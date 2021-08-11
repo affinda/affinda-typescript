@@ -1,0 +1,24 @@
+import { OperationParameter, OperationURLParameter, OperationQueryParameter } from "@azure/core-client";
+export declare const accept: OperationParameter;
+export declare const $host: OperationURLParameter;
+export declare const limit: OperationQueryParameter;
+export declare const offset: OperationQueryParameter;
+export declare const contentType: OperationParameter;
+export declare const file: OperationParameter;
+export declare const identifier: OperationParameter;
+export declare const fileName: OperationParameter;
+export declare const url: OperationParameter;
+export declare const wait: OperationParameter;
+export declare const resumeLanguage: OperationParameter;
+export declare const expiryTime: OperationParameter;
+export declare const accept1: OperationParameter;
+export declare const identifier1: OperationURLParameter;
+export declare const redactHeadshot: OperationParameter;
+export declare const redactPersonalDetails: OperationParameter;
+export declare const redactWorkDetails: OperationParameter;
+export declare const redactEducationDetails: OperationParameter;
+export declare const redactReferees: OperationParameter;
+export declare const redactLocations: OperationParameter;
+export declare const redactDates: OperationParameter;
+export declare const resumeFormat: OperationParameter;
+//# sourceMappingURL=parameters.d.ts.map
