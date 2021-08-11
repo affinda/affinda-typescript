@@ -85,6 +85,10 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+dist-test
+esm
+review
+temp
 
 # Gatsby files
 .cache/
@@ -118,3 +122,4 @@ dist
 .pnp.*
 
 .idea
+.vscode
