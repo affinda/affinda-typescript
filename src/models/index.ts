@@ -1,7 +1,7 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
 
-export interface Paths1Vwy7YkResumesGetResponses200ContentApplicationJsonSchema {
+export interface GetAllDocumentsResults {
   count?: number;
   next?: string;
   previous?: string;
@@ -16,21 +16,11 @@ export interface Meta {
   /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
   ready: boolean;
   /** The datetime when the document was ready */
-  readyDt: Date | null;
+  readyDt?: Date;
   /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
   failed: boolean;
-  user: User;
   /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
-  expiryTime: string | null;
-}
-
-export interface User {
-  documentCount?: number;
-  redactedDocumentCount?: number;
-  reformattedResumeCount?: number;
-  parsingCredits?: number;
-  redactionCredits?: number;
-  reformattingCredits?: number;
+  expiryTime?: string;
 }
 
 export interface ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema {
@@ -38,26 +28,11 @@ export interface ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema {
   statusCode?: number;
 }
 
-export interface PathsWt95EfResumesPostResponses201ContentApplicationJsonSchema {
-  /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-}
-
-export interface Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema {
-  fileForConversion?: string;
-}
-
-export interface ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema {
-  detail?: string;
-  statusCode?: number;
-}
-
 export interface Resume {
-  data?: ResumeData;
-  meta?: Meta;
-  error?: ErrorModel;
+  data: ResumeData | null;
+  meta: Meta;
+  error: ErrorModel;
+  user: User;
 }
 
 export interface ResumeData {
@@ -175,36 +150,36 @@ export interface ResumeDataSectionsItem {
 }
 
 export interface ErrorModel {
-  errorCode: number | null;
-  errorDetail: string | null;
+  errorCode?: string;
+  errorDetail?: string;
 }
 
-export interface Paths1My65ZdRedactedResumesGetResponses200ContentApplicationJsonSchema {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results?: Meta[];
+export interface User {
+  documentCount?: number;
+  redactedDocumentCount?: number;
+  reformattedResumeCount?: number;
+  parsingCredits?: number;
+  redactionCredits?: number;
+  reformattingCredits?: number;
 }
 
-export interface Paths1VouiekRedactedResumesPostResponses201ContentApplicationJsonSchema {
-  fileName?: string;
-  identifier?: string;
-  redactHeadshot?: boolean;
-  redactPersonalDetails?: boolean;
-  redactWorkDetails?: boolean;
-  redactEducationDetails?: boolean;
-  redactReferees?: boolean;
-  redactLocations?: boolean;
-  redactDates?: boolean;
+export interface Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema {
+  fileForConversion?: string;
 }
 
-export interface RedactedDocument {
-  data?: RedactedDocumentData;
-  meta?: Meta;
-  error?: ErrorModel;
+export interface ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema {
+  detail?: string;
+  statusCode?: number;
 }
 
-export interface RedactedDocumentData {
+export interface RedactedResume {
+  data: RedactedResumeData | null;
+  meta: Meta;
+  error: ErrorModel;
+  user: User;
+}
+
+export interface RedactedResumeData {
   redactedPdf?: string;
 }
 
@@ -216,33 +191,20 @@ export interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonS
 }
 
 export interface Get200ApplicationJsonPropertiesItemsItem {
-  identifier: string;
+  /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+  identifier: string | null;
+  /** The template to apply */
   formatFile: string;
 }
 
-export interface Paths4Fg3YrReformattedResumesGetResponses200ContentApplicationJsonSchema {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results?: Meta[];
+export interface ReformattedResume {
+  data: ReformattedResumeData | null;
+  meta: Meta;
+  error: ErrorModel;
+  user: User;
 }
 
-export interface Paths1Wyf6PlReformattedResumesPostResponses201ContentApplicationJsonSchema {
-  /** Optional filename of the file */
-  fileName?: string;
-  /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
-  identifier?: string;
-  /** Identifier of the format used */
-  resumeFormat?: string;
-}
-
-export interface ReformattedDocument {
-  data?: ReformattedDocumentData;
-  meta?: Meta;
-  error?: ErrorModel;
-}
-
-export interface ReformattedDocumentData {
+export interface ReformattedResumeData {
   reformattedFile?: string;
 }
 
@@ -255,7 +217,7 @@ export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
-  /** If true (default), will return a response only after resume processing has completed. If False, will return an identifier, which can be polled at the GET endpoint until processing is complete. */
+  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
@@ -274,6 +236,8 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   url?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
+  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: boolean;
   /** Whether to redact headshot */
   redactHeadshot?: boolean;
   /** Whether to redact personal details (e.g. name, address) */
@@ -305,6 +269,8 @@ export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFor
   resumeLanguage?: string;
   /** Identifier of the format used */
   resumeFormat: string;
+  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: boolean;
 }
 
 /** Optional parameters. */
@@ -312,7 +278,7 @@ export interface AffindaAPIGetAllResumesOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllResumes operation. */
-export type AffindaAPIGetAllResumesResponse = Paths1Vwy7YkResumesGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllResumesResponse = GetAllDocumentsResults;
 
 /** Optional parameters. */
 export interface AffindaAPICreateResumeOptionalParams
@@ -325,7 +291,7 @@ export interface AffindaAPICreateResumeOptionalParams
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
-  /** If true (default), will return a response only after resume processing has completed. If False, will return an identifier, which can be polled at the GET endpoint until processing is complete. */
+  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
@@ -334,7 +300,7 @@ export interface AffindaAPICreateResumeOptionalParams
 }
 
 /** Contains response data for the createResume operation. */
-export type AffindaAPICreateResumeResponse = PathsWt95EfResumesPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateResumeResponse = Resume;
 
 /** Optional parameters. */
 export interface AffindaAPIGetResumeOptionalParams
@@ -355,7 +321,7 @@ export interface AffindaAPIGetAllRedactedResumesOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllRedactedResumes operation. */
-export type AffindaAPIGetAllRedactedResumesResponse = Paths1My65ZdRedactedResumesGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResults;
 
 /** Optional parameters. */
 export interface AffindaAPICreateRedactedResumeOptionalParams
@@ -368,6 +334,8 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
+  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
   /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
@@ -389,14 +357,14 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
 }
 
 /** Contains response data for the createRedactedResume operation. */
-export type AffindaAPICreateRedactedResumeResponse = Paths1VouiekRedactedResumesPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateRedactedResumeResponse = RedactedResume;
 
 /** Optional parameters. */
 export interface AffindaAPIGetRedactedResumeOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getRedactedResume operation. */
-export type AffindaAPIGetRedactedResumeResponse = RedactedDocument;
+export type AffindaAPIGetRedactedResumeResponse = RedactedResume;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteRedactedResumeOptionalParams
@@ -417,7 +385,7 @@ export interface AffindaAPIGetAllReformattedResumesOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllReformattedResumes operation. */
-export type AffindaAPIGetAllReformattedResumesResponse = Paths4Fg3YrReformattedResumesGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllReformattedResumesResponse = GetAllDocumentsResults;
 
 /** Optional parameters. */
 export interface AffindaAPICreateReformattedResumeOptionalParams
@@ -430,19 +398,21 @@ export interface AffindaAPICreateReformattedResumeOptionalParams
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
+  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
 }
 
 /** Contains response data for the createReformattedResume operation. */
-export type AffindaAPICreateReformattedResumeResponse = Paths1Wyf6PlReformattedResumesPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateReformattedResumeResponse = ReformattedResume;
 
 /** Optional parameters. */
 export interface AffindaAPIGetReformattedResumeOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getReformattedResume operation. */
-export type AffindaAPIGetReformattedResumeResponse = ReformattedDocument;
+export type AffindaAPIGetReformattedResumeResponse = ReformattedResume;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteReformattedResumeOptionalParams

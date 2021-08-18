@@ -77,7 +77,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getResume(
-    identifier: string,
+    identifier: string | null,
     options?: AffindaAPIGetResumeOptionalParams
   ): Promise<AffindaAPIGetResumeResponse> {
     return this.sendOperationRequest(
@@ -92,7 +92,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteResume(
-    identifier: string,
+    identifier: string | null,
     options?: AffindaAPIDeleteResumeOptionalParams
   ): Promise<AffindaAPIDeleteResumeResponse> {
     return this.sendOperationRequest(
@@ -116,9 +116,6 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Uploads a resume for redacting.
-   * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/redacted_resumes/{identifier}](#operation/getRedactedResume) endpoint to check processing status
-   * and retrieve results.
    * @param options The options parameters.
    */
   createRedactedResume(
@@ -138,7 +135,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getRedactedResume(
-    identifier: string,
+    identifier: string | null,
     options?: AffindaAPIGetRedactedResumeOptionalParams
   ): Promise<AffindaAPIGetRedactedResumeResponse> {
     return this.sendOperationRequest(
@@ -153,7 +150,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteRedactedResume(
-    identifier: string,
+    identifier: string | null,
     options?: AffindaAPIDeleteRedactedResumeOptionalParams
   ): Promise<AffindaAPIDeleteRedactedResumeResponse> {
     return this.sendOperationRequest(
@@ -190,9 +187,6 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Uploads a resume for reformatting.
-   * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/reformatted_resumes/{identifier}](#operation/getReformattedResume) endpoint to check processing
-   * status and retrieve results.
    * @param resumeFormat Identifier of the format used
    * @param options The options parameters.
    */
@@ -214,7 +208,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getReformattedResume(
-    identifier: string,
+    identifier: string | null,
     options?: AffindaAPIGetReformattedResumeOptionalParams
   ): Promise<AffindaAPIGetReformattedResumeResponse> {
     return this.sendOperationRequest(
@@ -229,7 +223,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteReformattedResume(
-    identifier: string,
+    identifier: string | null,
     options?: AffindaAPIDeleteReformattedResumeOptionalParams
   ): Promise<AffindaAPIDeleteReformattedResumeResponse> {
     return this.sendOperationRequest(
@@ -246,8 +240,7 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper:
-        Mappers.Paths1Vwy7YkResumesGetResponses200ContentApplicationJsonSchema
+      bodyMapper: Mappers.GetAllDocumentsResults
     },
     401: {
       bodyMapper:
@@ -263,9 +256,11 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
   path: "/resumes",
   httpMethod: "POST",
   responses: {
+    200: {
+      bodyMapper: Mappers.Resume
+    },
     201: {
-      bodyMapper:
-        Mappers.PathsWt95EfResumesPostResponses201ContentApplicationJsonSchema
+      bodyMapper: Mappers.Resume
     },
     400: {
       bodyMapper:
@@ -336,8 +331,7 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper:
-        Mappers.Paths1My65ZdRedactedResumesGetResponses200ContentApplicationJsonSchema
+      bodyMapper: Mappers.GetAllDocumentsResults
     },
     401: {
       bodyMapper:
@@ -357,9 +351,11 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
   path: "/redacted_resumes",
   httpMethod: "POST",
   responses: {
+    200: {
+      bodyMapper: Mappers.RedactedResume
+    },
     201: {
-      bodyMapper:
-        Mappers.Paths1VouiekRedactedResumesPostResponses201ContentApplicationJsonSchema
+      bodyMapper: Mappers.RedactedResume
     },
     400: {
       bodyMapper:
@@ -379,6 +375,7 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.identifier,
     Parameters.fileName,
     Parameters.url,
+    Parameters.wait,
     Parameters.resumeLanguage,
     Parameters.expiryTime,
     Parameters.redactHeadshot,
@@ -398,7 +395,7 @@ const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper: Mappers.RedactedDocument
+      bodyMapper: Mappers.RedactedResume
     },
     401: {
       bodyMapper:
@@ -458,8 +455,7 @@ const getAllReformattedResumesOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper:
-        Mappers.Paths4Fg3YrReformattedResumesGetResponses200ContentApplicationJsonSchema
+      bodyMapper: Mappers.GetAllDocumentsResults
     },
     401: {
       bodyMapper:
@@ -479,9 +475,11 @@ const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
   path: "/reformatted_resumes",
   httpMethod: "POST",
   responses: {
+    200: {
+      bodyMapper: Mappers.ReformattedResume
+    },
     201: {
-      bodyMapper:
-        Mappers.Paths1Wyf6PlReformattedResumesPostResponses201ContentApplicationJsonSchema
+      bodyMapper: Mappers.ReformattedResume
     },
     400: {
       bodyMapper:
@@ -501,6 +499,7 @@ const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.identifier,
     Parameters.fileName,
     Parameters.url,
+    Parameters.wait,
     Parameters.resumeLanguage,
     Parameters.resumeFormat
   ],
@@ -513,7 +512,7 @@ const getReformattedResumeOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper: Mappers.ReformattedDocument
+      bodyMapper: Mappers.ReformattedResume
     },
     401: {
       bodyMapper:

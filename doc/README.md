@@ -1,3 +1,5 @@
+affinda / [Exports](modules.md)
+
 ![affinda logo](affinda_logo.png)
 
 This is the typescript client for the **Affinda API**
@@ -12,7 +14,6 @@ This package contains an isomorphic SDK (runs both in Node.js and in browsers) f
 
 - [LTS versions of Node.js](https://nodejs.org/about/releases/)
 - Latest versions of Safari, Chrome, Edge and Firefox.
-
 
 ### Install the `affinda` package
 
@@ -29,7 +30,6 @@ npm build
 ```
 
 ## Quickstart
-
 
 `AffindaAPI` is the primary interface for developers using the Service client library. [Explore the methods on this client object](./docs/classes/AffindaAPI.md) to understand the different features of the Service service that you can access.
 
