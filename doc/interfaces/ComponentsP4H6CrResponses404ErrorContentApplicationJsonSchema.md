@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
 
 # Interface: ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/models/index.ts:171](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L171)
+[src/models/index.ts:163](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L163)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:172](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L172)
+[src/models/index.ts:164](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L164)

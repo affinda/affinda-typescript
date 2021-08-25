@@ -264,7 +264,7 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     },
     400: {
       bodyMapper:
-        Mappers.Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema
+        Mappers.Components8Sxs33Responses400ErrorContentApplicationJsonSchema
     },
     401: {
       bodyMapper:
@@ -359,7 +359,7 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     },
     400: {
       bodyMapper:
-        Mappers.Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema
+        Mappers.Components8Sxs33Responses400ErrorContentApplicationJsonSchema
     },
     401: {
       bodyMapper:
@@ -483,7 +483,7 @@ const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
     },
     400: {
       bodyMapper:
-        Mappers.Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema
+        Mappers.Components8Sxs33Responses400ErrorContentApplicationJsonSchema
     },
     401: {
       bodyMapper:

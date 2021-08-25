@@ -32,7 +32,6 @@ export interface Resume {
   data: ResumeData | null;
   meta: Meta;
   error: ErrorModel;
-  user: User;
 }
 
 export interface ResumeData {
@@ -50,14 +49,15 @@ export interface ResumeData {
   headShot?: coreRestPipeline.RequestBodyType;
   education?: ResumeDataEducationItem[];
   workExperience?: ResumeDataWorkExperienceItem[];
-  skills?: string[];
-  skillsDetails?: ResumeDataSkillsDetailsItem[];
+  skills?: ResumeDataSkillsItem[];
   certifications?: string[];
   publications?: string[];
   referees?: ResumeDataRefereesItem[];
   sections?: ResumeDataSectionsItem[];
   /** Probability that the given document is a resume. Values below 30 suggest that the resume is not a resume. */
   isResumeProbability?: number;
+  /** All of the raw text of the parsed resume, example is shortened for readiblity */
+  rawText?: string;
 }
 
 export interface ResumeDataName {
@@ -122,15 +122,15 @@ export interface ResumeDataWorkExperienceItemDates {
   isCurrent?: boolean;
 }
 
-export interface ResumeDataSkillsDetailsItem {
+export interface ResumeDataSkillsItem {
   name?: string;
   lastUsed?: string;
   numberOfMonths?: number;
   type?: string;
-  sources?: ResumeDataSkillsDetailsPropertiesItemsItem[];
+  sources?: ResumeDataSkillsPropertiesItemsItem[];
 }
 
-export interface ResumeDataSkillsDetailsPropertiesItemsItem {
+export interface ResumeDataSkillsPropertiesItemsItem {
   section?: string;
   position?: number;
 }
@@ -154,17 +154,9 @@ export interface ErrorModel {
   errorDetail?: string;
 }
 
-export interface User {
-  documentCount?: number;
-  redactedDocumentCount?: number;
-  reformattedResumeCount?: number;
-  parsingCredits?: number;
-  redactionCredits?: number;
-  reformattingCredits?: number;
-}
-
-export interface Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema {
-  fileForConversion?: string;
+export interface Components8Sxs33Responses400ErrorContentApplicationJsonSchema {
+  statusCode?: number;
+  detail?: string;
 }
 
 export interface ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema {
@@ -176,7 +168,6 @@ export interface RedactedResume {
   data: RedactedResumeData | null;
   meta: Meta;
   error: ErrorModel;
-  user: User;
 }
 
 export interface RedactedResumeData {
@@ -201,7 +192,6 @@ export interface ReformattedResume {
   data: ReformattedResumeData | null;
   meta: Meta;
   error: ErrorModel;
-  user: User;
 }
 
 export interface ReformattedResumeData {

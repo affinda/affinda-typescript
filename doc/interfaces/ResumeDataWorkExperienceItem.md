@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItem
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItem
 
 # Interface: ResumeDataWorkExperienceItem
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/models/index.ts:115](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L115)
+[src/models/index.ts:115](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L115)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:114](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L114)
+[src/models/index.ts:114](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L114)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:111](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L111)
+[src/models/index.ts:111](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L111)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:113](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L113)
+[src/models/index.ts:113](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L113)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:112](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L112)
+[src/models/index.ts:112](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L112)

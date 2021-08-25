@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / AffindaAPI
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPI
 
 # Class: AffindaAPI
 
@@ -60,7 +60,7 @@ Initializes a new instance of the AffindaAPI class.
 
 #### Defined in
 
-[src/affindaAPI.ts:42](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L42)
+[src/affindaAPI.ts:42](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L42)
 
 ## Properties
 
@@ -74,7 +74,7 @@ Initializes a new instance of the AffindaAPI class.
 
 #### Defined in
 
-[src/affindaAPIContext.ts:6](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPIContext.ts#L6)
+[src/affindaAPIContext.ts:6](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPIContext.ts#L6)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/affindaAPIContext.ts:7](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPIContext.ts#L7)
+[src/affindaAPIContext.ts:7](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPIContext.ts#L7)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/affindaAPIContext.ts:8](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPIContext.ts#L8)
+[src/affindaAPIContext.ts:8](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPIContext.ts#L8)
 
 ___
 
@@ -140,7 +140,7 @@ Uploads a resume for redacting.
 
 #### Defined in
 
-[src/affindaAPI.ts:121](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L121)
+[src/affindaAPI.ts:121](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L121)
 
 ___
 
@@ -163,7 +163,7 @@ Uploads a resume for reformatting.
 
 #### Defined in
 
-[src/affindaAPI.ts:193](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L193)
+[src/affindaAPI.ts:193](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L193)
 
 ___
 
@@ -188,7 +188,7 @@ results.
 
 #### Defined in
 
-[src/affindaAPI.ts:66](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L66)
+[src/affindaAPI.ts:66](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L66)
 
 ___
 
@@ -211,7 +211,7 @@ Deletes the specified resume from the database
 
 #### Defined in
 
-[src/affindaAPI.ts:152](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L152)
+[src/affindaAPI.ts:152](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L152)
 
 ___
 
@@ -234,7 +234,7 @@ Deletes the specified resume from the database
 
 #### Defined in
 
-[src/affindaAPI.ts:225](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L225)
+[src/affindaAPI.ts:225](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L225)
 
 ___
 
@@ -257,7 +257,7 @@ Deletes the specified resume from the database
 
 #### Defined in
 
-[src/affindaAPI.ts:94](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L94)
+[src/affindaAPI.ts:94](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L94)
 
 ___
 
@@ -279,7 +279,7 @@ Returns all the redacted resume information for that resume
 
 #### Defined in
 
-[src/affindaAPI.ts:108](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L108)
+[src/affindaAPI.ts:108](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L108)
 
 ___
 
@@ -301,7 +301,7 @@ Returns all the reformatted resume information for that resume
 
 #### Defined in
 
-[src/affindaAPI.ts:179](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L179)
+[src/affindaAPI.ts:179](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L179)
 
 ___
 
@@ -323,7 +323,7 @@ Returns all the resume formats
 
 #### Defined in
 
-[src/affindaAPI.ts:166](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L166)
+[src/affindaAPI.ts:166](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L166)
 
 ___
 
@@ -345,7 +345,7 @@ Returns all the resume summaries for that user, limited to 300 per page.
 
 #### Defined in
 
-[src/affindaAPI.ts:53](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L53)
+[src/affindaAPI.ts:53](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L53)
 
 ___
 
@@ -370,7 +370,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Defined in
 
-[src/affindaAPI.ts:137](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L137)
+[src/affindaAPI.ts:137](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L137)
 
 ___
 
@@ -395,7 +395,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Defined in
 
-[src/affindaAPI.ts:210](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L210)
+[src/affindaAPI.ts:210](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L210)
 
 ___
 
@@ -420,7 +420,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Defined in
 
-[src/affindaAPI.ts:79](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPI.ts#L79)
+[src/affindaAPI.ts:79](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPI.ts#L79)
 
 ___
 

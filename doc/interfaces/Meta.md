@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / Meta
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Meta
 
 # Interface: Meta
 
@@ -23,7 +23,7 @@ The date/time in ISO-8601 format when the resume will be automatically deleted. 
 
 #### Defined in
 
-[src/models/index.ts:23](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L23)
+[src/models/index.ts:23](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L23)
 
 ___
 
@@ -35,7 +35,7 @@ If true, some exception was raised during processing. Check the 'error' field of
 
 #### Defined in
 
-[src/models/index.ts:21](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L21)
+[src/models/index.ts:21](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L21)
 
 ___
 
@@ -47,7 +47,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:15](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L15)
+[src/models/index.ts:15](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L15)
 
 ___
 
@@ -59,7 +59,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:13](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L13)
+[src/models/index.ts:13](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L13)
 
 ___
 
@@ -71,7 +71,7 @@ If true, the document has finished processing. Particularly useful if an endpoin
 
 #### Defined in
 
-[src/models/index.ts:17](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L17)
+[src/models/index.ts:17](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L17)
 
 ___
 
@@ -83,4 +83,4 @@ The datetime when the document was ready
 
 #### Defined in
 
-[src/models/index.ts:19](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L19)
+[src/models/index.ts:19](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L19)

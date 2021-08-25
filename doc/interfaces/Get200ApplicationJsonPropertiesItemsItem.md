@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / Get200ApplicationJsonPropertiesItemsItem
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Get200ApplicationJsonPropertiesItemsItem
 
 # Interface: Get200ApplicationJsonPropertiesItemsItem
 
@@ -19,7 +19,7 @@ The template to apply
 
 #### Defined in
 
-[src/models/index.ts:197](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L197)
+[src/models/index.ts:188](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L188)
 
 ___
 
@@ -31,4 +31,4 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:195](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L195)
+[src/models/index.ts:186](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L186)

@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema
 
 # Interface: Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema
 
@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/models/index.ts:187](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L187)
+[src/models/index.ts:178](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L178)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:188](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L188)
+[src/models/index.ts:179](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L179)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:189](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L189)
+[src/models/index.ts:180](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L180)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:190](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L190)
+[src/models/index.ts:181](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L181)

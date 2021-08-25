@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateReformattedResumeOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateReformattedResumeOptionalParams
 
 # Interface: AffindaAPICreateReformattedResumeOptionalParams
 
@@ -46,13 +46,13 @@ ___
 
 ### file
 
-• `Optional` **file**: ``null`` \| `string` \| `ReadableStream` \| `Blob` \| `ArrayBuffer` \| `ArrayBufferView` \| `FormData`
+• `Optional` **file**: `RequestBodyType`
 
 File as binary data blob
 
 #### Defined in
 
-[src/models/index.ts:394](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L394)
+[src/models/index.ts:384](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L384)
 
 ___
 
@@ -64,7 +64,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:398](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L398)
+[src/models/index.ts:388](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L388)
 
 ___
 
@@ -76,7 +76,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:396](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L396)
+[src/models/index.ts:386](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L386)
 
 ___
 
@@ -122,7 +122,7 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 #### Defined in
 
-[src/models/index.ts:404](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L404)
+[src/models/index.ts:394](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L394)
 
 ___
 
@@ -166,7 +166,7 @@ URL to file to download and process
 
 #### Defined in
 
-[src/models/index.ts:400](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L400)
+[src/models/index.ts:390](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L390)
 
 ___
 
@@ -178,4 +178,4 @@ If true (default), will return a response only after processing has completed. I
 
 #### Defined in
 
-[src/models/index.ts:402](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L402)
+[src/models/index.ts:392](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L392)

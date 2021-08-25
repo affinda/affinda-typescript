@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
 
 # Interface: ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/models/index.ts:27](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L27)
+[src/models/index.ts:27](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L27)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:28](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L28)
+[src/models/index.ts:28](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L28)

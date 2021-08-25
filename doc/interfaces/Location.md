@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / Location
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Location
 
 # Interface: Location
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/models/index.ts:79](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L79)
+[src/models/index.ts:79](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L79)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:80](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L80)
+[src/models/index.ts:80](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L80)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:75](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L75)
+[src/models/index.ts:75](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L75)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:72](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L72)
+[src/models/index.ts:72](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L72)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:73](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L73)
+[src/models/index.ts:73](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L73)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:76](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L76)
+[src/models/index.ts:76](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L76)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:74](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L74)
+[src/models/index.ts:74](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L74)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:78](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L78)
+[src/models/index.ts:78](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L78)
 
 ___
 
@@ -104,4 +104,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:77](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L77)
+[src/models/index.ts:77](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L77)

@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / RedactedResumeData
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / RedactedResumeData
 
 # Interface: RedactedResumeData
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[src/models/index.ts:183](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L183)
+[src/models/index.ts:174](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L174)

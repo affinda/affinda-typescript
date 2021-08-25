@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ResumeDataEducationItemDates
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataEducationItemDates
 
 # Interface: ResumeDataEducationItemDates
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/models/index.ts:105](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L105)
+[src/models/index.ts:105](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L105)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:106](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L106)
+[src/models/index.ts:106](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L106)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:107](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L107)
+[src/models/index.ts:107](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L107)

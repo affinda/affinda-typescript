@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ResumeDataName
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataName
 
 # Interface: ResumeDataName
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/models/index.ts:65](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L65)
+[src/models/index.ts:65](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L65)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:66](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L66)
+[src/models/index.ts:66](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L66)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:67](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L67)
+[src/models/index.ts:67](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L67)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:64](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L64)
+[src/models/index.ts:64](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L64)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:68](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L68)
+[src/models/index.ts:68](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L68)

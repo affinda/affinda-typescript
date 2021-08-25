@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / GetAllDocumentsResults
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllDocumentsResults
 
 # Interface: GetAllDocumentsResults
 
@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/models/index.ts:5](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L5)
+[src/models/index.ts:5](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L5)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:6](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L6)
+[src/models/index.ts:6](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L6)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:7](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L7)
+[src/models/index.ts:7](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L7)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:8](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L8)
+[src/models/index.ts:8](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L8)

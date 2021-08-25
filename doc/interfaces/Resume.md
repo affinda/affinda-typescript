@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / Resume
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Resume
 
 # Interface: Resume
 
@@ -9,7 +9,6 @@
 - [data](Resume.md#data)
 - [error](Resume.md#error)
 - [meta](Resume.md#meta)
-- [user](Resume.md#user)
 
 ## Properties
 
@@ -19,7 +18,7 @@
 
 #### Defined in
 
-[src/models/index.ts:32](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L32)
+[src/models/index.ts:32](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L32)
 
 ___
 
@@ -29,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:34](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L34)
+[src/models/index.ts:34](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L34)
 
 ___
 
@@ -39,14 +38,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:33](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L33)
-
-___
-
-### user
-
-• **user**: [`User`](User.md)
-
-#### Defined in
-
-[src/models/index.ts:35](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L35)
+[src/models/index.ts:33](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L33)

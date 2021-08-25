@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / AffindaCredential
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaCredential
 
 # Class: AffindaCredential
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/affindaAPICredential.ts:7](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPICredential.ts#L7)
+[src/affindaAPICredential.ts:7](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPICredential.ts#L7)
 
 ## Properties
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/affindaAPICredential.ts:5](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPICredential.ts#L5)
+[src/affindaAPICredential.ts:5](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPICredential.ts#L5)
 
 ## Methods
 
@@ -69,4 +69,4 @@ TokenCredential.getToken
 
 #### Defined in
 
-[src/affindaAPICredential.ts:11](https://github.com/affinda/affinda-typescript/blob/b869a13/src/affindaAPICredential.ts#L11)
+[src/affindaAPICredential.ts:11](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/affindaAPICredential.ts#L11)

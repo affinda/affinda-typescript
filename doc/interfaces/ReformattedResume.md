@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ReformattedResume
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ReformattedResume
 
 # Interface: ReformattedResume
 
@@ -9,7 +9,6 @@
 - [data](ReformattedResume.md#data)
 - [error](ReformattedResume.md#error)
 - [meta](ReformattedResume.md#meta)
-- [user](ReformattedResume.md#user)
 
 ## Properties
 
@@ -19,7 +18,7 @@
 
 #### Defined in
 
-[src/models/index.ts:201](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L201)
+[src/models/index.ts:192](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L192)
 
 ___
 
@@ -29,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:203](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L203)
+[src/models/index.ts:194](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L194)
 
 ___
 
@@ -39,14 +38,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:202](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L202)
-
-___
-
-### user
-
-• **user**: [`User`](User.md)
-
-#### Defined in
-
-[src/models/index.ts:204](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L204)
+[src/models/index.ts:193](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L193)

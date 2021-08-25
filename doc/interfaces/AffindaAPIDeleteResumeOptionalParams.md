@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / AffindaAPIDeleteResumeOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIDeleteResumeOptionalParams
 
 # Interface: AffindaAPIDeleteResumeOptionalParams
 

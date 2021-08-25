@@ -139,13 +139,6 @@ export const Resume: coreClient.CompositeMapper = {
           name: "Composite",
           className: "ErrorModel"
         }
-      },
-      user: {
-        serializedName: "user",
-        type: {
-          name: "Composite",
-          className: "User"
-        }
       }
     }
   }
@@ -276,19 +269,8 @@ export const ResumeData: coreClient.CompositeMapper = {
           name: "Sequence",
           element: {
             type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      skillsDetails: {
-        serializedName: "skillsDetails",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
               name: "Composite",
-              className: "ResumeDataSkillsDetailsItem"
+              className: "ResumeDataSkillsItem"
             }
           }
         }
@@ -343,6 +325,12 @@ export const ResumeData: coreClient.CompositeMapper = {
         serializedName: "isResumeProbability",
         type: {
           name: "Number"
+        }
+      },
+      rawText: {
+        serializedName: "rawText",
+        type: {
+          name: "String"
         }
       }
     }
@@ -674,10 +662,10 @@ export const ResumeDataWorkExperienceItemDates: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeDataSkillsDetailsItem: coreClient.CompositeMapper = {
+export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeDataSkillsDetailsItem",
+    className: "ResumeDataSkillsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -712,7 +700,7 @@ export const ResumeDataSkillsDetailsItem: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ResumeDataSkillsDetailsPropertiesItemsItem"
+              className: "ResumeDataSkillsPropertiesItemsItem"
             }
           }
         }
@@ -721,10 +709,10 @@ export const ResumeDataSkillsDetailsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeDataSkillsDetailsPropertiesItemsItem: coreClient.CompositeMapper = {
+export const ResumeDataSkillsPropertiesItemsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeDataSkillsDetailsPropertiesItemsItem",
+    className: "ResumeDataSkillsPropertiesItemsItem",
     modelProperties: {
       section: {
         serializedName: "section",
@@ -844,59 +832,19 @@ export const ErrorModel: coreClient.CompositeMapper = {
   }
 };
 
-export const User: coreClient.CompositeMapper = {
+export const Components8Sxs33Responses400ErrorContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "User",
+    className: "Components8Sxs33Responses400ErrorContentApplicationJsonSchema",
     modelProperties: {
-      documentCount: {
-        serializedName: "documentCount",
+      statusCode: {
+        serializedName: "statusCode",
         type: {
           name: "Number"
         }
       },
-      redactedDocumentCount: {
-        serializedName: "redactedDocumentCount",
-        type: {
-          name: "Number"
-        }
-      },
-      reformattedResumeCount: {
-        serializedName: "reformattedResumeCount",
-        type: {
-          name: "Number"
-        }
-      },
-      parsingCredits: {
-        serializedName: "parsingCredits",
-        type: {
-          name: "Number"
-        }
-      },
-      redactionCredits: {
-        serializedName: "redactionCredits",
-        type: {
-          name: "Number"
-        }
-      },
-      reformattingCredits: {
-        serializedName: "reformattingCredits",
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema",
-    modelProperties: {
-      fileForConversion: {
-        serializedName: "fileForConversion",
+      detail: {
+        serializedName: "detail",
         type: {
           name: "String"
         }
@@ -950,13 +898,6 @@ export const RedactedResume: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "ErrorModel"
-        }
-      },
-      user: {
-        serializedName: "user",
-        type: {
-          name: "Composite",
-          className: "User"
         }
       }
     }
@@ -1068,13 +1009,6 @@ export const ReformattedResume: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "ErrorModel"
-        }
-      },
-      user: {
-        serializedName: "user",
-        type: {
-          name: "Composite",
-          className: "User"
         }
       }
     }

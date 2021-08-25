@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ReformattedResumeData
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ReformattedResumeData
 
 # Interface: ReformattedResumeData
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[src/models/index.ts:208](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L208)
+[src/models/index.ts:198](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L198)

@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / RedactedResume
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / RedactedResume
 
 # Interface: RedactedResume
 
@@ -9,7 +9,6 @@
 - [data](RedactedResume.md#data)
 - [error](RedactedResume.md#error)
 - [meta](RedactedResume.md#meta)
-- [user](RedactedResume.md#user)
 
 ## Properties
 
@@ -19,7 +18,7 @@
 
 #### Defined in
 
-[src/models/index.ts:176](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L176)
+[src/models/index.ts:168](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L168)
 
 ___
 
@@ -29,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:178](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L178)
+[src/models/index.ts:170](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L170)
 
 ___
 
@@ -39,14 +38,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:177](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L177)
-
-___
-
-### user
-
-• **user**: [`User`](User.md)
-
-#### Defined in
-
-[src/models/index.ts:179](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L179)
+[src/models/index.ts:169](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L169)

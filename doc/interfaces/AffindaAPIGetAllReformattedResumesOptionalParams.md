@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllReformattedResumesOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllReformattedResumesOptionalParams
 
 # Interface: AffindaAPIGetAllReformattedResumesOptionalParams
 

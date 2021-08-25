@@ -1,6 +1,6 @@
-[affinda](README.md) / Exports
+[@affinda/affinda](README.md) / Exports
 
-# affinda
+# @affinda/affinda
 
 ## Table of contents
 
@@ -26,7 +26,7 @@
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
-- [Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema](interfaces/Components10Bc157ResponsesConversionerrorContentApplicationJsonSchema.md)
+- [Components8Sxs33Responses400ErrorContentApplicationJsonSchema](interfaces/Components8Sxs33Responses400ErrorContentApplicationJsonSchema.md)
 - [ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema](interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)
 - [ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema](interfaces/ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema.md)
 - [ErrorModel](interfaces/ErrorModel.md)
@@ -51,11 +51,10 @@
 - [ResumeDataName](interfaces/ResumeDataName.md)
 - [ResumeDataRefereesItem](interfaces/ResumeDataRefereesItem.md)
 - [ResumeDataSectionsItem](interfaces/ResumeDataSectionsItem.md)
-- [ResumeDataSkillsDetailsItem](interfaces/ResumeDataSkillsDetailsItem.md)
-- [ResumeDataSkillsDetailsPropertiesItemsItem](interfaces/ResumeDataSkillsDetailsPropertiesItemsItem.md)
+- [ResumeDataSkillsItem](interfaces/ResumeDataSkillsItem.md)
+- [ResumeDataSkillsPropertiesItemsItem](interfaces/ResumeDataSkillsPropertiesItemsItem.md)
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
-- [User](interfaces/User.md)
 
 ### Type aliases
 
@@ -83,7 +82,7 @@ Contains response data for the createRedactedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:360](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L360)
+[src/models/index.ts:350](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L350)
 
 ___
 
@@ -95,7 +94,7 @@ Contains response data for the createReformattedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:408](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L408)
+[src/models/index.ts:398](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L398)
 
 ___
 
@@ -107,7 +106,7 @@ Contains response data for the createResume operation.
 
 #### Defined in
 
-[src/models/index.ts:303](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L303)
+[src/models/index.ts:293](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L293)
 
 ___
 
@@ -119,7 +118,7 @@ Contains response data for the deleteRedactedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:374](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L374)
+[src/models/index.ts:364](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L364)
 
 ___
 
@@ -131,7 +130,7 @@ Contains response data for the deleteReformattedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:422](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L422)
+[src/models/index.ts:412](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L412)
 
 ___
 
@@ -143,7 +142,7 @@ Contains response data for the deleteResume operation.
 
 #### Defined in
 
-[src/models/index.ts:317](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L317)
+[src/models/index.ts:307](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L307)
 
 ___
 
@@ -155,7 +154,7 @@ Contains response data for the getAllRedactedResumes operation.
 
 #### Defined in
 
-[src/models/index.ts:324](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L324)
+[src/models/index.ts:314](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L314)
 
 ___
 
@@ -167,7 +166,7 @@ Contains response data for the getAllReformattedResumes operation.
 
 #### Defined in
 
-[src/models/index.ts:388](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L388)
+[src/models/index.ts:378](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L378)
 
 ___
 
@@ -179,7 +178,7 @@ Contains response data for the getAllResumeFormats operation.
 
 #### Defined in
 
-[src/models/index.ts:381](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L381)
+[src/models/index.ts:371](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L371)
 
 ___
 
@@ -191,7 +190,7 @@ Contains response data for the getAllResumes operation.
 
 #### Defined in
 
-[src/models/index.ts:281](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L281)
+[src/models/index.ts:271](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L271)
 
 ___
 
@@ -203,7 +202,7 @@ Contains response data for the getRedactedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:367](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L367)
+[src/models/index.ts:357](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L357)
 
 ___
 
@@ -215,7 +214,7 @@ Contains response data for the getReformattedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:415](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L415)
+[src/models/index.ts:405](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L405)
 
 ___
 
@@ -227,4 +226,4 @@ Contains response data for the getResume operation.
 
 #### Defined in
 
-[src/models/index.ts:310](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L310)
+[src/models/index.ts:300](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L300)

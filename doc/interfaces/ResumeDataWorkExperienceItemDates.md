@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItemDates
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItemDates
 
 # Interface: ResumeDataWorkExperienceItemDates
 
@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/models/index.ts:120](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L120)
+[src/models/index.ts:120](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L120)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:122](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L122)
+[src/models/index.ts:122](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L122)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:121](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L121)
+[src/models/index.ts:121](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L121)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:119](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L119)
+[src/models/index.ts:119](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L119)

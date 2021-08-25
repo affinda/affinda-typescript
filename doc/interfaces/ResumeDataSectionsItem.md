@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ResumeDataSectionsItem
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataSectionsItem
 
 # Interface: ResumeDataSectionsItem
 
@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/models/index.ts:147](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L147)
+[src/models/index.ts:147](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L147)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:148](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L148)
+[src/models/index.ts:148](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L148)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:146](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L146)
+[src/models/index.ts:146](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L146)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:149](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L149)
+[src/models/index.ts:149](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L149)

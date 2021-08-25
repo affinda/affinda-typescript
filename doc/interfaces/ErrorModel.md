@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ErrorModel
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ErrorModel
 
 # Interface: ErrorModel
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/models/index.ts:153](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L153)
+[src/models/index.ts:153](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L153)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:154](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L154)
+[src/models/index.ts:154](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L154)

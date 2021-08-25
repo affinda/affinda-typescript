@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / ResumeData
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeData
 
 # Interface: ResumeData
 
@@ -18,10 +18,10 @@
 - [objective](ResumeData.md#objective)
 - [phoneNumbers](ResumeData.md#phonenumbers)
 - [publications](ResumeData.md#publications)
+- [rawText](ResumeData.md#rawtext)
 - [referees](ResumeData.md#referees)
 - [sections](ResumeData.md#sections)
 - [skills](ResumeData.md#skills)
-- [skillsDetails](ResumeData.md#skillsdetails)
 - [summary](ResumeData.md#summary)
 - [totalYearsExperience](ResumeData.md#totalyearsexperience)
 - [websites](ResumeData.md#websites)
@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[src/models/index.ts:55](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L55)
+[src/models/index.ts:53](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L53)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:43](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L43)
+[src/models/index.ts:42](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L42)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:51](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L51)
+[src/models/index.ts:50](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L50)
 
 ___
 
@@ -65,19 +65,19 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:42](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L42)
+[src/models/index.ts:41](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L41)
 
 ___
 
 ### headShot
 
-• `Optional` **headShot**: ``null`` \| `string` \| `ReadableStream` \| `Blob` \| `ArrayBuffer` \| `ArrayBufferView` \| `FormData`
+• `Optional` **headShot**: `RequestBodyType`
 
 base64 encoded string
 
 #### Defined in
 
-[src/models/index.ts:50](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L50)
+[src/models/index.ts:49](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L49)
 
 ___
 
@@ -89,7 +89,7 @@ Probability that the given document is a resume. Values below 30 suggest that th
 
 #### Defined in
 
-[src/models/index.ts:60](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L60)
+[src/models/index.ts:58](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L58)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:46](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L46)
+[src/models/index.ts:45](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L45)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:44](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L44)
+[src/models/index.ts:43](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L43)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:39](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L39)
+[src/models/index.ts:38](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L38)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:45](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L45)
+[src/models/index.ts:44](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L44)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:40](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L40)
+[src/models/index.ts:39](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L39)
 
 ___
 
@@ -149,7 +149,19 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:56](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L56)
+[src/models/index.ts:54](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L54)
+
+___
+
+### rawText
+
+• `Optional` **rawText**: `string`
+
+All of the raw text of the parsed resume, example is shortened for readiblity
+
+#### Defined in
+
+[src/models/index.ts:60](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L60)
 
 ___
 
@@ -159,7 +171,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:57](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L57)
+[src/models/index.ts:55](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L55)
 
 ___
 
@@ -169,27 +181,17 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:58](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L58)
+[src/models/index.ts:56](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L56)
 
 ___
 
 ### skills
 
-• `Optional` **skills**: `string`[]
+• `Optional` **skills**: [`ResumeDataSkillsItem`](ResumeDataSkillsItem.md)[]
 
 #### Defined in
 
-[src/models/index.ts:53](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L53)
-
-___
-
-### skillsDetails
-
-• `Optional` **skillsDetails**: [`ResumeDataSkillsDetailsItem`](ResumeDataSkillsDetailsItem.md)[]
-
-#### Defined in
-
-[src/models/index.ts:54](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L54)
+[src/models/index.ts:52](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L52)
 
 ___
 
@@ -199,7 +201,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:47](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L47)
+[src/models/index.ts:46](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L46)
 
 ___
 
@@ -209,7 +211,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:48](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L48)
+[src/models/index.ts:47](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L47)
 
 ___
 
@@ -219,7 +221,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:41](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L41)
+[src/models/index.ts:40](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L40)
 
 ___
 
@@ -229,4 +231,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:52](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L52)
+[src/models/index.ts:51](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L51)

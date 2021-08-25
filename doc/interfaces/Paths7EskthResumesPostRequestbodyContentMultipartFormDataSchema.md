@@ -1,4 +1,4 @@
-[affinda](../README.md) / [Exports](../modules.md) / Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
 
 # Interface: Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
 
@@ -24,19 +24,19 @@ The date/time in ISO-8601 format when the resume will be automatically deleted. 
 
 #### Defined in
 
-[src/models/index.ts:225](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L225)
+[src/models/index.ts:215](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L215)
 
 ___
 
 ### file
 
-• `Optional` **file**: ``null`` \| `string` \| `ReadableStream` \| `Blob` \| `ArrayBuffer` \| `ArrayBufferView` \| `FormData`
+• `Optional` **file**: `RequestBodyType`
 
 File as binary data blob
 
 #### Defined in
 
-[src/models/index.ts:213](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L213)
+[src/models/index.ts:203](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L203)
 
 ___
 
@@ -48,7 +48,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:217](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L217)
+[src/models/index.ts:207](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L207)
 
 ___
 
@@ -60,7 +60,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:215](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L215)
+[src/models/index.ts:205](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L205)
 
 ___
 
@@ -72,7 +72,7 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 #### Defined in
 
-[src/models/index.ts:223](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L223)
+[src/models/index.ts:213](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L213)
 
 ___
 
@@ -84,7 +84,7 @@ URL to file to download and process
 
 #### Defined in
 
-[src/models/index.ts:219](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L219)
+[src/models/index.ts:209](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L209)
 
 ___
 
@@ -96,4 +96,4 @@ If true (default), will return a response only after processing has completed. I
 
 #### Defined in
 
-[src/models/index.ts:221](https://github.com/affinda/affinda-typescript/blob/b869a13/src/models/index.ts#L221)
+[src/models/index.ts:211](https://github.com/affinda/affinda-typescript/blob/30e5a05/src/models/index.ts#L211)
