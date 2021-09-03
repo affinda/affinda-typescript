@@ -86,6 +86,7 @@ out
 .nuxt
 dist
 dist-test
+dist-esm
 esm
 review
 temp
