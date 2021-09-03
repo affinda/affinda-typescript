@@ -207,8 +207,8 @@ export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
-  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
   /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
@@ -226,22 +226,22 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   url?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
-  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
   /** Whether to redact headshot */
-  redactHeadshot?: boolean;
+  redactHeadshot?: string;
   /** Whether to redact personal details (e.g. name, address) */
-  redactPersonalDetails?: boolean;
+  redactPersonalDetails?: string;
   /** Whether to redact work details (e.g. company names) */
-  redactWorkDetails?: boolean;
+  redactWorkDetails?: string;
   /** Whether to redact education details (e.g. university names) */
-  redactEducationDetails?: boolean;
+  redactEducationDetails?: string;
   /** Whether to redact referee details */
-  redactReferees?: boolean;
+  redactReferees?: string;
   /** Whether to redact location names */
-  redactLocations?: boolean;
+  redactLocations?: string;
   /** Whether to redact dates */
-  redactDates?: boolean;
+  redactDates?: string;
   /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
 }
@@ -259,8 +259,8 @@ export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFor
   resumeLanguage?: string;
   /** Identifier of the format used */
   resumeFormat: string;
-  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
 }
 
 /** Optional parameters. */
@@ -281,8 +281,8 @@ export interface AffindaAPICreateResumeOptionalParams
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
-  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
   /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
@@ -324,26 +324,26 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
-  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
   /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
   /** Whether to redact headshot */
-  redactHeadshot?: boolean;
+  redactHeadshot?: string;
   /** Whether to redact personal details (e.g. name, address) */
-  redactPersonalDetails?: boolean;
+  redactPersonalDetails?: string;
   /** Whether to redact work details (e.g. company names) */
-  redactWorkDetails?: boolean;
+  redactWorkDetails?: string;
   /** Whether to redact education details (e.g. university names) */
-  redactEducationDetails?: boolean;
+  redactEducationDetails?: string;
   /** Whether to redact referee details */
-  redactReferees?: boolean;
+  redactReferees?: string;
   /** Whether to redact location names */
-  redactLocations?: boolean;
+  redactLocations?: string;
   /** Whether to redact dates */
-  redactDates?: boolean;
+  redactDates?: string;
 }
 
 /** Contains response data for the createRedactedResume operation. */
@@ -388,8 +388,8 @@ export interface AffindaAPICreateReformattedResumeOptionalParams
   fileName?: string;
   /** URL to file to download and process */
   url?: string;
-  /** If true (default), will return a response only after processing has completed. If false, will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   resumeLanguage?: string;
 }

@@ -1066,7 +1066,7 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
       wait: {
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       resumeLanguage: {
@@ -1130,56 +1130,56 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
       wait: {
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactHeadshot: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactHeadshot",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactPersonalDetails: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactPersonalDetails",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactWorkDetails: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactWorkDetails",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactEducationDetails: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactEducationDetails",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactReferees: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactReferees",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactLocations: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactLocations",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactDates: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "redactDates",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       expiryTime: {
@@ -1243,7 +1243,7 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
       wait: {
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       }
     }

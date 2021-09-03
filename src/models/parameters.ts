@@ -112,7 +112,7 @@ export const wait: OperationParameter = {
   mapper: {
     serializedName: "wait",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -163,10 +163,10 @@ export const identifier1: OperationURLParameter = {
 export const redactHeadshot: OperationParameter = {
   parameterPath: ["options", "redactHeadshot"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactHeadshot",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -174,10 +174,10 @@ export const redactHeadshot: OperationParameter = {
 export const redactPersonalDetails: OperationParameter = {
   parameterPath: ["options", "redactPersonalDetails"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactPersonalDetails",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -185,10 +185,10 @@ export const redactPersonalDetails: OperationParameter = {
 export const redactWorkDetails: OperationParameter = {
   parameterPath: ["options", "redactWorkDetails"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactWorkDetails",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -196,10 +196,10 @@ export const redactWorkDetails: OperationParameter = {
 export const redactEducationDetails: OperationParameter = {
   parameterPath: ["options", "redactEducationDetails"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactEducationDetails",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -207,10 +207,10 @@ export const redactEducationDetails: OperationParameter = {
 export const redactReferees: OperationParameter = {
   parameterPath: ["options", "redactReferees"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactReferees",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -218,10 +218,10 @@ export const redactReferees: OperationParameter = {
 export const redactLocations: OperationParameter = {
   parameterPath: ["options", "redactLocations"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactLocations",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -229,10 +229,10 @@ export const redactLocations: OperationParameter = {
 export const redactDates: OperationParameter = {
   parameterPath: ["options", "redactDates"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "redactDates",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
