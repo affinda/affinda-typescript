@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/affindaAPICredential.ts:7](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPICredential.ts#L7)
+[src/affindaAPICredential.ts:7](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPICredential.ts#L7)
 
 ## Properties
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/affindaAPICredential.ts:5](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPICredential.ts#L5)
+[src/affindaAPICredential.ts:5](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPICredential.ts#L5)
 
 ## Methods
 
@@ -69,4 +69,4 @@ TokenCredential.getToken
 
 #### Defined in
 
-[src/affindaAPICredential.ts:11](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPICredential.ts#L11)
+[src/affindaAPICredential.ts:11](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPICredential.ts#L11)

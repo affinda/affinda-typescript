@@ -1,7 +1,18 @@
+## 0.2.0 - 2021-09-05
+
+### Added
+
+- samples files for javascrippt
+
+### Fixed
+
+- Example used in README
+
 ## 0.1.1
 
-* Changed
-  * Rebuilt for updated API spec with stringified booleans in mulipart/form-data paths
+### Changed
+
+- Rebuilt for updated API spec with stringified booleans in mulipart/form-data paths
 
 ## 0.1.0
 

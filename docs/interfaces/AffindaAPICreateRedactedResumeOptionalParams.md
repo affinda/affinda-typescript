@@ -60,7 +60,7 @@ The date/time in ISO-8601 format when the resume will be automatically deleted. 
 
 #### Defined in
 
-[src/models/index.ts:332](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L332)
+[src/models/index.ts:332](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L332)
 
 ___
 
@@ -72,7 +72,7 @@ File as binary data blob
 
 #### Defined in
 
-[src/models/index.ts:320](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L320)
+[src/models/index.ts:320](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L320)
 
 ___
 
@@ -84,7 +84,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:324](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L324)
+[src/models/index.ts:324](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L324)
 
 ___
 
@@ -96,7 +96,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:322](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L322)
+[src/models/index.ts:322](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L322)
 
 ___
 
@@ -126,7 +126,7 @@ Whether to redact dates
 
 #### Defined in
 
-[src/models/index.ts:346](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L346)
+[src/models/index.ts:346](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L346)
 
 ___
 
@@ -138,7 +138,7 @@ Whether to redact education details (e.g. university names)
 
 #### Defined in
 
-[src/models/index.ts:340](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L340)
+[src/models/index.ts:340](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L340)
 
 ___
 
@@ -150,7 +150,7 @@ Whether to redact headshot
 
 #### Defined in
 
-[src/models/index.ts:334](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L334)
+[src/models/index.ts:334](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L334)
 
 ___
 
@@ -162,7 +162,7 @@ Whether to redact location names
 
 #### Defined in
 
-[src/models/index.ts:344](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L344)
+[src/models/index.ts:344](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L344)
 
 ___
 
@@ -174,7 +174,7 @@ Whether to redact personal details (e.g. name, address)
 
 #### Defined in
 
-[src/models/index.ts:336](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L336)
+[src/models/index.ts:336](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L336)
 
 ___
 
@@ -186,7 +186,7 @@ Whether to redact referee details
 
 #### Defined in
 
-[src/models/index.ts:342](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L342)
+[src/models/index.ts:342](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L342)
 
 ___
 
@@ -198,7 +198,7 @@ Whether to redact work details (e.g. company names)
 
 #### Defined in
 
-[src/models/index.ts:338](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L338)
+[src/models/index.ts:338](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L338)
 
 ___
 
@@ -226,7 +226,7 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 #### Defined in
 
-[src/models/index.ts:330](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L330)
+[src/models/index.ts:330](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L330)
 
 ___
 
@@ -270,7 +270,7 @@ URL to file to download and process
 
 #### Defined in
 
-[src/models/index.ts:326](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L326)
+[src/models/index.ts:326](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L326)
 
 ___
 
@@ -282,4 +282,4 @@ If "true" (default), will return a response only after processing has completed.
 
 #### Defined in
 
-[src/models/index.ts:328](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L328)
+[src/models/index.ts:328](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L328)

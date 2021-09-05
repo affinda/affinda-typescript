@@ -24,7 +24,7 @@ File as binary data blob
 
 #### Defined in
 
-[src/models/index.ts:251](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L251)
+[src/models/index.ts:251](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L251)
 
 ___
 
@@ -36,7 +36,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:255](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L255)
+[src/models/index.ts:255](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L255)
 
 ___
 
@@ -48,7 +48,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:253](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L253)
+[src/models/index.ts:253](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L253)
 
 ___
 
@@ -60,7 +60,7 @@ Identifier of the format used
 
 #### Defined in
 
-[src/models/index.ts:261](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L261)
+[src/models/index.ts:261](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L261)
 
 ___
 
@@ -72,7 +72,7 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 #### Defined in
 
-[src/models/index.ts:259](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L259)
+[src/models/index.ts:259](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L259)
 
 ___
 
@@ -84,7 +84,7 @@ URL to file to download and process
 
 #### Defined in
 
-[src/models/index.ts:257](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L257)
+[src/models/index.ts:257](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L257)
 
 ___
 
@@ -96,4 +96,4 @@ If "true" (default), will return a response only after processing has completed.
 
 #### Defined in
 
-[src/models/index.ts:263](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L263)
+[src/models/index.ts:263](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L263)

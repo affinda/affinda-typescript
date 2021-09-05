@@ -49,7 +49,7 @@ coreClient.ServiceClient.constructor
 
 #### Defined in
 
-[src/affindaAPIContext.ts:15](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPIContext.ts#L15)
+[src/affindaAPIContext.ts:15](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPIContext.ts#L15)
 
 ## Properties
 
@@ -59,7 +59,7 @@ coreClient.ServiceClient.constructor
 
 #### Defined in
 
-[src/affindaAPIContext.ts:6](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPIContext.ts#L6)
+[src/affindaAPIContext.ts:6](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPIContext.ts#L6)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/affindaAPIContext.ts:7](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPIContext.ts#L7)
+[src/affindaAPIContext.ts:7](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPIContext.ts#L7)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/affindaAPIContext.ts:8](https://github.com/affinda/affinda-typescript/blob/a379e85/src/affindaAPIContext.ts#L8)
+[src/affindaAPIContext.ts:8](https://github.com/affinda/affinda-typescript/blob/716efb7/src/affindaAPIContext.ts#L8)
 
 ___
 

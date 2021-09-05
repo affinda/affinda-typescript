@@ -82,7 +82,7 @@ Contains response data for the createRedactedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:350](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L350)
+[src/models/index.ts:350](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L350)
 
 ___
 
@@ -94,7 +94,7 @@ Contains response data for the createReformattedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:398](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L398)
+[src/models/index.ts:398](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L398)
 
 ___
 
@@ -106,7 +106,7 @@ Contains response data for the createResume operation.
 
 #### Defined in
 
-[src/models/index.ts:293](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L293)
+[src/models/index.ts:293](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L293)
 
 ___
 
@@ -118,7 +118,7 @@ Contains response data for the deleteRedactedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:364](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L364)
+[src/models/index.ts:364](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L364)
 
 ___
 
@@ -130,7 +130,7 @@ Contains response data for the deleteReformattedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:412](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L412)
+[src/models/index.ts:412](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L412)
 
 ___
 
@@ -142,7 +142,7 @@ Contains response data for the deleteResume operation.
 
 #### Defined in
 
-[src/models/index.ts:307](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L307)
+[src/models/index.ts:307](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L307)
 
 ___
 
@@ -154,7 +154,7 @@ Contains response data for the getAllRedactedResumes operation.
 
 #### Defined in
 
-[src/models/index.ts:314](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L314)
+[src/models/index.ts:314](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L314)
 
 ___
 
@@ -166,7 +166,7 @@ Contains response data for the getAllReformattedResumes operation.
 
 #### Defined in
 
-[src/models/index.ts:378](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L378)
+[src/models/index.ts:378](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L378)
 
 ___
 
@@ -178,7 +178,7 @@ Contains response data for the getAllResumeFormats operation.
 
 #### Defined in
 
-[src/models/index.ts:371](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L371)
+[src/models/index.ts:371](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L371)
 
 ___
 
@@ -190,7 +190,7 @@ Contains response data for the getAllResumes operation.
 
 #### Defined in
 
-[src/models/index.ts:271](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L271)
+[src/models/index.ts:271](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L271)
 
 ___
 
@@ -202,7 +202,7 @@ Contains response data for the getRedactedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:357](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L357)
+[src/models/index.ts:357](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L357)
 
 ___
 
@@ -214,7 +214,7 @@ Contains response data for the getReformattedResume operation.
 
 #### Defined in
 
-[src/models/index.ts:405](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L405)
+[src/models/index.ts:405](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L405)
 
 ___
 
@@ -226,4 +226,4 @@ Contains response data for the getResume operation.
 
 #### Defined in
 
-[src/models/index.ts:300](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L300)
+[src/models/index.ts:300](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L300)

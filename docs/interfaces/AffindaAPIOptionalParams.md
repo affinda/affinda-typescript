@@ -40,7 +40,7 @@ server parameter
 
 #### Defined in
 
-[src/models/index.ts:418](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L418)
+[src/models/index.ts:418](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L418)
 
 ___
 
@@ -117,7 +117,7 @@ Overrides client endpoint.
 
 #### Defined in
 
-[src/models/index.ts:424](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L424)
+[src/models/index.ts:424](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L424)
 
 ___
 
@@ -145,7 +145,7 @@ The numbers of documents to return, defaults to 300.
 
 #### Defined in
 
-[src/models/index.ts:420](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L420)
+[src/models/index.ts:420](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L420)
 
 ___
 
@@ -157,7 +157,7 @@ The number of documents to skip before starting to collect the result set.
 
 #### Defined in
 
-[src/models/index.ts:422](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L422)
+[src/models/index.ts:422](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L422)
 
 ___
 

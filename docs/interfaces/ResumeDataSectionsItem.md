@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/models/index.ts:147](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L147)
+[src/models/index.ts:147](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L147)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:148](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L148)
+[src/models/index.ts:148](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L148)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:146](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L146)
+[src/models/index.ts:146](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L146)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:149](https://github.com/affinda/affinda-typescript/blob/a379e85/src/models/index.ts#L149)
+[src/models/index.ts:149](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L149)

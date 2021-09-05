@@ -4,5 +4,6 @@
   ],
   "out": "docs",
   "readme": null,
-  "plugin": ["typedoc-plugin-markdown"]
+  "plugin": ["typedoc-plugin-markdown"],
+  "disableOutputCheck": true
 }

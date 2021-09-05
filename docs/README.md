@@ -11,13 +11,15 @@ Affinda API - Typescript Client Library
 - [Installation](#installation)
 - [Quickstart](#quickstart)
 
-Generated using [autorest](https://github.com/Azure/autorest) and [autorest.typescript](https://github.com/Azure/autorest.typescript).
+Generated using [autorest](https://github.com/Azure/autorest)
+and [autorest.typescript](https://github.com/Azure/autorest.typescript).
 
 [Package (NPM)](https://www.npmjs.com/package/affinda) |
 [Samples](https://github.com/Azure-Samples/azure-samples-js-management)
 
 Installation
 ------------
+
 ```bash
 npm install @affinda/affinda
 ```
@@ -28,43 +30,79 @@ Quickstart
 ### Currently supported environments
 
 - [LTS versions of Node.js](https://nodejs.org/about/releases/)
-- Latest versions of Safari, Chrome, Edge and Firefox.
-- This package contains an isomorphic SDK (runs both in Node.js and in browsers) for Service client.
+- Latest versions of Safari, Chrome, Edge, and Firefox.
 
 ### Install the `affinda` package
 
 Install the Service client library for JavaScript with `npm`:
+
 ```bash
 npm install @affinda/affinda
 ```
 
 or build from source:
+
 ```shell
 git clone git@github.com:affinda/affinda-typescript.git
 npm install
 npm build
 ```
 
-Example getting a resume:
-```typescript
-import {AffindaAPI, AffindaCredential} from "@affinda/affinda";
+Example parsing a resume:
 
-let credential = new AffindaCredential("<TOKEN>")
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+const fs = require("fs");
 
-const client = new AffindaAPI(credential, {})
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
 
-client.getResume("<IDENTIFIER>", {}).then(resume => console.log(JSON.stringify(resume)))
+client.createResume({file: readStream}).then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+
+// Can also use a URL:
+
+client.createResume({url: "https://api.affinda.com/static/sample_resumes/example.pdf"}).then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+
 ```
 
-## API reference
+API reference
+-------------
 
-A full API reference generated with [typedoc](https://github.com/TypeStrong/typedoc) is [available here](./docs/modules.md)
+A full API reference generated with [typedoc](https://github.com/TypeStrong/typedoc)
+is [available here](./docs/modules.md)
 
-Parser
-------
+Samples
+-------
 
-Redactor
---------
+Samples are available for [javascript](./docs/samples_javascript.md) intended for use in a browser, or for [NodeJS](./docs/samples_nodejs.md)
 
-Reformatter
------------
+Troubleshooting
+---------------
+
+### Logging
+
+Enabling logging may help uncover useful information about failures. In order to see a log of HTTP requests and
+responses, set the `AZURE_LOG_LEVEL` environment variable to `info`. Alternatively, logging can be enabled at runtime by
+calling `setLogLevel` in the `@azure/logger`:
+
+````javascript
+import {setLogLevel} from "@azure/logger";
+
+setLogLevel("info");
+````
+
+For more detailed instructions on how to enable logs, you can look at
+the [@azure/logger](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/core/logger) package docs.
