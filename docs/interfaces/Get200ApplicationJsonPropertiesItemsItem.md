@@ -19,7 +19,7 @@ The template to apply
 
 #### Defined in
 
-[src/models/index.ts:188](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L188)
+[src/models/index.ts:188](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L188)
 
 ___
 
@@ -31,4 +31,4 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:186](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L186)
+[src/models/index.ts:186](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L186)

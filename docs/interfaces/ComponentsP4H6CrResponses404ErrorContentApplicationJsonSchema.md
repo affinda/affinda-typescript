@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/models/index.ts:163](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L163)
+[src/models/index.ts:163](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L163)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/models/index.ts:164](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L164)
+[src/models/index.ts:164](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L164)

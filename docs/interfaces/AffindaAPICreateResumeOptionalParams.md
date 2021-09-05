@@ -53,7 +53,7 @@ The date/time in ISO-8601 format when the resume will be automatically deleted. 
 
 #### Defined in
 
-[src/models/index.ts:289](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L289)
+[src/models/index.ts:289](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L289)
 
 ___
 
@@ -65,7 +65,7 @@ File as binary data blob
 
 #### Defined in
 
-[src/models/index.ts:277](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L277)
+[src/models/index.ts:277](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L277)
 
 ___
 
@@ -77,7 +77,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:281](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L281)
+[src/models/index.ts:281](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L281)
 
 ___
 
@@ -89,7 +89,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:279](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L279)
+[src/models/index.ts:279](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L279)
 
 ___
 
@@ -135,7 +135,7 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 #### Defined in
 
-[src/models/index.ts:287](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L287)
+[src/models/index.ts:287](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L287)
 
 ___
 
@@ -179,7 +179,7 @@ URL to file to download and process
 
 #### Defined in
 
-[src/models/index.ts:283](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L283)
+[src/models/index.ts:283](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L283)
 
 ___
 
@@ -191,4 +191,4 @@ If "true" (default), will return a response only after processing has completed.
 
 #### Defined in
 
-[src/models/index.ts:285](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L285)
+[src/models/index.ts:285](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L285)

@@ -52,7 +52,7 @@ File as binary data blob
 
 #### Defined in
 
-[src/models/index.ts:384](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L384)
+[src/models/index.ts:384](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L384)
 
 ___
 
@@ -64,7 +64,7 @@ Optional filename of the file
 
 #### Defined in
 
-[src/models/index.ts:388](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L388)
+[src/models/index.ts:388](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L388)
 
 ___
 
@@ -76,7 +76,7 @@ Unique identifier for the resume. If creating a document and left blank, one wil
 
 #### Defined in
 
-[src/models/index.ts:386](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L386)
+[src/models/index.ts:386](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L386)
 
 ___
 
@@ -122,7 +122,7 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 #### Defined in
 
-[src/models/index.ts:394](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L394)
+[src/models/index.ts:394](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L394)
 
 ___
 
@@ -166,7 +166,7 @@ URL to file to download and process
 
 #### Defined in
 
-[src/models/index.ts:390](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L390)
+[src/models/index.ts:390](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L390)
 
 ___
 
@@ -178,4 +178,4 @@ If "true" (default), will return a response only after processing has completed.
 
 #### Defined in
 
-[src/models/index.ts:392](https://github.com/affinda/affinda-typescript/blob/716efb7/src/models/index.ts#L392)
+[src/models/index.ts:392](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L392)

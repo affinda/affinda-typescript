@@ -1,8 +1,14 @@
+## 0.2.1 - 2021-09-05
+
+### Fixed
+
+- Samples files naming convention
+
 ## 0.2.0 - 2021-09-05
 
 ### Added
 
-- samples files for javascrippt
+- samples files for javascript
 
 ### Fixed
 
