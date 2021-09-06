@@ -1064,6 +1064,7 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
         }
       },
       wait: {
+        defaultValue: "true",
         serializedName: "wait",
         type: {
           name: "String"
@@ -1128,6 +1129,7 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
         }
       },
       wait: {
+        defaultValue: "true",
         serializedName: "wait",
         type: {
           name: "String"
@@ -1241,6 +1243,7 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
         }
       },
       wait: {
+        defaultValue: "true",
         serializedName: "wait",
         type: {
           name: "String"

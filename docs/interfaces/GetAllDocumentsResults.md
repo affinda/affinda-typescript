@@ -17,19 +17,11 @@
 
 • `Optional` **count**: `number`
 
-#### Defined in
-
-[src/models/index.ts:5](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L5)
-
 ___
 
 ### next
 
 • `Optional` **next**: `string`
-
-#### Defined in
-
-[src/models/index.ts:6](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L6)
 
 ___
 
@@ -37,16 +29,8 @@ ___
 
 • `Optional` **previous**: `string`
 
-#### Defined in
-
-[src/models/index.ts:7](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L7)
-
 ___
 
 ### results
 
 • `Optional` **results**: [`Meta`](Meta.md)[]
-
-#### Defined in
-
-[src/models/index.ts:8](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L8)

@@ -18,19 +18,11 @@
 
 • `Optional` **lastUsed**: `string`
 
-#### Defined in
-
-[src/models/index.ts:127](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L127)
-
 ___
 
 ### name
 
 • `Optional` **name**: `string`
-
-#### Defined in
-
-[src/models/index.ts:126](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L126)
 
 ___
 
@@ -38,26 +30,14 @@ ___
 
 • `Optional` **numberOfMonths**: `number`
 
-#### Defined in
-
-[src/models/index.ts:128](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L128)
-
 ___
 
 ### sources
 
 • `Optional` **sources**: [`ResumeDataSkillsPropertiesItemsItem`](ResumeDataSkillsPropertiesItemsItem.md)[]
 
-#### Defined in
-
-[src/models/index.ts:130](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L130)
-
 ___
 
 ### type
 
 • `Optional` **type**: `string`
-
-#### Defined in
-
-[src/models/index.ts:129](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L129)

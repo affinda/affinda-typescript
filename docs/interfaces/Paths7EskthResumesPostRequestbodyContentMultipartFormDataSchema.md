@@ -22,10 +22,6 @@
 
 The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry.
 
-#### Defined in
-
-[src/models/index.ts:215](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L215)
-
 ___
 
 ### file
@@ -33,10 +29,6 @@ ___
 • `Optional` **file**: `RequestBodyType`
 
 File as binary data blob
-
-#### Defined in
-
-[src/models/index.ts:203](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L203)
 
 ___
 
@@ -46,10 +38,6 @@ ___
 
 Optional filename of the file
 
-#### Defined in
-
-[src/models/index.ts:207](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L207)
-
 ___
 
 ### identifier
@@ -57,10 +45,6 @@ ___
 • `Optional` **identifier**: `string`
 
 Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
-
-#### Defined in
-
-[src/models/index.ts:205](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L205)
 
 ___
 
@@ -70,10 +54,6 @@ ___
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
-#### Defined in
-
-[src/models/index.ts:213](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L213)
-
 ___
 
 ### url
@@ -82,10 +62,6 @@ ___
 
 URL to file to download and process
 
-#### Defined in
-
-[src/models/index.ts:209](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L209)
-
 ___
 
 ### wait
@@ -93,7 +69,3 @@ ___
 • `Optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.
-
-#### Defined in
-
-[src/models/index.ts:211](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L211)

@@ -15,16 +15,8 @@
 
 • `Optional` **detail**: `string`
 
-#### Defined in
-
-[src/models/index.ts:163](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L163)
-
 ___
 
 ### statusCode
 
 • `Optional` **statusCode**: `number`
-
-#### Defined in
-
-[src/models/index.ts:164](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L164)

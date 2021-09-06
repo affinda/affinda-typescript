@@ -16,26 +16,14 @@
 
 • `Optional` **completionDate**: `Date`
 
-#### Defined in
-
-[src/models/index.ts:105](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L105)
-
 ___
 
 ### isCurrent
 
 • `Optional` **isCurrent**: `boolean`
 
-#### Defined in
-
-[src/models/index.ts:106](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L106)
-
 ___
 
 ### startDate
 
 • `Optional` **startDate**: `Date`
-
-#### Defined in
-
-[src/models/index.ts:107](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L107)

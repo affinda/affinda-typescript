@@ -17,19 +17,11 @@
 
 • `Optional` **endDate**: `Date`
 
-#### Defined in
-
-[src/models/index.ts:120](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L120)
-
 ___
 
 ### isCurrent
 
 • `Optional` **isCurrent**: `boolean`
-
-#### Defined in
-
-[src/models/index.ts:122](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L122)
 
 ___
 
@@ -37,16 +29,8 @@ ___
 
 • `Optional` **monthsInPosition**: `number`
 
-#### Defined in
-
-[src/models/index.ts:121](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L121)
-
 ___
 
 ### startDate
 
 • `Optional` **startDate**: `Date`
-
-#### Defined in
-
-[src/models/index.ts:119](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L119)

@@ -1,3 +1,11 @@
+## 0.2.3 - 2021-09-06
+
+### Fixed
+
+- Link in README, general improvements in formatting
+- Fix typo in sample
+- Set wait default to be true for requests
+
 ## 0.2.1 - 2021-09-05
 
 ### Fixed

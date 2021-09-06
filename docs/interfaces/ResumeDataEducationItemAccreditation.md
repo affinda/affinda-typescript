@@ -17,19 +17,11 @@
 
 • `Optional` **education**: `string`
 
-#### Defined in
-
-[src/models/index.ts:92](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L92)
-
 ___
 
 ### educationLevel
 
 • `Optional` **educationLevel**: `string`
-
-#### Defined in
-
-[src/models/index.ts:95](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L95)
 
 ___
 
@@ -37,16 +29,8 @@ ___
 
 • `Optional` **inputStr**: `string`
 
-#### Defined in
-
-[src/models/index.ts:93](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L93)
-
 ___
 
 ### matchStr
 
 • `Optional` **matchStr**: `string`
-
-#### Defined in
-
-[src/models/index.ts:94](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L94)

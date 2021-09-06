@@ -25,7 +25,7 @@ client.getAllResumes().then((result) => {
 ### Uploads a resume for parsing
 
 ```javascript
-const {AffindaCredential, Aresumes_postffindaAPI} = require("@affinda/affinda");
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
 const fs = require("fs");
 
 const credential = new AffindaCredential("REPLACE_TOKEN")

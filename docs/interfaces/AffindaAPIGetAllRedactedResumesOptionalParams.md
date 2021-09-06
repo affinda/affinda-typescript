@@ -32,10 +32,6 @@ The signal which can be used to abort requests.
 
 coreClient.OperationOptions.abortSignal
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:289
-
 ___
 
 ### onResponse
@@ -50,10 +46,6 @@ May be called multiple times.
 
 coreClient.OperationOptions.onResponse
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:307
-
 ___
 
 ### requestOptions
@@ -65,10 +57,6 @@ Options used when creating and sending HTTP requests for this operation.
 #### Inherited from
 
 coreClient.OperationOptions.requestOptions
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:293
 
 ___
 
@@ -82,10 +70,6 @@ Options to override serialization/de-serialization behavior.
 
 coreClient.OperationOptions.serializerOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:301
-
 ___
 
 ### tracingOptions
@@ -97,7 +81,3 @@ Options used when tracing is enabled.
 #### Inherited from
 
 coreClient.OperationOptions.tracingOptions
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:297

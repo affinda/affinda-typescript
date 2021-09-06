@@ -38,10 +38,6 @@ Optional parameters.
 
 server parameter
 
-#### Defined in
-
-[src/models/index.ts:418](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L418)
-
 ___
 
 ### allowInsecureConnection
@@ -53,10 +49,6 @@ Set to true if the request is sent over HTTP instead of HTTPS
 #### Inherited from
 
 coreClient.ServiceClientOptions.allowInsecureConnection
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:84
 
 ___
 
@@ -71,10 +63,6 @@ If it is not specified, then all OperationSpecs must contain a baseUrl property.
 
 coreClient.ServiceClientOptions.baseUri
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:637
-
 ___
 
 ### credential
@@ -86,10 +74,6 @@ Credential used to authenticate the request.
 #### Inherited from
 
 coreClient.ServiceClientOptions.credential
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:650
 
 ___
 
@@ -103,10 +87,6 @@ If specified, will be used to build the BearerTokenAuthenticationPolicy.
 
 coreClient.ServiceClientOptions.credentialScopes
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:641
-
 ___
 
 ### endpoint
@@ -114,10 +94,6 @@ ___
 • `Optional` **endpoint**: `string`
 
 Overrides client endpoint.
-
-#### Defined in
-
-[src/models/index.ts:424](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L424)
 
 ___
 
@@ -131,10 +107,6 @@ The HttpClient that will be used to send HTTP requests.
 
 coreClient.ServiceClientOptions.httpClient
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:80
-
 ___
 
 ### limit
@@ -143,10 +115,6 @@ ___
 
 The numbers of documents to return, defaults to 300.
 
-#### Defined in
-
-[src/models/index.ts:420](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L420)
-
 ___
 
 ### offset
@@ -154,10 +122,6 @@ ___
 • `Optional` **offset**: `number`
 
 The number of documents to skip before starting to collect the result set.
-
-#### Defined in
-
-[src/models/index.ts:422](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L422)
 
 ___
 
@@ -171,10 +135,6 @@ A customized pipeline to use, otherwise a default one will be created.
 
 coreClient.ServiceClientOptions.pipeline
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:654
-
 ___
 
 ### proxyOptions
@@ -187,10 +147,6 @@ Options to configure a proxy for outgoing requests.
 
 coreClient.ServiceClientOptions.proxyOptions
 
-#### Defined in
-
-node_modules/@azure/core-rest-pipeline/types/latest/core-rest-pipeline.d.ts:406
-
 ___
 
 ### redirectOptions
@@ -202,10 +158,6 @@ Options for how redirect responses are handled.
 #### Inherited from
 
 coreClient.ServiceClientOptions.redirectOptions
-
-#### Defined in
-
-node_modules/@azure/core-rest-pipeline/types/latest/core-rest-pipeline.d.ts:410
 
 ___
 
@@ -220,10 +172,6 @@ Used if no requestContentType is present on an OperationSpec.
 
 coreClient.ServiceClientOptions.requestContentType
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:646
-
 ___
 
 ### retryOptions
@@ -236,10 +184,6 @@ Options that control how to retry failed requests.
 
 coreClient.ServiceClientOptions.retryOptions
 
-#### Defined in
-
-node_modules/@azure/core-rest-pipeline/types/latest/core-rest-pipeline.d.ts:402
-
 ___
 
 ### userAgentOptions
@@ -251,7 +195,3 @@ Options for adding user agent details to outgoing requests.
 #### Inherited from
 
 coreClient.ServiceClientOptions.userAgentOptions
-
-#### Defined in
-
-node_modules/@azure/core-rest-pipeline/types/latest/core-rest-pipeline.d.ts:414

@@ -13,7 +13,3 @@
 ### reformattedFile
 
 • `Optional` **reformattedFile**: `string`
-
-#### Defined in
-
-[src/models/index.ts:198](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L198)

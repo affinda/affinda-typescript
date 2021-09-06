@@ -110,6 +110,7 @@ export const url: OperationParameter = {
 export const wait: OperationParameter = {
   parameterPath: ["options", "wait"],
   mapper: {
+    defaultValue: "true",
     serializedName: "wait",
     type: {
       name: "String"

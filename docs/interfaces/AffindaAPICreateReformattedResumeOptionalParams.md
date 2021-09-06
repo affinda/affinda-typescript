@@ -38,10 +38,6 @@ The signal which can be used to abort requests.
 
 coreClient.OperationOptions.abortSignal
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:289
-
 ___
 
 ### file
@@ -49,10 +45,6 @@ ___
 • `Optional` **file**: `RequestBodyType`
 
 File as binary data blob
-
-#### Defined in
-
-[src/models/index.ts:384](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L384)
 
 ___
 
@@ -62,10 +54,6 @@ ___
 
 Optional filename of the file
 
-#### Defined in
-
-[src/models/index.ts:388](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L388)
-
 ___
 
 ### identifier
@@ -73,10 +61,6 @@ ___
 • `Optional` **identifier**: `string`
 
 Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
-
-#### Defined in
-
-[src/models/index.ts:386](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L386)
 
 ___
 
@@ -92,10 +76,6 @@ May be called multiple times.
 
 coreClient.OperationOptions.onResponse
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:307
-
 ___
 
 ### requestOptions
@@ -108,10 +88,6 @@ Options used when creating and sending HTTP requests for this operation.
 
 coreClient.OperationOptions.requestOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:293
-
 ___
 
 ### resumeLanguage
@@ -119,10 +95,6 @@ ___
 • `Optional` **resumeLanguage**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
-
-#### Defined in
-
-[src/models/index.ts:394](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L394)
 
 ___
 
@@ -136,10 +108,6 @@ Options to override serialization/de-serialization behavior.
 
 coreClient.OperationOptions.serializerOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:301
-
 ___
 
 ### tracingOptions
@@ -152,10 +120,6 @@ Options used when tracing is enabled.
 
 coreClient.OperationOptions.tracingOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:297
-
 ___
 
 ### url
@@ -164,10 +128,6 @@ ___
 
 URL to file to download and process
 
-#### Defined in
-
-[src/models/index.ts:390](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L390)
-
 ___
 
 ### wait
@@ -175,7 +135,3 @@ ___
 • `Optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.
-
-#### Defined in
-
-[src/models/index.ts:392](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L392)

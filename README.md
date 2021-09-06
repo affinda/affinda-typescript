@@ -6,14 +6,17 @@ Affinda API - Typescript Client Library
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/affinda/affinda-typescript)
 
+
 - [Installation](#installation)
 - [Quickstart](#quickstart)
+- [API reference](#api-reference)
+- [Samples](#samples)
+- [Troubleshooting](#troubleshooting)
 
 Generated using [autorest](https://github.com/Azure/autorest)
 and [autorest.typescript](https://github.com/Azure/autorest.typescript).
 
-[Package (NPM)](https://www.npmjs.com/package/affinda) |
-[Samples](https://github.com/Azure-Samples/azure-samples-js-management)
+[Package (NPM)](https://www.npmjs.com/package/@affinda/affinda)
 
 Installation
 ------------
@@ -85,7 +88,8 @@ is [available here](./docs/modules.md)
 Samples
 -------
 
-Samples are available for [javascript](./docs/samples_javascript.md) intended for use in a browser, or for [NodeJS](./docs/samples_nodejs.md)
+Samples are available for [NodeJS](./docs/samples_nodejs.md) amd also for [javascript](./docs/samples_javascript.md) intended for
+use in a browser.
 
 Troubleshooting
 ---------------

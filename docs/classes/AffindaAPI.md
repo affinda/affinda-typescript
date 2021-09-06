@@ -58,10 +58,6 @@ Initializes a new instance of the AffindaAPI class.
 
 [AffindaAPIContext](AffindaAPIContext.md).[constructor](AffindaAPIContext.md#constructor)
 
-#### Defined in
-
-[src/affindaAPI.ts:42](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L42)
-
 ## Properties
 
 ### $host
@@ -71,10 +67,6 @@ Initializes a new instance of the AffindaAPI class.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[$host](AffindaAPIContext.md#$host)
-
-#### Defined in
-
-[src/affindaAPIContext.ts:6](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L6)
 
 ___
 
@@ -86,10 +78,6 @@ ___
 
 [AffindaAPIContext](AffindaAPIContext.md).[limit](AffindaAPIContext.md#limit)
 
-#### Defined in
-
-[src/affindaAPIContext.ts:7](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L7)
-
 ___
 
 ### offset
@@ -99,10 +87,6 @@ ___
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[offset](AffindaAPIContext.md#offset)
-
-#### Defined in
-
-[src/affindaAPIContext.ts:8](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L8)
 
 ___
 
@@ -115,10 +99,6 @@ The pipeline used by this client to make requests
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[pipeline](AffindaAPIContext.md#pipeline)
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:609
 
 ## Methods
 
@@ -138,10 +118,6 @@ Uploads a resume for redacting.
 
 `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:121](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L121)
-
 ___
 
 ### createReformattedResume
@@ -160,10 +136,6 @@ Uploads a resume for reformatting.
 #### Returns
 
 `Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
-
-#### Defined in
-
-[src/affindaAPI.ts:193](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L193)
 
 ___
 
@@ -186,10 +158,6 @@ results.
 
 `Promise`<[`Resume`](../interfaces/Resume.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:66](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L66)
-
 ___
 
 ### deleteRedactedResume
@@ -208,10 +176,6 @@ Deletes the specified resume from the database
 #### Returns
 
 `Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
-
-#### Defined in
-
-[src/affindaAPI.ts:152](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L152)
 
 ___
 
@@ -232,10 +196,6 @@ Deletes the specified resume from the database
 
 `Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:225](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L225)
-
 ___
 
 ### deleteResume
@@ -255,10 +215,6 @@ Deletes the specified resume from the database
 
 `Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:94](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L94)
-
 ___
 
 ### getAllRedactedResumes
@@ -276,10 +232,6 @@ Returns all the redacted resume information for that resume
 #### Returns
 
 `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
-
-#### Defined in
-
-[src/affindaAPI.ts:108](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L108)
 
 ___
 
@@ -299,10 +251,6 @@ Returns all the reformatted resume information for that resume
 
 `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:179](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L179)
-
 ___
 
 ### getAllResumeFormats
@@ -321,10 +269,6 @@ Returns all the resume formats
 
 `Promise`<[`Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:166](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L166)
-
 ___
 
 ### getAllResumes
@@ -342,10 +286,6 @@ Returns all the resume summaries for that user, limited to 300 per page.
 #### Returns
 
 `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
-
-#### Defined in
-
-[src/affindaAPI.ts:53](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L53)
 
 ___
 
@@ -368,10 +308,6 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:137](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L137)
-
 ___
 
 ### getReformattedResume
@@ -393,10 +329,6 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 `Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
 
-#### Defined in
-
-[src/affindaAPI.ts:210](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L210)
-
 ___
 
 ### getResume
@@ -417,10 +349,6 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 #### Returns
 
 `Promise`<[`Resume`](../interfaces/Resume.md)\>
-
-#### Defined in
-
-[src/affindaAPI.ts:79](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPI.ts#L79)
 
 ___
 
@@ -451,10 +379,6 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 [AffindaAPIContext](AffindaAPIContext.md).[sendOperationRequest](AffindaAPIContext.md#sendoperationrequest)
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:626
-
 ___
 
 ### sendRequest
@@ -476,7 +400,3 @@ Send the provided httpRequest.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[sendRequest](AffindaAPIContext.md#sendrequest)
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:619

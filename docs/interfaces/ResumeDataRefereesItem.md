@@ -17,19 +17,11 @@
 
 • `Optional` **email**: `string`
 
-#### Defined in
-
-[src/models/index.ts:141](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L141)
-
 ___
 
 ### name
 
 • `Optional` **name**: `string`
-
-#### Defined in
-
-[src/models/index.ts:139](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L139)
 
 ___
 
@@ -37,16 +29,8 @@ ___
 
 • `Optional` **number**: `string`
 
-#### Defined in
-
-[src/models/index.ts:142](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L142)
-
 ___
 
 ### text
 
 • `Optional` **text**: `string`
-
-#### Defined in
-
-[src/models/index.ts:140](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L140)

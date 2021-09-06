@@ -46,10 +46,6 @@ The signal which can be used to abort requests.
 
 coreClient.OperationOptions.abortSignal
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:289
-
 ___
 
 ### expiryTime
@@ -57,10 +53,6 @@ ___
 • `Optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry.
-
-#### Defined in
-
-[src/models/index.ts:332](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L332)
 
 ___
 
@@ -70,10 +62,6 @@ ___
 
 File as binary data blob
 
-#### Defined in
-
-[src/models/index.ts:320](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L320)
-
 ___
 
 ### fileName
@@ -82,10 +70,6 @@ ___
 
 Optional filename of the file
 
-#### Defined in
-
-[src/models/index.ts:324](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L324)
-
 ___
 
 ### identifier
@@ -93,10 +77,6 @@ ___
 • `Optional` **identifier**: `string`
 
 Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
-
-#### Defined in
-
-[src/models/index.ts:322](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L322)
 
 ___
 
@@ -112,10 +92,6 @@ May be called multiple times.
 
 coreClient.OperationOptions.onResponse
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:307
-
 ___
 
 ### redactDates
@@ -123,10 +99,6 @@ ___
 • `Optional` **redactDates**: `string`
 
 Whether to redact dates
-
-#### Defined in
-
-[src/models/index.ts:346](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L346)
 
 ___
 
@@ -136,10 +108,6 @@ ___
 
 Whether to redact education details (e.g. university names)
 
-#### Defined in
-
-[src/models/index.ts:340](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L340)
-
 ___
 
 ### redactHeadshot
@@ -147,10 +115,6 @@ ___
 • `Optional` **redactHeadshot**: `string`
 
 Whether to redact headshot
-
-#### Defined in
-
-[src/models/index.ts:334](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L334)
 
 ___
 
@@ -160,10 +124,6 @@ ___
 
 Whether to redact location names
 
-#### Defined in
-
-[src/models/index.ts:344](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L344)
-
 ___
 
 ### redactPersonalDetails
@@ -171,10 +131,6 @@ ___
 • `Optional` **redactPersonalDetails**: `string`
 
 Whether to redact personal details (e.g. name, address)
-
-#### Defined in
-
-[src/models/index.ts:336](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L336)
 
 ___
 
@@ -184,10 +140,6 @@ ___
 
 Whether to redact referee details
 
-#### Defined in
-
-[src/models/index.ts:342](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L342)
-
 ___
 
 ### redactWorkDetails
@@ -195,10 +147,6 @@ ___
 • `Optional` **redactWorkDetails**: `string`
 
 Whether to redact work details (e.g. company names)
-
-#### Defined in
-
-[src/models/index.ts:338](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L338)
 
 ___
 
@@ -212,10 +160,6 @@ Options used when creating and sending HTTP requests for this operation.
 
 coreClient.OperationOptions.requestOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:293
-
 ___
 
 ### resumeLanguage
@@ -223,10 +167,6 @@ ___
 • `Optional` **resumeLanguage**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
-
-#### Defined in
-
-[src/models/index.ts:330](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L330)
 
 ___
 
@@ -240,10 +180,6 @@ Options to override serialization/de-serialization behavior.
 
 coreClient.OperationOptions.serializerOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:301
-
 ___
 
 ### tracingOptions
@@ -256,10 +192,6 @@ Options used when tracing is enabled.
 
 coreClient.OperationOptions.tracingOptions
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:297
-
 ___
 
 ### url
@@ -268,10 +200,6 @@ ___
 
 URL to file to download and process
 
-#### Defined in
-
-[src/models/index.ts:326](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L326)
-
 ___
 
 ### wait
@@ -279,7 +207,3 @@ ___
 • `Optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.
-
-#### Defined in
-
-[src/models/index.ts:328](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L328)

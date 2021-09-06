@@ -16,26 +16,14 @@
 
 • **data**: ``null`` \| [`ReformattedResumeData`](ReformattedResumeData.md)
 
-#### Defined in
-
-[src/models/index.ts:192](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L192)
-
 ___
 
 ### error
 
 • **error**: [`ErrorModel`](ErrorModel.md)
 
-#### Defined in
-
-[src/models/index.ts:194](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L194)
-
 ___
 
 ### meta
 
 • **meta**: [`Meta`](Meta.md)
-
-#### Defined in
-
-[src/models/index.ts:193](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L193)

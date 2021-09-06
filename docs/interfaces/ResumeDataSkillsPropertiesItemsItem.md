@@ -15,16 +15,8 @@
 
 • `Optional` **position**: `number`
 
-#### Defined in
-
-[src/models/index.ts:135](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L135)
-
 ___
 
 ### section
 
 • `Optional` **section**: `string`
-
-#### Defined in
-
-[src/models/index.ts:134](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L134)

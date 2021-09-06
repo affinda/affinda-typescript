@@ -17,10 +17,6 @@
 
 The template to apply
 
-#### Defined in
-
-[src/models/index.ts:188](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L188)
-
 ___
 
 ### identifier
@@ -28,7 +24,3 @@ ___
 • **identifier**: ``null`` \| `string`
 
 Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
-
-#### Defined in
-
-[src/models/index.ts:186](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L186)

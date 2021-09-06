@@ -17,19 +17,11 @@
 
 • `Optional` **count**: `number`
 
-#### Defined in
-
-[src/models/index.ts:178](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L178)
-
 ___
 
 ### next
 
 • `Optional` **next**: `string`
-
-#### Defined in
-
-[src/models/index.ts:179](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L179)
 
 ___
 
@@ -37,16 +29,8 @@ ___
 
 • `Optional` **previous**: `string`
 
-#### Defined in
-
-[src/models/index.ts:180](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L180)
-
 ___
 
 ### results
 
 • `Optional` **results**: [`Get200ApplicationJsonPropertiesItemsItem`](Get200ApplicationJsonPropertiesItemsItem.md)[]
-
-#### Defined in
-
-[src/models/index.ts:181](https://github.com/affinda/affinda-typescript/blob/12596da/src/models/index.ts#L181)

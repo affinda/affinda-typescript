@@ -47,19 +47,11 @@ Initializes a new instance of the AffindaAPIContext class.
 
 coreClient.ServiceClient.constructor
 
-#### Defined in
-
-[src/affindaAPIContext.ts:15](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L15)
-
 ## Properties
 
 ### $host
 
 • **$host**: `string`
-
-#### Defined in
-
-[src/affindaAPIContext.ts:6](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L6)
 
 ___
 
@@ -67,19 +59,11 @@ ___
 
 • `Optional` **limit**: `number`
 
-#### Defined in
-
-[src/affindaAPIContext.ts:7](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L7)
-
 ___
 
 ### offset
 
 • `Optional` **offset**: `number`
-
-#### Defined in
-
-[src/affindaAPIContext.ts:8](https://github.com/affinda/affinda-typescript/blob/12596da/src/affindaAPIContext.ts#L8)
 
 ___
 
@@ -92,10 +76,6 @@ The pipeline used by this client to make requests
 #### Inherited from
 
 coreClient.ServiceClient.pipeline
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:609
 
 ## Methods
 
@@ -126,10 +106,6 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 coreClient.ServiceClient.sendOperationRequest
 
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:626
-
 ___
 
 ### sendRequest
@@ -151,7 +127,3 @@ Send the provided httpRequest.
 #### Inherited from
 
 coreClient.ServiceClient.sendRequest
-
-#### Defined in
-
-node_modules/@azure/core-client/types/latest/core-client.d.ts:619
