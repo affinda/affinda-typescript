@@ -187,21 +187,21 @@ export declare interface AffindaAPIDeleteRedactedResumeOptionalParams extends co
 }
 
 /** Contains response data for the deleteRedactedResume operation. */
-export declare type AffindaAPIDeleteRedactedResumeResponse = ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema;
+export declare type AffindaAPIDeleteRedactedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteReformattedResumeOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Contains response data for the deleteReformattedResume operation. */
-export declare type AffindaAPIDeleteReformattedResumeResponse = ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema;
+export declare type AffindaAPIDeleteReformattedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteResumeOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Contains response data for the deleteResume operation. */
-export declare type AffindaAPIDeleteResumeResponse = ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema;
+export declare type AffindaAPIDeleteResumeResponse = RequestError;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllRedactedResumesOptionalParams extends coreClient.OperationOptions {
@@ -268,21 +268,6 @@ export declare class AffindaCredential implements TokenCredential {
     token: string;
     constructor(token: string);
     getToken(scopes: string | string[], options?: GetTokenOptions): Promise<AccessToken | null>;
-}
-
-export declare interface Components8Sxs33Responses400ErrorContentApplicationJsonSchema {
-    statusCode?: number;
-    detail?: string;
-}
-
-export declare interface ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema {
-    detail?: string;
-    statusCode?: number;
-}
-
-export declare interface ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema {
-    detail?: string;
-    statusCode?: number;
 }
 
 export declare interface ErrorModel {
@@ -423,6 +408,11 @@ export declare interface ReformattedResumeData {
     reformattedFile?: string;
 }
 
+export declare interface RequestError {
+    detail: string;
+    statusCode: number;
+}
+
 export declare interface Resume {
     data: ResumeData | null;
     meta: Meta;
@@ -441,8 +431,10 @@ export declare interface ResumeData {
     summary?: string;
     totalYearsExperience?: number;
     /** base64 encoded string */
-    headShot?: coreRestPipeline.RequestBodyType;
+    headShot?: Uint8Array;
     education?: ResumeDataEducationItem[];
+    /** Prediction of the candidate's profession based on recent work experience */
+    profession?: string;
     workExperience?: ResumeDataWorkExperienceItem[];
     skills?: ResumeDataSkillsItem[];
     certifications?: string[];

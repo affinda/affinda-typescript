@@ -1,3 +1,10 @@
+## 0.2.4 - 2021-09-08
+
+### Added
+
+- Profession in ResumeData model
+- Unified Error models
+
 ## 0.2.3 - 2021-09-06
 
 ### Fixed

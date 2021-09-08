@@ -242,9 +242,17 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper: Mappers.GetAllDocumentsResults
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   queryParameters: [Parameters.limit, Parameters.offset],
@@ -263,16 +271,16 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Resume
     },
     400: {
-      bodyMapper:
-        Mappers.Components8Sxs33Responses400ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
@@ -295,13 +303,17 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper: Mappers.Resume
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
@@ -313,13 +325,17 @@ const deleteResumeOperationSpec: coreClient.OperationSpec = {
   httpMethod: "DELETE",
   responses: {
     204: {},
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
@@ -333,13 +349,17 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper: Mappers.GetAllDocumentsResults
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   queryParameters: [Parameters.limit, Parameters.offset],
@@ -358,16 +378,16 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RedactedResume
     },
     400: {
-      bodyMapper:
-        Mappers.Components8Sxs33Responses400ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
@@ -397,13 +417,17 @@ const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper: Mappers.RedactedResume
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
@@ -415,13 +439,17 @@ const deleteRedactedResumeOperationSpec: coreClient.OperationSpec = {
   httpMethod: "DELETE",
   responses: {
     204: {},
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
@@ -436,13 +464,17 @@ const getAllResumeFormatsOperationSpec: coreClient.OperationSpec = {
       bodyMapper:
         Mappers.Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   queryParameters: [Parameters.limit, Parameters.offset],
@@ -457,13 +489,17 @@ const getAllReformattedResumesOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper: Mappers.GetAllDocumentsResults
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   queryParameters: [Parameters.limit, Parameters.offset],
@@ -482,16 +518,16 @@ const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ReformattedResume
     },
     400: {
-      bodyMapper:
-        Mappers.Components8Sxs33Responses400ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
@@ -514,13 +550,17 @@ const getReformattedResumeOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper: Mappers.ReformattedResume
     },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
@@ -532,13 +572,17 @@ const deleteReformattedResumeOperationSpec: coreClient.OperationSpec = {
   httpMethod: "DELETE",
   responses: {
     204: {},
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
     401: {
-      bodyMapper:
-        Mappers.ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
     },
     404: {
-      bodyMapper:
-        Mappers.ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],

@@ -17,6 +17,7 @@
 - [name](ResumeData.md#name)
 - [objective](ResumeData.md#objective)
 - [phoneNumbers](ResumeData.md#phonenumbers)
+- [profession](ResumeData.md#profession)
 - [publications](ResumeData.md#publications)
 - [rawText](ResumeData.md#rawtext)
 - [referees](ResumeData.md#referees)
@@ -55,7 +56,7 @@ ___
 
 ### headShot
 
-• `Optional` **headShot**: `RequestBodyType`
+• `Optional` **headShot**: `Uint8Array`
 
 base64 encoded string
 
@@ -96,6 +97,14 @@ ___
 ### phoneNumbers
 
 • `Optional` **phoneNumbers**: `string`[]
+
+___
+
+### profession
+
+• `Optional` **profession**: `string`
+
+Prediction of the candidate's profession based on recent work experience
 
 ___
 

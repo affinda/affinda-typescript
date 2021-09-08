@@ -3,7 +3,7 @@
 Parser
 ------
 
-### Gets list of all resumes
+### getAllResumes - Gets list of all resumes
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -22,7 +22,7 @@ client.getAllResumes().then((result) => {
 });
 ```
 
-### Uploads a resume for parsing
+### createResume - Uploads a resume for parsing
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -51,7 +51,7 @@ client.createResume({url: "https://api.affinda.com/static/sample_resumes/example
 });
 ```
 
-### Gets parse results for a specific resume
+### getResume - Gets parse results for a specific resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -68,7 +68,7 @@ client.getResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-### Deletes a resume
+### deleteResume - Deletes a resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -88,7 +88,7 @@ client.deleteResume("REPLACE_IDENTIFIER").then((result) => {
 Redactor
 --------
 
-### Gets list of all redacted resumes
+### getAllRedactedResumes - Gets list of all redacted resumes
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -107,7 +107,7 @@ client.getAllRedactedResumes().then((result) => {
 });
 ```
 
-### Uploads a resume for redacting
+### createRedactedResume - Uploads a resume for redacting
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -136,7 +136,7 @@ client.createRedactedResume({url: "https://api.affinda.com/static/sample_resumes
 });
 ```
 
-### Gets redaction results for a specific resume
+### getRedactedResume - Gets redaction results for a specific resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -153,7 +153,7 @@ client.getRedactedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-### Deletes a redacted resume
+### deleteRedactedResume - Deletes a redacted resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -173,7 +173,7 @@ client.deleteRedactedResume("REPLACE_IDENTIFIER").then((result) => {
 Reformatter
 -----------
 
-### Gets list of all resume formats
+### getAllResumeFormats - Gets list of all resume formats
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -192,7 +192,7 @@ client.getAllResumeFormats().then((result) => {
 });
 ```
 
-### Gets list of all reformatted resumes
+### getAllReformattedResumes - Gets list of all reformatted resumes
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -211,7 +211,7 @@ client.getAllReformattedResumes().then((result) => {
 });
 ```
 
-### Uploads a resume for reformatting
+### createReformattedResume - Uploads a resume for reformatting
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -243,7 +243,7 @@ client.createReformattedResume("Affinda", {
 })
 ```
 
-### Gets reformatting results for a specific resume
+### getReformattedResume - Gets reformatting results for a specific resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -260,7 +260,7 @@ client.getReformattedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-### Deletes a reformatted resume
+### deleteReformattedResume - Deletes a reformatted resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");

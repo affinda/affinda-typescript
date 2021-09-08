@@ -93,19 +93,21 @@ export const Meta: coreClient.CompositeMapper = {
   }
 };
 
-export const ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const RequestError: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema",
+    className: "RequestError",
     modelProperties: {
       detail: {
         serializedName: "detail",
+        required: true,
         type: {
           name: "String"
         }
       },
       statusCode: {
         serializedName: "statusCode",
+        required: true,
         type: {
           name: "Number"
         }
@@ -236,7 +238,7 @@ export const ResumeData: coreClient.CompositeMapper = {
         serializedName: "headShot",
         nullable: true,
         type: {
-          name: "Stream"
+          name: "ByteArray"
         }
       },
       education: {
@@ -249,6 +251,13 @@ export const ResumeData: coreClient.CompositeMapper = {
               className: "ResumeDataEducationItem"
             }
           }
+        }
+      },
+      profession: {
+        serializedName: "profession",
+        nullable: true,
+        type: {
+          name: "String"
         }
       },
       workExperience: {
@@ -826,48 +835,6 @@ export const ErrorModel: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Components8Sxs33Responses400ErrorContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Components8Sxs33Responses400ErrorContentApplicationJsonSchema",
-    modelProperties: {
-      statusCode: {
-        serializedName: "statusCode",
-        type: {
-          name: "Number"
-        }
-      },
-      detail: {
-        serializedName: "detail",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema",
-    modelProperties: {
-      detail: {
-        serializedName: "detail",
-        type: {
-          name: "String"
-        }
-      },
-      statusCode: {
-        serializedName: "statusCode",
-        type: {
-          name: "Number"
         }
       }
     }

@@ -162,7 +162,7 @@ ___
 
 ### deleteRedactedResume
 
-▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
+▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
 Deletes the specified resume from the database
 
@@ -175,13 +175,13 @@ Deletes the specified resume from the database
 
 #### Returns
 
-`Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
 ___
 
 ### deleteReformattedResume
 
-▸ **deleteReformattedResume**(`identifier`, `options?`): `Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
+▸ **deleteReformattedResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
 Deletes the specified resume from the database
 
@@ -194,13 +194,13 @@ Deletes the specified resume from the database
 
 #### Returns
 
-`Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
 ___
 
 ### deleteResume
 
-▸ **deleteResume**(`identifier`, `options?`): `Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
+▸ **deleteResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
 Deletes the specified resume from the database
 
@@ -213,7 +213,7 @@ Deletes the specified resume from the database
 
 #### Returns
 
-`Promise`<[`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](../interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)\>
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
 ___
 

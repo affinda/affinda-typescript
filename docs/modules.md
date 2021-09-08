@@ -26,9 +26,6 @@
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
-- [Components8Sxs33Responses400ErrorContentApplicationJsonSchema](interfaces/Components8Sxs33Responses400ErrorContentApplicationJsonSchema.md)
-- [ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema](interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)
-- [ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema](interfaces/ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [GetAllDocumentsResults](interfaces/GetAllDocumentsResults.md)
@@ -42,6 +39,7 @@
 - [RedactedResumeData](interfaces/RedactedResumeData.md)
 - [ReformattedResume](interfaces/ReformattedResume.md)
 - [ReformattedResumeData](interfaces/ReformattedResumeData.md)
+- [RequestError](interfaces/RequestError.md)
 - [Resume](interfaces/Resume.md)
 - [ResumeData](interfaces/ResumeData.md)
 - [ResumeDataEducationItem](interfaces/ResumeDataEducationItem.md)
@@ -100,7 +98,7 @@ ___
 
 ### AffindaAPIDeleteRedactedResumeResponse
 
-Ƭ **AffindaAPIDeleteRedactedResumeResponse**: [`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)
+Ƭ **AffindaAPIDeleteRedactedResumeResponse**: [`RequestError`](interfaces/RequestError.md)
 
 Contains response data for the deleteRedactedResume operation.
 
@@ -108,7 +106,7 @@ ___
 
 ### AffindaAPIDeleteReformattedResumeResponse
 
-Ƭ **AffindaAPIDeleteReformattedResumeResponse**: [`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)
+Ƭ **AffindaAPIDeleteReformattedResumeResponse**: [`RequestError`](interfaces/RequestError.md)
 
 Contains response data for the deleteReformattedResume operation.
 
@@ -116,7 +114,7 @@ ___
 
 ### AffindaAPIDeleteResumeResponse
 
-Ƭ **AffindaAPIDeleteResumeResponse**: [`ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema`](interfaces/ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema.md)
+Ƭ **AffindaAPIDeleteResumeResponse**: [`RequestError`](interfaces/RequestError.md)
 
 Contains response data for the deleteResume operation.
 

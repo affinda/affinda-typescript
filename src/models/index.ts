@@ -23,9 +23,9 @@ export interface Meta {
   expiryTime?: string;
 }
 
-export interface ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema {
-  detail?: string;
-  statusCode?: number;
+export interface RequestError {
+  detail: string;
+  statusCode: number;
 }
 
 export interface Resume {
@@ -46,8 +46,10 @@ export interface ResumeData {
   summary?: string;
   totalYearsExperience?: number;
   /** base64 encoded string */
-  headShot?: coreRestPipeline.RequestBodyType;
+  headShot?: Uint8Array;
   education?: ResumeDataEducationItem[];
+  /** Prediction of the candidate's profession based on recent work experience */
+  profession?: string;
   workExperience?: ResumeDataWorkExperienceItem[];
   skills?: ResumeDataSkillsItem[];
   certifications?: string[];
@@ -152,16 +154,6 @@ export interface ResumeDataSectionsItem {
 export interface ErrorModel {
   errorCode?: string;
   errorDetail?: string;
-}
-
-export interface Components8Sxs33Responses400ErrorContentApplicationJsonSchema {
-  statusCode?: number;
-  detail?: string;
-}
-
-export interface ComponentsP4H6CrResponses404ErrorContentApplicationJsonSchema {
-  detail?: string;
-  statusCode?: number;
 }
 
 export interface RedactedResume {
@@ -304,7 +296,7 @@ export interface AffindaAPIDeleteResumeOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the deleteResume operation. */
-export type AffindaAPIDeleteResumeResponse = ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema;
+export type AffindaAPIDeleteResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllRedactedResumesOptionalParams
@@ -361,7 +353,7 @@ export interface AffindaAPIDeleteRedactedResumeOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the deleteRedactedResume operation. */
-export type AffindaAPIDeleteRedactedResumeResponse = ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema;
+export type AffindaAPIDeleteRedactedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumeFormatsOptionalParams
@@ -409,7 +401,7 @@ export interface AffindaAPIDeleteReformattedResumeOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the deleteReformattedResume operation. */
-export type AffindaAPIDeleteReformattedResumeResponse = ComponentsMzfa75Responses401ErrorContentApplicationJsonSchema;
+export type AffindaAPIDeleteReformattedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams
