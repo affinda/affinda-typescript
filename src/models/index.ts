@@ -50,6 +50,8 @@ export interface ResumeData {
   education?: ResumeDataEducationItem[];
   /** Prediction of the candidate's profession based on recent work experience */
   profession?: string;
+  /** Linkedin account associated with the candidate */
+  linkedin?: string;
   workExperience?: ResumeDataWorkExperienceItem[];
   skills?: ResumeDataSkillsItem[];
   certifications?: string[];

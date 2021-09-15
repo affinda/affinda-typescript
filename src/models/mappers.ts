@@ -260,6 +260,13 @@ export const ResumeData: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      linkedin: {
+        serializedName: "linkedin",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       workExperience: {
         serializedName: "workExperience",
         type: {

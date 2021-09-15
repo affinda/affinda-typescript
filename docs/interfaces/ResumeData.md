@@ -13,6 +13,7 @@
 - [headShot](ResumeData.md#headshot)
 - [isResumeProbability](ResumeData.md#isresumeprobability)
 - [languages](ResumeData.md#languages)
+- [linkedin](ResumeData.md#linkedin)
 - [location](ResumeData.md#location)
 - [name](ResumeData.md#name)
 - [objective](ResumeData.md#objective)
@@ -73,6 +74,14 @@ ___
 ### languages
 
 • `Optional` **languages**: `string`[]
+
+___
+
+### linkedin
+
+• `Optional` **linkedin**: `string`
+
+Linkedin account associated with the candidate
 
 ___
 
