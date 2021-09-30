@@ -1,11 +1,11 @@
-Affinda API - Typescript Client Library
-===================================
+Typescript Client Library for Affinda Resume Parser API
+=======================================================
+
 
 ![affinda logo](https://github.com/affinda/affinda-typescript/blob/main/affinda_logo.png)
 [![license](https://img.shields.io/github/license/affinda/affinda-typescript)](https://choosealicense.com/licenses/mit/)
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/affinda/affinda-typescript)
-
 
 - [Installation](#installation)
 - [Quickstart](#quickstart)
@@ -88,8 +88,8 @@ is [available here](./docs/modules.md)
 Samples
 -------
 
-Samples are available for [NodeJS](./docs/samples_nodejs.md) amd also for [javascript](./docs/samples_javascript.md) intended for
-use in a browser.
+Samples are available for [NodeJS](./docs/samples_nodejs.md) amd also for [javascript](./docs/samples_javascript.md)
+intended for use in a browser.
 
 Troubleshooting
 ---------------
@@ -108,4 +108,3 @@ setLogLevel("info");
 
 For more detailed instructions on how to enable logs, you can look at
 the [@azure/logger](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/core/logger) package docs.
-
