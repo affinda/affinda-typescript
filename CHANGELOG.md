@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adding LinkedIn to ResumeData
 
 ### Changed
-- Updated changedlog formatting to allow automated updates
+- Updated changelog formatting to allow automated updates
 
 ## [0.2.4] - 2021-09-08
 ### Added
