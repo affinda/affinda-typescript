@@ -1,18 +1,18 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema
 
-# Interface: Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
+# Interface: Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema
 
 ## Table of contents
 
 ### Properties
 
-- [expiryTime](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#expirytime)
-- [file](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#file)
-- [fileName](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#filename)
-- [identifier](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#identifier)
-- [language](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#language)
-- [url](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#url)
-- [wait](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#wait)
+- [expiryTime](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#expirytime)
+- [file](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#file)
+- [fileName](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#filename)
+- [identifier](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#identifier)
+- [language](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#language)
+- [url](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#url)
+- [wait](Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md#wait)
 
 ## Properties
 

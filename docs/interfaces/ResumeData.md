@@ -67,7 +67,7 @@ ___
 
 • `Optional` **isResumeProbability**: `number`
 
-Probability that the given document is a resume. Values below 30 suggest that the resume is not a resume.
+Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
 
 ___
 

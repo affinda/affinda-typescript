@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateReformattedResumeOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateInvoiceOptionalParams
 
-# Interface: AffindaAPICreateReformattedResumeOptionalParams
+# Interface: AffindaAPICreateInvoiceOptionalParams
 
 Optional parameters.
 
@@ -8,23 +8,24 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateReformattedResumeOptionalParams`**
+  ↳ **`AffindaAPICreateInvoiceOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateReformattedResumeOptionalParams.md#abortsignal)
-- [file](AffindaAPICreateReformattedResumeOptionalParams.md#file)
-- [fileName](AffindaAPICreateReformattedResumeOptionalParams.md#filename)
-- [identifier](AffindaAPICreateReformattedResumeOptionalParams.md#identifier)
-- [language](AffindaAPICreateReformattedResumeOptionalParams.md#language)
-- [onResponse](AffindaAPICreateReformattedResumeOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateReformattedResumeOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateReformattedResumeOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateReformattedResumeOptionalParams.md#tracingoptions)
-- [url](AffindaAPICreateReformattedResumeOptionalParams.md#url)
-- [wait](AffindaAPICreateReformattedResumeOptionalParams.md#wait)
+- [abortSignal](AffindaAPICreateInvoiceOptionalParams.md#abortsignal)
+- [expiryTime](AffindaAPICreateInvoiceOptionalParams.md#expirytime)
+- [file](AffindaAPICreateInvoiceOptionalParams.md#file)
+- [fileName](AffindaAPICreateInvoiceOptionalParams.md#filename)
+- [identifier](AffindaAPICreateInvoiceOptionalParams.md#identifier)
+- [language](AffindaAPICreateInvoiceOptionalParams.md#language)
+- [onResponse](AffindaAPICreateInvoiceOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPICreateInvoiceOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPICreateInvoiceOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPICreateInvoiceOptionalParams.md#tracingoptions)
+- [url](AffindaAPICreateInvoiceOptionalParams.md#url)
+- [wait](AffindaAPICreateInvoiceOptionalParams.md#wait)
 
 ## Properties
 
@@ -37,6 +38,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### expiryTime
+
+• `Optional` **expiryTime**: `string`
+
+The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
 ___
 

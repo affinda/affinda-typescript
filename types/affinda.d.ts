@@ -74,7 +74,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     getAllReformattedResumes(options?: AffindaAPIGetAllReformattedResumesOptionalParams): Promise<AffindaAPIGetAllReformattedResumesResponse>;
     /**
-     * Uploads a resume for reformatting.
+     * Upload a resume for reformatting.
      * @param resumeFormat Identifier of the format used
      * @param options The options parameters.
      */
@@ -88,11 +88,38 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     getReformattedResume(identifier: string | null, options?: AffindaAPIGetReformattedResumeOptionalParams): Promise<AffindaAPIGetReformattedResumeResponse>;
     /**
-     * Deletes the specified resume from the database
+     * Delete the specified resume from the database
      * @param identifier Document identifier
      * @param options The options parameters.
      */
     deleteReformattedResume(identifier: string | null, options?: AffindaAPIDeleteReformattedResumeOptionalParams): Promise<AffindaAPIDeleteReformattedResumeResponse>;
+    /**
+     * Returns all the invoice summaries for that user, limited to 300 per page.
+     * @param options The options parameters.
+     */
+    getAllInvoices(options?: AffindaAPIGetAllInvoicesOptionalParams): Promise<AffindaAPIGetAllInvoicesResponse>;
+    /**
+     * Uploads an invoice for parsing.
+     * When successful, returns an `identifier` in the response for subsequent use with the
+     * [/invoices/{identifier}](#operation/getInvoice) endpoint to check processing status and retrieve
+     * results.
+     * @param options The options parameters.
+     */
+    createInvoice(options?: AffindaAPICreateInvoiceOptionalParams): Promise<AffindaAPICreateInvoiceResponse>;
+    /**
+     * Returns all the parse results for that invoice if processing is completed.
+     * The `identifier` is the unique ID returned after POST-ing the invoice via the
+     * [/invoices](#operation/createInvoice) endpoint.
+     * @param identifier Document identifier
+     * @param options The options parameters.
+     */
+    getInvoice(identifier: string | null, options?: AffindaAPIGetInvoiceOptionalParams): Promise<AffindaAPIGetInvoiceResponse>;
+    /**
+     * Delete the specified invoice from the database
+     * @param identifier Invoice identifier
+     * @param options The options parameters.
+     */
+    deleteInvoice(identifier: string | null, options?: AffindaAPIDeleteInvoiceOptionalParams): Promise<AffindaAPIDeleteInvoiceResponse>;
 }
 
 export declare class AffindaAPIContext extends coreClient.ServiceClient {
@@ -108,10 +135,10 @@ export declare class AffindaAPIContext extends coreClient.ServiceClient {
 }
 
 /** Optional parameters. */
-export declare interface AffindaAPICreateRedactedResumeOptionalParams extends coreClient.OperationOptions {
+export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob */
     file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     /** Optional filename of the file */
     fileName?: string;
@@ -120,8 +147,29 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    resumeLanguage?: string;
-    /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+}
+
+/** Contains response data for the createInvoice operation. */
+export declare type AffindaAPICreateInvoiceResponse = Invoice;
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateRedactedResumeOptionalParams extends coreClient.OperationOptions {
+    /** File as binary data blob */
+    file?: coreRestPipeline.RequestBodyType;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** URL to file to download and process */
+    url?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
     /** Whether to redact headshot */
     redactHeadshot?: string;
@@ -146,7 +194,7 @@ export declare type AffindaAPICreateRedactedResumeResponse = RedactedResume;
 export declare interface AffindaAPICreateReformattedResumeOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob */
     file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     /** Optional filename of the file */
     fileName?: string;
@@ -155,7 +203,7 @@ export declare interface AffindaAPICreateReformattedResumeOptionalParams extends
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    resumeLanguage?: string;
+    language?: string;
 }
 
 /** Contains response data for the createReformattedResume operation. */
@@ -165,7 +213,7 @@ export declare type AffindaAPICreateReformattedResumeResponse = ReformattedResum
 export declare interface AffindaAPICreateResumeOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob */
     file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     /** Optional filename of the file */
     fileName?: string;
@@ -174,13 +222,20 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    resumeLanguage?: string;
-    /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
 }
 
 /** Contains response data for the createResume operation. */
 export declare type AffindaAPICreateResumeResponse = Resume;
+
+/** Optional parameters. */
+export declare interface AffindaAPIDeleteInvoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the deleteInvoice operation. */
+export declare type AffindaAPIDeleteInvoiceResponse = RequestError;
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteRedactedResumeOptionalParams extends coreClient.OperationOptions {
@@ -202,6 +257,13 @@ export declare interface AffindaAPIDeleteResumeOptionalParams extends coreClient
 
 /** Contains response data for the deleteResume operation. */
 export declare type AffindaAPIDeleteResumeResponse = RequestError;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAllInvoicesOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllInvoices operation. */
+export declare type AffindaAPIGetAllInvoicesResponse = GetAllInvoicesResults;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllRedactedResumesOptionalParams extends coreClient.OperationOptions {
@@ -230,6 +292,13 @@ export declare interface AffindaAPIGetAllResumesOptionalParams extends coreClien
 
 /** Contains response data for the getAllResumes operation. */
 export declare type AffindaAPIGetAllResumesResponse = GetAllDocumentsResults;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetInvoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getInvoice operation. */
+export declare type AffindaAPIGetInvoiceResponse = Invoice;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetRedactedResumeOptionalParams extends coreClient.OperationOptions {
@@ -276,17 +345,74 @@ export declare interface ErrorModel {
 }
 
 export declare interface Get200ApplicationJsonPropertiesItemsItem {
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier: string | null;
-    /** The template to apply */
+    /** URL to a template to apply */
     formatFile: string;
 }
 
 export declare interface GetAllDocumentsResults {
+    /** Number of documents in result */
     count?: number;
+    /** URL to request next page of results */
     next?: string;
+    /** URL to request previous page of results */
     previous?: string;
     results?: Meta[];
+}
+
+export declare interface GetAllInvoicesResults {
+    /** Number of documents in result */
+    count?: number;
+    /** URL to request next page of results */
+    next?: string;
+    /** URL to request previous page of results */
+    previous?: string;
+    results?: Meta[];
+}
+
+export declare interface Invoice {
+    data: InvoiceData | null;
+    meta: Meta;
+    error: ErrorModel;
+}
+
+export declare interface InvoiceData {
+    invoiceDate?: string;
+    invoiceOrderDate?: string;
+    paymentDateDue?: string;
+    paymentAmountBase?: string;
+    paymentAmountTax?: string;
+    paymentAmountTotal?: string;
+    paymentAmountPaid?: string;
+    paymentAmountDue?: string;
+    invoiceNumber?: string;
+    invoicePurchaseOrderNumber?: string;
+    supplierBusinessNumber?: string;
+    customerNumber?: string;
+    customerBusinessNumber?: string;
+    paymentReference?: string;
+    bankAccountNumber?: string;
+    supplierVAT?: string;
+    customerVAT?: string;
+    bpayBillerCode?: string;
+    bpayReference?: string;
+    bankSortCode?: string;
+    bankIban?: string;
+    bankSwift?: string;
+    bankBSB?: string;
+    customerContactName?: string;
+    customerCompanyName?: string;
+    supplierCompanyName?: string;
+    customerBillingAddress?: Location;
+    customerDeliveryAddress?: Location;
+    supplierAddress?: Location;
+    customerPhoneNumber?: string;
+    supplierPhoneNumber?: string;
+    supplierFax?: string;
+    customerEmail?: string;
+    supplierEmail?: string;
+    supplierWebsite?: string;
 }
 
 export declare interface Location {
@@ -302,7 +428,7 @@ export declare interface Location {
 }
 
 export declare interface Meta {
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier: string | null;
     /** Optional filename of the file */
     fileName?: string;
@@ -312,21 +438,14 @@ export declare interface Meta {
     readyDt?: Date;
     /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
     failed: boolean;
-    /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
 }
 
-export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema {
-    count?: number;
-    next?: string;
-    previous?: string;
-    results?: Get200ApplicationJsonPropertiesItemsItem[];
-}
-
-export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
+export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
     /** File as binary data blob */
     file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     /** Optional filename of the file */
     fileName?: string;
@@ -335,22 +454,49 @@ export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDa
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    resumeLanguage?: string;
-    /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+}
+
+export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema {
+    /** Number of documents in result */
+    count?: number;
+    /** URL to request next page of results */
+    next?: string;
+    /** URL to request previous page of results */
+    previous?: string;
+    results?: Get200ApplicationJsonPropertiesItemsItem[];
+}
+
+export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
+    /** File as binary data blob */
+    file?: coreRestPipeline.RequestBodyType;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** URL to file to download and process */
+    url?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
 }
 
 export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
     /** File as binary data blob */
     file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** URL to file to download and process */
     url?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    resumeLanguage?: string;
+    language?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** Whether to redact headshot */
@@ -367,21 +513,21 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
     redactLocations?: string;
     /** Whether to redact dates */
     redactDates?: string;
-    /** The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry. */
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
 }
 
 export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
     /** File as binary data blob */
     file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the resume. If creating a document and left blank, one will be automatically generated. */
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** URL to file to download and process */
     url?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    resumeLanguage?: string;
+    language?: string;
     /** Identifier of the format used */
     resumeFormat: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -395,6 +541,7 @@ export declare interface RedactedResume {
 }
 
 export declare interface RedactedResumeData {
+    /** URL to redacted PDF */
     redactedPdf?: string;
 }
 
@@ -443,7 +590,7 @@ export declare interface ResumeData {
     publications?: string[];
     referees?: ResumeDataRefereesItem[];
     sections?: ResumeDataSectionsItem[];
-    /** Probability that the given document is a resume. Values below 30 suggest that the resume is not a resume. */
+    /** Probability that the given document is a resume. Values below 30 suggest that the document is not a resume. */
     isResumeProbability?: number;
     /** All of the raw text of the parsed resume, example is shortened for readiblity */
     rawText?: string;

@@ -13,3 +13,5 @@
 ### redactedPdf
 
 • `Optional` **redactedPdf**: `string`
+
+URL to redacted PDF

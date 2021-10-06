@@ -23,16 +23,20 @@
 
 ### Methods
 
+- [createInvoice](AffindaAPI.md#createinvoice)
 - [createRedactedResume](AffindaAPI.md#createredactedresume)
 - [createReformattedResume](AffindaAPI.md#createreformattedresume)
 - [createResume](AffindaAPI.md#createresume)
+- [deleteInvoice](AffindaAPI.md#deleteinvoice)
 - [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
 - [deleteReformattedResume](AffindaAPI.md#deletereformattedresume)
 - [deleteResume](AffindaAPI.md#deleteresume)
+- [getAllInvoices](AffindaAPI.md#getallinvoices)
 - [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
 - [getAllReformattedResumes](AffindaAPI.md#getallreformattedresumes)
 - [getAllResumeFormats](AffindaAPI.md#getallresumeformats)
 - [getAllResumes](AffindaAPI.md#getallresumes)
+- [getInvoice](AffindaAPI.md#getinvoice)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
@@ -102,6 +106,27 @@ The pipeline used by this client to make requests
 
 ## Methods
 
+### createInvoice
+
+▸ **createInvoice**(`options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+
+Uploads an invoice for parsing.
+When successful, returns an `identifier` in the response for subsequent use with the
+[/invoices/{identifier}](#operation/getInvoice) endpoint to check processing status and retrieve
+results.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateInvoiceOptionalParams`](../interfaces/AffindaAPICreateInvoiceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+
+___
+
 ### createRedactedResume
 
 ▸ **createRedactedResume**(`options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
@@ -124,7 +149,7 @@ ___
 
 ▸ **createReformattedResume**(`resumeFormat`, `options?`): `Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
 
-Uploads a resume for reformatting.
+Upload a resume for reformatting.
 
 #### Parameters
 
@@ -160,6 +185,25 @@ results.
 
 ___
 
+### deleteInvoice
+
+▸ **deleteInvoice**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+Delete the specified invoice from the database
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Invoice identifier |
+| `options?` | [`AffindaAPIDeleteInvoiceOptionalParams`](../interfaces/AffindaAPIDeleteInvoiceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+___
+
 ### deleteRedactedResume
 
 ▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
@@ -183,7 +227,7 @@ ___
 
 ▸ **deleteReformattedResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
-Deletes the specified resume from the database
+Delete the specified resume from the database
 
 #### Parameters
 
@@ -214,6 +258,24 @@ Deletes the specified resume from the database
 #### Returns
 
 `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+___
+
+### getAllInvoices
+
+▸ **getAllInvoices**(`options?`): `Promise`<[`GetAllInvoicesResults`](../interfaces/GetAllInvoicesResults.md)\>
+
+Returns all the invoice summaries for that user, limited to 300 per page.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetAllInvoicesOptionalParams`](../interfaces/AffindaAPIGetAllInvoicesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`GetAllInvoicesResults`](../interfaces/GetAllInvoicesResults.md)\>
 
 ___
 
@@ -286,6 +348,27 @@ Returns all the resume summaries for that user, limited to 300 per page.
 #### Returns
 
 `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
+
+___
+
+### getInvoice
+
+▸ **getInvoice**(`identifier`, `options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+
+Returns all the parse results for that invoice if processing is completed.
+The `identifier` is the unique ID returned after POST-ing the invoice via the
+[/invoices](#operation/createInvoice) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Document identifier |
+| `options?` | [`AffindaAPIGetInvoiceOptionalParams`](../interfaces/AffindaAPIGetInvoiceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
 
 ___
 

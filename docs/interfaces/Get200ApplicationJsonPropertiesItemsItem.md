@@ -15,7 +15,7 @@
 
 • **formatFile**: `string`
 
-The template to apply
+URL to a template to apply
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **identifier**: ``null`` \| `string`
 
-Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.

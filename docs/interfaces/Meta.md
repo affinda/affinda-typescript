@@ -19,7 +19,7 @@
 
 • `Optional` **expiryTime**: `string`
 
-The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry.
+The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **identifier**: ``null`` \| `string`
 
-Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
 
 ___
 

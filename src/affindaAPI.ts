@@ -30,7 +30,15 @@ import {
   AffindaAPIGetReformattedResumeOptionalParams,
   AffindaAPIGetReformattedResumeResponse,
   AffindaAPIDeleteReformattedResumeOptionalParams,
-  AffindaAPIDeleteReformattedResumeResponse
+  AffindaAPIDeleteReformattedResumeResponse,
+  AffindaAPIGetAllInvoicesOptionalParams,
+  AffindaAPIGetAllInvoicesResponse,
+  AffindaAPICreateInvoiceOptionalParams,
+  AffindaAPICreateInvoiceResponse,
+  AffindaAPIGetInvoiceOptionalParams,
+  AffindaAPIGetInvoiceResponse,
+  AffindaAPIDeleteInvoiceOptionalParams,
+  AffindaAPIDeleteInvoiceResponse
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -186,7 +194,7 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Uploads a resume for reformatting.
+   * Upload a resume for reformatting.
    * @param resumeFormat Identifier of the format used
    * @param options The options parameters.
    */
@@ -218,7 +226,7 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Deletes the specified resume from the database
+   * Delete the specified resume from the database
    * @param identifier Document identifier
    * @param options The options parameters.
    */
@@ -229,6 +237,61 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, options },
       deleteReformattedResumeOperationSpec
+    );
+  }
+
+  /**
+   * Returns all the invoice summaries for that user, limited to 300 per page.
+   * @param options The options parameters.
+   */
+  getAllInvoices(
+    options?: AffindaAPIGetAllInvoicesOptionalParams
+  ): Promise<AffindaAPIGetAllInvoicesResponse> {
+    return this.sendOperationRequest({ options }, getAllInvoicesOperationSpec);
+  }
+
+  /**
+   * Uploads an invoice for parsing.
+   * When successful, returns an `identifier` in the response for subsequent use with the
+   * [/invoices/{identifier}](#operation/getInvoice) endpoint to check processing status and retrieve
+   * results.
+   * @param options The options parameters.
+   */
+  createInvoice(
+    options?: AffindaAPICreateInvoiceOptionalParams
+  ): Promise<AffindaAPICreateInvoiceResponse> {
+    return this.sendOperationRequest({ options }, createInvoiceOperationSpec);
+  }
+
+  /**
+   * Returns all the parse results for that invoice if processing is completed.
+   * The `identifier` is the unique ID returned after POST-ing the invoice via the
+   * [/invoices](#operation/createInvoice) endpoint.
+   * @param identifier Document identifier
+   * @param options The options parameters.
+   */
+  getInvoice(
+    identifier: string | null,
+    options?: AffindaAPIGetInvoiceOptionalParams
+  ): Promise<AffindaAPIGetInvoiceResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getInvoiceOperationSpec
+    );
+  }
+
+  /**
+   * Delete the specified invoice from the database
+   * @param identifier Invoice identifier
+   * @param options The options parameters.
+   */
+  deleteInvoice(
+    identifier: string | null,
+    options?: AffindaAPIDeleteInvoiceOptionalParams
+  ): Promise<AffindaAPIDeleteInvoiceResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteInvoiceOperationSpec
     );
   }
 }
@@ -289,7 +352,7 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.fileName,
     Parameters.url,
     Parameters.wait,
-    Parameters.resumeLanguage,
+    Parameters.language,
     Parameters.expiryTime
   ],
   urlParameters: [Parameters.$host],
@@ -396,7 +459,7 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.fileName,
     Parameters.url,
     Parameters.wait,
-    Parameters.resumeLanguage,
+    Parameters.language,
     Parameters.expiryTime,
     Parameters.redactHeadshot,
     Parameters.redactPersonalDetails,
@@ -536,7 +599,7 @@ const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.fileName,
     Parameters.url,
     Parameters.wait,
-    Parameters.resumeLanguage,
+    Parameters.language,
     Parameters.resumeFormat
   ],
   urlParameters: [Parameters.$host],
@@ -569,6 +632,113 @@ const getReformattedResumeOperationSpec: coreClient.OperationSpec = {
 };
 const deleteReformattedResumeOperationSpec: coreClient.OperationSpec = {
   path: "/reformatted_resumes/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
+  path: "/invoices",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.GetAllInvoicesResults
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.limit, Parameters.offset],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createInvoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/invoices",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invoice
+    },
+    201: {
+      bodyMapper: Mappers.Invoice
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  formDataParameters: [
+    Parameters.file,
+    Parameters.identifier,
+    Parameters.fileName,
+    Parameters.url,
+    Parameters.wait,
+    Parameters.language,
+    Parameters.expiryTime
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer
+};
+const getInvoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/invoices/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invoice
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/invoices/{identifier}",
   httpMethod: "DELETE",
   responses: {
     204: {},

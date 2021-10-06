@@ -12,16 +12,20 @@
 
 ### Interfaces
 
+- [AffindaAPICreateInvoiceOptionalParams](interfaces/AffindaAPICreateInvoiceOptionalParams.md)
 - [AffindaAPICreateRedactedResumeOptionalParams](interfaces/AffindaAPICreateRedactedResumeOptionalParams.md)
 - [AffindaAPICreateReformattedResumeOptionalParams](interfaces/AffindaAPICreateReformattedResumeOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
+- [AffindaAPIDeleteInvoiceOptionalParams](interfaces/AffindaAPIDeleteInvoiceOptionalParams.md)
 - [AffindaAPIDeleteRedactedResumeOptionalParams](interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md)
 - [AffindaAPIDeleteReformattedResumeOptionalParams](interfaces/AffindaAPIDeleteReformattedResumeOptionalParams.md)
 - [AffindaAPIDeleteResumeOptionalParams](interfaces/AffindaAPIDeleteResumeOptionalParams.md)
+- [AffindaAPIGetAllInvoicesOptionalParams](interfaces/AffindaAPIGetAllInvoicesOptionalParams.md)
 - [AffindaAPIGetAllRedactedResumesOptionalParams](interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md)
 - [AffindaAPIGetAllReformattedResumesOptionalParams](interfaces/AffindaAPIGetAllReformattedResumesOptionalParams.md)
 - [AffindaAPIGetAllResumeFormatsOptionalParams](interfaces/AffindaAPIGetAllResumeFormatsOptionalParams.md)
 - [AffindaAPIGetAllResumesOptionalParams](interfaces/AffindaAPIGetAllResumesOptionalParams.md)
+- [AffindaAPIGetInvoiceOptionalParams](interfaces/AffindaAPIGetInvoiceOptionalParams.md)
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
@@ -29,8 +33,12 @@
 - [ErrorModel](interfaces/ErrorModel.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [GetAllDocumentsResults](interfaces/GetAllDocumentsResults.md)
+- [GetAllInvoicesResults](interfaces/GetAllInvoicesResults.md)
+- [Invoice](interfaces/Invoice.md)
+- [InvoiceData](interfaces/InvoiceData.md)
 - [Location](interfaces/Location.md)
 - [Meta](interfaces/Meta.md)
+- [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)
 - [Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md)
@@ -56,21 +64,33 @@
 
 ### Type aliases
 
+- [AffindaAPICreateInvoiceResponse](modules.md#affindaapicreateinvoiceresponse)
 - [AffindaAPICreateRedactedResumeResponse](modules.md#affindaapicreateredactedresumeresponse)
 - [AffindaAPICreateReformattedResumeResponse](modules.md#affindaapicreatereformattedresumeresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
+- [AffindaAPIDeleteInvoiceResponse](modules.md#affindaapideleteinvoiceresponse)
 - [AffindaAPIDeleteRedactedResumeResponse](modules.md#affindaapideleteredactedresumeresponse)
 - [AffindaAPIDeleteReformattedResumeResponse](modules.md#affindaapideletereformattedresumeresponse)
 - [AffindaAPIDeleteResumeResponse](modules.md#affindaapideleteresumeresponse)
+- [AffindaAPIGetAllInvoicesResponse](modules.md#affindaapigetallinvoicesresponse)
 - [AffindaAPIGetAllRedactedResumesResponse](modules.md#affindaapigetallredactedresumesresponse)
 - [AffindaAPIGetAllReformattedResumesResponse](modules.md#affindaapigetallreformattedresumesresponse)
 - [AffindaAPIGetAllResumeFormatsResponse](modules.md#affindaapigetallresumeformatsresponse)
 - [AffindaAPIGetAllResumesResponse](modules.md#affindaapigetallresumesresponse)
+- [AffindaAPIGetInvoiceResponse](modules.md#affindaapigetinvoiceresponse)
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 
 ## Type aliases
+
+### AffindaAPICreateInvoiceResponse
+
+Ƭ **AffindaAPICreateInvoiceResponse**: [`Invoice`](interfaces/Invoice.md)
+
+Contains response data for the createInvoice operation.
+
+___
 
 ### AffindaAPICreateRedactedResumeResponse
 
@@ -96,6 +116,14 @@ Contains response data for the createResume operation.
 
 ___
 
+### AffindaAPIDeleteInvoiceResponse
+
+Ƭ **AffindaAPIDeleteInvoiceResponse**: [`RequestError`](interfaces/RequestError.md)
+
+Contains response data for the deleteInvoice operation.
+
+___
+
 ### AffindaAPIDeleteRedactedResumeResponse
 
 Ƭ **AffindaAPIDeleteRedactedResumeResponse**: [`RequestError`](interfaces/RequestError.md)
@@ -117,6 +145,14 @@ ___
 Ƭ **AffindaAPIDeleteResumeResponse**: [`RequestError`](interfaces/RequestError.md)
 
 Contains response data for the deleteResume operation.
+
+___
+
+### AffindaAPIGetAllInvoicesResponse
+
+Ƭ **AffindaAPIGetAllInvoicesResponse**: [`GetAllInvoicesResults`](interfaces/GetAllInvoicesResults.md)
+
+Contains response data for the getAllInvoices operation.
 
 ___
 
@@ -149,6 +185,14 @@ ___
 Ƭ **AffindaAPIGetAllResumesResponse**: [`GetAllDocumentsResults`](interfaces/GetAllDocumentsResults.md)
 
 Contains response data for the getAllResumes operation.
+
+___
+
+### AffindaAPIGetInvoiceResponse
+
+Ƭ **AffindaAPIGetInvoiceResponse**: [`Invoice`](interfaces/Invoice.md)
+
+Contains response data for the getInvoice operation.
 
 ___
 

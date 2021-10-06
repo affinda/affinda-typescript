@@ -9,8 +9,8 @@
 - [file](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#file)
 - [fileName](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#filename)
 - [identifier](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#identifier)
+- [language](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#language)
 - [resumeFormat](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#resumeformat)
-- [resumeLanguage](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#resumelanguage)
 - [url](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#url)
 - [wait](PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md#wait)
 
@@ -36,7 +36,15 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+
+___
+
+### language
+
+• `Optional` **language**: `string`
+
+Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ___
 
@@ -45,14 +53,6 @@ ___
 • **resumeFormat**: `string`
 
 Identifier of the format used
-
-___
-
-### resumeLanguage
-
-• `Optional` **resumeLanguage**: `string`
-
-Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ___
 

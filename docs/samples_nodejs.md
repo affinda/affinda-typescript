@@ -1,9 +1,9 @@
 
 
-Parser
-------
+Resume Parser
+-------------
 
-### getAllResumes - Gets list of all resumes
+### getAllResumes - Get list of all resumes
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -22,7 +22,7 @@ client.getAllResumes().then((result) => {
 });
 ```
 
-### createResume - Uploads a resume for parsing
+### createResume - Upload a resume for parsing
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -30,7 +30,7 @@ const fs = require("fs");
 
 const credential = new AffindaCredential("REPLACE_TOKEN")
 const client = new AffindaAPI(credential)
-const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
+const readStream = fs.createReadStream("path_to_file.pdf");
 
 client.createResume({file: readStream}).then((result) => {
     console.log("Returned data:");
@@ -51,7 +51,7 @@ client.createResume({url: "https://api.affinda.com/static/sample_resumes/example
 });
 ```
 
-### getResume - Gets parse results for a specific resume
+### getResume - Get parse results for a specific resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -68,7 +68,7 @@ client.getResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-### deleteResume - Deletes a resume
+### deleteResume - Delete a resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -85,10 +85,10 @@ client.deleteResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-Redactor
---------
+Resume Redactor
+---------------
 
-### getAllRedactedResumes - Gets list of all redacted resumes
+### getAllRedactedResumes - Get list of all redacted resumes
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -107,7 +107,7 @@ client.getAllRedactedResumes().then((result) => {
 });
 ```
 
-### createRedactedResume - Uploads a resume for redacting
+### createRedactedResume - Upload a resume for redacting
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -115,7 +115,7 @@ const fs = require("fs");
 
 const credential = new AffindaCredential("REPLACE_TOKEN")
 const client = new AffindaAPI(credential)
-const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
+const readStream = fs.createReadStream("path_to_file.pdf");
 
 client.createRedactedResume({file: readStream}).then((result) => {
     console.log("Returned data:");
@@ -136,7 +136,7 @@ client.createRedactedResume({url: "https://api.affinda.com/static/sample_resumes
 });
 ```
 
-### getRedactedResume - Gets redaction results for a specific resume
+### getRedactedResume - Get redaction results for a specific resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -153,7 +153,7 @@ client.getRedactedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-### deleteRedactedResume - Deletes a redacted resume
+### deleteRedactedResume - Delete a redacted resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -170,10 +170,10 @@ client.deleteRedactedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-Reformatter
------------
+Resume Reformatter
+------------------
 
-### getAllResumeFormats - Gets list of all resume formats
+### getAllResumeFormats - Get list of all resume formats
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -192,7 +192,7 @@ client.getAllResumeFormats().then((result) => {
 });
 ```
 
-### getAllReformattedResumes - Gets list of all reformatted resumes
+### getAllReformattedResumes - Get list of all reformatted resumes
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -211,7 +211,7 @@ client.getAllReformattedResumes().then((result) => {
 });
 ```
 
-### createReformattedResume - Uploads a resume for reformatting
+### createReformattedResume - Upload a resume for reformatting
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -219,7 +219,7 @@ const fs = require("fs");
 
 const credential = new AffindaCredential("REPLACE_TOKEN")
 const client = new AffindaAPI(credential)
-const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
+const readStream = fs.createReadStream("path_to_file.pdf");
 
 client.createReformattedResume("Affinda", {file: readStream}).then((result) => {
     console.log("Returned data:");
@@ -243,7 +243,7 @@ client.createReformattedResume("Affinda", {
 })
 ```
 
-### getReformattedResume - Gets reformatting results for a specific resume
+### getReformattedResume - Get reformatting results for a specific resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -260,7 +260,7 @@ client.getReformattedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-### deleteReformattedResume - Deletes a reformatted resume
+### deleteReformattedResume - Delete a reformatted resume
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
@@ -269,6 +269,91 @@ const credential = new AffindaCredential("REPLACE_TOKEN")
 const client = new AffindaAPI(credential)
 
 client.deleteReformattedResume("REPLACE_IDENTIFIER").then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+Invoice Parser
+--------------
+
+### getAllInvoices - Get list of all invoices
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+
+client.getAllInvoices().then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+### createInvoice - Upload an invoice for parsing
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+const fs = require("fs");
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+const readStream = fs.createReadStream("path_to_file.pdf");
+
+client.createInvoice({file: readStream}).then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+
+// Can also use a URL:
+
+client.createInvoice({url: "https://api.affinda.com/static/sample_invoices/example.pdf"}).then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+### getInvoice - Get parse results for a specific invoice
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+client.getInvoice("REPLACE_IDENTIFIER").then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+### deleteInvoice - Delete an invoice
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+client.deleteInvoice("REPLACE_IDENTIFIER").then((result) => {
     console.log("Returned data:");
     console.dir(result)
 }).catch((err) => {

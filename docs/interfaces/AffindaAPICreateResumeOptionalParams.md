@@ -19,9 +19,9 @@ Optional parameters.
 - [file](AffindaAPICreateResumeOptionalParams.md#file)
 - [fileName](AffindaAPICreateResumeOptionalParams.md#filename)
 - [identifier](AffindaAPICreateResumeOptionalParams.md#identifier)
+- [language](AffindaAPICreateResumeOptionalParams.md#language)
 - [onResponse](AffindaAPICreateResumeOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPICreateResumeOptionalParams.md#requestoptions)
-- [resumeLanguage](AffindaAPICreateResumeOptionalParams.md#resumelanguage)
 - [serializerOptions](AffindaAPICreateResumeOptionalParams.md#serializeroptions)
 - [tracingOptions](AffindaAPICreateResumeOptionalParams.md#tracingoptions)
 - [url](AffindaAPICreateResumeOptionalParams.md#url)
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **expiryTime**: `string`
 
-The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry.
+The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
 ___
 
@@ -69,7 +69,15 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+
+___
+
+### language
+
+• `Optional` **language**: `string`
+
+Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ___
 
@@ -96,14 +104,6 @@ Options used when creating and sending HTTP requests for this operation.
 #### Inherited from
 
 coreClient.OperationOptions.requestOptions
-
-___
-
-### resumeLanguage
-
-• `Optional` **resumeLanguage**: `string`
-
-Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ___
 

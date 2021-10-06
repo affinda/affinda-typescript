@@ -10,6 +10,7 @@
 - [file](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#file)
 - [fileName](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#filename)
 - [identifier](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#identifier)
+- [language](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#language)
 - [redactDates](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactdates)
 - [redactEducationDetails](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redacteducationdetails)
 - [redactHeadshot](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactheadshot)
@@ -17,7 +18,6 @@
 - [redactPersonalDetails](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactpersonaldetails)
 - [redactReferees](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactreferees)
 - [redactWorkDetails](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactworkdetails)
-- [resumeLanguage](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#resumelanguage)
 - [url](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#url)
 - [wait](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#wait)
 
@@ -27,7 +27,7 @@
 
 • `Optional` **expiryTime**: `string`
 
-The date/time in ISO-8601 format when the resume will be automatically deleted.  Defaults to no expiry.
+The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
 ___
 
@@ -51,7 +51,15 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Unique identifier for the resume. If creating a document and left blank, one will be automatically generated.
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+
+___
+
+### language
+
+• `Optional` **language**: `string`
+
+Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ___
 
@@ -108,14 +116,6 @@ ___
 • `Optional` **redactWorkDetails**: `string`
 
 Whether to redact work details (e.g. company names)
-
-___
-
-### resumeLanguage
-
-• `Optional` **resumeLanguage**: `string`
-
-Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ___
 

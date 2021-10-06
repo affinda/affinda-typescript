@@ -118,10 +118,10 @@ export const wait: OperationParameter = {
   }
 };
 
-export const resumeLanguage: OperationParameter = {
-  parameterPath: ["options", "resumeLanguage"],
+export const language: OperationParameter = {
+  parameterPath: ["options", "language"],
   mapper: {
-    serializedName: "resumeLanguage",
+    serializedName: "language",
     type: {
       name: "String"
     }

@@ -1,15 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllDocumentsResults
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllInvoicesResults
 
-# Interface: GetAllDocumentsResults
+# Interface: GetAllInvoicesResults
 
 ## Table of contents
 
 ### Properties
 
-- [count](GetAllDocumentsResults.md#count)
-- [next](GetAllDocumentsResults.md#next)
-- [previous](GetAllDocumentsResults.md#previous)
-- [results](GetAllDocumentsResults.md#results)
+- [count](GetAllInvoicesResults.md#count)
+- [next](GetAllInvoicesResults.md#next)
+- [previous](GetAllInvoicesResults.md#previous)
+- [results](GetAllInvoicesResults.md#results)
 
 ## Properties
 

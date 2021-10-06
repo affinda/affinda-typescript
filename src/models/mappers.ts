@@ -1004,6 +1004,325 @@ export const ReformattedResumeData: coreClient.CompositeMapper = {
   }
 };
 
+export const GetAllInvoicesResults: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "GetAllInvoicesResults",
+    modelProperties: {
+      count: {
+        serializedName: "count",
+        type: {
+          name: "Number"
+        }
+      },
+      next: {
+        serializedName: "next",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      previous: {
+        serializedName: "previous",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Meta"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Invoice: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Invoice",
+    modelProperties: {
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "InvoiceData"
+        }
+      },
+      meta: {
+        serializedName: "meta",
+        type: {
+          name: "Composite",
+          className: "Meta"
+        }
+      },
+      error: {
+        serializedName: "error",
+        type: {
+          name: "Composite",
+          className: "ErrorModel"
+        }
+      }
+    }
+  }
+};
+
+export const InvoiceData: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceData",
+    modelProperties: {
+      invoiceDate: {
+        serializedName: "invoiceDate",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      invoiceOrderDate: {
+        serializedName: "invoiceOrderDate",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentDateDue: {
+        serializedName: "paymentDateDue",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentAmountBase: {
+        serializedName: "paymentAmountBase",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentAmountTax: {
+        serializedName: "paymentAmountTax",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentAmountTotal: {
+        serializedName: "paymentAmountTotal",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentAmountPaid: {
+        serializedName: "paymentAmountPaid",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentAmountDue: {
+        serializedName: "paymentAmountDue",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      invoiceNumber: {
+        serializedName: "invoiceNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      invoicePurchaseOrderNumber: {
+        serializedName: "invoicePurchaseOrderNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      supplierBusinessNumber: {
+        serializedName: "supplierBusinessNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      customerNumber: {
+        serializedName: "customerNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      customerBusinessNumber: {
+        serializedName: "customerBusinessNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      paymentReference: {
+        serializedName: "paymentReference",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bankAccountNumber: {
+        serializedName: "bankAccountNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      supplierVAT: {
+        serializedName: "supplierVAT",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      customerVAT: {
+        serializedName: "customerVAT",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bpayBillerCode: {
+        serializedName: "bpayBillerCode",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bpayReference: {
+        serializedName: "bpayReference",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bankSortCode: {
+        serializedName: "bankSortCode",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bankIban: {
+        serializedName: "bankIBAN",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bankSwift: {
+        serializedName: "bankSwift",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      bankBSB: {
+        serializedName: "bankBSB",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      customerContactName: {
+        serializedName: "customerContactName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      customerCompanyName: {
+        serializedName: "customerCompanyName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      supplierCompanyName: {
+        serializedName: "supplierCompanyName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      customerBillingAddress: {
+        serializedName: "customerBillingAddress",
+        type: {
+          name: "Composite",
+          className: "Location"
+        }
+      },
+      customerDeliveryAddress: {
+        serializedName: "customerDeliveryAddress",
+        type: {
+          name: "Composite",
+          className: "Location"
+        }
+      },
+      supplierAddress: {
+        serializedName: "supplierAddress",
+        type: {
+          name: "Composite",
+          className: "Location"
+        }
+      },
+      customerPhoneNumber: {
+        serializedName: "customerPhoneNumber",
+        type: {
+          name: "String"
+        }
+      },
+      supplierPhoneNumber: {
+        serializedName: "supplierPhoneNumber",
+        type: {
+          name: "String"
+        }
+      },
+      supplierFax: {
+        serializedName: "supplierFax",
+        type: {
+          name: "String"
+        }
+      },
+      customerEmail: {
+        serializedName: "customerEmail",
+        type: {
+          name: "String"
+        }
+      },
+      supplierEmail: {
+        serializedName: "supplierEmail",
+        type: {
+          name: "String"
+        }
+      },
+      supplierWebsite: {
+        serializedName: "supplierWebsite",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1044,8 +1363,8 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
           name: "String"
         }
       },
-      resumeLanguage: {
-        serializedName: "resumeLanguage",
+      language: {
+        serializedName: "language",
         nullable: true,
         type: {
           name: "String"
@@ -1095,8 +1414,8 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
           name: "String"
         }
       },
-      resumeLanguage: {
-        serializedName: "resumeLanguage",
+      language: {
+        serializedName: "language",
         nullable: true,
         type: {
           name: "String"
@@ -1202,8 +1521,8 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
           name: "String"
         }
       },
-      resumeLanguage: {
-        serializedName: "resumeLanguage",
+      language: {
+        serializedName: "language",
         nullable: true,
         type: {
           name: "String"
@@ -1219,6 +1538,64 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
       wait: {
         defaultValue: "true",
         serializedName: "wait",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema",
+    modelProperties: {
+      file: {
+        serializedName: "file",
+        type: {
+          name: "Stream"
+        }
+      },
+      identifier: {
+        serializedName: "identifier",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      fileName: {
+        serializedName: "fileName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      url: {
+        serializedName: "url",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      wait: {
+        defaultValue: "true",
+        serializedName: "wait",
+        type: {
+          name: "String"
+        }
+      },
+      language: {
+        serializedName: "language",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      expiryTime: {
+        serializedName: "expiryTime",
+        nullable: true,
         type: {
           name: "String"
         }
