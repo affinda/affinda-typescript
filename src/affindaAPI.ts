@@ -467,7 +467,8 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.redactEducationDetails,
     Parameters.redactReferees,
     Parameters.redactLocations,
-    Parameters.redactDates
+    Parameters.redactDates,
+    Parameters.redactGender
   ],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.contentType, Parameters.accept1],

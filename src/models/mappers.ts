@@ -637,6 +637,13 @@ export const ResumeDataWorkExperienceItem: coreClient.CompositeMapper = {
           name: "Composite",
           className: "ResumeDataWorkExperienceItemDates"
         }
+      },
+      occupation: {
+        serializedName: "occupation",
+        type: {
+          name: "Composite",
+          className: "ResumeDataWorkExperienceItemOccupation"
+        }
       }
     }
   }
@@ -672,6 +679,84 @@ export const ResumeDataWorkExperienceItemDates: coreClient.CompositeMapper = {
         serializedName: "isCurrent",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeDataWorkExperienceItemOccupation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeDataWorkExperienceItemOccupation",
+    modelProperties: {
+      jobTitle: {
+        serializedName: "jobTitle",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      jobTitleNormalized: {
+        serializedName: "jobTitleNormalized",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      classification: {
+        serializedName: "classification",
+        type: {
+          name: "Composite",
+          className:
+            "Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification"
+        }
+      }
+    }
+  }
+};
+
+export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification",
+    modelProperties: {
+      title: {
+        serializedName: "title",
+        type: {
+          name: "String"
+        }
+      },
+      minorGroup: {
+        serializedName: "minorGroup",
+        type: {
+          name: "String"
+        }
+      },
+      subMajorGroup: {
+        serializedName: "subMajorGroup",
+        type: {
+          name: "String"
+        }
+      },
+      majorGroup: {
+        serializedName: "majorGroup",
+        type: {
+          name: "String"
+        }
+      },
+      socCode: {
+        serializedName: "socCode",
+        type: {
+          name: "Number"
         }
       }
     }
@@ -1473,6 +1558,13 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
       redactDates: {
         defaultValue: "true",
         serializedName: "redactDates",
+        type: {
+          name: "String"
+        }
+      },
+      redactGender: {
+        defaultValue: "true",
+        serializedName: "redactGender",
         type: {
           name: "String"
         }

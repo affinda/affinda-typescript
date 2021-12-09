@@ -238,6 +238,17 @@ export const redactDates: OperationParameter = {
   }
 };
 
+export const redactGender: OperationParameter = {
+  parameterPath: ["options", "redactGender"],
+  mapper: {
+    defaultValue: "true",
+    serializedName: "redactGender",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const resumeFormat: OperationParameter = {
   parameterPath: "resumeFormat",
   mapper: {

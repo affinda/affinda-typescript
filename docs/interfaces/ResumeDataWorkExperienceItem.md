@@ -10,6 +10,7 @@
 - [jobDescription](ResumeDataWorkExperienceItem.md#jobdescription)
 - [jobTitle](ResumeDataWorkExperienceItem.md#jobtitle)
 - [location](ResumeDataWorkExperienceItem.md#location)
+- [occupation](ResumeDataWorkExperienceItem.md#occupation)
 - [organization](ResumeDataWorkExperienceItem.md#organization)
 
 ## Properties
@@ -35,6 +36,12 @@ ___
 ### location
 
 • `Optional` **location**: [`Location`](Location.md)
+
+___
+
+### occupation
+
+• `Optional` **occupation**: [`ResumeDataWorkExperienceItemOccupation`](ResumeDataWorkExperienceItemOccupation.md)
 
 ___
 

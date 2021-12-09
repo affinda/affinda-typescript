@@ -20,7 +20,7 @@
 
 • `Optional` **file**: `RequestBodyType`
 
-File as binary data blob
+File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG
 
 ___
 

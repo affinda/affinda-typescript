@@ -4,6 +4,10 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [KnownEnum0](enums/KnownEnum0.md)
+
 ### Classes
 
 - [AffindaAPI](classes/AffindaAPI.md)
@@ -30,6 +34,7 @@
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
+- [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [GetAllDocumentsResults](interfaces/GetAllDocumentsResults.md)
@@ -61,6 +66,7 @@
 - [ResumeDataSkillsPropertiesItemsItem](interfaces/ResumeDataSkillsPropertiesItemsItem.md)
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
+- [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
 
 ### Type aliases
 
@@ -81,6 +87,7 @@
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
+- [Enum0](modules.md#enum0)
 
 ## Type aliases
 
@@ -217,3 +224,18 @@ ___
 Ƭ **AffindaAPIGetResumeResponse**: [`Resume`](interfaces/Resume.md)
 
 Contains response data for the getResume operation.
+
+___
+
+### Enum0
+
+Ƭ **Enum0**: `string`
+
+Defines values for Enum0. \
+[KnownEnum0](enums/KnownEnum0.md) can be used interchangeably with Enum0,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**None** \
+**Low** \
+**Mid** \
+**Upper**

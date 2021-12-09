@@ -136,7 +136,7 @@ export declare class AffindaAPIContext extends coreClient.ServiceClient {
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -157,7 +157,7 @@ export declare type AffindaAPICreateInvoiceResponse = Invoice;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateRedactedResumeOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -185,6 +185,8 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
     redactLocations?: string;
     /** Whether to redact dates */
     redactDates?: string;
+    /** Whether to redact gender */
+    redactGender?: string;
 }
 
 /** Contains response data for the createRedactedResume operation. */
@@ -192,7 +194,7 @@ export declare type AffindaAPICreateRedactedResumeResponse = RedactedResume;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateReformattedResumeOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -211,7 +213,7 @@ export declare type AffindaAPICreateReformattedResumeResponse = ReformattedResum
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateResumeOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -339,6 +341,31 @@ export declare class AffindaCredential implements TokenCredential {
     getToken(scopes: string | string[], options?: GetTokenOptions): Promise<AccessToken | null>;
 }
 
+export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification {
+    /** SOC2020 classification for this job title */
+    title?: string;
+    /** SOC2020 minor group */
+    minorGroup?: string;
+    /** SOC2020 sub major group */
+    subMajorGroup?: string;
+    /** SOC2020 major group */
+    majorGroup?: string;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    socCode?: number;
+}
+
+/**
+ * Defines values for Enum0. \
+ * {@link KnownEnum0} can be used interchangeably with Enum0,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **None** \
+ * **Low** \
+ * **Mid** \
+ * **Upper**
+ */
+export declare type Enum0 = string;
+
 export declare interface ErrorModel {
     errorCode?: string;
     errorDetail?: string;
@@ -415,6 +442,14 @@ export declare interface InvoiceData {
     supplierWebsite?: string;
 }
 
+/** Known values of {@link Enum0} that the service accepts. */
+export declare enum KnownEnum0 {
+    None = "None",
+    Low = "Low",
+    Mid = "Mid",
+    Upper = "Upper"
+}
+
 export declare interface Location {
     formatted?: string;
     postalCode?: string;
@@ -443,7 +478,7 @@ export declare interface Meta {
 }
 
 export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -470,7 +505,7 @@ export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicat
 }
 
 export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -487,7 +522,7 @@ export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDa
 }
 
 export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -513,12 +548,14 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
     redactLocations?: string;
     /** Whether to redact dates */
     redactDates?: string;
+    /** Whether to redact gender */
+    redactGender?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
 }
 
 export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -664,6 +701,7 @@ export declare interface ResumeDataWorkExperienceItem {
     location?: Location;
     jobDescription?: string;
     dates?: ResumeDataWorkExperienceItemDates;
+    occupation?: ResumeDataWorkExperienceItemOccupation;
 }
 
 export declare interface ResumeDataWorkExperienceItemDates {
@@ -671,6 +709,15 @@ export declare interface ResumeDataWorkExperienceItemDates {
     endDate?: Date;
     monthsInPosition?: number;
     isCurrent?: boolean;
+}
+
+export declare interface ResumeDataWorkExperienceItemOccupation {
+    /** The raw (not normalized) job title pulled from the work experience entry */
+    jobTitle?: string;
+    /** Mapped onto the EMSI job title taxonomy if a sufficiently close match exists. */
+    jobTitleNormalized?: string;
+    managementLevel?: Enum0;
+    classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
 export { }

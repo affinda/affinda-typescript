@@ -23,6 +23,7 @@ Optional parameters.
 - [onResponse](AffindaAPICreateRedactedResumeOptionalParams.md#onresponse)
 - [redactDates](AffindaAPICreateRedactedResumeOptionalParams.md#redactdates)
 - [redactEducationDetails](AffindaAPICreateRedactedResumeOptionalParams.md#redacteducationdetails)
+- [redactGender](AffindaAPICreateRedactedResumeOptionalParams.md#redactgender)
 - [redactHeadshot](AffindaAPICreateRedactedResumeOptionalParams.md#redactheadshot)
 - [redactLocations](AffindaAPICreateRedactedResumeOptionalParams.md#redactlocations)
 - [redactPersonalDetails](AffindaAPICreateRedactedResumeOptionalParams.md#redactpersonaldetails)
@@ -60,7 +61,7 @@ ___
 
 • `Optional` **file**: `RequestBodyType`
 
-File as binary data blob
+File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG
 
 ___
 
@@ -115,6 +116,14 @@ ___
 • `Optional` **redactEducationDetails**: `string`
 
 Whether to redact education details (e.g. university names)
+
+___
+
+### redactGender
+
+• `Optional` **redactGender**: `string`
+
+Whether to redact gender
 
 ___
 

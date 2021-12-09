@@ -13,6 +13,7 @@
 - [language](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#language)
 - [redactDates](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactdates)
 - [redactEducationDetails](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redacteducationdetails)
+- [redactGender](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactgender)
 - [redactHeadshot](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactheadshot)
 - [redactLocations](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactlocations)
 - [redactPersonalDetails](Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md#redactpersonaldetails)
@@ -35,7 +36,7 @@ ___
 
 • `Optional` **file**: `RequestBodyType`
 
-File as binary data blob
+File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG
 
 ___
 
@@ -76,6 +77,14 @@ ___
 • `Optional` **redactEducationDetails**: `string`
 
 Whether to redact education details (e.g. university names)
+
+___
+
+### redactGender
+
+• `Optional` **redactGender**: `string`
+
+Whether to redact gender
 
 ___
 
