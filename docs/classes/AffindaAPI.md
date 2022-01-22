@@ -233,7 +233,7 @@ ___
 
 ### createResumeSearch
 
-▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`AffindaAPICreateResumeSearchResponse`](../modules.md#affindaapicreateresumesearchresponse)\>
+▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 Searches through parsed resumes.
 TODO TODO TODO
@@ -244,12 +244,12 @@ When successful, returns a list of {id, pdf} in the response for subsequent use 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | [`Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema`](../interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md) | Search parameters |
+| `body` | [`ResumeSearch`](../interfaces/ResumeSearch.md) | Search parameters |
 | `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`AffindaAPICreateResumeSearchResponse`](../modules.md#affindaapicreateresumesearchresponse)\>
+`Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 ___
 

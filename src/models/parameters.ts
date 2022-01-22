@@ -4,7 +4,7 @@ import {
   OperationQueryParameter
 } from "@azure/core-client";
 import {
-  Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema as Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchemaMapper,
+  ResumeSearch as ResumeSearchMapper,
   Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema as Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchemaMapper,
   PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 } from "../models/mappers";
@@ -279,7 +279,7 @@ export const contentType1: OperationParameter = {
 
 export const body: OperationParameter = {
   parameterPath: "body",
-  mapper: Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper: ResumeSearchMapper
 };
 
 export const name: OperationParameter = {

@@ -7,7 +7,7 @@
 ### Enumerations
 
 - [KnownEnum0](enums/KnownEnum0.md)
-- [KnownPostContentSchemaHighestDegreeTypesItem](enums/KnownPostContentSchemaHighestDegreeTypesItem.md)
+- [KnownResumeSearchHighestDegreeTypesItem](enums/KnownResumeSearchHighestDegreeTypesItem.md)
 
 ### Classes
 
@@ -53,7 +53,6 @@
 - [Location](interfaces/Location.md)
 - [Meta](interfaces/Meta.md)
 - [Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
-- [Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema](interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md)
@@ -68,11 +67,6 @@
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema.md)
 - [PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md)
-- [PostContentSchemaLanguagesItem](interfaces/PostContentSchemaLanguagesItem.md)
-- [PostContentSchemaLocationsItem](interfaces/PostContentSchemaLocationsItem.md)
-- [PostContentSchemaSkillsItem](interfaces/PostContentSchemaSkillsItem.md)
-- [PostContentSchemaSocCodesItem](interfaces/PostContentSchemaSocCodesItem.md)
-- [PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates](interfaces/PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates.md)
 - [RedactedResume](interfaces/RedactedResume.md)
 - [RedactedResumeData](interfaces/RedactedResumeData.md)
 - [ReformattedResume](interfaces/ReformattedResume.md)
@@ -92,7 +86,12 @@
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
-- [ResumeSearchItem](interfaces/ResumeSearchItem.md)
+- [ResumeSearch](interfaces/ResumeSearch.md)
+- [ResumeSearchLanguagesItem](interfaces/ResumeSearchLanguagesItem.md)
+- [ResumeSearchLocationsItem](interfaces/ResumeSearchLocationsItem.md)
+- [ResumeSearchLocationsItemCoordinates](interfaces/ResumeSearchLocationsItemCoordinates.md)
+- [ResumeSearchSkillsItem](interfaces/ResumeSearchSkillsItem.md)
+- [ResumeSearchSocCodesItem](interfaces/ResumeSearchSocCodesItem.md)
 
 ### Type aliases
 
@@ -122,7 +121,7 @@
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
 - [Enum0](modules.md#enum0)
-- [PostContentSchemaHighestDegreeTypesItem](modules.md#postcontentschemahighestdegreetypesitem)
+- [ResumeSearchHighestDegreeTypesItem](modules.md#resumesearchhighestdegreetypesitem)
 
 ## Type aliases
 
@@ -176,7 +175,7 @@ ___
 
 ### AffindaAPICreateResumeSearchResponse
 
-Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearchItem`](interfaces/ResumeSearchItem.md)[]
+Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearch`](interfaces/ResumeSearch.md)
 
 Contains response data for the createResumeSearch operation.
 
@@ -341,12 +340,12 @@ Defines values for Enum0. \
 
 ___
 
-### PostContentSchemaHighestDegreeTypesItem
+### ResumeSearchHighestDegreeTypesItem
 
-Ƭ **PostContentSchemaHighestDegreeTypesItem**: `string`
+Ƭ **ResumeSearchHighestDegreeTypesItem**: `string`
 
-Defines values for PostContentSchemaHighestDegreeTypesItem. \
-[KnownPostContentSchemaHighestDegreeTypesItem](enums/KnownPostContentSchemaHighestDegreeTypesItem.md) can be used interchangeably with PostContentSchemaHighestDegreeTypesItem,
+Defines values for ResumeSearchHighestDegreeTypesItem. \
+[KnownResumeSearchHighestDegreeTypesItem](enums/KnownResumeSearchHighestDegreeTypesItem.md) can be used interchangeably with ResumeSearchHighestDegreeTypesItem,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **doctoral** \

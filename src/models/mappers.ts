@@ -1089,10 +1089,10 @@ export const ReformattedResumeData: coreClient.CompositeMapper = {
   }
 };
 
-export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const ResumeSearch: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema",
+    className: "ResumeSearch",
     modelProperties: {
       indices: {
         serializedName: "indices",
@@ -1175,7 +1175,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaLocationsItem"
+              className: "ResumeSearchLocationsItem"
             }
           }
         }
@@ -1197,7 +1197,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaSkillsItem"
+              className: "ResumeSearchSkillsItem"
             }
           }
         }
@@ -1219,7 +1219,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaLanguagesItem"
+              className: "ResumeSearchLanguagesItem"
             }
           }
         }
@@ -1352,7 +1352,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaSocCodesItem"
+              className: "ResumeSearchSocCodesItem"
             }
           }
         }
@@ -1390,10 +1390,10 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
   }
 };
 
-export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
+export const ResumeSearchLocationsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaLocationsItem",
+    className: "ResumeSearchLocationsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1405,8 +1405,7 @@ export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
         serializedName: "coordinates",
         type: {
           name: "Composite",
-          className:
-            "PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates"
+          className: "ResumeSearchLocationsItemCoordinates"
         }
       },
       distance: {
@@ -1425,11 +1424,10 @@ export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates: coreClient.CompositeMapper = {
+export const ResumeSearchLocationsItemCoordinates: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates",
+    className: "ResumeSearchLocationsItemCoordinates",
     modelProperties: {
       latitude: {
         serializedName: "latitude",
@@ -1449,10 +1447,10 @@ export const PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates
   }
 };
 
-export const PostContentSchemaSkillsItem: coreClient.CompositeMapper = {
+export const ResumeSearchSkillsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaSkillsItem",
+    className: "ResumeSearchSkillsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1470,10 +1468,10 @@ export const PostContentSchemaSkillsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const PostContentSchemaLanguagesItem: coreClient.CompositeMapper = {
+export const ResumeSearchLanguagesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaLanguagesItem",
+    className: "ResumeSearchLanguagesItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1491,37 +1489,15 @@ export const PostContentSchemaLanguagesItem: coreClient.CompositeMapper = {
   }
 };
 
-export const PostContentSchemaSocCodesItem: coreClient.CompositeMapper = {
+export const ResumeSearchSocCodesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaSocCodesItem",
+    className: "ResumeSearchSocCodesItem",
     modelProperties: {
       code: {
         serializedName: "code",
         type: {
           name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchItem",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      pdf: {
-        serializedName: "pdf",
-        type: {
-          name: "String"
         }
       }
     }

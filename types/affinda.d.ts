@@ -101,7 +101,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    createResumeSearch(body: Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    createResumeSearch(body: ResumeSearch, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
     /**
      * Returns all the indexes
      * @param options The options parameters.
@@ -304,7 +304,7 @@ export declare interface AffindaAPICreateResumeSearchOptionalParams extends core
 }
 
 /** Contains response data for the createResumeSearch operation. */
-export declare type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
+export declare type AffindaAPICreateResumeSearchResponse = ResumeSearch;
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteIndexDocumentOptionalParams extends coreClient.OperationOptions {
@@ -559,8 +559,8 @@ export declare enum KnownEnum0 {
     Upper = "Upper"
 }
 
-/** Known values of {@link PostContentSchemaHighestDegreeTypesItem} that the service accepts. */
-export declare enum KnownPostContentSchemaHighestDegreeTypesItem {
+/** Known values of {@link ResumeSearchHighestDegreeTypesItem} that the service accepts. */
+export declare enum KnownResumeSearchHighestDegreeTypesItem {
     Doctoral = "doctoral",
     Masters = "masters",
     Bachelors = "bachelors",
@@ -597,43 +597,6 @@ export declare interface Meta {
 
 export declare interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
     name?: string;
-}
-
-export declare interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
-    indices?: string[];
-    jobTitles?: string[];
-    jobTitlesCurrentOnly?: boolean;
-    jobTitlesRequired?: boolean;
-    jobTitlesWeight?: number;
-    yearsExperienceMin?: number;
-    yearsExperienceMax?: number;
-    yearsExperienceRequired?: boolean;
-    yearsExperienceWeight?: number;
-    locations?: PostContentSchemaLocationsItem[];
-    locationsWeight?: number;
-    skills?: PostContentSchemaSkillsItem[];
-    skillsWeight?: number;
-    languages?: PostContentSchemaLanguagesItem[];
-    languagesWeight?: number;
-    institutions?: string[];
-    institutionsRequired?: boolean;
-    degrees?: string[];
-    degreesRequired?: boolean;
-    highestDegreeTypes?: PostContentSchemaHighestDegreeTypesItem[];
-    highestDegreeTypesRequired?: boolean;
-    isCurrentStudent?: boolean;
-    isCurrentStudentRequired?: boolean;
-    isRecentGraduate?: boolean;
-    isRecentGraduateRequired?: boolean;
-    educationWeight?: number;
-    searchExpression?: string;
-    searchExpressionRequired?: boolean;
-    searchExpressionWeight?: number;
-    socCodes?: PostContentSchemaSocCodesItem[];
-    socCodesRequired?: boolean;
-    managementLevel?: number;
-    managementLevelRequired?: boolean;
-    managementLevelWeight?: number;
 }
 
 export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
@@ -776,45 +739,6 @@ export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMult
     resumeFormat: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-}
-
-/**
- * Defines values for PostContentSchemaHighestDegreeTypesItem. \
- * {@link KnownPostContentSchemaHighestDegreeTypesItem} can be used interchangeably with PostContentSchemaHighestDegreeTypesItem,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **doctoral** \
- * **masters** \
- * **bachelors** \
- * **certificate** \
- * **school**
- */
-export declare type PostContentSchemaHighestDegreeTypesItem = string;
-
-export declare interface PostContentSchemaLanguagesItem {
-    name?: string;
-    required?: boolean;
-}
-
-export declare interface PostContentSchemaLocationsItem {
-    name?: string;
-    coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
-    distance?: number;
-    unit?: string;
-}
-
-export declare interface PostContentSchemaSkillsItem {
-    name?: string;
-    required?: boolean;
-}
-
-export declare interface PostContentSchemaSocCodesItem {
-    code?: number;
-}
-
-export declare interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
-    latitude?: number;
-    longitude?: number;
 }
 
 export declare interface RedactedResume {
@@ -966,10 +890,80 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
-export declare interface ResumeSearchItem {
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    pdf?: string;
+export declare interface ResumeSearch {
+    indices?: string[];
+    jobTitles?: string[];
+    jobTitlesCurrentOnly?: boolean;
+    jobTitlesRequired?: boolean;
+    jobTitlesWeight?: number;
+    yearsExperienceMin?: number;
+    yearsExperienceMax?: number;
+    yearsExperienceRequired?: boolean;
+    yearsExperienceWeight?: number;
+    locations?: ResumeSearchLocationsItem[];
+    locationsWeight?: number;
+    skills?: ResumeSearchSkillsItem[];
+    skillsWeight?: number;
+    languages?: ResumeSearchLanguagesItem[];
+    languagesWeight?: number;
+    institutions?: string[];
+    institutionsRequired?: boolean;
+    degrees?: string[];
+    degreesRequired?: boolean;
+    highestDegreeTypes?: ResumeSearchHighestDegreeTypesItem[];
+    highestDegreeTypesRequired?: boolean;
+    isCurrentStudent?: boolean;
+    isCurrentStudentRequired?: boolean;
+    isRecentGraduate?: boolean;
+    isRecentGraduateRequired?: boolean;
+    educationWeight?: number;
+    searchExpression?: string;
+    searchExpressionRequired?: boolean;
+    searchExpressionWeight?: number;
+    socCodes?: ResumeSearchSocCodesItem[];
+    socCodesRequired?: boolean;
+    managementLevel?: number;
+    managementLevelRequired?: boolean;
+    managementLevelWeight?: number;
+}
+
+/**
+ * Defines values for ResumeSearchHighestDegreeTypesItem. \
+ * {@link KnownResumeSearchHighestDegreeTypesItem} can be used interchangeably with ResumeSearchHighestDegreeTypesItem,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **doctoral** \
+ * **masters** \
+ * **bachelors** \
+ * **certificate** \
+ * **school**
+ */
+export declare type ResumeSearchHighestDegreeTypesItem = string;
+
+export declare interface ResumeSearchLanguagesItem {
+    name?: string;
+    required?: boolean;
+}
+
+export declare interface ResumeSearchLocationsItem {
+    name?: string;
+    coordinates?: ResumeSearchLocationsItemCoordinates;
+    distance?: number;
+    unit?: string;
+}
+
+export declare interface ResumeSearchLocationsItemCoordinates {
+    latitude?: number;
+    longitude?: number;
+}
+
+export declare interface ResumeSearchSkillsItem {
+    name?: string;
+    required?: boolean;
+}
+
+export declare interface ResumeSearchSocCodesItem {
+    code?: number;
 }
 
 export { }

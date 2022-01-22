@@ -222,7 +222,7 @@ export interface ReformattedResumeData {
   reformattedFile?: string;
 }
 
-export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
+export interface ResumeSearch {
   indices?: string[];
   jobTitles?: string[];
   jobTitlesCurrentOnly?: boolean;
@@ -232,17 +232,17 @@ export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
   yearsExperienceMax?: number;
   yearsExperienceRequired?: boolean;
   yearsExperienceWeight?: number;
-  locations?: PostContentSchemaLocationsItem[];
+  locations?: ResumeSearchLocationsItem[];
   locationsWeight?: number;
-  skills?: PostContentSchemaSkillsItem[];
+  skills?: ResumeSearchSkillsItem[];
   skillsWeight?: number;
-  languages?: PostContentSchemaLanguagesItem[];
+  languages?: ResumeSearchLanguagesItem[];
   languagesWeight?: number;
   institutions?: string[];
   institutionsRequired?: boolean;
   degrees?: string[];
   degreesRequired?: boolean;
-  highestDegreeTypes?: PostContentSchemaHighestDegreeTypesItem[];
+  highestDegreeTypes?: ResumeSearchHighestDegreeTypesItem[];
   highestDegreeTypesRequired?: boolean;
   isCurrentStudent?: boolean;
   isCurrentStudentRequired?: boolean;
@@ -252,43 +252,37 @@ export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
   searchExpression?: string;
   searchExpressionRequired?: boolean;
   searchExpressionWeight?: number;
-  socCodes?: PostContentSchemaSocCodesItem[];
+  socCodes?: ResumeSearchSocCodesItem[];
   socCodesRequired?: boolean;
   managementLevel?: number;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
 }
 
-export interface PostContentSchemaLocationsItem {
+export interface ResumeSearchLocationsItem {
   name?: string;
-  coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
+  coordinates?: ResumeSearchLocationsItemCoordinates;
   distance?: number;
   unit?: string;
 }
 
-export interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
+export interface ResumeSearchLocationsItemCoordinates {
   latitude?: number;
   longitude?: number;
 }
 
-export interface PostContentSchemaSkillsItem {
+export interface ResumeSearchSkillsItem {
   name?: string;
   required?: boolean;
 }
 
-export interface PostContentSchemaLanguagesItem {
+export interface ResumeSearchLanguagesItem {
   name?: string;
   required?: boolean;
 }
 
-export interface PostContentSchemaSocCodesItem {
+export interface ResumeSearchSocCodesItem {
   code?: number;
-}
-
-export interface ResumeSearchItem {
-  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-  identifier?: string;
-  pdf?: string;
 }
 
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
@@ -501,8 +495,8 @@ export enum KnownEnum0 {
  */
 export type Enum0 = string;
 
-/** Known values of {@link PostContentSchemaHighestDegreeTypesItem} that the service accepts. */
-export enum KnownPostContentSchemaHighestDegreeTypesItem {
+/** Known values of {@link ResumeSearchHighestDegreeTypesItem} that the service accepts. */
+export enum KnownResumeSearchHighestDegreeTypesItem {
   Doctoral = "doctoral",
   Masters = "masters",
   Bachelors = "bachelors",
@@ -511,8 +505,8 @@ export enum KnownPostContentSchemaHighestDegreeTypesItem {
 }
 
 /**
- * Defines values for PostContentSchemaHighestDegreeTypesItem. \
- * {@link KnownPostContentSchemaHighestDegreeTypesItem} can be used interchangeably with PostContentSchemaHighestDegreeTypesItem,
+ * Defines values for ResumeSearchHighestDegreeTypesItem. \
+ * {@link KnownResumeSearchHighestDegreeTypesItem} can be used interchangeably with ResumeSearchHighestDegreeTypesItem,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **doctoral** \
@@ -521,7 +515,7 @@ export enum KnownPostContentSchemaHighestDegreeTypesItem {
  * **certificate** \
  * **school**
  */
-export type PostContentSchemaHighestDegreeTypesItem = string;
+export type ResumeSearchHighestDegreeTypesItem = string;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
@@ -678,7 +672,7 @@ export interface AffindaAPICreateResumeSearchOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createResumeSearch operation. */
-export type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
+export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
