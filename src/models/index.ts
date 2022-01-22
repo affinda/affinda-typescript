@@ -222,6 +222,123 @@ export interface ReformattedResumeData {
   reformattedFile?: string;
 }
 
+export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
+  indices?: string[];
+  jobTitles?: string[];
+  jobTitlesCurrentOnly?: boolean;
+  jobTitlesRequired?: boolean;
+  jobTitlesWeight?: number;
+  yearsExperienceMin?: number;
+  yearsExperienceMax?: number;
+  yearsExperienceRequired?: boolean;
+  yearsExperienceWeight?: number;
+  locations?: PostContentSchemaLocationsItem[];
+  locationsWeight?: number;
+  skills?: PostContentSchemaSkillsItem[];
+  skillsWeight?: number;
+  languages?: PostContentSchemaLanguagesItem[];
+  languagesWeight?: number;
+  institutions?: string[];
+  institutionsRequired?: boolean;
+  degrees?: string[];
+  degreesRequired?: boolean;
+  highestDegreeTypes?: PostContentSchemaHighestDegreeTypesItem[];
+  highestDegreeTypesRequired?: boolean;
+  isCurrentStudent?: boolean;
+  isCurrentStudentRequired?: boolean;
+  isRecentGraduate?: boolean;
+  isRecentGraduateRequired?: boolean;
+  educationWeight?: number;
+  searchExpression?: string;
+  searchExpressionRequired?: boolean;
+  searchExpressionWeight?: number;
+  socCodes?: PostContentSchemaSocCodesItem[];
+  socCodesRequired?: boolean;
+  managementLevel?: number;
+  managementLevelRequired?: boolean;
+  managementLevelWeight?: number;
+}
+
+export interface PostContentSchemaLocationsItem {
+  name?: string;
+  coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
+  distance?: number;
+  unit?: string;
+}
+
+export interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
+  latitude?: number;
+  longitude?: number;
+}
+
+export interface PostContentSchemaSkillsItem {
+  name?: string;
+  required?: boolean;
+}
+
+export interface PostContentSchemaLanguagesItem {
+  name?: string;
+  required?: boolean;
+}
+
+export interface PostContentSchemaSocCodesItem {
+  code?: number;
+}
+
+export interface ResumeSearchItem {
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  identifier?: string;
+  pdf?: string;
+}
+
+export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
+  /** Number of indexes in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+}
+
+export interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+  name?: string;
+}
+
+export interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
+  name?: string;
+}
+
+export interface Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema {
+  name?: string;
+}
+
+export interface PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema {
+  name?: string;
+}
+
+export interface PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
+  /** Number of indexed documents in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+}
+
+export interface PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+  document?: string;
+}
+
+export interface PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
+  document?: string;
+}
+
+export interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
+  document?: string;
+}
+
 export interface GetAllInvoicesResults {
   /** Number of documents in result */
   count?: number;
@@ -343,6 +460,10 @@ export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFor
   wait?: string;
 }
 
+export interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
+  name?: string;
+}
+
 export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -379,6 +500,28 @@ export enum KnownEnum0 {
  * **Upper**
  */
 export type Enum0 = string;
+
+/** Known values of {@link PostContentSchemaHighestDegreeTypesItem} that the service accepts. */
+export enum KnownPostContentSchemaHighestDegreeTypesItem {
+  Doctoral = "doctoral",
+  Masters = "masters",
+  Bachelors = "bachelors",
+  Certificate = "certificate",
+  School = "school"
+}
+
+/**
+ * Defines values for PostContentSchemaHighestDegreeTypesItem. \
+ * {@link KnownPostContentSchemaHighestDegreeTypesItem} can be used interchangeably with PostContentSchemaHighestDegreeTypesItem,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **doctoral** \
+ * **masters** \
+ * **bachelors** \
+ * **certificate** \
+ * **school**
+ */
+export type PostContentSchemaHighestDegreeTypesItem = string;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
@@ -529,6 +672,64 @@ export interface AffindaAPIDeleteReformattedResumeOptionalParams
 
 /** Contains response data for the deleteReformattedResume operation. */
 export type AffindaAPIDeleteReformattedResumeResponse = RequestError;
+
+/** Optional parameters. */
+export interface AffindaAPICreateResumeSearchOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createResumeSearch operation. */
+export type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllIndexesOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAllIndexes operation. */
+export type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPICreateIndexOptionalParams
+  extends coreClient.OperationOptions {
+  name?: string;
+}
+
+/** Contains response data for the createIndex operation. */
+export type AffindaAPICreateIndexResponse = Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateIndexOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateIndex operation. */
+export type AffindaAPIUpdateIndexResponse = PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteIndexOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the deleteIndex operation. */
+export type AffindaAPIDeleteIndexResponse = RequestError;
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllIndexDocumentsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAllIndexDocuments operation. */
+export type AffindaAPIGetAllIndexDocumentsResponse = PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPICreateIndexDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createIndexDocument operation. */
+export type AffindaAPICreateIndexDocumentResponse = PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteIndexDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the deleteIndexDocument operation. */
+export type AffindaAPIDeleteIndexDocumentResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllInvoicesOptionalParams

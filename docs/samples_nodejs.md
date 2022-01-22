@@ -277,6 +277,9 @@ client.deleteReformattedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
+Resume Search
+-------------
+
 Invoice Parser
 --------------
 

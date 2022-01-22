@@ -23,14 +23,21 @@
 
 ### Methods
 
+- [createIndex](AffindaAPI.md#createindex)
+- [createIndexDocument](AffindaAPI.md#createindexdocument)
 - [createInvoice](AffindaAPI.md#createinvoice)
 - [createRedactedResume](AffindaAPI.md#createredactedresume)
 - [createReformattedResume](AffindaAPI.md#createreformattedresume)
 - [createResume](AffindaAPI.md#createresume)
+- [createResumeSearch](AffindaAPI.md#createresumesearch)
+- [deleteIndex](AffindaAPI.md#deleteindex)
+- [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
 - [deleteInvoice](AffindaAPI.md#deleteinvoice)
 - [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
 - [deleteReformattedResume](AffindaAPI.md#deletereformattedresume)
 - [deleteResume](AffindaAPI.md#deleteresume)
+- [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
+- [getAllIndexes](AffindaAPI.md#getallindexes)
 - [getAllInvoices](AffindaAPI.md#getallinvoices)
 - [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
 - [getAllReformattedResumes](AffindaAPI.md#getallreformattedresumes)
@@ -42,6 +49,7 @@
 - [getResume](AffindaAPI.md#getresume)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
+- [updateIndex](AffindaAPI.md#updateindex)
 
 ## Constructors
 
@@ -105,6 +113,44 @@ The pipeline used by this client to make requests
 [AffindaAPIContext](AffindaAPIContext.md).[pipeline](AffindaAPIContext.md#pipeline)
 
 ## Methods
+
+### createIndex
+
+▸ **createIndex**(`options?`): `Promise`<[`Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)\>
+
+Create an index for the search tool
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateIndexOptionalParams`](../interfaces/AffindaAPICreateIndexOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)\>
+
+___
+
+### createIndexDocument
+
+▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`<[`PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+
+Create an indexed document for the search tool
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `body` | [`PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md) | Document to index |
+| `options?` | [`AffindaAPICreateIndexDocumentOptionalParams`](../interfaces/AffindaAPICreateIndexDocumentOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+
+___
 
 ### createInvoice
 
@@ -185,6 +231,67 @@ results.
 
 ___
 
+### createResumeSearch
+
+▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`AffindaAPICreateResumeSearchResponse`](../modules.md#affindaapicreateresumesearchresponse)\>
+
+Searches through parsed resumes.
+TODO TODO TODO
+When successful, returns a list of {id, pdf} in the response for subsequent use with the
+[/resumes/{identifier}](#operation/getResume) endpoint to retrieve the resumes.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema`](../interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md) | Search parameters |
+| `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPICreateResumeSearchResponse`](../modules.md#affindaapicreateresumesearchresponse)\>
+
+___
+
+### deleteIndex
+
+▸ **deleteIndex**(`name`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+Deletes the specified index from the database
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `options?` | [`AffindaAPIDeleteIndexOptionalParams`](../interfaces/AffindaAPIDeleteIndexOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+___
+
+### deleteIndexDocument
+
+▸ **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+Delete the specified indexed document from the database
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `identifier` | ``null`` \| `string` | Document identifier |
+| `options?` | [`AffindaAPIDeleteIndexDocumentOptionalParams`](../interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+___
+
 ### deleteInvoice
 
 ▸ **deleteInvoice**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
@@ -258,6 +365,43 @@ Deletes the specified resume from the database
 #### Returns
 
 `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+___
+
+### getAllIndexDocuments
+
+▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`<[`PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+
+Returns all the indexed documents for that index
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `options?` | [`AffindaAPIGetAllIndexDocumentsOptionalParams`](../interfaces/AffindaAPIGetAllIndexDocumentsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+
+___
+
+### getAllIndexes
+
+▸ **getAllIndexes**(`options?`): `Promise`<[`Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)\>
+
+Returns all the indexes
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetAllIndexesOptionalParams`](../interfaces/AffindaAPIGetAllIndexesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
@@ -483,3 +627,23 @@ Send the provided httpRequest.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[sendRequest](AffindaAPIContext.md#sendrequest)
+
+___
+
+### updateIndex
+
+▸ **updateIndex**(`name`, `body`, `options?`): `Promise`<[`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](../interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)\>
+
+Updates the specified index name to a new one
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `body` | [`Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema`](../interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md) | New Index name |
+| `options?` | [`AffindaAPIUpdateIndexOptionalParams`](../interfaces/AffindaAPIUpdateIndexOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](../interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)\>

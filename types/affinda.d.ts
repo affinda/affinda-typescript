@@ -94,6 +94,58 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteReformattedResume(identifier: string | null, options?: AffindaAPIDeleteReformattedResumeOptionalParams): Promise<AffindaAPIDeleteReformattedResumeResponse>;
     /**
+     * Searches through parsed resumes.
+     * TODO TODO TODO
+     * When successful, returns a list of {id, pdf} in the response for subsequent use with the
+     * [/resumes/{identifier}](#operation/getResume) endpoint to retrieve the resumes.
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    createResumeSearch(body: Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    /**
+     * Returns all the indexes
+     * @param options The options parameters.
+     */
+    getAllIndexes(options?: AffindaAPIGetAllIndexesOptionalParams): Promise<AffindaAPIGetAllIndexesResponse>;
+    /**
+     * Create an index for the search tool
+     * @param options The options parameters.
+     */
+    createIndex(options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
+    /**
+     * Updates the specified index name to a new one
+     * @param name Index name
+     * @param body New Index name
+     * @param options The options parameters.
+     */
+    updateIndex(name: string, body: Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema, options?: AffindaAPIUpdateIndexOptionalParams): Promise<AffindaAPIUpdateIndexResponse>;
+    /**
+     * Deletes the specified index from the database
+     * @param name Index name
+     * @param options The options parameters.
+     */
+    deleteIndex(name: string, options?: AffindaAPIDeleteIndexOptionalParams): Promise<AffindaAPIDeleteIndexResponse>;
+    /**
+     * Returns all the indexed documents for that index
+     * @param name Index name
+     * @param options The options parameters.
+     */
+    getAllIndexDocuments(name: string, options?: AffindaAPIGetAllIndexDocumentsOptionalParams): Promise<AffindaAPIGetAllIndexDocumentsResponse>;
+    /**
+     * Create an indexed document for the search tool
+     * @param name Index name
+     * @param body Document to index
+     * @param options The options parameters.
+     */
+    createIndexDocument(name: string, body: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateIndexDocumentOptionalParams): Promise<AffindaAPICreateIndexDocumentResponse>;
+    /**
+     * Delete the specified indexed document from the database
+     * @param name Index name
+     * @param identifier Document identifier
+     * @param options The options parameters.
+     */
+    deleteIndexDocument(name: string, identifier: string | null, options?: AffindaAPIDeleteIndexDocumentOptionalParams): Promise<AffindaAPIDeleteIndexDocumentResponse>;
+    /**
      * Returns all the invoice summaries for that user, limited to 300 per page.
      * @param options The options parameters.
      */
@@ -133,6 +185,21 @@ export declare class AffindaAPIContext extends coreClient.ServiceClient {
      */
     constructor(credentials: coreAuth.TokenCredential, options?: AffindaAPIOptionalParams);
 }
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateIndexDocumentOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createIndexDocument operation. */
+export declare type AffindaAPICreateIndexDocumentResponse = PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateIndexOptionalParams extends coreClient.OperationOptions {
+    name?: string;
+}
+
+/** Contains response data for the createIndex operation. */
+export declare type AffindaAPICreateIndexResponse = Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClient.OperationOptions {
@@ -233,6 +300,27 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
 export declare type AffindaAPICreateResumeResponse = Resume;
 
 /** Optional parameters. */
+export declare interface AffindaAPICreateResumeSearchOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createResumeSearch operation. */
+export declare type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
+
+/** Optional parameters. */
+export declare interface AffindaAPIDeleteIndexDocumentOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the deleteIndexDocument operation. */
+export declare type AffindaAPIDeleteIndexDocumentResponse = RequestError;
+
+/** Optional parameters. */
+export declare interface AffindaAPIDeleteIndexOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the deleteIndex operation. */
+export declare type AffindaAPIDeleteIndexResponse = RequestError;
+
+/** Optional parameters. */
 export declare interface AffindaAPIDeleteInvoiceOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -259,6 +347,20 @@ export declare interface AffindaAPIDeleteResumeOptionalParams extends coreClient
 
 /** Contains response data for the deleteResume operation. */
 export declare type AffindaAPIDeleteResumeResponse = RequestError;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAllIndexDocumentsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllIndexDocuments operation. */
+export declare type AffindaAPIGetAllIndexDocumentsResponse = PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllIndexes operation. */
+export declare type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllInvoicesOptionalParams extends coreClient.OperationOptions {
@@ -334,6 +436,13 @@ export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClie
     /** Overrides client endpoint. */
     endpoint?: string;
 }
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateIndexOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateIndex operation. */
+export declare type AffindaAPIUpdateIndexResponse = PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema;
 
 export declare class AffindaCredential implements TokenCredential {
     token: string;
@@ -450,6 +559,15 @@ export declare enum KnownEnum0 {
     Upper = "Upper"
 }
 
+/** Known values of {@link PostContentSchemaHighestDegreeTypesItem} that the service accepts. */
+export declare enum KnownPostContentSchemaHighestDegreeTypesItem {
+    Doctoral = "doctoral",
+    Masters = "masters",
+    Bachelors = "bachelors",
+    Certificate = "certificate",
+    School = "school"
+}
+
 export declare interface Location {
     formatted?: string;
     postalCode?: string;
@@ -477,6 +595,47 @@ export declare interface Meta {
     expiryTime?: string;
 }
 
+export declare interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+    name?: string;
+}
+
+export declare interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
+    indices?: string[];
+    jobTitles?: string[];
+    jobTitlesCurrentOnly?: boolean;
+    jobTitlesRequired?: boolean;
+    jobTitlesWeight?: number;
+    yearsExperienceMin?: number;
+    yearsExperienceMax?: number;
+    yearsExperienceRequired?: boolean;
+    yearsExperienceWeight?: number;
+    locations?: PostContentSchemaLocationsItem[];
+    locationsWeight?: number;
+    skills?: PostContentSchemaSkillsItem[];
+    skillsWeight?: number;
+    languages?: PostContentSchemaLanguagesItem[];
+    languagesWeight?: number;
+    institutions?: string[];
+    institutionsRequired?: boolean;
+    degrees?: string[];
+    degreesRequired?: boolean;
+    highestDegreeTypes?: PostContentSchemaHighestDegreeTypesItem[];
+    highestDegreeTypesRequired?: boolean;
+    isCurrentStudent?: boolean;
+    isCurrentStudentRequired?: boolean;
+    isRecentGraduate?: boolean;
+    isRecentGraduateRequired?: boolean;
+    educationWeight?: number;
+    searchExpression?: string;
+    searchExpressionRequired?: boolean;
+    searchExpressionWeight?: number;
+    socCodes?: PostContentSchemaSocCodesItem[];
+    socCodesRequired?: boolean;
+    managementLevel?: number;
+    managementLevelRequired?: boolean;
+    managementLevelWeight?: number;
+}
+
 export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
@@ -494,6 +653,14 @@ export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartForm
     expiryTime?: string;
 }
 
+export declare interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
+    name?: string;
+}
+
+export declare interface Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema {
+    name?: string;
+}
+
 export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema {
     /** Number of documents in result */
     count?: number;
@@ -502,6 +669,16 @@ export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicat
     /** URL to request previous page of results */
     previous?: string;
     results?: Get200ApplicationJsonPropertiesItemsItem[];
+}
+
+export declare interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
+    /** Number of indexes in result */
+    count?: number;
+    /** URL to request next page of results */
+    next?: string;
+    /** URL to request previous page of results */
+    previous?: string;
+    results?: Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
 }
 
 export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -554,6 +731,36 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
     expiryTime?: string;
 }
 
+export declare interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
+    document?: string;
+}
+
+export declare interface PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema {
+    name?: string;
+}
+
+export declare interface PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
+    document?: string;
+}
+
+export declare interface PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+    document?: string;
+}
+
+export declare interface PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
+    /** Number of indexed documents in result */
+    count?: number;
+    /** URL to request next page of results */
+    next?: string;
+    /** URL to request previous page of results */
+    previous?: string;
+    results?: PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+}
+
+export declare interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
+    name?: string;
+}
+
 export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
@@ -569,6 +776,45 @@ export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMult
     resumeFormat: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
+}
+
+/**
+ * Defines values for PostContentSchemaHighestDegreeTypesItem. \
+ * {@link KnownPostContentSchemaHighestDegreeTypesItem} can be used interchangeably with PostContentSchemaHighestDegreeTypesItem,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **doctoral** \
+ * **masters** \
+ * **bachelors** \
+ * **certificate** \
+ * **school**
+ */
+export declare type PostContentSchemaHighestDegreeTypesItem = string;
+
+export declare interface PostContentSchemaLanguagesItem {
+    name?: string;
+    required?: boolean;
+}
+
+export declare interface PostContentSchemaLocationsItem {
+    name?: string;
+    coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
+    distance?: number;
+    unit?: string;
+}
+
+export declare interface PostContentSchemaSkillsItem {
+    name?: string;
+    required?: boolean;
+}
+
+export declare interface PostContentSchemaSocCodesItem {
+    code?: number;
+}
+
+export declare interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
+    latitude?: number;
+    longitude?: number;
 }
 
 export declare interface RedactedResume {
@@ -718,6 +964,12 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     jobTitleNormalized?: string;
     managementLevel?: Enum0;
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
+}
+
+export declare interface ResumeSearchItem {
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    pdf?: string;
 }
 
 export { }
