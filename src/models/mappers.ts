@@ -1421,7 +1421,8 @@ export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
       unit: {
         serializedName: "unit",
         type: {
-          name: "String"
+          name: "Enum",
+          allowedValues: ["km", "mi"]
         }
       }
     }

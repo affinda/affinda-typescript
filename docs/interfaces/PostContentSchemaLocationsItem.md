@@ -33,4 +33,4 @@ ___
 
 ### unit
 
-• `Optional` **unit**: `string`
+• `Optional` **unit**: [`SearchLocationUnit`](../modules.md#searchlocationunit)

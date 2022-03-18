@@ -780,7 +780,7 @@ export declare interface PostContentSchemaLocationsItem {
     name?: string;
     coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
     distance?: number;
-    unit?: string;
+    unit?: SearchLocationUnit;
 }
 
 export declare interface PostContentSchemaSkillsItem {
@@ -951,5 +951,8 @@ export declare interface ResumeSearchItem {
     identifier?: string;
     pdf?: string;
 }
+
+/** Defines values for SearchLocationUnit. */
+export declare type SearchLocationUnit = "km" | "mi";
 
 export { }

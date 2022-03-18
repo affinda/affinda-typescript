@@ -120,6 +120,7 @@
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
 - [ManagementLevel](modules.md#managementlevel)
+- [SearchLocationUnit](modules.md#searchlocationunit)
 
 ## Type aliases
 
@@ -336,3 +337,11 @@ ___
 Ƭ **ManagementLevel**: ``"None"`` \| ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
 
 Defines values for ManagementLevel.
+
+___
+
+### SearchLocationUnit
+
+Ƭ **SearchLocationUnit**: ``"km"`` \| ``"mi"``
+
+Defines values for SearchLocationUnit.

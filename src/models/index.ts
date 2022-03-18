@@ -264,7 +264,7 @@ export interface PostContentSchemaLocationsItem {
   name?: string;
   coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
   distance?: number;
-  unit?: string;
+  unit?: SearchLocationUnit;
 }
 
 export interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
@@ -490,6 +490,8 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
 
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
+/** Defines values for SearchLocationUnit. */
+export type SearchLocationUnit = "km" | "mi";
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
