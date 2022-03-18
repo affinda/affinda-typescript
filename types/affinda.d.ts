@@ -959,6 +959,7 @@ export declare interface ResumeSearchResult {
     languages?: ResumeSearchScoreComponent;
     location?: ResumeSearchScoreComponent;
     education?: ResumeSearchScoreComponent;
+    occupationGroup?: ResumeSearchScoreComponent;
 }
 
 export declare interface ResumeSearchScoreComponent {

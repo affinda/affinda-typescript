@@ -1589,6 +1589,13 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
           name: "Composite",
           className: "ResumeSearchScoreComponent"
         }
+      },
+      occupationGroup: {
+        serializedName: "occupationGroup",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
       }
     }
   }

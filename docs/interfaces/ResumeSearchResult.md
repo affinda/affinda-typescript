@@ -14,6 +14,7 @@
 - [location](ResumeSearchResult.md#location)
 - [managementLevel](ResumeSearchResult.md#managementlevel)
 - [name](ResumeSearchResult.md#name)
+- [occupationGroup](ResumeSearchResult.md#occupationgroup)
 - [pdf](ResumeSearchResult.md#pdf)
 - [score](ResumeSearchResult.md#score)
 - [skills](ResumeSearchResult.md#skills)
@@ -67,6 +68,12 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### occupationGroup
+
+• `Optional` **occupationGroup**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
