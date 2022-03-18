@@ -286,7 +286,22 @@ export interface ResumeSearchParametersLanguagesItem {
 export interface ResumeSearchResult {
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
+  score?: number;
   pdf?: string;
+  name?: string;
+  jobTitle?: ResumeSearchScoreComponent;
+  managementLevel?: ResumeSearchScoreComponent;
+  experience?: ResumeSearchScoreComponent;
+  skills?: ResumeSearchScoreComponent;
+  languages?: ResumeSearchScoreComponent;
+  location?: ResumeSearchScoreComponent;
+  education?: ResumeSearchScoreComponent;
+}
+
+export interface ResumeSearchScoreComponent {
+  label?: string;
+  value?: string;
+  score?: number;
 }
 
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
@@ -486,7 +501,7 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
 }
 
 /** Defines values for ManagementLevel. */
-export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
+export type ManagementLevel = "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
 export type SearchLocationUnit = "km" | "mi";
 /** Defines values for EducationLevel. */

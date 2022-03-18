@@ -89,6 +89,7 @@
 - [ResumeSearchParametersLocationsItemCoordinates](interfaces/ResumeSearchParametersLocationsItemCoordinates.md)
 - [ResumeSearchParametersSkillsItem](interfaces/ResumeSearchParametersSkillsItem.md)
 - [ResumeSearchResult](interfaces/ResumeSearchResult.md)
+- [ResumeSearchScoreComponent](interfaces/ResumeSearchScoreComponent.md)
 
 ### Type aliases
 
@@ -342,7 +343,7 @@ ___
 
 ### ManagementLevel
 
-Ƭ **ManagementLevel**: ``"None"`` \| ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
+Ƭ **ManagementLevel**: ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
 
 Defines values for ManagementLevel.
 

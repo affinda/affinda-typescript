@@ -709,7 +709,7 @@ export const ResumeDataWorkExperienceItemOccupation: coreClient.CompositeMapper 
         nullable: true,
         type: {
           name: "Enum",
-          allowedValues: ["None", "Low", "Mid", "Upper"]
+          allowedValues: ["Low", "Mid", "Upper"]
         }
       },
       classification: {
@@ -1388,7 +1388,7 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Enum",
-          allowedValues: ["None", "Low", "Mid", "Upper"]
+          allowedValues: ["Low", "Mid", "Upper"]
         }
       },
       managementLevelRequired: {
@@ -1523,10 +1523,98 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      score: {
+        serializedName: "score",
+        type: {
+          name: "Number"
+        }
+      },
       pdf: {
         serializedName: "pdf",
         type: {
           name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      jobTitle: {
+        serializedName: "jobTitle",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      experience: {
+        serializedName: "experience",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      education: {
+        serializedName: "education",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchScoreComponent",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        type: {
+          name: "String"
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        type: {
+          name: "Number"
         }
       }
     }

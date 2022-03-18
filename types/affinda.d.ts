@@ -567,7 +567,7 @@ export declare interface Location {
 }
 
 /** Defines values for ManagementLevel. */
-export declare type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
+export declare type ManagementLevel = "Low" | "Mid" | "Upper";
 
 export declare interface Meta {
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
@@ -949,7 +949,22 @@ export declare interface ResumeSearchParametersSkillsItem {
 export declare interface ResumeSearchResult {
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
+    score?: number;
     pdf?: string;
+    name?: string;
+    jobTitle?: ResumeSearchScoreComponent;
+    managementLevel?: ResumeSearchScoreComponent;
+    experience?: ResumeSearchScoreComponent;
+    skills?: ResumeSearchScoreComponent;
+    languages?: ResumeSearchScoreComponent;
+    location?: ResumeSearchScoreComponent;
+    education?: ResumeSearchScoreComponent;
+}
+
+export declare interface ResumeSearchScoreComponent {
+    label?: string;
+    value?: string;
+    score?: number;
 }
 
 /** Defines values for SearchLocationUnit. */
