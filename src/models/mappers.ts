@@ -708,7 +708,8 @@ export const ResumeDataWorkExperienceItemOccupation: coreClient.CompositeMapper 
         serializedName: "managementLevel",
         nullable: true,
         type: {
-          name: "String"
+          name: "Enum",
+          allowedValues: ["None", "Low", "Mid", "Upper"]
         }
       },
       classification: {
@@ -1089,10 +1090,10 @@ export const ReformattedResumeData: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearch: coreClient.CompositeMapper = {
+export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearch",
+    className: "Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema",
     modelProperties: {
       indices: {
         serializedName: "indices",
@@ -1140,14 +1141,12 @@ export const ResumeSearch: coreClient.CompositeMapper = {
       },
       yearsExperienceMin: {
         serializedName: "yearsExperienceMin",
-        nullable: true,
         type: {
           name: "Number"
         }
       },
       yearsExperienceMax: {
         serializedName: "yearsExperienceMax",
-        nullable: true,
         type: {
           name: "Number"
         }
@@ -1175,7 +1174,7 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchLocationsItem"
+              className: "PostContentSchemaLocationsItem"
             }
           }
         }
@@ -1190,6 +1189,12 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           name: "Number"
         }
       },
+      locationsRequired: {
+        serializedName: "locationsRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
       skills: {
         serializedName: "skills",
         type: {
@@ -1197,7 +1202,7 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchSkillsItem"
+              className: "PostContentSchemaSkillsItem"
             }
           }
         }
@@ -1219,7 +1224,7 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchLanguagesItem"
+              className: "PostContentSchemaLanguagesItem"
             }
           }
         }
@@ -1277,7 +1282,7 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           name: "Sequence",
           element: {
             type: {
-              name: "String"
+              name: "Number"
             }
           }
         }
@@ -1324,7 +1329,6 @@ export const ResumeSearch: coreClient.CompositeMapper = {
       },
       searchExpression: {
         serializedName: "searchExpression",
-        nullable: true,
         type: {
           name: "String"
         }
@@ -1352,7 +1356,7 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchSocCodesItem"
+              className: "PostContentSchemaSocCodesItem"
             }
           }
         }
@@ -1365,7 +1369,6 @@ export const ResumeSearch: coreClient.CompositeMapper = {
       },
       managementLevel: {
         serializedName: "managementLevel",
-        nullable: true,
         type: {
           name: "Number"
         }
@@ -1390,10 +1393,10 @@ export const ResumeSearch: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchLocationsItem: coreClient.CompositeMapper = {
+export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchLocationsItem",
+    className: "PostContentSchemaLocationsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1405,7 +1408,8 @@ export const ResumeSearchLocationsItem: coreClient.CompositeMapper = {
         serializedName: "coordinates",
         type: {
           name: "Composite",
-          className: "ResumeSearchLocationsItemCoordinates"
+          className:
+            "PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates"
         }
       },
       distance: {
@@ -1424,10 +1428,11 @@ export const ResumeSearchLocationsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchLocationsItemCoordinates: coreClient.CompositeMapper = {
+export const PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchLocationsItemCoordinates",
+    className:
+      "PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates",
     modelProperties: {
       latitude: {
         serializedName: "latitude",
@@ -1447,10 +1452,10 @@ export const ResumeSearchLocationsItemCoordinates: coreClient.CompositeMapper = 
   }
 };
 
-export const ResumeSearchSkillsItem: coreClient.CompositeMapper = {
+export const PostContentSchemaSkillsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchSkillsItem",
+    className: "PostContentSchemaSkillsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1468,10 +1473,10 @@ export const ResumeSearchSkillsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchLanguagesItem: coreClient.CompositeMapper = {
+export const PostContentSchemaLanguagesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchLanguagesItem",
+    className: "PostContentSchemaLanguagesItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1489,15 +1494,37 @@ export const ResumeSearchLanguagesItem: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchSocCodesItem: coreClient.CompositeMapper = {
+export const PostContentSchemaSocCodesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchSocCodesItem",
+    className: "PostContentSchemaSocCodesItem",
     modelProperties: {
       code: {
         serializedName: "code",
         type: {
           name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchItem",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      pdf: {
+        serializedName: "pdf",
+        type: {
+          name: "String"
         }
       }
     }
@@ -2013,6 +2040,42 @@ export const InvoiceData: coreClient.CompositeMapper = {
         serializedName: "supplierWebsite",
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const OccupationGroup: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OccupationGroup",
+    modelProperties: {
+      code: {
+        serializedName: "code",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      children: {
+        serializedName: "children",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "OccupationGroup"
+            }
+          }
         }
       }
     }

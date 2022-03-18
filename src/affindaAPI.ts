@@ -31,7 +31,7 @@ import {
   AffindaAPIGetReformattedResumeResponse,
   AffindaAPIDeleteReformattedResumeOptionalParams,
   AffindaAPIDeleteReformattedResumeResponse,
-  ResumeSearch,
+  Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
   AffindaAPIGetAllIndexesOptionalParams,
@@ -57,7 +57,9 @@ import {
   AffindaAPIGetInvoiceOptionalParams,
   AffindaAPIGetInvoiceResponse,
   AffindaAPIDeleteInvoiceOptionalParams,
-  AffindaAPIDeleteInvoiceResponse
+  AffindaAPIDeleteInvoiceResponse,
+  AffindaAPIListOccupationGroupsOptionalParams,
+  AffindaAPIListOccupationGroupsResponse
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -268,7 +270,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   createResumeSearch(
-    body: ResumeSearch,
+    body: Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema,
     options?: AffindaAPICreateResumeSearchOptionalParams
   ): Promise<AffindaAPICreateResumeSearchResponse> {
     return this.sendOperationRequest(
@@ -430,6 +432,19 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, options },
       deleteInvoiceOperationSpec
+    );
+  }
+
+  /**
+   * TODO TODO TODO
+   * @param options The options parameters.
+   */
+  listOccupationGroups(
+    options?: AffindaAPIListOccupationGroupsOptionalParams
+  ): Promise<AffindaAPIListOccupationGroupsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      listOccupationGroupsOperationSpec
     );
   }
 }
@@ -796,7 +811,14 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
   httpMethod: "POST",
   responses: {
     201: {
-      bodyMapper: Mappers.ResumeSearch
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "ResumeSearchItem" }
+          }
+        }
+      }
     },
     400: {
       bodyMapper: Mappers.RequestError
@@ -1096,6 +1118,30 @@ const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
+  path: "/occupation_groups",
+  httpMethod: "GET",
+  responses: {
+    201: {
+      bodyMapper: Mappers.OccupationGroup
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
 };

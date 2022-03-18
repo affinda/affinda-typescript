@@ -135,7 +135,7 @@ export interface ResumeDataWorkExperienceItemOccupation {
   jobTitle?: string;
   /** Mapped onto the EMSI job title taxonomy if a sufficiently close match exists. */
   jobTitleNormalized?: string;
-  managementLevel?: Enum0;
+  managementLevel?: ManagementLevel;
   classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
@@ -222,7 +222,7 @@ export interface ReformattedResumeData {
   reformattedFile?: string;
 }
 
-export interface ResumeSearch {
+export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
   indices?: string[];
   jobTitles?: string[];
   jobTitlesCurrentOnly?: boolean;
@@ -232,17 +232,18 @@ export interface ResumeSearch {
   yearsExperienceMax?: number;
   yearsExperienceRequired?: boolean;
   yearsExperienceWeight?: number;
-  locations?: ResumeSearchLocationsItem[];
+  locations?: PostContentSchemaLocationsItem[];
   locationsWeight?: number;
-  skills?: ResumeSearchSkillsItem[];
+  locationsRequired?: boolean;
+  skills?: PostContentSchemaSkillsItem[];
   skillsWeight?: number;
-  languages?: ResumeSearchLanguagesItem[];
+  languages?: PostContentSchemaLanguagesItem[];
   languagesWeight?: number;
   institutions?: string[];
   institutionsRequired?: boolean;
   degrees?: string[];
   degreesRequired?: boolean;
-  highestDegreeTypes?: ResumeSearchHighestDegreeTypesItem[];
+  highestDegreeTypes?: number[];
   highestDegreeTypesRequired?: boolean;
   isCurrentStudent?: boolean;
   isCurrentStudentRequired?: boolean;
@@ -252,37 +253,43 @@ export interface ResumeSearch {
   searchExpression?: string;
   searchExpressionRequired?: boolean;
   searchExpressionWeight?: number;
-  socCodes?: ResumeSearchSocCodesItem[];
+  socCodes?: PostContentSchemaSocCodesItem[];
   socCodesRequired?: boolean;
   managementLevel?: number;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
 }
 
-export interface ResumeSearchLocationsItem {
+export interface PostContentSchemaLocationsItem {
   name?: string;
-  coordinates?: ResumeSearchLocationsItemCoordinates;
+  coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
   distance?: number;
   unit?: string;
 }
 
-export interface ResumeSearchLocationsItemCoordinates {
+export interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
   latitude?: number;
   longitude?: number;
 }
 
-export interface ResumeSearchSkillsItem {
+export interface PostContentSchemaSkillsItem {
   name?: string;
   required?: boolean;
 }
 
-export interface ResumeSearchLanguagesItem {
+export interface PostContentSchemaLanguagesItem {
   name?: string;
   required?: boolean;
 }
 
-export interface ResumeSearchSocCodesItem {
+export interface PostContentSchemaSocCodesItem {
   code?: number;
+}
+
+export interface ResumeSearchItem {
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  identifier?: string;
+  pdf?: string;
 }
 
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
@@ -387,6 +394,12 @@ export interface InvoiceData {
   supplierWebsite?: string;
 }
 
+export interface OccupationGroup {
+  code: number;
+  name: string;
+  children: OccupationGroup[];
+}
+
 export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -475,47 +488,8 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
   expiryTime?: string;
 }
 
-/** Known values of {@link Enum0} that the service accepts. */
-export enum KnownEnum0 {
-  None = "None",
-  Low = "Low",
-  Mid = "Mid",
-  Upper = "Upper"
-}
-
-/**
- * Defines values for Enum0. \
- * {@link KnownEnum0} can be used interchangeably with Enum0,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **None** \
- * **Low** \
- * **Mid** \
- * **Upper**
- */
-export type Enum0 = string;
-
-/** Known values of {@link ResumeSearchHighestDegreeTypesItem} that the service accepts. */
-export enum KnownResumeSearchHighestDegreeTypesItem {
-  Doctoral = "doctoral",
-  Masters = "masters",
-  Bachelors = "bachelors",
-  Certificate = "certificate",
-  School = "school"
-}
-
-/**
- * Defines values for ResumeSearchHighestDegreeTypesItem. \
- * {@link KnownResumeSearchHighestDegreeTypesItem} can be used interchangeably with ResumeSearchHighestDegreeTypesItem,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **doctoral** \
- * **masters** \
- * **bachelors** \
- * **certificate** \
- * **school**
- */
-export type ResumeSearchHighestDegreeTypesItem = string;
+/** Defines values for ManagementLevel. */
+export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
@@ -672,7 +646,7 @@ export interface AffindaAPICreateResumeSearchOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createResumeSearch operation. */
-export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
+export type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
@@ -767,6 +741,13 @@ export interface AffindaAPIDeleteInvoiceOptionalParams
 
 /** Contains response data for the deleteInvoice operation. */
 export type AffindaAPIDeleteInvoiceResponse = RequestError;
+
+/** Optional parameters. */
+export interface AffindaAPIListOccupationGroupsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the listOccupationGroups operation. */
+export type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

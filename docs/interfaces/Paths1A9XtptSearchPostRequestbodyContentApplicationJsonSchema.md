@@ -25,6 +25,7 @@
 - [languages](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#languages)
 - [languagesWeight](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#languagesweight)
 - [locations](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#locations)
+- [locationsRequired](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#locationsrequired)
 - [locationsWeight](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#locationsweight)
 - [managementLevel](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#managementlevel)
 - [managementLevelRequired](Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md#managementlevelrequired)
@@ -63,7 +64,7 @@ ___
 
 ### highestDegreeTypes
 
-• `Optional` **highestDegreeTypes**: `string`[]
+• `Optional` **highestDegreeTypes**: `number`[]
 
 ___
 
@@ -154,6 +155,12 @@ ___
 ### locations
 
 • `Optional` **locations**: [`PostContentSchemaLocationsItem`](PostContentSchemaLocationsItem.md)[]
+
+___
+
+### locationsRequired
+
+• `Optional` **locationsRequired**: `boolean`
 
 ___
 

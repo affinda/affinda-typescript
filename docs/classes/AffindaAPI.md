@@ -47,6 +47,7 @@
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
+- [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
 - [updateIndex](AffindaAPI.md#updateindex)
@@ -233,7 +234,7 @@ ___
 
 ### createResumeSearch
 
-▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`AffindaAPICreateResumeSearchResponse`](../modules.md#affindaapicreateresumesearchresponse)\>
 
 Searches through parsed resumes.
 TODO TODO TODO
@@ -244,12 +245,12 @@ When successful, returns a list of {id, pdf} in the response for subsequent use 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | [`ResumeSearch`](../interfaces/ResumeSearch.md) | Search parameters |
+| `body` | [`Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema`](../interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md) | Search parameters |
 | `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+`Promise`<[`AffindaAPICreateResumeSearchResponse`](../modules.md#affindaapicreateresumesearchresponse)\>
 
 ___
 
@@ -576,6 +577,24 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 #### Returns
 
 `Promise`<[`Resume`](../interfaces/Resume.md)\>
+
+___
+
+### listOccupationGroups
+
+▸ **listOccupationGroups**(`options?`): `Promise`<[`OccupationGroup`](../interfaces/OccupationGroup.md)\>
+
+TODO TODO TODO
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIListOccupationGroupsOptionalParams`](../interfaces/AffindaAPIListOccupationGroupsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`OccupationGroup`](../interfaces/OccupationGroup.md)\>
 
 ___
 

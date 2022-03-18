@@ -4,11 +4,6 @@
 
 ## Table of contents
 
-### Enumerations
-
-- [KnownEnum0](enums/KnownEnum0.md)
-- [KnownResumeSearchHighestDegreeTypesItem](enums/KnownResumeSearchHighestDegreeTypesItem.md)
-
 ### Classes
 
 - [AffindaAPI](classes/AffindaAPI.md)
@@ -41,6 +36,7 @@
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
+- [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIUpdateIndexOptionalParams](interfaces/AffindaAPIUpdateIndexOptionalParams.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
@@ -52,7 +48,9 @@
 - [InvoiceData](interfaces/InvoiceData.md)
 - [Location](interfaces/Location.md)
 - [Meta](interfaces/Meta.md)
+- [OccupationGroup](interfaces/OccupationGroup.md)
 - [Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
+- [Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema](interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md)
@@ -67,6 +65,11 @@
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema.md)
 - [PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md)
+- [PostContentSchemaLanguagesItem](interfaces/PostContentSchemaLanguagesItem.md)
+- [PostContentSchemaLocationsItem](interfaces/PostContentSchemaLocationsItem.md)
+- [PostContentSchemaSkillsItem](interfaces/PostContentSchemaSkillsItem.md)
+- [PostContentSchemaSocCodesItem](interfaces/PostContentSchemaSocCodesItem.md)
+- [PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates](interfaces/PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates.md)
 - [RedactedResume](interfaces/RedactedResume.md)
 - [RedactedResumeData](interfaces/RedactedResumeData.md)
 - [ReformattedResume](interfaces/ReformattedResume.md)
@@ -86,12 +89,7 @@
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
-- [ResumeSearch](interfaces/ResumeSearch.md)
-- [ResumeSearchLanguagesItem](interfaces/ResumeSearchLanguagesItem.md)
-- [ResumeSearchLocationsItem](interfaces/ResumeSearchLocationsItem.md)
-- [ResumeSearchLocationsItemCoordinates](interfaces/ResumeSearchLocationsItemCoordinates.md)
-- [ResumeSearchSkillsItem](interfaces/ResumeSearchSkillsItem.md)
-- [ResumeSearchSocCodesItem](interfaces/ResumeSearchSocCodesItem.md)
+- [ResumeSearchItem](interfaces/ResumeSearchItem.md)
 
 ### Type aliases
 
@@ -119,9 +117,9 @@
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
+- [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
-- [Enum0](modules.md#enum0)
-- [ResumeSearchHighestDegreeTypesItem](modules.md#resumesearchhighestdegreetypesitem)
+- [ManagementLevel](modules.md#managementlevel)
 
 ## Type aliases
 
@@ -175,7 +173,7 @@ ___
 
 ### AffindaAPICreateResumeSearchResponse
 
-Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearch`](interfaces/ResumeSearch.md)
+Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearchItem`](interfaces/ResumeSearchItem.md)[]
 
 Contains response data for the createResumeSearch operation.
 
@@ -317,6 +315,14 @@ Contains response data for the getResume operation.
 
 ___
 
+### AffindaAPIListOccupationGroupsResponse
+
+Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)
+
+Contains response data for the listOccupationGroups operation.
+
+___
+
 ### AffindaAPIUpdateIndexResponse
 
 Ƭ **AffindaAPIUpdateIndexResponse**: [`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)
@@ -325,31 +331,8 @@ Contains response data for the updateIndex operation.
 
 ___
 
-### Enum0
+### ManagementLevel
 
-Ƭ **Enum0**: `string`
+Ƭ **ManagementLevel**: ``"None"`` \| ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
 
-Defines values for Enum0. \
-[KnownEnum0](enums/KnownEnum0.md) can be used interchangeably with Enum0,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**None** \
-**Low** \
-**Mid** \
-**Upper**
-
-___
-
-### ResumeSearchHighestDegreeTypesItem
-
-Ƭ **ResumeSearchHighestDegreeTypesItem**: `string`
-
-Defines values for ResumeSearchHighestDegreeTypesItem. \
-[KnownResumeSearchHighestDegreeTypesItem](enums/KnownResumeSearchHighestDegreeTypesItem.md) can be used interchangeably with ResumeSearchHighestDegreeTypesItem,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**doctoral** \
-**masters** \
-**bachelors** \
-**certificate** \
-**school**
+Defines values for ManagementLevel.
