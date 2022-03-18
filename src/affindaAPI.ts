@@ -31,7 +31,7 @@ import {
   AffindaAPIGetReformattedResumeResponse,
   AffindaAPIDeleteReformattedResumeOptionalParams,
   AffindaAPIDeleteReformattedResumeResponse,
-  Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema,
+  ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
   AffindaAPIGetAllIndexesOptionalParams,
@@ -270,7 +270,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   createResumeSearch(
-    body: Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema,
+    body: ResumeSearchParameters | null,
     options?: AffindaAPICreateResumeSearchOptionalParams
   ): Promise<AffindaAPICreateResumeSearchResponse> {
     return this.sendOperationRequest(
@@ -815,7 +815,7 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
         type: {
           name: "Sequence",
           element: {
-            type: { name: "Composite", className: "ResumeSearchItem" }
+            type: { name: "Composite", className: "ResumeSearchResult" }
           }
         }
       }

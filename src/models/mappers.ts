@@ -1090,10 +1090,10 @@ export const ReformattedResumeData: coreClient.CompositeMapper = {
   }
 };
 
-export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const ResumeSearchParameters: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema",
+    className: "ResumeSearchParameters",
     modelProperties: {
       indices: {
         serializedName: "indices",
@@ -1174,7 +1174,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaLocationsItem"
+              className: "ResumeSearchParametersLocationsItem"
             }
           }
         }
@@ -1202,7 +1202,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaSkillsItem"
+              className: "ResumeSearchParametersSkillsItem"
             }
           }
         }
@@ -1224,7 +1224,7 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "PostContentSchemaLanguagesItem"
+              className: "ResumeSearchParametersLanguagesItem"
             }
           }
         }
@@ -1282,7 +1282,14 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           name: "Sequence",
           element: {
             type: {
-              name: "Number"
+              name: "Enum",
+              allowedValues: [
+                "school",
+                "certificate",
+                "bachelors",
+                "masters",
+                "doctoral"
+              ]
             }
           }
         }
@@ -1355,10 +1362,19 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
           name: "Sequence",
           element: {
             type: {
-              name: "Composite",
-              className: "PostContentSchemaSocCodesItem"
+              name: "Number"
             }
           }
+        }
+      },
+      socCodesWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "socCodesWeight",
+        type: {
+          name: "Number"
         }
       },
       socCodesRequired: {
@@ -1369,8 +1385,10 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
       },
       managementLevel: {
         serializedName: "managementLevel",
+        nullable: true,
         type: {
-          name: "Number"
+          name: "Enum",
+          allowedValues: ["None", "Low", "Mid", "Upper"]
         }
       },
       managementLevelRequired: {
@@ -1393,10 +1411,10 @@ export const Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema: core
   }
 };
 
-export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
+export const ResumeSearchParametersLocationsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaLocationsItem",
+    className: "ResumeSearchParametersLocationsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1408,8 +1426,7 @@ export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
         serializedName: "coordinates",
         type: {
           name: "Composite",
-          className:
-            "PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates"
+          className: "ResumeSearchParametersLocationsItemCoordinates"
         }
       },
       distance: {
@@ -1429,11 +1446,10 @@ export const PostContentSchemaLocationsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates: coreClient.CompositeMapper = {
+export const ResumeSearchParametersLocationsItemCoordinates: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates",
+    className: "ResumeSearchParametersLocationsItemCoordinates",
     modelProperties: {
       latitude: {
         serializedName: "latitude",
@@ -1453,10 +1469,10 @@ export const PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates
   }
 };
 
-export const PostContentSchemaSkillsItem: coreClient.CompositeMapper = {
+export const ResumeSearchParametersSkillsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaSkillsItem",
+    className: "ResumeSearchParametersSkillsItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1474,10 +1490,10 @@ export const PostContentSchemaSkillsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const PostContentSchemaLanguagesItem: coreClient.CompositeMapper = {
+export const ResumeSearchParametersLanguagesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaLanguagesItem",
+    className: "ResumeSearchParametersLanguagesItem",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1495,25 +1511,10 @@ export const PostContentSchemaLanguagesItem: coreClient.CompositeMapper = {
   }
 };
 
-export const PostContentSchemaSocCodesItem: coreClient.CompositeMapper = {
+export const ResumeSearchResult: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PostContentSchemaSocCodesItem",
-    modelProperties: {
-      code: {
-        serializedName: "code",
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchItem",
+    className: "ResumeSearchResult",
     modelProperties: {
       identifier: {
         serializedName: "identifier",

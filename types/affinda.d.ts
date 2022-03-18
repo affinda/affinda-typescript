@@ -101,7 +101,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    createResumeSearch(body: Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    createResumeSearch(body: ResumeSearchParameters | null, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
     /**
      * Returns all the indexes
      * @param options The options parameters.
@@ -309,7 +309,7 @@ export declare interface AffindaAPICreateResumeSearchOptionalParams extends core
 }
 
 /** Contains response data for the createResumeSearch operation. */
-export declare type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
+export declare type AffindaAPICreateResumeSearchResponse = ResumeSearchResult[];
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteIndexDocumentOptionalParams extends coreClient.OperationOptions {
@@ -475,6 +475,9 @@ export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperie
     socCode?: number;
 }
 
+/** Defines values for EducationLevel. */
+export declare type EducationLevel = "school" | "certificate" | "bachelors" | "masters" | "doctoral";
+
 export declare interface ErrorModel {
     errorCode?: string;
     errorDetail?: string;
@@ -589,44 +592,6 @@ export declare interface OccupationGroup {
 
 export declare interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
     name?: string;
-}
-
-export declare interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
-    indices?: string[];
-    jobTitles?: string[];
-    jobTitlesCurrentOnly?: boolean;
-    jobTitlesRequired?: boolean;
-    jobTitlesWeight?: number;
-    yearsExperienceMin?: number;
-    yearsExperienceMax?: number;
-    yearsExperienceRequired?: boolean;
-    yearsExperienceWeight?: number;
-    locations?: PostContentSchemaLocationsItem[];
-    locationsWeight?: number;
-    locationsRequired?: boolean;
-    skills?: PostContentSchemaSkillsItem[];
-    skillsWeight?: number;
-    languages?: PostContentSchemaLanguagesItem[];
-    languagesWeight?: number;
-    institutions?: string[];
-    institutionsRequired?: boolean;
-    degrees?: string[];
-    degreesRequired?: boolean;
-    highestDegreeTypes?: number[];
-    highestDegreeTypesRequired?: boolean;
-    isCurrentStudent?: boolean;
-    isCurrentStudentRequired?: boolean;
-    isRecentGraduate?: boolean;
-    isRecentGraduateRequired?: boolean;
-    educationWeight?: number;
-    searchExpression?: string;
-    searchExpressionRequired?: boolean;
-    searchExpressionWeight?: number;
-    socCodes?: PostContentSchemaSocCodesItem[];
-    socCodesRequired?: boolean;
-    managementLevel?: number;
-    managementLevelRequired?: boolean;
-    managementLevelWeight?: number;
 }
 
 export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
@@ -769,32 +734,6 @@ export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMult
     resumeFormat: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-}
-
-export declare interface PostContentSchemaLanguagesItem {
-    name?: string;
-    required?: boolean;
-}
-
-export declare interface PostContentSchemaLocationsItem {
-    name?: string;
-    coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
-    distance?: number;
-    unit?: SearchLocationUnit;
-}
-
-export declare interface PostContentSchemaSkillsItem {
-    name?: string;
-    required?: boolean;
-}
-
-export declare interface PostContentSchemaSocCodesItem {
-    code?: number;
-}
-
-export declare interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
-    latitude?: number;
-    longitude?: number;
 }
 
 export declare interface RedactedResume {
@@ -946,7 +885,68 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
-export declare interface ResumeSearchItem {
+export declare interface ResumeSearchParameters {
+    indices?: string[];
+    jobTitles?: string[];
+    jobTitlesCurrentOnly?: boolean;
+    jobTitlesRequired?: boolean;
+    jobTitlesWeight?: number;
+    yearsExperienceMin?: number;
+    yearsExperienceMax?: number;
+    yearsExperienceRequired?: boolean;
+    yearsExperienceWeight?: number;
+    locations?: ResumeSearchParametersLocationsItem[];
+    locationsWeight?: number;
+    locationsRequired?: boolean;
+    skills?: ResumeSearchParametersSkillsItem[];
+    skillsWeight?: number;
+    languages?: ResumeSearchParametersLanguagesItem[];
+    languagesWeight?: number;
+    institutions?: string[];
+    institutionsRequired?: boolean;
+    degrees?: string[];
+    degreesRequired?: boolean;
+    highestDegreeTypes?: (EducationLevel | null)[];
+    highestDegreeTypesRequired?: boolean;
+    isCurrentStudent?: boolean;
+    isCurrentStudentRequired?: boolean;
+    isRecentGraduate?: boolean;
+    isRecentGraduateRequired?: boolean;
+    educationWeight?: number;
+    searchExpression?: string;
+    searchExpressionRequired?: boolean;
+    searchExpressionWeight?: number;
+    socCodes?: number[];
+    socCodesWeight?: number;
+    socCodesRequired?: boolean;
+    managementLevel?: ManagementLevel;
+    managementLevelRequired?: boolean;
+    managementLevelWeight?: number;
+}
+
+export declare interface ResumeSearchParametersLanguagesItem {
+    name?: string;
+    required?: boolean;
+}
+
+export declare interface ResumeSearchParametersLocationsItem {
+    name?: string;
+    coordinates?: ResumeSearchParametersLocationsItemCoordinates;
+    distance?: number;
+    unit?: SearchLocationUnit;
+}
+
+export declare interface ResumeSearchParametersLocationsItemCoordinates {
+    latitude?: number;
+    longitude?: number;
+}
+
+export declare interface ResumeSearchParametersSkillsItem {
+    name?: string;
+    required?: boolean;
+}
+
+export declare interface ResumeSearchResult {
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
     pdf?: string;

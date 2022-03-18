@@ -222,7 +222,7 @@ export interface ReformattedResumeData {
   reformattedFile?: string;
 }
 
-export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
+export interface ResumeSearchParameters {
   indices?: string[];
   jobTitles?: string[];
   jobTitlesCurrentOnly?: boolean;
@@ -232,18 +232,18 @@ export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
   yearsExperienceMax?: number;
   yearsExperienceRequired?: boolean;
   yearsExperienceWeight?: number;
-  locations?: PostContentSchemaLocationsItem[];
+  locations?: ResumeSearchParametersLocationsItem[];
   locationsWeight?: number;
   locationsRequired?: boolean;
-  skills?: PostContentSchemaSkillsItem[];
+  skills?: ResumeSearchParametersSkillsItem[];
   skillsWeight?: number;
-  languages?: PostContentSchemaLanguagesItem[];
+  languages?: ResumeSearchParametersLanguagesItem[];
   languagesWeight?: number;
   institutions?: string[];
   institutionsRequired?: boolean;
   degrees?: string[];
   degreesRequired?: boolean;
-  highestDegreeTypes?: number[];
+  highestDegreeTypes?: (EducationLevel | null)[];
   highestDegreeTypesRequired?: boolean;
   isCurrentStudent?: boolean;
   isCurrentStudentRequired?: boolean;
@@ -253,40 +253,37 @@ export interface Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema {
   searchExpression?: string;
   searchExpressionRequired?: boolean;
   searchExpressionWeight?: number;
-  socCodes?: PostContentSchemaSocCodesItem[];
+  socCodes?: number[];
+  socCodesWeight?: number;
   socCodesRequired?: boolean;
-  managementLevel?: number;
+  managementLevel?: ManagementLevel;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
 }
 
-export interface PostContentSchemaLocationsItem {
+export interface ResumeSearchParametersLocationsItem {
   name?: string;
-  coordinates?: PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates;
+  coordinates?: ResumeSearchParametersLocationsItemCoordinates;
   distance?: number;
   unit?: SearchLocationUnit;
 }
 
-export interface PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates {
+export interface ResumeSearchParametersLocationsItemCoordinates {
   latitude?: number;
   longitude?: number;
 }
 
-export interface PostContentSchemaSkillsItem {
+export interface ResumeSearchParametersSkillsItem {
   name?: string;
   required?: boolean;
 }
 
-export interface PostContentSchemaLanguagesItem {
+export interface ResumeSearchParametersLanguagesItem {
   name?: string;
   required?: boolean;
 }
 
-export interface PostContentSchemaSocCodesItem {
-  code?: number;
-}
-
-export interface ResumeSearchItem {
+export interface ResumeSearchResult {
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   pdf?: string;
@@ -492,6 +489,13 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
 export type SearchLocationUnit = "km" | "mi";
+/** Defines values for EducationLevel. */
+export type EducationLevel =
+  | "school"
+  | "certificate"
+  | "bachelors"
+  | "masters"
+  | "doctoral";
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
@@ -648,7 +652,7 @@ export interface AffindaAPICreateResumeSearchOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createResumeSearch operation. */
-export type AffindaAPICreateResumeSearchResponse = ResumeSearchItem[];
+export type AffindaAPICreateResumeSearchResponse = ResumeSearchResult[];
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams

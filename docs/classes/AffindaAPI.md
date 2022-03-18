@@ -245,7 +245,7 @@ When successful, returns a list of {id, pdf} in the response for subsequent use 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | [`Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema`](../interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md) | Search parameters |
+| `body` | ``null`` \| [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
 | `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
 
 #### Returns

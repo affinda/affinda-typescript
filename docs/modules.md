@@ -50,7 +50,6 @@
 - [Meta](interfaces/Meta.md)
 - [OccupationGroup](interfaces/OccupationGroup.md)
 - [Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
-- [Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1A9XtptSearchPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema](interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md)
@@ -65,11 +64,6 @@
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema.md)
 - [PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md)
-- [PostContentSchemaLanguagesItem](interfaces/PostContentSchemaLanguagesItem.md)
-- [PostContentSchemaLocationsItem](interfaces/PostContentSchemaLocationsItem.md)
-- [PostContentSchemaSkillsItem](interfaces/PostContentSchemaSkillsItem.md)
-- [PostContentSchemaSocCodesItem](interfaces/PostContentSchemaSocCodesItem.md)
-- [PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates](interfaces/PostRequestBodyContentApplicationJsonSchemaLocationsItemCoordinates.md)
 - [RedactedResume](interfaces/RedactedResume.md)
 - [RedactedResumeData](interfaces/RedactedResumeData.md)
 - [ReformattedResume](interfaces/ReformattedResume.md)
@@ -89,7 +83,12 @@
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
-- [ResumeSearchItem](interfaces/ResumeSearchItem.md)
+- [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
+- [ResumeSearchParametersLanguagesItem](interfaces/ResumeSearchParametersLanguagesItem.md)
+- [ResumeSearchParametersLocationsItem](interfaces/ResumeSearchParametersLocationsItem.md)
+- [ResumeSearchParametersLocationsItemCoordinates](interfaces/ResumeSearchParametersLocationsItemCoordinates.md)
+- [ResumeSearchParametersSkillsItem](interfaces/ResumeSearchParametersSkillsItem.md)
+- [ResumeSearchResult](interfaces/ResumeSearchResult.md)
 
 ### Type aliases
 
@@ -119,6 +118,7 @@
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
+- [EducationLevel](modules.md#educationlevel)
 - [ManagementLevel](modules.md#managementlevel)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 
@@ -174,7 +174,7 @@ ___
 
 ### AffindaAPICreateResumeSearchResponse
 
-Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearchItem`](interfaces/ResumeSearchItem.md)[]
+Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearchResult`](interfaces/ResumeSearchResult.md)[]
 
 Contains response data for the createResumeSearch operation.
 
@@ -329,6 +329,14 @@ ___
 Ƭ **AffindaAPIUpdateIndexResponse**: [`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)
 
 Contains response data for the updateIndex operation.
+
+___
+
+### EducationLevel
+
+Ƭ **EducationLevel**: ``"school"`` \| ``"certificate"`` \| ``"bachelors"`` \| ``"masters"`` \| ``"doctoral"``
+
+Defines values for EducationLevel.
 
 ___
 
