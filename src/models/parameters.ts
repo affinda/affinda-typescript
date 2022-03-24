@@ -3,11 +3,6 @@ import {
   OperationURLParameter,
   OperationQueryParameter
 } from "@azure/core-client";
-import {
-  ResumeSearchParameters as ResumeSearchParametersMapper,
-  Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema as Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchemaMapper,
-  PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
-} from "../models/mappers";
 
 export const accept: OperationParameter = {
   parameterPath: "accept",
@@ -263,52 +258,4 @@ export const resumeFormat: OperationParameter = {
       name: "String"
     }
   }
-};
-
-export const contentType1: OperationParameter = {
-  parameterPath: ["options", "contentType"],
-  mapper: {
-    defaultValue: "application/json",
-    isConstant: true,
-    serializedName: "Content-Type",
-    type: {
-      name: "String"
-    }
-  }
-};
-
-export const body: OperationParameter = {
-  parameterPath: "body",
-  mapper: ResumeSearchParametersMapper
-};
-
-export const name: OperationParameter = {
-  parameterPath: ["options", "name"],
-  mapper: {
-    serializedName: "name",
-    type: {
-      name: "String"
-    }
-  }
-};
-
-export const body1: OperationParameter = {
-  parameterPath: "body",
-  mapper: Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchemaMapper
-};
-
-export const name1: OperationURLParameter = {
-  parameterPath: "name",
-  mapper: {
-    serializedName: "name",
-    required: true,
-    type: {
-      name: "String"
-    }
-  }
-};
-
-export const body2: OperationParameter = {
-  parameterPath: "body",
-  mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };

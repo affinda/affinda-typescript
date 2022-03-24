@@ -5,9 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.3.1] - 2021-12-09
 ### Added
-- Adding Occupation to work experience.  Includes SOC2020 classifications and management level.  Job titles are normalized against EMSI taxonomy'
+- Add iso 3166 country code to locations
+
+## [0.3.1] - 2021-10-06
+### Added
+- Add Occupation data to work experience
 
 ## [0.3.0] - 2021-10-06
 ### Added

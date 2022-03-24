@@ -31,25 +31,6 @@ import {
   AffindaAPIGetReformattedResumeResponse,
   AffindaAPIDeleteReformattedResumeOptionalParams,
   AffindaAPIDeleteReformattedResumeResponse,
-  ResumeSearchParameters,
-  AffindaAPICreateResumeSearchOptionalParams,
-  AffindaAPICreateResumeSearchResponse,
-  AffindaAPIGetAllIndexesOptionalParams,
-  AffindaAPIGetAllIndexesResponse,
-  AffindaAPICreateIndexOptionalParams,
-  AffindaAPICreateIndexResponse,
-  Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema,
-  AffindaAPIUpdateIndexOptionalParams,
-  AffindaAPIUpdateIndexResponse,
-  AffindaAPIDeleteIndexOptionalParams,
-  AffindaAPIDeleteIndexResponse,
-  AffindaAPIGetAllIndexDocumentsOptionalParams,
-  AffindaAPIGetAllIndexDocumentsResponse,
-  PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema,
-  AffindaAPICreateIndexDocumentOptionalParams,
-  AffindaAPICreateIndexDocumentResponse,
-  AffindaAPIDeleteIndexDocumentOptionalParams,
-  AffindaAPIDeleteIndexDocumentResponse,
   AffindaAPIGetAllInvoicesOptionalParams,
   AffindaAPIGetAllInvoicesResponse,
   AffindaAPICreateInvoiceOptionalParams,
@@ -57,9 +38,7 @@ import {
   AffindaAPIGetInvoiceOptionalParams,
   AffindaAPIGetInvoiceResponse,
   AffindaAPIDeleteInvoiceOptionalParams,
-  AffindaAPIDeleteInvoiceResponse,
-  AffindaAPIListOccupationGroupsOptionalParams,
-  AffindaAPIListOccupationGroupsResponse
+  AffindaAPIDeleteInvoiceResponse
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -262,125 +241,6 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Searches through parsed resumes.
-   * TODO TODO TODO
-   * When successful, returns a list of {id, pdf} in the response for subsequent use with the
-   * [/resumes/{identifier}](#operation/getResume) endpoint to retrieve the resumes.
-   * @param body Search parameters
-   * @param options The options parameters.
-   */
-  createResumeSearch(
-    body: ResumeSearchParameters | null,
-    options?: AffindaAPICreateResumeSearchOptionalParams
-  ): Promise<AffindaAPICreateResumeSearchResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createResumeSearchOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the indexes
-   * @param options The options parameters.
-   */
-  getAllIndexes(
-    options?: AffindaAPIGetAllIndexesOptionalParams
-  ): Promise<AffindaAPIGetAllIndexesResponse> {
-    return this.sendOperationRequest({ options }, getAllIndexesOperationSpec);
-  }
-
-  /**
-   * Create an index for the search tool
-   * @param options The options parameters.
-   */
-  createIndex(
-    options?: AffindaAPICreateIndexOptionalParams
-  ): Promise<AffindaAPICreateIndexResponse> {
-    return this.sendOperationRequest({ options }, createIndexOperationSpec);
-  }
-
-  /**
-   * Updates the specified index name to a new one
-   * @param name Index name
-   * @param body New Index name
-   * @param options The options parameters.
-   */
-  updateIndex(
-    name: string,
-    body: Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema,
-    options?: AffindaAPIUpdateIndexOptionalParams
-  ): Promise<AffindaAPIUpdateIndexResponse> {
-    return this.sendOperationRequest(
-      { name, body, options },
-      updateIndexOperationSpec
-    );
-  }
-
-  /**
-   * Deletes the specified index from the database
-   * @param name Index name
-   * @param options The options parameters.
-   */
-  deleteIndex(
-    name: string,
-    options?: AffindaAPIDeleteIndexOptionalParams
-  ): Promise<AffindaAPIDeleteIndexResponse> {
-    return this.sendOperationRequest(
-      { name, options },
-      deleteIndexOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the indexed documents for that index
-   * @param name Index name
-   * @param options The options parameters.
-   */
-  getAllIndexDocuments(
-    name: string,
-    options?: AffindaAPIGetAllIndexDocumentsOptionalParams
-  ): Promise<AffindaAPIGetAllIndexDocumentsResponse> {
-    return this.sendOperationRequest(
-      { name, options },
-      getAllIndexDocumentsOperationSpec
-    );
-  }
-
-  /**
-   * Create an indexed document for the search tool
-   * @param name Index name
-   * @param body Document to index
-   * @param options The options parameters.
-   */
-  createIndexDocument(
-    name: string,
-    body: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema,
-    options?: AffindaAPICreateIndexDocumentOptionalParams
-  ): Promise<AffindaAPICreateIndexDocumentResponse> {
-    return this.sendOperationRequest(
-      { name, body, options },
-      createIndexDocumentOperationSpec
-    );
-  }
-
-  /**
-   * Delete the specified indexed document from the database
-   * @param name Index name
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  deleteIndexDocument(
-    name: string,
-    identifier: string | null,
-    options?: AffindaAPIDeleteIndexDocumentOptionalParams
-  ): Promise<AffindaAPIDeleteIndexDocumentResponse> {
-    return this.sendOperationRequest(
-      { name, identifier, options },
-      deleteIndexDocumentOperationSpec
-    );
-  }
-
-  /**
    * Returns all the invoice summaries for that user, limited to 300 per page.
    * @param options The options parameters.
    */
@@ -432,19 +292,6 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, options },
       deleteInvoiceOperationSpec
-    );
-  }
-
-  /**
-   * TODO TODO TODO
-   * @param options The options parameters.
-   */
-  listOccupationGroups(
-    options?: AffindaAPIListOccupationGroupsOptionalParams
-  ): Promise<AffindaAPIListOccupationGroupsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      listOccupationGroupsOperationSpec
     );
   }
 }
@@ -806,214 +653,6 @@ const deleteReformattedResumeOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
-const createResumeSearchOperationSpec: coreClient.OperationSpec = {
-  path: "/search",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Composite", className: "ResumeSearchResult" }
-          }
-        }
-      }
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body,
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const getAllIndexesOperationSpec: coreClient.OperationSpec = {
-  path: "/index",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.limit, Parameters.offset],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createIndexOperationSpec: coreClient.OperationSpec = {
-  path: "/index",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper:
-        Mappers.Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [Parameters.name],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const updateIndexOperationSpec: coreClient.OperationSpec = {
-  path: "/index/{name}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body1,
-  urlParameters: [Parameters.$host, Parameters.name1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const deleteIndexOperationSpec: coreClient.OperationSpec = {
-  path: "/index/{name}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.$host, Parameters.name1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllIndexDocumentsOperationSpec: coreClient.OperationSpec = {
-  path: "/index/{name}/documents",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.$host, Parameters.name1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/index/{name}/documents",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper:
-        Mappers.PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body2,
-  urlParameters: [Parameters.$host, Parameters.name1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/index/{name}/documents/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.$host, Parameters.identifier1, Parameters.name1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
 const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
   path: "/invoices",
   httpMethod: "GET",
@@ -1118,30 +757,6 @@ const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
-  path: "/occupation_groups",
-  httpMethod: "GET",
-  responses: {
-    201: {
-      bodyMapper: Mappers.OccupationGroup
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
 };

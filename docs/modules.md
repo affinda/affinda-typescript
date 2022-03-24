@@ -4,6 +4,10 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [KnownEnum0](enums/KnownEnum0.md)
+
 ### Classes
 
 - [AffindaAPI](classes/AffindaAPI.md)
@@ -12,21 +16,14 @@
 
 ### Interfaces
 
-- [AffindaAPICreateIndexDocumentOptionalParams](interfaces/AffindaAPICreateIndexDocumentOptionalParams.md)
-- [AffindaAPICreateIndexOptionalParams](interfaces/AffindaAPICreateIndexOptionalParams.md)
 - [AffindaAPICreateInvoiceOptionalParams](interfaces/AffindaAPICreateInvoiceOptionalParams.md)
 - [AffindaAPICreateRedactedResumeOptionalParams](interfaces/AffindaAPICreateRedactedResumeOptionalParams.md)
 - [AffindaAPICreateReformattedResumeOptionalParams](interfaces/AffindaAPICreateReformattedResumeOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
-- [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
-- [AffindaAPIDeleteIndexDocumentOptionalParams](interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md)
-- [AffindaAPIDeleteIndexOptionalParams](interfaces/AffindaAPIDeleteIndexOptionalParams.md)
 - [AffindaAPIDeleteInvoiceOptionalParams](interfaces/AffindaAPIDeleteInvoiceOptionalParams.md)
 - [AffindaAPIDeleteRedactedResumeOptionalParams](interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md)
 - [AffindaAPIDeleteReformattedResumeOptionalParams](interfaces/AffindaAPIDeleteReformattedResumeOptionalParams.md)
 - [AffindaAPIDeleteResumeOptionalParams](interfaces/AffindaAPIDeleteResumeOptionalParams.md)
-- [AffindaAPIGetAllIndexDocumentsOptionalParams](interfaces/AffindaAPIGetAllIndexDocumentsOptionalParams.md)
-- [AffindaAPIGetAllIndexesOptionalParams](interfaces/AffindaAPIGetAllIndexesOptionalParams.md)
 - [AffindaAPIGetAllInvoicesOptionalParams](interfaces/AffindaAPIGetAllInvoicesOptionalParams.md)
 - [AffindaAPIGetAllRedactedResumesOptionalParams](interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md)
 - [AffindaAPIGetAllReformattedResumesOptionalParams](interfaces/AffindaAPIGetAllReformattedResumesOptionalParams.md)
@@ -36,9 +33,7 @@
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
-- [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
-- [AffindaAPIUpdateIndexOptionalParams](interfaces/AffindaAPIUpdateIndexOptionalParams.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
@@ -48,21 +43,10 @@
 - [InvoiceData](interfaces/InvoiceData.md)
 - [Location](interfaces/Location.md)
 - [Meta](interfaces/Meta.md)
-- [OccupationGroup](interfaces/OccupationGroup.md)
-- [Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
-- [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
-- [Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema](interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md)
 - [Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)
-- [Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
 - [Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md)
-- [PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
-- [PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema](interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)
-- [PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
-- [PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
-- [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
-- [PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema.md)
 - [PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [RedactedResume](interfaces/RedactedResume.md)
 - [RedactedResumeData](interfaces/RedactedResumeData.md)
@@ -83,31 +67,17 @@
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
-- [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
-- [ResumeSearchParametersLanguagesItem](interfaces/ResumeSearchParametersLanguagesItem.md)
-- [ResumeSearchParametersLocationsItem](interfaces/ResumeSearchParametersLocationsItem.md)
-- [ResumeSearchParametersLocationsItemCoordinates](interfaces/ResumeSearchParametersLocationsItemCoordinates.md)
-- [ResumeSearchParametersSkillsItem](interfaces/ResumeSearchParametersSkillsItem.md)
-- [ResumeSearchResult](interfaces/ResumeSearchResult.md)
-- [ResumeSearchScoreComponent](interfaces/ResumeSearchScoreComponent.md)
 
 ### Type aliases
 
-- [AffindaAPICreateIndexDocumentResponse](modules.md#affindaapicreateindexdocumentresponse)
-- [AffindaAPICreateIndexResponse](modules.md#affindaapicreateindexresponse)
 - [AffindaAPICreateInvoiceResponse](modules.md#affindaapicreateinvoiceresponse)
 - [AffindaAPICreateRedactedResumeResponse](modules.md#affindaapicreateredactedresumeresponse)
 - [AffindaAPICreateReformattedResumeResponse](modules.md#affindaapicreatereformattedresumeresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
-- [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
-- [AffindaAPIDeleteIndexDocumentResponse](modules.md#affindaapideleteindexdocumentresponse)
-- [AffindaAPIDeleteIndexResponse](modules.md#affindaapideleteindexresponse)
 - [AffindaAPIDeleteInvoiceResponse](modules.md#affindaapideleteinvoiceresponse)
 - [AffindaAPIDeleteRedactedResumeResponse](modules.md#affindaapideleteredactedresumeresponse)
 - [AffindaAPIDeleteReformattedResumeResponse](modules.md#affindaapideletereformattedresumeresponse)
 - [AffindaAPIDeleteResumeResponse](modules.md#affindaapideleteresumeresponse)
-- [AffindaAPIGetAllIndexDocumentsResponse](modules.md#affindaapigetallindexdocumentsresponse)
-- [AffindaAPIGetAllIndexesResponse](modules.md#affindaapigetallindexesresponse)
 - [AffindaAPIGetAllInvoicesResponse](modules.md#affindaapigetallinvoicesresponse)
 - [AffindaAPIGetAllRedactedResumesResponse](modules.md#affindaapigetallredactedresumesresponse)
 - [AffindaAPIGetAllReformattedResumesResponse](modules.md#affindaapigetallreformattedresumesresponse)
@@ -117,29 +87,9 @@
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
-- [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
-- [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
-- [EducationLevel](modules.md#educationlevel)
-- [ManagementLevel](modules.md#managementlevel)
-- [SearchLocationUnit](modules.md#searchlocationunit)
+- [Enum0](modules.md#enum0)
 
 ## Type aliases
-
-### AffindaAPICreateIndexDocumentResponse
-
-Ƭ **AffindaAPICreateIndexDocumentResponse**: [`PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
-
-Contains response data for the createIndexDocument operation.
-
-___
-
-### AffindaAPICreateIndexResponse
-
-Ƭ **AffindaAPICreateIndexResponse**: [`Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema`](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
-
-Contains response data for the createIndex operation.
-
-___
 
 ### AffindaAPICreateInvoiceResponse
 
@@ -173,30 +123,6 @@ Contains response data for the createResume operation.
 
 ___
 
-### AffindaAPICreateResumeSearchResponse
-
-Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearchResult`](interfaces/ResumeSearchResult.md)[]
-
-Contains response data for the createResumeSearch operation.
-
-___
-
-### AffindaAPIDeleteIndexDocumentResponse
-
-Ƭ **AffindaAPIDeleteIndexDocumentResponse**: [`RequestError`](interfaces/RequestError.md)
-
-Contains response data for the deleteIndexDocument operation.
-
-___
-
-### AffindaAPIDeleteIndexResponse
-
-Ƭ **AffindaAPIDeleteIndexResponse**: [`RequestError`](interfaces/RequestError.md)
-
-Contains response data for the deleteIndex operation.
-
-___
-
 ### AffindaAPIDeleteInvoiceResponse
 
 Ƭ **AffindaAPIDeleteInvoiceResponse**: [`RequestError`](interfaces/RequestError.md)
@@ -226,22 +152,6 @@ ___
 Ƭ **AffindaAPIDeleteResumeResponse**: [`RequestError`](interfaces/RequestError.md)
 
 Contains response data for the deleteResume operation.
-
-___
-
-### AffindaAPIGetAllIndexDocumentsResponse
-
-Ƭ **AffindaAPIGetAllIndexDocumentsResponse**: [`PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
-
-Contains response data for the getAllIndexDocuments operation.
-
-___
-
-### AffindaAPIGetAllIndexesResponse
-
-Ƭ **AffindaAPIGetAllIndexesResponse**: [`Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema`](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
-
-Contains response data for the getAllIndexes operation.
 
 ___
 
@@ -317,40 +227,15 @@ Contains response data for the getResume operation.
 
 ___
 
-### AffindaAPIListOccupationGroupsResponse
+### Enum0
 
-Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)
+Ƭ **Enum0**: `string`
 
-Contains response data for the listOccupationGroups operation.
-
-___
-
-### AffindaAPIUpdateIndexResponse
-
-Ƭ **AffindaAPIUpdateIndexResponse**: [`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)
-
-Contains response data for the updateIndex operation.
-
-___
-
-### EducationLevel
-
-Ƭ **EducationLevel**: ``"school"`` \| ``"certificate"`` \| ``"bachelors"`` \| ``"masters"`` \| ``"doctoral"``
-
-Defines values for EducationLevel.
-
-___
-
-### ManagementLevel
-
-Ƭ **ManagementLevel**: ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
-
-Defines values for ManagementLevel.
-
-___
-
-### SearchLocationUnit
-
-Ƭ **SearchLocationUnit**: ``"km"`` \| ``"mi"``
-
-Defines values for SearchLocationUnit.
+Defines values for Enum0. \
+[KnownEnum0](enums/KnownEnum0.md) can be used interchangeably with Enum0,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**None** \
+**Low** \
+**Mid** \
+**Upper**

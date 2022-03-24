@@ -9,6 +9,7 @@
 - [apartmentNumber](Location.md#apartmentnumber)
 - [city](Location.md#city)
 - [country](Location.md#country)
+- [countryCode](Location.md#countrycode)
 - [formatted](Location.md#formatted)
 - [postalCode](Location.md#postalcode)
 - [rawInput](Location.md#rawinput)
@@ -33,6 +34,14 @@ ___
 ### country
 
 • `Optional` **country**: `string`
+
+___
+
+### countryCode
+
+• `Optional` **countryCode**: `string`
+
+Two letter country code (ISO 3166-1 alpha-2)
 
 ___
 
