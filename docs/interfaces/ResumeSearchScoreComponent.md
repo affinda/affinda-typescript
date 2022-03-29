@@ -14,7 +14,7 @@
 
 ### label
 
-• `Optional` **label**: `string`
+• **label**: `string`
 
 ___
 

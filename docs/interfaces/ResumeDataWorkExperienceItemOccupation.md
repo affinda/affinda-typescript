@@ -37,4 +37,4 @@ ___
 
 ### managementLevel
 
-• `Optional` **managementLevel**: `string`
+• `Optional` **managementLevel**: [`ManagementLevel`](../modules.md#managementlevel)

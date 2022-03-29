@@ -77,7 +77,7 @@ ___
 
 ### indices
 
-• `Optional` **indices**: `string`[]
+• **indices**: `string`[]
 
 ___
 

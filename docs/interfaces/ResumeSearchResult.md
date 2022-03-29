@@ -23,19 +23,19 @@
 
 ### education
 
-• `Optional` **education**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **education**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
 ### experience
 
-• `Optional` **experience**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **experience**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
 ### identifier
 
-• `Optional` **identifier**: `string`
+• **identifier**: ``null`` \| `string`
 
 Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
 
@@ -43,25 +43,25 @@ ___
 
 ### jobTitle
 
-• `Optional` **jobTitle**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **jobTitle**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
 ### languages
 
-• `Optional` **languages**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **languages**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
 ### location
 
-• `Optional` **location**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **location**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
 ### managementLevel
 
-• `Optional` **managementLevel**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **managementLevel**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
@@ -73,22 +73,22 @@ ___
 
 ### occupationGroup
 
-• `Optional` **occupationGroup**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **occupationGroup**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 
 ### pdf
 
-• `Optional` **pdf**: `string`
+• **pdf**: `string`
 
 ___
 
 ### score
 
-• `Optional` **score**: `number`
+• **score**: `number`
 
 ___
 
 ### skills
 
-• `Optional` **skills**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• **skills**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
