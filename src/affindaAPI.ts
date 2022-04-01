@@ -31,16 +31,12 @@ import {
   AffindaAPIGetReformattedResumeResponse,
   AffindaAPIDeleteReformattedResumeOptionalParams,
   AffindaAPIDeleteReformattedResumeResponse,
-  ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
   AffindaAPICreateIndexOptionalParams,
   AffindaAPICreateIndexResponse,
-  Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema,
-  AffindaAPIUpdateIndexOptionalParams,
-  AffindaAPIUpdateIndexResponse,
   AffindaAPIDeleteIndexOptionalParams,
   AffindaAPIDeleteIndexResponse,
   AffindaAPIGetAllIndexDocumentsOptionalParams,
@@ -263,18 +259,15 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Searches through parsed resumes.
-   * TODO TODO TODO
-   * When successful, returns a list of {id, pdf} in the response for subsequent use with the
-   * [/resumes/{identifier}](#operation/getResume) endpoint to retrieve the resumes.
-   * @param body Search parameters
+   * @param indices Array of ResumeSearchParametersIndicesItem
    * @param options The options parameters.
    */
   createResumeSearch(
-    body: ResumeSearchParameters | null,
+    indices: string[],
     options?: AffindaAPICreateResumeSearchOptionalParams
   ): Promise<AffindaAPICreateResumeSearchResponse> {
     return this.sendOperationRequest(
-      { body, options },
+      { indices, options },
       createResumeSearchOperationSpec
     );
   }
@@ -297,23 +290,6 @@ export class AffindaAPI extends AffindaAPIContext {
     options?: AffindaAPICreateIndexOptionalParams
   ): Promise<AffindaAPICreateIndexResponse> {
     return this.sendOperationRequest({ options }, createIndexOperationSpec);
-  }
-
-  /**
-   * Updates the specified index name to a new one
-   * @param name Index name
-   * @param body New Index name
-   * @param options The options parameters.
-   */
-  updateIndex(
-    name: string,
-    body: Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema,
-    options?: AffindaAPIUpdateIndexOptionalParams
-  ): Promise<AffindaAPIUpdateIndexResponse> {
-    return this.sendOperationRequest(
-      { name, body, options },
-      updateIndexOperationSpec
-    );
   }
 
   /**
@@ -807,7 +783,7 @@ const deleteReformattedResumeOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const createResumeSearchOperationSpec: coreClient.OperationSpec = {
-  path: "/search",
+  path: "/resume_search",
   httpMethod: "POST",
   responses: {
     201: {
@@ -826,10 +802,47 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body,
+  formDataParameters: [
+    Parameters.indices,
+    Parameters.jobTitles,
+    Parameters.jobTitlesCurrentOnly,
+    Parameters.jobTitlesRequired,
+    Parameters.jobTitlesWeight,
+    Parameters.yearsExperienceMin,
+    Parameters.yearsExperienceMax,
+    Parameters.yearsExperienceRequired,
+    Parameters.yearsExperienceWeight,
+    Parameters.locations,
+    Parameters.locationsWeight,
+    Parameters.locationsRequired,
+    Parameters.skills,
+    Parameters.skillsWeight,
+    Parameters.languages,
+    Parameters.languagesWeight,
+    Parameters.institutions,
+    Parameters.institutionsRequired,
+    Parameters.degrees,
+    Parameters.degreesRequired,
+    Parameters.highestDegreeTypes,
+    Parameters.highestDegreeTypesRequired,
+    Parameters.isCurrentStudent,
+    Parameters.isCurrentStudentRequired,
+    Parameters.isRecentGraduate,
+    Parameters.isRecentGraduateRequired,
+    Parameters.educationWeight,
+    Parameters.searchExpression,
+    Parameters.searchExpressionRequired,
+    Parameters.searchExpressionWeight,
+    Parameters.socCodes,
+    Parameters.socCodesWeight,
+    Parameters.socCodesRequired,
+    Parameters.managementLevel,
+    Parameters.managementLevelRequired,
+    Parameters.managementLevelWeight
+  ],
+  queryParameters: [Parameters.offset, Parameters.limit1],
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
+  headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
 const getAllIndexesOperationSpec: coreClient.OperationSpec = {
@@ -882,33 +895,6 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
   formDataParameters: [Parameters.name],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const updateIndexOperationSpec: coreClient.OperationSpec = {
-  path: "/index/{name}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body1,
-  urlParameters: [Parameters.$host, Parameters.name1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
   serializer
 };
 const deleteIndexOperationSpec: coreClient.OperationSpec = {
@@ -979,7 +965,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body2,
+  requestBody: Parameters.body,
   urlParameters: [Parameters.$host, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

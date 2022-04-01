@@ -95,13 +95,10 @@ export declare class AffindaAPI extends AffindaAPIContext {
     deleteReformattedResume(identifier: string | null, options?: AffindaAPIDeleteReformattedResumeOptionalParams): Promise<AffindaAPIDeleteReformattedResumeResponse>;
     /**
      * Searches through parsed resumes.
-     * TODO TODO TODO
-     * When successful, returns a list of {id, pdf} in the response for subsequent use with the
-     * [/resumes/{identifier}](#operation/getResume) endpoint to retrieve the resumes.
-     * @param body Search parameters
+     * @param indices Array of ResumeSearchParametersIndicesItem
      * @param options The options parameters.
      */
-    createResumeSearch(body: ResumeSearchParameters | null, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    createResumeSearch(indices: string[], options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
     /**
      * Returns all the indexes
      * @param options The options parameters.
@@ -112,13 +109,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     createIndex(options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
-    /**
-     * Updates the specified index name to a new one
-     * @param name Index name
-     * @param body New Index name
-     * @param options The options parameters.
-     */
-    updateIndex(name: string, body: Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema, options?: AffindaAPIUpdateIndexOptionalParams): Promise<AffindaAPIUpdateIndexResponse>;
     /**
      * Deletes the specified index from the database
      * @param name Index name
@@ -306,6 +296,51 @@ export declare type AffindaAPICreateResumeResponse = Resume;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateResumeSearchOptionalParams extends coreClient.OperationOptions {
+    /** Array of ResumeSearchParametersJobTitlesItem */
+    jobTitles?: string[];
+    jobTitlesCurrentOnly?: boolean;
+    jobTitlesRequired?: boolean;
+    jobTitlesWeight?: number;
+    yearsExperienceMin?: number;
+    yearsExperienceMax?: number;
+    yearsExperienceRequired?: boolean;
+    yearsExperienceWeight?: number;
+    /** Array of ResumeSearchParameters-locationsItem */
+    locations?: ResumeSearchParametersLocationsItem[];
+    locationsWeight?: number;
+    locationsRequired?: boolean;
+    /** Array of ResumeSearchParameters-skillsItem */
+    skills?: ResumeSearchParametersSkillsItem[];
+    skillsWeight?: number;
+    /** Array of ResumeSearchParameters-languagesItem */
+    languages?: ResumeSearchParametersLanguagesItem[];
+    languagesWeight?: number;
+    /** Array of ResumeSearchParametersInstitutionsItem */
+    institutions?: string[];
+    institutionsRequired?: boolean;
+    /** Array of ResumeSearchParametersDegreesItem */
+    degrees?: string[];
+    degreesRequired?: boolean;
+    /** Array of educationLevel */
+    highestDegreeTypes?: (EducationLevel | null)[];
+    highestDegreeTypesRequired?: boolean;
+    isCurrentStudent?: boolean;
+    isCurrentStudentRequired?: boolean;
+    isRecentGraduate?: boolean;
+    isRecentGraduateRequired?: boolean;
+    educationWeight?: number;
+    searchExpression?: string;
+    searchExpressionRequired?: boolean;
+    searchExpressionWeight?: number;
+    /** Array of ArrayItemschema */
+    socCodes?: number[];
+    socCodesWeight?: number;
+    socCodesRequired?: boolean;
+    managementLevel?: ManagementLevel;
+    managementLevelRequired?: boolean;
+    managementLevelWeight?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the createResumeSearch operation. */
@@ -448,13 +483,6 @@ export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClie
     /** Overrides client endpoint. */
     endpoint?: string;
 }
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateIndexOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateIndex operation. */
-export declare type AffindaAPIUpdateIndexResponse = PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema;
 
 export declare class AffindaCredential implements TokenCredential {
     token: string;
@@ -617,10 +645,6 @@ export declare interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJson
     name?: string;
 }
 
-export declare interface Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema {
-    name?: string;
-}
-
 export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema {
     /** Number of documents in result */
     count?: number;
@@ -692,11 +716,8 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
 }
 
 export declare interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
+    /** Unique identifier for the document. */
     document?: string;
-}
-
-export declare interface PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema {
-    name?: string;
 }
 
 export declare interface PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {

@@ -3,11 +3,7 @@ import {
   OperationURLParameter,
   OperationQueryParameter
 } from "@azure/core-client";
-import {
-  ResumeSearchParameters as ResumeSearchParametersMapper,
-  Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema as Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchemaMapper,
-  PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
-} from "../models/mappers";
+import { PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
 
 export const accept: OperationParameter = {
   parameterPath: "accept",
@@ -265,21 +261,474 @@ export const resumeFormat: OperationParameter = {
   }
 };
 
-export const contentType1: OperationParameter = {
-  parameterPath: ["options", "contentType"],
+export const indices: OperationParameter = {
+  parameterPath: "indices",
   mapper: {
-    defaultValue: "application/json",
-    isConstant: true,
-    serializedName: "Content-Type",
+    serializedName: "indices",
+    required: true,
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const jobTitles: OperationParameter = {
+  parameterPath: ["options", "jobTitles"],
+  mapper: {
+    serializedName: "jobTitles",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const jobTitlesCurrentOnly: OperationParameter = {
+  parameterPath: ["options", "jobTitlesCurrentOnly"],
+  mapper: {
+    serializedName: "jobTitlesCurrentOnly",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const jobTitlesRequired: OperationParameter = {
+  parameterPath: ["options", "jobTitlesRequired"],
+  mapper: {
+    serializedName: "jobTitlesRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const jobTitlesWeight: OperationParameter = {
+  parameterPath: ["options", "jobTitlesWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "jobTitlesWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const yearsExperienceMin: OperationParameter = {
+  parameterPath: ["options", "yearsExperienceMin"],
+  mapper: {
+    serializedName: "yearsExperienceMin",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const yearsExperienceMax: OperationParameter = {
+  parameterPath: ["options", "yearsExperienceMax"],
+  mapper: {
+    serializedName: "yearsExperienceMax",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const yearsExperienceRequired: OperationParameter = {
+  parameterPath: ["options", "yearsExperienceRequired"],
+  mapper: {
+    serializedName: "yearsExperienceRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const yearsExperienceWeight: OperationParameter = {
+  parameterPath: ["options", "yearsExperienceWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "yearsExperienceWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const locations: OperationParameter = {
+  parameterPath: ["options", "locations"],
+  mapper: {
+    serializedName: "locations",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParametersLocationsItem"
+        }
+      }
+    }
+  }
+};
+
+export const locationsWeight: OperationParameter = {
+  parameterPath: ["options", "locationsWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "locationsWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const locationsRequired: OperationParameter = {
+  parameterPath: ["options", "locationsRequired"],
+  mapper: {
+    serializedName: "locationsRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const skills: OperationParameter = {
+  parameterPath: ["options", "skills"],
+  mapper: {
+    serializedName: "skills",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParametersSkillsItem"
+        }
+      }
+    }
+  }
+};
+
+export const skillsWeight: OperationParameter = {
+  parameterPath: ["options", "skillsWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "skillsWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const languages: OperationParameter = {
+  parameterPath: ["options", "languages"],
+  mapper: {
+    serializedName: "languages",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParametersLanguagesItem"
+        }
+      }
+    }
+  }
+};
+
+export const languagesWeight: OperationParameter = {
+  parameterPath: ["options", "languagesWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "languagesWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const institutions: OperationParameter = {
+  parameterPath: ["options", "institutions"],
+  mapper: {
+    serializedName: "institutions",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const institutionsRequired: OperationParameter = {
+  parameterPath: ["options", "institutionsRequired"],
+  mapper: {
+    serializedName: "institutionsRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const degrees: OperationParameter = {
+  parameterPath: ["options", "degrees"],
+  mapper: {
+    serializedName: "degrees",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const degreesRequired: OperationParameter = {
+  parameterPath: ["options", "degreesRequired"],
+  mapper: {
+    serializedName: "degreesRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const highestDegreeTypes: OperationParameter = {
+  parameterPath: ["options", "highestDegreeTypes"],
+  mapper: {
+    constraints: {
+      UniqueItems: true
+    },
+    serializedName: "highestDegreeTypes",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Enum",
+          allowedValues: [
+            "school",
+            "certificate",
+            "bachelors",
+            "masters",
+            "doctoral"
+          ]
+        }
+      }
+    }
+  }
+};
+
+export const highestDegreeTypesRequired: OperationParameter = {
+  parameterPath: ["options", "highestDegreeTypesRequired"],
+  mapper: {
+    serializedName: "highestDegreeTypesRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const isCurrentStudent: OperationParameter = {
+  parameterPath: ["options", "isCurrentStudent"],
+  mapper: {
+    serializedName: "isCurrentStudent",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const isCurrentStudentRequired: OperationParameter = {
+  parameterPath: ["options", "isCurrentStudentRequired"],
+  mapper: {
+    serializedName: "isCurrentStudentRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const isRecentGraduate: OperationParameter = {
+  parameterPath: ["options", "isRecentGraduate"],
+  mapper: {
+    serializedName: "isRecentGraduate",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const isRecentGraduateRequired: OperationParameter = {
+  parameterPath: ["options", "isRecentGraduateRequired"],
+  mapper: {
+    serializedName: "isRecentGraduateRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const educationWeight: OperationParameter = {
+  parameterPath: ["options", "educationWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "educationWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const searchExpression: OperationParameter = {
+  parameterPath: ["options", "searchExpression"],
+  mapper: {
+    serializedName: "searchExpression",
     type: {
       name: "String"
     }
   }
 };
 
-export const body: OperationParameter = {
-  parameterPath: "body",
-  mapper: ResumeSearchParametersMapper
+export const searchExpressionRequired: OperationParameter = {
+  parameterPath: ["options", "searchExpressionRequired"],
+  mapper: {
+    serializedName: "searchExpressionRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const searchExpressionWeight: OperationParameter = {
+  parameterPath: ["options", "searchExpressionWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "searchExpressionWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const socCodes: OperationParameter = {
+  parameterPath: ["options", "socCodes"],
+  mapper: {
+    serializedName: "socCodes",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const socCodesWeight: OperationParameter = {
+  parameterPath: ["options", "socCodesWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "socCodesWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const socCodesRequired: OperationParameter = {
+  parameterPath: ["options", "socCodesRequired"],
+  mapper: {
+    serializedName: "socCodesRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const managementLevel: OperationParameter = {
+  parameterPath: ["options", "managementLevel"],
+  mapper: {
+    serializedName: "managementLevel",
+    type: {
+      name: "Enum",
+      allowedValues: ["Low", "Mid", "Upper"]
+    }
+  }
+};
+
+export const managementLevelRequired: OperationParameter = {
+  parameterPath: ["options", "managementLevelRequired"],
+  mapper: {
+    serializedName: "managementLevelRequired",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const managementLevelWeight: OperationParameter = {
+  parameterPath: ["options", "managementLevelWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "managementLevelWeight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const limit1: OperationQueryParameter = {
+  parameterPath: ["options", "limit"],
+  mapper: {
+    defaultValue: 20,
+    constraints: {
+      InclusiveMinimum: 1
+    },
+    serializedName: "limit",
+    type: {
+      name: "Number"
+    }
+  }
 };
 
 export const name: OperationParameter = {
@@ -290,11 +739,6 @@ export const name: OperationParameter = {
       name: "String"
     }
   }
-};
-
-export const body1: OperationParameter = {
-  parameterPath: "body",
-  mapper: Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const name1: OperationURLParameter = {
@@ -308,7 +752,19 @@ export const name1: OperationURLParameter = {
   }
 };
 
-export const body2: OperationParameter = {
+export const contentType1: OperationParameter = {
+  parameterPath: ["options", "contentType"],
+  mapper: {
+    defaultValue: "application/json",
+    isConstant: true,
+    serializedName: "Content-Type",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body: OperationParameter = {
   parameterPath: "body",
   mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };

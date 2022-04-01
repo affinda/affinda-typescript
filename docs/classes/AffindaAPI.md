@@ -50,7 +50,6 @@
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
-- [updateIndex](AffindaAPI.md#updateindex)
 
 ## Constructors
 
@@ -234,18 +233,15 @@ ___
 
 ### createResumeSearch
 
-▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+▸ **createResumeSearch**(`indices`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 Searches through parsed resumes.
-TODO TODO TODO
-When successful, returns a list of {id, pdf} in the response for subsequent use with the
-[/resumes/{identifier}](#operation/getResume) endpoint to retrieve the resumes.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | ``null`` \| [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
+| `indices` | `string`[] | Array of ResumeSearchParametersIndicesItem |
 | `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -646,23 +642,3 @@ Send the provided httpRequest.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[sendRequest](AffindaAPIContext.md#sendrequest)
-
-___
-
-### updateIndex
-
-▸ **updateIndex**(`name`, `body`, `options?`): `Promise`<[`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](../interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)\>
-
-Updates the specified index name to a new one
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `body` | [`Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema`](../interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md) | New Index name |
-| `options?` | [`AffindaAPIUpdateIndexOptionalParams`](../interfaces/AffindaAPIUpdateIndexOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](../interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)\>

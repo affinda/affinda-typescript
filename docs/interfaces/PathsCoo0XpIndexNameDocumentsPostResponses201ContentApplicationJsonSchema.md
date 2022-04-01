@@ -13,3 +13,5 @@
 ### document
 
 • `Optional` **document**: `string`
+
+Unique identifier for the document.

@@ -224,6 +224,39 @@ export interface ReformattedResumeData {
   reformattedFile?: string;
 }
 
+export interface ResumeSearchParametersLocationsItem {
+  name?: string;
+  coordinates?: ResumeSearchParametersLocationsItemCoordinates;
+  distance?: number;
+  unit?: SearchLocationUnit;
+}
+
+export interface ResumeSearchParametersLocationsItemCoordinates {
+  latitude?: number;
+  longitude?: number;
+}
+
+export interface ResumeSearchParametersSkillsItem {
+  name?: string;
+  required?: boolean;
+}
+
+export interface ResumeSearchParametersLanguagesItem {
+  name?: string;
+  required?: boolean;
+}
+
+export interface ResumeSearch {
+  /** Total number of results */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  parameters?: ResumeSearchParameters;
+  results?: ResumeSearchResult[];
+}
+
 export interface ResumeSearchParameters {
   indices: string[];
   jobTitles?: string[];
@@ -261,39 +294,6 @@ export interface ResumeSearchParameters {
   managementLevel?: ManagementLevel;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
-}
-
-export interface ResumeSearchParametersLocationsItem {
-  name?: string;
-  coordinates?: ResumeSearchParametersLocationsItemCoordinates;
-  distance?: number;
-  unit?: SearchLocationUnit;
-}
-
-export interface ResumeSearchParametersLocationsItemCoordinates {
-  latitude?: number;
-  longitude?: number;
-}
-
-export interface ResumeSearchParametersSkillsItem {
-  name?: string;
-  required?: boolean;
-}
-
-export interface ResumeSearchParametersLanguagesItem {
-  name?: string;
-  required?: boolean;
-}
-
-export interface ResumeSearch {
-  /** Total number of results */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  parameters?: ResumeSearchParameters;
-  results?: ResumeSearchResult[];
 }
 
 export interface ResumeSearchResult {
@@ -336,14 +336,6 @@ export interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
 }
 
-export interface Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema {
-  name?: string;
-}
-
-export interface PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema {
-  name?: string;
-}
-
 export interface PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
   /** Number of indexed documents in result */
   count?: number;
@@ -363,6 +355,7 @@ export interface PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJs
 }
 
 export interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
+  /** Unique identifier for the document. */
   document?: string;
 }
 
@@ -678,7 +671,53 @@ export type AffindaAPIDeleteReformattedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPICreateResumeSearchOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** Array of ResumeSearchParametersJobTitlesItem */
+  jobTitles?: string[];
+  jobTitlesCurrentOnly?: boolean;
+  jobTitlesRequired?: boolean;
+  jobTitlesWeight?: number;
+  yearsExperienceMin?: number;
+  yearsExperienceMax?: number;
+  yearsExperienceRequired?: boolean;
+  yearsExperienceWeight?: number;
+  /** Array of ResumeSearchParameters-locationsItem */
+  locations?: ResumeSearchParametersLocationsItem[];
+  locationsWeight?: number;
+  locationsRequired?: boolean;
+  /** Array of ResumeSearchParameters-skillsItem */
+  skills?: ResumeSearchParametersSkillsItem[];
+  skillsWeight?: number;
+  /** Array of ResumeSearchParameters-languagesItem */
+  languages?: ResumeSearchParametersLanguagesItem[];
+  languagesWeight?: number;
+  /** Array of ResumeSearchParametersInstitutionsItem */
+  institutions?: string[];
+  institutionsRequired?: boolean;
+  /** Array of ResumeSearchParametersDegreesItem */
+  degrees?: string[];
+  degreesRequired?: boolean;
+  /** Array of educationLevel */
+  highestDegreeTypes?: (EducationLevel | null)[];
+  highestDegreeTypesRequired?: boolean;
+  isCurrentStudent?: boolean;
+  isCurrentStudentRequired?: boolean;
+  isRecentGraduate?: boolean;
+  isRecentGraduateRequired?: boolean;
+  educationWeight?: number;
+  searchExpression?: string;
+  searchExpressionRequired?: boolean;
+  searchExpressionWeight?: number;
+  /** Array of ArrayItemschema */
+  socCodes?: number[];
+  socCodesWeight?: number;
+  socCodesRequired?: boolean;
+  managementLevel?: ManagementLevel;
+  managementLevelRequired?: boolean;
+  managementLevelWeight?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the createResumeSearch operation. */
 export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
@@ -698,13 +737,6 @@ export interface AffindaAPICreateIndexOptionalParams
 
 /** Contains response data for the createIndex operation. */
 export type AffindaAPICreateIndexResponse = Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface AffindaAPIUpdateIndexOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateIndex operation. */
-export type AffindaAPIUpdateIndexResponse = PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteIndexOptionalParams

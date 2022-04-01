@@ -38,7 +38,6 @@
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
-- [AffindaAPIUpdateIndexOptionalParams](interfaces/AffindaAPIUpdateIndexOptionalParams.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
@@ -52,13 +51,11 @@
 - [Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
-- [Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema](interfaces/Paths1Ud8LkzIndexNamePatchRequestbodyContentApplicationJsonSchema.md)
 - [Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)
 - [Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
 - [Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
-- [PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema](interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)
 - [PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
@@ -119,7 +116,6 @@
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
-- [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
 - [EducationLevel](modules.md#educationlevel)
 - [ManagementLevel](modules.md#managementlevel)
 - [SearchLocationUnit](modules.md#searchlocationunit)
@@ -323,14 +319,6 @@ ___
 Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)
 
 Contains response data for the listOccupationGroups operation.
-
-___
-
-### AffindaAPIUpdateIndexResponse
-
-Ƭ **AffindaAPIUpdateIndexResponse**: [`PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema`](interfaces/PathsEzsbycIndexNamePatchResponses200ContentApplicationJsonSchema.md)
-
-Contains response data for the updateIndex operation.
 
 ___
 
