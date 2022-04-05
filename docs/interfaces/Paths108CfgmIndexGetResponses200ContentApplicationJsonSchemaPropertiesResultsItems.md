@@ -12,4 +12,4 @@
 
 ### name
 
-• `Optional` **name**: `string`
+• **name**: `string`

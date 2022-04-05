@@ -598,7 +598,7 @@ export declare interface OccupationGroup {
 }
 
 export declare interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
-    name?: string;
+    name: string;
 }
 
 export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {

@@ -1738,6 +1738,7 @@ export const Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropert
     modelProperties: {
       name: {
         serializedName: "name",
+        required: true,
         type: {
           name: "String"
         }

@@ -329,7 +329,7 @@ export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
 }
 
 export interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
-  name?: string;
+  name: string;
 }
 
 export interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
