@@ -29,27 +29,27 @@ export const $host: OperationURLParameter = {
   skipEncoding: true
 };
 
-export const limit: OperationQueryParameter = {
-  parameterPath: "limit",
+export const offset: OperationQueryParameter = {
+  parameterPath: ["options", "offset"],
   mapper: {
-    defaultValue: 300,
     constraints: {
-      InclusiveMinimum: 1
+      InclusiveMinimum: 0
     },
-    serializedName: "limit",
+    serializedName: "offset",
     type: {
       name: "Number"
     }
   }
 };
 
-export const offset: OperationQueryParameter = {
-  parameterPath: "offset",
+export const limit: OperationQueryParameter = {
+  parameterPath: ["options", "limit"],
   mapper: {
+    defaultValue: 300,
     constraints: {
-      InclusiveMinimum: 0
+      InclusiveMinimum: 1
     },
-    serializedName: "offset",
+    serializedName: "limit",
     type: {
       name: "Number"
     }

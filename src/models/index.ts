@@ -521,7 +521,12 @@ export type EducationLevel =
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllResumes operation. */
 export type AffindaAPIGetAllResumesResponse = GetAllDocumentsResults;
@@ -564,7 +569,12 @@ export type AffindaAPIDeleteResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllRedactedResumesOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllRedactedResumes operation. */
 export type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResults;
@@ -623,14 +633,24 @@ export type AffindaAPIDeleteRedactedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumeFormatsOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllResumeFormats operation. */
 export type AffindaAPIGetAllResumeFormatsResponse = Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllReformattedResumesOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllReformattedResumes operation. */
 export type AffindaAPIGetAllReformattedResumesResponse = GetAllDocumentsResults;
@@ -672,6 +692,8 @@ export type AffindaAPIDeleteReformattedResumeResponse = RequestError;
 /** Optional parameters. */
 export interface AffindaAPICreateResumeSearchOptionalParams
   extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
   /** Array of ResumeSearchParametersJobTitlesItem */
   jobTitles?: string[];
   jobTitlesCurrentOnly?: boolean;
@@ -724,7 +746,12 @@ export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllIndexes operation. */
 export type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema;
@@ -768,7 +795,12 @@ export type AffindaAPIDeleteIndexDocumentResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllInvoicesOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllInvoices operation. */
 export type AffindaAPIGetAllInvoicesResponse = GetAllInvoicesResults;
@@ -821,10 +853,6 @@ export interface AffindaAPIOptionalParams
   extends coreClient.ServiceClientOptions {
   /** server parameter */
   $host?: string;
-  /** The numbers of documents to return, defaults to 300. */
-  limit?: number;
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
   /** Overrides client endpoint. */
   endpoint?: string;
 }

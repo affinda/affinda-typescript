@@ -4,8 +4,6 @@ import { AffindaAPIOptionalParams } from "./models";
 
 export class AffindaAPIContext extends coreClient.ServiceClient {
   $host: string;
-  limit?: number;
-  offset?: number;
 
   /**
    * Initializes a new instance of the AffindaAPIContext class.

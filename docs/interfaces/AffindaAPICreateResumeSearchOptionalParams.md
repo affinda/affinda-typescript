@@ -39,6 +39,7 @@ Optional parameters.
 - [managementLevel](AffindaAPICreateResumeSearchOptionalParams.md#managementlevel)
 - [managementLevelRequired](AffindaAPICreateResumeSearchOptionalParams.md#managementlevelrequired)
 - [managementLevelWeight](AffindaAPICreateResumeSearchOptionalParams.md#managementlevelweight)
+- [offset](AffindaAPICreateResumeSearchOptionalParams.md#offset)
 - [onResponse](AffindaAPICreateResumeSearchOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPICreateResumeSearchOptionalParams.md#requestoptions)
 - [searchExpression](AffindaAPICreateResumeSearchOptionalParams.md#searchexpression)
@@ -225,6 +226,14 @@ ___
 ### managementLevelWeight
 
 • `Optional` **managementLevelWeight**: `number`
+
+___
+
+### offset
+
+• `Optional` **offset**: `number`
+
+The number of documents to skip before starting to collect the result set.
 
 ___
 

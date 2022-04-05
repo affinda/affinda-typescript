@@ -447,7 +447,7 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.limit, Parameters.offset],
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
@@ -554,7 +554,7 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.limit, Parameters.offset],
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
@@ -670,7 +670,7 @@ const getAllResumeFormatsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.limit, Parameters.offset],
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
@@ -695,7 +695,7 @@ const getAllReformattedResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.limit, Parameters.offset],
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
@@ -866,7 +866,7 @@ const getAllIndexesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.limit, Parameters.offset],
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
@@ -1013,7 +1013,7 @@ const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.limit, Parameters.offset],
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
