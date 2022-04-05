@@ -1097,154 +1097,6 @@ export const ReformattedResumeData: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchParametersLocationsItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersLocationsItem",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      coordinates: {
-        serializedName: "coordinates",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchParametersLocationsItemCoordinates"
-        }
-      },
-      distance: {
-        serializedName: "distance",
-        type: {
-          name: "Number"
-        }
-      },
-      unit: {
-        serializedName: "unit",
-        type: {
-          name: "Enum",
-          allowedValues: ["km", "mi"]
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersLocationsItemCoordinates: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersLocationsItemCoordinates",
-    modelProperties: {
-      latitude: {
-        serializedName: "latitude",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      longitude: {
-        serializedName: "longitude",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersSkillsItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersSkillsItem",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      required: {
-        serializedName: "required",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersLanguagesItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersLanguagesItem",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      required: {
-        serializedName: "required",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearch: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearch",
-    modelProperties: {
-      count: {
-        serializedName: "count",
-        type: {
-          name: "Number"
-        }
-      },
-      next: {
-        serializedName: "next",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      previous: {
-        serializedName: "previous",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parameters: {
-        serializedName: "parameters",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchParameters"
-        }
-      },
-      results: {
-        serializedName: "results",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchResult"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
 export const ResumeSearchParameters: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1561,6 +1413,154 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         serializedName: "managementLevelWeight",
         type: {
           name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersLocationsItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersLocationsItem",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      coordinates: {
+        serializedName: "coordinates",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParametersLocationsItemCoordinates"
+        }
+      },
+      distance: {
+        serializedName: "distance",
+        type: {
+          name: "Number"
+        }
+      },
+      unit: {
+        serializedName: "unit",
+        type: {
+          name: "Enum",
+          allowedValues: ["km", "mi"]
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersLocationsItemCoordinates: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersLocationsItemCoordinates",
+    modelProperties: {
+      latitude: {
+        serializedName: "latitude",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      longitude: {
+        serializedName: "longitude",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersSkillsItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersSkillsItem",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      required: {
+        serializedName: "required",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersLanguagesItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersLanguagesItem",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      required: {
+        serializedName: "required",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearch: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearch",
+    modelProperties: {
+      count: {
+        serializedName: "count",
+        type: {
+          name: "Number"
+        }
+      },
+      next: {
+        serializedName: "next",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      previous: {
+        serializedName: "previous",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parameters: {
+        serializedName: "parameters",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParameters"
+        }
+      },
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchResult"
+            }
+          }
         }
       }
     }

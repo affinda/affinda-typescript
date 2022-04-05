@@ -31,6 +31,7 @@ import {
   AffindaAPIGetReformattedResumeResponse,
   AffindaAPIDeleteReformattedResumeOptionalParams,
   AffindaAPIDeleteReformattedResumeResponse,
+  ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
   AffindaAPIGetAllIndexesOptionalParams,
@@ -259,15 +260,15 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Searches through parsed resumes.
-   * @param indices Array of ResumeSearchParametersIndicesItem
+   * @param body Search parameters
    * @param options The options parameters.
    */
   createResumeSearch(
-    indices: string[],
+    body: ResumeSearchParameters | null,
     options?: AffindaAPICreateResumeSearchOptionalParams
   ): Promise<AffindaAPICreateResumeSearchResponse> {
     return this.sendOperationRequest(
-      { indices, options },
+      { body, options },
       createResumeSearchOperationSpec
     );
   }
@@ -802,47 +803,11 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  formDataParameters: [
-    Parameters.indices,
-    Parameters.jobTitles,
-    Parameters.jobTitlesCurrentOnly,
-    Parameters.jobTitlesRequired,
-    Parameters.jobTitlesWeight,
-    Parameters.yearsExperienceMin,
-    Parameters.yearsExperienceMax,
-    Parameters.yearsExperienceRequired,
-    Parameters.yearsExperienceWeight,
-    Parameters.locations,
-    Parameters.locationsWeight,
-    Parameters.locationsRequired,
-    Parameters.skills,
-    Parameters.skillsWeight,
-    Parameters.languages,
-    Parameters.languagesWeight,
-    Parameters.institutions,
-    Parameters.institutionsRequired,
-    Parameters.degrees,
-    Parameters.degreesRequired,
-    Parameters.highestDegreeTypes,
-    Parameters.highestDegreeTypesRequired,
-    Parameters.isCurrentStudent,
-    Parameters.isCurrentStudentRequired,
-    Parameters.isRecentGraduate,
-    Parameters.isRecentGraduateRequired,
-    Parameters.educationWeight,
-    Parameters.searchExpression,
-    Parameters.searchExpressionRequired,
-    Parameters.searchExpressionWeight,
-    Parameters.socCodes,
-    Parameters.socCodesWeight,
-    Parameters.socCodesRequired,
-    Parameters.managementLevel,
-    Parameters.managementLevelRequired,
-    Parameters.managementLevelWeight
-  ],
+  requestBody: Parameters.body,
   queryParameters: [Parameters.offset, Parameters.limit1],
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer
 };
 const getAllIndexesOperationSpec: coreClient.OperationSpec = {
@@ -965,7 +930,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body,
+  requestBody: Parameters.body1,
   urlParameters: [Parameters.$host, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

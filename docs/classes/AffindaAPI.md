@@ -211,7 +211,7 @@ ___
 
 ### createResumeSearch
 
-▸ **createResumeSearch**(`indices`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 Searches through parsed resumes.
 
@@ -219,7 +219,7 @@ Searches through parsed resumes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `indices` | `string`[] | Array of ResumeSearchParametersIndicesItem |
+| `body` | ``null`` \| [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
 | `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
 
 #### Returns
