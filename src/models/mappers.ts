@@ -1114,6 +1114,13 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
           }
         }
       },
+      jobDescription: {
+        serializedName: "jobDescription",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       jobTitles: {
         serializedName: "jobTitles",
         type: {

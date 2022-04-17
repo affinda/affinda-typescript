@@ -898,6 +898,8 @@ export declare interface ResumeSearch {
 
 export declare interface ResumeSearchParameters {
     indices: string[];
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    jobDescription?: string;
     jobTitles?: string[];
     jobTitlesCurrentOnly?: boolean;
     jobTitlesRequired?: boolean;

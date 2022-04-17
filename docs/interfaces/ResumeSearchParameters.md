@@ -18,6 +18,7 @@
 - [isCurrentStudentRequired](ResumeSearchParameters.md#iscurrentstudentrequired)
 - [isRecentGraduate](ResumeSearchParameters.md#isrecentgraduate)
 - [isRecentGraduateRequired](ResumeSearchParameters.md#isrecentgraduaterequired)
+- [jobDescription](ResumeSearchParameters.md#jobdescription)
 - [jobTitles](ResumeSearchParameters.md#jobtitles)
 - [jobTitlesCurrentOnly](ResumeSearchParameters.md#jobtitlescurrentonly)
 - [jobTitlesRequired](ResumeSearchParameters.md#jobtitlesrequired)
@@ -114,6 +115,14 @@ ___
 ### isRecentGraduateRequired
 
 • `Optional` **isRecentGraduateRequired**: `boolean`
+
+___
+
+### jobDescription
+
+• `Optional` **jobDescription**: `string`
+
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
 
 ___
 
