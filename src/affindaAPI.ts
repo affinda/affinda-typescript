@@ -34,6 +34,14 @@ import {
   ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
+  AffindaAPIGetAllJobDescriptionsOptionalParams,
+  AffindaAPIGetAllJobDescriptionsResponse,
+  AffindaAPICreateJobDescriptionOptionalParams,
+  AffindaAPICreateJobDescriptionResponse,
+  AffindaAPIGetJobDescriptionOptionalParams,
+  AffindaAPIGetJobDescriptionResponse,
+  AffindaAPIDeleteJobDescriptionOptionalParams,
+  AffindaAPIDeleteJobDescriptionResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
   AffindaAPICreateIndexOptionalParams,
@@ -270,6 +278,67 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { body, options },
       createResumeSearchOperationSpec
+    );
+  }
+
+  /**
+   * Returns all the job descriptions for that user, limited to 300 per page.
+   * @param options The options parameters.
+   */
+  getAllJobDescriptions(
+    options?: AffindaAPIGetAllJobDescriptionsOptionalParams
+  ): Promise<AffindaAPIGetAllJobDescriptionsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllJobDescriptionsOperationSpec
+    );
+  }
+
+  /**
+   * Uploads a job description for parsing.
+   * When successful, returns an `identifier` in the response for subsequent use with the
+   * [/job_descriptions/{identifier}](#operation/getResume) endpoint to check processing status and
+   * retrieve results.
+   * @param options The options parameters.
+   */
+  createJobDescription(
+    options?: AffindaAPICreateJobDescriptionOptionalParams
+  ): Promise<AffindaAPICreateJobDescriptionResponse> {
+    return this.sendOperationRequest(
+      { options },
+      createJobDescriptionOperationSpec
+    );
+  }
+
+  /**
+   * Returns all the results for that job description if processing is completed.
+   * The `identifier` is the unique ID returned after POST-ing the resume via the
+   * [/job_descriptions](#operation/createJobDescription) endpoint.
+   * @param identifier Document identifier
+   * @param options The options parameters.
+   */
+  getJobDescription(
+    identifier: string | null,
+    options?: AffindaAPIGetJobDescriptionOptionalParams
+  ): Promise<AffindaAPIGetJobDescriptionResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getJobDescriptionOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified job description from the database
+   * @param identifier Document identifier
+   * @param options The options parameters.
+   */
+  deleteJobDescription(
+    identifier: string | null,
+    options?: AffindaAPIDeleteJobDescriptionOptionalParams
+  ): Promise<AffindaAPIDeleteJobDescriptionResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteJobDescriptionOperationSpec
     );
   }
 
@@ -808,6 +877,113 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
+  serializer
+};
+const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
+  path: "/job_descriptions",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.GetAllJobDescriptionsResults
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/job_descriptions",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescription
+    },
+    201: {
+      bodyMapper: Mappers.JobDescription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  formDataParameters: [
+    Parameters.file,
+    Parameters.identifier,
+    Parameters.fileName,
+    Parameters.url,
+    Parameters.wait,
+    Parameters.language,
+    Parameters.expiryTime
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer
+};
+const getJobDescriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/job_descriptions/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const deleteJobDescriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/job_descriptions/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
   serializer
 };
 const getAllIndexesOperationSpec: coreClient.OperationSpec = {

@@ -320,6 +320,66 @@ export interface ResumeSearchScoreComponent {
   score?: number;
 }
 
+export interface GetAllJobDescriptionsResults {
+  /** Number of documents in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: Meta[];
+}
+
+export interface JobDescription {
+  data: JobDescriptionData | null;
+  meta: Meta;
+  error: ErrorModel;
+}
+
+export interface JobDescriptionData {
+  contactEmail?: Annotation;
+  contactName?: Annotation;
+  contactPhone?: Annotation;
+  startDate?: DateAnnotation;
+  endDate?: DateAnnotation;
+  jobType?: Annotation;
+  languages?: LanguageAnnotation[];
+  skills?: SkillAnnotation[];
+  organizationName?: Annotation;
+  organizationWebsite?: Annotation;
+  educationLevel?: Annotation;
+  educationAccreditation?: Annotation;
+  expectedRemuneration?: ExpectedRemunerationAnnotation;
+  location?: LocationAnnotation;
+  certifications?: (Annotation | null)[];
+}
+
+export interface Annotation {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  rectangle: Rectangle;
+  pageIndex: number | null;
+  raw: string | null;
+  parsed?: string;
+  confidence: number;
+  isVerified: boolean;
+  classification: string;
+}
+
+export interface Rectangle {
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+}
+
+export interface ExpectedRemunerationAnnotationParsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
   /** Number of indexes in result */
   count?: number;
@@ -378,41 +438,186 @@ export interface Invoice {
 }
 
 export interface InvoiceData {
-  invoiceDate?: string;
-  invoiceOrderDate?: string;
-  paymentDateDue?: string;
-  paymentAmountBase?: string;
-  paymentAmountTax?: string;
-  paymentAmountTotal?: string;
-  paymentAmountPaid?: string;
-  paymentAmountDue?: string;
-  invoiceNumber?: string;
-  invoicePurchaseOrderNumber?: string;
-  supplierBusinessNumber?: string;
-  customerNumber?: string;
-  customerBusinessNumber?: string;
-  paymentReference?: string;
-  bankAccountNumber?: string;
-  supplierVAT?: string;
-  customerVAT?: string;
-  bpayBillerCode?: string;
-  bpayReference?: string;
-  bankSortCode?: string;
-  bankIban?: string;
-  bankSwift?: string;
-  bankBSB?: string;
-  customerContactName?: string;
-  customerCompanyName?: string;
-  supplierCompanyName?: string;
-  customerBillingAddress?: Location;
-  customerDeliveryAddress?: Location;
-  supplierAddress?: Location;
-  customerPhoneNumber?: string;
-  supplierPhoneNumber?: string;
-  supplierFax?: string;
-  customerEmail?: string;
-  supplierEmail?: string;
-  supplierWebsite?: string;
+  invoiceDate?: DateAnnotation;
+  invoiceOrderDate?: DateAnnotation;
+  paymentDateDue?: DateAnnotation;
+  paymentAmountBase?: InvoiceDataPaymentAmountBase;
+  paymentAmountTax?: InvoiceDataPaymentAmountTax;
+  paymentAmountTotal?: InvoiceDataPaymentAmountTotal;
+  paymentAmountPaid?: InvoiceDataPaymentAmountPaid;
+  paymentAmountDue?: InvoiceDataPaymentAmountDue;
+  invoiceNumber?: InvoiceDataInvoiceNumber;
+  invoicePurchaseOrderNumber?: InvoiceDataInvoicePurchaseOrderNumber;
+  supplierBusinessNumber?: InvoiceDataSupplierBusinessNumber;
+  customerNumber?: InvoiceDataCustomerNumber;
+  customerBusinessNumber?: InvoiceDataCustomerBusinessNumber;
+  paymentReference?: InvoiceDataPaymentReference;
+  bankAccountNumber?: InvoiceDataBankAccountNumber;
+  supplierVAT?: InvoiceDataSupplierVAT;
+  customerVAT?: InvoiceDataCustomerVAT;
+  bpayBillerCode?: InvoiceDataBpayBillerCode;
+  bpayReference?: InvoiceDataBpayReference;
+  bankSortCode?: InvoiceDataBankSortCode;
+  bankIban?: InvoiceDataBankIban;
+  bankSwift?: InvoiceDataBankSwift;
+  bankBSB?: InvoiceDataBankBSB;
+  customerContactName?: InvoiceDataCustomerContactName;
+  customerCompanyName?: InvoiceDataCustomerCompanyName;
+  supplierCompanyName?: InvoiceDataSupplierCompanyName;
+  customerBillingAddress?: LocationAnnotation;
+  customerDeliveryAddress?: LocationAnnotation;
+  supplierAddress?: LocationAnnotation;
+  customerPhoneNumber?: InvoiceDataCustomerPhoneNumber;
+  supplierPhoneNumber?: InvoiceDataSupplierPhoneNumber;
+  supplierFax?: InvoiceDataSupplierFax;
+  customerEmail?: InvoiceDataCustomerEmail;
+  supplierEmail?: InvoiceDataSupplierEmail;
+  supplierWebsite?: InvoiceDataSupplierWebsite;
+}
+
+export interface ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 {
+  raw?: string;
+  parsed?: string;
+}
+
+export interface Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 {
+  raw?: string;
+  parsed?: string;
 }
 
 export interface OccupationGroup {
@@ -488,6 +693,23 @@ export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFor
   wait?: string;
 }
 
+export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema {
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  file?: coreRestPipeline.RequestBodyType;
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  identifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** URL to file to download and process */
+  url?: string;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+}
+
 export interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
   name?: string;
 }
@@ -509,6 +731,112 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
   expiryTime?: string;
 }
 
+export type DateAnnotation = Annotation & {
+  parsed?: Date;
+};
+
+export type LanguageAnnotation = Annotation & {
+  parsed?: string;
+};
+
+export type SkillAnnotation = Annotation & {
+  parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotation = Annotation & {
+  parsed?: ExpectedRemunerationAnnotationParsed;
+};
+
+export type LocationAnnotation = Annotation & {
+  parsed?: Location;
+};
+
+export type InvoiceDataPaymentAmountBase = Annotation &
+  ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 & {};
+
+export type InvoiceDataPaymentAmountTax = Annotation &
+  ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 & {};
+
+export type InvoiceDataPaymentAmountTotal = Annotation &
+  Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 & {};
+
+export type InvoiceDataPaymentAmountPaid = Annotation &
+  Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 & {};
+
+export type InvoiceDataPaymentAmountDue = Annotation &
+  Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 & {};
+
+export type InvoiceDataInvoiceNumber = Annotation &
+  Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 & {};
+
+export type InvoiceDataInvoicePurchaseOrderNumber = Annotation &
+  Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 & {};
+
+export type InvoiceDataSupplierBusinessNumber = Annotation &
+  ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 & {};
+
+export type InvoiceDataCustomerNumber = Annotation &
+  Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 & {};
+
+export type InvoiceDataCustomerBusinessNumber = Annotation &
+  ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 & {};
+
+export type InvoiceDataPaymentReference = Annotation &
+  Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 & {};
+
+export type InvoiceDataBankAccountNumber = Annotation &
+  Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 & {};
+
+export type InvoiceDataSupplierVAT = Annotation &
+  Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 & {};
+
+export type InvoiceDataCustomerVAT = Annotation &
+  ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 & {};
+
+export type InvoiceDataBpayBillerCode = Annotation &
+  Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 & {};
+
+export type InvoiceDataBpayReference = Annotation &
+  Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 & {};
+
+export type InvoiceDataBankSortCode = Annotation &
+  Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 & {};
+
+export type InvoiceDataBankIban = Annotation &
+  ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 & {};
+
+export type InvoiceDataBankSwift = Annotation &
+  Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 & {};
+
+export type InvoiceDataBankBSB = Annotation &
+  ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 & {};
+
+export type InvoiceDataCustomerContactName = Annotation &
+  ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 & {};
+
+export type InvoiceDataCustomerCompanyName = Annotation &
+  Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 & {};
+
+export type InvoiceDataSupplierCompanyName = Annotation &
+  Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 & {};
+
+export type InvoiceDataCustomerPhoneNumber = Annotation &
+  ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 & {};
+
+export type InvoiceDataSupplierPhoneNumber = Annotation &
+  ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 & {};
+
+export type InvoiceDataSupplierFax = Annotation &
+  Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 & {};
+
+export type InvoiceDataCustomerEmail = Annotation &
+  Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 & {};
+
+export type InvoiceDataSupplierEmail = Annotation &
+  ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 & {};
+
+export type InvoiceDataSupplierWebsite = Annotation &
+  Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -702,6 +1030,54 @@ export interface AffindaAPICreateResumeSearchOptionalParams
 
 /** Contains response data for the createResumeSearch operation. */
 export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllJobDescriptionsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the getAllJobDescriptions operation. */
+export type AffindaAPIGetAllJobDescriptionsResponse = GetAllJobDescriptionsResults;
+
+/** Optional parameters. */
+export interface AffindaAPICreateJobDescriptionOptionalParams
+  extends coreClient.OperationOptions {
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  file?: coreRestPipeline.RequestBodyType;
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  identifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** URL to file to download and process */
+  url?: string;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+}
+
+/** Contains response data for the createJobDescription operation. */
+export type AffindaAPICreateJobDescriptionResponse = JobDescription;
+
+/** Optional parameters. */
+export interface AffindaAPIGetJobDescriptionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getJobDescription operation. */
+export type AffindaAPIGetJobDescriptionResponse = JobDescription;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteJobDescriptionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the deleteJobDescription operation. */
+export type AffindaAPIDeleteJobDescriptionResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams

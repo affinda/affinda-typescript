@@ -1695,6 +1695,341 @@ export const ResumeSearchScoreComponent: coreClient.CompositeMapper = {
   }
 };
 
+export const GetAllJobDescriptionsResults: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "GetAllJobDescriptionsResults",
+    modelProperties: {
+      count: {
+        serializedName: "count",
+        type: {
+          name: "Number"
+        }
+      },
+      next: {
+        serializedName: "next",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      previous: {
+        serializedName: "previous",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Meta"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const JobDescription: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescription",
+    modelProperties: {
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionData"
+        }
+      },
+      meta: {
+        serializedName: "meta",
+        type: {
+          name: "Composite",
+          className: "Meta"
+        }
+      },
+      error: {
+        serializedName: "error",
+        type: {
+          name: "Composite",
+          className: "ErrorModel"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionData: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionData",
+    modelProperties: {
+      contactEmail: {
+        serializedName: "contactEmail",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      contactName: {
+        serializedName: "contactName",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      contactPhone: {
+        serializedName: "contactPhone",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      startDate: {
+        serializedName: "startDate",
+        type: {
+          name: "Composite",
+          className: "DateAnnotation"
+        }
+      },
+      endDate: {
+        serializedName: "endDate",
+        type: {
+          name: "Composite",
+          className: "DateAnnotation"
+        }
+      },
+      jobType: {
+        serializedName: "jobType",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "LanguageAnnotation"
+            }
+          }
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "SkillAnnotation"
+            }
+          }
+        }
+      },
+      organizationName: {
+        serializedName: "organizationName",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      organizationWebsite: {
+        serializedName: "organizationWebsite",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      educationLevel: {
+        serializedName: "educationLevel",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      educationAccreditation: {
+        serializedName: "educationAccreditation",
+        type: {
+          name: "Composite",
+          className: "Annotation"
+        }
+      },
+      expectedRemuneration: {
+        serializedName: "expectedRemuneration",
+        type: {
+          name: "Composite",
+          className: "ExpectedRemunerationAnnotation"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "LocationAnnotation"
+        }
+      },
+      certifications: {
+        serializedName: "certifications",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Annotation"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Annotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Annotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      rectangle: {
+        serializedName: "rectangle",
+        type: {
+          name: "Composite",
+          className: "Rectangle"
+        }
+      },
+      pageIndex: {
+        serializedName: "pageIndex",
+        required: true,
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      raw: {
+        serializedName: "raw",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      confidence: {
+        serializedName: "confidence",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      isVerified: {
+        serializedName: "is_verified",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      classification: {
+        serializedName: "classification",
+        required: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Rectangle: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Rectangle",
+    modelProperties: {
+      x0: {
+        serializedName: "x0",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      y0: {
+        serializedName: "y0",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      x1: {
+        serializedName: "x1",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      y1: {
+        serializedName: "y1",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ExpectedRemunerationAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ExpectedRemunerationAnnotationParsed",
+    modelProperties: {
+      minimum: {
+        serializedName: "minimum",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      maximum: {
+        serializedName: "maximum",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      currency: {
+        serializedName: "currency",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      unit: {
+        serializedName: "unit",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1938,239 +2273,935 @@ export const InvoiceData: coreClient.CompositeMapper = {
     modelProperties: {
       invoiceDate: {
         serializedName: "invoiceDate",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "DateAnnotation"
         }
       },
       invoiceOrderDate: {
         serializedName: "invoiceOrderDate",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "DateAnnotation"
         }
       },
       paymentDateDue: {
         serializedName: "paymentDateDue",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "DateAnnotation"
         }
       },
       paymentAmountBase: {
         serializedName: "paymentAmountBase",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataPaymentAmountBase"
         }
       },
       paymentAmountTax: {
         serializedName: "paymentAmountTax",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataPaymentAmountTax"
         }
       },
       paymentAmountTotal: {
         serializedName: "paymentAmountTotal",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataPaymentAmountTotal"
         }
       },
       paymentAmountPaid: {
         serializedName: "paymentAmountPaid",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataPaymentAmountPaid"
         }
       },
       paymentAmountDue: {
         serializedName: "paymentAmountDue",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataPaymentAmountDue"
         }
       },
       invoiceNumber: {
         serializedName: "invoiceNumber",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataInvoiceNumber"
         }
       },
       invoicePurchaseOrderNumber: {
         serializedName: "invoicePurchaseOrderNumber",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataInvoicePurchaseOrderNumber"
         }
       },
       supplierBusinessNumber: {
         serializedName: "supplierBusinessNumber",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataSupplierBusinessNumber"
         }
       },
       customerNumber: {
         serializedName: "customerNumber",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerNumber"
         }
       },
       customerBusinessNumber: {
         serializedName: "customerBusinessNumber",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerBusinessNumber"
         }
       },
       paymentReference: {
         serializedName: "paymentReference",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataPaymentReference"
         }
       },
       bankAccountNumber: {
         serializedName: "bankAccountNumber",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBankAccountNumber"
         }
       },
       supplierVAT: {
         serializedName: "supplierVAT",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataSupplierVAT"
         }
       },
       customerVAT: {
         serializedName: "customerVAT",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerVAT"
         }
       },
       bpayBillerCode: {
         serializedName: "bpayBillerCode",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBpayBillerCode"
         }
       },
       bpayReference: {
         serializedName: "bpayReference",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBpayReference"
         }
       },
       bankSortCode: {
         serializedName: "bankSortCode",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBankSortCode"
         }
       },
       bankIban: {
         serializedName: "bankIBAN",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBankIban"
         }
       },
       bankSwift: {
         serializedName: "bankSwift",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBankSwift"
         }
       },
       bankBSB: {
         serializedName: "bankBSB",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataBankBSB"
         }
       },
       customerContactName: {
         serializedName: "customerContactName",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerContactName"
         }
       },
       customerCompanyName: {
         serializedName: "customerCompanyName",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerCompanyName"
         }
       },
       supplierCompanyName: {
         serializedName: "supplierCompanyName",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataSupplierCompanyName"
         }
       },
       customerBillingAddress: {
         serializedName: "customerBillingAddress",
         type: {
           name: "Composite",
-          className: "Location"
+          className: "LocationAnnotation"
         }
       },
       customerDeliveryAddress: {
         serializedName: "customerDeliveryAddress",
         type: {
           name: "Composite",
-          className: "Location"
+          className: "LocationAnnotation"
         }
       },
       supplierAddress: {
         serializedName: "supplierAddress",
         type: {
           name: "Composite",
-          className: "Location"
+          className: "LocationAnnotation"
         }
       },
       customerPhoneNumber: {
         serializedName: "customerPhoneNumber",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerPhoneNumber"
         }
       },
       supplierPhoneNumber: {
         serializedName: "supplierPhoneNumber",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataSupplierPhoneNumber"
         }
       },
       supplierFax: {
         serializedName: "supplierFax",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataSupplierFax"
         }
       },
       customerEmail: {
         serializedName: "customerEmail",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataCustomerEmail"
         }
       },
       supplierEmail: {
         serializedName: "supplierEmail",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "InvoiceDataSupplierEmail"
         }
       },
       supplierWebsite: {
         serializedName: "supplierWebsite",
+        type: {
+          name: "Composite",
+          className: "InvoiceDataSupplierWebsite"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -2445,6 +3476,64 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
   }
 };
 
+export const PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema",
+    modelProperties: {
+      file: {
+        serializedName: "file",
+        type: {
+          name: "Stream"
+        }
+      },
+      identifier: {
+        serializedName: "identifier",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      fileName: {
+        serializedName: "fileName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      url: {
+        serializedName: "url",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      wait: {
+        defaultValue: "true",
+        serializedName: "wait",
+        type: {
+          name: "String"
+        }
+      },
+      language: {
+        serializedName: "language",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      expiryTime: {
+        serializedName: "expiryTime",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -2514,6 +3603,473 @@ export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: 
           name: "String"
         }
       }
+    }
+  }
+};
+
+export const DateAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DateAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "Date"
+        }
+      }
+    }
+  }
+};
+
+export const LanguageAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "LanguageAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const SkillAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "SkillAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ExpectedRemunerationAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ExpectedRemunerationAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "ExpectedRemunerationAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const LocationAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "LocationAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "Location"
+        }
+      }
+    }
+  }
+};
+
+export const InvoiceDataPaymentAmountBase: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataPaymentAmountBase",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataPaymentAmountTax: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataPaymentAmountTax",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataPaymentAmountTotal: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataPaymentAmountTotal",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataPaymentAmountPaid: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataPaymentAmountPaid",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataPaymentAmountDue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataPaymentAmountDue",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataInvoiceNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataInvoiceNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataInvoicePurchaseOrderNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataInvoicePurchaseOrderNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierBusinessNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierBusinessNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerBusinessNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerBusinessNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataPaymentReference: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataPaymentReference",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBankAccountNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBankAccountNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierVAT: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierVAT",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerVAT: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerVAT",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBpayBillerCode: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBpayBillerCode",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBpayReference: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBpayReference",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBankSortCode: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBankSortCode",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBankIban: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBankIban",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBankSwift: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBankSwift",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataBankBSB: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataBankBSB",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerContactName: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerContactName",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerCompanyName: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerCompanyName",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierCompanyName: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierCompanyName",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerPhoneNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerPhoneNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierPhoneNumber: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierPhoneNumber",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2
+        .type.modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierFax: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierFax",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataCustomerEmail: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataCustomerEmail",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierEmail: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierEmail",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2.type
+        .modelProperties
+    }
+  }
+};
+
+export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataSupplierWebsite",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      ...Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.type
+        .modelProperties
     }
   }
 };

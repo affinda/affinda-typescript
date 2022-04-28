@@ -280,6 +280,91 @@ client.deleteReformattedResume("REPLACE_IDENTIFIER").then((result) => {
 Resume Search
 -------------
 
+Job Descriptions
+----------------
+
+### getAllJobDescriptions - Get list of all job descriptions
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+
+client.getAllJobDescriptions().then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+### createJobDescription - Upload a job description for parsing
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+const fs = require("fs");
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+const readStream = fs.createReadStream("path_to_file.pdf");
+
+client.createJobDescription({file: readStream}).then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+
+// Can also use a URL:
+
+client.createJobDescription({url: "https://api.affinda.com/static/sample_job_descriptions/example.pdf"}).then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+### getJobDescription - Get job description results for a specific job description file
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+client.getJobDescription("REPLACE_IDENTIFIER").then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
+### deleteJobDescription - Delete a job description
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+client.deleteJobDescription("REPLACE_IDENTIFIER").then((result) => {
+    console.log("Returned data:");
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:");
+    console.error(err);
+});
+```
+
 Invoice Parser
 --------------
 

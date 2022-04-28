@@ -24,6 +24,7 @@
 - [createIndex](AffindaAPI.md#createindex)
 - [createIndexDocument](AffindaAPI.md#createindexdocument)
 - [createInvoice](AffindaAPI.md#createinvoice)
+- [createJobDescription](AffindaAPI.md#createjobdescription)
 - [createRedactedResume](AffindaAPI.md#createredactedresume)
 - [createReformattedResume](AffindaAPI.md#createreformattedresume)
 - [createResume](AffindaAPI.md#createresume)
@@ -31,17 +32,20 @@
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
 - [deleteInvoice](AffindaAPI.md#deleteinvoice)
+- [deleteJobDescription](AffindaAPI.md#deletejobdescription)
 - [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
 - [deleteReformattedResume](AffindaAPI.md#deletereformattedresume)
 - [deleteResume](AffindaAPI.md#deleteresume)
 - [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
 - [getAllIndexes](AffindaAPI.md#getallindexes)
 - [getAllInvoices](AffindaAPI.md#getallinvoices)
+- [getAllJobDescriptions](AffindaAPI.md#getalljobdescriptions)
 - [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
 - [getAllReformattedResumes](AffindaAPI.md#getallreformattedresumes)
 - [getAllResumeFormats](AffindaAPI.md#getallresumeformats)
 - [getAllResumes](AffindaAPI.md#getallresumes)
 - [getInvoice](AffindaAPI.md#getinvoice)
+- [getJobDescription](AffindaAPI.md#getjobdescription)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
@@ -148,6 +152,27 @@ results.
 #### Returns
 
 `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+
+___
+
+### createJobDescription
+
+▸ **createJobDescription**(`options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+
+Uploads a job description for parsing.
+When successful, returns an `identifier` in the response for subsequent use with the
+[/job_descriptions/{identifier}](#operation/getResume) endpoint to check processing status and
+retrieve results.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateJobDescriptionOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
@@ -286,6 +311,25 @@ Delete the specified invoice from the database
 
 ___
 
+### deleteJobDescription
+
+▸ **deleteJobDescription**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+Deletes the specified job description from the database
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Document identifier |
+| `options?` | [`AffindaAPIDeleteJobDescriptionOptionalParams`](../interfaces/AffindaAPIDeleteJobDescriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
+
+___
+
 ### deleteRedactedResume
 
 ▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
@@ -398,6 +442,24 @@ Returns all the invoice summaries for that user, limited to 300 per page.
 
 ___
 
+### getAllJobDescriptions
+
+▸ **getAllJobDescriptions**(`options?`): `Promise`<[`GetAllJobDescriptionsResults`](../interfaces/GetAllJobDescriptionsResults.md)\>
+
+Returns all the job descriptions for that user, limited to 300 per page.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetAllJobDescriptionsOptionalParams`](../interfaces/AffindaAPIGetAllJobDescriptionsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`GetAllJobDescriptionsResults`](../interfaces/GetAllJobDescriptionsResults.md)\>
+
+___
+
 ### getAllRedactedResumes
 
 ▸ **getAllRedactedResumes**(`options?`): `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
@@ -488,6 +550,27 @@ The `identifier` is the unique ID returned after POST-ing the invoice via the
 #### Returns
 
 `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+
+___
+
+### getJobDescription
+
+▸ **getJobDescription**(`identifier`, `options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+
+Returns all the results for that job description if processing is completed.
+The `identifier` is the unique ID returned after POST-ing the resume via the
+[/job_descriptions](#operation/createJobDescription) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Document identifier |
+| `options?` | [`AffindaAPIGetJobDescriptionOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
