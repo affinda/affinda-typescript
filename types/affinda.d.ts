@@ -546,7 +546,6 @@ export declare interface Annotation {
     rectangle: Rectangle;
     pageIndex: number | null;
     raw: string | null;
-    parsed?: string;
     confidence: number;
     isVerified: boolean;
     classification: string;
@@ -575,6 +574,11 @@ export declare interface Components15Ayv0YSchemasInvoicedataPropertiesPaymentamo
 export declare interface Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 {
     raw?: string;
     parsed?: string;
+}
+
+export declare interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
+    /** Signed URL (valid for 60 minutes) to access the invoice review tool */
+    reviewUrl?: string;
 }
 
 export declare interface Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 {
@@ -772,7 +776,7 @@ export declare interface GetAllJobDescriptionsResults {
 
 export declare interface Invoice {
     data: InvoiceData | null;
-    meta: Meta;
+    meta: InvoiceMeta;
     error: ErrorModel;
 }
 
@@ -814,63 +818,65 @@ export declare interface InvoiceData {
     supplierWebsite?: InvoiceDataSupplierWebsite;
 }
 
-export declare type InvoiceDataBankAccountNumber = Annotation & Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 & {};
+export declare type InvoiceDataBankAccountNumber = TextAnnotation & Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 & {};
 
-export declare type InvoiceDataBankBSB = Annotation & ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 & {};
+export declare type InvoiceDataBankBSB = TextAnnotation & ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 & {};
 
-export declare type InvoiceDataBankIban = Annotation & ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 & {};
+export declare type InvoiceDataBankIban = TextAnnotation & ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 & {};
 
-export declare type InvoiceDataBankSortCode = Annotation & Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 & {};
+export declare type InvoiceDataBankSortCode = TextAnnotation & Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 & {};
 
-export declare type InvoiceDataBankSwift = Annotation & Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 & {};
+export declare type InvoiceDataBankSwift = TextAnnotation & Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 & {};
 
-export declare type InvoiceDataBpayBillerCode = Annotation & Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 & {};
+export declare type InvoiceDataBpayBillerCode = TextAnnotation & Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 & {};
 
-export declare type InvoiceDataBpayReference = Annotation & Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 & {};
+export declare type InvoiceDataBpayReference = TextAnnotation & Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 & {};
 
-export declare type InvoiceDataCustomerBusinessNumber = Annotation & ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 & {};
+export declare type InvoiceDataCustomerBusinessNumber = TextAnnotation & ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 & {};
 
-export declare type InvoiceDataCustomerCompanyName = Annotation & Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 & {};
+export declare type InvoiceDataCustomerCompanyName = TextAnnotation & Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 & {};
 
-export declare type InvoiceDataCustomerContactName = Annotation & ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 & {};
+export declare type InvoiceDataCustomerContactName = TextAnnotation & ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 & {};
 
-export declare type InvoiceDataCustomerEmail = Annotation & Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 & {};
+export declare type InvoiceDataCustomerEmail = TextAnnotation & Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 & {};
 
-export declare type InvoiceDataCustomerNumber = Annotation & Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 & {};
+export declare type InvoiceDataCustomerNumber = TextAnnotation & Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 & {};
 
-export declare type InvoiceDataCustomerPhoneNumber = Annotation & ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 & {};
+export declare type InvoiceDataCustomerPhoneNumber = TextAnnotation & ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 & {};
 
-export declare type InvoiceDataCustomerVAT = Annotation & ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 & {};
+export declare type InvoiceDataCustomerVAT = TextAnnotation & ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 & {};
 
-export declare type InvoiceDataInvoiceNumber = Annotation & Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 & {};
+export declare type InvoiceDataInvoiceNumber = TextAnnotation & Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 & {};
 
-export declare type InvoiceDataInvoicePurchaseOrderNumber = Annotation & Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 & {};
+export declare type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation & Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 & {};
 
-export declare type InvoiceDataPaymentAmountBase = Annotation & ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 & {};
+export declare type InvoiceDataPaymentAmountBase = TextAnnotation & ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 & {};
 
-export declare type InvoiceDataPaymentAmountDue = Annotation & Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 & {};
+export declare type InvoiceDataPaymentAmountDue = TextAnnotation & Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 & {};
 
-export declare type InvoiceDataPaymentAmountPaid = Annotation & Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 & {};
+export declare type InvoiceDataPaymentAmountPaid = TextAnnotation & Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 & {};
 
-export declare type InvoiceDataPaymentAmountTax = Annotation & ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 & {};
+export declare type InvoiceDataPaymentAmountTax = TextAnnotation & ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 & {};
 
-export declare type InvoiceDataPaymentAmountTotal = Annotation & Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 & {};
+export declare type InvoiceDataPaymentAmountTotal = TextAnnotation & Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 & {};
 
-export declare type InvoiceDataPaymentReference = Annotation & Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 & {};
+export declare type InvoiceDataPaymentReference = TextAnnotation & Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 & {};
 
-export declare type InvoiceDataSupplierBusinessNumber = Annotation & ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 & {};
+export declare type InvoiceDataSupplierBusinessNumber = TextAnnotation & ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 & {};
 
-export declare type InvoiceDataSupplierCompanyName = Annotation & Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 & {};
+export declare type InvoiceDataSupplierCompanyName = TextAnnotation & Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 & {};
 
-export declare type InvoiceDataSupplierEmail = Annotation & ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 & {};
+export declare type InvoiceDataSupplierEmail = TextAnnotation & ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 & {};
 
-export declare type InvoiceDataSupplierFax = Annotation & Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 & {};
+export declare type InvoiceDataSupplierFax = TextAnnotation & Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 & {};
 
-export declare type InvoiceDataSupplierPhoneNumber = Annotation & ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 & {};
+export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 & {};
 
-export declare type InvoiceDataSupplierVAT = Annotation & Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 & {};
+export declare type InvoiceDataSupplierVAT = TextAnnotation & Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 & {};
 
-export declare type InvoiceDataSupplierWebsite = Annotation & Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
+export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
+
+export declare type InvoiceMeta = Meta & Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
 
 export declare interface JobDescription {
     data: JobDescriptionData | null;
@@ -879,21 +885,21 @@ export declare interface JobDescription {
 }
 
 export declare interface JobDescriptionData {
-    contactEmail?: Annotation;
-    contactName?: Annotation;
-    contactPhone?: Annotation;
+    contactEmail?: TextAnnotation;
+    contactName?: TextAnnotation;
+    contactPhone?: TextAnnotation;
     startDate?: DateAnnotation;
     endDate?: DateAnnotation;
-    jobType?: Annotation;
+    jobType?: TextAnnotation;
     languages?: LanguageAnnotation[];
     skills?: SkillAnnotation[];
-    organizationName?: Annotation;
-    organizationWebsite?: Annotation;
-    educationLevel?: Annotation;
-    educationAccreditation?: Annotation;
+    organizationName?: TextAnnotation;
+    organizationWebsite?: TextAnnotation;
+    educationLevel?: TextAnnotation;
+    educationAccreditation?: TextAnnotation;
     expectedRemuneration?: ExpectedRemunerationAnnotation;
     location?: LocationAnnotation;
-    certifications?: (Annotation | null)[];
+    certifications?: TextAnnotation[];
 }
 
 export declare type LanguageAnnotation = Annotation & {
@@ -1354,6 +1360,10 @@ export declare interface ResumeSearchScoreComponent {
 export declare type SearchLocationUnit = "km" | "mi";
 
 export declare type SkillAnnotation = Annotation & {
+    parsed?: string;
+};
+
+export declare type TextAnnotation = Annotation & {
     parsed?: string;
 };
 

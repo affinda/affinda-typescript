@@ -16,7 +16,6 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [confidence](Annotation.md#confidence)
 - [isVerified](Annotation.md#isverified)
 - [pageIndex](Annotation.md#pageindex)
-- [parsed](Annotation.md#parsed)
 - [raw](Annotation.md#raw)
 - [rectangle](Annotation.md#rectangle)
 
@@ -43,12 +42,6 @@ ___
 ### pageIndex
 
 • **pageIndex**: ``null`` \| `number`
-
-___
-
-### parsed
-
-• `Optional` **parsed**: `string`
 
 ___
 

@@ -26,37 +26,37 @@
 
 ### certifications
 
-• `Optional` **certifications**: (``null`` \| [`Annotation`](Annotation.md))[]
+• `Optional` **certifications**: [`TextAnnotation`](../modules.md#textannotation)[]
 
 ___
 
 ### contactEmail
 
-• `Optional` **contactEmail**: [`Annotation`](Annotation.md)
+• `Optional` **contactEmail**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### contactName
 
-• `Optional` **contactName**: [`Annotation`](Annotation.md)
+• `Optional` **contactName**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### contactPhone
 
-• `Optional` **contactPhone**: [`Annotation`](Annotation.md)
+• `Optional` **contactPhone**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### educationAccreditation
 
-• `Optional` **educationAccreditation**: [`Annotation`](Annotation.md)
+• `Optional` **educationAccreditation**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### educationLevel
 
-• `Optional` **educationLevel**: [`Annotation`](Annotation.md)
+• `Optional` **educationLevel**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 ### jobType
 
-• `Optional` **jobType**: [`Annotation`](Annotation.md)
+• `Optional` **jobType**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
@@ -92,13 +92,13 @@ ___
 
 ### organizationName
 
-• `Optional` **organizationName**: [`Annotation`](Annotation.md)
+• `Optional` **organizationName**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### organizationWebsite
 
-• `Optional` **organizationWebsite**: [`Annotation`](Annotation.md)
+• `Optional` **organizationWebsite**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 

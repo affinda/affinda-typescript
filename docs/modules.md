@@ -48,6 +48,7 @@
 - [Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2](interfaces/Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2.md)
 - [Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2](interfaces/Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2.md)
 - [Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2](interfaces/Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.md)
+- [Components17Ashz6SchemasInvoicePropertiesMetaAllof1](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md)
 - [Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2](interfaces/Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2.md)
 - [Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2](interfaces/Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2.md)
 - [Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2](interfaces/Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2.md)
@@ -192,11 +193,13 @@
 - [InvoiceDataSupplierPhoneNumber](modules.md#invoicedatasupplierphonenumber)
 - [InvoiceDataSupplierVAT](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
+- [InvoiceMeta](modules.md#invoicemeta)
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
 - [ManagementLevel](modules.md#managementlevel)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotation](modules.md#skillannotation)
+- [TextAnnotation](modules.md#textannotation)
 
 ## Type aliases
 
@@ -454,175 +457,181 @@ ___
 
 ### InvoiceDataBankAccountNumber
 
-Ƭ **InvoiceDataBankAccountNumber**: [`Annotation`](interfaces/Annotation.md) & [`Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2`](interfaces/Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2.md) & {}
+Ƭ **InvoiceDataBankAccountNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2`](interfaces/Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataBankBSB
 
-Ƭ **InvoiceDataBankBSB**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2`](interfaces/ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2.md) & {}
+Ƭ **InvoiceDataBankBSB**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2`](interfaces/ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2.md) & {}
 
 ___
 
 ### InvoiceDataBankIban
 
-Ƭ **InvoiceDataBankIban**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2`](interfaces/ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2.md) & {}
+Ƭ **InvoiceDataBankIban**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2`](interfaces/ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2.md) & {}
 
 ___
 
 ### InvoiceDataBankSortCode
 
-Ƭ **InvoiceDataBankSortCode**: [`Annotation`](interfaces/Annotation.md) & [`Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2`](interfaces/Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2.md) & {}
+Ƭ **InvoiceDataBankSortCode**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2`](interfaces/Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2.md) & {}
 
 ___
 
 ### InvoiceDataBankSwift
 
-Ƭ **InvoiceDataBankSwift**: [`Annotation`](interfaces/Annotation.md) & [`Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2`](interfaces/Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.md) & {}
+Ƭ **InvoiceDataBankSwift**: [`TextAnnotation`](modules.md#textannotation) & [`Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2`](interfaces/Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.md) & {}
 
 ___
 
 ### InvoiceDataBpayBillerCode
 
-Ƭ **InvoiceDataBpayBillerCode**: [`Annotation`](interfaces/Annotation.md) & [`Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2`](interfaces/Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2.md) & {}
+Ƭ **InvoiceDataBpayBillerCode**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2`](interfaces/Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2.md) & {}
 
 ___
 
 ### InvoiceDataBpayReference
 
-Ƭ **InvoiceDataBpayReference**: [`Annotation`](interfaces/Annotation.md) & [`Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2`](interfaces/Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2.md) & {}
+Ƭ **InvoiceDataBpayReference**: [`TextAnnotation`](modules.md#textannotation) & [`Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2`](interfaces/Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerBusinessNumber
 
-Ƭ **InvoiceDataCustomerBusinessNumber**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2`](interfaces/ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2.md) & {}
+Ƭ **InvoiceDataCustomerBusinessNumber**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2`](interfaces/ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerCompanyName
 
-Ƭ **InvoiceDataCustomerCompanyName**: [`Annotation`](interfaces/Annotation.md) & [`Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2`](interfaces/Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2.md) & {}
+Ƭ **InvoiceDataCustomerCompanyName**: [`TextAnnotation`](modules.md#textannotation) & [`Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2`](interfaces/Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerContactName
 
-Ƭ **InvoiceDataCustomerContactName**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2`](interfaces/ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2.md) & {}
+Ƭ **InvoiceDataCustomerContactName**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2`](interfaces/ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerEmail
 
-Ƭ **InvoiceDataCustomerEmail**: [`Annotation`](interfaces/Annotation.md) & [`Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2`](interfaces/Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2.md) & {}
+Ƭ **InvoiceDataCustomerEmail**: [`TextAnnotation`](modules.md#textannotation) & [`Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2`](interfaces/Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerNumber
 
-Ƭ **InvoiceDataCustomerNumber**: [`Annotation`](interfaces/Annotation.md) & [`Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2`](interfaces/Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2.md) & {}
+Ƭ **InvoiceDataCustomerNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2`](interfaces/Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerPhoneNumber
 
-Ƭ **InvoiceDataCustomerPhoneNumber**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2`](interfaces/ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2.md) & {}
+Ƭ **InvoiceDataCustomerPhoneNumber**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2`](interfaces/ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataCustomerVAT
 
-Ƭ **InvoiceDataCustomerVAT**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2`](interfaces/ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2.md) & {}
+Ƭ **InvoiceDataCustomerVAT**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2`](interfaces/ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2.md) & {}
 
 ___
 
 ### InvoiceDataInvoiceNumber
 
-Ƭ **InvoiceDataInvoiceNumber**: [`Annotation`](interfaces/Annotation.md) & [`Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2`](interfaces/Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2.md) & {}
+Ƭ **InvoiceDataInvoiceNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2`](interfaces/Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataInvoicePurchaseOrderNumber
 
-Ƭ **InvoiceDataInvoicePurchaseOrderNumber**: [`Annotation`](interfaces/Annotation.md) & [`Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2`](interfaces/Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2.md) & {}
+Ƭ **InvoiceDataInvoicePurchaseOrderNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2`](interfaces/Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataPaymentAmountBase
 
-Ƭ **InvoiceDataPaymentAmountBase**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2`](interfaces/ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2.md) & {}
+Ƭ **InvoiceDataPaymentAmountBase**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2`](interfaces/ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2.md) & {}
 
 ___
 
 ### InvoiceDataPaymentAmountDue
 
-Ƭ **InvoiceDataPaymentAmountDue**: [`Annotation`](interfaces/Annotation.md) & [`Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2`](interfaces/Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2.md) & {}
+Ƭ **InvoiceDataPaymentAmountDue**: [`TextAnnotation`](modules.md#textannotation) & [`Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2`](interfaces/Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2.md) & {}
 
 ___
 
 ### InvoiceDataPaymentAmountPaid
 
-Ƭ **InvoiceDataPaymentAmountPaid**: [`Annotation`](interfaces/Annotation.md) & [`Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2`](interfaces/Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2.md) & {}
+Ƭ **InvoiceDataPaymentAmountPaid**: [`TextAnnotation`](modules.md#textannotation) & [`Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2`](interfaces/Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2.md) & {}
 
 ___
 
 ### InvoiceDataPaymentAmountTax
 
-Ƭ **InvoiceDataPaymentAmountTax**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2`](interfaces/ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2.md) & {}
+Ƭ **InvoiceDataPaymentAmountTax**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2`](interfaces/ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2.md) & {}
 
 ___
 
 ### InvoiceDataPaymentAmountTotal
 
-Ƭ **InvoiceDataPaymentAmountTotal**: [`Annotation`](interfaces/Annotation.md) & [`Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2`](interfaces/Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2.md) & {}
+Ƭ **InvoiceDataPaymentAmountTotal**: [`TextAnnotation`](modules.md#textannotation) & [`Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2`](interfaces/Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2.md) & {}
 
 ___
 
 ### InvoiceDataPaymentReference
 
-Ƭ **InvoiceDataPaymentReference**: [`Annotation`](interfaces/Annotation.md) & [`Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2`](interfaces/Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2.md) & {}
+Ƭ **InvoiceDataPaymentReference**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2`](interfaces/Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierBusinessNumber
 
-Ƭ **InvoiceDataSupplierBusinessNumber**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2`](interfaces/ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2.md) & {}
+Ƭ **InvoiceDataSupplierBusinessNumber**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2`](interfaces/ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierCompanyName
 
-Ƭ **InvoiceDataSupplierCompanyName**: [`Annotation`](interfaces/Annotation.md) & [`Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2`](interfaces/Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2.md) & {}
+Ƭ **InvoiceDataSupplierCompanyName**: [`TextAnnotation`](modules.md#textannotation) & [`Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2`](interfaces/Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierEmail
 
-Ƭ **InvoiceDataSupplierEmail**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2`](interfaces/ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2.md) & {}
+Ƭ **InvoiceDataSupplierEmail**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2`](interfaces/ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierFax
 
-Ƭ **InvoiceDataSupplierFax**: [`Annotation`](interfaces/Annotation.md) & [`Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2`](interfaces/Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2.md) & {}
+Ƭ **InvoiceDataSupplierFax**: [`TextAnnotation`](modules.md#textannotation) & [`Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2`](interfaces/Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierPhoneNumber
 
-Ƭ **InvoiceDataSupplierPhoneNumber**: [`Annotation`](interfaces/Annotation.md) & [`ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2`](interfaces/ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2.md) & {}
+Ƭ **InvoiceDataSupplierPhoneNumber**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2`](interfaces/ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierVAT
 
-Ƭ **InvoiceDataSupplierVAT**: [`Annotation`](interfaces/Annotation.md) & [`Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2`](interfaces/Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2.md) & {}
+Ƭ **InvoiceDataSupplierVAT**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2`](interfaces/Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2.md) & {}
 
 ___
 
 ### InvoiceDataSupplierWebsite
 
-Ƭ **InvoiceDataSupplierWebsite**: [`Annotation`](interfaces/Annotation.md) & [`Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2`](interfaces/Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.md) & {}
+Ƭ **InvoiceDataSupplierWebsite**: [`TextAnnotation`](modules.md#textannotation) & [`Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2`](interfaces/Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.md) & {}
+
+___
+
+### InvoiceMeta
+
+Ƭ **InvoiceMeta**: [`Meta`](interfaces/Meta.md) & [`Components17Ashz6SchemasInvoicePropertiesMetaAllof1`](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md) & {}
 
 ___
 
@@ -657,3 +666,9 @@ ___
 ### SkillAnnotation
 
 Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+
+___
+
+### TextAnnotation
+
+Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }

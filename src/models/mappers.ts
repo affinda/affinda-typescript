@@ -1775,21 +1775,21 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
         serializedName: "contactEmail",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       contactName: {
         serializedName: "contactName",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       contactPhone: {
         serializedName: "contactPhone",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       startDate: {
@@ -1810,7 +1810,7 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
         serializedName: "jobType",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       languages: {
@@ -1841,28 +1841,28 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
         serializedName: "organizationName",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       organizationWebsite: {
         serializedName: "organizationWebsite",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       educationLevel: {
         serializedName: "educationLevel",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       educationAccreditation: {
         serializedName: "educationAccreditation",
         type: {
           name: "Composite",
-          className: "Annotation"
+          className: "TextAnnotation"
         }
       },
       expectedRemuneration: {
@@ -1886,7 +1886,7 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Annotation"
+              className: "TextAnnotation"
             }
           }
         }
@@ -1924,13 +1924,6 @@ export const Annotation: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      parsed: {
-        serializedName: "parsed",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
       confidence: {
         serializedName: "confidence",
         required: true,
@@ -1939,7 +1932,7 @@ export const Annotation: coreClient.CompositeMapper = {
         }
       },
       isVerified: {
-        serializedName: "is_verified",
+        serializedName: "isVerified",
         required: true,
         type: {
           name: "Boolean"
@@ -2252,7 +2245,7 @@ export const Invoice: coreClient.CompositeMapper = {
         serializedName: "meta",
         type: {
           name: "Composite",
-          className: "Meta"
+          className: "InvoiceMeta"
         }
       },
       error: {
@@ -3210,6 +3203,22 @@ export const Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2:
   }
 };
 
+export const Components17Ashz6SchemasInvoicePropertiesMetaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components17Ashz6SchemasInvoicePropertiesMetaAllof1",
+    modelProperties: {
+      reviewUrl: {
+        serializedName: "reviewUrl",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const OccupationGroup: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -3607,6 +3616,36 @@ export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: 
   }
 };
 
+export const InvoiceMeta: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceMeta",
+    modelProperties: {
+      ...Meta.type.modelProperties,
+      ...Components17Ashz6SchemasInvoicePropertiesMetaAllof1.type
+        .modelProperties
+    }
+  }
+};
+
+export const TextAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TextAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const DateAnnotation: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -3703,7 +3742,7 @@ export const InvoiceDataPaymentAmountBase: coreClient.CompositeMapper = {
     className: "InvoiceDataPaymentAmountBase",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2
         .type.modelProperties
     }
@@ -3716,7 +3755,7 @@ export const InvoiceDataPaymentAmountTax: coreClient.CompositeMapper = {
     className: "InvoiceDataPaymentAmountTax",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2.type
         .modelProperties
     }
@@ -3729,7 +3768,7 @@ export const InvoiceDataPaymentAmountTotal: coreClient.CompositeMapper = {
     className: "InvoiceDataPaymentAmountTotal",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2
         .type.modelProperties
     }
@@ -3742,7 +3781,7 @@ export const InvoiceDataPaymentAmountPaid: coreClient.CompositeMapper = {
     className: "InvoiceDataPaymentAmountPaid",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2
         .type.modelProperties
     }
@@ -3755,7 +3794,7 @@ export const InvoiceDataPaymentAmountDue: coreClient.CompositeMapper = {
     className: "InvoiceDataPaymentAmountDue",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2
         .type.modelProperties
     }
@@ -3768,7 +3807,7 @@ export const InvoiceDataInvoiceNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataInvoiceNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2.type
         .modelProperties
     }
@@ -3781,7 +3820,7 @@ export const InvoiceDataInvoicePurchaseOrderNumber: coreClient.CompositeMapper =
     className: "InvoiceDataInvoicePurchaseOrderNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2
         .type.modelProperties
     }
@@ -3794,7 +3833,7 @@ export const InvoiceDataSupplierBusinessNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierBusinessNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2
         .type.modelProperties
     }
@@ -3807,7 +3846,7 @@ export const InvoiceDataCustomerNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2.type
         .modelProperties
     }
@@ -3820,7 +3859,7 @@ export const InvoiceDataCustomerBusinessNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerBusinessNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2
         .type.modelProperties
     }
@@ -3833,7 +3872,7 @@ export const InvoiceDataPaymentReference: coreClient.CompositeMapper = {
     className: "InvoiceDataPaymentReference",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2
         .type.modelProperties
     }
@@ -3846,7 +3885,7 @@ export const InvoiceDataBankAccountNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataBankAccountNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2
         .type.modelProperties
     }
@@ -3859,7 +3898,7 @@ export const InvoiceDataSupplierVAT: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierVAT",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2.type
         .modelProperties
     }
@@ -3872,7 +3911,7 @@ export const InvoiceDataCustomerVAT: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerVAT",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2.type
         .modelProperties
     }
@@ -3885,7 +3924,7 @@ export const InvoiceDataBpayBillerCode: coreClient.CompositeMapper = {
     className: "InvoiceDataBpayBillerCode",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2.type
         .modelProperties
     }
@@ -3898,7 +3937,7 @@ export const InvoiceDataBpayReference: coreClient.CompositeMapper = {
     className: "InvoiceDataBpayReference",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2.type
         .modelProperties
     }
@@ -3911,7 +3950,7 @@ export const InvoiceDataBankSortCode: coreClient.CompositeMapper = {
     className: "InvoiceDataBankSortCode",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2.type
         .modelProperties
     }
@@ -3924,7 +3963,7 @@ export const InvoiceDataBankIban: coreClient.CompositeMapper = {
     className: "InvoiceDataBankIban",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2.type
         .modelProperties
     }
@@ -3937,7 +3976,7 @@ export const InvoiceDataBankSwift: coreClient.CompositeMapper = {
     className: "InvoiceDataBankSwift",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.type
         .modelProperties
     }
@@ -3950,7 +3989,7 @@ export const InvoiceDataBankBSB: coreClient.CompositeMapper = {
     className: "InvoiceDataBankBSB",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2.type
         .modelProperties
     }
@@ -3963,7 +4002,7 @@ export const InvoiceDataCustomerContactName: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerContactName",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2
         .type.modelProperties
     }
@@ -3976,7 +4015,7 @@ export const InvoiceDataCustomerCompanyName: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerCompanyName",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2
         .type.modelProperties
     }
@@ -3989,7 +4028,7 @@ export const InvoiceDataSupplierCompanyName: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierCompanyName",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2
         .type.modelProperties
     }
@@ -4002,7 +4041,7 @@ export const InvoiceDataCustomerPhoneNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerPhoneNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2
         .type.modelProperties
     }
@@ -4015,7 +4054,7 @@ export const InvoiceDataSupplierPhoneNumber: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierPhoneNumber",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2
         .type.modelProperties
     }
@@ -4028,7 +4067,7 @@ export const InvoiceDataSupplierFax: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierFax",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2.type
         .modelProperties
     }
@@ -4041,7 +4080,7 @@ export const InvoiceDataCustomerEmail: coreClient.CompositeMapper = {
     className: "InvoiceDataCustomerEmail",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2.type
         .modelProperties
     }
@@ -4054,7 +4093,7 @@ export const InvoiceDataSupplierEmail: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierEmail",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2.type
         .modelProperties
     }
@@ -4067,7 +4106,7 @@ export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
     className: "InvoiceDataSupplierWebsite",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
-      ...Annotation.type.modelProperties,
+      ...TextAnnotation.type.modelProperties,
       ...Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.type
         .modelProperties
     }

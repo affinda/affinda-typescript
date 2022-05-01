@@ -337,21 +337,21 @@ export interface JobDescription {
 }
 
 export interface JobDescriptionData {
-  contactEmail?: Annotation;
-  contactName?: Annotation;
-  contactPhone?: Annotation;
+  contactEmail?: TextAnnotation;
+  contactName?: TextAnnotation;
+  contactPhone?: TextAnnotation;
   startDate?: DateAnnotation;
   endDate?: DateAnnotation;
-  jobType?: Annotation;
+  jobType?: TextAnnotation;
   languages?: LanguageAnnotation[];
   skills?: SkillAnnotation[];
-  organizationName?: Annotation;
-  organizationWebsite?: Annotation;
-  educationLevel?: Annotation;
-  educationAccreditation?: Annotation;
+  organizationName?: TextAnnotation;
+  organizationWebsite?: TextAnnotation;
+  educationLevel?: TextAnnotation;
+  educationAccreditation?: TextAnnotation;
   expectedRemuneration?: ExpectedRemunerationAnnotation;
   location?: LocationAnnotation;
-  certifications?: (Annotation | null)[];
+  certifications?: TextAnnotation[];
 }
 
 export interface Annotation {
@@ -360,7 +360,6 @@ export interface Annotation {
   rectangle: Rectangle;
   pageIndex: number | null;
   raw: string | null;
-  parsed?: string;
   confidence: number;
   isVerified: boolean;
   classification: string;
@@ -433,7 +432,7 @@ export interface GetAllInvoicesResults {
 
 export interface Invoice {
   data: InvoiceData | null;
-  meta: Meta;
+  meta: InvoiceMeta;
   error: ErrorModel;
 }
 
@@ -620,6 +619,11 @@ export interface Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
+export interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
+  /** Signed URL (valid for 60 minutes) to access the invoice review tool */
+  reviewUrl?: string;
+}
+
 export interface OccupationGroup {
   code: number;
   name: string;
@@ -731,6 +735,13 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
   expiryTime?: string;
 }
 
+export type InvoiceMeta = Meta &
+  Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
+
+export type TextAnnotation = Annotation & {
+  parsed?: string;
+};
+
 export type DateAnnotation = Annotation & {
   parsed?: Date;
 };
@@ -751,91 +762,91 @@ export type LocationAnnotation = Annotation & {
   parsed?: Location;
 };
 
-export type InvoiceDataPaymentAmountBase = Annotation &
+export type InvoiceDataPaymentAmountBase = TextAnnotation &
   ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 & {};
 
-export type InvoiceDataPaymentAmountTax = Annotation &
+export type InvoiceDataPaymentAmountTax = TextAnnotation &
   ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 & {};
 
-export type InvoiceDataPaymentAmountTotal = Annotation &
+export type InvoiceDataPaymentAmountTotal = TextAnnotation &
   Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 & {};
 
-export type InvoiceDataPaymentAmountPaid = Annotation &
+export type InvoiceDataPaymentAmountPaid = TextAnnotation &
   Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 & {};
 
-export type InvoiceDataPaymentAmountDue = Annotation &
+export type InvoiceDataPaymentAmountDue = TextAnnotation &
   Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 & {};
 
-export type InvoiceDataInvoiceNumber = Annotation &
+export type InvoiceDataInvoiceNumber = TextAnnotation &
   Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 & {};
 
-export type InvoiceDataInvoicePurchaseOrderNumber = Annotation &
+export type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation &
   Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 & {};
 
-export type InvoiceDataSupplierBusinessNumber = Annotation &
+export type InvoiceDataSupplierBusinessNumber = TextAnnotation &
   ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 & {};
 
-export type InvoiceDataCustomerNumber = Annotation &
+export type InvoiceDataCustomerNumber = TextAnnotation &
   Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 & {};
 
-export type InvoiceDataCustomerBusinessNumber = Annotation &
+export type InvoiceDataCustomerBusinessNumber = TextAnnotation &
   ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 & {};
 
-export type InvoiceDataPaymentReference = Annotation &
+export type InvoiceDataPaymentReference = TextAnnotation &
   Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 & {};
 
-export type InvoiceDataBankAccountNumber = Annotation &
+export type InvoiceDataBankAccountNumber = TextAnnotation &
   Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 & {};
 
-export type InvoiceDataSupplierVAT = Annotation &
+export type InvoiceDataSupplierVAT = TextAnnotation &
   Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 & {};
 
-export type InvoiceDataCustomerVAT = Annotation &
+export type InvoiceDataCustomerVAT = TextAnnotation &
   ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 & {};
 
-export type InvoiceDataBpayBillerCode = Annotation &
+export type InvoiceDataBpayBillerCode = TextAnnotation &
   Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 & {};
 
-export type InvoiceDataBpayReference = Annotation &
+export type InvoiceDataBpayReference = TextAnnotation &
   Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 & {};
 
-export type InvoiceDataBankSortCode = Annotation &
+export type InvoiceDataBankSortCode = TextAnnotation &
   Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 & {};
 
-export type InvoiceDataBankIban = Annotation &
+export type InvoiceDataBankIban = TextAnnotation &
   ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 & {};
 
-export type InvoiceDataBankSwift = Annotation &
+export type InvoiceDataBankSwift = TextAnnotation &
   Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 & {};
 
-export type InvoiceDataBankBSB = Annotation &
+export type InvoiceDataBankBSB = TextAnnotation &
   ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 & {};
 
-export type InvoiceDataCustomerContactName = Annotation &
+export type InvoiceDataCustomerContactName = TextAnnotation &
   ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 & {};
 
-export type InvoiceDataCustomerCompanyName = Annotation &
+export type InvoiceDataCustomerCompanyName = TextAnnotation &
   Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 & {};
 
-export type InvoiceDataSupplierCompanyName = Annotation &
+export type InvoiceDataSupplierCompanyName = TextAnnotation &
   Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 & {};
 
-export type InvoiceDataCustomerPhoneNumber = Annotation &
+export type InvoiceDataCustomerPhoneNumber = TextAnnotation &
   ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 & {};
 
-export type InvoiceDataSupplierPhoneNumber = Annotation &
+export type InvoiceDataSupplierPhoneNumber = TextAnnotation &
   ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 & {};
 
-export type InvoiceDataSupplierFax = Annotation &
+export type InvoiceDataSupplierFax = TextAnnotation &
   Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 & {};
 
-export type InvoiceDataCustomerEmail = Annotation &
+export type InvoiceDataCustomerEmail = TextAnnotation &
   Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 & {};
 
-export type InvoiceDataSupplierEmail = Annotation &
+export type InvoiceDataSupplierEmail = TextAnnotation &
   ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 & {};
 
-export type InvoiceDataSupplierWebsite = Annotation &
+export type InvoiceDataSupplierWebsite = TextAnnotation &
   Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "Low" | "Mid" | "Upper";
