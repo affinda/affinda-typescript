@@ -236,7 +236,7 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 /** Contains response data for the createInvoice operation. */
@@ -257,7 +257,7 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 /** Contains response data for the createJobDescription operation. */
@@ -278,7 +278,7 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
     /** Whether to redact headshot */
     redactHeadshot?: string;
     /** Whether to redact personal details (e.g. name, address) */
@@ -334,7 +334,7 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 /** Contains response data for the createResume operation. */
@@ -939,7 +939,7 @@ export declare interface Meta {
     /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
     failed: boolean;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 export declare interface OccupationGroup {
@@ -966,7 +966,7 @@ export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartForm
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 export declare interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
@@ -1007,7 +1007,7 @@ export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDa
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -1040,7 +1040,7 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
     /** Whether to redact gender */
     redactGender?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 export declare interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
@@ -1084,7 +1084,7 @@ export declare interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipar
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    expiryTime?: Date;
 }
 
 export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {

@@ -17,7 +17,7 @@
 
 ### expiryTime
 
-• `Optional` **expiryTime**: `string`
+• `Optional` **expiryTime**: `Date`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 

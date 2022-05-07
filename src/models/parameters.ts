@@ -137,7 +137,7 @@ export const expiryTime: OperationParameter = {
   mapper: {
     serializedName: "expiryTime",
     type: {
-      name: "String"
+      name: "DateTime"
     }
   }
 };

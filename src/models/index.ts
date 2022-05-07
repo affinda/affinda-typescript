@@ -23,7 +23,7 @@ export interface Meta {
   /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
   failed: boolean;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 export interface RequestError {
@@ -644,7 +644,7 @@ export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -677,7 +677,7 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   /** Whether to redact gender */
   redactGender?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -711,7 +711,7 @@ export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDat
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 export interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
@@ -732,7 +732,7 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 export type InvoiceMeta = Meta &
@@ -888,7 +888,7 @@ export interface AffindaAPICreateResumeOptionalParams
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 /** Contains response data for the createResume operation. */
@@ -936,7 +936,7 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
   /** Whether to redact headshot */
   redactHeadshot?: string;
   /** Whether to redact personal details (e.g. name, address) */
@@ -1070,7 +1070,7 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 /** Contains response data for the createJobDescription operation. */
@@ -1167,7 +1167,7 @@ export interface AffindaAPICreateInvoiceOptionalParams
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
+  expiryTime?: Date;
 }
 
 /** Contains response data for the createInvoice operation. */

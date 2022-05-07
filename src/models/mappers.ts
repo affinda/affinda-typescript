@@ -86,7 +86,7 @@ export const Meta: coreClient.CompositeMapper = {
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "String"
+          name: "DateTime"
         }
       }
     }
@@ -3306,7 +3306,7 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "String"
+          name: "DateTime"
         }
       }
     }
@@ -3420,7 +3420,7 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "String"
+          name: "DateTime"
         }
       }
     }
@@ -3536,7 +3536,7 @@ export const PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSch
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "String"
+          name: "DateTime"
         }
       }
     }
@@ -3609,7 +3609,7 @@ export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: 
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "String"
+          name: "DateTime"
         }
       }
     }
