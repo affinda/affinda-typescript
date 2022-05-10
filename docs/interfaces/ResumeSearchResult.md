@@ -17,6 +17,7 @@
 - [occupationGroup](ResumeSearchResult.md#occupationgroup)
 - [pdf](ResumeSearchResult.md#pdf)
 - [score](ResumeSearchResult.md#score)
+- [searchExpression](ResumeSearchResult.md#searchexpression)
 - [skills](ResumeSearchResult.md#skills)
 
 ## Properties
@@ -86,6 +87,12 @@ ___
 ### score
 
 • **score**: `number`
+
+___
+
+### searchExpression
+
+• **searchExpression**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
 
 ___
 

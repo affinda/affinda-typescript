@@ -1348,6 +1348,7 @@ export declare interface ResumeSearchResult {
     location: ResumeSearchScoreComponent;
     education: ResumeSearchScoreComponent;
     occupationGroup: ResumeSearchScoreComponent;
+    searchExpression: ResumeSearchScoreComponent;
 }
 
 export declare interface ResumeSearchScoreComponent {

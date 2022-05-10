@@ -312,6 +312,7 @@ export interface ResumeSearchResult {
   location: ResumeSearchScoreComponent;
   education: ResumeSearchScoreComponent;
   occupationGroup: ResumeSearchScoreComponent;
+  searchExpression: ResumeSearchScoreComponent;
 }
 
 export interface ResumeSearchScoreComponent {

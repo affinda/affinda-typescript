@@ -1662,6 +1662,13 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
           name: "Composite",
           className: "ResumeSearchScoreComponent"
         }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
       }
     }
   }
