@@ -429,7 +429,7 @@ ___
 
 ### AffindaAPIListOccupationGroupsResponse
 
-Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)
+Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
 
 Contains response data for the listOccupationGroups operation.
 

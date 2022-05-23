@@ -524,7 +524,7 @@ export declare interface AffindaAPIListOccupationGroupsOptionalParams extends co
 }
 
 /** Contains response data for the listOccupationGroups operation. */
-export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
+export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
 export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClientOptions {

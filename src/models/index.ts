@@ -1193,7 +1193,7 @@ export interface AffindaAPIListOccupationGroupsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the listOccupationGroups operation. */
-export type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
+export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams
