@@ -5,6 +5,13 @@ import * as coreRestPipeline from '@azure/core-rest-pipeline';
 import { GetTokenOptions } from '@azure/identity';
 import { TokenCredential } from '@azure/identity';
 
+export declare interface Accreditation {
+    education?: string;
+    educationLevel?: string;
+    inputStr?: string;
+    matchStr?: string;
+}
+
 export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * Initializes a new instance of the AffindaAPI class.
@@ -99,6 +106,16 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     createResumeSearch(body: ResumeSearchParameters | null, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    /**
+     * This contains more detailed information about the matching score of the search criteria, or which
+     * search criteria is missing in this resume.
+     * The `identifier` is the unique ID returned via the [/resume_search](#operation/createResumeSearch)
+     * endpoint.
+     * @param identifier Resume identifier
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    getResumeSearchDetail(identifier: string | null, body: ResumeSearchParameters | null, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
     /**
      * Returns all the job descriptions for that user, limited to 300 per page.
      * @param options The options parameters.
@@ -520,11 +537,18 @@ export declare interface AffindaAPIGetResumeOptionalParams extends coreClient.Op
 export declare type AffindaAPIGetResumeResponse = Resume;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetResumeSearchDetailOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResumeSearchDetail operation. */
+export declare type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
+
+/** Optional parameters. */
 export declare interface AffindaAPIListOccupationGroupsOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Contains response data for the listOccupationGroups operation. */
-export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
+export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
 
 /** Optional parameters. */
 export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClientOptions {
@@ -564,6 +588,10 @@ export declare interface Components14Dm0XSchemasInvoicedataPropertiesBankaccount
 export declare interface Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 {
     raw?: string;
     parsed?: string;
+}
+
+export declare interface Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {
+    match?: boolean;
 }
 
 export declare interface Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 {
@@ -669,6 +697,18 @@ export declare interface ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAll
     parsed?: string;
 }
 
+export declare interface ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {
+    match?: boolean;
+}
+
+export declare interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+    match?: boolean;
+}
+
+export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {
+    match?: boolean;
+}
+
 export declare interface ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 {
     raw?: string;
     parsed?: string;
@@ -682,6 +722,10 @@ export declare interface ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbus
 export declare interface ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 {
     raw?: string;
     parsed?: string;
+}
+
+export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
+    match?: boolean;
 }
 
 export declare interface ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 {
@@ -717,6 +761,20 @@ export declare interface ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbus
 export declare type DateAnnotation = Annotation & {
     parsed?: Date;
 };
+
+export declare interface Education {
+    organization?: string;
+    accreditation?: Accreditation;
+    grade?: string;
+    location?: Location;
+    dates?: EducationDates;
+}
+
+export declare interface EducationDates {
+    startDate?: string;
+    completionDate?: string;
+    isCurrent?: boolean;
+}
 
 /** Defines values for EducationLevel. */
 export declare type EducationLevel = "school" | "certificate" | "bachelors" | "masters" | "doctoral";
@@ -900,6 +958,27 @@ export declare interface JobDescriptionData {
     expectedRemuneration?: ExpectedRemunerationAnnotation;
     location?: LocationAnnotation;
     certifications?: TextAnnotation[];
+}
+
+/** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
+export declare enum KnownResumeSkillSourcesItemSection {
+    Achievements = "Achievements",
+    AdditionalInformation = "AdditionalInformation",
+    Education = "Education",
+    Extracurriculars = "Extracurriculars",
+    Organisations = "Organisations",
+    Other = "Other",
+    PersonalDetails = "PersonalDetails",
+    Projects = "Projects",
+    Publications = "Publications",
+    Referees = "Referees",
+    Skills = "Skills",
+    Summary = "Summary",
+    Training = "Training",
+    WorkExperience = "WorkExperience",
+    NotPopulated = "NotPopulated",
+    Header = "Header",
+    Footer = "Footer"
 }
 
 export declare type LanguageAnnotation = Annotation & {
@@ -1271,6 +1350,83 @@ export declare interface ResumeSearch {
     results?: ResumeSearchResult[];
 }
 
+export declare interface ResumeSearchDetail {
+    jobTitle?: ResumeSearchDetailJobTitle;
+    location?: ResumeSearchDetailLocation;
+    education?: ResumeSearchDetailEducation;
+    skills?: ResumeSearchDetailSkills;
+    experience?: ResumeSearchDetailExperience;
+    occupationGroup?: ResumeSearchDetailOccupationGroup;
+    languages?: ResumeSearchDetailLanguages;
+    managementLevel?: ResumeSearchDetailManagementLevel;
+}
+
+export declare interface ResumeSearchDetailEducation {
+    missing?: ResumeSearchDetailEducationMissing;
+    value?: ResumeSearchDetailEducationValueItem[];
+}
+
+export declare interface ResumeSearchDetailEducationMissing {
+    degrees?: string[];
+    highestDegreeTypes?: string[];
+    institutions?: string[];
+    currentStudent?: boolean;
+    recentGraduate?: boolean;
+}
+
+export declare type ResumeSearchDetailEducationValueItem = Education & ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+
+export declare interface ResumeSearchDetailExperience {
+    years?: number;
+    match?: boolean;
+}
+
+export declare interface ResumeSearchDetailJobTitle {
+    missing?: string[];
+    value?: ResumeSearchDetailJobTitleValueItem[];
+}
+
+export declare interface ResumeSearchDetailJobTitleValueItem {
+    name?: string;
+    startDate?: string;
+    endDate?: string;
+    companyName?: string;
+    match?: boolean;
+}
+
+export declare interface ResumeSearchDetailLanguages {
+    missing?: ResumeSearchParametersSkill[];
+    value?: ResumeSearchDetailLanguagesValueItem[];
+}
+
+export declare type ResumeSearchDetailLanguagesValueItem = ResumeSkill & Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
+
+export declare interface ResumeSearchDetailLocation {
+    missing?: ResumeSearchParametersLocation[];
+    value?: ResumeSearchDetailLocationValue;
+}
+
+export declare type ResumeSearchDetailLocationValue = Location & ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export declare interface ResumeSearchDetailManagementLevel {
+    level?: ManagementLevel;
+    match?: boolean;
+}
+
+export declare interface ResumeSearchDetailOccupationGroup {
+    missing?: number[];
+    value?: ResumeSearchDetailOccupationGroupValueItem[];
+}
+
+export declare type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup & ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+
+export declare interface ResumeSearchDetailSkills {
+    missing?: ResumeSearchParametersSkill[];
+    value?: ResumeSearchDetailSkillsValueItem[];
+}
+
+export declare type ResumeSearchDetailSkillsValueItem = ResumeSkill & ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
+
 export declare interface ResumeSearchParameters {
     indices: string[];
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
@@ -1283,12 +1439,12 @@ export declare interface ResumeSearchParameters {
     yearsExperienceMax?: number;
     yearsExperienceRequired?: boolean;
     yearsExperienceWeight?: number;
-    locations?: ResumeSearchParametersLocationsItem[];
+    locations?: ResumeSearchParametersLocation[];
     locationsWeight?: number;
     locationsRequired?: boolean;
-    skills?: ResumeSearchParametersSkillsItem[];
+    skills?: ResumeSearchParametersSkill[];
     skillsWeight?: number;
-    languages?: ResumeSearchParametersLanguagesItem[];
+    languages?: ResumeSearchParametersSkill[];
     languagesWeight?: number;
     institutions?: string[];
     institutionsRequired?: boolean;
@@ -1312,24 +1468,19 @@ export declare interface ResumeSearchParameters {
     managementLevelWeight?: number;
 }
 
-export declare interface ResumeSearchParametersLanguagesItem {
+export declare interface ResumeSearchParametersLocation {
     name?: string;
-    required?: boolean;
-}
-
-export declare interface ResumeSearchParametersLocationsItem {
-    name?: string;
-    coordinates?: ResumeSearchParametersLocationsItemCoordinates;
+    coordinates?: ResumeSearchParametersLocationCoordinates;
     distance?: number;
     unit?: SearchLocationUnit;
 }
 
-export declare interface ResumeSearchParametersLocationsItemCoordinates {
+export declare interface ResumeSearchParametersLocationCoordinates {
     latitude?: number;
     longitude?: number;
 }
 
-export declare interface ResumeSearchParametersSkillsItem {
+export declare interface ResumeSearchParametersSkill {
     name?: string;
     required?: boolean;
 }
@@ -1356,6 +1507,44 @@ export declare interface ResumeSearchScoreComponent {
     value?: string;
     score?: number;
 }
+
+export declare interface ResumeSkill {
+    name?: string;
+    lastUsed?: string;
+    numberOfMonths?: number;
+    type?: string;
+    sources?: ResumeSkillSourcesItem[];
+}
+
+export declare interface ResumeSkillSourcesItem {
+    section?: ResumeSkillSourcesItemSection;
+    position?: number;
+}
+
+/**
+ * Defines values for ResumeSkillSourcesItemSection. \
+ * {@link KnownResumeSkillSourcesItemSection} can be used interchangeably with ResumeSkillSourcesItemSection,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **Achievements** \
+ * **AdditionalInformation** \
+ * **Education** \
+ * **Extracurriculars** \
+ * **Organisations** \
+ * **Other** \
+ * **PersonalDetails** \
+ * **Projects** \
+ * **Publications** \
+ * **Referees** \
+ * **Skills** \
+ * **Summary** \
+ * **Training** \
+ * **WorkExperience** \
+ * **NotPopulated** \
+ * **Header** \
+ * **Footer**
+ */
+export declare type ResumeSkillSourcesItemSection = string;
 
 /** Defines values for SearchLocationUnit. */
 export declare type SearchLocationUnit = "km" | "mi";

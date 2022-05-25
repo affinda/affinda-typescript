@@ -34,6 +34,8 @@ import {
   ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
+  AffindaAPIGetResumeSearchDetailOptionalParams,
+  AffindaAPIGetResumeSearchDetailResponse,
   AffindaAPIGetAllJobDescriptionsOptionalParams,
   AffindaAPIGetAllJobDescriptionsResponse,
   AffindaAPICreateJobDescriptionOptionalParams,
@@ -278,6 +280,26 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { body, options },
       createResumeSearchOperationSpec
+    );
+  }
+
+  /**
+   * This contains more detailed information about the matching score of the search criteria, or which
+   * search criteria is missing in this resume.
+   * The `identifier` is the unique ID returned via the [/resume_search](#operation/createResumeSearch)
+   * endpoint.
+   * @param identifier Resume identifier
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  getResumeSearchDetail(
+    identifier: string | null,
+    body: ResumeSearchParameters | null,
+    options?: AffindaAPIGetResumeSearchDetailOptionalParams
+  ): Promise<AffindaAPIGetResumeSearchDetailResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      getResumeSearchDetailOperationSpec
     );
   }
 
@@ -879,6 +901,32 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer
 };
+const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/details/{identifier}",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchDetail
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
 const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
   path: "/job_descriptions",
   httpMethod: "GET",
@@ -1246,12 +1294,7 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     201: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "OccupationGroup" } }
-        }
-      }
+      bodyMapper: Mappers.OccupationGroup
     },
     400: {
       bodyMapper: Mappers.RequestError

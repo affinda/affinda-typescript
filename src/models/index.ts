@@ -236,12 +236,12 @@ export interface ResumeSearchParameters {
   yearsExperienceMax?: number;
   yearsExperienceRequired?: boolean;
   yearsExperienceWeight?: number;
-  locations?: ResumeSearchParametersLocationsItem[];
+  locations?: ResumeSearchParametersLocation[];
   locationsWeight?: number;
   locationsRequired?: boolean;
-  skills?: ResumeSearchParametersSkillsItem[];
+  skills?: ResumeSearchParametersSkill[];
   skillsWeight?: number;
-  languages?: ResumeSearchParametersLanguagesItem[];
+  languages?: ResumeSearchParametersSkill[];
   languagesWeight?: number;
   institutions?: string[];
   institutionsRequired?: boolean;
@@ -265,24 +265,19 @@ export interface ResumeSearchParameters {
   managementLevelWeight?: number;
 }
 
-export interface ResumeSearchParametersLocationsItem {
+export interface ResumeSearchParametersLocation {
   name?: string;
-  coordinates?: ResumeSearchParametersLocationsItemCoordinates;
+  coordinates?: ResumeSearchParametersLocationCoordinates;
   distance?: number;
   unit?: SearchLocationUnit;
 }
 
-export interface ResumeSearchParametersLocationsItemCoordinates {
+export interface ResumeSearchParametersLocationCoordinates {
   latitude?: number;
   longitude?: number;
 }
 
-export interface ResumeSearchParametersSkillsItem {
-  name?: string;
-  required?: boolean;
-}
-
-export interface ResumeSearchParametersLanguagesItem {
+export interface ResumeSearchParametersSkill {
   name?: string;
   required?: boolean;
 }
@@ -319,6 +314,133 @@ export interface ResumeSearchScoreComponent {
   label: string;
   value?: string;
   score?: number;
+}
+
+export interface ResumeSearchDetail {
+  jobTitle?: ResumeSearchDetailJobTitle;
+  location?: ResumeSearchDetailLocation;
+  education?: ResumeSearchDetailEducation;
+  skills?: ResumeSearchDetailSkills;
+  experience?: ResumeSearchDetailExperience;
+  occupationGroup?: ResumeSearchDetailOccupationGroup;
+  languages?: ResumeSearchDetailLanguages;
+  managementLevel?: ResumeSearchDetailManagementLevel;
+}
+
+export interface ResumeSearchDetailJobTitle {
+  missing?: string[];
+  value?: ResumeSearchDetailJobTitleValueItem[];
+}
+
+export interface ResumeSearchDetailJobTitleValueItem {
+  name?: string;
+  startDate?: string;
+  endDate?: string;
+  companyName?: string;
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailLocation {
+  missing?: ResumeSearchParametersLocation[];
+  value?: ResumeSearchDetailLocationValue;
+}
+
+export interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailEducation {
+  missing?: ResumeSearchDetailEducationMissing;
+  value?: ResumeSearchDetailEducationValueItem[];
+}
+
+export interface ResumeSearchDetailEducationMissing {
+  degrees?: string[];
+  highestDegreeTypes?: string[];
+  institutions?: string[];
+  currentStudent?: boolean;
+  recentGraduate?: boolean;
+}
+
+export interface Education {
+  organization?: string;
+  accreditation?: Accreditation;
+  grade?: string;
+  location?: Location;
+  dates?: EducationDates;
+}
+
+export interface Accreditation {
+  education?: string;
+  educationLevel?: string;
+  inputStr?: string;
+  matchStr?: string;
+}
+
+export interface EducationDates {
+  startDate?: string;
+  completionDate?: string;
+  isCurrent?: boolean;
+}
+
+export interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailSkills {
+  missing?: ResumeSearchParametersSkill[];
+  value?: ResumeSearchDetailSkillsValueItem[];
+}
+
+export interface ResumeSkill {
+  name?: string;
+  lastUsed?: string;
+  numberOfMonths?: number;
+  type?: string;
+  sources?: ResumeSkillSourcesItem[];
+}
+
+export interface ResumeSkillSourcesItem {
+  section?: ResumeSkillSourcesItemSection;
+  position?: number;
+}
+
+export interface ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailExperience {
+  years?: number;
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailOccupationGroup {
+  missing?: number[];
+  value?: ResumeSearchDetailOccupationGroupValueItem[];
+}
+
+export interface OccupationGroup {
+  code: number;
+  name: string;
+  children: OccupationGroup[];
+}
+
+export interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailLanguages {
+  missing?: ResumeSearchParametersSkill[];
+  value?: ResumeSearchDetailLanguagesValueItem[];
+}
+
+export interface Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailManagementLevel {
+  level?: ManagementLevel;
+  match?: boolean;
 }
 
 export interface GetAllJobDescriptionsResults {
@@ -625,12 +747,6 @@ export interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
   reviewUrl?: string;
 }
 
-export interface OccupationGroup {
-  code: number;
-  name: string;
-  children: OccupationGroup[];
-}
-
 export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -738,6 +854,21 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
 
 export type InvoiceMeta = Meta &
   Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
+
+export type ResumeSearchDetailLocationValue = Location &
+  ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export type ResumeSearchDetailEducationValueItem = Education &
+  ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+
+export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
+  ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
+
+export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
+  Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
+
+export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
+  ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
 export type TextAnnotation = Annotation & {
   parsed?: string;
@@ -849,6 +980,52 @@ export type InvoiceDataSupplierEmail = TextAnnotation &
 
 export type InvoiceDataSupplierWebsite = TextAnnotation &
   Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
+
+/** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
+export enum KnownResumeSkillSourcesItemSection {
+  Achievements = "Achievements",
+  AdditionalInformation = "AdditionalInformation",
+  Education = "Education",
+  Extracurriculars = "Extracurriculars",
+  Organisations = "Organisations",
+  Other = "Other",
+  PersonalDetails = "PersonalDetails",
+  Projects = "Projects",
+  Publications = "Publications",
+  Referees = "Referees",
+  Skills = "Skills",
+  Summary = "Summary",
+  Training = "Training",
+  WorkExperience = "WorkExperience",
+  NotPopulated = "NotPopulated",
+  Header = "Header",
+  Footer = "Footer"
+}
+
+/**
+ * Defines values for ResumeSkillSourcesItemSection. \
+ * {@link KnownResumeSkillSourcesItemSection} can be used interchangeably with ResumeSkillSourcesItemSection,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **Achievements** \
+ * **AdditionalInformation** \
+ * **Education** \
+ * **Extracurriculars** \
+ * **Organisations** \
+ * **Other** \
+ * **PersonalDetails** \
+ * **Projects** \
+ * **Publications** \
+ * **Referees** \
+ * **Skills** \
+ * **Summary** \
+ * **Training** \
+ * **WorkExperience** \
+ * **NotPopulated** \
+ * **Header** \
+ * **Footer**
+ */
+export type ResumeSkillSourcesItemSection = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -1044,6 +1221,13 @@ export interface AffindaAPICreateResumeSearchOptionalParams
 export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
 
 /** Optional parameters. */
+export interface AffindaAPIGetResumeSearchDetailOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchDetail operation. */
+export type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllJobDescriptionsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -1193,7 +1377,7 @@ export interface AffindaAPIListOccupationGroupsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the listOccupationGroups operation. */
-export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
+export type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

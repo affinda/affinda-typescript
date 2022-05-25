@@ -152,7 +152,7 @@ ___
 
 ### languages
 
-• `Optional` **languages**: [`ResumeSearchParametersLanguagesItem`](ResumeSearchParametersLanguagesItem.md)[]
+• `Optional` **languages**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 ### locations
 
-• `Optional` **locations**: [`ResumeSearchParametersLocationsItem`](ResumeSearchParametersLocationsItem.md)[]
+• `Optional` **locations**: [`ResumeSearchParametersLocation`](ResumeSearchParametersLocation.md)[]
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 ### skills
 
-• `Optional` **skills**: [`ResumeSearchParametersSkillsItem`](ResumeSearchParametersSkillsItem.md)[]
+• `Optional` **skills**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
 
 ___
 

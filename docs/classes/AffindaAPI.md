@@ -49,6 +49,7 @@
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
+- [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
@@ -637,9 +638,32 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 ___
 
+### getResumeSearchDetail
+
+▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+
+This contains more detailed information about the matching score of the search criteria, or which
+search criteria is missing in this resume.
+The `identifier` is the unique ID returned via the [/resume_search](#operation/createResumeSearch)
+endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Resume identifier |
+| `body` | ``null`` \| [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
+| `options?` | [`AffindaAPIGetResumeSearchDetailOptionalParams`](../interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+
+___
+
 ### listOccupationGroups
 
-▸ **listOccupationGroups**(`options?`): `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+▸ **listOccupationGroups**(`options?`): `Promise`<[`OccupationGroup`](../interfaces/OccupationGroup.md)\>
 
 TODO TODO TODO
 
@@ -651,7 +675,7 @@ TODO TODO TODO
 
 #### Returns
 
-`Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+`Promise`<[`OccupationGroup`](../interfaces/OccupationGroup.md)\>
 
 ___
 

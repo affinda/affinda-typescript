@@ -4,6 +4,10 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
+
 ### Classes
 
 - [AffindaAPI](classes/AffindaAPI.md)
@@ -12,6 +16,7 @@
 
 ### Interfaces
 
+- [Accreditation](interfaces/Accreditation.md)
 - [AffindaAPICreateIndexDocumentOptionalParams](interfaces/AffindaAPICreateIndexDocumentOptionalParams.md)
 - [AffindaAPICreateIndexOptionalParams](interfaces/AffindaAPICreateIndexOptionalParams.md)
 - [AffindaAPICreateInvoiceOptionalParams](interfaces/AffindaAPICreateInvoiceOptionalParams.md)
@@ -40,12 +45,14 @@
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
+- [AffindaAPIGetResumeSearchDetailOptionalParams](interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2](interfaces/Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.md)
 - [Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2](interfaces/Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2.md)
 - [Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2](interfaces/Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2.md)
+- [Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md)
 - [Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2](interfaces/Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2.md)
 - [Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2](interfaces/Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.md)
 - [Components17Ashz6SchemasInvoicePropertiesMetaAllof1](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md)
@@ -65,15 +72,21 @@
 - [Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2](interfaces/Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2.md)
 - [ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2](interfaces/ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2.md)
 - [ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2](interfaces/ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2.md)
+- [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
+- [ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
+- [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2](interfaces/ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2.md)
 - [ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2](interfaces/ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2.md)
 - [ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2](interfaces/ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2.md)
+- [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2](interfaces/ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2.md)
 - [ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2](interfaces/ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2.md)
 - [ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2](interfaces/ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2.md)
 - [ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2](interfaces/ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2.md)
 - [ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2](interfaces/ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2.md)
 - [ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2](interfaces/ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2.md)
+- [Education](interfaces/Education.md)
+- [EducationDates](interfaces/EducationDates.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [ExpectedRemunerationAnnotationParsed](interfaces/ExpectedRemunerationAnnotationParsed.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
@@ -122,13 +135,25 @@
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
 - [ResumeSearch](interfaces/ResumeSearch.md)
+- [ResumeSearchDetail](interfaces/ResumeSearchDetail.md)
+- [ResumeSearchDetailEducation](interfaces/ResumeSearchDetailEducation.md)
+- [ResumeSearchDetailEducationMissing](interfaces/ResumeSearchDetailEducationMissing.md)
+- [ResumeSearchDetailExperience](interfaces/ResumeSearchDetailExperience.md)
+- [ResumeSearchDetailJobTitle](interfaces/ResumeSearchDetailJobTitle.md)
+- [ResumeSearchDetailJobTitleValueItem](interfaces/ResumeSearchDetailJobTitleValueItem.md)
+- [ResumeSearchDetailLanguages](interfaces/ResumeSearchDetailLanguages.md)
+- [ResumeSearchDetailLocation](interfaces/ResumeSearchDetailLocation.md)
+- [ResumeSearchDetailManagementLevel](interfaces/ResumeSearchDetailManagementLevel.md)
+- [ResumeSearchDetailOccupationGroup](interfaces/ResumeSearchDetailOccupationGroup.md)
+- [ResumeSearchDetailSkills](interfaces/ResumeSearchDetailSkills.md)
 - [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
-- [ResumeSearchParametersLanguagesItem](interfaces/ResumeSearchParametersLanguagesItem.md)
-- [ResumeSearchParametersLocationsItem](interfaces/ResumeSearchParametersLocationsItem.md)
-- [ResumeSearchParametersLocationsItemCoordinates](interfaces/ResumeSearchParametersLocationsItemCoordinates.md)
-- [ResumeSearchParametersSkillsItem](interfaces/ResumeSearchParametersSkillsItem.md)
+- [ResumeSearchParametersLocation](interfaces/ResumeSearchParametersLocation.md)
+- [ResumeSearchParametersLocationCoordinates](interfaces/ResumeSearchParametersLocationCoordinates.md)
+- [ResumeSearchParametersSkill](interfaces/ResumeSearchParametersSkill.md)
 - [ResumeSearchResult](interfaces/ResumeSearchResult.md)
 - [ResumeSearchScoreComponent](interfaces/ResumeSearchScoreComponent.md)
+- [ResumeSkill](interfaces/ResumeSkill.md)
+- [ResumeSkillSourcesItem](interfaces/ResumeSkillSourcesItem.md)
 
 ### Type aliases
 
@@ -160,6 +185,7 @@
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
+- [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [DateAnnotation](modules.md#dateannotation)
 - [EducationLevel](modules.md#educationlevel)
@@ -197,6 +223,12 @@
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
 - [ManagementLevel](modules.md#managementlevel)
+- [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
+- [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
+- [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
+- [ResumeSearchDetailOccupationGroupValueItem](modules.md#resumesearchdetailoccupationgroupvalueitem)
+- [ResumeSearchDetailSkillsValueItem](modules.md#resumesearchdetailskillsvalueitem)
+- [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotation](modules.md#skillannotation)
 - [TextAnnotation](modules.md#textannotation)
@@ -427,9 +459,17 @@ Contains response data for the getResume operation.
 
 ___
 
+### AffindaAPIGetResumeSearchDetailResponse
+
+Ƭ **AffindaAPIGetResumeSearchDetailResponse**: [`ResumeSearchDetail`](interfaces/ResumeSearchDetail.md)
+
+Contains response data for the getResumeSearchDetail operation.
+
+___
+
 ### AffindaAPIListOccupationGroupsResponse
 
-Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
+Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)
 
 Contains response data for the listOccupationGroups operation.
 
@@ -652,6 +692,64 @@ ___
 Ƭ **ManagementLevel**: ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
 
 Defines values for ManagementLevel.
+
+___
+
+### ResumeSearchDetailEducationValueItem
+
+Ƭ **ResumeSearchDetailEducationValueItem**: [`Education`](interfaces/Education.md) & [`ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1`](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md) & {}
+
+___
+
+### ResumeSearchDetailLanguagesValueItem
+
+Ƭ **ResumeSearchDetailLanguagesValueItem**: [`ResumeSkill`](interfaces/ResumeSkill.md) & [`Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1`](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md) & {}
+
+___
+
+### ResumeSearchDetailLocationValue
+
+Ƭ **ResumeSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
+
+___
+
+### ResumeSearchDetailOccupationGroupValueItem
+
+Ƭ **ResumeSearchDetailOccupationGroupValueItem**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1`](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md) & {}
+
+___
+
+### ResumeSearchDetailSkillsValueItem
+
+Ƭ **ResumeSearchDetailSkillsValueItem**: [`ResumeSkill`](interfaces/ResumeSkill.md) & [`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md) & {}
+
+___
+
+### ResumeSkillSourcesItemSection
+
+Ƭ **ResumeSkillSourcesItemSection**: `string`
+
+Defines values for ResumeSkillSourcesItemSection. \
+[KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md) can be used interchangeably with ResumeSkillSourcesItemSection,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**Achievements** \
+**AdditionalInformation** \
+**Education** \
+**Extracurriculars** \
+**Organisations** \
+**Other** \
+**PersonalDetails** \
+**Projects** \
+**Publications** \
+**Referees** \
+**Skills** \
+**Summary** \
+**Training** \
+**WorkExperience** \
+**NotPopulated** \
+**Header** \
+**Footer**
 
 ___
 
