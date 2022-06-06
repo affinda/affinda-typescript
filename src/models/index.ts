@@ -325,6 +325,7 @@ export interface ResumeSearchDetail {
   occupationGroup?: ResumeSearchDetailOccupationGroup;
   languages?: ResumeSearchDetailLanguages;
   managementLevel?: ResumeSearchDetailManagementLevel;
+  searchExpression?: ResumeSearchDetailSearchExpression;
 }
 
 export interface ResumeSearchDetailJobTitle {
@@ -441,6 +442,11 @@ export interface Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPr
 export interface ResumeSearchDetailManagementLevel {
   level?: ManagementLevel;
   match?: boolean;
+}
+
+export interface ResumeSearchDetailSearchExpression {
+  missing?: string[];
+  value?: string[];
 }
 
 export interface GetAllJobDescriptionsResults {
@@ -1377,7 +1383,7 @@ export interface AffindaAPIListOccupationGroupsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the listOccupationGroups operation. */
-export type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
+export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams
