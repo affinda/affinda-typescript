@@ -548,7 +548,7 @@ export declare interface AffindaAPIListOccupationGroupsOptionalParams extends co
 }
 
 /** Contains response data for the listOccupationGroups operation. */
-export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
+export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup;
 
 /** Optional parameters. */
 export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClientOptions {
@@ -1359,7 +1359,6 @@ export declare interface ResumeSearchDetail {
     occupationGroup?: ResumeSearchDetailOccupationGroup;
     languages?: ResumeSearchDetailLanguages;
     managementLevel?: ResumeSearchDetailManagementLevel;
-    searchExpression?: ResumeSearchDetailSearchExpression;
 }
 
 export declare interface ResumeSearchDetailEducation {
@@ -1420,11 +1419,6 @@ export declare interface ResumeSearchDetailOccupationGroup {
 }
 
 export declare type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup & ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
-
-export declare interface ResumeSearchDetailSearchExpression {
-    missing?: string[];
-    value?: string[];
-}
 
 export declare interface ResumeSearchDetailSkills {
     missing?: ResumeSearchParametersSkill[];

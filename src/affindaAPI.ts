@@ -1294,12 +1294,7 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     201: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "OccupationGroup" } }
-        }
-      }
+      bodyMapper: Mappers.OccupationGroup
     },
     400: {
       bodyMapper: Mappers.RequestError

@@ -1741,13 +1741,6 @@ export const ResumeSearchDetail: coreClient.CompositeMapper = {
           name: "Composite",
           className: "ResumeSearchDetailManagementLevel"
         }
-      },
-      searchExpression: {
-        serializedName: "searchExpression",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailSearchExpression"
-        }
       }
     }
   }
@@ -2363,37 +2356,6 @@ export const ResumeSearchDetailManagementLevel: coreClient.CompositeMapper = {
         serializedName: "match",
         type: {
           name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailSearchExpression: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailSearchExpression",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      value: {
-        serializedName: "value",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
         }
       }
     }

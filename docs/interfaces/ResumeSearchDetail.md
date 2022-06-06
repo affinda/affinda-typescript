@@ -13,7 +13,6 @@
 - [location](ResumeSearchDetail.md#location)
 - [managementLevel](ResumeSearchDetail.md#managementlevel)
 - [occupationGroup](ResumeSearchDetail.md#occupationgroup)
-- [searchExpression](ResumeSearchDetail.md#searchexpression)
 - [skills](ResumeSearchDetail.md#skills)
 
 ## Properties
@@ -57,12 +56,6 @@ ___
 ### occupationGroup
 
 • `Optional` **occupationGroup**: [`ResumeSearchDetailOccupationGroup`](ResumeSearchDetailOccupationGroup.md)
-
-___
-
-### searchExpression
-
-• `Optional` **searchExpression**: [`ResumeSearchDetailSearchExpression`](ResumeSearchDetailSearchExpression.md)
 
 ___
 

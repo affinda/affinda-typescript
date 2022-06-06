@@ -663,7 +663,7 @@ ___
 
 ### listOccupationGroups
 
-▸ **listOccupationGroups**(`options?`): `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+▸ **listOccupationGroups**(`options?`): `Promise`<[`OccupationGroup`](../interfaces/OccupationGroup.md)\>
 
 TODO TODO TODO
 
@@ -675,7 +675,7 @@ TODO TODO TODO
 
 #### Returns
 
-`Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+`Promise`<[`OccupationGroup`](../interfaces/OccupationGroup.md)\>
 
 ___
 
