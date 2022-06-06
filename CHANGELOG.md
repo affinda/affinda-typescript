@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2022-06-06
+### Added
+- Add searchExpression to ResumeSearchDetail
+
 ## [1.1.0] - 2022-05-26
 ### Added
 - Add resume search detail endpoint

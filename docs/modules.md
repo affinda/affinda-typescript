@@ -145,6 +145,7 @@
 - [ResumeSearchDetailLocation](interfaces/ResumeSearchDetailLocation.md)
 - [ResumeSearchDetailManagementLevel](interfaces/ResumeSearchDetailManagementLevel.md)
 - [ResumeSearchDetailOccupationGroup](interfaces/ResumeSearchDetailOccupationGroup.md)
+- [ResumeSearchDetailSearchExpression](interfaces/ResumeSearchDetailSearchExpression.md)
 - [ResumeSearchDetailSkills](interfaces/ResumeSearchDetailSkills.md)
 - [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
 - [ResumeSearchParametersLocation](interfaces/ResumeSearchParametersLocation.md)
@@ -469,7 +470,7 @@ ___
 
 ### AffindaAPIListOccupationGroupsResponse
 
-Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)
+Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
 
 Contains response data for the listOccupationGroups operation.
 
