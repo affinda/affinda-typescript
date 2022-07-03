@@ -449,3 +449,6 @@ client.deleteInvoice("REPLACE_IDENTIFIER").then((result) => {
     console.error(err);
 });
 ```
+
+Users
+-----

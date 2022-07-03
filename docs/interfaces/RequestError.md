@@ -6,17 +6,17 @@
 
 ### Properties
 
-- [detail](RequestError.md#detail)
-- [statusCode](RequestError.md#statuscode)
+- [errors](RequestError.md#errors)
+- [type](RequestError.md#type)
 
 ## Properties
 
-### detail
+### errors
 
-• **detail**: `string`
+• **errors**: [`RequestErrorErrorsItem`](RequestErrorErrorsItem.md)[]
 
 ___
 
-### statusCode
+### type
 
-• **statusCode**: `number`
+• **type**: `string`

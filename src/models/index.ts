@@ -27,14 +27,14 @@ export interface Meta {
 }
 
 export interface RequestError {
-  detail: string;
-  statusCode: number;
+  type: string;
+  errors: RequestErrorErrorsItem[];
 }
 
-export interface Resume {
-  data: ResumeData | null;
-  meta: Meta;
-  error: ErrorModel;
+export interface RequestErrorErrorsItem {
+  attr: string | null;
+  code: string;
+  detail: string;
 }
 
 export interface ResumeData {
@@ -45,24 +45,38 @@ export interface ResumeData {
   dateOfBirth?: string;
   location?: Location;
   objective?: string;
-  languages?: string[];
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly languages?: string[];
   summary?: string;
   totalYearsExperience?: number;
-  /** base64 encoded string */
-  headShot?: Uint8Array;
+  /**
+   * base64 encoded string
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly headShot?: Uint8Array;
   education?: ResumeDataEducationItem[];
-  /** Prediction of the candidate's profession based on recent work experience */
-  profession?: string;
-  /** Linkedin account associated with the candidate */
-  linkedin?: string;
+  /**
+   * Prediction of the candidate's profession based on recent work experience
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly profession?: string;
+  /**
+   * Linkedin account associated with the candidate
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly linkedin?: string;
   workExperience?: ResumeDataWorkExperienceItem[];
   skills?: ResumeDataSkillsItem[];
   certifications?: string[];
   publications?: string[];
   referees?: ResumeDataRefereesItem[];
-  sections?: ResumeDataSectionsItem[];
-  /** Probability that the given document is a resume. Values below 30 suggest that the document is not a resume. */
-  isResumeProbability?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly sections?: ResumeDataSectionsItem[];
+  /**
+   * Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly isResumeProbability?: number;
   /** All of the raw text of the parsed resume, example is shortened for readiblity */
   rawText?: string;
 }
@@ -76,20 +90,32 @@ export interface ResumeDataName {
 }
 
 export interface Location {
-  formatted?: string;
-  postalCode?: string;
-  state?: string;
-  country?: string;
-  /** Two letter country code (ISO 3166-1 alpha-2) */
-  countryCode?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly formatted?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly postalCode?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly state?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly country?: string;
+  /**
+   * Two letter country code (ISO 3166-1 alpha-2)
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly countryCode?: string;
   rawInput: string;
-  streetNumber?: string;
-  street?: string;
-  apartmentNumber?: string;
-  city?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly streetNumber?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly street?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly apartmentNumber?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly city?: string;
 }
 
 export interface ResumeDataEducationItem {
+  id?: number;
   organization?: string;
   accreditation?: ResumeDataEducationItemAccreditation;
   grade?: ResumeDataEducationItemGrade;
@@ -99,9 +125,12 @@ export interface ResumeDataEducationItem {
 
 export interface ResumeDataEducationItemAccreditation {
   education?: string;
-  inputStr?: string;
-  matchStr?: string;
-  educationLevel?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly inputStr?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly matchStr?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly educationLevel?: string;
 }
 
 export interface ResumeDataEducationItemGrade {
@@ -117,12 +146,14 @@ export interface ResumeDataEducationItemDates {
 }
 
 export interface ResumeDataWorkExperienceItem {
+  id?: number;
   jobTitle?: string;
   organization?: string;
   location?: Location;
   jobDescription?: string;
   dates?: ResumeDataWorkExperienceItemDates;
-  occupation?: ResumeDataWorkExperienceItemOccupation;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly occupation?: ResumeDataWorkExperienceItemOccupation;
 }
 
 export interface ResumeDataWorkExperienceItemDates {
@@ -155,11 +186,14 @@ export interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItems
 }
 
 export interface ResumeDataSkillsItem {
+  id?: number;
   name?: string;
   lastUsed?: string;
   numberOfMonths?: number;
-  type?: string;
-  sources?: ResumeDataSkillsPropertiesItemsItem[];
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly type?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly sources?: ResumeDataSkillsPropertiesItemsItem[];
 }
 
 export interface ResumeDataSkillsPropertiesItemsItem {
@@ -179,6 +213,12 @@ export interface ResumeDataSectionsItem {
   bbox?: number[];
   pageIndex?: number;
   text?: string;
+}
+
+export interface Resume {
+  data: ResumeData | null;
+  meta: Meta;
+  error: ErrorModel;
 }
 
 export interface ErrorModel {
@@ -253,6 +293,8 @@ export interface ResumeSearchParameters {
   isCurrentStudentRequired?: boolean;
   isRecentGraduate?: boolean;
   isRecentGraduateRequired?: boolean;
+  isTopStudent?: boolean;
+  isTopStudentRequired?: boolean;
   educationWeight?: number;
   searchExpression?: string;
   searchExpressionRequired?: boolean;
@@ -753,17 +795,41 @@ export interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
   reviewUrl?: string;
 }
 
+export interface PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema {
+  /** Number of indexes in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: User[];
+}
+
+export interface User {
+  id?: number;
+  name?: string;
+  username: string;
+  email?: string;
+}
+
+export interface Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1 {
+  /** API key used to authenticate for future requests.  This key is only retrievable at the initial creation of the user. */
+  apiKey?: string;
+}
+
 export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to file to download and process */
+  url?: string;
+  /** A JSON-encoded string of the `ResumeData` object. */
+  data?: ResumeData;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -782,7 +848,7 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Whether to redact headshot */
   redactHeadshot?: string;
   /** Whether to redact personal details (e.g. name, address) */
@@ -817,7 +883,7 @@ export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFor
   /** Identifier of the format used */
   resumeFormat: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
 }
 
 export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema {
@@ -830,7 +896,7 @@ export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDat
   /** URL to file to download and process */
   url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -851,7 +917,7 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
   /** URL to file to download and process */
   url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -987,6 +1053,9 @@ export type InvoiceDataSupplierEmail = TextAnnotation &
 export type InvoiceDataSupplierWebsite = TextAnnotation &
   Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
 
+export type PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema = User &
+  Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1 & {};
+
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
   Achievements = "Achievements",
@@ -1046,12 +1115,7 @@ export type EducationLevel =
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllResumes operation. */
 export type AffindaAPIGetAllResumesResponse = GetAllDocumentsResults;
@@ -1061,14 +1125,16 @@ export interface AffindaAPICreateResumeOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to file to download and process */
+  url?: string;
+  /** A JSON-encoded string of the `ResumeData` object. */
+  data?: ResumeData;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1086,6 +1152,13 @@ export interface AffindaAPIGetResumeOptionalParams
 export type AffindaAPIGetResumeResponse = Resume;
 
 /** Optional parameters. */
+export interface AffindaAPIUpdateResumeDataOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateResumeData operation. */
+export type AffindaAPIUpdateResumeDataResponse = ResumeData;
+
+/** Optional parameters. */
 export interface AffindaAPIDeleteResumeOptionalParams
   extends coreClient.OperationOptions {}
 
@@ -1094,12 +1167,7 @@ export type AffindaAPIDeleteResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllRedactedResumesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllRedactedResumes operation. */
 export type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResults;
@@ -1109,14 +1177,14 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to file to download and process */
+  url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1158,24 +1226,14 @@ export type AffindaAPIDeleteRedactedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllResumeFormatsOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllResumeFormats operation. */
 export type AffindaAPIGetAllResumeFormatsResponse = Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllReformattedResumesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllReformattedResumes operation. */
 export type AffindaAPIGetAllReformattedResumesResponse = GetAllDocumentsResults;
@@ -1185,14 +1243,14 @@ export interface AffindaAPICreateReformattedResumeOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to file to download and process */
+  url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
 }
@@ -1216,12 +1274,7 @@ export type AffindaAPIDeleteReformattedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPICreateResumeSearchOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the createResumeSearch operation. */
 export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
@@ -1235,12 +1288,7 @@ export type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllJobDescriptionsOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllJobDescriptions operation. */
 export type AffindaAPIGetAllJobDescriptionsResponse = GetAllJobDescriptionsResults;
@@ -1250,14 +1298,14 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to file to download and process */
+  url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1283,12 +1331,7 @@ export type AffindaAPIDeleteJobDescriptionResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllIndexes operation. */
 export type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema;
@@ -1332,12 +1375,7 @@ export type AffindaAPIDeleteIndexDocumentResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllInvoicesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllInvoices operation. */
 export type AffindaAPIGetAllInvoicesResponse = GetAllInvoicesResults;
@@ -1347,14 +1385,14 @@ export interface AffindaAPICreateInvoiceOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to file to download and process */
+  url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
+  wait?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1386,10 +1424,32 @@ export interface AffindaAPIListOccupationGroupsOptionalParams
 export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
+export interface AffindaAPIGetAllUsersOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAllUsers operation. */
+export type AffindaAPIGetAllUsersResponse = PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPICreateUserOptionalParams
+  extends coreClient.OperationOptions {
+  name?: string;
+  id?: number;
+  email?: string;
+}
+
+/** Contains response data for the createUser operation. */
+export type AffindaAPICreateUserResponse = PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema;
+
+/** Optional parameters. */
 export interface AffindaAPIOptionalParams
   extends coreClient.ServiceClientOptions {
   /** server parameter */
   $host?: string;
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
   /** Overrides client endpoint. */
   endpoint?: string;
 }

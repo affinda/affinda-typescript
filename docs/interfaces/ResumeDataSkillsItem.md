@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [id](ResumeDataSkillsItem.md#id)
 - [lastUsed](ResumeDataSkillsItem.md#lastused)
 - [name](ResumeDataSkillsItem.md#name)
 - [numberOfMonths](ResumeDataSkillsItem.md#numberofmonths)
@@ -13,6 +14,12 @@
 - [type](ResumeDataSkillsItem.md#type)
 
 ## Properties
+
+### id
+
+• `Optional` **id**: `number`
+
+___
 
 ### lastUsed
 
@@ -34,10 +41,14 @@ ___
 
 ### sources
 
-• `Optional` **sources**: [`ResumeDataSkillsPropertiesItemsItem`](ResumeDataSkillsPropertiesItemsItem.md)[]
+• `Optional` `Readonly` **sources**: [`ResumeDataSkillsPropertiesItemsItem`](ResumeDataSkillsPropertiesItemsItem.md)[]
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### type
 
-• `Optional` **type**: `string`
+• `Optional` `Readonly` **type**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.

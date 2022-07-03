@@ -9,6 +9,7 @@
 - [accreditation](ResumeDataEducationItem.md#accreditation)
 - [dates](ResumeDataEducationItem.md#dates)
 - [grade](ResumeDataEducationItem.md#grade)
+- [id](ResumeDataEducationItem.md#id)
 - [location](ResumeDataEducationItem.md#location)
 - [organization](ResumeDataEducationItem.md#organization)
 
@@ -29,6 +30,12 @@ ___
 ### grade
 
 • `Optional` **grade**: [`ResumeDataEducationItemGrade`](ResumeDataEducationItemGrade.md)
+
+___
+
+### id
+
+• `Optional` **id**: `number`
 
 ___
 

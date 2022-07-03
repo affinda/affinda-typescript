@@ -7,6 +7,7 @@
 ### Properties
 
 - [dates](ResumeDataWorkExperienceItem.md#dates)
+- [id](ResumeDataWorkExperienceItem.md#id)
 - [jobDescription](ResumeDataWorkExperienceItem.md#jobdescription)
 - [jobTitle](ResumeDataWorkExperienceItem.md#jobtitle)
 - [location](ResumeDataWorkExperienceItem.md#location)
@@ -18,6 +19,12 @@
 ### dates
 
 • `Optional` **dates**: [`ResumeDataWorkExperienceItemDates`](ResumeDataWorkExperienceItemDates.md)
+
+___
+
+### id
+
+• `Optional` **id**: `number`
 
 ___
 
@@ -41,7 +48,9 @@ ___
 
 ### occupation
 
-• `Optional` **occupation**: [`ResumeDataWorkExperienceItemOccupation`](ResumeDataWorkExperienceItemOccupation.md)
+• `Optional` `Readonly` **occupation**: [`ResumeDataWorkExperienceItemOccupation`](ResumeDataWorkExperienceItemOccupation.md)
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 

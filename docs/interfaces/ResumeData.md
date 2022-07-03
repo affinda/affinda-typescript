@@ -57,31 +57,36 @@ ___
 
 ### headShot
 
-• `Optional` **headShot**: `Uint8Array`
+• `Optional` `Readonly` **headShot**: `Uint8Array`
 
 base64 encoded string
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### isResumeProbability
 
-• `Optional` **isResumeProbability**: `number`
+• `Optional` `Readonly` **isResumeProbability**: `number`
 
 Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### languages
 
-• `Optional` **languages**: `string`[]
+• `Optional` `Readonly` **languages**: `string`[]
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### linkedin
 
-• `Optional` **linkedin**: `string`
+• `Optional` `Readonly` **linkedin**: `string`
 
 Linkedin account associated with the candidate
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
@@ -111,9 +116,10 @@ ___
 
 ### profession
 
-• `Optional` **profession**: `string`
+• `Optional` `Readonly` **profession**: `string`
 
 Prediction of the candidate's profession based on recent work experience
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
@@ -139,7 +145,9 @@ ___
 
 ### sections
 
-• `Optional` **sections**: [`ResumeDataSectionsItem`](ResumeDataSectionsItem.md)[]
+• `Optional` `Readonly` **sections**: [`ResumeDataSectionsItem`](ResumeDataSectionsItem.md)[]
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 

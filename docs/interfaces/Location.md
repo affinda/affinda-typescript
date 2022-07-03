@@ -21,39 +21,50 @@
 
 ### apartmentNumber
 
-• `Optional` **apartmentNumber**: `string`
+• `Optional` `Readonly` **apartmentNumber**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### city
 
-• `Optional` **city**: `string`
+• `Optional` `Readonly` **city**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### country
 
-• `Optional` **country**: `string`
+• `Optional` `Readonly` **country**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### countryCode
 
-• `Optional` **countryCode**: `string`
+• `Optional` `Readonly` **countryCode**: `string`
 
 Two letter country code (ISO 3166-1 alpha-2)
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### formatted
 
-• `Optional` **formatted**: `string`
+• `Optional` `Readonly` **formatted**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### postalCode
 
-• `Optional` **postalCode**: `string`
+• `Optional` `Readonly` **postalCode**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
@@ -65,16 +76,22 @@ ___
 
 ### state
 
-• `Optional` **state**: `string`
+• `Optional` `Readonly` **state**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### street
 
-• `Optional` **street**: `string`
+• `Optional` `Readonly` **street**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### streetNumber
 
-• `Optional` **streetNumber**: `string`
+• `Optional` `Readonly` **streetNumber**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.

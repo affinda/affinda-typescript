@@ -18,6 +18,8 @@
 - [isCurrentStudentRequired](ResumeSearchParameters.md#iscurrentstudentrequired)
 - [isRecentGraduate](ResumeSearchParameters.md#isrecentgraduate)
 - [isRecentGraduateRequired](ResumeSearchParameters.md#isrecentgraduaterequired)
+- [isTopStudent](ResumeSearchParameters.md#istopstudent)
+- [isTopStudentRequired](ResumeSearchParameters.md#istopstudentrequired)
 - [jobDescription](ResumeSearchParameters.md#jobdescription)
 - [jobTitles](ResumeSearchParameters.md#jobtitles)
 - [jobTitlesCurrentOnly](ResumeSearchParameters.md#jobtitlescurrentonly)
@@ -115,6 +117,18 @@ ___
 ### isRecentGraduateRequired
 
 • `Optional` **isRecentGraduateRequired**: `boolean`
+
+___
+
+### isTopStudent
+
+• `Optional` **isTopStudent**: `boolean`
+
+___
+
+### isTopStudentRequired
+
+• `Optional` **isTopStudentRequired**: `boolean`
 
 ___
 

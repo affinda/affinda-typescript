@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateResumeOptionalParams.md#abortsignal)
+- [data](AffindaAPICreateResumeOptionalParams.md#data)
 - [expiryTime](AffindaAPICreateResumeOptionalParams.md#expirytime)
 - [file](AffindaAPICreateResumeOptionalParams.md#file)
 - [fileName](AffindaAPICreateResumeOptionalParams.md#filename)
@@ -38,6 +39,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### data
+
+• `Optional` **data**: [`ResumeData`](ResumeData.md)
+
+A JSON-encoded string of the `ResumeData` object.
 
 ___
 
@@ -141,6 +150,6 @@ ___
 
 ### wait
 
-• `Optional` **wait**: `string`
+• `Optional` **wait**: `boolean`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.

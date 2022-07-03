@@ -21,6 +21,8 @@ Optional parameters.
 - [credentialScopes](AffindaAPIOptionalParams.md#credentialscopes)
 - [endpoint](AffindaAPIOptionalParams.md#endpoint)
 - [httpClient](AffindaAPIOptionalParams.md#httpclient)
+- [limit](AffindaAPIOptionalParams.md#limit)
+- [offset](AffindaAPIOptionalParams.md#offset)
 - [pipeline](AffindaAPIOptionalParams.md#pipeline)
 - [proxyOptions](AffindaAPIOptionalParams.md#proxyoptions)
 - [redirectOptions](AffindaAPIOptionalParams.md#redirectoptions)
@@ -104,6 +106,22 @@ The HttpClient that will be used to send HTTP requests.
 #### Inherited from
 
 coreClient.ServiceClientOptions.httpClient
+
+___
+
+### limit
+
+• `Optional` **limit**: `number`
+
+The numbers of results to return.
+
+___
+
+### offset
+
+• `Optional` **offset**: `number`
+
+The number of documents to skip before starting to collect the result set.
 
 ___
 

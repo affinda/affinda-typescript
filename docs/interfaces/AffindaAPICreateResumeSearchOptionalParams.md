@@ -15,8 +15,6 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateResumeSearchOptionalParams.md#abortsignal)
-- [limit](AffindaAPICreateResumeSearchOptionalParams.md#limit)
-- [offset](AffindaAPICreateResumeSearchOptionalParams.md#offset)
 - [onResponse](AffindaAPICreateResumeSearchOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPICreateResumeSearchOptionalParams.md#requestoptions)
 - [serializerOptions](AffindaAPICreateResumeSearchOptionalParams.md#serializeroptions)
@@ -33,22 +31,6 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
-
-___
-
-### limit
-
-• `Optional` **limit**: `number`
-
-The numbers of results to return.
-
-___
-
-### offset
-
-• `Optional` **offset**: `number`
-
-The number of documents to skip before starting to collect the result set.
 
 ___
 

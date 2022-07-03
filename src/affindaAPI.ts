@@ -11,6 +11,9 @@ import {
   AffindaAPICreateResumeResponse,
   AffindaAPIGetResumeOptionalParams,
   AffindaAPIGetResumeResponse,
+  ResumeData,
+  AffindaAPIUpdateResumeDataOptionalParams,
+  AffindaAPIUpdateResumeDataResponse,
   AffindaAPIDeleteResumeOptionalParams,
   AffindaAPIDeleteResumeResponse,
   AffindaAPIGetAllRedactedResumesOptionalParams,
@@ -66,7 +69,11 @@ import {
   AffindaAPIDeleteInvoiceOptionalParams,
   AffindaAPIDeleteInvoiceResponse,
   AffindaAPIListOccupationGroupsOptionalParams,
-  AffindaAPIListOccupationGroupsResponse
+  AffindaAPIListOccupationGroupsResponse,
+  AffindaAPIGetAllUsersOptionalParams,
+  AffindaAPIGetAllUsersResponse,
+  AffindaAPICreateUserOptionalParams,
+  AffindaAPICreateUserResponse
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -94,6 +101,9 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Uploads a resume for parsing.
+   * Provide `file` for uploading a resume file, or `url` for getting resume file from an url, or `data`
+   * if you want to upload resume data directly without parsing any resume file.
+   * For uploading resume data, the `data` argument provided must be a JSON-encoded string.
    * When successful, returns an `identifier` in the response for subsequent use with the
    * [/resumes/{identifier}](#operation/getResume) endpoint to check processing status and retrieve
    * results.
@@ -119,6 +129,25 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, options },
       getResumeOperationSpec
+    );
+  }
+
+  /**
+   * Update data of a parsed resume.
+   * The `identifier` is the unique ID returned after POST-ing the resume via the
+   * [/resumes](#operation/createResume) endpoint.
+   * @param identifier Resume identifier
+   * @param body Resume data to update
+   * @param options The options parameters.
+   */
+  updateResumeData(
+    identifier: string | null,
+    body: ResumeData | null,
+    options?: AffindaAPIUpdateResumeDataOptionalParams
+  ): Promise<AffindaAPIUpdateResumeDataResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateResumeDataOperationSpec
     );
   }
 
@@ -515,6 +544,31 @@ export class AffindaAPI extends AffindaAPIContext {
       listOccupationGroupsOperationSpec
     );
   }
+
+  /**
+   * Returns all the users
+   * @param options The options parameters.
+   */
+  getAllUsers(
+    options?: AffindaAPIGetAllUsersOptionalParams
+  ): Promise<AffindaAPIGetAllUsersResponse> {
+    return this.sendOperationRequest({ options }, getAllUsersOperationSpec);
+  }
+
+  /**
+   * Create an user as part of your account
+   * @param username
+   * @param options The options parameters.
+   */
+  createUser(
+    username: string,
+    options?: AffindaAPICreateUserOptionalParams
+  ): Promise<AffindaAPICreateUserResponse> {
+    return this.sendOperationRequest(
+      { username, options },
+      createUserOperationSpec
+    );
+  }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -530,9 +584,6 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -560,18 +611,16 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
     Parameters.file,
+    Parameters.url,
+    Parameters.data,
     Parameters.identifier,
     Parameters.fileName,
-    Parameters.url,
     Parameters.wait,
     Parameters.language,
     Parameters.expiryTime
@@ -593,15 +642,35 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host, Parameters.identifier1],
   headerParameters: [Parameters.accept],
+  serializer
+};
+const updateResumeDataOperationSpec: coreClient.OperationSpec = {
+  path: "/resumes/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeData
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer
 };
 const deleteResumeOperationSpec: coreClient.OperationSpec = {
@@ -613,9 +682,6 @@ const deleteResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -637,9 +703,6 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -667,18 +730,15 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
     Parameters.file,
+    Parameters.url,
     Parameters.identifier,
     Parameters.fileName,
-    Parameters.url,
     Parameters.wait,
     Parameters.language,
     Parameters.expiryTime,
@@ -708,9 +768,6 @@ const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -728,9 +785,6 @@ const deleteRedactedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -755,9 +809,6 @@ const getAllResumeFormatsOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -778,9 +829,6 @@ const getAllReformattedResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -808,18 +856,15 @@ const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
     Parameters.file,
+    Parameters.url,
     Parameters.identifier,
     Parameters.fileName,
-    Parameters.url,
     Parameters.wait,
     Parameters.language,
     Parameters.resumeFormat
@@ -841,9 +886,6 @@ const getReformattedResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -861,9 +903,6 @@ const deleteReformattedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -887,15 +926,12 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body,
-  queryParameters: [Parameters.offset, Parameters.limit1],
+  requestBody: Parameters.body1,
+  queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -914,14 +950,11 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body,
+  requestBody: Parameters.body1,
   urlParameters: [Parameters.$host, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -938,9 +971,6 @@ const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -968,18 +998,15 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
     Parameters.file,
+    Parameters.url,
     Parameters.identifier,
     Parameters.fileName,
-    Parameters.url,
     Parameters.wait,
     Parameters.language,
     Parameters.expiryTime
@@ -1001,9 +1028,6 @@ const getJobDescriptionOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -1021,9 +1045,6 @@ const deleteJobDescriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -1046,9 +1067,6 @@ const getAllIndexesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -1074,9 +1092,6 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -1095,9 +1110,6 @@ const deleteIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -1122,9 +1134,6 @@ const getAllIndexDocumentsOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -1147,14 +1156,11 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body1,
+  requestBody: Parameters.body2,
   urlParameters: [Parameters.$host, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -1169,9 +1175,6 @@ const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -1193,9 +1196,6 @@ const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
       bodyMapper: Mappers.RequestError
     },
     default: {
@@ -1223,18 +1223,15 @@ const createInvoiceOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   formDataParameters: [
     Parameters.file,
+    Parameters.url,
     Parameters.identifier,
     Parameters.fileName,
-    Parameters.url,
     Parameters.wait,
     Parameters.language,
     Parameters.expiryTime
@@ -1256,9 +1253,6 @@ const getInvoiceOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -1278,9 +1272,6 @@ const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
@@ -1293,7 +1284,7 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
   path: "/occupation_groups",
   httpMethod: "GET",
   responses: {
-    201: {
+    200: {
       bodyMapper: {
         type: {
           name: "Sequence",
@@ -1307,14 +1298,62 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
     default: {
       bodyMapper: Mappers.RequestError
     }
   },
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllUsersOperationSpec: coreClient.OperationSpec = {
+  path: "/users",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createUserOperationSpec: coreClient.OperationSpec = {
+  path: "/users",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper:
+        Mappers.PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  formDataParameters: [
+    Parameters.name,
+    Parameters.id,
+    Parameters.username,
+    Parameters.email
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };

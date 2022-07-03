@@ -98,48 +98,55 @@ export const RequestError: coreClient.CompositeMapper = {
     name: "Composite",
     className: "RequestError",
     modelProperties: {
-      detail: {
-        serializedName: "detail",
+      type: {
+        serializedName: "type",
         required: true,
         type: {
           name: "String"
         }
       },
-      statusCode: {
-        serializedName: "statusCode",
+      errors: {
+        serializedName: "errors",
         required: true,
         type: {
-          name: "Number"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "RequestErrorErrorsItem"
+            }
+          }
         }
       }
     }
   }
 };
 
-export const Resume: coreClient.CompositeMapper = {
+export const RequestErrorErrorsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Resume",
+    className: "RequestErrorErrorsItem",
     modelProperties: {
-      data: {
-        serializedName: "data",
+      attr: {
+        serializedName: "attr",
+        required: true,
+        nullable: true,
         type: {
-          name: "Composite",
-          className: "ResumeData"
+          name: "String"
         }
       },
-      meta: {
-        serializedName: "meta",
+      code: {
+        serializedName: "code",
+        required: true,
         type: {
-          name: "Composite",
-          className: "Meta"
+          name: "String"
         }
       },
-      error: {
-        serializedName: "error",
+      detail: {
+        serializedName: "detail",
+        required: true,
         type: {
-          name: "Composite",
-          className: "ErrorModel"
+          name: "String"
         }
       }
     }
@@ -213,6 +220,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       languages: {
         serializedName: "languages",
+        readOnly: true,
         type: {
           name: "Sequence",
           element: {
@@ -236,6 +244,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       headShot: {
         serializedName: "headShot",
+        readOnly: true,
         nullable: true,
         type: {
           name: "ByteArray"
@@ -255,6 +264,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       profession: {
         serializedName: "profession",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -262,6 +272,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       linkedin: {
         serializedName: "linkedin",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -327,6 +338,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       sections: {
         serializedName: "sections",
+        readOnly: true,
         type: {
           name: "Sequence",
           element: {
@@ -339,6 +351,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       isResumeProbability: {
         serializedName: "isResumeProbability",
+        readOnly: true,
         type: {
           name: "Number"
         }
@@ -399,6 +412,7 @@ export const Location: coreClient.CompositeMapper = {
     modelProperties: {
       formatted: {
         serializedName: "formatted",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -406,6 +420,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       postalCode: {
         serializedName: "postalCode",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -413,6 +428,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       state: {
         serializedName: "state",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -420,6 +436,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       country: {
         serializedName: "country",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -427,6 +444,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       countryCode: {
         serializedName: "countryCode",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -441,6 +459,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       streetNumber: {
         serializedName: "streetNumber",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -448,6 +467,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       street: {
         serializedName: "street",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -455,6 +475,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       apartmentNumber: {
         serializedName: "apartmentNumber",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -462,6 +483,7 @@ export const Location: coreClient.CompositeMapper = {
       },
       city: {
         serializedName: "city",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -476,6 +498,12 @@ export const ResumeDataEducationItem: coreClient.CompositeMapper = {
     name: "Composite",
     className: "ResumeDataEducationItem",
     modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
       organization: {
         serializedName: "organization",
         nullable: true,
@@ -528,12 +556,14 @@ export const ResumeDataEducationItemAccreditation: coreClient.CompositeMapper = 
       },
       inputStr: {
         serializedName: "inputStr",
+        readOnly: true,
         type: {
           name: "String"
         }
       },
       matchStr: {
         serializedName: "matchStr",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -541,6 +571,7 @@ export const ResumeDataEducationItemAccreditation: coreClient.CompositeMapper = 
       },
       educationLevel: {
         serializedName: "educationLevel",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -610,6 +641,12 @@ export const ResumeDataWorkExperienceItem: coreClient.CompositeMapper = {
     name: "Composite",
     className: "ResumeDataWorkExperienceItem",
     modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
       jobTitle: {
         serializedName: "jobTitle",
         nullable: true,
@@ -776,6 +813,12 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
     name: "Composite",
     className: "ResumeDataSkillsItem",
     modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
       name: {
         serializedName: "name",
         type: {
@@ -798,12 +841,14 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
       },
       type: {
         serializedName: "type",
+        readOnly: true,
         type: {
           name: "String"
         }
       },
       sources: {
         serializedName: "sources",
+        readOnly: true,
         type: {
           name: "Sequence",
           element: {
@@ -912,6 +957,36 @@ export const ResumeDataSectionsItem: coreClient.CompositeMapper = {
         serializedName: "text",
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Resume: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Resume",
+    modelProperties: {
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "ResumeData"
+        }
+      },
+      meta: {
+        serializedName: "meta",
+        type: {
+          name: "Composite",
+          className: "Meta"
+        }
+      },
+      error: {
+        serializedName: "error",
+        type: {
+          name: "Composite",
+          className: "ErrorModel"
         }
       }
     }
@@ -1156,12 +1231,14 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
       },
       yearsExperienceMin: {
         serializedName: "yearsExperienceMin",
+        nullable: true,
         type: {
           name: "Number"
         }
       },
       yearsExperienceMax: {
         serializedName: "yearsExperienceMax",
+        nullable: true,
         type: {
           name: "Number"
         }
@@ -1339,6 +1416,18 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      isTopStudent: {
+        serializedName: "isTopStudent",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isTopStudentRequired: {
+        serializedName: "isTopStudentRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
       educationWeight: {
         constraints: {
           InclusiveMaximum: 1,
@@ -1351,6 +1440,7 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
       },
       searchExpression: {
         serializedName: "searchExpression",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -3924,6 +4014,97 @@ export const Components17Ashz6SchemasInvoicePropertiesMetaAllof1: coreClient.Com
   }
 };
 
+export const PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      count: {
+        serializedName: "count",
+        type: {
+          name: "Number"
+        }
+      },
+      next: {
+        serializedName: "next",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      previous: {
+        serializedName: "previous",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "User"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const User: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "User",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      apiKey: {
+        serializedName: "apiKey",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -3934,6 +4115,20 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
         serializedName: "file",
         type: {
           name: "Stream"
+        }
+      },
+      url: {
+        serializedName: "url",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "ResumeData"
         }
       },
       identifier: {
@@ -3950,18 +4145,11 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
           name: "String"
         }
       },
-      url: {
-        serializedName: "url",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
       wait: {
-        defaultValue: "true",
+        defaultValue: true,
         serializedName: "wait",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
       language: {
@@ -4023,10 +4211,10 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
         }
       },
       wait: {
-        defaultValue: "true",
+        defaultValue: true,
         serializedName: "wait",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
       redactHeadshot: {
@@ -4144,10 +4332,10 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
         }
       },
       wait: {
-        defaultValue: "true",
+        defaultValue: true,
         serializedName: "wait",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       }
     }
@@ -4188,10 +4376,10 @@ export const PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSch
         }
       },
       wait: {
-        defaultValue: "true",
+        defaultValue: true,
         serializedName: "wait",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
       language: {
@@ -4261,10 +4449,10 @@ export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: 
         }
       },
       wait: {
-        defaultValue: "true",
+        defaultValue: true,
         serializedName: "wait",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
       language: {
@@ -4838,6 +5026,18 @@ export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
       ...TextAnnotation.type.modelProperties,
       ...Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.type
         .modelProperties
+    }
+  }
+};
+
+export const PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema",
+    modelProperties: {
+      ...User.type.modelProperties,
+      ...Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
     }
   }
 };

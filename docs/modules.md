@@ -25,6 +25,7 @@
 - [AffindaAPICreateReformattedResumeOptionalParams](interfaces/AffindaAPICreateReformattedResumeOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
 - [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
+- [AffindaAPICreateUserOptionalParams](interfaces/AffindaAPICreateUserOptionalParams.md)
 - [AffindaAPIDeleteIndexDocumentOptionalParams](interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md)
 - [AffindaAPIDeleteIndexOptionalParams](interfaces/AffindaAPIDeleteIndexOptionalParams.md)
 - [AffindaAPIDeleteInvoiceOptionalParams](interfaces/AffindaAPIDeleteInvoiceOptionalParams.md)
@@ -40,6 +41,7 @@
 - [AffindaAPIGetAllReformattedResumesOptionalParams](interfaces/AffindaAPIGetAllReformattedResumesOptionalParams.md)
 - [AffindaAPIGetAllResumeFormatsOptionalParams](interfaces/AffindaAPIGetAllResumeFormatsOptionalParams.md)
 - [AffindaAPIGetAllResumesOptionalParams](interfaces/AffindaAPIGetAllResumesOptionalParams.md)
+- [AffindaAPIGetAllUsersOptionalParams](interfaces/AffindaAPIGetAllUsersOptionalParams.md)
 - [AffindaAPIGetInvoiceOptionalParams](interfaces/AffindaAPIGetInvoiceOptionalParams.md)
 - [AffindaAPIGetJobDescriptionOptionalParams](interfaces/AffindaAPIGetJobDescriptionOptionalParams.md)
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
@@ -48,6 +50,7 @@
 - [AffindaAPIGetResumeSearchDetailOptionalParams](interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
+- [AffindaAPIUpdateResumeDataOptionalParams](interfaces/AffindaAPIUpdateResumeDataOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2](interfaces/Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.md)
 - [Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2](interfaces/Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2.md)
@@ -104,6 +107,7 @@
 - [Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)
+- [Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md)
 - [Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
 - [Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md)
@@ -112,6 +116,7 @@
 - [PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema.md)
+- [PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema](interfaces/PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema.md)
 - [PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema.md)
 - [PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Rectangle](interfaces/Rectangle.md)
@@ -120,6 +125,7 @@
 - [ReformattedResume](interfaces/ReformattedResume.md)
 - [ReformattedResumeData](interfaces/ReformattedResumeData.md)
 - [RequestError](interfaces/RequestError.md)
+- [RequestErrorErrorsItem](interfaces/RequestErrorErrorsItem.md)
 - [Resume](interfaces/Resume.md)
 - [ResumeData](interfaces/ResumeData.md)
 - [ResumeDataEducationItem](interfaces/ResumeDataEducationItem.md)
@@ -155,6 +161,7 @@
 - [ResumeSearchScoreComponent](interfaces/ResumeSearchScoreComponent.md)
 - [ResumeSkill](interfaces/ResumeSkill.md)
 - [ResumeSkillSourcesItem](interfaces/ResumeSkillSourcesItem.md)
+- [User](interfaces/User.md)
 
 ### Type aliases
 
@@ -166,6 +173,7 @@
 - [AffindaAPICreateReformattedResumeResponse](modules.md#affindaapicreatereformattedresumeresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
 - [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
+- [AffindaAPICreateUserResponse](modules.md#affindaapicreateuserresponse)
 - [AffindaAPIDeleteIndexDocumentResponse](modules.md#affindaapideleteindexdocumentresponse)
 - [AffindaAPIDeleteIndexResponse](modules.md#affindaapideleteindexresponse)
 - [AffindaAPIDeleteInvoiceResponse](modules.md#affindaapideleteinvoiceresponse)
@@ -181,6 +189,7 @@
 - [AffindaAPIGetAllReformattedResumesResponse](modules.md#affindaapigetallreformattedresumesresponse)
 - [AffindaAPIGetAllResumeFormatsResponse](modules.md#affindaapigetallresumeformatsresponse)
 - [AffindaAPIGetAllResumesResponse](modules.md#affindaapigetallresumesresponse)
+- [AffindaAPIGetAllUsersResponse](modules.md#affindaapigetallusersresponse)
 - [AffindaAPIGetInvoiceResponse](modules.md#affindaapigetinvoiceresponse)
 - [AffindaAPIGetJobDescriptionResponse](modules.md#affindaapigetjobdescriptionresponse)
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
@@ -188,6 +197,7 @@
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
+- [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
 - [DateAnnotation](modules.md#dateannotation)
 - [EducationLevel](modules.md#educationlevel)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
@@ -224,6 +234,7 @@
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
 - [ManagementLevel](modules.md#managementlevel)
+- [PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema](modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -297,6 +308,14 @@ ___
 Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearch`](interfaces/ResumeSearch.md)
 
 Contains response data for the createResumeSearch operation.
+
+___
+
+### AffindaAPICreateUserResponse
+
+Ƭ **AffindaAPICreateUserResponse**: [`PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema`](modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)
+
+Contains response data for the createUser operation.
 
 ___
 
@@ -420,6 +439,14 @@ Contains response data for the getAllResumes operation.
 
 ___
 
+### AffindaAPIGetAllUsersResponse
+
+Ƭ **AffindaAPIGetAllUsersResponse**: [`PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema`](interfaces/PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllUsers operation.
+
+___
+
 ### AffindaAPIGetInvoiceResponse
 
 Ƭ **AffindaAPIGetInvoiceResponse**: [`Invoice`](interfaces/Invoice.md)
@@ -473,6 +500,14 @@ ___
 Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
 
 Contains response data for the listOccupationGroups operation.
+
+___
+
+### AffindaAPIUpdateResumeDataResponse
+
+Ƭ **AffindaAPIUpdateResumeDataResponse**: [`ResumeData`](interfaces/ResumeData.md)
+
+Contains response data for the updateResumeData operation.
 
 ___
 
@@ -693,6 +728,12 @@ ___
 Ƭ **ManagementLevel**: ``"Low"`` \| ``"Mid"`` \| ``"Upper"``
 
 Defines values for ManagementLevel.
+
+___
+
+### PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema
+
+Ƭ **PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema**: [`User`](interfaces/User.md) & [`Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md) & {}
 
 ___
 

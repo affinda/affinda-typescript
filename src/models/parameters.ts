@@ -4,6 +4,7 @@ import {
   OperationQueryParameter
 } from "@azure/core-client";
 import {
+  ResumeData as ResumeDataMapper,
   ResumeSearchParameters as ResumeSearchParametersMapper,
   PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 } from "../models/mappers";
@@ -33,7 +34,7 @@ export const $host: OperationURLParameter = {
 };
 
 export const offset: OperationQueryParameter = {
-  parameterPath: ["options", "offset"],
+  parameterPath: "offset",
   mapper: {
     constraints: {
       InclusiveMinimum: 0
@@ -46,10 +47,11 @@ export const offset: OperationQueryParameter = {
 };
 
 export const limit: OperationQueryParameter = {
-  parameterPath: ["options", "limit"],
+  parameterPath: "limit",
   mapper: {
     defaultValue: 300,
     constraints: {
+      InclusiveMaximum: 300,
       InclusiveMinimum: 1
     },
     serializedName: "limit",
@@ -81,6 +83,21 @@ export const file: OperationParameter = {
   }
 };
 
+export const url: OperationParameter = {
+  parameterPath: ["options", "url"],
+  mapper: {
+    serializedName: "url",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const data: OperationParameter = {
+  parameterPath: ["options", "data"],
+  mapper: ResumeDataMapper
+};
+
 export const identifier: OperationParameter = {
   parameterPath: ["options", "identifier"],
   mapper: {
@@ -101,23 +118,13 @@ export const fileName: OperationParameter = {
   }
 };
 
-export const url: OperationParameter = {
-  parameterPath: ["options", "url"],
-  mapper: {
-    serializedName: "url",
-    type: {
-      name: "String"
-    }
-  }
-};
-
 export const wait: OperationParameter = {
   parameterPath: ["options", "wait"],
   mapper: {
-    defaultValue: "true",
+    defaultValue: true,
     serializedName: "wait",
     type: {
-      name: "String"
+      name: "Boolean"
     }
   }
 };
@@ -163,6 +170,23 @@ export const identifier1: OperationURLParameter = {
       name: "String"
     }
   }
+};
+
+export const contentType1: OperationParameter = {
+  parameterPath: ["options", "contentType"],
+  mapper: {
+    defaultValue: "application/json",
+    isConstant: true,
+    serializedName: "Content-Type",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body: OperationParameter = {
+  parameterPath: "body",
+  mapper: ResumeDataMapper
 };
 
 export const redactHeadshot: OperationParameter = {
@@ -264,35 +288,9 @@ export const resumeFormat: OperationParameter = {
   }
 };
 
-export const contentType1: OperationParameter = {
-  parameterPath: ["options", "contentType"],
-  mapper: {
-    defaultValue: "application/json",
-    isConstant: true,
-    serializedName: "Content-Type",
-    type: {
-      name: "String"
-    }
-  }
-};
-
-export const body: OperationParameter = {
+export const body1: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper
-};
-
-export const limit1: OperationQueryParameter = {
-  parameterPath: ["options", "limit"],
-  mapper: {
-    defaultValue: 20,
-    constraints: {
-      InclusiveMinimum: 1
-    },
-    serializedName: "limit",
-    type: {
-      name: "Number"
-    }
-  }
 };
 
 export const name: OperationParameter = {
@@ -316,7 +314,38 @@ export const name1: OperationURLParameter = {
   }
 };
 
-export const body1: OperationParameter = {
+export const body2: OperationParameter = {
   parameterPath: "body",
   mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
+};
+
+export const id: OperationParameter = {
+  parameterPath: ["options", "id"],
+  mapper: {
+    serializedName: "id",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const username: OperationParameter = {
+  parameterPath: "username",
+  mapper: {
+    serializedName: "username",
+    required: true,
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const email: OperationParameter = {
+  parameterPath: ["options", "email"],
+  mapper: {
+    serializedName: "email",
+    type: {
+      name: "String"
+    }
+  }
 };

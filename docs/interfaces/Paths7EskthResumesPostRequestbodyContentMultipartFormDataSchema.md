@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [data](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#data)
 - [expiryTime](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#expirytime)
 - [file](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#file)
 - [fileName](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#filename)
@@ -15,6 +16,14 @@
 - [wait](Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md#wait)
 
 ## Properties
+
+### data
+
+• `Optional` **data**: [`ResumeData`](ResumeData.md)
+
+A JSON-encoded string of the `ResumeData` object.
+
+___
 
 ### expiryTime
 
@@ -66,6 +75,6 @@ ___
 
 ### wait
 
-• `Optional` **wait**: `string`
+• `Optional` **wait**: `boolean`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.

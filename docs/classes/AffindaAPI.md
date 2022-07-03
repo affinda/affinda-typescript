@@ -17,6 +17,8 @@
 ### Properties
 
 - [$host](AffindaAPI.md#$host)
+- [limit](AffindaAPI.md#limit)
+- [offset](AffindaAPI.md#offset)
 - [pipeline](AffindaAPI.md#pipeline)
 
 ### Methods
@@ -29,6 +31,7 @@
 - [createReformattedResume](AffindaAPI.md#createreformattedresume)
 - [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
+- [createUser](AffindaAPI.md#createuser)
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
 - [deleteInvoice](AffindaAPI.md#deleteinvoice)
@@ -44,6 +47,7 @@
 - [getAllReformattedResumes](AffindaAPI.md#getallreformattedresumes)
 - [getAllResumeFormats](AffindaAPI.md#getallresumeformats)
 - [getAllResumes](AffindaAPI.md#getallresumes)
+- [getAllUsers](AffindaAPI.md#getallusers)
 - [getInvoice](AffindaAPI.md#getinvoice)
 - [getJobDescription](AffindaAPI.md#getjobdescription)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
@@ -53,6 +57,7 @@
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
+- [updateResumeData](AffindaAPI.md#updateresumedata)
 
 ## Constructors
 
@@ -82,6 +87,26 @@ Initializes a new instance of the AffindaAPI class.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[$host](AffindaAPIContext.md#$host)
+
+___
+
+### limit
+
+• `Optional` **limit**: `number`
+
+#### Inherited from
+
+[AffindaAPIContext](AffindaAPIContext.md).[limit](AffindaAPIContext.md#limit)
+
+___
+
+### offset
+
+• `Optional` **offset**: `number`
+
+#### Inherited from
+
+[AffindaAPIContext](AffindaAPIContext.md).[offset](AffindaAPIContext.md#offset)
 
 ___
 
@@ -219,6 +244,9 @@ ___
 ▸ **createResume**(`options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
 
 Uploads a resume for parsing.
+Provide `file` for uploading a resume file, or `url` for getting resume file from an url, or `data`
+if you want to upload resume data directly without parsing any resume file.
+For uploading resume data, the `data` argument provided must be a JSON-encoded string.
 When successful, returns an `identifier` in the response for subsequent use with the
 [/resumes/{identifier}](#operation/getResume) endpoint to check processing status and retrieve
 results.
@@ -251,6 +279,25 @@ Searches through parsed resumes.
 #### Returns
 
 `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+
+___
+
+### createUser
+
+▸ **createUser**(`username`, `options?`): `Promise`<[`PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema`](../modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)\>
+
+Create an user as part of your account
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `username` | `string` |  |
+| `options?` | [`AffindaAPICreateUserOptionalParams`](../interfaces/AffindaAPICreateUserOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema`](../modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)\>
 
 ___
 
@@ -533,6 +580,24 @@ Returns all the resume summaries for that user, limited to 300 per page.
 
 ___
 
+### getAllUsers
+
+▸ **getAllUsers**(`options?`): `Promise`<[`PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema.md)\>
+
+Returns all the users
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetAllUsersOptionalParams`](../interfaces/AffindaAPIGetAllUsersOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema.md)\>
+
+___
+
 ### getInvoice
 
 ▸ **getInvoice**(`identifier`, `options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
@@ -727,3 +792,25 @@ Send the provided httpRequest.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[sendRequest](AffindaAPIContext.md#sendrequest)
+
+___
+
+### updateResumeData
+
+▸ **updateResumeData**(`identifier`, `body`, `options?`): `Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
+
+Update data of a parsed resume.
+The `identifier` is the unique ID returned after POST-ing the resume via the
+[/resumes](#operation/createResume) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Resume identifier |
+| `body` | ``null`` \| [`ResumeData`](../interfaces/ResumeData.md) | Resume data to update |
+| `options?` | [`AffindaAPIUpdateResumeDataOptionalParams`](../interfaces/AffindaAPIUpdateResumeDataOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>

@@ -15,8 +15,6 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPIGetAllIndexesOptionalParams.md#abortsignal)
-- [limit](AffindaAPIGetAllIndexesOptionalParams.md#limit)
-- [offset](AffindaAPIGetAllIndexesOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllIndexesOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPIGetAllIndexesOptionalParams.md#requestoptions)
 - [serializerOptions](AffindaAPIGetAllIndexesOptionalParams.md#serializeroptions)
@@ -33,22 +31,6 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
-
-___
-
-### limit
-
-• `Optional` **limit**: `number`
-
-The numbers of results to return.
-
-___
-
-### offset
-
-• `Optional` **offset**: `number`
-
-The number of documents to skip before starting to collect the result set.
 
 ___
 

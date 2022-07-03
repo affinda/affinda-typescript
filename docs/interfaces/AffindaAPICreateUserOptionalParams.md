@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllRedactedResumesOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateUserOptionalParams
 
-# Interface: AffindaAPIGetAllRedactedResumesOptionalParams
+# Interface: AffindaAPICreateUserOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,20 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetAllRedactedResumesOptionalParams`**
+  ↳ **`AffindaAPICreateUserOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetAllRedactedResumesOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIGetAllRedactedResumesOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPICreateUserOptionalParams.md#abortsignal)
+- [email](AffindaAPICreateUserOptionalParams.md#email)
+- [id](AffindaAPICreateUserOptionalParams.md#id)
+- [name](AffindaAPICreateUserOptionalParams.md#name)
+- [onResponse](AffindaAPICreateUserOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPICreateUserOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPICreateUserOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPICreateUserOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -31,6 +34,24 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### email
+
+• `Optional` **email**: `string`
+
+___
+
+### id
+
+• `Optional` **id**: `number`
+
+___
+
+### name
+
+• `Optional` **name**: `string`
 
 ___
 

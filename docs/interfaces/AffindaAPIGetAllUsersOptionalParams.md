@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllRedactedResumesOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllUsersOptionalParams
 
-# Interface: AffindaAPIGetAllRedactedResumesOptionalParams
+# Interface: AffindaAPIGetAllUsersOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetAllRedactedResumesOptionalParams`**
+  ↳ **`AffindaAPIGetAllUsersOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetAllRedactedResumesOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIGetAllRedactedResumesOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIGetAllUsersOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIGetAllUsersOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIGetAllUsersOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIGetAllUsersOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIGetAllUsersOptionalParams.md#tracingoptions)
 
 ## Properties
 
