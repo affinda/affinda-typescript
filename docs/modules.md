@@ -98,6 +98,7 @@
 - [GetAllJobDescriptionsResults](interfaces/GetAllJobDescriptionsResults.md)
 - [Invoice](interfaces/Invoice.md)
 - [InvoiceData](interfaces/InvoiceData.md)
+- [InvoiceDataTablesItem](interfaces/InvoiceDataTablesItem.md)
 - [JobDescription](interfaces/JobDescription.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
 - [Location](interfaces/Location.md)
@@ -161,6 +162,7 @@
 - [ResumeSearchScoreComponent](interfaces/ResumeSearchScoreComponent.md)
 - [ResumeSkill](interfaces/ResumeSkill.md)
 - [ResumeSkillSourcesItem](interfaces/ResumeSkillSourcesItem.md)
+- [RowAnnotation](interfaces/RowAnnotation.md)
 - [User](interfaces/User.md)
 
 ### Type aliases

@@ -862,6 +862,7 @@ export declare interface Invoice {
 }
 
 export declare interface InvoiceData {
+    tables?: InvoiceDataTablesItem[];
     invoiceDate?: DateAnnotation;
     invoiceOrderDate?: DateAnnotation;
     paymentDateDue?: DateAnnotation;
@@ -956,6 +957,10 @@ export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & Components
 export declare type InvoiceDataSupplierVAT = TextAnnotation & Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 & {};
 
 export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
+
+export declare interface InvoiceDataTablesItem {
+    rows?: RowAnnotation[];
+}
 
 export declare type InvoiceMeta = Meta & Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
 
@@ -1635,6 +1640,21 @@ export declare interface ResumeSkillSourcesItem {
  * **Footer**
  */
 export declare type ResumeSkillSourcesItemSection = string;
+
+export declare interface RowAnnotation {
+    code?: string;
+    date?: string;
+    description?: string;
+    unit?: string;
+    unitPrice?: number;
+    quantity?: number;
+    discount?: string;
+    baseTotal?: number;
+    taxRate?: string;
+    taxTotal?: number;
+    total?: number;
+    other?: string;
+}
 
 /** Defines values for SearchLocationUnit. */
 export declare type SearchLocationUnit = "km" | "mi";

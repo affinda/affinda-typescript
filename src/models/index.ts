@@ -608,6 +608,7 @@ export interface Invoice {
 }
 
 export interface InvoiceData {
+  tables?: InvoiceDataTablesItem[];
   invoiceDate?: DateAnnotation;
   invoiceOrderDate?: DateAnnotation;
   paymentDateDue?: DateAnnotation;
@@ -643,6 +644,25 @@ export interface InvoiceData {
   customerEmail?: InvoiceDataCustomerEmail;
   supplierEmail?: InvoiceDataSupplierEmail;
   supplierWebsite?: InvoiceDataSupplierWebsite;
+}
+
+export interface InvoiceDataTablesItem {
+  rows?: RowAnnotation[];
+}
+
+export interface RowAnnotation {
+  code?: string;
+  date?: string;
+  description?: string;
+  unit?: string;
+  unitPrice?: number;
+  quantity?: number;
+  discount?: string;
+  baseTotal?: number;
+  taxRate?: string;
+  taxTotal?: number;
+  total?: number;
+  other?: string;
 }
 
 export interface ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 {

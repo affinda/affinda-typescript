@@ -3059,6 +3059,18 @@ export const InvoiceData: coreClient.CompositeMapper = {
     name: "Composite",
     className: "InvoiceData",
     modelProperties: {
+      tables: {
+        serializedName: "tables",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "InvoiceDataTablesItem"
+            }
+          }
+        }
+      },
       invoiceDate: {
         serializedName: "invoiceDate",
         type: {
@@ -3302,6 +3314,120 @@ export const InvoiceData: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "InvoiceDataSupplierWebsite"
+        }
+      }
+    }
+  }
+};
+
+export const InvoiceDataTablesItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "InvoiceDataTablesItem",
+    modelProperties: {
+      rows: {
+        serializedName: "rows",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "RowAnnotation"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const RowAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "RowAnnotation",
+    modelProperties: {
+      code: {
+        serializedName: "code",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      date: {
+        serializedName: "date",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      unit: {
+        serializedName: "unit",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      unitPrice: {
+        serializedName: "unitPrice",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      quantity: {
+        serializedName: "quantity",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      discount: {
+        serializedName: "discount",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      baseTotal: {
+        serializedName: "baseTotal",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      taxRate: {
+        serializedName: "taxRate",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      taxTotal: {
+        serializedName: "taxTotal",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      total: {
+        serializedName: "total",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      other: {
+        serializedName: "other",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }

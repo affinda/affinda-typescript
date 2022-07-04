@@ -41,6 +41,7 @@
 - [supplierPhoneNumber](InvoiceData.md#supplierphonenumber)
 - [supplierVAT](InvoiceData.md#suppliervat)
 - [supplierWebsite](InvoiceData.md#supplierwebsite)
+- [tables](InvoiceData.md#tables)
 
 ## Properties
 
@@ -251,3 +252,9 @@ ___
 ### supplierWebsite
 
 • `Optional` **supplierWebsite**: [`InvoiceDataSupplierWebsite`](../modules.md#invoicedatasupplierwebsite)
+
+___
+
+### tables
+
+• `Optional` **tables**: [`InvoiceDataTablesItem`](InvoiceDataTablesItem.md)[]
