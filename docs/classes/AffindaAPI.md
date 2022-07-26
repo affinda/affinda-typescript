@@ -17,8 +17,6 @@
 ### Properties
 
 - [$host](AffindaAPI.md#$host)
-- [limit](AffindaAPI.md#limit)
-- [offset](AffindaAPI.md#offset)
 - [pipeline](AffindaAPI.md#pipeline)
 
 ### Methods
@@ -88,26 +86,6 @@ Initializes a new instance of the AffindaAPI class.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[$host](AffindaAPIContext.md#$host)
-
-___
-
-### limit
-
-• `Optional` **limit**: `number`
-
-#### Inherited from
-
-[AffindaAPIContext](AffindaAPIContext.md).[limit](AffindaAPIContext.md#limit)
-
-___
-
-### offset
-
-• `Optional` **offset**: `number`
-
-#### Inherited from
-
-[AffindaAPIContext](AffindaAPIContext.md).[offset](AffindaAPIContext.md#offset)
 
 ___
 

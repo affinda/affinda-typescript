@@ -19,8 +19,6 @@
 ### Properties
 
 - [$host](AffindaAPIContext.md#$host)
-- [limit](AffindaAPIContext.md#limit)
-- [offset](AffindaAPIContext.md#offset)
 - [pipeline](AffindaAPIContext.md#pipeline)
 
 ### Methods
@@ -52,18 +50,6 @@ coreClient.ServiceClient.constructor
 ### $host
 
 • **$host**: `string`
-
-___
-
-### limit
-
-• `Optional` **limit**: `number`
-
-___
-
-### offset
-
-• `Optional` **offset**: `number`
 
 ___
 

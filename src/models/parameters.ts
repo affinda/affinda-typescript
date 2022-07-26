@@ -34,7 +34,7 @@ export const $host: OperationURLParameter = {
 };
 
 export const offset: OperationQueryParameter = {
-  parameterPath: "offset",
+  parameterPath: ["options", "offset"],
   mapper: {
     constraints: {
       InclusiveMinimum: 0
@@ -47,7 +47,7 @@ export const offset: OperationQueryParameter = {
 };
 
 export const limit: OperationQueryParameter = {
-  parameterPath: "limit",
+  parameterPath: ["options", "limit"],
   mapper: {
     defaultValue: 300,
     constraints: {

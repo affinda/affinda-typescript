@@ -251,8 +251,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
 
 export declare class AffindaAPIContext extends coreClient.ServiceClient {
     $host: string;
-    offset?: number;
-    limit?: number;
     /**
      * Initializes a new instance of the AffindaAPIContext class.
      * @param credentials Subscription credentials which uniquely identify client subscription.
@@ -399,6 +397,10 @@ export declare type AffindaAPICreateResumeResponse = Resume;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateResumeSearchOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the createResumeSearch operation. */
@@ -473,6 +475,10 @@ export declare type AffindaAPIGetAllIndexDocumentsResponse = PathsRvverlIndexNam
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -480,6 +486,10 @@ export declare type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetRespons
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllInvoicesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllInvoices operation. */
@@ -487,6 +497,10 @@ export declare type AffindaAPIGetAllInvoicesResponse = GetAllInvoicesResults;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllJobDescriptionsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllJobDescriptions operation. */
@@ -494,6 +508,10 @@ export declare type AffindaAPIGetAllJobDescriptionsResponse = GetAllJobDescripti
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllRedactedResumesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllRedactedResumes operation. */
@@ -501,6 +519,10 @@ export declare type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsRes
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllReformattedResumesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllReformattedResumes operation. */
@@ -508,6 +530,10 @@ export declare type AffindaAPIGetAllReformattedResumesResponse = GetAllDocuments
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllResumeFormatsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllResumeFormats operation. */
@@ -515,6 +541,10 @@ export declare type AffindaAPIGetAllResumeFormatsResponse = Paths1UtuacyResumeFo
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllResumesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllResumes operation. */
@@ -522,6 +552,10 @@ export declare type AffindaAPIGetAllResumesResponse = GetAllDocumentsResults;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllUsersOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllUsers operation. */
@@ -607,10 +641,6 @@ export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClientOptions {
     /** server parameter */
     $host?: string;
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
     /** Overrides client endpoint. */
     endpoint?: string;
 }

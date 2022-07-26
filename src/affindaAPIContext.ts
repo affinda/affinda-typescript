@@ -4,8 +4,6 @@ import { AffindaAPIOptionalParams } from "./models";
 
 export class AffindaAPIContext extends coreClient.ServiceClient {
   $host: string;
-  offset?: number;
-  limit?: number;
 
   /**
    * Initializes a new instance of the AffindaAPIContext class.
@@ -29,7 +27,7 @@ export class AffindaAPIContext extends coreClient.ServiceClient {
       credential: credentials
     };
 
-    const packageDetails = `azsdk-js-affinda/2.1.0`;
+    const packageDetails = `azsdk-js-affinda/2.1.1`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
