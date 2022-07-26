@@ -6,11 +6,18 @@
 
 ### Properties
 
+- [clientVerifiedDt](Invoice.md#clientverifieddt)
 - [data](Invoice.md#data)
 - [error](Invoice.md#error)
 - [meta](Invoice.md#meta)
 
 ## Properties
+
+### clientVerifiedDt
+
+• **clientVerifiedDt**: ``null`` \| `string`
+
+___
 
 ### data
 

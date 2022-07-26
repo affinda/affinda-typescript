@@ -14,6 +14,7 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 
 - [classification](Annotation.md#classification)
 - [confidence](Annotation.md#confidence)
+- [id](Annotation.md#id)
 - [isVerified](Annotation.md#isverified)
 - [pageIndex](Annotation.md#pageindex)
 - [raw](Annotation.md#raw)
@@ -30,6 +31,12 @@ ___
 ### confidence
 
 • **confidence**: `number`
+
+___
+
+### id
+
+• `Optional` **id**: `number`
 
 ___
 

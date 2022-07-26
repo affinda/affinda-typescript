@@ -45,6 +45,7 @@ export const Meta: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Meta",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       identifier: {
         serializedName: "identifier",
@@ -214,6 +215,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       objective: {
         serializedName: "objective",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -232,6 +234,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       summary: {
         serializedName: "summary",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -753,7 +756,7 @@ export const ResumeDataWorkExperienceItemOccupation: coreClient.CompositeMapper 
         nullable: true,
         type: {
           name: "Enum",
-          allowedValues: ["Low", "Mid", "Upper"]
+          allowedValues: ["None", "Low", "Mid", "Upper"]
         }
       },
       classification: {
@@ -1196,6 +1199,13 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      resume: {
+        serializedName: "resume",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       jobTitles: {
         serializedName: "jobTitles",
         type: {
@@ -1493,7 +1503,7 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Enum",
-          allowedValues: ["Low", "Mid", "Upper"]
+          allowedValues: ["None", "Low", "Mid", "Upper"]
         }
       },
       managementLevelRequired: {
@@ -1763,6 +1773,7 @@ export const ResumeSearchScoreComponent: coreClient.CompositeMapper = {
       },
       score: {
         serializedName: "score",
+        nullable: true,
         type: {
           name: "Number"
         }
@@ -1882,24 +1893,28 @@ export const ResumeSearchDetailJobTitleValueItem: coreClient.CompositeMapper = {
     modelProperties: {
       name: {
         serializedName: "name",
+        nullable: true,
         type: {
           name: "String"
         }
       },
       startDate: {
         serializedName: "startDate",
+        nullable: true,
         type: {
           name: "String"
         }
       },
       endDate: {
         serializedName: "endDate",
+        nullable: true,
         type: {
           name: "String"
         }
       },
       companyName: {
         serializedName: "companyName",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -2061,9 +2076,9 @@ export const Education: coreClient.CompositeMapper = {
       },
       grade: {
         serializedName: "grade",
-        nullable: true,
         type: {
-          name: "String"
+          name: "Composite",
+          className: "EducationGrade"
         }
       },
       location: {
@@ -2109,6 +2124,35 @@ export const Accreditation: coreClient.CompositeMapper = {
       },
       matchStr: {
         serializedName: "matchStr",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const EducationGrade: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EducationGrade",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        type: {
+          name: "String"
+        }
+      },
+      value: {
+        serializedName: "value",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      metric: {
+        serializedName: "metric",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -2289,6 +2333,7 @@ export const ResumeSearchDetailExperience: coreClient.CompositeMapper = {
     modelProperties: {
       years: {
         serializedName: "years",
+        nullable: true,
         type: {
           name: "Number"
         }
@@ -2446,7 +2491,7 @@ export const ResumeSearchDetailManagementLevel: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Enum",
-          allowedValues: ["Low", "Mid", "Upper"]
+          allowedValues: ["None", "Low", "Mid", "Upper"]
         }
       },
       match: {
@@ -2484,6 +2529,104 @@ export const ResumeSearchDetailSearchExpression: coreClient.CompositeMapper = {
               name: "String"
             }
           }
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchMatch: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchMatch",
+    modelProperties: {
+      score: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "score",
+        type: {
+          name: "Number"
+        }
+      },
+      details: {
+        serializedName: "details",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchMatchDetails"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchMatchDetails: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchMatchDetails",
+    modelProperties: {
+      jobTitle: {
+        serializedName: "jobTitle",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      experience: {
+        serializedName: "experience",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      education: {
+        serializedName: "education",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      occupationGroup: {
+        serializedName: "occupationGroup",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
+        }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchScoreComponent"
         }
       }
     }
@@ -2566,6 +2709,13 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
     name: "Composite",
     className: "JobDescriptionData",
     modelProperties: {
+      jobTitle: {
+        serializedName: "jobTitle",
+        type: {
+          name: "Composite",
+          className: "JobTitleAnnotation"
+        }
+      },
       contactEmail: {
         serializedName: "contactEmail",
         type: {
@@ -2685,6 +2835,82 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      yearsExperience: {
+        serializedName: "yearsExperience",
+        type: {
+          name: "Composite",
+          className: "YearsExperienceAnnotation"
+        }
+      }
+    }
+  }
+};
+
+export const JobTitleAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobTitleAnnotationParsed",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      classification: {
+        serializedName: "classification",
+        type: {
+          name: "Composite",
+          className: "JobTitleAnnotationParsedClassification"
+        }
+      }
+    }
+  }
+};
+
+export const JobTitleAnnotationParsedClassification: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobTitleAnnotationParsedClassification",
+    modelProperties: {
+      socCode: {
+        serializedName: "socCode",
+        type: {
+          name: "Number"
+        }
+      },
+      title: {
+        serializedName: "title",
+        type: {
+          name: "String"
+        }
+      },
+      minorGroup: {
+        serializedName: "minorGroup",
+        type: {
+          name: "String"
+        }
+      },
+      subMajorGroup: {
+        serializedName: "subMajorGroup",
+        type: {
+          name: "String"
+        }
+      },
+      majorGroup: {
+        serializedName: "majorGroup",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -2696,6 +2922,13 @@ export const Annotation: coreClient.CompositeMapper = {
     className: "Annotation",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
+      id: {
+        serializedName: "id",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
       rectangle: {
         serializedName: "rectangle",
         type: {
@@ -2812,6 +3045,29 @@ export const ExpectedRemunerationAnnotationParsed: coreClient.CompositeMapper = 
         nullable: true,
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const YearsExperienceAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "YearsExperienceAnnotationParsed",
+    modelProperties: {
+      minimum: {
+        serializedName: "minimum",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      maximum: {
+        serializedName: "maximum",
+        nullable: true,
+        type: {
+          name: "Number"
         }
       }
     }
@@ -3029,6 +3285,14 @@ export const Invoice: coreClient.CompositeMapper = {
     name: "Composite",
     className: "Invoice",
     modelProperties: {
+      clientVerifiedDt: {
+        serializedName: "clientVerifiedDt",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       data: {
         serializedName: "data",
         type: {
@@ -3176,18 +3440,18 @@ export const InvoiceData: coreClient.CompositeMapper = {
           className: "InvoiceDataBankAccountNumber"
         }
       },
-      supplierVAT: {
-        serializedName: "supplierVAT",
+      supplierVat: {
+        serializedName: "supplierVat",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierVAT"
+          className: "InvoiceDataSupplierVat"
         }
       },
-      customerVAT: {
-        serializedName: "customerVAT",
+      customerVat: {
+        serializedName: "customerVat",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerVAT"
+          className: "InvoiceDataCustomerVat"
         }
       },
       bpayBillerCode: {
@@ -3212,7 +3476,7 @@ export const InvoiceData: coreClient.CompositeMapper = {
         }
       },
       bankIban: {
-        serializedName: "bankIBAN",
+        serializedName: "bankIban",
         type: {
           name: "Composite",
           className: "InvoiceDataBankIban"
@@ -3225,11 +3489,11 @@ export const InvoiceData: coreClient.CompositeMapper = {
           className: "InvoiceDataBankSwift"
         }
       },
-      bankBSB: {
-        serializedName: "bankBSB",
+      bankBsb: {
+        serializedName: "bankBsb",
         type: {
           name: "Composite",
-          className: "InvoiceDataBankBSB"
+          className: "InvoiceDataBankBsb"
         }
       },
       customerContactName: {
@@ -3314,6 +3578,20 @@ export const InvoiceData: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "InvoiceDataSupplierWebsite"
+        }
+      },
+      currencyCode: {
+        serializedName: "currencyCode",
+        type: {
+          name: "Composite",
+          className: "EnumAnnotationSerializer"
+        }
+      },
+      customFields: {
+        serializedName: "customFields",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
         }
       }
     }
@@ -3429,16 +3707,23 @@ export const RowAnnotation: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      customFields: {
+        serializedName: "customFields",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
       }
     }
   }
 };
 
-export const ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2: coreClient.CompositeMapper = {
+export const Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2",
+      "Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3458,11 +3743,11 @@ export const ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2
   }
 };
 
-export const ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2: coreClient.CompositeMapper = {
+export const Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2",
+      "Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3482,11 +3767,11 @@ export const ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2:
   }
 };
 
-export const Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2: coreClient.CompositeMapper = {
+export const Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2",
+      "Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3506,11 +3791,11 @@ export const Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllo
   }
 };
 
-export const Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2: coreClient.CompositeMapper = {
+export const Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2",
+      "Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3530,11 +3815,11 @@ export const Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof
   }
 };
 
-export const Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2: coreClient.CompositeMapper = {
+export const ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2",
+      "ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3554,11 +3839,11 @@ export const Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2
   }
 };
 
-export const Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2: coreClient.CompositeMapper = {
+export const Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2",
+      "Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3578,11 +3863,11 @@ export const Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2: co
   }
 };
 
-export const Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2: coreClient.CompositeMapper = {
+export const ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2",
+      "ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3602,11 +3887,11 @@ export const Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernum
   }
 };
 
-export const ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2: coreClient.CompositeMapper = {
+export const Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2",
+      "Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3626,11 +3911,11 @@ export const ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberA
   }
 };
 
-export const Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2: coreClient.CompositeMapper = {
+export const Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2",
+      "Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3650,11 +3935,11 @@ export const Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2: c
   }
 };
 
-export const ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2: coreClient.CompositeMapper = {
+export const Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2",
+      "Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3674,11 +3959,11 @@ export const ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberA
   }
 };
 
-export const Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2: coreClient.CompositeMapper = {
+export const Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2",
+      "Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3698,11 +3983,11 @@ export const Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2
   }
 };
 
-export const Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2: coreClient.CompositeMapper = {
+export const Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2",
+      "Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3722,10 +4007,10 @@ export const Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2
   }
 };
 
-export const Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2: coreClient.CompositeMapper = {
+export const ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2",
+    className: "ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3745,10 +4030,10 @@ export const Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2: cor
   }
 };
 
-export const ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2: coreClient.CompositeMapper = {
+export const ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2",
+    className: "ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3768,35 +4053,11 @@ export const ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2: core
   }
 };
 
-export const Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2",
-    modelProperties: {
-      raw: {
-        serializedName: "raw",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parsed: {
-        serializedName: "parsed",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2: coreClient.CompositeMapper = {
+export const ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2",
+      "ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3816,11 +4077,11 @@ export const Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2: co
   }
 };
 
-export const Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2: coreClient.CompositeMapper = {
+export const ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2",
+      "ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3840,80 +4101,11 @@ export const Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2: co
   }
 };
 
-export const ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2",
-    modelProperties: {
-      raw: {
-        serializedName: "raw",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parsed: {
-        serializedName: "parsed",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2",
-    modelProperties: {
-      raw: {
-        serializedName: "raw",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parsed: {
-        serializedName: "parsed",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2",
-    modelProperties: {
-      raw: {
-        serializedName: "raw",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parsed: {
-        serializedName: "parsed",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2: coreClient.CompositeMapper = {
+export const Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2",
+      "Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3933,11 +4125,80 @@ export const ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllo
   }
 };
 
-export const Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2: coreClient.CompositeMapper = {
+export const Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2",
+      "ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3957,11 +4218,11 @@ export const Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllo
   }
 };
 
-export const Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2: coreClient.CompositeMapper = {
+export const Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2",
+      "Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -3981,11 +4242,11 @@ export const Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAll
   }
 };
 
-export const ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2: coreClient.CompositeMapper = {
+export const Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2",
+      "Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -4005,11 +4266,11 @@ export const ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllo
   }
 };
 
-export const ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2: coreClient.CompositeMapper = {
+export const Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2",
+      "Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -4029,34 +4290,11 @@ export const ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllo
   }
 };
 
-export const Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2",
-    modelProperties: {
-      raw: {
-        serializedName: "raw",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parsed: {
-        serializedName: "parsed",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2: coreClient.CompositeMapper = {
+export const Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2",
+      "Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -4076,11 +4314,10 @@ export const Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2: co
   }
 };
 
-export const ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2: coreClient.CompositeMapper = {
+export const Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2",
+    className: "Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -4100,11 +4337,59 @@ export const ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2: co
   }
 };
 
-export const Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2: coreClient.CompositeMapper = {
+export const Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2",
+      "Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1",
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -4129,6 +4414,13 @@ export const Components17Ashz6SchemasInvoicePropertiesMetaAllof1: coreClient.Com
     name: "Composite",
     className: "Components17Ashz6SchemasInvoicePropertiesMetaAllof1",
     modelProperties: {
+      clientVerifiedDt: {
+        serializedName: "clientVerifiedDt",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       reviewUrl: {
         serializedName: "reviewUrl",
         nullable: true,
@@ -4207,6 +4499,12 @@ export const User: coreClient.CompositeMapper = {
       },
       email: {
         serializedName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      apiKey: {
+        serializedName: "apiKey",
         type: {
           name: "String"
         }
@@ -4603,6 +4901,7 @@ export const InvoiceMeta: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "InvoiceMeta",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...Meta.type.modelProperties,
       ...Components17Ashz6SchemasInvoicePropertiesMetaAllof1.type
@@ -4667,6 +4966,24 @@ export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMap
       ...OccupationGroup.type.modelProperties,
       ...ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
         .type.modelProperties
+    }
+  }
+};
+
+export const JobTitleAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobTitleAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "JobTitleAnnotationParsed"
+        }
+      }
     }
   }
 };
@@ -4779,6 +5096,41 @@ export const LocationAnnotation: coreClient.CompositeMapper = {
   }
 };
 
+export const YearsExperienceAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "YearsExperienceAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "YearsExperienceAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const EnumAnnotationSerializer: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EnumAnnotationSerializer",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const InvoiceDataPaymentAmountBase: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -4786,7 +5138,7 @@ export const InvoiceDataPaymentAmountBase: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2
+      ...Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1
         .type.modelProperties
     }
   }
@@ -4799,7 +5151,7 @@ export const InvoiceDataPaymentAmountTax: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2.type
+      ...Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1.type
         .modelProperties
     }
   }
@@ -4812,7 +5164,7 @@ export const InvoiceDataPaymentAmountTotal: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2
+      ...Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1
         .type.modelProperties
     }
   }
@@ -4825,7 +5177,7 @@ export const InvoiceDataPaymentAmountPaid: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2
+      ...Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1
         .type.modelProperties
     }
   }
@@ -4838,8 +5190,8 @@ export const InvoiceDataPaymentAmountDue: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2
-        .type.modelProperties
+      ...ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.type
+        .modelProperties
     }
   }
 };
@@ -4851,7 +5203,7 @@ export const InvoiceDataInvoiceNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2.type
+      ...Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1.type
         .modelProperties
     }
   }
@@ -4864,7 +5216,7 @@ export const InvoiceDataInvoicePurchaseOrderNumber: coreClient.CompositeMapper =
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2
+      ...ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1
         .type.modelProperties
     }
   }
@@ -4877,7 +5229,7 @@ export const InvoiceDataSupplierBusinessNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2
+      ...Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1
         .type.modelProperties
     }
   }
@@ -4890,7 +5242,7 @@ export const InvoiceDataCustomerNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2.type
+      ...Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.type
         .modelProperties
     }
   }
@@ -4903,7 +5255,7 @@ export const InvoiceDataCustomerBusinessNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2
+      ...Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1
         .type.modelProperties
     }
   }
@@ -4916,8 +5268,8 @@ export const InvoiceDataPaymentReference: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2
-        .type.modelProperties
+      ...Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1.type
+        .modelProperties
     }
   }
 };
@@ -4929,33 +5281,33 @@ export const InvoiceDataBankAccountNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2
+      ...Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1
         .type.modelProperties
     }
   }
 };
 
-export const InvoiceDataSupplierVAT: coreClient.CompositeMapper = {
+export const InvoiceDataSupplierVat: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "InvoiceDataSupplierVAT",
+    className: "InvoiceDataSupplierVat",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2.type
+      ...ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.type
         .modelProperties
     }
   }
 };
 
-export const InvoiceDataCustomerVAT: coreClient.CompositeMapper = {
+export const InvoiceDataCustomerVat: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "InvoiceDataCustomerVAT",
+    className: "InvoiceDataCustomerVat",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2.type
+      ...ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.type
         .modelProperties
     }
   }
@@ -4968,7 +5320,7 @@ export const InvoiceDataBpayBillerCode: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2.type
+      ...ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1.type
         .modelProperties
     }
   }
@@ -4981,7 +5333,7 @@ export const InvoiceDataBpayReference: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2.type
+      ...ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.type
         .modelProperties
     }
   }
@@ -4994,7 +5346,7 @@ export const InvoiceDataBankSortCode: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2.type
+      ...Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.type
         .modelProperties
     }
   }
@@ -5007,7 +5359,7 @@ export const InvoiceDataBankIban: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2.type
+      ...Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.type
         .modelProperties
     }
   }
@@ -5020,20 +5372,20 @@ export const InvoiceDataBankSwift: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2.type
+      ...Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.type
         .modelProperties
     }
   }
 };
 
-export const InvoiceDataBankBSB: coreClient.CompositeMapper = {
+export const InvoiceDataBankBsb: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "InvoiceDataBankBSB",
+    className: "InvoiceDataBankBsb",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2.type
+      ...Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.type
         .modelProperties
     }
   }
@@ -5046,7 +5398,7 @@ export const InvoiceDataCustomerContactName: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2
+      ...ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1
         .type.modelProperties
     }
   }
@@ -5059,7 +5411,7 @@ export const InvoiceDataCustomerCompanyName: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2
+      ...Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1
         .type.modelProperties
     }
   }
@@ -5072,7 +5424,7 @@ export const InvoiceDataSupplierCompanyName: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2
+      ...Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1
         .type.modelProperties
     }
   }
@@ -5085,7 +5437,7 @@ export const InvoiceDataCustomerPhoneNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2
+      ...Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1
         .type.modelProperties
     }
   }
@@ -5098,7 +5450,7 @@ export const InvoiceDataSupplierPhoneNumber: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2
+      ...Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1
         .type.modelProperties
     }
   }
@@ -5111,7 +5463,7 @@ export const InvoiceDataSupplierFax: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2.type
+      ...Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.type
         .modelProperties
     }
   }
@@ -5124,7 +5476,7 @@ export const InvoiceDataCustomerEmail: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2.type
+      ...Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1.type
         .modelProperties
     }
   }
@@ -5137,7 +5489,7 @@ export const InvoiceDataSupplierEmail: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2.type
+      ...Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.type
         .modelProperties
     }
   }
@@ -5150,7 +5502,7 @@ export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...TextAnnotation.type.modelProperties,
-      ...Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2.type
+      ...Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.type
         .modelProperties
     }
   }

@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateUserOptionalParams.md#abortsignal)
+- [apiKey](AffindaAPICreateUserOptionalParams.md#apikey)
 - [email](AffindaAPICreateUserOptionalParams.md#email)
 - [id](AffindaAPICreateUserOptionalParams.md#id)
 - [name](AffindaAPICreateUserOptionalParams.md#name)
@@ -34,6 +35,12 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### apiKey
+
+• `Optional` **apiKey**: `string`
 
 ___
 

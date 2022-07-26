@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2022-07-26
+### Added
+- Add ability to find other candidates that have similar attributes to a resume
+- Add an endpoint to get the matching score between a resume and a job description
+
 ## [2.0.0] - 2022-07-04
 ### Added
 - Ability to update resume data in the search system

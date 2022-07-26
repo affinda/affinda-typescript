@@ -14,6 +14,7 @@
 - [educationLevel](JobDescriptionData.md#educationlevel)
 - [endDate](JobDescriptionData.md#enddate)
 - [expectedRemuneration](JobDescriptionData.md#expectedremuneration)
+- [jobTitle](JobDescriptionData.md#jobtitle)
 - [jobType](JobDescriptionData.md#jobtype)
 - [languages](JobDescriptionData.md#languages)
 - [location](JobDescriptionData.md#location)
@@ -21,6 +22,7 @@
 - [organizationWebsite](JobDescriptionData.md#organizationwebsite)
 - [skills](JobDescriptionData.md#skills)
 - [startDate](JobDescriptionData.md#startdate)
+- [yearsExperience](JobDescriptionData.md#yearsexperience)
 
 ## Properties
 
@@ -72,6 +74,12 @@ ___
 
 ___
 
+### jobTitle
+
+• `Optional` **jobTitle**: [`JobTitleAnnotation`](../modules.md#jobtitleannotation)
+
+___
+
 ### jobType
 
 • `Optional` **jobType**: [`TextAnnotation`](../modules.md#textannotation)
@@ -111,3 +119,9 @@ ___
 ### startDate
 
 • `Optional` **startDate**: [`DateAnnotation`](../modules.md#dateannotation)
+
+___
+
+### yearsExperience
+
+• `Optional` **yearsExperience**: [`YearsExperienceAnnotation`](../modules.md#yearsexperienceannotation)

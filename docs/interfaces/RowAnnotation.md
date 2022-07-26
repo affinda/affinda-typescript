@@ -8,6 +8,7 @@
 
 - [baseTotal](RowAnnotation.md#basetotal)
 - [code](RowAnnotation.md#code)
+- [customFields](RowAnnotation.md#customfields)
 - [date](RowAnnotation.md#date)
 - [description](RowAnnotation.md#description)
 - [discount](RowAnnotation.md#discount)
@@ -30,6 +31,18 @@ ___
 ### code
 
 • `Optional` **code**: `string`
+
+___
+
+### customFields
+
+• `Optional` **customFields**: `Object`
+
+Dictionary of <any>
+
+#### Index signature
+
+▪ [propertyName: `string`]: `any`
 
 ___
 

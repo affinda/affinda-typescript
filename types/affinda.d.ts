@@ -113,7 +113,12 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteReformattedResume(identifier: string | null, options?: AffindaAPIDeleteReformattedResumeOptionalParams): Promise<AffindaAPIDeleteReformattedResumeResponse>;
     /**
-     * Searches through parsed resumes.
+     * Searches through parsed resumes. You can search with custom criterias, a job description, or a
+     * resume.
+     * When searching with a job description, a parsed job description is used to find candidates that suit
+     * it.
+     * When searching with a resume, a parsed resume is used to find other candidates that have similar
+     * attributes.
      * @param body Search parameters
      * @param options The options parameters.
      */
@@ -128,6 +133,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     getResumeSearchDetail(identifier: string | null, body: ResumeSearchParameters | null, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
+    /**
+     * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
+     * with 0 being not a match at all, and 1 being perfect match.
+     * @param resume Identify the resume to match.
+     * @param jobDescription Identify the job description to match.
+     * @param options The options parameters.
+     */
+    getResumeSearchMatch(resume: string, jobDescription: string, options?: AffindaAPIGetResumeSearchMatchOptionalParams): Promise<AffindaAPIGetResumeSearchMatchResponse>;
     /**
      * Returns all the job descriptions for that user, limited to 300 per page.
      * @param options The options parameters.
@@ -396,6 +409,7 @@ export declare interface AffindaAPICreateUserOptionalParams extends coreClient.O
     name?: string;
     id?: number;
     email?: string;
+    apiKey?: string;
 }
 
 /** Contains response data for the createUser operation. */
@@ -556,6 +570,33 @@ export declare interface AffindaAPIGetResumeSearchDetailOptionalParams extends c
 export declare type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetResumeSearchMatchOptionalParams extends coreClient.OperationOptions {
+    /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
+    index?: string;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    jobTitlesWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    yearsExperienceWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    locationsWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    languagesWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    skillsWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    educationWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    searchExpressionWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    socCodesWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    managementLevelWeight?: number;
+}
+
+/** Contains response data for the getResumeSearchMatch operation. */
+export declare type AffindaAPIGetResumeSearchMatchResponse = ResumeSearchMatch;
+
+/** Optional parameters. */
 export declare interface AffindaAPIListOccupationGroupsOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -590,6 +631,7 @@ export declare class AffindaCredential implements TokenCredential {
 export declare interface Annotation {
     /** Describes unknown properties. The value of an unknown property can be of "any" type. */
     [property: string]: any;
+    id?: number;
     rectangle: Rectangle;
     pageIndex: number | null;
     raw: string | null;
@@ -598,17 +640,22 @@ export declare interface Annotation {
     classification: string;
 }
 
-export declare interface Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 {
+export declare interface Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 {
+export declare interface Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 {
+export declare interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
     raw?: string;
     parsed?: string;
 }
@@ -617,52 +664,48 @@ export declare interface Components159Ji55SchemasResumesearchdetailPropertiesLan
     match?: boolean;
 }
 
-export declare interface Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
 export declare interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
+    clientVerifiedDt?: string;
     /** Signed URL (valid for 60 minutes) to access the invoice review tool */
     reviewUrl?: string;
 }
 
-export declare interface Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 {
+export declare interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 {
+export declare interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 {
+export declare interface Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 {
+export declare interface Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 {
+export declare interface Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 {
+export declare interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 {
+export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
     raw?: string;
     parsed?: string;
 }
@@ -680,42 +723,77 @@ export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperie
     socCode?: number;
 }
 
-export declare interface Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 {
+export declare interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 {
+export declare interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 {
+export declare interface Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 {
+export declare interface Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 {
+export declare interface Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 {
+export declare interface Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 {
+export declare interface Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 {
+export declare interface Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
+    raw?: string;
+    parsed?: string;
+}
+
+export declare interface ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {
     raw?: string;
     parsed?: string;
 }
@@ -732,51 +810,16 @@ export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLoca
     match?: boolean;
 }
 
-export declare interface ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
 }
 
-export declare interface ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 {
+export declare interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 {
-    raw?: string;
-    parsed?: string;
-}
-
-export declare interface ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 {
+export declare interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {
     raw?: string;
     parsed?: string;
 }
@@ -788,7 +831,7 @@ export declare type DateAnnotation = Annotation & {
 export declare interface Education {
     organization?: string;
     accreditation?: Accreditation;
-    grade?: string;
+    grade?: EducationGrade;
     location?: Location;
     dates?: EducationDates;
 }
@@ -799,8 +842,18 @@ export declare interface EducationDates {
     isCurrent?: boolean;
 }
 
+export declare interface EducationGrade {
+    raw?: string;
+    value?: string;
+    metric?: string;
+}
+
 /** Defines values for EducationLevel. */
 export declare type EducationLevel = "school" | "certificate" | "bachelors" | "masters" | "doctoral";
+
+export declare type EnumAnnotationSerializer = Annotation & {
+    parsed?: string;
+};
 
 export declare interface ErrorModel {
     errorCode?: string;
@@ -856,6 +909,7 @@ export declare interface GetAllJobDescriptionsResults {
 }
 
 export declare interface Invoice {
+    clientVerifiedDt: string | null;
     data: InvoiceData | null;
     meta: InvoiceMeta;
     error: ErrorModel;
@@ -878,14 +932,14 @@ export declare interface InvoiceData {
     customerBusinessNumber?: InvoiceDataCustomerBusinessNumber;
     paymentReference?: InvoiceDataPaymentReference;
     bankAccountNumber?: InvoiceDataBankAccountNumber;
-    supplierVAT?: InvoiceDataSupplierVAT;
-    customerVAT?: InvoiceDataCustomerVAT;
+    supplierVat?: InvoiceDataSupplierVat;
+    customerVat?: InvoiceDataCustomerVat;
     bpayBillerCode?: InvoiceDataBpayBillerCode;
     bpayReference?: InvoiceDataBpayReference;
     bankSortCode?: InvoiceDataBankSortCode;
     bankIban?: InvoiceDataBankIban;
     bankSwift?: InvoiceDataBankSwift;
-    bankBSB?: InvoiceDataBankBSB;
+    bankBsb?: InvoiceDataBankBsb;
     customerContactName?: InvoiceDataCustomerContactName;
     customerCompanyName?: InvoiceDataCustomerCompanyName;
     supplierCompanyName?: InvoiceDataSupplierCompanyName;
@@ -898,65 +952,70 @@ export declare interface InvoiceData {
     customerEmail?: InvoiceDataCustomerEmail;
     supplierEmail?: InvoiceDataSupplierEmail;
     supplierWebsite?: InvoiceDataSupplierWebsite;
+    currencyCode?: EnumAnnotationSerializer;
+    /** Dictionary of <any> */
+    customFields?: {
+        [propertyName: string]: any;
+    };
 }
 
-export declare type InvoiceDataBankAccountNumber = TextAnnotation & Components14Dm0XSchemasInvoicedataPropertiesBankaccountnumberAllof2 & {};
+export declare type InvoiceDataBankAccountNumber = TextAnnotation & Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
 
-export declare type InvoiceDataBankBSB = TextAnnotation & ComponentsUilt2MSchemasInvoicedataPropertiesBankbsbAllof2 & {};
+export declare type InvoiceDataBankBsb = TextAnnotation & Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
 
-export declare type InvoiceDataBankIban = TextAnnotation & ComponentsE6Bjv3SchemasInvoicedataPropertiesBankibanAllof2 & {};
+export declare type InvoiceDataBankIban = TextAnnotation & Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
 
-export declare type InvoiceDataBankSortCode = TextAnnotation & Components1Rbm6P1SchemasInvoicedataPropertiesBanksortcodeAllof2 & {};
+export declare type InvoiceDataBankSortCode = TextAnnotation & Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
 
-export declare type InvoiceDataBankSwift = TextAnnotation & Components11Zi81FSchemasInvoicedataPropertiesBankswiftAllof2 & {};
+export declare type InvoiceDataBankSwift = TextAnnotation & Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
 
-export declare type InvoiceDataBpayBillerCode = TextAnnotation & Components1Bh8NlbSchemasInvoicedataPropertiesBpaybillercodeAllof2 & {};
+export declare type InvoiceDataBpayBillerCode = TextAnnotation & ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
 
-export declare type InvoiceDataBpayReference = TextAnnotation & Components1OmsnpSchemasInvoicedataPropertiesBpayreferenceAllof2 & {};
+export declare type InvoiceDataBpayReference = TextAnnotation & ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 & {};
 
-export declare type InvoiceDataCustomerBusinessNumber = TextAnnotation & ComponentsRft7JdSchemasInvoicedataPropertiesCustomerbusinessnumberAllof2 & {};
+export declare type InvoiceDataCustomerBusinessNumber = TextAnnotation & Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 & {};
 
-export declare type InvoiceDataCustomerCompanyName = TextAnnotation & Components6DhvidSchemasInvoicedataPropertiesCustomercompanynameAllof2 & {};
+export declare type InvoiceDataCustomerCompanyName = TextAnnotation & Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 & {};
 
-export declare type InvoiceDataCustomerContactName = TextAnnotation & ComponentsWywi9WSchemasInvoicedataPropertiesCustomercontactnameAllof2 & {};
+export declare type InvoiceDataCustomerContactName = TextAnnotation & ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
 
-export declare type InvoiceDataCustomerEmail = TextAnnotation & Components5PwavySchemasInvoicedataPropertiesCustomeremailAllof2 & {};
+export declare type InvoiceDataCustomerEmail = TextAnnotation & Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 & {};
 
-export declare type InvoiceDataCustomerNumber = TextAnnotation & Components2Hu973SchemasInvoicedataPropertiesCustomernumberAllof2 & {};
+export declare type InvoiceDataCustomerNumber = TextAnnotation & Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 & {};
 
-export declare type InvoiceDataCustomerPhoneNumber = TextAnnotation & ComponentsPs8Uo7SchemasInvoicedataPropertiesCustomerphonenumberAllof2 & {};
+export declare type InvoiceDataCustomerPhoneNumber = TextAnnotation & Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
 
-export declare type InvoiceDataCustomerVAT = TextAnnotation & ComponentsRsi73USchemasInvoicedataPropertiesCustomervatAllof2 & {};
+export declare type InvoiceDataCustomerVat = TextAnnotation & ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
 
-export declare type InvoiceDataInvoiceNumber = TextAnnotation & Components7CqvqpSchemasInvoicedataPropertiesInvoicenumberAllof2 & {};
+export declare type InvoiceDataInvoiceNumber = TextAnnotation & Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
 
-export declare type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation & Components55Nj82SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof2 & {};
+export declare type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation & ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 & {};
 
-export declare type InvoiceDataPaymentAmountBase = TextAnnotation & ComponentsTz04ToSchemasInvoicedataPropertiesPaymentamountbaseAllof2 & {};
+export declare type InvoiceDataPaymentAmountBase = TextAnnotation & Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
 
-export declare type InvoiceDataPaymentAmountDue = TextAnnotation & Components14V23KqSchemasInvoicedataPropertiesPaymentamountdueAllof2 & {};
+export declare type InvoiceDataPaymentAmountDue = TextAnnotation & ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 & {};
 
-export declare type InvoiceDataPaymentAmountPaid = TextAnnotation & Components1LdfgdeSchemasInvoicedataPropertiesPaymentamountpaidAllof2 & {};
+export declare type InvoiceDataPaymentAmountPaid = TextAnnotation & Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 & {};
 
-export declare type InvoiceDataPaymentAmountTax = TextAnnotation & ComponentsY49P83SchemasInvoicedataPropertiesPaymentamounttaxAllof2 & {};
+export declare type InvoiceDataPaymentAmountTax = TextAnnotation & Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 & {};
 
-export declare type InvoiceDataPaymentAmountTotal = TextAnnotation & Components15Ayv0YSchemasInvoicedataPropertiesPaymentamounttotalAllof2 & {};
+export declare type InvoiceDataPaymentAmountTotal = TextAnnotation & Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 & {};
 
-export declare type InvoiceDataPaymentReference = TextAnnotation & Components1Wx56HlSchemasInvoicedataPropertiesPaymentreferenceAllof2 & {};
+export declare type InvoiceDataPaymentReference = TextAnnotation & Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 & {};
 
-export declare type InvoiceDataSupplierBusinessNumber = TextAnnotation & ComponentsYe0TzySchemasInvoicedataPropertiesSupplierbusinessnumberAllof2 & {};
+export declare type InvoiceDataSupplierBusinessNumber = TextAnnotation & Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 & {};
 
-export declare type InvoiceDataSupplierCompanyName = TextAnnotation & Components1O4BmpySchemasInvoicedataPropertiesSuppliercompanynameAllof2 & {};
+export declare type InvoiceDataSupplierCompanyName = TextAnnotation & Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 & {};
 
-export declare type InvoiceDataSupplierEmail = TextAnnotation & ComponentsVyrnzuSchemasInvoicedataPropertiesSupplieremailAllof2 & {};
+export declare type InvoiceDataSupplierEmail = TextAnnotation & Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 & {};
 
-export declare type InvoiceDataSupplierFax = TextAnnotation & Components1ByjheSchemasInvoicedataPropertiesSupplierfaxAllof2 & {};
+export declare type InvoiceDataSupplierFax = TextAnnotation & Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 & {};
 
-export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & ComponentsBvthtoSchemasInvoicedataPropertiesSupplierphonenumberAllof2 & {};
+export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
 
-export declare type InvoiceDataSupplierVAT = TextAnnotation & Components1Fdmi0OSchemasInvoicedataPropertiesSuppliervatAllof2 & {};
+export declare type InvoiceDataSupplierVat = TextAnnotation & ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
 
-export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components179Pdz6SchemasInvoicedataPropertiesSupplierwebsiteAllof2 & {};
+export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
 export declare interface InvoiceDataTablesItem {
     rows?: RowAnnotation[];
@@ -971,6 +1030,7 @@ export declare interface JobDescription {
 }
 
 export declare interface JobDescriptionData {
+    jobTitle?: JobTitleAnnotation;
     contactEmail?: TextAnnotation;
     contactName?: TextAnnotation;
     contactPhone?: TextAnnotation;
@@ -986,6 +1046,27 @@ export declare interface JobDescriptionData {
     expectedRemuneration?: ExpectedRemunerationAnnotation;
     location?: LocationAnnotation;
     certifications?: TextAnnotation[];
+    yearsExperience?: YearsExperienceAnnotation;
+}
+
+export declare type JobTitleAnnotation = Annotation & {
+    /** Years of experience range */
+    parsed?: JobTitleAnnotationParsed;
+};
+
+/** Years of experience range */
+export declare interface JobTitleAnnotationParsed {
+    name?: string;
+    managementLevel?: string;
+    classification?: JobTitleAnnotationParsedClassification;
+}
+
+export declare interface JobTitleAnnotationParsedClassification {
+    socCode?: number;
+    title?: string;
+    minorGroup?: string;
+    subMajorGroup?: string;
+    majorGroup?: string;
 }
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
@@ -1043,9 +1124,11 @@ export declare type LocationAnnotation = Annotation & {
 };
 
 /** Defines values for ManagementLevel. */
-export declare type ManagementLevel = "Low" | "Mid" | "Upper";
+export declare type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 
 export declare interface Meta {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier: string | null;
     /** Optional filename of the file */
@@ -1520,10 +1603,30 @@ export declare interface ResumeSearchDetailSkills {
 
 export declare type ResumeSearchDetailSkillsValueItem = ResumeSkill & ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
 
+export declare interface ResumeSearchMatch {
+    /** The matching score between the provided resume and job description. */
+    score?: number;
+    details?: ResumeSearchMatchDetails;
+}
+
+export declare interface ResumeSearchMatchDetails {
+    jobTitle?: ResumeSearchScoreComponent;
+    managementLevel?: ResumeSearchScoreComponent;
+    experience?: ResumeSearchScoreComponent;
+    skills?: ResumeSearchScoreComponent;
+    languages?: ResumeSearchScoreComponent;
+    location?: ResumeSearchScoreComponent;
+    education?: ResumeSearchScoreComponent;
+    occupationGroup?: ResumeSearchScoreComponent;
+    searchExpression?: ResumeSearchScoreComponent;
+}
+
 export declare interface ResumeSearchParameters {
     indices: string[];
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     jobDescription?: string;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    resume?: string;
     jobTitles?: string[];
     jobTitlesCurrentOnly?: boolean;
     jobTitlesRequired?: boolean;
@@ -1654,6 +1757,10 @@ export declare interface RowAnnotation {
     taxTotal?: number;
     total?: number;
     other?: string;
+    /** Dictionary of <any> */
+    customFields?: {
+        [propertyName: string]: any;
+    };
 }
 
 /** Defines values for SearchLocationUnit. */
@@ -1672,6 +1779,20 @@ export declare interface User {
     name?: string;
     username: string;
     email?: string;
+    apiKey?: string;
+}
+
+export declare type YearsExperienceAnnotation = Annotation & {
+    /** Years of experience range */
+    parsed?: YearsExperienceAnnotationParsed;
+};
+
+/** Years of experience range */
+export declare interface YearsExperienceAnnotationParsed {
+    /** Minimum years of experience */
+    minimum?: number;
+    /** Maximum years of experience */
+    maximum?: number;
 }
 
 export { }

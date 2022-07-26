@@ -2,6 +2,12 @@
 
 # Interface: Meta
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
+Describes unknown properties. The value of an unknown property can be of "any" type.
+
 ## Table of contents
 
 ### Properties

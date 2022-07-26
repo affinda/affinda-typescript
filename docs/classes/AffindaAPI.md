@@ -54,6 +54,7 @@
 - [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
+- [getResumeSearchMatch](AffindaAPI.md#getresumesearchmatch)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
@@ -267,7 +268,12 @@ ___
 
 ▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
-Searches through parsed resumes.
+Searches through parsed resumes. You can search with custom criterias, a job description, or a
+resume.
+When searching with a job description, a parsed job description is used to find candidates that suit
+it.
+When searching with a resume, a parsed resume is used to find other candidates that have similar
+attributes.
 
 #### Parameters
 
@@ -723,6 +729,27 @@ endpoint.
 #### Returns
 
 `Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+
+___
+
+### getResumeSearchMatch
+
+▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+
+Get the matching score between a resume and a job description. The score ranges between 0 and 1,
+with 0 being not a match at all, and 1 being perfect match.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `resume` | `string` | Identify the resume to match. |
+| `jobDescription` | `string` | Identify the job description to match. |
+| `options?` | [`AffindaAPIGetResumeSearchMatchOptionalParams`](../interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 ___
 

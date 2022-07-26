@@ -280,6 +280,27 @@ client.deleteReformattedResume("REPLACE_IDENTIFIER").then((result) => {
 Resume Search
 -------------
 
+### getResumeSearchMatch - Resume and job description 1:1 match
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda")
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+const resumeIdentifier = "REPLACE_RESUME_IDENTIFIER"
+const jobDescriptionIdentifier = "REPLACE_JOB_DESCRIPTION_IDENTIFIER"
+const indexName = "REPLACE_INDEX_NAME" // Optional
+
+client.getResume(resumeIdentifier, jobDescriptionIdentifier, { indexName }).then((result) => {
+    console.log("Returned data:")
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:")
+    console.error(err)
+});
+```
+
 Job Descriptions
 ----------------
 

@@ -6,12 +6,19 @@
 
 ### Properties
 
+- [apiKey](User.md#apikey)
 - [email](User.md#email)
 - [id](User.md#id)
 - [name](User.md#name)
 - [username](User.md#username)
 
 ## Properties
+
+### apiKey
+
+• `Optional` **apiKey**: `string`
+
+___
 
 ### email
 

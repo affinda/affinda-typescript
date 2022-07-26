@@ -293,6 +293,164 @@ export const body1: OperationParameter = {
   mapper: ResumeSearchParametersMapper
 };
 
+export const resume: OperationQueryParameter = {
+  parameterPath: "resume",
+  mapper: {
+    serializedName: "resume",
+    required: true,
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const jobDescription: OperationQueryParameter = {
+  parameterPath: "jobDescription",
+  mapper: {
+    serializedName: "job_description",
+    required: true,
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const index: OperationQueryParameter = {
+  parameterPath: ["options", "index"],
+  mapper: {
+    serializedName: "index",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const jobTitlesWeight: OperationQueryParameter = {
+  parameterPath: ["options", "jobTitlesWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "job_titles_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const yearsExperienceWeight: OperationQueryParameter = {
+  parameterPath: ["options", "yearsExperienceWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "years_experience_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const locationsWeight: OperationQueryParameter = {
+  parameterPath: ["options", "locationsWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "locations_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const languagesWeight: OperationQueryParameter = {
+  parameterPath: ["options", "languagesWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "languages_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const skillsWeight: OperationQueryParameter = {
+  parameterPath: ["options", "skillsWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "skills_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const educationWeight: OperationQueryParameter = {
+  parameterPath: ["options", "educationWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "education_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const searchExpressionWeight: OperationQueryParameter = {
+  parameterPath: ["options", "searchExpressionWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "search_expression_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const socCodesWeight: OperationQueryParameter = {
+  parameterPath: ["options", "socCodesWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "soc_codes_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const managementLevelWeight: OperationQueryParameter = {
+  parameterPath: ["options", "managementLevelWeight"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 1,
+      InclusiveMinimum: 0
+    },
+    serializedName: "management_level_weight",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
 export const name: OperationParameter = {
   parameterPath: ["options", "name"],
   mapper: {
@@ -344,6 +502,16 @@ export const email: OperationParameter = {
   parameterPath: ["options", "email"],
   mapper: {
     serializedName: "email",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const apiKey: OperationParameter = {
+  parameterPath: ["options", "apiKey"],
+  mapper: {
+    serializedName: "apiKey",
     type: {
       name: "String"
     }

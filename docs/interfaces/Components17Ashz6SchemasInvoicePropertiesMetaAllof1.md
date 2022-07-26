@@ -6,9 +6,16 @@
 
 ### Properties
 
+- [clientVerifiedDt](Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md#clientverifieddt)
 - [reviewUrl](Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md#reviewurl)
 
 ## Properties
+
+### clientVerifiedDt
+
+• `Optional` **clientVerifiedDt**: `string`
+
+___
 
 ### reviewUrl
 

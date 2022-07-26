@@ -39,6 +39,8 @@ import {
   AffindaAPICreateResumeSearchResponse,
   AffindaAPIGetResumeSearchDetailOptionalParams,
   AffindaAPIGetResumeSearchDetailResponse,
+  AffindaAPIGetResumeSearchMatchOptionalParams,
+  AffindaAPIGetResumeSearchMatchResponse,
   AffindaAPIGetAllJobDescriptionsOptionalParams,
   AffindaAPIGetAllJobDescriptionsResponse,
   AffindaAPICreateJobDescriptionOptionalParams,
@@ -298,7 +300,12 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Searches through parsed resumes.
+   * Searches through parsed resumes. You can search with custom criterias, a job description, or a
+   * resume.
+   * When searching with a job description, a parsed job description is used to find candidates that suit
+   * it.
+   * When searching with a resume, a parsed resume is used to find other candidates that have similar
+   * attributes.
    * @param body Search parameters
    * @param options The options parameters.
    */
@@ -329,6 +336,24 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, body, options },
       getResumeSearchDetailOperationSpec
+    );
+  }
+
+  /**
+   * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
+   * with 0 being not a match at all, and 1 being perfect match.
+   * @param resume Identify the resume to match.
+   * @param jobDescription Identify the job description to match.
+   * @param options The options parameters.
+   */
+  getResumeSearchMatch(
+    resume: string,
+    jobDescription: string,
+    options?: AffindaAPIGetResumeSearchMatchOptionalParams
+  ): Promise<AffindaAPIGetResumeSearchMatchResponse> {
+    return this.sendOperationRequest(
+      { resume, jobDescription, options },
+      getResumeSearchMatchOperationSpec
     );
   }
 
@@ -960,6 +985,41 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer
 };
+const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/match",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchMatch
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.resume,
+    Parameters.jobDescription,
+    Parameters.index,
+    Parameters.jobTitlesWeight,
+    Parameters.yearsExperienceWeight,
+    Parameters.locationsWeight,
+    Parameters.languagesWeight,
+    Parameters.skillsWeight,
+    Parameters.educationWeight,
+    Parameters.searchExpressionWeight,
+    Parameters.socCodesWeight,
+    Parameters.managementLevelWeight
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
 const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
   path: "/job_descriptions",
   httpMethod: "GET",
@@ -1351,7 +1411,8 @@ const createUserOperationSpec: coreClient.OperationSpec = {
     Parameters.name,
     Parameters.id,
     Parameters.username,
-    Parameters.email
+    Parameters.email,
+    Parameters.apiKey
   ],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.contentType, Parameters.accept1],

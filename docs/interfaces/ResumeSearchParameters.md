@@ -33,6 +33,7 @@
 - [managementLevel](ResumeSearchParameters.md#managementlevel)
 - [managementLevelRequired](ResumeSearchParameters.md#managementlevelrequired)
 - [managementLevelWeight](ResumeSearchParameters.md#managementlevelweight)
+- [resume](ResumeSearchParameters.md#resume)
 - [searchExpression](ResumeSearchParameters.md#searchexpression)
 - [searchExpressionRequired](ResumeSearchParameters.md#searchexpressionrequired)
 - [searchExpressionWeight](ResumeSearchParameters.md#searchexpressionweight)
@@ -209,6 +210,14 @@ ___
 ### managementLevelWeight
 
 • `Optional` **managementLevelWeight**: `number`
+
+___
+
+### resume
+
+• `Optional` **resume**: `string`
+
+Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
 
 ___
 

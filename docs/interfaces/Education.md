@@ -28,7 +28,7 @@ ___
 
 ### grade
 
-• `Optional` **grade**: `string`
+• `Optional` **grade**: [`EducationGrade`](EducationGrade.md)
 
 ___
 
