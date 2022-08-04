@@ -142,6 +142,26 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     getResumeSearchMatch(resume: string, jobDescription: string, options?: AffindaAPIGetResumeSearchMatchOptionalParams): Promise<AffindaAPIGetResumeSearchMatchResponse>;
     /**
+     * Return configurations such as which fields can be displayed in the logged in user's embedable search
+     * tool, what are their weights, what is the maximum number of results that can be returned, etc.
+     * @param options The options parameters.
+     */
+    getResumeSearchConfig(options?: AffindaAPIGetResumeSearchConfigOptionalParams): Promise<AffindaAPIGetResumeSearchConfigResponse>;
+    /**
+     * Update configurations such as which fields can be displayed in the logged in user's embedable search
+     * tool, what are their weights, what is the maximum number of results that can be returned, etc.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateResumeSearchConfig(body: ResumeSearchConfig, options?: AffindaAPIUpdateResumeSearchConfigOptionalParams): Promise<AffindaAPIUpdateResumeSearchConfigResponse>;
+    /**
+     * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
+     * An optional parameter `config_override` can be passed to override the user-level configurations of
+     * the embedable search tool.
+     * @param options The options parameters.
+     */
+    createResumeSearchEmbedUrl(options?: AffindaAPICreateResumeSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateResumeSearchEmbedUrlResponse>;
+    /**
      * Returns all the job descriptions for that user, limited to 300 per page.
      * @param options The options parameters.
      */
@@ -285,11 +305,11 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 /** Contains response data for the createInvoice operation. */
@@ -306,11 +326,11 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 /** Contains response data for the createJobDescription operation. */
@@ -327,11 +347,11 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
     /** Whether to redact headshot */
     redactHeadshot?: string;
     /** Whether to redact personal details (e.g. name, address) */
@@ -364,7 +384,7 @@ export declare interface AffindaAPICreateReformattedResumeOptionalParams extends
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
 }
@@ -385,15 +405,23 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 /** Contains response data for the createResume operation. */
 export declare type AffindaAPICreateResumeResponse = Resume;
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams extends coreClient.OperationOptions {
+    body?: Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createResumeSearchEmbedUrl operation. */
+export declare type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateResumeSearchOptionalParams extends coreClient.OperationOptions {
@@ -597,6 +625,13 @@ export declare interface AffindaAPIGetResumeOptionalParams extends coreClient.Op
 export declare type AffindaAPIGetResumeResponse = Resume;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetResumeSearchConfigOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResumeSearchConfig operation. */
+export declare type AffindaAPIGetResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetResumeSearchDetailOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -651,6 +686,13 @@ export declare interface AffindaAPIUpdateResumeDataOptionalParams extends coreCl
 
 /** Contains response data for the updateResumeData operation. */
 export declare type AffindaAPIUpdateResumeDataResponse = ResumeData;
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateResumeSearchConfigOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateResumeSearchConfig operation. */
+export declare type AffindaAPIUpdateResumeSearchConfigResponse = ResumeSearchConfig;
 
 export declare class AffindaCredential implements TokenCredential {
     token: string;
@@ -1170,7 +1212,7 @@ export declare interface Meta {
     /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
     failed: boolean;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 export declare interface OccupationGroup {
@@ -1193,11 +1235,11 @@ export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartForm
     /** URL to file to download and process */
     url?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 export declare interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
@@ -1217,6 +1259,10 @@ export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicat
 export declare interface Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1 {
     /** API key used to authenticate for future requests.  This key is only retrievable at the initial creation of the user. */
     apiKey?: string;
+}
+
+export declare interface Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
+    configOverride?: ResumeSearchConfig;
 }
 
 export declare interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
@@ -1241,11 +1287,11 @@ export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDa
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -1260,7 +1306,7 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Whether to redact headshot */
     redactHeadshot?: string;
     /** Whether to redact personal details (e.g. name, address) */
@@ -1278,7 +1324,7 @@ export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipa
     /** Whether to redact gender */
     redactGender?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 export declare interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
@@ -1330,11 +1376,11 @@ export declare interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipar
     /** URL to file to download and process */
     url?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: Date;
+    expiryTime?: string;
 }
 
 export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -1351,7 +1397,7 @@ export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMult
     /** Identifier of the format used */
     resumeFormat: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: boolean;
+    wait?: string;
 }
 
 export declare interface Rectangle {
@@ -1550,6 +1596,46 @@ export declare interface ResumeSearch {
     results?: ResumeSearchResult[];
 }
 
+export declare interface ResumeSearchConfig {
+    allowPdfDownload?: boolean;
+    /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
+    maxResults?: number;
+    displayJobTitle?: boolean;
+    displayLocation?: boolean;
+    displayYearsExperience?: boolean;
+    displayOccupationGroup?: boolean;
+    displayEducation?: boolean;
+    displaySkills?: boolean;
+    displayLanguages?: boolean;
+    displayManagementLevel?: boolean;
+    displayKeywords?: boolean;
+    weightJobTitle?: number;
+    weightLocation?: number;
+    weightYearsExperience?: number;
+    weightOccupationGroup?: number;
+    weightEducation?: number;
+    weightSkills?: number;
+    weightLanguages?: number;
+    weightManagementLevel?: number;
+    weightKeywords?: number;
+    /** List of index names. */
+    indices?: string[];
+    /** Customize the theme of the embeded search tool. */
+    searchToolTheme?: {
+        [propertyName: string]: any;
+    };
+    /**
+     * ID of the logged in user.
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly userId?: number;
+    /**
+     * Username of the logged in user.
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly username?: string;
+}
+
 export declare interface ResumeSearchDetail {
     jobTitle?: ResumeSearchDetailJobTitle;
     location?: ResumeSearchDetailLocation;
@@ -1632,6 +1718,11 @@ export declare interface ResumeSearchDetailSkills {
 }
 
 export declare type ResumeSearchDetailSkillsValueItem = ResumeSkill & ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
+
+export declare interface ResumeSearchEmbed {
+    /** The signed URL for the embedable search tool. */
+    url?: string;
+}
 
 export declare interface ResumeSearchMatch {
     /** The matching score between the provided resume and job description. */

@@ -26,7 +26,7 @@
 
 ### expiryTime
 
-• `Optional` **expiryTime**: `Date`
+• `Optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
@@ -138,6 +138,6 @@ ___
 
 ### wait
 
-• `Optional` **wait**: `boolean`
+• `Optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.

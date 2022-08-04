@@ -24,6 +24,7 @@
 - [AffindaAPICreateRedactedResumeOptionalParams](interfaces/AffindaAPICreateRedactedResumeOptionalParams.md)
 - [AffindaAPICreateReformattedResumeOptionalParams](interfaces/AffindaAPICreateReformattedResumeOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
+- [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
 - [AffindaAPICreateUserOptionalParams](interfaces/AffindaAPICreateUserOptionalParams.md)
 - [AffindaAPIDeleteIndexDocumentOptionalParams](interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md)
@@ -47,11 +48,13 @@
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetReformattedResumeOptionalParams](interfaces/AffindaAPIGetReformattedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
+- [AffindaAPIGetResumeSearchConfigOptionalParams](interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md)
 - [AffindaAPIGetResumeSearchDetailOptionalParams](interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md)
 - [AffindaAPIGetResumeSearchMatchOptionalParams](interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIUpdateResumeDataOptionalParams](interfaces/AffindaAPIUpdateResumeDataOptionalParams.md)
+- [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1](interfaces/Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.md)
 - [Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1](interfaces/Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.md)
@@ -113,6 +116,7 @@
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)
 - [Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md)
+- [Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
 - [Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema.md)
 - [Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema](interfaces/Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema.md)
@@ -146,6 +150,7 @@
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
 - [ResumeSearch](interfaces/ResumeSearch.md)
+- [ResumeSearchConfig](interfaces/ResumeSearchConfig.md)
 - [ResumeSearchDetail](interfaces/ResumeSearchDetail.md)
 - [ResumeSearchDetailEducation](interfaces/ResumeSearchDetailEducation.md)
 - [ResumeSearchDetailEducationMissing](interfaces/ResumeSearchDetailEducationMissing.md)
@@ -158,6 +163,7 @@
 - [ResumeSearchDetailOccupationGroup](interfaces/ResumeSearchDetailOccupationGroup.md)
 - [ResumeSearchDetailSearchExpression](interfaces/ResumeSearchDetailSearchExpression.md)
 - [ResumeSearchDetailSkills](interfaces/ResumeSearchDetailSkills.md)
+- [ResumeSearchEmbed](interfaces/ResumeSearchEmbed.md)
 - [ResumeSearchMatch](interfaces/ResumeSearchMatch.md)
 - [ResumeSearchMatchDetails](interfaces/ResumeSearchMatchDetails.md)
 - [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
@@ -181,6 +187,7 @@
 - [AffindaAPICreateRedactedResumeResponse](modules.md#affindaapicreateredactedresumeresponse)
 - [AffindaAPICreateReformattedResumeResponse](modules.md#affindaapicreatereformattedresumeresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
+- [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
 - [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
 - [AffindaAPICreateUserResponse](modules.md#affindaapicreateuserresponse)
 - [AffindaAPIDeleteIndexDocumentResponse](modules.md#affindaapideleteindexdocumentresponse)
@@ -204,10 +211,12 @@
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetReformattedResumeResponse](modules.md#affindaapigetreformattedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
+- [AffindaAPIGetResumeSearchConfigResponse](modules.md#affindaapigetresumesearchconfigresponse)
 - [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
 - [AffindaAPIGetResumeSearchMatchResponse](modules.md#affindaapigetresumesearchmatchresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
+- [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [DateAnnotation](modules.md#dateannotation)
 - [EducationLevel](modules.md#educationlevel)
 - [EnumAnnotationSerializer](modules.md#enumannotationserializer)
@@ -313,6 +322,14 @@ ___
 Ƭ **AffindaAPICreateResumeResponse**: [`Resume`](interfaces/Resume.md)
 
 Contains response data for the createResume operation.
+
+___
+
+### AffindaAPICreateResumeSearchEmbedUrlResponse
+
+Ƭ **AffindaAPICreateResumeSearchEmbedUrlResponse**: [`ResumeSearchEmbed`](interfaces/ResumeSearchEmbed.md)
+
+Contains response data for the createResumeSearchEmbedUrl operation.
 
 ___
 
@@ -500,6 +517,14 @@ Contains response data for the getResume operation.
 
 ___
 
+### AffindaAPIGetResumeSearchConfigResponse
+
+Ƭ **AffindaAPIGetResumeSearchConfigResponse**: [`ResumeSearchConfig`](interfaces/ResumeSearchConfig.md)
+
+Contains response data for the getResumeSearchConfig operation.
+
+___
+
 ### AffindaAPIGetResumeSearchDetailResponse
 
 Ƭ **AffindaAPIGetResumeSearchDetailResponse**: [`ResumeSearchDetail`](interfaces/ResumeSearchDetail.md)
@@ -529,6 +554,14 @@ ___
 Ƭ **AffindaAPIUpdateResumeDataResponse**: [`ResumeData`](interfaces/ResumeData.md)
 
 Contains response data for the updateResumeData operation.
+
+___
+
+### AffindaAPIUpdateResumeSearchConfigResponse
+
+Ƭ **AffindaAPIUpdateResumeSearchConfigResponse**: [`ResumeSearchConfig`](interfaces/ResumeSearchConfig.md)
+
+Contains response data for the updateResumeSearchConfig operation.
 
 ___
 

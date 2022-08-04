@@ -87,7 +87,7 @@ export const Meta: coreClient.CompositeMapper = {
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "DateTime"
+          name: "String"
         }
       }
     }
@@ -2633,6 +2633,201 @@ export const ResumeSearchMatchDetails: coreClient.CompositeMapper = {
   }
 };
 
+export const ResumeSearchConfig: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchConfig",
+    modelProperties: {
+      allowPdfDownload: {
+        serializedName: "allowPdfDownload",
+        type: {
+          name: "Boolean"
+        }
+      },
+      maxResults: {
+        serializedName: "maxResults",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      displayJobTitle: {
+        serializedName: "displayJobTitle",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayLocation: {
+        serializedName: "displayLocation",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayYearsExperience: {
+        serializedName: "displayYearsExperience",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayOccupationGroup: {
+        serializedName: "displayOccupationGroup",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayEducation: {
+        serializedName: "displayEducation",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displaySkills: {
+        serializedName: "displaySkills",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayLanguages: {
+        serializedName: "displayLanguages",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayManagementLevel: {
+        serializedName: "displayManagementLevel",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayKeywords: {
+        serializedName: "displayKeywords",
+        type: {
+          name: "Boolean"
+        }
+      },
+      weightJobTitle: {
+        serializedName: "weightJobTitle",
+        type: {
+          name: "Number"
+        }
+      },
+      weightLocation: {
+        serializedName: "weightLocation",
+        type: {
+          name: "Number"
+        }
+      },
+      weightYearsExperience: {
+        serializedName: "weightYearsExperience",
+        type: {
+          name: "Number"
+        }
+      },
+      weightOccupationGroup: {
+        serializedName: "weightOccupationGroup",
+        type: {
+          name: "Number"
+        }
+      },
+      weightEducation: {
+        serializedName: "weightEducation",
+        type: {
+          name: "Number"
+        }
+      },
+      weightSkills: {
+        serializedName: "weightSkills",
+        type: {
+          name: "Number"
+        }
+      },
+      weightLanguages: {
+        serializedName: "weightLanguages",
+        type: {
+          name: "Number"
+        }
+      },
+      weightManagementLevel: {
+        serializedName: "weightManagementLevel",
+        type: {
+          name: "Number"
+        }
+      },
+      weightKeywords: {
+        serializedName: "weightKeywords",
+        type: {
+          name: "Number"
+        }
+      },
+      indices: {
+        serializedName: "indices",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      searchToolTheme: {
+        serializedName: "searchToolTheme",
+        nullable: true,
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      userId: {
+        serializedName: "userId",
+        readOnly: true,
+        type: {
+          name: "Number"
+        }
+      },
+      username: {
+        serializedName: "username",
+        readOnly: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema",
+    modelProperties: {
+      configOverride: {
+        serializedName: "configOverride",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchConfig"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchEmbed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchEmbed",
+    modelProperties: {
+      url: {
+        serializedName: "url",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const GetAllJobDescriptionsResults: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -4570,10 +4765,10 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
         }
       },
       wait: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       language: {
@@ -4587,7 +4782,7 @@ export const Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema: co
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "DateTime"
+          name: "String"
         }
       }
     }
@@ -4635,10 +4830,10 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
         }
       },
       wait: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       redactHeadshot: {
@@ -4701,7 +4896,7 @@ export const Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSc
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "DateTime"
+          name: "String"
         }
       }
     }
@@ -4756,10 +4951,10 @@ export const PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDat
         }
       },
       wait: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       }
     }
@@ -4800,10 +4995,10 @@ export const PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSch
         }
       },
       wait: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       language: {
@@ -4817,7 +5012,7 @@ export const PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSch
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "DateTime"
+          name: "String"
         }
       }
     }
@@ -4873,10 +5068,10 @@ export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: 
         }
       },
       wait: {
-        defaultValue: true,
+        defaultValue: "true",
         serializedName: "wait",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       language: {
@@ -4890,7 +5085,7 @@ export const Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema: 
         serializedName: "expiryTime",
         nullable: true,
         type: {
-          name: "DateTime"
+          name: "String"
         }
       }
     }

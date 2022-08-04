@@ -132,6 +132,6 @@ ___
 
 ### wait
 
-• `Optional` **wait**: `boolean`
+• `Optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.

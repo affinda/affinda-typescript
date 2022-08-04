@@ -29,6 +29,7 @@
 - [createReformattedResume](AffindaAPI.md#createreformattedresume)
 - [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
+- [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
 - [createUser](AffindaAPI.md#createuser)
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
@@ -51,12 +52,14 @@
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
+- [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
 - [getResumeSearchMatch](AffindaAPI.md#getresumesearchmatch)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
 - [updateResumeData](AffindaAPI.md#updateresumedata)
+- [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
 
 ## Constructors
 
@@ -263,6 +266,26 @@ attributes.
 #### Returns
 
 `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+
+___
+
+### createResumeSearchEmbedUrl
+
+▸ **createResumeSearchEmbedUrl**(`options?`): `Promise`<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
+
+Create and return a signed URL of the resume search tool which then can be embedded on a web page.
+An optional parameter `config_override` can be passed to override the user-level configurations of
+the embedable search tool.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateResumeSearchEmbedUrlOptionalParams`](../interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
 ___
 
@@ -687,6 +710,25 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 ___
 
+### getResumeSearchConfig
+
+▸ **getResumeSearchConfig**(`options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+
+Return configurations such as which fields can be displayed in the logged in user's embedable search
+tool, what are their weights, what is the maximum number of results that can be returned, etc.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetResumeSearchConfigOptionalParams`](../interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+
+___
+
 ### getResumeSearchDetail
 
 ▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
@@ -819,3 +861,23 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 #### Returns
 
 `Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
+
+___
+
+### updateResumeSearchConfig
+
+▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+
+Update configurations such as which fields can be displayed in the logged in user's embedable search
+tool, what are their weights, what is the maximum number of results that can be returned, etc.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md) |  |
+| `options?` | [`AffindaAPIUpdateResumeSearchConfigOptionalParams`](../interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>

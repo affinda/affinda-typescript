@@ -292,7 +292,24 @@ const resumeIdentifier = "REPLACE_RESUME_IDENTIFIER"
 const jobDescriptionIdentifier = "REPLACE_JOB_DESCRIPTION_IDENTIFIER"
 const indexName = "REPLACE_INDEX_NAME" // Optional
 
-client.getResume(resumeIdentifier, jobDescriptionIdentifier, { indexName }).then((result) => {
+client.getResumeSearchMatch(resumeIdentifier, jobDescriptionIdentifier, { indexName }).then((result) => {
+    console.log("Returned data:")
+    console.dir(result)
+}).catch((err) => {
+    console.log("An error occurred:")
+    console.error(err)
+});
+```
+
+### getResumeSearchConfig - Get the config for the logged in user's embedable search tool.
+
+```javascript
+const {AffindaCredential, AffindaAPI} = require("@affinda/affinda")
+
+const credential = new AffindaCredential("REPLACE_TOKEN")
+const client = new AffindaAPI(credential)
+
+client.getResumeSearchConfig().then((result) => {
     console.log("Returned data:")
     console.dir(result)
 }).catch((err) => {

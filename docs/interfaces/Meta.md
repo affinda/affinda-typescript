@@ -23,7 +23,7 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 
 ### expiryTime
 
-• `Optional` **expiryTime**: `Date`
+• `Optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 

@@ -41,6 +41,13 @@ import {
   AffindaAPIGetResumeSearchDetailResponse,
   AffindaAPIGetResumeSearchMatchOptionalParams,
   AffindaAPIGetResumeSearchMatchResponse,
+  AffindaAPIGetResumeSearchConfigOptionalParams,
+  AffindaAPIGetResumeSearchConfigResponse,
+  ResumeSearchConfig,
+  AffindaAPIUpdateResumeSearchConfigOptionalParams,
+  AffindaAPIUpdateResumeSearchConfigResponse,
+  AffindaAPICreateResumeSearchEmbedUrlOptionalParams,
+  AffindaAPICreateResumeSearchEmbedUrlResponse,
   AffindaAPIGetAllJobDescriptionsOptionalParams,
   AffindaAPIGetAllJobDescriptionsResponse,
   AffindaAPICreateJobDescriptionOptionalParams,
@@ -354,6 +361,51 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { resume, jobDescription, options },
       getResumeSearchMatchOperationSpec
+    );
+  }
+
+  /**
+   * Return configurations such as which fields can be displayed in the logged in user's embedable search
+   * tool, what are their weights, what is the maximum number of results that can be returned, etc.
+   * @param options The options parameters.
+   */
+  getResumeSearchConfig(
+    options?: AffindaAPIGetResumeSearchConfigOptionalParams
+  ): Promise<AffindaAPIGetResumeSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getResumeSearchConfigOperationSpec
+    );
+  }
+
+  /**
+   * Update configurations such as which fields can be displayed in the logged in user's embedable search
+   * tool, what are their weights, what is the maximum number of results that can be returned, etc.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateResumeSearchConfig(
+    body: ResumeSearchConfig,
+    options?: AffindaAPIUpdateResumeSearchConfigOptionalParams
+  ): Promise<AffindaAPIUpdateResumeSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      updateResumeSearchConfigOperationSpec
+    );
+  }
+
+  /**
+   * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
+   * An optional parameter `config_override` can be passed to override the user-level configurations of
+   * the embedable search tool.
+   * @param options The options parameters.
+   */
+  createResumeSearchEmbedUrl(
+    options?: AffindaAPICreateResumeSearchEmbedUrlOptionalParams
+  ): Promise<AffindaAPICreateResumeSearchEmbedUrlResponse> {
+    return this.sendOperationRequest(
+      { options },
+      createResumeSearchEmbedUrlOperationSpec
     );
   }
 
@@ -1020,6 +1072,67 @@ const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const getResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/config",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchConfig
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/config",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchConfig
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body2,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/embed",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchEmbed
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body3,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
 const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
   path: "/job_descriptions",
   httpMethod: "GET",
@@ -1220,7 +1333,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body2,
+  requestBody: Parameters.body4,
   urlParameters: [Parameters.$host, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

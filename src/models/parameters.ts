@@ -6,6 +6,8 @@ import {
 import {
   ResumeData as ResumeDataMapper,
   ResumeSearchParameters as ResumeSearchParametersMapper,
+  ResumeSearchConfig as ResumeSearchConfigMapper,
+  Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
   PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 } from "../models/mappers";
 
@@ -121,10 +123,10 @@ export const fileName: OperationParameter = {
 export const wait: OperationParameter = {
   parameterPath: ["options", "wait"],
   mapper: {
-    defaultValue: true,
+    defaultValue: "true",
     serializedName: "wait",
     type: {
-      name: "Boolean"
+      name: "String"
     }
   }
 };
@@ -144,7 +146,7 @@ export const expiryTime: OperationParameter = {
   mapper: {
     serializedName: "expiryTime",
     type: {
-      name: "DateTime"
+      name: "String"
     }
   }
 };
@@ -451,6 +453,16 @@ export const managementLevelWeight: OperationQueryParameter = {
   }
 };
 
+export const body2: OperationParameter = {
+  parameterPath: "body",
+  mapper: ResumeSearchConfigMapper
+};
+
+export const body3: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+};
+
 export const name: OperationParameter = {
   parameterPath: ["options", "name"],
   mapper: {
@@ -472,7 +484,7 @@ export const name1: OperationURLParameter = {
   }
 };
 
-export const body2: OperationParameter = {
+export const body4: OperationParameter = {
   parameterPath: "body",
   mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };

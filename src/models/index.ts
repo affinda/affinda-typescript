@@ -25,7 +25,7 @@ export interface Meta {
   /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
   failed: boolean;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 export interface RequestError {
@@ -519,6 +519,53 @@ export interface ResumeSearchMatchDetails {
   searchExpression?: ResumeSearchScoreComponent;
 }
 
+export interface ResumeSearchConfig {
+  allowPdfDownload?: boolean;
+  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
+  maxResults?: number;
+  displayJobTitle?: boolean;
+  displayLocation?: boolean;
+  displayYearsExperience?: boolean;
+  displayOccupationGroup?: boolean;
+  displayEducation?: boolean;
+  displaySkills?: boolean;
+  displayLanguages?: boolean;
+  displayManagementLevel?: boolean;
+  displayKeywords?: boolean;
+  weightJobTitle?: number;
+  weightLocation?: number;
+  weightYearsExperience?: number;
+  weightOccupationGroup?: number;
+  weightEducation?: number;
+  weightSkills?: number;
+  weightLanguages?: number;
+  weightManagementLevel?: number;
+  weightKeywords?: number;
+  /** List of index names. */
+  indices?: string[];
+  /** Customize the theme of the embeded search tool. */
+  searchToolTheme?: { [propertyName: string]: any };
+  /**
+   * ID of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly userId?: number;
+  /**
+   * Username of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly username?: string;
+}
+
+export interface Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
+  configOverride?: ResumeSearchConfig;
+}
+
+export interface ResumeSearchEmbed {
+  /** The signed URL for the embedable search tool. */
+  url?: string;
+}
+
 export interface GetAllJobDescriptionsResults {
   /** Number of documents in result */
   count?: number;
@@ -911,11 +958,11 @@ export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -930,7 +977,7 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Whether to redact headshot */
   redactHeadshot?: string;
   /** Whether to redact personal details (e.g. name, address) */
@@ -948,7 +995,7 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   /** Whether to redact gender */
   redactGender?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
@@ -965,7 +1012,7 @@ export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFor
   /** Identifier of the format used */
   resumeFormat: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
 }
 
 export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema {
@@ -978,11 +1025,11 @@ export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDat
   /** URL to file to download and process */
   url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 export interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
@@ -999,11 +1046,11 @@ export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSche
   /** URL to file to download and process */
   url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 export type InvoiceMeta = Meta &
@@ -1235,11 +1282,11 @@ export interface AffindaAPICreateResumeOptionalParams
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 /** Contains response data for the createResume operation. */
@@ -1290,11 +1337,11 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
   /** Whether to redact headshot */
   redactHeadshot?: string;
   /** Whether to redact personal details (e.g. name, address) */
@@ -1366,7 +1413,7 @@ export interface AffindaAPICreateReformattedResumeOptionalParams
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
 }
@@ -1436,6 +1483,29 @@ export interface AffindaAPIGetResumeSearchMatchOptionalParams
 export type AffindaAPIGetResumeSearchMatchResponse = ResumeSearchMatch;
 
 /** Optional parameters. */
+export interface AffindaAPIGetResumeSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchConfig operation. */
+export type AffindaAPIGetResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateResumeSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateResumeSearchConfig operation. */
+export type AffindaAPIUpdateResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams
+  extends coreClient.OperationOptions {
+  body?: Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createResumeSearchEmbedUrl operation. */
+export type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllJobDescriptionsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -1459,11 +1529,11 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 /** Contains response data for the createJobDescription operation. */
@@ -1556,11 +1626,11 @@ export interface AffindaAPICreateInvoiceOptionalParams
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: boolean;
+  wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: Date;
+  expiryTime?: string;
 }
 
 /** Contains response data for the createInvoice operation. */
