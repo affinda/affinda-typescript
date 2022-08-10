@@ -8,11 +8,14 @@
 
 - [dates](ResumeDataWorkExperienceItem.md#dates)
 - [id](ResumeDataWorkExperienceItem.md#id)
+- [industry](ResumeDataWorkExperienceItem.md#industry)
 - [jobDescription](ResumeDataWorkExperienceItem.md#jobdescription)
 - [jobTitle](ResumeDataWorkExperienceItem.md#jobtitle)
 - [location](ResumeDataWorkExperienceItem.md#location)
 - [occupation](ResumeDataWorkExperienceItem.md#occupation)
 - [organization](ResumeDataWorkExperienceItem.md#organization)
+- [socCode](ResumeDataWorkExperienceItem.md#soccode)
+- [socName](ResumeDataWorkExperienceItem.md#socname)
 
 ## Properties
 
@@ -25,6 +28,14 @@ ___
 ### id
 
 • `Optional` **id**: `number`
+
+___
+
+### industry
+
+• `Optional` `Readonly` **industry**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
@@ -57,3 +68,19 @@ ___
 ### organization
 
 • `Optional` **organization**: `string`
+
+___
+
+### socCode
+
+• `Optional` `Readonly` **socCode**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### socName
+
+• `Optional` `Readonly` **socName**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.

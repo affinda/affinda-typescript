@@ -89,6 +89,12 @@ export const Meta: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      language: {
+        serializedName: "language",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -222,6 +228,18 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       languages: {
         serializedName: "languages",
+        readOnly: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      languageCodes: {
+        serializedName: "languageCodes",
         readOnly: true,
         type: {
           name: "Sequence",
@@ -657,8 +675,32 @@ export const ResumeDataWorkExperienceItem: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      socCode: {
+        serializedName: "socCode",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      socName: {
+        serializedName: "socName",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       organization: {
         serializedName: "organization",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      industry: {
+        serializedName: "industry",
+        readOnly: true,
         nullable: true,
         type: {
           name: "String"
@@ -822,6 +864,14 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
           name: "Number"
         }
       },
+      emsiId: {
+        serializedName: "emsiId",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       name: {
         serializedName: "name",
         type: {
@@ -847,6 +897,22 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
         readOnly: true,
         type: {
           name: "String"
+        }
+      },
+      count: {
+        serializedName: "count",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      weighting: {
+        serializedName: "weighting",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "Number"
         }
       },
       sources: {
@@ -879,6 +945,13 @@ export const ResumeDataSkillsPropertiesItemsItem: coreClient.CompositeMapper = {
       },
       position: {
         serializedName: "position",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      workExperienceId: {
+        serializedName: "workExperienceId",
         nullable: true,
         type: {
           name: "Number"

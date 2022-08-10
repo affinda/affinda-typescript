@@ -16,6 +16,7 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [failed](Meta.md#failed)
 - [fileName](Meta.md#filename)
 - [identifier](Meta.md#identifier)
+- [language](Meta.md#language)
 - [ready](Meta.md#ready)
 - [readyDt](Meta.md#readydt)
 
@@ -50,6 +51,14 @@ ___
 • **identifier**: ``null`` \| `string`
 
 Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+
+___
+
+### language
+
+• `Optional` **language**: `string`
+
+The resume's language.
 
 ___
 

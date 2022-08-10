@@ -1058,6 +1058,7 @@ const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
     Parameters.resume,
     Parameters.jobDescription,
     Parameters.index,
+    Parameters.searchExpression,
     Parameters.jobTitlesWeight,
     Parameters.yearsExperienceWeight,
     Parameters.locationsWeight,

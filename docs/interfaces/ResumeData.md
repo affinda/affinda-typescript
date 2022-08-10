@@ -12,6 +12,7 @@
 - [emails](ResumeData.md#emails)
 - [headShot](ResumeData.md#headshot)
 - [isResumeProbability](ResumeData.md#isresumeprobability)
+- [languageCodes](ResumeData.md#languagecodes)
 - [languages](ResumeData.md#languages)
 - [linkedin](ResumeData.md#linkedin)
 - [location](ResumeData.md#location)
@@ -69,6 +70,14 @@ ___
 • `Optional` `Readonly` **isResumeProbability**: `number`
 
 Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### languageCodes
+
+• `Optional` `Readonly` **languageCodes**: `string`[]
+
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___

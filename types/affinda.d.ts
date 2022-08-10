@@ -642,6 +642,8 @@ export declare type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail
 export declare interface AffindaAPIGetResumeSearchMatchOptionalParams extends coreClient.OperationOptions {
     /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
     index?: string;
+    /** Add keywords to the search criteria. */
+    searchExpression?: string;
     /** How important is this criteria to the matching score, range from 0 to 1. */
     jobTitlesWeight?: number;
     /** How important is this criteria to the matching score, range from 0 to 1. */
@@ -1213,6 +1215,8 @@ export declare interface Meta {
     failed: boolean;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** The resume's language. */
+    language?: string;
 }
 
 export declare interface OccupationGroup {
@@ -1455,6 +1459,8 @@ export declare interface ResumeData {
     objective?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly languages?: string[];
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly languageCodes?: string[];
     summary?: string;
     totalYearsExperience?: number;
     /**
@@ -1544,24 +1550,42 @@ export declare interface ResumeDataSectionsItem {
 
 export declare interface ResumeDataSkillsItem {
     id?: number;
+    /**
+     * EMSI id of this skill.
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly emsiId?: string;
     name?: string;
     lastUsed?: string;
     numberOfMonths?: number;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly type?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly count?: number;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly weighting?: number;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly sources?: ResumeDataSkillsPropertiesItemsItem[];
 }
 
 export declare interface ResumeDataSkillsPropertiesItemsItem {
     section?: string;
+    /** If this skill is extracted from a "workExperience" section, the "position" is the index of the work experience where this skill is found, with 0 being the first work experience, 1 being the second work experience, and so on. */
     position?: number;
+    /** If this skill is extracted from a "workExperience" section, the "workExperienceId" is the id of the work experience where this skill is found. */
+    workExperienceId?: number;
 }
 
 export declare interface ResumeDataWorkExperienceItem {
     id?: number;
     jobTitle?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly socCode?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly socName?: string;
     organization?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly industry?: string;
     location?: Location;
     jobDescription?: string;
     dates?: ResumeDataWorkExperienceItemDates;

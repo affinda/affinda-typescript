@@ -23,6 +23,7 @@ Optional parameters.
 - [managementLevelWeight](AffindaAPIGetResumeSearchMatchOptionalParams.md#managementlevelweight)
 - [onResponse](AffindaAPIGetResumeSearchMatchOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPIGetResumeSearchMatchOptionalParams.md#requestoptions)
+- [searchExpression](AffindaAPIGetResumeSearchMatchOptionalParams.md#searchexpression)
 - [searchExpressionWeight](AffindaAPIGetResumeSearchMatchOptionalParams.md#searchexpressionweight)
 - [serializerOptions](AffindaAPIGetResumeSearchMatchOptionalParams.md#serializeroptions)
 - [skillsWeight](AffindaAPIGetResumeSearchMatchOptionalParams.md#skillsweight)
@@ -115,6 +116,14 @@ Options used when creating and sending HTTP requests for this operation.
 #### Inherited from
 
 coreClient.OperationOptions.requestOptions
+
+___
+
+### searchExpression
+
+• `Optional` **searchExpression**: `string`
+
+Add keywords to the search criteria.
 
 ___
 

@@ -327,6 +327,16 @@ export const index: OperationQueryParameter = {
   }
 };
 
+export const searchExpression: OperationQueryParameter = {
+  parameterPath: ["options", "searchExpression"],
+  mapper: {
+    serializedName: "search_expression",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const jobTitlesWeight: OperationQueryParameter = {
   parameterPath: ["options", "jobTitlesWeight"],
   mapper: {
