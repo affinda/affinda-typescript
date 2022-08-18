@@ -135,7 +135,7 @@ ___
 
 • `Optional` **url**: `string`
 
-URL to file to download and process
+URL to an invoice to download and process
 
 ___
 

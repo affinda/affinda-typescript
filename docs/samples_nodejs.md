@@ -170,117 +170,10 @@ client.deleteRedactedResume("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-Resume Reformatter
-------------------
+Search & Match - Searching
+--------------------------
 
-### getAllResumeFormats - Get list of all resume formats
-
-```javascript
-const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
-
-
-const credential = new AffindaCredential("REPLACE_TOKEN")
-const client = new AffindaAPI(credential)
-
-
-client.getAllResumeFormats().then((result) => {
-    console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-});
-```
-
-### getAllReformattedResumes - Get list of all reformatted resumes
-
-```javascript
-const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
-
-
-const credential = new AffindaCredential("REPLACE_TOKEN")
-const client = new AffindaAPI(credential)
-
-
-client.getAllReformattedResumes().then((result) => {
-    console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-});
-```
-
-### createReformattedResume - Upload a resume for reformatting
-
-```javascript
-const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
-const fs = require("fs");
-
-const credential = new AffindaCredential("REPLACE_TOKEN")
-const client = new AffindaAPI(credential)
-const readStream = fs.createReadStream("path_to_file.pdf");
-
-client.createReformattedResume("Affinda", {file: readStream}).then((result) => {
-    console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-});
-
-// Can also use a URL:
-
-client.createReformattedResume("Affinda", {
-        url: "https://api.affinda.com/static/sample_resumes/example.pdf"
-    }
-).then((result) => {
-    console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-})
-```
-
-### getReformattedResume - Get reformatting results for a specific resume
-
-```javascript
-const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
-
-const credential = new AffindaCredential("REPLACE_TOKEN")
-const client = new AffindaAPI(credential)
-
-client.getReformattedResume("REPLACE_IDENTIFIER").then((result) => {
-    console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-});
-```
-
-### deleteReformattedResume - Delete a reformatted resume
-
-```javascript
-const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
-
-const credential = new AffindaCredential("REPLACE_TOKEN")
-const client = new AffindaAPI(credential)
-
-client.deleteReformattedResume("REPLACE_IDENTIFIER").then((result) => {
-    console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-});
-```
-
-Resume Search
--------------
-
-### getResumeSearchMatch - Resume and job description 1:1 match
+### getResumeSearchMatch - Match a single resume and job description
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda")
@@ -301,7 +194,10 @@ client.getResumeSearchMatch(resumeIdentifier, jobDescriptionIdentifier, { indexN
 });
 ```
 
-### getResumeSearchConfig - Get the config for the logged in user's embedable search tool.
+Search & Match - Embedding
+--------------------------
+
+### getResumeSearchConfig - Get the config for the logged in user's embedable search tool
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda")
@@ -318,8 +214,8 @@ client.getResumeSearchConfig().then((result) => {
 });
 ```
 
-Job Descriptions
-----------------
+Job Description Parser
+----------------------
 
 ### getAllJobDescriptions - Get list of all job descriptions
 
@@ -403,8 +299,11 @@ client.deleteJobDescription("REPLACE_IDENTIFIER").then((result) => {
 });
 ```
 
-Invoice Parser
---------------
+Search & Match - Indexing
+-------------------------
+
+Invoice Extractor
+-----------------
 
 ### getAllInvoices - Get list of all invoices
 

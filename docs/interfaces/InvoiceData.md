@@ -7,7 +7,7 @@
 ### Properties
 
 - [bankAccountNumber](InvoiceData.md#bankaccountnumber)
-- [bankBsb](InvoiceData.md#bankbsb)
+- [bankBSB](InvoiceData.md#bankbsb)
 - [bankIban](InvoiceData.md#bankiban)
 - [bankSortCode](InvoiceData.md#banksortcode)
 - [bankSwift](InvoiceData.md#bankswift)
@@ -23,7 +23,7 @@
 - [customerEmail](InvoiceData.md#customeremail)
 - [customerNumber](InvoiceData.md#customernumber)
 - [customerPhoneNumber](InvoiceData.md#customerphonenumber)
-- [customerVat](InvoiceData.md#customervat)
+- [customerVAT](InvoiceData.md#customervat)
 - [invoiceDate](InvoiceData.md#invoicedate)
 - [invoiceNumber](InvoiceData.md#invoicenumber)
 - [invoiceOrderDate](InvoiceData.md#invoiceorderdate)
@@ -41,7 +41,7 @@
 - [supplierEmail](InvoiceData.md#supplieremail)
 - [supplierFax](InvoiceData.md#supplierfax)
 - [supplierPhoneNumber](InvoiceData.md#supplierphonenumber)
-- [supplierVat](InvoiceData.md#suppliervat)
+- [supplierVAT](InvoiceData.md#suppliervat)
 - [supplierWebsite](InvoiceData.md#supplierwebsite)
 - [tables](InvoiceData.md#tables)
 
@@ -53,9 +53,9 @@
 
 ___
 
-### bankBsb
+### bankBSB
 
-• `Optional` **bankBsb**: [`InvoiceDataBankBsb`](../modules.md#invoicedatabankbsb)
+• `Optional` **bankBSB**: [`InvoiceDataBankBSB`](../modules.md#invoicedatabankbsb)
 
 ___
 
@@ -155,9 +155,9 @@ ___
 
 ___
 
-### customerVat
+### customerVAT
 
-• `Optional` **customerVat**: [`InvoiceDataCustomerVat`](../modules.md#invoicedatacustomervat)
+• `Optional` **customerVAT**: [`InvoiceDataCustomerVAT`](../modules.md#invoicedatacustomervat)
 
 ___
 
@@ -263,9 +263,9 @@ ___
 
 ___
 
-### supplierVat
+### supplierVAT
 
-• `Optional` **supplierVat**: [`InvoiceDataSupplierVat`](../modules.md#invoicedatasuppliervat)
+• `Optional` **supplierVAT**: [`InvoiceDataSupplierVAT`](../modules.md#invoicedatasuppliervat)
 
 ___
 

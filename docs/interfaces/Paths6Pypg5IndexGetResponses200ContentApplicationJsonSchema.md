@@ -39,4 +39,4 @@ ___
 
 ### results
 
-• `Optional` **results**: [`Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems`](Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)[]
+• `Optional` **results**: [`Get200ApplicationJsonPropertiesItemsItem`](Get200ApplicationJsonPropertiesItemsItem.md)[]

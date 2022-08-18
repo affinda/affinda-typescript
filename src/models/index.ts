@@ -41,6 +41,7 @@ export interface RequestErrorErrorsItem {
   detail: string;
 }
 
+/** A JSON-encoded string of the `ResumeData` object. */
 export interface ResumeData {
   name?: ResumeDataName;
   phoneNumbers?: string[];
@@ -240,6 +241,7 @@ export interface ResumeDataSectionsItem {
 }
 
 export interface Resume {
+  /** A JSON-encoded string of the `ResumeData` object. */
   data: ResumeData | null;
   meta: Meta;
   error: ErrorModel;
@@ -259,33 +261,6 @@ export interface RedactedResume {
 export interface RedactedResumeData {
   /** URL to redacted PDF */
   redactedPdf?: string;
-}
-
-export interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema {
-  /** Number of documents in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: Get200ApplicationJsonPropertiesItemsItem[];
-}
-
-export interface Get200ApplicationJsonPropertiesItemsItem {
-  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-  identifier: string | null;
-  /** URL to a template to apply */
-  formatFile: string;
-}
-
-export interface ReformattedResume {
-  data: ReformattedResumeData | null;
-  meta: Meta;
-  error: ErrorModel;
-}
-
-export interface ReformattedResumeData {
-  reformattedFile?: string;
 }
 
 export interface ResumeSearchParameters {
@@ -367,18 +342,66 @@ export interface ResumeSearchResult {
   score: number;
   pdf: string;
   name?: string;
-  jobTitle: ResumeSearchScoreComponent;
-  managementLevel: ResumeSearchScoreComponent;
-  experience: ResumeSearchScoreComponent;
-  skills: ResumeSearchScoreComponent;
-  languages: ResumeSearchScoreComponent;
-  location: ResumeSearchScoreComponent;
-  education: ResumeSearchScoreComponent;
-  occupationGroup: ResumeSearchScoreComponent;
-  searchExpression: ResumeSearchScoreComponent;
+  jobTitle: JobTitleSearchScoreComponent;
+  managementLevel: ManagementLevelSearchScoreComponent;
+  experience: ExperienceSearchScoreComponent;
+  skills: SkillsSearchScoreComponent;
+  languages: LanguagesSearchScoreComponent;
+  location: LocationSearchScoreComponent;
+  education: EducationSearchScoreComponent;
+  occupationGroup: OccupationGroupSearchScoreComponent;
+  searchExpression: SearchExpressionSearchScoreComponent;
 }
 
-export interface ResumeSearchScoreComponent {
+export interface JobTitleSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ManagementLevelSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ExperienceSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SkillsSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LanguagesSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LocationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface EducationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface OccupationGroupSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SearchExpressionSearchScoreComponent {
   label: string;
   value?: string;
   score?: number;
@@ -530,15 +553,15 @@ export interface ResumeSearchMatch {
 }
 
 export interface ResumeSearchMatchDetails {
-  jobTitle?: ResumeSearchScoreComponent;
-  managementLevel?: ResumeSearchScoreComponent;
-  experience?: ResumeSearchScoreComponent;
-  skills?: ResumeSearchScoreComponent;
-  languages?: ResumeSearchScoreComponent;
-  location?: ResumeSearchScoreComponent;
-  education?: ResumeSearchScoreComponent;
-  occupationGroup?: ResumeSearchScoreComponent;
-  searchExpression?: ResumeSearchScoreComponent;
+  jobTitle?: JobTitleSearchScoreComponent;
+  managementLevel?: ManagementLevelSearchScoreComponent;
+  experience?: ExperienceSearchScoreComponent;
+  skills?: SkillsSearchScoreComponent;
+  languages?: LanguagesSearchScoreComponent;
+  location?: LocationSearchScoreComponent;
+  education?: EducationSearchScoreComponent;
+  occupationGroup?: OccupationGroupSearchScoreComponent;
+  searchExpression?: SearchExpressionSearchScoreComponent;
 }
 
 export interface ResumeSearchConfig {
@@ -673,6 +696,66 @@ export interface YearsExperienceAnnotationParsed {
   maximum?: number;
 }
 
+export interface JobDescriptionSearchParameters {
+  indices: string[];
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  resume?: string;
+  jobTitles?: string[];
+  jobTitlesRequired?: boolean;
+  jobTitlesWeight?: number;
+  totalYearsExperience?: number;
+  yearsExperienceRequired?: boolean;
+  yearsExperienceWeight?: number;
+  locations?: ResumeSearchParametersLocation[];
+  locationsWeight?: number;
+  locationsRequired?: boolean;
+  skills?: ResumeSearchParametersSkill[];
+  skillsWeight?: number;
+  languages?: ResumeSearchParametersSkill[];
+  languagesWeight?: number;
+  degrees?: string[];
+  degreesRequired?: boolean;
+  degreeTypes?: (EducationLevel | null)[];
+  degreeTypesRequired?: boolean;
+  educationWeight?: number;
+  searchExpression?: string;
+  searchExpressionRequired?: boolean;
+  searchExpressionWeight?: number;
+  socCodes?: number[];
+  socCodesWeight?: number;
+  socCodesRequired?: boolean;
+  managementLevel?: ManagementLevel;
+  managementLevelRequired?: boolean;
+  managementLevelWeight?: number;
+}
+
+export interface JobDescriptionSearch {
+  /** Total number of results */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  parameters?: JobDescriptionSearchParameters;
+  results?: JobDescriptionSearchResult[];
+}
+
+export interface JobDescriptionSearchResult {
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  identifier: string | null;
+  score: number;
+  pdf: string;
+  jobTitle: JobTitleSearchScoreComponent;
+  managementLevel: ManagementLevelSearchScoreComponent;
+  experience: ExperienceSearchScoreComponent;
+  skills: SkillsSearchScoreComponent;
+  languages: LanguagesSearchScoreComponent;
+  location: LocationSearchScoreComponent;
+  education: EducationSearchScoreComponent;
+  occupationGroup?: OccupationGroupSearchScoreComponent;
+  searchExpression: SearchExpressionSearchScoreComponent;
+}
+
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
   /** Number of indexes in result */
   count?: number;
@@ -680,10 +763,10 @@ export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
   next?: string;
   /** URL to request previous page of results */
   previous?: string;
-  results?: Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+  results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
-export interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+export interface Get200ApplicationJsonPropertiesItemsItem {
   name: string;
 }
 
@@ -748,14 +831,14 @@ export interface InvoiceData {
   customerBusinessNumber?: InvoiceDataCustomerBusinessNumber;
   paymentReference?: InvoiceDataPaymentReference;
   bankAccountNumber?: InvoiceDataBankAccountNumber;
-  supplierVat?: InvoiceDataSupplierVat;
-  customerVat?: InvoiceDataCustomerVat;
+  supplierVAT?: InvoiceDataSupplierVAT;
+  customerVAT?: InvoiceDataCustomerVAT;
   bpayBillerCode?: InvoiceDataBpayBillerCode;
   bpayReference?: InvoiceDataBpayReference;
   bankSortCode?: InvoiceDataBankSortCode;
   bankIban?: InvoiceDataBankIban;
   bankSwift?: InvoiceDataBankSwift;
-  bankBsb?: InvoiceDataBankBsb;
+  bankBSB?: InvoiceDataBankBSB;
   customerContactName?: InvoiceDataCustomerContactName;
   customerCompanyName?: InvoiceDataCustomerCompanyName;
   supplierCompanyName?: InvoiceDataSupplierCompanyName;
@@ -854,12 +937,12 @@ export interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAl
   parsed?: string;
 }
 
-export interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
+export interface ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1 {
   raw?: string;
   parsed?: string;
 }
 
-export interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
+export interface ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1 {
   raw?: string;
   parsed?: string;
 }
@@ -879,7 +962,7 @@ export interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1
   parsed?: string;
 }
 
-export interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
+export interface ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1 {
   raw?: string;
   parsed?: string;
 }
@@ -889,7 +972,7 @@ export interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
   parsed?: string;
 }
 
-export interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
+export interface Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 {
   raw?: string;
   parsed?: string;
 }
@@ -968,10 +1051,11 @@ export interface Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAl
   apiKey?: string;
 }
 
-export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
+/** ResumeRequestBody */
+export interface ResumeRequestBody {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to file to download and process */
+  /** URL to a resume to download and process */
   url?: string;
   /** A JSON-encoded string of the `ResumeData` object. */
   data?: ResumeData;
@@ -987,14 +1071,15 @@ export interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema
   expiryTime?: string;
 }
 
-export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
+/** RedactedResumeRequestBody */
+export interface RedactedResumeRequestBody {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
+  /** URL to a resume to download and process */
   url?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
@@ -1020,32 +1105,16 @@ export interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDa
   expiryTime?: string;
 }
 
-export interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
+/** JobDescriptionRequestBody */
+export interface JobDescriptionRequestBody {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to a job description to download and process */
+  url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-  /** Identifier of the format used */
-  resumeFormat: string;
-  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
-}
-
-export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-  file?: coreRestPipeline.RequestBodyType;
-  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
@@ -1054,19 +1123,21 @@ export interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDat
   expiryTime?: string;
 }
 
-export interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
+/** IndexRequestBody */
+export interface IndexRequestBody {
   name?: string;
 }
 
-export interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
+/** InvoiceRequestBody */
+export interface InvoiceRequestBody {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
+  /** URL to an invoice to download and process */
+  url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
-  /** URL to file to download and process */
-  url?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
@@ -1167,11 +1238,11 @@ export type InvoiceDataPaymentReference = TextAnnotation &
 export type InvoiceDataBankAccountNumber = TextAnnotation &
   Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
 
-export type InvoiceDataSupplierVat = TextAnnotation &
-  ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
+export type InvoiceDataSupplierVAT = TextAnnotation &
+  ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
 
-export type InvoiceDataCustomerVat = TextAnnotation &
-  ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
+export type InvoiceDataCustomerVAT = TextAnnotation &
+  ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1 & {};
 
 export type InvoiceDataBpayBillerCode = TextAnnotation &
   ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
@@ -1183,13 +1254,13 @@ export type InvoiceDataBankSortCode = TextAnnotation &
   Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
 
 export type InvoiceDataBankIban = TextAnnotation &
-  Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
+  ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1 & {};
 
 export type InvoiceDataBankSwift = TextAnnotation &
   Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
 
-export type InvoiceDataBankBsb = TextAnnotation &
-  Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
+export type InvoiceDataBankBSB = TextAnnotation &
+  Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 & {};
 
 export type InvoiceDataCustomerContactName = TextAnnotation &
   ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
@@ -1295,7 +1366,7 @@ export interface AffindaAPICreateResumeOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to file to download and process */
+  /** URL to a resume to download and process */
   url?: string;
   /** A JSON-encoded string of the `ResumeData` object. */
   data?: ResumeData;
@@ -1316,7 +1387,10 @@ export type AffindaAPICreateResumeResponse = Resume;
 
 /** Optional parameters. */
 export interface AffindaAPIGetResumeOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml". */
+  format?: string;
+}
 
 /** Contains response data for the getResume operation. */
 export type AffindaAPIGetResumeResponse = Resume;
@@ -1352,7 +1426,7 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to file to download and process */
+  /** URL to a resume to download and process */
   url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
@@ -1398,64 +1472,6 @@ export interface AffindaAPIDeleteRedactedResumeOptionalParams
 
 /** Contains response data for the deleteRedactedResume operation. */
 export type AffindaAPIDeleteRedactedResumeResponse = RequestError;
-
-/** Optional parameters. */
-export interface AffindaAPIGetAllResumeFormatsOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
-
-/** Contains response data for the getAllResumeFormats operation. */
-export type AffindaAPIGetAllResumeFormatsResponse = Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface AffindaAPIGetAllReformattedResumesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
-
-/** Contains response data for the getAllReformattedResumes operation. */
-export type AffindaAPIGetAllReformattedResumesResponse = GetAllDocumentsResults;
-
-/** Optional parameters. */
-export interface AffindaAPICreateReformattedResumeOptionalParams
-  extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-  file?: coreRestPipeline.RequestBodyType;
-  /** URL to file to download and process */
-  url?: string;
-  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-}
-
-/** Contains response data for the createReformattedResume operation. */
-export type AffindaAPICreateReformattedResumeResponse = ReformattedResume;
-
-/** Optional parameters. */
-export interface AffindaAPIGetReformattedResumeOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getReformattedResume operation. */
-export type AffindaAPIGetReformattedResumeResponse = ReformattedResume;
-
-/** Optional parameters. */
-export interface AffindaAPIDeleteReformattedResumeOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the deleteReformattedResume operation. */
-export type AffindaAPIDeleteReformattedResumeResponse = RequestError;
 
 /** Optional parameters. */
 export interface AffindaAPICreateResumeSearchOptionalParams
@@ -1546,7 +1562,7 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to file to download and process */
+  /** URL to a job description to download and process */
   url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;
@@ -1576,6 +1592,18 @@ export interface AffindaAPIDeleteJobDescriptionOptionalParams
 
 /** Contains response data for the deleteJobDescription operation. */
 export type AffindaAPIDeleteJobDescriptionResponse = RequestError;
+
+/** Optional parameters. */
+export interface AffindaAPICreateJobDescriptionSearchOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the createJobDescriptionSearch operation. */
+export type AffindaAPICreateJobDescriptionSearchResponse = JobDescriptionSearch;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
@@ -1643,7 +1671,7 @@ export interface AffindaAPICreateInvoiceOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to file to download and process */
+  /** URL to an invoice to download and process */
   url?: string;
   /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
   identifier?: string;

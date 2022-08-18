@@ -20,52 +20,52 @@
 
 ### education
 
-• `Optional` **education**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **education**: [`EducationSearchScoreComponent`](EducationSearchScoreComponent.md)
 
 ___
 
 ### experience
 
-• `Optional` **experience**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **experience**: [`ExperienceSearchScoreComponent`](ExperienceSearchScoreComponent.md)
 
 ___
 
 ### jobTitle
 
-• `Optional` **jobTitle**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **jobTitle**: [`JobTitleSearchScoreComponent`](JobTitleSearchScoreComponent.md)
 
 ___
 
 ### languages
 
-• `Optional` **languages**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **languages**: [`LanguagesSearchScoreComponent`](LanguagesSearchScoreComponent.md)
 
 ___
 
 ### location
 
-• `Optional` **location**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **location**: [`LocationSearchScoreComponent`](LocationSearchScoreComponent.md)
 
 ___
 
 ### managementLevel
 
-• `Optional` **managementLevel**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **managementLevel**: [`ManagementLevelSearchScoreComponent`](ManagementLevelSearchScoreComponent.md)
 
 ___
 
 ### occupationGroup
 
-• `Optional` **occupationGroup**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **occupationGroup**: [`OccupationGroupSearchScoreComponent`](OccupationGroupSearchScoreComponent.md)
 
 ___
 
 ### searchExpression
 
-• `Optional` **searchExpression**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **searchExpression**: [`SearchExpressionSearchScoreComponent`](SearchExpressionSearchScoreComponent.md)
 
 ___
 
 ### skills
 
-• `Optional` **skills**: [`ResumeSearchScoreComponent`](ResumeSearchScoreComponent.md)
+• `Optional` **skills**: [`SkillsSearchScoreComponent`](SkillsSearchScoreComponent.md)

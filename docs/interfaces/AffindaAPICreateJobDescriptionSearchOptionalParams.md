@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetResumeOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateJobDescriptionSearchOptionalParams
 
-# Interface: AffindaAPIGetResumeOptionalParams
+# Interface: AffindaAPICreateJobDescriptionSearchOptionalParams
 
 Optional parameters.
 
@@ -8,18 +8,19 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetResumeOptionalParams`**
+  ↳ **`AffindaAPICreateJobDescriptionSearchOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetResumeOptionalParams.md#abortsignal)
-- [format](AffindaAPIGetResumeOptionalParams.md#format)
-- [onResponse](AffindaAPIGetResumeOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetResumeOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetResumeOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetResumeOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPICreateJobDescriptionSearchOptionalParams.md#abortsignal)
+- [limit](AffindaAPICreateJobDescriptionSearchOptionalParams.md#limit)
+- [offset](AffindaAPICreateJobDescriptionSearchOptionalParams.md#offset)
+- [onResponse](AffindaAPICreateJobDescriptionSearchOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPICreateJobDescriptionSearchOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPICreateJobDescriptionSearchOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPICreateJobDescriptionSearchOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -35,11 +36,19 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
-### format
+### limit
 
-• `Optional` **format**: `string`
+• `Optional` **limit**: `number`
 
-Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml".
+The numbers of results to return.
+
+___
+
+### offset
+
+• `Optional` **offset**: `number`
+
+The number of documents to skip before starting to collect the result set.
 
 ___
 

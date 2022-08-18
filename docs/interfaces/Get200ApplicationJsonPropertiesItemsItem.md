@@ -6,21 +6,10 @@
 
 ### Properties
 
-- [formatFile](Get200ApplicationJsonPropertiesItemsItem.md#formatfile)
-- [identifier](Get200ApplicationJsonPropertiesItemsItem.md#identifier)
+- [name](Get200ApplicationJsonPropertiesItemsItem.md#name)
 
 ## Properties
 
-### formatFile
+### name
 
-• **formatFile**: `string`
-
-URL to a template to apply
-
-___
-
-### identifier
-
-• **identifier**: ``null`` \| `string`
-
-Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+• **name**: `string`

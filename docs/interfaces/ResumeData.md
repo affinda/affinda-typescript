@@ -2,6 +2,8 @@
 
 # Interface: ResumeData
 
+A JSON-encoded string of the `ResumeData` object.
+
 ## Table of contents
 
 ### Properties

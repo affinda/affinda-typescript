@@ -1,24 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchResult
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchResult
 
-# Interface: ResumeSearchResult
+# Interface: JobDescriptionSearchResult
 
 ## Table of contents
 
 ### Properties
 
-- [education](ResumeSearchResult.md#education)
-- [experience](ResumeSearchResult.md#experience)
-- [identifier](ResumeSearchResult.md#identifier)
-- [jobTitle](ResumeSearchResult.md#jobtitle)
-- [languages](ResumeSearchResult.md#languages)
-- [location](ResumeSearchResult.md#location)
-- [managementLevel](ResumeSearchResult.md#managementlevel)
-- [name](ResumeSearchResult.md#name)
-- [occupationGroup](ResumeSearchResult.md#occupationgroup)
-- [pdf](ResumeSearchResult.md#pdf)
-- [score](ResumeSearchResult.md#score)
-- [searchExpression](ResumeSearchResult.md#searchexpression)
-- [skills](ResumeSearchResult.md#skills)
+- [education](JobDescriptionSearchResult.md#education)
+- [experience](JobDescriptionSearchResult.md#experience)
+- [identifier](JobDescriptionSearchResult.md#identifier)
+- [jobTitle](JobDescriptionSearchResult.md#jobtitle)
+- [languages](JobDescriptionSearchResult.md#languages)
+- [location](JobDescriptionSearchResult.md#location)
+- [managementLevel](JobDescriptionSearchResult.md#managementlevel)
+- [occupationGroup](JobDescriptionSearchResult.md#occupationgroup)
+- [pdf](JobDescriptionSearchResult.md#pdf)
+- [score](JobDescriptionSearchResult.md#score)
+- [searchExpression](JobDescriptionSearchResult.md#searchexpression)
+- [skills](JobDescriptionSearchResult.md#skills)
 
 ## Properties
 
@@ -66,15 +65,9 @@ ___
 
 ___
 
-### name
-
-• `Optional` **name**: `string`
-
-___
-
 ### occupationGroup
 
-• **occupationGroup**: [`OccupationGroupSearchScoreComponent`](OccupationGroupSearchScoreComponent.md)
+• `Optional` **occupationGroup**: [`OccupationGroupSearchScoreComponent`](OccupationGroupSearchScoreComponent.md)
 
 ___
 

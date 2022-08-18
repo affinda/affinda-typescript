@@ -25,20 +25,19 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     getAllResumes(options?: AffindaAPIGetAllResumesOptionalParams): Promise<AffindaAPIGetAllResumesResponse>;
     /**
-     * Uploads a resume for parsing.
-     * Provide `file` for uploading a resume file, or `url` for getting resume file from an url, or `data`
-     * if you want to upload resume data directly without parsing any resume file.
-     * For uploading resume data, the `data` argument provided must be a JSON-encoded string.
-     * When successful, returns an `identifier` in the response for subsequent use with the
-     * [/resumes/{identifier}](#operation/getResume) endpoint to check processing status and retrieve
-     * results.
+     * Uploads a resume for parsing. When successful, returns an `identifier` in the response for
+     * subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
+     * processing status and retrieve results.<br/>
+     * Resumes can be uploaded as a file or a URL. In addition, data can be added directly if users want to
+     * upload directly without parsing any resume file. For uploading resume data, the `data` argument
+     * provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
      * @param options The options parameters.
      */
     createResume(options?: AffindaAPICreateResumeOptionalParams): Promise<AffindaAPICreateResumeResponse>;
     /**
      * Returns all the parse results for that resume if processing is completed.
      * The `identifier` is the unique ID returned after POST-ing the resume via the
-     * [/resumes](#operation/createResume) endpoint.
+     * [/resumes](#post-/resumes) endpoint.
      * @param identifier Document identifier
      * @param options The options parameters.
      */
@@ -46,7 +45,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * Update data of a parsed resume.
      * The `identifier` is the unique ID returned after POST-ing the resume via the
-     * [/resumes](#operation/createResume) endpoint.
+     * [/resumes](#post-/resumes) endpoint.
      * @param identifier Resume identifier
      * @param body Resume data to update
      * @param options The options parameters.
@@ -71,7 +70,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * Returns all the redaction results for that resume if processing is completed.
      * The `identifier` is the unique ID returned after POST-ing the resume via the
-     * [/redacted_resumes](#operation/createRedactedResume) endpoint.
+     * [/redacted_resumes](#post-/redacted_resumes) endpoint.
      * @param identifier Document identifier
      * @param options The options parameters.
      */
@@ -83,42 +82,11 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteRedactedResume(identifier: string | null, options?: AffindaAPIDeleteRedactedResumeOptionalParams): Promise<AffindaAPIDeleteRedactedResumeResponse>;
     /**
-     * Returns all the resume formats
-     * @param options The options parameters.
-     */
-    getAllResumeFormats(options?: AffindaAPIGetAllResumeFormatsOptionalParams): Promise<AffindaAPIGetAllResumeFormatsResponse>;
-    /**
-     * Returns all the reformatted resume information for that resume
-     * @param options The options parameters.
-     */
-    getAllReformattedResumes(options?: AffindaAPIGetAllReformattedResumesOptionalParams): Promise<AffindaAPIGetAllReformattedResumesResponse>;
-    /**
-     * Upload a resume for reformatting.
-     * @param resumeFormat Identifier of the format used
-     * @param options The options parameters.
-     */
-    createReformattedResume(resumeFormat: string, options?: AffindaAPICreateReformattedResumeOptionalParams): Promise<AffindaAPICreateReformattedResumeResponse>;
-    /**
-     * Returns all the reformatting results for that resume if processing is completed.
-     * The `identifier` is the unique ID returned after POST-ing the resume via the
-     * [/reformatted_resumes](#operation/createReformattedResume) endpoint.
-     * @param identifier Document identifier
-     * @param options The options parameters.
-     */
-    getReformattedResume(identifier: string | null, options?: AffindaAPIGetReformattedResumeOptionalParams): Promise<AffindaAPIGetReformattedResumeResponse>;
-    /**
-     * Delete the specified resume from the database
-     * @param identifier Document identifier
-     * @param options The options parameters.
-     */
-    deleteReformattedResume(identifier: string | null, options?: AffindaAPIDeleteReformattedResumeOptionalParams): Promise<AffindaAPIDeleteReformattedResumeResponse>;
-    /**
-     * Searches through parsed resumes. You can search with custom criterias, a job description, or a
-     * resume.
-     * When searching with a job description, a parsed job description is used to find candidates that suit
-     * it.
-     * When searching with a resume, a parsed resume is used to find other candidates that have similar
-     * attributes.
+     * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
+     * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
+     * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
+     * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
+     * the custom criteria.
      * @param body Search parameters
      * @param options The options parameters.
      */
@@ -126,8 +94,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * This contains more detailed information about the matching score of the search criteria, or which
      * search criteria is missing in this resume.
-     * The `identifier` is the unique ID returned via the [/resume_search](#operation/createResumeSearch)
-     * endpoint.
+     * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
      * @param identifier Resume identifier
      * @param body Search parameters
      * @param options The options parameters.
@@ -135,7 +102,9 @@ export declare class AffindaAPI extends AffindaAPIContext {
     getResumeSearchDetail(identifier: string | null, body: ResumeSearchParameters | null, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
     /**
      * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
-     * with 0 being not a match at all, and 1 being perfect match.
+     * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
+     * match the score returned from POST
+     * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
      * @param resume Identify the resume to match.
      * @param jobDescription Identify the job description to match.
      * @param options The options parameters.
@@ -169,15 +138,16 @@ export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * Uploads a job description for parsing.
      * When successful, returns an `identifier` in the response for subsequent use with the
-     * [/job_descriptions/{identifier}](#operation/getResume) endpoint to check processing status and
-     * retrieve results.
+     * [/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
+     * status and retrieve results.
+     * Job Descriptions can be uploaded as a file or a URL.
      * @param options The options parameters.
      */
     createJobDescription(options?: AffindaAPICreateJobDescriptionOptionalParams): Promise<AffindaAPICreateJobDescriptionResponse>;
     /**
      * Returns all the results for that job description if processing is completed.
      * The `identifier` is the unique ID returned after POST-ing the resume via the
-     * [/job_descriptions](#operation/createJobDescription) endpoint.
+     * [/job_descriptions](#post-/job_descriptions) endpoint.
      * @param identifier Document identifier
      * @param options The options parameters.
      */
@@ -188,6 +158,12 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     deleteJobDescription(identifier: string | null, options?: AffindaAPIDeleteJobDescriptionOptionalParams): Promise<AffindaAPIDeleteJobDescriptionResponse>;
+    /**
+     * Searches through parsed job descriptions. You can search with custom criterias or a resume.
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    createJobDescriptionSearch(body: JobDescriptionSearchParameters | null, options?: AffindaAPICreateJobDescriptionSearchOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchResponse>;
     /**
      * Returns all the indexes
      * @param options The options parameters.
@@ -232,27 +208,28 @@ export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * Uploads an invoice for parsing.
      * When successful, returns an `identifier` in the response for subsequent use with the
-     * [/invoices/{identifier}](#operation/getInvoice) endpoint to check processing status and retrieve
-     * results.
+     * [/invoices/{identifier}](#get-/invoices/-identifier-) endpoint to check processing status and
+     * retrieve results.
      * @param options The options parameters.
      */
     createInvoice(options?: AffindaAPICreateInvoiceOptionalParams): Promise<AffindaAPICreateInvoiceResponse>;
     /**
      * Returns all the parse results for that invoice if processing is completed.
      * The `identifier` is the unique ID returned after POST-ing the invoice via the
-     * [/invoices](#operation/createInvoice) endpoint.
+     * [/invoices](#post-/invoices) endpoint.
      * @param identifier Document identifier
      * @param options The options parameters.
      */
     getInvoice(identifier: string | null, options?: AffindaAPIGetInvoiceOptionalParams): Promise<AffindaAPIGetInvoiceResponse>;
     /**
-     * Delete the specified invoice from the database
+     * Delete the specified invoice from the database. Note, any invoices deleted from the database will no
+     * longer be used in any tailored customer models.
      * @param identifier Invoice identifier
      * @param options The options parameters.
      */
     deleteInvoice(identifier: string | null, options?: AffindaAPIDeleteInvoiceOptionalParams): Promise<AffindaAPIDeleteInvoiceResponse>;
     /**
-     * TODO TODO TODO
+     * Returns the list of searchable occupation groups.
      * @param options The options parameters.
      */
     listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
@@ -298,7 +275,7 @@ export declare type AffindaAPICreateIndexResponse = Paths1Mc0Je6IndexPostRespons
 export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
-    /** URL to file to download and process */
+    /** URL to an invoice to download and process */
     url?: string;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -319,7 +296,7 @@ export declare type AffindaAPICreateInvoiceResponse = Invoice;
 export declare interface AffindaAPICreateJobDescriptionOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
-    /** URL to file to download and process */
+    /** URL to a job description to download and process */
     url?: string;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -337,10 +314,21 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
 export declare type AffindaAPICreateJobDescriptionResponse = JobDescription;
 
 /** Optional parameters. */
+export declare interface AffindaAPICreateJobDescriptionSearchOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the createJobDescriptionSearch operation. */
+export declare type AffindaAPICreateJobDescriptionSearchResponse = JobDescriptionSearch;
+
+/** Optional parameters. */
 export declare interface AffindaAPICreateRedactedResumeOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
-    /** URL to file to download and process */
+    /** URL to a resume to download and process */
     url?: string;
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     identifier?: string;
@@ -374,29 +362,10 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
 export declare type AffindaAPICreateRedactedResumeResponse = RedactedResume;
 
 /** Optional parameters. */
-export declare interface AffindaAPICreateReformattedResumeOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-    file?: coreRestPipeline.RequestBodyType;
-    /** URL to file to download and process */
-    url?: string;
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-}
-
-/** Contains response data for the createReformattedResume operation. */
-export declare type AffindaAPICreateReformattedResumeResponse = ReformattedResume;
-
-/** Optional parameters. */
 export declare interface AffindaAPICreateResumeOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
-    /** URL to file to download and process */
+    /** URL to a resume to download and process */
     url?: string;
     /** A JSON-encoded string of the `ResumeData` object. */
     data?: ResumeData;
@@ -481,13 +450,6 @@ export declare interface AffindaAPIDeleteRedactedResumeOptionalParams extends co
 export declare type AffindaAPIDeleteRedactedResumeResponse = RequestError;
 
 /** Optional parameters. */
-export declare interface AffindaAPIDeleteReformattedResumeOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the deleteReformattedResume operation. */
-export declare type AffindaAPIDeleteReformattedResumeResponse = RequestError;
-
-/** Optional parameters. */
 export declare interface AffindaAPIDeleteResumeOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -546,28 +508,6 @@ export declare interface AffindaAPIGetAllRedactedResumesOptionalParams extends c
 export declare type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResults;
 
 /** Optional parameters. */
-export declare interface AffindaAPIGetAllReformattedResumesOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the getAllReformattedResumes operation. */
-export declare type AffindaAPIGetAllReformattedResumesResponse = GetAllDocumentsResults;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllResumeFormatsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the getAllResumeFormats operation. */
-export declare type AffindaAPIGetAllResumeFormatsResponse = Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
 export declare interface AffindaAPIGetAllResumesOptionalParams extends coreClient.OperationOptions {
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
@@ -611,14 +551,9 @@ export declare interface AffindaAPIGetRedactedResumeOptionalParams extends coreC
 export declare type AffindaAPIGetRedactedResumeResponse = RedactedResume;
 
 /** Optional parameters. */
-export declare interface AffindaAPIGetReformattedResumeOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getReformattedResume operation. */
-export declare type AffindaAPIGetReformattedResumeResponse = ReformattedResume;
-
-/** Optional parameters. */
 export declare interface AffindaAPIGetResumeOptionalParams extends coreClient.OperationOptions {
+    /** Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml". */
+    format?: string;
 }
 
 /** Contains response data for the getResume operation. */
@@ -724,11 +659,6 @@ export declare interface Components10Thcs2SchemasInvoicedataPropertiesSupplierem
     parsed?: string;
 }
 
-export declare interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
-    raw?: string;
-    parsed?: string;
-}
-
 export declare interface Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
     raw?: string;
     parsed?: string;
@@ -779,7 +709,7 @@ export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftA
     parsed?: string;
 }
 
-export declare interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
+export declare interface Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 {
     raw?: string;
     parsed?: string;
 }
@@ -857,12 +787,12 @@ export declare interface ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurc
     parsed?: string;
 }
 
-export declare interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
+export declare interface ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1 {
     raw?: string;
     parsed?: string;
 }
 
-export declare interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
+export declare interface ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1 {
     raw?: string;
     parsed?: string;
 }
@@ -886,6 +816,11 @@ export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLoca
 
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
+}
+
+export declare interface ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1 {
+    raw?: string;
+    parsed?: string;
 }
 
 export declare interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
@@ -925,6 +860,12 @@ export declare interface EducationGrade {
 /** Defines values for EducationLevel. */
 export declare type EducationLevel = "school" | "certificate" | "bachelors" | "masters" | "doctoral";
 
+export declare interface EducationSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
+}
+
 export declare type EnumAnnotationSerializer = Annotation & {
     parsed?: string;
 };
@@ -945,11 +886,14 @@ export declare interface ExpectedRemunerationAnnotationParsed {
     unit?: string;
 }
 
+export declare interface ExperienceSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
+}
+
 export declare interface Get200ApplicationJsonPropertiesItemsItem {
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier: string | null;
-    /** URL to a template to apply */
-    formatFile: string;
+    name: string;
 }
 
 export declare interface GetAllDocumentsResults {
@@ -982,6 +926,11 @@ export declare interface GetAllJobDescriptionsResults {
     results?: Meta[];
 }
 
+/** IndexRequestBody */
+export declare interface IndexRequestBody {
+    name?: string;
+}
+
 export declare interface Invoice {
     clientVerifiedDt: string | null;
     data: InvoiceData | null;
@@ -1006,14 +955,14 @@ export declare interface InvoiceData {
     customerBusinessNumber?: InvoiceDataCustomerBusinessNumber;
     paymentReference?: InvoiceDataPaymentReference;
     bankAccountNumber?: InvoiceDataBankAccountNumber;
-    supplierVat?: InvoiceDataSupplierVat;
-    customerVat?: InvoiceDataCustomerVat;
+    supplierVAT?: InvoiceDataSupplierVAT;
+    customerVAT?: InvoiceDataCustomerVAT;
     bpayBillerCode?: InvoiceDataBpayBillerCode;
     bpayReference?: InvoiceDataBpayReference;
     bankSortCode?: InvoiceDataBankSortCode;
     bankIban?: InvoiceDataBankIban;
     bankSwift?: InvoiceDataBankSwift;
-    bankBsb?: InvoiceDataBankBsb;
+    bankBSB?: InvoiceDataBankBSB;
     customerContactName?: InvoiceDataCustomerContactName;
     customerCompanyName?: InvoiceDataCustomerCompanyName;
     supplierCompanyName?: InvoiceDataSupplierCompanyName;
@@ -1035,9 +984,9 @@ export declare interface InvoiceData {
 
 export declare type InvoiceDataBankAccountNumber = TextAnnotation & Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
 
-export declare type InvoiceDataBankBsb = TextAnnotation & Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
+export declare type InvoiceDataBankBSB = TextAnnotation & Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 & {};
 
-export declare type InvoiceDataBankIban = TextAnnotation & Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
+export declare type InvoiceDataBankIban = TextAnnotation & ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1 & {};
 
 export declare type InvoiceDataBankSortCode = TextAnnotation & Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
 
@@ -1059,7 +1008,7 @@ export declare type InvoiceDataCustomerNumber = TextAnnotation & Components105Ab
 
 export declare type InvoiceDataCustomerPhoneNumber = TextAnnotation & Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
 
-export declare type InvoiceDataCustomerVat = TextAnnotation & ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
+export declare type InvoiceDataCustomerVAT = TextAnnotation & ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1 & {};
 
 export declare type InvoiceDataInvoiceNumber = TextAnnotation & Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
 
@@ -1087,7 +1036,7 @@ export declare type InvoiceDataSupplierFax = TextAnnotation & Components1Fe3VqtS
 
 export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
 
-export declare type InvoiceDataSupplierVat = TextAnnotation & ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
+export declare type InvoiceDataSupplierVAT = TextAnnotation & ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
 
 export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
@@ -1096,6 +1045,24 @@ export declare interface InvoiceDataTablesItem {
 }
 
 export declare type InvoiceMeta = Meta & Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
+
+/** InvoiceRequestBody */
+export declare interface InvoiceRequestBody {
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+    file?: coreRestPipeline.RequestBodyType;
+    /** URL to an invoice to download and process */
+    url?: string;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+}
 
 export declare interface JobDescription {
     data: JobDescriptionData | null;
@@ -1123,6 +1090,84 @@ export declare interface JobDescriptionData {
     yearsExperience?: YearsExperienceAnnotation;
 }
 
+/** JobDescriptionRequestBody */
+export declare interface JobDescriptionRequestBody {
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+    file?: coreRestPipeline.RequestBodyType;
+    /** URL to a job description to download and process */
+    url?: string;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+}
+
+export declare interface JobDescriptionSearch {
+    /** Total number of results */
+    count?: number;
+    /** URL to request next page of results */
+    next?: string;
+    /** URL to request previous page of results */
+    previous?: string;
+    parameters?: JobDescriptionSearchParameters;
+    results?: JobDescriptionSearchResult[];
+}
+
+export declare interface JobDescriptionSearchParameters {
+    indices: string[];
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    resume?: string;
+    jobTitles?: string[];
+    jobTitlesRequired?: boolean;
+    jobTitlesWeight?: number;
+    totalYearsExperience?: number;
+    yearsExperienceRequired?: boolean;
+    yearsExperienceWeight?: number;
+    locations?: ResumeSearchParametersLocation[];
+    locationsWeight?: number;
+    locationsRequired?: boolean;
+    skills?: ResumeSearchParametersSkill[];
+    skillsWeight?: number;
+    languages?: ResumeSearchParametersSkill[];
+    languagesWeight?: number;
+    degrees?: string[];
+    degreesRequired?: boolean;
+    degreeTypes?: (EducationLevel | null)[];
+    degreeTypesRequired?: boolean;
+    educationWeight?: number;
+    searchExpression?: string;
+    searchExpressionRequired?: boolean;
+    searchExpressionWeight?: number;
+    socCodes?: number[];
+    socCodesWeight?: number;
+    socCodesRequired?: boolean;
+    managementLevel?: ManagementLevel;
+    managementLevelRequired?: boolean;
+    managementLevelWeight?: number;
+}
+
+export declare interface JobDescriptionSearchResult {
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier: string | null;
+    score: number;
+    pdf: string;
+    jobTitle: JobTitleSearchScoreComponent;
+    managementLevel: ManagementLevelSearchScoreComponent;
+    experience: ExperienceSearchScoreComponent;
+    skills: SkillsSearchScoreComponent;
+    languages: LanguagesSearchScoreComponent;
+    location: LocationSearchScoreComponent;
+    education: EducationSearchScoreComponent;
+    occupationGroup?: OccupationGroupSearchScoreComponent;
+    searchExpression: SearchExpressionSearchScoreComponent;
+}
+
 export declare type JobTitleAnnotation = Annotation & {
     /** Years of experience range */
     parsed?: JobTitleAnnotationParsed;
@@ -1141,6 +1186,12 @@ export declare interface JobTitleAnnotationParsedClassification {
     minorGroup?: string;
     subMajorGroup?: string;
     majorGroup?: string;
+}
+
+export declare interface JobTitleSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
 }
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
@@ -1167,6 +1218,12 @@ export declare enum KnownResumeSkillSourcesItemSection {
 export declare type LanguageAnnotation = Annotation & {
     parsed?: string;
 };
+
+export declare interface LanguagesSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
+}
 
 export declare interface Location {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
@@ -1197,8 +1254,20 @@ export declare type LocationAnnotation = Annotation & {
     parsed?: Location;
 };
 
+export declare interface LocationSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
+}
+
 /** Defines values for ManagementLevel. */
 export declare type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
+
+export declare interface ManagementLevelSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
+}
 
 export declare interface Meta {
     /** Describes unknown properties. The value of an unknown property can be of "any" type. */
@@ -1225,39 +1294,14 @@ export declare interface OccupationGroup {
     children: OccupationGroup[];
 }
 
-export declare interface Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
-    name: string;
-}
-
-export declare interface Paths1BwrvmkInvoicesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-    file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** URL to file to download and process */
-    url?: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+export declare interface OccupationGroupSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
 }
 
 export declare interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-}
-
-export declare interface Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema {
-    /** Number of documents in result */
-    count?: number;
-    /** URL to request next page of results */
-    next?: string;
-    /** URL to request previous page of results */
-    previous?: string;
-    results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
 export declare interface Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1 {
@@ -1276,59 +1320,7 @@ export declare interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSc
     next?: string;
     /** URL to request previous page of results */
     previous?: string;
-    results?: Paths108CfgmIndexGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
-}
-
-export declare interface Paths7EskthResumesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-    file?: coreRestPipeline.RequestBodyType;
-    /** URL to file to download and process */
-    url?: string;
-    /** A JSON-encoded string of the `ResumeData` object. */
-    data?: ResumeData;
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
-}
-
-export declare interface Paths8DdhfcRedactedResumesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-    file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** URL to file to download and process */
-    url?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
-    /** Whether to redact headshot */
-    redactHeadshot?: string;
-    /** Whether to redact personal details (e.g. name, address) */
-    redactPersonalDetails?: string;
-    /** Whether to redact work details (e.g. company names) */
-    redactWorkDetails?: string;
-    /** Whether to redact education details (e.g. university names) */
-    redactEducationDetails?: string;
-    /** Whether to redact referee details */
-    redactReferees?: string;
-    /** Whether to redact location names */
-    redactLocations?: string;
-    /** Whether to redact dates */
-    redactDates?: string;
-    /** Whether to redact gender */
-    redactGender?: string;
-    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
+    results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
 export declare interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
@@ -1354,10 +1346,6 @@ export declare interface PathsRvverlIndexNameDocumentsGetResponses200ContentAppl
     results?: PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
 }
 
-export declare interface PathsSot11NIndexPostRequestbodyContentMultipartFormDataSchema {
-    name?: string;
-}
-
 export declare type PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema = User & Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema {
@@ -1368,40 +1356,6 @@ export declare interface PathsWjaaeuUsersGetResponses200ContentApplicationJsonSc
     /** URL to request previous page of results */
     previous?: string;
     results?: User[];
-}
-
-export declare interface PathsYlw96JobDescriptionsPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-    file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** URL to file to download and process */
-    url?: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
-}
-
-export declare interface PathsYzn84IReformattedResumesPostRequestbodyContentMultipartFormDataSchema {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-    file?: coreRestPipeline.RequestBodyType;
-    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
-    identifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** URL to file to download and process */
-    url?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-    /** Identifier of the format used */
-    resumeFormat: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
 }
 
 export declare interface Rectangle {
@@ -1422,14 +1376,38 @@ export declare interface RedactedResumeData {
     redactedPdf?: string;
 }
 
-export declare interface ReformattedResume {
-    data: ReformattedResumeData | null;
-    meta: Meta;
-    error: ErrorModel;
-}
-
-export declare interface ReformattedResumeData {
-    reformattedFile?: string;
+/** RedactedResumeRequestBody */
+export declare interface RedactedResumeRequestBody {
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+    file?: coreRestPipeline.RequestBodyType;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** URL to a resume to download and process */
+    url?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Whether to redact headshot */
+    redactHeadshot?: string;
+    /** Whether to redact personal details (e.g. name, address) */
+    redactPersonalDetails?: string;
+    /** Whether to redact work details (e.g. company names) */
+    redactWorkDetails?: string;
+    /** Whether to redact education details (e.g. university names) */
+    redactEducationDetails?: string;
+    /** Whether to redact referee details */
+    redactReferees?: string;
+    /** Whether to redact location names */
+    redactLocations?: string;
+    /** Whether to redact dates */
+    redactDates?: string;
+    /** Whether to redact gender */
+    redactGender?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
 }
 
 export declare interface RequestError {
@@ -1444,11 +1422,13 @@ export declare interface RequestErrorErrorsItem {
 }
 
 export declare interface Resume {
+    /** A JSON-encoded string of the `ResumeData` object. */
     data: ResumeData | null;
     meta: Meta;
     error: ErrorModel;
 }
 
+/** A JSON-encoded string of the `ResumeData` object. */
 export declare interface ResumeData {
     name?: ResumeDataName;
     phoneNumbers?: string[];
@@ -1609,6 +1589,26 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
+/** ResumeRequestBody */
+export declare interface ResumeRequestBody {
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+    file?: coreRestPipeline.RequestBodyType;
+    /** URL to a resume to download and process */
+    url?: string;
+    /** A JSON-encoded string of the `ResumeData` object. */
+    data?: ResumeData;
+    /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+}
+
 export declare interface ResumeSearch {
     /** Total number of results */
     count?: number;
@@ -1755,15 +1755,15 @@ export declare interface ResumeSearchMatch {
 }
 
 export declare interface ResumeSearchMatchDetails {
-    jobTitle?: ResumeSearchScoreComponent;
-    managementLevel?: ResumeSearchScoreComponent;
-    experience?: ResumeSearchScoreComponent;
-    skills?: ResumeSearchScoreComponent;
-    languages?: ResumeSearchScoreComponent;
-    location?: ResumeSearchScoreComponent;
-    education?: ResumeSearchScoreComponent;
-    occupationGroup?: ResumeSearchScoreComponent;
-    searchExpression?: ResumeSearchScoreComponent;
+    jobTitle?: JobTitleSearchScoreComponent;
+    managementLevel?: ManagementLevelSearchScoreComponent;
+    experience?: ExperienceSearchScoreComponent;
+    skills?: SkillsSearchScoreComponent;
+    languages?: LanguagesSearchScoreComponent;
+    location?: LocationSearchScoreComponent;
+    education?: EducationSearchScoreComponent;
+    occupationGroup?: OccupationGroupSearchScoreComponent;
+    searchExpression?: SearchExpressionSearchScoreComponent;
 }
 
 export declare interface ResumeSearchParameters {
@@ -1834,21 +1834,15 @@ export declare interface ResumeSearchResult {
     score: number;
     pdf: string;
     name?: string;
-    jobTitle: ResumeSearchScoreComponent;
-    managementLevel: ResumeSearchScoreComponent;
-    experience: ResumeSearchScoreComponent;
-    skills: ResumeSearchScoreComponent;
-    languages: ResumeSearchScoreComponent;
-    location: ResumeSearchScoreComponent;
-    education: ResumeSearchScoreComponent;
-    occupationGroup: ResumeSearchScoreComponent;
-    searchExpression: ResumeSearchScoreComponent;
-}
-
-export declare interface ResumeSearchScoreComponent {
-    label: string;
-    value?: string;
-    score?: number;
+    jobTitle: JobTitleSearchScoreComponent;
+    managementLevel: ManagementLevelSearchScoreComponent;
+    experience: ExperienceSearchScoreComponent;
+    skills: SkillsSearchScoreComponent;
+    languages: LanguagesSearchScoreComponent;
+    location: LocationSearchScoreComponent;
+    education: EducationSearchScoreComponent;
+    occupationGroup: OccupationGroupSearchScoreComponent;
+    searchExpression: SearchExpressionSearchScoreComponent;
 }
 
 export declare interface ResumeSkill {
@@ -1908,12 +1902,24 @@ export declare interface RowAnnotation {
     };
 }
 
+export declare interface SearchExpressionSearchScoreComponent {
+    label: string;
+    value?: string;
+    score?: number;
+}
+
 /** Defines values for SearchLocationUnit. */
 export declare type SearchLocationUnit = "km" | "mi";
 
 export declare type SkillAnnotation = Annotation & {
     parsed?: string;
 };
+
+export declare interface SkillsSearchScoreComponent {
+    value?: string;
+    label: string;
+    score?: number;
+}
 
 export declare type TextAnnotation = Annotation & {
     parsed?: string;

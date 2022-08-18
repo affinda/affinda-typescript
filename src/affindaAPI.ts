@@ -24,16 +24,6 @@ import {
   AffindaAPIGetRedactedResumeResponse,
   AffindaAPIDeleteRedactedResumeOptionalParams,
   AffindaAPIDeleteRedactedResumeResponse,
-  AffindaAPIGetAllResumeFormatsOptionalParams,
-  AffindaAPIGetAllResumeFormatsResponse,
-  AffindaAPIGetAllReformattedResumesOptionalParams,
-  AffindaAPIGetAllReformattedResumesResponse,
-  AffindaAPICreateReformattedResumeOptionalParams,
-  AffindaAPICreateReformattedResumeResponse,
-  AffindaAPIGetReformattedResumeOptionalParams,
-  AffindaAPIGetReformattedResumeResponse,
-  AffindaAPIDeleteReformattedResumeOptionalParams,
-  AffindaAPIDeleteReformattedResumeResponse,
   ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
@@ -56,6 +46,9 @@ import {
   AffindaAPIGetJobDescriptionResponse,
   AffindaAPIDeleteJobDescriptionOptionalParams,
   AffindaAPIDeleteJobDescriptionResponse,
+  JobDescriptionSearchParameters,
+  AffindaAPICreateJobDescriptionSearchOptionalParams,
+  AffindaAPICreateJobDescriptionSearchResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
   AffindaAPICreateIndexOptionalParams,
@@ -109,13 +102,12 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Uploads a resume for parsing.
-   * Provide `file` for uploading a resume file, or `url` for getting resume file from an url, or `data`
-   * if you want to upload resume data directly without parsing any resume file.
-   * For uploading resume data, the `data` argument provided must be a JSON-encoded string.
-   * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/resumes/{identifier}](#operation/getResume) endpoint to check processing status and retrieve
-   * results.
+   * Uploads a resume for parsing. When successful, returns an `identifier` in the response for
+   * subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
+   * processing status and retrieve results.<br/>
+   * Resumes can be uploaded as a file or a URL. In addition, data can be added directly if users want to
+   * upload directly without parsing any resume file. For uploading resume data, the `data` argument
+   * provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
    * @param options The options parameters.
    */
   createResume(
@@ -127,7 +119,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Returns all the parse results for that resume if processing is completed.
    * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/resumes](#operation/createResume) endpoint.
+   * [/resumes](#post-/resumes) endpoint.
    * @param identifier Document identifier
    * @param options The options parameters.
    */
@@ -144,7 +136,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Update data of a parsed resume.
    * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/resumes](#operation/createResume) endpoint.
+   * [/resumes](#post-/resumes) endpoint.
    * @param identifier Resume identifier
    * @param body Resume data to update
    * @param options The options parameters.
@@ -204,7 +196,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Returns all the redaction results for that resume if processing is completed.
    * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/redacted_resumes](#operation/createRedactedResume) endpoint.
+   * [/redacted_resumes](#post-/redacted_resumes) endpoint.
    * @param identifier Document identifier
    * @param options The options parameters.
    */
@@ -234,85 +226,11 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Returns all the resume formats
-   * @param options The options parameters.
-   */
-  getAllResumeFormats(
-    options?: AffindaAPIGetAllResumeFormatsOptionalParams
-  ): Promise<AffindaAPIGetAllResumeFormatsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllResumeFormatsOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the reformatted resume information for that resume
-   * @param options The options parameters.
-   */
-  getAllReformattedResumes(
-    options?: AffindaAPIGetAllReformattedResumesOptionalParams
-  ): Promise<AffindaAPIGetAllReformattedResumesResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllReformattedResumesOperationSpec
-    );
-  }
-
-  /**
-   * Upload a resume for reformatting.
-   * @param resumeFormat Identifier of the format used
-   * @param options The options parameters.
-   */
-  createReformattedResume(
-    resumeFormat: string,
-    options?: AffindaAPICreateReformattedResumeOptionalParams
-  ): Promise<AffindaAPICreateReformattedResumeResponse> {
-    return this.sendOperationRequest(
-      { resumeFormat, options },
-      createReformattedResumeOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the reformatting results for that resume if processing is completed.
-   * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/reformatted_resumes](#operation/createReformattedResume) endpoint.
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  getReformattedResume(
-    identifier: string | null,
-    options?: AffindaAPIGetReformattedResumeOptionalParams
-  ): Promise<AffindaAPIGetReformattedResumeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getReformattedResumeOperationSpec
-    );
-  }
-
-  /**
-   * Delete the specified resume from the database
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  deleteReformattedResume(
-    identifier: string | null,
-    options?: AffindaAPIDeleteReformattedResumeOptionalParams
-  ): Promise<AffindaAPIDeleteReformattedResumeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteReformattedResumeOperationSpec
-    );
-  }
-
-  /**
-   * Searches through parsed resumes. You can search with custom criterias, a job description, or a
-   * resume.
-   * When searching with a job description, a parsed job description is used to find candidates that suit
-   * it.
-   * When searching with a resume, a parsed resume is used to find other candidates that have similar
-   * attributes.
+   * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
+   * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
+   * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
+   * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
+   * the custom criteria.
    * @param body Search parameters
    * @param options The options parameters.
    */
@@ -329,8 +247,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * This contains more detailed information about the matching score of the search criteria, or which
    * search criteria is missing in this resume.
-   * The `identifier` is the unique ID returned via the [/resume_search](#operation/createResumeSearch)
-   * endpoint.
+   * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
    * @param identifier Resume identifier
    * @param body Search parameters
    * @param options The options parameters.
@@ -348,7 +265,9 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
-   * with 0 being not a match at all, and 1 being perfect match.
+   * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
+   * match the score returned from POST
+   * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
    * @param resume Identify the resume to match.
    * @param jobDescription Identify the job description to match.
    * @param options The options parameters.
@@ -425,8 +344,9 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Uploads a job description for parsing.
    * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/job_descriptions/{identifier}](#operation/getResume) endpoint to check processing status and
-   * retrieve results.
+   * [/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
+   * status and retrieve results.
+   * Job Descriptions can be uploaded as a file or a URL.
    * @param options The options parameters.
    */
   createJobDescription(
@@ -441,7 +361,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Returns all the results for that job description if processing is completed.
    * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/job_descriptions](#operation/createJobDescription) endpoint.
+   * [/job_descriptions](#post-/job_descriptions) endpoint.
    * @param identifier Document identifier
    * @param options The options parameters.
    */
@@ -467,6 +387,21 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, options },
       deleteJobDescriptionOperationSpec
+    );
+  }
+
+  /**
+   * Searches through parsed job descriptions. You can search with custom criterias or a resume.
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  createJobDescriptionSearch(
+    body: JobDescriptionSearchParameters | null,
+    options?: AffindaAPICreateJobDescriptionSearchOptionalParams
+  ): Promise<AffindaAPICreateJobDescriptionSearchResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createJobDescriptionSearchOperationSpec
     );
   }
 
@@ -567,8 +502,8 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Uploads an invoice for parsing.
    * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/invoices/{identifier}](#operation/getInvoice) endpoint to check processing status and retrieve
-   * results.
+   * [/invoices/{identifier}](#get-/invoices/-identifier-) endpoint to check processing status and
+   * retrieve results.
    * @param options The options parameters.
    */
   createInvoice(
@@ -580,7 +515,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Returns all the parse results for that invoice if processing is completed.
    * The `identifier` is the unique ID returned after POST-ing the invoice via the
-   * [/invoices](#operation/createInvoice) endpoint.
+   * [/invoices](#post-/invoices) endpoint.
    * @param identifier Document identifier
    * @param options The options parameters.
    */
@@ -595,7 +530,8 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Delete the specified invoice from the database
+   * Delete the specified invoice from the database. Note, any invoices deleted from the database will no
+   * longer be used in any tailored customer models.
    * @param identifier Invoice identifier
    * @param options The options parameters.
    */
@@ -610,7 +546,7 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * TODO TODO TODO
+   * Returns the list of searchable occupation groups.
    * @param options The options parameters.
    */
   listOccupationGroups(
@@ -723,6 +659,7 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
+  queryParameters: [Parameters.format],
   urlParameters: [Parameters.$host, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
@@ -855,124 +792,6 @@ const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
 };
 const deleteRedactedResumeOperationSpec: coreClient.OperationSpec = {
   path: "/redacted_resumes/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllResumeFormatsOperationSpec: coreClient.OperationSpec = {
-  path: "/resume_formats",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllReformattedResumesOperationSpec: coreClient.OperationSpec = {
-  path: "/reformatted_resumes",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.GetAllDocumentsResults
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createReformattedResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/reformatted_resumes",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ReformattedResume
-    },
-    201: {
-      bodyMapper: Mappers.ReformattedResume
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [
-    Parameters.file,
-    Parameters.url,
-    Parameters.identifier,
-    Parameters.fileName,
-    Parameters.wait,
-    Parameters.language,
-    Parameters.resumeFormat
-  ],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const getReformattedResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/reformatted_resumes/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ReformattedResume
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const deleteReformattedResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/reformatted_resumes/{identifier}",
   httpMethod: "DELETE",
   responses: {
     204: {},
@@ -1229,6 +1048,30 @@ const deleteJobDescriptionOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
+  path: "/job_description_search",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.JobDescriptionSearch
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body4,
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
 const getAllIndexesOperationSpec: coreClient.OperationSpec = {
   path: "/index",
   httpMethod: "GET",
@@ -1334,7 +1177,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body4,
+  requestBody: Parameters.body5,
   urlParameters: [Parameters.$host, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

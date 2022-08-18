@@ -144,7 +144,7 @@ ___
 
 • `Optional` **url**: `string`
 
-URL to file to download and process
+URL to a resume to download and process
 
 ___
 

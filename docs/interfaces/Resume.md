@@ -16,6 +16,8 @@
 
 • **data**: ``null`` \| [`ResumeData`](ResumeData.md)
 
+A JSON-encoded string of the `ResumeData` object.
+
 ___
 
 ### error

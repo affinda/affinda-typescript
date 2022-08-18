@@ -25,8 +25,8 @@
 - [createIndexDocument](AffindaAPI.md#createindexdocument)
 - [createInvoice](AffindaAPI.md#createinvoice)
 - [createJobDescription](AffindaAPI.md#createjobdescription)
+- [createJobDescriptionSearch](AffindaAPI.md#createjobdescriptionsearch)
 - [createRedactedResume](AffindaAPI.md#createredactedresume)
-- [createReformattedResume](AffindaAPI.md#createreformattedresume)
 - [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
 - [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
@@ -36,21 +36,17 @@
 - [deleteInvoice](AffindaAPI.md#deleteinvoice)
 - [deleteJobDescription](AffindaAPI.md#deletejobdescription)
 - [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
-- [deleteReformattedResume](AffindaAPI.md#deletereformattedresume)
 - [deleteResume](AffindaAPI.md#deleteresume)
 - [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
 - [getAllIndexes](AffindaAPI.md#getallindexes)
 - [getAllInvoices](AffindaAPI.md#getallinvoices)
 - [getAllJobDescriptions](AffindaAPI.md#getalljobdescriptions)
 - [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
-- [getAllReformattedResumes](AffindaAPI.md#getallreformattedresumes)
-- [getAllResumeFormats](AffindaAPI.md#getallresumeformats)
 - [getAllResumes](AffindaAPI.md#getallresumes)
 - [getAllUsers](AffindaAPI.md#getallusers)
 - [getInvoice](AffindaAPI.md#getinvoice)
 - [getJobDescription](AffindaAPI.md#getjobdescription)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
-- [getReformattedResume](AffindaAPI.md#getreformattedresume)
 - [getResume](AffindaAPI.md#getresume)
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
@@ -148,8 +144,8 @@ ___
 
 Uploads an invoice for parsing.
 When successful, returns an `identifier` in the response for subsequent use with the
-[/invoices/{identifier}](#operation/getInvoice) endpoint to check processing status and retrieve
-results.
+[/invoices/{identifier}](#get-/invoices/-identifier-) endpoint to check processing status and
+retrieve results.
 
 #### Parameters
 
@@ -169,8 +165,9 @@ ___
 
 Uploads a job description for parsing.
 When successful, returns an `identifier` in the response for subsequent use with the
-[/job_descriptions/{identifier}](#operation/getResume) endpoint to check processing status and
-retrieve results.
+[/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
+status and retrieve results.
+Job Descriptions can be uploaded as a file or a URL.
 
 #### Parameters
 
@@ -181,6 +178,25 @@ retrieve results.
 #### Returns
 
 `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+
+___
+
+### createJobDescriptionSearch
+
+▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
+
+Searches through parsed job descriptions. You can search with custom criterias or a resume.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
+| `options?` | [`AffindaAPICreateJobDescriptionSearchOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
 ___
 
@@ -202,36 +218,16 @@ Uploads a resume for redacting.
 
 ___
 
-### createReformattedResume
-
-▸ **createReformattedResume**(`resumeFormat`, `options?`): `Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
-
-Upload a resume for reformatting.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `resumeFormat` | `string` | Identifier of the format used |
-| `options?` | [`AffindaAPICreateReformattedResumeOptionalParams`](../interfaces/AffindaAPICreateReformattedResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
-
-___
-
 ### createResume
 
 ▸ **createResume**(`options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
 
-Uploads a resume for parsing.
-Provide `file` for uploading a resume file, or `url` for getting resume file from an url, or `data`
-if you want to upload resume data directly without parsing any resume file.
-For uploading resume data, the `data` argument provided must be a JSON-encoded string.
-When successful, returns an `identifier` in the response for subsequent use with the
-[/resumes/{identifier}](#operation/getResume) endpoint to check processing status and retrieve
-results.
+Uploads a resume for parsing. When successful, returns an `identifier` in the response for
+subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
+processing status and retrieve results.<br/>
+Resumes can be uploaded as a file or a URL. In addition, data can be added directly if users want to
+upload directly without parsing any resume file. For uploading resume data, the `data` argument
+provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
 
 #### Parameters
 
@@ -249,12 +245,11 @@ ___
 
 ▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
-Searches through parsed resumes. You can search with custom criterias, a job description, or a
-resume.
-When searching with a job description, a parsed job description is used to find candidates that suit
-it.
-When searching with a resume, a parsed resume is used to find other candidates that have similar
-attributes.
+Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
+job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
+a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
+Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
+the custom criteria.
 
 #### Parameters
 
@@ -351,7 +346,8 @@ ___
 
 ▸ **deleteInvoice**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
 
-Delete the specified invoice from the database
+Delete the specified invoice from the database. Note, any invoices deleted from the database will no
+longer be used in any tailored customer models.
 
 #### Parameters
 
@@ -397,25 +393,6 @@ Deletes the specified resume from the database
 | :------ | :------ | :------ |
 | `identifier` | ``null`` \| `string` | Document identifier |
 | `options?` | [`AffindaAPIDeleteRedactedResumeOptionalParams`](../interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`RequestError`](../interfaces/RequestError.md)\>
-
-___
-
-### deleteReformattedResume
-
-▸ **deleteReformattedResume**(`identifier`, `options?`): `Promise`<[`RequestError`](../interfaces/RequestError.md)\>
-
-Delete the specified resume from the database
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
-| `options?` | [`AffindaAPIDeleteReformattedResumeOptionalParams`](../interfaces/AffindaAPIDeleteReformattedResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -533,42 +510,6 @@ Returns all the redacted resume information for that resume
 
 ___
 
-### getAllReformattedResumes
-
-▸ **getAllReformattedResumes**(`options?`): `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
-
-Returns all the reformatted resume information for that resume
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllReformattedResumesOptionalParams`](../interfaces/AffindaAPIGetAllReformattedResumesOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
-
-___
-
-### getAllResumeFormats
-
-▸ **getAllResumeFormats**(`options?`): `Promise`<[`Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)\>
-
-Returns all the resume formats
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllResumeFormatsOptionalParams`](../interfaces/AffindaAPIGetAllResumeFormatsOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1UtuacyResumeFormatsGetResponses200ContentApplicationJsonSchema.md)\>
-
-___
-
 ### getAllResumes
 
 ▸ **getAllResumes**(`options?`): `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
@@ -611,7 +552,7 @@ ___
 
 Returns all the parse results for that invoice if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the invoice via the
-[/invoices](#operation/createInvoice) endpoint.
+[/invoices](#post-/invoices) endpoint.
 
 #### Parameters
 
@@ -632,7 +573,7 @@ ___
 
 Returns all the results for that job description if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the resume via the
-[/job_descriptions](#operation/createJobDescription) endpoint.
+[/job_descriptions](#post-/job_descriptions) endpoint.
 
 #### Parameters
 
@@ -653,7 +594,7 @@ ___
 
 Returns all the redaction results for that resume if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the resume via the
-[/redacted_resumes](#operation/createRedactedResume) endpoint.
+[/redacted_resumes](#post-/redacted_resumes) endpoint.
 
 #### Parameters
 
@@ -668,34 +609,13 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 ___
 
-### getReformattedResume
-
-▸ **getReformattedResume**(`identifier`, `options?`): `Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
-
-Returns all the reformatting results for that resume if processing is completed.
-The `identifier` is the unique ID returned after POST-ing the resume via the
-[/reformatted_resumes](#operation/createReformattedResume) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
-| `options?` | [`AffindaAPIGetReformattedResumeOptionalParams`](../interfaces/AffindaAPIGetReformattedResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`ReformattedResume`](../interfaces/ReformattedResume.md)\>
-
-___
-
 ### getResume
 
 ▸ **getResume**(`identifier`, `options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
 
 Returns all the parse results for that resume if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the resume via the
-[/resumes](#operation/createResume) endpoint.
+[/resumes](#post-/resumes) endpoint.
 
 #### Parameters
 
@@ -735,8 +655,7 @@ ___
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this resume.
-The `identifier` is the unique ID returned via the [/resume_search](#operation/createResumeSearch)
-endpoint.
+The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
 
 #### Parameters
 
@@ -757,7 +676,9 @@ ___
 ▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 Get the matching score between a resume and a job description. The score ranges between 0 and 1,
-with 0 being not a match at all, and 1 being perfect match.
+with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
+match the score returned from POST
+[/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
 
 #### Parameters
 
@@ -777,7 +698,7 @@ ___
 
 ▸ **listOccupationGroups**(`options?`): `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
 
-TODO TODO TODO
+Returns the list of searchable occupation groups.
 
 #### Parameters
 
@@ -848,7 +769,7 @@ ___
 
 Update data of a parsed resume.
 The `identifier` is the unique ID returned after POST-ing the resume via the
-[/resumes](#operation/createResume) endpoint.
+[/resumes](#post-/resumes) endpoint.
 
 #### Parameters
 
