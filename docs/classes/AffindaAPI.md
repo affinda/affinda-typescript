@@ -46,6 +46,7 @@
 - [getAllUsers](AffindaAPI.md#getallusers)
 - [getInvoice](AffindaAPI.md#getinvoice)
 - [getJobDescription](AffindaAPI.md#getjobdescription)
+- [getJobDescriptionSearchDetail](AffindaAPI.md#getjobdescriptionsearchdetail)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getResume](AffindaAPI.md#getresume)
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
@@ -585,6 +586,29 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 #### Returns
 
 `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+
+___
+
+### getJobDescriptionSearchDetail
+
+▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
+
+This contains more detailed information about the matching score of the search criteria, or which
+search criteria is missing in this job description.
+The `identifier` is the unique ID returned via the
+[/job_description_search](#post-/job_description_search) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | ``null`` \| `string` | Job Description identifier |
+| `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
+| `options?` | [`AffindaAPIGetJobDescriptionSearchDetailOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
 ___
 

@@ -165,6 +165,16 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     createJobDescriptionSearch(body: JobDescriptionSearchParameters | null, options?: AffindaAPICreateJobDescriptionSearchOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchResponse>;
     /**
+     * This contains more detailed information about the matching score of the search criteria, or which
+     * search criteria is missing in this job description.
+     * The `identifier` is the unique ID returned via the
+     * [/job_description_search](#post-/job_description_search) endpoint.
+     * @param identifier Job Description identifier
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    getJobDescriptionSearchDetail(identifier: string | null, body: JobDescriptionSearchParameters | null, options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse>;
+    /**
      * Returns all the indexes
      * @param options The options parameters.
      */
@@ -544,6 +554,13 @@ export declare interface AffindaAPIGetJobDescriptionOptionalParams extends coreC
 export declare type AffindaAPIGetJobDescriptionResponse = JobDescription;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetJobDescriptionSearchDetailOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getJobDescriptionSearchDetail operation. */
+export declare type AffindaAPIGetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetRedactedResumeOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -679,6 +696,10 @@ export declare interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwe
     parsed?: string;
 }
 
+export declare interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+    match?: boolean;
+}
+
 export declare interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
     raw?: string;
     parsed?: string;
@@ -712,6 +733,10 @@ export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftA
 export declare interface Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 {
     raw?: string;
     parsed?: string;
+}
+
+export declare interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
+    match?: boolean;
 }
 
 export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification {
@@ -1117,6 +1142,95 @@ export declare interface JobDescriptionSearch {
     previous?: string;
     parameters?: JobDescriptionSearchParameters;
     results?: JobDescriptionSearchResult[];
+}
+
+export declare interface JobDescriptionSearchDetail {
+    jobTitle?: JobDescriptionSearchDetailJobTitle;
+    location?: JobDescriptionSearchDetailLocation;
+    education?: JobDescriptionSearchDetailEducation;
+    skills?: JobDescriptionSearchDetailSkills;
+    experience?: JobDescriptionSearchDetailExperience;
+    occupationGroup?: JobDescriptionSearchDetailOccupationGroup;
+    languages?: JobDescriptionSearchDetailLanguages;
+    managementLevel?: JobDescriptionSearchDetailManagementLevel;
+    searchExpression?: JobDescriptionSearchDetailSearchExpression;
+}
+
+export declare interface JobDescriptionSearchDetailEducation {
+    missing?: JobDescriptionSearchDetailEducationMissing;
+    value?: JobDescriptionSearchDetailEducationValue;
+}
+
+export declare interface JobDescriptionSearchDetailEducationMissing {
+    degrees?: string[];
+    degreeTypes?: string[];
+}
+
+export declare interface JobDescriptionSearchDetailEducationValue {
+    degrees?: string[];
+    degreeTypes?: string[];
+    match?: boolean;
+}
+
+export declare interface JobDescriptionSearchDetailExperience {
+    minimumExperience?: number;
+    maximumExperience?: number;
+    match?: boolean;
+}
+
+export declare interface JobDescriptionSearchDetailJobTitle {
+    missing?: string[];
+    value?: JobDescriptionSearchDetailJobTitleValue;
+}
+
+export declare interface JobDescriptionSearchDetailJobTitleValue {
+    name?: string;
+    companyName?: string;
+    match?: boolean;
+}
+
+export declare interface JobDescriptionSearchDetailLanguages {
+    missing?: ResumeSearchParametersSkill[];
+    value?: JobDescriptionSearchDetailLanguagesValueItem[];
+}
+
+export declare interface JobDescriptionSearchDetailLanguagesValueItem {
+    name?: string;
+    match?: boolean;
+}
+
+export declare interface JobDescriptionSearchDetailLocation {
+    missing?: ResumeSearchParametersLocation[];
+    value?: JobDescriptionSearchDetailLocationValue;
+}
+
+export declare type JobDescriptionSearchDetailLocationValue = Location & Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export declare interface JobDescriptionSearchDetailManagementLevel {
+    level?: ManagementLevel;
+    match?: boolean;
+}
+
+export declare interface JobDescriptionSearchDetailOccupationGroup {
+    missing?: number[];
+    value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
+}
+
+export declare type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup & Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+
+export declare interface JobDescriptionSearchDetailSearchExpression {
+    missing?: string[];
+    value?: string[];
+}
+
+export declare interface JobDescriptionSearchDetailSkills {
+    missing?: ResumeSearchParametersSkill[];
+    value?: JobDescriptionSearchDetailSkillsValueItem[];
+}
+
+export declare interface JobDescriptionSearchDetailSkillsValueItem {
+    name?: string;
+    match?: boolean;
 }
 
 export declare interface JobDescriptionSearchParameters {

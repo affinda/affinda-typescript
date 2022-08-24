@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 - Depreciated resume_formats and reformatted_resumes endpoints
 
+### Added
+- Reverse match functionality - search job descriptions with a resume, or with a set of parameters.
+
 ## [2.2.1] - 2022-08-10
 ### Added
 - Add search expression to 1v1 match

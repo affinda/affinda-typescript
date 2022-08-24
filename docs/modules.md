@@ -42,6 +42,7 @@
 - [AffindaAPIGetAllUsersOptionalParams](interfaces/AffindaAPIGetAllUsersOptionalParams.md)
 - [AffindaAPIGetInvoiceOptionalParams](interfaces/AffindaAPIGetInvoiceOptionalParams.md)
 - [AffindaAPIGetJobDescriptionOptionalParams](interfaces/AffindaAPIGetJobDescriptionOptionalParams.md)
+- [AffindaAPIGetJobDescriptionSearchDetailOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md)
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIGetResumeSearchConfigOptionalParams](interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md)
@@ -58,6 +59,7 @@
 - [Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md)
 - [Components17Ashz6SchemasInvoicePropertiesMetaAllof1](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md)
 - [Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md)
+- [Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1](interfaces/Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.md)
 - [Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1](interfaces/Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1.md)
 - [Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1](interfaces/Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1.md)
@@ -65,6 +67,7 @@
 - [Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1](interfaces/Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.md)
 - [Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1](interfaces/Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.md)
 - [Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1](interfaces/Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1.md)
+- [Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
 - [Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1](interfaces/Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1.md)
 - [Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1](interfaces/Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1.md)
@@ -108,6 +111,21 @@
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
 - [JobDescriptionRequestBody](interfaces/JobDescriptionRequestBody.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
+- [JobDescriptionSearchDetail](interfaces/JobDescriptionSearchDetail.md)
+- [JobDescriptionSearchDetailEducation](interfaces/JobDescriptionSearchDetailEducation.md)
+- [JobDescriptionSearchDetailEducationMissing](interfaces/JobDescriptionSearchDetailEducationMissing.md)
+- [JobDescriptionSearchDetailEducationValue](interfaces/JobDescriptionSearchDetailEducationValue.md)
+- [JobDescriptionSearchDetailExperience](interfaces/JobDescriptionSearchDetailExperience.md)
+- [JobDescriptionSearchDetailJobTitle](interfaces/JobDescriptionSearchDetailJobTitle.md)
+- [JobDescriptionSearchDetailJobTitleValue](interfaces/JobDescriptionSearchDetailJobTitleValue.md)
+- [JobDescriptionSearchDetailLanguages](interfaces/JobDescriptionSearchDetailLanguages.md)
+- [JobDescriptionSearchDetailLanguagesValueItem](interfaces/JobDescriptionSearchDetailLanguagesValueItem.md)
+- [JobDescriptionSearchDetailLocation](interfaces/JobDescriptionSearchDetailLocation.md)
+- [JobDescriptionSearchDetailManagementLevel](interfaces/JobDescriptionSearchDetailManagementLevel.md)
+- [JobDescriptionSearchDetailOccupationGroup](interfaces/JobDescriptionSearchDetailOccupationGroup.md)
+- [JobDescriptionSearchDetailSearchExpression](interfaces/JobDescriptionSearchDetailSearchExpression.md)
+- [JobDescriptionSearchDetailSkills](interfaces/JobDescriptionSearchDetailSkills.md)
+- [JobDescriptionSearchDetailSkillsValueItem](interfaces/JobDescriptionSearchDetailSkillsValueItem.md)
 - [JobDescriptionSearchParameters](interfaces/JobDescriptionSearchParameters.md)
 - [JobDescriptionSearchResult](interfaces/JobDescriptionSearchResult.md)
 - [JobTitleAnnotationParsed](interfaces/JobTitleAnnotationParsed.md)
@@ -207,6 +225,7 @@
 - [AffindaAPIGetAllUsersResponse](modules.md#affindaapigetallusersresponse)
 - [AffindaAPIGetInvoiceResponse](modules.md#affindaapigetinvoiceresponse)
 - [AffindaAPIGetJobDescriptionResponse](modules.md#affindaapigetjobdescriptionresponse)
+- [AffindaAPIGetJobDescriptionSearchDetailResponse](modules.md#affindaapigetjobdescriptionsearchdetailresponse)
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIGetResumeSearchConfigResponse](modules.md#affindaapigetresumesearchconfigresponse)
@@ -249,6 +268,8 @@
 - [InvoiceDataSupplierVAT](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
 - [InvoiceMeta](modules.md#invoicemeta)
+- [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
+- [JobDescriptionSearchDetailOccupationGroupValueItem](modules.md#jobdescriptionsearchdetailoccupationgroupvalueitem)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
@@ -464,6 +485,14 @@ ___
 Ƭ **AffindaAPIGetJobDescriptionResponse**: [`JobDescription`](interfaces/JobDescription.md)
 
 Contains response data for the getJobDescription operation.
+
+___
+
+### AffindaAPIGetJobDescriptionSearchDetailResponse
+
+Ƭ **AffindaAPIGetJobDescriptionSearchDetailResponse**: [`JobDescriptionSearchDetail`](interfaces/JobDescriptionSearchDetail.md)
+
+Contains response data for the getJobDescriptionSearchDetail operation.
 
 ___
 
@@ -734,6 +763,18 @@ ___
 ### InvoiceMeta
 
 Ƭ **InvoiceMeta**: [`Meta`](interfaces/Meta.md) & [`Components17Ashz6SchemasInvoicePropertiesMetaAllof1`](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md) & {}
+
+___
+
+### JobDescriptionSearchDetailLocationValue
+
+Ƭ **JobDescriptionSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
+
+___
+
+### JobDescriptionSearchDetailOccupationGroupValueItem
+
+Ƭ **JobDescriptionSearchDetailOccupationGroupValueItem**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1`](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md) & {}
 
 ___
 

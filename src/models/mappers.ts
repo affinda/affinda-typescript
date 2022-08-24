@@ -3882,6 +3882,508 @@ export const JobDescriptionSearchResult: coreClient.CompositeMapper = {
   }
 };
 
+export const JobDescriptionSearchDetail: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetail",
+    modelProperties: {
+      jobTitle: {
+        serializedName: "jobTitle",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailJobTitle"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailLocation"
+        }
+      },
+      education: {
+        serializedName: "education",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailEducation"
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailSkills"
+        }
+      },
+      experience: {
+        serializedName: "experience",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailExperience"
+        }
+      },
+      occupationGroup: {
+        serializedName: "occupationGroup",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailOccupationGroup"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailLanguages"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailManagementLevel"
+        }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailSearchExpression"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailJobTitle: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailJobTitle",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailJobTitleValue"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailJobTitleValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailJobTitleValue",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      companyName: {
+        serializedName: "companyName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailLocation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailLocation",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersLocation"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailLocationValue"
+        }
+      }
+    }
+  }
+};
+
+export const Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1",
+    modelProperties: {
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailEducation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailEducation",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailEducationMissing"
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionSearchDetailEducationValue"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailEducationMissing: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailEducationMissing",
+    modelProperties: {
+      degrees: {
+        serializedName: "degrees",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      degreeTypes: {
+        serializedName: "degreeTypes",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailEducationValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailEducationValue",
+    modelProperties: {
+      degrees: {
+        serializedName: "degrees",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      degreeTypes: {
+        serializedName: "degreeTypes",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailSkills: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailSkills",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersSkill"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "JobDescriptionSearchDetailSkillsValueItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailSkillsValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailSkillsValueItem",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailExperience: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailExperience",
+    modelProperties: {
+      minimumExperience: {
+        serializedName: "minimumExperience",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      maximumExperience: {
+        serializedName: "maximumExperience",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailOccupationGroup: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailOccupationGroup",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "JobDescriptionSearchDetailOccupationGroupValueItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+    modelProperties: {
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailLanguages: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailLanguages",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersSkill"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "JobDescriptionSearchDetailLanguagesValueItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailLanguagesValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailLanguagesValueItem",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailManagementLevel: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailManagementLevel",
+    modelProperties: {
+      level: {
+        serializedName: "level",
+        nullable: true,
+        type: {
+          name: "Enum",
+          allowedValues: ["None", "Low", "Mid", "Upper"]
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailSearchExpression: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailSearchExpression",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
 export const Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -5666,6 +6168,18 @@ export const ResumeSearchDetailLocationValue: coreClient.CompositeMapper = {
   }
 };
 
+export const JobDescriptionSearchDetailLocationValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailLocationValue",
+    modelProperties: {
+      ...Location.type.modelProperties,
+      ...Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
+        .type.modelProperties
+    }
+  }
+};
+
 export const ResumeSearchDetailEducationValueItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -5709,6 +6223,18 @@ export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMap
     modelProperties: {
       ...OccupationGroup.type.modelProperties,
       ...ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailOccupationGroupValueItem",
+    modelProperties: {
+      ...OccupationGroup.type.modelProperties,
+      ...Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
         .type.modelProperties
     }
   }

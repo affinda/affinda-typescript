@@ -756,6 +756,99 @@ export interface JobDescriptionSearchResult {
   searchExpression: SearchExpressionSearchScoreComponent;
 }
 
+export interface JobDescriptionSearchDetail {
+  jobTitle?: JobDescriptionSearchDetailJobTitle;
+  location?: JobDescriptionSearchDetailLocation;
+  education?: JobDescriptionSearchDetailEducation;
+  skills?: JobDescriptionSearchDetailSkills;
+  experience?: JobDescriptionSearchDetailExperience;
+  occupationGroup?: JobDescriptionSearchDetailOccupationGroup;
+  languages?: JobDescriptionSearchDetailLanguages;
+  managementLevel?: JobDescriptionSearchDetailManagementLevel;
+  searchExpression?: JobDescriptionSearchDetailSearchExpression;
+}
+
+export interface JobDescriptionSearchDetailJobTitle {
+  missing?: string[];
+  value?: JobDescriptionSearchDetailJobTitleValue;
+}
+
+export interface JobDescriptionSearchDetailJobTitleValue {
+  name?: string;
+  companyName?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailLocation {
+  missing?: ResumeSearchParametersLocation[];
+  value?: JobDescriptionSearchDetailLocationValue;
+}
+
+export interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailEducation {
+  missing?: JobDescriptionSearchDetailEducationMissing;
+  value?: JobDescriptionSearchDetailEducationValue;
+}
+
+export interface JobDescriptionSearchDetailEducationMissing {
+  degrees?: string[];
+  degreeTypes?: string[];
+}
+
+export interface JobDescriptionSearchDetailEducationValue {
+  degrees?: string[];
+  degreeTypes?: string[];
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailSkills {
+  missing?: ResumeSearchParametersSkill[];
+  value?: JobDescriptionSearchDetailSkillsValueItem[];
+}
+
+export interface JobDescriptionSearchDetailSkillsValueItem {
+  name?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailExperience {
+  minimumExperience?: number;
+  maximumExperience?: number;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailOccupationGroup {
+  missing?: number[];
+  value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
+}
+
+export interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailLanguages {
+  missing?: ResumeSearchParametersSkill[];
+  value?: JobDescriptionSearchDetailLanguagesValueItem[];
+}
+
+export interface JobDescriptionSearchDetailLanguagesValueItem {
+  name?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailManagementLevel {
+  level?: ManagementLevel;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailSearchExpression {
+  missing?: string[];
+  value?: string[];
+}
+
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
   /** Number of indexes in result */
   count?: number;
@@ -1152,6 +1245,9 @@ export type InvoiceMeta = Meta &
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
+export type JobDescriptionSearchDetailLocationValue = Location &
+  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
 export type ResumeSearchDetailEducationValueItem = Education &
   ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
 
@@ -1163,6 +1259,9 @@ export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
 
 export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
   ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+
+export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
+  Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
 export type JobTitleAnnotation = Annotation & {
   /** Years of experience range */
@@ -1604,6 +1703,13 @@ export interface AffindaAPICreateJobDescriptionSearchOptionalParams
 
 /** Contains response data for the createJobDescriptionSearch operation. */
 export type AffindaAPICreateJobDescriptionSearchResponse = JobDescriptionSearch;
+
+/** Optional parameters. */
+export interface AffindaAPIGetJobDescriptionSearchDetailOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getJobDescriptionSearchDetail operation. */
+export type AffindaAPIGetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams

@@ -49,6 +49,8 @@ import {
   JobDescriptionSearchParameters,
   AffindaAPICreateJobDescriptionSearchOptionalParams,
   AffindaAPICreateJobDescriptionSearchResponse,
+  AffindaAPIGetJobDescriptionSearchDetailOptionalParams,
+  AffindaAPIGetJobDescriptionSearchDetailResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
   AffindaAPICreateIndexOptionalParams,
@@ -402,6 +404,26 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { body, options },
       createJobDescriptionSearchOperationSpec
+    );
+  }
+
+  /**
+   * This contains more detailed information about the matching score of the search criteria, or which
+   * search criteria is missing in this job description.
+   * The `identifier` is the unique ID returned via the
+   * [/job_description_search](#post-/job_description_search) endpoint.
+   * @param identifier Job Description identifier
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  getJobDescriptionSearchDetail(
+    identifier: string | null,
+    body: JobDescriptionSearchParameters | null,
+    options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams
+  ): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      getJobDescriptionSearchDetailOperationSpec
     );
   }
 
@@ -1068,6 +1090,29 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
   requestBody: Parameters.body4,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
+  path: "/job_description_search/details/{identifier}",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchDetail
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body4,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
