@@ -197,7 +197,7 @@ client.getResumeSearchMatch(resumeIdentifier, jobDescriptionIdentifier, { indexN
 Search & Match - Embedding
 --------------------------
 
-### getResumeSearchConfig - Get the config for the logged in user's embedable search tool
+### getResumeSearchConfig - Get the config for the logged in user's embeddable resume search tool
 
 ```javascript
 const {AffindaCredential, AffindaAPI} = require("@affinda/affinda")

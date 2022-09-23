@@ -6,6 +6,10 @@
 
 ### Enumerations
 
+- [KnownEnum1](enums/KnownEnum1.md)
+- [KnownEnum4](enums/KnownEnum4.md)
+- [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
+- [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
 
 ### Classes
@@ -21,6 +25,7 @@
 - [AffindaAPICreateIndexOptionalParams](interfaces/AffindaAPICreateIndexOptionalParams.md)
 - [AffindaAPICreateInvoiceOptionalParams](interfaces/AffindaAPICreateInvoiceOptionalParams.md)
 - [AffindaAPICreateJobDescriptionOptionalParams](interfaces/AffindaAPICreateJobDescriptionOptionalParams.md)
+- [AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateJobDescriptionSearchOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md)
 - [AffindaAPICreateRedactedResumeOptionalParams](interfaces/AffindaAPICreateRedactedResumeOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
@@ -42,6 +47,7 @@
 - [AffindaAPIGetAllUsersOptionalParams](interfaces/AffindaAPIGetAllUsersOptionalParams.md)
 - [AffindaAPIGetInvoiceOptionalParams](interfaces/AffindaAPIGetInvoiceOptionalParams.md)
 - [AffindaAPIGetJobDescriptionOptionalParams](interfaces/AffindaAPIGetJobDescriptionOptionalParams.md)
+- [AffindaAPIGetJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIGetJobDescriptionSearchDetailOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md)
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
@@ -50,11 +56,13 @@
 - [AffindaAPIGetResumeSearchMatchOptionalParams](interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
+- [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateResumeDataOptionalParams](interfaces/AffindaAPIUpdateResumeDataOptionalParams.md)
 - [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1](interfaces/Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.md)
 - [Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1](interfaces/Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.md)
+- [Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1](interfaces/Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.md)
 - [Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1](interfaces/Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1.md)
 - [Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md)
 - [Components17Ashz6SchemasInvoicePropertiesMetaAllof1](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md)
@@ -66,7 +74,7 @@
 - [Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1](interfaces/Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1.md)
 - [Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1](interfaces/Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.md)
 - [Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1](interfaces/Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.md)
-- [Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1](interfaces/Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1.md)
+- [Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1](interfaces/Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.md)
 - [Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
 - [Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1](interfaces/Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1.md)
@@ -81,14 +89,13 @@
 - [Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1](interfaces/Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1.md)
 - [ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1](interfaces/ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1.md)
 - [ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1](interfaces/ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1.md)
-- [ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1](interfaces/ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1.md)
-- [ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1](interfaces/ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1.md)
+- [ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1](interfaces/ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.md)
+- [ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1](interfaces/ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.md)
 - [ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1](interfaces/ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.md)
 - [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
 - [ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
-- [ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1](interfaces/ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
 - [Education](interfaces/Education.md)
@@ -111,6 +118,7 @@
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
 - [JobDescriptionRequestBody](interfaces/JobDescriptionRequestBody.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
+- [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
 - [JobDescriptionSearchDetail](interfaces/JobDescriptionSearchDetail.md)
 - [JobDescriptionSearchDetailEducation](interfaces/JobDescriptionSearchDetailEducation.md)
 - [JobDescriptionSearchDetailEducationMissing](interfaces/JobDescriptionSearchDetailEducationMissing.md)
@@ -126,6 +134,7 @@
 - [JobDescriptionSearchDetailSearchExpression](interfaces/JobDescriptionSearchDetailSearchExpression.md)
 - [JobDescriptionSearchDetailSkills](interfaces/JobDescriptionSearchDetailSkills.md)
 - [JobDescriptionSearchDetailSkillsValueItem](interfaces/JobDescriptionSearchDetailSkillsValueItem.md)
+- [JobDescriptionSearchEmbed](interfaces/JobDescriptionSearchEmbed.md)
 - [JobDescriptionSearchParameters](interfaces/JobDescriptionSearchParameters.md)
 - [JobDescriptionSearchResult](interfaces/JobDescriptionSearchResult.md)
 - [JobTitleAnnotationParsed](interfaces/JobTitleAnnotationParsed.md)
@@ -138,11 +147,13 @@
 - [Meta](interfaces/Meta.md)
 - [OccupationGroup](interfaces/OccupationGroup.md)
 - [OccupationGroupSearchScoreComponent](interfaces/OccupationGroupSearchScoreComponent.md)
+- [PageMeta](interfaces/PageMeta.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md)
 - [Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
 - [PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
+- [PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
@@ -195,6 +206,7 @@
 - [RowAnnotation](interfaces/RowAnnotation.md)
 - [SearchExpressionSearchScoreComponent](interfaces/SearchExpressionSearchScoreComponent.md)
 - [SkillsSearchScoreComponent](interfaces/SkillsSearchScoreComponent.md)
+- [SplitRelation](interfaces/SplitRelation.md)
 - [User](interfaces/User.md)
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
 
@@ -204,6 +216,7 @@
 - [AffindaAPICreateIndexResponse](modules.md#affindaapicreateindexresponse)
 - [AffindaAPICreateInvoiceResponse](modules.md#affindaapicreateinvoiceresponse)
 - [AffindaAPICreateJobDescriptionResponse](modules.md#affindaapicreatejobdescriptionresponse)
+- [AffindaAPICreateJobDescriptionSearchEmbedUrlResponse](modules.md#affindaapicreatejobdescriptionsearchembedurlresponse)
 - [AffindaAPICreateJobDescriptionSearchResponse](modules.md#affindaapicreatejobdescriptionsearchresponse)
 - [AffindaAPICreateRedactedResumeResponse](modules.md#affindaapicreateredactedresumeresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
@@ -225,6 +238,7 @@
 - [AffindaAPIGetAllUsersResponse](modules.md#affindaapigetallusersresponse)
 - [AffindaAPIGetInvoiceResponse](modules.md#affindaapigetinvoiceresponse)
 - [AffindaAPIGetJobDescriptionResponse](modules.md#affindaapigetjobdescriptionresponse)
+- [AffindaAPIGetJobDescriptionSearchConfigResponse](modules.md#affindaapigetjobdescriptionsearchconfigresponse)
 - [AffindaAPIGetJobDescriptionSearchDetailResponse](modules.md#affindaapigetjobdescriptionsearchdetailresponse)
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
@@ -232,14 +246,18 @@
 - [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
 - [AffindaAPIGetResumeSearchMatchResponse](modules.md#affindaapigetresumesearchmatchresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
+- [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
 - [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [DateAnnotation](modules.md#dateannotation)
 - [EducationLevel](modules.md#educationlevel)
+- [Enum1](modules.md#enum1)
+- [Enum4](modules.md#enum4)
 - [EnumAnnotationSerializer](modules.md#enumannotationserializer)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
+- [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
 - [InvoiceDataBankAccountNumber](modules.md#invoicedatabankaccountnumber)
-- [InvoiceDataBankBSB](modules.md#invoicedatabankbsb)
+- [InvoiceDataBankBsb](modules.md#invoicedatabankbsb)
 - [InvoiceDataBankIban](modules.md#invoicedatabankiban)
 - [InvoiceDataBankSortCode](modules.md#invoicedatabanksortcode)
 - [InvoiceDataBankSwift](modules.md#invoicedatabankswift)
@@ -251,7 +269,7 @@
 - [InvoiceDataCustomerEmail](modules.md#invoicedatacustomeremail)
 - [InvoiceDataCustomerNumber](modules.md#invoicedatacustomernumber)
 - [InvoiceDataCustomerPhoneNumber](modules.md#invoicedatacustomerphonenumber)
-- [InvoiceDataCustomerVAT](modules.md#invoicedatacustomervat)
+- [InvoiceDataCustomerVat](modules.md#invoicedatacustomervat)
 - [InvoiceDataInvoiceNumber](modules.md#invoicedatainvoicenumber)
 - [InvoiceDataInvoicePurchaseOrderNumber](modules.md#invoicedatainvoicepurchaseordernumber)
 - [InvoiceDataPaymentAmountBase](modules.md#invoicedatapaymentamountbase)
@@ -265,7 +283,7 @@
 - [InvoiceDataSupplierEmail](modules.md#invoicedatasupplieremail)
 - [InvoiceDataSupplierFax](modules.md#invoicedatasupplierfax)
 - [InvoiceDataSupplierPhoneNumber](modules.md#invoicedatasupplierphonenumber)
-- [InvoiceDataSupplierVAT](modules.md#invoicedatasuppliervat)
+- [InvoiceDataSupplierVat](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
 - [InvoiceMeta](modules.md#invoicemeta)
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
@@ -275,6 +293,7 @@
 - [LocationAnnotation](modules.md#locationannotation)
 - [ManagementLevel](modules.md#managementlevel)
 - [PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema](modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)
+- [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -317,6 +336,14 @@ ___
 Ƭ **AffindaAPICreateJobDescriptionResponse**: [`JobDescription`](interfaces/JobDescription.md)
 
 Contains response data for the createJobDescription operation.
+
+___
+
+### AffindaAPICreateJobDescriptionSearchEmbedUrlResponse
+
+Ƭ **AffindaAPICreateJobDescriptionSearchEmbedUrlResponse**: [`JobDescriptionSearchEmbed`](interfaces/JobDescriptionSearchEmbed.md)
+
+Contains response data for the createJobDescriptionSearchEmbedUrl operation.
 
 ___
 
@@ -488,6 +515,14 @@ Contains response data for the getJobDescription operation.
 
 ___
 
+### AffindaAPIGetJobDescriptionSearchConfigResponse
+
+Ƭ **AffindaAPIGetJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
+
+Contains response data for the getJobDescriptionSearchConfig operation.
+
+___
+
 ### AffindaAPIGetJobDescriptionSearchDetailResponse
 
 Ƭ **AffindaAPIGetJobDescriptionSearchDetailResponse**: [`JobDescriptionSearchDetail`](interfaces/JobDescriptionSearchDetail.md)
@@ -544,6 +579,14 @@ Contains response data for the listOccupationGroups operation.
 
 ___
 
+### AffindaAPIUpdateJobDescriptionSearchConfigResponse
+
+Ƭ **AffindaAPIUpdateJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
+
+Contains response data for the updateJobDescriptionSearchConfig operation.
+
+___
+
 ### AffindaAPIUpdateResumeDataResponse
 
 Ƭ **AffindaAPIUpdateResumeDataResponse**: [`ResumeData`](interfaces/ResumeData.md)
@@ -574,6 +617,32 @@ Defines values for EducationLevel.
 
 ___
 
+### Enum1
+
+Ƭ **Enum1**: `string`
+
+Defines values for Enum1. \
+[KnownEnum1](enums/KnownEnum1.md) can be used interchangeably with Enum1,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
+
+___
+
+### Enum4
+
+Ƭ **Enum4**: `string`
+
+Defines values for Enum4. \
+[KnownEnum4](enums/KnownEnum4.md) can be used interchangeably with Enum4,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
+
+___
+
 ### EnumAnnotationSerializer
 
 Ƭ **EnumAnnotationSerializer**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
@@ -586,21 +655,34 @@ ___
 
 ___
 
+### GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType
+
+Ƭ **GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType**: `string`
+
+Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
+[KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md) can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
+
+___
+
 ### InvoiceDataBankAccountNumber
 
 Ƭ **InvoiceDataBankAccountNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1`](interfaces/Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1.md) & {}
 
 ___
 
-### InvoiceDataBankBSB
+### InvoiceDataBankBsb
 
-Ƭ **InvoiceDataBankBSB**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1`](interfaces/Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1.md) & {}
+Ƭ **InvoiceDataBankBsb**: [`TextAnnotation`](modules.md#textannotation) & [`Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1`](interfaces/Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.md) & {}
 
 ___
 
 ### InvoiceDataBankIban
 
-Ƭ **InvoiceDataBankIban**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1`](interfaces/ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1.md) & {}
+Ƭ **InvoiceDataBankIban**: [`TextAnnotation`](modules.md#textannotation) & [`Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1`](interfaces/Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.md) & {}
 
 ___
 
@@ -664,9 +746,9 @@ ___
 
 ___
 
-### InvoiceDataCustomerVAT
+### InvoiceDataCustomerVat
 
-Ƭ **InvoiceDataCustomerVAT**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1`](interfaces/ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1.md) & {}
+Ƭ **InvoiceDataCustomerVat**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1`](interfaces/ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.md) & {}
 
 ___
 
@@ -748,9 +830,9 @@ ___
 
 ___
 
-### InvoiceDataSupplierVAT
+### InvoiceDataSupplierVat
 
-Ƭ **InvoiceDataSupplierVAT**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1`](interfaces/ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1.md) & {}
+Ƭ **InvoiceDataSupplierVat**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1`](interfaces/ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.md) & {}
 
 ___
 
@@ -807,6 +889,19 @@ ___
 ### PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema
 
 Ƭ **PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema**: [`User`](interfaces/User.md) & [`Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### PostContentSchemaDocumentType
+
+Ƭ **PostContentSchemaDocumentType**: `string`
+
+Defines values for PostContentSchemaDocumentType. \
+[KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md) can be used interchangeably with PostContentSchemaDocumentType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
 
 ___
 

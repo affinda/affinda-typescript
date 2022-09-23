@@ -8,9 +8,16 @@ IndexRequestBody
 
 ### Properties
 
+- [documentType](IndexRequestBody.md#documenttype)
 - [name](IndexRequestBody.md#name)
 
 ## Properties
+
+### documentType
+
+• `Optional` **documentType**: `string`
+
+___
 
 ### name
 

@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateIndexOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
 
-# Interface: AffindaAPICreateIndexOptionalParams
+# Interface: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
 
 Optional parameters.
 
@@ -8,19 +8,18 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateIndexOptionalParams`**
+  ↳ **`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateIndexOptionalParams.md#abortsignal)
-- [documentType](AffindaAPICreateIndexOptionalParams.md#documenttype)
-- [name](AffindaAPICreateIndexOptionalParams.md#name)
-- [onResponse](AffindaAPICreateIndexOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateIndexOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateIndexOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateIndexOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#abortsignal)
+- [body](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#body)
+- [onResponse](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -36,15 +35,9 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
-### documentType
+### body
 
-• `Optional` **documentType**: `string`
-
-___
-
-### name
-
-• `Optional` **name**: `string`
+• `Optional` **body**: [`PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 
 ___
 

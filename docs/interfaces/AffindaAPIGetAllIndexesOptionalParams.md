@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPIGetAllIndexesOptionalParams.md#abortsignal)
+- [documentType](AffindaAPIGetAllIndexesOptionalParams.md#documenttype)
 - [limit](AffindaAPIGetAllIndexesOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllIndexesOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllIndexesOptionalParams.md#onresponse)
@@ -33,6 +34,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### documentType
+
+• `Optional` **documentType**: `string`
+
+Filter indices by a document type
 
 ___
 

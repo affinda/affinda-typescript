@@ -26,8 +26,44 @@ export interface Meta {
   failed: boolean;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
-  /** The resume's language. */
+  /** The document's language. */
   language?: string;
+  /**
+   * The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process).
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly pdf?: string;
+  /**
+   * If this document is part of a splitted document, this attribute points to the original document that this document is splitted from.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly parentDocument?: SplitRelation;
+  /**
+   * If this document has been splitted into a number of child documents, this attribute points to those child documents.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly childDocuments?: SplitRelation[];
+  /** The document's pages. */
+  pages?: PageMeta[];
+}
+
+export interface SplitRelation {
+  /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
+  identifier?: string;
+}
+
+export interface PageMeta {
+  id?: number;
+  /** Page number within the document, starts from 0. */
+  pageIndex?: number;
+  /** The URL to the image of the page. */
+  image?: string;
+  /** Height of the page's image in px. */
+  height?: number;
+  /** Width of the page's image in px. */
+  width?: number;
+  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
+  rotation?: number;
 }
 
 export interface RequestError {
@@ -635,15 +671,15 @@ export interface JobDescriptionData {
   startDate?: DateAnnotation;
   endDate?: DateAnnotation;
   jobType?: TextAnnotation;
-  languages?: LanguageAnnotation[];
-  skills?: SkillAnnotation[];
+  languages?: (LanguageAnnotation | null)[];
+  skills?: (SkillAnnotation | null)[];
   organizationName?: TextAnnotation;
   organizationWebsite?: TextAnnotation;
   educationLevel?: TextAnnotation;
   educationAccreditation?: TextAnnotation;
   expectedRemuneration?: ExpectedRemunerationAnnotation;
   location?: LocationAnnotation;
-  certifications?: TextAnnotation[];
+  certifications?: (TextAnnotation | null)[];
   yearsExperience?: YearsExperienceAnnotation;
 }
 
@@ -666,10 +702,10 @@ export interface Annotation {
   /** Describes unknown properties. The value of an unknown property can be of "any" type. */
   [property: string]: any;
   id?: number;
-  rectangle: Rectangle;
+  rectangle: Rectangle | null;
   pageIndex: number | null;
   raw: string | null;
-  confidence: number;
+  confidence: number | null;
   isVerified: boolean;
   classification: string;
 }
@@ -849,6 +885,53 @@ export interface JobDescriptionSearchDetailSearchExpression {
   value?: string[];
 }
 
+export interface JobDescriptionSearchConfig {
+  allowPdfDownload?: boolean;
+  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
+  maxResults?: number;
+  displayJobTitle?: boolean;
+  displayLocation?: boolean;
+  displayYearsExperience?: boolean;
+  displayOccupationGroup?: boolean;
+  displayEducation?: boolean;
+  displaySkills?: boolean;
+  displayLanguages?: boolean;
+  displayManagementLevel?: boolean;
+  displayKeywords?: boolean;
+  weightJobTitle?: number;
+  weightLocation?: number;
+  weightYearsExperience?: number;
+  weightOccupationGroup?: number;
+  weightEducation?: number;
+  weightSkills?: number;
+  weightLanguages?: number;
+  weightManagementLevel?: number;
+  weightKeywords?: number;
+  /** List of index names. */
+  indices?: string[];
+  /** Customize the theme of the embeded search tool. */
+  searchToolTheme?: { [propertyName: string]: any };
+  /**
+   * ID of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly userId?: number;
+  /**
+   * Username of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly username?: string;
+}
+
+export interface PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
+  configOverride?: JobDescriptionSearchConfig;
+}
+
+export interface JobDescriptionSearchEmbed {
+  /** The signed URL for the embedable search tool. */
+  url?: string;
+}
+
 export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
   /** Number of indexes in result */
   count?: number;
@@ -861,10 +944,12 @@ export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
 
 export interface Get200ApplicationJsonPropertiesItemsItem {
   name: string;
+  documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
 }
 
 export interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
+  documentType?: Enum4;
 }
 
 export interface PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -924,14 +1009,14 @@ export interface InvoiceData {
   customerBusinessNumber?: InvoiceDataCustomerBusinessNumber;
   paymentReference?: InvoiceDataPaymentReference;
   bankAccountNumber?: InvoiceDataBankAccountNumber;
-  supplierVAT?: InvoiceDataSupplierVAT;
-  customerVAT?: InvoiceDataCustomerVAT;
+  supplierVat?: InvoiceDataSupplierVat;
+  customerVat?: InvoiceDataCustomerVat;
   bpayBillerCode?: InvoiceDataBpayBillerCode;
   bpayReference?: InvoiceDataBpayReference;
   bankSortCode?: InvoiceDataBankSortCode;
   bankIban?: InvoiceDataBankIban;
   bankSwift?: InvoiceDataBankSwift;
-  bankBSB?: InvoiceDataBankBSB;
+  bankBsb?: InvoiceDataBankBsb;
   customerContactName?: InvoiceDataCustomerContactName;
   customerCompanyName?: InvoiceDataCustomerCompanyName;
   supplierCompanyName?: InvoiceDataSupplierCompanyName;
@@ -950,7 +1035,7 @@ export interface InvoiceData {
 }
 
 export interface InvoiceDataTablesItem {
-  rows?: RowAnnotation[];
+  rows?: (RowAnnotation | null)[];
 }
 
 export interface RowAnnotation {
@@ -1030,12 +1115,12 @@ export interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAl
   parsed?: string;
 }
 
-export interface ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1 {
+export interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
   raw?: string;
   parsed?: string;
 }
 
-export interface ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1 {
+export interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
   raw?: string;
   parsed?: string;
 }
@@ -1055,7 +1140,7 @@ export interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1
   parsed?: string;
 }
 
-export interface ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1 {
+export interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
   raw?: string;
   parsed?: string;
 }
@@ -1065,7 +1150,7 @@ export interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
   parsed?: string;
 }
 
-export interface Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 {
+export interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
   raw?: string;
   parsed?: string;
 }
@@ -1116,7 +1201,7 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
 }
 
 export interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
-  clientVerifiedDt?: string;
+  clientVerifiedDt?: boolean;
   /** Signed URL (valid for 60 minutes) to access the invoice review tool */
   reviewUrl?: string;
 }
@@ -1219,6 +1304,7 @@ export interface JobDescriptionRequestBody {
 /** IndexRequestBody */
 export interface IndexRequestBody {
   name?: string;
+  documentType?: PostContentSchemaDocumentType;
 }
 
 /** InvoiceRequestBody */
@@ -1337,11 +1423,11 @@ export type InvoiceDataPaymentReference = TextAnnotation &
 export type InvoiceDataBankAccountNumber = TextAnnotation &
   Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
 
-export type InvoiceDataSupplierVAT = TextAnnotation &
-  ComponentsCbu2XdSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
+export type InvoiceDataSupplierVat = TextAnnotation &
+  ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
 
-export type InvoiceDataCustomerVAT = TextAnnotation &
-  ComponentsBap9YwSchemasInvoicedataPropertiesCustomervatAllof1 & {};
+export type InvoiceDataCustomerVat = TextAnnotation &
+  ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
 
 export type InvoiceDataBpayBillerCode = TextAnnotation &
   ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
@@ -1353,13 +1439,13 @@ export type InvoiceDataBankSortCode = TextAnnotation &
   Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
 
 export type InvoiceDataBankIban = TextAnnotation &
-  ComponentsUlui83SchemasInvoicedataPropertiesBankibanAllof1 & {};
+  Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
 
 export type InvoiceDataBankSwift = TextAnnotation &
   Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
 
-export type InvoiceDataBankBSB = TextAnnotation &
-  Components1Stp713SchemasInvoicedataPropertiesBankbsbAllof1 & {};
+export type InvoiceDataBankBsb = TextAnnotation &
+  Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
 
 export type InvoiceDataCustomerContactName = TextAnnotation &
   ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
@@ -1436,6 +1522,70 @@ export enum KnownResumeSkillSourcesItemSection {
  * **Footer**
  */
 export type ResumeSkillSourcesItemSection = string;
+
+/** Known values of {@link Enum1} that the service accepts. */
+export enum KnownEnum1 {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for Enum1. \
+ * {@link KnownEnum1} can be used interchangeably with Enum1,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type Enum1 = string;
+
+/** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
+export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
+ * {@link KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType = string;
+
+/** Known values of {@link PostContentSchemaDocumentType} that the service accepts. */
+export enum KnownPostContentSchemaDocumentType {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for PostContentSchemaDocumentType. \
+ * {@link KnownPostContentSchemaDocumentType} can be used interchangeably with PostContentSchemaDocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type PostContentSchemaDocumentType = string;
+
+/** Known values of {@link Enum4} that the service accepts. */
+export enum KnownEnum4 {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for Enum4. \
+ * {@link KnownEnum4} can be used interchangeably with Enum4,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type Enum4 = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -1712,12 +1862,37 @@ export interface AffindaAPIGetJobDescriptionSearchDetailOptionalParams
 export type AffindaAPIGetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
 
 /** Optional parameters. */
+export interface AffindaAPIGetJobDescriptionSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getJobDescriptionSearchConfig operation. */
+export type AffindaAPIGetJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateJobDescriptionSearchConfig operation. */
+export type AffindaAPIUpdateJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+
+/** Optional parameters. */
+export interface AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+  extends coreClient.OperationOptions {
+  body?: PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createJobDescriptionSearchEmbedUrl operation. */
+export type AffindaAPICreateJobDescriptionSearchEmbedUrlResponse = JobDescriptionSearchEmbed;
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter indices by a document type */
+  documentType?: Enum1;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -1727,6 +1902,7 @@ export type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetResponses200Con
 export interface AffindaAPICreateIndexOptionalParams
   extends coreClient.OperationOptions {
   name?: string;
+  documentType?: PostContentSchemaDocumentType;
 }
 
 /** Contains response data for the createIndex operation. */

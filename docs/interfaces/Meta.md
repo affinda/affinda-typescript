@@ -12,15 +12,28 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 
 ### Properties
 
+- [childDocuments](Meta.md#childdocuments)
 - [expiryTime](Meta.md#expirytime)
 - [failed](Meta.md#failed)
 - [fileName](Meta.md#filename)
 - [identifier](Meta.md#identifier)
 - [language](Meta.md#language)
+- [pages](Meta.md#pages)
+- [parentDocument](Meta.md#parentdocument)
+- [pdf](Meta.md#pdf)
 - [ready](Meta.md#ready)
 - [readyDt](Meta.md#readydt)
 
 ## Properties
+
+### childDocuments
+
+• `Optional` `Readonly` **childDocuments**: [`SplitRelation`](SplitRelation.md)[]
+
+If this document has been splitted into a number of child documents, this attribute points to those child documents.
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
 
 ### expiryTime
 
@@ -58,7 +71,33 @@ ___
 
 • `Optional` **language**: `string`
 
-The resume's language.
+The document's language.
+
+___
+
+### pages
+
+• `Optional` **pages**: [`PageMeta`](PageMeta.md)[]
+
+The document's pages.
+
+___
+
+### parentDocument
+
+• `Optional` `Readonly` **parentDocument**: [`SplitRelation`](SplitRelation.md)
+
+If this document is part of a splitted document, this attribute points to the original document that this document is splitted from.
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### pdf
+
+• `Optional` `Readonly` **pdf**: `string`
+
+The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process).
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 

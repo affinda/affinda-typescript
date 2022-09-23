@@ -6,9 +6,16 @@
 
 ### Properties
 
+- [documentType](Get200ApplicationJsonPropertiesItemsItem.md#documenttype)
 - [name](Get200ApplicationJsonPropertiesItemsItem.md#name)
 
 ## Properties
+
+### documentType
+
+• `Optional` **documentType**: `string`
+
+___
 
 ### name
 

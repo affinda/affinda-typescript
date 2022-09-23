@@ -30,7 +30,7 @@ ___
 
 ### confidence
 
-• **confidence**: `number`
+• **confidence**: ``null`` \| `number`
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 ### rectangle
 
-• **rectangle**: [`Rectangle`](Rectangle.md)
+• **rectangle**: ``null`` \| [`Rectangle`](Rectangle.md)

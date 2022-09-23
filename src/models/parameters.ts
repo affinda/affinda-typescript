@@ -9,6 +9,8 @@ import {
   ResumeSearchConfig as ResumeSearchConfigMapper,
   Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
+  JobDescriptionSearchConfig as JobDescriptionSearchConfigMapper,
+  PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
   PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 } from "../models/mappers";
 
@@ -478,10 +480,40 @@ export const body4: OperationParameter = {
   mapper: JobDescriptionSearchParametersMapper
 };
 
+export const body5: OperationParameter = {
+  parameterPath: "body",
+  mapper: JobDescriptionSearchConfigMapper
+};
+
+export const body6: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+};
+
+export const documentType: OperationQueryParameter = {
+  parameterPath: ["options", "documentType"],
+  mapper: {
+    serializedName: "document_type",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const name: OperationParameter = {
   parameterPath: ["options", "name"],
   mapper: {
     serializedName: "name",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const documentType1: OperationParameter = {
+  parameterPath: ["options", "documentType"],
+  mapper: {
+    serializedName: "documentType",
     type: {
       name: "String"
     }
@@ -499,7 +531,7 @@ export const name1: OperationURLParameter = {
   }
 };
 
-export const body5: OperationParameter = {
+export const body7: OperationParameter = {
   parameterPath: "body",
   mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };

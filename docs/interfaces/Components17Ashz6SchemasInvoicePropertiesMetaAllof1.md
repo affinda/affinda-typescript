@@ -13,7 +13,7 @@
 
 ### clientVerifiedDt
 
-• `Optional` **clientVerifiedDt**: `string`
+• `Optional` **clientVerifiedDt**: `boolean`
 
 ___
 

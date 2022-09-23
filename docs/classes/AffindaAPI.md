@@ -26,6 +26,7 @@
 - [createInvoice](AffindaAPI.md#createinvoice)
 - [createJobDescription](AffindaAPI.md#createjobdescription)
 - [createJobDescriptionSearch](AffindaAPI.md#createjobdescriptionsearch)
+- [createJobDescriptionSearchEmbedUrl](AffindaAPI.md#createjobdescriptionsearchembedurl)
 - [createRedactedResume](AffindaAPI.md#createredactedresume)
 - [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
@@ -46,6 +47,7 @@
 - [getAllUsers](AffindaAPI.md#getallusers)
 - [getInvoice](AffindaAPI.md#getinvoice)
 - [getJobDescription](AffindaAPI.md#getjobdescription)
+- [getJobDescriptionSearchConfig](AffindaAPI.md#getjobdescriptionsearchconfig)
 - [getJobDescriptionSearchDetail](AffindaAPI.md#getjobdescriptionsearchdetail)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getResume](AffindaAPI.md#getresume)
@@ -55,6 +57,7 @@
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
+- [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateResumeData](AffindaAPI.md#updateresumedata)
 - [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
 
@@ -201,6 +204,26 @@ Searches through parsed job descriptions. You can search with custom criterias o
 
 ___
 
+### createJobDescriptionSearchEmbedUrl
+
+▸ **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+
+Create and return a signed URL of the job description search tool which then can be embedded on a
+web page. An optional parameter `config_override` can be passed to override the user-level
+configurations of the embeddable search tool.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+
+___
+
 ### createRedactedResume
 
 ▸ **createRedactedResume**(`options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
@@ -271,7 +294,7 @@ ___
 
 Create and return a signed URL of the resume search tool which then can be embedded on a web page.
 An optional parameter `config_override` can be passed to override the user-level configurations of
-the embedable search tool.
+the embeddable resume search tool.
 
 #### Parameters
 
@@ -589,6 +612,26 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 ___
 
+### getJobDescriptionSearchConfig
+
+▸ **getJobDescriptionSearchConfig**(`options?`): `Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+
+Return configurations such as which fields can be displayed in the logged in user's embeddable job
+description search tool, what are their weights, what is the maximum number of results that can be
+returned, etc.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetJobDescriptionSearchConfigOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+
+___
+
 ### getJobDescriptionSearchDetail
 
 ▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
@@ -658,8 +701,9 @@ ___
 
 ▸ **getResumeSearchConfig**(`options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
-Return configurations such as which fields can be displayed in the logged in user's embedable search
-tool, what are their weights, what is the maximum number of results that can be returned, etc.
+Return configurations such as which fields can be displayed in the logged in user's embeddable
+resume search tool, what are their weights, what is the maximum number of results that can be
+returned, etc.
 
 #### Parameters
 
@@ -787,6 +831,27 @@ Send the provided httpRequest.
 
 ___
 
+### updateJobDescriptionSearchConfig
+
+▸ **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+
+Update configurations such as which fields can be displayed in the logged in user's embeddable job
+description search tool, what are their weights, what is the maximum number of results that can be
+returned, etc.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md) |  |
+| `options?` | [`AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams`](../interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+
+___
+
 ### updateResumeData
 
 ▸ **updateResumeData**(`identifier`, `body`, `options?`): `Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
@@ -813,8 +878,9 @@ ___
 
 ▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
-Update configurations such as which fields can be displayed in the logged in user's embedable search
-tool, what are their weights, what is the maximum number of results that can be returned, etc.
+Update configurations such as which fields can be displayed in the logged in user's embeddable
+resume search tool, what are their weights, what is the maximum number of results that can be
+returned, etc.
 
 #### Parameters
 

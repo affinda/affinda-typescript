@@ -51,6 +51,13 @@ import {
   AffindaAPICreateJobDescriptionSearchResponse,
   AffindaAPIGetJobDescriptionSearchDetailOptionalParams,
   AffindaAPIGetJobDescriptionSearchDetailResponse,
+  AffindaAPIGetJobDescriptionSearchConfigOptionalParams,
+  AffindaAPIGetJobDescriptionSearchConfigResponse,
+  JobDescriptionSearchConfig,
+  AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams,
+  AffindaAPIUpdateJobDescriptionSearchConfigResponse,
+  AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams,
+  AffindaAPICreateJobDescriptionSearchEmbedUrlResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
   AffindaAPICreateIndexOptionalParams,
@@ -286,8 +293,9 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Return configurations such as which fields can be displayed in the logged in user's embedable search
-   * tool, what are their weights, what is the maximum number of results that can be returned, etc.
+   * Return configurations such as which fields can be displayed in the logged in user's embeddable
+   * resume search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
    * @param options The options parameters.
    */
   getResumeSearchConfig(
@@ -300,8 +308,9 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Update configurations such as which fields can be displayed in the logged in user's embedable search
-   * tool, what are their weights, what is the maximum number of results that can be returned, etc.
+   * Update configurations such as which fields can be displayed in the logged in user's embeddable
+   * resume search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
    * @param body
    * @param options The options parameters.
    */
@@ -318,7 +327,7 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
    * An optional parameter `config_override` can be passed to override the user-level configurations of
-   * the embedable search tool.
+   * the embeddable resume search tool.
    * @param options The options parameters.
    */
   createResumeSearchEmbedUrl(
@@ -424,6 +433,53 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, body, options },
       getJobDescriptionSearchDetailOperationSpec
+    );
+  }
+
+  /**
+   * Return configurations such as which fields can be displayed in the logged in user's embeddable job
+   * description search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
+   * @param options The options parameters.
+   */
+  getJobDescriptionSearchConfig(
+    options?: AffindaAPIGetJobDescriptionSearchConfigOptionalParams
+  ): Promise<AffindaAPIGetJobDescriptionSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getJobDescriptionSearchConfigOperationSpec
+    );
+  }
+
+  /**
+   * Update configurations such as which fields can be displayed in the logged in user's embeddable job
+   * description search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateJobDescriptionSearchConfig(
+    body: JobDescriptionSearchConfig,
+    options?: AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams
+  ): Promise<AffindaAPIUpdateJobDescriptionSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      updateJobDescriptionSearchConfigOperationSpec
+    );
+  }
+
+  /**
+   * Create and return a signed URL of the job description search tool which then can be embedded on a
+   * web page. An optional parameter `config_override` can be passed to override the user-level
+   * configurations of the embeddable search tool.
+   * @param options The options parameters.
+   */
+  createJobDescriptionSearchEmbedUrl(
+    options?: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+  ): Promise<AffindaAPICreateJobDescriptionSearchEmbedUrlResponse> {
+    return this.sendOperationRequest(
+      { options },
+      createJobDescriptionSearchEmbedUrlOperationSpec
     );
   }
 
@@ -1117,6 +1173,67 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer
 };
+const getJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/job_description_search/config",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchConfig
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/job_description_search/config",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchConfig
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body5,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
+  path: "/job_description_search/embed",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchEmbed
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body6,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
 const getAllIndexesOperationSpec: coreClient.OperationSpec = {
   path: "/index",
   httpMethod: "GET",
@@ -1135,7 +1252,11 @@ const getAllIndexesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.documentType
+  ],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept],
   serializer
@@ -1158,7 +1279,7 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  formDataParameters: [Parameters.name],
+  formDataParameters: [Parameters.name, Parameters.documentType1],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
@@ -1222,7 +1343,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body5,
+  requestBody: Parameters.body7,
   urlParameters: [Parameters.$host, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

@@ -28,7 +28,7 @@
 
 ### certifications
 
-• `Optional` **certifications**: [`TextAnnotation`](../modules.md#textannotation)[]
+• `Optional` **certifications**: (``null`` \| [`TextAnnotation`](../modules.md#textannotation))[]
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 ### languages
 
-• `Optional` **languages**: [`LanguageAnnotation`](../modules.md#languageannotation)[]
+• `Optional` **languages**: (``null`` \| [`LanguageAnnotation`](../modules.md#languageannotation))[]
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 ### skills
 
-• `Optional` **skills**: [`SkillAnnotation`](../modules.md#skillannotation)[]
+• `Optional` **skills**: (``null`` \| [`SkillAnnotation`](../modules.md#skillannotation))[]
 
 ___
 

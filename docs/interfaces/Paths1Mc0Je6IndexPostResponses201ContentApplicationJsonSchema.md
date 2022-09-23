@@ -6,9 +6,16 @@
 
 ### Properties
 
+- [documentType](Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md#documenttype)
 - [name](Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md#name)
 
 ## Properties
+
+### documentType
+
+• `Optional` **documentType**: `string`
+
+___
 
 ### name
 
