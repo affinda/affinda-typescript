@@ -175,6 +175,7 @@ export const PageMeta: coreClient.CompositeMapper = {
       },
       image: {
         serializedName: "image",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -3453,6 +3454,18 @@ export const Annotation: coreClient.CompositeMapper = {
       isVerified: {
         serializedName: "isVerified",
         required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      isClientVerified: {
+        serializedName: "isClientVerified",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isAutoVerified: {
+        serializedName: "isAutoVerified",
         type: {
           name: "Boolean"
         }

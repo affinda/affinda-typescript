@@ -707,6 +707,8 @@ export interface Annotation {
   raw: string | null;
   confidence: number | null;
   isVerified: boolean;
+  isClientVerified?: boolean;
+  isAutoVerified?: boolean;
   classification: string;
 }
 
