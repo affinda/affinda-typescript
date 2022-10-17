@@ -175,7 +175,6 @@ export const PageMeta: coreClient.CompositeMapper = {
       },
       image: {
         serializedName: "image",
-        nullable: true,
         type: {
           name: "String"
         }
@@ -6206,6 +6205,13 @@ export const ResumeRequestBody: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      rejectDuplicates: {
+        defaultValue: false,
+        serializedName: "rejectDuplicates",
+        type: {
+          name: "Boolean"
+        }
+      },
       language: {
         serializedName: "language",
         nullable: true,
@@ -6376,6 +6382,13 @@ export const JobDescriptionRequestBody: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      rejectDuplicates: {
+        defaultValue: false,
+        serializedName: "rejectDuplicates",
+        type: {
+          name: "Boolean"
+        }
+      },
       language: {
         serializedName: "language",
         nullable: true,
@@ -6452,6 +6465,13 @@ export const InvoiceRequestBody: coreClient.CompositeMapper = {
         serializedName: "wait",
         type: {
           name: "String"
+        }
+      },
+      rejectDuplicates: {
+        defaultValue: false,
+        serializedName: "rejectDuplicates",
+        type: {
+          name: "Boolean"
         }
       },
       language: {

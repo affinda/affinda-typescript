@@ -14,6 +14,7 @@ ResumeRequestBody
 - [fileName](ResumeRequestBody.md#filename)
 - [identifier](ResumeRequestBody.md#identifier)
 - [language](ResumeRequestBody.md#language)
+- [rejectDuplicates](ResumeRequestBody.md#rejectduplicates)
 - [url](ResumeRequestBody.md#url)
 - [wait](ResumeRequestBody.md#wait)
 
@@ -64,6 +65,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### rejectDuplicates
+
+• `Optional` **rejectDuplicates**: `boolean`
+
+If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not.
 
 ___
 

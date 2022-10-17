@@ -15,7 +15,6 @@ Optional parameters.
 ### Properties
 
 - [$host](AffindaAPIOptionalParams.md#$host)
-- [additionalPolicies](AffindaAPIOptionalParams.md#additionalpolicies)
 - [allowInsecureConnection](AffindaAPIOptionalParams.md#allowinsecureconnection)
 - [baseUri](AffindaAPIOptionalParams.md#baseuri)
 - [credential](AffindaAPIOptionalParams.md#credential)
@@ -27,7 +26,6 @@ Optional parameters.
 - [redirectOptions](AffindaAPIOptionalParams.md#redirectoptions)
 - [requestContentType](AffindaAPIOptionalParams.md#requestcontenttype)
 - [retryOptions](AffindaAPIOptionalParams.md#retryoptions)
-- [tlsOptions](AffindaAPIOptionalParams.md#tlsoptions)
 - [userAgentOptions](AffindaAPIOptionalParams.md#useragentoptions)
 
 ## Properties
@@ -37,18 +35,6 @@ Optional parameters.
 • `Optional` **$host**: `string`
 
 server parameter
-
-___
-
-### additionalPolicies
-
-• `Optional` **additionalPolicies**: `AdditionalPolicyConfig`[]
-
-Additional policies to include in the HTTP pipeline.
-
-#### Inherited from
-
-coreClient.ServiceClientOptions.additionalPolicies
 
 ___
 
@@ -70,8 +56,6 @@ ___
 
 If specified, this is the base URI that requests will be made against for this ServiceClient.
 If it is not specified, then all OperationSpecs must contain a baseUrl property.
-
-**`deprecated`** This property is deprecated and will be removed soon, please use endpoint instead
 
 #### Inherited from
 
@@ -108,10 +92,6 @@ ___
 • `Optional` **endpoint**: `string`
 
 Overrides client endpoint.
-
-#### Overrides
-
-coreClient.ServiceClientOptions.endpoint
 
 ___
 
@@ -178,25 +158,13 @@ ___
 
 ### retryOptions
 
-• `Optional` **retryOptions**: `PipelineRetryOptions`
+• `Optional` **retryOptions**: `ExponentialRetryPolicyOptions`
 
 Options that control how to retry failed requests.
 
 #### Inherited from
 
 coreClient.ServiceClientOptions.retryOptions
-
-___
-
-### tlsOptions
-
-• `Optional` **tlsOptions**: `TlsSettings`
-
-Options for configuring TLS authentication
-
-#### Inherited from
-
-coreClient.ServiceClientOptions.tlsOptions
 
 ___
 

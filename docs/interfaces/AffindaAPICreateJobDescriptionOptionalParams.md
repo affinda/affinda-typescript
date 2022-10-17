@@ -21,6 +21,7 @@ Optional parameters.
 - [identifier](AffindaAPICreateJobDescriptionOptionalParams.md#identifier)
 - [language](AffindaAPICreateJobDescriptionOptionalParams.md#language)
 - [onResponse](AffindaAPICreateJobDescriptionOptionalParams.md#onresponse)
+- [rejectDuplicates](AffindaAPICreateJobDescriptionOptionalParams.md#rejectduplicates)
 - [requestOptions](AffindaAPICreateJobDescriptionOptionalParams.md#requestoptions)
 - [serializerOptions](AffindaAPICreateJobDescriptionOptionalParams.md#serializeroptions)
 - [tracingOptions](AffindaAPICreateJobDescriptionOptionalParams.md#tracingoptions)
@@ -92,6 +93,14 @@ May be called multiple times.
 #### Inherited from
 
 coreClient.OperationOptions.onResponse
+
+___
+
+### rejectDuplicates
+
+• `Optional` **rejectDuplicates**: `boolean`
+
+If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not.
 
 ___
 

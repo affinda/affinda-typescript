@@ -134,6 +134,17 @@ export const wait: OperationParameter = {
   }
 };
 
+export const rejectDuplicates: OperationParameter = {
+  parameterPath: ["options", "rejectDuplicates"],
+  mapper: {
+    defaultValue: false,
+    serializedName: "rejectDuplicates",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const language: OperationParameter = {
   parameterPath: ["options", "language"],
   mapper: {

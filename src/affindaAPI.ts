@@ -713,6 +713,7 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.identifier,
     Parameters.fileName,
     Parameters.wait,
+    Parameters.rejectDuplicates,
     Parameters.language,
     Parameters.expiryTime
   ],
@@ -1079,6 +1080,7 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
     Parameters.identifier,
     Parameters.fileName,
     Parameters.wait,
+    Parameters.rejectDuplicates,
     Parameters.language,
     Parameters.expiryTime
   ],
@@ -1416,6 +1418,7 @@ const createInvoiceOperationSpec: coreClient.OperationSpec = {
     Parameters.identifier,
     Parameters.fileName,
     Parameters.wait,
+    Parameters.rejectDuplicates,
     Parameters.language,
     Parameters.expiryTime
   ],
