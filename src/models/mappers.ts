@@ -175,6 +175,7 @@ export const PageMeta: coreClient.CompositeMapper = {
       },
       image: {
         serializedName: "image",
+        nullable: true,
         type: {
           name: "String"
         }
