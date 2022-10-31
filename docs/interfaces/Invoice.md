@@ -33,4 +33,4 @@ ___
 
 ### meta
 
-• **meta**: [`InvoiceMeta`](../modules.md#invoicemeta)
+• **meta**: [`Meta`](Meta.md)

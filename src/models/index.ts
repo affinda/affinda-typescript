@@ -45,6 +45,12 @@ export interface Meta {
   readonly childDocuments?: SplitRelation[];
   /** The document's pages. */
   pages?: PageMeta[];
+  /** This is true if the "confirm" button has been clicked in the Affinda validation tool */
+  isVerified?: boolean;
+  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
+  reviewUrl?: string;
+  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+  ocrConfidence?: number;
 }
 
 export interface SplitRelation {
@@ -990,7 +996,7 @@ export interface GetAllInvoicesResults {
 export interface Invoice {
   clientVerifiedDt: string | null;
   data: InvoiceData | null;
-  meta: InvoiceMeta;
+  meta: Meta;
   error: ErrorModel;
 }
 
@@ -1202,12 +1208,6 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
-export interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
-  clientVerifiedDt?: boolean;
-  /** Signed URL (valid for 60 minutes) to access the invoice review tool */
-  reviewUrl?: string;
-}
-
 export interface PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema {
   /** Number of indexes in result */
   count?: number;
@@ -1332,9 +1332,6 @@ export interface InvoiceRequestBody {
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
 }
-
-export type InvoiceMeta = Meta &
-  Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
 
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};

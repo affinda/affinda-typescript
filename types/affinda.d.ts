@@ -747,12 +747,6 @@ export declare interface Components159Ji55SchemasResumesearchdetailPropertiesLan
     match?: boolean;
 }
 
-export declare interface Components17Ashz6SchemasInvoicePropertiesMetaAllof1 {
-    clientVerifiedDt?: boolean;
-    /** Signed URL (valid for 60 minutes) to access the invoice review tool */
-    reviewUrl?: string;
-}
-
 export declare interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
     raw?: string;
     parsed?: string;
@@ -1048,7 +1042,7 @@ export declare interface IndexRequestBody {
 export declare interface Invoice {
     clientVerifiedDt: string | null;
     data: InvoiceData | null;
-    meta: InvoiceMeta;
+    meta: Meta;
     error: ErrorModel;
 }
 
@@ -1157,8 +1151,6 @@ export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components17Jm
 export declare interface InvoiceDataTablesItem {
     rows?: (RowAnnotation | null)[];
 }
-
-export declare type InvoiceMeta = Meta & Components17Ashz6SchemasInvoicePropertiesMetaAllof1 & {};
 
 /** InvoiceRequestBody */
 export declare interface InvoiceRequestBody {
@@ -1579,6 +1571,12 @@ export declare interface Meta {
     readonly childDocuments?: SplitRelation[];
     /** The document's pages. */
     pages?: PageMeta[];
+    /** This is true if the "confirm" button has been clicked in the Affinda validation tool */
+    isVerified?: boolean;
+    /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
+    reviewUrl?: string;
+    /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+    ocrConfidence?: number;
 }
 
 export declare interface OccupationGroup {

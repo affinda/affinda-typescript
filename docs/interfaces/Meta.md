@@ -17,12 +17,15 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [failed](Meta.md#failed)
 - [fileName](Meta.md#filename)
 - [identifier](Meta.md#identifier)
+- [isVerified](Meta.md#isverified)
 - [language](Meta.md#language)
+- [ocrConfidence](Meta.md#ocrconfidence)
 - [pages](Meta.md#pages)
 - [parentDocument](Meta.md#parentdocument)
 - [pdf](Meta.md#pdf)
 - [ready](Meta.md#ready)
 - [readyDt](Meta.md#readydt)
+- [reviewUrl](Meta.md#reviewurl)
 
 ## Properties
 
@@ -67,11 +70,27 @@ Unique identifier for the document. If creating a document and left blank, one w
 
 ___
 
+### isVerified
+
+• `Optional` **isVerified**: `boolean`
+
+This is true if the "confirm" button has been clicked in the Affinda validation tool
+
+___
+
 ### language
 
 • `Optional` **language**: `string`
 
 The document's language.
+
+___
+
+### ocrConfidence
+
+• `Optional` **ocrConfidence**: `number`
+
+The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer)
 
 ___
 
@@ -114,3 +133,11 @@ ___
 • `Optional` **readyDt**: `Date`
 
 The datetime when the document was ready
+
+___
+
+### reviewUrl
+
+• `Optional` **reviewUrl**: `string`
+
+Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes.

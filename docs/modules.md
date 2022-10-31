@@ -65,7 +65,6 @@
 - [Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1](interfaces/Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.md)
 - [Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1](interfaces/Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1.md)
 - [Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md)
-- [Components17Ashz6SchemasInvoicePropertiesMetaAllof1](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md)
 - [Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md)
 - [Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1](interfaces/Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.md)
@@ -285,7 +284,6 @@
 - [InvoiceDataSupplierPhoneNumber](modules.md#invoicedatasupplierphonenumber)
 - [InvoiceDataSupplierVat](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
-- [InvoiceMeta](modules.md#invoicemeta)
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
 - [JobDescriptionSearchDetailOccupationGroupValueItem](modules.md#jobdescriptionsearchdetailoccupationgroupvalueitem)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
@@ -839,12 +837,6 @@ ___
 ### InvoiceDataSupplierWebsite
 
 Ƭ **InvoiceDataSupplierWebsite**: [`TextAnnotation`](modules.md#textannotation) & [`Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1`](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md) & {}
-
-___
-
-### InvoiceMeta
-
-Ƭ **InvoiceMeta**: [`Meta`](interfaces/Meta.md) & [`Components17Ashz6SchemasInvoicePropertiesMetaAllof1`](interfaces/Components17Ashz6SchemasInvoicePropertiesMetaAllof1.md) & {}
 
 ___
 
