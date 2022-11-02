@@ -736,6 +736,9 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
     401: {
       bodyMapper: Mappers.RequestError
     },
+    404: {
+      bodyMapper: Mappers.RequestError
+    },
     default: {
       bodyMapper: Mappers.RequestError
     }

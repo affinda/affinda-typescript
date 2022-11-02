@@ -48,7 +48,7 @@ ___
 
 ### education
 
-• `Optional` **education**: [`ResumeDataEducationItem`](ResumeDataEducationItem.md)[]
+• `Optional` **education**: [`Education`](Education.md)[]
 
 ___
 

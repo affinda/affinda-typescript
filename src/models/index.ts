@@ -103,7 +103,7 @@ export interface ResumeData {
    * NOTE: This property will not be serialized. It can only be populated by the server.
    */
   readonly headShot?: Uint8Array;
-  education?: ResumeDataEducationItem[];
+  education?: Education[];
   /**
    * Prediction of the candidate's profession based on recent work experience
    * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -163,16 +163,16 @@ export interface Location {
   readonly city?: string;
 }
 
-export interface ResumeDataEducationItem {
+export interface Education {
   id?: number;
   organization?: string;
-  accreditation?: ResumeDataEducationItemAccreditation;
-  grade?: ResumeDataEducationItemGrade;
+  accreditation?: Accreditation;
+  grade?: EducationGrade;
   location?: Location;
-  dates?: ResumeDataEducationItemDates;
+  dates?: EducationDates;
 }
 
-export interface ResumeDataEducationItemAccreditation {
+export interface Accreditation {
   education?: string;
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly inputStr?: string;
@@ -182,13 +182,13 @@ export interface ResumeDataEducationItemAccreditation {
   readonly educationLevel?: string;
 }
 
-export interface ResumeDataEducationItemGrade {
+export interface EducationGrade {
   raw?: string;
   metric?: string;
   value?: string;
 }
 
-export interface ResumeDataEducationItemDates {
+export interface EducationDates {
   completionDate?: Date;
   isCurrent?: boolean;
   startDate?: Date;
@@ -494,33 +494,6 @@ export interface ResumeSearchDetailEducationMissing {
   institutions?: string[];
   currentStudent?: boolean;
   recentGraduate?: boolean;
-}
-
-export interface Education {
-  organization?: string;
-  accreditation?: Accreditation;
-  grade?: EducationGrade;
-  location?: Location;
-  dates?: EducationDates;
-}
-
-export interface Accreditation {
-  education?: string;
-  educationLevel?: string;
-  inputStr?: string;
-  matchStr?: string;
-}
-
-export interface EducationGrade {
-  raw?: string;
-  value?: string;
-  metric?: string;
-}
-
-export interface EducationDates {
-  startDate?: string;
-  completionDate?: string;
-  isCurrent?: boolean;
 }
 
 export interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {

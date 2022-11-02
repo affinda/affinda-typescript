@@ -455,13 +455,13 @@ export const ResumeData: coreClient.CompositeMapper = {
       education: {
         serializedName: "education",
         xmlName: "education",
-        xmlElementName: "ResumeDataEducationItem",
+        xmlElementName: "Education",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeDataEducationItem"
+              className: "Education"
             }
           }
         }
@@ -730,11 +730,11 @@ export const Location: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeDataEducationItem: coreClient.CompositeMapper = {
-  serializedName: "ResumeDataEducationItem",
+export const Education: coreClient.CompositeMapper = {
+  serializedName: "Education",
   type: {
     name: "Composite",
-    className: "ResumeDataEducationItem",
+    className: "Education",
     modelProperties: {
       id: {
         serializedName: "id",
@@ -756,7 +756,7 @@ export const ResumeDataEducationItem: coreClient.CompositeMapper = {
         xmlName: "accreditation",
         type: {
           name: "Composite",
-          className: "ResumeDataEducationItemAccreditation"
+          className: "Accreditation"
         }
       },
       grade: {
@@ -764,7 +764,7 @@ export const ResumeDataEducationItem: coreClient.CompositeMapper = {
         xmlName: "grade",
         type: {
           name: "Composite",
-          className: "ResumeDataEducationItemGrade"
+          className: "EducationGrade"
         }
       },
       location: {
@@ -780,18 +780,18 @@ export const ResumeDataEducationItem: coreClient.CompositeMapper = {
         xmlName: "dates",
         type: {
           name: "Composite",
-          className: "ResumeDataEducationItemDates"
+          className: "EducationDates"
         }
       }
     }
   }
 };
 
-export const ResumeDataEducationItemAccreditation: coreClient.CompositeMapper = {
-  serializedName: "ResumeDataEducationItemAccreditation",
+export const Accreditation: coreClient.CompositeMapper = {
+  serializedName: "Accreditation",
   type: {
     name: "Composite",
-    className: "ResumeDataEducationItemAccreditation",
+    className: "Accreditation",
     modelProperties: {
       education: {
         serializedName: "education",
@@ -830,11 +830,11 @@ export const ResumeDataEducationItemAccreditation: coreClient.CompositeMapper = 
   }
 };
 
-export const ResumeDataEducationItemGrade: coreClient.CompositeMapper = {
-  serializedName: "ResumeDataEducationItemGrade",
+export const EducationGrade: coreClient.CompositeMapper = {
+  serializedName: "EducationGrade",
   type: {
     name: "Composite",
-    className: "ResumeDataEducationItemGrade",
+    className: "EducationGrade",
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -845,6 +845,7 @@ export const ResumeDataEducationItemGrade: coreClient.CompositeMapper = {
       },
       metric: {
         serializedName: "metric",
+        nullable: true,
         xmlName: "metric",
         type: {
           name: "String"
@@ -861,11 +862,11 @@ export const ResumeDataEducationItemGrade: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeDataEducationItemDates: coreClient.CompositeMapper = {
-  serializedName: "ResumeDataEducationItemDates",
+export const EducationDates: coreClient.CompositeMapper = {
+  serializedName: "EducationDates",
   type: {
     name: "Composite",
-    className: "ResumeDataEducationItemDates",
+    className: "EducationDates",
     modelProperties: {
       completionDate: {
         serializedName: "completionDate",
@@ -2704,160 +2705,6 @@ export const ResumeSearchDetailEducationMissing: coreClient.CompositeMapper = {
       recentGraduate: {
         serializedName: "recentGraduate",
         xmlName: "recentGraduate",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const Education: coreClient.CompositeMapper = {
-  serializedName: "Education",
-  type: {
-    name: "Composite",
-    className: "Education",
-    modelProperties: {
-      organization: {
-        serializedName: "organization",
-        nullable: true,
-        xmlName: "organization",
-        type: {
-          name: "String"
-        }
-      },
-      accreditation: {
-        serializedName: "accreditation",
-        xmlName: "accreditation",
-        type: {
-          name: "Composite",
-          className: "Accreditation"
-        }
-      },
-      grade: {
-        serializedName: "grade",
-        xmlName: "grade",
-        type: {
-          name: "Composite",
-          className: "EducationGrade"
-        }
-      },
-      location: {
-        serializedName: "location",
-        xmlName: "location",
-        type: {
-          name: "Composite",
-          className: "Location"
-        }
-      },
-      dates: {
-        serializedName: "dates",
-        xmlName: "dates",
-        type: {
-          name: "Composite",
-          className: "EducationDates"
-        }
-      }
-    }
-  }
-};
-
-export const Accreditation: coreClient.CompositeMapper = {
-  serializedName: "Accreditation",
-  type: {
-    name: "Composite",
-    className: "Accreditation",
-    modelProperties: {
-      education: {
-        serializedName: "education",
-        xmlName: "education",
-        type: {
-          name: "String"
-        }
-      },
-      educationLevel: {
-        serializedName: "educationLevel",
-        xmlName: "educationLevel",
-        type: {
-          name: "String"
-        }
-      },
-      inputStr: {
-        serializedName: "inputStr",
-        xmlName: "inputStr",
-        type: {
-          name: "String"
-        }
-      },
-      matchStr: {
-        serializedName: "matchStr",
-        xmlName: "matchStr",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const EducationGrade: coreClient.CompositeMapper = {
-  serializedName: "EducationGrade",
-  type: {
-    name: "Composite",
-    className: "EducationGrade",
-    modelProperties: {
-      raw: {
-        serializedName: "raw",
-        xmlName: "raw",
-        type: {
-          name: "String"
-        }
-      },
-      value: {
-        serializedName: "value",
-        nullable: true,
-        xmlName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      metric: {
-        serializedName: "metric",
-        nullable: true,
-        xmlName: "metric",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const EducationDates: coreClient.CompositeMapper = {
-  serializedName: "EducationDates",
-  type: {
-    name: "Composite",
-    className: "EducationDates",
-    modelProperties: {
-      startDate: {
-        serializedName: "startDate",
-        nullable: true,
-        xmlName: "startDate",
-        type: {
-          name: "String"
-        }
-      },
-      completionDate: {
-        serializedName: "completionDate",
-        nullable: true,
-        xmlName: "completionDate",
-        type: {
-          name: "String"
-        }
-      },
-      isCurrent: {
-        serializedName: "isCurrent",
-        xmlName: "isCurrent",
         type: {
           name: "Boolean"
         }

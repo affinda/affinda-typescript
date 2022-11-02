@@ -21,16 +21,22 @@ ___
 
 ### educationLevel
 
-• `Optional` **educationLevel**: `string`
+• `Optional` `Readonly` **educationLevel**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### inputStr
 
-• `Optional` **inputStr**: `string`
+• `Optional` `Readonly` **inputStr**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 
 ### matchStr
 
-• `Optional` **matchStr**: `string`
+• `Optional` `Readonly` **matchStr**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.

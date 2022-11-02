@@ -14,7 +14,7 @@
 
 ### completionDate
 
-• `Optional` **completionDate**: `string`
+• `Optional` **completionDate**: `Date`
 
 ___
 
@@ -26,4 +26,4 @@ ___
 
 ### startDate
 
-• `Optional` **startDate**: `string`
+• `Optional` **startDate**: `Date`

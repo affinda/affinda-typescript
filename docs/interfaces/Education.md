@@ -9,6 +9,7 @@
 - [accreditation](Education.md#accreditation)
 - [dates](Education.md#dates)
 - [grade](Education.md#grade)
+- [id](Education.md#id)
 - [location](Education.md#location)
 - [organization](Education.md#organization)
 
@@ -29,6 +30,12 @@ ___
 ### grade
 
 • `Optional` **grade**: [`EducationGrade`](EducationGrade.md)
+
+___
+
+### id
+
+• `Optional` **id**: `number`
 
 ___
 

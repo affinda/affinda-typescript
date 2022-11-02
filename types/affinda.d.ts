@@ -7,9 +7,12 @@ import { TokenCredential } from '@azure/identity';
 
 export declare interface Accreditation {
     education?: string;
-    educationLevel?: string;
-    inputStr?: string;
-    matchStr?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly inputStr?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly matchStr?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly educationLevel?: string;
 }
 
 export declare class AffindaAPI extends AffindaAPIContext {
@@ -914,6 +917,7 @@ export declare type DateAnnotation = Annotation & {
 };
 
 export declare interface Education {
+    id?: number;
     organization?: string;
     accreditation?: Accreditation;
     grade?: EducationGrade;
@@ -922,15 +926,15 @@ export declare interface Education {
 }
 
 export declare interface EducationDates {
-    startDate?: string;
-    completionDate?: string;
+    completionDate?: Date;
     isCurrent?: boolean;
+    startDate?: Date;
 }
 
 export declare interface EducationGrade {
     raw?: string;
-    value?: string;
     metric?: string;
+    value?: string;
 }
 
 /** Defines values for EducationLevel. */
@@ -1768,7 +1772,7 @@ export declare interface ResumeData {
      * NOTE: This property will not be serialized. It can only be populated by the server.
      */
     readonly headShot?: Uint8Array;
-    education?: ResumeDataEducationItem[];
+    education?: Education[];
     /**
      * Prediction of the candidate's profession based on recent work experience
      * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -1793,37 +1797,6 @@ export declare interface ResumeData {
     readonly isResumeProbability?: number;
     /** All of the raw text of the parsed resume, example is shortened for readiblity */
     rawText?: string;
-}
-
-export declare interface ResumeDataEducationItem {
-    id?: number;
-    organization?: string;
-    accreditation?: ResumeDataEducationItemAccreditation;
-    grade?: ResumeDataEducationItemGrade;
-    location?: Location;
-    dates?: ResumeDataEducationItemDates;
-}
-
-export declare interface ResumeDataEducationItemAccreditation {
-    education?: string;
-    /** NOTE: This property will not be serialized. It can only be populated by the server. */
-    readonly inputStr?: string;
-    /** NOTE: This property will not be serialized. It can only be populated by the server. */
-    readonly matchStr?: string;
-    /** NOTE: This property will not be serialized. It can only be populated by the server. */
-    readonly educationLevel?: string;
-}
-
-export declare interface ResumeDataEducationItemDates {
-    completionDate?: Date;
-    isCurrent?: boolean;
-    startDate?: Date;
-}
-
-export declare interface ResumeDataEducationItemGrade {
-    raw?: string;
-    metric?: string;
-    value?: string;
 }
 
 export declare interface ResumeDataName {
