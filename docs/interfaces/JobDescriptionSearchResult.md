@@ -14,6 +14,7 @@
 - [location](JobDescriptionSearchResult.md#location)
 - [managementLevel](JobDescriptionSearchResult.md#managementlevel)
 - [occupationGroup](JobDescriptionSearchResult.md#occupationgroup)
+- [organizationName](JobDescriptionSearchResult.md#organizationname)
 - [pdf](JobDescriptionSearchResult.md#pdf)
 - [score](JobDescriptionSearchResult.md#score)
 - [searchExpression](JobDescriptionSearchResult.md#searchexpression)
@@ -68,6 +69,12 @@ ___
 ### occupationGroup
 
 • `Optional` **occupationGroup**: [`OccupationGroupSearchScoreComponent`](OccupationGroupSearchScoreComponent.md)
+
+___
+
+### organizationName
+
+• **organizationName**: ``null`` \| `string`
 
 ___
 

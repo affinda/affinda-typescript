@@ -898,6 +898,12 @@ export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLoca
     match?: boolean;
 }
 
+export declare interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
+    value?: string;
+    label: string;
+    score?: number;
+}
+
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
 }
@@ -1414,6 +1420,7 @@ export declare interface JobDescriptionSearchResult {
     education: EducationSearchScoreComponent;
     occupationGroup?: OccupationGroupSearchScoreComponent;
     searchExpression: SearchExpressionSearchScoreComponent;
+    organizationName: string | null;
 }
 
 export declare type JobTitleAnnotation = Annotation & {
@@ -2104,6 +2111,16 @@ export declare interface ResumeSearchParameters {
     managementLevel?: ManagementLevel;
     managementLevelRequired?: boolean;
     managementLevelWeight?: number;
+    customData?: ResumeSearchParametersCustomData[];
+}
+
+export declare interface ResumeSearchParametersCustomData {
+    filterType: string;
+    dataPoint: string;
+    /** Any object */
+    query: Record<string, unknown>;
+    required?: boolean;
+    weight?: number;
 }
 
 export declare interface ResumeSearchParametersLocation {
@@ -2138,6 +2155,10 @@ export declare interface ResumeSearchResult {
     education: EducationSearchScoreComponent;
     occupationGroup: OccupationGroupSearchScoreComponent;
     searchExpression: SearchExpressionSearchScoreComponent;
+    /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+    customData: {
+        [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+    };
 }
 
 export declare interface ResumeSkill {

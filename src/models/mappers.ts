@@ -1837,6 +1837,20 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      customData: {
+        serializedName: "customData",
+        xmlName: "customData",
+        xmlElementName: "ResumeSearchParametersCustomData",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersCustomData"
+            }
+          }
+        }
       }
     }
   }
@@ -1926,6 +1940,59 @@ export const ResumeSearchParametersSkill: coreClient.CompositeMapper = {
         xmlName: "required",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersCustomData: coreClient.CompositeMapper = {
+  serializedName: "ResumeSearchParametersCustomData",
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersCustomData",
+    modelProperties: {
+      filterType: {
+        serializedName: "filterType",
+        required: true,
+        xmlName: "filterType",
+        type: {
+          name: "String"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        xmlName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      query: {
+        serializedName: "query",
+        required: true,
+        xmlName: "query",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      required: {
+        serializedName: "required",
+        xmlName: "required",
+        type: {
+          name: "Boolean"
+        }
+      },
+      weight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "weight",
+        xmlName: "weight",
+        type: {
+          name: "Number"
         }
       }
     }
@@ -2095,6 +2162,21 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "SearchExpressionSearchScoreComponent"
+        }
+      },
+      customData: {
+        serializedName: "customData",
+        required: true,
+        xmlName: "customData",
+        type: {
+          name: "Dictionary",
+          value: {
+            type: {
+              name: "Composite",
+              className:
+                "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties"
+            }
+          }
         }
       }
     }
@@ -2274,6 +2356,7 @@ export const LocationSearchScoreComponent: coreClient.CompositeMapper = {
     modelProperties: {
       value: {
         serializedName: "value",
+        nullable: true,
         xmlName: "value",
         type: {
           name: "String"
@@ -2382,6 +2465,41 @@ export const SearchExpressionSearchScoreComponent: coreClient.CompositeMapper = 
       value: {
         serializedName: "value",
         xmlName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        xmlName: "score",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties: coreClient.CompositeMapper = {
+  serializedName:
+    "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        xmlName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        xmlName: "label",
         type: {
           name: "String"
         }
@@ -4439,6 +4557,15 @@ export const JobDescriptionSearchResult: coreClient.CompositeMapper = {
           name: "Composite",
           className: "SearchExpressionSearchScoreComponent"
         }
+      },
+      organizationName: {
+        serializedName: "organizationName",
+        required: true,
+        nullable: true,
+        xmlName: "organizationName",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -4864,6 +4991,7 @@ export const JobDescriptionSearchDetailOccupationGroup: coreClient.CompositeMapp
       },
       value: {
         serializedName: "value",
+        nullable: true,
         xmlName: "value",
         xmlElementName: "JobDescriptionSearchDetailOccupationGroupValueItem",
         type: {

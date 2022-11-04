@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [customData](ResumeSearchParameters.md#customdata)
 - [degrees](ResumeSearchParameters.md#degrees)
 - [degreesRequired](ResumeSearchParameters.md#degreesrequired)
 - [educationWeight](ResumeSearchParameters.md#educationweight)
@@ -48,6 +49,12 @@
 - [yearsExperienceWeight](ResumeSearchParameters.md#yearsexperienceweight)
 
 ## Properties
+
+### customData
+
+• `Optional` **customData**: [`ResumeSearchParametersCustomData`](ResumeSearchParametersCustomData.md)[]
+
+___
 
 ### degrees
 

@@ -348,6 +348,7 @@ export interface ResumeSearchParameters {
   managementLevel?: ManagementLevel;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
+  customData?: ResumeSearchParametersCustomData[];
 }
 
 export interface ResumeSearchParametersLocation {
@@ -365,6 +366,15 @@ export interface ResumeSearchParametersLocationCoordinates {
 export interface ResumeSearchParametersSkill {
   name?: string;
   required?: boolean;
+}
+
+export interface ResumeSearchParametersCustomData {
+  filterType: string;
+  dataPoint: string;
+  /** Any object */
+  query: Record<string, unknown>;
+  required?: boolean;
+  weight?: number;
 }
 
 export interface ResumeSearch {
@@ -393,6 +403,10 @@ export interface ResumeSearchResult {
   education: EducationSearchScoreComponent;
   occupationGroup: OccupationGroupSearchScoreComponent;
   searchExpression: SearchExpressionSearchScoreComponent;
+  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+  customData: {
+    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+  };
 }
 
 export interface JobTitleSearchScoreComponent {
@@ -446,6 +460,12 @@ export interface OccupationGroupSearchScoreComponent {
 export interface SearchExpressionSearchScoreComponent {
   label: string;
   value?: string;
+  score?: number;
+}
+
+export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
+  value?: string;
+  label: string;
   score?: number;
 }
 
@@ -771,6 +791,7 @@ export interface JobDescriptionSearchResult {
   education: EducationSearchScoreComponent;
   occupationGroup?: OccupationGroupSearchScoreComponent;
   searchExpression: SearchExpressionSearchScoreComponent;
+  organizationName: string | null;
 }
 
 export interface JobDescriptionSearchDetail {
