@@ -532,6 +532,44 @@ export const body3: OperationParameter = {
   mapper: Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
+export const jobTitles: OperationQueryParameter = {
+  parameterPath: "jobTitles",
+  mapper: {
+    serializedName: "job_titles",
+    required: true,
+    xmlName: "job_titles",
+    xmlElementName: "Get0ItemsItem",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  },
+  collectionFormat: "Multi"
+};
+
+export const skills: OperationQueryParameter = {
+  parameterPath: "skills",
+  mapper: {
+    serializedName: "skills",
+    required: true,
+    xmlName: "skills",
+    xmlElementName: "String",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  },
+  collectionFormat: "Multi"
+};
+
 export const body4: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchParametersMapper

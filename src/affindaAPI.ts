@@ -38,6 +38,10 @@ import {
   AffindaAPIUpdateResumeSearchConfigResponse,
   AffindaAPICreateResumeSearchEmbedUrlOptionalParams,
   AffindaAPICreateResumeSearchEmbedUrlResponse,
+  AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams,
+  AffindaAPIGetResumeSearchSuggestionJobTitleResponse,
+  AffindaAPIGetResumeSearchSuggestionSkillOptionalParams,
+  AffindaAPIGetResumeSearchSuggestionSkillResponse,
   AffindaAPIGetAllJobDescriptionsOptionalParams,
   AffindaAPIGetAllJobDescriptionsResponse,
   AffindaAPICreateJobDescriptionOptionalParams,
@@ -336,6 +340,36 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { options },
       createResumeSearchEmbedUrlOperationSpec
+    );
+  }
+
+  /**
+   * Provided one or more job titles, get related suggestions for your search.
+   * @param jobTitles Job title to query suggestions for
+   * @param options The options parameters.
+   */
+  getResumeSearchSuggestionJobTitle(
+    jobTitles: string[],
+    options?: AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams
+  ): Promise<AffindaAPIGetResumeSearchSuggestionJobTitleResponse> {
+    return this.sendOperationRequest(
+      { jobTitles, options },
+      getResumeSearchSuggestionJobTitleOperationSpec
+    );
+  }
+
+  /**
+   * Provided one or more skills, get related suggestions for your search.
+   * @param skills Skill to query suggestions for
+   * @param options The options parameters.
+   */
+  getResumeSearchSuggestionSkill(
+    skills: string[],
+    options?: AffindaAPIGetResumeSearchSuggestionSkillOptionalParams
+  ): Promise<AffindaAPIGetResumeSearchSuggestionSkillResponse> {
+    return this.sendOperationRequest(
+      { skills, options },
+      getResumeSearchSuggestionSkillOperationSpec
     );
   }
 
@@ -1036,6 +1070,54 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
+  serializer
+};
+const getResumeSearchSuggestionJobTitleOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/suggestion_job_title",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Sequence", element: { type: { name: "String" } } }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.jobTitles],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
+  path: "/resume_search/suggestion_skill",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Sequence", element: { type: { name: "String" } } }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError
+    },
+    401: {
+      bodyMapper: Mappers.RequestError
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.skills],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
   serializer
 };
 const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {

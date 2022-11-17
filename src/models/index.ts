@@ -83,8 +83,13 @@ export interface RequestErrorErrorsItem {
   detail: string;
 }
 
+/** For custom fields. E.g. "isAvailable": true */
+export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
+
 /** A JSON-encoded string of the `ResumeData` object. */
 export interface ResumeData {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   name?: ResumeDataName;
   phoneNumbers?: string[];
   websites?: string[];
@@ -369,9 +374,9 @@ export interface ResumeSearchParametersSkill {
 }
 
 export interface ResumeSearchParametersCustomData {
-  filterType: string;
+  filterType: ResumeSearchParametersCustomDataFilterType;
   dataPoint: string;
-  /** Any object */
+  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
   query: Record<string, unknown>;
   required?: boolean;
   weight?: number;
@@ -951,7 +956,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum4;
+  documentType?: Enum5;
 }
 
 export interface PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1476,6 +1481,22 @@ export type InvoiceDataSupplierWebsite = TextAnnotation &
 export type PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema = User &
   Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1 & {};
 
+/** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
+export enum KnownResumeSearchParametersCustomDataFilterType {
+  Equals = "equals",
+  Range = "range"
+}
+
+/**
+ * Defines values for ResumeSearchParametersCustomDataFilterType. \
+ * {@link KnownResumeSearchParametersCustomDataFilterType} can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **equals** \
+ * **range**
+ */
+export type ResumeSearchParametersCustomDataFilterType = string;
+
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
   Achievements = "Achievements",
@@ -1522,21 +1543,21 @@ export enum KnownResumeSkillSourcesItemSection {
  */
 export type ResumeSkillSourcesItemSection = string;
 
-/** Known values of {@link Enum1} that the service accepts. */
-export enum KnownEnum1 {
+/** Known values of {@link Enum2} that the service accepts. */
+export enum KnownEnum2 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum1. \
- * {@link KnownEnum1} can be used interchangeably with Enum1,
+ * Defines values for Enum2. \
+ * {@link KnownEnum2} can be used interchangeably with Enum2,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum1 = string;
+export type Enum2 = string;
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
 export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
@@ -1570,21 +1591,21 @@ export enum KnownPostContentSchemaDocumentType {
  */
 export type PostContentSchemaDocumentType = string;
 
-/** Known values of {@link Enum4} that the service accepts. */
-export enum KnownEnum4 {
+/** Known values of {@link Enum5} that the service accepts. */
+export enum KnownEnum5 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum4. \
- * {@link KnownEnum4} can be used interchangeably with Enum4,
+ * Defines values for Enum5. \
+ * {@link KnownEnum5} can be used interchangeably with Enum5,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum4 = string;
+export type Enum5 = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -1796,6 +1817,26 @@ export interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams
 export type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
 
 /** Optional parameters. */
+export interface AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
+export type AffindaAPIGetResumeSearchSuggestionJobTitleResponse = {
+  /** The parsed response body. */
+  body: string[];
+};
+
+/** Optional parameters. */
+export interface AffindaAPIGetResumeSearchSuggestionSkillOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchSuggestionSkill operation. */
+export type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
+  /** The parsed response body. */
+  body: string[];
+};
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllJobDescriptionsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -1895,7 +1936,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum1;
+  documentType?: Enum2;
 }
 
 /** Contains response data for the getAllIndexes operation. */

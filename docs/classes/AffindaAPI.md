@@ -54,6 +54,8 @@
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
 - [getResumeSearchMatch](AffindaAPI.md#getresumesearchmatch)
+- [getResumeSearchSuggestionJobTitle](AffindaAPI.md#getresumesearchsuggestionjobtitle)
+- [getResumeSearchSuggestionSkill](AffindaAPI.md#getresumesearchsuggestionskill)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
@@ -759,6 +761,44 @@ match the score returned from POST
 #### Returns
 
 `Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+
+___
+
+### getResumeSearchSuggestionJobTitle
+
+▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+
+Provided one or more job titles, get related suggestions for your search.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `jobTitles` | `string`[] | Job title to query suggestions for |
+| `options?` | [`AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams`](../interfaces/AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+
+___
+
+### getResumeSearchSuggestionSkill
+
+▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+
+Provided one or more skills, get related suggestions for your search.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `skills` | `string`[] | Skill to query suggestions for |
+| `options?` | [`AffindaAPIGetResumeSearchSuggestionSkillOptionalParams`](../interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
 
 ___
 

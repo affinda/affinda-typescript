@@ -6,10 +6,11 @@
 
 ### Enumerations
 
-- [KnownEnum1](enums/KnownEnum1.md)
-- [KnownEnum4](enums/KnownEnum4.md)
+- [KnownEnum2](enums/KnownEnum2.md)
+- [KnownEnum5](enums/KnownEnum5.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
+- [KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
 
 ### Classes
@@ -54,6 +55,8 @@
 - [AffindaAPIGetResumeSearchConfigOptionalParams](interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md)
 - [AffindaAPIGetResumeSearchDetailOptionalParams](interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md)
 - [AffindaAPIGetResumeSearchMatchOptionalParams](interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md)
+- [AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams.md)
+- [AffindaAPIGetResumeSearchSuggestionSkillOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
@@ -91,6 +94,7 @@
 - [ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1](interfaces/ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.md)
 - [ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1](interfaces/ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.md)
 - [ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1](interfaces/ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.md)
+- [ComponentsEyyf0ZSchemasResumedataAdditionalproperties](interfaces/ComponentsEyyf0ZSchemasResumedataAdditionalproperties.md)
 - [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
 - [ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
@@ -242,14 +246,16 @@
 - [AffindaAPIGetResumeSearchConfigResponse](modules.md#affindaapigetresumesearchconfigresponse)
 - [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
 - [AffindaAPIGetResumeSearchMatchResponse](modules.md#affindaapigetresumesearchmatchresponse)
+- [AffindaAPIGetResumeSearchSuggestionJobTitleResponse](modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)
+- [AffindaAPIGetResumeSearchSuggestionSkillResponse](modules.md#affindaapigetresumesearchsuggestionskillresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
 - [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [DateAnnotation](modules.md#dateannotation)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum1](modules.md#enum1)
-- [Enum4](modules.md#enum4)
+- [Enum2](modules.md#enum2)
+- [Enum5](modules.md#enum5)
 - [EnumAnnotationSerializer](modules.md#enumannotationserializer)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -295,6 +301,7 @@
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
 - [ResumeSearchDetailOccupationGroupValueItem](modules.md#resumesearchdetailoccupationgroupvalueitem)
 - [ResumeSearchDetailSkillsValueItem](modules.md#resumesearchdetailskillsvalueitem)
+- [ResumeSearchParametersCustomDataFilterType](modules.md#resumesearchparameterscustomdatafiltertype)
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotation](modules.md#skillannotation)
@@ -567,6 +574,34 @@ Contains response data for the getResumeSearchMatch operation.
 
 ___
 
+### AffindaAPIGetResumeSearchSuggestionJobTitleResponse
+
+Ƭ **AffindaAPIGetResumeSearchSuggestionJobTitleResponse**: `Object`
+
+Contains response data for the getResumeSearchSuggestionJobTitle operation.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | `string`[] | The parsed response body. |
+
+___
+
+### AffindaAPIGetResumeSearchSuggestionSkillResponse
+
+Ƭ **AffindaAPIGetResumeSearchSuggestionSkillResponse**: `Object`
+
+Contains response data for the getResumeSearchSuggestionSkill operation.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | `string`[] | The parsed response body. |
+
+___
+
 ### AffindaAPIListOccupationGroupsResponse
 
 Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
@@ -613,12 +648,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum1
+### Enum2
 
-Ƭ **Enum1**: `string`
+Ƭ **Enum2**: `string`
 
-Defines values for Enum1. \
-[KnownEnum1](enums/KnownEnum1.md) can be used interchangeably with Enum1,
+Defines values for Enum2. \
+[KnownEnum2](enums/KnownEnum2.md) can be used interchangeably with Enum2,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -626,12 +661,12 @@ Defines values for Enum1. \
 
 ___
 
-### Enum4
+### Enum5
 
-Ƭ **Enum4**: `string`
+Ƭ **Enum5**: `string`
 
-Defines values for Enum4. \
-[KnownEnum4](enums/KnownEnum4.md) can be used interchangeably with Enum4,
+Defines values for Enum5. \
+[KnownEnum5](enums/KnownEnum5.md) can be used interchangeably with Enum5,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -922,6 +957,19 @@ ___
 ### ResumeSearchDetailSkillsValueItem
 
 Ƭ **ResumeSearchDetailSkillsValueItem**: [`ResumeSkill`](interfaces/ResumeSkill.md) & [`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md) & {}
+
+___
+
+### ResumeSearchParametersCustomDataFilterType
+
+Ƭ **ResumeSearchParametersCustomDataFilterType**: `string`
+
+Defines values for ResumeSearchParametersCustomDataFilterType. \
+[KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md) can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**equals** \
+**range**
 
 ___
 

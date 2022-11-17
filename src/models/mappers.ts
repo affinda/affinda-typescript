@@ -322,11 +322,20 @@ export const RequestErrorErrorsItem: coreClient.CompositeMapper = {
   }
 };
 
+export const ComponentsEyyf0ZSchemasResumedataAdditionalproperties: coreClient.CompositeMapper = {
+  serializedName: "ComponentsEyyf0ZSchemasResumedataAdditionalproperties",
+  type: {
+    name: "Composite",
+    className: "ComponentsEyyf0ZSchemasResumedataAdditionalproperties"
+  }
+};
+
 export const ResumeData: coreClient.CompositeMapper = {
   serializedName: "ResumeData",
   type: {
     name: "Composite",
     className: "ResumeData",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       name: {
         serializedName: "name",
