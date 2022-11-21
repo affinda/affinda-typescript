@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.4.0] - 2022-11-17
+## [2.4.0] - 2022-11-21
 ### Fixed
 - Document meta pages without images should be nullable
 - Small fixes for accreditiation and education return objects
