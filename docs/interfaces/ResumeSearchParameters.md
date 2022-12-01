@@ -19,8 +19,6 @@
 - [isCurrentStudentRequired](ResumeSearchParameters.md#iscurrentstudentrequired)
 - [isRecentGraduate](ResumeSearchParameters.md#isrecentgraduate)
 - [isRecentGraduateRequired](ResumeSearchParameters.md#isrecentgraduaterequired)
-- [isTopStudent](ResumeSearchParameters.md#istopstudent)
-- [isTopStudentRequired](ResumeSearchParameters.md#istopstudentrequired)
 - [jobDescription](ResumeSearchParameters.md#jobdescription)
 - [jobTitles](ResumeSearchParameters.md#jobtitles)
 - [jobTitlesCurrentOnly](ResumeSearchParameters.md#jobtitlescurrentonly)
@@ -108,6 +106,8 @@ ___
 
 • `Optional` **isCurrentStudent**: `boolean`
 
+Search for student canditates
+
 ___
 
 ### isCurrentStudentRequired
@@ -120,23 +120,13 @@ ___
 
 • `Optional` **isRecentGraduate**: `boolean`
 
+Search for canditates that graduated less than a year ago
+
 ___
 
 ### isRecentGraduateRequired
 
 • `Optional` **isRecentGraduateRequired**: `boolean`
-
-___
-
-### isTopStudent
-
-• `Optional` **isTopStudent**: `boolean`
-
-___
-
-### isTopStudentRequired
-
-• `Optional` **isTopStudentRequired**: `boolean`
 
 ___
 
@@ -157,6 +147,8 @@ ___
 ### jobTitlesCurrentOnly
 
 • `Optional` **jobTitlesCurrentOnly**: `boolean`
+
+Search only through the canditate's current job
 
 ___
 
@@ -187,6 +179,8 @@ ___
 ### locations
 
 • `Optional` **locations**: [`ResumeSearchParametersLocation`](ResumeSearchParametersLocation.md)[]
+
+Search by location name or by coordinates
 
 ___
 
@@ -231,6 +225,8 @@ ___
 ### searchExpression
 
 • `Optional` **searchExpression**: `string`
+
+Search through resumes' raw text
 
 ___
 
@@ -280,11 +276,15 @@ ___
 
 • `Optional` **yearsExperienceMax**: `number`
 
+Maximum years of total work experience
+
 ___
 
 ### yearsExperienceMin
 
 • `Optional` **yearsExperienceMin**: `number`
+
+Minimum years of total work experience
 
 ___
 

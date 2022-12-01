@@ -347,6 +347,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       phoneNumbers: {
         serializedName: "phoneNumbers",
+        nullable: true,
         xmlName: "phoneNumbers",
         xmlElementName: "ResumeDataPhoneNumbersItem",
         type: {
@@ -360,6 +361,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       websites: {
         serializedName: "websites",
+        nullable: true,
         xmlName: "websites",
         xmlElementName: "ResumeDataWebsitesItem",
         type: {
@@ -373,6 +375,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       emails: {
         serializedName: "emails",
+        nullable: true,
         xmlName: "emails",
         xmlElementName: "ResumeDataEmailsItem",
         type: {
@@ -579,6 +582,7 @@ export const ResumeData: coreClient.CompositeMapper = {
       isResumeProbability: {
         serializedName: "isResumeProbability",
         readOnly: true,
+        nullable: true,
         xmlName: "isResumeProbability",
         type: {
           name: "Number"
@@ -1738,20 +1742,6 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      isTopStudent: {
-        serializedName: "isTopStudent",
-        xmlName: "isTopStudent",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isTopStudentRequired: {
-        serializedName: "isTopStudentRequired",
-        xmlName: "isTopStudentRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
       educationWeight: {
         constraints: {
           InclusiveMaximum: 1,
@@ -1872,6 +1862,7 @@ export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
     className: "ResumeSearchParametersLocation",
     modelProperties: {
       name: {
+        defaultValue: "",
         serializedName: "name",
         xmlName: "name",
         type: {
@@ -1887,6 +1878,7 @@ export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
         }
       },
       distance: {
+        defaultValue: 100,
         serializedName: "distance",
         xmlName: "distance",
         type: {
@@ -1894,6 +1886,7 @@ export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
         }
       },
       unit: {
+        defaultValue: "km",
         serializedName: "unit",
         xmlName: "unit",
         type: {

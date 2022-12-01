@@ -1846,7 +1846,7 @@ export declare interface ResumeData {
      * NOTE: This property will not be serialized. It can only be populated by the server.
      */
     readonly isResumeProbability?: number;
-    /** All of the raw text of the parsed resume, example is shortened for readiblity */
+    /** All of the raw text of the parsed resume, example is shortened for readability */
     rawText?: string;
 }
 
@@ -2119,13 +2119,17 @@ export declare interface ResumeSearchParameters {
     /** Unique identifier for the document. If creating a document and left blank, one will be automatically generated. */
     resume?: string;
     jobTitles?: string[];
+    /** Search only through the canditate's current job */
     jobTitlesCurrentOnly?: boolean;
     jobTitlesRequired?: boolean;
     jobTitlesWeight?: number;
+    /** Minimum years of total work experience */
     yearsExperienceMin?: number;
+    /** Maximum years of total work experience */
     yearsExperienceMax?: number;
     yearsExperienceRequired?: boolean;
     yearsExperienceWeight?: number;
+    /** Search by location name or by coordinates */
     locations?: ResumeSearchParametersLocation[];
     locationsWeight?: number;
     locationsRequired?: boolean;
@@ -2139,13 +2143,14 @@ export declare interface ResumeSearchParameters {
     degreesRequired?: boolean;
     highestDegreeTypes?: (EducationLevel | null)[];
     highestDegreeTypesRequired?: boolean;
+    /** Search for student canditates */
     isCurrentStudent?: boolean;
     isCurrentStudentRequired?: boolean;
+    /** Search for canditates that graduated less than a year ago */
     isRecentGraduate?: boolean;
     isRecentGraduateRequired?: boolean;
-    isTopStudent?: boolean;
-    isTopStudentRequired?: boolean;
     educationWeight?: number;
+    /** Search through resumes' raw text */
     searchExpression?: string;
     searchExpressionRequired?: boolean;
     searchExpressionWeight?: number;

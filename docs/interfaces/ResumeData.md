@@ -150,7 +150,7 @@ ___
 
 • `Optional` **rawText**: `string`
 
-All of the raw text of the parsed resume, example is shortened for readiblity
+All of the raw text of the parsed resume, example is shortened for readability
 
 ___
 
