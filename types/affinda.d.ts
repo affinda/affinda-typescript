@@ -334,7 +334,7 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -357,7 +357,7 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -438,7 +438,7 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1211,7 +1211,7 @@ export declare interface InvoiceRequestBody {
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1257,7 +1257,7 @@ export declare interface JobDescriptionRequestBody {
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1948,7 +1948,7 @@ export declare interface ResumeRequestBody {
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */

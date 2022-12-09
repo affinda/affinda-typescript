@@ -7103,11 +7103,11 @@ export const ResumeRequestBody: coreClient.CompositeMapper = {
         }
       },
       rejectDuplicates: {
-        defaultValue: false,
+        defaultValue: "false",
         serializedName: "rejectDuplicates",
         xmlName: "rejectDuplicates",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       language: {
@@ -7305,11 +7305,11 @@ export const JobDescriptionRequestBody: coreClient.CompositeMapper = {
         }
       },
       rejectDuplicates: {
-        defaultValue: false,
+        defaultValue: "false",
         serializedName: "rejectDuplicates",
         xmlName: "rejectDuplicates",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       language: {
@@ -7402,11 +7402,11 @@ export const InvoiceRequestBody: coreClient.CompositeMapper = {
         }
       },
       rejectDuplicates: {
-        defaultValue: false,
+        defaultValue: "false",
         serializedName: "rejectDuplicates",
         xmlName: "rejectDuplicates",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       },
       language: {

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Allowing a few more fields in ResumeData to be null
 
+### Fixed
+- Issue with rejectDuplicates as a boolean field and typescript client lib generation
+
 ## [2.5.0] - 2022-11-21
 ### Changed
 - Small changes to release process
