@@ -181,6 +181,7 @@
 - [ResumeRequestBody](interfaces/ResumeRequestBody.md)
 - [ResumeSearch](interfaces/ResumeSearch.md)
 - [ResumeSearchConfig](interfaces/ResumeSearchConfig.md)
+- [ResumeSearchConfigActionsItem](interfaces/ResumeSearchConfigActionsItem.md)
 - [ResumeSearchDetail](interfaces/ResumeSearchDetail.md)
 - [ResumeSearchDetailEducation](interfaces/ResumeSearchDetailEducation.md)
 - [ResumeSearchDetailEducationMissing](interfaces/ResumeSearchDetailEducationMissing.md)
