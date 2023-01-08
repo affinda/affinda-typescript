@@ -2,7 +2,7 @@ Typescript Client Library for Affinda Resume Parser API
 =======================================================
 
 
-![affinda logo](https://github.com/affinda/affinda-typescript/blob/main/affinda_logo.png)
+![affinda logo](https://github.com/affinda/affinda-typescript/blob/master/affinda_logo.png)
 [![license](https://img.shields.io/github/license/affinda/affinda-typescript)](https://choosealicense.com/licenses/mit/)
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/affinda/affinda-typescript)

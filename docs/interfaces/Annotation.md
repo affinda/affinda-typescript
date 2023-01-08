@@ -36,7 +36,7 @@ ___
 
 • **classificationConfidence**: ``null`` \| `number`
 
-The model's confidence that the text has been classified correctly
+The AI model confidence.
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **confidence**: ``null`` \| `number`
 
-The overall confidence that the model's prediction is correct
+Combined confidence from the model confidence and the OCR confidence.
 
 ___
 
@@ -94,4 +94,4 @@ ___
 
 • **textExtractionConfidence**: ``null`` \| `number`
 
-If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model.
+The OCR confidence.

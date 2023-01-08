@@ -3526,44 +3526,6 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
-      },
-      actions: {
-        serializedName: "actions",
-        xmlName: "actions",
-        xmlElementName: "ResumeSearchConfigActionsItem",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchConfigActionsItem"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchConfigActionsItem: coreClient.CompositeMapper = {
-  serializedName: "ResumeSearchConfigActionsItem",
-  type: {
-    name: "Composite",
-    className: "ResumeSearchConfigActionsItem",
-    modelProperties: {
-      label: {
-        serializedName: "label",
-        xmlName: "label",
-        type: {
-          name: "String"
-        }
-      },
-      eventName: {
-        serializedName: "eventName",
-        xmlName: "eventName",
-        type: {
-          name: "String"
-        }
       }
     }
   }
@@ -3981,19 +3943,19 @@ export const Annotation: coreClient.CompositeMapper = {
         }
       },
       classificationConfidence: {
-        serializedName: "classificationConfidence",
+        serializedName: "classification_confidence",
         required: true,
         nullable: true,
-        xmlName: "classificationConfidence",
+        xmlName: "classification_confidence",
         type: {
           name: "Number"
         }
       },
       textExtractionConfidence: {
-        serializedName: "textExtractionConfidence",
+        serializedName: "text_extraction_confidence",
         required: true,
         nullable: true,
-        xmlName: "textExtractionConfidence",
+        xmlName: "text_extraction_confidence",
         type: {
           name: "Number"
         }

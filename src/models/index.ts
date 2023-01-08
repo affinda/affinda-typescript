@@ -645,15 +645,6 @@ export interface ResumeSearchConfig {
    * NOTE: This property will not be serialized. It can only be populated by the server.
    */
   readonly username?: string;
-  /** A list of actions to show in the dropdown in the embedded search tool */
-  actions?: ResumeSearchConfigActionsItem[];
-}
-
-export interface ResumeSearchConfigActionsItem {
-  /** Human readable label to display in the UI */
-  label?: string;
-  /** Name of the event to be triggered */
-  eventName?: string;
 }
 
 export interface Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -723,11 +714,11 @@ export interface Annotation {
   rectangle: Rectangle | null;
   pageIndex: number | null;
   raw: string | null;
-  /** The overall confidence that the model's prediction is correct */
+  /** Combined confidence from the model confidence and the OCR confidence. */
   confidence: number | null;
-  /** The model's confidence that the text has been classified correctly */
+  /** The AI model confidence. */
   classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  /** The OCR confidence. */
   textExtractionConfidence: number | null;
   isVerified: boolean;
   isClientVerified?: boolean;
