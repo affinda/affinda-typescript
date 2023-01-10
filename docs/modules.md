@@ -123,6 +123,7 @@
 - [JobDescriptionRequestBody](interfaces/JobDescriptionRequestBody.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
+- [JobDescriptionSearchConfigActionsItem](interfaces/JobDescriptionSearchConfigActionsItem.md)
 - [JobDescriptionSearchDetail](interfaces/JobDescriptionSearchDetail.md)
 - [JobDescriptionSearchDetailEducation](interfaces/JobDescriptionSearchDetailEducation.md)
 - [JobDescriptionSearchDetailEducationMissing](interfaces/JobDescriptionSearchDetailEducationMissing.md)

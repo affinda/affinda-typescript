@@ -749,13 +749,14 @@ export declare interface Annotation {
     [property: string]: any;
     id?: number;
     rectangle: Rectangle | null;
+    rectangles?: Rectangle[];
     pageIndex: number | null;
     raw: string | null;
-    /** Combined confidence from the model confidence and the OCR confidence. */
+    /** The overall confidence that the model's prediction is correct */
     confidence: number | null;
-    /** The AI model confidence. */
+    /** The model's confidence that the text has been classified correctly */
     classificationConfidence: number | null;
-    /** The OCR confidence. */
+    /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
     textExtractionConfidence: number | null;
     isVerified: boolean;
     isClientVerified?: boolean;
@@ -1318,6 +1319,15 @@ export declare interface JobDescriptionSearchConfig {
      * NOTE: This property will not be serialized. It can only be populated by the server.
      */
     readonly username?: string;
+    /** A list of actions to show in the dropdown in the embedded search tool */
+    actions?: JobDescriptionSearchConfigActionsItem[];
+}
+
+export declare interface JobDescriptionSearchConfigActionsItem {
+    /** Human readable label to display in the UI */
+    label?: string;
+    /** Name of the event to be triggered */
+    eventName?: string;
 }
 
 export declare interface JobDescriptionSearchDetail {
@@ -1868,6 +1878,7 @@ export declare interface ResumeDataRefereesItem {
     text?: string;
     email?: string;
     number?: string;
+    position?: string;
 }
 
 export declare interface ResumeDataSectionsItem {

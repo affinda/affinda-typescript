@@ -22,6 +22,7 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [pageIndex](Annotation.md#pageindex)
 - [raw](Annotation.md#raw)
 - [rectangle](Annotation.md#rectangle)
+- [rectangles](Annotation.md#rectangles)
 - [textExtractionConfidence](Annotation.md#textextractionconfidence)
 
 ## Properties
@@ -36,7 +37,7 @@ ___
 
 • **classificationConfidence**: ``null`` \| `number`
 
-The AI model confidence.
+The model's confidence that the text has been classified correctly
 
 ___
 
@@ -44,7 +45,7 @@ ___
 
 • **confidence**: ``null`` \| `number`
 
-Combined confidence from the model confidence and the OCR confidence.
+The overall confidence that the model's prediction is correct
 
 ___
 
@@ -90,8 +91,14 @@ ___
 
 ___
 
+### rectangles
+
+• `Optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
+
+___
+
 ### textExtractionConfidence
 
 • **textExtractionConfidence**: ``null`` \| `number`
 
-The OCR confidence.
+If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model.

@@ -9,6 +9,7 @@
 - [email](ResumeDataRefereesItem.md#email)
 - [name](ResumeDataRefereesItem.md#name)
 - [number](ResumeDataRefereesItem.md#number)
+- [position](ResumeDataRefereesItem.md#position)
 - [text](ResumeDataRefereesItem.md#text)
 
 ## Properties
@@ -28,6 +29,12 @@ ___
 ### number
 
 • `Optional` **number**: `string`
+
+___
+
+### position
+
+• `Optional` **position**: `string`
 
 ___
 

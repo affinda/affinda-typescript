@@ -1290,6 +1290,14 @@ export const ResumeDataRefereesItem: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      position: {
+        serializedName: "position",
+        nullable: true,
+        xmlName: "position",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -3915,6 +3923,21 @@ export const Annotation: coreClient.CompositeMapper = {
           className: "Rectangle"
         }
       },
+      rectangles: {
+        serializedName: "rectangles",
+        nullable: true,
+        xmlName: "rectangles",
+        xmlElementName: "Rectangle",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Rectangle"
+            }
+          }
+        }
+      },
       pageIndex: {
         serializedName: "pageIndex",
         required: true,
@@ -3943,19 +3966,19 @@ export const Annotation: coreClient.CompositeMapper = {
         }
       },
       classificationConfidence: {
-        serializedName: "classification_confidence",
+        serializedName: "classificationConfidence",
         required: true,
         nullable: true,
-        xmlName: "classification_confidence",
+        xmlName: "classificationConfidence",
         type: {
           name: "Number"
         }
       },
       textExtractionConfidence: {
-        serializedName: "text_extraction_confidence",
+        serializedName: "textExtractionConfidence",
         required: true,
         nullable: true,
-        xmlName: "text_extraction_confidence",
+        xmlName: "textExtractionConfidence",
         type: {
           name: "Number"
         }
@@ -5352,6 +5375,45 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         serializedName: "username",
         readOnly: true,
         xmlName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      actions: {
+        serializedName: "actions",
+        nullable: true,
+        xmlName: "actions",
+        xmlElementName: "JobDescriptionSearchConfigActionsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "JobDescriptionSearchConfigActionsItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const JobDescriptionSearchConfigActionsItem: coreClient.CompositeMapper = {
+  serializedName: "JobDescriptionSearchConfigActionsItem",
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchConfigActionsItem",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        xmlName: "label",
+        type: {
+          name: "String"
+        }
+      },
+      eventName: {
+        serializedName: "eventName",
+        xmlName: "eventName",
         type: {
           name: "String"
         }

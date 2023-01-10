@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [actions](JobDescriptionSearchConfig.md#actions)
 - [allowPdfDownload](JobDescriptionSearchConfig.md#allowpdfdownload)
 - [displayEducation](JobDescriptionSearchConfig.md#displayeducation)
 - [displayJobTitle](JobDescriptionSearchConfig.md#displayjobtitle)
@@ -32,6 +33,14 @@
 - [weightYearsExperience](JobDescriptionSearchConfig.md#weightyearsexperience)
 
 ## Properties
+
+### actions
+
+• `Optional` **actions**: [`JobDescriptionSearchConfigActionsItem`](JobDescriptionSearchConfigActionsItem.md)[]
+
+A list of actions to show in the dropdown in the embedded search tool
+
+___
 
 ### allowPdfDownload
 
