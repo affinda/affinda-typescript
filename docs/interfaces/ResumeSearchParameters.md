@@ -134,7 +134,7 @@ ___
 
 • `Optional` **jobDescription**: `string`
 
-Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+A random string that uniquely identify the resource.
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 • `Optional` **resume**: `string`
 
-Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+A random string that uniquely identify the resource.
 
 ___
 

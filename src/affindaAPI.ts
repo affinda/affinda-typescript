@@ -15,7 +15,6 @@ import {
   AffindaAPIUpdateResumeDataOptionalParams,
   AffindaAPIUpdateResumeDataResponse,
   AffindaAPIDeleteResumeOptionalParams,
-  AffindaAPIDeleteResumeResponse,
   AffindaAPIGetAllRedactedResumesOptionalParams,
   AffindaAPIGetAllRedactedResumesResponse,
   AffindaAPICreateRedactedResumeOptionalParams,
@@ -23,7 +22,6 @@ import {
   AffindaAPIGetRedactedResumeOptionalParams,
   AffindaAPIGetRedactedResumeResponse,
   AffindaAPIDeleteRedactedResumeOptionalParams,
-  AffindaAPIDeleteRedactedResumeResponse,
   ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
@@ -49,7 +47,6 @@ import {
   AffindaAPIGetJobDescriptionOptionalParams,
   AffindaAPIGetJobDescriptionResponse,
   AffindaAPIDeleteJobDescriptionOptionalParams,
-  AffindaAPIDeleteJobDescriptionResponse,
   JobDescriptionSearchParameters,
   AffindaAPICreateJobDescriptionSearchOptionalParams,
   AffindaAPICreateJobDescriptionSearchResponse,
@@ -67,14 +64,12 @@ import {
   AffindaAPICreateIndexOptionalParams,
   AffindaAPICreateIndexResponse,
   AffindaAPIDeleteIndexOptionalParams,
-  AffindaAPIDeleteIndexResponse,
   AffindaAPIGetAllIndexDocumentsOptionalParams,
   AffindaAPIGetAllIndexDocumentsResponse,
   PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema,
   AffindaAPICreateIndexDocumentOptionalParams,
   AffindaAPICreateIndexDocumentResponse,
   AffindaAPIDeleteIndexDocumentOptionalParams,
-  AffindaAPIDeleteIndexDocumentResponse,
   AffindaAPIGetAllInvoicesOptionalParams,
   AffindaAPIGetAllInvoicesResponse,
   AffindaAPICreateInvoiceOptionalParams,
@@ -82,13 +77,116 @@ import {
   AffindaAPIGetInvoiceOptionalParams,
   AffindaAPIGetInvoiceResponse,
   AffindaAPIDeleteInvoiceOptionalParams,
-  AffindaAPIDeleteInvoiceResponse,
   AffindaAPIListOccupationGroupsOptionalParams,
   AffindaAPIListOccupationGroupsResponse,
   AffindaAPIGetAllUsersOptionalParams,
   AffindaAPIGetAllUsersResponse,
   AffindaAPICreateUserOptionalParams,
-  AffindaAPICreateUserResponse
+  AffindaAPICreateUserResponse,
+  AffindaAPIGetAllOrganizationsOptionalParams,
+  AffindaAPIGetAllOrganizationsResponse,
+  AffindaAPICreateOrganizationOptionalParams,
+  AffindaAPICreateOrganizationResponse,
+  AffindaAPIGetOrganizationOptionalParams,
+  AffindaAPIGetOrganizationResponse,
+  AffindaAPIUpdateOrganizationOptionalParams,
+  AffindaAPIUpdateOrganizationResponse,
+  AffindaAPIDeleteOrganizationOptionalParams,
+  AffindaAPIGetAllOrganizationMembershipsOptionalParams,
+  AffindaAPIGetAllOrganizationMembershipsResponse,
+  AffindaAPIGetOrganizationMembershipOptionalParams,
+  AffindaAPIGetOrganizationMembershipResponse,
+  OrganizationMembershipUpdate,
+  AffindaAPIUpdateOrganizationMembershipOptionalParams,
+  AffindaAPIUpdateOrganizationMembershipResponse,
+  AffindaAPIDeleteOrganizationMembershipOptionalParams,
+  AffindaAPIGetAllInvitationsOptionalParams,
+  AffindaAPIGetAllInvitationsResponse,
+  InvitationCreate,
+  AffindaAPICreateInvitationOptionalParams,
+  AffindaAPICreateInvitationResponse,
+  AffindaAPIGetInvitationOptionalParams,
+  AffindaAPIGetInvitationResponse,
+  InvitationUpdate,
+  AffindaAPIUpdateInvitationOptionalParams,
+  AffindaAPIUpdateInvitationResponse,
+  AffindaAPIDeleteInvitationOptionalParams,
+  AffindaAPIGetInvitationByTokenOptionalParams,
+  AffindaAPIGetInvitationByTokenResponse,
+  PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema,
+  AffindaAPIRespondToInvitationOptionalParams,
+  AffindaAPIRespondToInvitationResponse,
+  AffindaAPIGetAllExtractorsOptionalParams,
+  AffindaAPIGetAllExtractorsResponse,
+  AffindaAPICreateExtractorOptionalParams,
+  AffindaAPICreateExtractorResponse,
+  AffindaAPIGetExtractorOptionalParams,
+  AffindaAPIGetExtractorResponse,
+  ExtractorUpdate,
+  AffindaAPIUpdateExtractorDataOptionalParams,
+  AffindaAPIUpdateExtractorDataResponse,
+  AffindaAPIDeleteExtractorOptionalParams,
+  AffindaAPIGetAllDataPointsOptionalParams,
+  AffindaAPIGetAllDataPointsResponse,
+  AffindaAPICreateDataPointOptionalParams,
+  AffindaAPICreateDataPointResponse,
+  AffindaAPIGetDataPointOptionalParams,
+  AffindaAPIGetDataPointResponse,
+  DataPointUpdate,
+  AffindaAPIUpdateDataPointDataOptionalParams,
+  AffindaAPIUpdateDataPointDataResponse,
+  AffindaAPIDeleteDataPointOptionalParams,
+  AffindaAPIGetAllWorkspacesOptionalParams,
+  AffindaAPIGetAllWorkspacesResponse,
+  WorkspaceCreate,
+  AffindaAPICreateWorkspaceOptionalParams,
+  AffindaAPICreateWorkspaceResponse,
+  AffindaAPIGetWorkspaceOptionalParams,
+  AffindaAPIGetWorkspaceResponse,
+  WorkspaceUpdate,
+  AffindaAPIUpdateWorkspaceOptionalParams,
+  AffindaAPIUpdateWorkspaceResponse,
+  AffindaAPIDeleteWorkspaceOptionalParams,
+  AffindaAPIGetAllWorkspaceMembershipsOptionalParams,
+  AffindaAPIGetAllWorkspaceMembershipsResponse,
+  WorkspaceMembershipCreate,
+  AffindaAPICreateWorkspaceMembershipOptionalParams,
+  AffindaAPICreateWorkspaceMembershipResponse,
+  AffindaAPIGetWorkspaceMembershipOptionalParams,
+  AffindaAPIGetWorkspaceMembershipResponse,
+  AffindaAPIDeleteWorkspaceMembershipOptionalParams,
+  AffindaAPIGetAllCollectionsOptionalParams,
+  AffindaAPIGetAllCollectionsResponse,
+  CollectionCreate,
+  AffindaAPICreateCollectionOptionalParams,
+  AffindaAPICreateCollectionResponse,
+  AffindaAPIGetCollectionOptionalParams,
+  AffindaAPIGetCollectionResponse,
+  CollectionUpdate,
+  AffindaAPIUpdateCollectionDataOptionalParams,
+  AffindaAPIUpdateCollectionDataResponse,
+  AffindaAPIDeleteCollectionOptionalParams,
+  AffindaAPIGetAllDocumentsOptionalParams,
+  AffindaAPIGetAllDocumentsResponse,
+  AffindaAPICreateDocumentOptionalParams,
+  AffindaAPICreateDocumentResponse,
+  AffindaAPIGetDocumentOptionalParams,
+  AffindaAPIGetDocumentResponse,
+  DocumentUpdate,
+  AffindaAPIUpdateDocumentDataOptionalParams,
+  AffindaAPIUpdateDocumentDataResponse,
+  AffindaAPIDeleteDocumentOptionalParams,
+  AffindaAPIGetAllTagsOptionalParams,
+  AffindaAPIGetAllTagsResponse,
+  TagCreate,
+  AffindaAPICreateTagOptionalParams,
+  AffindaAPICreateTagResponse,
+  AffindaAPIGetTagOptionalParams,
+  AffindaAPIGetTagResponse,
+  TagUpdate,
+  AffindaAPIUpdateTagDataOptionalParams,
+  AffindaAPIUpdateTagDataResponse,
+  AffindaAPIDeleteTagOptionalParams
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -137,7 +235,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetResumeOptionalParams
   ): Promise<AffindaAPIGetResumeResponse> {
     return this.sendOperationRequest(
@@ -155,7 +253,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateResumeData(
-    identifier: string | null,
+    identifier: string,
     body: ResumeData | null,
     options?: AffindaAPIUpdateResumeDataOptionalParams
   ): Promise<AffindaAPIUpdateResumeDataResponse> {
@@ -171,9 +269,9 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteResumeOptionalParams
-  ): Promise<AffindaAPIDeleteResumeResponse> {
+  ): Promise<void> {
     return this.sendOperationRequest(
       { identifier, options },
       deleteResumeOperationSpec
@@ -214,7 +312,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getRedactedResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetRedactedResumeOptionalParams
   ): Promise<AffindaAPIGetRedactedResumeResponse> {
     return this.sendOperationRequest(
@@ -229,9 +327,9 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteRedactedResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteRedactedResumeOptionalParams
-  ): Promise<AffindaAPIDeleteRedactedResumeResponse> {
+  ): Promise<void> {
     return this.sendOperationRequest(
       { identifier, options },
       deleteRedactedResumeOperationSpec
@@ -266,7 +364,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getResumeSearchDetail(
-    identifier: string | null,
+    identifier: string,
     body: ResumeSearchParameters | null,
     options?: AffindaAPIGetResumeSearchDetailOptionalParams
   ): Promise<AffindaAPIGetResumeSearchDetailResponse> {
@@ -411,7 +509,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getJobDescription(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetJobDescriptionOptionalParams
   ): Promise<AffindaAPIGetJobDescriptionResponse> {
     return this.sendOperationRequest(
@@ -426,9 +524,9 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteJobDescription(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteJobDescriptionOptionalParams
-  ): Promise<AffindaAPIDeleteJobDescriptionResponse> {
+  ): Promise<void> {
     return this.sendOperationRequest(
       { identifier, options },
       deleteJobDescriptionOperationSpec
@@ -460,7 +558,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getJobDescriptionSearchDetail(
-    identifier: string | null,
+    identifier: string,
     body: JobDescriptionSearchParameters | null,
     options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams
   ): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse> {
@@ -545,7 +643,7 @@ export class AffindaAPI extends AffindaAPIContext {
   deleteIndex(
     name: string,
     options?: AffindaAPIDeleteIndexOptionalParams
-  ): Promise<AffindaAPIDeleteIndexResponse> {
+  ): Promise<void> {
     return this.sendOperationRequest(
       { name, options },
       deleteIndexOperationSpec
@@ -592,9 +690,9 @@ export class AffindaAPI extends AffindaAPIContext {
    */
   deleteIndexDocument(
     name: string,
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteIndexDocumentOptionalParams
-  ): Promise<AffindaAPIDeleteIndexDocumentResponse> {
+  ): Promise<void> {
     return this.sendOperationRequest(
       { name, identifier, options },
       deleteIndexDocumentOperationSpec
@@ -632,7 +730,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getInvoice(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetInvoiceOptionalParams
   ): Promise<AffindaAPIGetInvoiceResponse> {
     return this.sendOperationRequest(
@@ -648,9 +746,9 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteInvoice(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteInvoiceOptionalParams
-  ): Promise<AffindaAPIDeleteInvoiceResponse> {
+  ): Promise<void> {
     return this.sendOperationRequest(
       { identifier, options },
       deleteInvoiceOperationSpec
@@ -683,16 +781,746 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Create an user as part of your account
    * @param username
+   * @param email
    * @param options The options parameters.
    */
   createUser(
     username: string,
+    email: string,
     options?: AffindaAPICreateUserOptionalParams
   ): Promise<AffindaAPICreateUserResponse> {
     return this.sendOperationRequest(
-      { username, options },
+      { username, email, options },
       createUserOperationSpec
     );
+  }
+
+  /**
+   * Returns all the organizations
+   * @param options The options parameters.
+   */
+  getAllOrganizations(
+    options?: AffindaAPIGetAllOrganizationsOptionalParams
+  ): Promise<AffindaAPIGetAllOrganizationsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllOrganizationsOperationSpec
+    );
+  }
+
+  /**
+   * Create a new organization.
+   * @param name
+   * @param options The options parameters.
+   */
+  createOrganization(
+    name: string,
+    options?: AffindaAPICreateOrganizationOptionalParams
+  ): Promise<AffindaAPICreateOrganizationResponse> {
+    return this.sendOperationRequest(
+      { name, options },
+      createOrganizationOperationSpec
+    );
+  }
+
+  /**
+   * Get detail of an organization.
+   * @param identifier Organization identifier.
+   * @param options The options parameters.
+   */
+  getOrganization(
+    identifier: string,
+    options?: AffindaAPIGetOrganizationOptionalParams
+  ): Promise<AffindaAPIGetOrganizationResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getOrganizationOperationSpec
+    );
+  }
+
+  /**
+   * Update the detail of an organization.
+   * @param identifier Organization identifier.
+   * @param options The options parameters.
+   */
+  updateOrganization(
+    identifier: string,
+    options?: AffindaAPIUpdateOrganizationOptionalParams
+  ): Promise<AffindaAPIUpdateOrganizationResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      updateOrganizationOperationSpec
+    );
+  }
+
+  /**
+   * Delete the specified organization from the database.
+   * @param identifier Organization identifier.
+   * @param options The options parameters.
+   */
+  deleteOrganization(
+    identifier: string,
+    options?: AffindaAPIDeleteOrganizationOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteOrganizationOperationSpec
+    );
+  }
+
+  /**
+   * Returns all the organization memberships
+   * @param options The options parameters.
+   */
+  getAllOrganizationMemberships(
+    options?: AffindaAPIGetAllOrganizationMembershipsOptionalParams
+  ): Promise<AffindaAPIGetAllOrganizationMembershipsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllOrganizationMembershipsOperationSpec
+    );
+  }
+
+  /**
+   * Get detail of an organization membership.
+   * @param identifier Membership identifier.
+   * @param options The options parameters.
+   */
+  getOrganizationMembership(
+    identifier: string,
+    options?: AffindaAPIGetOrganizationMembershipOptionalParams
+  ): Promise<AffindaAPIGetOrganizationMembershipResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getOrganizationMembershipOperationSpec
+    );
+  }
+
+  /**
+   * The admin users can use this endpoint to update the role of the members within their organization.
+   * @param identifier Membership identifier.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateOrganizationMembership(
+    identifier: string,
+    body: OrganizationMembershipUpdate,
+    options?: AffindaAPIUpdateOrganizationMembershipOptionalParams
+  ): Promise<AffindaAPIUpdateOrganizationMembershipResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateOrganizationMembershipOperationSpec
+    );
+  }
+
+  /**
+   * The admin users can use this endpoint to remove member from their organization. Other users can also
+   * use this to leave their organization.
+   * @param identifier Membership identifier.
+   * @param options The options parameters.
+   */
+  deleteOrganizationMembership(
+    identifier: string,
+    options?: AffindaAPIDeleteOrganizationMembershipOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteOrganizationMembershipOperationSpec
+    );
+  }
+
+  /**
+   * Get list of all invitations you created or sent to you.
+   * @param options The options parameters.
+   */
+  getAllInvitations(
+    options?: AffindaAPIGetAllInvitationsOptionalParams
+  ): Promise<AffindaAPIGetAllInvitationsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllInvitationsOperationSpec
+    );
+  }
+
+  /**
+   * Create a new invitation.
+   * @param body Invitation to create.
+   * @param options The options parameters.
+   */
+  createInvitation(
+    body: InvitationCreate,
+    options?: AffindaAPICreateInvitationOptionalParams
+  ): Promise<AffindaAPICreateInvitationResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createInvitationOperationSpec
+    );
+  }
+
+  /**
+   * Get detail of an invitation.
+   * @param identifier Invitation identifier.
+   * @param options The options parameters.
+   */
+  getInvitation(
+    identifier: string,
+    options?: AffindaAPIGetInvitationOptionalParams
+  ): Promise<AffindaAPIGetInvitationResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getInvitationOperationSpec
+    );
+  }
+
+  /**
+   * Update the detail of an invitation.
+   * @param identifier Invitation identifier.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateInvitation(
+    identifier: string,
+    body: InvitationUpdate,
+    options?: AffindaAPIUpdateInvitationOptionalParams
+  ): Promise<AffindaAPIUpdateInvitationResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateInvitationOperationSpec
+    );
+  }
+
+  /**
+   * Delete the specified invitation from the database.
+   * @param identifier Invitation identifier.
+   * @param options The options parameters.
+   */
+  deleteInvitation(
+    identifier: string,
+    options?: AffindaAPIDeleteInvitationOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteInvitationOperationSpec
+    );
+  }
+
+  /**
+   * Get detail of an invitation using a secret token. This allows users who have not registered/logged
+   * in to view the invitation.
+   * @param token Invitation token.
+   * @param options The options parameters.
+   */
+  getInvitationByToken(
+    token: string,
+    options?: AffindaAPIGetInvitationByTokenOptionalParams
+  ): Promise<AffindaAPIGetInvitationByTokenResponse> {
+    return this.sendOperationRequest(
+      { token, options },
+      getInvitationByTokenOperationSpec
+    );
+  }
+
+  /**
+   * Choose to accept or decline an invitation.
+   * @param token Invitation token.
+   * @param body
+   * @param options The options parameters.
+   */
+  respondToInvitation(
+    token: string,
+    body: PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema,
+    options?: AffindaAPIRespondToInvitationOptionalParams
+  ): Promise<AffindaAPIRespondToInvitationResponse> {
+    return this.sendOperationRequest(
+      { token, body, options },
+      respondToInvitationOperationSpec
+    );
+  }
+
+  /**
+   * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
+   * @param organization Filter by organization.
+   * @param options The options parameters.
+   */
+  getAllExtractors(
+    organization: string,
+    options?: AffindaAPIGetAllExtractorsOptionalParams
+  ): Promise<AffindaAPIGetAllExtractorsResponse> {
+    return this.sendOperationRequest(
+      { organization, options },
+      getAllExtractorsOperationSpec
+    );
+  }
+
+  /**
+   * Create a custom extractor.
+   * @param options The options parameters.
+   */
+  createExtractor(
+    options?: AffindaAPICreateExtractorOptionalParams
+  ): Promise<AffindaAPICreateExtractorResponse> {
+    return this.sendOperationRequest({ options }, createExtractorOperationSpec);
+  }
+
+  /**
+   * Return a specific extractor.
+   * @param id Extractor's ID
+   * @param options The options parameters.
+   */
+  getExtractor(
+    id: number,
+    options?: AffindaAPIGetExtractorOptionalParams
+  ): Promise<AffindaAPIGetExtractorResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      getExtractorOperationSpec
+    );
+  }
+
+  /**
+   * Update data of an extractor.
+   * @param id Extractor's ID
+   * @param body Extractor data to update
+   * @param options The options parameters.
+   */
+  updateExtractorData(
+    id: number,
+    body: ExtractorUpdate,
+    options?: AffindaAPIUpdateExtractorDataOptionalParams
+  ): Promise<AffindaAPIUpdateExtractorDataResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateExtractorDataOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified extractor from the database.
+   * @param id Extractor's ID
+   * @param options The options parameters.
+   */
+  deleteExtractor(
+    id: number,
+    options?: AffindaAPIDeleteExtractorOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { id, options },
+      deleteExtractorOperationSpec
+    );
+  }
+
+  /**
+   * Returns your custom data points as well as Affinda's off-the-shelf data points.
+   * @param options The options parameters.
+   */
+  getAllDataPoints(
+    options?: AffindaAPIGetAllDataPointsOptionalParams
+  ): Promise<AffindaAPIGetAllDataPointsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllDataPointsOperationSpec
+    );
+  }
+
+  /**
+   * Create a custom data point.
+   * @param options The options parameters.
+   */
+  createDataPoint(
+    options?: AffindaAPICreateDataPointOptionalParams
+  ): Promise<AffindaAPICreateDataPointResponse> {
+    return this.sendOperationRequest({ options }, createDataPointOperationSpec);
+  }
+
+  /**
+   * Return a specific data point.
+   * @param identifier Data point's identifier
+   * @param options The options parameters.
+   */
+  getDataPoint(
+    identifier: string,
+    options?: AffindaAPIGetDataPointOptionalParams
+  ): Promise<AffindaAPIGetDataPointResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getDataPointOperationSpec
+    );
+  }
+
+  /**
+   * Update data of a data point.
+   * @param identifier DataPoint's identifier
+   * @param body Data point to update
+   * @param options The options parameters.
+   */
+  updateDataPointData(
+    identifier: string,
+    body: DataPointUpdate,
+    options?: AffindaAPIUpdateDataPointDataOptionalParams
+  ): Promise<AffindaAPIUpdateDataPointDataResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateDataPointDataOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified data point from the database.
+   * @param identifier DataPoint's identifier
+   * @param options The options parameters.
+   */
+  deleteDataPoint(
+    identifier: string,
+    options?: AffindaAPIDeleteDataPointOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteDataPointOperationSpec
+    );
+  }
+
+  /**
+   * Returns your workspaces.
+   * @param organization Filter by organization.
+   * @param options The options parameters.
+   */
+  getAllWorkspaces(
+    organization: string,
+    options?: AffindaAPIGetAllWorkspacesOptionalParams
+  ): Promise<AffindaAPIGetAllWorkspacesResponse> {
+    return this.sendOperationRequest(
+      { organization, options },
+      getAllWorkspacesOperationSpec
+    );
+  }
+
+  /**
+   * Create a workspace
+   * @param body Workspace to create
+   * @param options The options parameters.
+   */
+  createWorkspace(
+    body: WorkspaceCreate,
+    options?: AffindaAPICreateWorkspaceOptionalParams
+  ): Promise<AffindaAPICreateWorkspaceResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createWorkspaceOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific workspace.
+   * @param identifier Workspace's identifier
+   * @param options The options parameters.
+   */
+  getWorkspace(
+    identifier: string,
+    options?: AffindaAPIGetWorkspaceOptionalParams
+  ): Promise<AffindaAPIGetWorkspaceResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getWorkspaceOperationSpec
+    );
+  }
+
+  /**
+   * Update a workspace.
+   * @param identifier Workspace's identifier
+   * @param body Workspace data to update
+   * @param options The options parameters.
+   */
+  updateWorkspace(
+    identifier: string,
+    body: WorkspaceUpdate,
+    options?: AffindaAPIUpdateWorkspaceOptionalParams
+  ): Promise<AffindaAPIUpdateWorkspaceResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateWorkspaceOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified workspace from the database.
+   * @param identifier Workspace's identifier
+   * @param options The options parameters.
+   */
+  deleteWorkspace(
+    identifier: string,
+    options?: AffindaAPIDeleteWorkspaceOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteWorkspaceOperationSpec
+    );
+  }
+
+  /**
+   * Returns the memberships of your workspaces.
+   * @param options The options parameters.
+   */
+  getAllWorkspaceMemberships(
+    options?: AffindaAPIGetAllWorkspaceMembershipsOptionalParams
+  ): Promise<AffindaAPIGetAllWorkspaceMembershipsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllWorkspaceMembershipsOperationSpec
+    );
+  }
+
+  /**
+   * Create a workspace membership.
+   * @param body
+   * @param options The options parameters.
+   */
+  createWorkspaceMembership(
+    body: WorkspaceMembershipCreate,
+    options?: AffindaAPICreateWorkspaceMembershipOptionalParams
+  ): Promise<AffindaAPICreateWorkspaceMembershipResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createWorkspaceMembershipOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific workspace membership.
+   * @param identifier Workspace membership's identifier.
+   * @param options The options parameters.
+   */
+  getWorkspaceMembership(
+    identifier: string,
+    options?: AffindaAPIGetWorkspaceMembershipOptionalParams
+  ): Promise<AffindaAPIGetWorkspaceMembershipResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getWorkspaceMembershipOperationSpec
+    );
+  }
+
+  /**
+   * Remove an user from a workspace.
+   * @param identifier Workspace membership's identifier.
+   * @param options The options parameters.
+   */
+  deleteWorkspaceMembership(
+    identifier: string,
+    options?: AffindaAPIDeleteWorkspaceMembershipOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteWorkspaceMembershipOperationSpec
+    );
+  }
+
+  /**
+   * Returns your collections.
+   * @param workspace Filter by workspace.
+   * @param options The options parameters.
+   */
+  getAllCollections(
+    workspace: string,
+    options?: AffindaAPIGetAllCollectionsOptionalParams
+  ): Promise<AffindaAPIGetAllCollectionsResponse> {
+    return this.sendOperationRequest(
+      { workspace, options },
+      getAllCollectionsOperationSpec
+    );
+  }
+
+  /**
+   * Create a collection
+   * @param body
+   * @param options The options parameters.
+   */
+  createCollection(
+    body: CollectionCreate,
+    options?: AffindaAPICreateCollectionOptionalParams
+  ): Promise<AffindaAPICreateCollectionResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createCollectionOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific collection.
+   * @param identifier Collection's identifier
+   * @param options The options parameters.
+   */
+  getCollection(
+    identifier: string,
+    options?: AffindaAPIGetCollectionOptionalParams
+  ): Promise<AffindaAPIGetCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getCollectionOperationSpec
+    );
+  }
+
+  /**
+   * Update data of a collection.
+   * @param identifier Collection's identifier
+   * @param body Collection data to update
+   * @param options The options parameters.
+   */
+  updateCollectionData(
+    identifier: string,
+    body: CollectionUpdate,
+    options?: AffindaAPIUpdateCollectionDataOptionalParams
+  ): Promise<AffindaAPIUpdateCollectionDataResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateCollectionDataOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified collection from the database.
+   * @param identifier Collection's identifier
+   * @param options The options parameters.
+   */
+  deleteCollection(
+    identifier: string,
+    options?: AffindaAPIDeleteCollectionOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteCollectionOperationSpec
+    );
+  }
+
+  /**
+   * Returns all the document summaries for that user, limited to 300 per page.
+   * @param options The options parameters.
+   */
+  getAllDocuments(
+    options?: AffindaAPIGetAllDocumentsOptionalParams
+  ): Promise<AffindaAPIGetAllDocumentsResponse> {
+    return this.sendOperationRequest({ options }, getAllDocumentsOperationSpec);
+  }
+
+  /**
+   * Uploads a document for parsing. When successful, returns an `identifier` in the response for
+   * subsequent use with the [/documents/{identifier}](#get-/documents/-identifier-) endpoint to check
+   * processing status and retrieve results.<br/>
+   * @param options The options parameters.
+   */
+  createDocument(
+    options?: AffindaAPICreateDocumentOptionalParams
+  ): Promise<AffindaAPICreateDocumentResponse> {
+    return this.sendOperationRequest({ options }, createDocumentOperationSpec);
+  }
+
+  /**
+   * Return a specific document.
+   * @param identifier Document's identifier
+   * @param options The options parameters.
+   */
+  getDocument(
+    identifier: string,
+    options?: AffindaAPIGetDocumentOptionalParams
+  ): Promise<AffindaAPIGetDocumentResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getDocumentOperationSpec
+    );
+  }
+
+  /**
+   * Update file name, expiry time, or move to another collection, etc.
+   * @param identifier Document's identifier
+   * @param body Document data to update
+   * @param options The options parameters.
+   */
+  updateDocumentData(
+    identifier: string,
+    body: DocumentUpdate,
+    options?: AffindaAPIUpdateDocumentDataOptionalParams
+  ): Promise<AffindaAPIUpdateDocumentDataResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateDocumentDataOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified document from the database.
+   * @param identifier Document's identifier
+   * @param options The options parameters.
+   */
+  deleteDocument(
+    identifier: string,
+    options?: AffindaAPIDeleteDocumentOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteDocumentOperationSpec
+    );
+  }
+
+  /**
+   * Returns your tags.
+   * @param options The options parameters.
+   */
+  getAllTags(
+    options?: AffindaAPIGetAllTagsOptionalParams
+  ): Promise<AffindaAPIGetAllTagsResponse> {
+    return this.sendOperationRequest({ options }, getAllTagsOperationSpec);
+  }
+
+  /**
+   * Create a tag
+   * @param body
+   * @param options The options parameters.
+   */
+  createTag(
+    body: TagCreate,
+    options?: AffindaAPICreateTagOptionalParams
+  ): Promise<AffindaAPICreateTagResponse> {
+    return this.sendOperationRequest({ body, options }, createTagOperationSpec);
+  }
+
+  /**
+   * Return a specific tag.
+   * @param id Tag's ID
+   * @param options The options parameters.
+   */
+  getTag(
+    id: number,
+    options?: AffindaAPIGetTagOptionalParams
+  ): Promise<AffindaAPIGetTagResponse> {
+    return this.sendOperationRequest({ id, options }, getTagOperationSpec);
+  }
+
+  /**
+   * Update data of an tag.
+   * @param id Tag's ID
+   * @param body Tag data to update
+   * @param options The options parameters.
+   */
+  updateTagData(
+    id: number,
+    body: TagUpdate,
+    options?: AffindaAPIUpdateTagDataOptionalParams
+  ): Promise<AffindaAPIUpdateTagDataResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateTagDataOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified tag from the database.
+   * @param id Tag's ID
+   * @param options The options parameters.
+   */
+  deleteTag(
+    id: number,
+    options?: AffindaAPIDeleteTagOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest({ id, options }, deleteTagOperationSpec);
   }
 }
 // Operation Specifications
@@ -708,10 +1536,12 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.GetAllDocumentsResults
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -733,10 +1563,12 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Resume
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -791,10 +1623,12 @@ const updateResumeDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeData
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -812,10 +1646,12 @@ const deleteResumeOperationSpec: coreClient.OperationSpec = {
   responses: {
     204: {},
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -833,10 +1669,12 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.GetAllDocumentsResults
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -858,10 +1696,12 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RedactedResume
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -896,10 +1736,12 @@ const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RedactedResume
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -915,10 +1757,12 @@ const deleteRedactedResumeOperationSpec: coreClient.OperationSpec = {
   responses: {
     204: {},
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -936,10 +1780,12 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeSearch
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -960,10 +1806,12 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeSearchDetail
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -983,10 +1831,12 @@ const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeSearchMatch
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1019,7 +1869,8 @@ const getResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeSearchConfig
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1037,10 +1888,12 @@ const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeSearchConfig
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1060,7 +1913,8 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.ResumeSearchEmbed
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1082,10 +1936,12 @@ const getResumeSearchSuggestionJobTitleOperationSpec: coreClient.OperationSpec =
       }
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1106,10 +1962,12 @@ const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
       }
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1128,10 +1986,12 @@ const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.GetAllJobDescriptionsResults
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1153,10 +2013,12 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.JobDescription
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1184,10 +2046,12 @@ const getJobDescriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.JobDescription
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1203,10 +2067,12 @@ const deleteJobDescriptionOperationSpec: coreClient.OperationSpec = {
   responses: {
     204: {},
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1224,10 +2090,12 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.JobDescriptionSearch
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1248,10 +2116,12 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.JobDescriptionSearchDetail
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1271,7 +2141,8 @@ const getJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.JobDescriptionSearchConfig
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1289,10 +2160,12 @@ const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = 
       bodyMapper: Mappers.JobDescriptionSearchConfig
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1312,7 +2185,8 @@ const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec 
       bodyMapper: Mappers.JobDescriptionSearchEmbed
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1333,10 +2207,12 @@ const getAllIndexesOperationSpec: coreClient.OperationSpec = {
         Mappers.Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1360,10 +2236,12 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
         Mappers.Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1380,10 +2258,12 @@ const deleteIndexOperationSpec: coreClient.OperationSpec = {
   responses: {
     204: {},
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1402,10 +2282,12 @@ const getAllIndexDocumentsOperationSpec: coreClient.OperationSpec = {
         Mappers.PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1424,10 +2306,12 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
         Mappers.PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1445,10 +2329,12 @@ const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
   responses: {
     204: {},
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1466,10 +2352,12 @@ const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.GetAllInvoicesResults
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1491,10 +2379,12 @@ const createInvoiceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Invoice
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1522,10 +2412,12 @@ const getInvoiceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Invoice
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1541,10 +2433,12 @@ const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
   responses: {
     204: {},
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1567,10 +2461,12 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
       }
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1589,10 +2485,12 @@ const getAllUsersOperationSpec: coreClient.OperationSpec = {
         Mappers.PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1608,14 +2506,15 @@ const createUserOperationSpec: coreClient.OperationSpec = {
   httpMethod: "POST",
   responses: {
     201: {
-      bodyMapper:
-        Mappers.PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema
+      bodyMapper: Mappers.UserCreateResponse
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1623,12 +2522,1275 @@ const createUserOperationSpec: coreClient.OperationSpec = {
   },
   formDataParameters: [
     Parameters.name,
-    Parameters.id,
     Parameters.username,
     Parameters.email,
-    Parameters.apiKey
+    Parameters.avatar
   ],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer
+};
+const getAllOrganizationsOperationSpec: coreClient.OperationSpec = {
+  path: "/organizations",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Organization" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createOrganizationOperationSpec: coreClient.OperationSpec = {
+  path: "/organizations",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Organization
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  formDataParameters: [
+    Parameters.avatar,
+    Parameters.name2,
+    Parameters.resthookSignatureKey
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer
+};
+const getOrganizationOperationSpec: coreClient.OperationSpec = {
+  path: "/organizations/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Organization
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateOrganizationOperationSpec: coreClient.OperationSpec = {
+  path: "/organizations/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Organization
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  formDataParameters: [
+    Parameters.name,
+    Parameters.avatar,
+    Parameters.resthookSignatureKey
+  ],
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer
+};
+const deleteOrganizationOperationSpec: coreClient.OperationSpec = {
+  path: "/organizations/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllOrganizationMembershipsOperationSpec: coreClient.OperationSpec = {
+  path: "/organization_memberships",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization,
+    Parameters.role
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/organization_memberships/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.OrganizationMembership
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/organization_memberships/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.OrganizationMembership
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body8,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/organization_memberships/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllInvitationsOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization,
+    Parameters.role,
+    Parameters.status
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Invitation
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body9,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body10,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getInvitationByTokenOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations/token/{token}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.token],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const respondToInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/invitations/token/{token}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body11,
+  urlParameters: [Parameters.$host, Parameters.token],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getAllExtractorsOperationSpec: coreClient.OperationSpec = {
+  path: "/extractors",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Extractor" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.organization1,
+    Parameters.includePublicExtractors,
+    Parameters.name3,
+    Parameters.validatable
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/extractors",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Extractor
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body12,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/extractors/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Extractor
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
+  path: "/extractors/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Extractor
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body13,
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/extractors/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
+  path: "/data_points",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "DataPoint" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization,
+    Parameters.extractor,
+    Parameters.slug,
+    Parameters.description,
+    Parameters.annotationContentType
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/data_points",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.DataPoint
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body14,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/data_points/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPoint
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateDataPointDataOperationSpec: coreClient.OperationSpec = {
+  path: "/data_points/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPoint
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body15,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/data_points/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllWorkspacesOperationSpec: coreClient.OperationSpec = {
+  path: "/workspaces",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Workspace" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.organization1, Parameters.name3],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createWorkspaceOperationSpec: coreClient.OperationSpec = {
+  path: "/workspaces",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Workspace
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body16,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getWorkspaceOperationSpec: coreClient.OperationSpec = {
+  path: "/workspaces/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Workspace
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateWorkspaceOperationSpec: coreClient.OperationSpec = {
+  path: "/workspaces/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Workspace
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body17,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteWorkspaceOperationSpec: coreClient.OperationSpec = {
+  path: "/workspaces/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllWorkspaceMembershipsOperationSpec: coreClient.OperationSpec = {
+  path: "/workspace_memberships",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.workspace,
+    Parameters.user
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/workspace_memberships",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.WorkspaceMembership
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body18,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/workspace_memberships/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.WorkspaceMembership
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const deleteWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/workspace_memberships/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllCollectionsOperationSpec: coreClient.OperationSpec = {
+  path: "/collections",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Collection" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.workspace1],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/collections",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Collection
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body19,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/collections/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Collection
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateCollectionDataOperationSpec: coreClient.OperationSpec = {
+  path: "/collections/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Collection
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body20,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/collections/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
+  path: "/documents",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.GetAllDocumentsResults
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.workspace,
+    Parameters.collection,
+    Parameters.state,
+    Parameters.tags,
+    Parameters.createdDt,
+    Parameters.search,
+    Parameters.ordering,
+    Parameters.includeData
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/documents",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document
+    },
+    201: {
+      bodyMapper: Mappers.Document
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  formDataParameters: [
+    Parameters.file,
+    Parameters.url,
+    Parameters.identifier,
+    Parameters.fileName,
+    Parameters.wait,
+    Parameters.language,
+    Parameters.expiryTime,
+    Parameters.collection1,
+    Parameters.workspace2
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer
+};
+const getDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/documents/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
+  path: "/documents/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body21,
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/documents/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllTagsOperationSpec: coreClient.OperationSpec = {
+  path: "/tags",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Tag" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.offset, Parameters.limit, Parameters.workspace],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createTagOperationSpec: coreClient.OperationSpec = {
+  path: "/tags",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Tag
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body22,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getTagOperationSpec: coreClient.OperationSpec = {
+  path: "/tags/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Tag
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateTagDataOperationSpec: coreClient.OperationSpec = {
+  path: "/tags/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Tag
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body23,
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteTagOperationSpec: coreClient.OperationSpec = {
+  path: "/tags/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept],
   serializer
 };

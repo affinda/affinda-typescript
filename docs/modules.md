@@ -6,12 +6,23 @@
 
 ### Enumerations
 
+- [KnownAnnotationContentType](enums/KnownAnnotationContentType.md)
+- [KnownCollectionDateFormatPreference](enums/KnownCollectionDateFormatPreference.md)
+- [KnownDateFormatPreference](enums/KnownDateFormatPreference.md)
+- [KnownDateRange](enums/KnownDateRange.md)
+- [KnownDocumentState](enums/KnownDocumentState.md)
 - [KnownEnum2](enums/KnownEnum2.md)
 - [KnownEnum5](enums/KnownEnum5.md)
+- [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
+- [KnownInvitationStatus](enums/KnownInvitationStatus.md)
+- [KnownOrganizationRole](enums/KnownOrganizationRole.md)
+- [KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md)
+- [KnownPatchContentSchemaStatus](enums/KnownPatchContentSchemaStatus.md)
 - [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
 - [KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
+- [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
 
 ### Classes
 
@@ -22,34 +33,71 @@
 ### Interfaces
 
 - [Accreditation](interfaces/Accreditation.md)
+- [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
+- [AffindaAPICreateDataPointOptionalParams](interfaces/AffindaAPICreateDataPointOptionalParams.md)
+- [AffindaAPICreateDocumentOptionalParams](interfaces/AffindaAPICreateDocumentOptionalParams.md)
+- [AffindaAPICreateExtractorOptionalParams](interfaces/AffindaAPICreateExtractorOptionalParams.md)
 - [AffindaAPICreateIndexDocumentOptionalParams](interfaces/AffindaAPICreateIndexDocumentOptionalParams.md)
 - [AffindaAPICreateIndexOptionalParams](interfaces/AffindaAPICreateIndexOptionalParams.md)
+- [AffindaAPICreateInvitationOptionalParams](interfaces/AffindaAPICreateInvitationOptionalParams.md)
 - [AffindaAPICreateInvoiceOptionalParams](interfaces/AffindaAPICreateInvoiceOptionalParams.md)
 - [AffindaAPICreateJobDescriptionOptionalParams](interfaces/AffindaAPICreateJobDescriptionOptionalParams.md)
 - [AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateJobDescriptionSearchOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md)
+- [AffindaAPICreateOrganizationOptionalParams](interfaces/AffindaAPICreateOrganizationOptionalParams.md)
 - [AffindaAPICreateRedactedResumeOptionalParams](interfaces/AffindaAPICreateRedactedResumeOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
 - [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
+- [AffindaAPICreateTagOptionalParams](interfaces/AffindaAPICreateTagOptionalParams.md)
 - [AffindaAPICreateUserOptionalParams](interfaces/AffindaAPICreateUserOptionalParams.md)
+- [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
+- [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
+- [AffindaAPIDeleteCollectionOptionalParams](interfaces/AffindaAPIDeleteCollectionOptionalParams.md)
+- [AffindaAPIDeleteDataPointOptionalParams](interfaces/AffindaAPIDeleteDataPointOptionalParams.md)
+- [AffindaAPIDeleteDocumentOptionalParams](interfaces/AffindaAPIDeleteDocumentOptionalParams.md)
+- [AffindaAPIDeleteExtractorOptionalParams](interfaces/AffindaAPIDeleteExtractorOptionalParams.md)
 - [AffindaAPIDeleteIndexDocumentOptionalParams](interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md)
 - [AffindaAPIDeleteIndexOptionalParams](interfaces/AffindaAPIDeleteIndexOptionalParams.md)
+- [AffindaAPIDeleteInvitationOptionalParams](interfaces/AffindaAPIDeleteInvitationOptionalParams.md)
 - [AffindaAPIDeleteInvoiceOptionalParams](interfaces/AffindaAPIDeleteInvoiceOptionalParams.md)
 - [AffindaAPIDeleteJobDescriptionOptionalParams](interfaces/AffindaAPIDeleteJobDescriptionOptionalParams.md)
+- [AffindaAPIDeleteOrganizationMembershipOptionalParams](interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md)
+- [AffindaAPIDeleteOrganizationOptionalParams](interfaces/AffindaAPIDeleteOrganizationOptionalParams.md)
 - [AffindaAPIDeleteRedactedResumeOptionalParams](interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md)
 - [AffindaAPIDeleteResumeOptionalParams](interfaces/AffindaAPIDeleteResumeOptionalParams.md)
+- [AffindaAPIDeleteTagOptionalParams](interfaces/AffindaAPIDeleteTagOptionalParams.md)
+- [AffindaAPIDeleteWorkspaceMembershipOptionalParams](interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md)
+- [AffindaAPIDeleteWorkspaceOptionalParams](interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md)
+- [AffindaAPIGetAllCollectionsOptionalParams](interfaces/AffindaAPIGetAllCollectionsOptionalParams.md)
+- [AffindaAPIGetAllDataPointsOptionalParams](interfaces/AffindaAPIGetAllDataPointsOptionalParams.md)
+- [AffindaAPIGetAllDocumentsOptionalParams](interfaces/AffindaAPIGetAllDocumentsOptionalParams.md)
+- [AffindaAPIGetAllExtractorsOptionalParams](interfaces/AffindaAPIGetAllExtractorsOptionalParams.md)
 - [AffindaAPIGetAllIndexDocumentsOptionalParams](interfaces/AffindaAPIGetAllIndexDocumentsOptionalParams.md)
 - [AffindaAPIGetAllIndexesOptionalParams](interfaces/AffindaAPIGetAllIndexesOptionalParams.md)
+- [AffindaAPIGetAllInvitationsOptionalParams](interfaces/AffindaAPIGetAllInvitationsOptionalParams.md)
 - [AffindaAPIGetAllInvoicesOptionalParams](interfaces/AffindaAPIGetAllInvoicesOptionalParams.md)
 - [AffindaAPIGetAllJobDescriptionsOptionalParams](interfaces/AffindaAPIGetAllJobDescriptionsOptionalParams.md)
+- [AffindaAPIGetAllOrganizationMembershipsOptionalParams](interfaces/AffindaAPIGetAllOrganizationMembershipsOptionalParams.md)
+- [AffindaAPIGetAllOrganizationsOptionalParams](interfaces/AffindaAPIGetAllOrganizationsOptionalParams.md)
 - [AffindaAPIGetAllRedactedResumesOptionalParams](interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md)
 - [AffindaAPIGetAllResumesOptionalParams](interfaces/AffindaAPIGetAllResumesOptionalParams.md)
+- [AffindaAPIGetAllTagsOptionalParams](interfaces/AffindaAPIGetAllTagsOptionalParams.md)
 - [AffindaAPIGetAllUsersOptionalParams](interfaces/AffindaAPIGetAllUsersOptionalParams.md)
+- [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
+- [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
+- [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
+- [AffindaAPIGetDataPointOptionalParams](interfaces/AffindaAPIGetDataPointOptionalParams.md)
+- [AffindaAPIGetDocumentOptionalParams](interfaces/AffindaAPIGetDocumentOptionalParams.md)
+- [AffindaAPIGetExtractorOptionalParams](interfaces/AffindaAPIGetExtractorOptionalParams.md)
+- [AffindaAPIGetInvitationByTokenOptionalParams](interfaces/AffindaAPIGetInvitationByTokenOptionalParams.md)
+- [AffindaAPIGetInvitationOptionalParams](interfaces/AffindaAPIGetInvitationOptionalParams.md)
 - [AffindaAPIGetInvoiceOptionalParams](interfaces/AffindaAPIGetInvoiceOptionalParams.md)
 - [AffindaAPIGetJobDescriptionOptionalParams](interfaces/AffindaAPIGetJobDescriptionOptionalParams.md)
 - [AffindaAPIGetJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIGetJobDescriptionSearchDetailOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md)
+- [AffindaAPIGetOrganizationMembershipOptionalParams](interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md)
+- [AffindaAPIGetOrganizationOptionalParams](interfaces/AffindaAPIGetOrganizationOptionalParams.md)
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIGetResumeSearchConfigOptionalParams](interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md)
@@ -57,12 +105,30 @@
 - [AffindaAPIGetResumeSearchMatchOptionalParams](interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md)
 - [AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams.md)
 - [AffindaAPIGetResumeSearchSuggestionSkillOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md)
+- [AffindaAPIGetTagOptionalParams](interfaces/AffindaAPIGetTagOptionalParams.md)
+- [AffindaAPIGetWorkspaceMembershipOptionalParams](interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md)
+- [AffindaAPIGetWorkspaceOptionalParams](interfaces/AffindaAPIGetWorkspaceOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
+- [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
+- [AffindaAPIUpdateCollectionDataOptionalParams](interfaces/AffindaAPIUpdateCollectionDataOptionalParams.md)
+- [AffindaAPIUpdateDataPointDataOptionalParams](interfaces/AffindaAPIUpdateDataPointDataOptionalParams.md)
+- [AffindaAPIUpdateDocumentDataOptionalParams](interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md)
+- [AffindaAPIUpdateExtractorDataOptionalParams](interfaces/AffindaAPIUpdateExtractorDataOptionalParams.md)
+- [AffindaAPIUpdateInvitationOptionalParams](interfaces/AffindaAPIUpdateInvitationOptionalParams.md)
 - [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
+- [AffindaAPIUpdateOrganizationMembershipOptionalParams](interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md)
+- [AffindaAPIUpdateOrganizationOptionalParams](interfaces/AffindaAPIUpdateOrganizationOptionalParams.md)
 - [AffindaAPIUpdateResumeDataOptionalParams](interfaces/AffindaAPIUpdateResumeDataOptionalParams.md)
 - [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
+- [AffindaAPIUpdateTagDataOptionalParams](interfaces/AffindaAPIUpdateTagDataOptionalParams.md)
+- [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
+- [BaseExtractor](interfaces/BaseExtractor.md)
+- [Collection](interfaces/Collection.md)
+- [CollectionCreate](interfaces/CollectionCreate.md)
+- [CollectionUpdate](interfaces/CollectionUpdate.md)
+- [CollectionWorkspace](interfaces/CollectionWorkspace.md)
 - [Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1](interfaces/Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.md)
 - [Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1](interfaces/Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.md)
 - [Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1](interfaces/Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.md)
@@ -102,6 +168,18 @@
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
+- [DataPoint](interfaces/DataPoint.md)
+- [DataPointChoicesItem](interfaces/DataPointChoicesItem.md)
+- [DataPointCreate](interfaces/DataPointCreate.md)
+- [DataPointUpdate](interfaces/DataPointUpdate.md)
+- [DocumentCreate](interfaces/DocumentCreate.md)
+- [DocumentMeta](interfaces/DocumentMeta.md)
+- [DocumentMetaChildDocumentsItem](interfaces/DocumentMetaChildDocumentsItem.md)
+- [DocumentMetaCollection](interfaces/DocumentMetaCollection.md)
+- [DocumentMetaCollectionExtractor](interfaces/DocumentMetaCollectionExtractor.md)
+- [DocumentMetaParentDocument](interfaces/DocumentMetaParentDocument.md)
+- [DocumentMetaWorkspace](interfaces/DocumentMetaWorkspace.md)
+- [DocumentUpdate](interfaces/DocumentUpdate.md)
 - [Education](interfaces/Education.md)
 - [EducationDates](interfaces/EducationDates.md)
 - [EducationGrade](interfaces/EducationGrade.md)
@@ -109,11 +187,20 @@
 - [ErrorModel](interfaces/ErrorModel.md)
 - [ExpectedRemunerationAnnotationParsed](interfaces/ExpectedRemunerationAnnotationParsed.md)
 - [ExperienceSearchScoreComponent](interfaces/ExperienceSearchScoreComponent.md)
+- [Extractor](interfaces/Extractor.md)
+- [ExtractorBaseExtractor](interfaces/ExtractorBaseExtractor.md)
+- [ExtractorCreate](interfaces/ExtractorCreate.md)
+- [ExtractorUpdate](interfaces/ExtractorUpdate.md)
+- [Field](interfaces/Field.md)
+- [FieldGroup](interfaces/FieldGroup.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [GetAllDocumentsResults](interfaces/GetAllDocumentsResults.md)
 - [GetAllInvoicesResults](interfaces/GetAllInvoicesResults.md)
 - [GetAllJobDescriptionsResults](interfaces/GetAllJobDescriptionsResults.md)
 - [IndexRequestBody](interfaces/IndexRequestBody.md)
+- [Invitation](interfaces/Invitation.md)
+- [InvitationCreate](interfaces/InvitationCreate.md)
+- [InvitationUpdate](interfaces/InvitationUpdate.md)
 - [Invoice](interfaces/Invoice.md)
 - [InvoiceData](interfaces/InvoiceData.md)
 - [InvoiceDataTablesItem](interfaces/InvoiceDataTablesItem.md)
@@ -146,15 +233,25 @@
 - [JobTitleAnnotationParsedClassification](interfaces/JobTitleAnnotationParsedClassification.md)
 - [JobTitleSearchScoreComponent](interfaces/JobTitleSearchScoreComponent.md)
 - [LanguagesSearchScoreComponent](interfaces/LanguagesSearchScoreComponent.md)
+- [ListResult](interfaces/ListResult.md)
 - [Location](interfaces/Location.md)
 - [LocationSearchScoreComponent](interfaces/LocationSearchScoreComponent.md)
 - [ManagementLevelSearchScoreComponent](interfaces/ManagementLevelSearchScoreComponent.md)
 - [Meta](interfaces/Meta.md)
+- [MetaChildDocumentsItem](interfaces/MetaChildDocumentsItem.md)
+- [MetaParentDocument](interfaces/MetaParentDocument.md)
 - [OccupationGroup](interfaces/OccupationGroup.md)
 - [OccupationGroupSearchScoreComponent](interfaces/OccupationGroupSearchScoreComponent.md)
+- [Organization](interfaces/Organization.md)
+- [OrganizationCreate](interfaces/OrganizationCreate.md)
+- [OrganizationMembership](interfaces/OrganizationMembership.md)
+- [OrganizationMembershipUpdate](interfaces/OrganizationMembershipUpdate.md)
+- [OrganizationUpdate](interfaces/OrganizationUpdate.md)
 - [PageMeta](interfaces/PageMeta.md)
+- [PaginatedResponse](interfaces/PaginatedResponse.md)
+- [Paths171Dpm5OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths171Dpm5OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
-- [Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md)
+- [Paths1Vlpqy9WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Vlpqy9WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema.md)
 - [PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
@@ -162,6 +259,8 @@
 - [PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
+- [PathsSnpek6InvitationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsSnpek6InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema](interfaces/PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema.md)
 - [PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema](interfaces/PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema.md)
 - [Rectangle](interfaces/Rectangle.md)
 - [RedactedResume](interfaces/RedactedResume.md)
@@ -208,40 +307,71 @@
 - [RowAnnotation](interfaces/RowAnnotation.md)
 - [SearchExpressionSearchScoreComponent](interfaces/SearchExpressionSearchScoreComponent.md)
 - [SkillsSearchScoreComponent](interfaces/SkillsSearchScoreComponent.md)
-- [SplitRelation](interfaces/SplitRelation.md)
+- [Tag](interfaces/Tag.md)
+- [TagCreate](interfaces/TagCreate.md)
+- [TagUpdate](interfaces/TagUpdate.md)
 - [User](interfaces/User.md)
+- [UserCreateRequest](interfaces/UserCreateRequest.md)
+- [Workspace](interfaces/Workspace.md)
+- [WorkspaceCollectionsItem](interfaces/WorkspaceCollectionsItem.md)
+- [WorkspaceCollectionsItemExtractor](interfaces/WorkspaceCollectionsItemExtractor.md)
+- [WorkspaceCreate](interfaces/WorkspaceCreate.md)
+- [WorkspaceMembership](interfaces/WorkspaceMembership.md)
+- [WorkspaceMembershipCreate](interfaces/WorkspaceMembershipCreate.md)
+- [WorkspaceUpdate](interfaces/WorkspaceUpdate.md)
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
 
 ### Type aliases
 
+- [AffindaAPICreateCollectionResponse](modules.md#affindaapicreatecollectionresponse)
+- [AffindaAPICreateDataPointResponse](modules.md#affindaapicreatedatapointresponse)
+- [AffindaAPICreateDocumentResponse](modules.md#affindaapicreatedocumentresponse)
+- [AffindaAPICreateExtractorResponse](modules.md#affindaapicreateextractorresponse)
 - [AffindaAPICreateIndexDocumentResponse](modules.md#affindaapicreateindexdocumentresponse)
 - [AffindaAPICreateIndexResponse](modules.md#affindaapicreateindexresponse)
+- [AffindaAPICreateInvitationResponse](modules.md#affindaapicreateinvitationresponse)
 - [AffindaAPICreateInvoiceResponse](modules.md#affindaapicreateinvoiceresponse)
 - [AffindaAPICreateJobDescriptionResponse](modules.md#affindaapicreatejobdescriptionresponse)
 - [AffindaAPICreateJobDescriptionSearchEmbedUrlResponse](modules.md#affindaapicreatejobdescriptionsearchembedurlresponse)
 - [AffindaAPICreateJobDescriptionSearchResponse](modules.md#affindaapicreatejobdescriptionsearchresponse)
+- [AffindaAPICreateOrganizationResponse](modules.md#affindaapicreateorganizationresponse)
 - [AffindaAPICreateRedactedResumeResponse](modules.md#affindaapicreateredactedresumeresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
 - [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
 - [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
+- [AffindaAPICreateTagResponse](modules.md#affindaapicreatetagresponse)
 - [AffindaAPICreateUserResponse](modules.md#affindaapicreateuserresponse)
-- [AffindaAPIDeleteIndexDocumentResponse](modules.md#affindaapideleteindexdocumentresponse)
-- [AffindaAPIDeleteIndexResponse](modules.md#affindaapideleteindexresponse)
-- [AffindaAPIDeleteInvoiceResponse](modules.md#affindaapideleteinvoiceresponse)
-- [AffindaAPIDeleteJobDescriptionResponse](modules.md#affindaapideletejobdescriptionresponse)
-- [AffindaAPIDeleteRedactedResumeResponse](modules.md#affindaapideleteredactedresumeresponse)
-- [AffindaAPIDeleteResumeResponse](modules.md#affindaapideleteresumeresponse)
+- [AffindaAPICreateWorkspaceMembershipResponse](modules.md#affindaapicreateworkspacemembershipresponse)
+- [AffindaAPICreateWorkspaceResponse](modules.md#affindaapicreateworkspaceresponse)
+- [AffindaAPIGetAllCollectionsResponse](modules.md#affindaapigetallcollectionsresponse)
+- [AffindaAPIGetAllDataPointsResponse](modules.md#affindaapigetalldatapointsresponse)
+- [AffindaAPIGetAllDocumentsResponse](modules.md#affindaapigetalldocumentsresponse)
+- [AffindaAPIGetAllExtractorsResponse](modules.md#affindaapigetallextractorsresponse)
 - [AffindaAPIGetAllIndexDocumentsResponse](modules.md#affindaapigetallindexdocumentsresponse)
 - [AffindaAPIGetAllIndexesResponse](modules.md#affindaapigetallindexesresponse)
+- [AffindaAPIGetAllInvitationsResponse](modules.md#affindaapigetallinvitationsresponse)
 - [AffindaAPIGetAllInvoicesResponse](modules.md#affindaapigetallinvoicesresponse)
 - [AffindaAPIGetAllJobDescriptionsResponse](modules.md#affindaapigetalljobdescriptionsresponse)
+- [AffindaAPIGetAllOrganizationMembershipsResponse](modules.md#affindaapigetallorganizationmembershipsresponse)
+- [AffindaAPIGetAllOrganizationsResponse](modules.md#affindaapigetallorganizationsresponse)
 - [AffindaAPIGetAllRedactedResumesResponse](modules.md#affindaapigetallredactedresumesresponse)
 - [AffindaAPIGetAllResumesResponse](modules.md#affindaapigetallresumesresponse)
+- [AffindaAPIGetAllTagsResponse](modules.md#affindaapigetalltagsresponse)
 - [AffindaAPIGetAllUsersResponse](modules.md#affindaapigetallusersresponse)
+- [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
+- [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
+- [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
+- [AffindaAPIGetDataPointResponse](modules.md#affindaapigetdatapointresponse)
+- [AffindaAPIGetDocumentResponse](modules.md#affindaapigetdocumentresponse)
+- [AffindaAPIGetExtractorResponse](modules.md#affindaapigetextractorresponse)
+- [AffindaAPIGetInvitationByTokenResponse](modules.md#affindaapigetinvitationbytokenresponse)
+- [AffindaAPIGetInvitationResponse](modules.md#affindaapigetinvitationresponse)
 - [AffindaAPIGetInvoiceResponse](modules.md#affindaapigetinvoiceresponse)
 - [AffindaAPIGetJobDescriptionResponse](modules.md#affindaapigetjobdescriptionresponse)
 - [AffindaAPIGetJobDescriptionSearchConfigResponse](modules.md#affindaapigetjobdescriptionsearchconfigresponse)
 - [AffindaAPIGetJobDescriptionSearchDetailResponse](modules.md#affindaapigetjobdescriptionsearchdetailresponse)
+- [AffindaAPIGetOrganizationMembershipResponse](modules.md#affindaapigetorganizationmembershipresponse)
+- [AffindaAPIGetOrganizationResponse](modules.md#affindaapigetorganizationresponse)
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIGetResumeSearchConfigResponse](modules.md#affindaapigetresumesearchconfigresponse)
@@ -249,17 +379,41 @@
 - [AffindaAPIGetResumeSearchMatchResponse](modules.md#affindaapigetresumesearchmatchresponse)
 - [AffindaAPIGetResumeSearchSuggestionJobTitleResponse](modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)
 - [AffindaAPIGetResumeSearchSuggestionSkillResponse](modules.md#affindaapigetresumesearchsuggestionskillresponse)
+- [AffindaAPIGetTagResponse](modules.md#affindaapigettagresponse)
+- [AffindaAPIGetWorkspaceMembershipResponse](modules.md#affindaapigetworkspacemembershipresponse)
+- [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
+- [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
+- [AffindaAPIUpdateCollectionDataResponse](modules.md#affindaapiupdatecollectiondataresponse)
+- [AffindaAPIUpdateDataPointDataResponse](modules.md#affindaapiupdatedatapointdataresponse)
+- [AffindaAPIUpdateDocumentDataResponse](modules.md#affindaapiupdatedocumentdataresponse)
+- [AffindaAPIUpdateExtractorDataResponse](modules.md#affindaapiupdateextractordataresponse)
+- [AffindaAPIUpdateInvitationResponse](modules.md#affindaapiupdateinvitationresponse)
 - [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
+- [AffindaAPIUpdateOrganizationMembershipResponse](modules.md#affindaapiupdateorganizationmembershipresponse)
+- [AffindaAPIUpdateOrganizationResponse](modules.md#affindaapiupdateorganizationresponse)
 - [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
+- [AffindaAPIUpdateTagDataResponse](modules.md#affindaapiupdatetagdataresponse)
+- [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
+- [AnnotationContentType](modules.md#annotationcontenttype)
+- [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
 - [DateAnnotation](modules.md#dateannotation)
+- [DateFormatPreference](modules.md#dateformatpreference)
+- [DateRange](modules.md#daterange)
+- [Document](modules.md#document)
+- [DocumentState](modules.md#documentstate)
 - [EducationLevel](modules.md#educationlevel)
 - [Enum2](modules.md#enum2)
 - [Enum5](modules.md#enum5)
 - [EnumAnnotationSerializer](modules.md#enumannotationserializer)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
+- [ExtractorFieldGroups](modules.md#extractorfieldgroups)
+- [FieldGroups](modules.md#fieldgroups)
+- [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
+- [InvitationRespondedBy](modules.md#invitationrespondedby)
+- [InvitationStatus](modules.md#invitationstatus)
 - [InvoiceDataBankAccountNumber](modules.md#invoicedatabankaccountnumber)
 - [InvoiceDataBankBsb](modules.md#invoicedatabankbsb)
 - [InvoiceDataBankIban](modules.md#invoicedatabankiban)
@@ -295,7 +449,12 @@
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
 - [ManagementLevel](modules.md#managementlevel)
-- [PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema](modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)
+- [OrganizationRole](modules.md#organizationrole)
+- [OrganizationUserRole](modules.md#organizationuserrole)
+- [PatchContentSchemaStatus](modules.md#patchcontentschemastatus)
+- [PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsadr1yhworkspacemembershipsgetresponses200contentapplicationjsonschema)
+- [PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsckdzu3organizationmembershipsgetresponses200contentapplicationjsonschema)
+- [PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema](modules.md#pathszt2jhiinvitationsgetresponses200contentapplicationjsonschema)
 - [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
@@ -307,9 +466,43 @@
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotation](modules.md#skillannotation)
 - [TextAnnotation](modules.md#textannotation)
+- [UserCreateResponse](modules.md#usercreateresponse)
+- [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
 
 ## Type aliases
+
+### AffindaAPICreateCollectionResponse
+
+Ƭ **AffindaAPICreateCollectionResponse**: [`Collection`](interfaces/Collection.md)
+
+Contains response data for the createCollection operation.
+
+___
+
+### AffindaAPICreateDataPointResponse
+
+Ƭ **AffindaAPICreateDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
+
+Contains response data for the createDataPoint operation.
+
+___
+
+### AffindaAPICreateDocumentResponse
+
+Ƭ **AffindaAPICreateDocumentResponse**: [`Document`](modules.md#document)
+
+Contains response data for the createDocument operation.
+
+___
+
+### AffindaAPICreateExtractorResponse
+
+Ƭ **AffindaAPICreateExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
+
+Contains response data for the createExtractor operation.
+
+___
 
 ### AffindaAPICreateIndexDocumentResponse
 
@@ -324,6 +517,14 @@ ___
 Ƭ **AffindaAPICreateIndexResponse**: [`Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema`](interfaces/Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema.md)
 
 Contains response data for the createIndex operation.
+
+___
+
+### AffindaAPICreateInvitationResponse
+
+Ƭ **AffindaAPICreateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the createInvitation operation.
 
 ___
 
@@ -359,6 +560,14 @@ Contains response data for the createJobDescriptionSearch operation.
 
 ___
 
+### AffindaAPICreateOrganizationResponse
+
+Ƭ **AffindaAPICreateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
+
+Contains response data for the createOrganization operation.
+
+___
+
 ### AffindaAPICreateRedactedResumeResponse
 
 Ƭ **AffindaAPICreateRedactedResumeResponse**: [`RedactedResume`](interfaces/RedactedResume.md)
@@ -391,59 +600,67 @@ Contains response data for the createResumeSearch operation.
 
 ___
 
+### AffindaAPICreateTagResponse
+
+Ƭ **AffindaAPICreateTagResponse**: [`Tag`](interfaces/Tag.md)
+
+Contains response data for the createTag operation.
+
+___
+
 ### AffindaAPICreateUserResponse
 
-Ƭ **AffindaAPICreateUserResponse**: [`PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema`](modules.md#pathstop5zkuserspostresponses201contentapplicationjsonschema)
+Ƭ **AffindaAPICreateUserResponse**: [`UserCreateResponse`](modules.md#usercreateresponse)
 
 Contains response data for the createUser operation.
 
 ___
 
-### AffindaAPIDeleteIndexDocumentResponse
+### AffindaAPICreateWorkspaceMembershipResponse
 
-Ƭ **AffindaAPIDeleteIndexDocumentResponse**: [`RequestError`](interfaces/RequestError.md)
+Ƭ **AffindaAPICreateWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
 
-Contains response data for the deleteIndexDocument operation.
-
-___
-
-### AffindaAPIDeleteIndexResponse
-
-Ƭ **AffindaAPIDeleteIndexResponse**: [`RequestError`](interfaces/RequestError.md)
-
-Contains response data for the deleteIndex operation.
+Contains response data for the createWorkspaceMembership operation.
 
 ___
 
-### AffindaAPIDeleteInvoiceResponse
+### AffindaAPICreateWorkspaceResponse
 
-Ƭ **AffindaAPIDeleteInvoiceResponse**: [`RequestError`](interfaces/RequestError.md)
+Ƭ **AffindaAPICreateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
 
-Contains response data for the deleteInvoice operation.
-
-___
-
-### AffindaAPIDeleteJobDescriptionResponse
-
-Ƭ **AffindaAPIDeleteJobDescriptionResponse**: [`RequestError`](interfaces/RequestError.md)
-
-Contains response data for the deleteJobDescription operation.
+Contains response data for the createWorkspace operation.
 
 ___
 
-### AffindaAPIDeleteRedactedResumeResponse
+### AffindaAPIGetAllCollectionsResponse
 
-Ƭ **AffindaAPIDeleteRedactedResumeResponse**: [`RequestError`](interfaces/RequestError.md)
+Ƭ **AffindaAPIGetAllCollectionsResponse**: [`Collection`](interfaces/Collection.md)[]
 
-Contains response data for the deleteRedactedResume operation.
+Contains response data for the getAllCollections operation.
 
 ___
 
-### AffindaAPIDeleteResumeResponse
+### AffindaAPIGetAllDataPointsResponse
 
-Ƭ **AffindaAPIDeleteResumeResponse**: [`RequestError`](interfaces/RequestError.md)
+Ƭ **AffindaAPIGetAllDataPointsResponse**: [`DataPoint`](interfaces/DataPoint.md)[]
 
-Contains response data for the deleteResume operation.
+Contains response data for the getAllDataPoints operation.
+
+___
+
+### AffindaAPIGetAllDocumentsResponse
+
+Ƭ **AffindaAPIGetAllDocumentsResponse**: [`GetAllDocumentsResults`](interfaces/GetAllDocumentsResults.md)
+
+Contains response data for the getAllDocuments operation.
+
+___
+
+### AffindaAPIGetAllExtractorsResponse
+
+Ƭ **AffindaAPIGetAllExtractorsResponse**: [`Extractor`](interfaces/Extractor.md)[]
+
+Contains response data for the getAllExtractors operation.
 
 ___
 
@@ -463,6 +680,14 @@ Contains response data for the getAllIndexes operation.
 
 ___
 
+### AffindaAPIGetAllInvitationsResponse
+
+Ƭ **AffindaAPIGetAllInvitationsResponse**: [`PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema`](modules.md#pathszt2jhiinvitationsgetresponses200contentapplicationjsonschema)
+
+Contains response data for the getAllInvitations operation.
+
+___
+
 ### AffindaAPIGetAllInvoicesResponse
 
 Ƭ **AffindaAPIGetAllInvoicesResponse**: [`GetAllInvoicesResults`](interfaces/GetAllInvoicesResults.md)
@@ -476,6 +701,22 @@ ___
 Ƭ **AffindaAPIGetAllJobDescriptionsResponse**: [`GetAllJobDescriptionsResults`](interfaces/GetAllJobDescriptionsResults.md)
 
 Contains response data for the getAllJobDescriptions operation.
+
+___
+
+### AffindaAPIGetAllOrganizationMembershipsResponse
+
+Ƭ **AffindaAPIGetAllOrganizationMembershipsResponse**: [`PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](modules.md#pathsckdzu3organizationmembershipsgetresponses200contentapplicationjsonschema)
+
+Contains response data for the getAllOrganizationMemberships operation.
+
+___
+
+### AffindaAPIGetAllOrganizationsResponse
+
+Ƭ **AffindaAPIGetAllOrganizationsResponse**: [`Organization`](interfaces/Organization.md)[]
+
+Contains response data for the getAllOrganizations operation.
 
 ___
 
@@ -495,11 +736,83 @@ Contains response data for the getAllResumes operation.
 
 ___
 
+### AffindaAPIGetAllTagsResponse
+
+Ƭ **AffindaAPIGetAllTagsResponse**: [`Tag`](interfaces/Tag.md)[]
+
+Contains response data for the getAllTags operation.
+
+___
+
 ### AffindaAPIGetAllUsersResponse
 
 Ƭ **AffindaAPIGetAllUsersResponse**: [`PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema`](interfaces/PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema.md)
 
 Contains response data for the getAllUsers operation.
+
+___
+
+### AffindaAPIGetAllWorkspaceMembershipsResponse
+
+Ƭ **AffindaAPIGetAllWorkspaceMembershipsResponse**: [`PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](modules.md#pathsadr1yhworkspacemembershipsgetresponses200contentapplicationjsonschema)
+
+Contains response data for the getAllWorkspaceMemberships operation.
+
+___
+
+### AffindaAPIGetAllWorkspacesResponse
+
+Ƭ **AffindaAPIGetAllWorkspacesResponse**: [`Workspace`](interfaces/Workspace.md)[]
+
+Contains response data for the getAllWorkspaces operation.
+
+___
+
+### AffindaAPIGetCollectionResponse
+
+Ƭ **AffindaAPIGetCollectionResponse**: [`Collection`](interfaces/Collection.md)
+
+Contains response data for the getCollection operation.
+
+___
+
+### AffindaAPIGetDataPointResponse
+
+Ƭ **AffindaAPIGetDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
+
+Contains response data for the getDataPoint operation.
+
+___
+
+### AffindaAPIGetDocumentResponse
+
+Ƭ **AffindaAPIGetDocumentResponse**: [`Document`](modules.md#document)
+
+Contains response data for the getDocument operation.
+
+___
+
+### AffindaAPIGetExtractorResponse
+
+Ƭ **AffindaAPIGetExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
+
+Contains response data for the getExtractor operation.
+
+___
+
+### AffindaAPIGetInvitationByTokenResponse
+
+Ƭ **AffindaAPIGetInvitationByTokenResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the getInvitationByToken operation.
+
+___
+
+### AffindaAPIGetInvitationResponse
+
+Ƭ **AffindaAPIGetInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the getInvitation operation.
 
 ___
 
@@ -532,6 +845,22 @@ ___
 Ƭ **AffindaAPIGetJobDescriptionSearchDetailResponse**: [`JobDescriptionSearchDetail`](interfaces/JobDescriptionSearchDetail.md)
 
 Contains response data for the getJobDescriptionSearchDetail operation.
+
+___
+
+### AffindaAPIGetOrganizationMembershipResponse
+
+Ƭ **AffindaAPIGetOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
+
+Contains response data for the getOrganizationMembership operation.
+
+___
+
+### AffindaAPIGetOrganizationResponse
+
+Ƭ **AffindaAPIGetOrganizationResponse**: [`Organization`](interfaces/Organization.md)
+
+Contains response data for the getOrganization operation.
 
 ___
 
@@ -603,6 +932,30 @@ Contains response data for the getResumeSearchSuggestionSkill operation.
 
 ___
 
+### AffindaAPIGetTagResponse
+
+Ƭ **AffindaAPIGetTagResponse**: [`Tag`](interfaces/Tag.md)
+
+Contains response data for the getTag operation.
+
+___
+
+### AffindaAPIGetWorkspaceMembershipResponse
+
+Ƭ **AffindaAPIGetWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
+
+Contains response data for the getWorkspaceMembership operation.
+
+___
+
+### AffindaAPIGetWorkspaceResponse
+
+Ƭ **AffindaAPIGetWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
+
+Contains response data for the getWorkspace operation.
+
+___
+
 ### AffindaAPIListOccupationGroupsResponse
 
 Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
@@ -611,11 +964,75 @@ Contains response data for the listOccupationGroups operation.
 
 ___
 
+### AffindaAPIRespondToInvitationResponse
+
+Ƭ **AffindaAPIRespondToInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the respondToInvitation operation.
+
+___
+
+### AffindaAPIUpdateCollectionDataResponse
+
+Ƭ **AffindaAPIUpdateCollectionDataResponse**: [`Collection`](interfaces/Collection.md)
+
+Contains response data for the updateCollectionData operation.
+
+___
+
+### AffindaAPIUpdateDataPointDataResponse
+
+Ƭ **AffindaAPIUpdateDataPointDataResponse**: [`DataPoint`](interfaces/DataPoint.md)
+
+Contains response data for the updateDataPointData operation.
+
+___
+
+### AffindaAPIUpdateDocumentDataResponse
+
+Ƭ **AffindaAPIUpdateDocumentDataResponse**: [`Document`](modules.md#document)
+
+Contains response data for the updateDocumentData operation.
+
+___
+
+### AffindaAPIUpdateExtractorDataResponse
+
+Ƭ **AffindaAPIUpdateExtractorDataResponse**: [`Extractor`](interfaces/Extractor.md)
+
+Contains response data for the updateExtractorData operation.
+
+___
+
+### AffindaAPIUpdateInvitationResponse
+
+Ƭ **AffindaAPIUpdateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the updateInvitation operation.
+
+___
+
 ### AffindaAPIUpdateJobDescriptionSearchConfigResponse
 
 Ƭ **AffindaAPIUpdateJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
 
 Contains response data for the updateJobDescriptionSearchConfig operation.
+
+___
+
+### AffindaAPIUpdateOrganizationMembershipResponse
+
+Ƭ **AffindaAPIUpdateOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
+
+Contains response data for the updateOrganizationMembership operation.
+
+___
+
+### AffindaAPIUpdateOrganizationResponse
+
+Ƭ **AffindaAPIUpdateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
+
+Contains response data for the updateOrganization operation.
 
 ___
 
@@ -635,9 +1052,113 @@ Contains response data for the updateResumeSearchConfig operation.
 
 ___
 
+### AffindaAPIUpdateTagDataResponse
+
+Ƭ **AffindaAPIUpdateTagDataResponse**: [`Tag`](interfaces/Tag.md)
+
+Contains response data for the updateTagData operation.
+
+___
+
+### AffindaAPIUpdateWorkspaceResponse
+
+Ƭ **AffindaAPIUpdateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
+
+Contains response data for the updateWorkspace operation.
+
+___
+
+### AnnotationContentType
+
+Ƭ **AnnotationContentType**: `string`
+
+Defines values for AnnotationContentType. \
+[KnownAnnotationContentType](enums/KnownAnnotationContentType.md) can be used interchangeably with AnnotationContentType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**text** \
+**integer** \
+**float** \
+**decimal** \
+**date** \
+**datetime** \
+**boolean** \
+**enum** \
+**location** \
+**json** \
+**table**
+
+___
+
+### CollectionDateFormatPreference
+
+Ƭ **CollectionDateFormatPreference**: `string`
+
+Defines values for CollectionDateFormatPreference. \
+[KnownCollectionDateFormatPreference](enums/KnownCollectionDateFormatPreference.md) can be used interchangeably with CollectionDateFormatPreference,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**DMY** \
+**MDY** \
+**YMD**
+
+___
+
 ### DateAnnotation
 
 Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `Date`  }
+
+___
+
+### DateFormatPreference
+
+Ƭ **DateFormatPreference**: `string`
+
+Defines values for DateFormatPreference. \
+[KnownDateFormatPreference](enums/KnownDateFormatPreference.md) can be used interchangeably with DateFormatPreference,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**DMY** \
+**MDY** \
+**YMD**
+
+___
+
+### DateRange
+
+Ƭ **DateRange**: `string`
+
+Defines values for DateRange. \
+[KnownDateRange](enums/KnownDateRange.md) can be used interchangeably with DateRange,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**today** \
+**yesterday** \
+**week** \
+**month** \
+**year**
+
+___
+
+### Document
+
+Ƭ **Document**: [`DocumentMeta`](interfaces/DocumentMeta.md) & { `data?`: { [propertyName: string]: `any`;  }  }
+
+___
+
+### DocumentState
+
+Ƭ **DocumentState**: `string`
+
+Defines values for DocumentState. \
+[KnownDocumentState](enums/KnownDocumentState.md) can be used interchangeably with DocumentState,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**uploaded** \
+**review** \
+**validated** \
+**archived** \
+**rejected**
 
 ___
 
@@ -687,6 +1208,32 @@ ___
 
 ___
 
+### ExtractorFieldGroups
+
+Ƭ **ExtractorFieldGroups**: [`FieldGroup`](interfaces/FieldGroup.md) & {}
+
+___
+
+### FieldGroups
+
+Ƭ **FieldGroups**: [`FieldGroup`](interfaces/FieldGroup.md) & {}
+
+___
+
+### Get8ItemsItem
+
+Ƭ **Get8ItemsItem**: `string`
+
+Defines values for Get8ItemsItem. \
+[KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md) can be used interchangeably with Get8ItemsItem,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**file_name** \
+**extractor** \
+**created_dt**
+
+___
+
 ### GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType
 
 Ƭ **GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType**: `string`
@@ -697,6 +1244,26 @@ Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumen
 ### Known values supported by the service
 **resumes** \
 **job_descriptions**
+
+___
+
+### InvitationRespondedBy
+
+Ƭ **InvitationRespondedBy**: [`User`](interfaces/User.md) & {}
+
+___
+
+### InvitationStatus
+
+Ƭ **InvitationStatus**: `string`
+
+Defines values for InvitationStatus. \
+[KnownInvitationStatus](enums/KnownInvitationStatus.md) can be used interchangeably with InvitationStatus,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**pending** \
+**accepted** \
+**declined**
 
 ___
 
@@ -912,9 +1479,60 @@ Defines values for ManagementLevel.
 
 ___
 
-### PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema
+### OrganizationRole
 
-Ƭ **PathsTop5ZkUsersPostResponses201ContentApplicationJsonSchema**: [`User`](interfaces/User.md) & [`Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Y6A2MfUsersPostResponses201ContentApplicationJsonSchemaAllof1.md) & {}
+Ƭ **OrganizationRole**: `string`
+
+Defines values for OrganizationRole. \
+[KnownOrganizationRole](enums/KnownOrganizationRole.md) can be used interchangeably with OrganizationRole,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**admin** \
+**member**
+
+___
+
+### OrganizationUserRole
+
+Ƭ **OrganizationUserRole**: `string`
+
+Defines values for OrganizationUserRole. \
+[KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md) can be used interchangeably with OrganizationUserRole,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**admin** \
+**member**
+
+___
+
+### PatchContentSchemaStatus
+
+Ƭ **PatchContentSchemaStatus**: `string`
+
+Defines values for PatchContentSchemaStatus. \
+[KnownPatchContentSchemaStatus](enums/KnownPatchContentSchemaStatus.md) can be used interchangeably with PatchContentSchemaStatus,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**accepted** \
+**declined**
+
+___
+
+### PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
+
+Ƭ **PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema**: [`ListResult`](interfaces/ListResult.md) & [`Paths1Vlpqy9WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Vlpqy9WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
+
+Ƭ **PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths171Dpm5OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths171Dpm5OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema
+
+Ƭ **PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`PathsSnpek6InvitationsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/PathsSnpek6InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
 
 ___
 
@@ -1019,6 +1637,25 @@ ___
 ### TextAnnotation
 
 Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+
+___
+
+### UserCreateResponse
+
+Ƭ **UserCreateResponse**: [`User`](interfaces/User.md) & { `apiKey?`: `string`  }
+
+___
+
+### WorkspaceVisibility
+
+Ƭ **WorkspaceVisibility**: `string`
+
+Defines values for WorkspaceVisibility. \
+[KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md) can be used interchangeably with WorkspaceVisibility,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**organization** \
+**private**
 
 ___
 

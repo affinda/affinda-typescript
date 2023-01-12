@@ -389,3 +389,6 @@ client.deleteInvoice("REPLACE_IDENTIFIER").then((result) => {
 
 Users
 -----
+
+Documents API
+-------------

@@ -15,9 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateUserOptionalParams.md#abortsignal)
-- [apiKey](AffindaAPICreateUserOptionalParams.md#apikey)
-- [email](AffindaAPICreateUserOptionalParams.md#email)
-- [id](AffindaAPICreateUserOptionalParams.md#id)
+- [avatar](AffindaAPICreateUserOptionalParams.md#avatar)
 - [name](AffindaAPICreateUserOptionalParams.md#name)
 - [onResponse](AffindaAPICreateUserOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPICreateUserOptionalParams.md#requestoptions)
@@ -38,21 +36,11 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
-### apiKey
+### avatar
 
-• `Optional` **apiKey**: `string`
+• `Optional` **avatar**: `RequestBodyType`
 
-___
-
-### email
-
-• `Optional` **email**: `string`
-
-___
-
-### id
-
-• `Optional` **id**: `number`
+Upload avatar for the user.
 
 ___
 

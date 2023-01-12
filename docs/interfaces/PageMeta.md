@@ -17,7 +17,7 @@
 
 ### height
 
-• `Optional` **height**: `number`
+• **height**: `number`
 
 Height of the page's image in px.
 
@@ -25,13 +25,13 @@ ___
 
 ### id
 
-• `Optional` **id**: `number`
+• **id**: `number`
 
 ___
 
 ### image
 
-• `Optional` **image**: `string`
+• **image**: ``null`` \| `string`
 
 The URL to the image of the page.
 
@@ -39,7 +39,7 @@ ___
 
 ### pageIndex
 
-• `Optional` **pageIndex**: `number`
+• **pageIndex**: `number`
 
 Page number within the document, starts from 0.
 
@@ -47,7 +47,7 @@ ___
 
 ### rotation
 
-• `Optional` **rotation**: `number`
+• **rotation**: `number`
 
 The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation.
 
@@ -55,6 +55,6 @@ ___
 
 ### width
 
-• `Optional` **width**: `number`
+• **width**: `number`
 
 Width of the page's image in px.

@@ -12,9 +12,10 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 
 ### Properties
 
-- [classification](Annotation.md#classification)
 - [classificationConfidence](Annotation.md#classificationconfidence)
 - [confidence](Annotation.md#confidence)
+- [contentType](Annotation.md#contenttype)
+- [dataPoint](Annotation.md#datapoint)
 - [id](Annotation.md#id)
 - [isAutoVerified](Annotation.md#isautoverified)
 - [isClientVerified](Annotation.md#isclientverified)
@@ -26,12 +27,6 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [textExtractionConfidence](Annotation.md#textextractionconfidence)
 
 ## Properties
-
-### classification
-
-• **classification**: `string`
-
-___
 
 ### classificationConfidence
 
@@ -49,21 +44,33 @@ The overall confidence that the model's prediction is correct
 
 ___
 
+### contentType
+
+• **contentType**: `string`
+
+___
+
+### dataPoint
+
+• **dataPoint**: `string`
+
+___
+
 ### id
 
-• `Optional` **id**: `number`
+• **id**: `number`
 
 ___
 
 ### isAutoVerified
 
-• `Optional` **isAutoVerified**: `boolean`
+• **isAutoVerified**: `boolean`
 
 ___
 
 ### isClientVerified
 
-• `Optional` **isClientVerified**: `boolean`
+• **isClientVerified**: `boolean`
 
 ___
 
@@ -93,7 +100,7 @@ ___
 
 ### rectangles
 
-• `Optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
+• **rectangles**: ``null`` \| [`Rectangle`](Rectangle.md)[]
 
 ___
 

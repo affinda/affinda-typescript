@@ -11,7 +11,23 @@ import {
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
   JobDescriptionSearchConfig as JobDescriptionSearchConfigMapper,
   PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
-  PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
+  PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
+  OrganizationMembershipUpdate as OrganizationMembershipUpdateMapper,
+  InvitationCreate as InvitationCreateMapper,
+  InvitationUpdate as InvitationUpdateMapper,
+  PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema as PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchemaMapper,
+  ExtractorCreate as ExtractorCreateMapper,
+  ExtractorUpdate as ExtractorUpdateMapper,
+  DataPointCreate as DataPointCreateMapper,
+  DataPointUpdate as DataPointUpdateMapper,
+  WorkspaceCreate as WorkspaceCreateMapper,
+  WorkspaceUpdate as WorkspaceUpdateMapper,
+  WorkspaceMembershipCreate as WorkspaceMembershipCreateMapper,
+  CollectionCreate as CollectionCreateMapper,
+  CollectionUpdate as CollectionUpdateMapper,
+  DocumentUpdate as DocumentUpdateMapper,
+  TagCreate as TagCreateMapper,
+  TagUpdate as TagUpdateMapper
 } from "../models/mappers";
 
 export const accept: OperationParameter = {
@@ -635,17 +651,6 @@ export const body7: OperationParameter = {
   mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
-export const id: OperationParameter = {
-  parameterPath: ["options", "id"],
-  mapper: {
-    serializedName: "id",
-    xmlName: "id",
-    type: {
-      name: "Number"
-    }
-  }
-};
-
 export const username: OperationParameter = {
   parameterPath: "username",
   mapper: {
@@ -659,9 +664,10 @@ export const username: OperationParameter = {
 };
 
 export const email: OperationParameter = {
-  parameterPath: ["options", "email"],
+  parameterPath: "email",
   mapper: {
     serializedName: "email",
+    required: true,
     xmlName: "email",
     type: {
       name: "String"
@@ -669,13 +675,407 @@ export const email: OperationParameter = {
   }
 };
 
-export const apiKey: OperationParameter = {
-  parameterPath: ["options", "apiKey"],
+export const avatar: OperationParameter = {
+  parameterPath: ["options", "avatar"],
   mapper: {
-    serializedName: "apiKey",
-    xmlName: "apiKey",
+    serializedName: "avatar",
+    xmlName: "avatar",
+    type: {
+      name: "Stream"
+    }
+  }
+};
+
+export const name2: OperationParameter = {
+  parameterPath: "name",
+  mapper: {
+    serializedName: "name",
+    required: true,
+    xmlName: "name",
     type: {
       name: "String"
     }
   }
+};
+
+export const resthookSignatureKey: OperationParameter = {
+  parameterPath: ["options", "resthookSignatureKey"],
+  mapper: {
+    serializedName: "resthookSignatureKey",
+    xmlName: "resthookSignatureKey",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const organization: OperationQueryParameter = {
+  parameterPath: ["options", "organization"],
+  mapper: {
+    serializedName: "organization",
+    xmlName: "organization",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const role: OperationQueryParameter = {
+  parameterPath: ["options", "role"],
+  mapper: {
+    serializedName: "role",
+    xmlName: "role",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body8: OperationParameter = {
+  parameterPath: "body",
+  mapper: OrganizationMembershipUpdateMapper
+};
+
+export const status: OperationQueryParameter = {
+  parameterPath: ["options", "status"],
+  mapper: {
+    serializedName: "status",
+    xmlName: "status",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body9: OperationParameter = {
+  parameterPath: "body",
+  mapper: InvitationCreateMapper
+};
+
+export const body10: OperationParameter = {
+  parameterPath: "body",
+  mapper: InvitationUpdateMapper
+};
+
+export const token: OperationURLParameter = {
+  parameterPath: "token",
+  mapper: {
+    serializedName: "token",
+    required: true,
+    xmlName: "token",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body11: OperationParameter = {
+  parameterPath: "body",
+  mapper: PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchemaMapper
+};
+
+export const organization1: OperationQueryParameter = {
+  parameterPath: "organization",
+  mapper: {
+    serializedName: "organization",
+    required: true,
+    xmlName: "organization",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const includePublicExtractors: OperationQueryParameter = {
+  parameterPath: ["options", "includePublicExtractors"],
+  mapper: {
+    serializedName: "include_public_extractors",
+    xmlName: "include_public_extractors",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const name3: OperationQueryParameter = {
+  parameterPath: ["options", "name"],
+  mapper: {
+    serializedName: "name",
+    xmlName: "name",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const validatable: OperationQueryParameter = {
+  parameterPath: ["options", "validatable"],
+  mapper: {
+    serializedName: "validatable",
+    xmlName: "validatable",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const body12: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: ExtractorCreateMapper
+};
+
+export const id: OperationURLParameter = {
+  parameterPath: "id",
+  mapper: {
+    serializedName: "id",
+    required: true,
+    xmlName: "id",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const body13: OperationParameter = {
+  parameterPath: "body",
+  mapper: ExtractorUpdateMapper
+};
+
+export const extractor: OperationQueryParameter = {
+  parameterPath: ["options", "extractor"],
+  mapper: {
+    serializedName: "extractor",
+    xmlName: "extractor",
+    type: {
+      name: "Number"
+    }
+  }
+};
+
+export const slug: OperationQueryParameter = {
+  parameterPath: ["options", "slug"],
+  mapper: {
+    serializedName: "slug",
+    xmlName: "slug",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const description: OperationQueryParameter = {
+  parameterPath: ["options", "description"],
+  mapper: {
+    serializedName: "description",
+    xmlName: "description",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const annotationContentType: OperationQueryParameter = {
+  parameterPath: ["options", "annotationContentType"],
+  mapper: {
+    serializedName: "annotation_content_type",
+    xmlName: "annotation_content_type",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body14: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: DataPointCreateMapper
+};
+
+export const body15: OperationParameter = {
+  parameterPath: "body",
+  mapper: DataPointUpdateMapper
+};
+
+export const body16: OperationParameter = {
+  parameterPath: "body",
+  mapper: WorkspaceCreateMapper
+};
+
+export const body17: OperationParameter = {
+  parameterPath: "body",
+  mapper: WorkspaceUpdateMapper
+};
+
+export const workspace: OperationQueryParameter = {
+  parameterPath: ["options", "workspace"],
+  mapper: {
+    serializedName: "workspace",
+    xmlName: "workspace",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const user: OperationQueryParameter = {
+  parameterPath: ["options", "user"],
+  mapper: {
+    serializedName: "user",
+    xmlName: "user",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body18: OperationParameter = {
+  parameterPath: "body",
+  mapper: WorkspaceMembershipCreateMapper
+};
+
+export const workspace1: OperationQueryParameter = {
+  parameterPath: "workspace",
+  mapper: {
+    serializedName: "workspace",
+    required: true,
+    xmlName: "workspace",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body19: OperationParameter = {
+  parameterPath: "body",
+  mapper: CollectionCreateMapper
+};
+
+export const body20: OperationParameter = {
+  parameterPath: "body",
+  mapper: CollectionUpdateMapper
+};
+
+export const collection: OperationQueryParameter = {
+  parameterPath: ["options", "collection"],
+  mapper: {
+    serializedName: "collection",
+    xmlName: "collection",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const state: OperationQueryParameter = {
+  parameterPath: ["options", "state"],
+  mapper: {
+    serializedName: "state",
+    xmlName: "state",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const tags: OperationQueryParameter = {
+  parameterPath: ["options", "tags"],
+  mapper: {
+    serializedName: "tags",
+    xmlName: "tags",
+    xmlElementName: "TagPropertiesId",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const createdDt: OperationQueryParameter = {
+  parameterPath: ["options", "createdDt"],
+  mapper: {
+    serializedName: "created_dt",
+    xmlName: "created_dt",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const search: OperationQueryParameter = {
+  parameterPath: ["options", "search"],
+  mapper: {
+    serializedName: "search",
+    xmlName: "search",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const ordering: OperationQueryParameter = {
+  parameterPath: ["options", "ordering"],
+  mapper: {
+    serializedName: "ordering",
+    xmlName: "ordering",
+    xmlElementName: "Get8ItemsItem",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const includeData: OperationQueryParameter = {
+  parameterPath: ["options", "includeData"],
+  mapper: {
+    serializedName: "include_data",
+    xmlName: "include_data",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const collection1: OperationParameter = {
+  parameterPath: ["options", "collection"],
+  mapper: {
+    serializedName: "collection",
+    xmlName: "collection",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const workspace2: OperationParameter = {
+  parameterPath: ["options", "workspace"],
+  mapper: {
+    serializedName: "workspace",
+    xmlName: "workspace",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const body21: OperationParameter = {
+  parameterPath: "body",
+  mapper: DocumentUpdateMapper
+};
+
+export const body22: OperationParameter = {
+  parameterPath: "body",
+  mapper: TagCreateMapper
+};
+
+export const body23: OperationParameter = {
+  parameterPath: "body",
+  mapper: TagUpdateMapper
 };

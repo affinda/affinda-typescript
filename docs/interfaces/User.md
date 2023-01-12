@@ -6,7 +6,7 @@
 
 ### Properties
 
-- [apiKey](User.md#apikey)
+- [avatar](User.md#avatar)
 - [email](User.md#email)
 - [id](User.md#id)
 - [name](User.md#name)
@@ -14,9 +14,11 @@
 
 ## Properties
 
-### apiKey
+### avatar
 
-• `Optional` **apiKey**: `string`
+• `Optional` **avatar**: `string`
+
+URL of the user's avatar.
 
 ___
 
@@ -30,6 +32,8 @@ ___
 
 • `Optional` **id**: `number`
 
+Uniquely identify a user.
+
 ___
 
 ### name
@@ -40,4 +44,4 @@ ___
 
 ### username
 
-• **username**: `string`
+• `Optional` **username**: `string`

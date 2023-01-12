@@ -77,7 +77,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Unique identifier for the document. If creating a document and left blank, one will be automatically generated.
+A random string that uniquely identify the resource.
 
 ___
 

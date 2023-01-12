@@ -15,7 +15,7 @@
 
 ### count
 
-• `Optional` **count**: `number`
+• **count**: `number`
 
 Number of documents in result
 
@@ -39,4 +39,4 @@ ___
 
 ### results
 
-• `Optional` **results**: [`Meta`](Meta.md)[]
+• **results**: [`Document`](../modules.md#document)[]
