@@ -12,6 +12,7 @@ Known values of [ResumeSkillSourcesItemSection](../modules.md#resumeskillsources
 - [AdditionalInformation](KnownResumeSkillSourcesItemSection.md#additionalinformation)
 - [Education](KnownResumeSkillSourcesItemSection.md#education)
 - [Extracurriculars](KnownResumeSkillSourcesItemSection.md#extracurriculars)
+- [ExtracurricularsLeadership](KnownResumeSkillSourcesItemSection.md#extracurricularsleadership)
 - [Footer](KnownResumeSkillSourcesItemSection.md#footer)
 - [Header](KnownResumeSkillSourcesItemSection.md#header)
 - [NotPopulated](KnownResumeSkillSourcesItemSection.md#notpopulated)
@@ -22,8 +23,10 @@ Known values of [ResumeSkillSourcesItemSection](../modules.md#resumeskillsources
 - [Publications](KnownResumeSkillSourcesItemSection.md#publications)
 - [Referees](KnownResumeSkillSourcesItemSection.md#referees)
 - [Skills](KnownResumeSkillSourcesItemSection.md#skills)
+- [SkillsInterestsLanguages](KnownResumeSkillSourcesItemSection.md#skillsinterestslanguages)
 - [Summary](KnownResumeSkillSourcesItemSection.md#summary)
 - [Training](KnownResumeSkillSourcesItemSection.md#training)
+- [TrainingCertifications](KnownResumeSkillSourcesItemSection.md#trainingcertifications)
 - [WorkExperience](KnownResumeSkillSourcesItemSection.md#workexperience)
 
 ## Enumeration members
@@ -49,6 +52,12 @@ ___
 ### Extracurriculars
 
 • **Extracurriculars** = `"Extracurriculars"`
+
+___
+
+### ExtracurricularsLeadership
+
+• **ExtracurricularsLeadership** = `"Extracurriculars/Leadership"`
 
 ___
 
@@ -112,6 +121,12 @@ ___
 
 ___
 
+### SkillsInterestsLanguages
+
+• **SkillsInterestsLanguages** = `"Skills/Interests/Languages"`
+
+___
+
 ### Summary
 
 • **Summary** = `"Summary"`
@@ -121,6 +136,12 @@ ___
 ### Training
 
 • **Training** = `"Training"`
+
+___
+
+### TrainingCertifications
+
+• **TrainingCertifications** = `"Training/Certifications"`
 
 ___
 

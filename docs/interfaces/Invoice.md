@@ -21,7 +21,7 @@ ___
 
 ### data
 
-• **data**: ``null`` \| [`InvoiceData`](InvoiceData.md)
+• **data**: [`InvoiceData`](InvoiceData.md)
 
 ___
 

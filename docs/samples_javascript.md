@@ -6,20 +6,20 @@ Resume Parser
 Resume Redactor
 ---------------
 
+Invoice Extractor
+-----------------
+
+Job Description Parser
+----------------------
+
 Search & Match - Searching
 --------------------------
 
 Search & Match - Embedding
 --------------------------
 
-Job Description Parser
-----------------------
-
 Search & Match - Indexing
 -------------------------
-
-Invoice Extractor
------------------
 
 Users
 -----

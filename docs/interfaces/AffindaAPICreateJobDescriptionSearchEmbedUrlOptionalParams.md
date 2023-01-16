@@ -37,7 +37,7 @@ ___
 
 ### body
 
-• `Optional` **body**: [`PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+• `Optional` **body**: [`Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 
 ___
 

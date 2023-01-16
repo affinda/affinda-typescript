@@ -37,7 +37,7 @@ ___
 
 ### body
 
-• `Optional` **body**: [`Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+• `Optional` **body**: [`Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 
 ___
 

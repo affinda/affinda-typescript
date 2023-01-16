@@ -42,11 +42,11 @@ export class AffindaAPIContext extends coreClient.ServiceClient {
       userAgentOptions: {
         userAgentPrefix
       },
-      baseUri: options.endpoint || "https://api.affinda.com/v2"
+      baseUri: options.endpoint || "https://api.affinda.com"
     };
     super(optionsWithDefaults);
 
     // Assigning values to Constant parameters
-    this.$host = options.$host || "https://api.affinda.com/v2";
+    this.$host = options.$host || "https://api.affinda.com";
   }
 }

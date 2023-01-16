@@ -2,4 +2,4 @@
 
 # Interface: ComponentsEyyf0ZSchemasResumedataAdditionalproperties
 
-For custom fields. E.g. "isAvailable": true
+For custom fields. E.g. 'isAvailable': true

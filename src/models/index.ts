@@ -1,19 +1,19 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
 
-export interface GetAllDocumentsResults {
+export interface GetAllDocumentsResultsV2 {
   /** Number of documents in result */
   count: number;
   /** URL to request next page of results */
   next?: string;
   /** URL to request previous page of results */
   previous?: string;
-  results: Document[];
+  results: Meta[];
 }
 
-export interface DocumentMeta {
+export interface Meta {
   /** Uniquely identify a document. */
-  identifier: string;
+  identifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -29,37 +29,26 @@ export interface DocumentMeta {
   /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
   pdf?: string;
   /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-  parentDocument?: DocumentMetaParentDocument;
+  parentDocument?: MetaParentDocument;
   /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
-  childDocuments?: DocumentMetaChildDocumentsItem[];
+  childDocuments?: MetaChildDocumentsItem[];
   /** The document's pages. */
-  pages: PageMeta[];
-  isOcrd?: boolean;
-  ocrConfidence?: number;
+  pages?: PageMeta[];
+  /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
+  isVerified?: boolean;
+  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
   reviewUrl?: string;
-  collection?: DocumentMetaCollection;
-  workspace: DocumentMetaWorkspace;
-  archivedDt?: Date;
-  isArchived?: boolean;
-  confirmedDt?: Date;
-  isConfirmed?: boolean;
-  rejectedDt?: Date;
-  isRejected?: boolean;
-  createdDt?: Date;
-  errorCode?: string;
-  errorDetail?: string;
-  /** URL to view the file. */
-  file?: string;
-  tags?: Tag[];
+  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+  ocrConfidence?: number;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-export interface DocumentMetaParentDocument {
+export interface MetaParentDocument {
   /** Uniquely identify a document. */
   identifier?: string;
 }
 
-export interface DocumentMetaChildDocumentsItem {
+export interface MetaChildDocumentsItem {
   /** Uniquely identify a document. */
   identifier?: string;
 }
@@ -78,38 +67,6 @@ export interface PageMeta {
   rotation: number;
 }
 
-export interface DocumentMetaCollection {
-  /** Uniquely identify a collection. */
-  identifier: string;
-  name?: string;
-  extractor?: DocumentMetaCollectionExtractor;
-}
-
-export interface DocumentMetaCollectionExtractor {
-  /** Extractor's ID. */
-  id?: number;
-  name?: string;
-  /** Base extractor's ID. */
-  baseExtractor?: number;
-  validatable?: boolean;
-}
-
-export interface DocumentMetaWorkspace {
-  /** Uniquely identify a workspace. */
-  identifier: string;
-  name?: string;
-}
-
-export interface Tag {
-  /** Uniquely identify a tag. */
-  id: number;
-  name: string;
-  /** Uniquely identify a workspace. */
-  workspace: string;
-  /** Number of documents tagged with this. */
-  documentCount: number;
-}
-
 export interface RequestError {
   type: string;
   errors: RequestErrorErrorsItem[];
@@ -121,7 +78,7 @@ export interface RequestErrorErrorsItem {
   detail: string;
 }
 
-/** For custom fields. E.g. "isAvailable": true */
+/** For custom fields. E.g. 'isAvailable': true */
 export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
 
 /** A JSON-encoded string of the `ResumeData` object. */
@@ -333,48 +290,6 @@ export interface Resume {
   error: ErrorModel;
 }
 
-export interface Meta {
-  /** Uniquely identify a document. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
-  ready?: boolean;
-  /** The datetime when the document was ready */
-  readyDt?: Date;
-  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
-  failed?: boolean;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  /** The document's language. */
-  language?: string;
-  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
-  pdf?: string;
-  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-  parentDocument?: MetaParentDocument;
-  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
-  childDocuments?: MetaChildDocumentsItem[];
-  /** The document's pages. */
-  pages?: PageMeta[];
-  /** This is true if the "confirm" button has been clicked in the Affinda validation tool */
-  isVerified?: boolean;
-  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
-  reviewUrl?: string;
-  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
-  ocrConfidence?: number;
-}
-
-/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-export interface MetaParentDocument {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface MetaChildDocumentsItem {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
 export interface ErrorModel {
   errorCode?: string;
   errorDetail?: string;
@@ -391,699 +306,6 @@ export interface RedactedResumeData {
   redactedPdf?: string;
 }
 
-export interface ResumeSearchParameters {
-  indices: string[];
-  /** A random string that uniquely identify the resource. */
-  jobDescription?: string;
-  /** A random string that uniquely identify the resource. */
-  resume?: string;
-  jobTitles?: string[];
-  /** Search only through the canditate's current job */
-  jobTitlesCurrentOnly?: boolean;
-  jobTitlesRequired?: boolean;
-  jobTitlesWeight?: number;
-  /** Minimum years of total work experience */
-  yearsExperienceMin?: number;
-  /** Maximum years of total work experience */
-  yearsExperienceMax?: number;
-  yearsExperienceRequired?: boolean;
-  yearsExperienceWeight?: number;
-  /** Search by location name or by coordinates */
-  locations?: ResumeSearchParametersLocation[];
-  locationsWeight?: number;
-  locationsRequired?: boolean;
-  skills?: ResumeSearchParametersSkill[];
-  skillsWeight?: number;
-  languages?: ResumeSearchParametersSkill[];
-  languagesWeight?: number;
-  institutions?: string[];
-  institutionsRequired?: boolean;
-  degrees?: string[];
-  degreesRequired?: boolean;
-  highestDegreeTypes?: (EducationLevel | null)[];
-  highestDegreeTypesRequired?: boolean;
-  /** Search for student canditates */
-  isCurrentStudent?: boolean;
-  isCurrentStudentRequired?: boolean;
-  /** Search for canditates that graduated less than a year ago */
-  isRecentGraduate?: boolean;
-  isRecentGraduateRequired?: boolean;
-  educationWeight?: number;
-  /** Search through resumes' raw text */
-  searchExpression?: string;
-  searchExpressionRequired?: boolean;
-  searchExpressionWeight?: number;
-  socCodes?: number[];
-  socCodesWeight?: number;
-  socCodesRequired?: boolean;
-  managementLevel?: ManagementLevel;
-  managementLevelRequired?: boolean;
-  managementLevelWeight?: number;
-  customData?: ResumeSearchParametersCustomData[];
-}
-
-export interface ResumeSearchParametersLocation {
-  name?: string;
-  coordinates?: ResumeSearchParametersLocationCoordinates;
-  distance?: number;
-  unit?: SearchLocationUnit;
-}
-
-export interface ResumeSearchParametersLocationCoordinates {
-  latitude?: number;
-  longitude?: number;
-}
-
-export interface ResumeSearchParametersSkill {
-  name?: string;
-  required?: boolean;
-}
-
-export interface ResumeSearchParametersCustomData {
-  filterType: ResumeSearchParametersCustomDataFilterType;
-  dataPoint: string;
-  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
-  query: Record<string, unknown>;
-  required?: boolean;
-  weight?: number;
-}
-
-export interface ResumeSearch {
-  /** Total number of results */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  parameters?: ResumeSearchParameters;
-  results?: ResumeSearchResult[];
-}
-
-export interface ResumeSearchResult {
-  /** A random string that uniquely identify the resource. */
-  identifier: string;
-  score: number;
-  pdf: string;
-  name?: string;
-  jobTitle: JobTitleSearchScoreComponent;
-  managementLevel: ManagementLevelSearchScoreComponent;
-  experience: ExperienceSearchScoreComponent;
-  skills: SkillsSearchScoreComponent;
-  languages: LanguagesSearchScoreComponent;
-  location: LocationSearchScoreComponent;
-  education: EducationSearchScoreComponent;
-  occupationGroup: OccupationGroupSearchScoreComponent;
-  searchExpression: SearchExpressionSearchScoreComponent;
-  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-  customData: {
-    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
-  };
-}
-
-export interface JobTitleSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface ManagementLevelSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface ExperienceSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface SkillsSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface LanguagesSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface LocationSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface EducationSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface OccupationGroupSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface SearchExpressionSearchScoreComponent {
-  label: string;
-  value?: string;
-  score?: number;
-}
-
-export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface ResumeSearchDetail {
-  jobTitle?: ResumeSearchDetailJobTitle;
-  location?: ResumeSearchDetailLocation;
-  education?: ResumeSearchDetailEducation;
-  skills?: ResumeSearchDetailSkills;
-  experience?: ResumeSearchDetailExperience;
-  occupationGroup?: ResumeSearchDetailOccupationGroup;
-  languages?: ResumeSearchDetailLanguages;
-  managementLevel?: ResumeSearchDetailManagementLevel;
-  searchExpression?: ResumeSearchDetailSearchExpression;
-}
-
-export interface ResumeSearchDetailJobTitle {
-  missing?: string[];
-  value?: ResumeSearchDetailJobTitleValueItem[];
-}
-
-export interface ResumeSearchDetailJobTitleValueItem {
-  name?: string;
-  startDate?: string;
-  endDate?: string;
-  companyName?: string;
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailLocation {
-  missing?: ResumeSearchParametersLocation[];
-  value?: ResumeSearchDetailLocationValue;
-}
-
-export interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailEducation {
-  missing?: ResumeSearchDetailEducationMissing;
-  value?: ResumeSearchDetailEducationValueItem[];
-}
-
-export interface ResumeSearchDetailEducationMissing {
-  degrees?: string[];
-  highestDegreeTypes?: string[];
-  institutions?: string[];
-  currentStudent?: boolean;
-  recentGraduate?: boolean;
-}
-
-export interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailSkills {
-  missing?: ResumeSearchParametersSkill[];
-  value?: ResumeSearchDetailSkillsValueItem[];
-}
-
-export interface ResumeSkill {
-  name?: string;
-  lastUsed?: string;
-  numberOfMonths?: number;
-  type?: string;
-  sources?: ResumeSkillSourcesItem[];
-}
-
-export interface ResumeSkillSourcesItem {
-  section?: ResumeSkillSourcesItemSection;
-  position?: number;
-}
-
-export interface ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailExperience {
-  years?: number;
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailOccupationGroup {
-  missing?: number[];
-  value?: ResumeSearchDetailOccupationGroupValueItem[];
-}
-
-export interface OccupationGroup {
-  code: number;
-  name: string;
-  children: OccupationGroup[];
-}
-
-export interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailLanguages {
-  missing?: ResumeSearchParametersSkill[];
-  value?: ResumeSearchDetailLanguagesValueItem[];
-}
-
-export interface Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailManagementLevel {
-  level?: ManagementLevel;
-  match?: boolean;
-}
-
-export interface ResumeSearchDetailSearchExpression {
-  missing?: string[];
-  value?: string[];
-}
-
-export interface ResumeSearchMatch {
-  /** The matching score between the provided resume and job description. */
-  score?: number;
-  details?: ResumeSearchMatchDetails;
-}
-
-export interface ResumeSearchMatchDetails {
-  jobTitle?: JobTitleSearchScoreComponent;
-  managementLevel?: ManagementLevelSearchScoreComponent;
-  experience?: ExperienceSearchScoreComponent;
-  skills?: SkillsSearchScoreComponent;
-  languages?: LanguagesSearchScoreComponent;
-  location?: LocationSearchScoreComponent;
-  education?: EducationSearchScoreComponent;
-  occupationGroup?: OccupationGroupSearchScoreComponent;
-  searchExpression?: SearchExpressionSearchScoreComponent;
-}
-
-export interface ResumeSearchConfig {
-  allowPdfDownload?: boolean;
-  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
-  maxResults?: number;
-  displayJobTitle?: boolean;
-  displayLocation?: boolean;
-  displayYearsExperience?: boolean;
-  displayOccupationGroup?: boolean;
-  displayEducation?: boolean;
-  displaySkills?: boolean;
-  displayLanguages?: boolean;
-  displayManagementLevel?: boolean;
-  displayKeywords?: boolean;
-  weightJobTitle?: number;
-  weightLocation?: number;
-  weightYearsExperience?: number;
-  weightOccupationGroup?: number;
-  weightEducation?: number;
-  weightSkills?: number;
-  weightLanguages?: number;
-  weightManagementLevel?: number;
-  weightKeywords?: number;
-  /** List of index names. */
-  indices?: string[];
-  /** Customize the theme of the embeded search tool. */
-  searchToolTheme?: { [propertyName: string]: any };
-  /**
-   * ID of the logged in user.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly userId?: number;
-  /**
-   * Username of the logged in user.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly username?: string;
-}
-
-export interface Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
-  configOverride?: ResumeSearchConfig;
-}
-
-export interface ResumeSearchEmbed {
-  /** The signed URL for the embedable search tool. */
-  url?: string;
-}
-
-export interface GetAllJobDescriptionsResults {
-  /** Number of documents in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: Meta[];
-}
-
-export interface JobDescription {
-  data: JobDescriptionData | null;
-  meta: Meta;
-  error: ErrorModel;
-}
-
-export interface JobDescriptionData {
-  jobTitle?: JobTitleAnnotation;
-  contactEmail?: TextAnnotation;
-  contactName?: TextAnnotation;
-  contactPhone?: TextAnnotation;
-  startDate?: DateAnnotation;
-  endDate?: DateAnnotation;
-  jobType?: TextAnnotation;
-  languages?: (LanguageAnnotation | null)[];
-  skills?: (SkillAnnotation | null)[];
-  organizationName?: TextAnnotation;
-  organizationWebsite?: TextAnnotation;
-  educationLevel?: TextAnnotation;
-  educationAccreditation?: TextAnnotation;
-  expectedRemuneration?: ExpectedRemunerationAnnotation;
-  location?: LocationAnnotation;
-  certifications?: (TextAnnotation | null)[];
-  yearsExperience?: YearsExperienceAnnotation;
-}
-
-/** Years of experience range */
-export interface JobTitleAnnotationParsed {
-  name?: string;
-  managementLevel?: string;
-  classification?: JobTitleAnnotationParsedClassification;
-}
-
-export interface JobTitleAnnotationParsedClassification {
-  socCode?: number;
-  title?: string;
-  minorGroup?: string;
-  subMajorGroup?: string;
-  majorGroup?: string;
-}
-
-export interface Annotation {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  id: number;
-  rectangle: Rectangle | null;
-  rectangles: Rectangle[] | null;
-  pageIndex: number | null;
-  raw: string | null;
-  /** The overall confidence that the model's prediction is correct */
-  confidence: number | null;
-  /** The model's confidence that the text has been classified correctly */
-  classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
-  textExtractionConfidence: number | null;
-  isVerified: boolean;
-  isClientVerified: boolean;
-  isAutoVerified: boolean;
-  dataPoint: string;
-  contentType: string;
-}
-
-export interface Rectangle {
-  x0: number;
-  y0: number;
-  x1: number;
-  y1: number;
-}
-
-export interface ExpectedRemunerationAnnotationParsed {
-  minimum?: number;
-  maximum?: number;
-  currency?: string;
-  unit?: string;
-}
-
-/** Years of experience range */
-export interface YearsExperienceAnnotationParsed {
-  /** Minimum years of experience */
-  minimum?: number;
-  /** Maximum years of experience */
-  maximum?: number;
-}
-
-export interface JobDescriptionSearchParameters {
-  indices: string[];
-  /** A random string that uniquely identify the resource. */
-  resume?: string;
-  jobTitles?: string[];
-  jobTitlesRequired?: boolean;
-  jobTitlesWeight?: number;
-  totalYearsExperience?: number;
-  yearsExperienceRequired?: boolean;
-  yearsExperienceWeight?: number;
-  locations?: ResumeSearchParametersLocation[];
-  locationsWeight?: number;
-  locationsRequired?: boolean;
-  skills?: ResumeSearchParametersSkill[];
-  skillsWeight?: number;
-  languages?: ResumeSearchParametersSkill[];
-  languagesWeight?: number;
-  degrees?: string[];
-  degreesRequired?: boolean;
-  degreeTypes?: (EducationLevel | null)[];
-  degreeTypesRequired?: boolean;
-  educationWeight?: number;
-  searchExpression?: string;
-  searchExpressionRequired?: boolean;
-  searchExpressionWeight?: number;
-  socCodes?: number[];
-  socCodesWeight?: number;
-  socCodesRequired?: boolean;
-  managementLevel?: ManagementLevel;
-  managementLevelRequired?: boolean;
-  managementLevelWeight?: number;
-}
-
-export interface JobDescriptionSearch {
-  /** Total number of results */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  parameters?: JobDescriptionSearchParameters;
-  results?: JobDescriptionSearchResult[];
-}
-
-export interface JobDescriptionSearchResult {
-  /** A random string that uniquely identify the resource. */
-  identifier: string;
-  score: number;
-  pdf: string;
-  jobTitle: JobTitleSearchScoreComponent;
-  managementLevel: ManagementLevelSearchScoreComponent;
-  experience: ExperienceSearchScoreComponent;
-  skills: SkillsSearchScoreComponent;
-  languages: LanguagesSearchScoreComponent;
-  location: LocationSearchScoreComponent;
-  education: EducationSearchScoreComponent;
-  occupationGroup?: OccupationGroupSearchScoreComponent;
-  searchExpression: SearchExpressionSearchScoreComponent;
-  organizationName: string | null;
-}
-
-export interface JobDescriptionSearchDetail {
-  jobTitle?: JobDescriptionSearchDetailJobTitle;
-  location?: JobDescriptionSearchDetailLocation;
-  education?: JobDescriptionSearchDetailEducation;
-  skills?: JobDescriptionSearchDetailSkills;
-  experience?: JobDescriptionSearchDetailExperience;
-  occupationGroup?: JobDescriptionSearchDetailOccupationGroup;
-  languages?: JobDescriptionSearchDetailLanguages;
-  managementLevel?: JobDescriptionSearchDetailManagementLevel;
-  searchExpression?: JobDescriptionSearchDetailSearchExpression;
-}
-
-export interface JobDescriptionSearchDetailJobTitle {
-  missing?: string[];
-  value?: JobDescriptionSearchDetailJobTitleValue;
-}
-
-export interface JobDescriptionSearchDetailJobTitleValue {
-  name?: string;
-  companyName?: string;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailLocation {
-  missing?: ResumeSearchParametersLocation[];
-  value?: JobDescriptionSearchDetailLocationValue;
-}
-
-export interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailEducation {
-  missing?: JobDescriptionSearchDetailEducationMissing;
-  value?: JobDescriptionSearchDetailEducationValue;
-}
-
-export interface JobDescriptionSearchDetailEducationMissing {
-  degrees?: string[];
-  degreeTypes?: string[];
-}
-
-export interface JobDescriptionSearchDetailEducationValue {
-  degrees?: string[];
-  degreeTypes?: string[];
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailSkills {
-  missing?: ResumeSearchParametersSkill[];
-  value?: JobDescriptionSearchDetailSkillsValueItem[];
-}
-
-export interface JobDescriptionSearchDetailSkillsValueItem {
-  name?: string;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailExperience {
-  minimumExperience?: number;
-  maximumExperience?: number;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailOccupationGroup {
-  missing?: number[];
-  value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
-}
-
-export interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailLanguages {
-  missing?: ResumeSearchParametersSkill[];
-  value?: JobDescriptionSearchDetailLanguagesValueItem[];
-}
-
-export interface JobDescriptionSearchDetailLanguagesValueItem {
-  name?: string;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailManagementLevel {
-  level?: ManagementLevel;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailSearchExpression {
-  missing?: string[];
-  value?: string[];
-}
-
-export interface JobDescriptionSearchConfig {
-  allowPdfDownload?: boolean;
-  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
-  maxResults?: number;
-  displayJobTitle?: boolean;
-  displayLocation?: boolean;
-  displayYearsExperience?: boolean;
-  displayOccupationGroup?: boolean;
-  displayEducation?: boolean;
-  displaySkills?: boolean;
-  displayLanguages?: boolean;
-  displayManagementLevel?: boolean;
-  displayKeywords?: boolean;
-  weightJobTitle?: number;
-  weightLocation?: number;
-  weightYearsExperience?: number;
-  weightOccupationGroup?: number;
-  weightEducation?: number;
-  weightSkills?: number;
-  weightLanguages?: number;
-  weightManagementLevel?: number;
-  weightKeywords?: number;
-  /** List of index names. */
-  indices?: string[];
-  /** Customize the theme of the embeded search tool. */
-  searchToolTheme?: { [propertyName: string]: any };
-  /**
-   * ID of the logged in user.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly userId?: number;
-  /**
-   * Username of the logged in user.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly username?: string;
-  /** A list of actions to show in the dropdown in the embedded search tool */
-  actions?: JobDescriptionSearchConfigActionsItem[];
-}
-
-export interface JobDescriptionSearchConfigActionsItem {
-  /** Human readable label to display in the UI */
-  label?: string;
-  /** Name of the event to be triggered */
-  eventName?: string;
-}
-
-export interface PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
-  configOverride?: JobDescriptionSearchConfig;
-}
-
-export interface JobDescriptionSearchEmbed {
-  /** The signed URL for the embedable search tool. */
-  url?: string;
-}
-
-export interface Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema {
-  /** Number of indexes in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: Get200ApplicationJsonPropertiesItemsItem[];
-}
-
-export interface Get200ApplicationJsonPropertiesItemsItem {
-  name: string;
-  documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
-}
-
-export interface Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema {
-  name?: string;
-  documentType?: Enum5;
-}
-
-export interface PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
-  /** Number of indexed documents in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
-}
-
-export interface PathsHryo8IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
-  document?: string;
-}
-
-export interface PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
-  document?: string;
-}
-
-export interface PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
-  /** Unique identifier for the document. */
-  document?: string;
-}
-
 export interface GetAllInvoicesResults {
   /** Number of documents in result */
   count?: number;
@@ -1096,16 +318,16 @@ export interface GetAllInvoicesResults {
 
 export interface Invoice {
   clientVerifiedDt: string | null;
-  data: InvoiceData | null;
+  data: InvoiceData;
   meta: Meta;
   error: ErrorModel;
 }
 
 export interface InvoiceData {
   tables?: InvoiceDataTablesItem[];
-  invoiceDate?: DateAnnotation;
-  invoiceOrderDate?: DateAnnotation;
-  paymentDateDue?: DateAnnotation;
+  invoiceDate?: DateAnnotationV2;
+  invoiceOrderDate?: DateAnnotationV2;
+  paymentDateDue?: DateAnnotationV2;
   paymentAmountBase?: InvoiceDataPaymentAmountBase;
   paymentAmountTax?: InvoiceDataPaymentAmountTax;
   paymentAmountTotal?: InvoiceDataPaymentAmountTotal;
@@ -1129,16 +351,16 @@ export interface InvoiceData {
   customerContactName?: InvoiceDataCustomerContactName;
   customerCompanyName?: InvoiceDataCustomerCompanyName;
   supplierCompanyName?: InvoiceDataSupplierCompanyName;
-  customerBillingAddress?: LocationAnnotation;
-  customerDeliveryAddress?: LocationAnnotation;
-  supplierAddress?: LocationAnnotation;
+  customerBillingAddress?: LocationAnnotationV2;
+  customerDeliveryAddress?: LocationAnnotationV2;
+  supplierAddress?: LocationAnnotationV2;
   customerPhoneNumber?: InvoiceDataCustomerPhoneNumber;
   supplierPhoneNumber?: InvoiceDataSupplierPhoneNumber;
   supplierFax?: InvoiceDataSupplierFax;
   customerEmail?: InvoiceDataCustomerEmail;
   supplierEmail?: InvoiceDataSupplierEmail;
   supplierWebsite?: InvoiceDataSupplierWebsite;
-  currencyCode?: EnumAnnotationSerializer;
+  currencyCode?: EnumAnnotationSerializerV2;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
 }
@@ -1162,6 +384,34 @@ export interface RowAnnotation {
   other?: string;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
+}
+
+export interface AnnotationV2 {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  id: number;
+  rectangle: Rectangle | null;
+  rectangles: Rectangle[] | null;
+  pageIndex: number | null;
+  raw: string | null;
+  /** The overall confidence that the model's prediction is correct */
+  confidence: number | null;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence: number | null;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  textExtractionConfidence: number | null;
+  isVerified: boolean;
+  isClientVerified: boolean;
+  isAutoVerified: boolean;
+  dataPoint?: string;
+  contentType: string;
+}
+
+export interface Rectangle {
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
 }
 
 export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
@@ -1309,7 +559,702 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
-export interface PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema {
+export interface GetAllJobDescriptionsResults {
+  /** Number of documents in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: Meta[];
+}
+
+export interface JobDescription {
+  data: JobDescriptionData | null;
+  meta: Meta;
+  error: ErrorModel;
+}
+
+export interface JobDescriptionData {
+  jobTitle?: JobTitleAnnotation;
+  contactEmail?: TextAnnotationV2;
+  contactName?: TextAnnotationV2;
+  contactPhone?: TextAnnotationV2;
+  startDate?: DateAnnotation;
+  endDate?: DateAnnotation;
+  jobType?: TextAnnotationV2;
+  languages?: (LanguageAnnotationV2 | null)[];
+  skills?: (SkillAnnotationV2 | null)[];
+  organizationName?: TextAnnotationV2;
+  organizationWebsite?: TextAnnotationV2;
+  educationLevel?: TextAnnotationV2;
+  educationAccreditation?: TextAnnotationV2;
+  expectedRemuneration?: ExpectedRemunerationAnnotationV2;
+  location?: LocationAnnotationV2;
+  certifications?: (TextAnnotationV2 | null)[];
+  yearsExperience?: YearsExperienceAnnotationV2;
+}
+
+/** Years of experience range */
+export interface JobTitleAnnotationParsed {
+  name?: string;
+  managementLevel?: string;
+  classification?: JobTitleAnnotationParsedClassification;
+}
+
+export interface JobTitleAnnotationParsedClassification {
+  socCode?: number;
+  title?: string;
+  minorGroup?: string;
+  subMajorGroup?: string;
+  majorGroup?: string;
+}
+
+export interface Annotation {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  id: number;
+  rectangle: Rectangle | null;
+  rectangles: Rectangle[] | null;
+  pageIndex: number | null;
+  raw: string | null;
+  /** The overall confidence that the model's prediction is correct */
+  confidence: number | null;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence: number | null;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  textExtractionConfidence: number | null;
+  isVerified: boolean;
+  isClientVerified: boolean;
+  isAutoVerified: boolean;
+  dataPoint: string;
+  contentType: string;
+}
+
+export interface ExpectedRemunerationAnnotationV2Parsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
+/** Years of experience range */
+export interface YearsExperienceAnnotationV2Parsed {
+  /** Minimum years of experience */
+  minimum?: number;
+  /** Maximum years of experience */
+  maximum?: number;
+}
+
+export interface JobDescriptionSearchParameters {
+  indices: string[];
+  /** A random string that uniquely identify the resource. */
+  resume?: string;
+  jobTitles?: string[];
+  jobTitlesRequired?: boolean;
+  jobTitlesWeight?: number;
+  totalYearsExperience?: number;
+  yearsExperienceRequired?: boolean;
+  yearsExperienceWeight?: number;
+  locations?: ResumeSearchParametersLocation[];
+  locationsWeight?: number;
+  locationsRequired?: boolean;
+  skills?: ResumeSearchParametersSkill[];
+  skillsWeight?: number;
+  languages?: ResumeSearchParametersSkill[];
+  languagesWeight?: number;
+  degrees?: string[];
+  degreesRequired?: boolean;
+  degreeTypes?: (EducationLevel | null)[];
+  degreeTypesRequired?: boolean;
+  educationWeight?: number;
+  searchExpression?: string;
+  searchExpressionRequired?: boolean;
+  searchExpressionWeight?: number;
+  socCodes?: number[];
+  socCodesWeight?: number;
+  socCodesRequired?: boolean;
+  managementLevel?: ManagementLevel;
+  managementLevelRequired?: boolean;
+  managementLevelWeight?: number;
+}
+
+export interface ResumeSearchParametersLocation {
+  name?: string;
+  coordinates?: ResumeSearchParametersLocationCoordinates;
+  distance?: number;
+  unit?: SearchLocationUnit;
+}
+
+export interface ResumeSearchParametersLocationCoordinates {
+  latitude?: number;
+  longitude?: number;
+}
+
+export interface ResumeSearchParametersSkill {
+  name?: string;
+  required?: boolean;
+}
+
+export interface JobDescriptionSearch {
+  /** Total number of results */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  parameters?: JobDescriptionSearchParameters;
+  results?: JobDescriptionSearchResult[];
+}
+
+export interface JobDescriptionSearchResult {
+  /** A random string that uniquely identify the resource. */
+  identifier: string | null;
+  score: number;
+  pdf: string;
+  jobTitle: JobTitleSearchScoreComponent;
+  managementLevel: ManagementLevelSearchScoreComponent;
+  experience: ExperienceSearchScoreComponent;
+  skills: SkillsSearchScoreComponent;
+  languages: LanguagesSearchScoreComponent;
+  location: LocationSearchScoreComponent;
+  education: EducationSearchScoreComponent;
+  occupationGroup?: OccupationGroupSearchScoreComponent;
+  searchExpression: SearchExpressionSearchScoreComponent;
+  organizationName: string | null;
+}
+
+export interface JobTitleSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ManagementLevelSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ExperienceSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SkillsSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LanguagesSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LocationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface EducationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface OccupationGroupSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SearchExpressionSearchScoreComponent {
+  label: string;
+  value?: string;
+  score?: number;
+}
+
+export interface JobDescriptionSearchDetail {
+  jobTitle?: JobDescriptionSearchDetailJobTitle;
+  location?: JobDescriptionSearchDetailLocation;
+  education?: JobDescriptionSearchDetailEducation;
+  skills?: JobDescriptionSearchDetailSkills;
+  experience?: JobDescriptionSearchDetailExperience;
+  occupationGroup?: JobDescriptionSearchDetailOccupationGroup;
+  languages?: JobDescriptionSearchDetailLanguages;
+  managementLevel?: JobDescriptionSearchDetailManagementLevel;
+  searchExpression?: JobDescriptionSearchDetailSearchExpression;
+}
+
+export interface JobDescriptionSearchDetailJobTitle {
+  missing?: string[];
+  value?: JobDescriptionSearchDetailJobTitleValue;
+}
+
+export interface JobDescriptionSearchDetailJobTitleValue {
+  name?: string;
+  companyName?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailLocation {
+  missing?: ResumeSearchParametersLocation[];
+  value?: JobDescriptionSearchDetailLocationValue;
+}
+
+export interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailEducation {
+  missing?: JobDescriptionSearchDetailEducationMissing;
+  value?: JobDescriptionSearchDetailEducationValue;
+}
+
+export interface JobDescriptionSearchDetailEducationMissing {
+  degrees?: string[];
+  degreeTypes?: string[];
+}
+
+export interface JobDescriptionSearchDetailEducationValue {
+  degrees?: string[];
+  degreeTypes?: string[];
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailSkills {
+  missing?: ResumeSearchParametersSkill[];
+  value?: JobDescriptionSearchDetailSkillsValueItem[];
+}
+
+export interface JobDescriptionSearchDetailSkillsValueItem {
+  name?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailExperience {
+  minimumExperience?: number;
+  maximumExperience?: number;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailOccupationGroup {
+  missing?: number[];
+  value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
+}
+
+export interface OccupationGroup {
+  code: number;
+  name: string;
+  children: OccupationGroup[];
+}
+
+export interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailLanguages {
+  missing?: ResumeSearchParametersSkill[];
+  value?: JobDescriptionSearchDetailLanguagesValueItem[];
+}
+
+export interface JobDescriptionSearchDetailLanguagesValueItem {
+  name?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailManagementLevel {
+  level?: ManagementLevel;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailSearchExpression {
+  missing?: string[];
+  value?: string[];
+}
+
+export interface JobDescriptionSearchConfig {
+  allowPdfDownload?: boolean;
+  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
+  maxResults?: number;
+  displayJobTitle?: boolean;
+  displayLocation?: boolean;
+  displayYearsExperience?: boolean;
+  displayOccupationGroup?: boolean;
+  displayEducation?: boolean;
+  displaySkills?: boolean;
+  displayLanguages?: boolean;
+  displayManagementLevel?: boolean;
+  displayKeywords?: boolean;
+  weightJobTitle?: number;
+  weightLocation?: number;
+  weightYearsExperience?: number;
+  weightOccupationGroup?: number;
+  weightEducation?: number;
+  weightSkills?: number;
+  weightLanguages?: number;
+  weightManagementLevel?: number;
+  weightKeywords?: number;
+  /** List of index names. */
+  indices?: string[];
+  /** Customize the theme of the embeded search tool. */
+  searchToolTheme?: { [propertyName: string]: any };
+  /**
+   * ID of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly userId?: number;
+  /**
+   * Username of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly username?: string;
+  /** A list of actions to show in the dropdown in the embedded search tool */
+  actions?: JobDescriptionSearchConfigActionsItem[];
+}
+
+export interface JobDescriptionSearchConfigActionsItem {
+  /** Human readable label to display in the UI */
+  label?: string;
+  /** Name of the event to be triggered */
+  eventName?: string;
+}
+
+export interface Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
+  configOverride?: JobDescriptionSearchConfig;
+}
+
+export interface JobDescriptionSearchEmbed {
+  /** The signed URL for the embedable search tool. */
+  url?: string;
+}
+
+export interface ResumeSearchParameters {
+  indices: string[];
+  /** A random string that uniquely identify the resource. */
+  jobDescription?: string;
+  /** A random string that uniquely identify the resource. */
+  resume?: string;
+  jobTitles?: string[];
+  /** Search only through the canditate's current job */
+  jobTitlesCurrentOnly?: boolean;
+  jobTitlesRequired?: boolean;
+  jobTitlesWeight?: number;
+  /** Minimum years of total work experience */
+  yearsExperienceMin?: number;
+  /** Maximum years of total work experience */
+  yearsExperienceMax?: number;
+  yearsExperienceRequired?: boolean;
+  yearsExperienceWeight?: number;
+  /** Search by location name or by coordinates */
+  locations?: ResumeSearchParametersLocation[];
+  locationsWeight?: number;
+  locationsRequired?: boolean;
+  skills?: ResumeSearchParametersSkill[];
+  skillsWeight?: number;
+  languages?: ResumeSearchParametersSkill[];
+  languagesWeight?: number;
+  institutions?: string[];
+  institutionsRequired?: boolean;
+  degrees?: string[];
+  degreesRequired?: boolean;
+  highestDegreeTypes?: (EducationLevel | null)[];
+  highestDegreeTypesRequired?: boolean;
+  /** Search for student canditates */
+  isCurrentStudent?: boolean;
+  isCurrentStudentRequired?: boolean;
+  /** Search for canditates that graduated less than a year ago */
+  isRecentGraduate?: boolean;
+  isRecentGraduateRequired?: boolean;
+  educationWeight?: number;
+  /** Search through resumes' raw text */
+  searchExpression?: string;
+  searchExpressionRequired?: boolean;
+  searchExpressionWeight?: number;
+  socCodes?: number[];
+  socCodesWeight?: number;
+  socCodesRequired?: boolean;
+  managementLevel?: ManagementLevel;
+  managementLevelRequired?: boolean;
+  managementLevelWeight?: number;
+  customData?: ResumeSearchParametersCustomData[];
+}
+
+export interface ResumeSearchParametersCustomData {
+  filterType: ResumeSearchParametersCustomDataFilterType;
+  dataPoint: string;
+  /** 'equals' searches require the 'value' key inside the query, and 'range' searches require at least one of 'gte' (greater than or equal) and 'lte' (less than or equal) */
+  query: Record<string, unknown>;
+  required?: boolean;
+  weight?: number;
+}
+
+export interface ResumeSearch {
+  /** Total number of results */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  parameters?: ResumeSearchParameters;
+  results?: ResumeSearchResult[];
+}
+
+export interface ResumeSearchResult {
+  /** A random string that uniquely identify the resource. */
+  identifier: string | null;
+  score: number;
+  pdf: string;
+  name?: string;
+  jobTitle: JobTitleSearchScoreComponent;
+  managementLevel: ManagementLevelSearchScoreComponent;
+  experience: ExperienceSearchScoreComponent;
+  skills: SkillsSearchScoreComponent;
+  languages: LanguagesSearchScoreComponent;
+  location: LocationSearchScoreComponent;
+  education: EducationSearchScoreComponent;
+  occupationGroup: OccupationGroupSearchScoreComponent;
+  searchExpression: SearchExpressionSearchScoreComponent;
+  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+  customData: {
+    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+  };
+}
+
+export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ResumeSearchDetail {
+  jobTitle?: ResumeSearchDetailJobTitle;
+  location?: ResumeSearchDetailLocation;
+  education?: ResumeSearchDetailEducation;
+  skills?: ResumeSearchDetailSkills;
+  experience?: ResumeSearchDetailExperience;
+  occupationGroup?: ResumeSearchDetailOccupationGroup;
+  languages?: ResumeSearchDetailLanguages;
+  managementLevel?: ResumeSearchDetailManagementLevel;
+  searchExpression?: ResumeSearchDetailSearchExpression;
+}
+
+export interface ResumeSearchDetailJobTitle {
+  missing?: string[];
+  value?: ResumeSearchDetailJobTitleValueItem[];
+}
+
+export interface ResumeSearchDetailJobTitleValueItem {
+  name?: string;
+  startDate?: string;
+  endDate?: string;
+  companyName?: string;
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailLocation {
+  missing?: ResumeSearchParametersLocation[];
+  value?: ResumeSearchDetailLocationValue;
+}
+
+export interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailEducation {
+  missing?: ResumeSearchDetailEducationMissing;
+  value?: ResumeSearchDetailEducationValueItem[];
+}
+
+export interface ResumeSearchDetailEducationMissing {
+  degrees?: string[];
+  highestDegreeTypes?: string[];
+  institutions?: string[];
+  currentStudent?: boolean;
+  recentGraduate?: boolean;
+}
+
+export interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailSkills {
+  missing?: ResumeSearchParametersSkill[];
+  value?: ResumeSearchDetailSkillsValueItem[];
+}
+
+export interface ResumeSkill {
+  name?: string;
+  lastUsed?: string;
+  numberOfMonths?: number;
+  type?: string;
+  sources?: ResumeSkillSourcesItem[];
+}
+
+export interface ResumeSkillSourcesItem {
+  section?: ResumeSkillSourcesItemSection;
+  position?: number;
+}
+
+export interface ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailExperience {
+  years?: number;
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailOccupationGroup {
+  missing?: number[];
+  value?: ResumeSearchDetailOccupationGroupValueItem[];
+}
+
+export interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailLanguages {
+  missing?: ResumeSearchParametersSkill[];
+  value?: ResumeSearchDetailLanguagesValueItem[];
+}
+
+export interface Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailManagementLevel {
+  level?: ManagementLevel;
+  match?: boolean;
+}
+
+export interface ResumeSearchDetailSearchExpression {
+  missing?: string[];
+  value?: string[];
+}
+
+export interface ResumeSearchMatch {
+  /** The matching score between the provided resume and job description. */
+  score?: number;
+  details?: ResumeSearchMatchDetails;
+}
+
+export interface ResumeSearchMatchDetails {
+  jobTitle?: JobTitleSearchScoreComponent;
+  managementLevel?: ManagementLevelSearchScoreComponent;
+  experience?: ExperienceSearchScoreComponent;
+  skills?: SkillsSearchScoreComponent;
+  languages?: LanguagesSearchScoreComponent;
+  location?: LocationSearchScoreComponent;
+  education?: EducationSearchScoreComponent;
+  occupationGroup?: OccupationGroupSearchScoreComponent;
+  searchExpression?: SearchExpressionSearchScoreComponent;
+}
+
+export interface ResumeSearchConfig {
+  allowPdfDownload?: boolean;
+  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
+  maxResults?: number;
+  displayJobTitle?: boolean;
+  displayLocation?: boolean;
+  displayYearsExperience?: boolean;
+  displayOccupationGroup?: boolean;
+  displayEducation?: boolean;
+  displaySkills?: boolean;
+  displayLanguages?: boolean;
+  displayManagementLevel?: boolean;
+  displayKeywords?: boolean;
+  weightJobTitle?: number;
+  weightLocation?: number;
+  weightYearsExperience?: number;
+  weightOccupationGroup?: number;
+  weightEducation?: number;
+  weightSkills?: number;
+  weightLanguages?: number;
+  weightManagementLevel?: number;
+  weightKeywords?: number;
+  /** List of index names. */
+  indices?: string[];
+  /** Customize the theme of the embeded search tool. */
+  searchToolTheme?: { [propertyName: string]: any };
+  /**
+   * ID of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly userId?: number;
+  /**
+   * Username of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly username?: string;
+  /** A list of actions to show in the dropdown in the embedded search tool */
+  actions?: ResumeSearchConfigActionsItem[];
+}
+
+export interface ResumeSearchConfigActionsItem {
+  /** Human readable label to display in the UI */
+  label?: string;
+  /** Name of the event to be triggered */
+  eventName?: string;
+}
+
+export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
+  configOverride?: ResumeSearchConfig;
+}
+
+export interface ResumeSearchEmbed {
+  /** The signed URL for the embedable search tool. */
+  url?: string;
+}
+
+export interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema {
+  /** Number of indexes in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: Get200ApplicationJsonPropertiesItemsItem[];
+}
+
+export interface Get200ApplicationJsonPropertiesItemsItem {
+  name: string;
+  documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
+}
+
+export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
+  name?: string;
+  documentType?: Enum5;
+}
+
+export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
+  /** Number of indexed documents in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+}
+
+export interface Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+  document?: string;
+}
+
+export interface PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
+  document?: string;
+}
+
+export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
+  /** Unique identifier for the document. */
+  document?: string;
+}
+
+export interface Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema {
   /** Number of indexes in result */
   count?: number;
   /** URL to request next page of results */
@@ -1351,13 +1296,13 @@ export interface PaginatedResponse {
   previous?: string;
 }
 
-export interface Paths171Dpm5OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
+export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: OrganizationMembership[];
 }
 
 export interface OrganizationMembership {
   /** A random string that uniquely identify the resource. */
-  identifier: string;
+  identifier: string | null;
   /** Uniquely identify an organization. */
   organization: string;
   user: User;
@@ -1368,7 +1313,7 @@ export interface OrganizationMembershipUpdate {
   role?: OrganizationRole;
 }
 
-export interface PathsSnpek6InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+export interface PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: Invitation[];
 }
 
@@ -1399,7 +1344,7 @@ export interface InvitationUpdate {
   role?: OrganizationRole;
 }
 
-export interface PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema {
+export interface PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema {
   status?: PatchContentSchemaStatus;
 }
 
@@ -1583,7 +1528,7 @@ export interface ListResult {
   previous?: string;
 }
 
-export interface Paths1Vlpqy9WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
+export interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results: WorkspaceMembership[];
 }
 
@@ -1653,6 +1598,102 @@ export interface CollectionUpdate {
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
   extractorConfig?: { [propertyName: string]: any };
+}
+
+export interface GetAllDocumentsResults {
+  /** Number of documents in result */
+  count: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results: Document[];
+}
+
+export interface DocumentMeta {
+  /** Uniquely identify a document. */
+  identifier: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+  ready?: boolean;
+  /** The datetime when the document was ready */
+  readyDt?: Date;
+  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+  failed?: boolean;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** The document's language. */
+  language?: string;
+  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+  pdf?: string;
+  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+  parentDocument?: DocumentMetaParentDocument;
+  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+  childDocuments?: DocumentMetaChildDocumentsItem[];
+  /** The document's pages. */
+  pages: PageMeta[];
+  isOcrd?: boolean;
+  ocrConfidence?: number;
+  reviewUrl?: string;
+  collection?: DocumentMetaCollection;
+  workspace: DocumentMetaWorkspace;
+  archivedDt?: Date;
+  isArchived?: boolean;
+  confirmedDt?: Date;
+  isConfirmed?: boolean;
+  rejectedDt?: Date;
+  isRejected?: boolean;
+  createdDt?: Date;
+  errorCode?: string;
+  errorDetail?: string;
+  /** URL to view the file. */
+  file?: string;
+  tags?: Tag[];
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export interface DocumentMetaParentDocument {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface DocumentMetaChildDocumentsItem {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface DocumentMetaCollection {
+  /** Uniquely identify a collection. */
+  identifier: string;
+  name?: string;
+  extractor?: DocumentMetaCollectionExtractor;
+}
+
+export interface DocumentMetaCollectionExtractor {
+  /** Extractor's ID. */
+  id?: number;
+  identifier?: string;
+  name?: string;
+  /** Base extractor's ID. */
+  baseExtractor?: number;
+  validatable?: boolean;
+}
+
+export interface DocumentMetaWorkspace {
+  /** Uniquely identify a workspace. */
+  identifier: string;
+  name?: string;
+}
+
+export interface Tag {
+  /** Uniquely identify a tag. */
+  id: number;
+  name: string;
+  /** Uniquely identify a workspace. */
+  workspace: string;
+  /** Number of documents tagged with this. */
+  documentCount: number;
 }
 
 export interface DocumentUpdate {
@@ -1781,6 +1822,26 @@ export interface RedactedResumeRequestBody {
   expiryTime?: string;
 }
 
+/** InvoiceRequestBody */
+export interface InvoiceRequestBody {
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  file?: coreRestPipeline.RequestBodyType;
+  /** URL to an invoice to download and process */
+  url?: string;
+  /** A random string that uniquely identify the resource. */
+  identifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+}
+
 /** JobDescriptionRequestBody */
 export interface JobDescriptionRequestBody {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
@@ -1807,176 +1868,155 @@ export interface IndexRequestBody {
   documentType?: PostContentSchemaDocumentType;
 }
 
-/** InvoiceRequestBody */
-export interface InvoiceRequestBody {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-  file?: coreRestPipeline.RequestBodyType;
-  /** URL to an invoice to download and process */
-  url?: string;
-  /** A random string that uniquely identify the resource. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-  rejectDuplicates?: string;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-}
-
-export type Document = DocumentMeta & {
-  /** Dictionary of <any> */
-  data?: { [propertyName: string]: any };
-};
+export type JobDescriptionSearchDetailLocationValue = Location &
+  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
-export type JobDescriptionSearchDetailLocationValue = Location &
-  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
-
 export type ResumeSearchDetailEducationValueItem = Education &
   ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+
+export type DateAnnotationV2 = AnnotationV2 & {
+  parsed?: Date;
+};
+
+export type TextAnnotationV2 = AnnotationV2 & {
+  parsed?: string;
+};
+
+export type LocationAnnotationV2 = AnnotationV2 & {
+  parsed?: Location;
+};
+
+export type EnumAnnotationSerializerV2 = AnnotationV2 & {
+  parsed?: string;
+};
+
+export type JobTitleAnnotation = AnnotationV2 & {
+  /** Years of experience range */
+  parsed?: JobTitleAnnotationParsed;
+};
+
+export type LanguageAnnotationV2 = AnnotationV2 & {
+  parsed?: string;
+};
+
+export type SkillAnnotationV2 = AnnotationV2 & {
+  parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotationV2 = AnnotationV2 & {
+  parsed?: ExpectedRemunerationAnnotationV2Parsed;
+};
+
+export type YearsExperienceAnnotationV2 = AnnotationV2 & {
+  /** Years of experience range */
+  parsed?: YearsExperienceAnnotationV2Parsed;
+};
+
+export type InvoiceDataPaymentAmountBase = TextAnnotationV2 &
+  Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
+
+export type InvoiceDataPaymentAmountTax = TextAnnotationV2 &
+  Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 & {};
+
+export type InvoiceDataPaymentAmountTotal = TextAnnotationV2 &
+  Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 & {};
+
+export type InvoiceDataPaymentAmountPaid = TextAnnotationV2 &
+  Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 & {};
+
+export type InvoiceDataPaymentAmountDue = TextAnnotationV2 &
+  ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 & {};
+
+export type InvoiceDataInvoiceNumber = TextAnnotationV2 &
+  Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
+
+export type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotationV2 &
+  ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 & {};
+
+export type InvoiceDataSupplierBusinessNumber = TextAnnotationV2 &
+  Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 & {};
+
+export type InvoiceDataCustomerNumber = TextAnnotationV2 &
+  Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 & {};
+
+export type InvoiceDataCustomerBusinessNumber = TextAnnotationV2 &
+  Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 & {};
+
+export type InvoiceDataPaymentReference = TextAnnotationV2 &
+  Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 & {};
+
+export type InvoiceDataBankAccountNumber = TextAnnotationV2 &
+  Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
+
+export type InvoiceDataSupplierVat = TextAnnotationV2 &
+  ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
+
+export type InvoiceDataCustomerVat = TextAnnotationV2 &
+  ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
+
+export type InvoiceDataBpayBillerCode = TextAnnotationV2 &
+  ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
+
+export type InvoiceDataBpayReference = TextAnnotationV2 &
+  ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 & {};
+
+export type InvoiceDataBankSortCode = TextAnnotationV2 &
+  Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
+
+export type InvoiceDataBankIban = TextAnnotationV2 &
+  Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
+
+export type InvoiceDataBankSwift = TextAnnotationV2 &
+  Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
+
+export type InvoiceDataBankBsb = TextAnnotationV2 &
+  Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
+
+export type InvoiceDataCustomerContactName = TextAnnotationV2 &
+  ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
+
+export type InvoiceDataCustomerCompanyName = TextAnnotationV2 &
+  Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 & {};
+
+export type InvoiceDataSupplierCompanyName = TextAnnotationV2 &
+  Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 & {};
+
+export type InvoiceDataCustomerPhoneNumber = TextAnnotationV2 &
+  Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
+
+export type InvoiceDataSupplierPhoneNumber = TextAnnotationV2 &
+  Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
+
+export type InvoiceDataSupplierFax = TextAnnotationV2 &
+  Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 & {};
+
+export type InvoiceDataCustomerEmail = TextAnnotationV2 &
+  Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 & {};
+
+export type InvoiceDataSupplierEmail = TextAnnotationV2 &
+  Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 & {};
+
+export type InvoiceDataSupplierWebsite = TextAnnotationV2 &
+  Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
+
+export type DateAnnotation = Annotation & {
+  parsed?: Date;
+};
+
+export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
+  Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+
+export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
+  ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
 export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
   ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
 
 export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
   Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
-
-export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
-  ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
-
-export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
-  Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
-
-export type JobTitleAnnotation = Annotation & {
-  /** Years of experience range */
-  parsed?: JobTitleAnnotationParsed;
-};
-
-export type TextAnnotation = Annotation & {
-  parsed?: string;
-};
-
-export type DateAnnotation = Annotation & {
-  parsed?: Date;
-};
-
-export type LanguageAnnotation = Annotation & {
-  parsed?: string;
-};
-
-export type SkillAnnotation = Annotation & {
-  parsed?: string;
-};
-
-export type ExpectedRemunerationAnnotation = Annotation & {
-  parsed?: ExpectedRemunerationAnnotationParsed;
-};
-
-export type LocationAnnotation = Annotation & {
-  parsed?: Location;
-};
-
-export type YearsExperienceAnnotation = Annotation & {
-  /** Years of experience range */
-  parsed?: YearsExperienceAnnotationParsed;
-};
-
-export type EnumAnnotationSerializer = Annotation & {
-  parsed?: string;
-};
-
-export type InvoiceDataPaymentAmountBase = TextAnnotation &
-  Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
-
-export type InvoiceDataPaymentAmountTax = TextAnnotation &
-  Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 & {};
-
-export type InvoiceDataPaymentAmountTotal = TextAnnotation &
-  Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 & {};
-
-export type InvoiceDataPaymentAmountPaid = TextAnnotation &
-  Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 & {};
-
-export type InvoiceDataPaymentAmountDue = TextAnnotation &
-  ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 & {};
-
-export type InvoiceDataInvoiceNumber = TextAnnotation &
-  Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
-
-export type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation &
-  ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 & {};
-
-export type InvoiceDataSupplierBusinessNumber = TextAnnotation &
-  Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 & {};
-
-export type InvoiceDataCustomerNumber = TextAnnotation &
-  Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 & {};
-
-export type InvoiceDataCustomerBusinessNumber = TextAnnotation &
-  Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 & {};
-
-export type InvoiceDataPaymentReference = TextAnnotation &
-  Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 & {};
-
-export type InvoiceDataBankAccountNumber = TextAnnotation &
-  Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
-
-export type InvoiceDataSupplierVat = TextAnnotation &
-  ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
-
-export type InvoiceDataCustomerVat = TextAnnotation &
-  ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
-
-export type InvoiceDataBpayBillerCode = TextAnnotation &
-  ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
-
-export type InvoiceDataBpayReference = TextAnnotation &
-  ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 & {};
-
-export type InvoiceDataBankSortCode = TextAnnotation &
-  Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
-
-export type InvoiceDataBankIban = TextAnnotation &
-  Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
-
-export type InvoiceDataBankSwift = TextAnnotation &
-  Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
-
-export type InvoiceDataBankBsb = TextAnnotation &
-  Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
-
-export type InvoiceDataCustomerContactName = TextAnnotation &
-  ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
-
-export type InvoiceDataCustomerCompanyName = TextAnnotation &
-  Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 & {};
-
-export type InvoiceDataSupplierCompanyName = TextAnnotation &
-  Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 & {};
-
-export type InvoiceDataCustomerPhoneNumber = TextAnnotation &
-  Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
-
-export type InvoiceDataSupplierPhoneNumber = TextAnnotation &
-  Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
-
-export type InvoiceDataSupplierFax = TextAnnotation &
-  Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 & {};
-
-export type InvoiceDataCustomerEmail = TextAnnotation &
-  Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 & {};
-
-export type InvoiceDataSupplierEmail = TextAnnotation &
-  Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 & {};
-
-export type InvoiceDataSupplierWebsite = TextAnnotation &
-  Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
 export type UserCreateResponse = User & {
   /** API key used to authenticate for future requests. This key is only retrievable at the initial creation of the user. */
@@ -1985,18 +2025,23 @@ export type UserCreateResponse = User & {
 
 export type InvitationRespondedBy = User & {};
 
-export type PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths171Dpm5OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
-export type PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  PathsSnpek6InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type ExtractorFieldGroups = FieldGroup & {};
 
 export type FieldGroups = FieldGroup & {};
 
-export type PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = ListResult &
-  Paths1Vlpqy9WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = ListResult &
+  Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type Document = DocumentMeta & {
+  /** Dictionary of <any> */
+  data?: { [propertyName: string]: any };
+};
 
 /** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
 export enum KnownResumeSearchParametersCustomDataFilterType {
@@ -2032,7 +2077,10 @@ export enum KnownResumeSkillSourcesItemSection {
   WorkExperience = "WorkExperience",
   NotPopulated = "NotPopulated",
   Header = "Header",
-  Footer = "Footer"
+  Footer = "Footer",
+  SkillsInterestsLanguages = "Skills/Interests/Languages",
+  TrainingCertifications = "Training/Certifications",
+  ExtracurricularsLeadership = "Extracurriculars/Leadership"
 }
 
 /**
@@ -2056,7 +2104,10 @@ export enum KnownResumeSkillSourcesItemSection {
  * **WorkExperience** \
  * **NotPopulated** \
  * **Header** \
- * **Footer**
+ * **Footer** \
+ * **Skills\/Interests\/Languages** \
+ * **Training\/Certifications** \
+ * **Extracurriculars\/Leadership**
  */
 export type ResumeSkillSourcesItemSection = string;
 
@@ -2359,7 +2410,7 @@ export interface AffindaAPIGetAllResumesOptionalParams
 }
 
 /** Contains response data for the getAllResumes operation. */
-export type AffindaAPIGetAllResumesResponse = GetAllDocumentsResults;
+export type AffindaAPIGetAllResumesResponse = GetAllDocumentsResultsV2;
 
 /** Optional parameters. */
 export interface AffindaAPICreateResumeOptionalParams
@@ -2418,7 +2469,7 @@ export interface AffindaAPIGetAllRedactedResumesOptionalParams
 }
 
 /** Contains response data for the getAllRedactedResumes operation. */
-export type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResults;
+export type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResultsV2;
 
 /** Optional parameters. */
 export interface AffindaAPICreateRedactedResumeOptionalParams
@@ -2470,7 +2521,7 @@ export interface AffindaAPIDeleteRedactedResumeOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPICreateResumeSearchOptionalParams
+export interface AffindaAPIGetAllInvoicesOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -2478,88 +2529,43 @@ export interface AffindaAPICreateResumeSearchOptionalParams
   limit?: number;
 }
 
-/** Contains response data for the createResumeSearch operation. */
-export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
+/** Contains response data for the getAllInvoices operation. */
+export type AffindaAPIGetAllInvoicesResponse = GetAllInvoicesResults;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchDetailOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchDetail operation. */
-export type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
-
-/** Optional parameters. */
-export interface AffindaAPIGetResumeSearchMatchOptionalParams
+export interface AffindaAPICreateInvoiceOptionalParams
   extends coreClient.OperationOptions {
-  /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
-  index?: string;
-  /** Add keywords to the search criteria. */
-  searchExpression?: string;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  jobTitlesWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  yearsExperienceWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  locationsWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  languagesWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  skillsWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  educationWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  searchExpressionWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  socCodesWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  managementLevelWeight?: number;
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  file?: coreRestPipeline.RequestBodyType;
+  /** URL to an invoice to download and process */
+  url?: string;
+  /** A random string that uniquely identify the resource. */
+  identifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
 }
 
-/** Contains response data for the getResumeSearchMatch operation. */
-export type AffindaAPIGetResumeSearchMatchResponse = ResumeSearchMatch;
+/** Contains response data for the createInvoice operation. */
+export type AffindaAPICreateInvoiceResponse = Invoice;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchConfigOptionalParams
+export interface AffindaAPIGetInvoiceOptionalParams
   extends coreClient.OperationOptions {}
 
-/** Contains response data for the getResumeSearchConfig operation. */
-export type AffindaAPIGetResumeSearchConfigResponse = ResumeSearchConfig;
+/** Contains response data for the getInvoice operation. */
+export type AffindaAPIGetInvoiceResponse = Invoice;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateResumeSearchConfigOptionalParams
+export interface AffindaAPIDeleteInvoiceOptionalParams
   extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateResumeSearchConfig operation. */
-export type AffindaAPIUpdateResumeSearchConfigResponse = ResumeSearchConfig;
-
-/** Optional parameters. */
-export interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams
-  extends coreClient.OperationOptions {
-  body?: Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
-}
-
-/** Contains response data for the createResumeSearchEmbedUrl operation. */
-export type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
-
-/** Optional parameters. */
-export interface AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
-export type AffindaAPIGetResumeSearchSuggestionJobTitleResponse = {
-  /** The parsed response body. */
-  body: string[];
-};
-
-/** Optional parameters. */
-export interface AffindaAPIGetResumeSearchSuggestionSkillOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchSuggestionSkill operation. */
-export type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
-  /** The parsed response body. */
-  body: string[];
-};
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllJobDescriptionsOptionalParams
@@ -2644,11 +2650,103 @@ export type AffindaAPIUpdateJobDescriptionSearchConfigResponse = JobDescriptionS
 /** Optional parameters. */
 export interface AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
   extends coreClient.OperationOptions {
-  body?: PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+  body?: Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema;
 }
 
 /** Contains response data for the createJobDescriptionSearchEmbedUrl operation. */
 export type AffindaAPICreateJobDescriptionSearchEmbedUrlResponse = JobDescriptionSearchEmbed;
+
+/** Optional parameters. */
+export interface AffindaAPICreateResumeSearchOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the createResumeSearch operation. */
+export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
+
+/** Optional parameters. */
+export interface AffindaAPIGetResumeSearchDetailOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchDetail operation. */
+export type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
+
+/** Optional parameters. */
+export interface AffindaAPIGetResumeSearchMatchOptionalParams
+  extends coreClient.OperationOptions {
+  /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
+  index?: string;
+  /** Add keywords to the search criteria. */
+  searchExpression?: string;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  jobTitlesWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  yearsExperienceWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  locationsWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  languagesWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  skillsWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  educationWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  searchExpressionWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  socCodesWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  managementLevelWeight?: number;
+}
+
+/** Contains response data for the getResumeSearchMatch operation. */
+export type AffindaAPIGetResumeSearchMatchResponse = ResumeSearchMatch;
+
+/** Optional parameters. */
+export interface AffindaAPIGetResumeSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchConfig operation. */
+export type AffindaAPIGetResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateResumeSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateResumeSearchConfig operation. */
+export type AffindaAPIUpdateResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams
+  extends coreClient.OperationOptions {
+  body?: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createResumeSearchEmbedUrl operation. */
+export type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
+
+/** Optional parameters. */
+export interface AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
+export type AffindaAPIGetResumeSearchSuggestionJobTitleResponse = {
+  /** The parsed response body. */
+  body: string[];
+};
+
+/** Optional parameters. */
+export interface AffindaAPIGetResumeSearchSuggestionSkillOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchSuggestionSkill operation. */
+export type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
+  /** The parsed response body. */
+  body: string[];
+};
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexesOptionalParams
@@ -2662,7 +2760,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
 }
 
 /** Contains response data for the getAllIndexes operation. */
-export type AffindaAPIGetAllIndexesResponse = Paths6Pypg5IndexGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllIndexesResponse = PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateIndexOptionalParams
@@ -2672,7 +2770,7 @@ export interface AffindaAPICreateIndexOptionalParams
 }
 
 /** Contains response data for the createIndex operation. */
-export type AffindaAPICreateIndexResponse = Paths1Mc0Je6IndexPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateIndexResponse = Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteIndexOptionalParams
@@ -2683,64 +2781,17 @@ export interface AffindaAPIGetAllIndexDocumentsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllIndexDocuments operation. */
-export type AffindaAPIGetAllIndexDocumentsResponse = PathsRvverlIndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllIndexDocumentsResponse = PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateIndexDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createIndexDocument operation. */
-export type AffindaAPICreateIndexDocumentResponse = PathsCoo0XpIndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateIndexDocumentResponse = PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteIndexDocumentOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface AffindaAPIGetAllInvoicesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
-
-/** Contains response data for the getAllInvoices operation. */
-export type AffindaAPIGetAllInvoicesResponse = GetAllInvoicesResults;
-
-/** Optional parameters. */
-export interface AffindaAPICreateInvoiceOptionalParams
-  extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
-  file?: coreRestPipeline.RequestBodyType;
-  /** URL to an invoice to download and process */
-  url?: string;
-  /** A random string that uniquely identify the resource. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
-  rejectDuplicates?: string;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-}
-
-/** Contains response data for the createInvoice operation. */
-export type AffindaAPICreateInvoiceResponse = Invoice;
-
-/** Optional parameters. */
-export interface AffindaAPIGetInvoiceOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getInvoice operation. */
-export type AffindaAPIGetInvoiceResponse = Invoice;
-
-/** Optional parameters. */
-export interface AffindaAPIDeleteInvoiceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
@@ -2760,7 +2811,7 @@ export interface AffindaAPIGetAllUsersOptionalParams
 }
 
 /** Contains response data for the getAllUsers operation. */
-export type AffindaAPIGetAllUsersResponse = PathsWjaaeuUsersGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllUsersResponse = Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateUserOptionalParams
@@ -2830,7 +2881,7 @@ export interface AffindaAPIGetAllOrganizationMembershipsOptionalParams
 }
 
 /** Contains response data for the getAllOrganizationMemberships operation. */
-export type AffindaAPIGetAllOrganizationMembershipsResponse = PathsCkdzu3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllOrganizationMembershipsResponse = PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPIGetOrganizationMembershipOptionalParams
@@ -2866,7 +2917,7 @@ export interface AffindaAPIGetAllInvitationsOptionalParams
 }
 
 /** Contains response data for the getAllInvitations operation. */
-export type AffindaAPIGetAllInvitationsResponse = PathsZt2JhiInvitationsGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllInvitationsResponse = Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateInvitationOptionalParams
@@ -3046,7 +3097,7 @@ export interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams
 }
 
 /** Contains response data for the getAllWorkspaceMemberships operation. */
-export type AffindaAPIGetAllWorkspaceMembershipsResponse = PathsAdr1YhWorkspaceMembershipsGetResponses200ContentApplicationJsonSchema;
+export type AffindaAPIGetAllWorkspaceMembershipsResponse = PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateWorkspaceMembershipOptionalParams

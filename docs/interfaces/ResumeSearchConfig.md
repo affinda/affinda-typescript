@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [actions](ResumeSearchConfig.md#actions)
 - [allowPdfDownload](ResumeSearchConfig.md#allowpdfdownload)
 - [displayEducation](ResumeSearchConfig.md#displayeducation)
 - [displayJobTitle](ResumeSearchConfig.md#displayjobtitle)
@@ -32,6 +33,14 @@
 - [weightYearsExperience](ResumeSearchConfig.md#weightyearsexperience)
 
 ## Properties
+
+### actions
+
+• `Optional` **actions**: [`ResumeSearchConfigActionsItem`](ResumeSearchConfigActionsItem.md)[]
+
+A list of actions to show in the dropdown in the embedded search tool
+
+___
 
 ### allowPdfDownload
 

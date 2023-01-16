@@ -5,17 +5,17 @@ import {
 } from "@azure/core-client";
 import {
   ResumeData as ResumeDataMapper,
-  ResumeSearchParameters as ResumeSearchParametersMapper,
-  ResumeSearchConfig as ResumeSearchConfigMapper,
-  Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
   JobDescriptionSearchConfig as JobDescriptionSearchConfigMapper,
-  PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
-  PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
+  Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
+  ResumeSearchParameters as ResumeSearchParametersMapper,
+  ResumeSearchConfig as ResumeSearchConfigMapper,
+  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
+  PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
   OrganizationMembershipUpdate as OrganizationMembershipUpdateMapper,
   InvitationCreate as InvitationCreateMapper,
   InvitationUpdate as InvitationUpdateMapper,
-  PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchema as PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchemaMapper,
+  PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema as PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchemaMapper,
   ExtractorCreate as ExtractorCreateMapper,
   ExtractorUpdate as ExtractorUpdateMapper,
   DataPointCreate as DataPointCreateMapper,
@@ -354,6 +354,21 @@ export const redactGender: OperationParameter = {
 
 export const body1: OperationParameter = {
   parameterPath: "body",
+  mapper: JobDescriptionSearchParametersMapper
+};
+
+export const body2: OperationParameter = {
+  parameterPath: "body",
+  mapper: JobDescriptionSearchConfigMapper
+};
+
+export const body3: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+};
+
+export const body4: OperationParameter = {
+  parameterPath: "body",
   mapper: ResumeSearchParametersMapper
 };
 
@@ -538,14 +553,14 @@ export const managementLevelWeight: OperationQueryParameter = {
   }
 };
 
-export const body2: OperationParameter = {
+export const body5: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchConfigMapper
 };
 
-export const body3: OperationParameter = {
+export const body6: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: Paths2T1Oc0ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const jobTitles: OperationQueryParameter = {
@@ -584,21 +599,6 @@ export const skills: OperationQueryParameter = {
     }
   },
   collectionFormat: "Multi"
-};
-
-export const body4: OperationParameter = {
-  parameterPath: "body",
-  mapper: JobDescriptionSearchParametersMapper
-};
-
-export const body5: OperationParameter = {
-  parameterPath: "body",
-  mapper: JobDescriptionSearchConfigMapper
-};
-
-export const body6: OperationParameter = {
-  parameterPath: ["options", "body"],
-  mapper: PathsFqn8P8JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const documentType: OperationQueryParameter = {
@@ -648,7 +648,7 @@ export const name1: OperationURLParameter = {
 
 export const body7: OperationParameter = {
   parameterPath: "body",
-  mapper: PathsGpptmIndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const username: OperationParameter = {
@@ -771,7 +771,7 @@ export const token: OperationURLParameter = {
 
 export const body11: OperationParameter = {
   parameterPath: "body",
-  mapper: PathsW51LnrInvitationsTokenPatchRequestbodyContentApplicationJsonSchemaMapper
+  mapper: PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const organization1: OperationQueryParameter = {

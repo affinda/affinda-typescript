@@ -67,7 +67,7 @@ ___
 
 • `Optional` **isVerified**: `boolean`
 
-This is true if the "confirm" button has been clicked in the Affinda validation tool
+This is true if the 'confirm' button has been clicked in the Affinda validation tool
 
 ___
 

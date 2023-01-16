@@ -8,6 +8,7 @@
 
 - [baseExtractor](DocumentMetaCollectionExtractor.md#baseextractor)
 - [id](DocumentMetaCollectionExtractor.md#id)
+- [identifier](DocumentMetaCollectionExtractor.md#identifier)
 - [name](DocumentMetaCollectionExtractor.md#name)
 - [validatable](DocumentMetaCollectionExtractor.md#validatable)
 
@@ -26,6 +27,12 @@ ___
 • `Optional` **id**: `number`
 
 Extractor's ID.
+
+___
+
+### identifier
+
+• `Optional` **identifier**: `string`
 
 ___
 
