@@ -20,6 +20,7 @@
 - [indices](ResumeSearchConfig.md#indices)
 - [maxResults](ResumeSearchConfig.md#maxresults)
 - [searchToolTheme](ResumeSearchConfig.md#searchtooltheme)
+- [showIndexDropdown](ResumeSearchConfig.md#showindexdropdown)
 - [userId](ResumeSearchConfig.md#userid)
 - [username](ResumeSearchConfig.md#username)
 - [weightEducation](ResumeSearchConfig.md#weighteducation)
@@ -127,6 +128,14 @@ Customize the theme of the embeded search tool.
 #### Index signature
 
 ▪ [propertyName: `string`]: `any`
+
+___
+
+### showIndexDropdown
+
+• `Optional` **showIndexDropdown**: `boolean`
+
+Controls whether or not the index dropdown is displayed to the user
 
 ___
 

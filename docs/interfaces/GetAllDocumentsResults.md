@@ -39,4 +39,4 @@ ___
 
 ### results
 
-• **results**: [`Document`](../modules.md#document)[]
+• **results**: [`Document`](Document.md)[]

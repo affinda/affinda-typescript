@@ -235,7 +235,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetResumeOptionalParams
   ): Promise<AffindaAPIGetResumeResponse> {
     return this.sendOperationRequest(
@@ -253,7 +253,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateResumeData(
-    identifier: string | null,
+    identifier: string,
     body: ResumeData | null,
     options?: AffindaAPIUpdateResumeDataOptionalParams
   ): Promise<AffindaAPIUpdateResumeDataResponse> {
@@ -269,7 +269,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteResumeOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -312,7 +312,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getRedactedResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetRedactedResumeOptionalParams
   ): Promise<AffindaAPIGetRedactedResumeResponse> {
     return this.sendOperationRequest(
@@ -327,7 +327,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteRedactedResume(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteRedactedResumeOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -367,7 +367,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getInvoice(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetInvoiceOptionalParams
   ): Promise<AffindaAPIGetInvoiceResponse> {
     return this.sendOperationRequest(
@@ -383,7 +383,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteInvoice(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteInvoiceOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -430,7 +430,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getJobDescription(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetJobDescriptionOptionalParams
   ): Promise<AffindaAPIGetJobDescriptionResponse> {
     return this.sendOperationRequest(
@@ -445,7 +445,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteJobDescription(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteJobDescriptionOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -479,7 +479,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getJobDescriptionSearchDetail(
-    identifier: string | null,
+    identifier: string,
     body: JobDescriptionSearchParameters | null,
     options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams
   ): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse> {
@@ -564,7 +564,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getResumeSearchDetail(
-    identifier: string | null,
+    identifier: string,
     body: ResumeSearchParameters,
     options?: AffindaAPIGetResumeSearchDetailOptionalParams
   ): Promise<AffindaAPIGetResumeSearchDetailResponse> {
@@ -746,7 +746,7 @@ export class AffindaAPI extends AffindaAPIContext {
    */
   deleteIndexDocument(
     name: string,
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteIndexDocumentOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -829,7 +829,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getOrganization(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetOrganizationOptionalParams
   ): Promise<AffindaAPIGetOrganizationResponse> {
     return this.sendOperationRequest(
@@ -844,7 +844,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateOrganization(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIUpdateOrganizationOptionalParams
   ): Promise<AffindaAPIUpdateOrganizationResponse> {
     return this.sendOperationRequest(
@@ -859,7 +859,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteOrganization(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteOrganizationOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -887,7 +887,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getOrganizationMembership(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetOrganizationMembershipOptionalParams
   ): Promise<AffindaAPIGetOrganizationMembershipResponse> {
     return this.sendOperationRequest(
@@ -903,7 +903,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateOrganizationMembership(
-    identifier: string | null,
+    identifier: string,
     body: OrganizationMembershipUpdate,
     options?: AffindaAPIUpdateOrganizationMembershipOptionalParams
   ): Promise<AffindaAPIUpdateOrganizationMembershipResponse> {
@@ -920,7 +920,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteOrganizationMembership(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteOrganizationMembershipOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -963,7 +963,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getInvitation(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetInvitationOptionalParams
   ): Promise<AffindaAPIGetInvitationResponse> {
     return this.sendOperationRequest(
@@ -979,7 +979,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateInvitation(
-    identifier: string | null,
+    identifier: string,
     body: InvitationUpdate,
     options?: AffindaAPIUpdateInvitationOptionalParams
   ): Promise<AffindaAPIUpdateInvitationResponse> {
@@ -995,7 +995,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteInvitation(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteInvitationOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -1138,7 +1138,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getDataPoint(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetDataPointOptionalParams
   ): Promise<AffindaAPIGetDataPointResponse> {
     return this.sendOperationRequest(
@@ -1154,7 +1154,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateDataPointData(
-    identifier: string | null,
+    identifier: string,
     body: DataPointUpdate,
     options?: AffindaAPIUpdateDataPointDataOptionalParams
   ): Promise<AffindaAPIUpdateDataPointDataResponse> {
@@ -1170,7 +1170,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteDataPoint(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteDataPointOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -1215,7 +1215,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getWorkspace(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetWorkspaceOptionalParams
   ): Promise<AffindaAPIGetWorkspaceResponse> {
     return this.sendOperationRequest(
@@ -1231,7 +1231,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateWorkspace(
-    identifier: string | null,
+    identifier: string,
     body: WorkspaceUpdate,
     options?: AffindaAPIUpdateWorkspaceOptionalParams
   ): Promise<AffindaAPIUpdateWorkspaceResponse> {
@@ -1247,7 +1247,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteWorkspace(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteWorkspaceOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -1290,7 +1290,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getWorkspaceMembership(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetWorkspaceMembershipOptionalParams
   ): Promise<AffindaAPIGetWorkspaceMembershipResponse> {
     return this.sendOperationRequest(
@@ -1305,7 +1305,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteWorkspaceMembership(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteWorkspaceMembershipOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -1350,7 +1350,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getCollection(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetCollectionOptionalParams
   ): Promise<AffindaAPIGetCollectionResponse> {
     return this.sendOperationRequest(
@@ -1366,7 +1366,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateCollectionData(
-    identifier: string | null,
+    identifier: string,
     body: CollectionUpdate,
     options?: AffindaAPIUpdateCollectionDataOptionalParams
   ): Promise<AffindaAPIUpdateCollectionDataResponse> {
@@ -1382,7 +1382,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteCollection(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteCollectionOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -1419,7 +1419,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   getDocument(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIGetDocumentOptionalParams
   ): Promise<AffindaAPIGetDocumentResponse> {
     return this.sendOperationRequest(
@@ -1435,7 +1435,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   updateDocumentData(
-    identifier: string | null,
+    identifier: string,
     body: DocumentUpdate,
     options?: AffindaAPIUpdateDocumentDataOptionalParams
   ): Promise<AffindaAPIUpdateDocumentDataResponse> {
@@ -1451,7 +1451,7 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param options The options parameters.
    */
   deleteDocument(
-    identifier: string | null,
+    identifier: string,
     options?: AffindaAPIDeleteDocumentOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
@@ -1548,7 +1548,7 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1585,7 +1585,7 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.language,
     Parameters.expiryTime
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -1610,7 +1610,7 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.format],
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept2],
   isXML: true,
   serializer: xmlSerializer
@@ -1635,7 +1635,7 @@ const updateResumeDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -1657,7 +1657,7 @@ const deleteResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1681,7 +1681,7 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1724,7 +1724,7 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.redactDates,
     Parameters.redactGender
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -1747,7 +1747,7 @@ const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1768,7 +1768,7 @@ const deleteRedactedResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1792,7 +1792,7 @@ const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1828,7 +1828,7 @@ const createInvoiceOperationSpec: coreClient.OperationSpec = {
     Parameters.language,
     Parameters.expiryTime
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -1851,7 +1851,7 @@ const getInvoiceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1872,7 +1872,7 @@ const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1896,7 +1896,7 @@ const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1932,7 +1932,7 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
     Parameters.language,
     Parameters.expiryTime
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -1955,7 +1955,7 @@ const getJobDescriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1976,7 +1976,7 @@ const deleteJobDescriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2001,7 +2001,7 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.body1,
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2026,7 +2026,7 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body1,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2046,7 +2046,7 @@ const getJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2070,7 +2070,7 @@ const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = 
     }
   },
   requestBody: Parameters.body2,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2091,7 +2091,7 @@ const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec 
     }
   },
   requestBody: Parameters.body3,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2117,7 +2117,7 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.body4,
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2142,7 +2142,7 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body4,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2181,7 +2181,7 @@ const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
     Parameters.socCodesWeight,
     Parameters.managementLevelWeight
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2200,7 +2200,7 @@ const getResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2224,7 +2224,7 @@ const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body5,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2245,7 +2245,7 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body6,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2272,7 +2272,7 @@ const getResumeSearchSuggestionJobTitleOperationSpec: coreClient.OperationSpec =
     }
   },
   queryParameters: [Parameters.jobTitles],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2298,7 +2298,7 @@ const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.skills],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2327,7 +2327,7 @@ const getAllIndexesOperationSpec: coreClient.OperationSpec = {
     Parameters.limit,
     Parameters.documentType
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2352,7 +2352,7 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
     }
   },
   formDataParameters: [Parameters.name, Parameters.documentType1],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -2373,7 +2373,7 @@ const deleteIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.name1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2397,7 +2397,7 @@ const getAllIndexDocumentsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.name1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2422,7 +2422,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body7,
-  urlParameters: [Parameters.$host, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.name1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2444,7 +2444,7 @@ const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.name1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2472,7 +2472,7 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2497,7 +2497,7 @@ const getAllUsersOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2526,7 +2526,7 @@ const createUserOperationSpec: coreClient.OperationSpec = {
     Parameters.email,
     Parameters.avatar
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -2554,7 +2554,7 @@ const getAllOrganizationsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2582,7 +2582,7 @@ const createOrganizationOperationSpec: coreClient.OperationSpec = {
     Parameters.name2,
     Parameters.resthookSignatureKey
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -2605,7 +2605,7 @@ const getOrganizationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2633,7 +2633,7 @@ const updateOrganizationOperationSpec: coreClient.OperationSpec = {
     Parameters.avatar,
     Parameters.resthookSignatureKey
   ],
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -2654,7 +2654,7 @@ const deleteOrganizationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2684,7 +2684,7 @@ const getAllOrganizationMembershipsOperationSpec: coreClient.OperationSpec = {
     Parameters.organization,
     Parameters.role
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2707,7 +2707,7 @@ const getOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2731,7 +2731,7 @@ const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body8,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2753,7 +2753,7 @@ const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2784,7 +2784,7 @@ const getAllInvitationsOperationSpec: coreClient.OperationSpec = {
     Parameters.role,
     Parameters.status
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2808,7 +2808,7 @@ const createInvitationOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body9,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2832,7 +2832,7 @@ const getInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2856,7 +2856,7 @@ const updateInvitationOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body10,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2878,7 +2878,7 @@ const deleteInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2897,7 +2897,7 @@ const getInvitationByTokenOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.token],
+  urlParameters: [Parameters.region, Parameters.token],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2921,7 +2921,7 @@ const respondToInvitationOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body11,
-  urlParameters: [Parameters.$host, Parameters.token],
+  urlParameters: [Parameters.region, Parameters.token],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -2956,7 +2956,7 @@ const getAllExtractorsOperationSpec: coreClient.OperationSpec = {
     Parameters.name3,
     Parameters.validatable
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2980,7 +2980,7 @@ const createExtractorOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body12,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3004,7 +3004,7 @@ const getExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3028,7 +3028,7 @@ const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body13,
-  urlParameters: [Parameters.$host, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3050,7 +3050,7 @@ const deleteExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3087,7 +3087,7 @@ const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
     Parameters.description,
     Parameters.annotationContentType
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3111,7 +3111,7 @@ const createDataPointOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body14,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3135,7 +3135,7 @@ const getDataPointOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3159,7 +3159,7 @@ const updateDataPointDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body15,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3181,7 +3181,7 @@ const deleteDataPointOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3210,7 +3210,7 @@ const getAllWorkspacesOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.organization1, Parameters.name3],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3234,7 +3234,7 @@ const createWorkspaceOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body16,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3258,7 +3258,7 @@ const getWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3282,7 +3282,7 @@ const updateWorkspaceOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body17,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3304,7 +3304,7 @@ const deleteWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3334,7 +3334,7 @@ const getAllWorkspaceMembershipsOperationSpec: coreClient.OperationSpec = {
     Parameters.workspace,
     Parameters.user
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3358,7 +3358,7 @@ const createWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body18,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3382,7 +3382,7 @@ const getWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3403,7 +3403,7 @@ const deleteWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3432,7 +3432,7 @@ const getAllCollectionsOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.workspace1],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3456,7 +3456,7 @@ const createCollectionOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body19,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3480,7 +3480,7 @@ const getCollectionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3504,7 +3504,7 @@ const updateCollectionDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body20,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3526,7 +3526,7 @@ const deleteCollectionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3561,7 +3561,7 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.ordering,
     Parameters.includeData
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3598,7 +3598,7 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
     Parameters.collection1,
     Parameters.workspace2
   ],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer
 };
@@ -3621,7 +3621,7 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3645,7 +3645,7 @@ const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body21,
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3667,7 +3667,7 @@ const deleteDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3696,7 +3696,7 @@ const getAllTagsOperationSpec: coreClient.OperationSpec = {
     }
   },
   queryParameters: [Parameters.offset, Parameters.limit, Parameters.workspace],
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3720,7 +3720,7 @@ const createTagOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body22,
-  urlParameters: [Parameters.$host],
+  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3744,7 +3744,7 @@ const getTagOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3768,7 +3768,7 @@ const updateTagDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body23,
-  urlParameters: [Parameters.$host, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -3790,7 +3790,7 @@ const deleteTagOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.$host, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer
 };

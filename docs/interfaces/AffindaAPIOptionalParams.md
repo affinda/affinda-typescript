@@ -14,7 +14,6 @@ Optional parameters.
 
 ### Properties
 
-- [$host](AffindaAPIOptionalParams.md#$host)
 - [additionalPolicies](AffindaAPIOptionalParams.md#additionalpolicies)
 - [allowInsecureConnection](AffindaAPIOptionalParams.md#allowinsecureconnection)
 - [baseUri](AffindaAPIOptionalParams.md#baseuri)
@@ -25,20 +24,13 @@ Optional parameters.
 - [pipeline](AffindaAPIOptionalParams.md#pipeline)
 - [proxyOptions](AffindaAPIOptionalParams.md#proxyoptions)
 - [redirectOptions](AffindaAPIOptionalParams.md#redirectoptions)
+- [region](AffindaAPIOptionalParams.md#region)
 - [requestContentType](AffindaAPIOptionalParams.md#requestcontenttype)
 - [retryOptions](AffindaAPIOptionalParams.md#retryoptions)
 - [tlsOptions](AffindaAPIOptionalParams.md#tlsoptions)
 - [userAgentOptions](AffindaAPIOptionalParams.md#useragentoptions)
 
 ## Properties
-
-### $host
-
-• `Optional` **$host**: `string`
-
-server parameter
-
-___
 
 ### additionalPolicies
 
@@ -160,6 +152,14 @@ Options for how redirect responses are handled.
 #### Inherited from
 
 coreClient.ServiceClientOptions.redirectOptions
+
+___
+
+### region
+
+• `Optional` **region**: `string`
+
+region - server parameter
 
 ___
 

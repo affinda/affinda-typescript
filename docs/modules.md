@@ -11,8 +11,8 @@
 - [KnownDateFormatPreference](enums/KnownDateFormatPreference.md)
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum2](enums/KnownEnum2.md)
-- [KnownEnum5](enums/KnownEnum5.md)
+- [KnownEnum3](enums/KnownEnum3.md)
+- [KnownEnum6](enums/KnownEnum6.md)
 - [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationStatus](enums/KnownInvitationStatus.md)
@@ -20,6 +20,7 @@
 - [KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md)
 - [KnownPatchContentSchemaStatus](enums/KnownPatchContentSchemaStatus.md)
 - [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
+- [KnownRegion](enums/KnownRegion.md)
 - [KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
 - [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
@@ -173,6 +174,7 @@
 - [DataPointChoicesItem](interfaces/DataPointChoicesItem.md)
 - [DataPointCreate](interfaces/DataPointCreate.md)
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
+- [Document](interfaces/Document.md)
 - [DocumentCreate](interfaces/DocumentCreate.md)
 - [DocumentMeta](interfaces/DocumentMeta.md)
 - [DocumentMetaChildDocumentsItem](interfaces/DocumentMetaChildDocumentsItem.md)
@@ -405,11 +407,10 @@
 - [DateAnnotationV2](modules.md#dateannotationv2)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
-- [Document](modules.md#document)
 - [DocumentState](modules.md#documentstate)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum2](modules.md#enum2)
-- [Enum5](modules.md#enum5)
+- [Enum3](modules.md#enum3)
+- [Enum6](modules.md#enum6)
 - [EnumAnnotationSerializerV2](modules.md#enumannotationserializerv2)
 - [ExpectedRemunerationAnnotationV2](modules.md#expectedremunerationannotationv2)
 - [ExtractorFieldGroups](modules.md#extractorfieldgroups)
@@ -460,6 +461,7 @@
 - [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
 - [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
 - [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
+- [Region](modules.md#region)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -494,7 +496,7 @@ ___
 
 ### AffindaAPICreateDocumentResponse
 
-Ƭ **AffindaAPICreateDocumentResponse**: [`Document`](modules.md#document)
+Ƭ **AffindaAPICreateDocumentResponse**: [`Document`](interfaces/Document.md)
 
 Contains response data for the createDocument operation.
 
@@ -790,7 +792,7 @@ ___
 
 ### AffindaAPIGetDocumentResponse
 
-Ƭ **AffindaAPIGetDocumentResponse**: [`Document`](modules.md#document)
+Ƭ **AffindaAPIGetDocumentResponse**: [`Document`](interfaces/Document.md)
 
 Contains response data for the getDocument operation.
 
@@ -994,7 +996,7 @@ ___
 
 ### AffindaAPIUpdateDocumentDataResponse
 
-Ƭ **AffindaAPIUpdateDocumentDataResponse**: [`Document`](modules.md#document)
+Ƭ **AffindaAPIUpdateDocumentDataResponse**: [`Document`](interfaces/Document.md)
 
 Contains response data for the updateDocumentData operation.
 
@@ -1090,7 +1092,8 @@ Defines values for AnnotationContentType. \
 **enum** \
 **location** \
 **json** \
-**table**
+**table** \
+**cell**
 
 ___
 
@@ -1150,12 +1153,6 @@ Defines values for DateRange. \
 
 ___
 
-### Document
-
-Ƭ **Document**: [`DocumentMeta`](interfaces/DocumentMeta.md) & { `data?`: { [propertyName: string]: `any`;  }  }
-
-___
-
 ### DocumentState
 
 Ƭ **DocumentState**: `string`
@@ -1180,12 +1177,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum2
+### Enum3
 
-Ƭ **Enum2**: `string`
+Ƭ **Enum3**: `string`
 
-Defines values for Enum2. \
-[KnownEnum2](enums/KnownEnum2.md) can be used interchangeably with Enum2,
+Defines values for Enum3. \
+[KnownEnum3](enums/KnownEnum3.md) can be used interchangeably with Enum3,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1193,12 +1190,12 @@ Defines values for Enum2. \
 
 ___
 
-### Enum5
+### Enum6
 
-Ƭ **Enum5**: `string`
+Ƭ **Enum6**: `string`
 
-Defines values for Enum5. \
-[KnownEnum5](enums/KnownEnum5.md) can be used interchangeably with Enum5,
+Defines values for Enum6. \
+[KnownEnum6](enums/KnownEnum6.md) can be used interchangeably with Enum6,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1556,6 +1553,19 @@ Defines values for PostContentSchemaDocumentType. \
 ### Known values supported by the service
 **resumes** \
 **job_descriptions**
+
+___
+
+### Region
+
+Ƭ **Region**: `string`
+
+Defines values for Region. \
+[KnownRegion](enums/KnownRegion.md) can be used interchangeably with Region,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**api** \
+**api.eu1**
 
 ___
 

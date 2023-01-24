@@ -9,6 +9,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 ### Enumeration members
 
 - [Boolean](KnownAnnotationContentType.md#boolean)
+- [Cell](KnownAnnotationContentType.md#cell)
 - [Date](KnownAnnotationContentType.md#date)
 - [Datetime](KnownAnnotationContentType.md#datetime)
 - [Decimal](KnownAnnotationContentType.md#decimal)
@@ -25,6 +26,12 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 ### Boolean
 
 • **Boolean** = `"boolean"`
+
+___
+
+### Cell
+
+• **Cell** = `"cell"`
 
 ___
 

@@ -16,7 +16,6 @@
 - [name](DataPoint.md#name)
 - [noRect](DataPoint.md#norect)
 - [organization](DataPoint.md#organization)
-- [similarTo](DataPoint.md#similarto)
 - [slug](DataPoint.md#slug)
 
 ## Properties
@@ -47,7 +46,7 @@ ___
 
 ### extractor
 
-• **extractor**: `number`
+• **extractor**: ``null`` \| `number`
 
 Extractor's ID.
 
@@ -82,12 +81,6 @@ ___
 ### organization
 
 • `Optional` **organization**: [`Organization`](Organization.md)
-
-___
-
-### similarTo
-
-• **similarTo**: `string`[]
 
 ___
 

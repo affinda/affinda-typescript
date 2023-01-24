@@ -161,6 +161,10 @@ export interface Location {
   readonly apartmentNumber?: string;
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly city?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly latitude?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly longitude?: number;
 }
 
 export interface Education {
@@ -709,7 +713,7 @@ export interface JobDescriptionSearch {
 
 export interface JobDescriptionSearchResult {
   /** A random string that uniquely identify the resource. */
-  identifier: string | null;
+  identifier: string;
   score: number;
   pdf: string;
   jobTitle: JobTitleSearchScoreComponent;
@@ -901,6 +905,8 @@ export interface JobDescriptionSearchConfig {
   weightKeywords?: number;
   /** List of index names. */
   indices?: string[];
+  /** Controls whether or not the index dropdown is displayed to the user */
+  showIndexDropdown?: boolean;
   /** Customize the theme of the embeded search tool. */
   searchToolTheme?: { [propertyName: string]: any };
   /**
@@ -1006,7 +1012,7 @@ export interface ResumeSearch {
 
 export interface ResumeSearchResult {
   /** A random string that uniquely identify the resource. */
-  identifier: string | null;
+  identifier: string;
   score: number;
   pdf: string;
   name?: string;
@@ -1179,6 +1185,8 @@ export interface ResumeSearchConfig {
   weightKeywords?: number;
   /** List of index names. */
   indices?: string[];
+  /** Controls whether or not the index dropdown is displayed to the user */
+  showIndexDropdown?: boolean;
   /** Customize the theme of the embeded search tool. */
   searchToolTheme?: { [propertyName: string]: any };
   /**
@@ -1228,7 +1236,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum5;
+  documentType?: Enum6;
 }
 
 export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1302,7 +1310,7 @@ export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentAppli
 
 export interface OrganizationMembership {
   /** A random string that uniquely identify the resource. */
-  identifier: string | null;
+  identifier: string;
   /** Uniquely identify an organization. */
   organization: string;
   user: User;
@@ -1419,10 +1427,9 @@ export interface DataPoint {
   annotationContentType: AnnotationContentType;
   organization?: Organization;
   /** Extractor's ID. */
-  extractor: number;
+  extractor: number | null;
   multiple?: boolean;
   noRect?: boolean;
-  similarTo: string[];
   choices?: DataPointChoicesItem[];
   children?: DataPoint[];
 }
@@ -1608,6 +1615,13 @@ export interface GetAllDocumentsResults {
   /** URL to request previous page of results */
   previous?: string;
   results: Document[];
+}
+
+export interface Document {
+  meta: DocumentMeta;
+  /** Dictionary of <any> */
+  data?: { [propertyName: string]: any };
+  error?: ErrorModel;
 }
 
 export interface DocumentMeta {
@@ -2038,10 +2052,21 @@ export type FieldGroups = FieldGroup & {};
 export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = ListResult &
   Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
-export type Document = DocumentMeta & {
-  /** Dictionary of <any> */
-  data?: { [propertyName: string]: any };
-};
+/** Known values of {@link Region} that the service accepts. */
+export enum KnownRegion {
+  Api = "api",
+  ApiEu1 = "api.eu1"
+}
+
+/**
+ * Defines values for Region. \
+ * {@link KnownRegion} can be used interchangeably with Region,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **api** \
+ * **api.eu1**
+ */
+export type Region = string;
 
 /** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
 export enum KnownResumeSearchParametersCustomDataFilterType {
@@ -2111,21 +2136,21 @@ export enum KnownResumeSkillSourcesItemSection {
  */
 export type ResumeSkillSourcesItemSection = string;
 
-/** Known values of {@link Enum2} that the service accepts. */
-export enum KnownEnum2 {
+/** Known values of {@link Enum3} that the service accepts. */
+export enum KnownEnum3 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum2. \
- * {@link KnownEnum2} can be used interchangeably with Enum2,
+ * Defines values for Enum3. \
+ * {@link KnownEnum3} can be used interchangeably with Enum3,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum2 = string;
+export type Enum3 = string;
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
 export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
@@ -2159,21 +2184,21 @@ export enum KnownPostContentSchemaDocumentType {
  */
 export type PostContentSchemaDocumentType = string;
 
-/** Known values of {@link Enum5} that the service accepts. */
-export enum KnownEnum5 {
+/** Known values of {@link Enum6} that the service accepts. */
+export enum KnownEnum6 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum5. \
- * {@link KnownEnum5} can be used interchangeably with Enum5,
+ * Defines values for Enum6. \
+ * {@link KnownEnum6} can be used interchangeably with Enum6,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum5 = string;
+export type Enum6 = string;
 
 /** Known values of {@link OrganizationRole} that the service accepts. */
 export enum KnownOrganizationRole {
@@ -2253,7 +2278,8 @@ export enum KnownAnnotationContentType {
   Enum = "enum",
   Location = "location",
   Json = "json",
-  Table = "table"
+  Table = "table",
+  Cell = "cell"
 }
 
 /**
@@ -2271,7 +2297,8 @@ export enum KnownAnnotationContentType {
  * **enum** \
  * **location** \
  * **json** \
- * **table**
+ * **table** \
+ * **cell**
  */
 export type AnnotationContentType = string;
 
@@ -2756,7 +2783,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum2;
+  documentType?: Enum3;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -3263,8 +3290,8 @@ export interface AffindaAPIDeleteTagOptionalParams
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams
   extends coreClient.ServiceClientOptions {
-  /** server parameter */
-  $host?: string;
+  /** region - server parameter */
+  region?: Region;
   /** Overrides client endpoint. */
   endpoint?: string;
 }

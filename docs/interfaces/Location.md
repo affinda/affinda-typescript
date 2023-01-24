@@ -11,6 +11,8 @@
 - [country](Location.md#country)
 - [countryCode](Location.md#countrycode)
 - [formatted](Location.md#formatted)
+- [latitude](Location.md#latitude)
+- [longitude](Location.md#longitude)
 - [postalCode](Location.md#postalcode)
 - [rawInput](Location.md#rawinput)
 - [state](Location.md#state)
@@ -55,6 +57,22 @@ ___
 ### formatted
 
 • `Optional` `Readonly` **formatted**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### latitude
+
+• `Optional` `Readonly` **latitude**: `number`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### longitude
+
+• `Optional` `Readonly` **longitude**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 

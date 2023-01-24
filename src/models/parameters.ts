@@ -42,17 +42,16 @@ export const accept: OperationParameter = {
   }
 };
 
-export const $host: OperationURLParameter = {
-  parameterPath: "$host",
+export const region: OperationURLParameter = {
+  parameterPath: "region",
   mapper: {
-    serializedName: "$host",
+    serializedName: "region",
     required: true,
-    xmlName: "$host",
+    xmlName: "region",
     type: {
       name: "String"
     }
-  },
-  skipEncoding: true
+  }
 };
 
 export const offset: OperationQueryParameter = {

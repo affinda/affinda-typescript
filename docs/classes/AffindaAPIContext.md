@@ -18,8 +18,8 @@
 
 ### Properties
 
-- [$host](AffindaAPIContext.md#$host)
 - [pipeline](AffindaAPIContext.md#pipeline)
+- [region](AffindaAPIContext.md#region)
 
 ### Methods
 
@@ -47,12 +47,6 @@ coreClient.ServiceClient.constructor
 
 ## Properties
 
-### $host
-
-• **$host**: `string`
-
-___
-
 ### pipeline
 
 • `Readonly` **pipeline**: `Pipeline`
@@ -62,6 +56,12 @@ The pipeline used by this client to make requests
 #### Inherited from
 
 coreClient.ServiceClient.pipeline
+
+___
+
+### region
+
+• **region**: `string`
 
 ## Methods
 

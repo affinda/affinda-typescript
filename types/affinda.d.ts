@@ -44,7 +44,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    getResume(identifier: string | null, options?: AffindaAPIGetResumeOptionalParams): Promise<AffindaAPIGetResumeResponse>;
+    getResume(identifier: string, options?: AffindaAPIGetResumeOptionalParams): Promise<AffindaAPIGetResumeResponse>;
     /**
      * Update data of a parsed resume.
      * The `identifier` is the unique ID returned after POST-ing the resume via the
@@ -53,13 +53,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Resume data to update
      * @param options The options parameters.
      */
-    updateResumeData(identifier: string | null, body: ResumeData | null, options?: AffindaAPIUpdateResumeDataOptionalParams): Promise<AffindaAPIUpdateResumeDataResponse>;
+    updateResumeData(identifier: string, body: ResumeData | null, options?: AffindaAPIUpdateResumeDataOptionalParams): Promise<AffindaAPIUpdateResumeDataResponse>;
     /**
      * Deletes the specified resume from the database
      * @param identifier Resume identifier
      * @param options The options parameters.
      */
-    deleteResume(identifier: string | null, options?: AffindaAPIDeleteResumeOptionalParams): Promise<void>;
+    deleteResume(identifier: string, options?: AffindaAPIDeleteResumeOptionalParams): Promise<void>;
     /**
      * Returns all the redacted resume information for that resume
      * @param options The options parameters.
@@ -77,13 +77,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    getRedactedResume(identifier: string | null, options?: AffindaAPIGetRedactedResumeOptionalParams): Promise<AffindaAPIGetRedactedResumeResponse>;
+    getRedactedResume(identifier: string, options?: AffindaAPIGetRedactedResumeOptionalParams): Promise<AffindaAPIGetRedactedResumeResponse>;
     /**
      * Deletes the specified resume from the database
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    deleteRedactedResume(identifier: string | null, options?: AffindaAPIDeleteRedactedResumeOptionalParams): Promise<void>;
+    deleteRedactedResume(identifier: string, options?: AffindaAPIDeleteRedactedResumeOptionalParams): Promise<void>;
     /**
      * Returns all the invoice summaries for that user, limited to 300 per page.
      * @param options The options parameters.
@@ -104,14 +104,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    getInvoice(identifier: string | null, options?: AffindaAPIGetInvoiceOptionalParams): Promise<AffindaAPIGetInvoiceResponse>;
+    getInvoice(identifier: string, options?: AffindaAPIGetInvoiceOptionalParams): Promise<AffindaAPIGetInvoiceResponse>;
     /**
      * Delete the specified invoice from the database. Note, any invoices deleted from the database will no
      * longer be used in any tailored customer models.
      * @param identifier Invoice identifier
      * @param options The options parameters.
      */
-    deleteInvoice(identifier: string | null, options?: AffindaAPIDeleteInvoiceOptionalParams): Promise<void>;
+    deleteInvoice(identifier: string, options?: AffindaAPIDeleteInvoiceOptionalParams): Promise<void>;
     /**
      * Returns all the job descriptions for that user, limited to 300 per page.
      * @param options The options parameters.
@@ -133,13 +133,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    getJobDescription(identifier: string | null, options?: AffindaAPIGetJobDescriptionOptionalParams): Promise<AffindaAPIGetJobDescriptionResponse>;
+    getJobDescription(identifier: string, options?: AffindaAPIGetJobDescriptionOptionalParams): Promise<AffindaAPIGetJobDescriptionResponse>;
     /**
      * Deletes the specified job description from the database
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    deleteJobDescription(identifier: string | null, options?: AffindaAPIDeleteJobDescriptionOptionalParams): Promise<void>;
+    deleteJobDescription(identifier: string, options?: AffindaAPIDeleteJobDescriptionOptionalParams): Promise<void>;
     /**
      * Searches through parsed job descriptions. You can search with custom criterias or a resume.
      * @param body Search parameters
@@ -155,7 +155,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    getJobDescriptionSearchDetail(identifier: string | null, body: JobDescriptionSearchParameters | null, options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse>;
+    getJobDescriptionSearchDetail(identifier: string, body: JobDescriptionSearchParameters | null, options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse>;
     /**
      * Return configurations such as which fields can be displayed in the logged in user's embeddable job
      * description search tool, what are their weights, what is the maximum number of results that can be
@@ -196,7 +196,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    getResumeSearchDetail(identifier: string | null, body: ResumeSearchParameters, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
+    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
     /**
      * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
      * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
@@ -276,7 +276,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    deleteIndexDocument(name: string, identifier: string | null, options?: AffindaAPIDeleteIndexDocumentOptionalParams): Promise<void>;
+    deleteIndexDocument(name: string, identifier: string, options?: AffindaAPIDeleteIndexDocumentOptionalParams): Promise<void>;
     /**
      * Returns the list of searchable occupation groups.
      * @param options The options parameters.
@@ -310,19 +310,19 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Organization identifier.
      * @param options The options parameters.
      */
-    getOrganization(identifier: string | null, options?: AffindaAPIGetOrganizationOptionalParams): Promise<AffindaAPIGetOrganizationResponse>;
+    getOrganization(identifier: string, options?: AffindaAPIGetOrganizationOptionalParams): Promise<AffindaAPIGetOrganizationResponse>;
     /**
      * Update the detail of an organization.
      * @param identifier Organization identifier.
      * @param options The options parameters.
      */
-    updateOrganization(identifier: string | null, options?: AffindaAPIUpdateOrganizationOptionalParams): Promise<AffindaAPIUpdateOrganizationResponse>;
+    updateOrganization(identifier: string, options?: AffindaAPIUpdateOrganizationOptionalParams): Promise<AffindaAPIUpdateOrganizationResponse>;
     /**
      * Delete the specified organization from the database.
      * @param identifier Organization identifier.
      * @param options The options parameters.
      */
-    deleteOrganization(identifier: string | null, options?: AffindaAPIDeleteOrganizationOptionalParams): Promise<void>;
+    deleteOrganization(identifier: string, options?: AffindaAPIDeleteOrganizationOptionalParams): Promise<void>;
     /**
      * Returns all the organization memberships
      * @param options The options parameters.
@@ -333,21 +333,21 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Membership identifier.
      * @param options The options parameters.
      */
-    getOrganizationMembership(identifier: string | null, options?: AffindaAPIGetOrganizationMembershipOptionalParams): Promise<AffindaAPIGetOrganizationMembershipResponse>;
+    getOrganizationMembership(identifier: string, options?: AffindaAPIGetOrganizationMembershipOptionalParams): Promise<AffindaAPIGetOrganizationMembershipResponse>;
     /**
      * The admin users can use this endpoint to update the role of the members within their organization.
      * @param identifier Membership identifier.
      * @param body
      * @param options The options parameters.
      */
-    updateOrganizationMembership(identifier: string | null, body: OrganizationMembershipUpdate, options?: AffindaAPIUpdateOrganizationMembershipOptionalParams): Promise<AffindaAPIUpdateOrganizationMembershipResponse>;
+    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: AffindaAPIUpdateOrganizationMembershipOptionalParams): Promise<AffindaAPIUpdateOrganizationMembershipResponse>;
     /**
      * The admin users can use this endpoint to remove member from their organization. Other users can also
      * use this to leave their organization.
      * @param identifier Membership identifier.
      * @param options The options parameters.
      */
-    deleteOrganizationMembership(identifier: string | null, options?: AffindaAPIDeleteOrganizationMembershipOptionalParams): Promise<void>;
+    deleteOrganizationMembership(identifier: string, options?: AffindaAPIDeleteOrganizationMembershipOptionalParams): Promise<void>;
     /**
      * Get list of all invitations you created or sent to you.
      * @param options The options parameters.
@@ -364,20 +364,20 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Invitation identifier.
      * @param options The options parameters.
      */
-    getInvitation(identifier: string | null, options?: AffindaAPIGetInvitationOptionalParams): Promise<AffindaAPIGetInvitationResponse>;
+    getInvitation(identifier: string, options?: AffindaAPIGetInvitationOptionalParams): Promise<AffindaAPIGetInvitationResponse>;
     /**
      * Update the detail of an invitation.
      * @param identifier Invitation identifier.
      * @param body
      * @param options The options parameters.
      */
-    updateInvitation(identifier: string | null, body: InvitationUpdate, options?: AffindaAPIUpdateInvitationOptionalParams): Promise<AffindaAPIUpdateInvitationResponse>;
+    updateInvitation(identifier: string, body: InvitationUpdate, options?: AffindaAPIUpdateInvitationOptionalParams): Promise<AffindaAPIUpdateInvitationResponse>;
     /**
      * Delete the specified invitation from the database.
      * @param identifier Invitation identifier.
      * @param options The options parameters.
      */
-    deleteInvitation(identifier: string | null, options?: AffindaAPIDeleteInvitationOptionalParams): Promise<void>;
+    deleteInvitation(identifier: string, options?: AffindaAPIDeleteInvitationOptionalParams): Promise<void>;
     /**
      * Get detail of an invitation using a secret token. This allows users who have not registered/logged
      * in to view the invitation.
@@ -437,20 +437,20 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Data point's identifier
      * @param options The options parameters.
      */
-    getDataPoint(identifier: string | null, options?: AffindaAPIGetDataPointOptionalParams): Promise<AffindaAPIGetDataPointResponse>;
+    getDataPoint(identifier: string, options?: AffindaAPIGetDataPointOptionalParams): Promise<AffindaAPIGetDataPointResponse>;
     /**
      * Update data of a data point.
      * @param identifier DataPoint's identifier
      * @param body Data point to update
      * @param options The options parameters.
      */
-    updateDataPointData(identifier: string | null, body: DataPointUpdate, options?: AffindaAPIUpdateDataPointDataOptionalParams): Promise<AffindaAPIUpdateDataPointDataResponse>;
+    updateDataPointData(identifier: string, body: DataPointUpdate, options?: AffindaAPIUpdateDataPointDataOptionalParams): Promise<AffindaAPIUpdateDataPointDataResponse>;
     /**
      * Deletes the specified data point from the database.
      * @param identifier DataPoint's identifier
      * @param options The options parameters.
      */
-    deleteDataPoint(identifier: string | null, options?: AffindaAPIDeleteDataPointOptionalParams): Promise<void>;
+    deleteDataPoint(identifier: string, options?: AffindaAPIDeleteDataPointOptionalParams): Promise<void>;
     /**
      * Returns your workspaces.
      * @param organization Filter by organization.
@@ -468,20 +468,20 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Workspace's identifier
      * @param options The options parameters.
      */
-    getWorkspace(identifier: string | null, options?: AffindaAPIGetWorkspaceOptionalParams): Promise<AffindaAPIGetWorkspaceResponse>;
+    getWorkspace(identifier: string, options?: AffindaAPIGetWorkspaceOptionalParams): Promise<AffindaAPIGetWorkspaceResponse>;
     /**
      * Update a workspace.
      * @param identifier Workspace's identifier
      * @param body Workspace data to update
      * @param options The options parameters.
      */
-    updateWorkspace(identifier: string | null, body: WorkspaceUpdate, options?: AffindaAPIUpdateWorkspaceOptionalParams): Promise<AffindaAPIUpdateWorkspaceResponse>;
+    updateWorkspace(identifier: string, body: WorkspaceUpdate, options?: AffindaAPIUpdateWorkspaceOptionalParams): Promise<AffindaAPIUpdateWorkspaceResponse>;
     /**
      * Deletes the specified workspace from the database.
      * @param identifier Workspace's identifier
      * @param options The options parameters.
      */
-    deleteWorkspace(identifier: string | null, options?: AffindaAPIDeleteWorkspaceOptionalParams): Promise<void>;
+    deleteWorkspace(identifier: string, options?: AffindaAPIDeleteWorkspaceOptionalParams): Promise<void>;
     /**
      * Returns the memberships of your workspaces.
      * @param options The options parameters.
@@ -498,13 +498,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Workspace membership's identifier.
      * @param options The options parameters.
      */
-    getWorkspaceMembership(identifier: string | null, options?: AffindaAPIGetWorkspaceMembershipOptionalParams): Promise<AffindaAPIGetWorkspaceMembershipResponse>;
+    getWorkspaceMembership(identifier: string, options?: AffindaAPIGetWorkspaceMembershipOptionalParams): Promise<AffindaAPIGetWorkspaceMembershipResponse>;
     /**
      * Remove an user from a workspace.
      * @param identifier Workspace membership's identifier.
      * @param options The options parameters.
      */
-    deleteWorkspaceMembership(identifier: string | null, options?: AffindaAPIDeleteWorkspaceMembershipOptionalParams): Promise<void>;
+    deleteWorkspaceMembership(identifier: string, options?: AffindaAPIDeleteWorkspaceMembershipOptionalParams): Promise<void>;
     /**
      * Returns your collections.
      * @param workspace Filter by workspace.
@@ -522,20 +522,20 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Collection's identifier
      * @param options The options parameters.
      */
-    getCollection(identifier: string | null, options?: AffindaAPIGetCollectionOptionalParams): Promise<AffindaAPIGetCollectionResponse>;
+    getCollection(identifier: string, options?: AffindaAPIGetCollectionOptionalParams): Promise<AffindaAPIGetCollectionResponse>;
     /**
      * Update data of a collection.
      * @param identifier Collection's identifier
      * @param body Collection data to update
      * @param options The options parameters.
      */
-    updateCollectionData(identifier: string | null, body: CollectionUpdate, options?: AffindaAPIUpdateCollectionDataOptionalParams): Promise<AffindaAPIUpdateCollectionDataResponse>;
+    updateCollectionData(identifier: string, body: CollectionUpdate, options?: AffindaAPIUpdateCollectionDataOptionalParams): Promise<AffindaAPIUpdateCollectionDataResponse>;
     /**
      * Deletes the specified collection from the database.
      * @param identifier Collection's identifier
      * @param options The options parameters.
      */
-    deleteCollection(identifier: string | null, options?: AffindaAPIDeleteCollectionOptionalParams): Promise<void>;
+    deleteCollection(identifier: string, options?: AffindaAPIDeleteCollectionOptionalParams): Promise<void>;
     /**
      * Returns all the document summaries for that user, limited to 300 per page.
      * @param options The options parameters.
@@ -553,20 +553,20 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param identifier Document's identifier
      * @param options The options parameters.
      */
-    getDocument(identifier: string | null, options?: AffindaAPIGetDocumentOptionalParams): Promise<AffindaAPIGetDocumentResponse>;
+    getDocument(identifier: string, options?: AffindaAPIGetDocumentOptionalParams): Promise<AffindaAPIGetDocumentResponse>;
     /**
      * Update file name, expiry time, or move to another collection, etc.
      * @param identifier Document's identifier
      * @param body Document data to update
      * @param options The options parameters.
      */
-    updateDocumentData(identifier: string | null, body: DocumentUpdate, options?: AffindaAPIUpdateDocumentDataOptionalParams): Promise<AffindaAPIUpdateDocumentDataResponse>;
+    updateDocumentData(identifier: string, body: DocumentUpdate, options?: AffindaAPIUpdateDocumentDataOptionalParams): Promise<AffindaAPIUpdateDocumentDataResponse>;
     /**
      * Deletes the specified document from the database.
      * @param identifier Document's identifier
      * @param options The options parameters.
      */
-    deleteDocument(identifier: string | null, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
+    deleteDocument(identifier: string, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
     /**
      * Returns your tags.
      * @param options The options parameters.
@@ -600,7 +600,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
 }
 
 export declare class AffindaAPIContext extends coreClient.ServiceClient {
-    $host: string;
+    region: Region;
     /**
      * Initializes a new instance of the AffindaAPIContext class.
      * @param credentials Subscription credentials which uniquely identify client subscription.
@@ -1014,7 +1014,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum2;
+    documentType?: Enum3;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -1344,8 +1344,8 @@ export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
 export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClientOptions {
-    /** server parameter */
-    $host?: string;
+    /** region - server parameter */
+    region?: Region;
     /** Overrides client endpoint. */
     endpoint?: string;
 }
@@ -1488,7 +1488,8 @@ export declare interface Annotation {
  * **enum** \
  * **location** \
  * **json** \
- * **table**
+ * **table** \
+ * **cell**
  */
 export declare type AnnotationContentType = string;
 
@@ -1798,10 +1799,9 @@ export declare interface DataPoint {
     annotationContentType: AnnotationContentType;
     organization?: Organization;
     /** Extractor's ID. */
-    extractor: number;
+    extractor: number | null;
     multiple?: boolean;
     noRect?: boolean;
-    similarTo: string[];
     choices?: DataPointChoicesItem[];
     children?: DataPoint[];
 }
@@ -1861,12 +1861,14 @@ export declare type DateFormatPreference = string;
  */
 export declare type DateRange = string;
 
-export declare type Document = DocumentMeta & {
+export declare interface Document {
+    meta: DocumentMeta;
     /** Dictionary of <any> */
     data?: {
         [propertyName: string]: any;
     };
-};
+    error?: ErrorModel;
+}
 
 export declare interface DocumentCreate {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
@@ -2022,24 +2024,24 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum2. \
- * {@link KnownEnum2} can be used interchangeably with Enum2,
+ * Defines values for Enum3. \
+ * {@link KnownEnum3} can be used interchangeably with Enum3,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum2 = string;
+export declare type Enum3 = string;
 
 /**
- * Defines values for Enum5. \
- * {@link KnownEnum5} can be used interchangeably with Enum5,
+ * Defines values for Enum6. \
+ * {@link KnownEnum6} can be used interchangeably with Enum6,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum5 = string;
+export declare type Enum6 = string;
 
 export declare type EnumAnnotationSerializerV2 = AnnotationV2 & {
     parsed?: string;
@@ -2459,6 +2461,8 @@ export declare interface JobDescriptionSearchConfig {
     weightKeywords?: number;
     /** List of index names. */
     indices?: string[];
+    /** Controls whether or not the index dropdown is displayed to the user */
+    showIndexDropdown?: boolean;
     /** Customize the theme of the embeded search tool. */
     searchToolTheme?: {
         [propertyName: string]: any;
@@ -2613,7 +2617,7 @@ export declare interface JobDescriptionSearchParameters {
 
 export declare interface JobDescriptionSearchResult {
     /** A random string that uniquely identify the resource. */
-    identifier: string | null;
+    identifier: string;
     score: number;
     pdf: string;
     jobTitle: JobTitleSearchScoreComponent;
@@ -2666,7 +2670,8 @@ export declare enum KnownAnnotationContentType {
     Enum = "enum",
     Location = "location",
     Json = "json",
-    Table = "table"
+    Table = "table",
+    Cell = "cell"
 }
 
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
@@ -2701,14 +2706,14 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum2} that the service accepts. */
-export declare enum KnownEnum2 {
+/** Known values of {@link Enum3} that the service accepts. */
+export declare enum KnownEnum3 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum5} that the service accepts. */
-export declare enum KnownEnum5 {
+/** Known values of {@link Enum6} that the service accepts. */
+export declare enum KnownEnum6 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -2755,6 +2760,12 @@ export declare enum KnownPatchContentSchemaStatus {
 export declare enum KnownPostContentSchemaDocumentType {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
+}
+
+/** Known values of {@link Region} that the service accepts. */
+export declare enum KnownRegion {
+    Api = "api",
+    ApiEu1 = "api.eu1"
 }
 
 /** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
@@ -2835,6 +2846,10 @@ export declare interface Location {
     readonly apartmentNumber?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly city?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly latitude?: number;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly longitude?: number;
 }
 
 export declare type LocationAnnotationV2 = AnnotationV2 & {
@@ -2933,7 +2948,7 @@ export declare interface OrganizationCreate {
 
 export declare interface OrganizationMembership {
     /** A random string that uniquely identify the resource. */
-    identifier: string | null;
+    identifier: string;
     /** Uniquely identify an organization. */
     organization: string;
     user: User;
@@ -3021,7 +3036,7 @@ export declare interface Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentA
 
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum5;
+    documentType?: Enum6;
 }
 
 export declare interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -3144,6 +3159,16 @@ export declare interface RedactedResumeRequestBody {
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
 }
+
+/**
+ * Defines values for Region. \
+ * {@link KnownRegion} can be used interchangeably with Region,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **api** \
+ * **api.eu1**
+ */
+export declare type Region = string;
 
 export declare interface RequestError {
     type: string;
@@ -3353,6 +3378,8 @@ export declare interface ResumeSearchConfig {
     weightKeywords?: number;
     /** List of index names. */
     indices?: string[];
+    /** Controls whether or not the index dropdown is displayed to the user */
+    showIndexDropdown?: boolean;
     /** Customize the theme of the embeded search tool. */
     searchToolTheme?: {
         [propertyName: string]: any;
@@ -3573,7 +3600,7 @@ export declare interface ResumeSearchParametersSkill {
 
 export declare interface ResumeSearchResult {
     /** A random string that uniquely identify the resource. */
-    identifier: string | null;
+    identifier: string;
     score: number;
     pdf: string;
     name?: string;

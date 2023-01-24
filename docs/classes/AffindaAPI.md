@@ -16,8 +16,8 @@
 
 ### Properties
 
-- [$host](AffindaAPI.md#$host)
 - [pipeline](AffindaAPI.md#pipeline)
+- [region](AffindaAPI.md#region)
 
 ### Methods
 
@@ -134,16 +134,6 @@ Initializes a new instance of the AffindaAPI class.
 
 ## Properties
 
-### $host
-
-• **$host**: `string`
-
-#### Inherited from
-
-[AffindaAPIContext](AffindaAPIContext.md).[$host](AffindaAPIContext.md#$host)
-
-___
-
 ### pipeline
 
 • `Readonly` **pipeline**: `Pipeline`
@@ -153,6 +143,16 @@ The pipeline used by this client to make requests
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[pipeline](AffindaAPIContext.md#pipeline)
+
+___
+
+### region
+
+• **region**: `string`
+
+#### Inherited from
+
+[AffindaAPIContext](AffindaAPIContext.md).[region](AffindaAPIContext.md#region)
 
 ## Methods
 
@@ -195,7 +195,7 @@ ___
 
 ### createDocument
 
-▸ **createDocument**(`options?`): `Promise`<[`Document`](../modules.md#document)\>
+▸ **createDocument**(`options?`): `Promise`<[`Document`](../interfaces/Document.md)\>
 
 Uploads a document for parsing. When successful, returns an `identifier` in the response for
 subsequent use with the [/documents/{identifier}](#get-/documents/-identifier-) endpoint to check
@@ -209,7 +209,7 @@ processing status and retrieve results.<br/>
 
 #### Returns
 
-`Promise`<[`Document`](../modules.md#document)\>
+`Promise`<[`Document`](../interfaces/Document.md)\>
 
 ___
 
@@ -560,7 +560,7 @@ Deletes the specified collection from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Collection's identifier |
+| `identifier` | `string` | Collection's identifier |
 | `options?` | [`AffindaAPIDeleteCollectionOptionalParams`](../interfaces/AffindaAPIDeleteCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -579,7 +579,7 @@ Deletes the specified data point from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | DataPoint's identifier |
+| `identifier` | `string` | DataPoint's identifier |
 | `options?` | [`AffindaAPIDeleteDataPointOptionalParams`](../interfaces/AffindaAPIDeleteDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -598,7 +598,7 @@ Deletes the specified document from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document's identifier |
+| `identifier` | `string` | Document's identifier |
 | `options?` | [`AffindaAPIDeleteDocumentOptionalParams`](../interfaces/AffindaAPIDeleteDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -656,7 +656,7 @@ Delete the specified indexed document from the database
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIDeleteIndexDocumentOptionalParams`](../interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -675,7 +675,7 @@ Delete the specified invitation from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Invitation identifier. |
+| `identifier` | `string` | Invitation identifier. |
 | `options?` | [`AffindaAPIDeleteInvitationOptionalParams`](../interfaces/AffindaAPIDeleteInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -695,7 +695,7 @@ longer be used in any tailored customer models.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Invoice identifier |
+| `identifier` | `string` | Invoice identifier |
 | `options?` | [`AffindaAPIDeleteInvoiceOptionalParams`](../interfaces/AffindaAPIDeleteInvoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -714,7 +714,7 @@ Deletes the specified job description from the database
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIDeleteJobDescriptionOptionalParams`](../interfaces/AffindaAPIDeleteJobDescriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -733,7 +733,7 @@ Delete the specified organization from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Organization identifier. |
+| `identifier` | `string` | Organization identifier. |
 | `options?` | [`AffindaAPIDeleteOrganizationOptionalParams`](../interfaces/AffindaAPIDeleteOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -753,7 +753,7 @@ use this to leave their organization.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Membership identifier. |
+| `identifier` | `string` | Membership identifier. |
 | `options?` | [`AffindaAPIDeleteOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -772,7 +772,7 @@ Deletes the specified resume from the database
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIDeleteRedactedResumeOptionalParams`](../interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -791,7 +791,7 @@ Deletes the specified resume from the database
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Resume identifier |
+| `identifier` | `string` | Resume identifier |
 | `options?` | [`AffindaAPIDeleteResumeOptionalParams`](../interfaces/AffindaAPIDeleteResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -829,7 +829,7 @@ Deletes the specified workspace from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Workspace's identifier |
+| `identifier` | `string` | Workspace's identifier |
 | `options?` | [`AffindaAPIDeleteWorkspaceOptionalParams`](../interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -848,7 +848,7 @@ Remove an user from a workspace.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Workspace membership's identifier. |
+| `identifier` | `string` | Workspace membership's identifier. |
 | `options?` | [`AffindaAPIDeleteWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1177,7 +1177,7 @@ Return a specific collection.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Collection's identifier |
+| `identifier` | `string` | Collection's identifier |
 | `options?` | [`AffindaAPIGetCollectionOptionalParams`](../interfaces/AffindaAPIGetCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1196,7 +1196,7 @@ Return a specific data point.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Data point's identifier |
+| `identifier` | `string` | Data point's identifier |
 | `options?` | [`AffindaAPIGetDataPointOptionalParams`](../interfaces/AffindaAPIGetDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1207,7 +1207,7 @@ ___
 
 ### getDocument
 
-▸ **getDocument**(`identifier`, `options?`): `Promise`<[`Document`](../modules.md#document)\>
+▸ **getDocument**(`identifier`, `options?`): `Promise`<[`Document`](../interfaces/Document.md)\>
 
 Return a specific document.
 
@@ -1215,12 +1215,12 @@ Return a specific document.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document's identifier |
+| `identifier` | `string` | Document's identifier |
 | `options?` | [`AffindaAPIGetDocumentOptionalParams`](../interfaces/AffindaAPIGetDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Document`](../modules.md#document)\>
+`Promise`<[`Document`](../interfaces/Document.md)\>
 
 ___
 
@@ -1253,7 +1253,7 @@ Get detail of an invitation.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Invitation identifier. |
+| `identifier` | `string` | Invitation identifier. |
 | `options?` | [`AffindaAPIGetInvitationOptionalParams`](../interfaces/AffindaAPIGetInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1294,7 +1294,7 @@ The `identifier` is the unique ID returned after POST-ing the invoice via the
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIGetInvoiceOptionalParams`](../interfaces/AffindaAPIGetInvoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1315,7 +1315,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIGetJobDescriptionOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1357,7 +1357,7 @@ The `identifier` is the unique ID returned via the
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Job Description identifier |
+| `identifier` | `string` | Job Description identifier |
 | `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
 | `options?` | [`AffindaAPIGetJobDescriptionSearchDetailOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md) | The options parameters. |
 
@@ -1377,7 +1377,7 @@ Get detail of an organization.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Organization identifier. |
+| `identifier` | `string` | Organization identifier. |
 | `options?` | [`AffindaAPIGetOrganizationOptionalParams`](../interfaces/AffindaAPIGetOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1396,7 +1396,7 @@ Get detail of an organization membership.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Membership identifier. |
+| `identifier` | `string` | Membership identifier. |
 | `options?` | [`AffindaAPIGetOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1417,7 +1417,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIGetRedactedResumeOptionalParams`](../interfaces/AffindaAPIGetRedactedResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1438,7 +1438,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document identifier |
+| `identifier` | `string` | Document identifier |
 | `options?` | [`AffindaAPIGetResumeOptionalParams`](../interfaces/AffindaAPIGetResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1479,7 +1479,7 @@ The `identifier` is the unique ID returned via the [/resume_search](#post-/resum
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Resume identifier |
+| `identifier` | `string` | Resume identifier |
 | `body` | [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
 | `options?` | [`AffindaAPIGetResumeSearchDetailOptionalParams`](../interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md) | The options parameters. |
 
@@ -1579,7 +1579,7 @@ Return a specific workspace.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Workspace's identifier |
+| `identifier` | `string` | Workspace's identifier |
 | `options?` | [`AffindaAPIGetWorkspaceOptionalParams`](../interfaces/AffindaAPIGetWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1598,7 +1598,7 @@ Return a specific workspace membership.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Workspace membership's identifier. |
+| `identifier` | `string` | Workspace membership's identifier. |
 | `options?` | [`AffindaAPIGetWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1706,7 +1706,7 @@ Update data of a collection.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Collection's identifier |
+| `identifier` | `string` | Collection's identifier |
 | `body` | [`CollectionUpdate`](../interfaces/CollectionUpdate.md) | Collection data to update |
 | `options?` | [`AffindaAPIUpdateCollectionDataOptionalParams`](../interfaces/AffindaAPIUpdateCollectionDataOptionalParams.md) | The options parameters. |
 
@@ -1726,7 +1726,7 @@ Update data of a data point.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | DataPoint's identifier |
+| `identifier` | `string` | DataPoint's identifier |
 | `body` | [`DataPointUpdate`](../interfaces/DataPointUpdate.md) | Data point to update |
 | `options?` | [`AffindaAPIUpdateDataPointDataOptionalParams`](../interfaces/AffindaAPIUpdateDataPointDataOptionalParams.md) | The options parameters. |
 
@@ -1738,7 +1738,7 @@ ___
 
 ### updateDocumentData
 
-▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`<[`Document`](../modules.md#document)\>
+▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`<[`Document`](../interfaces/Document.md)\>
 
 Update file name, expiry time, or move to another collection, etc.
 
@@ -1746,13 +1746,13 @@ Update file name, expiry time, or move to another collection, etc.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Document's identifier |
+| `identifier` | `string` | Document's identifier |
 | `body` | [`DocumentUpdate`](../interfaces/DocumentUpdate.md) | Document data to update |
 | `options?` | [`AffindaAPIUpdateDocumentDataOptionalParams`](../interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Document`](../modules.md#document)\>
+`Promise`<[`Document`](../interfaces/Document.md)\>
 
 ___
 
@@ -1786,7 +1786,7 @@ Update the detail of an invitation.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Invitation identifier. |
+| `identifier` | `string` | Invitation identifier. |
 | `body` | [`InvitationUpdate`](../interfaces/InvitationUpdate.md) |  |
 | `options?` | [`AffindaAPIUpdateInvitationOptionalParams`](../interfaces/AffindaAPIUpdateInvitationOptionalParams.md) | The options parameters. |
 
@@ -1827,7 +1827,7 @@ Update the detail of an organization.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Organization identifier. |
+| `identifier` | `string` | Organization identifier. |
 | `options?` | [`AffindaAPIUpdateOrganizationOptionalParams`](../interfaces/AffindaAPIUpdateOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1846,7 +1846,7 @@ The admin users can use this endpoint to update the role of the members within t
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Membership identifier. |
+| `identifier` | `string` | Membership identifier. |
 | `body` | [`OrganizationMembershipUpdate`](../interfaces/OrganizationMembershipUpdate.md) |  |
 | `options?` | [`AffindaAPIUpdateOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md) | The options parameters. |
 
@@ -1868,7 +1868,7 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Resume identifier |
+| `identifier` | `string` | Resume identifier |
 | `body` | ``null`` \| [`ResumeData`](../interfaces/ResumeData.md) | Resume data to update |
 | `options?` | [`AffindaAPIUpdateResumeDataOptionalParams`](../interfaces/AffindaAPIUpdateResumeDataOptionalParams.md) | The options parameters. |
 
@@ -1929,7 +1929,7 @@ Update a workspace.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | ``null`` \| `string` | Workspace's identifier |
+| `identifier` | `string` | Workspace's identifier |
 | `body` | [`WorkspaceUpdate`](../interfaces/WorkspaceUpdate.md) | Workspace data to update |
 | `options?` | [`AffindaAPIUpdateWorkspaceOptionalParams`](../interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md) | The options parameters. |
 

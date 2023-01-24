@@ -1,9 +1,9 @@
 import * as coreClient from "@azure/core-client";
 import * as coreAuth from "@azure/core-auth";
-import { AffindaAPIOptionalParams } from "./models";
+import { Region, AffindaAPIOptionalParams } from "./models";
 
 export class AffindaAPIContext extends coreClient.ServiceClient {
-  $host: string;
+  region: Region;
 
   /**
    * Initializes a new instance of the AffindaAPIContext class.
@@ -42,11 +42,11 @@ export class AffindaAPIContext extends coreClient.ServiceClient {
       userAgentOptions: {
         userAgentPrefix
       },
-      baseUri: options.endpoint || "https://api.affinda.com"
+      baseUri: options.endpoint || "https://{region}.affinda.com"
     };
     super(optionsWithDefaults);
 
     // Assigning values to Constant parameters
-    this.$host = options.$host || "https://api.affinda.com";
+    this.region = options.region || "api";
   }
 }

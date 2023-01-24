@@ -36,7 +36,7 @@ ___
 
 ### identifier
 
-• **identifier**: ``null`` \| `string`
+• **identifier**: `string`
 
 A random string that uniquely identify the resource.
 

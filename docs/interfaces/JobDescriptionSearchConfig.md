@@ -20,6 +20,7 @@
 - [indices](JobDescriptionSearchConfig.md#indices)
 - [maxResults](JobDescriptionSearchConfig.md#maxresults)
 - [searchToolTheme](JobDescriptionSearchConfig.md#searchtooltheme)
+- [showIndexDropdown](JobDescriptionSearchConfig.md#showindexdropdown)
 - [userId](JobDescriptionSearchConfig.md#userid)
 - [username](JobDescriptionSearchConfig.md#username)
 - [weightEducation](JobDescriptionSearchConfig.md#weighteducation)
@@ -127,6 +128,14 @@ Customize the theme of the embeded search tool.
 #### Index signature
 
 ▪ [propertyName: `string`]: `any`
+
+___
+
+### showIndexDropdown
+
+• `Optional` **showIndexDropdown**: `boolean`
+
+Controls whether or not the index dropdown is displayed to the user
 
 ___
 
