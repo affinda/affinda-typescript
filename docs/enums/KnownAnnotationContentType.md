@@ -14,12 +14,17 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Datetime](KnownAnnotationContentType.md#datetime)
 - [Decimal](KnownAnnotationContentType.md#decimal)
 - [Enum](KnownAnnotationContentType.md#enum)
+- [Expectedremuneration](KnownAnnotationContentType.md#expectedremuneration)
 - [Float](KnownAnnotationContentType.md#float)
 - [Integer](KnownAnnotationContentType.md#integer)
+- [Jobtitle](KnownAnnotationContentType.md#jobtitle)
 - [Json](KnownAnnotationContentType.md#json)
+- [Language](KnownAnnotationContentType.md#language)
 - [Location](KnownAnnotationContentType.md#location)
+- [Skill](KnownAnnotationContentType.md#skill)
 - [Table](KnownAnnotationContentType.md#table)
 - [Text](KnownAnnotationContentType.md#text)
+- [Yearsexperience](KnownAnnotationContentType.md#yearsexperience)
 
 ## Enumeration members
 
@@ -59,6 +64,12 @@ ___
 
 ___
 
+### Expectedremuneration
+
+• **Expectedremuneration** = `"expectedremuneration"`
+
+___
+
 ### Float
 
 • **Float** = `"float"`
@@ -71,15 +82,33 @@ ___
 
 ___
 
+### Jobtitle
+
+• **Jobtitle** = `"jobtitle"`
+
+___
+
 ### Json
 
 • **Json** = `"json"`
 
 ___
 
+### Language
+
+• **Language** = `"language"`
+
+___
+
 ### Location
 
 • **Location** = `"location"`
+
+___
+
+### Skill
+
+• **Skill** = `"skill"`
 
 ___
 
@@ -92,3 +121,9 @@ ___
 ### Text
 
 • **Text** = `"text"`
+
+___
+
+### Yearsexperience
+
+• **Yearsexperience** = `"yearsexperience"`

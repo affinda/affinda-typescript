@@ -1093,7 +1093,12 @@ Defines values for AnnotationContentType. \
 **location** \
 **json** \
 **table** \
-**cell**
+**cell** \
+**expectedremuneration** \
+**jobtitle** \
+**language** \
+**skill** \
+**yearsexperience**
 
 ___
 

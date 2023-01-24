@@ -2279,7 +2279,12 @@ export enum KnownAnnotationContentType {
   Location = "location",
   Json = "json",
   Table = "table",
-  Cell = "cell"
+  Cell = "cell",
+  Expectedremuneration = "expectedremuneration",
+  Jobtitle = "jobtitle",
+  Language = "language",
+  Skill = "skill",
+  Yearsexperience = "yearsexperience"
 }
 
 /**
@@ -2298,7 +2303,12 @@ export enum KnownAnnotationContentType {
  * **location** \
  * **json** \
  * **table** \
- * **cell**
+ * **cell** \
+ * **expectedremuneration** \
+ * **jobtitle** \
+ * **language** \
+ * **skill** \
+ * **yearsexperience**
  */
 export type AnnotationContentType = string;
 
