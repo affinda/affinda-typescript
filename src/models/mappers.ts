@@ -3561,6 +3561,7 @@ export const JobDescriptionSearchParameters: coreClient.CompositeMapper = {
       },
       resume: {
         serializedName: "resume",
+        nullable: true,
         xmlName: "resume",
         type: {
           name: "String"
@@ -5331,6 +5332,7 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
       },
       jobDescription: {
         serializedName: "jobDescription",
+        nullable: true,
         xmlName: "jobDescription",
         type: {
           name: "String"
@@ -5338,6 +5340,7 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
       },
       resume: {
         serializedName: "resume",
+        nullable: true,
         xmlName: "resume",
         type: {
           name: "String"
