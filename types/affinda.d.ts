@@ -1807,6 +1807,7 @@ export declare interface DataPoint {
     extractor: number | null;
     multiple?: boolean;
     noRect?: boolean;
+    similarTo?: string[];
     choices?: DataPointChoicesItem[];
     children?: DataPoint[];
 }

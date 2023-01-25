@@ -16,6 +16,7 @@
 - [name](DataPoint.md#name)
 - [noRect](DataPoint.md#norect)
 - [organization](DataPoint.md#organization)
+- [similarTo](DataPoint.md#similarto)
 - [slug](DataPoint.md#slug)
 
 ## Properties
@@ -81,6 +82,12 @@ ___
 ### organization
 
 • `Optional` **organization**: [`Organization`](Organization.md)
+
+___
+
+### similarTo
+
+• `Optional` **similarTo**: `string`[]
 
 ___
 

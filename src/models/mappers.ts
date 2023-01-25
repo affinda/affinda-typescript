@@ -8140,6 +8140,19 @@ export const DataPoint: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      similarTo: {
+        serializedName: "similarTo",
+        xmlName: "similarTo",
+        xmlElementName: "DataPointSimilarToItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
       choices: {
         serializedName: "choices",
         xmlName: "choices",
