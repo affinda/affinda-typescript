@@ -38,7 +38,6 @@
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
 - [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
 - [createTag](AffindaAPI.md#createtag)
-- [createUser](AffindaAPI.md#createuser)
 - [createWorkspace](AffindaAPI.md#createworkspace)
 - [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
 - [deleteCollection](AffindaAPI.md#deletecollection)
@@ -71,7 +70,6 @@
 - [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
 - [getAllResumes](AffindaAPI.md#getallresumes)
 - [getAllTags](AffindaAPI.md#getalltags)
-- [getAllUsers](AffindaAPI.md#getallusers)
 - [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
 - [getCollection](AffindaAPI.md#getcollection)
@@ -489,26 +487,6 @@ Create a tag
 #### Returns
 
 `Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-___
-
-### createUser
-
-▸ **createUser**(`username`, `email`, `options?`): `Promise`<[`UserCreateResponse`](../modules.md#usercreateresponse)\>
-
-Create an user as part of your account
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `username` | `string` |  |
-| `email` | `string` |  |
-| `options?` | [`AffindaAPICreateUserOptionalParams`](../interfaces/AffindaAPICreateUserOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`UserCreateResponse`](../modules.md#usercreateresponse)\>
 
 ___
 
@@ -1109,24 +1087,6 @@ Returns your tags.
 #### Returns
 
 `Promise`<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
-
-___
-
-### getAllUsers
-
-▸ **getAllUsers**(`options?`): `Promise`<[`Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema.md)\>
-
-Returns all the users
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllUsersOptionalParams`](../interfaces/AffindaAPIGetAllUsersOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 

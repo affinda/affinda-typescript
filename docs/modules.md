@@ -51,7 +51,6 @@
 - [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
 - [AffindaAPICreateTagOptionalParams](interfaces/AffindaAPICreateTagOptionalParams.md)
-- [AffindaAPICreateUserOptionalParams](interfaces/AffindaAPICreateUserOptionalParams.md)
 - [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
 - [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
 - [AffindaAPIDeleteCollectionOptionalParams](interfaces/AffindaAPIDeleteCollectionOptionalParams.md)
@@ -84,7 +83,6 @@
 - [AffindaAPIGetAllRedactedResumesOptionalParams](interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md)
 - [AffindaAPIGetAllResumesOptionalParams](interfaces/AffindaAPIGetAllResumesOptionalParams.md)
 - [AffindaAPIGetAllTagsOptionalParams](interfaces/AffindaAPIGetAllTagsOptionalParams.md)
-- [AffindaAPIGetAllUsersOptionalParams](interfaces/AffindaAPIGetAllUsersOptionalParams.md)
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
 - [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
 - [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
@@ -259,7 +257,6 @@
 - [Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
-- [Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema](interfaces/Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema.md)
 - [PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema](interfaces/PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema.md)
 - [PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema](interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
@@ -316,7 +313,6 @@
 - [TagCreate](interfaces/TagCreate.md)
 - [TagUpdate](interfaces/TagUpdate.md)
 - [User](interfaces/User.md)
-- [UserCreateRequest](interfaces/UserCreateRequest.md)
 - [Workspace](interfaces/Workspace.md)
 - [WorkspaceCollectionsItem](interfaces/WorkspaceCollectionsItem.md)
 - [WorkspaceCollectionsItemExtractor](interfaces/WorkspaceCollectionsItemExtractor.md)
@@ -345,7 +341,6 @@
 - [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
 - [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
 - [AffindaAPICreateTagResponse](modules.md#affindaapicreatetagresponse)
-- [AffindaAPICreateUserResponse](modules.md#affindaapicreateuserresponse)
 - [AffindaAPICreateWorkspaceMembershipResponse](modules.md#affindaapicreateworkspacemembershipresponse)
 - [AffindaAPICreateWorkspaceResponse](modules.md#affindaapicreateworkspaceresponse)
 - [AffindaAPIGetAllCollectionsResponse](modules.md#affindaapigetallcollectionsresponse)
@@ -362,7 +357,6 @@
 - [AffindaAPIGetAllRedactedResumesResponse](modules.md#affindaapigetallredactedresumesresponse)
 - [AffindaAPIGetAllResumesResponse](modules.md#affindaapigetallresumesresponse)
 - [AffindaAPIGetAllTagsResponse](modules.md#affindaapigetalltagsresponse)
-- [AffindaAPIGetAllUsersResponse](modules.md#affindaapigetallusersresponse)
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
 - [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
 - [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
@@ -472,7 +466,6 @@
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotationV2](modules.md#skillannotationv2)
 - [TextAnnotationV2](modules.md#textannotationv2)
-- [UserCreateResponse](modules.md#usercreateresponse)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotationV2](modules.md#yearsexperienceannotationv2)
 
@@ -614,14 +607,6 @@ Contains response data for the createTag operation.
 
 ___
 
-### AffindaAPICreateUserResponse
-
-Ƭ **AffindaAPICreateUserResponse**: [`UserCreateResponse`](modules.md#usercreateresponse)
-
-Contains response data for the createUser operation.
-
-___
-
 ### AffindaAPICreateWorkspaceMembershipResponse
 
 Ƭ **AffindaAPICreateWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
@@ -747,14 +732,6 @@ ___
 Ƭ **AffindaAPIGetAllTagsResponse**: [`Tag`](interfaces/Tag.md)[]
 
 Contains response data for the getAllTags operation.
-
-___
-
-### AffindaAPIGetAllUsersResponse
-
-Ƭ **AffindaAPIGetAllUsersResponse**: [`Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema`](interfaces/Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema.md)
-
-Contains response data for the getAllUsers operation.
 
 ___
 
@@ -1665,12 +1642,6 @@ ___
 ### TextAnnotationV2
 
 Ƭ **TextAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: `string`  }
-
-___
-
-### UserCreateResponse
-
-Ƭ **UserCreateResponse**: [`User`](interfaces/User.md) & { `apiKey?`: `string`  }
 
 ___
 

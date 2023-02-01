@@ -1262,26 +1262,6 @@ export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicati
   document?: string;
 }
 
-export interface Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema {
-  /** Number of indexes in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: User[];
-}
-
-export interface User {
-  /** Uniquely identify a user. */
-  id?: number;
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-}
-
 export interface Organization {
   /** Uniquely identify an organization. */
   identifier?: string;
@@ -1315,6 +1295,16 @@ export interface OrganizationMembership {
   organization: string;
   user: User;
   role: OrganizationRole;
+}
+
+export interface User {
+  /** Uniquely identify a user. */
+  id?: number;
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
 }
 
 export interface OrganizationMembershipUpdate {
@@ -1736,14 +1726,6 @@ export interface TagUpdate {
   workspace?: string;
 }
 
-export interface UserCreateRequest {
-  name?: string;
-  username: string;
-  email: string;
-  /** Upload avatar for the user. */
-  avatar?: coreRestPipeline.RequestBodyType;
-}
-
 export interface OrganizationCreate {
   name: string;
   /** Upload avatar for the organization. */
@@ -2033,18 +2015,13 @@ export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
 export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
   Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
 
-export type UserCreateResponse = User & {
-  /** API key used to authenticate for future requests. This key is only retrievable at the initial creation of the user. */
-  apiKey?: string;
-};
-
-export type InvitationRespondedBy = User & {};
-
 export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type InvitationRespondedBy = User & {};
 
 export type ExtractorFieldGroups = FieldGroup & {};
 
@@ -2840,29 +2817,6 @@ export interface AffindaAPIListOccupationGroupsOptionalParams
 export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllUsersOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
-
-/** Contains response data for the getAllUsers operation. */
-export type AffindaAPIGetAllUsersResponse = Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface AffindaAPICreateUserOptionalParams
-  extends coreClient.OperationOptions {
-  name?: string;
-  /** Upload avatar for the user. */
-  avatar?: coreRestPipeline.RequestBodyType;
-}
-
-/** Contains response data for the createUser operation. */
-export type AffindaAPICreateUserResponse = UserCreateResponse;
-
-/** Optional parameters. */
 export interface AffindaAPIGetAllOrganizationsOptionalParams
   extends coreClient.OperationOptions {}
 
@@ -3210,6 +3164,8 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   ordering?: Get8ItemsItem[];
   /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return the detailed data that was parsed, at a performance cost. */
   includeData?: boolean;
+  /** Exclude some documents from the result. */
+  exclude?: string[];
 }
 
 /** Contains response data for the getAllDocuments operation. */

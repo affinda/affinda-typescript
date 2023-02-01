@@ -79,10 +79,6 @@ import {
   AffindaAPIDeleteIndexDocumentOptionalParams,
   AffindaAPIListOccupationGroupsOptionalParams,
   AffindaAPIListOccupationGroupsResponse,
-  AffindaAPIGetAllUsersOptionalParams,
-  AffindaAPIGetAllUsersResponse,
-  AffindaAPICreateUserOptionalParams,
-  AffindaAPICreateUserResponse,
   AffindaAPIGetAllOrganizationsOptionalParams,
   AffindaAPIGetAllOrganizationsResponse,
   AffindaAPICreateOrganizationOptionalParams,
@@ -765,33 +761,6 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { options },
       listOccupationGroupsOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the users
-   * @param options The options parameters.
-   */
-  getAllUsers(
-    options?: AffindaAPIGetAllUsersOptionalParams
-  ): Promise<AffindaAPIGetAllUsersResponse> {
-    return this.sendOperationRequest({ options }, getAllUsersOperationSpec);
-  }
-
-  /**
-   * Create an user as part of your account
-   * @param username
-   * @param email
-   * @param options The options parameters.
-   */
-  createUser(
-    username: string,
-    email: string,
-    options?: AffindaAPICreateUserOptionalParams
-  ): Promise<AffindaAPICreateUserResponse> {
-    return this.sendOperationRequest(
-      { username, email, options },
-      createUserOperationSpec
     );
   }
 
@@ -2476,60 +2445,6 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
-const getAllUsersOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/users",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/users",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.UserCreateResponse
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [
-    Parameters.name,
-    Parameters.username,
-    Parameters.email,
-    Parameters.avatar
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
 const getAllOrganizationsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/organizations",
   httpMethod: "GET",
@@ -2578,8 +2493,8 @@ const createOrganizationOperationSpec: coreClient.OperationSpec = {
     }
   },
   formDataParameters: [
-    Parameters.avatar,
     Parameters.name2,
+    Parameters.avatar,
     Parameters.resthookSignatureKey
   ],
   urlParameters: [Parameters.region],
@@ -3559,7 +3474,8 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.createdDt,
     Parameters.search,
     Parameters.ordering,
-    Parameters.includeData
+    Parameters.includeData,
+    Parameters.exclude
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],

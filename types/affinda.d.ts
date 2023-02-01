@@ -283,18 +283,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
     /**
-     * Returns all the users
-     * @param options The options parameters.
-     */
-    getAllUsers(options?: AffindaAPIGetAllUsersOptionalParams): Promise<AffindaAPIGetAllUsersResponse>;
-    /**
-     * Create an user as part of your account
-     * @param username
-     * @param email
-     * @param options The options parameters.
-     */
-    createUser(username: string, email: string, options?: AffindaAPICreateUserOptionalParams): Promise<AffindaAPICreateUserResponse>;
-    /**
      * Returns all the organizations
      * @param options The options parameters.
      */
@@ -845,16 +833,6 @@ export declare interface AffindaAPICreateTagOptionalParams extends coreClient.Op
 export declare type AffindaAPICreateTagResponse = Tag;
 
 /** Optional parameters. */
-export declare interface AffindaAPICreateUserOptionalParams extends coreClient.OperationOptions {
-    name?: string;
-    /** Upload avatar for the user. */
-    avatar?: coreRestPipeline.RequestBodyType;
-}
-
-/** Contains response data for the createUser operation. */
-export declare type AffindaAPICreateUserResponse = UserCreateResponse;
-
-/** Optional parameters. */
 export declare interface AffindaAPICreateWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -982,6 +960,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     ordering?: Get8ItemsItem[];
     /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return the detailed data that was parsed, at a performance cost. */
     includeData?: boolean;
+    /** Exclude some documents from the result. */
+    exclude?: string[];
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -1115,17 +1095,6 @@ export declare interface AffindaAPIGetAllTagsOptionalParams extends coreClient.O
 
 /** Contains response data for the getAllTags operation. */
 export declare type AffindaAPIGetAllTagsResponse = Tag[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllUsersOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the getAllUsers operation. */
-export declare type AffindaAPIGetAllUsersResponse = Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams extends coreClient.OperationOptions {
@@ -3058,16 +3027,6 @@ export declare interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200Cont
     results?: OrganizationMembership[];
 }
 
-export declare interface Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema {
-    /** Number of indexes in result */
-    count?: number;
-    /** URL to request next page of results */
-    next?: string;
-    /** URL to request previous page of results */
-    previous?: string;
-    results?: User[];
-}
-
 export declare interface PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
     document?: string;
 }
@@ -3744,19 +3703,6 @@ export declare interface User {
     /** URL of the user's avatar. */
     avatar?: string;
 }
-
-export declare interface UserCreateRequest {
-    name?: string;
-    username: string;
-    email: string;
-    /** Upload avatar for the user. */
-    avatar?: coreRestPipeline.RequestBodyType;
-}
-
-export declare type UserCreateResponse = User & {
-    /** API key used to authenticate for future requests. This key is only retrievable at the initial creation of the user. */
-    apiKey?: string;
-};
 
 export declare interface Workspace {
     /** Uniquely identify a workspace. */

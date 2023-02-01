@@ -650,24 +650,12 @@ export const body7: OperationParameter = {
   mapper: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
-export const username: OperationParameter = {
-  parameterPath: "username",
+export const name2: OperationParameter = {
+  parameterPath: "name",
   mapper: {
-    serializedName: "username",
+    serializedName: "name",
     required: true,
-    xmlName: "username",
-    type: {
-      name: "String"
-    }
-  }
-};
-
-export const email: OperationParameter = {
-  parameterPath: "email",
-  mapper: {
-    serializedName: "email",
-    required: true,
-    xmlName: "email",
+    xmlName: "name",
     type: {
       name: "String"
     }
@@ -681,18 +669,6 @@ export const avatar: OperationParameter = {
     xmlName: "avatar",
     type: {
       name: "Stream"
-    }
-  }
-};
-
-export const name2: OperationParameter = {
-  parameterPath: "name",
-  mapper: {
-    serializedName: "name",
-    required: true,
-    xmlName: "name",
-    type: {
-      name: "String"
     }
   }
 };
@@ -1038,6 +1014,23 @@ export const includeData: OperationQueryParameter = {
     xmlName: "include_data",
     type: {
       name: "Boolean"
+    }
+  }
+};
+
+export const exclude: OperationQueryParameter = {
+  parameterPath: ["options", "exclude"],
+  mapper: {
+    serializedName: "exclude",
+    xmlName: "exclude",
+    xmlElementName: "Identifier",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
     }
   }
 };

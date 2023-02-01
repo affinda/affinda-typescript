@@ -7245,100 +7245,6 @@ export const PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJs
   }
 };
 
-export const Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  serializedName:
-    "Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema",
-  type: {
-    name: "Composite",
-    className: "Paths9K2ZxlV3UsersGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      count: {
-        serializedName: "count",
-        xmlName: "count",
-        type: {
-          name: "Number"
-        }
-      },
-      next: {
-        serializedName: "next",
-        nullable: true,
-        xmlName: "next",
-        type: {
-          name: "String"
-        }
-      },
-      previous: {
-        serializedName: "previous",
-        nullable: true,
-        xmlName: "previous",
-        type: {
-          name: "String"
-        }
-      },
-      results: {
-        serializedName: "results",
-        xmlName: "results",
-        xmlElementName: "User",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "User"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const User: coreClient.CompositeMapper = {
-  serializedName: "User",
-  type: {
-    name: "Composite",
-    className: "User",
-    modelProperties: {
-      id: {
-        serializedName: "id",
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
-      name: {
-        serializedName: "name",
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        xmlName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        xmlName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        nullable: true,
-        xmlName: "avatar",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const Organization: coreClient.CompositeMapper = {
   serializedName: "Organization",
   type: {
@@ -7488,6 +7394,52 @@ export const OrganizationMembership: coreClient.CompositeMapper = {
         serializedName: "role",
         required: true,
         xmlName: "role",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const User: coreClient.CompositeMapper = {
+  serializedName: "User",
+  type: {
+    name: "Composite",
+    className: "User",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        xmlName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        xmlName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
+        xmlName: "avatar",
         type: {
           name: "String"
         }
@@ -9668,46 +9620,6 @@ export const TagUpdate: coreClient.CompositeMapper = {
   }
 };
 
-export const UserCreateRequest: coreClient.CompositeMapper = {
-  serializedName: "UserCreateRequest",
-  type: {
-    name: "Composite",
-    className: "UserCreateRequest",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        required: true,
-        xmlName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        required: true,
-        xmlName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        xmlName: "avatar",
-        type: {
-          name: "Stream"
-        }
-      }
-    }
-  }
-};
-
 export const OrganizationCreate: coreClient.CompositeMapper = {
   serializedName: "OrganizationCreate",
   type: {
@@ -10923,35 +10835,6 @@ export const ResumeSearchDetailLanguagesValueItem: coreClient.CompositeMapper = 
   }
 };
 
-export const UserCreateResponse: coreClient.CompositeMapper = {
-  serializedName: "UserCreateResponse",
-  type: {
-    name: "Composite",
-    className: "UserCreateResponse",
-    modelProperties: {
-      ...User.type.modelProperties,
-      apiKey: {
-        serializedName: "apiKey",
-        xmlName: "apiKey",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const InvitationRespondedBy: coreClient.CompositeMapper = {
-  serializedName: "InvitationRespondedBy",
-  type: {
-    name: "Composite",
-    className: "InvitationRespondedBy",
-    modelProperties: {
-      ...User.type.modelProperties
-    }
-  }
-};
-
 export const PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   serializedName:
     "PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema",
@@ -10978,6 +10861,17 @@ export const Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchem
       ...PaginatedResponse.type.modelProperties,
       ...PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
+    }
+  }
+};
+
+export const InvitationRespondedBy: coreClient.CompositeMapper = {
+  serializedName: "InvitationRespondedBy",
+  type: {
+    name: "Composite",
+    className: "InvitationRespondedBy",
+    modelProperties: {
+      ...User.type.modelProperties
     }
   }
 };

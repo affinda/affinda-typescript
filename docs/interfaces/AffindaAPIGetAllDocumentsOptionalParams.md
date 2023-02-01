@@ -17,6 +17,7 @@ Optional parameters.
 - [abortSignal](AffindaAPIGetAllDocumentsOptionalParams.md#abortsignal)
 - [collection](AffindaAPIGetAllDocumentsOptionalParams.md#collection)
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
+- [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
 - [includeData](AffindaAPIGetAllDocumentsOptionalParams.md#includedata)
 - [limit](AffindaAPIGetAllDocumentsOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllDocumentsOptionalParams.md#offset)
@@ -57,6 +58,14 @@ ___
 • `Optional` **createdDt**: `string`
 
 Filter by created datetime.
+
+___
+
+### exclude
+
+• `Optional` **exclude**: `string`[]
+
+Exclude some documents from the result.
 
 ___
 
