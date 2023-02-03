@@ -8,8 +8,8 @@
 
 - [annotationContentType](DataPoint.md#annotationcontenttype)
 - [children](DataPoint.md#children)
-- [choices](DataPoint.md#choices)
 - [description](DataPoint.md#description)
+- [displayEnumValue](DataPoint.md#displayenumvalue)
 - [extractor](DataPoint.md#extractor)
 - [identifier](DataPoint.md#identifier)
 - [multiple](DataPoint.md#multiple)
@@ -33,15 +33,15 @@ ___
 
 ___
 
-### choices
-
-• `Optional` **choices**: [`DataPointChoicesItem`](DataPointChoicesItem.md)[]
-
-___
-
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### displayEnumValue
+
+• `Optional` **displayEnumValue**: `boolean`
 
 ___
 

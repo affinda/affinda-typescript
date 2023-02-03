@@ -86,6 +86,7 @@
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
 - [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
 - [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
+- [AffindaAPIGetDataPointChoicesOptionalParams](interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md)
 - [AffindaAPIGetDataPointOptionalParams](interfaces/AffindaAPIGetDataPointOptionalParams.md)
 - [AffindaAPIGetDocumentOptionalParams](interfaces/AffindaAPIGetDocumentOptionalParams.md)
 - [AffindaAPIGetExtractorOptionalParams](interfaces/AffindaAPIGetExtractorOptionalParams.md)
@@ -169,7 +170,7 @@
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
 - [DataPoint](interfaces/DataPoint.md)
-- [DataPointChoicesItem](interfaces/DataPointChoicesItem.md)
+- [DataPointChoice](interfaces/DataPointChoice.md)
 - [DataPointCreate](interfaces/DataPointCreate.md)
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
 - [Document](interfaces/Document.md)
@@ -256,6 +257,7 @@
 - [Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema](interfaces/PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema.md)
@@ -360,6 +362,7 @@
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
 - [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
 - [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
+- [AffindaAPIGetDataPointChoicesResponse](modules.md#affindaapigetdatapointchoicesresponse)
 - [AffindaAPIGetDataPointResponse](modules.md#affindaapigetdatapointresponse)
 - [AffindaAPIGetDocumentResponse](modules.md#affindaapigetdocumentresponse)
 - [AffindaAPIGetExtractorResponse](modules.md#affindaapigetextractorresponse)
@@ -405,7 +408,6 @@
 - [EducationLevel](modules.md#educationlevel)
 - [Enum3](modules.md#enum3)
 - [Enum6](modules.md#enum6)
-- [EnumAnnotationSerializerV2](modules.md#enumannotationserializerv2)
 - [ExpectedRemunerationAnnotationV2](modules.md#expectedremunerationannotationv2)
 - [ExtractorFieldGroups](modules.md#extractorfieldgroups)
 - [FieldGroups](modules.md#fieldgroups)
@@ -452,6 +454,7 @@
 - [OrganizationUserRole](modules.md#organizationuserrole)
 - [PatchContentSchemaStatus](modules.md#patchcontentschemastatus)
 - [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
+- [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
 - [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
 - [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
 - [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
@@ -468,6 +471,12 @@
 - [TextAnnotationV2](modules.md#textannotationv2)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotationV2](modules.md#yearsexperienceannotationv2)
+
+### Functions
+
+- [asInvoice](modules.md#asinvoice)
+- [asJobDescription](modules.md#asjobdescription)
+- [asResume](modules.md#asresume)
 
 ## Type aliases
 
@@ -756,6 +765,14 @@ ___
 Ƭ **AffindaAPIGetCollectionResponse**: [`Collection`](interfaces/Collection.md)
 
 Contains response data for the getCollection operation.
+
+___
+
+### AffindaAPIGetDataPointChoicesResponse
+
+Ƭ **AffindaAPIGetDataPointChoicesResponse**: [`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
+
+Contains response data for the getDataPointChoices operation.
 
 ___
 
@@ -1185,12 +1202,6 @@ Defines values for Enum6. \
 
 ___
 
-### EnumAnnotationSerializerV2
-
-Ƭ **EnumAnnotationSerializerV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: `string`  }
-
-___
-
 ### ExpectedRemunerationAnnotationV2
 
 Ƭ **ExpectedRemunerationAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`ExpectedRemunerationAnnotationV2Parsed`](interfaces/ExpectedRemunerationAnnotationV2Parsed.md)  }
@@ -1513,6 +1524,12 @@ ___
 
 ___
 
+### PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
+
+Ƭ **PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
 ### PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
 
 Ƭ **PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
@@ -1661,3 +1678,51 @@ ___
 ### YearsExperienceAnnotationV2
 
 Ƭ **YearsExperienceAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`YearsExperienceAnnotationV2Parsed`](interfaces/YearsExperienceAnnotationV2Parsed.md)  }
+
+## Functions
+
+### asInvoice
+
+▸ **asInvoice**(`doc`): [`Invoice`](interfaces/Invoice.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `doc` | [`Document`](interfaces/Document.md) |
+
+#### Returns
+
+[`Invoice`](interfaces/Invoice.md)
+
+___
+
+### asJobDescription
+
+▸ **asJobDescription**(`doc`): [`JobDescription`](interfaces/JobDescription.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `doc` | [`Document`](interfaces/Document.md) |
+
+#### Returns
+
+[`JobDescription`](interfaces/JobDescription.md)
+
+___
+
+### asResume
+
+▸ **asResume**(`doc`): [`Resume`](interfaces/Resume.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `doc` | [`Document`](interfaces/Document.md) |
+
+#### Returns
+
+[`Resume`](interfaces/Resume.md)

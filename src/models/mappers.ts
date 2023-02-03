@@ -883,6 +883,7 @@ export const EducationGrade: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "EducationGrade",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       raw: {
         serializedName: "raw",
@@ -1294,6 +1295,7 @@ export const ResumeDataRefereesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "ResumeDataRefereesItem",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       name: {
         serializedName: "name",
@@ -1892,7 +1894,7 @@ export const InvoiceData: coreClient.CompositeMapper = {
         xmlName: "currencyCode",
         type: {
           name: "Composite",
-          className: "EnumAnnotationSerializerV2"
+          className: "TextAnnotationV2"
         }
       },
       customFields: {
@@ -8105,18 +8107,11 @@ export const DataPoint: coreClient.CompositeMapper = {
           }
         }
       },
-      choices: {
-        serializedName: "choices",
-        xmlName: "choices",
-        xmlElementName: "DataPointChoicesItem",
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        xmlName: "displayEnumValue",
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "DataPointChoicesItem"
-            }
-          }
+          name: "Boolean"
         }
       },
       children: {
@@ -8131,24 +8126,6 @@ export const DataPoint: coreClient.CompositeMapper = {
               className: "DataPoint"
             }
           }
-        }
-      }
-    }
-  }
-};
-
-export const DataPointChoicesItem: coreClient.CompositeMapper = {
-  serializedName: "DataPointChoicesItem",
-  type: {
-    name: "Composite",
-    className: "DataPointChoicesItem",
-    modelProperties: {
-      label: {
-        serializedName: "label",
-        required: true,
-        xmlName: "label",
-        type: {
-          name: "String"
         }
       }
     }
@@ -8250,6 +8227,66 @@ export const DataPointUpdate: coreClient.CompositeMapper = {
         serializedName: "description",
         nullable: true,
         xmlName: "description",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  serializedName:
+    "Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1",
+  type: {
+    name: "Composite",
+    className:
+      "Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        xmlName: "results",
+        xmlElementName: "DataPointChoice",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPointChoice"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoice: coreClient.CompositeMapper = {
+  serializedName: "DataPointChoice",
+  type: {
+    name: "Composite",
+    className: "DataPointChoice",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        xmlName: "label",
+        type: {
+          name: "String"
+        }
+      },
+      value: {
+        serializedName: "value",
+        required: true,
+        xmlName: "value",
         type: {
           name: "String"
         }
@@ -10238,25 +10275,6 @@ export const LocationAnnotationV2: coreClient.CompositeMapper = {
   }
 };
 
-export const EnumAnnotationSerializerV2: coreClient.CompositeMapper = {
-  serializedName: "EnumAnnotationSerializerV2",
-  type: {
-    name: "Composite",
-    className: "EnumAnnotationSerializerV2",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...AnnotationV2.type.modelProperties,
-      parsed: {
-        serializedName: "parsed",
-        xmlName: "parsed",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const JobTitleAnnotation: coreClient.CompositeMapper = {
   serializedName: "JobTitleAnnotation",
   type: {
@@ -10860,6 +10878,21 @@ export const Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchem
     modelProperties: {
       ...PaginatedResponse.type.modelProperties,
       ...PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  serializedName:
+    "PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema",
+  type: {
+    name: "Composite",
+    className:
+      "PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }

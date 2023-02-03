@@ -870,6 +870,29 @@ export const body15: OperationParameter = {
   mapper: DataPointUpdateMapper
 };
 
+export const dataPoint: OperationQueryParameter = {
+  parameterPath: "dataPoint",
+  mapper: {
+    serializedName: "data_point",
+    required: true,
+    xmlName: "data_point",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const search: OperationQueryParameter = {
+  parameterPath: ["options", "search"],
+  mapper: {
+    serializedName: "search",
+    xmlName: "search",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const body16: OperationParameter = {
   parameterPath: "body",
   mapper: WorkspaceCreateMapper
@@ -973,17 +996,6 @@ export const createdDt: OperationQueryParameter = {
   mapper: {
     serializedName: "created_dt",
     xmlName: "created_dt",
-    type: {
-      name: "String"
-    }
-  }
-};
-
-export const search: OperationQueryParameter = {
-  parameterPath: ["options", "search"],
-  mapper: {
-    serializedName: "search",
-    xmlName: "search",
     type: {
       name: "String"
     }

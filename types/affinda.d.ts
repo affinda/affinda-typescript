@@ -440,6 +440,12 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteDataPoint(identifier: string, options?: AffindaAPIDeleteDataPointOptionalParams): Promise<void>;
     /**
+     * Returns available choices for a specific enum data point.
+     * @param dataPoint The data point to get choices for.
+     * @param options The options parameters.
+     */
+    getDataPointChoices(dataPoint: string, options?: AffindaAPIGetDataPointChoicesOptionalParams): Promise<AffindaAPIGetDataPointChoicesResponse>;
+    /**
      * Returns your workspaces.
      * @param organization Filter by organization.
      * @param options The options parameters.
@@ -944,6 +950,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
+    /** Partial, case-insensitive match with file name or tag name. */
+    search?: string;
     /** Filter by workspace. */
     workspace?: string;
     /** Filter by collection. */
@@ -954,8 +962,6 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     tags?: number[];
     /** Filter by created datetime. */
     createdDt?: DateRange;
-    /** Partial, case-insensitive match with file name or tag name. */
-    search?: string;
     /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. */
     ordering?: Get8ItemsItem[];
     /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return the detailed data that was parsed, at a performance cost. */
@@ -1126,6 +1132,19 @@ export declare interface AffindaAPIGetCollectionOptionalParams extends coreClien
 
 /** Contains response data for the getCollection operation. */
 export declare type AffindaAPIGetCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetDataPointChoicesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter choices by searching for a substring. */
+    search?: string;
+}
+
+/** Contains response data for the getDataPointChoices operation. */
+export declare type AffindaAPIGetDataPointChoicesResponse = PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetDataPointOptionalParams extends coreClient.OperationOptions {
@@ -1488,6 +1507,12 @@ export declare interface AnnotationV2 {
     contentType: string;
 }
 
+export declare function asInvoice(doc: Document): Invoice;
+
+export declare function asJobDescription(doc: Document): JobDescription;
+
+export declare function asResume(doc: Document): Resume;
+
 export declare interface BaseExtractor {
     id: number;
     identifier: string;
@@ -1777,12 +1802,14 @@ export declare interface DataPoint {
     multiple?: boolean;
     noRect?: boolean;
     similarTo?: string[];
-    choices?: DataPointChoicesItem[];
+    displayEnumValue?: boolean;
     children?: DataPoint[];
 }
 
-export declare interface DataPointChoicesItem {
+export declare interface DataPointChoice {
+    id: number;
     label: string;
+    value: string;
 }
 
 export declare interface DataPointCreate {
@@ -1984,6 +2011,8 @@ export declare interface EducationDates {
 }
 
 export declare interface EducationGrade {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     raw?: string;
     metric?: string;
     value?: string;
@@ -2017,10 +2046,6 @@ export declare type Enum3 = string;
  * **job_descriptions**
  */
 export declare type Enum6 = string;
-
-export declare type EnumAnnotationSerializerV2 = AnnotationV2 & {
-    parsed?: string;
-};
 
 export declare interface ErrorModel {
     errorCode?: string;
@@ -2266,7 +2291,7 @@ export declare interface InvoiceData {
     customerEmail?: InvoiceDataCustomerEmail;
     supplierEmail?: InvoiceDataSupplierEmail;
     supplierWebsite?: InvoiceDataSupplierWebsite;
-    currencyCode?: EnumAnnotationSerializerV2;
+    currencyCode?: TextAnnotationV2;
     /** Dictionary of <any> */
     customFields?: {
         [propertyName: string]: any;
@@ -3023,6 +3048,10 @@ export declare interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200Content
     results: WorkspaceMembership[];
 }
 
+export declare interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: DataPointChoice[];
+}
+
 export declare interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: OrganizationMembership[];
 }
@@ -3053,6 +3082,8 @@ export declare interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentA
 export declare interface PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: Invitation[];
 }
+
+export declare type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
     /** Number of indexed documents in result */
@@ -3216,6 +3247,8 @@ export declare interface ResumeDataName {
 }
 
 export declare interface ResumeDataRefereesItem {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     name?: string;
     text?: string;
     email?: string;

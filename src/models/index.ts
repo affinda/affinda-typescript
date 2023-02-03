@@ -187,6 +187,8 @@ export interface Accreditation {
 }
 
 export interface EducationGrade {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   raw?: string;
   metric?: string;
   value?: string;
@@ -273,6 +275,8 @@ export interface ResumeDataSkillsPropertiesItemsItem {
 }
 
 export interface ResumeDataRefereesItem {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   name?: string;
   text?: string;
   email?: string;
@@ -364,7 +368,7 @@ export interface InvoiceData {
   customerEmail?: InvoiceDataCustomerEmail;
   supplierEmail?: InvoiceDataSupplierEmail;
   supplierWebsite?: InvoiceDataSupplierWebsite;
-  currencyCode?: EnumAnnotationSerializerV2;
+  currencyCode?: TextAnnotationV2;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
 }
@@ -1421,12 +1425,8 @@ export interface DataPoint {
   multiple?: boolean;
   noRect?: boolean;
   similarTo?: string[];
-  choices?: DataPointChoicesItem[];
+  displayEnumValue?: boolean;
   children?: DataPoint[];
-}
-
-export interface DataPointChoicesItem {
-  label: string;
 }
 
 export interface DataPointCreate {
@@ -1446,6 +1446,16 @@ export interface DataPointUpdate {
   name?: string;
   slug?: string;
   description?: string;
+}
+
+export interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: DataPointChoice[];
+}
+
+export interface DataPointChoice {
+  id: number;
+  label: string;
+  value: string;
 }
 
 export interface Workspace {
@@ -1886,10 +1896,6 @@ export type LocationAnnotationV2 = AnnotationV2 & {
   parsed?: Location;
 };
 
-export type EnumAnnotationSerializerV2 = AnnotationV2 & {
-  parsed?: string;
-};
-
 export type JobTitleAnnotation = AnnotationV2 & {
   /** Years of experience range */
   parsed?: JobTitleAnnotationParsed;
@@ -2020,6 +2026,9 @@ export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicatio
 
 export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type InvitationRespondedBy = User & {};
 
@@ -3041,6 +3050,20 @@ export interface AffindaAPIDeleteDataPointOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
+export interface AffindaAPIGetDataPointChoicesOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter choices by searching for a substring. */
+  search?: string;
+}
+
+/** Contains response data for the getDataPointChoices operation. */
+export type AffindaAPIGetDataPointChoicesResponse = PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllWorkspacesOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by name. */
@@ -3148,6 +3171,8 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Partial, case-insensitive match with file name or tag name. */
+  search?: string;
   /** Filter by workspace. */
   workspace?: string;
   /** Filter by collection. */
@@ -3158,8 +3183,6 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   tags?: number[];
   /** Filter by created datetime. */
   createdDt?: DateRange;
-  /** Partial, case-insensitive match with file name or tag name. */
-  search?: string;
   /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. */
   ordering?: Get8ItemsItem[];
   /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return the detailed data that was parsed, at a performance cost. */

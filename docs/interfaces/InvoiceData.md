@@ -91,7 +91,7 @@ ___
 
 ### currencyCode
 
-• `Optional` **currencyCode**: [`EnumAnnotationSerializerV2`](../modules.md#enumannotationserializerv2)
+• `Optional` **currencyCode**: [`TextAnnotationV2`](../modules.md#textannotationv2)
 
 ___
 

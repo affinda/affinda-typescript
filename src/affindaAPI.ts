@@ -132,6 +132,8 @@ import {
   AffindaAPIUpdateDataPointDataOptionalParams,
   AffindaAPIUpdateDataPointDataResponse,
   AffindaAPIDeleteDataPointOptionalParams,
+  AffindaAPIGetDataPointChoicesOptionalParams,
+  AffindaAPIGetDataPointChoicesResponse,
   AffindaAPIGetAllWorkspacesOptionalParams,
   AffindaAPIGetAllWorkspacesResponse,
   WorkspaceCreate,
@@ -1145,6 +1147,21 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, options },
       deleteDataPointOperationSpec
+    );
+  }
+
+  /**
+   * Returns available choices for a specific enum data point.
+   * @param dataPoint The data point to get choices for.
+   * @param options The options parameters.
+   */
+  getDataPointChoices(
+    dataPoint: string,
+    options?: AffindaAPIGetDataPointChoicesOptionalParams
+  ): Promise<AffindaAPIGetDataPointChoicesResponse> {
+    return this.sendOperationRequest(
+      { dataPoint, options },
+      getDataPointChoicesOperationSpec
     );
   }
 
@@ -3100,6 +3117,36 @@ const deleteDataPointOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const getDataPointChoicesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.dataPoint,
+    Parameters.search
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
 const getAllWorkspacesOperationSpec: coreClient.OperationSpec = {
   path: "/v3/workspaces",
   httpMethod: "GET",
@@ -3467,12 +3514,12 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
   queryParameters: [
     Parameters.offset,
     Parameters.limit,
+    Parameters.search,
     Parameters.workspace,
     Parameters.collection,
     Parameters.state,
     Parameters.tags,
     Parameters.createdDt,
-    Parameters.search,
     Parameters.ordering,
     Parameters.includeData,
     Parameters.exclude

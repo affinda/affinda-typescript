@@ -74,6 +74,7 @@
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
 - [getCollection](AffindaAPI.md#getcollection)
 - [getDataPoint](AffindaAPI.md#getdatapoint)
+- [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
 - [getDocument](AffindaAPI.md#getdocument)
 - [getExtractor](AffindaAPI.md#getextractor)
 - [getInvitation](AffindaAPI.md#getinvitation)
@@ -1162,6 +1163,25 @@ Return a specific data point.
 #### Returns
 
 `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+
+___
+
+### getDataPointChoices
+
+▸ **getDataPointChoices**(`dataPoint`, `options?`): `Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
+
+Returns available choices for a specific enum data point.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dataPoint` | `string` | The data point to get choices for. |
+| `options?` | [`AffindaAPIGetDataPointChoicesOptionalParams`](../interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
