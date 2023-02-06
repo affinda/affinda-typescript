@@ -1473,6 +1473,7 @@ export interface Workspace {
   unvalidatedDocsCount?: number;
   /** Number of validated documents in the workspace. */
   confirmedDocsCount?: number;
+  ingestEmail?: string;
 }
 
 export interface WorkspaceCollectionsItem {
@@ -1573,6 +1574,7 @@ export interface Collection {
   unvalidatedDocsCount?: number;
   /** Number of validated documents in the collection. */
   confirmedDocsCount?: number;
+  ingestEmail?: string;
 }
 
 export interface CollectionWorkspace {

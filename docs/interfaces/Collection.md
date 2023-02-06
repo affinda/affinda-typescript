@@ -15,6 +15,7 @@
 - [fields](Collection.md#fields)
 - [fieldsConfigured](Collection.md#fieldsconfigured)
 - [identifier](Collection.md#identifier)
+- [ingestEmail](Collection.md#ingestemail)
 - [name](Collection.md#name)
 - [unvalidatedDocsCount](Collection.md#unvalidateddocscount)
 - [workspace](Collection.md#workspace)
@@ -84,6 +85,12 @@ ___
 • **identifier**: `string`
 
 Uniquely identify a collection.
+
+___
+
+### ingestEmail
+
+• `Optional` **ingestEmail**: `string`
 
 ___
 

@@ -9,6 +9,7 @@
 - [collections](Workspace.md#collections)
 - [confirmedDocsCount](Workspace.md#confirmeddocscount)
 - [identifier](Workspace.md#identifier)
+- [ingestEmail](Workspace.md#ingestemail)
 - [members](Workspace.md#members)
 - [name](Workspace.md#name)
 - [organization](Workspace.md#organization)
@@ -37,6 +38,12 @@ ___
 • **identifier**: `string`
 
 Uniquely identify a workspace.
+
+___
+
+### ingestEmail
+
+• `Optional` **ingestEmail**: `string`
 
 ___
 

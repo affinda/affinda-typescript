@@ -1543,6 +1543,7 @@ export declare interface Collection {
     unvalidatedDocsCount?: number;
     /** Number of validated documents in the collection. */
     confirmedDocsCount?: number;
+    ingestEmail?: string;
 }
 
 export declare interface CollectionCreate {
@@ -3752,6 +3753,7 @@ export declare interface Workspace {
     unvalidatedDocsCount?: number;
     /** Number of validated documents in the workspace. */
     confirmedDocsCount?: number;
+    ingestEmail?: string;
 }
 
 export declare interface WorkspaceCollectionsItem {

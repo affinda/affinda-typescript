@@ -8379,6 +8379,13 @@ export const Workspace: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      ingestEmail: {
+        serializedName: "ingestEmail",
+        xmlName: "ingestEmail",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -8870,6 +8877,13 @@ export const Collection: coreClient.CompositeMapper = {
         xmlName: "confirmedDocsCount",
         type: {
           name: "Number"
+        }
+      },
+      ingestEmail: {
+        serializedName: "ingestEmail",
+        xmlName: "ingestEmail",
+        type: {
+          name: "String"
         }
       }
     }
