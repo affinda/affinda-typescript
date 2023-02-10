@@ -1490,6 +1490,7 @@ export const RedactedResumeData: coreClient.CompositeMapper = {
     modelProperties: {
       redactedPdf: {
         serializedName: "redactedPdf",
+        nullable: true,
         xmlName: "redactedPdf",
         type: {
           name: "String"
@@ -7247,6 +7248,73 @@ export const PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJs
   }
 };
 
+export const ResthookSubscription: coreClient.CompositeMapper = {
+  serializedName: "ResthookSubscription",
+  type: {
+    name: "Composite",
+    className: "ResthookSubscription",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      event: {
+        serializedName: "event",
+        xmlName: "event",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        xmlName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      targetUrl: {
+        serializedName: "targetUrl",
+        xmlName: "targetUrl",
+        type: {
+          name: "String"
+        }
+      },
+      active: {
+        serializedName: "active",
+        xmlName: "active",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoDeactivated: {
+        serializedName: "autoDeactivated",
+        xmlName: "autoDeactivated",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoDeactivateReason: {
+        serializedName: "autoDeactivateReason",
+        xmlName: "autoDeactivateReason",
+        type: {
+          name: "String"
+        }
+      },
+      version: {
+        serializedName: "version",
+        xmlName: "version",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const Organization: coreClient.CompositeMapper = {
   serializedName: "Organization",
   type: {
@@ -7296,6 +7364,77 @@ export const Organization: coreClient.CompositeMapper = {
         xmlName: "isTrial",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResthookSubscriptionCreate: coreClient.CompositeMapper = {
+  serializedName: "ResthookSubscriptionCreate",
+  type: {
+    name: "Composite",
+    className: "ResthookSubscriptionCreate",
+    modelProperties: {
+      targetUrl: {
+        serializedName: "targetUrl",
+        required: true,
+        xmlName: "targetUrl",
+        type: {
+          name: "String"
+        }
+      },
+      event: {
+        serializedName: "event",
+        required: true,
+        xmlName: "event",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        xmlName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      version: {
+        serializedName: "version",
+        xmlName: "version",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
+  serializedName: "ResthookSubscriptionUpdate",
+  type: {
+    name: "Composite",
+    className: "ResthookSubscriptionUpdate",
+    modelProperties: {
+      event: {
+        serializedName: "event",
+        xmlName: "event",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        xmlName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      version: {
+        serializedName: "version",
+        xmlName: "version",
+        type: {
+          name: "String"
         }
       }
     }
@@ -7718,10 +7857,17 @@ export const Extractor: coreClient.CompositeMapper = {
       },
       fieldGroups: {
         serializedName: "fieldGroups",
+        nullable: true,
         xmlName: "fieldGroups",
+        xmlElementName: "FieldGroup",
         type: {
-          name: "Composite",
-          className: "ExtractorFieldGroups"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldGroup"
+            }
+          }
         }
       },
       createdDt: {
@@ -7954,10 +8100,17 @@ export const ExtractorCreate: coreClient.CompositeMapper = {
       },
       fieldGroups: {
         serializedName: "fieldGroups",
+        nullable: true,
         xmlName: "fieldGroups",
+        xmlElementName: "FieldGroup",
         type: {
-          name: "Composite",
-          className: "FieldGroups"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldGroup"
+            }
+          }
         }
       }
     }
@@ -8008,10 +8161,17 @@ export const ExtractorUpdate: coreClient.CompositeMapper = {
       },
       fieldGroups: {
         serializedName: "fieldGroups",
+        nullable: true,
         xmlName: "fieldGroups",
+        xmlElementName: "FieldGroup",
         type: {
-          name: "Composite",
-          className: "FieldGroups"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldGroup"
+            }
+          }
         }
       }
     }
@@ -8819,6 +8979,7 @@ export const Collection: coreClient.CompositeMapper = {
       },
       fields: {
         serializedName: "fields",
+        nullable: true,
         xmlName: "fields",
         xmlElementName: "FieldGroup",
         type: {
@@ -8961,6 +9122,7 @@ export const CollectionCreate: coreClient.CompositeMapper = {
       },
       fields: {
         serializedName: "fields",
+        nullable: true,
         xmlName: "fields",
         xmlElementName: "FieldGroup",
         type: {
@@ -9024,6 +9186,7 @@ export const CollectionUpdate: coreClient.CompositeMapper = {
       },
       fields: {
         serializedName: "fields",
+        nullable: true,
         xmlName: "fields",
         xmlElementName: "FieldGroup",
         type: {
@@ -10919,28 +11082,6 @@ export const InvitationRespondedBy: coreClient.CompositeMapper = {
     className: "InvitationRespondedBy",
     modelProperties: {
       ...User.type.modelProperties
-    }
-  }
-};
-
-export const ExtractorFieldGroups: coreClient.CompositeMapper = {
-  serializedName: "ExtractorFieldGroups",
-  type: {
-    name: "Composite",
-    className: "ExtractorFieldGroups",
-    modelProperties: {
-      ...FieldGroup.type.modelProperties
-    }
-  }
-};
-
-export const FieldGroups: coreClient.CompositeMapper = {
-  serializedName: "FieldGroups",
-  type: {
-    name: "Composite",
-    className: "FieldGroups",
-    modelProperties: {
-      ...FieldGroup.type.modelProperties
     }
   }
 };

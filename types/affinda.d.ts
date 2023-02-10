@@ -283,6 +283,36 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
     /**
+     * Returns your resthook subscriptions.
+     * @param options The options parameters.
+     */
+    getAllResthookSubscriptions(options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams): Promise<AffindaAPIGetAllResthookSubscriptionsResponse>;
+    /**
+     * Create a resthook subscriptions
+     * @param body
+     * @param options The options parameters.
+     */
+    createResthookSubscription(body: ResthookSubscriptionCreate, options?: AffindaAPICreateResthookSubscriptionOptionalParams): Promise<AffindaAPICreateResthookSubscriptionResponse>;
+    /**
+     * Return a specific resthook subscription.
+     * @param id Resthook subscription's ID
+     * @param options The options parameters.
+     */
+    getResthookSubscription(id: number, options?: AffindaAPIGetResthookSubscriptionOptionalParams): Promise<AffindaAPIGetResthookSubscriptionResponse>;
+    /**
+     * Update data of a resthook subscription.
+     * @param id ResthookSubscription's ID
+     * @param body ResthookSubscription data to update
+     * @param options The options parameters.
+     */
+    updateResthookSubscriptionData(id: number, body: ResthookSubscriptionUpdate, options?: AffindaAPIUpdateResthookSubscriptionDataOptionalParams): Promise<AffindaAPIUpdateResthookSubscriptionDataResponse>;
+    /**
+     * Deletes the specified resthook subscription from the database.
+     * @param id ResthookSubscription's ID
+     * @param options The options parameters.
+     */
+    deleteResthookSubscription(id: number, options?: AffindaAPIDeleteResthookSubscriptionOptionalParams): Promise<void>;
+    /**
      * Returns all the organizations
      * @param options The options parameters.
      */
@@ -788,6 +818,13 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
 export declare type AffindaAPICreateRedactedResumeResponse = RedactedResume;
 
 /** Optional parameters. */
+export declare interface AffindaAPICreateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createResthookSubscription operation. */
+export declare type AffindaAPICreateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
 export declare interface AffindaAPICreateResumeOptionalParams extends coreClient.OperationOptions {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
@@ -898,6 +935,10 @@ export declare interface AffindaAPIDeleteOrganizationOptionalParams extends core
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteRedactedResumeOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface AffindaAPIDeleteResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Optional parameters. */
@@ -1079,6 +1120,17 @@ export declare interface AffindaAPIGetAllRedactedResumesOptionalParams extends c
 export declare type AffindaAPIGetAllRedactedResumesResponse = GetAllDocumentsResultsV2;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetAllResthookSubscriptionsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the getAllResthookSubscriptions operation. */
+export declare type AffindaAPIGetAllResthookSubscriptionsResponse = ResthookSubscription[];
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetAllResumesOptionalParams extends coreClient.OperationOptions {
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
@@ -1229,6 +1281,13 @@ export declare interface AffindaAPIGetRedactedResumeOptionalParams extends coreC
 
 /** Contains response data for the getRedactedResume operation. */
 export declare type AffindaAPIGetRedactedResumeResponse = RedactedResume;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResthookSubscription operation. */
+export declare type AffindaAPIGetResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetResumeOptionalParams extends coreClient.OperationOptions {
@@ -1405,6 +1464,13 @@ export declare interface AffindaAPIUpdateOrganizationOptionalParams extends core
 
 /** Contains response data for the updateOrganization operation. */
 export declare type AffindaAPIUpdateOrganizationResponse = Organization;
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateResthookSubscriptionDataOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateResthookSubscriptionData operation. */
+export declare type AffindaAPIUpdateResthookSubscriptionDataResponse = ResthookSubscription;
 
 /** Optional parameters. */
 export declare interface AffindaAPIUpdateResumeDataOptionalParams extends coreClient.OperationOptions {
@@ -2081,7 +2147,7 @@ export declare interface Extractor {
     category?: string;
     validatable: boolean;
     isCustom?: boolean;
-    fieldGroups?: ExtractorFieldGroups;
+    fieldGroups?: FieldGroup[];
     createdDt?: Date;
 }
 
@@ -2104,10 +2170,8 @@ export declare interface ExtractorCreate {
     organization: string;
     category?: string;
     validatable?: boolean;
-    fieldGroups?: FieldGroups;
+    fieldGroups?: FieldGroup[];
 }
-
-export declare type ExtractorFieldGroups = FieldGroup & {};
 
 export declare interface ExtractorUpdate {
     name?: string;
@@ -2116,7 +2180,7 @@ export declare interface ExtractorUpdate {
     baseExtractor?: number;
     category?: string;
     validatable?: boolean;
-    fieldGroups?: FieldGroups;
+    fieldGroups?: FieldGroup[];
 }
 
 export declare interface Field {
@@ -2133,8 +2197,6 @@ export declare interface FieldGroup {
     label: string;
     fields: Field[];
 }
-
-export declare type FieldGroups = FieldGroup & {};
 
 export declare interface Get200ApplicationJsonPropertiesItemsItem {
     name: string;
@@ -2774,6 +2836,31 @@ export declare enum KnownRegion {
     ApiEu1 = "api.eu1"
 }
 
+/** Known values of {@link ResthookEvent} that the service accepts. */
+export declare enum KnownResthookEvent {
+    ResumeParseSucceeded = "resume.parse.succeeded",
+    ResumeParseFailed = "resume.parse.failed",
+    ResumeParseCompleted = "resume.parse.completed",
+    InvoiceParseSucceeded = "invoice.parse.succeeded",
+    InvoiceParseFailed = "invoice.parse.failed",
+    InvoiceParseCompleted = "invoice.parse.completed",
+    InvoiceValidateCompleted = "invoice.validate.completed",
+    DocumentParseSucceeded = "document.parse.succeeded",
+    DocumentParseFailed = "document.parse.failed",
+    DocumentParseCompleted = "document.parse.completed",
+    DocumentValidateCompleted = "document.validate.completed",
+    DocumentClassifySucceeded = "document.classify.succeeded",
+    DocumentClassifyFailed = "document.classify.failed",
+    DocumentClassifyCompleted = "document.classify.completed"
+}
+
+/** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
+export declare enum KnownResthookSubscriptionVersion {
+    V1 = "v1",
+    V2 = "v2",
+    V3 = "v3"
+}
+
 /** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
 export declare enum KnownResumeSearchParametersCustomDataFilterType {
     Equals = "equals",
@@ -2802,6 +2889,13 @@ export declare enum KnownResumeSkillSourcesItemSection {
     SkillsInterestsLanguages = "Skills/Interests/Languages",
     TrainingCertifications = "Training/Certifications",
     ExtracurricularsLeadership = "Extracurriculars/Leadership"
+}
+
+/** Known values of {@link Version} that the service accepts. */
+export declare enum KnownVersion {
+    V1 = "v1",
+    V2 = "v2",
+    V3 = "v3"
 }
 
 /** Known values of {@link WorkspaceVisibility} that the service accepts. */
@@ -3182,6 +3276,76 @@ export declare interface RequestErrorErrorsItem {
     code: string;
     detail: string;
 }
+
+/**
+ * Defines values for ResthookEvent. \
+ * {@link KnownResthookEvent} can be used interchangeably with ResthookEvent,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resume.parse.succeeded** \
+ * **resume.parse.failed** \
+ * **resume.parse.completed** \
+ * **invoice.parse.succeeded** \
+ * **invoice.parse.failed** \
+ * **invoice.parse.completed** \
+ * **invoice.validate.completed** \
+ * **document.parse.succeeded** \
+ * **document.parse.failed** \
+ * **document.parse.completed** \
+ * **document.validate.completed** \
+ * **document.classify.succeeded** \
+ * **document.classify.failed** \
+ * **document.classify.completed**
+ */
+export declare type ResthookEvent = string;
+
+export declare interface ResthookSubscription {
+    /** Resthook subscription's ID. */
+    id?: number;
+    /** The event name to subscribe to. */
+    event?: ResthookEvent;
+    organization?: Organization;
+    /** URL of the resthook's receiver. */
+    targetUrl?: string;
+    /** Resthooks only fire for active subscriptions. */
+    active?: boolean;
+    /** Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time. */
+    autoDeactivated?: boolean;
+    /** The reason for the subscription being auto deactivated. May contains the error response that the receiver returned. */
+    autoDeactivateReason?: string;
+    /** Version of the resthook subscription. Determines the resthook body being fired. */
+    version?: ResthookSubscriptionVersion;
+}
+
+export declare interface ResthookSubscriptionCreate {
+    /** URL of the resthook's receiver. */
+    targetUrl: string;
+    /** The event name to subscribe to. */
+    event: ResthookEvent;
+    organization?: string;
+    /** Version of the resthook subscription. Determines the resthook body being fired. */
+    version?: Version;
+}
+
+export declare interface ResthookSubscriptionUpdate {
+    /** The event name to subscribe to. */
+    event?: ResthookEvent;
+    /** Uniquely identify an organization. */
+    organization?: string;
+    /** Version of the resthook subscription. Determines the resthook body being fired. */
+    version?: Version;
+}
+
+/**
+ * Defines values for ResthookSubscriptionVersion. \
+ * {@link KnownResthookSubscriptionVersion} can be used interchangeably with ResthookSubscriptionVersion,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **v1** \
+ * **v2** \
+ * **v3**
+ */
+export declare type ResthookSubscriptionVersion = string;
 
 export declare interface Resume {
     /** A JSON-encoded string of the `ResumeData` object. */
@@ -3737,6 +3901,17 @@ export declare interface User {
     /** URL of the user's avatar. */
     avatar?: string;
 }
+
+/**
+ * Defines values for Version. \
+ * {@link KnownVersion} can be used interchangeably with Version,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **v1** \
+ * **v2** \
+ * **v3**
+ */
+export declare type Version = string;
 
 export declare interface Workspace {
     /** Uniquely identify a workspace. */

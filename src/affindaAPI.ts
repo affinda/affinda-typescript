@@ -79,6 +79,17 @@ import {
   AffindaAPIDeleteIndexDocumentOptionalParams,
   AffindaAPIListOccupationGroupsOptionalParams,
   AffindaAPIListOccupationGroupsResponse,
+  AffindaAPIGetAllResthookSubscriptionsOptionalParams,
+  AffindaAPIGetAllResthookSubscriptionsResponse,
+  ResthookSubscriptionCreate,
+  AffindaAPICreateResthookSubscriptionOptionalParams,
+  AffindaAPICreateResthookSubscriptionResponse,
+  AffindaAPIGetResthookSubscriptionOptionalParams,
+  AffindaAPIGetResthookSubscriptionResponse,
+  ResthookSubscriptionUpdate,
+  AffindaAPIUpdateResthookSubscriptionDataOptionalParams,
+  AffindaAPIUpdateResthookSubscriptionDataResponse,
+  AffindaAPIDeleteResthookSubscriptionOptionalParams,
   AffindaAPIGetAllOrganizationsOptionalParams,
   AffindaAPIGetAllOrganizationsResponse,
   AffindaAPICreateOrganizationOptionalParams,
@@ -763,6 +774,81 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { options },
       listOccupationGroupsOperationSpec
+    );
+  }
+
+  /**
+   * Returns your resthook subscriptions.
+   * @param options The options parameters.
+   */
+  getAllResthookSubscriptions(
+    options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams
+  ): Promise<AffindaAPIGetAllResthookSubscriptionsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllResthookSubscriptionsOperationSpec
+    );
+  }
+
+  /**
+   * Create a resthook subscriptions
+   * @param body
+   * @param options The options parameters.
+   */
+  createResthookSubscription(
+    body: ResthookSubscriptionCreate,
+    options?: AffindaAPICreateResthookSubscriptionOptionalParams
+  ): Promise<AffindaAPICreateResthookSubscriptionResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific resthook subscription.
+   * @param id Resthook subscription's ID
+   * @param options The options parameters.
+   */
+  getResthookSubscription(
+    id: number,
+    options?: AffindaAPIGetResthookSubscriptionOptionalParams
+  ): Promise<AffindaAPIGetResthookSubscriptionResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      getResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * Update data of a resthook subscription.
+   * @param id ResthookSubscription's ID
+   * @param body ResthookSubscription data to update
+   * @param options The options parameters.
+   */
+  updateResthookSubscriptionData(
+    id: number,
+    body: ResthookSubscriptionUpdate,
+    options?: AffindaAPIUpdateResthookSubscriptionDataOptionalParams
+  ): Promise<AffindaAPIUpdateResthookSubscriptionDataResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateResthookSubscriptionDataOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified resthook subscription from the database.
+   * @param id ResthookSubscription's ID
+   * @param options The options parameters.
+   */
+  deleteResthookSubscription(
+    id: number,
+    options?: AffindaAPIDeleteResthookSubscriptionOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { id, options },
+      deleteResthookSubscriptionOperationSpec
     );
   }
 
@@ -2462,6 +2548,131 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const getAllResthookSubscriptionsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "ResthookSubscription" }
+          }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body8,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const getResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateResthookSubscriptionDataOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body9,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const deleteResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
 const getAllOrganizationsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/organizations",
   httpMethod: "GET",
@@ -2662,7 +2873,7 @@ const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body8,
+  requestBody: Parameters.body10,
   urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -2739,7 +2950,7 @@ const createInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body9,
+  requestBody: Parameters.body11,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -2787,7 +2998,7 @@ const updateInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body10,
+  requestBody: Parameters.body12,
   urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -2852,7 +3063,7 @@ const respondToInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body11,
+  requestBody: Parameters.body13,
   urlParameters: [Parameters.region, Parameters.token],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -2911,7 +3122,7 @@ const createExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body12,
+  requestBody: Parameters.body14,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -2959,7 +3170,7 @@ const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body13,
+  requestBody: Parameters.body15,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3042,7 +3253,7 @@ const createDataPointOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body14,
+  requestBody: Parameters.body16,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3090,7 +3301,7 @@ const updateDataPointDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body15,
+  requestBody: Parameters.body17,
   urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3195,7 +3406,7 @@ const createWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body16,
+  requestBody: Parameters.body18,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3243,7 +3454,7 @@ const updateWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body17,
+  requestBody: Parameters.body19,
   urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3319,7 +3530,7 @@ const createWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body18,
+  requestBody: Parameters.body20,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3417,7 +3628,7 @@ const createCollectionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body19,
+  requestBody: Parameters.body21,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3465,7 +3676,7 @@ const updateCollectionDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body20,
+  requestBody: Parameters.body22,
   urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3607,7 +3818,7 @@ const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body21,
+  requestBody: Parameters.body23,
   urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3682,7 +3893,7 @@ const createTagOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body22,
+  requestBody: Parameters.body24,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -3730,7 +3941,7 @@ const updateTagDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body23,
+  requestBody: Parameters.body25,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

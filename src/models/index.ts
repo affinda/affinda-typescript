@@ -1266,6 +1266,24 @@ export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicati
   document?: string;
 }
 
+export interface ResthookSubscription {
+  /** Resthook subscription's ID. */
+  id?: number;
+  /** The event name to subscribe to. */
+  event?: ResthookEvent;
+  organization?: Organization;
+  /** URL of the resthook's receiver. */
+  targetUrl?: string;
+  /** Resthooks only fire for active subscriptions. */
+  active?: boolean;
+  /** Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time. */
+  autoDeactivated?: boolean;
+  /** The reason for the subscription being auto deactivated. May contains the error response that the receiver returned. */
+  autoDeactivateReason?: string;
+  /** Version of the resthook subscription. Determines the resthook body being fired. */
+  version?: ResthookSubscriptionVersion;
+}
+
 export interface Organization {
   /** Uniquely identify an organization. */
   identifier?: string;
@@ -1277,6 +1295,25 @@ export interface Organization {
   /** Used to sign webhook payloads so you can verify their integrity. */
   resthookSignatureKey?: string;
   isTrial?: boolean;
+}
+
+export interface ResthookSubscriptionCreate {
+  /** URL of the resthook's receiver. */
+  targetUrl: string;
+  /** The event name to subscribe to. */
+  event: ResthookEvent;
+  organization?: string;
+  /** Version of the resthook subscription. Determines the resthook body being fired. */
+  version?: Version;
+}
+
+export interface ResthookSubscriptionUpdate {
+  /** The event name to subscribe to. */
+  event?: ResthookEvent;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Version of the resthook subscription. Determines the resthook body being fired. */
+  version?: Version;
 }
 
 export interface PaginatedResponse {
@@ -1361,7 +1398,7 @@ export interface Extractor {
   category?: string;
   validatable: boolean;
   isCustom?: boolean;
-  fieldGroups?: ExtractorFieldGroups;
+  fieldGroups?: FieldGroup[];
   createdDt?: Date;
 }
 
@@ -1399,7 +1436,7 @@ export interface ExtractorCreate {
   organization: string;
   category?: string;
   validatable?: boolean;
-  fieldGroups?: FieldGroups;
+  fieldGroups?: FieldGroup[];
 }
 
 export interface ExtractorUpdate {
@@ -1409,7 +1446,7 @@ export interface ExtractorUpdate {
   baseExtractor?: number;
   category?: string;
   validatable?: boolean;
-  fieldGroups?: FieldGroups;
+  fieldGroups?: FieldGroup[];
 }
 
 export interface DataPoint {
@@ -2034,10 +2071,6 @@ export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSch
 
 export type InvitationRespondedBy = User & {};
 
-export type ExtractorFieldGroups = FieldGroup & {};
-
-export type FieldGroups = FieldGroup & {};
-
 export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = ListResult &
   Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
@@ -2189,6 +2222,46 @@ export enum KnownEnum6 {
  */
 export type Enum6 = string;
 
+/** Known values of {@link ResthookEvent} that the service accepts. */
+export enum KnownResthookEvent {
+  ResumeParseSucceeded = "resume.parse.succeeded",
+  ResumeParseFailed = "resume.parse.failed",
+  ResumeParseCompleted = "resume.parse.completed",
+  InvoiceParseSucceeded = "invoice.parse.succeeded",
+  InvoiceParseFailed = "invoice.parse.failed",
+  InvoiceParseCompleted = "invoice.parse.completed",
+  InvoiceValidateCompleted = "invoice.validate.completed",
+  DocumentParseSucceeded = "document.parse.succeeded",
+  DocumentParseFailed = "document.parse.failed",
+  DocumentParseCompleted = "document.parse.completed",
+  DocumentValidateCompleted = "document.validate.completed",
+  DocumentClassifySucceeded = "document.classify.succeeded",
+  DocumentClassifyFailed = "document.classify.failed",
+  DocumentClassifyCompleted = "document.classify.completed"
+}
+
+/**
+ * Defines values for ResthookEvent. \
+ * {@link KnownResthookEvent} can be used interchangeably with ResthookEvent,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resume.parse.succeeded** \
+ * **resume.parse.failed** \
+ * **resume.parse.completed** \
+ * **invoice.parse.succeeded** \
+ * **invoice.parse.failed** \
+ * **invoice.parse.completed** \
+ * **invoice.validate.completed** \
+ * **document.parse.succeeded** \
+ * **document.parse.failed** \
+ * **document.parse.completed** \
+ * **document.validate.completed** \
+ * **document.classify.succeeded** \
+ * **document.classify.failed** \
+ * **document.classify.completed**
+ */
+export type ResthookEvent = string;
+
 /** Known values of {@link OrganizationRole} that the service accepts. */
 export enum KnownOrganizationRole {
   Admin = "admin",
@@ -2220,6 +2293,42 @@ export enum KnownOrganizationUserRole {
  * **member**
  */
 export type OrganizationUserRole = string;
+
+/** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
+export enum KnownResthookSubscriptionVersion {
+  V1 = "v1",
+  V2 = "v2",
+  V3 = "v3"
+}
+
+/**
+ * Defines values for ResthookSubscriptionVersion. \
+ * {@link KnownResthookSubscriptionVersion} can be used interchangeably with ResthookSubscriptionVersion,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **v1** \
+ * **v2** \
+ * **v3**
+ */
+export type ResthookSubscriptionVersion = string;
+
+/** Known values of {@link Version} that the service accepts. */
+export enum KnownVersion {
+  V1 = "v1",
+  V2 = "v2",
+  V3 = "v3"
+}
+
+/**
+ * Defines values for Version. \
+ * {@link KnownVersion} can be used interchangeably with Version,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **v1** \
+ * **v2** \
+ * **v3**
+ */
+export type Version = string;
 
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export enum KnownInvitationStatus {
@@ -2826,6 +2935,43 @@ export interface AffindaAPIListOccupationGroupsOptionalParams
 
 /** Contains response data for the listOccupationGroups operation. */
 export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllResthookSubscriptionsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the getAllResthookSubscriptions operation. */
+export type AffindaAPIGetAllResthookSubscriptionsResponse = ResthookSubscription[];
+
+/** Optional parameters. */
+export interface AffindaAPICreateResthookSubscriptionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createResthookSubscription operation. */
+export type AffindaAPICreateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export interface AffindaAPIGetResthookSubscriptionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResthookSubscription operation. */
+export type AffindaAPIGetResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateResthookSubscriptionDataOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateResthookSubscriptionData operation. */
+export type AffindaAPIUpdateResthookSubscriptionDataResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteResthookSubscriptionOptionalParams
+  extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllOrganizationsOptionalParams

@@ -21,8 +21,11 @@
 - [KnownPatchContentSchemaStatus](enums/KnownPatchContentSchemaStatus.md)
 - [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
 - [KnownRegion](enums/KnownRegion.md)
+- [KnownResthookEvent](enums/KnownResthookEvent.md)
+- [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
 - [KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
+- [KnownVersion](enums/KnownVersion.md)
 - [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
 
 ### Classes
@@ -47,6 +50,7 @@
 - [AffindaAPICreateJobDescriptionSearchOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md)
 - [AffindaAPICreateOrganizationOptionalParams](interfaces/AffindaAPICreateOrganizationOptionalParams.md)
 - [AffindaAPICreateRedactedResumeOptionalParams](interfaces/AffindaAPICreateRedactedResumeOptionalParams.md)
+- [AffindaAPICreateResthookSubscriptionOptionalParams](interfaces/AffindaAPICreateResthookSubscriptionOptionalParams.md)
 - [AffindaAPICreateResumeOptionalParams](interfaces/AffindaAPICreateResumeOptionalParams.md)
 - [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
@@ -65,6 +69,7 @@
 - [AffindaAPIDeleteOrganizationMembershipOptionalParams](interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md)
 - [AffindaAPIDeleteOrganizationOptionalParams](interfaces/AffindaAPIDeleteOrganizationOptionalParams.md)
 - [AffindaAPIDeleteRedactedResumeOptionalParams](interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md)
+- [AffindaAPIDeleteResthookSubscriptionOptionalParams](interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md)
 - [AffindaAPIDeleteResumeOptionalParams](interfaces/AffindaAPIDeleteResumeOptionalParams.md)
 - [AffindaAPIDeleteTagOptionalParams](interfaces/AffindaAPIDeleteTagOptionalParams.md)
 - [AffindaAPIDeleteWorkspaceMembershipOptionalParams](interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md)
@@ -81,6 +86,7 @@
 - [AffindaAPIGetAllOrganizationMembershipsOptionalParams](interfaces/AffindaAPIGetAllOrganizationMembershipsOptionalParams.md)
 - [AffindaAPIGetAllOrganizationsOptionalParams](interfaces/AffindaAPIGetAllOrganizationsOptionalParams.md)
 - [AffindaAPIGetAllRedactedResumesOptionalParams](interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md)
+- [AffindaAPIGetAllResthookSubscriptionsOptionalParams](interfaces/AffindaAPIGetAllResthookSubscriptionsOptionalParams.md)
 - [AffindaAPIGetAllResumesOptionalParams](interfaces/AffindaAPIGetAllResumesOptionalParams.md)
 - [AffindaAPIGetAllTagsOptionalParams](interfaces/AffindaAPIGetAllTagsOptionalParams.md)
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
@@ -99,6 +105,7 @@
 - [AffindaAPIGetOrganizationMembershipOptionalParams](interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md)
 - [AffindaAPIGetOrganizationOptionalParams](interfaces/AffindaAPIGetOrganizationOptionalParams.md)
 - [AffindaAPIGetRedactedResumeOptionalParams](interfaces/AffindaAPIGetRedactedResumeOptionalParams.md)
+- [AffindaAPIGetResthookSubscriptionOptionalParams](interfaces/AffindaAPIGetResthookSubscriptionOptionalParams.md)
 - [AffindaAPIGetResumeOptionalParams](interfaces/AffindaAPIGetResumeOptionalParams.md)
 - [AffindaAPIGetResumeSearchConfigOptionalParams](interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md)
 - [AffindaAPIGetResumeSearchDetailOptionalParams](interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md)
@@ -119,6 +126,7 @@
 - [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateOrganizationMembershipOptionalParams](interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md)
 - [AffindaAPIUpdateOrganizationOptionalParams](interfaces/AffindaAPIUpdateOrganizationOptionalParams.md)
+- [AffindaAPIUpdateResthookSubscriptionDataOptionalParams](interfaces/AffindaAPIUpdateResthookSubscriptionDataOptionalParams.md)
 - [AffindaAPIUpdateResumeDataOptionalParams](interfaces/AffindaAPIUpdateResumeDataOptionalParams.md)
 - [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateTagDataOptionalParams](interfaces/AffindaAPIUpdateTagDataOptionalParams.md)
@@ -271,6 +279,9 @@
 - [RedactedResumeRequestBody](interfaces/RedactedResumeRequestBody.md)
 - [RequestError](interfaces/RequestError.md)
 - [RequestErrorErrorsItem](interfaces/RequestErrorErrorsItem.md)
+- [ResthookSubscription](interfaces/ResthookSubscription.md)
+- [ResthookSubscriptionCreate](interfaces/ResthookSubscriptionCreate.md)
+- [ResthookSubscriptionUpdate](interfaces/ResthookSubscriptionUpdate.md)
 - [Resume](interfaces/Resume.md)
 - [ResumeData](interfaces/ResumeData.md)
 - [ResumeDataName](interfaces/ResumeDataName.md)
@@ -339,6 +350,7 @@
 - [AffindaAPICreateJobDescriptionSearchResponse](modules.md#affindaapicreatejobdescriptionsearchresponse)
 - [AffindaAPICreateOrganizationResponse](modules.md#affindaapicreateorganizationresponse)
 - [AffindaAPICreateRedactedResumeResponse](modules.md#affindaapicreateredactedresumeresponse)
+- [AffindaAPICreateResthookSubscriptionResponse](modules.md#affindaapicreateresthooksubscriptionresponse)
 - [AffindaAPICreateResumeResponse](modules.md#affindaapicreateresumeresponse)
 - [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
 - [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
@@ -357,6 +369,7 @@
 - [AffindaAPIGetAllOrganizationMembershipsResponse](modules.md#affindaapigetallorganizationmembershipsresponse)
 - [AffindaAPIGetAllOrganizationsResponse](modules.md#affindaapigetallorganizationsresponse)
 - [AffindaAPIGetAllRedactedResumesResponse](modules.md#affindaapigetallredactedresumesresponse)
+- [AffindaAPIGetAllResthookSubscriptionsResponse](modules.md#affindaapigetallresthooksubscriptionsresponse)
 - [AffindaAPIGetAllResumesResponse](modules.md#affindaapigetallresumesresponse)
 - [AffindaAPIGetAllTagsResponse](modules.md#affindaapigetalltagsresponse)
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
@@ -375,6 +388,7 @@
 - [AffindaAPIGetOrganizationMembershipResponse](modules.md#affindaapigetorganizationmembershipresponse)
 - [AffindaAPIGetOrganizationResponse](modules.md#affindaapigetorganizationresponse)
 - [AffindaAPIGetRedactedResumeResponse](modules.md#affindaapigetredactedresumeresponse)
+- [AffindaAPIGetResthookSubscriptionResponse](modules.md#affindaapigetresthooksubscriptionresponse)
 - [AffindaAPIGetResumeResponse](modules.md#affindaapigetresumeresponse)
 - [AffindaAPIGetResumeSearchConfigResponse](modules.md#affindaapigetresumesearchconfigresponse)
 - [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
@@ -394,6 +408,7 @@
 - [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
 - [AffindaAPIUpdateOrganizationMembershipResponse](modules.md#affindaapiupdateorganizationmembershipresponse)
 - [AffindaAPIUpdateOrganizationResponse](modules.md#affindaapiupdateorganizationresponse)
+- [AffindaAPIUpdateResthookSubscriptionDataResponse](modules.md#affindaapiupdateresthooksubscriptiondataresponse)
 - [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [AffindaAPIUpdateTagDataResponse](modules.md#affindaapiupdatetagdataresponse)
@@ -409,8 +424,6 @@
 - [Enum3](modules.md#enum3)
 - [Enum6](modules.md#enum6)
 - [ExpectedRemunerationAnnotationV2](modules.md#expectedremunerationannotationv2)
-- [ExtractorFieldGroups](modules.md#extractorfieldgroups)
-- [FieldGroups](modules.md#fieldgroups)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
 - [InvitationRespondedBy](modules.md#invitationrespondedby)
@@ -459,6 +472,8 @@
 - [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
 - [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
 - [Region](modules.md#region)
+- [ResthookEvent](modules.md#resthookevent)
+- [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -469,6 +484,7 @@
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotationV2](modules.md#skillannotationv2)
 - [TextAnnotationV2](modules.md#textannotationv2)
+- [Version](modules.md#version)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotationV2](modules.md#yearsexperienceannotationv2)
 
@@ -581,6 +597,14 @@ ___
 Ƭ **AffindaAPICreateRedactedResumeResponse**: [`RedactedResume`](interfaces/RedactedResume.md)
 
 Contains response data for the createRedactedResume operation.
+
+___
+
+### AffindaAPICreateResthookSubscriptionResponse
+
+Ƭ **AffindaAPICreateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the createResthookSubscription operation.
 
 ___
 
@@ -728,6 +752,14 @@ Contains response data for the getAllRedactedResumes operation.
 
 ___
 
+### AffindaAPIGetAllResthookSubscriptionsResponse
+
+Ƭ **AffindaAPIGetAllResthookSubscriptionsResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)[]
+
+Contains response data for the getAllResthookSubscriptions operation.
+
+___
+
 ### AffindaAPIGetAllResumesResponse
 
 Ƭ **AffindaAPIGetAllResumesResponse**: [`GetAllDocumentsResultsV2`](interfaces/GetAllDocumentsResultsV2.md)
@@ -869,6 +901,14 @@ ___
 Ƭ **AffindaAPIGetRedactedResumeResponse**: [`RedactedResume`](interfaces/RedactedResume.md)
 
 Contains response data for the getRedactedResume operation.
+
+___
+
+### AffindaAPIGetResthookSubscriptionResponse
+
+Ƭ **AffindaAPIGetResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the getResthookSubscription operation.
 
 ___
 
@@ -1033,6 +1073,14 @@ ___
 Ƭ **AffindaAPIUpdateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
 
 Contains response data for the updateOrganization operation.
+
+___
+
+### AffindaAPIUpdateResthookSubscriptionDataResponse
+
+Ƭ **AffindaAPIUpdateResthookSubscriptionDataResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the updateResthookSubscriptionData operation.
 
 ___
 
@@ -1205,18 +1253,6 @@ ___
 ### ExpectedRemunerationAnnotationV2
 
 Ƭ **ExpectedRemunerationAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`ExpectedRemunerationAnnotationV2Parsed`](interfaces/ExpectedRemunerationAnnotationV2Parsed.md)  }
-
-___
-
-### ExtractorFieldGroups
-
-Ƭ **ExtractorFieldGroups**: [`FieldGroup`](interfaces/FieldGroup.md) & {}
-
-___
-
-### FieldGroups
-
-Ƭ **FieldGroups**: [`FieldGroup`](interfaces/FieldGroup.md) & {}
 
 ___
 
@@ -1568,6 +1604,45 @@ Defines values for Region. \
 
 ___
 
+### ResthookEvent
+
+Ƭ **ResthookEvent**: `string`
+
+Defines values for ResthookEvent. \
+[KnownResthookEvent](enums/KnownResthookEvent.md) can be used interchangeably with ResthookEvent,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resume.parse.succeeded** \
+**resume.parse.failed** \
+**resume.parse.completed** \
+**invoice.parse.succeeded** \
+**invoice.parse.failed** \
+**invoice.parse.completed** \
+**invoice.validate.completed** \
+**document.parse.succeeded** \
+**document.parse.failed** \
+**document.parse.completed** \
+**document.validate.completed** \
+**document.classify.succeeded** \
+**document.classify.failed** \
+**document.classify.completed**
+
+___
+
+### ResthookSubscriptionVersion
+
+Ƭ **ResthookSubscriptionVersion**: `string`
+
+Defines values for ResthookSubscriptionVersion. \
+[KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md) can be used interchangeably with ResthookSubscriptionVersion,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**v1** \
+**v2** \
+**v3**
+
+___
+
 ### ResumeSearchDetailEducationValueItem
 
 Ƭ **ResumeSearchDetailEducationValueItem**: [`Education`](interfaces/Education.md) & [`ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1`](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md) & {}
@@ -1659,6 +1734,20 @@ ___
 ### TextAnnotationV2
 
 Ƭ **TextAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: `string`  }
+
+___
+
+### Version
+
+Ƭ **Version**: `string`
+
+Defines values for Version. \
+[KnownVersion](enums/KnownVersion.md) can be used interchangeably with Version,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**v1** \
+**v2** \
+**v3**
 
 ___
 

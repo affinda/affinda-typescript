@@ -32,7 +32,7 @@ ___
 
 ### fieldGroups
 
-• `Optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)
+• `Optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
 
 ___
 

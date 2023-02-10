@@ -34,6 +34,7 @@
 - [createJobDescriptionSearchEmbedUrl](AffindaAPI.md#createjobdescriptionsearchembedurl)
 - [createOrganization](AffindaAPI.md#createorganization)
 - [createRedactedResume](AffindaAPI.md#createredactedresume)
+- [createResthookSubscription](AffindaAPI.md#createresthooksubscription)
 - [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
 - [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
@@ -52,6 +53,7 @@
 - [deleteOrganization](AffindaAPI.md#deleteorganization)
 - [deleteOrganizationMembership](AffindaAPI.md#deleteorganizationmembership)
 - [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
+- [deleteResthookSubscription](AffindaAPI.md#deleteresthooksubscription)
 - [deleteResume](AffindaAPI.md#deleteresume)
 - [deleteTag](AffindaAPI.md#deletetag)
 - [deleteWorkspace](AffindaAPI.md#deleteworkspace)
@@ -68,6 +70,7 @@
 - [getAllOrganizationMemberships](AffindaAPI.md#getallorganizationmemberships)
 - [getAllOrganizations](AffindaAPI.md#getallorganizations)
 - [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
+- [getAllResthookSubscriptions](AffindaAPI.md#getallresthooksubscriptions)
 - [getAllResumes](AffindaAPI.md#getallresumes)
 - [getAllTags](AffindaAPI.md#getalltags)
 - [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
@@ -86,6 +89,7 @@
 - [getOrganization](AffindaAPI.md#getorganization)
 - [getOrganizationMembership](AffindaAPI.md#getorganizationmembership)
 - [getRedactedResume](AffindaAPI.md#getredactedresume)
+- [getResthookSubscription](AffindaAPI.md#getresthooksubscription)
 - [getResume](AffindaAPI.md#getresume)
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
@@ -107,6 +111,7 @@
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateOrganization](AffindaAPI.md#updateorganization)
 - [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
+- [updateResthookSubscriptionData](AffindaAPI.md#updateresthooksubscriptiondata)
 - [updateResumeData](AffindaAPI.md#updateresumedata)
 - [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
 - [updateTagData](AffindaAPI.md#updatetagdata)
@@ -403,6 +408,25 @@ Uploads a resume for redacting.
 #### Returns
 
 `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
+
+___
+
+### createResthookSubscription
+
+▸ **createResthookSubscription**(`body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+Create a resthook subscriptions
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`ResthookSubscriptionCreate`](../interfaces/ResthookSubscriptionCreate.md) |  |
+| `options?` | [`AffindaAPICreateResthookSubscriptionOptionalParams`](../interfaces/AffindaAPICreateResthookSubscriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
@@ -760,6 +784,25 @@ Deletes the specified resume from the database
 
 ___
 
+### deleteResthookSubscription
+
+▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`<`void`\>
+
+Deletes the specified resthook subscription from the database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | ResthookSubscription's ID |
+| `options?` | [`AffindaAPIDeleteResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
 ### deleteResume
 
 ▸ **deleteResume**(`identifier`, `options?`): `Promise`<`void`\>
@@ -1052,6 +1095,24 @@ Returns all the redacted resume information for that resume
 #### Returns
 
 `Promise`<[`GetAllDocumentsResultsV2`](../interfaces/GetAllDocumentsResultsV2.md)\>
+
+___
+
+### getAllResthookSubscriptions
+
+▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`AffindaAPIGetAllResthookSubscriptionsResponse`](../modules.md#affindaapigetallresthooksubscriptionsresponse)\>
+
+Returns your resthook subscriptions.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetAllResthookSubscriptionsOptionalParams`](../interfaces/AffindaAPIGetAllResthookSubscriptionsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIGetAllResthookSubscriptionsResponse`](../modules.md#affindaapigetallresthooksubscriptionsresponse)\>
 
 ___
 
@@ -1403,6 +1464,25 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 #### Returns
 
 `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
+
+___
+
+### getResthookSubscription
+
+▸ **getResthookSubscription**(`id`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+Return a specific resthook subscription.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Resthook subscription's ID |
+| `options?` | [`AffindaAPIGetResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIGetResthookSubscriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
@@ -1833,6 +1913,26 @@ The admin users can use this endpoint to update the role of the members within t
 #### Returns
 
 `Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+
+___
+
+### updateResthookSubscriptionData
+
+▸ **updateResthookSubscriptionData**(`id`, `body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+Update data of a resthook subscription.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | ResthookSubscription's ID |
+| `body` | [`ResthookSubscriptionUpdate`](../interfaces/ResthookSubscriptionUpdate.md) | ResthookSubscription data to update |
+| `options?` | [`AffindaAPIUpdateResthookSubscriptionDataOptionalParams`](../interfaces/AffindaAPIUpdateResthookSubscriptionDataOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
