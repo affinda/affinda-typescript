@@ -10,7 +10,6 @@
 - [category](Extractor.md#category)
 - [createdDt](Extractor.md#createddt)
 - [fieldGroups](Extractor.md#fieldgroups)
-- [id](Extractor.md#id)
 - [identifier](Extractor.md#identifier)
 - [isCustom](Extractor.md#iscustom)
 - [name](Extractor.md#name)
@@ -44,17 +43,11 @@ ___
 
 ___
 
-### id
-
-• **id**: `number`
-
-Extractor's ID.
-
-___
-
 ### identifier
 
 • **identifier**: `string`
+
+Uniquely identify an extractor.
 
 ___
 

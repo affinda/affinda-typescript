@@ -1392,8 +1392,7 @@ export interface PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplication
 }
 
 export interface Extractor {
-  /** Extractor's ID. */
-  id: number;
+  /** Uniquely identify an extractor. */
   identifier: string;
   name: string;
   namePlural: string;
@@ -1407,7 +1406,7 @@ export interface Extractor {
 }
 
 export interface ExtractorBaseExtractor {
-  id: number;
+  /** Uniquely identify an extractor. */
   identifier: string;
   name: string;
   namePlural: string;
@@ -1434,8 +1433,8 @@ export interface Field {
 export interface ExtractorCreate {
   name: string;
   namePlural?: string;
-  /** The base extractor's ID. */
-  baseExtractor?: number;
+  /** Uniquely identify an extractor. */
+  baseExtractor?: string;
   /** Uniquely identify an organization. */
   organization: string;
   category?: string;
@@ -1446,8 +1445,8 @@ export interface ExtractorCreate {
 export interface ExtractorUpdate {
   name?: string;
   namePlural?: string;
-  /** The base extractor's ID. */
-  baseExtractor?: number;
+  /** Uniquely identify an extractor. */
+  baseExtractor?: string;
   category?: string;
   validatable?: boolean;
   fieldGroups?: FieldGroup[];
@@ -1461,8 +1460,8 @@ export interface DataPoint {
   description?: string;
   annotationContentType: AnnotationContentType;
   organization?: Organization;
-  /** Extractor's ID. */
-  extractor: number | null;
+  /** Uniquely identify an extractor. */
+  extractor: string | null;
   multiple?: boolean;
   noRect?: boolean;
   similarTo?: string[];
@@ -1477,8 +1476,8 @@ export interface DataPointCreate {
   annotationContentType: AnnotationContentType;
   /** Uniquely identify an organization. */
   organization: string;
-  /** Extractor's ID. */
-  extractor: number;
+  /** Uniquely identify an extractor. */
+  extractor: string;
   multiple?: boolean;
   noRect?: boolean;
 }
@@ -1529,8 +1528,7 @@ export interface WorkspaceCollectionsItem {
 }
 
 export interface WorkspaceCollectionsItemExtractor {
-  /** Extractor's ID. */
-  id: number;
+  /** Uniquely identify an extractor. */
   identifier: string;
   name: string;
   namePlural: string;
@@ -1542,7 +1540,7 @@ export interface WorkspaceCollectionsItemExtractor {
 }
 
 export interface BaseExtractor {
-  id: number;
+  /** Uniquely identify an extractor. */
   identifier: string;
   name: string;
   namePlural: string;
@@ -1629,8 +1627,8 @@ export interface CollectionCreate {
   name: string;
   /** Uniquely identify a workspace. */
   workspace: string;
-  /** Extractor's ID. */
-  extractor: number;
+  /** Uniquely identify an extractor. */
+  extractor: string;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
   dateFormatPreference?: DateFormatPreference;
@@ -1729,12 +1727,11 @@ export interface DocumentMetaCollection {
 }
 
 export interface DocumentMetaCollectionExtractor {
-  /** Extractor's ID. */
-  id?: number;
+  /** Uniquely identify an extractor. */
   identifier?: string;
   name?: string;
-  /** Base extractor's ID. */
-  baseExtractor?: number;
+  /** Base extractor's identifier. */
+  baseExtractor?: string;
   validatable?: boolean;
 }
 
@@ -3165,7 +3162,7 @@ export interface AffindaAPIGetAllDataPointsOptionalParams
   /** Filter by organization. */
   organization?: string;
   /** Filter by extractor. */
-  extractor?: number;
+  extractor?: string;
   /** Filter by slug. */
   slug?: string;
   /** Filter by description. */

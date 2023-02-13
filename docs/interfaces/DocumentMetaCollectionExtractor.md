@@ -7,7 +7,6 @@
 ### Properties
 
 - [baseExtractor](DocumentMetaCollectionExtractor.md#baseextractor)
-- [id](DocumentMetaCollectionExtractor.md#id)
 - [identifier](DocumentMetaCollectionExtractor.md#identifier)
 - [name](DocumentMetaCollectionExtractor.md#name)
 - [validatable](DocumentMetaCollectionExtractor.md#validatable)
@@ -16,23 +15,17 @@
 
 ### baseExtractor
 
-• `Optional` **baseExtractor**: `number`
+• `Optional` **baseExtractor**: `string`
 
-Base extractor's ID.
-
-___
-
-### id
-
-• `Optional` **id**: `number`
-
-Extractor's ID.
+Base extractor's identifier.
 
 ___
 
 ### identifier
 
 • `Optional` **identifier**: `string`
+
+Uniquely identify an extractor.
 
 ___
 

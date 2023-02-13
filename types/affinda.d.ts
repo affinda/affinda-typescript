@@ -423,23 +423,23 @@ export declare class AffindaAPI extends AffindaAPIContext {
     createExtractor(options?: AffindaAPICreateExtractorOptionalParams): Promise<AffindaAPICreateExtractorResponse>;
     /**
      * Return a specific extractor.
-     * @param id Extractor's ID
+     * @param identifier Extractor's identifier
      * @param options The options parameters.
      */
-    getExtractor(id: number, options?: AffindaAPIGetExtractorOptionalParams): Promise<AffindaAPIGetExtractorResponse>;
+    getExtractor(identifier: string, options?: AffindaAPIGetExtractorOptionalParams): Promise<AffindaAPIGetExtractorResponse>;
     /**
      * Update data of an extractor.
-     * @param id Extractor's ID
+     * @param identifier Extractor's identifier
      * @param body Extractor data to update
      * @param options The options parameters.
      */
-    updateExtractorData(id: number, body: ExtractorUpdate, options?: AffindaAPIUpdateExtractorDataOptionalParams): Promise<AffindaAPIUpdateExtractorDataResponse>;
+    updateExtractorData(identifier: string, body: ExtractorUpdate, options?: AffindaAPIUpdateExtractorDataOptionalParams): Promise<AffindaAPIUpdateExtractorDataResponse>;
     /**
      * Deletes the specified extractor from the database.
-     * @param id Extractor's ID
+     * @param identifier Extractor's identifier
      * @param options The options parameters.
      */
-    deleteExtractor(id: number, options?: AffindaAPIDeleteExtractorOptionalParams): Promise<void>;
+    deleteExtractor(identifier: string, options?: AffindaAPIDeleteExtractorOptionalParams): Promise<void>;
     /**
      * Returns your custom data points as well as Affinda's off-the-shelf data points.
      * @param options The options parameters.
@@ -973,7 +973,7 @@ export declare interface AffindaAPIGetAllDataPointsOptionalParams extends coreCl
     /** Filter by organization. */
     organization?: string;
     /** Filter by extractor. */
-    extractor?: number;
+    extractor?: string;
     /** Filter by slug. */
     slug?: string;
     /** Filter by description. */
@@ -1582,7 +1582,7 @@ export declare function asJobDescription(doc: Document): JobDescription;
 export declare function asResume(doc: Document): Resume;
 
 export declare interface BaseExtractor {
-    id: number;
+    /** Uniquely identify an extractor. */
     identifier: string;
     name: string;
     namePlural: string;
@@ -1618,8 +1618,8 @@ export declare interface CollectionCreate {
     name: string;
     /** Uniquely identify a workspace. */
     workspace: string;
-    /** Extractor's ID. */
-    extractor: number;
+    /** Uniquely identify an extractor. */
+    extractor: string;
     autoValidationThreshold?: number;
     fields?: FieldGroup[];
     dateFormatPreference?: DateFormatPreference;
@@ -1866,8 +1866,8 @@ export declare interface DataPoint {
     description?: string;
     annotationContentType: AnnotationContentType;
     organization?: Organization;
-    /** Extractor's ID. */
-    extractor: number | null;
+    /** Uniquely identify an extractor. */
+    extractor: string | null;
     multiple?: boolean;
     noRect?: boolean;
     similarTo?: string[];
@@ -1888,8 +1888,8 @@ export declare interface DataPointCreate {
     annotationContentType: AnnotationContentType;
     /** Uniquely identify an organization. */
     organization: string;
-    /** Extractor's ID. */
-    extractor: number;
+    /** Uniquely identify an extractor. */
+    extractor: string;
     multiple?: boolean;
     noRect?: boolean;
 }
@@ -2017,12 +2017,11 @@ export declare interface DocumentMetaCollection {
 }
 
 export declare interface DocumentMetaCollectionExtractor {
-    /** Extractor's ID. */
-    id?: number;
+    /** Uniquely identify an extractor. */
     identifier?: string;
     name?: string;
-    /** Base extractor's ID. */
-    baseExtractor?: number;
+    /** Base extractor's identifier. */
+    baseExtractor?: string;
     validatable?: boolean;
 }
 
@@ -2139,8 +2138,7 @@ export declare interface ExperienceSearchScoreComponent {
 }
 
 export declare interface Extractor {
-    /** Extractor's ID. */
-    id: number;
+    /** Uniquely identify an extractor. */
     identifier: string;
     name: string;
     namePlural: string;
@@ -2154,7 +2152,7 @@ export declare interface Extractor {
 }
 
 export declare interface ExtractorBaseExtractor {
-    id: number;
+    /** Uniquely identify an extractor. */
     identifier: string;
     name: string;
     namePlural: string;
@@ -2166,8 +2164,8 @@ export declare interface ExtractorBaseExtractor {
 export declare interface ExtractorCreate {
     name: string;
     namePlural?: string;
-    /** The base extractor's ID. */
-    baseExtractor?: number;
+    /** Uniquely identify an extractor. */
+    baseExtractor?: string;
     /** Uniquely identify an organization. */
     organization: string;
     category?: string;
@@ -2178,8 +2176,8 @@ export declare interface ExtractorCreate {
 export declare interface ExtractorUpdate {
     name?: string;
     namePlural?: string;
-    /** The base extractor's ID. */
-    baseExtractor?: number;
+    /** Uniquely identify an extractor. */
+    baseExtractor?: string;
     category?: string;
     validatable?: boolean;
     fieldGroups?: FieldGroup[];
@@ -3951,8 +3949,7 @@ export declare interface WorkspaceCollectionsItem {
 }
 
 export declare interface WorkspaceCollectionsItemExtractor {
-    /** Extractor's ID. */
-    id: number;
+    /** Uniquely identify an extractor. */
     identifier: string;
     name: string;
     namePlural: string;

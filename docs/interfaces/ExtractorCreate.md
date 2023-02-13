@@ -18,9 +18,9 @@
 
 ### baseExtractor
 
-• `Optional` **baseExtractor**: `number`
+• `Optional` **baseExtractor**: `string`
 
-The base extractor's ID.
+Uniquely identify an extractor.
 
 ___
 

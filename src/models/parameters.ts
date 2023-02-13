@@ -834,7 +834,7 @@ export const extractor: OperationQueryParameter = {
     serializedName: "extractor",
     xmlName: "extractor",
     type: {
-      name: "Number"
+      name: "String"
     }
   }
 };

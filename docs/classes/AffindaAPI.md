@@ -612,7 +612,7 @@ ___
 
 ### deleteExtractor
 
-▸ **deleteExtractor**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteExtractor**(`identifier`, `options?`): `Promise`<`void`\>
 
 Deletes the specified extractor from the database.
 
@@ -620,7 +620,7 @@ Deletes the specified extractor from the database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | `number` | Extractor's ID |
+| `identifier` | `string` | Extractor's identifier |
 | `options?` | [`AffindaAPIDeleteExtractorOptionalParams`](../interfaces/AffindaAPIDeleteExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1267,7 +1267,7 @@ ___
 
 ### getExtractor
 
-▸ **getExtractor**(`id`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+▸ **getExtractor**(`identifier`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
 
 Return a specific extractor.
 
@@ -1275,7 +1275,7 @@ Return a specific extractor.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | `number` | Extractor's ID |
+| `identifier` | `string` | Extractor's identifier |
 | `options?` | [`AffindaAPIGetExtractorOptionalParams`](../interfaces/AffindaAPIGetExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1818,7 +1818,7 @@ ___
 
 ### updateExtractorData
 
-▸ **updateExtractorData**(`id`, `body`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+▸ **updateExtractorData**(`identifier`, `body`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
 
 Update data of an extractor.
 
@@ -1826,7 +1826,7 @@ Update data of an extractor.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | `number` | Extractor's ID |
+| `identifier` | `string` | Extractor's identifier |
 | `body` | [`ExtractorUpdate`](../interfaces/ExtractorUpdate.md) | Extractor data to update |
 | `options?` | [`AffindaAPIUpdateExtractorDataOptionalParams`](../interfaces/AffindaAPIUpdateExtractorDataOptionalParams.md) | The options parameters. |
 

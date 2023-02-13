@@ -47,9 +47,9 @@ ___
 
 ### extractor
 
-• **extractor**: ``null`` \| `number`
+• **extractor**: ``null`` \| `string`
 
-Extractor's ID.
+Uniquely identify an extractor.
 
 ___
 

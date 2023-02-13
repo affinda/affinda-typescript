@@ -39,9 +39,9 @@ ___
 
 ### extractor
 
-• **extractor**: `number`
+• **extractor**: `string`
 
-Extractor's ID.
+Uniquely identify an extractor.
 
 ___
 

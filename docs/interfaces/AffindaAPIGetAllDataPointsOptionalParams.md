@@ -59,7 +59,7 @@ ___
 
 ### extractor
 
-• `Optional` **extractor**: `number`
+• `Optional` **extractor**: `string`
 
 Filter by extractor.
 

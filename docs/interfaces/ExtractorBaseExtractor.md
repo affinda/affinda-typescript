@@ -7,7 +7,6 @@
 ### Properties
 
 - [createdDt](ExtractorBaseExtractor.md#createddt)
-- [id](ExtractorBaseExtractor.md#id)
 - [identifier](ExtractorBaseExtractor.md#identifier)
 - [isCustom](ExtractorBaseExtractor.md#iscustom)
 - [name](ExtractorBaseExtractor.md#name)
@@ -22,15 +21,11 @@
 
 ___
 
-### id
-
-• **id**: `number`
-
-___
-
 ### identifier
 
 • **identifier**: `string`
+
+Uniquely identify an extractor.
 
 ___
 

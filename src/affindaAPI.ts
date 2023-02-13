@@ -1121,47 +1121,47 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Return a specific extractor.
-   * @param id Extractor's ID
+   * @param identifier Extractor's identifier
    * @param options The options parameters.
    */
   getExtractor(
-    id: number,
+    identifier: string,
     options?: AffindaAPIGetExtractorOptionalParams
   ): Promise<AffindaAPIGetExtractorResponse> {
     return this.sendOperationRequest(
-      { id, options },
+      { identifier, options },
       getExtractorOperationSpec
     );
   }
 
   /**
    * Update data of an extractor.
-   * @param id Extractor's ID
+   * @param identifier Extractor's identifier
    * @param body Extractor data to update
    * @param options The options parameters.
    */
   updateExtractorData(
-    id: number,
+    identifier: string,
     body: ExtractorUpdate,
     options?: AffindaAPIUpdateExtractorDataOptionalParams
   ): Promise<AffindaAPIUpdateExtractorDataResponse> {
     return this.sendOperationRequest(
-      { id, body, options },
+      { identifier, body, options },
       updateExtractorDataOperationSpec
     );
   }
 
   /**
    * Deletes the specified extractor from the database.
-   * @param id Extractor's ID
+   * @param identifier Extractor's identifier
    * @param options The options parameters.
    */
   deleteExtractor(
-    id: number,
+    identifier: string,
     options?: AffindaAPIDeleteExtractorOptionalParams
   ): Promise<void> {
     return this.sendOperationRequest(
-      { id, options },
+      { identifier, options },
       deleteExtractorOperationSpec
     );
   }
@@ -3123,7 +3123,7 @@ const createExtractorOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getExtractorOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors/{id}",
+  path: "/v3/extractors/{identifier}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -3141,12 +3141,12 @@ const getExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };
 const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors/{id}",
+  path: "/v3/extractors/{identifier}",
   httpMethod: "PATCH",
   responses: {
     200: {
@@ -3165,13 +3165,13 @@ const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body15,
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
 };
 const deleteExtractorOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors/{id}",
+  path: "/v3/extractors/{identifier}",
   httpMethod: "DELETE",
   responses: {
     204: {},
@@ -3187,7 +3187,7 @@ const deleteExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer
 };

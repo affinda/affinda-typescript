@@ -9,7 +9,6 @@
 - [baseExtractor](WorkspaceCollectionsItemExtractor.md#baseextractor)
 - [category](WorkspaceCollectionsItemExtractor.md#category)
 - [createdDt](WorkspaceCollectionsItemExtractor.md#createddt)
-- [id](WorkspaceCollectionsItemExtractor.md#id)
 - [identifier](WorkspaceCollectionsItemExtractor.md#identifier)
 - [isCustom](WorkspaceCollectionsItemExtractor.md#iscustom)
 - [name](WorkspaceCollectionsItemExtractor.md#name)
@@ -36,17 +35,11 @@ ___
 
 ___
 
-### id
-
-• **id**: `number`
-
-Extractor's ID.
-
-___
-
 ### identifier
 
 • **identifier**: `string`
+
+Uniquely identify an extractor.
 
 ___
 

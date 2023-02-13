@@ -7809,14 +7809,6 @@ export const Extractor: coreClient.CompositeMapper = {
     name: "Composite",
     className: "Extractor",
     modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
       identifier: {
         serializedName: "identifier",
         required: true,
@@ -7912,14 +7904,6 @@ export const ExtractorBaseExtractor: coreClient.CompositeMapper = {
     name: "Composite",
     className: "ExtractorBaseExtractor",
     modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
       identifier: {
         serializedName: "identifier",
         required: true,
@@ -8097,7 +8081,7 @@ export const ExtractorCreate: coreClient.CompositeMapper = {
         serializedName: "baseExtractor",
         xmlName: "baseExtractor",
         type: {
-          name: "Number"
+          name: "String"
         }
       },
       organization: {
@@ -8166,7 +8150,7 @@ export const ExtractorUpdate: coreClient.CompositeMapper = {
         serializedName: "baseExtractor",
         xmlName: "baseExtractor",
         type: {
-          name: "Number"
+          name: "String"
         }
       },
       category: {
@@ -8262,7 +8246,7 @@ export const DataPoint: coreClient.CompositeMapper = {
         nullable: true,
         xmlName: "extractor",
         type: {
-          name: "Number"
+          name: "String"
         }
       },
       multiple: {
@@ -8367,7 +8351,7 @@ export const DataPointCreate: coreClient.CompositeMapper = {
         required: true,
         xmlName: "extractor",
         type: {
-          name: "Number"
+          name: "String"
         }
       },
       multiple: {
@@ -8632,14 +8616,6 @@ export const WorkspaceCollectionsItemExtractor: coreClient.CompositeMapper = {
     name: "Composite",
     className: "WorkspaceCollectionsItemExtractor",
     modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
       identifier: {
         serializedName: "identifier",
         required: true,
@@ -8712,14 +8688,6 @@ export const BaseExtractor: coreClient.CompositeMapper = {
     name: "Composite",
     className: "BaseExtractor",
     modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
       identifier: {
         serializedName: "identifier",
         required: true,
@@ -9135,7 +9103,7 @@ export const CollectionCreate: coreClient.CompositeMapper = {
         required: true,
         xmlName: "extractor",
         type: {
-          name: "Number"
+          name: "String"
         }
       },
       autoValidationThreshold: {
@@ -9647,13 +9615,6 @@ export const DocumentMetaCollectionExtractor: coreClient.CompositeMapper = {
     name: "Composite",
     className: "DocumentMetaCollectionExtractor",
     modelProperties: {
-      id: {
-        serializedName: "id",
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
       identifier: {
         serializedName: "identifier",
         xmlName: "identifier",
@@ -9673,7 +9634,7 @@ export const DocumentMetaCollectionExtractor: coreClient.CompositeMapper = {
         nullable: true,
         xmlName: "baseExtractor",
         type: {
-          name: "Number"
+          name: "String"
         }
       },
       validatable: {
