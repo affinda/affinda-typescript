@@ -1059,6 +1059,17 @@ export const exclude: OperationQueryParameter = {
   }
 };
 
+export const inReview: OperationQueryParameter = {
+  parameterPath: ["options", "inReview"],
+  mapper: {
+    serializedName: "in_review",
+    xmlName: "in_review",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const collection1: OperationParameter = {
   parameterPath: ["options", "collection"],
   mapper: {

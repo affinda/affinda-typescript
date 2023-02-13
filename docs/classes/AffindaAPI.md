@@ -1100,7 +1100,7 @@ ___
 
 ### getAllResthookSubscriptions
 
-▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`AffindaAPIGetAllResthookSubscriptionsResponse`](../modules.md#affindaapigetallresthooksubscriptionsresponse)\>
+▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 Returns your resthook subscriptions.
 
@@ -1112,7 +1112,7 @@ Returns your resthook subscriptions.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllResthookSubscriptionsResponse`](../modules.md#affindaapigetallresthooksubscriptionsresponse)\>
+`Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 ___
 

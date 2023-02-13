@@ -2553,14 +2553,8 @@ const getAllResthookSubscriptionsOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Composite", className: "ResthookSubscription" }
-          }
-        }
-      }
+      bodyMapper:
+        Mappers.PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -3733,7 +3727,8 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.createdDt,
     Parameters.ordering,
     Parameters.includeData,
-    Parameters.exclude
+    Parameters.exclude,
+    Parameters.inReview
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],

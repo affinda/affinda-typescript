@@ -4294,7 +4294,6 @@ export const LocationSearchScoreComponent: coreClient.CompositeMapper = {
     modelProperties: {
       value: {
         serializedName: "value",
-        nullable: true,
         xmlName: "value",
         type: {
           name: "String"
@@ -7248,6 +7247,66 @@ export const PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJs
   }
 };
 
+export const PaginatedResponse: coreClient.CompositeMapper = {
+  serializedName: "PaginatedResponse",
+  type: {
+    name: "Composite",
+    className: "PaginatedResponse",
+    modelProperties: {
+      count: {
+        serializedName: "count",
+        required: true,
+        xmlName: "count",
+        type: {
+          name: "Number"
+        }
+      },
+      next: {
+        serializedName: "next",
+        nullable: true,
+        xmlName: "next",
+        type: {
+          name: "String"
+        }
+      },
+      previous: {
+        serializedName: "previous",
+        nullable: true,
+        xmlName: "previous",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  serializedName:
+    "Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1",
+  type: {
+    name: "Composite",
+    className:
+      "Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        xmlName: "results",
+        xmlElementName: "ResthookSubscription",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResthookSubscription"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
 export const ResthookSubscription: coreClient.CompositeMapper = {
   serializedName: "ResthookSubscription",
   type: {
@@ -7433,40 +7492,6 @@ export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
       version: {
         serializedName: "version",
         xmlName: "version",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const PaginatedResponse: coreClient.CompositeMapper = {
-  serializedName: "PaginatedResponse",
-  type: {
-    name: "Composite",
-    className: "PaginatedResponse",
-    modelProperties: {
-      count: {
-        serializedName: "count",
-        required: true,
-        xmlName: "count",
-        type: {
-          name: "Number"
-        }
-      },
-      next: {
-        serializedName: "next",
-        nullable: true,
-        xmlName: "next",
-        type: {
-          name: "String"
-        }
-      },
-      previous: {
-        serializedName: "previous",
-        nullable: true,
-        xmlName: "previous",
         type: {
           name: "String"
         }
@@ -11025,6 +11050,21 @@ export const ResumeSearchDetailLanguagesValueItem: coreClient.CompositeMapper = 
     modelProperties: {
       ...ResumeSkill.type.modelProperties,
       ...Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  serializedName:
+    "PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema",
+  type: {
+    name: "Composite",
+    className:
+      "PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }

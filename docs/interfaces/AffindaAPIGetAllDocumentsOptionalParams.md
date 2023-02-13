@@ -18,6 +18,7 @@ Optional parameters.
 - [collection](AffindaAPIGetAllDocumentsOptionalParams.md#collection)
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
 - [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
+- [inReview](AffindaAPIGetAllDocumentsOptionalParams.md#inreview)
 - [includeData](AffindaAPIGetAllDocumentsOptionalParams.md#includedata)
 - [limit](AffindaAPIGetAllDocumentsOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllDocumentsOptionalParams.md#offset)
@@ -66,6 +67,14 @@ ___
 • `Optional` **exclude**: `string`[]
 
 Exclude some documents from the result.
+
+___
+
+### inReview
+
+• `Optional` **inReview**: `boolean`
+
+Exclude documents that are currently being reviewed.
 
 ___
 

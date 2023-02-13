@@ -1009,6 +1009,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     includeData?: boolean;
     /** Exclude some documents from the result. */
     exclude?: string[];
+    /** Exclude documents that are currently being reviewed. */
+    inReview?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -1128,7 +1130,7 @@ export declare interface AffindaAPIGetAllResthookSubscriptionsOptionalParams ext
 }
 
 /** Contains response data for the getAllResthookSubscriptions operation. */
-export declare type AffindaAPIGetAllResthookSubscriptionsResponse = ResthookSubscription[];
+export declare type AffindaAPIGetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllResumesOptionalParams extends coreClient.OperationOptions {
@@ -3134,6 +3136,10 @@ export declare interface Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentA
     document?: string;
 }
 
+export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: ResthookSubscription[];
+}
+
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
     documentType?: Enum6;
@@ -3191,6 +3197,8 @@ export declare interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentAp
 }
 
 export declare type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export declare type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = ListResult & Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 

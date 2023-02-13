@@ -1266,6 +1266,19 @@ export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicati
   document?: string;
 }
 
+export interface PaginatedResponse {
+  /** Number of items in results. */
+  count: number;
+  /** URL to request next page of results. */
+  next?: string;
+  /** URL to request previous page of results. */
+  previous?: string;
+}
+
+export interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: ResthookSubscription[];
+}
+
 export interface ResthookSubscription {
   /** Resthook subscription's ID. */
   id?: number;
@@ -1314,15 +1327,6 @@ export interface ResthookSubscriptionUpdate {
   organization?: string;
   /** Version of the resthook subscription. Determines the resthook body being fired. */
   version?: Version;
-}
-
-export interface PaginatedResponse {
-  /** Number of items in results. */
-  count: number;
-  /** URL to request next page of results. */
-  next?: string;
-  /** URL to request previous page of results. */
-  previous?: string;
 }
 
 export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -2059,6 +2063,9 @@ export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
 
 export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
   Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
+
+export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -2946,7 +2953,7 @@ export interface AffindaAPIGetAllResthookSubscriptionsOptionalParams
 }
 
 /** Contains response data for the getAllResthookSubscriptions operation. */
-export type AffindaAPIGetAllResthookSubscriptionsResponse = ResthookSubscription[];
+export type AffindaAPIGetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateResthookSubscriptionOptionalParams
@@ -3337,6 +3344,8 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   includeData?: boolean;
   /** Exclude some documents from the result. */
   exclude?: string[];
+  /** Exclude documents that are currently being reviewed. */
+  inReview?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
