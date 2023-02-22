@@ -108,6 +108,7 @@
 - [updateDocumentData](AffindaAPI.md#updatedocumentdata)
 - [updateExtractorData](AffindaAPI.md#updateextractordata)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
+- [updateJobDescriptionData](AffindaAPI.md#updatejobdescriptiondata)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateOrganization](AffindaAPI.md#updateorganization)
 - [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
@@ -321,7 +322,9 @@ Uploads a job description for parsing.
 When successful, returns an `identifier` in the response for subsequent use with the
 [/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
 status and retrieve results.
-Job Descriptions can be uploaded as a file or a URL.
+Job Descriptions can be uploaded as a file or a URL. In addition, data can be added directly if
+users want to upload directly without parsing any resume file. For uploading resume data, the `data`
+argument provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
 
 #### Parameters
 
@@ -1853,6 +1856,28 @@ Update the detail of an invitation.
 #### Returns
 
 `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+
+___
+
+### updateJobDescriptionData
+
+▸ **updateJobDescriptionData**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
+
+Update data of a job description.
+The `identifier` is the unique ID returned after POST-ing the job description via the
+[/job_descriptions](#post-/job_descriptions) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Job description identifier |
+| `body` | ``null`` \| [`JobDescriptionDataUpdate`](../interfaces/JobDescriptionDataUpdate.md) | Job description data to update |
+| `options?` | [`AffindaAPIUpdateJobDescriptionDataOptionalParams`](../interfaces/AffindaAPIUpdateJobDescriptionDataOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
 
 ___
 

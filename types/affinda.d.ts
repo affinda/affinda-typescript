@@ -122,7 +122,9 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * When successful, returns an `identifier` in the response for subsequent use with the
      * [/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
      * status and retrieve results.
-     * Job Descriptions can be uploaded as a file or a URL.
+     * Job Descriptions can be uploaded as a file or a URL. In addition, data can be added directly if
+     * users want to upload directly without parsing any resume file. For uploading resume data, the `data`
+     * argument provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
      * @param options The options parameters.
      */
     createJobDescription(options?: AffindaAPICreateJobDescriptionOptionalParams): Promise<AffindaAPICreateJobDescriptionResponse>;
@@ -134,6 +136,15 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     getJobDescription(identifier: string, options?: AffindaAPIGetJobDescriptionOptionalParams): Promise<AffindaAPIGetJobDescriptionResponse>;
+    /**
+     * Update data of a job description.
+     * The `identifier` is the unique ID returned after POST-ing the job description via the
+     * [/job_descriptions](#post-/job_descriptions) endpoint.
+     * @param identifier Job description identifier
+     * @param body Job description data to update
+     * @param options The options parameters.
+     */
+    updateJobDescriptionData(identifier: string, body: JobDescriptionDataUpdate | null, options?: AffindaAPIUpdateJobDescriptionDataOptionalParams): Promise<AffindaAPIUpdateJobDescriptionDataResponse>;
     /**
      * Deletes the specified job description from the database
      * @param identifier Document identifier
@@ -1442,6 +1453,13 @@ export declare interface AffindaAPIUpdateInvitationOptionalParams extends coreCl
 export declare type AffindaAPIUpdateInvitationResponse = Invitation;
 
 /** Optional parameters. */
+export declare interface AffindaAPIUpdateJobDescriptionDataOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateJobDescriptionData operation. */
+export declare type AffindaAPIUpdateJobDescriptionDataResponse = JobDescriptionData;
+
+/** Optional parameters. */
 export declare interface AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1508,27 +1526,6 @@ export declare class AffindaCredential implements TokenCredential {
     getToken(scopes: string | string[], options?: GetTokenOptions): Promise<AccessToken | null>;
 }
 
-export declare interface Annotation {
-    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-    [property: string]: any;
-    id: number;
-    rectangle: Rectangle | null;
-    rectangles: Rectangle[] | null;
-    pageIndex: number | null;
-    raw: string | null;
-    /** The overall confidence that the model's prediction is correct */
-    confidence: number | null;
-    /** The model's confidence that the text has been classified correctly */
-    classificationConfidence: number | null;
-    /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
-    textExtractionConfidence: number | null;
-    isVerified: boolean;
-    isClientVerified: boolean;
-    isAutoVerified: boolean;
-    dataPoint: string;
-    contentType: string;
-}
-
 /**
  * Defines values for AnnotationContentType. \
  * {@link KnownAnnotationContentType} can be used interchangeably with AnnotationContentType,
@@ -1573,6 +1570,27 @@ export declare interface AnnotationV2 {
     isAutoVerified: boolean;
     dataPoint?: string;
     contentType: string;
+}
+
+export declare interface AnnotationV2Base {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
+    id?: number;
+    rectangle?: Rectangle;
+    rectangles?: Rectangle[];
+    pageIndex?: number;
+    raw?: string;
+    /** The overall confidence that the model's prediction is correct */
+    confidence?: number;
+    /** The model's confidence that the text has been classified correctly */
+    classificationConfidence?: number;
+    /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+    textExtractionConfidence?: number;
+    isVerified?: boolean;
+    isClientVerified?: boolean;
+    isAutoVerified?: boolean;
+    dataPoint?: string;
+    contentType?: string;
 }
 
 export declare function asInvoice(doc: Document): Invoice;
@@ -1900,11 +1918,11 @@ export declare interface DataPointUpdate {
     description?: string;
 }
 
-export declare type DateAnnotation = Annotation & {
+export declare type DateAnnotationV2 = AnnotationV2 & {
     parsed?: Date;
 };
 
-export declare type DateAnnotationV2 = AnnotationV2 & {
+export declare type DateAnnotationV2Update = AnnotationV2Base & {
     parsed?: Date;
 };
 
@@ -2125,6 +2143,17 @@ export declare type ExpectedRemunerationAnnotationV2 = AnnotationV2 & {
 };
 
 export declare interface ExpectedRemunerationAnnotationV2Parsed {
+    minimum?: number;
+    maximum?: number;
+    currency?: string;
+    unit?: string;
+}
+
+export declare type ExpectedRemunerationAnnotationV2Update = AnnotationV2Base & {
+    parsed?: ExpectedRemunerationAnnotationV2UpdateParsed;
+};
+
+export declare interface ExpectedRemunerationAnnotationV2UpdateParsed {
     minimum?: number;
     maximum?: number;
     currency?: string;
@@ -2444,18 +2473,20 @@ export declare interface InvoiceRequestBody {
 }
 
 export declare interface JobDescription {
+    /** A JSON-encoded string of the `JobDescriptionData` object. */
     data: JobDescriptionData | null;
     meta: Meta;
     error: ErrorModel;
 }
 
+/** A JSON-encoded string of the `JobDescriptionData` object. */
 export declare interface JobDescriptionData {
     jobTitle?: JobTitleAnnotation;
     contactEmail?: TextAnnotationV2;
     contactName?: TextAnnotationV2;
     contactPhone?: TextAnnotationV2;
-    startDate?: DateAnnotation;
-    endDate?: DateAnnotation;
+    startDate?: DateAnnotationV2;
+    endDate?: DateAnnotationV2;
     jobType?: TextAnnotationV2;
     languages?: (LanguageAnnotationV2 | null)[];
     skills?: (SkillAnnotationV2 | null)[];
@@ -2467,6 +2498,27 @@ export declare interface JobDescriptionData {
     location?: LocationAnnotationV2;
     certifications?: (TextAnnotationV2 | null)[];
     yearsExperience?: YearsExperienceAnnotationV2;
+}
+
+/** A JSON-encoded string of the `JobDescriptionData` object. */
+export declare interface JobDescriptionDataUpdate {
+    jobTitle?: JobTitleAnnotationUpdate;
+    contactEmail?: TextAnnotationV2Update;
+    contactName?: TextAnnotationV2Update;
+    contactPhone?: TextAnnotationV2Update;
+    startDate?: DateAnnotationV2Update;
+    endDate?: DateAnnotationV2Update;
+    jobType?: TextAnnotationV2Update;
+    languages?: (LanguageAnnotationV2Update | null)[];
+    skills?: (SkillAnnotationV2Update | null)[];
+    organizationName?: TextAnnotationV2Update;
+    organizationWebsite?: TextAnnotationV2Update;
+    educationLevel?: TextAnnotationV2Update;
+    educationAccreditation?: TextAnnotationV2Update;
+    expectedRemuneration?: ExpectedRemunerationAnnotationV2Update;
+    location?: LocationAnnotationV2Update;
+    certifications?: (TextAnnotationV2Update | null)[];
+    yearsExperience?: YearsExperienceAnnotationV2Update;
 }
 
 /** JobDescriptionRequestBody */
@@ -2695,24 +2747,31 @@ export declare interface JobDescriptionSearchResult {
     organizationName: string | null;
 }
 
-export declare type JobTitleAnnotation = AnnotationV2 & {
-    /** Years of experience range */
-    parsed?: JobTitleAnnotationParsed;
-};
+export declare type JobTitleAnnotation = AnnotationV2 & JobTitleParsed & {};
 
-/** Years of experience range */
-export declare interface JobTitleAnnotationParsed {
-    name?: string;
-    managementLevel?: string;
-    classification?: JobTitleAnnotationParsedClassification;
+export declare type JobTitleAnnotationUpdate = AnnotationV2Base & JobTitleParsed & {};
+
+export declare interface JobTitleParsed {
+    /**
+     * Matching job title to extracted text
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly parsed?: JobTitleParsedParsed;
 }
 
-export declare interface JobTitleAnnotationParsedClassification {
+export declare interface JobTitleParsedClassification {
     socCode?: number;
     title?: string;
     minorGroup?: string;
     subMajorGroup?: string;
     majorGroup?: string;
+}
+
+/** Matching job title to extracted text */
+export declare interface JobTitleParsedParsed {
+    name?: string;
+    managementLevel?: string;
+    classification?: JobTitleParsedClassification;
 }
 
 export declare interface JobTitleSearchScoreComponent {
@@ -2905,7 +2964,13 @@ export declare enum KnownWorkspaceVisibility {
 }
 
 export declare type LanguageAnnotationV2 = AnnotationV2 & {
-    parsed?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
+};
+
+export declare type LanguageAnnotationV2Update = AnnotationV2Base & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
 };
 
 export declare interface LanguagesSearchScoreComponent {
@@ -2953,8 +3018,18 @@ export declare interface Location {
 }
 
 export declare type LocationAnnotationV2 = AnnotationV2 & {
-    parsed?: Location;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: LocationAnnotationV2Parsed;
 };
+
+export declare type LocationAnnotationV2Parsed = Location & {};
+
+export declare type LocationAnnotationV2Update = AnnotationV2Base & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: LocationAnnotationV2UpdateParsed;
+};
+
+export declare type LocationAnnotationV2UpdateParsed = Location & {};
 
 export declare interface LocationSearchScoreComponent {
     value?: string;
@@ -3863,7 +3938,13 @@ export declare interface SearchExpressionSearchScoreComponent {
 export declare type SearchLocationUnit = "km" | "mi";
 
 export declare type SkillAnnotationV2 = AnnotationV2 & {
-    parsed?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
+};
+
+export declare type SkillAnnotationV2Update = AnnotationV2Base & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
 };
 
 export declare interface SkillsSearchScoreComponent {
@@ -3895,6 +3976,10 @@ export declare interface TagUpdate {
 }
 
 export declare type TextAnnotationV2 = AnnotationV2 & {
+    parsed?: string;
+};
+
+export declare type TextAnnotationV2Update = AnnotationV2Base & {
     parsed?: string;
 };
 
@@ -4010,6 +4095,19 @@ export declare type YearsExperienceAnnotationV2 = AnnotationV2 & {
 
 /** Years of experience range */
 export declare interface YearsExperienceAnnotationV2Parsed {
+    /** Minimum years of experience */
+    minimum?: number;
+    /** Maximum years of experience */
+    maximum?: number;
+}
+
+export declare type YearsExperienceAnnotationV2Update = AnnotationV2Base & {
+    /** Years of experience range */
+    parsed?: YearsExperienceAnnotationV2UpdateParsed;
+};
+
+/** Years of experience range */
+export declare interface YearsExperienceAnnotationV2UpdateParsed {
     /** Minimum years of experience */
     minimum?: number;
     /** Maximum years of experience */

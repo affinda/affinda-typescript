@@ -123,6 +123,7 @@
 - [AffindaAPIUpdateDocumentDataOptionalParams](interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md)
 - [AffindaAPIUpdateExtractorDataOptionalParams](interfaces/AffindaAPIUpdateExtractorDataOptionalParams.md)
 - [AffindaAPIUpdateInvitationOptionalParams](interfaces/AffindaAPIUpdateInvitationOptionalParams.md)
+- [AffindaAPIUpdateJobDescriptionDataOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionDataOptionalParams.md)
 - [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateOrganizationMembershipOptionalParams](interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md)
 - [AffindaAPIUpdateOrganizationOptionalParams](interfaces/AffindaAPIUpdateOrganizationOptionalParams.md)
@@ -131,8 +132,8 @@
 - [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateTagDataOptionalParams](interfaces/AffindaAPIUpdateTagDataOptionalParams.md)
 - [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
-- [Annotation](interfaces/Annotation.md)
 - [AnnotationV2](interfaces/AnnotationV2.md)
+- [AnnotationV2Base](interfaces/AnnotationV2Base.md)
 - [BaseExtractor](interfaces/BaseExtractor.md)
 - [Collection](interfaces/Collection.md)
 - [CollectionCreate](interfaces/CollectionCreate.md)
@@ -196,6 +197,7 @@
 - [EducationSearchScoreComponent](interfaces/EducationSearchScoreComponent.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [ExpectedRemunerationAnnotationV2Parsed](interfaces/ExpectedRemunerationAnnotationV2Parsed.md)
+- [ExpectedRemunerationAnnotationV2UpdateParsed](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)
 - [ExperienceSearchScoreComponent](interfaces/ExperienceSearchScoreComponent.md)
 - [Extractor](interfaces/Extractor.md)
 - [ExtractorBaseExtractor](interfaces/ExtractorBaseExtractor.md)
@@ -218,6 +220,7 @@
 - [InvoiceRequestBody](interfaces/InvoiceRequestBody.md)
 - [JobDescription](interfaces/JobDescription.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
+- [JobDescriptionDataUpdate](interfaces/JobDescriptionDataUpdate.md)
 - [JobDescriptionRequestBody](interfaces/JobDescriptionRequestBody.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
@@ -240,8 +243,9 @@
 - [JobDescriptionSearchEmbed](interfaces/JobDescriptionSearchEmbed.md)
 - [JobDescriptionSearchParameters](interfaces/JobDescriptionSearchParameters.md)
 - [JobDescriptionSearchResult](interfaces/JobDescriptionSearchResult.md)
-- [JobTitleAnnotationParsed](interfaces/JobTitleAnnotationParsed.md)
-- [JobTitleAnnotationParsedClassification](interfaces/JobTitleAnnotationParsedClassification.md)
+- [JobTitleParsed](interfaces/JobTitleParsed.md)
+- [JobTitleParsedClassification](interfaces/JobTitleParsedClassification.md)
+- [JobTitleParsedParsed](interfaces/JobTitleParsedParsed.md)
 - [JobTitleSearchScoreComponent](interfaces/JobTitleSearchScoreComponent.md)
 - [LanguagesSearchScoreComponent](interfaces/LanguagesSearchScoreComponent.md)
 - [ListResult](interfaces/ListResult.md)
@@ -335,6 +339,7 @@
 - [WorkspaceMembershipCreate](interfaces/WorkspaceMembershipCreate.md)
 - [WorkspaceUpdate](interfaces/WorkspaceUpdate.md)
 - [YearsExperienceAnnotationV2Parsed](interfaces/YearsExperienceAnnotationV2Parsed.md)
+- [YearsExperienceAnnotationV2UpdateParsed](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)
 
 ### Type aliases
 
@@ -406,6 +411,7 @@
 - [AffindaAPIUpdateDocumentDataResponse](modules.md#affindaapiupdatedocumentdataresponse)
 - [AffindaAPIUpdateExtractorDataResponse](modules.md#affindaapiupdateextractordataresponse)
 - [AffindaAPIUpdateInvitationResponse](modules.md#affindaapiupdateinvitationresponse)
+- [AffindaAPIUpdateJobDescriptionDataResponse](modules.md#affindaapiupdatejobdescriptiondataresponse)
 - [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
 - [AffindaAPIUpdateOrganizationMembershipResponse](modules.md#affindaapiupdateorganizationmembershipresponse)
 - [AffindaAPIUpdateOrganizationResponse](modules.md#affindaapiupdateorganizationresponse)
@@ -416,8 +422,8 @@
 - [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
 - [AnnotationContentType](modules.md#annotationcontenttype)
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
-- [DateAnnotation](modules.md#dateannotation)
 - [DateAnnotationV2](modules.md#dateannotationv2)
+- [DateAnnotationV2Update](modules.md#dateannotationv2update)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
 - [DocumentState](modules.md#documentstate)
@@ -425,6 +431,7 @@
 - [Enum3](modules.md#enum3)
 - [Enum6](modules.md#enum6)
 - [ExpectedRemunerationAnnotationV2](modules.md#expectedremunerationannotationv2)
+- [ExpectedRemunerationAnnotationV2Update](modules.md#expectedremunerationannotationv2update)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
 - [InvitationRespondedBy](modules.md#invitationrespondedby)
@@ -461,8 +468,13 @@
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
 - [JobDescriptionSearchDetailOccupationGroupValueItem](modules.md#jobdescriptionsearchdetailoccupationgroupvalueitem)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
+- [JobTitleAnnotationUpdate](modules.md#jobtitleannotationupdate)
 - [LanguageAnnotationV2](modules.md#languageannotationv2)
+- [LanguageAnnotationV2Update](modules.md#languageannotationv2update)
 - [LocationAnnotationV2](modules.md#locationannotationv2)
+- [LocationAnnotationV2Parsed](modules.md#locationannotationv2parsed)
+- [LocationAnnotationV2Update](modules.md#locationannotationv2update)
+- [LocationAnnotationV2UpdateParsed](modules.md#locationannotationv2updateparsed)
 - [ManagementLevel](modules.md#managementlevel)
 - [OrganizationRole](modules.md#organizationrole)
 - [OrganizationUserRole](modules.md#organizationuserrole)
@@ -485,10 +497,13 @@
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotationV2](modules.md#skillannotationv2)
+- [SkillAnnotationV2Update](modules.md#skillannotationv2update)
 - [TextAnnotationV2](modules.md#textannotationv2)
+- [TextAnnotationV2Update](modules.md#textannotationv2update)
 - [Version](modules.md#version)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotationV2](modules.md#yearsexperienceannotationv2)
+- [YearsExperienceAnnotationV2Update](modules.md#yearsexperienceannotationv2update)
 
 ### Functions
 
@@ -1054,6 +1069,14 @@ Contains response data for the updateInvitation operation.
 
 ___
 
+### AffindaAPIUpdateJobDescriptionDataResponse
+
+Ƭ **AffindaAPIUpdateJobDescriptionDataResponse**: [`JobDescriptionData`](interfaces/JobDescriptionData.md)
+
+Contains response data for the updateJobDescriptionData operation.
+
+___
+
 ### AffindaAPIUpdateJobDescriptionSearchConfigResponse
 
 Ƭ **AffindaAPIUpdateJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
@@ -1160,15 +1183,15 @@ Defines values for CollectionDateFormatPreference. \
 
 ___
 
-### DateAnnotation
-
-Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `Date`  }
-
-___
-
 ### DateAnnotationV2
 
 Ƭ **DateAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: `Date`  }
+
+___
+
+### DateAnnotationV2Update
+
+Ƭ **DateAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `Date`  }
 
 ___
 
@@ -1255,6 +1278,12 @@ ___
 ### ExpectedRemunerationAnnotationV2
 
 Ƭ **ExpectedRemunerationAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`ExpectedRemunerationAnnotationV2Parsed`](interfaces/ExpectedRemunerationAnnotationV2Parsed.md)  }
+
+___
+
+### ExpectedRemunerationAnnotationV2Update
+
+Ƭ **ExpectedRemunerationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`ExpectedRemunerationAnnotationV2UpdateParsed`](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)  }
 
 ___
 
@@ -1493,7 +1522,13 @@ ___
 
 ### JobTitleAnnotation
 
-Ƭ **JobTitleAnnotation**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`JobTitleAnnotationParsed`](interfaces/JobTitleAnnotationParsed.md)  }
+Ƭ **JobTitleAnnotation**: [`AnnotationV2`](interfaces/AnnotationV2.md) & [`JobTitleParsed`](interfaces/JobTitleParsed.md) & {}
+
+___
+
+### JobTitleAnnotationUpdate
+
+Ƭ **JobTitleAnnotationUpdate**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & [`JobTitleParsed`](interfaces/JobTitleParsed.md) & {}
 
 ___
 
@@ -1503,9 +1538,33 @@ ___
 
 ___
 
+### LanguageAnnotationV2Update
+
+Ƭ **LanguageAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+
+___
+
 ### LocationAnnotationV2
 
-Ƭ **LocationAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`Location`](interfaces/Location.md)  }
+Ƭ **LocationAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`LocationAnnotationV2Parsed`](modules.md#locationannotationv2parsed)  }
+
+___
+
+### LocationAnnotationV2Parsed
+
+Ƭ **LocationAnnotationV2Parsed**: [`Location`](interfaces/Location.md) & {}
+
+___
+
+### LocationAnnotationV2Update
+
+Ƭ **LocationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`LocationAnnotationV2UpdateParsed`](modules.md#locationannotationv2updateparsed)  }
+
+___
+
+### LocationAnnotationV2UpdateParsed
+
+Ƭ **LocationAnnotationV2UpdateParsed**: [`Location`](interfaces/Location.md) & {}
 
 ___
 
@@ -1739,9 +1798,21 @@ ___
 
 ___
 
+### SkillAnnotationV2Update
+
+Ƭ **SkillAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+
+___
+
 ### TextAnnotationV2
 
 Ƭ **TextAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: `string`  }
+
+___
+
+### TextAnnotationV2Update
+
+Ƭ **TextAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
 
 ___
 
@@ -1775,6 +1846,12 @@ ___
 ### YearsExperienceAnnotationV2
 
 Ƭ **YearsExperienceAnnotationV2**: [`AnnotationV2`](interfaces/AnnotationV2.md) & { `parsed?`: [`YearsExperienceAnnotationV2Parsed`](interfaces/YearsExperienceAnnotationV2Parsed.md)  }
+
+___
+
+### YearsExperienceAnnotationV2Update
+
+Ƭ **YearsExperienceAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`YearsExperienceAnnotationV2UpdateParsed`](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)  }
 
 ## Functions
 

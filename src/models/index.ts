@@ -578,18 +578,20 @@ export interface GetAllJobDescriptionsResults {
 }
 
 export interface JobDescription {
+  /** A JSON-encoded string of the `JobDescriptionData` object. */
   data: JobDescriptionData | null;
   meta: Meta;
   error: ErrorModel;
 }
 
+/** A JSON-encoded string of the `JobDescriptionData` object. */
 export interface JobDescriptionData {
   jobTitle?: JobTitleAnnotation;
   contactEmail?: TextAnnotationV2;
   contactName?: TextAnnotationV2;
   contactPhone?: TextAnnotationV2;
-  startDate?: DateAnnotation;
-  endDate?: DateAnnotation;
+  startDate?: DateAnnotationV2;
+  endDate?: DateAnnotationV2;
   jobType?: TextAnnotationV2;
   languages?: (LanguageAnnotationV2 | null)[];
   skills?: (SkillAnnotationV2 | null)[];
@@ -603,40 +605,27 @@ export interface JobDescriptionData {
   yearsExperience?: YearsExperienceAnnotationV2;
 }
 
-/** Years of experience range */
-export interface JobTitleAnnotationParsed {
-  name?: string;
-  managementLevel?: string;
-  classification?: JobTitleAnnotationParsedClassification;
+export interface JobTitleParsed {
+  /**
+   * Matching job title to extracted text
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly parsed?: JobTitleParsedParsed;
 }
 
-export interface JobTitleAnnotationParsedClassification {
+/** Matching job title to extracted text */
+export interface JobTitleParsedParsed {
+  name?: string;
+  managementLevel?: string;
+  classification?: JobTitleParsedClassification;
+}
+
+export interface JobTitleParsedClassification {
   socCode?: number;
   title?: string;
   minorGroup?: string;
   subMajorGroup?: string;
   majorGroup?: string;
-}
-
-export interface Annotation {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  id: number;
-  rectangle: Rectangle | null;
-  rectangles: Rectangle[] | null;
-  pageIndex: number | null;
-  raw: string | null;
-  /** The overall confidence that the model's prediction is correct */
-  confidence: number | null;
-  /** The model's confidence that the text has been classified correctly */
-  classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
-  textExtractionConfidence: number | null;
-  isVerified: boolean;
-  isClientVerified: boolean;
-  isAutoVerified: boolean;
-  dataPoint: string;
-  contentType: string;
 }
 
 export interface ExpectedRemunerationAnnotationV2Parsed {
@@ -648,6 +637,63 @@ export interface ExpectedRemunerationAnnotationV2Parsed {
 
 /** Years of experience range */
 export interface YearsExperienceAnnotationV2Parsed {
+  /** Minimum years of experience */
+  minimum?: number;
+  /** Maximum years of experience */
+  maximum?: number;
+}
+
+/** A JSON-encoded string of the `JobDescriptionData` object. */
+export interface JobDescriptionDataUpdate {
+  jobTitle?: JobTitleAnnotationUpdate;
+  contactEmail?: TextAnnotationV2Update;
+  contactName?: TextAnnotationV2Update;
+  contactPhone?: TextAnnotationV2Update;
+  startDate?: DateAnnotationV2Update;
+  endDate?: DateAnnotationV2Update;
+  jobType?: TextAnnotationV2Update;
+  languages?: (LanguageAnnotationV2Update | null)[];
+  skills?: (SkillAnnotationV2Update | null)[];
+  organizationName?: TextAnnotationV2Update;
+  organizationWebsite?: TextAnnotationV2Update;
+  educationLevel?: TextAnnotationV2Update;
+  educationAccreditation?: TextAnnotationV2Update;
+  expectedRemuneration?: ExpectedRemunerationAnnotationV2Update;
+  location?: LocationAnnotationV2Update;
+  certifications?: (TextAnnotationV2Update | null)[];
+  yearsExperience?: YearsExperienceAnnotationV2Update;
+}
+
+export interface AnnotationV2Base {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  id?: number;
+  rectangle?: Rectangle;
+  rectangles?: Rectangle[];
+  pageIndex?: number;
+  raw?: string;
+  /** The overall confidence that the model's prediction is correct */
+  confidence?: number;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence?: number;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  textExtractionConfidence?: number;
+  isVerified?: boolean;
+  isClientVerified?: boolean;
+  isAutoVerified?: boolean;
+  dataPoint?: string;
+  contentType?: string;
+}
+
+export interface ExpectedRemunerationAnnotationV2UpdateParsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
+/** Years of experience range */
+export interface YearsExperienceAnnotationV2UpdateParsed {
   /** Minimum years of experience */
   minimum?: number;
   /** Maximum years of experience */
@@ -1915,6 +1961,10 @@ export interface IndexRequestBody {
   documentType?: PostContentSchemaDocumentType;
 }
 
+export type LocationAnnotationV2Parsed = Location & {};
+
+export type LocationAnnotationV2UpdateParsed = Location & {};
+
 export type JobDescriptionSearchDetailLocationValue = Location &
   Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
@@ -1933,20 +1983,20 @@ export type TextAnnotationV2 = AnnotationV2 & {
 };
 
 export type LocationAnnotationV2 = AnnotationV2 & {
-  parsed?: Location;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: LocationAnnotationV2Parsed;
 };
 
-export type JobTitleAnnotation = AnnotationV2 & {
-  /** Years of experience range */
-  parsed?: JobTitleAnnotationParsed;
-};
+export type JobTitleAnnotation = AnnotationV2 & JobTitleParsed & {};
 
 export type LanguageAnnotationV2 = AnnotationV2 & {
-  parsed?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
 };
 
 export type SkillAnnotationV2 = AnnotationV2 & {
-  parsed?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
 };
 
 export type ExpectedRemunerationAnnotationV2 = AnnotationV2 & {
@@ -2045,8 +2095,38 @@ export type InvoiceDataSupplierEmail = TextAnnotationV2 &
 export type InvoiceDataSupplierWebsite = TextAnnotationV2 &
   Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
-export type DateAnnotation = Annotation & {
+export type JobTitleAnnotationUpdate = AnnotationV2Base & JobTitleParsed & {};
+
+export type TextAnnotationV2Update = AnnotationV2Base & {
+  parsed?: string;
+};
+
+export type DateAnnotationV2Update = AnnotationV2Base & {
   parsed?: Date;
+};
+
+export type LanguageAnnotationV2Update = AnnotationV2Base & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type SkillAnnotationV2Update = AnnotationV2Base & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotationV2Update = AnnotationV2Base & {
+  parsed?: ExpectedRemunerationAnnotationV2UpdateParsed;
+};
+
+export type LocationAnnotationV2Update = AnnotationV2Base & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: LocationAnnotationV2UpdateParsed;
+};
+
+export type YearsExperienceAnnotationV2Update = AnnotationV2Base & {
+  /** Years of experience range */
+  parsed?: YearsExperienceAnnotationV2UpdateParsed;
 };
 
 export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
@@ -2748,6 +2828,13 @@ export interface AffindaAPIGetJobDescriptionOptionalParams
 
 /** Contains response data for the getJobDescription operation. */
 export type AffindaAPIGetJobDescriptionResponse = JobDescription;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateJobDescriptionDataOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateJobDescriptionData operation. */
+export type AffindaAPIUpdateJobDescriptionDataResponse = JobDescriptionData;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteJobDescriptionOptionalParams

@@ -16,6 +16,8 @@
 
 • **data**: ``null`` \| [`JobDescriptionData`](JobDescriptionData.md)
 
+A JSON-encoded string of the `JobDescriptionData` object.
+
 ___
 
 ### error

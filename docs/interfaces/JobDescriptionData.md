@@ -2,6 +2,8 @@
 
 # Interface: JobDescriptionData
 
+A JSON-encoded string of the `JobDescriptionData` object.
+
 ## Table of contents
 
 ### Properties
@@ -64,7 +66,7 @@ ___
 
 ### endDate
 
-• `Optional` **endDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **endDate**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
 
 ___
 
@@ -118,7 +120,7 @@ ___
 
 ### startDate
 
-• `Optional` **startDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **startDate**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
 
 ___
 
