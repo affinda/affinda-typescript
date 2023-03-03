@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateResumeDataOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateExtractorOptionalParams
 
-# Interface: AffindaAPIUpdateResumeDataOptionalParams
+# Interface: AffindaAPIUpdateExtractorOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIUpdateResumeDataOptionalParams`**
+  ↳ **`AffindaAPIUpdateExtractorOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIUpdateResumeDataOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIUpdateResumeDataOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIUpdateResumeDataOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIUpdateResumeDataOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIUpdateResumeDataOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIUpdateExtractorOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIUpdateExtractorOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIUpdateExtractorOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIUpdateExtractorOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIUpdateExtractorOptionalParams.md#tracingoptions)
 
 ## Properties
 

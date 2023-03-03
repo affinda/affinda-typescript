@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetInvoiceOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateCollectionOptionalParams
 
-# Interface: AffindaAPIGetInvoiceOptionalParams
+# Interface: AffindaAPIUpdateCollectionOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetInvoiceOptionalParams`**
+  ↳ **`AffindaAPIUpdateCollectionOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetInvoiceOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIGetInvoiceOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetInvoiceOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetInvoiceOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetInvoiceOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIUpdateCollectionOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIUpdateCollectionOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIUpdateCollectionOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIUpdateCollectionOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIUpdateCollectionOptionalParams.md#tracingoptions)
 
 ## Properties
 

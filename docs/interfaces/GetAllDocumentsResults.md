@@ -39,4 +39,4 @@ ___
 
 ### results
 
-• **results**: [`Document`](Document.md)[]
+• **results**: [`DocumentUnion`](../modules.md#documentunion)[]

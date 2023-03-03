@@ -28,14 +28,10 @@
 - [createIndex](AffindaAPI.md#createindex)
 - [createIndexDocument](AffindaAPI.md#createindexdocument)
 - [createInvitation](AffindaAPI.md#createinvitation)
-- [createInvoice](AffindaAPI.md#createinvoice)
-- [createJobDescription](AffindaAPI.md#createjobdescription)
 - [createJobDescriptionSearch](AffindaAPI.md#createjobdescriptionsearch)
 - [createJobDescriptionSearchEmbedUrl](AffindaAPI.md#createjobdescriptionsearchembedurl)
 - [createOrganization](AffindaAPI.md#createorganization)
-- [createRedactedResume](AffindaAPI.md#createredactedresume)
 - [createResthookSubscription](AffindaAPI.md#createresthooksubscription)
-- [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
 - [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
 - [createTag](AffindaAPI.md#createtag)
@@ -48,13 +44,9 @@
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
 - [deleteInvitation](AffindaAPI.md#deleteinvitation)
-- [deleteInvoice](AffindaAPI.md#deleteinvoice)
-- [deleteJobDescription](AffindaAPI.md#deletejobdescription)
 - [deleteOrganization](AffindaAPI.md#deleteorganization)
 - [deleteOrganizationMembership](AffindaAPI.md#deleteorganizationmembership)
-- [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
 - [deleteResthookSubscription](AffindaAPI.md#deleteresthooksubscription)
-- [deleteResume](AffindaAPI.md#deleteresume)
 - [deleteTag](AffindaAPI.md#deletetag)
 - [deleteWorkspace](AffindaAPI.md#deleteworkspace)
 - [deleteWorkspaceMembership](AffindaAPI.md#deleteworkspacemembership)
@@ -65,13 +57,9 @@
 - [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
 - [getAllIndexes](AffindaAPI.md#getallindexes)
 - [getAllInvitations](AffindaAPI.md#getallinvitations)
-- [getAllInvoices](AffindaAPI.md#getallinvoices)
-- [getAllJobDescriptions](AffindaAPI.md#getalljobdescriptions)
 - [getAllOrganizationMemberships](AffindaAPI.md#getallorganizationmemberships)
 - [getAllOrganizations](AffindaAPI.md#getallorganizations)
-- [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
 - [getAllResthookSubscriptions](AffindaAPI.md#getallresthooksubscriptions)
-- [getAllResumes](AffindaAPI.md#getallresumes)
 - [getAllTags](AffindaAPI.md#getalltags)
 - [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
@@ -82,15 +70,11 @@
 - [getExtractor](AffindaAPI.md#getextractor)
 - [getInvitation](AffindaAPI.md#getinvitation)
 - [getInvitationByToken](AffindaAPI.md#getinvitationbytoken)
-- [getInvoice](AffindaAPI.md#getinvoice)
-- [getJobDescription](AffindaAPI.md#getjobdescription)
 - [getJobDescriptionSearchConfig](AffindaAPI.md#getjobdescriptionsearchconfig)
 - [getJobDescriptionSearchDetail](AffindaAPI.md#getjobdescriptionsearchdetail)
 - [getOrganization](AffindaAPI.md#getorganization)
 - [getOrganizationMembership](AffindaAPI.md#getorganizationmembership)
-- [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getResthookSubscription](AffindaAPI.md#getresthooksubscription)
-- [getResume](AffindaAPI.md#getresume)
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
 - [getResumeSearchMatch](AffindaAPI.md#getresumesearchmatch)
@@ -103,19 +87,17 @@
 - [respondToInvitation](AffindaAPI.md#respondtoinvitation)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
-- [updateCollectionData](AffindaAPI.md#updatecollectiondata)
-- [updateDataPointData](AffindaAPI.md#updatedatapointdata)
-- [updateDocumentData](AffindaAPI.md#updatedocumentdata)
-- [updateExtractorData](AffindaAPI.md#updateextractordata)
+- [updateCollection](AffindaAPI.md#updatecollection)
+- [updateDataPoint](AffindaAPI.md#updatedatapoint)
+- [updateDocument](AffindaAPI.md#updatedocument)
+- [updateExtractor](AffindaAPI.md#updateextractor)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
-- [updateJobDescriptionData](AffindaAPI.md#updatejobdescriptiondata)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateOrganization](AffindaAPI.md#updateorganization)
 - [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
-- [updateResthookSubscriptionData](AffindaAPI.md#updateresthooksubscriptiondata)
-- [updateResumeData](AffindaAPI.md#updateresumedata)
+- [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
 - [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
-- [updateTagData](AffindaAPI.md#updatetagdata)
+- [updateTag](AffindaAPI.md#updatetag)
 - [updateWorkspace](AffindaAPI.md#updateworkspace)
 
 ## Constructors
@@ -200,7 +182,7 @@ ___
 
 ### createDocument
 
-▸ **createDocument**(`options?`): `Promise`<[`Document`](../interfaces/Document.md)\>
+▸ **createDocument**(`options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Uploads a document for parsing. When successful, returns an `identifier` in the response for
 subsequent use with the [/documents/{identifier}](#get-/documents/-identifier-) endpoint to check
@@ -214,7 +196,7 @@ processing status and retrieve results.<br/>
 
 #### Returns
 
-`Promise`<[`Document`](../interfaces/Document.md)\>
+`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
@@ -293,51 +275,6 @@ Create a new invitation.
 
 ___
 
-### createInvoice
-
-▸ **createInvoice**(`options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
-
-Uploads an invoice for parsing.
-When successful, returns an `identifier` in the response for subsequent use with the
-[/invoices/{identifier}](#get-/invoices/-identifier-) endpoint to check processing status and
-retrieve results.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateInvoiceOptionalParams`](../interfaces/AffindaAPICreateInvoiceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
-
-___
-
-### createJobDescription
-
-▸ **createJobDescription**(`options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
-
-Uploads a job description for parsing.
-When successful, returns an `identifier` in the response for subsequent use with the
-[/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
-status and retrieve results.
-Job Descriptions can be uploaded as a file or a URL. In addition, data can be added directly if
-users want to upload directly without parsing any resume file. For uploading resume data, the `data`
-argument provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateJobDescriptionOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
-
-___
-
 ### createJobDescriptionSearch
 
 ▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
@@ -396,24 +333,6 @@ Create a new organization.
 
 ___
 
-### createRedactedResume
-
-▸ **createRedactedResume**(`options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
-
-Uploads a resume for redacting.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateRedactedResumeOptionalParams`](../interfaces/AffindaAPICreateRedactedResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
-
-___
-
 ### createResthookSubscription
 
 ▸ **createResthookSubscription**(`body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
@@ -430,29 +349,6 @@ Create a resthook subscriptions
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
-
-___
-
-### createResume
-
-▸ **createResume**(`options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
-
-Uploads a resume for parsing. When successful, returns an `identifier` in the response for
-subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
-processing status and retrieve results.<br/>
-Resumes can be uploaded as a file or a URL. In addition, data can be added directly if users want to
-upload directly without parsing any resume file. For uploading resume data, the `data` argument
-provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateResumeOptionalParams`](../interfaces/AffindaAPICreateResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Resume`](../interfaces/Resume.md)\>
 
 ___
 
@@ -690,45 +586,6 @@ Delete the specified invitation from the database.
 
 ___
 
-### deleteInvoice
-
-▸ **deleteInvoice**(`identifier`, `options?`): `Promise`<`void`\>
-
-Delete the specified invoice from the database. Note, any invoices deleted from the database will no
-longer be used in any tailored customer models.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Invoice identifier |
-| `options?` | [`AffindaAPIDeleteInvoiceOptionalParams`](../interfaces/AffindaAPIDeleteInvoiceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### deleteJobDescription
-
-▸ **deleteJobDescription**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified job description from the database
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIDeleteJobDescriptionOptionalParams`](../interfaces/AffindaAPIDeleteJobDescriptionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
 ### deleteOrganization
 
 ▸ **deleteOrganization**(`identifier`, `options?`): `Promise`<`void`\>
@@ -768,25 +625,6 @@ use this to leave their organization.
 
 ___
 
-### deleteRedactedResume
-
-▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified resume from the database
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIDeleteRedactedResumeOptionalParams`](../interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
 ### deleteResthookSubscription
 
 ▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`<`void`\>
@@ -799,25 +637,6 @@ Deletes the specified resthook subscription from the database.
 | :------ | :------ | :------ |
 | `id` | `number` | ResthookSubscription's ID |
 | `options?` | [`AffindaAPIDeleteResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### deleteResume
-
-▸ **deleteResume**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified resume from the database
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Resume identifier |
-| `options?` | [`AffindaAPIDeleteResumeOptionalParams`](../interfaces/AffindaAPIDeleteResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1011,42 +830,6 @@ Get list of all invitations you created or sent to you.
 
 ___
 
-### getAllInvoices
-
-▸ **getAllInvoices**(`options?`): `Promise`<[`GetAllInvoicesResults`](../interfaces/GetAllInvoicesResults.md)\>
-
-Returns all the invoice summaries for that user, limited to 300 per page.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllInvoicesOptionalParams`](../interfaces/AffindaAPIGetAllInvoicesOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`GetAllInvoicesResults`](../interfaces/GetAllInvoicesResults.md)\>
-
-___
-
-### getAllJobDescriptions
-
-▸ **getAllJobDescriptions**(`options?`): `Promise`<[`GetAllJobDescriptionsResults`](../interfaces/GetAllJobDescriptionsResults.md)\>
-
-Returns all the job descriptions for that user, limited to 300 per page.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllJobDescriptionsOptionalParams`](../interfaces/AffindaAPIGetAllJobDescriptionsOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`GetAllJobDescriptionsResults`](../interfaces/GetAllJobDescriptionsResults.md)\>
-
-___
-
 ### getAllOrganizationMemberships
 
 ▸ **getAllOrganizationMemberships**(`options?`): `Promise`<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
@@ -1083,24 +866,6 @@ Returns all the organizations
 
 ___
 
-### getAllRedactedResumes
-
-▸ **getAllRedactedResumes**(`options?`): `Promise`<[`GetAllDocumentsResultsV2`](../interfaces/GetAllDocumentsResultsV2.md)\>
-
-Returns all the redacted resume information for that resume
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllRedactedResumesOptionalParams`](../interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`GetAllDocumentsResultsV2`](../interfaces/GetAllDocumentsResultsV2.md)\>
-
-___
-
 ### getAllResthookSubscriptions
 
 ▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
@@ -1116,24 +881,6 @@ Returns your resthook subscriptions.
 #### Returns
 
 `Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
-
-___
-
-### getAllResumes
-
-▸ **getAllResumes**(`options?`): `Promise`<[`GetAllDocumentsResultsV2`](../interfaces/GetAllDocumentsResultsV2.md)\>
-
-Returns all the resume summaries for that user, limited to 300 per page.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllResumesOptionalParams`](../interfaces/AffindaAPIGetAllResumesOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`GetAllDocumentsResultsV2`](../interfaces/GetAllDocumentsResultsV2.md)\>
 
 ___
 
@@ -1251,7 +998,7 @@ ___
 
 ### getDocument
 
-▸ **getDocument**(`identifier`, `options?`): `Promise`<[`Document`](../interfaces/Document.md)\>
+▸ **getDocument**(`identifier`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Return a specific document.
 
@@ -1264,7 +1011,7 @@ Return a specific document.
 
 #### Returns
 
-`Promise`<[`Document`](../interfaces/Document.md)\>
+`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
@@ -1323,48 +1070,6 @@ in to view the invitation.
 #### Returns
 
 `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-___
-
-### getInvoice
-
-▸ **getInvoice**(`identifier`, `options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
-
-Returns all the parse results for that invoice if processing is completed.
-The `identifier` is the unique ID returned after POST-ing the invoice via the
-[/invoices](#post-/invoices) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIGetInvoiceOptionalParams`](../interfaces/AffindaAPIGetInvoiceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
-
-___
-
-### getJobDescription
-
-▸ **getJobDescription**(`identifier`, `options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
-
-Returns all the results for that job description if processing is completed.
-The `identifier` is the unique ID returned after POST-ing the resume via the
-[/job_descriptions](#post-/job_descriptions) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIGetJobDescriptionOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
@@ -1449,27 +1154,6 @@ Get detail of an organization membership.
 
 ___
 
-### getRedactedResume
-
-▸ **getRedactedResume**(`identifier`, `options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
-
-Returns all the redaction results for that resume if processing is completed.
-The `identifier` is the unique ID returned after POST-ing the resume via the
-[/redacted_resumes](#post-/redacted_resumes) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIGetRedactedResumeOptionalParams`](../interfaces/AffindaAPIGetRedactedResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
-
-___
-
 ### getResthookSubscription
 
 ▸ **getResthookSubscription**(`id`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
@@ -1486,27 +1170,6 @@ Return a specific resthook subscription.
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
-
-___
-
-### getResume
-
-▸ **getResume**(`identifier`, `options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
-
-Returns all the parse results for that resume if processing is completed.
-The `identifier` is the unique ID returned after POST-ing the resume via the
-[/resumes](#post-/resumes) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIGetResumeOptionalParams`](../interfaces/AffindaAPIGetResumeOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Resume`](../interfaces/Resume.md)\>
 
 ___
 
@@ -1699,7 +1362,7 @@ Choose to accept or decline an invitation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `token` | `string` | Invitation token. |
-| `body` | [`PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema`](../interfaces/PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema.md) |  |
+| `body` | [`InvitationResponse`](../interfaces/InvitationResponse.md) |  |
 | `options?` | [`AffindaAPIRespondToInvitationOptionalParams`](../interfaces/AffindaAPIRespondToInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
@@ -1759,9 +1422,9 @@ Send the provided httpRequest.
 
 ___
 
-### updateCollectionData
+### updateCollection
 
-▸ **updateCollectionData**(`identifier`, `body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
+▸ **updateCollection**(`identifier`, `body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
 
 Update data of a collection.
 
@@ -1771,7 +1434,7 @@ Update data of a collection.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
 | `body` | [`CollectionUpdate`](../interfaces/CollectionUpdate.md) | Collection data to update |
-| `options?` | [`AffindaAPIUpdateCollectionDataOptionalParams`](../interfaces/AffindaAPIUpdateCollectionDataOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIUpdateCollectionOptionalParams`](../interfaces/AffindaAPIUpdateCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1779,9 +1442,9 @@ Update data of a collection.
 
 ___
 
-### updateDataPointData
+### updateDataPoint
 
-▸ **updateDataPointData**(`identifier`, `body`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+▸ **updateDataPoint**(`identifier`, `body`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Update data of a data point.
 
@@ -1791,7 +1454,7 @@ Update data of a data point.
 | :------ | :------ | :------ |
 | `identifier` | `string` | DataPoint's identifier |
 | `body` | [`DataPointUpdate`](../interfaces/DataPointUpdate.md) | Data point to update |
-| `options?` | [`AffindaAPIUpdateDataPointDataOptionalParams`](../interfaces/AffindaAPIUpdateDataPointDataOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIUpdateDataPointOptionalParams`](../interfaces/AffindaAPIUpdateDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1799,9 +1462,9 @@ Update data of a data point.
 
 ___
 
-### updateDocumentData
+### updateDocument
 
-▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`<[`Document`](../interfaces/Document.md)\>
+▸ **updateDocument**(`identifier`, `body`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Update file name, expiry time, or move to another collection, etc.
 
@@ -1811,17 +1474,17 @@ Update file name, expiry time, or move to another collection, etc.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Document's identifier |
 | `body` | [`DocumentUpdate`](../interfaces/DocumentUpdate.md) | Document data to update |
-| `options?` | [`AffindaAPIUpdateDocumentDataOptionalParams`](../interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIUpdateDocumentOptionalParams`](../interfaces/AffindaAPIUpdateDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Document`](../interfaces/Document.md)\>
+`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
-### updateExtractorData
+### updateExtractor
 
-▸ **updateExtractorData**(`identifier`, `body`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+▸ **updateExtractor**(`identifier`, `body`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
 
 Update data of an extractor.
 
@@ -1831,7 +1494,7 @@ Update data of an extractor.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Extractor's identifier |
 | `body` | [`ExtractorUpdate`](../interfaces/ExtractorUpdate.md) | Extractor data to update |
-| `options?` | [`AffindaAPIUpdateExtractorDataOptionalParams`](../interfaces/AffindaAPIUpdateExtractorDataOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIUpdateExtractorOptionalParams`](../interfaces/AffindaAPIUpdateExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1856,28 +1519,6 @@ Update the detail of an invitation.
 #### Returns
 
 `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-___
-
-### updateJobDescriptionData
-
-▸ **updateJobDescriptionData**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
-
-Update data of a job description.
-The `identifier` is the unique ID returned after POST-ing the job description via the
-[/job_descriptions](#post-/job_descriptions) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Job description identifier |
-| `body` | ``null`` \| [`JobDescriptionDataUpdate`](../interfaces/JobDescriptionDataUpdate.md) | Job description data to update |
-| `options?` | [`AffindaAPIUpdateJobDescriptionDataOptionalParams`](../interfaces/AffindaAPIUpdateJobDescriptionDataOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
 
 ___
 
@@ -1941,9 +1582,9 @@ The admin users can use this endpoint to update the role of the members within t
 
 ___
 
-### updateResthookSubscriptionData
+### updateResthookSubscription
 
-▸ **updateResthookSubscriptionData**(`id`, `body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Update data of a resthook subscription.
 
@@ -1953,33 +1594,11 @@ Update data of a resthook subscription.
 | :------ | :------ | :------ |
 | `id` | `number` | ResthookSubscription's ID |
 | `body` | [`ResthookSubscriptionUpdate`](../interfaces/ResthookSubscriptionUpdate.md) | ResthookSubscription data to update |
-| `options?` | [`AffindaAPIUpdateResthookSubscriptionDataOptionalParams`](../interfaces/AffindaAPIUpdateResthookSubscriptionDataOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIUpdateResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIUpdateResthookSubscriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
-
-___
-
-### updateResumeData
-
-▸ **updateResumeData**(`identifier`, `body`, `options?`): `Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
-
-Update data of a parsed resume.
-The `identifier` is the unique ID returned after POST-ing the resume via the
-[/resumes](#post-/resumes) endpoint.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Resume identifier |
-| `body` | ``null`` \| [`ResumeData`](../interfaces/ResumeData.md) | Resume data to update |
-| `options?` | [`AffindaAPIUpdateResumeDataOptionalParams`](../interfaces/AffindaAPIUpdateResumeDataOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
 
 ___
 
@@ -2004,9 +1623,9 @@ returned, etc.
 
 ___
 
-### updateTagData
+### updateTag
 
-▸ **updateTagData**(`id`, `body`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
+▸ **updateTag**(`id`, `body`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
 
 Update data of an tag.
 
@@ -2016,7 +1635,7 @@ Update data of an tag.
 | :------ | :------ | :------ |
 | `id` | `number` | Tag's ID |
 | `body` | [`TagUpdate`](../interfaces/TagUpdate.md) | Tag data to update |
-| `options?` | [`AffindaAPIUpdateTagDataOptionalParams`](../interfaces/AffindaAPIUpdateTagDataOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIUpdateTagOptionalParams`](../interfaces/AffindaAPIUpdateTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 

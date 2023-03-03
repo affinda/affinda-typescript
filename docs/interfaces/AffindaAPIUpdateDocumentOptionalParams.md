@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateDataPointDataOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateDocumentOptionalParams
 
-# Interface: AffindaAPIUpdateDataPointDataOptionalParams
+# Interface: AffindaAPIUpdateDocumentOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIUpdateDataPointDataOptionalParams`**
+  ↳ **`AffindaAPIUpdateDocumentOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIUpdateDataPointDataOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIUpdateDataPointDataOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIUpdateDataPointDataOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIUpdateDataPointDataOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIUpdateDataPointDataOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIUpdateDocumentOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIUpdateDocumentOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIUpdateDocumentOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIUpdateDocumentOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIUpdateDocumentOptionalParams.md#tracingoptions)
 
 ## Properties
 

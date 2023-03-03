@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetJobDescriptionOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateDataPointOptionalParams
 
-# Interface: AffindaAPIGetJobDescriptionOptionalParams
+# Interface: AffindaAPIUpdateDataPointOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetJobDescriptionOptionalParams`**
+  ↳ **`AffindaAPIUpdateDataPointOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetJobDescriptionOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIGetJobDescriptionOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetJobDescriptionOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetJobDescriptionOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetJobDescriptionOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIUpdateDataPointOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIUpdateDataPointOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIUpdateDataPointOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIUpdateDataPointOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIUpdateDataPointOptionalParams.md#tracingoptions)
 
 ## Properties
 

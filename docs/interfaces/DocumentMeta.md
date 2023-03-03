@@ -9,6 +9,7 @@
 - [archivedDt](DocumentMeta.md#archiveddt)
 - [childDocuments](DocumentMeta.md#childdocuments)
 - [collection](DocumentMeta.md#collection)
+- [confirmedBy](DocumentMeta.md#confirmedby)
 - [confirmedDt](DocumentMeta.md#confirmeddt)
 - [createdDt](DocumentMeta.md#createddt)
 - [errorCode](DocumentMeta.md#errorcode)
@@ -53,6 +54,12 @@ ___
 ### collection
 
 • `Optional` **collection**: [`DocumentMetaCollection`](DocumentMetaCollection.md)
+
+___
+
+### confirmedBy
+
+• `Optional` **confirmedBy**: [`User`](User.md)
 
 ___
 

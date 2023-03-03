@@ -8,6 +8,7 @@
 
 - [data](Document.md#data)
 - [error](Document.md#error)
+- [extractor](Document.md#extractor)
 - [meta](Document.md#meta)
 
 ## Properties
@@ -27,6 +28,14 @@ ___
 ### error
 
 • `Optional` **error**: [`ErrorModel`](ErrorModel.md)
+
+___
+
+### extractor
+
+• **extractor**: ``"resume"`` \| ``"invoice"`` \| ``"job-description"``
+
+Polymorphic discriminator, which specifies the different types this object can be
 
 ___
 

@@ -5,52 +5,6 @@ import * as Mappers from "./models/mappers";
 import { AffindaAPIContext } from "./affindaAPIContext";
 import {
   AffindaAPIOptionalParams,
-  AffindaAPIGetAllResumesOptionalParams,
-  AffindaAPIGetAllResumesResponse,
-  AffindaAPICreateResumeOptionalParams,
-  AffindaAPICreateResumeResponse,
-  AffindaAPIGetResumeOptionalParams,
-  AffindaAPIGetResumeResponse,
-  ResumeData,
-  AffindaAPIUpdateResumeDataOptionalParams,
-  AffindaAPIUpdateResumeDataResponse,
-  AffindaAPIDeleteResumeOptionalParams,
-  AffindaAPIGetAllRedactedResumesOptionalParams,
-  AffindaAPIGetAllRedactedResumesResponse,
-  AffindaAPICreateRedactedResumeOptionalParams,
-  AffindaAPICreateRedactedResumeResponse,
-  AffindaAPIGetRedactedResumeOptionalParams,
-  AffindaAPIGetRedactedResumeResponse,
-  AffindaAPIDeleteRedactedResumeOptionalParams,
-  AffindaAPIGetAllInvoicesOptionalParams,
-  AffindaAPIGetAllInvoicesResponse,
-  AffindaAPICreateInvoiceOptionalParams,
-  AffindaAPICreateInvoiceResponse,
-  AffindaAPIGetInvoiceOptionalParams,
-  AffindaAPIGetInvoiceResponse,
-  AffindaAPIDeleteInvoiceOptionalParams,
-  AffindaAPIGetAllJobDescriptionsOptionalParams,
-  AffindaAPIGetAllJobDescriptionsResponse,
-  AffindaAPICreateJobDescriptionOptionalParams,
-  AffindaAPICreateJobDescriptionResponse,
-  AffindaAPIGetJobDescriptionOptionalParams,
-  AffindaAPIGetJobDescriptionResponse,
-  JobDescriptionDataUpdate,
-  AffindaAPIUpdateJobDescriptionDataOptionalParams,
-  AffindaAPIUpdateJobDescriptionDataResponse,
-  AffindaAPIDeleteJobDescriptionOptionalParams,
-  JobDescriptionSearchParameters,
-  AffindaAPICreateJobDescriptionSearchOptionalParams,
-  AffindaAPICreateJobDescriptionSearchResponse,
-  AffindaAPIGetJobDescriptionSearchDetailOptionalParams,
-  AffindaAPIGetJobDescriptionSearchDetailResponse,
-  AffindaAPIGetJobDescriptionSearchConfigOptionalParams,
-  AffindaAPIGetJobDescriptionSearchConfigResponse,
-  JobDescriptionSearchConfig,
-  AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams,
-  AffindaAPIUpdateJobDescriptionSearchConfigResponse,
-  AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams,
-  AffindaAPICreateJobDescriptionSearchEmbedUrlResponse,
   ResumeSearchParameters,
   AffindaAPICreateResumeSearchOptionalParams,
   AffindaAPICreateResumeSearchResponse,
@@ -69,6 +23,18 @@ import {
   AffindaAPIGetResumeSearchSuggestionJobTitleResponse,
   AffindaAPIGetResumeSearchSuggestionSkillOptionalParams,
   AffindaAPIGetResumeSearchSuggestionSkillResponse,
+  JobDescriptionSearchParameters,
+  AffindaAPICreateJobDescriptionSearchOptionalParams,
+  AffindaAPICreateJobDescriptionSearchResponse,
+  AffindaAPIGetJobDescriptionSearchDetailOptionalParams,
+  AffindaAPIGetJobDescriptionSearchDetailResponse,
+  AffindaAPIGetJobDescriptionSearchConfigOptionalParams,
+  AffindaAPIGetJobDescriptionSearchConfigResponse,
+  JobDescriptionSearchConfig,
+  AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams,
+  AffindaAPIUpdateJobDescriptionSearchConfigResponse,
+  AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams,
+  AffindaAPICreateJobDescriptionSearchEmbedUrlResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
   AffindaAPICreateIndexOptionalParams,
@@ -82,17 +48,6 @@ import {
   AffindaAPIDeleteIndexDocumentOptionalParams,
   AffindaAPIListOccupationGroupsOptionalParams,
   AffindaAPIListOccupationGroupsResponse,
-  AffindaAPIGetAllResthookSubscriptionsOptionalParams,
-  AffindaAPIGetAllResthookSubscriptionsResponse,
-  ResthookSubscriptionCreate,
-  AffindaAPICreateResthookSubscriptionOptionalParams,
-  AffindaAPICreateResthookSubscriptionResponse,
-  AffindaAPIGetResthookSubscriptionOptionalParams,
-  AffindaAPIGetResthookSubscriptionResponse,
-  ResthookSubscriptionUpdate,
-  AffindaAPIUpdateResthookSubscriptionDataOptionalParams,
-  AffindaAPIUpdateResthookSubscriptionDataResponse,
-  AffindaAPIDeleteResthookSubscriptionOptionalParams,
   AffindaAPIGetAllOrganizationsOptionalParams,
   AffindaAPIGetAllOrganizationsResponse,
   AffindaAPICreateOrganizationOptionalParams,
@@ -123,7 +78,7 @@ import {
   AffindaAPIDeleteInvitationOptionalParams,
   AffindaAPIGetInvitationByTokenOptionalParams,
   AffindaAPIGetInvitationByTokenResponse,
-  PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema,
+  InvitationResponse,
   AffindaAPIRespondToInvitationOptionalParams,
   AffindaAPIRespondToInvitationResponse,
   AffindaAPIGetAllExtractorsOptionalParams,
@@ -133,8 +88,8 @@ import {
   AffindaAPIGetExtractorOptionalParams,
   AffindaAPIGetExtractorResponse,
   ExtractorUpdate,
-  AffindaAPIUpdateExtractorDataOptionalParams,
-  AffindaAPIUpdateExtractorDataResponse,
+  AffindaAPIUpdateExtractorOptionalParams,
+  AffindaAPIUpdateExtractorResponse,
   AffindaAPIDeleteExtractorOptionalParams,
   AffindaAPIGetAllDataPointsOptionalParams,
   AffindaAPIGetAllDataPointsResponse,
@@ -143,8 +98,8 @@ import {
   AffindaAPIGetDataPointOptionalParams,
   AffindaAPIGetDataPointResponse,
   DataPointUpdate,
-  AffindaAPIUpdateDataPointDataOptionalParams,
-  AffindaAPIUpdateDataPointDataResponse,
+  AffindaAPIUpdateDataPointOptionalParams,
+  AffindaAPIUpdateDataPointResponse,
   AffindaAPIDeleteDataPointOptionalParams,
   AffindaAPIGetDataPointChoicesOptionalParams,
   AffindaAPIGetDataPointChoicesResponse,
@@ -175,8 +130,8 @@ import {
   AffindaAPIGetCollectionOptionalParams,
   AffindaAPIGetCollectionResponse,
   CollectionUpdate,
-  AffindaAPIUpdateCollectionDataOptionalParams,
-  AffindaAPIUpdateCollectionDataResponse,
+  AffindaAPIUpdateCollectionOptionalParams,
+  AffindaAPIUpdateCollectionResponse,
   AffindaAPIDeleteCollectionOptionalParams,
   AffindaAPIGetAllDocumentsOptionalParams,
   AffindaAPIGetAllDocumentsResponse,
@@ -185,8 +140,8 @@ import {
   AffindaAPIGetDocumentOptionalParams,
   AffindaAPIGetDocumentResponse,
   DocumentUpdate,
-  AffindaAPIUpdateDocumentDataOptionalParams,
-  AffindaAPIUpdateDocumentDataResponse,
+  AffindaAPIUpdateDocumentOptionalParams,
+  AffindaAPIUpdateDocumentResponse,
   AffindaAPIDeleteDocumentOptionalParams,
   AffindaAPIGetAllTagsOptionalParams,
   AffindaAPIGetAllTagsResponse,
@@ -196,9 +151,20 @@ import {
   AffindaAPIGetTagOptionalParams,
   AffindaAPIGetTagResponse,
   TagUpdate,
-  AffindaAPIUpdateTagDataOptionalParams,
-  AffindaAPIUpdateTagDataResponse,
-  AffindaAPIDeleteTagOptionalParams
+  AffindaAPIUpdateTagOptionalParams,
+  AffindaAPIUpdateTagResponse,
+  AffindaAPIDeleteTagOptionalParams,
+  AffindaAPIGetAllResthookSubscriptionsOptionalParams,
+  AffindaAPIGetAllResthookSubscriptionsResponse,
+  ResthookSubscriptionCreate,
+  AffindaAPICreateResthookSubscriptionOptionalParams,
+  AffindaAPICreateResthookSubscriptionResponse,
+  AffindaAPIGetResthookSubscriptionOptionalParams,
+  AffindaAPIGetResthookSubscriptionResponse,
+  ResthookSubscriptionUpdate,
+  AffindaAPIUpdateResthookSubscriptionOptionalParams,
+  AffindaAPIUpdateResthookSubscriptionResponse,
+  AffindaAPIDeleteResthookSubscriptionOptionalParams
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -212,361 +178,6 @@ export class AffindaAPI extends AffindaAPIContext {
     options?: AffindaAPIOptionalParams
   ) {
     super(credentials, options);
-  }
-
-  /**
-   * Returns all the resume summaries for that user, limited to 300 per page.
-   * @param options The options parameters.
-   */
-  getAllResumes(
-    options?: AffindaAPIGetAllResumesOptionalParams
-  ): Promise<AffindaAPIGetAllResumesResponse> {
-    return this.sendOperationRequest({ options }, getAllResumesOperationSpec);
-  }
-
-  /**
-   * Uploads a resume for parsing. When successful, returns an `identifier` in the response for
-   * subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
-   * processing status and retrieve results.<br/>
-   * Resumes can be uploaded as a file or a URL. In addition, data can be added directly if users want to
-   * upload directly without parsing any resume file. For uploading resume data, the `data` argument
-   * provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
-   * @param options The options parameters.
-   */
-  createResume(
-    options?: AffindaAPICreateResumeOptionalParams
-  ): Promise<AffindaAPICreateResumeResponse> {
-    return this.sendOperationRequest({ options }, createResumeOperationSpec);
-  }
-
-  /**
-   * Returns all the parse results for that resume if processing is completed.
-   * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/resumes](#post-/resumes) endpoint.
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  getResume(
-    identifier: string,
-    options?: AffindaAPIGetResumeOptionalParams
-  ): Promise<AffindaAPIGetResumeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getResumeOperationSpec
-    );
-  }
-
-  /**
-   * Update data of a parsed resume.
-   * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/resumes](#post-/resumes) endpoint.
-   * @param identifier Resume identifier
-   * @param body Resume data to update
-   * @param options The options parameters.
-   */
-  updateResumeData(
-    identifier: string,
-    body: ResumeData | null,
-    options?: AffindaAPIUpdateResumeDataOptionalParams
-  ): Promise<AffindaAPIUpdateResumeDataResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateResumeDataOperationSpec
-    );
-  }
-
-  /**
-   * Deletes the specified resume from the database
-   * @param identifier Resume identifier
-   * @param options The options parameters.
-   */
-  deleteResume(
-    identifier: string,
-    options?: AffindaAPIDeleteResumeOptionalParams
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteResumeOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the redacted resume information for that resume
-   * @param options The options parameters.
-   */
-  getAllRedactedResumes(
-    options?: AffindaAPIGetAllRedactedResumesOptionalParams
-  ): Promise<AffindaAPIGetAllRedactedResumesResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllRedactedResumesOperationSpec
-    );
-  }
-
-  /**
-   * Uploads a resume for redacting.
-   * @param options The options parameters.
-   */
-  createRedactedResume(
-    options?: AffindaAPICreateRedactedResumeOptionalParams
-  ): Promise<AffindaAPICreateRedactedResumeResponse> {
-    return this.sendOperationRequest(
-      { options },
-      createRedactedResumeOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the redaction results for that resume if processing is completed.
-   * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/redacted_resumes](#post-/redacted_resumes) endpoint.
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  getRedactedResume(
-    identifier: string,
-    options?: AffindaAPIGetRedactedResumeOptionalParams
-  ): Promise<AffindaAPIGetRedactedResumeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getRedactedResumeOperationSpec
-    );
-  }
-
-  /**
-   * Deletes the specified resume from the database
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  deleteRedactedResume(
-    identifier: string,
-    options?: AffindaAPIDeleteRedactedResumeOptionalParams
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteRedactedResumeOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the invoice summaries for that user, limited to 300 per page.
-   * @param options The options parameters.
-   */
-  getAllInvoices(
-    options?: AffindaAPIGetAllInvoicesOptionalParams
-  ): Promise<AffindaAPIGetAllInvoicesResponse> {
-    return this.sendOperationRequest({ options }, getAllInvoicesOperationSpec);
-  }
-
-  /**
-   * Uploads an invoice for parsing.
-   * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/invoices/{identifier}](#get-/invoices/-identifier-) endpoint to check processing status and
-   * retrieve results.
-   * @param options The options parameters.
-   */
-  createInvoice(
-    options?: AffindaAPICreateInvoiceOptionalParams
-  ): Promise<AffindaAPICreateInvoiceResponse> {
-    return this.sendOperationRequest({ options }, createInvoiceOperationSpec);
-  }
-
-  /**
-   * Returns all the parse results for that invoice if processing is completed.
-   * The `identifier` is the unique ID returned after POST-ing the invoice via the
-   * [/invoices](#post-/invoices) endpoint.
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  getInvoice(
-    identifier: string,
-    options?: AffindaAPIGetInvoiceOptionalParams
-  ): Promise<AffindaAPIGetInvoiceResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getInvoiceOperationSpec
-    );
-  }
-
-  /**
-   * Delete the specified invoice from the database. Note, any invoices deleted from the database will no
-   * longer be used in any tailored customer models.
-   * @param identifier Invoice identifier
-   * @param options The options parameters.
-   */
-  deleteInvoice(
-    identifier: string,
-    options?: AffindaAPIDeleteInvoiceOptionalParams
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteInvoiceOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the job descriptions for that user, limited to 300 per page.
-   * @param options The options parameters.
-   */
-  getAllJobDescriptions(
-    options?: AffindaAPIGetAllJobDescriptionsOptionalParams
-  ): Promise<AffindaAPIGetAllJobDescriptionsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllJobDescriptionsOperationSpec
-    );
-  }
-
-  /**
-   * Uploads a job description for parsing.
-   * When successful, returns an `identifier` in the response for subsequent use with the
-   * [/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
-   * status and retrieve results.
-   * Job Descriptions can be uploaded as a file or a URL. In addition, data can be added directly if
-   * users want to upload directly without parsing any resume file. For uploading resume data, the `data`
-   * argument provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
-   * @param options The options parameters.
-   */
-  createJobDescription(
-    options?: AffindaAPICreateJobDescriptionOptionalParams
-  ): Promise<AffindaAPICreateJobDescriptionResponse> {
-    return this.sendOperationRequest(
-      { options },
-      createJobDescriptionOperationSpec
-    );
-  }
-
-  /**
-   * Returns all the results for that job description if processing is completed.
-   * The `identifier` is the unique ID returned after POST-ing the resume via the
-   * [/job_descriptions](#post-/job_descriptions) endpoint.
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  getJobDescription(
-    identifier: string,
-    options?: AffindaAPIGetJobDescriptionOptionalParams
-  ): Promise<AffindaAPIGetJobDescriptionResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getJobDescriptionOperationSpec
-    );
-  }
-
-  /**
-   * Update data of a job description.
-   * The `identifier` is the unique ID returned after POST-ing the job description via the
-   * [/job_descriptions](#post-/job_descriptions) endpoint.
-   * @param identifier Job description identifier
-   * @param body Job description data to update
-   * @param options The options parameters.
-   */
-  updateJobDescriptionData(
-    identifier: string,
-    body: JobDescriptionDataUpdate | null,
-    options?: AffindaAPIUpdateJobDescriptionDataOptionalParams
-  ): Promise<AffindaAPIUpdateJobDescriptionDataResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateJobDescriptionDataOperationSpec
-    );
-  }
-
-  /**
-   * Deletes the specified job description from the database
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  deleteJobDescription(
-    identifier: string,
-    options?: AffindaAPIDeleteJobDescriptionOptionalParams
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteJobDescriptionOperationSpec
-    );
-  }
-
-  /**
-   * Searches through parsed job descriptions. You can search with custom criterias or a resume.
-   * @param body Search parameters
-   * @param options The options parameters.
-   */
-  createJobDescriptionSearch(
-    body: JobDescriptionSearchParameters | null,
-    options?: AffindaAPICreateJobDescriptionSearchOptionalParams
-  ): Promise<AffindaAPICreateJobDescriptionSearchResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createJobDescriptionSearchOperationSpec
-    );
-  }
-
-  /**
-   * This contains more detailed information about the matching score of the search criteria, or which
-   * search criteria is missing in this job description.
-   * The `identifier` is the unique ID returned via the
-   * [/job_description_search](#post-/job_description_search) endpoint.
-   * @param identifier Job Description identifier
-   * @param body Search parameters
-   * @param options The options parameters.
-   */
-  getJobDescriptionSearchDetail(
-    identifier: string,
-    body: JobDescriptionSearchParameters | null,
-    options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams
-  ): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      getJobDescriptionSearchDetailOperationSpec
-    );
-  }
-
-  /**
-   * Return configurations such as which fields can be displayed in the logged in user's embeddable job
-   * description search tool, what are their weights, what is the maximum number of results that can be
-   * returned, etc.
-   * @param options The options parameters.
-   */
-  getJobDescriptionSearchConfig(
-    options?: AffindaAPIGetJobDescriptionSearchConfigOptionalParams
-  ): Promise<AffindaAPIGetJobDescriptionSearchConfigResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getJobDescriptionSearchConfigOperationSpec
-    );
-  }
-
-  /**
-   * Update configurations such as which fields can be displayed in the logged in user's embeddable job
-   * description search tool, what are their weights, what is the maximum number of results that can be
-   * returned, etc.
-   * @param body
-   * @param options The options parameters.
-   */
-  updateJobDescriptionSearchConfig(
-    body: JobDescriptionSearchConfig,
-    options?: AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams
-  ): Promise<AffindaAPIUpdateJobDescriptionSearchConfigResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      updateJobDescriptionSearchConfigOperationSpec
-    );
-  }
-
-  /**
-   * Create and return a signed URL of the job description search tool which then can be embedded on a
-   * web page. An optional parameter `config_override` can be passed to override the user-level
-   * configurations of the embeddable search tool.
-   * @param options The options parameters.
-   */
-  createJobDescriptionSearchEmbedUrl(
-    options?: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
-  ): Promise<AffindaAPICreateJobDescriptionSearchEmbedUrlResponse> {
-    return this.sendOperationRequest(
-      { options },
-      createJobDescriptionSearchEmbedUrlOperationSpec
-    );
   }
 
   /**
@@ -705,6 +316,88 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
+   * Searches through parsed job descriptions. You can search with custom criterias or a resume.
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  createJobDescriptionSearch(
+    body: JobDescriptionSearchParameters | null,
+    options?: AffindaAPICreateJobDescriptionSearchOptionalParams
+  ): Promise<AffindaAPICreateJobDescriptionSearchResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createJobDescriptionSearchOperationSpec
+    );
+  }
+
+  /**
+   * This contains more detailed information about the matching score of the search criteria, or which
+   * search criteria is missing in this job description.
+   * The `identifier` is the unique ID returned via the
+   * [/job_description_search](#post-/job_description_search) endpoint.
+   * @param identifier Job Description identifier
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  getJobDescriptionSearchDetail(
+    identifier: string,
+    body: JobDescriptionSearchParameters | null,
+    options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams
+  ): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      getJobDescriptionSearchDetailOperationSpec
+    );
+  }
+
+  /**
+   * Return configurations such as which fields can be displayed in the logged in user's embeddable job
+   * description search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
+   * @param options The options parameters.
+   */
+  getJobDescriptionSearchConfig(
+    options?: AffindaAPIGetJobDescriptionSearchConfigOptionalParams
+  ): Promise<AffindaAPIGetJobDescriptionSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getJobDescriptionSearchConfigOperationSpec
+    );
+  }
+
+  /**
+   * Update configurations such as which fields can be displayed in the logged in user's embeddable job
+   * description search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateJobDescriptionSearchConfig(
+    body: JobDescriptionSearchConfig,
+    options?: AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams
+  ): Promise<AffindaAPIUpdateJobDescriptionSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      updateJobDescriptionSearchConfigOperationSpec
+    );
+  }
+
+  /**
+   * Create and return a signed URL of the job description search tool which then can be embedded on a
+   * web page. An optional parameter `config_override` can be passed to override the user-level
+   * configurations of the embeddable search tool.
+   * @param options The options parameters.
+   */
+  createJobDescriptionSearchEmbedUrl(
+    options?: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+  ): Promise<AffindaAPICreateJobDescriptionSearchEmbedUrlResponse> {
+    return this.sendOperationRequest(
+      { options },
+      createJobDescriptionSearchEmbedUrlOperationSpec
+    );
+  }
+
+  /**
    * Returns all the indexes
    * @param options The options parameters.
    */
@@ -798,81 +491,6 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { options },
       listOccupationGroupsOperationSpec
-    );
-  }
-
-  /**
-   * Returns your resthook subscriptions.
-   * @param options The options parameters.
-   */
-  getAllResthookSubscriptions(
-    options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams
-  ): Promise<AffindaAPIGetAllResthookSubscriptionsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllResthookSubscriptionsOperationSpec
-    );
-  }
-
-  /**
-   * Create a resthook subscriptions
-   * @param body
-   * @param options The options parameters.
-   */
-  createResthookSubscription(
-    body: ResthookSubscriptionCreate,
-    options?: AffindaAPICreateResthookSubscriptionOptionalParams
-  ): Promise<AffindaAPICreateResthookSubscriptionResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createResthookSubscriptionOperationSpec
-    );
-  }
-
-  /**
-   * Return a specific resthook subscription.
-   * @param id Resthook subscription's ID
-   * @param options The options parameters.
-   */
-  getResthookSubscription(
-    id: number,
-    options?: AffindaAPIGetResthookSubscriptionOptionalParams
-  ): Promise<AffindaAPIGetResthookSubscriptionResponse> {
-    return this.sendOperationRequest(
-      { id, options },
-      getResthookSubscriptionOperationSpec
-    );
-  }
-
-  /**
-   * Update data of a resthook subscription.
-   * @param id ResthookSubscription's ID
-   * @param body ResthookSubscription data to update
-   * @param options The options parameters.
-   */
-  updateResthookSubscriptionData(
-    id: number,
-    body: ResthookSubscriptionUpdate,
-    options?: AffindaAPIUpdateResthookSubscriptionDataOptionalParams
-  ): Promise<AffindaAPIUpdateResthookSubscriptionDataResponse> {
-    return this.sendOperationRequest(
-      { id, body, options },
-      updateResthookSubscriptionDataOperationSpec
-    );
-  }
-
-  /**
-   * Deletes the specified resthook subscription from the database.
-   * @param id ResthookSubscription's ID
-   * @param options The options parameters.
-   */
-  deleteResthookSubscription(
-    id: number,
-    options?: AffindaAPIDeleteResthookSubscriptionOptionalParams
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { id, options },
-      deleteResthookSubscriptionOperationSpec
     );
   }
 
@@ -1109,7 +727,7 @@ export class AffindaAPI extends AffindaAPIContext {
    */
   respondToInvitation(
     token: string,
-    body: PathsCtl5TcV3InvitationsTokenPatchRequestbodyContentApplicationJsonSchema,
+    body: InvitationResponse,
     options?: AffindaAPIRespondToInvitationOptionalParams
   ): Promise<AffindaAPIRespondToInvitationResponse> {
     return this.sendOperationRequest(
@@ -1164,14 +782,14 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param body Extractor data to update
    * @param options The options parameters.
    */
-  updateExtractorData(
+  updateExtractor(
     identifier: string,
     body: ExtractorUpdate,
-    options?: AffindaAPIUpdateExtractorDataOptionalParams
-  ): Promise<AffindaAPIUpdateExtractorDataResponse> {
+    options?: AffindaAPIUpdateExtractorOptionalParams
+  ): Promise<AffindaAPIUpdateExtractorResponse> {
     return this.sendOperationRequest(
       { identifier, body, options },
-      updateExtractorDataOperationSpec
+      updateExtractorOperationSpec
     );
   }
 
@@ -1234,14 +852,14 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param body Data point to update
    * @param options The options parameters.
    */
-  updateDataPointData(
+  updateDataPoint(
     identifier: string,
     body: DataPointUpdate,
-    options?: AffindaAPIUpdateDataPointDataOptionalParams
-  ): Promise<AffindaAPIUpdateDataPointDataResponse> {
+    options?: AffindaAPIUpdateDataPointOptionalParams
+  ): Promise<AffindaAPIUpdateDataPointResponse> {
     return this.sendOperationRequest(
       { identifier, body, options },
-      updateDataPointDataOperationSpec
+      updateDataPointOperationSpec
     );
   }
 
@@ -1461,14 +1079,14 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param body Collection data to update
    * @param options The options parameters.
    */
-  updateCollectionData(
+  updateCollection(
     identifier: string,
     body: CollectionUpdate,
-    options?: AffindaAPIUpdateCollectionDataOptionalParams
-  ): Promise<AffindaAPIUpdateCollectionDataResponse> {
+    options?: AffindaAPIUpdateCollectionOptionalParams
+  ): Promise<AffindaAPIUpdateCollectionResponse> {
     return this.sendOperationRequest(
       { identifier, body, options },
-      updateCollectionDataOperationSpec
+      updateCollectionOperationSpec
     );
   }
 
@@ -1530,14 +1148,14 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param body Document data to update
    * @param options The options parameters.
    */
-  updateDocumentData(
+  updateDocument(
     identifier: string,
     body: DocumentUpdate,
-    options?: AffindaAPIUpdateDocumentDataOptionalParams
-  ): Promise<AffindaAPIUpdateDocumentDataResponse> {
+    options?: AffindaAPIUpdateDocumentOptionalParams
+  ): Promise<AffindaAPIUpdateDocumentResponse> {
     return this.sendOperationRequest(
       { identifier, body, options },
-      updateDocumentDataOperationSpec
+      updateDocumentOperationSpec
     );
   }
 
@@ -1596,14 +1214,14 @@ export class AffindaAPI extends AffindaAPIContext {
    * @param body Tag data to update
    * @param options The options parameters.
    */
-  updateTagData(
+  updateTag(
     id: number,
     body: TagUpdate,
-    options?: AffindaAPIUpdateTagDataOptionalParams
-  ): Promise<AffindaAPIUpdateTagDataResponse> {
+    options?: AffindaAPIUpdateTagOptionalParams
+  ): Promise<AffindaAPIUpdateTagResponse> {
     return this.sendOperationRequest(
       { id, body, options },
-      updateTagDataOperationSpec
+      updateTagOperationSpec
     );
   }
 
@@ -1618,605 +1236,85 @@ export class AffindaAPI extends AffindaAPIContext {
   ): Promise<void> {
     return this.sendOperationRequest({ id, options }, deleteTagOperationSpec);
   }
+
+  /**
+   * Returns your resthook subscriptions.
+   * @param options The options parameters.
+   */
+  getAllResthookSubscriptions(
+    options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams
+  ): Promise<AffindaAPIGetAllResthookSubscriptionsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllResthookSubscriptionsOperationSpec
+    );
+  }
+
+  /**
+   * Create a resthook subscriptions
+   * @param body
+   * @param options The options parameters.
+   */
+  createResthookSubscription(
+    body: ResthookSubscriptionCreate,
+    options?: AffindaAPICreateResthookSubscriptionOptionalParams
+  ): Promise<AffindaAPICreateResthookSubscriptionResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific resthook subscription.
+   * @param id Resthook subscription's ID
+   * @param options The options parameters.
+   */
+  getResthookSubscription(
+    id: number,
+    options?: AffindaAPIGetResthookSubscriptionOptionalParams
+  ): Promise<AffindaAPIGetResthookSubscriptionResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      getResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * Update data of a resthook subscription.
+   * @param id ResthookSubscription's ID
+   * @param body ResthookSubscription data to update
+   * @param options The options parameters.
+   */
+  updateResthookSubscription(
+    id: number,
+    body: ResthookSubscriptionUpdate,
+    options?: AffindaAPIUpdateResthookSubscriptionOptionalParams
+  ): Promise<AffindaAPIUpdateResthookSubscriptionResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified resthook subscription from the database.
+   * @param id ResthookSubscription's ID
+   * @param options The options parameters.
+   */
+  deleteResthookSubscription(
+    id: number,
+    options?: AffindaAPIDeleteResthookSubscriptionOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { id, options },
+      deleteResthookSubscriptionOperationSpec
+    );
+  }
 }
 // Operation Specifications
-const xmlSerializer = coreClient.createSerializer(Mappers, /* isXml */ true);
-
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
-const getAllResumesOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/resumes",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.GetAllDocumentsResultsV2
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/resumes",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Resume
-    },
-    201: {
-      bodyMapper: Mappers.Resume
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [
-    Parameters.file,
-    Parameters.url,
-    Parameters.data,
-    Parameters.identifier,
-    Parameters.fileName,
-    Parameters.wait,
-    Parameters.rejectDuplicates,
-    Parameters.language,
-    Parameters.expiryTime
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const getResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/resumes/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Resume
-    },
-    400: {
-      bodyMapper: Mappers.RequestError
-    },
-    401: {
-      bodyMapper: Mappers.RequestError
-    },
-    404: {
-      bodyMapper: Mappers.RequestError
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.format],
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept2],
-  isXML: true,
-  serializer: xmlSerializer
-};
-const updateResumeDataOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/resumes/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResumeData
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const deleteResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/resumes/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/redacted_resumes",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.GetAllDocumentsResultsV2
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/redacted_resumes",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.RedactedResume
-    },
-    201: {
-      bodyMapper: Mappers.RedactedResume
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [
-    Parameters.file,
-    Parameters.url,
-    Parameters.identifier,
-    Parameters.fileName,
-    Parameters.wait,
-    Parameters.language,
-    Parameters.expiryTime,
-    Parameters.redactHeadshot,
-    Parameters.redactPersonalDetails,
-    Parameters.redactWorkDetails,
-    Parameters.redactEducationDetails,
-    Parameters.redactReferees,
-    Parameters.redactLocations,
-    Parameters.redactDates,
-    Parameters.redactGender
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const getRedactedResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/redacted_resumes/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.RedactedResume
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const deleteRedactedResumeOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/redacted_resumes/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/invoices",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.GetAllInvoicesResults
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createInvoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/invoices",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Invoice
-    },
-    201: {
-      bodyMapper: Mappers.Invoice
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [
-    Parameters.file,
-    Parameters.url,
-    Parameters.identifier,
-    Parameters.fileName,
-    Parameters.wait,
-    Parameters.rejectDuplicates,
-    Parameters.language,
-    Parameters.expiryTime
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const getInvoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/invoices/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Invoice
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const deleteInvoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/invoices/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_descriptions",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.GetAllJobDescriptionsResults
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_descriptions",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescription
-    },
-    201: {
-      bodyMapper: Mappers.JobDescription
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  formDataParameters: [
-    Parameters.file,
-    Parameters.url,
-    Parameters.identifier,
-    Parameters.fileName,
-    Parameters.wait,
-    Parameters.rejectDuplicates,
-    Parameters.language,
-    Parameters.expiryTime
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
-  serializer
-};
-const getJobDescriptionOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_descriptions/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescription
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const updateJobDescriptionDataOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_descriptions/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescriptionData
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body1,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const deleteJobDescriptionOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_descriptions/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_description_search",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.JobDescriptionSearch
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body2,
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_description_search/details/{identifier}",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescriptionSearchDetail
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body2,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const getJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_description_search/config",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescriptionSearchConfig
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_description_search/config",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescriptionSearchConfig
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body3,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
-  path: "/v2/job_description_search/embed",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.JobDescriptionSearchEmbed
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body4,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
 const createResumeSearchOperationSpec: coreClient.OperationSpec = {
   path: "/v3/resume_search",
   httpMethod: "POST",
@@ -2236,10 +1334,10 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body5,
+  requestBody: Parameters.body,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -2262,9 +1360,9 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body5,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -2344,9 +1442,9 @@ const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body6,
+  requestBody: Parameters.body1,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -2365,9 +1463,9 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body7,
+  requestBody: Parameters.body2,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -2423,6 +1521,122 @@ const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/job_description_search",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.JobDescriptionSearch
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body3,
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
+const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/job_description_search/details/{identifier}",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchDetail
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body3,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
+const getJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/job_description_search/config",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchConfig
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/job_description_search/config",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchConfig
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body4,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
+const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/job_description_search/embed",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.JobDescriptionSearchEmbed
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body5,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
 const getAllIndexesOperationSpec: coreClient.OperationSpec = {
   path: "/v3/index",
   httpMethod: "GET",
@@ -2474,7 +1688,7 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
   },
   formDataParameters: [Parameters.name, Parameters.documentType1],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
+  headerParameters: [Parameters.contentType1, Parameters.accept1],
   serializer
 };
 const deleteIndexOperationSpec: coreClient.OperationSpec = {
@@ -2542,9 +1756,9 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body8,
+  requestBody: Parameters.body6,
   urlParameters: [Parameters.region, Parameters.name1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -2565,7 +1779,7 @@ const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.identifier, Parameters.name1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2594,125 +1808,6 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
     }
   },
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllResthookSubscriptionsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resthook_subscriptions",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.offset, Parameters.limit],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resthook_subscriptions",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.ResthookSubscription
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body9,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const getResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resthook_subscriptions/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResthookSubscription
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const updateResthookSubscriptionDataOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resthook_subscriptions/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResthookSubscription
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body10,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
-  mediaType: "json",
-  serializer
-};
-const deleteResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resthook_subscriptions/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2769,7 +1864,7 @@ const createOrganizationOperationSpec: coreClient.OperationSpec = {
     Parameters.resthookSignatureKey
   ],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
+  headerParameters: [Parameters.contentType1, Parameters.accept1],
   serializer
 };
 const getOrganizationOperationSpec: coreClient.OperationSpec = {
@@ -2791,7 +1886,7 @@ const getOrganizationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2819,8 +1914,8 @@ const updateOrganizationOperationSpec: coreClient.OperationSpec = {
     Parameters.avatar,
     Parameters.resthookSignatureKey
   ],
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType1, Parameters.accept1],
   serializer
 };
 const deleteOrganizationOperationSpec: coreClient.OperationSpec = {
@@ -2840,7 +1935,7 @@ const deleteOrganizationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2893,7 +1988,7 @@ const getOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2916,9 +2011,9 @@ const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body11,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body7,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -2939,7 +2034,7 @@ const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -2993,9 +2088,9 @@ const createInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body12,
+  requestBody: Parameters.body8,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3018,7 +2113,7 @@ const getInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3041,9 +2136,9 @@ const updateInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body13,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body9,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3064,7 +2159,7 @@ const deleteInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3106,9 +2201,9 @@ const respondToInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body14,
+  requestBody: Parameters.body10,
   urlParameters: [Parameters.region, Parameters.token],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3165,9 +2260,9 @@ const createExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body15,
+  requestBody: Parameters.body11,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3190,11 +2285,11 @@ const getExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
-const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
+const updateExtractorOperationSpec: coreClient.OperationSpec = {
   path: "/v3/extractors/{identifier}",
   httpMethod: "PATCH",
   responses: {
@@ -3213,9 +2308,9 @@ const updateExtractorDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body16,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body12,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3236,7 +2331,7 @@ const deleteExtractorOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3296,9 +2391,9 @@ const createDataPointOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body17,
+  requestBody: Parameters.body13,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3321,11 +2416,11 @@ const getDataPointOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
-const updateDataPointDataOperationSpec: coreClient.OperationSpec = {
+const updateDataPointOperationSpec: coreClient.OperationSpec = {
   path: "/v3/data_points/{identifier}",
   httpMethod: "PATCH",
   responses: {
@@ -3344,9 +2439,9 @@ const updateDataPointDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body18,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body14,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3367,7 +2462,7 @@ const deleteDataPointOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3449,9 +2544,9 @@ const createWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body19,
+  requestBody: Parameters.body15,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3474,7 +2569,7 @@ const getWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3497,9 +2592,9 @@ const updateWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body20,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body16,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3520,7 +2615,7 @@ const deleteWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3573,9 +2668,9 @@ const createWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body21,
+  requestBody: Parameters.body17,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3598,7 +2693,7 @@ const getWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3619,7 +2714,7 @@ const deleteWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3671,9 +2766,9 @@ const createCollectionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body22,
+  requestBody: Parameters.body18,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3696,11 +2791,11 @@ const getCollectionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
-const updateCollectionDataOperationSpec: coreClient.OperationSpec = {
+const updateCollectionOperationSpec: coreClient.OperationSpec = {
   path: "/v3/collections/{identifier}",
   httpMethod: "PATCH",
   responses: {
@@ -3719,9 +2814,9 @@ const updateCollectionDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body23,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body19,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3742,7 +2837,7 @@ const deleteCollectionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3808,16 +2903,16 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
   formDataParameters: [
     Parameters.file,
     Parameters.url,
-    Parameters.identifier,
-    Parameters.fileName,
-    Parameters.wait,
-    Parameters.language,
-    Parameters.expiryTime,
     Parameters.collection1,
-    Parameters.workspace2
+    Parameters.workspace2,
+    Parameters.wait,
+    Parameters.identifier1,
+    Parameters.fileName,
+    Parameters.expiryTime,
+    Parameters.language
   ],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
+  headerParameters: [Parameters.contentType1, Parameters.accept1],
   serializer
 };
 const getDocumentOperationSpec: coreClient.OperationSpec = {
@@ -3839,11 +2934,11 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
-const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
+const updateDocumentOperationSpec: coreClient.OperationSpec = {
   path: "/v3/documents/{identifier}",
   httpMethod: "PATCH",
   responses: {
@@ -3862,9 +2957,9 @@ const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body24,
-  urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  requestBody: Parameters.body20,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3885,7 +2980,7 @@ const deleteDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1],
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3937,9 +3032,9 @@ const createTagOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body25,
+  requestBody: Parameters.body21,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -3966,7 +3061,7 @@ const getTagOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
-const updateTagDataOperationSpec: coreClient.OperationSpec = {
+const updateTagOperationSpec: coreClient.OperationSpec = {
   path: "/v3/tags/{id}",
   httpMethod: "PATCH",
   responses: {
@@ -3985,14 +3080,133 @@ const updateTagDataOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body26,
+  requestBody: Parameters.body22,
   urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType1],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
 const deleteTagOperationSpec: coreClient.OperationSpec = {
   path: "/v3/tags/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getAllResthookSubscriptionsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body23,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
+const getResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body24,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
+const deleteResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/{id}",
   httpMethod: "DELETE",
   responses: {
     204: {},

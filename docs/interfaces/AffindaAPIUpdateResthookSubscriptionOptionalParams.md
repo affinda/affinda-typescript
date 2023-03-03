@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateDocumentDataOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateResthookSubscriptionOptionalParams
 
-# Interface: AffindaAPIUpdateDocumentDataOptionalParams
+# Interface: AffindaAPIUpdateResthookSubscriptionOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIUpdateDocumentDataOptionalParams`**
+  ↳ **`AffindaAPIUpdateResthookSubscriptionOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIUpdateDocumentDataOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPIUpdateDocumentDataOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIUpdateDocumentDataOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIUpdateDocumentDataOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIUpdateDocumentDataOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIUpdateResthookSubscriptionOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIUpdateResthookSubscriptionOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIUpdateResthookSubscriptionOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIUpdateResthookSubscriptionOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIUpdateResthookSubscriptionOptionalParams.md#tracingoptions)
 
 ## Properties
 

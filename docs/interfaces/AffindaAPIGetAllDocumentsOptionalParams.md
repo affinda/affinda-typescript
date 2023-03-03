@@ -168,7 +168,7 @@ ___
 
 • `Optional` **tags**: `number`[]
 
-Filter by tags.
+Filter by tag's IDs.
 
 ___
 
