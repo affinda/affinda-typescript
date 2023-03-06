@@ -1529,6 +1529,7 @@ export declare interface DataPointChoice {
     id: number;
     label: string;
     value: string;
+    description?: string;
 }
 
 export declare interface DataPointCreate {
@@ -1872,7 +1873,12 @@ export declare interface GetAllDocumentsResults {
     next?: string;
     /** URL to request previous page of results */
     previous?: string;
-    results: DocumentUnion[];
+    results: GetAllDocumentsResultsItem[];
+}
+
+export declare interface GetAllDocumentsResultsItem {
+    meta: DocumentMeta;
+    error?: ErrorModel;
 }
 
 /**

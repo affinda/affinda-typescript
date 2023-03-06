@@ -4446,6 +4446,12 @@ export const DataPointChoice: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      description: {
+        serializedName: "description",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -5146,7 +5152,7 @@ export const GetAllDocumentsResults: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Document"
+              className: "GetAllDocumentsResultsItem"
             }
           }
         }
@@ -5155,35 +5161,16 @@ export const GetAllDocumentsResults: coreClient.CompositeMapper = {
   }
 };
 
-export const Document: coreClient.CompositeMapper = {
+export const GetAllDocumentsResultsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Document",
-    uberParent: "Document",
-    polymorphicDiscriminator: {
-      serializedName: "extractor",
-      clientName: "extractor"
-    },
+    className: "GetAllDocumentsResultsItem",
     modelProperties: {
-      extractor: {
-        serializedName: "extractor",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
       meta: {
         serializedName: "meta",
         type: {
           name: "Composite",
           className: "DocumentMeta"
-        }
-      },
-      data: {
-        serializedName: "data",
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
         }
       },
       error: {
@@ -5632,6 +5619,48 @@ export const ErrorModel: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Document: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Document",
+    uberParent: "Document",
+    polymorphicDiscriminator: {
+      serializedName: "extractor",
+      clientName: "extractor"
+    },
+    modelProperties: {
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      meta: {
+        serializedName: "meta",
+        type: {
+          name: "Composite",
+          className: "DocumentMeta"
+        }
+      },
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      error: {
+        serializedName: "error",
+        type: {
+          name: "Composite",
+          className: "ErrorModel"
         }
       }
     }

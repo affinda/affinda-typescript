@@ -187,6 +187,7 @@
 - [FieldGroup](interfaces/FieldGroup.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [GetAllDocumentsResults](interfaces/GetAllDocumentsResults.md)
+- [GetAllDocumentsResultsItem](interfaces/GetAllDocumentsResultsItem.md)
 - [IndexRequestBody](interfaces/IndexRequestBody.md)
 - [Invitation](interfaces/Invitation.md)
 - [InvitationCreate](interfaces/InvitationCreate.md)

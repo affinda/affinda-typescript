@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added PATCH support for Job Descriptions
 - Add `confirmed_by` field to document meta
+- Add `description` field to `DataPointChoice`
 
 ### Changed
 - Rework document polymorphism, the model used to deserialize document response is now automatically chosen based on the document's extractor

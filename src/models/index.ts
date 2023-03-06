@@ -881,6 +881,7 @@ export interface DataPointChoice {
   id: number;
   label: string;
   value: string;
+  description?: string;
 }
 
 export interface Workspace {
@@ -1041,15 +1042,11 @@ export interface GetAllDocumentsResults {
   next?: string;
   /** URL to request previous page of results */
   previous?: string;
-  results: DocumentUnion[];
+  results: GetAllDocumentsResultsItem[];
 }
 
-export interface Document {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "resume" | "invoice" | "job-description";
+export interface GetAllDocumentsResultsItem {
   meta: DocumentMeta;
-  /** Dictionary of <any> */
-  data?: { [propertyName: string]: any };
   error?: ErrorModel;
 }
 
@@ -1156,6 +1153,15 @@ export interface Tag {
 export interface ErrorModel {
   errorCode?: string;
   errorDetail?: string;
+}
+
+export interface Document {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "resume" | "invoice" | "job-description";
+  meta: DocumentMeta;
+  /** Dictionary of <any> */
+  data?: { [propertyName: string]: any };
+  error?: ErrorModel;
 }
 
 export interface DocumentUpdate {

@@ -6,11 +6,18 @@
 
 ### Properties
 
+- [description](DataPointChoice.md#description)
 - [id](DataPointChoice.md#id)
 - [label](DataPointChoice.md#label)
 - [value](DataPointChoice.md#value)
 
 ## Properties
+
+### description
+
+• `Optional` **description**: `string`
+
+___
 
 ### id
 
