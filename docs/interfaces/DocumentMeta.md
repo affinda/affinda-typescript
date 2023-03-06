@@ -59,7 +59,7 @@ ___
 
 ### confirmedBy
 
-• `Optional` **confirmedBy**: [`User`](User.md)
+• `Optional` **confirmedBy**: [`UserNullable`](UserNullable.md)
 
 ___
 

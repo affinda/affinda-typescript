@@ -1090,7 +1090,7 @@ export interface DocumentMeta {
   /** URL to view the file. */
   file?: string;
   tags?: Tag[];
-  confirmedBy?: User;
+  confirmedBy?: UserNullable;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -1148,6 +1148,16 @@ export interface Tag {
   workspace: string;
   /** Number of documents tagged with this. */
   documentCount: number;
+}
+
+export interface UserNullable {
+  /** Uniquely identify a user. */
+  id?: number;
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
 }
 
 export interface ErrorModel {

@@ -1651,7 +1651,7 @@ export declare interface DocumentMeta {
     /** URL to view the file. */
     file?: string;
     tags?: Tag[];
-    confirmedBy?: User;
+    confirmedBy?: UserNullable;
 }
 
 export declare interface DocumentMetaChildDocumentsItem {
@@ -3394,6 +3394,16 @@ export declare type TextAnnotationV2 = AnnotationV2 & {
 };
 
 export declare interface User {
+    /** Uniquely identify a user. */
+    id?: number;
+    name?: string;
+    username?: string;
+    email?: string;
+    /** URL of the user's avatar. */
+    avatar?: string;
+}
+
+export declare interface UserNullable {
     /** Uniquely identify a user. */
     id?: number;
     name?: string;

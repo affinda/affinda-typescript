@@ -296,6 +296,7 @@
 - [TagCreate](interfaces/TagCreate.md)
 - [TagUpdate](interfaces/TagUpdate.md)
 - [User](interfaces/User.md)
+- [UserNullable](interfaces/UserNullable.md)
 - [Workspace](interfaces/Workspace.md)
 - [WorkspaceCollectionsItem](interfaces/WorkspaceCollectionsItem.md)
 - [WorkspaceCollectionsItemExtractor](interfaces/WorkspaceCollectionsItemExtractor.md)

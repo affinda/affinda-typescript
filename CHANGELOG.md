@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Rework document polymorphism, the model used to deserialize document response is now automatically chosen based on the document's extractor
+- Rename `updateCollectionData` to `updateCollection`
+- Rename `updateDocumentData` to `updateDocument`
+- Make Document.Meta.confirmedBy nullable
 
 ### Removed
 - Remove API v2 endpoints

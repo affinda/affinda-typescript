@@ -5391,7 +5391,7 @@ export const DocumentMeta: coreClient.CompositeMapper = {
         serializedName: "confirmedBy",
         type: {
           name: "Composite",
-          className: "User"
+          className: "UserNullable"
         }
       }
     }
@@ -5596,6 +5596,46 @@ export const Tag: coreClient.CompositeMapper = {
         required: true,
         type: {
           name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const UserNullable: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UserNullable",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
