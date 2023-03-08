@@ -1652,7 +1652,9 @@ export declare interface DocumentMeta {
     /** URL to view the file. */
     file?: string;
     tags?: Tag[];
-    confirmedBy?: User;
+    confirmedBy?: UserNullable;
+    /** If the document is created via email ingestion, this field stores the email file's URL. */
+    sourceEmail?: string;
 }
 
 export declare interface DocumentMetaChildDocumentsItem {
@@ -1712,6 +1714,7 @@ export declare interface DocumentUpdate {
     expiryTime?: string;
     isConfirmed?: boolean;
     isRejected?: boolean;
+    isArchived?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
 }
@@ -2981,7 +2984,7 @@ export declare interface ResumeSearch {
     /** URL to request previous page of results */
     previous?: string;
     parameters?: ResumeSearchParameters;
-    results?: ResumeSearchResultsItem[];
+    results?: DocumentUnion[];
 }
 
 export declare interface ResumeSearchConfig {
@@ -3228,11 +3231,6 @@ export declare interface ResumeSearchParametersSkill {
     required?: boolean;
 }
 
-export declare interface ResumeSearchResultsItem {
-    meta: DocumentMeta;
-    error?: DocumentError;
-}
-
 export declare interface ResumeSkill {
     name?: string;
     lastUsed?: string;
@@ -3340,6 +3338,16 @@ export declare type TextAnnotation = Annotation & {
 };
 
 export declare interface User {
+    /** Uniquely identify a user. */
+    id?: number;
+    name?: string;
+    username?: string;
+    email?: string;
+    /** URL of the user's avatar. */
+    avatar?: string;
+}
+
+export declare interface UserNullable {
     /** Uniquely identify a user. */
     id?: number;
     name?: string;

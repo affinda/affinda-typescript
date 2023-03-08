@@ -32,6 +32,7 @@
 - [readyDt](DocumentMeta.md#readydt)
 - [rejectedDt](DocumentMeta.md#rejecteddt)
 - [reviewUrl](DocumentMeta.md#reviewurl)
+- [sourceEmail](DocumentMeta.md#sourceemail)
 - [tags](DocumentMeta.md#tags)
 - [workspace](DocumentMeta.md#workspace)
 
@@ -59,7 +60,7 @@ ___
 
 ### confirmedBy
 
-• `Optional` **confirmedBy**: [`User`](User.md)
+• `Optional` **confirmedBy**: [`UserNullable`](UserNullable.md)
 
 ___
 
@@ -214,6 +215,14 @@ ___
 ### reviewUrl
 
 • `Optional` **reviewUrl**: `string`
+
+___
+
+### sourceEmail
+
+• `Optional` **sourceEmail**: `string`
+
+If the document is created via email ingestion, this field stores the email file's URL.
 
 ___
 

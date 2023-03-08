@@ -519,7 +519,7 @@ export const ResumeSearch: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchResultsItem"
+              className: "Document"
             }
           }
         }
@@ -528,11 +528,23 @@ export const ResumeSearch: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchResultsItem: coreClient.CompositeMapper = {
+export const Document: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchResultsItem",
+    className: "Document",
+    uberParent: "Document",
+    polymorphicDiscriminator: {
+      serializedName: "extractor",
+      clientName: "extractor"
+    },
     modelProperties: {
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
       meta: {
         serializedName: "meta",
         type: {
@@ -758,7 +770,14 @@ export const DocumentMeta: coreClient.CompositeMapper = {
         serializedName: "confirmedBy",
         type: {
           name: "Composite",
-          className: "User"
+          className: "UserNullable"
+        }
+      },
+      sourceEmail: {
+        serializedName: "sourceEmail",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
@@ -969,10 +988,10 @@ export const Tag: coreClient.CompositeMapper = {
   }
 };
 
-export const User: coreClient.CompositeMapper = {
+export const UserNullable: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "User",
+    className: "UserNullable",
     modelProperties: {
       id: {
         serializedName: "id",
@@ -4033,6 +4052,46 @@ export const OrganizationMembership: coreClient.CompositeMapper = {
   }
 };
 
+export const User: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "User",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const OrganizationMembershipUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -4770,6 +4829,7 @@ export const DataPointChoice: coreClient.CompositeMapper = {
       },
       description: {
         serializedName: "description",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -5431,41 +5491,6 @@ export const PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAl
   }
 };
 
-export const Document: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Document",
-    uberParent: "Document",
-    polymorphicDiscriminator: {
-      serializedName: "extractor",
-      clientName: "extractor"
-    },
-    modelProperties: {
-      extractor: {
-        serializedName: "extractor",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      meta: {
-        serializedName: "meta",
-        type: {
-          name: "Composite",
-          className: "DocumentMeta"
-        }
-      },
-      error: {
-        serializedName: "error",
-        type: {
-          name: "Composite",
-          className: "DocumentError"
-        }
-      }
-    }
-  }
-};
-
 export const DocumentUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -5499,6 +5524,12 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
       },
       isRejected: {
         serializedName: "isRejected",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isArchived: {
+        serializedName: "isArchived",
         type: {
           name: "Boolean"
         }
@@ -8028,12 +8059,62 @@ export const IndexRequestBody: coreClient.CompositeMapper = {
   }
 };
 
-export const InvitationRespondedBy: coreClient.CompositeMapper = {
+export const Resume: coreClient.CompositeMapper = {
+  serializedName: "resume",
   type: {
     name: "Composite",
-    className: "InvitationRespondedBy",
+    className: "Resume",
+    uberParent: "Document",
+    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
     modelProperties: {
-      ...User.type.modelProperties
+      ...Document.type.modelProperties,
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "ResumeData"
+        }
+      }
+    }
+  }
+};
+
+export const Invoice: coreClient.CompositeMapper = {
+  serializedName: "invoice",
+  type: {
+    name: "Composite",
+    className: "Invoice",
+    uberParent: "Document",
+    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
+    modelProperties: {
+      ...Document.type.modelProperties,
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "InvoiceData"
+        }
+      }
+    }
+  }
+};
+
+export const JobDescription: coreClient.CompositeMapper = {
+  serializedName: "job-description",
+  type: {
+    name: "Composite",
+    className: "JobDescription",
+    uberParent: "Document",
+    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
+    modelProperties: {
+      ...Document.type.modelProperties,
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "JobDescriptionData"
+        }
+      }
     }
   }
 };
@@ -8200,62 +8281,12 @@ export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplication
   }
 };
 
-export const Resume: coreClient.CompositeMapper = {
-  serializedName: "resume",
+export const InvitationRespondedBy: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Resume",
-    uberParent: "Document",
-    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
+    className: "InvitationRespondedBy",
     modelProperties: {
-      ...Document.type.modelProperties,
-      data: {
-        serializedName: "data",
-        type: {
-          name: "Composite",
-          className: "ResumeData"
-        }
-      }
-    }
-  }
-};
-
-export const Invoice: coreClient.CompositeMapper = {
-  serializedName: "invoice",
-  type: {
-    name: "Composite",
-    className: "Invoice",
-    uberParent: "Document",
-    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
-    modelProperties: {
-      ...Document.type.modelProperties,
-      data: {
-        serializedName: "data",
-        type: {
-          name: "Composite",
-          className: "InvoiceData"
-        }
-      }
-    }
-  }
-};
-
-export const JobDescription: coreClient.CompositeMapper = {
-  serializedName: "job-description",
-  type: {
-    name: "Composite",
-    className: "JobDescription",
-    uberParent: "Document",
-    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
-    modelProperties: {
-      ...Document.type.modelProperties,
-      data: {
-        serializedName: "data",
-        type: {
-          name: "Composite",
-          className: "JobDescriptionData"
-        }
-      }
+      ...User.type.modelProperties
     }
   }
 };

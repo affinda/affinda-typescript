@@ -88,10 +88,12 @@ export interface ResumeSearch {
   /** URL to request previous page of results */
   previous?: string;
   parameters?: ResumeSearchParameters;
-  results?: ResumeSearchResultsItem[];
+  results?: DocumentUnion[];
 }
 
-export interface ResumeSearchResultsItem {
+export interface Document {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "resume" | "invoice" | "job-description";
   meta: DocumentMeta;
   error?: DocumentError;
 }
@@ -136,7 +138,9 @@ export interface DocumentMeta {
   /** URL to view the file. */
   file?: string;
   tags?: Tag[];
-  confirmedBy?: User;
+  confirmedBy?: UserNullable;
+  /** If the document is created via email ingestion, this field stores the email file's URL. */
+  sourceEmail?: string;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -196,7 +200,7 @@ export interface Tag {
   documentCount: number;
 }
 
-export interface User {
+export interface UserNullable {
   /** Uniquely identify a user. */
   id?: number;
   name?: string;
@@ -816,6 +820,16 @@ export interface OrganizationMembership {
   role: OrganizationRole;
 }
 
+export interface User {
+  /** Uniquely identify a user. */
+  id?: number;
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+}
+
 export interface OrganizationMembershipUpdate {
   role?: OrganizationRole;
 }
@@ -1109,13 +1123,6 @@ export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSche
   results?: DocumentUnion[];
 }
 
-export interface Document {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "resume" | "invoice" | "job-description";
-  meta: DocumentMeta;
-  error?: DocumentError;
-}
-
 export interface DocumentUpdate {
   /** Uniquely identify a collection. */
   collection?: string;
@@ -1125,6 +1132,7 @@ export interface DocumentUpdate {
   expiryTime?: string;
   isConfirmed?: boolean;
   isRejected?: boolean;
+  isArchived?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
 }
@@ -1668,7 +1676,24 @@ export interface IndexRequestBody {
   documentType?: PostContentSchemaDocumentType;
 }
 
-export type InvitationRespondedBy = User & {};
+export type Resume = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "resume";
+  /** A JSON-encoded string of the `ResumeData` object. */
+  data?: ResumeData;
+};
+
+export type Invoice = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "invoice";
+  data?: InvoiceData;
+};
+
+export type JobDescription = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "job-description";
+  data?: JobDescriptionData;
+};
 
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
@@ -1709,24 +1734,7 @@ export type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema = 
 export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
-export type Resume = Document & {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "resume";
-  /** A JSON-encoded string of the `ResumeData` object. */
-  data?: ResumeData;
-};
-
-export type Invoice = Document & {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "invoice";
-  data?: InvoiceData;
-};
-
-export type JobDescription = Document & {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "job-description";
-  data?: JobDescriptionData;
-};
+export type InvitationRespondedBy = User & {};
 
 export type DateAnnotation = Annotation & {
   parsed?: Date;

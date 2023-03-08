@@ -9,6 +9,7 @@
 - [collection](DocumentUpdate.md#collection)
 - [expiryTime](DocumentUpdate.md#expirytime)
 - [fileName](DocumentUpdate.md#filename)
+- [isArchived](DocumentUpdate.md#isarchived)
 - [isConfirmed](DocumentUpdate.md#isconfirmed)
 - [isRejected](DocumentUpdate.md#isrejected)
 - [language](DocumentUpdate.md#language)
@@ -36,6 +37,12 @@ ___
 • `Optional` **fileName**: `string`
 
 Optional filename of the file
+
+___
+
+### isArchived
+
+• `Optional` **isArchived**: `boolean`
 
 ___
 
