@@ -22,6 +22,7 @@ Optional parameters.
 - [identifier](AffindaAPICreateDocumentOptionalParams.md#identifier)
 - [language](AffindaAPICreateDocumentOptionalParams.md#language)
 - [onResponse](AffindaAPICreateDocumentOptionalParams.md#onresponse)
+- [rejectDuplicates](AffindaAPICreateDocumentOptionalParams.md#rejectduplicates)
 - [requestOptions](AffindaAPICreateDocumentOptionalParams.md#requestoptions)
 - [serializerOptions](AffindaAPICreateDocumentOptionalParams.md#serializeroptions)
 - [tracingOptions](AffindaAPICreateDocumentOptionalParams.md#tracingoptions)
@@ -102,6 +103,14 @@ May be called multiple times.
 #### Inherited from
 
 coreClient.OperationOptions.onResponse
+
+___
+
+### rejectDuplicates
+
+• `Optional` **rejectDuplicates**: `string`
+
+If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not.
 
 ___
 

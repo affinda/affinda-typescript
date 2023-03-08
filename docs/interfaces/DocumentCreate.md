@@ -12,6 +12,7 @@
 - [fileName](DocumentCreate.md#filename)
 - [identifier](DocumentCreate.md#identifier)
 - [language](DocumentCreate.md#language)
+- [rejectDuplicates](DocumentCreate.md#rejectduplicates)
 - [url](DocumentCreate.md#url)
 - [wait](DocumentCreate.md#wait)
 - [workspace](DocumentCreate.md#workspace)
@@ -63,6 +64,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### rejectDuplicates
+
+• `Optional` **rejectDuplicates**: `string`
+
+If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not.
 
 ___
 

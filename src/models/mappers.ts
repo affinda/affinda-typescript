@@ -3364,26 +3364,20 @@ export const JobDescriptionSearchDetailOccupationGroup: coreClient.CompositeMapp
       },
       value: {
         serializedName: "value",
-        nullable: true,
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "JobDescriptionSearchDetailOccupationGroupValueItem"
-            }
-          }
+          name: "Composite",
+          className: "JobDescriptionSearchDetailOccupationGroupValue"
         }
       }
     }
   }
 };
 
-export const Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
+export const ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+      "ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1",
     modelProperties: {
       match: {
         serializedName: "match",
@@ -8033,6 +8027,13 @@ export const DocumentCreate: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      rejectDuplicates: {
+        defaultValue: "false",
+        serializedName: "rejectDuplicates",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -8191,13 +8192,13 @@ export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMap
   }
 };
 
-export const JobDescriptionSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
+export const JobDescriptionSearchDetailOccupationGroupValue: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "JobDescriptionSearchDetailOccupationGroupValueItem",
+    className: "JobDescriptionSearchDetailOccupationGroupValue",
     modelProperties: {
       ...OccupationGroup.type.modelProperties,
-      ...Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
+      ...ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1
         .type.modelProperties
     }
   }

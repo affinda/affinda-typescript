@@ -419,7 +419,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
     getAllDocuments(options?: AffindaAPIGetAllDocumentsOptionalParams): Promise<AffindaAPIGetAllDocumentsResponse>;
     /**
      * Uploads a document for parsing. When successful, returns an `identifier` in the response for
-     * subsequent use with the [/documents/{identifier}](#get-/documents/-identifier-) endpoint to check
+     * subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
      * processing status and retrieve results.<br/>
      * @param options The options parameters.
      */
@@ -479,7 +479,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     getAllResthookSubscriptions(options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams): Promise<AffindaAPIGetAllResthookSubscriptionsResponse>;
     /**
-     * Create a resthook subscriptions
+     * After a subscription is sucessfully created, we'll send a POST request to your target URL with a
+     * `X-Hook-Secret` header.
+     * You need to response to this request with a 200 status code to confirm your subscribe intention.
+     * Then, you need to use the `X-Hook-Secret` to activate the subscription using the
+     * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint.
+     * For more information, see our help article here - [How do I create a
+     * webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
      * @param body
      * @param options The options parameters.
      */
@@ -503,7 +509,23 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     deleteResthookSubscription(id: number, options?: AffindaAPIDeleteResthookSubscriptionOptionalParams): Promise<void>;
+    /**
+     * After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
+     * header.
+     * You should response to this with a 200 status code, and use the value of the `X-Hook-Secret` header
+     * that you received to activate the subscription using this endpoint.
+     * @param xHookSecret The secret received when creating a subscription.
+     * @param options The options parameters.
+     */
+    activateResthookSubscription(xHookSecret: string, options?: AffindaAPIActivateResthookSubscriptionOptionalParams): Promise<AffindaAPIActivateResthookSubscriptionResponse>;
 }
+
+/** Optional parameters. */
+export declare interface AffindaAPIActivateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the activateResthookSubscription operation. */
+export declare type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
 
 export declare class AffindaAPIContext extends coreClient.ServiceClient {
     region: Region;
@@ -550,6 +572,8 @@ export declare interface AffindaAPICreateDocumentOptionalParams extends coreClie
     expiryTime?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    rejectDuplicates?: string;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -923,6 +947,8 @@ export declare type AffindaAPIGetDataPointResponse = DataPoint;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetDocumentOptionalParams extends coreClient.OperationOptions {
+    /** Specify which format you want the response to be. Default is "json" */
+    format?: DocumentFormat;
 }
 
 /** Contains response data for the getDocument operation. */
@@ -1347,10 +1373,6 @@ export declare interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwe
     parsed?: string;
 }
 
-export declare interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
-    match?: boolean;
-}
-
 export declare interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
     raw?: string;
     parsed?: string;
@@ -1494,6 +1516,10 @@ export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLoca
     match?: boolean;
 }
 
+export declare interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 {
+    match?: boolean;
+}
+
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
 }
@@ -1605,12 +1631,25 @@ export declare interface DocumentCreate {
     expiryTime?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    rejectDuplicates?: string;
 }
 
 export declare interface DocumentError {
     errorCode?: string;
     errorDetail?: string;
 }
+
+/**
+ * Defines values for DocumentFormat. \
+ * {@link KnownDocumentFormat} can be used interchangeably with DocumentFormat,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **json** \
+ * **xml** \
+ * **hr-xml**
+ */
+export declare type DocumentFormat = string;
 
 export declare interface DocumentMeta {
     /** Uniquely identify a document. */
@@ -2204,10 +2243,10 @@ export declare interface JobDescriptionSearchDetailManagementLevel {
 
 export declare interface JobDescriptionSearchDetailOccupationGroup {
     missing?: number[];
-    value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
+    value?: JobDescriptionSearchDetailOccupationGroupValue;
 }
 
-export declare type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup & Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+export declare type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup & ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};
 
 export declare interface JobDescriptionSearchDetailSearchExpression {
     missing?: string[];
@@ -2347,6 +2386,13 @@ export declare enum KnownDateRange {
     Week = "week",
     Month = "month",
     Year = "year"
+}
+
+/** Known values of {@link DocumentFormat} that the service accepts. */
+export declare enum KnownDocumentFormat {
+    Json = "json",
+    Xml = "xml",
+    HrXml = "hr-xml"
 }
 
 /** Known values of {@link DocumentState} that the service accepts. */

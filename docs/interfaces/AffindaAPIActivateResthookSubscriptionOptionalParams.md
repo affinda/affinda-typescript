@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetDocumentOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIActivateResthookSubscriptionOptionalParams
 
-# Interface: AffindaAPIGetDocumentOptionalParams
+# Interface: AffindaAPIActivateResthookSubscriptionOptionalParams
 
 Optional parameters.
 
@@ -8,18 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetDocumentOptionalParams`**
+  ↳ **`AffindaAPIActivateResthookSubscriptionOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetDocumentOptionalParams.md#abortsignal)
-- [format](AffindaAPIGetDocumentOptionalParams.md#format)
-- [onResponse](AffindaAPIGetDocumentOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetDocumentOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetDocumentOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetDocumentOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIActivateResthookSubscriptionOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIActivateResthookSubscriptionOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIActivateResthookSubscriptionOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIActivateResthookSubscriptionOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIActivateResthookSubscriptionOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -32,14 +31,6 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
-
-___
-
-### format
-
-• `Optional` **format**: `string`
-
-Specify which format you want the response to be. Default is "json"
 
 ___
 

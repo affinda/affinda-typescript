@@ -657,10 +657,10 @@ export interface JobDescriptionSearchDetailExperience {
 
 export interface JobDescriptionSearchDetailOccupationGroup {
   missing?: number[];
-  value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
+  value?: JobDescriptionSearchDetailOccupationGroupValue;
 }
 
-export interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+export interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 {
   match?: boolean;
 }
 
@@ -1668,6 +1668,8 @@ export interface DocumentCreate {
   expiryTime?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
 }
 
 /** IndexRequestBody */
@@ -1713,8 +1715,8 @@ export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
 export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
   ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
-export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
-  Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup &
+  ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};
 
 export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -2232,6 +2234,24 @@ export enum KnownGet8ItemsItem {
  * **created_dt**
  */
 export type Get8ItemsItem = string;
+
+/** Known values of {@link DocumentFormat} that the service accepts. */
+export enum KnownDocumentFormat {
+  Json = "json",
+  Xml = "xml",
+  HrXml = "hr-xml"
+}
+
+/**
+ * Defines values for DocumentFormat. \
+ * {@link KnownDocumentFormat} can be used interchangeably with DocumentFormat,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **json** \
+ * **xml** \
+ * **hr-xml**
+ */
+export type DocumentFormat = string;
 
 /** Known values of {@link ResthookEvent} that the service accepts. */
 export enum KnownResthookEvent {
@@ -2899,6 +2919,8 @@ export interface AffindaAPICreateDocumentOptionalParams
   expiryTime?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -2906,7 +2928,10 @@ export type AffindaAPICreateDocumentResponse = DocumentUnion;
 
 /** Optional parameters. */
 export interface AffindaAPIGetDocumentOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** Specify which format you want the response to be. Default is "json" */
+  format?: DocumentFormat;
+}
 
 /** Contains response data for the getDocument operation. */
 export type AffindaAPIGetDocumentResponse = DocumentUnion;
@@ -2997,6 +3022,13 @@ export type AffindaAPIUpdateResthookSubscriptionResponse = ResthookSubscription;
 /** Optional parameters. */
 export interface AffindaAPIDeleteResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIActivateResthookSubscriptionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the activateResthookSubscription operation. */
+export type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

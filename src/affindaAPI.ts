@@ -164,7 +164,9 @@ import {
   ResthookSubscriptionUpdate,
   AffindaAPIUpdateResthookSubscriptionOptionalParams,
   AffindaAPIUpdateResthookSubscriptionResponse,
-  AffindaAPIDeleteResthookSubscriptionOptionalParams
+  AffindaAPIDeleteResthookSubscriptionOptionalParams,
+  AffindaAPIActivateResthookSubscriptionOptionalParams,
+  AffindaAPIActivateResthookSubscriptionResponse
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -1117,7 +1119,7 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Uploads a document for parsing. When successful, returns an `identifier` in the response for
-   * subsequent use with the [/documents/{identifier}](#get-/documents/-identifier-) endpoint to check
+   * subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
    * processing status and retrieve results.<br/>
    * @param options The options parameters.
    */
@@ -1251,7 +1253,13 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Create a resthook subscriptions
+   * After a subscription is sucessfully created, we'll send a POST request to your target URL with a
+   * `X-Hook-Secret` header.
+   * You need to response to this request with a 200 status code to confirm your subscribe intention.
+   * Then, you need to use the `X-Hook-Secret` to activate the subscription using the
+   * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint.
+   * For more information, see our help article here - [How do I create a
+   * webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
    * @param body
    * @param options The options parameters.
    */
@@ -1309,6 +1317,24 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { id, options },
       deleteResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
+   * header.
+   * You should response to this with a 200 status code, and use the value of the `X-Hook-Secret` header
+   * that you received to activate the subscription using this endpoint.
+   * @param xHookSecret The secret received when creating a subscription.
+   * @param options The options parameters.
+   */
+  activateResthookSubscription(
+    xHookSecret: string,
+    options?: AffindaAPIActivateResthookSubscriptionOptionalParams
+  ): Promise<AffindaAPIActivateResthookSubscriptionResponse> {
+    return this.sendOperationRequest(
+      { xHookSecret, options },
+      activateResthookSubscriptionOperationSpec
     );
   }
 }
@@ -2910,7 +2936,8 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
     Parameters.identifier1,
     Parameters.fileName,
     Parameters.expiryTime,
-    Parameters.language
+    Parameters.language,
+    Parameters.rejectDuplicates
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType1, Parameters.accept1],
@@ -2935,6 +2962,7 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
+  queryParameters: [Parameters.format],
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer
@@ -3225,5 +3253,28 @@ const deleteResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
   },
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
+  serializer
+};
+const activateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resthook_subscriptions/activate",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResthookSubscription
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.xHookSecret],
   serializer
 };

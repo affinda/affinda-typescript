@@ -10,6 +10,7 @@
 - [KnownCollectionDateFormatPreference](enums/KnownCollectionDateFormatPreference.md)
 - [KnownDateFormatPreference](enums/KnownDateFormatPreference.md)
 - [KnownDateRange](enums/KnownDateRange.md)
+- [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
 - [KnownEnum3](enums/KnownEnum3.md)
 - [KnownEnum6](enums/KnownEnum6.md)
@@ -37,6 +38,7 @@
 ### Interfaces
 
 - [Accreditation](interfaces/Accreditation.md)
+- [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
 - [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
 - [AffindaAPICreateDataPointOptionalParams](interfaces/AffindaAPICreateDataPointOptionalParams.md)
 - [AffindaAPICreateDocumentOptionalParams](interfaces/AffindaAPICreateDocumentOptionalParams.md)
@@ -126,7 +128,6 @@
 - [Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1](interfaces/Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1.md)
 - [Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md)
 - [Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md)
-- [Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1](interfaces/Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.md)
 - [Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1](interfaces/Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1.md)
 - [Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1](interfaces/Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1.md)
@@ -155,6 +156,7 @@
 - [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
 - [ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
+- [ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md)
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
@@ -303,6 +305,7 @@
 
 ### Type aliases
 
+- [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
 - [AffindaAPICreateCollectionResponse](modules.md#affindaapicreatecollectionresponse)
 - [AffindaAPICreateDataPointResponse](modules.md#affindaapicreatedatapointresponse)
 - [AffindaAPICreateDocumentResponse](modules.md#affindaapicreatedocumentresponse)
@@ -371,6 +374,7 @@
 - [DateAnnotation](modules.md#dateannotation)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
+- [DocumentFormat](modules.md#documentformat)
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
@@ -414,7 +418,7 @@
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
 - [JobDescription](modules.md#jobdescription)
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
-- [JobDescriptionSearchDetailOccupationGroupValueItem](modules.md#jobdescriptionsearchdetailoccupationgroupvalueitem)
+- [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
@@ -447,6 +451,14 @@
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
 
 ## Type aliases
+
+### AffindaAPIActivateResthookSubscriptionResponse
+
+Ƭ **AffindaAPIActivateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the activateResthookSubscription operation.
+
+___
 
 ### AffindaAPICreateCollectionResponse
 
@@ -1042,6 +1054,20 @@ Defines values for DateRange. \
 
 ___
 
+### DocumentFormat
+
+Ƭ **DocumentFormat**: `string`
+
+Defines values for DocumentFormat. \
+[KnownDocumentFormat](enums/KnownDocumentFormat.md) can be used interchangeably with DocumentFormat,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**json** \
+**xml** \
+**hr-xml**
+
+___
+
 ### DocumentState
 
 Ƭ **DocumentState**: `string`
@@ -1356,9 +1382,9 @@ ___
 
 ___
 
-### JobDescriptionSearchDetailOccupationGroupValueItem
+### JobDescriptionSearchDetailOccupationGroupValue
 
-Ƭ **JobDescriptionSearchDetailOccupationGroupValueItem**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1`](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md) & {}
+Ƭ **JobDescriptionSearchDetailOccupationGroupValue**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1`](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md) & {}
 
 ___
 

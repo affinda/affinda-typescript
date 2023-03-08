@@ -863,6 +863,27 @@ export const language: OperationParameter = {
   }
 };
 
+export const rejectDuplicates: OperationParameter = {
+  parameterPath: ["options", "rejectDuplicates"],
+  mapper: {
+    defaultValue: "false",
+    serializedName: "rejectDuplicates",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const format: OperationQueryParameter = {
+  parameterPath: ["options", "format"],
+  mapper: {
+    serializedName: "format",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const body20: OperationParameter = {
   parameterPath: "body",
   mapper: DocumentUpdateMapper
@@ -897,4 +918,15 @@ export const body23: OperationParameter = {
 export const body24: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionUpdateMapper
+};
+
+export const xHookSecret: OperationParameter = {
+  parameterPath: "xHookSecret",
+  mapper: {
+    serializedName: "X-Hook-Secret",
+    required: true,
+    type: {
+      name: "String"
+    }
+  }
 };
