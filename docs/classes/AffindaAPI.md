@@ -21,6 +21,7 @@
 
 ### Methods
 
+- [activateResthookSubscription](AffindaAPI.md#activateresthooksubscription)
 - [createIndex](AffindaAPI.md#createindex)
 - [createIndexDocument](AffindaAPI.md#createindexdocument)
 - [createInvoice](AffindaAPI.md#createinvoice)
@@ -109,6 +110,28 @@ ___
 [AffindaAPIContext](AffindaAPIContext.md).[region](AffindaAPIContext.md#region)
 
 ## Methods
+
+### activateResthookSubscription
+
+▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
+header.
+You should response to this with a 200 status code, and use the value of the `X-Hook-Secret` header
+that you received to activate the subscription using this endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `xHookSecret` | `string` | The secret received when creating a subscription. |
+| `options?` | [`AffindaAPIActivateResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+___
 
 ### createIndex
 
@@ -254,7 +277,13 @@ ___
 
 ▸ **createResthookSubscription**(`body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
-Create a resthook subscriptions
+After a subscription is sucessfully created, we'll send a POST request to your target URL with a
+`X-Hook-Secret` header.
+You need to response to this request with a 200 status code to confirm your subscribe intention.
+Then, you need to use the `X-Hook-Secret` to activate the subscription using the
+[/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint.
+For more information, see our help article here - [How do I create a
+webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
 
 #### Parameters
 

@@ -663,3 +663,15 @@ export const body10: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionUpdateMapper
 };
+
+export const xHookSecret: OperationParameter = {
+  parameterPath: "xHookSecret",
+  mapper: {
+    serializedName: "X-Hook-Secret",
+    required: true,
+    xmlName: "X-Hook-Secret",
+    type: {
+      name: "String"
+    }
+  }
+};

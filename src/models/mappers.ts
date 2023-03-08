@@ -4730,17 +4730,10 @@ export const JobDescriptionSearchDetailOccupationGroup: coreClient.CompositeMapp
       },
       value: {
         serializedName: "value",
-        nullable: true,
         xmlName: "value",
-        xmlElementName: "JobDescriptionSearchDetailOccupationGroupValueItem",
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "JobDescriptionSearchDetailOccupationGroupValueItem"
-            }
-          }
+          name: "Composite",
+          className: "JobDescriptionSearchDetailOccupationGroupValue"
         }
       }
     }
@@ -4802,13 +4795,13 @@ export const OccupationGroup: coreClient.CompositeMapper = {
   }
 };
 
-export const Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
+export const ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1: coreClient.CompositeMapper = {
   serializedName:
-    "Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+    "ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1",
   type: {
     name: "Composite",
     className:
-      "Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+      "ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1",
     modelProperties: {
       match: {
         serializedName: "match",
@@ -8387,14 +8380,14 @@ export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
   }
 };
 
-export const JobDescriptionSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
-  serializedName: "JobDescriptionSearchDetailOccupationGroupValueItem",
+export const JobDescriptionSearchDetailOccupationGroupValue: coreClient.CompositeMapper = {
+  serializedName: "JobDescriptionSearchDetailOccupationGroupValue",
   type: {
     name: "Composite",
-    className: "JobDescriptionSearchDetailOccupationGroupValueItem",
+    className: "JobDescriptionSearchDetailOccupationGroupValue",
     modelProperties: {
       ...OccupationGroup.type.modelProperties,
-      ...Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
+      ...ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1
         .type.modelProperties
     }
   }

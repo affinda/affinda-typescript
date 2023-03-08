@@ -836,7 +836,7 @@ export interface JobDescriptionSearchDetailExperience {
 
 export interface JobDescriptionSearchDetailOccupationGroup {
   missing?: number[];
-  value?: JobDescriptionSearchDetailOccupationGroupValueItem[];
+  value?: JobDescriptionSearchDetailOccupationGroupValue;
 }
 
 export interface OccupationGroup {
@@ -846,7 +846,7 @@ export interface OccupationGroup {
   parents?: OccupationGroup[];
 }
 
-export interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+export interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 {
   match?: boolean;
 }
 
@@ -1536,8 +1536,8 @@ export type InvoiceDataSupplierEmail = TextAnnotation &
 export type InvoiceDataSupplierWebsite = TextAnnotation &
   Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
-export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
-  Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
+export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup &
+  ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};
 
 export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
   ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
@@ -2224,6 +2224,13 @@ export type AffindaAPIUpdateResthookSubscriptionResponse = ResthookSubscription;
 /** Optional parameters. */
 export interface AffindaAPIDeleteResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIActivateResthookSubscriptionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the activateResthookSubscription operation. */
+export type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

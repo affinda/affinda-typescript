@@ -26,6 +26,7 @@
 ### Interfaces
 
 - [Accreditation](interfaces/Accreditation.md)
+- [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
 - [AffindaAPICreateIndexDocumentOptionalParams](interfaces/AffindaAPICreateIndexDocumentOptionalParams.md)
 - [AffindaAPICreateIndexOptionalParams](interfaces/AffindaAPICreateIndexOptionalParams.md)
 - [AffindaAPICreateInvoiceOptionalParams](interfaces/AffindaAPICreateInvoiceOptionalParams.md)
@@ -77,7 +78,6 @@
 - [Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1](interfaces/Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1.md)
 - [Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md)
 - [Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md)
-- [Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1](interfaces/Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.md)
 - [Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1](interfaces/Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1.md)
 - [Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1](interfaces/Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1.md)
@@ -106,6 +106,7 @@
 - [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties](interfaces/ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties.md)
+- [ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md)
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
@@ -228,6 +229,7 @@
 
 ### Type aliases
 
+- [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
 - [AffindaAPICreateIndexDocumentResponse](modules.md#affindaapicreateindexdocumentresponse)
 - [AffindaAPICreateIndexResponse](modules.md#affindaapicreateindexresponse)
 - [AffindaAPICreateInvoiceResponse](modules.md#affindaapicreateinvoiceresponse)
@@ -300,7 +302,7 @@
 - [InvoiceDataSupplierVat](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
-- [JobDescriptionSearchDetailOccupationGroupValueItem](modules.md#jobdescriptionsearchdetailoccupationgroupvalueitem)
+- [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
 - [LanguageAnnotation](modules.md#languageannotation)
 - [LocationAnnotation](modules.md#locationannotation)
@@ -327,6 +329,14 @@
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
 
 ## Type aliases
+
+### AffindaAPIActivateResthookSubscriptionResponse
+
+Ƭ **AffindaAPIActivateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the activateResthookSubscription operation.
+
+___
 
 ### AffindaAPICreateIndexDocumentResponse
 
@@ -867,9 +877,9 @@ ___
 
 ___
 
-### JobDescriptionSearchDetailOccupationGroupValueItem
+### JobDescriptionSearchDetailOccupationGroupValue
 
-Ƭ **JobDescriptionSearchDetailOccupationGroupValueItem**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1`](interfaces/Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md) & {}
+Ƭ **JobDescriptionSearchDetailOccupationGroupValue**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1`](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md) & {}
 
 ___
 

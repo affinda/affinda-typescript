@@ -387,5 +387,5 @@ client.getResumeSearchConfig().then((result) => {
 Search & Match - Indexing
 -------------------------
 
-Webhook
--------
+Webhook API
+-----------
