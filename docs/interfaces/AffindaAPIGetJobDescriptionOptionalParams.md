@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetJobDescriptionOptionalParams
 
-# Interface: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+# Interface: AffindaAPIGetJobDescriptionOptionalParams
 
 Optional parameters.
 
@@ -8,18 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`**
+  ↳ **`AffindaAPIGetJobDescriptionOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#abortsignal)
-- [body](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#body)
-- [onResponse](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIGetJobDescriptionOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIGetJobDescriptionOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIGetJobDescriptionOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIGetJobDescriptionOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIGetJobDescriptionOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -32,12 +31,6 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
-
-___
-
-### body
-
-• `Optional` **body**: [`Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 
 ___
 

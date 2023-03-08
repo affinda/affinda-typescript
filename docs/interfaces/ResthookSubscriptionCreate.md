@@ -7,7 +7,6 @@
 ### Properties
 
 - [event](ResthookSubscriptionCreate.md#event)
-- [organization](ResthookSubscriptionCreate.md#organization)
 - [targetUrl](ResthookSubscriptionCreate.md#targeturl)
 - [version](ResthookSubscriptionCreate.md#version)
 
@@ -18,12 +17,6 @@
 • **event**: `string`
 
 The event name to subscribe to.
-
-___
-
-### organization
-
-• `Optional` **organization**: `string`
 
 ___
 

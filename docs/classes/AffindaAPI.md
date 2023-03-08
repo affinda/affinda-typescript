@@ -21,84 +21,51 @@
 
 ### Methods
 
-- [createCollection](AffindaAPI.md#createcollection)
-- [createDataPoint](AffindaAPI.md#createdatapoint)
-- [createDocument](AffindaAPI.md#createdocument)
-- [createExtractor](AffindaAPI.md#createextractor)
 - [createIndex](AffindaAPI.md#createindex)
 - [createIndexDocument](AffindaAPI.md#createindexdocument)
-- [createInvitation](AffindaAPI.md#createinvitation)
+- [createInvoice](AffindaAPI.md#createinvoice)
+- [createJobDescription](AffindaAPI.md#createjobdescription)
 - [createJobDescriptionSearch](AffindaAPI.md#createjobdescriptionsearch)
 - [createJobDescriptionSearchEmbedUrl](AffindaAPI.md#createjobdescriptionsearchembedurl)
-- [createOrganization](AffindaAPI.md#createorganization)
+- [createRedactedResume](AffindaAPI.md#createredactedresume)
 - [createResthookSubscription](AffindaAPI.md#createresthooksubscription)
+- [createResume](AffindaAPI.md#createresume)
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
 - [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
-- [createTag](AffindaAPI.md#createtag)
-- [createWorkspace](AffindaAPI.md#createworkspace)
-- [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
-- [deleteCollection](AffindaAPI.md#deletecollection)
-- [deleteDataPoint](AffindaAPI.md#deletedatapoint)
-- [deleteDocument](AffindaAPI.md#deletedocument)
-- [deleteExtractor](AffindaAPI.md#deleteextractor)
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
-- [deleteInvitation](AffindaAPI.md#deleteinvitation)
-- [deleteOrganization](AffindaAPI.md#deleteorganization)
-- [deleteOrganizationMembership](AffindaAPI.md#deleteorganizationmembership)
+- [deleteInvoice](AffindaAPI.md#deleteinvoice)
+- [deleteJobDescription](AffindaAPI.md#deletejobdescription)
+- [deleteRedactedResume](AffindaAPI.md#deleteredactedresume)
 - [deleteResthookSubscription](AffindaAPI.md#deleteresthooksubscription)
-- [deleteTag](AffindaAPI.md#deletetag)
-- [deleteWorkspace](AffindaAPI.md#deleteworkspace)
-- [deleteWorkspaceMembership](AffindaAPI.md#deleteworkspacemembership)
-- [getAllCollections](AffindaAPI.md#getallcollections)
-- [getAllDataPoints](AffindaAPI.md#getalldatapoints)
-- [getAllDocuments](AffindaAPI.md#getalldocuments)
-- [getAllExtractors](AffindaAPI.md#getallextractors)
+- [deleteResume](AffindaAPI.md#deleteresume)
 - [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
 - [getAllIndexes](AffindaAPI.md#getallindexes)
-- [getAllInvitations](AffindaAPI.md#getallinvitations)
-- [getAllOrganizationMemberships](AffindaAPI.md#getallorganizationmemberships)
-- [getAllOrganizations](AffindaAPI.md#getallorganizations)
+- [getAllInvoices](AffindaAPI.md#getallinvoices)
+- [getAllJobDescriptions](AffindaAPI.md#getalljobdescriptions)
+- [getAllRedactedResumes](AffindaAPI.md#getallredactedresumes)
 - [getAllResthookSubscriptions](AffindaAPI.md#getallresthooksubscriptions)
-- [getAllTags](AffindaAPI.md#getalltags)
-- [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
-- [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
-- [getCollection](AffindaAPI.md#getcollection)
-- [getDataPoint](AffindaAPI.md#getdatapoint)
-- [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
-- [getDocument](AffindaAPI.md#getdocument)
-- [getExtractor](AffindaAPI.md#getextractor)
-- [getInvitation](AffindaAPI.md#getinvitation)
-- [getInvitationByToken](AffindaAPI.md#getinvitationbytoken)
+- [getAllResumes](AffindaAPI.md#getallresumes)
+- [getInvoice](AffindaAPI.md#getinvoice)
+- [getJobDescription](AffindaAPI.md#getjobdescription)
 - [getJobDescriptionSearchConfig](AffindaAPI.md#getjobdescriptionsearchconfig)
 - [getJobDescriptionSearchDetail](AffindaAPI.md#getjobdescriptionsearchdetail)
-- [getOrganization](AffindaAPI.md#getorganization)
-- [getOrganizationMembership](AffindaAPI.md#getorganizationmembership)
+- [getRedactedResume](AffindaAPI.md#getredactedresume)
 - [getResthookSubscription](AffindaAPI.md#getresthooksubscription)
+- [getResume](AffindaAPI.md#getresume)
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
 - [getResumeSearchMatch](AffindaAPI.md#getresumesearchmatch)
 - [getResumeSearchSuggestionJobTitle](AffindaAPI.md#getresumesearchsuggestionjobtitle)
 - [getResumeSearchSuggestionSkill](AffindaAPI.md#getresumesearchsuggestionskill)
-- [getTag](AffindaAPI.md#gettag)
-- [getWorkspace](AffindaAPI.md#getworkspace)
-- [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
-- [respondToInvitation](AffindaAPI.md#respondtoinvitation)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
-- [updateCollection](AffindaAPI.md#updatecollection)
-- [updateDataPoint](AffindaAPI.md#updatedatapoint)
-- [updateDocument](AffindaAPI.md#updatedocument)
-- [updateExtractor](AffindaAPI.md#updateextractor)
-- [updateInvitation](AffindaAPI.md#updateinvitation)
+- [updateJobDescriptionData](AffindaAPI.md#updatejobdescriptiondata)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
-- [updateOrganization](AffindaAPI.md#updateorganization)
-- [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
 - [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
+- [updateResumeData](AffindaAPI.md#updateresumedata)
 - [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
-- [updateTag](AffindaAPI.md#updatetag)
-- [updateWorkspace](AffindaAPI.md#updateworkspace)
 
 ## Constructors
 
@@ -143,84 +110,9 @@ ___
 
 ## Methods
 
-### createCollection
-
-▸ **createCollection**(`body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
-
-Create a collection
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`CollectionCreate`](../interfaces/CollectionCreate.md) |  |
-| `options?` | [`AffindaAPICreateCollectionOptionalParams`](../interfaces/AffindaAPICreateCollectionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Collection`](../interfaces/Collection.md)\>
-
-___
-
-### createDataPoint
-
-▸ **createDataPoint**(`options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
-
-Create a custom data point.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateDataPointOptionalParams`](../interfaces/AffindaAPICreateDataPointOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
-
-___
-
-### createDocument
-
-▸ **createDocument**(`options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
-
-Uploads a document for parsing. When successful, returns an `identifier` in the response for
-subsequent use with the [/documents/{identifier}](#get-/documents/-identifier-) endpoint to check
-processing status and retrieve results.<br/>
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateDocumentOptionalParams`](../interfaces/AffindaAPICreateDocumentOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
-
-___
-
-### createExtractor
-
-▸ **createExtractor**(`options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
-
-Create a custom extractor.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateExtractorOptionalParams`](../interfaces/AffindaAPICreateExtractorOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Extractor`](../interfaces/Extractor.md)\>
-
-___
-
 ### createIndex
 
-▸ **createIndex**(`options?`): `Promise`<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndex**(`options?`): `Promise`<[`Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema.md)\>
 
 Create an index for the search tool
 
@@ -232,13 +124,13 @@ Create an index for the search tool
 
 #### Returns
 
-`Promise`<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`<[`Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### createIndexDocument
 
-▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`<[`Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 Create an indexed document for the search tool
 
@@ -247,31 +139,57 @@ Create an indexed document for the search tool
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
-| `body` | [`PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md) | Document to index |
+| `body` | [`PathsYg099PV2IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsYg099PV2IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md) | Document to index |
 | `options?` | [`AffindaAPICreateIndexDocumentOptionalParams`](../interfaces/AffindaAPICreateIndexDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`<[`Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 ___
 
-### createInvitation
+### createInvoice
 
-▸ **createInvitation**(`body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+▸ **createInvoice**(`options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
 
-Create a new invitation.
+Uploads an invoice for parsing.
+When successful, returns an `identifier` in the response for subsequent use with the
+[/invoices/{identifier}](#get-/invoices/-identifier-) endpoint to check processing status and
+retrieve results.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | [`InvitationCreate`](../interfaces/InvitationCreate.md) | Invitation to create. |
-| `options?` | [`AffindaAPICreateInvitationOptionalParams`](../interfaces/AffindaAPICreateInvitationOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPICreateInvoiceOptionalParams`](../interfaces/AffindaAPICreateInvoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+
+___
+
+### createJobDescription
+
+▸ **createJobDescription**(`options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+
+Uploads a job description for parsing.
+When successful, returns an `identifier` in the response for subsequent use with the
+[/job_descriptions/{identifier}](#get-/job_descriptions/-identifier-) endpoint to check processing
+status and retrieve results.
+Job Descriptions can be uploaded as a file or a URL. In addition, data can be added directly if
+users want to upload directly without parsing any resume file. For uploading resume data, the `data`
+argument provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateJobDescriptionOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
@@ -314,22 +232,21 @@ configurations of the embeddable search tool.
 
 ___
 
-### createOrganization
+### createRedactedResume
 
-▸ **createOrganization**(`name`, `options?`): `Promise`<[`Organization`](../interfaces/Organization.md)\>
+▸ **createRedactedResume**(`options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
-Create a new organization.
+Uploads a resume for redacting.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `name` | `string` |  |
-| `options?` | [`AffindaAPICreateOrganizationOptionalParams`](../interfaces/AffindaAPICreateOrganizationOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPICreateRedactedResumeOptionalParams`](../interfaces/AffindaAPICreateRedactedResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Organization`](../interfaces/Organization.md)\>
+`Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
 ___
 
@@ -349,6 +266,29 @@ Create a resthook subscriptions
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+___
+
+### createResume
+
+▸ **createResume**(`options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
+
+Uploads a resume for parsing. When successful, returns an `identifier` in the response for
+subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
+processing status and retrieve results.<br/>
+Resumes can be uploaded as a file or a URL. In addition, data can be added directly if users want to
+upload directly without parsing any resume file. For uploading resume data, the `data` argument
+provided must be a JSON-encoded string. Data uploads will not impact upon parsing credits.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateResumeOptionalParams`](../interfaces/AffindaAPICreateResumeOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Resume`](../interfaces/Resume.md)\>
 
 ___
 
@@ -395,139 +335,6 @@ the embeddable resume search tool.
 
 ___
 
-### createTag
-
-▸ **createTag**(`body`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-Create a tag
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`TagCreate`](../interfaces/TagCreate.md) |  |
-| `options?` | [`AffindaAPICreateTagOptionalParams`](../interfaces/AffindaAPICreateTagOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-___
-
-### createWorkspace
-
-▸ **createWorkspace**(`body`, `options?`): `Promise`<[`Workspace`](../interfaces/Workspace.md)\>
-
-Create a workspace
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`WorkspaceCreate`](../interfaces/WorkspaceCreate.md) | Workspace to create |
-| `options?` | [`AffindaAPICreateWorkspaceOptionalParams`](../interfaces/AffindaAPICreateWorkspaceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Workspace`](../interfaces/Workspace.md)\>
-
-___
-
-### createWorkspaceMembership
-
-▸ **createWorkspaceMembership**(`body`, `options?`): `Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
-
-Create a workspace membership.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`WorkspaceMembershipCreate`](../interfaces/WorkspaceMembershipCreate.md) |  |
-| `options?` | [`AffindaAPICreateWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
-
-___
-
-### deleteCollection
-
-▸ **deleteCollection**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified collection from the database.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `options?` | [`AffindaAPIDeleteCollectionOptionalParams`](../interfaces/AffindaAPIDeleteCollectionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### deleteDataPoint
-
-▸ **deleteDataPoint**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified data point from the database.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | DataPoint's identifier |
-| `options?` | [`AffindaAPIDeleteDataPointOptionalParams`](../interfaces/AffindaAPIDeleteDataPointOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### deleteDocument
-
-▸ **deleteDocument**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified document from the database.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `options?` | [`AffindaAPIDeleteDocumentOptionalParams`](../interfaces/AffindaAPIDeleteDocumentOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### deleteExtractor
-
-▸ **deleteExtractor**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified extractor from the database.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Extractor's identifier |
-| `options?` | [`AffindaAPIDeleteExtractorOptionalParams`](../interfaces/AffindaAPIDeleteExtractorOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
 ### deleteIndex
 
 ▸ **deleteIndex**(`name`, `options?`): `Promise`<`void`\>
@@ -567,18 +374,19 @@ Delete the specified indexed document from the database
 
 ___
 
-### deleteInvitation
+### deleteInvoice
 
-▸ **deleteInvitation**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteInvoice**(`identifier`, `options?`): `Promise`<`void`\>
 
-Delete the specified invitation from the database.
+Delete the specified invoice from the database. Note, any invoices deleted from the database will no
+longer be used in any tailored customer models.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | `string` | Invitation identifier. |
-| `options?` | [`AffindaAPIDeleteInvitationOptionalParams`](../interfaces/AffindaAPIDeleteInvitationOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Invoice identifier |
+| `options?` | [`AffindaAPIDeleteInvoiceOptionalParams`](../interfaces/AffindaAPIDeleteInvoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -586,18 +394,18 @@ Delete the specified invitation from the database.
 
 ___
 
-### deleteOrganization
+### deleteJobDescription
 
-▸ **deleteOrganization**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteJobDescription**(`identifier`, `options?`): `Promise`<`void`\>
 
-Delete the specified organization from the database.
+Deletes the specified job description from the database
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | `string` | Organization identifier. |
-| `options?` | [`AffindaAPIDeleteOrganizationOptionalParams`](../interfaces/AffindaAPIDeleteOrganizationOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`AffindaAPIDeleteJobDescriptionOptionalParams`](../interfaces/AffindaAPIDeleteJobDescriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -605,19 +413,18 @@ Delete the specified organization from the database.
 
 ___
 
-### deleteOrganizationMembership
+### deleteRedactedResume
 
-▸ **deleteOrganizationMembership**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<`void`\>
 
-The admin users can use this endpoint to remove member from their organization. Other users can also
-use this to leave their organization.
+Deletes the specified resume from the database
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | `string` | Membership identifier. |
-| `options?` | [`AffindaAPIDeleteOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`AffindaAPIDeleteRedactedResumeOptionalParams`](../interfaces/AffindaAPIDeleteRedactedResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -644,140 +451,28 @@ Deletes the specified resthook subscription from the database.
 
 ___
 
-### deleteTag
+### deleteResume
 
-▸ **deleteTag**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteResume**(`identifier`, `options?`): `Promise`<`void`\>
 
-Deletes the specified tag from the database.
+Deletes the specified resume from the database
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | `number` | Tag's ID |
-| `options?` | [`AffindaAPIDeleteTagOptionalParams`](../interfaces/AffindaAPIDeleteTagOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Resume identifier |
+| `options?` | [`AffindaAPIDeleteResumeOptionalParams`](../interfaces/AffindaAPIDeleteResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
 `Promise`<`void`\>
-
-___
-
-### deleteWorkspace
-
-▸ **deleteWorkspace**(`identifier`, `options?`): `Promise`<`void`\>
-
-Deletes the specified workspace from the database.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `options?` | [`AffindaAPIDeleteWorkspaceOptionalParams`](../interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### deleteWorkspaceMembership
-
-▸ **deleteWorkspaceMembership**(`identifier`, `options?`): `Promise`<`void`\>
-
-Remove an user from a workspace.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace membership's identifier. |
-| `options?` | [`AffindaAPIDeleteWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### getAllCollections
-
-▸ **getAllCollections**(`workspace`, `options?`): `Promise`<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
-
-Returns your collections.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `workspace` | `string` | Filter by workspace. |
-| `options?` | [`AffindaAPIGetAllCollectionsOptionalParams`](../interfaces/AffindaAPIGetAllCollectionsOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
-
-___
-
-### getAllDataPoints
-
-▸ **getAllDataPoints**(`options?`): `Promise`<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
-
-Returns your custom data points as well as Affinda's off-the-shelf data points.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllDataPointsOptionalParams`](../interfaces/AffindaAPIGetAllDataPointsOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
-
-___
-
-### getAllDocuments
-
-▸ **getAllDocuments**(`options?`): `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
-
-Returns all the document summaries for that user, limited to 300 per page.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllDocumentsOptionalParams`](../interfaces/AffindaAPIGetAllDocumentsOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
-
-___
-
-### getAllExtractors
-
-▸ **getAllExtractors**(`organization`, `options?`): `Promise`<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
-
-Returns your custom extractors as well as Affinda's off-the-shelf extractors.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `organization` | `string` | Filter by organization. |
-| `options?` | [`AffindaAPIGetAllExtractorsOptionalParams`](../interfaces/AffindaAPIGetAllExtractorsOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
 
 ___
 
 ### getAllIndexDocuments
 
-▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`<[`PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexed documents for that index
 
@@ -790,13 +485,13 @@ Returns all the indexed documents for that index
 
 #### Returns
 
-`Promise`<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`<[`PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllIndexes
 
-▸ **getAllIndexes**(`options?`): `Promise`<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexes**(`options?`): `Promise`<[`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexes
 
@@ -808,67 +503,67 @@ Returns all the indexes
 
 #### Returns
 
-`Promise`<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`<[`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
-### getAllInvitations
+### getAllInvoices
 
-▸ **getAllInvitations**(`options?`): `Promise`<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllInvoices**(`options?`): `Promise`<[`PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)\>
 
-Get list of all invitations you created or sent to you.
+Returns all the invoice summaries for that user, limited to 300 per page.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllInvitationsOptionalParams`](../interfaces/AffindaAPIGetAllInvitationsOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIGetAllInvoicesOptionalParams`](../interfaces/AffindaAPIGetAllInvoicesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
+`Promise`<[`PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
-### getAllOrganizationMemberships
+### getAllJobDescriptions
 
-▸ **getAllOrganizationMemberships**(`options?`): `Promise`<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllJobDescriptions**(`options?`): `Promise`<[`PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)\>
 
-Returns all the organization memberships
+Returns all the job descriptions for that user, limited to 300 per page.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllOrganizationMembershipsOptionalParams`](../interfaces/AffindaAPIGetAllOrganizationMembershipsOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIGetAllJobDescriptionsOptionalParams`](../interfaces/AffindaAPIGetAllJobDescriptionsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
+`Promise`<[`PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
-### getAllOrganizations
+### getAllRedactedResumes
 
-▸ **getAllOrganizations**(`options?`): `Promise`<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
+▸ **getAllRedactedResumes**(`options?`): `Promise`<[`Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)\>
 
-Returns all the organizations
+Returns all the redacted resume information for that resume
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllOrganizationsOptionalParams`](../interfaces/AffindaAPIGetAllOrganizationsOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIGetAllRedactedResumesOptionalParams`](../interfaces/AffindaAPIGetAllRedactedResumesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
+`Promise`<[`Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllResthookSubscriptions
 
-▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 Returns your resthook subscriptions.
 
@@ -880,196 +575,67 @@ Returns your resthook subscriptions.
 
 #### Returns
 
-`Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+`Promise`<[`PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
-### getAllTags
+### getAllResumes
 
-▸ **getAllTags**(`options?`): `Promise`<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+▸ **getAllResumes**(`options?`): `Promise`<[`Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)\>
 
-Returns your tags.
+Returns all the resume summaries for that user, limited to 300 per page.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllTagsOptionalParams`](../interfaces/AffindaAPIGetAllTagsOptionalParams.md) | The options parameters. |
+| `options?` | [`AffindaAPIGetAllResumesOptionalParams`](../interfaces/AffindaAPIGetAllResumesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+`Promise`<[`Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
-### getAllWorkspaceMemberships
+### getInvoice
 
-▸ **getAllWorkspaceMemberships**(`options?`): `Promise`<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
+▸ **getInvoice**(`identifier`, `options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
 
-Returns the memberships of your workspaces.
+Returns all the parse results for that invoice if processing is completed.
+The `identifier` is the unique ID returned after POST-ing the invoice via the
+[/invoices](#post-/invoices) endpoint.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllWorkspaceMembershipsOptionalParams`](../interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`AffindaAPIGetInvoiceOptionalParams`](../interfaces/AffindaAPIGetInvoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
+`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
 
 ___
 
-### getAllWorkspaces
+### getJobDescription
 
-▸ **getAllWorkspaces**(`organization`, `options?`): `Promise`<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
+▸ **getJobDescription**(`identifier`, `options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
 
-Returns your workspaces.
+Returns all the results for that job description if processing is completed.
+The `identifier` is the unique ID returned after POST-ing the resume via the
+[/job_descriptions](#post-/job_descriptions) endpoint.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `organization` | `string` | Filter by organization. |
-| `options?` | [`AffindaAPIGetAllWorkspacesOptionalParams`](../interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`AffindaAPIGetJobDescriptionOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
-
-___
-
-### getCollection
-
-▸ **getCollection**(`identifier`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
-
-Return a specific collection.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `options?` | [`AffindaAPIGetCollectionOptionalParams`](../interfaces/AffindaAPIGetCollectionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Collection`](../interfaces/Collection.md)\>
-
-___
-
-### getDataPoint
-
-▸ **getDataPoint**(`identifier`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
-
-Return a specific data point.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Data point's identifier |
-| `options?` | [`AffindaAPIGetDataPointOptionalParams`](../interfaces/AffindaAPIGetDataPointOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
-
-___
-
-### getDataPointChoices
-
-▸ **getDataPointChoices**(`dataPoint`, `options?`): `Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
-
-Returns available choices for a specific enum data point.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dataPoint` | `string` | The data point to get choices for. |
-| `options?` | [`AffindaAPIGetDataPointChoicesOptionalParams`](../interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
-
-___
-
-### getDocument
-
-▸ **getDocument**(`identifier`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
-
-Return a specific document.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `options?` | [`AffindaAPIGetDocumentOptionalParams`](../interfaces/AffindaAPIGetDocumentOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
-
-___
-
-### getExtractor
-
-▸ **getExtractor**(`identifier`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
-
-Return a specific extractor.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Extractor's identifier |
-| `options?` | [`AffindaAPIGetExtractorOptionalParams`](../interfaces/AffindaAPIGetExtractorOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Extractor`](../interfaces/Extractor.md)\>
-
-___
-
-### getInvitation
-
-▸ **getInvitation**(`identifier`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-Get detail of an invitation.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Invitation identifier. |
-| `options?` | [`AffindaAPIGetInvitationOptionalParams`](../interfaces/AffindaAPIGetInvitationOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-___
-
-### getInvitationByToken
-
-▸ **getInvitationByToken**(`token`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-Get detail of an invitation using a secret token. This allows users who have not registered/logged
-in to view the invitation.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `token` | `string` | Invitation token. |
-| `options?` | [`AffindaAPIGetInvitationByTokenOptionalParams`](../interfaces/AffindaAPIGetInvitationByTokenOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
@@ -1116,41 +682,24 @@ The `identifier` is the unique ID returned via the
 
 ___
 
-### getOrganization
+### getRedactedResume
 
-▸ **getOrganization**(`identifier`, `options?`): `Promise`<[`Organization`](../interfaces/Organization.md)\>
+▸ **getRedactedResume**(`identifier`, `options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
-Get detail of an organization.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Organization identifier. |
-| `options?` | [`AffindaAPIGetOrganizationOptionalParams`](../interfaces/AffindaAPIGetOrganizationOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Organization`](../interfaces/Organization.md)\>
-
-___
-
-### getOrganizationMembership
-
-▸ **getOrganizationMembership**(`identifier`, `options?`): `Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
-
-Get detail of an organization membership.
+Returns all the redaction results for that resume if processing is completed.
+The `identifier` is the unique ID returned after POST-ing the resume via the
+[/redacted_resumes](#post-/redacted_resumes) endpoint.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | `string` | Membership identifier. |
-| `options?` | [`AffindaAPIGetOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`AffindaAPIGetRedactedResumeOptionalParams`](../interfaces/AffindaAPIGetRedactedResumeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+`Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
 ___
 
@@ -1170,6 +719,27 @@ Return a specific resthook subscription.
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+___
+
+### getResume
+
+▸ **getResume**(`identifier`, `options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
+
+Returns all the parse results for that resume if processing is completed.
+The `identifier` is the unique ID returned after POST-ing the resume via the
+[/resumes](#post-/resumes) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`AffindaAPIGetResumeOptionalParams`](../interfaces/AffindaAPIGetResumeOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Resume`](../interfaces/Resume.md)\>
 
 ___
 
@@ -1276,63 +846,6 @@ Provided one or more skills, get related suggestions for your search.
 
 ___
 
-### getTag
-
-▸ **getTag**(`id`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-Return a specific tag.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Tag's ID |
-| `options?` | [`AffindaAPIGetTagOptionalParams`](../interfaces/AffindaAPIGetTagOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-___
-
-### getWorkspace
-
-▸ **getWorkspace**(`identifier`, `options?`): `Promise`<[`Workspace`](../interfaces/Workspace.md)\>
-
-Return a specific workspace.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `options?` | [`AffindaAPIGetWorkspaceOptionalParams`](../interfaces/AffindaAPIGetWorkspaceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Workspace`](../interfaces/Workspace.md)\>
-
-___
-
-### getWorkspaceMembership
-
-▸ **getWorkspaceMembership**(`identifier`, `options?`): `Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
-
-Return a specific workspace membership.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace membership's identifier. |
-| `options?` | [`AffindaAPIGetWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
-
-___
-
 ### listOccupationGroups
 
 ▸ **listOccupationGroups**(`options?`): `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
@@ -1348,26 +861,6 @@ Returns the list of searchable occupation groups.
 #### Returns
 
 `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
-
-___
-
-### respondToInvitation
-
-▸ **respondToInvitation**(`token`, `body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-Choose to accept or decline an invitation.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `token` | `string` | Invitation token. |
-| `body` | [`InvitationResponse`](../interfaces/InvitationResponse.md) |  |
-| `options?` | [`AffindaAPIRespondToInvitationOptionalParams`](../interfaces/AffindaAPIRespondToInvitationOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
 
 ___
 
@@ -1422,103 +915,25 @@ Send the provided httpRequest.
 
 ___
 
-### updateCollection
+### updateJobDescriptionData
 
-▸ **updateCollection**(`identifier`, `body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
+▸ **updateJobDescriptionData**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
 
-Update data of a collection.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `body` | [`CollectionUpdate`](../interfaces/CollectionUpdate.md) | Collection data to update |
-| `options?` | [`AffindaAPIUpdateCollectionOptionalParams`](../interfaces/AffindaAPIUpdateCollectionOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Collection`](../interfaces/Collection.md)\>
-
-___
-
-### updateDataPoint
-
-▸ **updateDataPoint**(`identifier`, `body`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
-
-Update data of a data point.
+Update data of a job description.
+The `identifier` is the unique ID returned after POST-ing the job description via the
+[/job_descriptions](#post-/job_descriptions) endpoint.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `identifier` | `string` | DataPoint's identifier |
-| `body` | [`DataPointUpdate`](../interfaces/DataPointUpdate.md) | Data point to update |
-| `options?` | [`AffindaAPIUpdateDataPointOptionalParams`](../interfaces/AffindaAPIUpdateDataPointOptionalParams.md) | The options parameters. |
+| `identifier` | `string` | Job description identifier |
+| `body` | ``null`` \| [`JobDescriptionData`](../interfaces/JobDescriptionData.md) | Job description data to update |
+| `options?` | [`AffindaAPIUpdateJobDescriptionDataOptionalParams`](../interfaces/AffindaAPIUpdateJobDescriptionDataOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
-
-___
-
-### updateDocument
-
-▸ **updateDocument**(`identifier`, `body`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
-
-Update file name, expiry time, or move to another collection, etc.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `body` | [`DocumentUpdate`](../interfaces/DocumentUpdate.md) | Document data to update |
-| `options?` | [`AffindaAPIUpdateDocumentOptionalParams`](../interfaces/AffindaAPIUpdateDocumentOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
-
-___
-
-### updateExtractor
-
-▸ **updateExtractor**(`identifier`, `body`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
-
-Update data of an extractor.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Extractor's identifier |
-| `body` | [`ExtractorUpdate`](../interfaces/ExtractorUpdate.md) | Extractor data to update |
-| `options?` | [`AffindaAPIUpdateExtractorOptionalParams`](../interfaces/AffindaAPIUpdateExtractorOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Extractor`](../interfaces/Extractor.md)\>
-
-___
-
-### updateInvitation
-
-▸ **updateInvitation**(`identifier`, `body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
-
-Update the detail of an invitation.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Invitation identifier. |
-| `body` | [`InvitationUpdate`](../interfaces/InvitationUpdate.md) |  |
-| `options?` | [`AffindaAPIUpdateInvitationOptionalParams`](../interfaces/AffindaAPIUpdateInvitationOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
 
 ___
 
@@ -1543,45 +958,6 @@ returned, etc.
 
 ___
 
-### updateOrganization
-
-▸ **updateOrganization**(`identifier`, `options?`): `Promise`<[`Organization`](../interfaces/Organization.md)\>
-
-Update the detail of an organization.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Organization identifier. |
-| `options?` | [`AffindaAPIUpdateOrganizationOptionalParams`](../interfaces/AffindaAPIUpdateOrganizationOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Organization`](../interfaces/Organization.md)\>
-
-___
-
-### updateOrganizationMembership
-
-▸ **updateOrganizationMembership**(`identifier`, `body`, `options?`): `Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
-
-The admin users can use this endpoint to update the role of the members within their organization.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Membership identifier. |
-| `body` | [`OrganizationMembershipUpdate`](../interfaces/OrganizationMembershipUpdate.md) |  |
-| `options?` | [`AffindaAPIUpdateOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
-
-___
-
 ### updateResthookSubscription
 
 ▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
@@ -1599,6 +975,28 @@ Update data of a resthook subscription.
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+___
+
+### updateResumeData
+
+▸ **updateResumeData**(`identifier`, `body`, `options?`): `Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
+
+Update data of a parsed resume.
+The `identifier` is the unique ID returned after POST-ing the resume via the
+[/resumes](#post-/resumes) endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Resume identifier |
+| `body` | ``null`` \| [`ResumeData`](../interfaces/ResumeData.md) | Resume data to update |
+| `options?` | [`AffindaAPIUpdateResumeDataOptionalParams`](../interfaces/AffindaAPIUpdateResumeDataOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
 
 ___
 
@@ -1620,43 +1018,3 @@ returned, etc.
 #### Returns
 
 `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
-
-___
-
-### updateTag
-
-▸ **updateTag**(`id`, `body`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-Update data of an tag.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Tag's ID |
-| `body` | [`TagUpdate`](../interfaces/TagUpdate.md) | Tag data to update |
-| `options?` | [`AffindaAPIUpdateTagOptionalParams`](../interfaces/AffindaAPIUpdateTagOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Tag`](../interfaces/Tag.md)\>
-
-___
-
-### updateWorkspace
-
-▸ **updateWorkspace**(`identifier`, `body`, `options?`): `Promise`<[`Workspace`](../interfaces/Workspace.md)\>
-
-Update a workspace.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `body` | [`WorkspaceUpdate`](../interfaces/WorkspaceUpdate.md) | Workspace data to update |
-| `options?` | [`AffindaAPIUpdateWorkspaceOptionalParams`](../interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`<[`Workspace`](../interfaces/Workspace.md)\>

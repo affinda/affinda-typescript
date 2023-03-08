@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetResumeOptionalParams
 
-# Interface: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+# Interface: AffindaAPIGetResumeOptionalParams
 
 Optional parameters.
 
@@ -8,18 +8,18 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`**
+  ↳ **`AffindaAPIGetResumeOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#abortsignal)
-- [body](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#body)
-- [onResponse](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIGetResumeOptionalParams.md#abortsignal)
+- [format](AffindaAPIGetResumeOptionalParams.md#format)
+- [onResponse](AffindaAPIGetResumeOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIGetResumeOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIGetResumeOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIGetResumeOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -35,9 +35,11 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
-### body
+### format
 
-• `Optional` **body**: [`Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+• `Optional` **format**: `string`
+
+Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml".
 
 ___
 

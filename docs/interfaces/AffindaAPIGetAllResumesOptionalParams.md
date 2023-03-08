@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllResumesOptionalParams
 
-# Interface: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+# Interface: AffindaAPIGetAllResumesOptionalParams
 
 Optional parameters.
 
@@ -8,18 +8,19 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`**
+  ↳ **`AffindaAPIGetAllResumesOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#abortsignal)
-- [body](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#body)
-- [onResponse](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIGetAllResumesOptionalParams.md#abortsignal)
+- [limit](AffindaAPIGetAllResumesOptionalParams.md#limit)
+- [offset](AffindaAPIGetAllResumesOptionalParams.md#offset)
+- [onResponse](AffindaAPIGetAllResumesOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIGetAllResumesOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIGetAllResumesOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIGetAllResumesOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -35,9 +36,19 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
-### body
+### limit
 
-• `Optional` **body**: [`Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+• `Optional` **limit**: `number`
+
+The numbers of results to return.
+
+___
+
+### offset
+
+• `Optional` **offset**: `number`
+
+The number of documents to skip before starting to collect the result set.
 
 ___
 

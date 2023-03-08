@@ -7,7 +7,6 @@
 ### Properties
 
 - [event](ResthookSubscriptionUpdate.md#event)
-- [organization](ResthookSubscriptionUpdate.md#organization)
 - [version](ResthookSubscriptionUpdate.md#version)
 
 ## Properties
@@ -17,14 +16,6 @@
 • `Optional` **event**: `string`
 
 The event name to subscribe to.
-
-___
-
-### organization
-
-• `Optional` **organization**: `string`
-
-Uniquely identify an organization.
 
 ___
 

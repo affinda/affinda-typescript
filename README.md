@@ -18,12 +18,27 @@ and [autorest.typescript](https://github.com/Azure/autorest.typescript).
 
 [Package (NPM)](https://www.npmjs.com/package/@affinda/affinda)
 
+*NOTE: You are viewing a deprecated version of the documentation, this release is only compatible with `v2` of the
+Affinda API. Please go to [the master branch](https://github.com/affinda/affinda-typescript/tree/master) to view the
+latest revision.*
+
 Installation
 ------------
 
 ```bash
 npm install @affinda/affinda
 ```
+
+API Version Compatibility
+-------------------------
+
+The Affinda API is currently on `v3`, with breaking changes meant the release of new versions of the client library.
+Please see below for which versions are compatible with which API version.
+
+| Affinda API version | `affinda-typescript` versions |
+|---------------------|-------------------------------|
+| v2                  | 0.1.0 - 4.x.x                 |
+| v3                  | \>= 5.x.x                     |
 
 Quickstart
 ----------

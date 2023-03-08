@@ -11,7 +11,6 @@
 - [autoDeactivated](ResthookSubscription.md#autodeactivated)
 - [event](ResthookSubscription.md#event)
 - [id](ResthookSubscription.md#id)
-- [organization](ResthookSubscription.md#organization)
 - [targetUrl](ResthookSubscription.md#targeturl)
 - [version](ResthookSubscription.md#version)
 
@@ -54,12 +53,6 @@ ___
 • `Optional` **id**: `number`
 
 Resthook subscription's ID.
-
-___
-
-### organization
-
-• `Optional` **organization**: [`Organization`](Organization.md)
 
 ___
 

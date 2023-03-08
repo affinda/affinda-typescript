@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllRedactedResumesOptionalParams
 
-# Interface: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+# Interface: AffindaAPIGetAllRedactedResumesOptionalParams
 
 Optional parameters.
 
@@ -8,18 +8,19 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`**
+  ↳ **`AffindaAPIGetAllRedactedResumesOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#abortsignal)
-- [body](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#body)
-- [onResponse](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIGetAllRedactedResumesOptionalParams.md#abortsignal)
+- [limit](AffindaAPIGetAllRedactedResumesOptionalParams.md#limit)
+- [offset](AffindaAPIGetAllRedactedResumesOptionalParams.md#offset)
+- [onResponse](AffindaAPIGetAllRedactedResumesOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIGetAllRedactedResumesOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -35,9 +36,19 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
-### body
+### limit
 
-• `Optional` **body**: [`Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+• `Optional` **limit**: `number`
+
+The numbers of results to return.
+
+___
+
+### offset
+
+• `Optional` **offset**: `number`
+
+The number of documents to skip before starting to collect the result set.
 
 ___
 

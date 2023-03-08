@@ -2,8 +2,6 @@
 
 # Interface: JobDescriptionData
 
-A JSON-encoded string of the `JobDescriptionData` object.
-
 ## Table of contents
 
 ### Properties
@@ -30,49 +28,49 @@ A JSON-encoded string of the `JobDescriptionData` object.
 
 ### certifications
 
-• `Optional` **certifications**: (``null`` \| [`TextAnnotationV2`](../modules.md#textannotationv2))[]
+• `Optional` **certifications**: (``null`` \| [`TextAnnotation`](../modules.md#textannotation))[]
 
 ___
 
 ### contactEmail
 
-• `Optional` **contactEmail**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **contactEmail**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### contactName
 
-• `Optional` **contactName**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **contactName**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### contactPhone
 
-• `Optional` **contactPhone**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **contactPhone**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### educationAccreditation
 
-• `Optional` **educationAccreditation**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **educationAccreditation**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### educationLevel
 
-• `Optional` **educationLevel**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **educationLevel**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### endDate
 
-• `Optional` **endDate**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
+• `Optional` **endDate**: [`DateAnnotation`](../modules.md#dateannotation)
 
 ___
 
 ### expectedRemuneration
 
-• `Optional` **expectedRemuneration**: [`ExpectedRemunerationAnnotationV2`](../modules.md#expectedremunerationannotationv2)
+• `Optional` **expectedRemuneration**: [`ExpectedRemunerationAnnotation`](../modules.md#expectedremunerationannotation)
 
 ___
 
@@ -84,46 +82,46 @@ ___
 
 ### jobType
 
-• `Optional` **jobType**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **jobType**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### languages
 
-• `Optional` **languages**: (``null`` \| [`LanguageAnnotationV2`](../modules.md#languageannotationv2))[]
+• `Optional` **languages**: (``null`` \| [`LanguageAnnotation`](../modules.md#languageannotation))[]
 
 ___
 
 ### location
 
-• `Optional` **location**: [`LocationAnnotationV2`](../modules.md#locationannotationv2)
+• `Optional` **location**: [`LocationAnnotation`](../modules.md#locationannotation)
 
 ___
 
 ### organizationName
 
-• `Optional` **organizationName**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **organizationName**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### organizationWebsite
 
-• `Optional` **organizationWebsite**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **organizationWebsite**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
 ### skills
 
-• `Optional` **skills**: (``null`` \| [`SkillAnnotationV2`](../modules.md#skillannotationv2))[]
+• `Optional` **skills**: (``null`` \| [`SkillAnnotation`](../modules.md#skillannotation))[]
 
 ___
 
 ### startDate
 
-• `Optional` **startDate**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
+• `Optional` **startDate**: [`DateAnnotation`](../modules.md#dateannotation)
 
 ___
 
 ### yearsExperience
 
-• `Optional` **yearsExperience**: [`YearsExperienceAnnotationV2`](../modules.md#yearsexperienceannotationv2)
+• `Optional` **yearsExperience**: [`YearsExperienceAnnotation`](../modules.md#yearsexperienceannotation)
