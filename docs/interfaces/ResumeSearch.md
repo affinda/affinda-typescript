@@ -46,4 +46,4 @@ ___
 
 ### results
 
-• `Optional` **results**: [`ResumeSearchResult`](ResumeSearchResult.md)[]
+• `Optional` **results**: [`ResumeSearchResultsItem`](ResumeSearchResultsItem.md)[]

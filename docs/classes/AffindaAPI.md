@@ -740,7 +740,7 @@ ___
 
 ### getAllDocuments
 
-▸ **getAllDocuments**(`options?`): `Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
+▸ **getAllDocuments**(`options?`): `Promise`<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
 
 Returns all the document summaries for that user, limited to 300 per page.
 
@@ -752,7 +752,7 @@ Returns all the document summaries for that user, limited to 300 per page.
 
 #### Returns
 
-`Promise`<[`GetAllDocumentsResults`](../interfaces/GetAllDocumentsResults.md)\>
+`Promise`<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
 
 ___
 

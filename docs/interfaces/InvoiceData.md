@@ -91,7 +91,7 @@ ___
 
 ### currencyCode
 
-• `Optional` **currencyCode**: [`TextAnnotationV2`](../modules.md#textannotationv2)
+• `Optional` **currencyCode**: [`TextAnnotation`](../modules.md#textannotation)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 ### customerBillingAddress
 
-• `Optional` **customerBillingAddress**: [`LocationAnnotationV2`](../modules.md#locationannotationv2)
+• `Optional` **customerBillingAddress**: [`LocationAnnotation`](../modules.md#locationannotation)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 ### customerDeliveryAddress
 
-• `Optional` **customerDeliveryAddress**: [`LocationAnnotationV2`](../modules.md#locationannotationv2)
+• `Optional` **customerDeliveryAddress**: [`LocationAnnotation`](../modules.md#locationannotation)
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 ### invoiceDate
 
-• `Optional` **invoiceDate**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
+• `Optional` **invoiceDate**: [`DateAnnotation`](../modules.md#dateannotation)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 ### invoiceOrderDate
 
-• `Optional` **invoiceOrderDate**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
+• `Optional` **invoiceOrderDate**: [`DateAnnotation`](../modules.md#dateannotation)
 
 ___
 
@@ -217,7 +217,7 @@ ___
 
 ### paymentDateDue
 
-• `Optional` **paymentDateDue**: [`DateAnnotationV2`](../modules.md#dateannotationv2)
+• `Optional` **paymentDateDue**: [`DateAnnotation`](../modules.md#dateannotation)
 
 ___
 
@@ -229,7 +229,7 @@ ___
 
 ### supplierAddress
 
-• `Optional` **supplierAddress**: [`LocationAnnotationV2`](../modules.md#locationannotationv2)
+• `Optional` **supplierAddress**: [`LocationAnnotation`](../modules.md#locationannotation)
 
 ___
 

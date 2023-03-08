@@ -1,7 +1,7 @@
 
 
-Search & Match - Searching
---------------------------
+Search & Match API - Searching
+------------------------------
 
 ### getResumeSearchMatch - Match a single resume and job description
 
@@ -24,8 +24,8 @@ client.getResumeSearchMatch(resumeIdentifier, jobDescriptionIdentifier, { indexN
 });
 ```
 
-Search & Match - Embedding
---------------------------
+Search & Match API - Embedding
+------------------------------
 
 ### getResumeSearchConfig - Get the config for the logged in user's embeddable resume search tool
 
@@ -44,17 +44,17 @@ client.getResumeSearchConfig().then((result) => {
 });
 ```
 
-Search & Match - Indexing
--------------------------
+Search & Match API - Indexing
+-----------------------------
 
-Organization & User - Organization
-----------------------------------
+Organization API - Organization
+-------------------------------
 
-Organization & User - Membership
---------------------------------
+Organization API - Membership
+-----------------------------
 
-Organization & User - Invitation
---------------------------------
+Organization API - Invitation
+-----------------------------
 
 Document API - Extractor
 ------------------------
@@ -74,5 +74,5 @@ Document API - Upload Documents
 Document API - Tag
 ------------------
 
-Webhook
--------
+Webhook API
+-----------

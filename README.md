@@ -25,6 +25,17 @@ Installation
 npm install @affinda/affinda
 ```
 
+API Version Compatibility
+-------------------------
+
+The Affinda API is currently on `v3`, with breaking changes meant the release of new versions of the client library.
+Please see below for which versions are compatible with which API version.
+
+| Affinda API version | `affinda-typescript` versions |
+|---------------------|-------------------------------|
+| v2                  | 0.1.0 - 4.x.x                 |
+| v3                  | \>= 5.x.x                     |
+
 Quickstart
 ----------
 

@@ -2846,7 +2846,8 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper: Mappers.GetAllDocumentsResults
+      bodyMapper:
+        Mappers.PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema
     },
     400: {
       bodyMapper: Mappers.RequestError,

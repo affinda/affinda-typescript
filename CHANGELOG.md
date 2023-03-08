@@ -5,19 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Added
-- Added PATCH support for Job Descriptions
-- Add `confirmed_by` field to document meta
-- Add `description` field to `DataPointChoice`
-
-### Changed
-- Rework document polymorphism, the model used to deserialize document response is now automatically chosen based on the document's extractor
-- Rename `updateCollectionData` to `updateCollection`
-- Rename `updateDocumentData` to `updateDocument`
-- Make Document.Meta.confirmedBy nullable
-
-### Removed
-- Remove API v2 endpoints
+### Deprecated
+- Deprecated v2 endpoints
 
 ## [4.3.0] - 2023-02-13
 ### Changed

@@ -1,11 +1,7 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
 
-export type DocumentUnion =
-  | Document
-  | ResumeDocument
-  | InvoiceDocument
-  | JobDescriptionDocument;
+export type DocumentUnion = Document | Resume | Invoice | JobDescription;
 
 export interface ResumeSearchParameters {
   indices: string[];
@@ -92,88 +88,127 @@ export interface ResumeSearch {
   /** URL to request previous page of results */
   previous?: string;
   parameters?: ResumeSearchParameters;
-  results?: ResumeSearchResult[];
+  results?: ResumeSearchResultsItem[];
 }
 
-export interface ResumeSearchResult {
-  /** A random string that uniquely identify the resource. */
+export interface ResumeSearchResultsItem {
+  meta: DocumentMeta;
+  error?: DocumentError;
+}
+
+export interface DocumentMeta {
+  /** Uniquely identify a document. */
   identifier: string;
-  score: number;
-  pdf: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+  ready?: boolean;
+  /** The datetime when the document was ready */
+  readyDt?: Date;
+  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+  failed?: boolean;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** The document's language. */
+  language?: string;
+  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+  pdf?: string;
+  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+  parentDocument?: DocumentMetaParentDocument;
+  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+  childDocuments?: DocumentMetaChildDocumentsItem[];
+  /** The document's pages. */
+  pages: PageMeta[];
+  isOcrd?: boolean;
+  ocrConfidence?: number;
+  reviewUrl?: string;
+  collection?: DocumentMetaCollection;
+  workspace: DocumentMetaWorkspace;
+  archivedDt?: Date;
+  isArchived?: boolean;
+  confirmedDt?: Date;
+  isConfirmed?: boolean;
+  rejectedDt?: Date;
+  isRejected?: boolean;
+  createdDt?: Date;
+  errorCode?: string;
+  errorDetail?: string;
+  /** URL to view the file. */
+  file?: string;
+  tags?: Tag[];
+  confirmedBy?: User;
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export interface DocumentMetaParentDocument {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface DocumentMetaChildDocumentsItem {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface PageMeta {
+  id: number;
+  /** Page number within the document, starts from 0. */
+  pageIndex: number;
+  /** The URL to the image of the page. */
+  image: string | null;
+  /** Height of the page's image in px. */
+  height: number;
+  /** Width of the page's image in px. */
+  width: number;
+  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
+  rotation: number;
+}
+
+export interface DocumentMetaCollection {
+  /** Uniquely identify a collection. */
+  identifier: string;
   name?: string;
-  jobTitle: JobTitleSearchScoreComponent;
-  managementLevel: ManagementLevelSearchScoreComponent;
-  experience: ExperienceSearchScoreComponent;
-  skills: SkillsSearchScoreComponent;
-  languages: LanguagesSearchScoreComponent;
-  location: LocationSearchScoreComponent;
-  education: EducationSearchScoreComponent;
-  occupationGroup: OccupationGroupSearchScoreComponent;
-  searchExpression: SearchExpressionSearchScoreComponent;
-  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-  customData: {
-    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
-  };
+  extractor?: DocumentMetaCollectionExtractor;
 }
 
-export interface JobTitleSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
+export interface DocumentMetaCollectionExtractor {
+  /** Uniquely identify an extractor. */
+  identifier?: string;
+  name?: string;
+  /** Base extractor's identifier. */
+  baseExtractor?: string;
+  validatable?: boolean;
 }
 
-export interface ManagementLevelSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
+export interface DocumentMetaWorkspace {
+  /** Uniquely identify a workspace. */
+  identifier: string;
+  name?: string;
 }
 
-export interface ExperienceSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
+export interface Tag {
+  /** Uniquely identify a tag. */
+  id: number;
+  name: string;
+  /** Uniquely identify a workspace. */
+  workspace: string;
+  /** Number of documents tagged with this. */
+  documentCount: number;
 }
 
-export interface SkillsSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
+export interface User {
+  /** Uniquely identify a user. */
+  id?: number;
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
 }
 
-export interface LanguagesSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface LocationSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface EducationSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface OccupationGroupSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface SearchExpressionSearchScoreComponent {
-  label: string;
-  value?: string;
-  score?: number;
-}
-
-export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
-  value?: string;
-  label: string;
-  score?: number;
+export interface DocumentError {
+  errorCode?: string;
+  errorDetail?: string;
 }
 
 export interface RequestError {
@@ -377,6 +412,60 @@ export interface ResumeSearchMatchDetails {
   education?: EducationSearchScoreComponent;
   occupationGroup?: OccupationGroupSearchScoreComponent;
   searchExpression?: SearchExpressionSearchScoreComponent;
+}
+
+export interface JobTitleSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ManagementLevelSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface ExperienceSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SkillsSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LanguagesSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LocationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface EducationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface OccupationGroupSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SearchExpressionSearchScoreComponent {
+  label: string;
+  value?: string;
+  score?: number;
 }
 
 export interface ResumeSearchConfig {
@@ -727,16 +816,6 @@ export interface OrganizationMembership {
   role: OrganizationRole;
 }
 
-export interface User {
-  /** Uniquely identify a user. */
-  id?: number;
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-}
-
 export interface OrganizationMembershipUpdate {
   role?: OrganizationRole;
 }
@@ -953,15 +1032,6 @@ export interface WorkspaceUpdate {
   rejectInvalidDocuments?: boolean;
 }
 
-export interface ListResult {
-  /** Number of items in results */
-  count: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-}
-
 export interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results: WorkspaceMembership[];
 }
@@ -1035,143 +1105,15 @@ export interface CollectionUpdate {
   extractorConfig?: { [propertyName: string]: any };
 }
 
-export interface GetAllDocumentsResults {
-  /** Number of documents in result */
-  count: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results: GetAllDocumentsResultsItem[];
-}
-
-export interface GetAllDocumentsResultsItem {
-  meta: DocumentMeta;
-  error?: ErrorModel;
-}
-
-export interface DocumentMeta {
-  /** Uniquely identify a document. */
-  identifier: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
-  ready?: boolean;
-  /** The datetime when the document was ready */
-  readyDt?: Date;
-  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
-  failed?: boolean;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  /** The document's language. */
-  language?: string;
-  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
-  pdf?: string;
-  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-  parentDocument?: DocumentMetaParentDocument;
-  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
-  childDocuments?: DocumentMetaChildDocumentsItem[];
-  /** The document's pages. */
-  pages: PageMeta[];
-  isOcrd?: boolean;
-  ocrConfidence?: number;
-  reviewUrl?: string;
-  collection?: DocumentMetaCollection;
-  workspace: DocumentMetaWorkspace;
-  archivedDt?: Date;
-  isArchived?: boolean;
-  confirmedDt?: Date;
-  isConfirmed?: boolean;
-  rejectedDt?: Date;
-  isRejected?: boolean;
-  createdDt?: Date;
-  errorCode?: string;
-  errorDetail?: string;
-  /** URL to view the file. */
-  file?: string;
-  tags?: Tag[];
-  confirmedBy?: UserNullable;
-}
-
-/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-export interface DocumentMetaParentDocument {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface DocumentMetaChildDocumentsItem {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface PageMeta {
-  id: number;
-  /** Page number within the document, starts from 0. */
-  pageIndex: number;
-  /** The URL to the image of the page. */
-  image: string | null;
-  /** Height of the page's image in px. */
-  height: number;
-  /** Width of the page's image in px. */
-  width: number;
-  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
-  rotation: number;
-}
-
-export interface DocumentMetaCollection {
-  /** Uniquely identify a collection. */
-  identifier: string;
-  name?: string;
-  extractor?: DocumentMetaCollectionExtractor;
-}
-
-export interface DocumentMetaCollectionExtractor {
-  /** Uniquely identify an extractor. */
-  identifier?: string;
-  name?: string;
-  /** Base extractor's identifier. */
-  baseExtractor?: string;
-  validatable?: boolean;
-}
-
-export interface DocumentMetaWorkspace {
-  /** Uniquely identify a workspace. */
-  identifier: string;
-  name?: string;
-}
-
-export interface Tag {
-  /** Uniquely identify a tag. */
-  id: number;
-  name: string;
-  /** Uniquely identify a workspace. */
-  workspace: string;
-  /** Number of documents tagged with this. */
-  documentCount: number;
-}
-
-export interface UserNullable {
-  /** Uniquely identify a user. */
-  id?: number;
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-}
-
-export interface ErrorModel {
-  errorCode?: string;
-  errorDetail?: string;
+export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: DocumentUnion[];
 }
 
 export interface Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "resume" | "invoice" | "job-description";
   meta: DocumentMeta;
-  /** Dictionary of <any> */
-  data?: { [propertyName: string]: any };
-  error?: ErrorModel;
+  error?: DocumentError;
 }
 
 export interface DocumentUpdate {
@@ -1393,9 +1335,9 @@ export interface ResumeDataSectionsItem {
 
 export interface InvoiceData {
   tables?: InvoiceDataTablesItem[];
-  invoiceDate?: DateAnnotationV2;
-  invoiceOrderDate?: DateAnnotationV2;
-  paymentDateDue?: DateAnnotationV2;
+  invoiceDate?: DateAnnotation;
+  invoiceOrderDate?: DateAnnotation;
+  paymentDateDue?: DateAnnotation;
   paymentAmountBase?: InvoiceDataPaymentAmountBase;
   paymentAmountTax?: InvoiceDataPaymentAmountTax;
   paymentAmountTotal?: InvoiceDataPaymentAmountTotal;
@@ -1419,16 +1361,16 @@ export interface InvoiceData {
   customerContactName?: InvoiceDataCustomerContactName;
   customerCompanyName?: InvoiceDataCustomerCompanyName;
   supplierCompanyName?: InvoiceDataSupplierCompanyName;
-  customerBillingAddress?: LocationAnnotationV2;
-  customerDeliveryAddress?: LocationAnnotationV2;
-  supplierAddress?: LocationAnnotationV2;
+  customerBillingAddress?: LocationAnnotation;
+  customerDeliveryAddress?: LocationAnnotation;
+  supplierAddress?: LocationAnnotation;
   customerPhoneNumber?: InvoiceDataCustomerPhoneNumber;
   supplierPhoneNumber?: InvoiceDataSupplierPhoneNumber;
   supplierFax?: InvoiceDataSupplierFax;
   customerEmail?: InvoiceDataCustomerEmail;
   supplierEmail?: InvoiceDataSupplierEmail;
   supplierWebsite?: InvoiceDataSupplierWebsite;
-  currencyCode?: TextAnnotationV2;
+  currencyCode?: TextAnnotation;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
 }
@@ -1454,24 +1396,30 @@ export interface RowAnnotation {
   customFields?: { [propertyName: string]: any };
 }
 
-export interface AnnotationV2 {
+export interface Annotation {
   /** Describes unknown properties. The value of an unknown property can be of "any" type. */
   [property: string]: any;
   id: number;
+  /** x/y coordinates for the rectangular bounding box containing the data */
   rectangle: Rectangle | null;
   rectangles: Rectangle[] | null;
+  /** The page number within the document, starting from 0. */
   pageIndex: number | null;
+  /** Raw data extracted from the before any post-processing */
   raw: string | null;
   /** The overall confidence that the model's prediction is correct */
   confidence: number | null;
   /** The model's confidence that the text has been classified correctly */
   classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
   textExtractionConfidence: number | null;
+  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
   isVerified: boolean;
+  /** Indicates whether the data has been validated by a human */
   isClientVerified: boolean;
+  /** Indicates whether the data has been auto-validated */
   isAutoVerified: boolean;
-  dataPoint?: string;
+  dataPoint: string;
   contentType: string;
 }
 
@@ -1627,43 +1575,34 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
-/** A JSON-encoded string of the `JobDescriptionData` object. */
 export interface JobDescriptionData {
   jobTitle?: JobTitleAnnotation;
-  contactEmail?: TextAnnotationV2;
-  contactName?: TextAnnotationV2;
-  contactPhone?: TextAnnotationV2;
-  startDate?: DateAnnotationV2;
-  endDate?: DateAnnotationV2;
-  jobType?: TextAnnotationV2;
-  languages?: (LanguageAnnotationV2 | null)[];
-  skills?: (SkillAnnotationV2 | null)[];
-  organizationName?: TextAnnotationV2;
-  organizationWebsite?: TextAnnotationV2;
-  educationLevel?: TextAnnotationV2;
-  educationAccreditation?: TextAnnotationV2;
-  expectedRemuneration?: ExpectedRemunerationAnnotationV2;
-  location?: LocationAnnotationV2;
-  certifications?: (TextAnnotationV2 | null)[];
-  yearsExperience?: YearsExperienceAnnotationV2;
+  contactEmail?: TextAnnotation;
+  contactName?: TextAnnotation;
+  contactPhone?: TextAnnotation;
+  startDate?: DateAnnotation;
+  endDate?: DateAnnotation;
+  jobType?: TextAnnotation;
+  languages?: (LanguageAnnotation | null)[];
+  skills?: (SkillAnnotation | null)[];
+  organizationName?: TextAnnotation;
+  organizationWebsite?: TextAnnotation;
+  educationLevel?: TextAnnotation;
+  educationAccreditation?: TextAnnotation;
+  expectedRemuneration?: ExpectedRemunerationAnnotation;
+  location?: LocationAnnotation;
+  certifications?: (TextAnnotation | null)[];
+  yearsExperience?: YearsExperienceAnnotation;
 }
 
-export interface JobTitleParsed {
-  /**
-   * Matching job title to extracted text
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly parsed?: JobTitleParsedParsed;
-}
-
-/** Matching job title to extracted text */
-export interface JobTitleParsedParsed {
+/** Years of experience range */
+export interface JobTitleAnnotationParsed {
   name?: string;
   managementLevel?: string;
-  classification?: JobTitleParsedClassification;
+  classification?: JobTitleAnnotationParsedClassification;
 }
 
-export interface JobTitleParsedClassification {
+export interface JobTitleAnnotationParsedClassification {
   socCode?: number;
   title?: string;
   minorGroup?: string;
@@ -1671,7 +1610,7 @@ export interface JobTitleParsedClassification {
   majorGroup?: string;
 }
 
-export interface ExpectedRemunerationAnnotationV2Parsed {
+export interface ExpectedRemunerationAnnotationParsed {
   minimum?: number;
   maximum?: number;
   currency?: string;
@@ -1679,7 +1618,7 @@ export interface ExpectedRemunerationAnnotationV2Parsed {
 }
 
 /** Years of experience range */
-export interface YearsExperienceAnnotationV2Parsed {
+export interface YearsExperienceAnnotationParsed {
   /** Minimum years of experience */
   minimum?: number;
   /** Maximum years of experience */
@@ -1705,7 +1644,7 @@ export interface OrganizationUpdate {
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to a resume to download and process */
+  /** URL to download the document. */
   url?: string;
   /** Uniquely identify a collection. */
   collection?: string;
@@ -1729,13 +1668,13 @@ export interface IndexRequestBody {
   documentType?: PostContentSchemaDocumentType;
 }
 
+export type InvitationRespondedBy = User & {};
+
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
 export type JobDescriptionSearchDetailLocationValue = Location &
   Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
-
-export type LocationAnnotationV2Parsed = Location & {};
 
 export type ResumeSearchDetailEducationValueItem = Education &
   ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
@@ -1761,159 +1700,155 @@ export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema
 export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
+export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
 export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
-export type InvitationRespondedBy = User & {};
-
-export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = ListResult &
-  Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
-
-export type ResumeDocument = Document & {
+export type Resume = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "resume";
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
   /** A JSON-encoded string of the `ResumeData` object. */
-  data: ResumeData | null;
+  data?: ResumeData;
 };
 
-export type InvoiceDocument = Document & {
+export type Invoice = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "invoice";
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  data: InvoiceData;
+  data?: InvoiceData;
 };
 
-export type JobDescriptionDocument = Document & {
+export type JobDescription = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "job-description";
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  /** A JSON-encoded string of the `JobDescriptionData` object. */
-  data: JobDescriptionData | null;
+  data?: JobDescriptionData;
 };
 
-export type DateAnnotationV2 = AnnotationV2 & {
+export type DateAnnotation = Annotation & {
   parsed?: Date;
 };
 
-export type TextAnnotationV2 = AnnotationV2 & {
+export type TextAnnotation = Annotation & {
   parsed?: string;
 };
 
-export type LocationAnnotationV2 = AnnotationV2 & {
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly parsed?: LocationAnnotationV2Parsed;
+export type LocationAnnotation = Annotation & {
+  parsed?: Location;
 };
 
-export type JobTitleAnnotation = AnnotationV2 & JobTitleParsed & {};
-
-export type LanguageAnnotationV2 = AnnotationV2 & {
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly parsed?: string;
-};
-
-export type SkillAnnotationV2 = AnnotationV2 & {
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly parsed?: string;
-};
-
-export type ExpectedRemunerationAnnotationV2 = AnnotationV2 & {
-  parsed?: ExpectedRemunerationAnnotationV2Parsed;
-};
-
-export type YearsExperienceAnnotationV2 = AnnotationV2 & {
+export type JobTitleAnnotation = Annotation & {
   /** Years of experience range */
-  parsed?: YearsExperienceAnnotationV2Parsed;
+  parsed?: JobTitleAnnotationParsed;
 };
 
-export type InvoiceDataPaymentAmountBase = TextAnnotationV2 &
+export type LanguageAnnotation = Annotation & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type SkillAnnotation = Annotation & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotation = Annotation & {
+  parsed?: ExpectedRemunerationAnnotationParsed;
+};
+
+export type YearsExperienceAnnotation = Annotation & {
+  /** Years of experience range */
+  parsed?: YearsExperienceAnnotationParsed;
+};
+
+export type InvoiceDataPaymentAmountBase = TextAnnotation &
   Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
 
-export type InvoiceDataPaymentAmountTax = TextAnnotationV2 &
+export type InvoiceDataPaymentAmountTax = TextAnnotation &
   Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 & {};
 
-export type InvoiceDataPaymentAmountTotal = TextAnnotationV2 &
+export type InvoiceDataPaymentAmountTotal = TextAnnotation &
   Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 & {};
 
-export type InvoiceDataPaymentAmountPaid = TextAnnotationV2 &
+export type InvoiceDataPaymentAmountPaid = TextAnnotation &
   Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 & {};
 
-export type InvoiceDataPaymentAmountDue = TextAnnotationV2 &
+export type InvoiceDataPaymentAmountDue = TextAnnotation &
   ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 & {};
 
-export type InvoiceDataInvoiceNumber = TextAnnotationV2 &
+export type InvoiceDataInvoiceNumber = TextAnnotation &
   Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
 
-export type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotationV2 &
+export type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation &
   ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 & {};
 
-export type InvoiceDataSupplierBusinessNumber = TextAnnotationV2 &
+export type InvoiceDataSupplierBusinessNumber = TextAnnotation &
   Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 & {};
 
-export type InvoiceDataCustomerNumber = TextAnnotationV2 &
+export type InvoiceDataCustomerNumber = TextAnnotation &
   Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 & {};
 
-export type InvoiceDataCustomerBusinessNumber = TextAnnotationV2 &
+export type InvoiceDataCustomerBusinessNumber = TextAnnotation &
   Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 & {};
 
-export type InvoiceDataPaymentReference = TextAnnotationV2 &
+export type InvoiceDataPaymentReference = TextAnnotation &
   Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 & {};
 
-export type InvoiceDataBankAccountNumber = TextAnnotationV2 &
+export type InvoiceDataBankAccountNumber = TextAnnotation &
   Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
 
-export type InvoiceDataSupplierVat = TextAnnotationV2 &
+export type InvoiceDataSupplierVat = TextAnnotation &
   ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
 
-export type InvoiceDataCustomerVat = TextAnnotationV2 &
+export type InvoiceDataCustomerVat = TextAnnotation &
   ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
 
-export type InvoiceDataBpayBillerCode = TextAnnotationV2 &
+export type InvoiceDataBpayBillerCode = TextAnnotation &
   ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
 
-export type InvoiceDataBpayReference = TextAnnotationV2 &
+export type InvoiceDataBpayReference = TextAnnotation &
   ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 & {};
 
-export type InvoiceDataBankSortCode = TextAnnotationV2 &
+export type InvoiceDataBankSortCode = TextAnnotation &
   Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
 
-export type InvoiceDataBankIban = TextAnnotationV2 &
+export type InvoiceDataBankIban = TextAnnotation &
   Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
 
-export type InvoiceDataBankSwift = TextAnnotationV2 &
+export type InvoiceDataBankSwift = TextAnnotation &
   Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
 
-export type InvoiceDataBankBsb = TextAnnotationV2 &
+export type InvoiceDataBankBsb = TextAnnotation &
   Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
 
-export type InvoiceDataCustomerContactName = TextAnnotationV2 &
+export type InvoiceDataCustomerContactName = TextAnnotation &
   ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
 
-export type InvoiceDataCustomerCompanyName = TextAnnotationV2 &
+export type InvoiceDataCustomerCompanyName = TextAnnotation &
   Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 & {};
 
-export type InvoiceDataSupplierCompanyName = TextAnnotationV2 &
+export type InvoiceDataSupplierCompanyName = TextAnnotation &
   Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 & {};
 
-export type InvoiceDataCustomerPhoneNumber = TextAnnotationV2 &
+export type InvoiceDataCustomerPhoneNumber = TextAnnotation &
   Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
 
-export type InvoiceDataSupplierPhoneNumber = TextAnnotationV2 &
+export type InvoiceDataSupplierPhoneNumber = TextAnnotation &
   Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
 
-export type InvoiceDataSupplierFax = TextAnnotationV2 &
+export type InvoiceDataSupplierFax = TextAnnotation &
   Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 & {};
 
-export type InvoiceDataCustomerEmail = TextAnnotationV2 &
+export type InvoiceDataCustomerEmail = TextAnnotation &
   Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 & {};
 
-export type InvoiceDataSupplierEmail = TextAnnotationV2 &
+export type InvoiceDataSupplierEmail = TextAnnotation &
   Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 & {};
 
-export type InvoiceDataSupplierWebsite = TextAnnotationV2 &
+export type InvoiceDataSupplierWebsite = TextAnnotation &
   Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
 /** Known values of {@link Region} that the service accepts. */
@@ -2933,14 +2868,14 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
 }
 
 /** Contains response data for the getAllDocuments operation. */
-export type AffindaAPIGetAllDocumentsResponse = GetAllDocumentsResults;
+export type AffindaAPIGetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface AffindaAPICreateDocumentOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** URL to a resume to download and process */
+  /** URL to download the document. */
   url?: string;
   /** Uniquely identify a collection. */
   collection?: string;

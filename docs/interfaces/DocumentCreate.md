@@ -70,7 +70,7 @@ ___
 
 • `Optional` **url**: `string`
 
-URL to a resume to download and process
+URL to download the document.
 
 ___
 
