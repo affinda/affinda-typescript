@@ -71,6 +71,8 @@ export interface ResumeData {
   readonly isResumeProbability?: number;
   /** All of the raw text of the parsed resume, example is shortened for readability */
   rawText?: string;
+  /** Redacted version of the text in the resume, removing PII. */
+  redactedText?: string;
 }
 
 export interface ResumeDataName {
@@ -841,6 +843,7 @@ export interface OccupationGroup {
   code: number;
   name: string;
   children: OccupationGroup[];
+  parents?: OccupationGroup[];
 }
 
 export interface Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
@@ -1103,11 +1106,15 @@ export interface ResumeSearchDetailExperience {
 
 export interface ResumeSearchDetailOccupationGroup {
   missing?: number[];
-  value?: ResumeSearchDetailOccupationGroupValueItem[];
+  value?: OccupationGroupSearchResult[];
 }
 
-export interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
+export interface OccupationGroupSearchResult {
   match?: boolean;
+  code: number;
+  name: string;
+  children: OccupationGroup[];
+  parents?: OccupationGroup[];
 }
 
 export interface ResumeSearchDetailLanguages {
@@ -1531,9 +1538,6 @@ export type InvoiceDataSupplierWebsite = TextAnnotation &
 
 export type JobDescriptionSearchDetailOccupationGroupValueItem = OccupationGroup &
   Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
-
-export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
-  ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
 export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
   ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};

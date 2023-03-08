@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`ResumeSearchDetailOccupationGroupValueItem`](../modules.md#resumesearchdetailoccupationgroupvalueitem)[]
+• `Optional` **value**: [`OccupationGroupSearchResult`](OccupationGroupSearchResult.md)[]

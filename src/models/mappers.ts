@@ -365,6 +365,13 @@ export const ResumeData: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      redactedText: {
+        serializedName: "redactedText",
+        xmlName: "redactedText",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -4776,6 +4783,20 @@ export const OccupationGroup: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      parents: {
+        serializedName: "parents",
+        xmlName: "parents",
+        xmlElementName: "OccupationGroup",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "OccupationGroup"
+            }
+          }
+        }
       }
     }
   }
@@ -6388,13 +6409,13 @@ export const ResumeSearchDetailOccupationGroup: coreClient.CompositeMapper = {
       value: {
         serializedName: "value",
         xmlName: "value",
-        xmlElementName: "ResumeSearchDetailOccupationGroupValueItem",
+        xmlElementName: "OccupationGroupSearchResult",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchDetailOccupationGroupValueItem"
+              className: "OccupationGroupSearchResult"
             }
           }
         }
@@ -6403,19 +6424,62 @@ export const ResumeSearchDetailOccupationGroup: coreClient.CompositeMapper = {
   }
 };
 
-export const ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
-  serializedName:
-    "ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+export const OccupationGroupSearchResult: coreClient.CompositeMapper = {
+  serializedName: "OccupationGroupSearchResult",
   type: {
     name: "Composite",
-    className:
-      "ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+    className: "OccupationGroupSearchResult",
     modelProperties: {
       match: {
         serializedName: "match",
         xmlName: "match",
         type: {
           name: "Boolean"
+        }
+      },
+      code: {
+        serializedName: "code",
+        required: true,
+        xmlName: "code",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      children: {
+        serializedName: "children",
+        required: true,
+        xmlName: "children",
+        xmlElementName: "OccupationGroup",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "OccupationGroup"
+            }
+          }
+        }
+      },
+      parents: {
+        serializedName: "parents",
+        xmlName: "parents",
+        xmlElementName: "OccupationGroup",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "OccupationGroup"
+            }
+          }
         }
       }
     }
@@ -8331,19 +8395,6 @@ export const JobDescriptionSearchDetailOccupationGroupValueItem: coreClient.Comp
     modelProperties: {
       ...OccupationGroup.type.modelProperties,
       ...Components1Bq3Q31SchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
-  serializedName: "ResumeSearchDetailOccupationGroupValueItem",
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailOccupationGroupValueItem",
-    modelProperties: {
-      ...OccupationGroup.type.modelProperties,
-      ...ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
         .type.modelProperties
     }
   }

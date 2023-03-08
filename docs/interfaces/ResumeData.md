@@ -30,6 +30,7 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [profession](ResumeData.md#profession)
 - [publications](ResumeData.md#publications)
 - [rawText](ResumeData.md#rawtext)
+- [redactedText](ResumeData.md#redactedtext)
 - [referees](ResumeData.md#referees)
 - [sections](ResumeData.md#sections)
 - [skills](ResumeData.md#skills)
@@ -151,6 +152,14 @@ ___
 • `Optional` **rawText**: `string`
 
 All of the raw text of the parsed resume, example is shortened for readability
+
+___
+
+### redactedText
+
+• `Optional` **redactedText**: `string`
+
+Redacted version of the text in the resume, removing PII.
 
 ___
 

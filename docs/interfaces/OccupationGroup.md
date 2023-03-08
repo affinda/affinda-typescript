@@ -9,6 +9,7 @@
 - [children](OccupationGroup.md#children)
 - [code](OccupationGroup.md#code)
 - [name](OccupationGroup.md#name)
+- [parents](OccupationGroup.md#parents)
 
 ## Properties
 
@@ -27,3 +28,9 @@ ___
 ### name
 
 • **name**: `string`
+
+___
+
+### parents
+
+• `Optional` **parents**: [`OccupationGroup`](OccupationGroup.md)[]

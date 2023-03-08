@@ -966,10 +966,6 @@ export declare interface ComponentsH65QjbSchemasResumesearchdetailPropertiesSkil
     match?: boolean;
 }
 
-export declare interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
-    match?: boolean;
-}
-
 export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {
     match?: boolean;
 }
@@ -1705,6 +1701,15 @@ export declare interface OccupationGroup {
     code: number;
     name: string;
     children: OccupationGroup[];
+    parents?: OccupationGroup[];
+}
+
+export declare interface OccupationGroupSearchResult {
+    match?: boolean;
+    code: number;
+    name: string;
+    children: OccupationGroup[];
+    parents?: OccupationGroup[];
 }
 
 export declare interface OccupationGroupSearchScoreComponent {
@@ -2015,6 +2020,8 @@ export declare interface ResumeData {
     readonly isResumeProbability?: number;
     /** All of the raw text of the parsed resume, example is shortened for readability */
     rawText?: string;
+    /** Redacted version of the text in the resume, removing PII. */
+    redactedText?: string;
 }
 
 export declare interface ResumeDataName {
@@ -2253,10 +2260,8 @@ export declare interface ResumeSearchDetailManagementLevel {
 
 export declare interface ResumeSearchDetailOccupationGroup {
     missing?: number[];
-    value?: ResumeSearchDetailOccupationGroupValueItem[];
+    value?: OccupationGroupSearchResult[];
 }
-
-export declare type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup & ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
 export declare interface ResumeSearchDetailSearchExpression {
     missing?: string[];
