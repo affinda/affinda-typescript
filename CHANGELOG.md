@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- update readme example
+- updated readme with new examples
 
 ## [5.1.0] - 2023-03-09
 ### Added
@@ -24,12 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed v3 endpoints, see newer major release for v3 compatible release
 
 ## [5.0.0] - 2023-03-09
-
-- Unreleased
+* Unreleased
 
 ## [4.4.0] - 2023-03-09
-
-- Yanked release due to breaking changes
+* Yanked release due to breaking changes
 
 ## [4.3.0] - 2023-02-13
 ### Changed
