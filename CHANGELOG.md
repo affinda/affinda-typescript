@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [5.1.0] - 2023-03-09
 ### Added
 - Add link to affinda help docs for resthook creation
 - Add activate resthook subscription endpoint
@@ -19,7 +21,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Make Document.Meta.confirmedBy nullable
 
 ### Removed
-- Removing v3 endpoints, see newer major release for v3 compatible release
+- Removed v3 endpoints, see newer major release for v3 compatible release
+
+## [5.0.0] - 2023-03-09
+
+- Unreleased
+
+## [4.4.0] - 2023-03-09
+
+- Yanked release due to breaking changes
 
 ## [4.3.0] - 2023-02-13
 ### Changed
