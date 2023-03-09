@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add link to affinda help docs for resthook creation
 
 ## [5.0.0] - 2023-03-08
-### Deprecated
-- Deprecated v2 endpoints
+### Removed
+- Removed v2 endpoints
 
 ## [4.3.0] - 2023-02-13
 ### Changed
