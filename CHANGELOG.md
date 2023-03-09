@@ -7,8 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add link to affinda help docs for resthook creation
+- Add activate resthook subscription endpoint
+- Added PATCH support for Job Descriptions
+- Add `confirmed_by` field to document meta
+- Add `description` field to `DataPointChoice`
 
-## [5.0.0] - 2023-03-08
+### Changed
+- Rework document polymorphism, the model used to deserialize document response is now automatically chosen based on the document's extractor
+- Rename `updateCollectionData` to `updateCollection`
+- Rename `updateDocumentData` to `updateDocument`
+- Make Document.Meta.confirmedBy nullable
+
 ### Removed
 - Removed v2 endpoints
 
