@@ -80,7 +80,7 @@ client.createResume({file: readStream}).then((result) => {
 
 // Can also use a URL:
 
-client.createResume({url: "https://api.affinda.com/static/sample_resumes/example.pdf"}).then((result) => {
+client.createResume({url: "https://api.affinda.com/static/sample_resumes/example.docx"}).then((result) => {
     console.log("Returned data:");
     console.dir(result)
 }).catch((err) => {
