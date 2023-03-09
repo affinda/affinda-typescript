@@ -6,10 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Add link to affinda help docs for resthook creation\hAdd activate resthook subscription endpoint
-
-## [4.4.0] - 2023-03-08
-### Added
+- Add link to affinda help docs for resthook creation
+- Add activate resthook subscription endpoint
 - Added PATCH support for Job Descriptions
 - Add `confirmed_by` field to document meta
 - Add `description` field to `DataPointChoice`
@@ -21,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Make Document.Meta.confirmedBy nullable
 
 ### Removed
-- Remove API v2 endpoints
 - Removing v3 endpoints, see newer major release for v3 compatible release
 
 ## [4.3.0] - 2023-02-13

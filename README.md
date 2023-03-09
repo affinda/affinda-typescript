@@ -37,8 +37,8 @@ Please see below for which versions are compatible with which API version.
 
 | Affinda API version | `affinda-typescript` versions |
 |---------------------|-------------------------------|
-| v2                  | 0.1.0 - 4.x.x                 |
-| v3                  | \>= 5.x.x                     |
+| v2                  | 0.1.0 - 5.x.x                 |
+| v3                  | \>= 6.x.x                     |
 
 Quickstart
 ----------
