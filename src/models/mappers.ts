@@ -45,13 +45,13 @@ export const PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllo
       results: {
         serializedName: "results",
         xmlName: "results",
-        xmlElementName: "Resume",
+        xmlElementName: "Meta",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "Resume"
+              className: "Meta"
             }
           }
         }
@@ -60,34 +60,305 @@ export const PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllo
   }
 };
 
-export const Resume: coreClient.CompositeMapper = {
-  serializedName: "Resume",
+export const Meta: coreClient.CompositeMapper = {
+  serializedName: "Meta",
   type: {
     name: "Composite",
-    className: "Resume",
+    className: "Meta",
     modelProperties: {
-      data: {
-        serializedName: "data",
-        xmlName: "data",
+      identifier: {
+        serializedName: "identifier",
+        xmlName: "identifier",
         type: {
-          name: "Composite",
-          className: "ResumeData"
+          name: "String"
         }
       },
-      meta: {
-        serializedName: "meta",
-        xmlName: "meta",
+      fileName: {
+        serializedName: "fileName",
+        nullable: true,
+        xmlName: "fileName",
         type: {
-          name: "Composite",
-          className: "Meta"
+          name: "String"
         }
       },
-      error: {
-        serializedName: "error",
-        xmlName: "error",
+      ready: {
+        serializedName: "ready",
+        xmlName: "ready",
+        type: {
+          name: "Boolean"
+        }
+      },
+      readyDt: {
+        serializedName: "readyDt",
+        nullable: true,
+        xmlName: "readyDt",
+        type: {
+          name: "DateTime"
+        }
+      },
+      failed: {
+        serializedName: "failed",
+        xmlName: "failed",
+        type: {
+          name: "Boolean"
+        }
+      },
+      expiryTime: {
+        serializedName: "expiryTime",
+        nullable: true,
+        xmlName: "expiryTime",
+        type: {
+          name: "String"
+        }
+      },
+      language: {
+        serializedName: "language",
+        nullable: true,
+        xmlName: "language",
+        type: {
+          name: "String"
+        }
+      },
+      pdf: {
+        serializedName: "pdf",
+        nullable: true,
+        xmlName: "pdf",
+        type: {
+          name: "String"
+        }
+      },
+      parentDocument: {
+        serializedName: "parentDocument",
+        xmlName: "parentDocument",
         type: {
           name: "Composite",
-          className: "ErrorModel"
+          className: "MetaParentDocument"
+        }
+      },
+      childDocuments: {
+        serializedName: "childDocuments",
+        xmlName: "childDocuments",
+        xmlElementName: "MetaChildDocumentsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "MetaChildDocumentsItem"
+            }
+          }
+        }
+      },
+      pages: {
+        serializedName: "pages",
+        xmlName: "pages",
+        xmlElementName: "PageMeta",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "PageMeta"
+            }
+          }
+        }
+      },
+      isVerified: {
+        serializedName: "isVerified",
+        xmlName: "isVerified",
+        type: {
+          name: "Boolean"
+        }
+      },
+      reviewUrl: {
+        serializedName: "reviewUrl",
+        nullable: true,
+        xmlName: "reviewUrl",
+        type: {
+          name: "String"
+        }
+      },
+      ocrConfidence: {
+        serializedName: "ocrConfidence",
+        nullable: true,
+        xmlName: "ocrConfidence",
+        type: {
+          name: "Number"
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        xmlName: "createdDt",
+        type: {
+          name: "DateTime"
+        }
+      },
+      documentType: {
+        serializedName: "documentType",
+        xmlName: "documentType",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const MetaParentDocument: coreClient.CompositeMapper = {
+  serializedName: "MetaParentDocument",
+  type: {
+    name: "Composite",
+    className: "MetaParentDocument",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        xmlName: "identifier",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const MetaChildDocumentsItem: coreClient.CompositeMapper = {
+  serializedName: "MetaChildDocumentsItem",
+  type: {
+    name: "Composite",
+    className: "MetaChildDocumentsItem",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        xmlName: "identifier",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const PageMeta: coreClient.CompositeMapper = {
+  serializedName: "PageMeta",
+  type: {
+    name: "Composite",
+    className: "PageMeta",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      pageIndex: {
+        serializedName: "pageIndex",
+        required: true,
+        xmlName: "pageIndex",
+        type: {
+          name: "Number"
+        }
+      },
+      image: {
+        serializedName: "image",
+        required: true,
+        nullable: true,
+        xmlName: "image",
+        type: {
+          name: "String"
+        }
+      },
+      height: {
+        serializedName: "height",
+        required: true,
+        xmlName: "height",
+        type: {
+          name: "Number"
+        }
+      },
+      width: {
+        serializedName: "width",
+        required: true,
+        xmlName: "width",
+        type: {
+          name: "Number"
+        }
+      },
+      rotation: {
+        serializedName: "rotation",
+        required: true,
+        xmlName: "rotation",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const RequestError: coreClient.CompositeMapper = {
+  serializedName: "RequestError",
+  type: {
+    name: "Composite",
+    className: "RequestError",
+    modelProperties: {
+      type: {
+        serializedName: "type",
+        required: true,
+        xmlName: "type",
+        type: {
+          name: "String"
+        }
+      },
+      errors: {
+        serializedName: "errors",
+        required: true,
+        xmlName: "errors",
+        xmlElementName: "RequestErrorErrorsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "RequestErrorErrorsItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const RequestErrorErrorsItem: coreClient.CompositeMapper = {
+  serializedName: "RequestErrorErrorsItem",
+  type: {
+    name: "Composite",
+    className: "RequestErrorErrorsItem",
+    modelProperties: {
+      attr: {
+        serializedName: "attr",
+        required: true,
+        nullable: true,
+        xmlName: "attr",
+        type: {
+          name: "String"
+        }
+      },
+      code: {
+        serializedName: "code",
+        required: true,
+        xmlName: "code",
+        type: {
+          name: "String"
+        }
+      },
+      detail: {
+        serializedName: "detail",
+        required: true,
+        xmlName: "detail",
+        type: {
+          name: "String"
         }
       }
     }
@@ -1149,223 +1420,34 @@ export const ResumeDataSectionsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const Meta: coreClient.CompositeMapper = {
-  serializedName: "Meta",
+export const Resume: coreClient.CompositeMapper = {
+  serializedName: "Resume",
   type: {
     name: "Composite",
-    className: "Meta",
+    className: "Resume",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        xmlName: "identifier",
-        type: {
-          name: "String"
-        }
-      },
-      fileName: {
-        serializedName: "fileName",
-        nullable: true,
-        xmlName: "fileName",
-        type: {
-          name: "String"
-        }
-      },
-      ready: {
-        serializedName: "ready",
-        xmlName: "ready",
-        type: {
-          name: "Boolean"
-        }
-      },
-      readyDt: {
-        serializedName: "readyDt",
-        nullable: true,
-        xmlName: "readyDt",
-        type: {
-          name: "DateTime"
-        }
-      },
-      failed: {
-        serializedName: "failed",
-        xmlName: "failed",
-        type: {
-          name: "Boolean"
-        }
-      },
-      expiryTime: {
-        serializedName: "expiryTime",
-        nullable: true,
-        xmlName: "expiryTime",
-        type: {
-          name: "String"
-        }
-      },
-      language: {
-        serializedName: "language",
-        nullable: true,
-        xmlName: "language",
-        type: {
-          name: "String"
-        }
-      },
-      pdf: {
-        serializedName: "pdf",
-        nullable: true,
-        xmlName: "pdf",
-        type: {
-          name: "String"
-        }
-      },
-      parentDocument: {
-        serializedName: "parentDocument",
-        xmlName: "parentDocument",
+      data: {
+        serializedName: "data",
+        xmlName: "data",
         type: {
           name: "Composite",
-          className: "MetaParentDocument"
+          className: "ResumeData"
         }
       },
-      childDocuments: {
-        serializedName: "childDocuments",
-        xmlName: "childDocuments",
-        xmlElementName: "MetaChildDocumentsItem",
+      meta: {
+        serializedName: "meta",
+        xmlName: "meta",
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "MetaChildDocumentsItem"
-            }
-          }
+          name: "Composite",
+          className: "Meta"
         }
       },
-      pages: {
-        serializedName: "pages",
-        xmlName: "pages",
-        xmlElementName: "PageMeta",
+      error: {
+        serializedName: "error",
+        xmlName: "error",
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "PageMeta"
-            }
-          }
-        }
-      },
-      isVerified: {
-        serializedName: "isVerified",
-        xmlName: "isVerified",
-        type: {
-          name: "Boolean"
-        }
-      },
-      reviewUrl: {
-        serializedName: "reviewUrl",
-        nullable: true,
-        xmlName: "reviewUrl",
-        type: {
-          name: "String"
-        }
-      },
-      ocrConfidence: {
-        serializedName: "ocrConfidence",
-        nullable: true,
-        xmlName: "ocrConfidence",
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const MetaParentDocument: coreClient.CompositeMapper = {
-  serializedName: "MetaParentDocument",
-  type: {
-    name: "Composite",
-    className: "MetaParentDocument",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        xmlName: "identifier",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const MetaChildDocumentsItem: coreClient.CompositeMapper = {
-  serializedName: "MetaChildDocumentsItem",
-  type: {
-    name: "Composite",
-    className: "MetaChildDocumentsItem",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        xmlName: "identifier",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const PageMeta: coreClient.CompositeMapper = {
-  serializedName: "PageMeta",
-  type: {
-    name: "Composite",
-    className: "PageMeta",
-    modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
-      pageIndex: {
-        serializedName: "pageIndex",
-        required: true,
-        xmlName: "pageIndex",
-        type: {
-          name: "Number"
-        }
-      },
-      image: {
-        serializedName: "image",
-        required: true,
-        nullable: true,
-        xmlName: "image",
-        type: {
-          name: "String"
-        }
-      },
-      height: {
-        serializedName: "height",
-        required: true,
-        xmlName: "height",
-        type: {
-          name: "Number"
-        }
-      },
-      width: {
-        serializedName: "width",
-        required: true,
-        xmlName: "width",
-        type: {
-          name: "Number"
-        }
-      },
-      rotation: {
-        serializedName: "rotation",
-        required: true,
-        xmlName: "rotation",
-        type: {
-          name: "Number"
+          name: "Composite",
+          className: "ErrorModel"
         }
       }
     }
@@ -1398,74 +1480,6 @@ export const ErrorModel: coreClient.CompositeMapper = {
   }
 };
 
-export const RequestError: coreClient.CompositeMapper = {
-  serializedName: "RequestError",
-  type: {
-    name: "Composite",
-    className: "RequestError",
-    modelProperties: {
-      type: {
-        serializedName: "type",
-        required: true,
-        xmlName: "type",
-        type: {
-          name: "String"
-        }
-      },
-      errors: {
-        serializedName: "errors",
-        required: true,
-        xmlName: "errors",
-        xmlElementName: "RequestErrorErrorsItem",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "RequestErrorErrorsItem"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const RequestErrorErrorsItem: coreClient.CompositeMapper = {
-  serializedName: "RequestErrorErrorsItem",
-  type: {
-    name: "Composite",
-    className: "RequestErrorErrorsItem",
-    modelProperties: {
-      attr: {
-        serializedName: "attr",
-        required: true,
-        nullable: true,
-        xmlName: "attr",
-        type: {
-          name: "String"
-        }
-      },
-      code: {
-        serializedName: "code",
-        required: true,
-        xmlName: "code",
-        type: {
-          name: "String"
-        }
-      },
-      detail: {
-        serializedName: "detail",
-        required: true,
-        xmlName: "detail",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
   serializedName:
     "Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1",
@@ -1477,13 +1491,13 @@ export const Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonS
       results: {
         serializedName: "results",
         xmlName: "results",
-        xmlElementName: "Resume",
+        xmlElementName: "Meta",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "Resume"
+              className: "Meta"
             }
           }
         }
@@ -1555,13 +1569,13 @@ export const Paths18ZzckpV2InvoicesGetResponses200ContentApplicationJsonSchemaAl
       results: {
         serializedName: "results",
         xmlName: "results",
-        xmlElementName: "Invoice",
+        xmlElementName: "Meta",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "Invoice"
+              className: "Meta"
             }
           }
         }
@@ -3056,13 +3070,13 @@ export const PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSc
       results: {
         serializedName: "results",
         xmlName: "results",
-        xmlElementName: "JobDescription",
+        xmlElementName: "Meta",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "JobDescription"
+              className: "Meta"
             }
           }
         }

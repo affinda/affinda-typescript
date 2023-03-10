@@ -12,4 +12,4 @@
 
 ### results
 
-• `Optional` **results**: [`JobDescription`](JobDescription.md)[]
+• `Optional` **results**: [`Meta`](Meta.md)[]

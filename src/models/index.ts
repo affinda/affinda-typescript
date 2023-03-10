@@ -11,14 +11,76 @@ export interface PaginatedResponse {
 }
 
 export interface PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Resume[];
+  results?: Meta[];
 }
 
-export interface Resume {
-  /** A JSON-encoded string of the `ResumeData` object. */
-  data: ResumeData | null;
-  meta: Meta;
-  error: ErrorModel;
+export interface Meta {
+  /** Uniquely identify a document. */
+  identifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+  ready?: boolean;
+  /** The datetime when the document was ready */
+  readyDt?: Date;
+  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+  failed?: boolean;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** The document's language. */
+  language?: string;
+  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+  pdf?: string;
+  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+  parentDocument?: MetaParentDocument;
+  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+  childDocuments?: MetaChildDocumentsItem[];
+  /** The document's pages. */
+  pages?: PageMeta[];
+  /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
+  isVerified?: boolean;
+  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
+  reviewUrl?: string;
+  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+  ocrConfidence?: number;
+  createdDt?: Date;
+  documentType?: string;
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export interface MetaParentDocument {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface MetaChildDocumentsItem {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface PageMeta {
+  id: number;
+  /** Page number within the document, starts from 0. */
+  pageIndex: number;
+  /** The URL to the image of the page. */
+  image: string | null;
+  /** Height of the page's image in px. */
+  height: number;
+  /** Width of the page's image in px. */
+  width: number;
+  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
+  rotation: number;
+}
+
+export interface RequestError {
+  type: string;
+  errors: RequestErrorErrorsItem[];
+}
+
+export interface RequestErrorErrorsItem {
+  attr: string | null;
+  code: string;
+  detail: string;
 }
 
 /** For custom fields. E.g. 'isAvailable': true */
@@ -236,60 +298,11 @@ export interface ResumeDataSectionsItem {
   text?: string;
 }
 
-export interface Meta {
-  /** Uniquely identify a document. */
-  identifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
-  ready?: boolean;
-  /** The datetime when the document was ready */
-  readyDt?: Date;
-  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
-  failed?: boolean;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  /** The document's language. */
-  language?: string;
-  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
-  pdf?: string;
-  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-  parentDocument?: MetaParentDocument;
-  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
-  childDocuments?: MetaChildDocumentsItem[];
-  /** The document's pages. */
-  pages?: PageMeta[];
-  /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
-  isVerified?: boolean;
-  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
-  reviewUrl?: string;
-  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
-  ocrConfidence?: number;
-}
-
-/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-export interface MetaParentDocument {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface MetaChildDocumentsItem {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface PageMeta {
-  id: number;
-  /** Page number within the document, starts from 0. */
-  pageIndex: number;
-  /** The URL to the image of the page. */
-  image: string | null;
-  /** Height of the page's image in px. */
-  height: number;
-  /** Width of the page's image in px. */
-  width: number;
-  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
-  rotation: number;
+export interface Resume {
+  /** A JSON-encoded string of the `ResumeData` object. */
+  data: ResumeData | null;
+  meta: Meta;
+  error: ErrorModel;
 }
 
 export interface ErrorModel {
@@ -297,19 +310,8 @@ export interface ErrorModel {
   errorDetail?: string;
 }
 
-export interface RequestError {
-  type: string;
-  errors: RequestErrorErrorsItem[];
-}
-
-export interface RequestErrorErrorsItem {
-  attr: string | null;
-  code: string;
-  detail: string;
-}
-
 export interface Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Resume[];
+  results?: Meta[];
 }
 
 export interface RedactedResume {
@@ -324,7 +326,7 @@ export interface RedactedResumeData {
 }
 
 export interface Paths18ZzckpV2InvoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Invoice[];
+  results?: Meta[];
 }
 
 export interface Invoice {
@@ -571,7 +573,7 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
 }
 
 export interface PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: JobDescription[];
+  results?: Meta[];
 }
 
 export interface JobDescription {

@@ -12,4 +12,4 @@
 
 ### results
 
-• `Optional` **results**: [`Invoice`](Invoice.md)[]
+• `Optional` **results**: [`Meta`](Meta.md)[]

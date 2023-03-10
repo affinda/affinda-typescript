@@ -12,4 +12,4 @@
 
 ### results
 
-• `Optional` **results**: [`Resume`](Resume.md)[]
+• `Optional` **results**: [`Meta`](Meta.md)[]

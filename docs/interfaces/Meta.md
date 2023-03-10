@@ -7,6 +7,8 @@
 ### Properties
 
 - [childDocuments](Meta.md#childdocuments)
+- [createdDt](Meta.md#createddt)
+- [documentType](Meta.md#documenttype)
 - [expiryTime](Meta.md#expirytime)
 - [failed](Meta.md#failed)
 - [fileName](Meta.md#filename)
@@ -28,6 +30,18 @@
 • `Optional` **childDocuments**: [`MetaChildDocumentsItem`](MetaChildDocumentsItem.md)[]
 
 If this document has been splitted into a number of child documents, this attribute points to those child documents.
+
+___
+
+### createdDt
+
+• `Optional` **createdDt**: `Date`
+
+___
+
+### documentType
+
+• `Optional` **documentType**: `string`
 
 ___
 

@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - update readme example
 - updated readme with new examples
 
+### Fixed
+- Fixed GET request array object types for invoices, resumes, redacted resumes and job_descriptions
+
 ## [5.1.0] - 2023-03-09
 ### Added
 - Add link to affinda help docs for resthook creation

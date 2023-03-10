@@ -1706,6 +1706,8 @@ export declare interface Meta {
     reviewUrl?: string;
     /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
     ocrConfidence?: number;
+    createdDt?: Date;
+    documentType?: string;
 }
 
 export declare interface MetaChildDocumentsItem {
@@ -1789,13 +1791,13 @@ export declare interface Paths18Iqsr4V2IndexGetResponses200ContentApplicationJso
 }
 
 export declare interface Paths18ZzckpV2InvoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
-    results?: Invoice[];
+    results?: Meta[];
 }
 
 export declare type Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1 {
-    results?: Resume[];
+    results?: Meta[];
 }
 
 export declare interface Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema {
@@ -1828,11 +1830,11 @@ export declare type PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSc
 export declare type PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsDd1FapV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
-    results?: JobDescription[];
+    results?: Meta[];
 }
 
 export declare interface PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllof1 {
-    results?: Resume[];
+    results?: Meta[];
 }
 
 export declare interface PathsYg099PV2IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
