@@ -1516,6 +1516,12 @@ export declare interface ComponentsN9ShogSchemasResumesearchdetailPropertiesLoca
     match?: boolean;
 }
 
+export declare interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
+    value?: string;
+    label: string;
+    score?: number;
+}
+
 export declare interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 {
     match?: boolean;
 }
@@ -3030,7 +3036,7 @@ export declare interface ResumeSearch {
     /** URL to request previous page of results */
     previous?: string;
     parameters?: ResumeSearchParameters;
-    results?: DocumentUnion[];
+    results?: ResumeSearchResult[];
 }
 
 export declare interface ResumeSearchConfig {
@@ -3275,6 +3281,27 @@ export declare interface ResumeSearchParametersLocationCoordinates {
 export declare interface ResumeSearchParametersSkill {
     name?: string;
     required?: boolean;
+}
+
+export declare interface ResumeSearchResult {
+    /** A random string that uniquely identify the resource. */
+    identifier: string;
+    score: number;
+    pdf: string;
+    name?: string;
+    jobTitle: JobTitleSearchScoreComponent;
+    managementLevel: ManagementLevelSearchScoreComponent;
+    experience: ExperienceSearchScoreComponent;
+    skills: SkillsSearchScoreComponent;
+    languages: LanguagesSearchScoreComponent;
+    location: LocationSearchScoreComponent;
+    education: EducationSearchScoreComponent;
+    occupationGroup: OccupationGroupSearchScoreComponent;
+    searchExpression: SearchExpressionSearchScoreComponent;
+    /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+    customData: {
+        [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+    };
 }
 
 export declare interface ResumeSkill {

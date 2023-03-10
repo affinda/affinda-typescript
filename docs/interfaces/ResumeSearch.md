@@ -46,4 +46,4 @@ ___
 
 ### results
 
-• `Optional` **results**: [`DocumentUnion`](../modules.md#documentunion)[]
+• `Optional` **results**: [`ResumeSearchResult`](ResumeSearchResult.md)[]

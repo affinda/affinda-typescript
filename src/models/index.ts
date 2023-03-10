@@ -88,131 +88,88 @@ export interface ResumeSearch {
   /** URL to request previous page of results */
   previous?: string;
   parameters?: ResumeSearchParameters;
-  results?: DocumentUnion[];
+  results?: ResumeSearchResult[];
 }
 
-export interface Document {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "resume" | "invoice" | "job-description";
-  meta: DocumentMeta;
-  error?: DocumentError;
-}
-
-export interface DocumentMeta {
-  /** Uniquely identify a document. */
+export interface ResumeSearchResult {
+  /** A random string that uniquely identify the resource. */
   identifier: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
-  ready?: boolean;
-  /** The datetime when the document was ready */
-  readyDt?: Date;
-  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
-  failed?: boolean;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  /** The document's language. */
-  language?: string;
-  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
-  pdf?: string;
-  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-  parentDocument?: DocumentMetaParentDocument;
-  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
-  childDocuments?: DocumentMetaChildDocumentsItem[];
-  /** The document's pages. */
-  pages: PageMeta[];
-  isOcrd?: boolean;
-  ocrConfidence?: number;
-  reviewUrl?: string;
-  collection?: DocumentMetaCollection;
-  workspace: DocumentMetaWorkspace;
-  archivedDt?: Date;
-  isArchived?: boolean;
-  confirmedDt?: Date;
-  isConfirmed?: boolean;
-  rejectedDt?: Date;
-  isRejected?: boolean;
-  createdDt?: Date;
-  errorCode?: string;
-  errorDetail?: string;
-  /** URL to view the file. */
-  file?: string;
-  tags?: Tag[];
-  confirmedBy?: UserNullable;
-  /** If the document is created via email ingestion, this field stores the email file's URL. */
-  sourceEmail?: string;
-}
-
-/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-export interface DocumentMetaParentDocument {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface DocumentMetaChildDocumentsItem {
-  /** Uniquely identify a document. */
-  identifier?: string;
-}
-
-export interface PageMeta {
-  id: number;
-  /** Page number within the document, starts from 0. */
-  pageIndex: number;
-  /** The URL to the image of the page. */
-  image: string | null;
-  /** Height of the page's image in px. */
-  height: number;
-  /** Width of the page's image in px. */
-  width: number;
-  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
-  rotation: number;
-}
-
-export interface DocumentMetaCollection {
-  /** Uniquely identify a collection. */
-  identifier: string;
+  score: number;
+  pdf: string;
   name?: string;
-  extractor?: DocumentMetaCollectionExtractor;
+  jobTitle: JobTitleSearchScoreComponent;
+  managementLevel: ManagementLevelSearchScoreComponent;
+  experience: ExperienceSearchScoreComponent;
+  skills: SkillsSearchScoreComponent;
+  languages: LanguagesSearchScoreComponent;
+  location: LocationSearchScoreComponent;
+  education: EducationSearchScoreComponent;
+  occupationGroup: OccupationGroupSearchScoreComponent;
+  searchExpression: SearchExpressionSearchScoreComponent;
+  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+  customData: {
+    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+  };
 }
 
-export interface DocumentMetaCollectionExtractor {
-  /** Uniquely identify an extractor. */
-  identifier?: string;
-  name?: string;
-  /** Base extractor's identifier. */
-  baseExtractor?: string;
-  validatable?: boolean;
+export interface JobTitleSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
 }
 
-export interface DocumentMetaWorkspace {
-  /** Uniquely identify a workspace. */
-  identifier: string;
-  name?: string;
+export interface ManagementLevelSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
 }
 
-export interface Tag {
-  /** Uniquely identify a tag. */
-  id: number;
-  name: string;
-  /** Uniquely identify a workspace. */
-  workspace: string;
-  /** Number of documents tagged with this. */
-  documentCount: number;
+export interface ExperienceSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
 }
 
-export interface UserNullable {
-  /** Uniquely identify a user. */
-  id?: number;
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
+export interface SkillsSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
 }
 
-export interface DocumentError {
-  errorCode?: string;
-  errorDetail?: string;
+export interface LanguagesSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface LocationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface EducationSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface OccupationGroupSearchScoreComponent {
+  value?: string;
+  label: string;
+  score?: number;
+}
+
+export interface SearchExpressionSearchScoreComponent {
+  label: string;
+  value?: string;
+  score?: number;
+}
+
+export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
+  value?: string;
+  label: string;
+  score?: number;
 }
 
 export interface RequestError {
@@ -416,60 +373,6 @@ export interface ResumeSearchMatchDetails {
   education?: EducationSearchScoreComponent;
   occupationGroup?: OccupationGroupSearchScoreComponent;
   searchExpression?: SearchExpressionSearchScoreComponent;
-}
-
-export interface JobTitleSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface ManagementLevelSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface ExperienceSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface SkillsSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface LanguagesSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface LocationSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface EducationSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface OccupationGroupSearchScoreComponent {
-  value?: string;
-  label: string;
-  score?: number;
-}
-
-export interface SearchExpressionSearchScoreComponent {
-  label: string;
-  value?: string;
-  score?: number;
 }
 
 export interface ResumeSearchConfig {
@@ -1123,6 +1026,130 @@ export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSche
   results?: DocumentUnion[];
 }
 
+export interface Document {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "resume" | "invoice" | "job-description";
+  meta: DocumentMeta;
+  error?: DocumentError;
+}
+
+export interface DocumentMeta {
+  /** Uniquely identify a document. */
+  identifier: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+  ready?: boolean;
+  /** The datetime when the document was ready */
+  readyDt?: Date;
+  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+  failed?: boolean;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** The document's language. */
+  language?: string;
+  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+  pdf?: string;
+  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+  parentDocument?: DocumentMetaParentDocument;
+  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+  childDocuments?: DocumentMetaChildDocumentsItem[];
+  /** The document's pages. */
+  pages: PageMeta[];
+  isOcrd?: boolean;
+  ocrConfidence?: number;
+  reviewUrl?: string;
+  collection?: DocumentMetaCollection;
+  workspace: DocumentMetaWorkspace;
+  archivedDt?: Date;
+  isArchived?: boolean;
+  confirmedDt?: Date;
+  isConfirmed?: boolean;
+  rejectedDt?: Date;
+  isRejected?: boolean;
+  createdDt?: Date;
+  errorCode?: string;
+  errorDetail?: string;
+  /** URL to view the file. */
+  file?: string;
+  tags?: Tag[];
+  confirmedBy?: UserNullable;
+  /** If the document is created via email ingestion, this field stores the email file's URL. */
+  sourceEmail?: string;
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export interface DocumentMetaParentDocument {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface DocumentMetaChildDocumentsItem {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface PageMeta {
+  id: number;
+  /** Page number within the document, starts from 0. */
+  pageIndex: number;
+  /** The URL to the image of the page. */
+  image: string | null;
+  /** Height of the page's image in px. */
+  height: number;
+  /** Width of the page's image in px. */
+  width: number;
+  /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
+  rotation: number;
+}
+
+export interface DocumentMetaCollection {
+  /** Uniquely identify a collection. */
+  identifier: string;
+  name?: string;
+  extractor?: DocumentMetaCollectionExtractor;
+}
+
+export interface DocumentMetaCollectionExtractor {
+  /** Uniquely identify an extractor. */
+  identifier?: string;
+  name?: string;
+  /** Base extractor's identifier. */
+  baseExtractor?: string;
+  validatable?: boolean;
+}
+
+export interface DocumentMetaWorkspace {
+  /** Uniquely identify a workspace. */
+  identifier: string;
+  name?: string;
+}
+
+export interface Tag {
+  /** Uniquely identify a tag. */
+  id: number;
+  name: string;
+  /** Uniquely identify a workspace. */
+  workspace: string;
+  /** Number of documents tagged with this. */
+  documentCount: number;
+}
+
+export interface UserNullable {
+  /** Uniquely identify a user. */
+  id?: number;
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+}
+
+export interface DocumentError {
+  errorCode?: string;
+  errorDetail?: string;
+}
+
 export interface DocumentUpdate {
   /** Uniquely identify a collection. */
   collection?: string;
@@ -1678,25 +1705,6 @@ export interface IndexRequestBody {
   documentType?: PostContentSchemaDocumentType;
 }
 
-export type Resume = Document & {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "resume";
-  /** A JSON-encoded string of the `ResumeData` object. */
-  data?: ResumeData;
-};
-
-export type Invoice = Document & {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "invoice";
-  data?: InvoiceData;
-};
-
-export type JobDescription = Document & {
-  /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "job-description";
-  data?: JobDescriptionData;
-};
-
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
@@ -1737,6 +1745,25 @@ export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJ
   Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type InvitationRespondedBy = User & {};
+
+export type Resume = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "resume";
+  /** A JSON-encoded string of the `ResumeData` object. */
+  data?: ResumeData;
+};
+
+export type Invoice = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "invoice";
+  data?: InvoiceData;
+};
+
+export type JobDescription = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "job-description";
+  data?: JobDescriptionData;
+};
 
 export type DateAnnotation = Annotation & {
   parsed?: Date;
