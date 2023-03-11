@@ -5,7 +5,7 @@ import {
 } from "@azure/core-client";
 import {
   ResumeData as ResumeDataMapper,
-  JobDescriptionData as JobDescriptionDataMapper,
+  JobDescriptionDataUpdate as JobDescriptionDataUpdateMapper,
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
   JobDescriptionSearchConfig as JobDescriptionSearchConfigMapper,
   Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
@@ -340,7 +340,7 @@ export const redactGender: OperationParameter = {
 
 export const body1: OperationParameter = {
   parameterPath: "body",
-  mapper: JobDescriptionDataMapper
+  mapper: JobDescriptionDataUpdateMapper
 };
 
 export const body2: OperationParameter = {

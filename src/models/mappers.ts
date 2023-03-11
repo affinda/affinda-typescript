@@ -3448,6 +3448,354 @@ export const YearsExperienceAnnotationParsed: coreClient.CompositeMapper = {
   }
 };
 
+export const JobDescriptionDataUpdate: coreClient.CompositeMapper = {
+  serializedName: "JobDescriptionDataUpdate",
+  type: {
+    name: "Composite",
+    className: "JobDescriptionDataUpdate",
+    modelProperties: {
+      jobTitle: {
+        serializedName: "jobTitle",
+        xmlName: "jobTitle",
+        type: {
+          name: "Composite",
+          className: "JobTitleAnnotationUpdate"
+        }
+      },
+      contactEmail: {
+        serializedName: "contactEmail",
+        xmlName: "contactEmail",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      contactName: {
+        serializedName: "contactName",
+        xmlName: "contactName",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      contactPhone: {
+        serializedName: "contactPhone",
+        xmlName: "contactPhone",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      startDate: {
+        serializedName: "startDate",
+        xmlName: "startDate",
+        type: {
+          name: "Composite",
+          className: "DateAnnotationV2Update"
+        }
+      },
+      endDate: {
+        serializedName: "endDate",
+        xmlName: "endDate",
+        type: {
+          name: "Composite",
+          className: "DateAnnotationV2Update"
+        }
+      },
+      jobType: {
+        serializedName: "jobType",
+        xmlName: "jobType",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        xmlName: "languages",
+        xmlElementName: "LanguageAnnotationV2Update",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "LanguageAnnotationV2Update"
+            }
+          }
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        xmlName: "skills",
+        xmlElementName: "SkillAnnotationV2Update",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "SkillAnnotationV2Update"
+            }
+          }
+        }
+      },
+      organizationName: {
+        serializedName: "organizationName",
+        xmlName: "organizationName",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      organizationWebsite: {
+        serializedName: "organizationWebsite",
+        xmlName: "organizationWebsite",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      educationLevel: {
+        serializedName: "educationLevel",
+        xmlName: "educationLevel",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      educationAccreditation: {
+        serializedName: "educationAccreditation",
+        xmlName: "educationAccreditation",
+        type: {
+          name: "Composite",
+          className: "TextAnnotationV2Update"
+        }
+      },
+      expectedRemuneration: {
+        serializedName: "expectedRemuneration",
+        xmlName: "expectedRemuneration",
+        type: {
+          name: "Composite",
+          className: "ExpectedRemunerationAnnotationV2Update"
+        }
+      },
+      location: {
+        serializedName: "location",
+        xmlName: "location",
+        type: {
+          name: "Composite",
+          className: "LocationAnnotationV2Update"
+        }
+      },
+      certifications: {
+        serializedName: "certifications",
+        xmlName: "certifications",
+        xmlElementName: "TextAnnotationV2Update",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "TextAnnotationV2Update"
+            }
+          }
+        }
+      },
+      yearsExperience: {
+        serializedName: "yearsExperience",
+        xmlName: "yearsExperience",
+        type: {
+          name: "Composite",
+          className: "YearsExperienceAnnotationV2Update"
+        }
+      }
+    }
+  }
+};
+
+export const AnnotationV2Base: coreClient.CompositeMapper = {
+  serializedName: "AnnotationV2Base",
+  type: {
+    name: "Composite",
+    className: "AnnotationV2Base",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      rectangle: {
+        serializedName: "rectangle",
+        xmlName: "rectangle",
+        type: {
+          name: "Composite",
+          className: "Rectangle"
+        }
+      },
+      rectangles: {
+        serializedName: "rectangles",
+        nullable: true,
+        xmlName: "rectangles",
+        xmlElementName: "Rectangle",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Rectangle"
+            }
+          }
+        }
+      },
+      pageIndex: {
+        serializedName: "pageIndex",
+        nullable: true,
+        xmlName: "pageIndex",
+        type: {
+          name: "Number"
+        }
+      },
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        xmlName: "raw",
+        type: {
+          name: "String"
+        }
+      },
+      confidence: {
+        serializedName: "confidence",
+        nullable: true,
+        xmlName: "confidence",
+        type: {
+          name: "Number"
+        }
+      },
+      classificationConfidence: {
+        serializedName: "classificationConfidence",
+        nullable: true,
+        xmlName: "classificationConfidence",
+        type: {
+          name: "Number"
+        }
+      },
+      textExtractionConfidence: {
+        serializedName: "textExtractionConfidence",
+        nullable: true,
+        xmlName: "textExtractionConfidence",
+        type: {
+          name: "Number"
+        }
+      },
+      isVerified: {
+        serializedName: "isVerified",
+        xmlName: "isVerified",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isClientVerified: {
+        serializedName: "isClientVerified",
+        xmlName: "isClientVerified",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isAutoVerified: {
+        serializedName: "isAutoVerified",
+        xmlName: "isAutoVerified",
+        type: {
+          name: "Boolean"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        xmlName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      contentType: {
+        serializedName: "contentType",
+        xmlName: "contentType",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ExpectedRemunerationAnnotationV2UpdateParsed: coreClient.CompositeMapper = {
+  serializedName: "ExpectedRemunerationAnnotationV2UpdateParsed",
+  type: {
+    name: "Composite",
+    className: "ExpectedRemunerationAnnotationV2UpdateParsed",
+    modelProperties: {
+      minimum: {
+        serializedName: "minimum",
+        nullable: true,
+        xmlName: "minimum",
+        type: {
+          name: "Number"
+        }
+      },
+      maximum: {
+        serializedName: "maximum",
+        nullable: true,
+        xmlName: "maximum",
+        type: {
+          name: "Number"
+        }
+      },
+      currency: {
+        serializedName: "currency",
+        nullable: true,
+        xmlName: "currency",
+        type: {
+          name: "String"
+        }
+      },
+      unit: {
+        serializedName: "unit",
+        nullable: true,
+        xmlName: "unit",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const YearsExperienceAnnotationV2UpdateParsed: coreClient.CompositeMapper = {
+  serializedName: "YearsExperienceAnnotationV2UpdateParsed",
+  type: {
+    name: "Composite",
+    className: "YearsExperienceAnnotationV2UpdateParsed",
+    modelProperties: {
+      minimum: {
+        serializedName: "minimum",
+        nullable: true,
+        xmlName: "minimum",
+        type: {
+          name: "Number"
+        }
+      },
+      maximum: {
+        serializedName: "maximum",
+        nullable: true,
+        xmlName: "maximum",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
 export const JobDescriptionSearchParameters: coreClient.CompositeMapper = {
   serializedName: "JobDescriptionSearchParameters",
   type: {
@@ -7796,6 +8144,17 @@ export const PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplication
   }
 };
 
+export const LocationAnnotationV2UpdateParsed: coreClient.CompositeMapper = {
+  serializedName: "LocationAnnotationV2UpdateParsed",
+  type: {
+    name: "Composite",
+    className: "LocationAnnotationV2UpdateParsed",
+    modelProperties: {
+      ...Location.type.modelProperties
+    }
+  }
+};
+
 export const JobDescriptionSearchDetailLocationValue: coreClient.CompositeMapper = {
   serializedName: "JobDescriptionSearchDetailLocationValue",
   type: {
@@ -8390,6 +8749,161 @@ export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
       ...TextAnnotation.type.modelProperties,
       ...Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.type
         .modelProperties
+    }
+  }
+};
+
+export const JobTitleAnnotationUpdate: coreClient.CompositeMapper = {
+  serializedName: "JobTitleAnnotationUpdate",
+  type: {
+    name: "Composite",
+    className: "JobTitleAnnotationUpdate",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      ...JobTitleParsed.type.modelProperties
+    }
+  }
+};
+
+export const TextAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "TextAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "TextAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        xmlName: "parsed",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DateAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "DateAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "DateAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        xmlName: "parsed",
+        type: {
+          name: "Date"
+        }
+      }
+    }
+  }
+};
+
+export const LanguageAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "LanguageAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "LanguageAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        readOnly: true,
+        nullable: true,
+        xmlName: "parsed",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const SkillAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "SkillAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "SkillAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        readOnly: true,
+        nullable: true,
+        xmlName: "parsed",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ExpectedRemunerationAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "ExpectedRemunerationAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "ExpectedRemunerationAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        type: {
+          name: "Composite",
+          className: "ExpectedRemunerationAnnotationV2UpdateParsed"
+        }
+      }
+    }
+  }
+};
+
+export const LocationAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "LocationAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "LocationAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        type: {
+          name: "Composite",
+          className: "LocationAnnotationV2UpdateParsed"
+        }
+      }
+    }
+  }
+};
+
+export const YearsExperienceAnnotationV2Update: coreClient.CompositeMapper = {
+  serializedName: "YearsExperienceAnnotationV2Update",
+  type: {
+    name: "Composite",
+    className: "YearsExperienceAnnotationV2Update",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...AnnotationV2Base.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        type: {
+          name: "Composite",
+          className: "YearsExperienceAnnotationV2UpdateParsed"
+        }
+      }
     }
   }
 };

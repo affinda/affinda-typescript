@@ -35,7 +35,7 @@ import {
   AffindaAPICreateJobDescriptionResponse,
   AffindaAPIGetJobDescriptionOptionalParams,
   AffindaAPIGetJobDescriptionResponse,
-  JobDescriptionData,
+  JobDescriptionDataUpdate,
   AffindaAPIUpdateJobDescriptionDataOptionalParams,
   AffindaAPIUpdateJobDescriptionDataResponse,
   AffindaAPIDeleteJobDescriptionOptionalParams,
@@ -359,7 +359,7 @@ export class AffindaAPI extends AffindaAPIContext {
    */
   updateJobDescriptionData(
     identifier: string,
-    body: JobDescriptionData | null,
+    body: JobDescriptionDataUpdate | null,
     options?: AffindaAPIUpdateJobDescriptionDataOptionalParams
   ): Promise<AffindaAPIUpdateJobDescriptionDataResponse> {
     return this.sendOperationRequest(

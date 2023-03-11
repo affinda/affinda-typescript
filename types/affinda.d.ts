@@ -144,7 +144,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Job description data to update
      * @param options The options parameters.
      */
-    updateJobDescriptionData(identifier: string, body: JobDescriptionData | null, options?: AffindaAPIUpdateJobDescriptionDataOptionalParams): Promise<AffindaAPIUpdateJobDescriptionDataResponse>;
+    updateJobDescriptionData(identifier: string, body: JobDescriptionDataUpdate | null, options?: AffindaAPIUpdateJobDescriptionDataOptionalParams): Promise<AffindaAPIUpdateJobDescriptionDataResponse>;
     /**
      * Deletes the specified job description from the database
      * @param identifier Document identifier
@@ -820,6 +820,27 @@ export declare interface Annotation {
     contentType: string;
 }
 
+export declare interface AnnotationV2Base {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
+    id?: number;
+    rectangle?: Rectangle;
+    rectangles?: Rectangle[];
+    pageIndex?: number;
+    raw?: string;
+    /** The overall confidence that the model's prediction is correct */
+    confidence?: number;
+    /** The model's confidence that the text has been classified correctly */
+    classificationConfidence?: number;
+    /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+    textExtractionConfidence?: number;
+    isVerified?: boolean;
+    isClientVerified?: boolean;
+    isAutoVerified?: boolean;
+    dataPoint?: string;
+    contentType?: string;
+}
+
 export declare interface Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
     raw?: string;
     parsed?: string;
@@ -1016,6 +1037,10 @@ export declare type DateAnnotation = Annotation & {
     parsed?: Date;
 };
 
+export declare type DateAnnotationV2Update = AnnotationV2Base & {
+    parsed?: Date;
+};
+
 export declare interface Education {
     id?: number;
     organization?: string;
@@ -1078,6 +1103,17 @@ export declare type ExpectedRemunerationAnnotation = Annotation & {
 };
 
 export declare interface ExpectedRemunerationAnnotationParsed {
+    minimum?: number;
+    maximum?: number;
+    currency?: string;
+    unit?: string;
+}
+
+export declare type ExpectedRemunerationAnnotationV2Update = AnnotationV2Base & {
+    parsed?: ExpectedRemunerationAnnotationV2UpdateParsed;
+};
+
+export declare interface ExpectedRemunerationAnnotationV2UpdateParsed {
     minimum?: number;
     maximum?: number;
     currency?: string;
@@ -1268,6 +1304,27 @@ export declare interface JobDescriptionData {
     location?: LocationAnnotation;
     certifications?: (TextAnnotation | null)[];
     yearsExperience?: YearsExperienceAnnotation;
+}
+
+/** A JSON-encoded string of the `JobDescriptionData` object. */
+export declare interface JobDescriptionDataUpdate {
+    jobTitle?: JobTitleAnnotationUpdate;
+    contactEmail?: TextAnnotationV2Update;
+    contactName?: TextAnnotationV2Update;
+    contactPhone?: TextAnnotationV2Update;
+    startDate?: DateAnnotationV2Update;
+    endDate?: DateAnnotationV2Update;
+    jobType?: TextAnnotationV2Update;
+    languages?: (LanguageAnnotationV2Update | null)[];
+    skills?: (SkillAnnotationV2Update | null)[];
+    organizationName?: TextAnnotationV2Update;
+    organizationWebsite?: TextAnnotationV2Update;
+    educationLevel?: TextAnnotationV2Update;
+    educationAccreditation?: TextAnnotationV2Update;
+    expectedRemuneration?: ExpectedRemunerationAnnotationV2Update;
+    location?: LocationAnnotationV2Update;
+    certifications?: (TextAnnotationV2Update | null)[];
+    yearsExperience?: YearsExperienceAnnotationV2Update;
 }
 
 /** JobDescriptionRequestBody */
@@ -1498,6 +1555,8 @@ export declare interface JobDescriptionSearchResult {
 
 export declare type JobTitleAnnotation = Annotation & JobTitleParsed & {};
 
+export declare type JobTitleAnnotationUpdate = AnnotationV2Base & JobTitleParsed & {};
+
 export declare interface JobTitleParsed {
     /**
      * Matching job title to extracted text
@@ -1623,6 +1682,11 @@ export declare type LanguageAnnotation = Annotation & {
     parsed?: string;
 };
 
+export declare type LanguageAnnotationV2Update = AnnotationV2Base & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
+};
+
 export declare interface LanguagesSearchScoreComponent {
     value?: string;
     label: string;
@@ -1661,6 +1725,13 @@ export declare interface Location {
 export declare type LocationAnnotation = Annotation & {
     parsed?: Location;
 };
+
+export declare type LocationAnnotationV2Update = AnnotationV2Base & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: LocationAnnotationV2UpdateParsed;
+};
+
+export declare type LocationAnnotationV2UpdateParsed = Location & {};
 
 export declare interface LocationSearchScoreComponent {
     value?: string;
@@ -2503,6 +2574,11 @@ export declare type SkillAnnotation = Annotation & {
     parsed?: string;
 };
 
+export declare type SkillAnnotationV2Update = AnnotationV2Base & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
+};
+
 export declare interface SkillsSearchScoreComponent {
     value?: string;
     label: string;
@@ -2510,6 +2586,10 @@ export declare interface SkillsSearchScoreComponent {
 }
 
 export declare type TextAnnotation = Annotation & {
+    parsed?: string;
+};
+
+export declare type TextAnnotationV2Update = AnnotationV2Base & {
     parsed?: string;
 };
 
@@ -2531,6 +2611,19 @@ export declare type YearsExperienceAnnotation = Annotation & {
 
 /** Years of experience range */
 export declare interface YearsExperienceAnnotationParsed {
+    /** Minimum years of experience */
+    minimum?: number;
+    /** Maximum years of experience */
+    maximum?: number;
+}
+
+export declare type YearsExperienceAnnotationV2Update = AnnotationV2Base & {
+    /** Years of experience range */
+    parsed?: YearsExperienceAnnotationV2UpdateParsed;
+};
+
+/** Years of experience range */
+export declare interface YearsExperienceAnnotationV2UpdateParsed {
     /** Minimum years of experience */
     minimum?: number;
     /** Maximum years of experience */

@@ -640,6 +640,63 @@ export interface YearsExperienceAnnotationParsed {
   maximum?: number;
 }
 
+/** A JSON-encoded string of the `JobDescriptionData` object. */
+export interface JobDescriptionDataUpdate {
+  jobTitle?: JobTitleAnnotationUpdate;
+  contactEmail?: TextAnnotationV2Update;
+  contactName?: TextAnnotationV2Update;
+  contactPhone?: TextAnnotationV2Update;
+  startDate?: DateAnnotationV2Update;
+  endDate?: DateAnnotationV2Update;
+  jobType?: TextAnnotationV2Update;
+  languages?: (LanguageAnnotationV2Update | null)[];
+  skills?: (SkillAnnotationV2Update | null)[];
+  organizationName?: TextAnnotationV2Update;
+  organizationWebsite?: TextAnnotationV2Update;
+  educationLevel?: TextAnnotationV2Update;
+  educationAccreditation?: TextAnnotationV2Update;
+  expectedRemuneration?: ExpectedRemunerationAnnotationV2Update;
+  location?: LocationAnnotationV2Update;
+  certifications?: (TextAnnotationV2Update | null)[];
+  yearsExperience?: YearsExperienceAnnotationV2Update;
+}
+
+export interface AnnotationV2Base {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  id?: number;
+  rectangle?: Rectangle;
+  rectangles?: Rectangle[];
+  pageIndex?: number;
+  raw?: string;
+  /** The overall confidence that the model's prediction is correct */
+  confidence?: number;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence?: number;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  textExtractionConfidence?: number;
+  isVerified?: boolean;
+  isClientVerified?: boolean;
+  isAutoVerified?: boolean;
+  dataPoint?: string;
+  contentType?: string;
+}
+
+export interface ExpectedRemunerationAnnotationV2UpdateParsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
+/** Years of experience range */
+export interface YearsExperienceAnnotationV2UpdateParsed {
+  /** Minimum years of experience */
+  minimum?: number;
+  /** Maximum years of experience */
+  maximum?: number;
+}
+
 export interface JobDescriptionSearchParameters {
   indices: string[];
   /** A random string that uniquely identify the resource. */
@@ -1411,6 +1468,8 @@ export type PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSch
 export type PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsDd1FapV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
+export type LocationAnnotationV2UpdateParsed = Location & {};
+
 export type JobDescriptionSearchDetailLocationValue = Location &
   Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
@@ -1537,6 +1596,40 @@ export type InvoiceDataSupplierEmail = TextAnnotation &
 
 export type InvoiceDataSupplierWebsite = TextAnnotation &
   Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
+
+export type JobTitleAnnotationUpdate = AnnotationV2Base & JobTitleParsed & {};
+
+export type TextAnnotationV2Update = AnnotationV2Base & {
+  parsed?: string;
+};
+
+export type DateAnnotationV2Update = AnnotationV2Base & {
+  parsed?: Date;
+};
+
+export type LanguageAnnotationV2Update = AnnotationV2Base & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type SkillAnnotationV2Update = AnnotationV2Base & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotationV2Update = AnnotationV2Base & {
+  parsed?: ExpectedRemunerationAnnotationV2UpdateParsed;
+};
+
+export type LocationAnnotationV2Update = AnnotationV2Base & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: LocationAnnotationV2UpdateParsed;
+};
+
+export type YearsExperienceAnnotationV2Update = AnnotationV2Base & {
+  /** Years of experience range */
+  parsed?: YearsExperienceAnnotationV2UpdateParsed;
+};
 
 export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup &
   ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};

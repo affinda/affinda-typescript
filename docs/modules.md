@@ -72,6 +72,7 @@
 - [AffindaAPIUpdateResumeDataOptionalParams](interfaces/AffindaAPIUpdateResumeDataOptionalParams.md)
 - [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
+- [AnnotationV2Base](interfaces/AnnotationV2Base.md)
 - [Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1](interfaces/Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.md)
 - [Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1](interfaces/Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.md)
 - [Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1](interfaces/Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.md)
@@ -116,6 +117,7 @@
 - [EducationSearchScoreComponent](interfaces/EducationSearchScoreComponent.md)
 - [ErrorModel](interfaces/ErrorModel.md)
 - [ExpectedRemunerationAnnotationParsed](interfaces/ExpectedRemunerationAnnotationParsed.md)
+- [ExpectedRemunerationAnnotationV2UpdateParsed](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)
 - [ExperienceSearchScoreComponent](interfaces/ExperienceSearchScoreComponent.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [IndexRequestBody](interfaces/IndexRequestBody.md)
@@ -125,6 +127,7 @@
 - [InvoiceRequestBody](interfaces/InvoiceRequestBody.md)
 - [JobDescription](interfaces/JobDescription.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
+- [JobDescriptionDataUpdate](interfaces/JobDescriptionDataUpdate.md)
 - [JobDescriptionRequestBody](interfaces/JobDescriptionRequestBody.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
@@ -226,6 +229,7 @@
 - [SearchExpressionSearchScoreComponent](interfaces/SearchExpressionSearchScoreComponent.md)
 - [SkillsSearchScoreComponent](interfaces/SkillsSearchScoreComponent.md)
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
+- [YearsExperienceAnnotationV2UpdateParsed](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)
 
 ### Type aliases
 
@@ -267,10 +271,12 @@
 - [AffindaAPIUpdateResumeDataResponse](modules.md#affindaapiupdateresumedataresponse)
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [DateAnnotation](modules.md#dateannotation)
+- [DateAnnotationV2Update](modules.md#dateannotationv2update)
 - [EducationLevel](modules.md#educationlevel)
 - [Enum3](modules.md#enum3)
 - [Enum6](modules.md#enum6)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
+- [ExpectedRemunerationAnnotationV2Update](modules.md#expectedremunerationannotationv2update)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
 - [InvoiceDataBankAccountNumber](modules.md#invoicedatabankaccountnumber)
 - [InvoiceDataBankBsb](modules.md#invoicedatabankbsb)
@@ -304,8 +310,12 @@
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
 - [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
+- [JobTitleAnnotationUpdate](modules.md#jobtitleannotationupdate)
 - [LanguageAnnotation](modules.md#languageannotation)
+- [LanguageAnnotationV2Update](modules.md#languageannotationv2update)
 - [LocationAnnotation](modules.md#locationannotation)
+- [LocationAnnotationV2Update](modules.md#locationannotationv2update)
+- [LocationAnnotationV2UpdateParsed](modules.md#locationannotationv2updateparsed)
 - [ManagementLevel](modules.md#managementlevel)
 - [Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema](modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)
 - [Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema](modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)
@@ -324,9 +334,12 @@
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotation](modules.md#skillannotation)
+- [SkillAnnotationV2Update](modules.md#skillannotationv2update)
 - [TextAnnotation](modules.md#textannotation)
+- [TextAnnotationV2Update](modules.md#textannotationv2update)
 - [Version](modules.md#version)
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
+- [YearsExperienceAnnotationV2Update](modules.md#yearsexperienceannotationv2update)
 
 ## Type aliases
 
@@ -644,6 +657,12 @@ ___
 
 ___
 
+### DateAnnotationV2Update
+
+Ƭ **DateAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `Date`  }
+
+___
+
 ### EducationLevel
 
 Ƭ **EducationLevel**: ``"school"`` \| ``"certificate"`` \| ``"bachelors"`` \| ``"masters"`` \| ``"doctoral"``
@@ -681,6 +700,12 @@ ___
 ### ExpectedRemunerationAnnotation
 
 Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
+
+___
+
+### ExpectedRemunerationAnnotationV2Update
+
+Ƭ **ExpectedRemunerationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`ExpectedRemunerationAnnotationV2UpdateParsed`](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)  }
 
 ___
 
@@ -889,15 +914,39 @@ ___
 
 ___
 
+### JobTitleAnnotationUpdate
+
+Ƭ **JobTitleAnnotationUpdate**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & [`JobTitleParsed`](interfaces/JobTitleParsed.md) & {}
+
+___
+
 ### LanguageAnnotation
 
 Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
 
 ___
 
+### LanguageAnnotationV2Update
+
+Ƭ **LanguageAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+
+___
+
 ### LocationAnnotation
 
 Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`Location`](interfaces/Location.md)  }
+
+___
+
+### LocationAnnotationV2Update
+
+Ƭ **LocationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`LocationAnnotationV2UpdateParsed`](modules.md#locationannotationv2updateparsed)  }
+
+___
+
+### LocationAnnotationV2UpdateParsed
+
+Ƭ **LocationAnnotationV2UpdateParsed**: [`Location`](interfaces/Location.md) & {}
 
 ___
 
@@ -1086,9 +1135,21 @@ ___
 
 ___
 
+### SkillAnnotationV2Update
+
+Ƭ **SkillAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+
+___
+
 ### TextAnnotation
 
 Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+
+___
+
+### TextAnnotationV2Update
+
+Ƭ **TextAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
 
 ___
 
@@ -1109,3 +1170,9 @@ ___
 ### YearsExperienceAnnotation
 
 Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
+
+___
+
+### YearsExperienceAnnotationV2Update
+
+Ƭ **YearsExperienceAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`YearsExperienceAnnotationV2UpdateParsed`](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)  }

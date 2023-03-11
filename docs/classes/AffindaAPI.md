@@ -957,7 +957,7 @@ The `identifier` is the unique ID returned after POST-ing the job description vi
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Job description identifier |
-| `body` | ``null`` \| [`JobDescriptionData`](../interfaces/JobDescriptionData.md) | Job description data to update |
+| `body` | ``null`` \| [`JobDescriptionDataUpdate`](../interfaces/JobDescriptionDataUpdate.md) | Job description data to update |
 | `options?` | [`AffindaAPIUpdateJobDescriptionDataOptionalParams`](../interfaces/AffindaAPIUpdateJobDescriptionDataOptionalParams.md) | The options parameters. |
 
 #### Returns
