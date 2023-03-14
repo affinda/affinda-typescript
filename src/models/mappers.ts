@@ -1,537 +1,9 @@
 import * as coreClient from "@azure/core-client";
 
-export const ResumeSearchParameters: coreClient.CompositeMapper = {
+export const Workspace: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchParameters",
-    modelProperties: {
-      indices: {
-        serializedName: "indices",
-        required: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      jobDescription: {
-        serializedName: "jobDescription",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      resume: {
-        serializedName: "resume",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      jobTitles: {
-        serializedName: "jobTitles",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      jobTitlesCurrentOnly: {
-        serializedName: "jobTitlesCurrentOnly",
-        type: {
-          name: "Boolean"
-        }
-      },
-      jobTitlesRequired: {
-        serializedName: "jobTitlesRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      jobTitlesWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "jobTitlesWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      yearsExperienceMin: {
-        serializedName: "yearsExperienceMin",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      yearsExperienceMax: {
-        serializedName: "yearsExperienceMax",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      yearsExperienceRequired: {
-        serializedName: "yearsExperienceRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      yearsExperienceWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "yearsExperienceWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      locations: {
-        serializedName: "locations",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchParametersLocation"
-            }
-          }
-        }
-      },
-      locationsWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "locationsWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      locationsRequired: {
-        serializedName: "locationsRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      skills: {
-        serializedName: "skills",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchParametersSkill"
-            }
-          }
-        }
-      },
-      skillsWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "skillsWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      languages: {
-        serializedName: "languages",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchParametersSkill"
-            }
-          }
-        }
-      },
-      languagesWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "languagesWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      institutions: {
-        serializedName: "institutions",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      institutionsRequired: {
-        serializedName: "institutionsRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      degrees: {
-        serializedName: "degrees",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      degreesRequired: {
-        serializedName: "degreesRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      highestDegreeTypes: {
-        constraints: {
-          UniqueItems: true
-        },
-        serializedName: "highestDegreeTypes",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Enum",
-              allowedValues: [
-                "school",
-                "certificate",
-                "bachelors",
-                "masters",
-                "doctoral"
-              ]
-            }
-          }
-        }
-      },
-      highestDegreeTypesRequired: {
-        serializedName: "highestDegreeTypesRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isCurrentStudent: {
-        serializedName: "isCurrentStudent",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isCurrentStudentRequired: {
-        serializedName: "isCurrentStudentRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isRecentGraduate: {
-        serializedName: "isRecentGraduate",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isRecentGraduateRequired: {
-        serializedName: "isRecentGraduateRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      educationWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "educationWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      searchExpression: {
-        serializedName: "searchExpression",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      searchExpressionRequired: {
-        serializedName: "searchExpressionRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      searchExpressionWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "searchExpressionWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      socCodes: {
-        serializedName: "socCodes",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Number"
-            }
-          }
-        }
-      },
-      socCodesWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "socCodesWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      socCodesRequired: {
-        serializedName: "socCodesRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      managementLevel: {
-        serializedName: "managementLevel",
-        nullable: true,
-        type: {
-          name: "Enum",
-          allowedValues: ["None", "Low", "Mid", "Upper"]
-        }
-      },
-      managementLevelRequired: {
-        serializedName: "managementLevelRequired",
-        type: {
-          name: "Boolean"
-        }
-      },
-      managementLevelWeight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "managementLevelWeight",
-        type: {
-          name: "Number"
-        }
-      },
-      customData: {
-        serializedName: "customData",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchParametersCustomData"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersLocation",
-    modelProperties: {
-      name: {
-        defaultValue: "",
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      coordinates: {
-        serializedName: "coordinates",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchParametersLocationCoordinates"
-        }
-      },
-      distance: {
-        defaultValue: 100,
-        serializedName: "distance",
-        type: {
-          name: "Number"
-        }
-      },
-      unit: {
-        defaultValue: "km",
-        serializedName: "unit",
-        type: {
-          name: "Enum",
-          allowedValues: ["km", "mi"]
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersLocationCoordinates: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersLocationCoordinates",
-    modelProperties: {
-      latitude: {
-        serializedName: "latitude",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      longitude: {
-        serializedName: "longitude",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersSkill: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersSkill",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      required: {
-        serializedName: "required",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersCustomData: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersCustomData",
-    modelProperties: {
-      filterType: {
-        serializedName: "filterType",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      dataPoint: {
-        serializedName: "dataPoint",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      query: {
-        serializedName: "query",
-        required: true,
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
-      },
-      required: {
-        serializedName: "required",
-        type: {
-          name: "Boolean"
-        }
-      },
-      weight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "weight",
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearch: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearch",
-    modelProperties: {
-      count: {
-        serializedName: "count",
-        type: {
-          name: "Number"
-        }
-      },
-      next: {
-        serializedName: "next",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      previous: {
-        serializedName: "previous",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parameters: {
-        serializedName: "parameters",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchParameters"
-        }
-      },
-      results: {
-        serializedName: "results",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchResult"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchResult: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchResult",
+    className: "Workspace",
     modelProperties: {
       identifier: {
         serializedName: "identifier",
@@ -540,16 +12,84 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      score: {
-        serializedName: "score",
-        required: true,
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      visibility: {
+        serializedName: "visibility",
+        type: {
+          name: "String"
+        }
+      },
+      collections: {
+        serializedName: "collections",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "WorkspaceCollectionsItem"
+            }
+          }
+        }
+      },
+      rejectInvalidDocuments: {
+        serializedName: "rejectInvalidDocuments",
+        type: {
+          name: "Boolean"
+        }
+      },
+      members: {
+        serializedName: "members",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "User"
+            }
+          }
+        }
+      },
+      unvalidatedDocsCount: {
+        serializedName: "unvalidatedDocsCount",
         type: {
           name: "Number"
         }
       },
-      pdf: {
-        serializedName: "pdf",
-        required: true,
+      confirmedDocsCount: {
+        serializedName: "confirmedDocsCount",
+        type: {
+          name: "Number"
+        }
+      },
+      ingestEmail: {
+        serializedName: "ingestEmail",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Organization: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Organization",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
         type: {
           name: "String"
         }
@@ -560,372 +100,227 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      jobTitle: {
-        serializedName: "jobTitle",
+      userRole: {
+        serializedName: "userRole",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      resthookSignatureKey: {
+        serializedName: "resthookSignatureKey",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      isTrial: {
+        serializedName: "isTrial",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const WorkspaceCollectionsItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "WorkspaceCollectionsItem",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
         type: {
           name: "Composite",
-          className: "JobTitleSearchScoreComponent"
+          className: "WorkspaceCollectionsItemExtractor"
         }
       },
-      managementLevel: {
-        serializedName: "managementLevel",
+      unvalidatedDocsCount: {
+        serializedName: "unvalidatedDocsCount",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      confirmedDocsCount: {
+        serializedName: "confirmedDocsCount",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const WorkspaceCollectionsItemExtractor: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "WorkspaceCollectionsItemExtractor",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      namePlural: {
+        serializedName: "namePlural",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      baseExtractor: {
+        serializedName: "baseExtractor",
         type: {
           name: "Composite",
-          className: "ManagementLevelSearchScoreComponent"
+          className: "BaseExtractor"
         }
       },
-      experience: {
-        serializedName: "experience",
+      category: {
+        serializedName: "category",
+        nullable: true,
         type: {
-          name: "Composite",
-          className: "ExperienceSearchScoreComponent"
+          name: "String"
         }
       },
-      skills: {
-        serializedName: "skills",
-        type: {
-          name: "Composite",
-          className: "SkillsSearchScoreComponent"
-        }
-      },
-      languages: {
-        serializedName: "languages",
-        type: {
-          name: "Composite",
-          className: "LanguagesSearchScoreComponent"
-        }
-      },
-      location: {
-        serializedName: "location",
-        type: {
-          name: "Composite",
-          className: "LocationSearchScoreComponent"
-        }
-      },
-      education: {
-        serializedName: "education",
-        type: {
-          name: "Composite",
-          className: "EducationSearchScoreComponent"
-        }
-      },
-      occupationGroup: {
-        serializedName: "occupationGroup",
-        type: {
-          name: "Composite",
-          className: "OccupationGroupSearchScoreComponent"
-        }
-      },
-      searchExpression: {
-        serializedName: "searchExpression",
-        type: {
-          name: "Composite",
-          className: "SearchExpressionSearchScoreComponent"
-        }
-      },
-      customData: {
-        serializedName: "customData",
+      validatable: {
+        serializedName: "validatable",
         required: true,
         type: {
-          name: "Dictionary",
-          value: {
-            type: {
-              name: "Composite",
-              className:
-                "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties"
-            }
-          }
+          name: "Boolean"
+        }
+      },
+      isCustom: {
+        serializedName: "isCustom",
+        type: {
+          name: "Boolean"
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        type: {
+          name: "DateTime"
         }
       }
     }
   }
 };
 
-export const JobTitleSearchScoreComponent: coreClient.CompositeMapper = {
+export const BaseExtractor: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "JobTitleSearchScoreComponent",
+    className: "BaseExtractor",
     modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
+      identifier: {
+        serializedName: "identifier",
         required: true,
         type: {
           name: "String"
         }
       },
-      score: {
-        serializedName: "score",
-        nullable: true,
+      name: {
+        serializedName: "name",
+        required: true,
         type: {
-          name: "Number"
+          name: "String"
+        }
+      },
+      namePlural: {
+        serializedName: "namePlural",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      validatable: {
+        serializedName: "validatable",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      isCustom: {
+        serializedName: "isCustom",
+        type: {
+          name: "Boolean"
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        type: {
+          name: "DateTime"
         }
       }
     }
   }
 };
 
-export const ManagementLevelSearchScoreComponent: coreClient.CompositeMapper = {
+export const User: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ManagementLevelSearchScoreComponent",
+    className: "User",
     modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
+      id: {
+        serializedName: "id",
         type: {
           name: "Number"
         }
-      }
-    }
-  }
-};
-
-export const ExperienceSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ExperienceSearchScoreComponent",
-    modelProperties: {
-      value: {
-        serializedName: "value",
+      },
+      name: {
+        serializedName: "name",
         type: {
           name: "String"
         }
       },
-      label: {
-        serializedName: "label",
-        required: true,
+      username: {
+        serializedName: "username",
         type: {
           name: "String"
         }
       },
-      score: {
-        serializedName: "score",
+      email: {
+        serializedName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
         nullable: true,
         type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const SkillsSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "SkillsSearchScoreComponent",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
           name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const LanguagesSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "LanguagesSearchScoreComponent",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const LocationSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "LocationSearchScoreComponent",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const EducationSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "EducationSearchScoreComponent",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const OccupationGroupSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "OccupationGroupSearchScoreComponent",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const SearchExpressionSearchScoreComponent: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "SearchExpressionSearchScoreComponent",
-    modelProperties: {
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        type: {
-          name: "Number"
         }
       }
     }
@@ -992,293 +387,33 @@ export const RequestErrorErrorsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchDetail: coreClient.CompositeMapper = {
+export const WorkspaceCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchDetail",
+    className: "WorkspaceCreate",
     modelProperties: {
-      jobTitle: {
-        serializedName: "jobTitle",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailJobTitle"
-        }
-      },
-      location: {
-        serializedName: "location",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailLocation"
-        }
-      },
-      education: {
-        serializedName: "education",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailEducation"
-        }
-      },
-      skills: {
-        serializedName: "skills",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailSkills"
-        }
-      },
-      experience: {
-        serializedName: "experience",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailExperience"
-        }
-      },
-      occupationGroup: {
-        serializedName: "occupationGroup",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailOccupationGroup"
-        }
-      },
-      languages: {
-        serializedName: "languages",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailLanguages"
-        }
-      },
-      managementLevel: {
-        serializedName: "managementLevel",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailManagementLevel"
-        }
-      },
-      searchExpression: {
-        serializedName: "searchExpression",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailSearchExpression"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailJobTitle: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailJobTitle",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      value: {
-        serializedName: "value",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchDetailJobTitleValueItem"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailJobTitleValueItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailJobTitleValueItem",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      startDate: {
-        serializedName: "startDate",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      endDate: {
-        serializedName: "endDate",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      companyName: {
-        serializedName: "companyName",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      match: {
-        serializedName: "match",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailLocation: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailLocation",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchParametersLocation"
-            }
-          }
-        }
-      },
-      value: {
-        serializedName: "value",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchDetailLocationValue"
-        }
-      }
-    }
-  }
-};
-
-export const Location: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Location",
-    modelProperties: {
-      formatted: {
-        serializedName: "formatted",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      postalCode: {
-        serializedName: "postalCode",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      state: {
-        serializedName: "state",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      country: {
-        serializedName: "country",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      countryCode: {
-        serializedName: "countryCode",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      rawInput: {
-        serializedName: "rawInput",
+      organization: {
+        serializedName: "organization",
         required: true,
         type: {
           name: "String"
         }
       },
-      streetNumber: {
-        serializedName: "streetNumber",
-        readOnly: true,
-        nullable: true,
+      name: {
+        serializedName: "name",
+        required: true,
         type: {
           name: "String"
         }
       },
-      street: {
-        serializedName: "street",
-        readOnly: true,
-        nullable: true,
+      visibility: {
+        serializedName: "visibility",
         type: {
           name: "String"
         }
       },
-      apartmentNumber: {
-        serializedName: "apartmentNumber",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      city: {
-        serializedName: "city",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      latitude: {
-        serializedName: "latitude",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      longitude: {
-        serializedName: "longitude",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1",
-    modelProperties: {
-      match: {
-        serializedName: "match",
+      rejectInvalidDocuments: {
+        serializedName: "rejectInvalidDocuments",
         type: {
           name: "Boolean"
         }
@@ -1287,26 +422,78 @@ export const ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationProperti
   }
 };
 
-export const ResumeSearchDetailEducation: coreClient.CompositeMapper = {
+export const WorkspaceUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchDetailEducation",
+    className: "WorkspaceUpdate",
     modelProperties: {
-      missing: {
-        serializedName: "missing",
+      name: {
+        serializedName: "name",
         type: {
-          name: "Composite",
-          className: "ResumeSearchDetailEducationMissing"
+          name: "String"
         }
       },
-      value: {
-        serializedName: "value",
+      visibility: {
+        serializedName: "visibility",
+        type: {
+          name: "String"
+        }
+      },
+      rejectInvalidDocuments: {
+        serializedName: "rejectInvalidDocuments",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const PaginatedResponse: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PaginatedResponse",
+    modelProperties: {
+      count: {
+        serializedName: "count",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      next: {
+        serializedName: "next",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      previous: {
+        serializedName: "previous",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        required: true,
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchDetailEducationValueItem"
+              className: "WorkspaceMembership"
             }
           }
         }
@@ -1315,52 +502,949 @@ export const ResumeSearchDetailEducation: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchDetailEducationMissing: coreClient.CompositeMapper = {
+export const WorkspaceMembership: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchDetailEducationMissing",
+    className: "WorkspaceMembership",
     modelProperties: {
-      degrees: {
-        serializedName: "degrees",
+      identifier: {
+        serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "String"
+        }
+      },
+      user: {
+        serializedName: "user",
+        type: {
+          name: "Composite",
+          className: "User"
+        }
+      }
+    }
+  }
+};
+
+export const WorkspaceMembershipCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "WorkspaceMembershipCreate",
+    modelProperties: {
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "String"
+        }
+      },
+      user: {
+        serializedName: "user",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const Collection: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Collection",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "Composite",
+          className: "CollectionWorkspace"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
+        type: {
+          name: "Composite",
+          className: "Extractor"
+        }
+      },
+      autoValidationThreshold: {
+        serializedName: "autoValidationThreshold",
+        type: {
+          name: "Number"
+        }
+      },
+      fields: {
+        serializedName: "fields",
+        nullable: true,
         type: {
           name: "Sequence",
           element: {
             type: {
-              name: "String"
+              name: "Composite",
+              className: "FieldGroup"
             }
           }
         }
       },
-      highestDegreeTypes: {
-        serializedName: "highestDegreeTypes",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      institutions: {
-        serializedName: "institutions",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      currentStudent: {
-        serializedName: "currentStudent",
+      fieldsConfigured: {
+        serializedName: "fieldsConfigured",
         type: {
           name: "Boolean"
         }
       },
-      recentGraduate: {
-        serializedName: "recentGraduate",
+      dateFormatPreference: {
+        serializedName: "dateFormatPreference",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      dateFormatFromDocument: {
+        serializedName: "dateFormatFromDocument",
+        nullable: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      extractorConfig: {
+        serializedName: "extractorConfig",
+        nullable: true,
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      unvalidatedDocsCount: {
+        serializedName: "unvalidatedDocsCount",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      confirmedDocsCount: {
+        serializedName: "confirmedDocsCount",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      ingestEmail: {
+        serializedName: "ingestEmail",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const CollectionWorkspace: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "CollectionWorkspace",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Extractor: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Extractor",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      namePlural: {
+        serializedName: "namePlural",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      baseExtractor: {
+        serializedName: "baseExtractor",
+        type: {
+          name: "Composite",
+          className: "ExtractorBaseExtractor"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      category: {
+        serializedName: "category",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      validatable: {
+        serializedName: "validatable",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      isCustom: {
+        serializedName: "isCustom",
+        type: {
+          name: "Boolean"
+        }
+      },
+      fieldGroups: {
+        serializedName: "fieldGroups",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldGroup"
+            }
+          }
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        type: {
+          name: "DateTime"
+        }
+      }
+    }
+  }
+};
+
+export const ExtractorBaseExtractor: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ExtractorBaseExtractor",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      namePlural: {
+        serializedName: "namePlural",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      validatable: {
+        serializedName: "validatable",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      isCustom: {
+        serializedName: "isCustom",
+        type: {
+          name: "Boolean"
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        type: {
+          name: "DateTime"
+        }
+      }
+    }
+  }
+};
+
+export const FieldGroup: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "FieldGroup",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      fields: {
+        serializedName: "fields",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Field: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Field",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      slug: {
+        serializedName: "slug",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      mandatory: {
+        serializedName: "mandatory",
+        type: {
+          name: "Boolean"
+        }
+      },
+      disabled: {
+        serializedName: "disabled",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoValidationThreshold: {
+        serializedName: "autoValidationThreshold",
+        type: {
+          name: "Number"
+        }
+      },
+      fields: {
+        serializedName: "fields",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const CollectionCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "CollectionCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      autoValidationThreshold: {
+        serializedName: "autoValidationThreshold",
+        type: {
+          name: "Number"
+        }
+      },
+      fields: {
+        serializedName: "fields",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldGroup"
+            }
+          }
+        }
+      },
+      dateFormatPreference: {
+        serializedName: "dateFormatPreference",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      dateFormatFromDocument: {
+        serializedName: "dateFormatFromDocument",
+        nullable: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      extractorConfig: {
+        serializedName: "extractorConfig",
+        nullable: true,
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      }
+    }
+  }
+};
+
+export const CollectionUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "CollectionUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      autoValidationThreshold: {
+        serializedName: "autoValidationThreshold",
+        type: {
+          name: "Number"
+        }
+      },
+      fields: {
+        serializedName: "fields",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldGroup"
+            }
+          }
+        }
+      },
+      dateFormatPreference: {
+        serializedName: "dateFormatPreference",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      dateFormatFromDocument: {
+        serializedName: "dateFormatFromDocument",
+        nullable: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      extractorConfig: {
+        serializedName: "extractorConfig",
+        nullable: true,
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      }
+    }
+  }
+};
+
+export const PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Document"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Document: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Document",
+    uberParent: "Document",
+    polymorphicDiscriminator: {
+      serializedName: "extractor",
+      clientName: "extractor"
+    },
+    modelProperties: {
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      meta: {
+        serializedName: "meta",
+        type: {
+          name: "Composite",
+          className: "DocumentMeta"
+        }
+      },
+      error: {
+        serializedName: "error",
+        type: {
+          name: "Composite",
+          className: "DocumentError"
+        }
+      }
+    }
+  }
+};
+
+export const DocumentMeta: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentMeta",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      fileName: {
+        serializedName: "fileName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      ready: {
+        serializedName: "ready",
+        type: {
+          name: "Boolean"
+        }
+      },
+      readyDt: {
+        serializedName: "readyDt",
+        nullable: true,
+        type: {
+          name: "DateTime"
+        }
+      },
+      failed: {
+        serializedName: "failed",
+        type: {
+          name: "Boolean"
+        }
+      },
+      expiryTime: {
+        serializedName: "expiryTime",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      language: {
+        serializedName: "language",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      pdf: {
+        serializedName: "pdf",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parentDocument: {
+        serializedName: "parentDocument",
+        type: {
+          name: "Composite",
+          className: "DocumentMetaParentDocument"
+        }
+      },
+      childDocuments: {
+        serializedName: "childDocuments",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DocumentMetaChildDocumentsItem"
+            }
+          }
+        }
+      },
+      pages: {
+        serializedName: "pages",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "PageMeta"
+            }
+          }
+        }
+      },
+      isOcrd: {
+        serializedName: "isOcrd",
+        type: {
+          name: "Boolean"
+        }
+      },
+      ocrConfidence: {
+        serializedName: "ocrConfidence",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      reviewUrl: {
+        serializedName: "reviewUrl",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      collection: {
+        serializedName: "collection",
+        type: {
+          name: "Composite",
+          className: "DocumentMetaCollection"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "Composite",
+          className: "DocumentMetaWorkspace"
+        }
+      },
+      archivedDt: {
+        serializedName: "archivedDt",
+        nullable: true,
+        type: {
+          name: "DateTime"
+        }
+      },
+      isArchived: {
+        serializedName: "isArchived",
+        type: {
+          name: "Boolean"
+        }
+      },
+      confirmedDt: {
+        serializedName: "confirmedDt",
+        nullable: true,
+        type: {
+          name: "DateTime"
+        }
+      },
+      isConfirmed: {
+        serializedName: "isConfirmed",
+        type: {
+          name: "Boolean"
+        }
+      },
+      rejectedDt: {
+        serializedName: "rejectedDt",
+        nullable: true,
+        type: {
+          name: "DateTime"
+        }
+      },
+      isRejected: {
+        serializedName: "isRejected",
+        type: {
+          name: "Boolean"
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        type: {
+          name: "DateTime"
+        }
+      },
+      errorCode: {
+        serializedName: "errorCode",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      errorDetail: {
+        serializedName: "errorDetail",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      file: {
+        serializedName: "file",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      tags: {
+        serializedName: "tags",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Tag"
+            }
+          }
+        }
+      },
+      confirmedBy: {
+        serializedName: "confirmedBy",
+        type: {
+          name: "Composite",
+          className: "UserNullable"
+        }
+      },
+      sourceEmail: {
+        serializedName: "sourceEmail",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DocumentMetaParentDocument: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentMetaParentDocument",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DocumentMetaChildDocumentsItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentMetaChildDocumentsItem",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const PageMeta: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PageMeta",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      pageIndex: {
+        serializedName: "pageIndex",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      image: {
+        serializedName: "image",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      height: {
+        serializedName: "height",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      width: {
+        serializedName: "width",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      rotation: {
+        serializedName: "rotation",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const DocumentMetaCollection: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentMetaCollection",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
+        type: {
+          name: "Composite",
+          className: "DocumentMetaCollectionExtractor"
+        }
+      }
+    }
+  }
+};
+
+export const DocumentMetaCollectionExtractor: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentMetaCollectionExtractor",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      baseExtractor: {
+        serializedName: "baseExtractor",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      validatable: {
+        serializedName: "validatable",
         type: {
           name: "Boolean"
         }
@@ -1369,10 +1453,69 @@ export const ResumeSearchDetailEducationMissing: coreClient.CompositeMapper = {
   }
 };
 
-export const Education: coreClient.CompositeMapper = {
+export const DocumentMetaWorkspace: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Education",
+    className: "DocumentMetaWorkspace",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Tag: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Tag",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      documentCount: {
+        serializedName: "documentCount",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const UserNullable: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UserNullable",
     modelProperties: {
       id: {
         serializedName: "id",
@@ -1380,74 +1523,26 @@ export const Education: coreClient.CompositeMapper = {
           name: "Number"
         }
       },
-      organization: {
-        serializedName: "organization",
-        nullable: true,
+      name: {
+        serializedName: "name",
         type: {
           name: "String"
         }
       },
-      accreditation: {
-        serializedName: "accreditation",
-        type: {
-          name: "Composite",
-          className: "Accreditation"
-        }
-      },
-      grade: {
-        serializedName: "grade",
-        type: {
-          name: "Composite",
-          className: "EducationGrade"
-        }
-      },
-      location: {
-        serializedName: "location",
-        type: {
-          name: "Composite",
-          className: "Location"
-        }
-      },
-      dates: {
-        serializedName: "dates",
-        type: {
-          name: "Composite",
-          className: "EducationDates"
-        }
-      }
-    }
-  }
-};
-
-export const Accreditation: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Accreditation",
-    modelProperties: {
-      education: {
-        serializedName: "education",
+      username: {
+        serializedName: "username",
         type: {
           name: "String"
         }
       },
-      inputStr: {
-        serializedName: "inputStr",
-        readOnly: true,
+      email: {
+        serializedName: "email",
         type: {
           name: "String"
         }
       },
-      matchStr: {
-        serializedName: "matchStr",
-        readOnly: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      educationLevel: {
-        serializedName: "educationLevel",
-        readOnly: true,
+      avatar: {
+        serializedName: "avatar",
         nullable: true,
         type: {
           name: "String"
@@ -1457,27 +1552,21 @@ export const Accreditation: coreClient.CompositeMapper = {
   }
 };
 
-export const EducationGrade: coreClient.CompositeMapper = {
+export const DocumentError: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "EducationGrade",
-    additionalProperties: { type: { name: "Object" } },
+    className: "DocumentError",
     modelProperties: {
-      raw: {
-        serializedName: "raw",
-        type: {
-          name: "String"
-        }
-      },
-      metric: {
-        serializedName: "metric",
+      errorCode: {
+        serializedName: "errorCode",
         nullable: true,
         type: {
           name: "String"
         }
       },
-      value: {
-        serializedName: "value",
+      errorDetail: {
+        serializedName: "errorDetail",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -1486,124 +1575,113 @@ export const EducationGrade: coreClient.CompositeMapper = {
   }
 };
 
-export const EducationDates: coreClient.CompositeMapper = {
+export const DocumentUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "EducationDates",
+    className: "DocumentUpdate",
     modelProperties: {
-      completionDate: {
-        serializedName: "completionDate",
+      collection: {
+        serializedName: "collection",
         type: {
-          name: "Date"
+          name: "String"
         }
       },
-      isCurrent: {
-        serializedName: "isCurrent",
+      fileName: {
+        serializedName: "fileName",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      expiryTime: {
+        serializedName: "expiryTime",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      isConfirmed: {
+        serializedName: "isConfirmed",
         type: {
           name: "Boolean"
         }
       },
-      startDate: {
-        serializedName: "startDate",
-        nullable: true,
-        type: {
-          name: "Date"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1",
-    modelProperties: {
-      match: {
-        serializedName: "match",
+      isRejected: {
+        serializedName: "isRejected",
         type: {
           name: "Boolean"
         }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailSkills: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailSkills",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
+      },
+      isArchived: {
+        serializedName: "isArchived",
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchParametersSkill"
-            }
-          }
+          name: "Boolean"
         }
       },
-      value: {
-        serializedName: "value",
+      language: {
+        serializedName: "language",
+        nullable: true,
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchDetailSkillsValueItem"
-            }
-          }
+          name: "String"
         }
       }
     }
   }
 };
 
-export const ResumeSkill: coreClient.CompositeMapper = {
+export const ExtractorCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSkill",
+    className: "ExtractorCreate",
     modelProperties: {
       name: {
         serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      namePlural: {
+        serializedName: "namePlural",
+        type: {
+          name: "String"
+        }
+      },
+      baseExtractor: {
+        serializedName: "baseExtractor",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      category: {
+        serializedName: "category",
         nullable: true,
         type: {
           name: "String"
         }
       },
-      lastUsed: {
-        serializedName: "lastUsed",
-        nullable: true,
+      validatable: {
+        serializedName: "validatable",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
-      numberOfMonths: {
-        serializedName: "numberOfMonths",
+      fieldGroups: {
+        serializedName: "fieldGroups",
         nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      type: {
-        serializedName: "type",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      sources: {
-        serializedName: "sources",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSkillSourcesItem"
+              className: "FieldGroup"
             }
           }
         }
@@ -1612,92 +1690,526 @@ export const ResumeSkill: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSkillSourcesItem: coreClient.CompositeMapper = {
+export const ExtractorUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSkillSourcesItem",
+    className: "ExtractorUpdate",
     modelProperties: {
-      section: {
-        serializedName: "section",
+      name: {
+        serializedName: "name",
         type: {
           name: "String"
         }
       },
-      position: {
-        serializedName: "position",
-        nullable: true,
+      namePlural: {
+        serializedName: "namePlural",
         type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1",
-    modelProperties: {
-      match: {
-        serializedName: "match",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailExperience: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailExperience",
-    modelProperties: {
-      years: {
-        serializedName: "years",
-        nullable: true,
-        type: {
-          name: "Number"
+          name: "String"
         }
       },
-      match: {
-        serializedName: "match",
+      baseExtractor: {
+        serializedName: "baseExtractor",
+        type: {
+          name: "String"
+        }
+      },
+      category: {
+        serializedName: "category",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      validatable: {
+        serializedName: "validatable",
         type: {
           name: "Boolean"
         }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailOccupationGroup: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailOccupationGroup",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
+      },
+      fieldGroups: {
+        serializedName: "fieldGroups",
+        nullable: true,
         type: {
           name: "Sequence",
           element: {
             type: {
-              name: "Number"
+              name: "Composite",
+              className: "FieldGroup"
             }
           }
+        }
+      }
+    }
+  }
+};
+
+export const DataPoint: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPoint",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      slug: {
+        serializedName: "slug",
+        type: {
+          name: "String"
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      annotationContentType: {
+        serializedName: "annotationContentType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      multiple: {
+        serializedName: "multiple",
+        type: {
+          name: "Boolean"
+        }
+      },
+      noRect: {
+        serializedName: "noRect",
+        type: {
+          name: "Boolean"
+        }
+      },
+      similarTo: {
+        serializedName: "similarTo",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
+      children: {
+        serializedName: "children",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPoint"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DataPointCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      slug: {
+        serializedName: "slug",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      annotationContentType: {
+        serializedName: "annotationContentType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      multiple: {
+        serializedName: "multiple",
+        type: {
+          name: "Boolean"
+        }
+      },
+      noRect: {
+        serializedName: "noRect",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const DataPointUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      slug: {
+        serializedName: "slug",
+        type: {
+          name: "String"
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPointChoice"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoice: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoice",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      value: {
+        serializedName: "value",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      synonyms: {
+        serializedName: "synonyms",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoiceCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoiceCreate",
+    modelProperties: {
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      value: {
+        serializedName: "value",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      synonyms: {
+        serializedName: "synonyms",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoiceUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoiceUpdate",
+    modelProperties: {
+      dataPoint: {
+        serializedName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        type: {
+          name: "String"
         }
       },
       value: {
         serializedName: "value",
         type: {
+          name: "String"
+        }
+      },
+      synonyms: {
+        serializedName: "synonyms",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const TagCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TagCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        required: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const TagUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TagUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchDetailOccupationGroupValueItem"
+              className: "OrganizationMembership"
             }
           }
+        }
+      }
+    }
+  }
+};
+
+export const OrganizationMembership: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OrganizationMembership",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      user: {
+        serializedName: "user",
+        type: {
+          name: "Composite",
+          className: "User"
+        }
+      },
+      role: {
+        serializedName: "role",
+        required: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const OrganizationMembershipUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OrganizationMembershipUpdate",
+    modelProperties: {
+      role: {
+        serializedName: "role",
+        type: {
+          name: "String"
         }
       }
     }
@@ -1740,47 +2252,20 @@ export const OccupationGroup: coreClient.CompositeMapper = {
   }
 };
 
-export const ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
+export const PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
+      "PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1",
     modelProperties: {
-      match: {
-        serializedName: "match",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailLanguages: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailLanguages",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
+      results: {
+        serializedName: "results",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchParametersSkill"
-            }
-          }
-        }
-      },
-      value: {
-        serializedName: "value",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchDetailLanguagesValueItem"
+              className: "Invitation"
             }
           }
         }
@@ -1789,370 +2274,94 @@ export const ResumeSearchDetailLanguages: coreClient.CompositeMapper = {
   }
 };
 
-export const Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
+export const Invitation: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1",
+    className: "Invitation",
     modelProperties: {
-      match: {
-        serializedName: "match",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailManagementLevel: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailManagementLevel",
-    modelProperties: {
-      level: {
-        serializedName: "level",
-        nullable: true,
-        type: {
-          name: "Enum",
-          allowedValues: ["None", "Low", "Mid", "Upper"]
-        }
-      },
-      match: {
-        serializedName: "match",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchDetailSearchExpression: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailSearchExpression",
-    modelProperties: {
-      missing: {
-        serializedName: "missing",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      value: {
-        serializedName: "value",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchMatch: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchMatch",
-    modelProperties: {
-      score: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "score",
-        type: {
-          name: "Number"
-        }
-      },
-      details: {
-        serializedName: "details",
-        type: {
-          name: "Composite",
-          className: "ResumeSearchMatchDetails"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchMatchDetails: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchMatchDetails",
-    modelProperties: {
-      jobTitle: {
-        serializedName: "jobTitle",
-        type: {
-          name: "Composite",
-          className: "JobTitleSearchScoreComponent"
-        }
-      },
-      managementLevel: {
-        serializedName: "managementLevel",
-        type: {
-          name: "Composite",
-          className: "ManagementLevelSearchScoreComponent"
-        }
-      },
-      experience: {
-        serializedName: "experience",
-        type: {
-          name: "Composite",
-          className: "ExperienceSearchScoreComponent"
-        }
-      },
-      skills: {
-        serializedName: "skills",
-        type: {
-          name: "Composite",
-          className: "SkillsSearchScoreComponent"
-        }
-      },
-      languages: {
-        serializedName: "languages",
-        type: {
-          name: "Composite",
-          className: "LanguagesSearchScoreComponent"
-        }
-      },
-      location: {
-        serializedName: "location",
-        type: {
-          name: "Composite",
-          className: "LocationSearchScoreComponent"
-        }
-      },
-      education: {
-        serializedName: "education",
-        type: {
-          name: "Composite",
-          className: "EducationSearchScoreComponent"
-        }
-      },
-      occupationGroup: {
-        serializedName: "occupationGroup",
-        type: {
-          name: "Composite",
-          className: "OccupationGroupSearchScoreComponent"
-        }
-      },
-      searchExpression: {
-        serializedName: "searchExpression",
-        type: {
-          name: "Composite",
-          className: "SearchExpressionSearchScoreComponent"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchConfig: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchConfig",
-    modelProperties: {
-      allowPdfDownload: {
-        serializedName: "allowPdfDownload",
-        type: {
-          name: "Boolean"
-        }
-      },
-      maxResults: {
-        serializedName: "maxResults",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      displayJobTitle: {
-        serializedName: "displayJobTitle",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayLocation: {
-        serializedName: "displayLocation",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayYearsExperience: {
-        serializedName: "displayYearsExperience",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayOccupationGroup: {
-        serializedName: "displayOccupationGroup",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayEducation: {
-        serializedName: "displayEducation",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displaySkills: {
-        serializedName: "displaySkills",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayLanguages: {
-        serializedName: "displayLanguages",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayManagementLevel: {
-        serializedName: "displayManagementLevel",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayKeywords: {
-        serializedName: "displayKeywords",
-        type: {
-          name: "Boolean"
-        }
-      },
-      weightJobTitle: {
-        serializedName: "weightJobTitle",
-        type: {
-          name: "Number"
-        }
-      },
-      weightLocation: {
-        serializedName: "weightLocation",
-        type: {
-          name: "Number"
-        }
-      },
-      weightYearsExperience: {
-        serializedName: "weightYearsExperience",
-        type: {
-          name: "Number"
-        }
-      },
-      weightOccupationGroup: {
-        serializedName: "weightOccupationGroup",
-        type: {
-          name: "Number"
-        }
-      },
-      weightEducation: {
-        serializedName: "weightEducation",
-        type: {
-          name: "Number"
-        }
-      },
-      weightSkills: {
-        serializedName: "weightSkills",
-        type: {
-          name: "Number"
-        }
-      },
-      weightLanguages: {
-        serializedName: "weightLanguages",
-        type: {
-          name: "Number"
-        }
-      },
-      weightManagementLevel: {
-        serializedName: "weightManagementLevel",
-        type: {
-          name: "Number"
-        }
-      },
-      weightKeywords: {
-        serializedName: "weightKeywords",
-        type: {
-          name: "Number"
-        }
-      },
-      indices: {
-        serializedName: "indices",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
-      showIndexDropdown: {
-        serializedName: "showIndexDropdown",
-        nullable: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      searchToolTheme: {
-        serializedName: "searchToolTheme",
-        nullable: true,
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
-      },
-      userId: {
-        serializedName: "userId",
-        readOnly: true,
-        type: {
-          name: "Number"
-        }
-      },
-      username: {
-        serializedName: "username",
-        readOnly: true,
+      identifier: {
+        serializedName: "identifier",
         type: {
           name: "String"
         }
       },
-      actions: {
-        serializedName: "actions",
-        nullable: true,
+      organization: {
+        serializedName: "organization",
         type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ResumeSearchConfigActionsItem"
-            }
-          }
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      email: {
+        serializedName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      role: {
+        serializedName: "role",
+        type: {
+          name: "String"
+        }
+      },
+      status: {
+        serializedName: "status",
+        type: {
+          name: "String"
+        }
+      },
+      expiryDate: {
+        serializedName: "expiryDate",
+        type: {
+          name: "Date"
+        }
+      },
+      invitedBy: {
+        serializedName: "invitedBy",
+        type: {
+          name: "Composite",
+          className: "User"
+        }
+      },
+      respondedBy: {
+        serializedName: "respondedBy",
+        type: {
+          name: "Composite",
+          className: "InvitationRespondedBy"
+        }
+      },
+      createdDt: {
+        serializedName: "createdDt",
+        type: {
+          name: "DateTime"
         }
       }
     }
   }
 };
 
-export const ResumeSearchConfigActionsItem: coreClient.CompositeMapper = {
+export const InvitationCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchConfigActionsItem",
+    className: "InvitationCreate",
     modelProperties: {
-      label: {
-        serializedName: "label",
+      organization: {
+        serializedName: "organization",
+        required: true,
         type: {
           name: "String"
         }
       },
-      eventName: {
-        serializedName: "eventName",
+      email: {
+        serializedName: "email",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      role: {
+        serializedName: "role",
+        required: true,
         type: {
           name: "String"
         }
@@ -2161,30 +2370,170 @@ export const ResumeSearchConfigActionsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const InvitationUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema",
+    className: "InvitationUpdate",
     modelProperties: {
-      configOverride: {
-        serializedName: "configOverride",
+      role: {
+        serializedName: "role",
         type: {
-          name: "Composite",
-          className: "ResumeSearchConfig"
+          name: "String"
         }
       }
     }
   }
 };
 
-export const ResumeSearchEmbed: coreClient.CompositeMapper = {
+export const InvitationResponse: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchEmbed",
+    className: "InvitationResponse",
     modelProperties: {
-      url: {
-        serializedName: "url",
+      status: {
+        serializedName: "status",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResthookSubscription"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ResthookSubscription: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResthookSubscription",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      event: {
+        serializedName: "event",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      targetUrl: {
+        serializedName: "targetUrl",
+        type: {
+          name: "String"
+        }
+      },
+      active: {
+        serializedName: "active",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoDeactivated: {
+        serializedName: "autoDeactivated",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoDeactivateReason: {
+        serializedName: "autoDeactivateReason",
+        type: {
+          name: "String"
+        }
+      },
+      version: {
+        serializedName: "version",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ResthookSubscriptionCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResthookSubscriptionCreate",
+    modelProperties: {
+      targetUrl: {
+        serializedName: "targetUrl",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      event: {
+        serializedName: "event",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      version: {
+        serializedName: "version",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResthookSubscriptionUpdate",
+    modelProperties: {
+      event: {
+        serializedName: "event",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      version: {
+        serializedName: "version",
         type: {
           name: "String"
         }
@@ -2471,6 +2820,88 @@ export const JobDescriptionSearchParameters: coreClient.CompositeMapper = {
   }
 };
 
+export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersLocation",
+    modelProperties: {
+      name: {
+        defaultValue: "",
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      coordinates: {
+        serializedName: "coordinates",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParametersLocationCoordinates"
+        }
+      },
+      distance: {
+        defaultValue: 100,
+        serializedName: "distance",
+        type: {
+          name: "Number"
+        }
+      },
+      unit: {
+        defaultValue: "km",
+        serializedName: "unit",
+        type: {
+          name: "Enum",
+          allowedValues: ["km", "mi"]
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersLocationCoordinates: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersLocationCoordinates",
+    modelProperties: {
+      latitude: {
+        serializedName: "latitude",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      longitude: {
+        serializedName: "longitude",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchParametersSkill: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersSkill",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      required: {
+        serializedName: "required",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
 export const JobDescriptionSearch: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -2614,6 +3045,267 @@ export const JobDescriptionSearchResult: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const JobTitleSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobTitleSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ManagementLevelSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ManagementLevelSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ExperienceSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ExperienceSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const SkillsSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "SkillsSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const LanguagesSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "LanguagesSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const LocationSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "LocationSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const EducationSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EducationSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const OccupationGroupSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OccupationGroupSearchScoreComponent",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const SearchExpressionSearchScoreComponent: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "SearchExpressionSearchScoreComponent",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        type: {
+          name: "Number"
         }
       }
     }
@@ -2770,6 +3462,110 @@ export const JobDescriptionSearchDetailLocation: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "JobDescriptionSearchDetailLocationValue"
+        }
+      }
+    }
+  }
+};
+
+export const Location: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Location",
+    modelProperties: {
+      formatted: {
+        serializedName: "formatted",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      postalCode: {
+        serializedName: "postalCode",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      state: {
+        serializedName: "state",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      country: {
+        serializedName: "country",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      countryCode: {
+        serializedName: "countryCode",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      rawInput: {
+        serializedName: "rawInput",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      streetNumber: {
+        serializedName: "streetNumber",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      street: {
+        serializedName: "street",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      apartmentNumber: {
+        serializedName: "apartmentNumber",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      city: {
+        serializedName: "city",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      latitude: {
+        serializedName: "latitude",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      longitude: {
+        serializedName: "longitude",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "Number"
         }
       }
     }
@@ -3529,62 +4325,411 @@ export const PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJs
   }
 };
 
-export const Organization: coreClient.CompositeMapper = {
+export const ResumeSearchParameters: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Organization",
+    className: "ResumeSearchParameters",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
+      indices: {
+        serializedName: "indices",
+        required: true,
         type: {
-          name: "String"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
         }
       },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      userRole: {
-        serializedName: "userRole",
+      jobDescription: {
+        serializedName: "jobDescription",
         nullable: true,
         type: {
           name: "String"
         }
       },
-      avatar: {
-        serializedName: "avatar",
+      resume: {
+        serializedName: "resume",
         nullable: true,
         type: {
           name: "String"
         }
       },
-      resthookSignatureKey: {
-        serializedName: "resthookSignatureKey",
-        nullable: true,
+      jobTitles: {
+        serializedName: "jobTitles",
         type: {
-          name: "String"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
         }
       },
-      isTrial: {
-        serializedName: "isTrial",
+      jobTitlesCurrentOnly: {
+        serializedName: "jobTitlesCurrentOnly",
         type: {
           name: "Boolean"
+        }
+      },
+      jobTitlesRequired: {
+        serializedName: "jobTitlesRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      jobTitlesWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "jobTitlesWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      yearsExperienceMin: {
+        serializedName: "yearsExperienceMin",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      yearsExperienceMax: {
+        serializedName: "yearsExperienceMax",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      yearsExperienceRequired: {
+        serializedName: "yearsExperienceRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      yearsExperienceWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "yearsExperienceWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      locations: {
+        serializedName: "locations",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersLocation"
+            }
+          }
+        }
+      },
+      locationsWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "locationsWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      locationsRequired: {
+        serializedName: "locationsRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersSkill"
+            }
+          }
+        }
+      },
+      skillsWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "skillsWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersSkill"
+            }
+          }
+        }
+      },
+      languagesWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "languagesWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      institutions: {
+        serializedName: "institutions",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      institutionsRequired: {
+        serializedName: "institutionsRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      degrees: {
+        serializedName: "degrees",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      degreesRequired: {
+        serializedName: "degreesRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      highestDegreeTypes: {
+        constraints: {
+          UniqueItems: true
+        },
+        serializedName: "highestDegreeTypes",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Enum",
+              allowedValues: [
+                "school",
+                "certificate",
+                "bachelors",
+                "masters",
+                "doctoral"
+              ]
+            }
+          }
+        }
+      },
+      highestDegreeTypesRequired: {
+        serializedName: "highestDegreeTypesRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isCurrentStudent: {
+        serializedName: "isCurrentStudent",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isCurrentStudentRequired: {
+        serializedName: "isCurrentStudentRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isRecentGraduate: {
+        serializedName: "isRecentGraduate",
+        type: {
+          name: "Boolean"
+        }
+      },
+      isRecentGraduateRequired: {
+        serializedName: "isRecentGraduateRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      educationWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "educationWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      searchExpressionRequired: {
+        serializedName: "searchExpressionRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      searchExpressionWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "searchExpressionWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      socCodes: {
+        serializedName: "socCodes",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
+        }
+      },
+      socCodesWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "socCodesWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      socCodesRequired: {
+        serializedName: "socCodesRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        nullable: true,
+        type: {
+          name: "Enum",
+          allowedValues: ["None", "Low", "Mid", "Upper"]
+        }
+      },
+      managementLevelRequired: {
+        serializedName: "managementLevelRequired",
+        type: {
+          name: "Boolean"
+        }
+      },
+      managementLevelWeight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "managementLevelWeight",
+        type: {
+          name: "Number"
+        }
+      },
+      customData: {
+        serializedName: "customData",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersCustomData"
+            }
+          }
         }
       }
     }
   }
 };
 
-export const PaginatedResponse: coreClient.CompositeMapper = {
+export const ResumeSearchParametersCustomData: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PaginatedResponse",
+    className: "ResumeSearchParametersCustomData",
+    modelProperties: {
+      filterType: {
+        serializedName: "filterType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      query: {
+        serializedName: "query",
+        required: true,
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      required: {
+        serializedName: "required",
+        type: {
+          name: "Boolean"
+        }
+      },
+      weight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "weight",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearch: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearch",
     modelProperties: {
       count: {
         serializedName: "count",
-        required: true,
         type: {
           name: "Number"
         }
@@ -3602,17 +4747,14 @@ export const PaginatedResponse: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
-      }
-    }
-  }
-};
-
-export const Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1",
-    modelProperties: {
+      },
+      parameters: {
+        serializedName: "parameters",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchParameters"
+        }
+      },
       results: {
         serializedName: "results",
         type: {
@@ -3620,7 +4762,7 @@ export const Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicati
           element: {
             type: {
               name: "Composite",
-              className: "OrganizationMembership"
+              className: "ResumeSearchResult"
             }
           }
         }
@@ -3629,10 +4771,10 @@ export const Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicati
   }
 };
 
-export const OrganizationMembership: coreClient.CompositeMapper = {
+export const ResumeSearchResult: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "OrganizationMembership",
+    className: "ResumeSearchResult",
     modelProperties: {
       identifier: {
         serializedName: "identifier",
@@ -3641,40 +4783,18 @@ export const OrganizationMembership: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      organization: {
-        serializedName: "organization",
+      score: {
+        serializedName: "score",
         required: true,
-        type: {
-          name: "String"
-        }
-      },
-      user: {
-        serializedName: "user",
-        type: {
-          name: "Composite",
-          className: "User"
-        }
-      },
-      role: {
-        serializedName: "role",
-        required: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const User: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "User",
-    modelProperties: {
-      id: {
-        serializedName: "id",
         type: {
           name: "Number"
+        }
+      },
+      pdf: {
+        serializedName: "pdf",
+        required: true,
+        type: {
+          name: "String"
         }
       },
       name: {
@@ -3683,329 +4803,99 @@ export const User: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      username: {
-        serializedName: "username",
+      jobTitle: {
+        serializedName: "jobTitle",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "JobTitleSearchScoreComponent"
         }
       },
-      email: {
-        serializedName: "email",
+      managementLevel: {
+        serializedName: "managementLevel",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "ManagementLevelSearchScoreComponent"
         }
       },
-      avatar: {
-        serializedName: "avatar",
-        nullable: true,
+      experience: {
+        serializedName: "experience",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "ExperienceSearchScoreComponent"
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Composite",
+          className: "SkillsSearchScoreComponent"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Composite",
+          className: "LanguagesSearchScoreComponent"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "LocationSearchScoreComponent"
+        }
+      },
+      education: {
+        serializedName: "education",
+        type: {
+          name: "Composite",
+          className: "EducationSearchScoreComponent"
+        }
+      },
+      occupationGroup: {
+        serializedName: "occupationGroup",
+        type: {
+          name: "Composite",
+          className: "OccupationGroupSearchScoreComponent"
+        }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        type: {
+          name: "Composite",
+          className: "SearchExpressionSearchScoreComponent"
+        }
+      },
+      customData: {
+        serializedName: "customData",
+        required: true,
+        type: {
+          name: "Dictionary",
+          value: {
+            type: {
+              name: "Composite",
+              className:
+                "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties"
+            }
+          }
         }
       }
     }
   }
 };
 
-export const OrganizationMembershipUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "OrganizationMembershipUpdate",
-    modelProperties: {
-      role: {
-        serializedName: "role",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+export const ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1",
+      "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
     modelProperties: {
-      results: {
-        serializedName: "results",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "Invitation"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const Invitation: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Invitation",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
+      value: {
+        serializedName: "value",
         type: {
           name: "String"
         }
       },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "Composite",
-          className: "Organization"
-        }
-      },
-      email: {
-        serializedName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      role: {
-        serializedName: "role",
-        type: {
-          name: "String"
-        }
-      },
-      status: {
-        serializedName: "status",
-        type: {
-          name: "String"
-        }
-      },
-      expiryDate: {
-        serializedName: "expiryDate",
-        type: {
-          name: "Date"
-        }
-      },
-      invitedBy: {
-        serializedName: "invitedBy",
-        type: {
-          name: "Composite",
-          className: "User"
-        }
-      },
-      respondedBy: {
-        serializedName: "respondedBy",
-        type: {
-          name: "Composite",
-          className: "InvitationRespondedBy"
-        }
-      },
-      createdDt: {
-        serializedName: "createdDt",
-        type: {
-          name: "DateTime"
-        }
-      }
-    }
-  }
-};
-
-export const InvitationCreate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvitationCreate",
-    modelProperties: {
-      organization: {
-        serializedName: "organization",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      role: {
-        serializedName: "role",
-        required: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const InvitationUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvitationUpdate",
-    modelProperties: {
-      role: {
-        serializedName: "role",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const InvitationResponse: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvitationResponse",
-    modelProperties: {
-      status: {
-        serializedName: "status",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Extractor: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Extractor",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      namePlural: {
-        serializedName: "namePlural",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      baseExtractor: {
-        serializedName: "baseExtractor",
-        type: {
-          name: "Composite",
-          className: "ExtractorBaseExtractor"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "Composite",
-          className: "Organization"
-        }
-      },
-      category: {
-        serializedName: "category",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
-        required: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      isCustom: {
-        serializedName: "isCustom",
-        type: {
-          name: "Boolean"
-        }
-      },
-      fieldGroups: {
-        serializedName: "fieldGroups",
-        nullable: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "FieldGroup"
-            }
-          }
-        }
-      },
-      createdDt: {
-        serializedName: "createdDt",
-        type: {
-          name: "DateTime"
-        }
-      }
-    }
-  }
-};
-
-export const ExtractorBaseExtractor: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ExtractorBaseExtractor",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      namePlural: {
-        serializedName: "namePlural",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
-        required: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      isCustom: {
-        serializedName: "isCustom",
-        type: {
-          name: "Boolean"
-        }
-      },
-      createdDt: {
-        serializedName: "createdDt",
-        type: {
-          name: "DateTime"
-        }
-      }
-    }
-  }
-};
-
-export const FieldGroup: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "FieldGroup",
-    modelProperties: {
       label: {
         serializedName: "label",
         required: true,
@@ -4013,265 +4903,96 @@ export const FieldGroup: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      fields: {
-        serializedName: "fields",
-        required: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "Field"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const Field: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Field",
-    modelProperties: {
-      label: {
-        serializedName: "label",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      slug: {
-        serializedName: "slug",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      dataPoint: {
-        serializedName: "dataPoint",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      mandatory: {
-        serializedName: "mandatory",
-        type: {
-          name: "Boolean"
-        }
-      },
-      disabled: {
-        serializedName: "disabled",
-        type: {
-          name: "Boolean"
-        }
-      },
-      autoValidationThreshold: {
-        serializedName: "autoValidationThreshold",
+      score: {
+        serializedName: "score",
+        nullable: true,
         type: {
           name: "Number"
         }
-      },
-      fields: {
-        serializedName: "fields",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "Field"
-            }
-          }
-        }
       }
     }
   }
 };
 
-export const ExtractorCreate: coreClient.CompositeMapper = {
+export const ResumeSearchDetail: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ExtractorCreate",
+    className: "ResumeSearchDetail",
     modelProperties: {
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      namePlural: {
-        serializedName: "namePlural",
-        type: {
-          name: "String"
-        }
-      },
-      baseExtractor: {
-        serializedName: "baseExtractor",
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      category: {
-        serializedName: "category",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
-        type: {
-          name: "Boolean"
-        }
-      },
-      fieldGroups: {
-        serializedName: "fieldGroups",
-        nullable: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "FieldGroup"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ExtractorUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ExtractorUpdate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      namePlural: {
-        serializedName: "namePlural",
-        type: {
-          name: "String"
-        }
-      },
-      baseExtractor: {
-        serializedName: "baseExtractor",
-        type: {
-          name: "String"
-        }
-      },
-      category: {
-        serializedName: "category",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
-        type: {
-          name: "Boolean"
-        }
-      },
-      fieldGroups: {
-        serializedName: "fieldGroups",
-        nullable: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "FieldGroup"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const DataPoint: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DataPoint",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      slug: {
-        serializedName: "slug",
-        type: {
-          name: "String"
-        }
-      },
-      description: {
-        serializedName: "description",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      annotationContentType: {
-        serializedName: "annotationContentType",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
+      jobTitle: {
+        serializedName: "jobTitle",
         type: {
           name: "Composite",
-          className: "Organization"
+          className: "ResumeSearchDetailJobTitle"
         }
       },
-      extractor: {
-        serializedName: "extractor",
-        required: true,
-        nullable: true,
+      location: {
+        serializedName: "location",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "ResumeSearchDetailLocation"
         }
       },
-      multiple: {
-        serializedName: "multiple",
+      education: {
+        serializedName: "education",
         type: {
-          name: "Boolean"
+          name: "Composite",
+          className: "ResumeSearchDetailEducation"
         }
       },
-      noRect: {
-        serializedName: "noRect",
+      skills: {
+        serializedName: "skills",
         type: {
-          name: "Boolean"
+          name: "Composite",
+          className: "ResumeSearchDetailSkills"
         }
       },
-      similarTo: {
-        serializedName: "similarTo",
+      experience: {
+        serializedName: "experience",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchDetailExperience"
+        }
+      },
+      occupationGroup: {
+        serializedName: "occupationGroup",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchDetailOccupationGroup"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchDetailLanguages"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchDetailManagementLevel"
+        }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchDetailSearchExpression"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailJobTitle: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailJobTitle",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
         type: {
           name: "Sequence",
           element: {
@@ -4281,20 +5002,14 @@ export const DataPoint: coreClient.CompositeMapper = {
           }
         }
       },
-      displayEnumValue: {
-        serializedName: "displayEnumValue",
-        type: {
-          name: "Boolean"
-        }
-      },
-      children: {
-        serializedName: "children",
+      value: {
+        serializedName: "value",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "DataPoint"
+              className: "ResumeSearchDetailJobTitleValueItem"
             }
           }
         }
@@ -4303,60 +5018,41 @@ export const DataPoint: coreClient.CompositeMapper = {
   }
 };
 
-export const DataPointCreate: coreClient.CompositeMapper = {
+export const ResumeSearchDetailJobTitleValueItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "DataPointCreate",
+    className: "ResumeSearchDetailJobTitleValueItem",
     modelProperties: {
       name: {
         serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      slug: {
-        serializedName: "slug",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      description: {
-        serializedName: "description",
         nullable: true,
         type: {
           name: "String"
         }
       },
-      annotationContentType: {
-        serializedName: "annotationContentType",
-        required: true,
+      startDate: {
+        serializedName: "startDate",
+        nullable: true,
         type: {
           name: "String"
         }
       },
-      organization: {
-        serializedName: "organization",
-        required: true,
+      endDate: {
+        serializedName: "endDate",
+        nullable: true,
         type: {
           name: "String"
         }
       },
-      extractor: {
-        serializedName: "extractor",
-        required: true,
+      companyName: {
+        serializedName: "companyName",
+        nullable: true,
         type: {
           name: "String"
         }
       },
-      multiple: {
-        serializedName: "multiple",
-        type: {
-          name: "Boolean"
-        }
-      },
-      noRect: {
-        serializedName: "noRect",
+      match: {
+        serializedName: "match",
         type: {
           name: "Boolean"
         }
@@ -4365,48 +5061,70 @@ export const DataPointCreate: coreClient.CompositeMapper = {
   }
 };
 
-export const DataPointUpdate: coreClient.CompositeMapper = {
+export const ResumeSearchDetailLocation: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "DataPointUpdate",
+    className: "ResumeSearchDetailLocation",
     modelProperties: {
-      name: {
-        serializedName: "name",
+      missing: {
+        serializedName: "missing",
         type: {
-          name: "String"
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchParametersLocation"
+            }
+          }
         }
       },
-      slug: {
-        serializedName: "slug",
+      value: {
+        serializedName: "value",
         type: {
-          name: "String"
-        }
-      },
-      description: {
-        serializedName: "description",
-        nullable: true,
-        type: {
-          name: "String"
+          name: "Composite",
+          className: "ResumeSearchDetailLocationValue"
         }
       }
     }
   }
 };
 
-export const Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+export const ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1",
+      "ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1",
     modelProperties: {
-      results: {
-        serializedName: "results",
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailEducation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailEducation",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Composite",
+          className: "ResumeSearchDetailEducationMissing"
+        }
+      },
+      value: {
+        serializedName: "value",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "DataPointChoice"
+              className: "ResumeSearchDetailEducationValueItem"
             }
           }
         }
@@ -4415,359 +5133,246 @@ export const Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonS
   }
 };
 
-export const DataPointChoice: coreClient.CompositeMapper = {
+export const ResumeSearchDetailEducationMissing: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "DataPointChoice",
+    className: "ResumeSearchDetailEducationMissing",
+    modelProperties: {
+      degrees: {
+        serializedName: "degrees",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      highestDegreeTypes: {
+        serializedName: "highestDegreeTypes",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      institutions: {
+        serializedName: "institutions",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      currentStudent: {
+        serializedName: "currentStudent",
+        type: {
+          name: "Boolean"
+        }
+      },
+      recentGraduate: {
+        serializedName: "recentGraduate",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const Education: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Education",
     modelProperties: {
       id: {
         serializedName: "id",
-        required: true,
         type: {
           name: "Number"
         }
       },
-      label: {
-        serializedName: "label",
-        required: true,
+      organization: {
+        serializedName: "organization",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      accreditation: {
+        serializedName: "accreditation",
+        type: {
+          name: "Composite",
+          className: "Accreditation"
+        }
+      },
+      grade: {
+        serializedName: "grade",
+        type: {
+          name: "Composite",
+          className: "EducationGrade"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "Location"
+        }
+      },
+      dates: {
+        serializedName: "dates",
+        type: {
+          name: "Composite",
+          className: "EducationDates"
+        }
+      }
+    }
+  }
+};
+
+export const Accreditation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Accreditation",
+    modelProperties: {
+      education: {
+        serializedName: "education",
+        type: {
+          name: "String"
+        }
+      },
+      inputStr: {
+        serializedName: "inputStr",
+        readOnly: true,
+        type: {
+          name: "String"
+        }
+      },
+      matchStr: {
+        serializedName: "matchStr",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      educationLevel: {
+        serializedName: "educationLevel",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const EducationGrade: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EducationGrade",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      raw: {
+        serializedName: "raw",
+        type: {
+          name: "String"
+        }
+      },
+      metric: {
+        serializedName: "metric",
+        nullable: true,
         type: {
           name: "String"
         }
       },
       value: {
         serializedName: "value",
-        required: true,
         type: {
           name: "String"
         }
+      }
+    }
+  }
+};
+
+export const EducationDates: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EducationDates",
+    modelProperties: {
+      completionDate: {
+        serializedName: "completionDate",
+        type: {
+          name: "Date"
+        }
       },
-      description: {
-        serializedName: "description",
+      isCurrent: {
+        serializedName: "isCurrent",
+        type: {
+          name: "Boolean"
+        }
+      },
+      startDate: {
+        serializedName: "startDate",
         nullable: true,
         type: {
-          name: "String"
+          name: "Date"
         }
       }
     }
   }
 };
 
-export const Workspace: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Workspace",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "Composite",
-          className: "Organization"
-        }
-      },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      visibility: {
-        serializedName: "visibility",
-        type: {
-          name: "String"
-        }
-      },
-      collections: {
-        serializedName: "collections",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "WorkspaceCollectionsItem"
-            }
-          }
-        }
-      },
-      rejectInvalidDocuments: {
-        serializedName: "rejectInvalidDocuments",
-        type: {
-          name: "Boolean"
-        }
-      },
-      members: {
-        serializedName: "members",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "User"
-            }
-          }
-        }
-      },
-      unvalidatedDocsCount: {
-        serializedName: "unvalidatedDocsCount",
-        type: {
-          name: "Number"
-        }
-      },
-      confirmedDocsCount: {
-        serializedName: "confirmedDocsCount",
-        type: {
-          name: "Number"
-        }
-      },
-      ingestEmail: {
-        serializedName: "ingestEmail",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const WorkspaceCollectionsItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "WorkspaceCollectionsItem",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      extractor: {
-        serializedName: "extractor",
-        type: {
-          name: "Composite",
-          className: "WorkspaceCollectionsItemExtractor"
-        }
-      },
-      unvalidatedDocsCount: {
-        serializedName: "unvalidatedDocsCount",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      confirmedDocsCount: {
-        serializedName: "confirmedDocsCount",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const WorkspaceCollectionsItemExtractor: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "WorkspaceCollectionsItemExtractor",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      namePlural: {
-        serializedName: "namePlural",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      baseExtractor: {
-        serializedName: "baseExtractor",
-        type: {
-          name: "Composite",
-          className: "BaseExtractor"
-        }
-      },
-      category: {
-        serializedName: "category",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
-        required: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      isCustom: {
-        serializedName: "isCustom",
-        type: {
-          name: "Boolean"
-        }
-      },
-      createdDt: {
-        serializedName: "createdDt",
-        type: {
-          name: "DateTime"
-        }
-      }
-    }
-  }
-};
-
-export const BaseExtractor: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "BaseExtractor",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      namePlural: {
-        serializedName: "namePlural",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
-        required: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      isCustom: {
-        serializedName: "isCustom",
-        type: {
-          name: "Boolean"
-        }
-      },
-      createdDt: {
-        serializedName: "createdDt",
-        type: {
-          name: "DateTime"
-        }
-      }
-    }
-  }
-};
-
-export const WorkspaceCreate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "WorkspaceCreate",
-    modelProperties: {
-      organization: {
-        serializedName: "organization",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      visibility: {
-        serializedName: "visibility",
-        type: {
-          name: "String"
-        }
-      },
-      rejectInvalidDocuments: {
-        serializedName: "rejectInvalidDocuments",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const WorkspaceUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "WorkspaceUpdate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      visibility: {
-        serializedName: "visibility",
-        type: {
-          name: "String"
-        }
-      },
-      rejectInvalidDocuments: {
-        serializedName: "rejectInvalidDocuments",
-        type: {
-          name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+export const ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1",
+      "ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1",
     modelProperties: {
-      results: {
-        serializedName: "results",
-        required: true,
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailSkills: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailSkills",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "WorkspaceMembership"
+              className: "ResumeSearchParametersSkill"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeSearchDetailSkillsValueItem"
             }
           }
         }
@@ -4776,327 +5381,139 @@ export const Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJ
   }
 };
 
-export const WorkspaceMembership: coreClient.CompositeMapper = {
+export const ResumeSkill: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "WorkspaceMembership",
+    className: "ResumeSkill",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        type: {
-          name: "String"
-        }
-      },
-      workspace: {
-        serializedName: "workspace",
-        type: {
-          name: "String"
-        }
-      },
-      user: {
-        serializedName: "user",
-        type: {
-          name: "Composite",
-          className: "User"
-        }
-      }
-    }
-  }
-};
-
-export const WorkspaceMembershipCreate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "WorkspaceMembershipCreate",
-    modelProperties: {
-      workspace: {
-        serializedName: "workspace",
-        type: {
-          name: "String"
-        }
-      },
-      user: {
-        serializedName: "user",
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const Collection: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Collection",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
       name: {
         serializedName: "name",
+        nullable: true,
         type: {
           name: "String"
         }
       },
-      workspace: {
-        serializedName: "workspace",
+      lastUsed: {
+        serializedName: "lastUsed",
+        nullable: true,
         type: {
-          name: "Composite",
-          className: "CollectionWorkspace"
+          name: "String"
         }
       },
-      extractor: {
-        serializedName: "extractor",
-        type: {
-          name: "Composite",
-          className: "Extractor"
-        }
-      },
-      autoValidationThreshold: {
-        serializedName: "autoValidationThreshold",
+      numberOfMonths: {
+        serializedName: "numberOfMonths",
+        nullable: true,
         type: {
           name: "Number"
         }
       },
-      fields: {
-        serializedName: "fields",
+      type: {
+        serializedName: "type",
         nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      sources: {
+        serializedName: "sources",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "FieldGroup"
+              className: "ResumeSkillSourcesItem"
             }
           }
         }
-      },
-      fieldsConfigured: {
-        serializedName: "fieldsConfigured",
-        type: {
-          name: "Boolean"
-        }
-      },
-      dateFormatPreference: {
-        serializedName: "dateFormatPreference",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      dateFormatFromDocument: {
-        serializedName: "dateFormatFromDocument",
-        nullable: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      extractorConfig: {
-        serializedName: "extractorConfig",
-        nullable: true,
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
-      },
-      unvalidatedDocsCount: {
-        serializedName: "unvalidatedDocsCount",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      confirmedDocsCount: {
-        serializedName: "confirmedDocsCount",
-        nullable: true,
-        type: {
-          name: "Number"
-        }
-      },
-      ingestEmail: {
-        serializedName: "ingestEmail",
-        type: {
-          name: "String"
-        }
       }
     }
   }
 };
 
-export const CollectionWorkspace: coreClient.CompositeMapper = {
+export const ResumeSkillSourcesItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "CollectionWorkspace",
+    className: "ResumeSkillSourcesItem",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
+      section: {
+        serializedName: "section",
         type: {
           name: "String"
         }
       },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "Composite",
-          className: "Organization"
-        }
-      },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const CollectionCreate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "CollectionCreate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      workspace: {
-        serializedName: "workspace",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      extractor: {
-        serializedName: "extractor",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      autoValidationThreshold: {
-        serializedName: "autoValidationThreshold",
+      position: {
+        serializedName: "position",
+        nullable: true,
         type: {
           name: "Number"
         }
-      },
-      fields: {
-        serializedName: "fields",
-        nullable: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "FieldGroup"
-            }
-          }
-        }
-      },
-      dateFormatPreference: {
-        serializedName: "dateFormatPreference",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      dateFormatFromDocument: {
-        serializedName: "dateFormatFromDocument",
-        nullable: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      extractorConfig: {
-        serializedName: "extractorConfig",
-        nullable: true,
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
       }
     }
   }
 };
 
-export const CollectionUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "CollectionUpdate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      autoValidationThreshold: {
-        serializedName: "autoValidationThreshold",
-        type: {
-          name: "Number"
-        }
-      },
-      fields: {
-        serializedName: "fields",
-        nullable: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "FieldGroup"
-            }
-          }
-        }
-      },
-      dateFormatPreference: {
-        serializedName: "dateFormatPreference",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      dateFormatFromDocument: {
-        serializedName: "dateFormatFromDocument",
-        nullable: true,
-        type: {
-          name: "Boolean"
-        }
-      },
-      extractorConfig: {
-        serializedName: "extractorConfig",
-        nullable: true,
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
-      }
-    }
-  }
-};
-
-export const PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+export const ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className:
-      "PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1",
+      "ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1",
     modelProperties: {
-      results: {
-        serializedName: "results",
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailExperience: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailExperience",
+    modelProperties: {
+      years: {
+        serializedName: "years",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      match: {
+        serializedName: "match",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailOccupationGroup: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailOccupationGroup",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
+        }
+      },
+      value: {
+        serializedName: "value",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "Document"
+              className: "ResumeSearchDetailOccupationGroupValueItem"
             }
           }
         }
@@ -5105,641 +5522,398 @@ export const PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAl
   }
 };
 
-export const Document: coreClient.CompositeMapper = {
+export const ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Document",
-    uberParent: "Document",
-    polymorphicDiscriminator: {
-      serializedName: "extractor",
-      clientName: "extractor"
-    },
+    className:
+      "ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
     modelProperties: {
-      extractor: {
-        serializedName: "extractor",
-        required: true,
+      match: {
+        serializedName: "match",
         type: {
-          name: "String"
-        }
-      },
-      meta: {
-        serializedName: "meta",
-        type: {
-          name: "Composite",
-          className: "DocumentMeta"
-        }
-      },
-      error: {
-        serializedName: "error",
-        type: {
-          name: "Composite",
-          className: "DocumentError"
+          name: "Boolean"
         }
       }
     }
   }
 };
 
-export const DocumentMeta: coreClient.CompositeMapper = {
+export const ResumeSearchDetailLanguages: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "DocumentMeta",
+    className: "ResumeSearchDetailLanguages",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      fileName: {
-        serializedName: "fileName",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      ready: {
-        serializedName: "ready",
-        type: {
-          name: "Boolean"
-        }
-      },
-      readyDt: {
-        serializedName: "readyDt",
-        nullable: true,
-        type: {
-          name: "DateTime"
-        }
-      },
-      failed: {
-        serializedName: "failed",
-        type: {
-          name: "Boolean"
-        }
-      },
-      expiryTime: {
-        serializedName: "expiryTime",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      language: {
-        serializedName: "language",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      pdf: {
-        serializedName: "pdf",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      parentDocument: {
-        serializedName: "parentDocument",
-        type: {
-          name: "Composite",
-          className: "DocumentMetaParentDocument"
-        }
-      },
-      childDocuments: {
-        serializedName: "childDocuments",
+      missing: {
+        serializedName: "missing",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "DocumentMetaChildDocumentsItem"
+              className: "ResumeSearchParametersSkill"
             }
           }
         }
       },
-      pages: {
-        serializedName: "pages",
-        required: true,
+      value: {
+        serializedName: "value",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "PageMeta"
+              className: "ResumeSearchDetailLanguagesValueItem"
             }
           }
         }
-      },
-      isOcrd: {
-        serializedName: "isOcrd",
+      }
+    }
+  }
+};
+
+export const Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1",
+    modelProperties: {
+      match: {
+        serializedName: "match",
         type: {
           name: "Boolean"
         }
-      },
-      ocrConfidence: {
-        serializedName: "ocrConfidence",
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailManagementLevel: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailManagementLevel",
+    modelProperties: {
+      level: {
+        serializedName: "level",
         nullable: true,
         type: {
-          name: "Number"
+          name: "Enum",
+          allowedValues: ["None", "Low", "Mid", "Upper"]
         }
       },
-      reviewUrl: {
-        serializedName: "reviewUrl",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      collection: {
-        serializedName: "collection",
-        type: {
-          name: "Composite",
-          className: "DocumentMetaCollection"
-        }
-      },
-      workspace: {
-        serializedName: "workspace",
-        type: {
-          name: "Composite",
-          className: "DocumentMetaWorkspace"
-        }
-      },
-      archivedDt: {
-        serializedName: "archivedDt",
-        nullable: true,
-        type: {
-          name: "DateTime"
-        }
-      },
-      isArchived: {
-        serializedName: "isArchived",
+      match: {
+        serializedName: "match",
         type: {
           name: "Boolean"
         }
-      },
-      confirmedDt: {
-        serializedName: "confirmedDt",
-        nullable: true,
-        type: {
-          name: "DateTime"
-        }
-      },
-      isConfirmed: {
-        serializedName: "isConfirmed",
-        type: {
-          name: "Boolean"
-        }
-      },
-      rejectedDt: {
-        serializedName: "rejectedDt",
-        nullable: true,
-        type: {
-          name: "DateTime"
-        }
-      },
-      isRejected: {
-        serializedName: "isRejected",
-        type: {
-          name: "Boolean"
-        }
-      },
-      createdDt: {
-        serializedName: "createdDt",
-        type: {
-          name: "DateTime"
-        }
-      },
-      errorCode: {
-        serializedName: "errorCode",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      errorDetail: {
-        serializedName: "errorDetail",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      file: {
-        serializedName: "file",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      tags: {
-        serializedName: "tags",
+      }
+    }
+  }
+};
+
+export const ResumeSearchDetailSearchExpression: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailSearchExpression",
+    modelProperties: {
+      missing: {
+        serializedName: "missing",
         type: {
           name: "Sequence",
           element: {
             type: {
-              name: "Composite",
-              className: "Tag"
+              name: "String"
             }
           }
         }
       },
-      confirmedBy: {
-        serializedName: "confirmedBy",
+      value: {
+        serializedName: "value",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ResumeSearchMatch: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchMatch",
+    modelProperties: {
+      score: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "score",
+        type: {
+          name: "Number"
+        }
+      },
+      details: {
+        serializedName: "details",
         type: {
           name: "Composite",
-          className: "UserNullable"
-        }
-      },
-      sourceEmail: {
-        serializedName: "sourceEmail",
-        nullable: true,
-        type: {
-          name: "String"
+          className: "ResumeSearchMatchDetails"
         }
       }
     }
   }
 };
 
-export const DocumentMetaParentDocument: coreClient.CompositeMapper = {
+export const ResumeSearchMatchDetails: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "DocumentMetaParentDocument",
+    className: "ResumeSearchMatchDetails",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const DocumentMetaChildDocumentsItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DocumentMetaChildDocumentsItem",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const PageMeta: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "PageMeta",
-    modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      pageIndex: {
-        serializedName: "pageIndex",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      image: {
-        serializedName: "image",
-        required: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      height: {
-        serializedName: "height",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      width: {
-        serializedName: "width",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      rotation: {
-        serializedName: "rotation",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const DocumentMetaCollection: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DocumentMetaCollection",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      extractor: {
-        serializedName: "extractor",
+      jobTitle: {
+        serializedName: "jobTitle",
         type: {
           name: "Composite",
-          className: "DocumentMetaCollectionExtractor"
+          className: "JobTitleSearchScoreComponent"
+        }
+      },
+      managementLevel: {
+        serializedName: "managementLevel",
+        type: {
+          name: "Composite",
+          className: "ManagementLevelSearchScoreComponent"
+        }
+      },
+      experience: {
+        serializedName: "experience",
+        type: {
+          name: "Composite",
+          className: "ExperienceSearchScoreComponent"
+        }
+      },
+      skills: {
+        serializedName: "skills",
+        type: {
+          name: "Composite",
+          className: "SkillsSearchScoreComponent"
+        }
+      },
+      languages: {
+        serializedName: "languages",
+        type: {
+          name: "Composite",
+          className: "LanguagesSearchScoreComponent"
+        }
+      },
+      location: {
+        serializedName: "location",
+        type: {
+          name: "Composite",
+          className: "LocationSearchScoreComponent"
+        }
+      },
+      education: {
+        serializedName: "education",
+        type: {
+          name: "Composite",
+          className: "EducationSearchScoreComponent"
+        }
+      },
+      occupationGroup: {
+        serializedName: "occupationGroup",
+        type: {
+          name: "Composite",
+          className: "OccupationGroupSearchScoreComponent"
+        }
+      },
+      searchExpression: {
+        serializedName: "searchExpression",
+        type: {
+          name: "Composite",
+          className: "SearchExpressionSearchScoreComponent"
         }
       }
     }
   }
 };
 
-export const DocumentMetaCollectionExtractor: coreClient.CompositeMapper = {
+export const ResumeSearchConfig: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "DocumentMetaCollectionExtractor",
+    className: "ResumeSearchConfig",
     modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      baseExtractor: {
-        serializedName: "baseExtractor",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      validatable: {
-        serializedName: "validatable",
+      allowPdfDownload: {
+        serializedName: "allowPdfDownload",
         type: {
           name: "Boolean"
         }
-      }
-    }
-  }
-};
-
-export const DocumentMetaWorkspace: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DocumentMetaWorkspace",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
       },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Tag: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Tag",
-    modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
+      maxResults: {
+        serializedName: "maxResults",
+        nullable: true,
         type: {
           name: "Number"
         }
       },
-      name: {
-        serializedName: "name",
-        required: true,
+      displayJobTitle: {
+        serializedName: "displayJobTitle",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
-      workspace: {
-        serializedName: "workspace",
-        required: true,
+      displayLocation: {
+        serializedName: "displayLocation",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       },
-      documentCount: {
-        serializedName: "documentCount",
-        required: true,
+      displayYearsExperience: {
+        serializedName: "displayYearsExperience",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayOccupationGroup: {
+        serializedName: "displayOccupationGroup",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayEducation: {
+        serializedName: "displayEducation",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displaySkills: {
+        serializedName: "displaySkills",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayLanguages: {
+        serializedName: "displayLanguages",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayManagementLevel: {
+        serializedName: "displayManagementLevel",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayKeywords: {
+        serializedName: "displayKeywords",
+        type: {
+          name: "Boolean"
+        }
+      },
+      weightJobTitle: {
+        serializedName: "weightJobTitle",
         type: {
           name: "Number"
         }
-      }
-    }
-  }
-};
-
-export const UserNullable: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "UserNullable",
-    modelProperties: {
-      id: {
-        serializedName: "id",
+      },
+      weightLocation: {
+        serializedName: "weightLocation",
         type: {
           name: "Number"
         }
       },
-      name: {
-        serializedName: "name",
+      weightYearsExperience: {
+        serializedName: "weightYearsExperience",
         type: {
-          name: "String"
+          name: "Number"
+        }
+      },
+      weightOccupationGroup: {
+        serializedName: "weightOccupationGroup",
+        type: {
+          name: "Number"
+        }
+      },
+      weightEducation: {
+        serializedName: "weightEducation",
+        type: {
+          name: "Number"
+        }
+      },
+      weightSkills: {
+        serializedName: "weightSkills",
+        type: {
+          name: "Number"
+        }
+      },
+      weightLanguages: {
+        serializedName: "weightLanguages",
+        type: {
+          name: "Number"
+        }
+      },
+      weightManagementLevel: {
+        serializedName: "weightManagementLevel",
+        type: {
+          name: "Number"
+        }
+      },
+      weightKeywords: {
+        serializedName: "weightKeywords",
+        type: {
+          name: "Number"
+        }
+      },
+      indices: {
+        serializedName: "indices",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      showIndexDropdown: {
+        serializedName: "showIndexDropdown",
+        nullable: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      searchToolTheme: {
+        serializedName: "searchToolTheme",
+        nullable: true,
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      userId: {
+        serializedName: "userId",
+        readOnly: true,
+        type: {
+          name: "Number"
         }
       },
       username: {
         serializedName: "username",
+        readOnly: true,
         type: {
           name: "String"
         }
       },
-      email: {
-        serializedName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
+      actions: {
+        serializedName: "actions",
         nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const DocumentError: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DocumentError",
-    modelProperties: {
-      errorCode: {
-        serializedName: "errorCode",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      errorDetail: {
-        serializedName: "errorDetail",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const DocumentUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DocumentUpdate",
-    modelProperties: {
-      collection: {
-        serializedName: "collection",
-        type: {
-          name: "String"
-        }
-      },
-      fileName: {
-        serializedName: "fileName",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      expiryTime: {
-        serializedName: "expiryTime",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      isConfirmed: {
-        serializedName: "isConfirmed",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isRejected: {
-        serializedName: "isRejected",
-        type: {
-          name: "Boolean"
-        }
-      },
-      isArchived: {
-        serializedName: "isArchived",
-        type: {
-          name: "Boolean"
-        }
-      },
-      language: {
-        serializedName: "language",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const TagCreate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "TagCreate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      workspace: {
-        serializedName: "workspace",
-        required: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const TagUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "TagUpdate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      workspace: {
-        serializedName: "workspace",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1",
-    modelProperties: {
-      results: {
-        serializedName: "results",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResthookSubscription"
+              className: "ResumeSearchConfigActionsItem"
             }
           }
         }
@@ -5748,118 +5922,51 @@ export const Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplication
   }
 };
 
-export const ResthookSubscription: coreClient.CompositeMapper = {
+export const ResumeSearchConfigActionsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResthookSubscription",
+    className: "ResumeSearchConfigActionsItem",
     modelProperties: {
-      id: {
-        serializedName: "id",
-        type: {
-          name: "Number"
-        }
-      },
-      event: {
-        serializedName: "event",
+      label: {
+        serializedName: "label",
         type: {
           name: "String"
         }
       },
-      organization: {
-        serializedName: "organization",
+      eventName: {
+        serializedName: "eventName",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema",
+    modelProperties: {
+      configOverride: {
+        serializedName: "configOverride",
         type: {
           name: "Composite",
-          className: "Organization"
-        }
-      },
-      targetUrl: {
-        serializedName: "targetUrl",
-        type: {
-          name: "String"
-        }
-      },
-      active: {
-        serializedName: "active",
-        type: {
-          name: "Boolean"
-        }
-      },
-      autoDeactivated: {
-        serializedName: "autoDeactivated",
-        type: {
-          name: "Boolean"
-        }
-      },
-      autoDeactivateReason: {
-        serializedName: "autoDeactivateReason",
-        type: {
-          name: "String"
-        }
-      },
-      version: {
-        serializedName: "version",
-        type: {
-          name: "String"
+          className: "ResumeSearchConfig"
         }
       }
     }
   }
 };
 
-export const ResthookSubscriptionCreate: coreClient.CompositeMapper = {
+export const ResumeSearchEmbed: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResthookSubscriptionCreate",
+    className: "ResumeSearchEmbed",
     modelProperties: {
-      targetUrl: {
-        serializedName: "targetUrl",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      event: {
-        serializedName: "event",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "String"
-        }
-      },
-      version: {
-        serializedName: "version",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResthookSubscriptionUpdate",
-    modelProperties: {
-      event: {
-        serializedName: "event",
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "String"
-        }
-      },
-      version: {
-        serializedName: "version",
+      url: {
+        serializedName: "url",
         type: {
           name: "String"
         }
@@ -8050,63 +8157,6 @@ export const YearsExperienceAnnotationParsed: coreClient.CompositeMapper = {
   }
 };
 
-export const OrganizationCreate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "OrganizationCreate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        type: {
-          name: "Stream"
-        }
-      },
-      resthookSignatureKey: {
-        serializedName: "resthookSignatureKey",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const OrganizationUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "OrganizationUpdate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        type: {
-          name: "Stream"
-        }
-      },
-      resthookSignatureKey: {
-        serializedName: "resthookSignatureKey",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const DocumentCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -8182,6 +8232,63 @@ export const DocumentCreate: coreClient.CompositeMapper = {
   }
 };
 
+export const OrganizationCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OrganizationCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        type: {
+          name: "Stream"
+        }
+      },
+      resthookSignatureKey: {
+        serializedName: "resthookSignatureKey",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const OrganizationUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OrganizationUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        type: {
+          name: "Stream"
+        }
+      },
+      resthookSignatureKey: {
+        serializedName: "resthookSignatureKey",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const IndexRequestBody: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -8203,85 +8310,50 @@ export const IndexRequestBody: coreClient.CompositeMapper = {
   }
 };
 
-export const ResumeSearchDetailLocationValue: coreClient.CompositeMapper = {
+export const InvitationRespondedBy: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchDetailLocationValue",
+    className: "InvitationRespondedBy",
     modelProperties: {
-      ...Location.type.modelProperties,
-      ...ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1
+      ...User.type.modelProperties
+    }
+  }
+};
+
+export const PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }
 };
 
-export const JobDescriptionSearchDetailLocationValue: coreClient.CompositeMapper = {
+export const PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "JobDescriptionSearchDetailLocationValue",
+    className:
+      "PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema",
     modelProperties: {
-      ...Location.type.modelProperties,
-      ...Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
+      ...PaginatedResponse.type.modelProperties,
+      ...PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }
 };
 
-export const ResumeSearchDetailEducationValueItem: coreClient.CompositeMapper = {
+export const PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "ResumeSearchDetailEducationValueItem",
+    className:
+      "PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema",
     modelProperties: {
-      ...Education.type.modelProperties,
-      ...ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const ResumeSearchDetailSkillsValueItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailSkillsValueItem",
-    modelProperties: {
-      ...ResumeSkill.type.modelProperties,
-      ...ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const ResumeSearchDetailLanguagesValueItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailLanguagesValueItem",
-    modelProperties: {
-      ...ResumeSkill.type.modelProperties,
-      ...Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailOccupationGroupValueItem",
-    modelProperties: {
-      ...OccupationGroup.type.modelProperties,
-      ...ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const JobDescriptionSearchDetailOccupationGroupValue: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "JobDescriptionSearchDetailOccupationGroupValue",
-    modelProperties: {
-      ...OccupationGroup.type.modelProperties,
-      ...ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }
@@ -8313,45 +8385,6 @@ export const Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchem
   }
 };
 
-export const PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      ...PaginatedResponse.type.modelProperties,
-      ...Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      ...PaginatedResponse.type.modelProperties,
-      ...Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1
-        .type.modelProperties
-    }
-  }
-};
-
-export const PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      ...PaginatedResponse.type.modelProperties,
-      ...PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1
-        .type.modelProperties
-    }
-  }
-};
-
 export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -8361,16 +8394,6 @@ export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplication
       ...PaginatedResponse.type.modelProperties,
       ...Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
-    }
-  }
-};
-
-export const InvitationRespondedBy: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvitationRespondedBy",
-    modelProperties: {
-      ...User.type.modelProperties
     }
   }
 };
@@ -8431,6 +8454,90 @@ export const JobDescription: coreClient.CompositeMapper = {
           className: "JobDescriptionData"
         }
       }
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailOccupationGroupValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailOccupationGroupValue",
+    modelProperties: {
+      ...OccupationGroup.type.modelProperties,
+      ...ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailOccupationGroupValueItem",
+    modelProperties: {
+      ...OccupationGroup.type.modelProperties,
+      ...ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const JobDescriptionSearchDetailLocationValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchDetailLocationValue",
+    modelProperties: {
+      ...Location.type.modelProperties,
+      ...Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const ResumeSearchDetailLocationValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailLocationValue",
+    modelProperties: {
+      ...Location.type.modelProperties,
+      ...ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const ResumeSearchDetailEducationValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailEducationValueItem",
+    modelProperties: {
+      ...Education.type.modelProperties,
+      ...ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const ResumeSearchDetailSkillsValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailSkillsValueItem",
+    modelProperties: {
+      ...ResumeSkill.type.modelProperties,
+      ...ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const ResumeSearchDetailLanguagesValueItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchDetailLanguagesValueItem",
+    modelProperties: {
+      ...ResumeSkill.type.modelProperties,
+      ...Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1
+        .type.modelProperties
     }
   }
 };

@@ -9,6 +9,7 @@
 - [description](DataPointChoice.md#description)
 - [id](DataPointChoice.md#id)
 - [label](DataPointChoice.md#label)
+- [synonyms](DataPointChoice.md#synonyms)
 - [value](DataPointChoice.md#value)
 
 ## Properties
@@ -23,11 +24,19 @@ ___
 
 • **id**: `number`
 
+Data point choice's ID
+
 ___
 
 ### label
 
 • **label**: `string`
+
+___
+
+### synonyms
+
+• `Optional` **synonyms**: `string`[]
 
 ___
 

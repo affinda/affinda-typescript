@@ -1,5 +1,29 @@
 
 
+Document API - Workspace
+------------------------
+
+Document API - Collection
+-------------------------
+
+Document API - Upload Documents
+-------------------------------
+
+Document API - Extractor
+------------------------
+
+Document API - Data Point
+-------------------------
+
+Document API - Tag
+------------------
+
+Organization API - Organization
+-------------------------------
+
+Organization API - Membership
+-----------------------------
+
 Search & Match API - Searching
 ------------------------------
 
@@ -24,6 +48,12 @@ client.getResumeSearchMatch(resumeIdentifier, jobDescriptionIdentifier, { indexN
 });
 ```
 
+Organization API - Invitation
+-----------------------------
+
+Webhook API
+-----------
+
 Search & Match API - Embedding
 ------------------------------
 
@@ -46,33 +76,3 @@ client.getResumeSearchConfig().then((result) => {
 
 Search & Match API - Indexing
 -----------------------------
-
-Organization API - Organization
--------------------------------
-
-Organization API - Membership
------------------------------
-
-Organization API - Invitation
------------------------------
-
-Document API - Extractor
-------------------------
-
-Document API - Data Point
--------------------------
-
-Document API - Workspace
-------------------------
-
-Document API - Collection
--------------------------
-
-Document API - Upload Documents
--------------------------------
-
-Document API - Tag
-------------------
-
-Webhook API
------------

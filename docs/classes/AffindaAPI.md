@@ -24,6 +24,7 @@
 - [activateResthookSubscription](AffindaAPI.md#activateresthooksubscription)
 - [createCollection](AffindaAPI.md#createcollection)
 - [createDataPoint](AffindaAPI.md#createdatapoint)
+- [createDataPointChoice](AffindaAPI.md#createdatapointchoice)
 - [createDocument](AffindaAPI.md#createdocument)
 - [createExtractor](AffindaAPI.md#createextractor)
 - [createIndex](AffindaAPI.md#createindex)
@@ -40,6 +41,7 @@
 - [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
 - [deleteCollection](AffindaAPI.md#deletecollection)
 - [deleteDataPoint](AffindaAPI.md#deletedatapoint)
+- [deleteDataPointChoice](AffindaAPI.md#deletedatapointchoice)
 - [deleteDocument](AffindaAPI.md#deletedocument)
 - [deleteExtractor](AffindaAPI.md#deleteextractor)
 - [deleteIndex](AffindaAPI.md#deleteindex)
@@ -66,6 +68,7 @@
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
 - [getCollection](AffindaAPI.md#getcollection)
 - [getDataPoint](AffindaAPI.md#getdatapoint)
+- [getDataPointChoice](AffindaAPI.md#getdatapointchoice)
 - [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
 - [getDocument](AffindaAPI.md#getdocument)
 - [getExtractor](AffindaAPI.md#getextractor)
@@ -90,6 +93,7 @@
 - [sendRequest](AffindaAPI.md#sendrequest)
 - [updateCollection](AffindaAPI.md#updatecollection)
 - [updateDataPoint](AffindaAPI.md#updatedatapoint)
+- [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
 - [updateDocument](AffindaAPI.md#updatedocument)
 - [updateExtractor](AffindaAPI.md#updateextractor)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
@@ -149,7 +153,7 @@ ___
 ▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
-header.
+header. <br />
 You should response to this with a 200 status code, and use the value of the `X-Hook-Secret` header
 that you received to activate the subscription using this endpoint.
 
@@ -200,6 +204,24 @@ Create a custom data point.
 #### Returns
 
 `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+
+___
+
+### createDataPointChoice
+
+▸ **createDataPointChoice**(`options?`): `Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+
+Create a custom data point choice.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPICreateDataPointChoiceOptionalParams`](../interfaces/AffindaAPICreateDataPointChoiceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 ___
 
@@ -361,10 +383,11 @@ ___
 ▸ **createResthookSubscription**(`body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After a subscription is sucessfully created, we'll send a POST request to your target URL with a
-`X-Hook-Secret` header.
-You need to response to this request with a 200 status code to confirm your subscribe intention.
+`X-Hook-Secret` header. <br />
+You need to response to this request with a 200 status code to confirm your subscribe intention. <br
+/>
 Then, you need to use the `X-Hook-Secret` to activate the subscription using the
-[/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint.
+[/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint. <br />
 For more information, see our help article here - [How do I create a
 webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
 
@@ -512,6 +535,25 @@ Deletes the specified data point from the database.
 | :------ | :------ | :------ |
 | `identifier` | `string` | DataPoint's identifier |
 | `options?` | [`AffindaAPIDeleteDataPointOptionalParams`](../interfaces/AffindaAPIDeleteDataPointOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteDataPointChoice
+
+▸ **deleteDataPointChoice**(`id`, `options?`): `Promise`<`void`\>
+
+Deletes the specified data point choice from the database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Data point choice's ID |
+| `options?` | [`AffindaAPIDeleteDataPointChoiceOptionalParams`](../interfaces/AffindaAPIDeleteDataPointChoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1006,6 +1048,25 @@ Return a specific data point.
 
 ___
 
+### getDataPointChoice
+
+▸ **getDataPointChoice**(`id`, `options?`): `Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+
+Return a specific data point choice.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Data point choice's ID |
+| `options?` | [`AffindaAPIGetDataPointChoiceOptionalParams`](../interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+
+___
+
 ### getDataPointChoices
 
 ▸ **getDataPointChoices**(`dataPoint`, `options?`): `Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
@@ -1488,6 +1549,26 @@ Update data of a data point.
 #### Returns
 
 `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+
+___
+
+### updateDataPointChoice
+
+▸ **updateDataPointChoice**(`id`, `body`, `options?`): `Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+
+Update data of a data point choice.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Data point choice's ID |
+| `body` | [`DataPointChoiceUpdate`](../interfaces/DataPointChoiceUpdate.md) | Data point choice to update |
+| `options?` | [`AffindaAPIUpdateDataPointChoiceOptionalParams`](../interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 ___
 

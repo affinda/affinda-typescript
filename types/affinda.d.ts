@@ -23,311 +23,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     constructor(credentials: coreAuth.TokenCredential, options?: AffindaAPIOptionalParams);
     /**
-     * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
-     * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
-     * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
-     * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
-     * the custom criteria.
-     * @param body Search parameters
-     * @param options The options parameters.
-     */
-    createResumeSearch(body: ResumeSearchParameters, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
-    /**
-     * This contains more detailed information about the matching score of the search criteria, or which
-     * search criteria is missing in this resume.
-     * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
-     * @param identifier Resume identifier
-     * @param body Search parameters
-     * @param options The options parameters.
-     */
-    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
-    /**
-     * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
-     * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
-     * match the score returned from POST
-     * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
-     * @param resume Identify the resume to match.
-     * @param jobDescription Identify the job description to match.
-     * @param options The options parameters.
-     */
-    getResumeSearchMatch(resume: string, jobDescription: string, options?: AffindaAPIGetResumeSearchMatchOptionalParams): Promise<AffindaAPIGetResumeSearchMatchResponse>;
-    /**
-     * Return configurations such as which fields can be displayed in the logged in user's embeddable
-     * resume search tool, what are their weights, what is the maximum number of results that can be
-     * returned, etc.
-     * @param options The options parameters.
-     */
-    getResumeSearchConfig(options?: AffindaAPIGetResumeSearchConfigOptionalParams): Promise<AffindaAPIGetResumeSearchConfigResponse>;
-    /**
-     * Update configurations such as which fields can be displayed in the logged in user's embeddable
-     * resume search tool, what are their weights, what is the maximum number of results that can be
-     * returned, etc.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateResumeSearchConfig(body: ResumeSearchConfig, options?: AffindaAPIUpdateResumeSearchConfigOptionalParams): Promise<AffindaAPIUpdateResumeSearchConfigResponse>;
-    /**
-     * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
-     * An optional parameter `config_override` can be passed to override the user-level configurations of
-     * the embeddable resume search tool.
-     * @param options The options parameters.
-     */
-    createResumeSearchEmbedUrl(options?: AffindaAPICreateResumeSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateResumeSearchEmbedUrlResponse>;
-    /**
-     * Provided one or more job titles, get related suggestions for your search.
-     * @param jobTitles Job title to query suggestions for
-     * @param options The options parameters.
-     */
-    getResumeSearchSuggestionJobTitle(jobTitles: string[], options?: AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionJobTitleResponse>;
-    /**
-     * Provided one or more skills, get related suggestions for your search.
-     * @param skills Skill to query suggestions for
-     * @param options The options parameters.
-     */
-    getResumeSearchSuggestionSkill(skills: string[], options?: AffindaAPIGetResumeSearchSuggestionSkillOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionSkillResponse>;
-    /**
-     * Searches through parsed job descriptions. You can search with custom criterias or a resume.
-     * @param body Search parameters
-     * @param options The options parameters.
-     */
-    createJobDescriptionSearch(body: JobDescriptionSearchParameters | null, options?: AffindaAPICreateJobDescriptionSearchOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchResponse>;
-    /**
-     * This contains more detailed information about the matching score of the search criteria, or which
-     * search criteria is missing in this job description.
-     * The `identifier` is the unique ID returned via the
-     * [/job_description_search](#post-/job_description_search) endpoint.
-     * @param identifier Job Description identifier
-     * @param body Search parameters
-     * @param options The options parameters.
-     */
-    getJobDescriptionSearchDetail(identifier: string, body: JobDescriptionSearchParameters | null, options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse>;
-    /**
-     * Return configurations such as which fields can be displayed in the logged in user's embeddable job
-     * description search tool, what are their weights, what is the maximum number of results that can be
-     * returned, etc.
-     * @param options The options parameters.
-     */
-    getJobDescriptionSearchConfig(options?: AffindaAPIGetJobDescriptionSearchConfigOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchConfigResponse>;
-    /**
-     * Update configurations such as which fields can be displayed in the logged in user's embeddable job
-     * description search tool, what are their weights, what is the maximum number of results that can be
-     * returned, etc.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateJobDescriptionSearchConfig(body: JobDescriptionSearchConfig, options?: AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams): Promise<AffindaAPIUpdateJobDescriptionSearchConfigResponse>;
-    /**
-     * Create and return a signed URL of the job description search tool which then can be embedded on a
-     * web page. An optional parameter `config_override` can be passed to override the user-level
-     * configurations of the embeddable search tool.
-     * @param options The options parameters.
-     */
-    createJobDescriptionSearchEmbedUrl(options?: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchEmbedUrlResponse>;
-    /**
-     * Returns all the indexes
-     * @param options The options parameters.
-     */
-    getAllIndexes(options?: AffindaAPIGetAllIndexesOptionalParams): Promise<AffindaAPIGetAllIndexesResponse>;
-    /**
-     * Create an index for the search tool
-     * @param options The options parameters.
-     */
-    createIndex(options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
-    /**
-     * Deletes the specified index from the database
-     * @param name Index name
-     * @param options The options parameters.
-     */
-    deleteIndex(name: string, options?: AffindaAPIDeleteIndexOptionalParams): Promise<void>;
-    /**
-     * Returns all the indexed documents for that index
-     * @param name Index name
-     * @param options The options parameters.
-     */
-    getAllIndexDocuments(name: string, options?: AffindaAPIGetAllIndexDocumentsOptionalParams): Promise<AffindaAPIGetAllIndexDocumentsResponse>;
-    /**
-     * Create an indexed document for the search tool
-     * @param name Index name
-     * @param body Document to index
-     * @param options The options parameters.
-     */
-    createIndexDocument(name: string, body: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateIndexDocumentOptionalParams): Promise<AffindaAPICreateIndexDocumentResponse>;
-    /**
-     * Delete the specified indexed document from the database
-     * @param name Index name
-     * @param identifier Document identifier
-     * @param options The options parameters.
-     */
-    deleteIndexDocument(name: string, identifier: string, options?: AffindaAPIDeleteIndexDocumentOptionalParams): Promise<void>;
-    /**
-     * Returns the list of searchable occupation groups.
-     * @param options The options parameters.
-     */
-    listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
-    /**
-     * Returns all the organizations
-     * @param options The options parameters.
-     */
-    getAllOrganizations(options?: AffindaAPIGetAllOrganizationsOptionalParams): Promise<AffindaAPIGetAllOrganizationsResponse>;
-    /**
-     * Create a new organization.
-     * @param name
-     * @param options The options parameters.
-     */
-    createOrganization(name: string, options?: AffindaAPICreateOrganizationOptionalParams): Promise<AffindaAPICreateOrganizationResponse>;
-    /**
-     * Get detail of an organization.
-     * @param identifier Organization identifier.
-     * @param options The options parameters.
-     */
-    getOrganization(identifier: string, options?: AffindaAPIGetOrganizationOptionalParams): Promise<AffindaAPIGetOrganizationResponse>;
-    /**
-     * Update the detail of an organization.
-     * @param identifier Organization identifier.
-     * @param options The options parameters.
-     */
-    updateOrganization(identifier: string, options?: AffindaAPIUpdateOrganizationOptionalParams): Promise<AffindaAPIUpdateOrganizationResponse>;
-    /**
-     * Delete the specified organization from the database.
-     * @param identifier Organization identifier.
-     * @param options The options parameters.
-     */
-    deleteOrganization(identifier: string, options?: AffindaAPIDeleteOrganizationOptionalParams): Promise<void>;
-    /**
-     * Returns all the organization memberships
-     * @param options The options parameters.
-     */
-    getAllOrganizationMemberships(options?: AffindaAPIGetAllOrganizationMembershipsOptionalParams): Promise<AffindaAPIGetAllOrganizationMembershipsResponse>;
-    /**
-     * Get detail of an organization membership.
-     * @param identifier Membership identifier.
-     * @param options The options parameters.
-     */
-    getOrganizationMembership(identifier: string, options?: AffindaAPIGetOrganizationMembershipOptionalParams): Promise<AffindaAPIGetOrganizationMembershipResponse>;
-    /**
-     * The admin users can use this endpoint to update the role of the members within their organization.
-     * @param identifier Membership identifier.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: AffindaAPIUpdateOrganizationMembershipOptionalParams): Promise<AffindaAPIUpdateOrganizationMembershipResponse>;
-    /**
-     * The admin users can use this endpoint to remove member from their organization. Other users can also
-     * use this to leave their organization.
-     * @param identifier Membership identifier.
-     * @param options The options parameters.
-     */
-    deleteOrganizationMembership(identifier: string, options?: AffindaAPIDeleteOrganizationMembershipOptionalParams): Promise<void>;
-    /**
-     * Get list of all invitations you created or sent to you.
-     * @param options The options parameters.
-     */
-    getAllInvitations(options?: AffindaAPIGetAllInvitationsOptionalParams): Promise<AffindaAPIGetAllInvitationsResponse>;
-    /**
-     * Create a new invitation.
-     * @param body Invitation to create.
-     * @param options The options parameters.
-     */
-    createInvitation(body: InvitationCreate, options?: AffindaAPICreateInvitationOptionalParams): Promise<AffindaAPICreateInvitationResponse>;
-    /**
-     * Get detail of an invitation.
-     * @param identifier Invitation identifier.
-     * @param options The options parameters.
-     */
-    getInvitation(identifier: string, options?: AffindaAPIGetInvitationOptionalParams): Promise<AffindaAPIGetInvitationResponse>;
-    /**
-     * Update the detail of an invitation.
-     * @param identifier Invitation identifier.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateInvitation(identifier: string, body: InvitationUpdate, options?: AffindaAPIUpdateInvitationOptionalParams): Promise<AffindaAPIUpdateInvitationResponse>;
-    /**
-     * Delete the specified invitation from the database.
-     * @param identifier Invitation identifier.
-     * @param options The options parameters.
-     */
-    deleteInvitation(identifier: string, options?: AffindaAPIDeleteInvitationOptionalParams): Promise<void>;
-    /**
-     * Get detail of an invitation using a secret token. This allows users who have not registered/logged
-     * in to view the invitation.
-     * @param token Invitation token.
-     * @param options The options parameters.
-     */
-    getInvitationByToken(token: string, options?: AffindaAPIGetInvitationByTokenOptionalParams): Promise<AffindaAPIGetInvitationByTokenResponse>;
-    /**
-     * Choose to accept or decline an invitation.
-     * @param token Invitation token.
-     * @param body
-     * @param options The options parameters.
-     */
-    respondToInvitation(token: string, body: InvitationResponse, options?: AffindaAPIRespondToInvitationOptionalParams): Promise<AffindaAPIRespondToInvitationResponse>;
-    /**
-     * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
-     * @param organization Filter by organization.
-     * @param options The options parameters.
-     */
-    getAllExtractors(organization: string, options?: AffindaAPIGetAllExtractorsOptionalParams): Promise<AffindaAPIGetAllExtractorsResponse>;
-    /**
-     * Create a custom extractor.
-     * @param options The options parameters.
-     */
-    createExtractor(options?: AffindaAPICreateExtractorOptionalParams): Promise<AffindaAPICreateExtractorResponse>;
-    /**
-     * Return a specific extractor.
-     * @param identifier Extractor's identifier
-     * @param options The options parameters.
-     */
-    getExtractor(identifier: string, options?: AffindaAPIGetExtractorOptionalParams): Promise<AffindaAPIGetExtractorResponse>;
-    /**
-     * Update data of an extractor.
-     * @param identifier Extractor's identifier
-     * @param body Extractor data to update
-     * @param options The options parameters.
-     */
-    updateExtractor(identifier: string, body: ExtractorUpdate, options?: AffindaAPIUpdateExtractorOptionalParams): Promise<AffindaAPIUpdateExtractorResponse>;
-    /**
-     * Deletes the specified extractor from the database.
-     * @param identifier Extractor's identifier
-     * @param options The options parameters.
-     */
-    deleteExtractor(identifier: string, options?: AffindaAPIDeleteExtractorOptionalParams): Promise<void>;
-    /**
-     * Returns your custom data points as well as Affinda's off-the-shelf data points.
-     * @param options The options parameters.
-     */
-    getAllDataPoints(options?: AffindaAPIGetAllDataPointsOptionalParams): Promise<AffindaAPIGetAllDataPointsResponse>;
-    /**
-     * Create a custom data point.
-     * @param options The options parameters.
-     */
-    createDataPoint(options?: AffindaAPICreateDataPointOptionalParams): Promise<AffindaAPICreateDataPointResponse>;
-    /**
-     * Return a specific data point.
-     * @param identifier Data point's identifier
-     * @param options The options parameters.
-     */
-    getDataPoint(identifier: string, options?: AffindaAPIGetDataPointOptionalParams): Promise<AffindaAPIGetDataPointResponse>;
-    /**
-     * Update data of a data point.
-     * @param identifier DataPoint's identifier
-     * @param body Data point to update
-     * @param options The options parameters.
-     */
-    updateDataPoint(identifier: string, body: DataPointUpdate, options?: AffindaAPIUpdateDataPointOptionalParams): Promise<AffindaAPIUpdateDataPointResponse>;
-    /**
-     * Deletes the specified data point from the database.
-     * @param identifier DataPoint's identifier
-     * @param options The options parameters.
-     */
-    deleteDataPoint(identifier: string, options?: AffindaAPIDeleteDataPointOptionalParams): Promise<void>;
-    /**
-     * Returns available choices for a specific enum data point.
-     * @param dataPoint The data point to get choices for.
-     * @param options The options parameters.
-     */
-    getDataPointChoices(dataPoint: string, options?: AffindaAPIGetDataPointChoicesOptionalParams): Promise<AffindaAPIGetDataPointChoicesResponse>;
-    /**
      * Returns your workspaces.
      * @param organization Filter by organization.
      * @param options The options parameters.
@@ -444,6 +139,95 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteDocument(identifier: string, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
     /**
+     * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
+     * @param organization Filter by organization.
+     * @param options The options parameters.
+     */
+    getAllExtractors(organization: string, options?: AffindaAPIGetAllExtractorsOptionalParams): Promise<AffindaAPIGetAllExtractorsResponse>;
+    /**
+     * Create a custom extractor.
+     * @param options The options parameters.
+     */
+    createExtractor(options?: AffindaAPICreateExtractorOptionalParams): Promise<AffindaAPICreateExtractorResponse>;
+    /**
+     * Return a specific extractor.
+     * @param identifier Extractor's identifier
+     * @param options The options parameters.
+     */
+    getExtractor(identifier: string, options?: AffindaAPIGetExtractorOptionalParams): Promise<AffindaAPIGetExtractorResponse>;
+    /**
+     * Update data of an extractor.
+     * @param identifier Extractor's identifier
+     * @param body Extractor data to update
+     * @param options The options parameters.
+     */
+    updateExtractor(identifier: string, body: ExtractorUpdate, options?: AffindaAPIUpdateExtractorOptionalParams): Promise<AffindaAPIUpdateExtractorResponse>;
+    /**
+     * Deletes the specified extractor from the database.
+     * @param identifier Extractor's identifier
+     * @param options The options parameters.
+     */
+    deleteExtractor(identifier: string, options?: AffindaAPIDeleteExtractorOptionalParams): Promise<void>;
+    /**
+     * Returns your custom data points as well as Affinda's off-the-shelf data points.
+     * @param options The options parameters.
+     */
+    getAllDataPoints(options?: AffindaAPIGetAllDataPointsOptionalParams): Promise<AffindaAPIGetAllDataPointsResponse>;
+    /**
+     * Create a custom data point.
+     * @param options The options parameters.
+     */
+    createDataPoint(options?: AffindaAPICreateDataPointOptionalParams): Promise<AffindaAPICreateDataPointResponse>;
+    /**
+     * Return a specific data point.
+     * @param identifier Data point's identifier
+     * @param options The options parameters.
+     */
+    getDataPoint(identifier: string, options?: AffindaAPIGetDataPointOptionalParams): Promise<AffindaAPIGetDataPointResponse>;
+    /**
+     * Update data of a data point.
+     * @param identifier DataPoint's identifier
+     * @param body Data point to update
+     * @param options The options parameters.
+     */
+    updateDataPoint(identifier: string, body: DataPointUpdate, options?: AffindaAPIUpdateDataPointOptionalParams): Promise<AffindaAPIUpdateDataPointResponse>;
+    /**
+     * Deletes the specified data point from the database.
+     * @param identifier DataPoint's identifier
+     * @param options The options parameters.
+     */
+    deleteDataPoint(identifier: string, options?: AffindaAPIDeleteDataPointOptionalParams): Promise<void>;
+    /**
+     * Returns available choices for a specific enum data point.
+     * @param dataPoint The data point to get choices for.
+     * @param options The options parameters.
+     */
+    getDataPointChoices(dataPoint: string, options?: AffindaAPIGetDataPointChoicesOptionalParams): Promise<AffindaAPIGetDataPointChoicesResponse>;
+    /**
+     * Create a custom data point choice.
+     * @param options The options parameters.
+     */
+    createDataPointChoice(options?: AffindaAPICreateDataPointChoiceOptionalParams): Promise<AffindaAPICreateDataPointChoiceResponse>;
+    /**
+     * Return a specific data point choice.
+     * @param id Data point choice's ID
+     * @param options The options parameters.
+     */
+    getDataPointChoice(id: number, options?: AffindaAPIGetDataPointChoiceOptionalParams): Promise<AffindaAPIGetDataPointChoiceResponse>;
+    /**
+     * Update data of a data point choice.
+     * @param id Data point choice's ID
+     * @param body Data point choice to update
+     * @param options The options parameters.
+     */
+    updateDataPointChoice(id: number, body: DataPointChoiceUpdate, options?: AffindaAPIUpdateDataPointChoiceOptionalParams): Promise<AffindaAPIUpdateDataPointChoiceResponse>;
+    /**
+     * Deletes the specified data point choice from the database.
+     * @param id Data point choice's ID
+     * @param options The options parameters.
+     */
+    deleteDataPointChoice(id: number, options?: AffindaAPIDeleteDataPointChoiceOptionalParams): Promise<void>;
+    /**
      * Returns your tags.
      * @param options The options parameters.
      */
@@ -474,16 +258,120 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteTag(id: number, options?: AffindaAPIDeleteTagOptionalParams): Promise<void>;
     /**
+     * Returns all the organizations
+     * @param options The options parameters.
+     */
+    getAllOrganizations(options?: AffindaAPIGetAllOrganizationsOptionalParams): Promise<AffindaAPIGetAllOrganizationsResponse>;
+    /**
+     * Create a new organization.
+     * @param name
+     * @param options The options parameters.
+     */
+    createOrganization(name: string, options?: AffindaAPICreateOrganizationOptionalParams): Promise<AffindaAPICreateOrganizationResponse>;
+    /**
+     * Get detail of an organization.
+     * @param identifier Organization identifier.
+     * @param options The options parameters.
+     */
+    getOrganization(identifier: string, options?: AffindaAPIGetOrganizationOptionalParams): Promise<AffindaAPIGetOrganizationResponse>;
+    /**
+     * Update the detail of an organization.
+     * @param identifier Organization identifier.
+     * @param options The options parameters.
+     */
+    updateOrganization(identifier: string, options?: AffindaAPIUpdateOrganizationOptionalParams): Promise<AffindaAPIUpdateOrganizationResponse>;
+    /**
+     * Delete the specified organization from the database.
+     * @param identifier Organization identifier.
+     * @param options The options parameters.
+     */
+    deleteOrganization(identifier: string, options?: AffindaAPIDeleteOrganizationOptionalParams): Promise<void>;
+    /**
+     * Returns all the organization memberships
+     * @param options The options parameters.
+     */
+    getAllOrganizationMemberships(options?: AffindaAPIGetAllOrganizationMembershipsOptionalParams): Promise<AffindaAPIGetAllOrganizationMembershipsResponse>;
+    /**
+     * Get detail of an organization membership.
+     * @param identifier Membership identifier.
+     * @param options The options parameters.
+     */
+    getOrganizationMembership(identifier: string, options?: AffindaAPIGetOrganizationMembershipOptionalParams): Promise<AffindaAPIGetOrganizationMembershipResponse>;
+    /**
+     * The admin users can use this endpoint to update the role of the members within their organization.
+     * @param identifier Membership identifier.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: AffindaAPIUpdateOrganizationMembershipOptionalParams): Promise<AffindaAPIUpdateOrganizationMembershipResponse>;
+    /**
+     * The admin users can use this endpoint to remove member from their organization. Other users can also
+     * use this to leave their organization.
+     * @param identifier Membership identifier.
+     * @param options The options parameters.
+     */
+    deleteOrganizationMembership(identifier: string, options?: AffindaAPIDeleteOrganizationMembershipOptionalParams): Promise<void>;
+    /**
+     * Returns the list of searchable occupation groups.
+     * @param options The options parameters.
+     */
+    listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
+    /**
+     * Get list of all invitations you created or sent to you.
+     * @param options The options parameters.
+     */
+    getAllInvitations(options?: AffindaAPIGetAllInvitationsOptionalParams): Promise<AffindaAPIGetAllInvitationsResponse>;
+    /**
+     * Create a new invitation.
+     * @param body Invitation to create.
+     * @param options The options parameters.
+     */
+    createInvitation(body: InvitationCreate, options?: AffindaAPICreateInvitationOptionalParams): Promise<AffindaAPICreateInvitationResponse>;
+    /**
+     * Get detail of an invitation.
+     * @param identifier Invitation identifier.
+     * @param options The options parameters.
+     */
+    getInvitation(identifier: string, options?: AffindaAPIGetInvitationOptionalParams): Promise<AffindaAPIGetInvitationResponse>;
+    /**
+     * Update the detail of an invitation.
+     * @param identifier Invitation identifier.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateInvitation(identifier: string, body: InvitationUpdate, options?: AffindaAPIUpdateInvitationOptionalParams): Promise<AffindaAPIUpdateInvitationResponse>;
+    /**
+     * Delete the specified invitation from the database.
+     * @param identifier Invitation identifier.
+     * @param options The options parameters.
+     */
+    deleteInvitation(identifier: string, options?: AffindaAPIDeleteInvitationOptionalParams): Promise<void>;
+    /**
+     * Get detail of an invitation using a secret token. This allows users who have not registered/logged
+     * in to view the invitation.
+     * @param token Invitation token.
+     * @param options The options parameters.
+     */
+    getInvitationByToken(token: string, options?: AffindaAPIGetInvitationByTokenOptionalParams): Promise<AffindaAPIGetInvitationByTokenResponse>;
+    /**
+     * Choose to accept or decline an invitation.
+     * @param token Invitation token.
+     * @param body
+     * @param options The options parameters.
+     */
+    respondToInvitation(token: string, body: InvitationResponse, options?: AffindaAPIRespondToInvitationOptionalParams): Promise<AffindaAPIRespondToInvitationResponse>;
+    /**
      * Returns your resthook subscriptions.
      * @param options The options parameters.
      */
     getAllResthookSubscriptions(options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams): Promise<AffindaAPIGetAllResthookSubscriptionsResponse>;
     /**
      * After a subscription is sucessfully created, we'll send a POST request to your target URL with a
-     * `X-Hook-Secret` header.
-     * You need to response to this request with a 200 status code to confirm your subscribe intention.
+     * `X-Hook-Secret` header. <br />
+     * You need to response to this request with a 200 status code to confirm your subscribe intention. <br
+     * />
      * Then, you need to use the `X-Hook-Secret` to activate the subscription using the
-     * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint.
+     * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint. <br />
      * For more information, see our help article here - [How do I create a
      * webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
      * @param body
@@ -511,13 +399,150 @@ export declare class AffindaAPI extends AffindaAPIContext {
     deleteResthookSubscription(id: number, options?: AffindaAPIDeleteResthookSubscriptionOptionalParams): Promise<void>;
     /**
      * After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
-     * header.
+     * header. <br />
      * You should response to this with a 200 status code, and use the value of the `X-Hook-Secret` header
      * that you received to activate the subscription using this endpoint.
      * @param xHookSecret The secret received when creating a subscription.
      * @param options The options parameters.
      */
     activateResthookSubscription(xHookSecret: string, options?: AffindaAPIActivateResthookSubscriptionOptionalParams): Promise<AffindaAPIActivateResthookSubscriptionResponse>;
+    /**
+     * Searches through parsed job descriptions. You can search with custom criterias or a resume.
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    createJobDescriptionSearch(body: JobDescriptionSearchParameters | null, options?: AffindaAPICreateJobDescriptionSearchOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchResponse>;
+    /**
+     * This contains more detailed information about the matching score of the search criteria, or which
+     * search criteria is missing in this job description.
+     * The `identifier` is the unique ID returned via the
+     * [/job_description_search](#post-/job_description_search) endpoint.
+     * @param identifier Job Description identifier
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    getJobDescriptionSearchDetail(identifier: string, body: JobDescriptionSearchParameters | null, options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse>;
+    /**
+     * Return configurations such as which fields can be displayed in the logged in user's embeddable job
+     * description search tool, what are their weights, what is the maximum number of results that can be
+     * returned, etc.
+     * @param options The options parameters.
+     */
+    getJobDescriptionSearchConfig(options?: AffindaAPIGetJobDescriptionSearchConfigOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchConfigResponse>;
+    /**
+     * Update configurations such as which fields can be displayed in the logged in user's embeddable job
+     * description search tool, what are their weights, what is the maximum number of results that can be
+     * returned, etc.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateJobDescriptionSearchConfig(body: JobDescriptionSearchConfig, options?: AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams): Promise<AffindaAPIUpdateJobDescriptionSearchConfigResponse>;
+    /**
+     * Create and return a signed URL of the job description search tool which then can be embedded on a
+     * web page. An optional parameter `config_override` can be passed to override the user-level
+     * configurations of the embeddable search tool.
+     * @param options The options parameters.
+     */
+    createJobDescriptionSearchEmbedUrl(options?: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchEmbedUrlResponse>;
+    /**
+     * Returns all the indexes
+     * @param options The options parameters.
+     */
+    getAllIndexes(options?: AffindaAPIGetAllIndexesOptionalParams): Promise<AffindaAPIGetAllIndexesResponse>;
+    /**
+     * Create an index for the search tool
+     * @param options The options parameters.
+     */
+    createIndex(options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
+    /**
+     * Deletes the specified index from the database
+     * @param name Index name
+     * @param options The options parameters.
+     */
+    deleteIndex(name: string, options?: AffindaAPIDeleteIndexOptionalParams): Promise<void>;
+    /**
+     * Returns all the indexed documents for that index
+     * @param name Index name
+     * @param options The options parameters.
+     */
+    getAllIndexDocuments(name: string, options?: AffindaAPIGetAllIndexDocumentsOptionalParams): Promise<AffindaAPIGetAllIndexDocumentsResponse>;
+    /**
+     * Create an indexed document for the search tool
+     * @param name Index name
+     * @param body Document to index
+     * @param options The options parameters.
+     */
+    createIndexDocument(name: string, body: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateIndexDocumentOptionalParams): Promise<AffindaAPICreateIndexDocumentResponse>;
+    /**
+     * Delete the specified indexed document from the database
+     * @param name Index name
+     * @param identifier Document identifier
+     * @param options The options parameters.
+     */
+    deleteIndexDocument(name: string, identifier: string, options?: AffindaAPIDeleteIndexDocumentOptionalParams): Promise<void>;
+    /**
+     * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
+     * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
+     * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
+     * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
+     * the custom criteria.
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    createResumeSearch(body: ResumeSearchParameters, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    /**
+     * This contains more detailed information about the matching score of the search criteria, or which
+     * search criteria is missing in this resume.
+     * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
+     * @param identifier Resume identifier
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
+    /**
+     * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
+     * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
+     * match the score returned from POST
+     * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
+     * @param resume Identify the resume to match.
+     * @param jobDescription Identify the job description to match.
+     * @param options The options parameters.
+     */
+    getResumeSearchMatch(resume: string, jobDescription: string, options?: AffindaAPIGetResumeSearchMatchOptionalParams): Promise<AffindaAPIGetResumeSearchMatchResponse>;
+    /**
+     * Return configurations such as which fields can be displayed in the logged in user's embeddable
+     * resume search tool, what are their weights, what is the maximum number of results that can be
+     * returned, etc.
+     * @param options The options parameters.
+     */
+    getResumeSearchConfig(options?: AffindaAPIGetResumeSearchConfigOptionalParams): Promise<AffindaAPIGetResumeSearchConfigResponse>;
+    /**
+     * Update configurations such as which fields can be displayed in the logged in user's embeddable
+     * resume search tool, what are their weights, what is the maximum number of results that can be
+     * returned, etc.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateResumeSearchConfig(body: ResumeSearchConfig, options?: AffindaAPIUpdateResumeSearchConfigOptionalParams): Promise<AffindaAPIUpdateResumeSearchConfigResponse>;
+    /**
+     * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
+     * An optional parameter `config_override` can be passed to override the user-level configurations of
+     * the embeddable resume search tool.
+     * @param options The options parameters.
+     */
+    createResumeSearchEmbedUrl(options?: AffindaAPICreateResumeSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateResumeSearchEmbedUrlResponse>;
+    /**
+     * Provided one or more job titles, get related suggestions for your search.
+     * @param jobTitles Job title to query suggestions for
+     * @param options The options parameters.
+     */
+    getResumeSearchSuggestionJobTitle(jobTitles: string[], options?: AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionJobTitleResponse>;
+    /**
+     * Provided one or more skills, get related suggestions for your search.
+     * @param skills Skill to query suggestions for
+     * @param options The options parameters.
+     */
+    getResumeSearchSuggestionSkill(skills: string[], options?: AffindaAPIGetResumeSearchSuggestionSkillOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionSkillResponse>;
 }
 
 /** Optional parameters. */
@@ -543,6 +568,14 @@ export declare interface AffindaAPICreateCollectionOptionalParams extends coreCl
 
 /** Contains response data for the createCollection operation. */
 export declare type AffindaAPICreateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+    body?: DataPointChoiceCreate;
+}
+
+/** Contains response data for the createDataPointChoice operation. */
+export declare type AffindaAPICreateDataPointChoiceResponse = DataPointChoice;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateDataPointOptionalParams extends coreClient.OperationOptions {
@@ -692,6 +725,10 @@ export declare interface AffindaAPIDeleteCollectionOptionalParams extends coreCl
 }
 
 /** Optional parameters. */
+export declare interface AffindaAPIDeleteDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
 export declare interface AffindaAPIDeleteDataPointOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -773,8 +810,6 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
-    /** Partial, case-insensitive match with file name or tag name. */
-    search?: string;
     /** Filter by workspace. */
     workspace?: string;
     /** Filter by collection. */
@@ -785,6 +820,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     tags?: number[];
     /** Filter by created datetime. */
     createdDt?: DateRange;
+    /** Partial, case-insensitive match with file name or tag name. */
+    search?: string;
     /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. */
     ordering?: Get8ItemsItem[];
     /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return the detailed data that was parsed, at a performance cost. */
@@ -800,10 +837,10 @@ export declare type AffindaAPIGetAllDocumentsResponse = PathsOxm5M7V3DocumentsGe
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllExtractorsOptionalParams extends coreClient.OperationOptions {
-    /** Whether to include Affinda's off-the-shelf extractors. */
-    includePublicExtractors?: boolean;
     /** Filter by name. */
     name?: string;
+    /** Whether to include Affinda's off-the-shelf extractors. */
+    includePublicExtractors?: boolean;
     /** Filter by validatable. */
     validatable?: boolean;
 }
@@ -825,7 +862,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum3;
+    documentType?: Enum16;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -924,6 +961,13 @@ export declare interface AffindaAPIGetCollectionOptionalParams extends coreClien
 
 /** Contains response data for the getCollection operation. */
 export declare type AffindaAPIGetCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getDataPointChoice operation. */
+export declare type AffindaAPIGetDataPointChoiceResponse = DataPointChoice;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetDataPointChoicesOptionalParams extends coreClient.OperationOptions {
@@ -1124,6 +1168,13 @@ export declare interface AffindaAPIUpdateCollectionOptionalParams extends coreCl
 export declare type AffindaAPIUpdateCollectionResponse = Collection;
 
 /** Optional parameters. */
+export declare interface AffindaAPIUpdateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDataPointChoice operation. */
+export declare type AffindaAPIUpdateDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
 export declare interface AffindaAPIUpdateDataPointOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1167,11 +1218,11 @@ export declare type AffindaAPIUpdateOrganizationMembershipResponse = Organizatio
 
 /** Optional parameters. */
 export declare interface AffindaAPIUpdateOrganizationOptionalParams extends coreClient.OperationOptions {
-    name?: string;
     /** Upload avatar for the organization. */
     avatar?: coreRestPipeline.RequestBodyType;
     /** Used to sign webhook payloads so you can verify their integrity. */
     resthookSignatureKey?: string;
+    name?: string;
 }
 
 /** Contains response data for the updateOrganization operation. */
@@ -1558,9 +1609,29 @@ export declare interface DataPoint {
 }
 
 export declare interface DataPointChoice {
+    /** Data point choice's ID */
     id: number;
     label: string;
     value: string;
+    synonyms?: string[];
+    description?: string;
+}
+
+export declare interface DataPointChoiceCreate {
+    /** Uniquely identify a data point. */
+    dataPoint: string;
+    label: string;
+    value: string;
+    synonyms?: string[];
+    description?: string;
+}
+
+export declare interface DataPointChoiceUpdate {
+    /** Uniquely identify a data point. */
+    dataPoint?: string;
+    label?: string;
+    value?: string;
+    synonyms?: string[];
     description?: string;
 }
 
@@ -1797,24 +1868,24 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum3. \
- * {@link KnownEnum3} can be used interchangeably with Enum3,
+ * Defines values for Enum16. \
+ * {@link KnownEnum16} can be used interchangeably with Enum16,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum3 = string;
+export declare type Enum16 = string;
 
 /**
- * Defines values for Enum6. \
- * {@link KnownEnum6} can be used interchangeably with Enum6,
+ * Defines values for Enum19. \
+ * {@link KnownEnum19} can be used interchangeably with Enum19,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum6 = string;
+export declare type Enum19 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2410,14 +2481,14 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum3} that the service accepts. */
-export declare enum KnownEnum3 {
+/** Known values of {@link Enum16} that the service accepts. */
+export declare enum KnownEnum16 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum6} that the service accepts. */
-export declare enum KnownEnum6 {
+/** Known values of {@link Enum19} that the service accepts. */
+export declare enum KnownEnum19 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -2712,7 +2783,7 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
 
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum6;
+    documentType?: Enum19;
 }
 
 export declare interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -3248,9 +3319,11 @@ export declare interface ResumeSearchParameters {
 }
 
 export declare interface ResumeSearchParametersCustomData {
+    /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
     filterType: ResumeSearchParametersCustomDataFilterType;
+    /** The data point's slug */
     dataPoint: string;
-    /** 'equals' searches require the 'value' key inside the query, and 'range' searches require at least one of 'gte' (greater than or equal) and 'lte' (less than or equal) */
+    /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
     query: Record<string, unknown>;
     required?: boolean;
     weight?: number;

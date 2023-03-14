@@ -12,8 +12,8 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum3](enums/KnownEnum3.md)
-- [KnownEnum6](enums/KnownEnum6.md)
+- [KnownEnum16](enums/KnownEnum16.md)
+- [KnownEnum19](enums/KnownEnum19.md)
 - [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
@@ -40,6 +40,7 @@
 - [Accreditation](interfaces/Accreditation.md)
 - [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
 - [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
+- [AffindaAPICreateDataPointChoiceOptionalParams](interfaces/AffindaAPICreateDataPointChoiceOptionalParams.md)
 - [AffindaAPICreateDataPointOptionalParams](interfaces/AffindaAPICreateDataPointOptionalParams.md)
 - [AffindaAPICreateDocumentOptionalParams](interfaces/AffindaAPICreateDocumentOptionalParams.md)
 - [AffindaAPICreateExtractorOptionalParams](interfaces/AffindaAPICreateExtractorOptionalParams.md)
@@ -56,6 +57,7 @@
 - [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
 - [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
 - [AffindaAPIDeleteCollectionOptionalParams](interfaces/AffindaAPIDeleteCollectionOptionalParams.md)
+- [AffindaAPIDeleteDataPointChoiceOptionalParams](interfaces/AffindaAPIDeleteDataPointChoiceOptionalParams.md)
 - [AffindaAPIDeleteDataPointOptionalParams](interfaces/AffindaAPIDeleteDataPointOptionalParams.md)
 - [AffindaAPIDeleteDocumentOptionalParams](interfaces/AffindaAPIDeleteDocumentOptionalParams.md)
 - [AffindaAPIDeleteExtractorOptionalParams](interfaces/AffindaAPIDeleteExtractorOptionalParams.md)
@@ -82,6 +84,7 @@
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
 - [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
 - [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
+- [AffindaAPIGetDataPointChoiceOptionalParams](interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md)
 - [AffindaAPIGetDataPointChoicesOptionalParams](interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md)
 - [AffindaAPIGetDataPointOptionalParams](interfaces/AffindaAPIGetDataPointOptionalParams.md)
 - [AffindaAPIGetDocumentOptionalParams](interfaces/AffindaAPIGetDocumentOptionalParams.md)
@@ -105,6 +108,7 @@
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
 - [AffindaAPIUpdateCollectionOptionalParams](interfaces/AffindaAPIUpdateCollectionOptionalParams.md)
+- [AffindaAPIUpdateDataPointChoiceOptionalParams](interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md)
 - [AffindaAPIUpdateDataPointOptionalParams](interfaces/AffindaAPIUpdateDataPointOptionalParams.md)
 - [AffindaAPIUpdateDocumentOptionalParams](interfaces/AffindaAPIUpdateDocumentOptionalParams.md)
 - [AffindaAPIUpdateExtractorOptionalParams](interfaces/AffindaAPIUpdateExtractorOptionalParams.md)
@@ -163,6 +167,8 @@
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
 - [DataPoint](interfaces/DataPoint.md)
 - [DataPointChoice](interfaces/DataPointChoice.md)
+- [DataPointChoiceCreate](interfaces/DataPointChoiceCreate.md)
+- [DataPointChoiceUpdate](interfaces/DataPointChoiceUpdate.md)
 - [DataPointCreate](interfaces/DataPointCreate.md)
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
 - [Document](interfaces/Document.md)
@@ -309,6 +315,7 @@
 
 - [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
 - [AffindaAPICreateCollectionResponse](modules.md#affindaapicreatecollectionresponse)
+- [AffindaAPICreateDataPointChoiceResponse](modules.md#affindaapicreatedatapointchoiceresponse)
 - [AffindaAPICreateDataPointResponse](modules.md#affindaapicreatedatapointresponse)
 - [AffindaAPICreateDocumentResponse](modules.md#affindaapicreatedocumentresponse)
 - [AffindaAPICreateExtractorResponse](modules.md#affindaapicreateextractorresponse)
@@ -338,6 +345,7 @@
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
 - [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
 - [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
+- [AffindaAPIGetDataPointChoiceResponse](modules.md#affindaapigetdatapointchoiceresponse)
 - [AffindaAPIGetDataPointChoicesResponse](modules.md#affindaapigetdatapointchoicesresponse)
 - [AffindaAPIGetDataPointResponse](modules.md#affindaapigetdatapointresponse)
 - [AffindaAPIGetDocumentResponse](modules.md#affindaapigetdocumentresponse)
@@ -360,6 +368,7 @@
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
 - [AffindaAPIUpdateCollectionResponse](modules.md#affindaapiupdatecollectionresponse)
+- [AffindaAPIUpdateDataPointChoiceResponse](modules.md#affindaapiupdatedatapointchoiceresponse)
 - [AffindaAPIUpdateDataPointResponse](modules.md#affindaapiupdatedatapointresponse)
 - [AffindaAPIUpdateDocumentResponse](modules.md#affindaapiupdatedocumentresponse)
 - [AffindaAPIUpdateExtractorResponse](modules.md#affindaapiupdateextractorresponse)
@@ -380,8 +389,8 @@
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum3](modules.md#enum3)
-- [Enum6](modules.md#enum6)
+- [Enum16](modules.md#enum16)
+- [Enum19](modules.md#enum19)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -467,6 +476,14 @@ ___
 Ƭ **AffindaAPICreateCollectionResponse**: [`Collection`](interfaces/Collection.md)
 
 Contains response data for the createCollection operation.
+
+___
+
+### AffindaAPICreateDataPointChoiceResponse
+
+Ƭ **AffindaAPICreateDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
+
+Contains response data for the createDataPointChoice operation.
 
 ___
 
@@ -702,6 +719,14 @@ Contains response data for the getCollection operation.
 
 ___
 
+### AffindaAPIGetDataPointChoiceResponse
+
+Ƭ **AffindaAPIGetDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
+
+Contains response data for the getDataPointChoice operation.
+
+___
+
 ### AffindaAPIGetDataPointChoicesResponse
 
 Ƭ **AffindaAPIGetDataPointChoicesResponse**: [`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
@@ -887,6 +912,14 @@ ___
 Ƭ **AffindaAPIUpdateCollectionResponse**: [`Collection`](interfaces/Collection.md)
 
 Contains response data for the updateCollection operation.
+
+___
+
+### AffindaAPIUpdateDataPointChoiceResponse
+
+Ƭ **AffindaAPIUpdateDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
+
+Contains response data for the updateDataPointChoice operation.
 
 ___
 
@@ -1100,12 +1133,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum3
+### Enum16
 
-Ƭ **Enum3**: `string`
+Ƭ **Enum16**: `string`
 
-Defines values for Enum3. \
-[KnownEnum3](enums/KnownEnum3.md) can be used interchangeably with Enum3,
+Defines values for Enum16. \
+[KnownEnum16](enums/KnownEnum16.md) can be used interchangeably with Enum16,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1113,12 +1146,12 @@ Defines values for Enum3. \
 
 ___
 
-### Enum6
+### Enum19
 
-Ƭ **Enum6**: `string`
+Ƭ **Enum19**: `string`
 
-Defines values for Enum6. \
-[KnownEnum6](enums/KnownEnum6.md) can be used interchangeably with Enum6,
+Defines values for Enum19. \
+[KnownEnum19](enums/KnownEnum19.md) can be used interchangeably with Enum19,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
