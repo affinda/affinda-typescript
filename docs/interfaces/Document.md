@@ -6,11 +6,24 @@
 
 ### Properties
 
+- [data](Document.md#data)
 - [error](Document.md#error)
 - [extractor](Document.md#extractor)
 - [meta](Document.md#meta)
 
 ## Properties
+
+### data
+
+• `Optional` **data**: `Object`
+
+Dictionary of <any>
+
+#### Index signature
+
+▪ [propertyName: `string`]: `any`
+
+___
 
 ### error
 

@@ -1062,6 +1062,13 @@ export const Document: coreClient.CompositeMapper = {
       clientName: "extractor"
     },
     modelProperties: {
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
       extractor: {
         serializedName: "extractor",
         required: true,

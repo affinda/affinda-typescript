@@ -234,6 +234,8 @@ export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSche
 export interface Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "resume" | "invoice" | "job-description";
+  /** Dictionary of <any> */
+  data?: { [propertyName: string]: any };
   meta: DocumentMeta;
   error?: DocumentError;
 }
