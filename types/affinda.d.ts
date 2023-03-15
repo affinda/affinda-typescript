@@ -1573,10 +1573,6 @@ export declare interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAd
     score?: number;
 }
 
-export declare interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 {
-    match?: boolean;
-}
-
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
 }
@@ -2327,7 +2323,7 @@ export declare interface JobDescriptionSearchDetailOccupationGroup {
     value?: JobDescriptionSearchDetailOccupationGroupValue;
 }
 
-export declare type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup & ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};
+export declare type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
 
 export declare interface JobDescriptionSearchDetailSearchExpression {
     missing?: string[];
@@ -2678,6 +2674,14 @@ export declare interface OccupationGroup {
     code: number;
     name: string;
     children: OccupationGroup[];
+}
+
+export declare interface OccupationGroupSearchResult {
+    match?: boolean;
+    code: number;
+    name: string;
+    children: OccupationGroup[];
+    parents?: OccupationGroup[];
 }
 
 export declare interface OccupationGroupSearchScoreComponent {

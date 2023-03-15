@@ -801,8 +801,12 @@ export interface JobDescriptionSearchDetailOccupationGroup {
   value?: JobDescriptionSearchDetailOccupationGroupValue;
 }
 
-export interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 {
+export interface OccupationGroupSearchResult {
   match?: boolean;
+  code: number;
+  name: string;
+  children: OccupationGroup[];
+  parents?: OccupationGroup[];
 }
 
 export interface JobDescriptionSearchDetailLanguages {
@@ -1768,9 +1772,6 @@ export type JobDescription = Document & {
   data?: JobDescriptionData;
 };
 
-export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup &
-  ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};
-
 export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
   ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
@@ -1779,6 +1780,8 @@ export type JobDescriptionSearchDetailLocationValue = Location &
 
 export type ResumeSearchDetailLocationValue = Location &
   ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
 
 export type ResumeSearchDetailEducationValueItem = Education &
   ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};

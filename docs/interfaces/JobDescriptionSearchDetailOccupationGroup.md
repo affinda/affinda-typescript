@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`JobDescriptionSearchDetailOccupationGroupValue`](../modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
+• `Optional` **value**: [`OccupationGroupSearchResult`](OccupationGroupSearchResult.md)

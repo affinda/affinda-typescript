@@ -161,7 +161,6 @@
 - [ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties](interfaces/ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties.md)
-- [ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md)
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
@@ -231,6 +230,7 @@
 - [LocationSearchScoreComponent](interfaces/LocationSearchScoreComponent.md)
 - [ManagementLevelSearchScoreComponent](interfaces/ManagementLevelSearchScoreComponent.md)
 - [OccupationGroup](interfaces/OccupationGroup.md)
+- [OccupationGroupSearchResult](interfaces/OccupationGroupSearchResult.md)
 - [OccupationGroupSearchScoreComponent](interfaces/OccupationGroupSearchScoreComponent.md)
 - [Organization](interfaces/Organization.md)
 - [OrganizationCreate](interfaces/OrganizationCreate.md)
@@ -1419,7 +1419,7 @@ ___
 
 ### JobDescriptionSearchDetailOccupationGroupValue
 
-Ƭ **JobDescriptionSearchDetailOccupationGroupValue**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1`](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md) & {}
+Ƭ **JobDescriptionSearchDetailOccupationGroupValue**: [`OccupationGroupSearchResult`](interfaces/OccupationGroupSearchResult.md) & {}
 
 ___
 

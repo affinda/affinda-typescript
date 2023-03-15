@@ -1408,6 +1408,8 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 }
 // Operation Specifications
+const xmlSerializer = coreClient.createSerializer(Mappers, /* isXml */ true);
+
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getAllWorkspacesOperationSpec: coreClient.OperationSpec = {
@@ -1839,12 +1841,10 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Document
     },
     400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
+      bodyMapper: Mappers.RequestError
     },
     401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
+      bodyMapper: Mappers.RequestError
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -1852,8 +1852,9 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
   },
   queryParameters: [Parameters.format],
   urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer
+  headerParameters: [Parameters.accept2],
+  isXML: true,
+  serializer: xmlSerializer
 };
 const updateDocumentOperationSpec: coreClient.OperationSpec = {
   path: "/v3/documents/{identifier}",
