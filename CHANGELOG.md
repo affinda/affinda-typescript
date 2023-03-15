@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed search and match return types
 - fixed document error return types
 
+### Changed
+- Change Document API tag from Document API - Upload Documents to Document API - Document
+
 ## [6.0.2] - 2023-03-15
 ### Fixed
 - Fixed type and path of data_point and data_point_choices

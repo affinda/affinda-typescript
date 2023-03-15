@@ -6,8 +6,8 @@ Document API - Workspace
 Document API - Collection
 -------------------------
 
-Document API - Upload Documents
--------------------------------
+Document API - Document
+-----------------------
 
 Document API - Extractor
 ------------------------
