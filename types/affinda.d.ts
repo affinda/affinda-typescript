@@ -312,11 +312,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteOrganizationMembership(identifier: string, options?: AffindaAPIDeleteOrganizationMembershipOptionalParams): Promise<void>;
     /**
-     * Returns the list of searchable occupation groups.
-     * @param options The options parameters.
-     */
-    listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
-    /**
      * Get list of all invitations you created or sent to you.
      * @param options The options parameters.
      */
@@ -406,6 +401,11 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     activateResthookSubscription(xHookSecret: string, options?: AffindaAPIActivateResthookSubscriptionOptionalParams): Promise<AffindaAPIActivateResthookSubscriptionResponse>;
+    /**
+     * Returns the list of searchable occupation groups.
+     * @param options The options parameters.
+     */
+    listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
     /**
      * Searches through parsed job descriptions. You can search with custom criterias or a resume.
      * @param body Search parameters

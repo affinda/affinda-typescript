@@ -489,12 +489,6 @@ export interface OrganizationMembershipUpdate {
   role?: OrganizationRole;
 }
 
-export interface OccupationGroup {
-  code: number;
-  name: string;
-  children: OccupationGroup[];
-}
-
 export interface PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: Invitation[];
 }
@@ -569,6 +563,12 @@ export interface ResthookSubscriptionUpdate {
   organization?: string;
   /** Version of the resthook subscription. Determines the resthook body being fired. */
   version?: Version;
+}
+
+export interface OccupationGroup {
+  code: number;
+  name: string;
+  children: OccupationGroup[];
 }
 
 export interface JobDescriptionSearchParameters {
@@ -2821,13 +2821,6 @@ export interface AffindaAPIDeleteOrganizationMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIListOccupationGroupsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the listOccupationGroups operation. */
-export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
-
-/** Optional parameters. */
 export interface AffindaAPIGetAllInvitationsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -2927,6 +2920,13 @@ export interface AffindaAPIActivateResthookSubscriptionOptionalParams
 
 /** Contains response data for the activateResthookSubscription operation. */
 export type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export interface AffindaAPIListOccupationGroupsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the listOccupationGroups operation. */
+export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
 export interface AffindaAPICreateJobDescriptionSearchOptionalParams

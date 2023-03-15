@@ -103,8 +103,6 @@ import {
   AffindaAPIUpdateOrganizationMembershipOptionalParams,
   AffindaAPIUpdateOrganizationMembershipResponse,
   AffindaAPIDeleteOrganizationMembershipOptionalParams,
-  AffindaAPIListOccupationGroupsOptionalParams,
-  AffindaAPIListOccupationGroupsResponse,
   AffindaAPIGetAllInvitationsOptionalParams,
   AffindaAPIGetAllInvitationsResponse,
   InvitationCreate,
@@ -134,6 +132,8 @@ import {
   AffindaAPIDeleteResthookSubscriptionOptionalParams,
   AffindaAPIActivateResthookSubscriptionOptionalParams,
   AffindaAPIActivateResthookSubscriptionResponse,
+  AffindaAPIListOccupationGroupsOptionalParams,
+  AffindaAPIListOccupationGroupsResponse,
   JobDescriptionSearchParameters,
   AffindaAPICreateJobDescriptionSearchOptionalParams,
   AffindaAPICreateJobDescriptionSearchResponse,
@@ -886,19 +886,6 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * Returns the list of searchable occupation groups.
-   * @param options The options parameters.
-   */
-  listOccupationGroups(
-    options?: AffindaAPIListOccupationGroupsOptionalParams
-  ): Promise<AffindaAPIListOccupationGroupsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      listOccupationGroupsOperationSpec
-    );
-  }
-
-  /**
    * Get list of all invitations you created or sent to you.
    * @param options The options parameters.
    */
@@ -1103,6 +1090,19 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { xHookSecret, options },
       activateResthookSubscriptionOperationSpec
+    );
+  }
+
+  /**
+   * Returns the list of searchable occupation groups.
+   * @param options The options parameters.
+   */
+  listOccupationGroups(
+    options?: AffindaAPIListOccupationGroupsOptionalParams
+  ): Promise<AffindaAPIListOccupationGroupsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      listOccupationGroupsOperationSpec
     );
   }
 
@@ -2634,34 +2634,6 @@ const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
-const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/occupation_groups",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "OccupationGroup" } }
-        }
-      }
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
 const getAllInvitationsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/invitations",
   httpMethod: "GET",
@@ -2971,6 +2943,34 @@ const activateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
   },
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.xHookSecret],
+  serializer
+};
+const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/occupation_groups",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "OccupationGroup" } }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
   serializer
 };
 const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {

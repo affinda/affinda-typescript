@@ -2223,42 +2223,6 @@ export const OrganizationMembershipUpdate: coreClient.CompositeMapper = {
   }
 };
 
-export const OccupationGroup: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "OccupationGroup",
-    modelProperties: {
-      code: {
-        serializedName: "code",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      children: {
-        serializedName: "children",
-        required: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "OccupationGroup"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
 export const PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -2543,6 +2507,42 @@ export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
         serializedName: "version",
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const OccupationGroup: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "OccupationGroup",
+    modelProperties: {
+      code: {
+        serializedName: "code",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      children: {
+        serializedName: "children",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "OccupationGroup"
+            }
+          }
         }
       }
     }

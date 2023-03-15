@@ -24,6 +24,12 @@ Organization API - Organization
 Organization API - Membership
 -----------------------------
 
+Organization API - Invitation
+-----------------------------
+
+Webhook API
+-----------
+
 Search & Match API - Searching
 ------------------------------
 
@@ -47,12 +53,6 @@ client.getResumeSearchMatch(resumeIdentifier, jobDescriptionIdentifier, { indexN
     console.error(err)
 });
 ```
-
-Organization API - Invitation
------------------------------
-
-Webhook API
------------
 
 Search & Match API - Embedding
 ------------------------------

@@ -24,14 +24,14 @@ Organization API - Organization
 Organization API - Membership
 -----------------------------
 
-Search & Match API - Searching
-------------------------------
-
 Organization API - Invitation
 -----------------------------
 
 Webhook API
 -----------
+
+Search & Match API - Searching
+------------------------------
 
 Search & Match API - Embedding
 ------------------------------
