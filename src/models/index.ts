@@ -1143,11 +1143,7 @@ export interface ResumeSearchDetailExperience {
 
 export interface ResumeSearchDetailOccupationGroup {
   missing?: number[];
-  value?: ResumeSearchDetailOccupationGroupValueItem[];
-}
-
-export interface ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 {
-  match?: boolean;
+  value?: OccupationGroupSearchResult[];
 }
 
 export interface ResumeSearchDetailLanguages {
@@ -1771,9 +1767,6 @@ export type JobDescription = Document & {
   extractor: "job-description";
   data?: JobDescriptionData;
 };
-
-export type ResumeSearchDetailOccupationGroupValueItem = OccupationGroup &
-  ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1 & {};
 
 export type JobDescriptionSearchDetailLocationValue = Location &
   Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};

@@ -6366,34 +6366,15 @@ export const ResumeSearchDetailOccupationGroup: coreClient.CompositeMapper = {
       value: {
         serializedName: "value",
         xmlName: "value",
-        xmlElementName: "ResumeSearchDetailOccupationGroupValueItem",
+        xmlElementName: "OccupationGroupSearchResult",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchDetailOccupationGroupValueItem"
+              className: "OccupationGroupSearchResult"
             }
           }
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1: coreClient.CompositeMapper = {
-  serializedName:
-    "ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
-  type: {
-    name: "Composite",
-    className:
-      "ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1",
-    modelProperties: {
-      match: {
-        serializedName: "match",
-        xmlName: "match",
-        type: {
-          name: "Boolean"
         }
       }
     }
@@ -9748,19 +9729,6 @@ export const JobDescription: coreClient.CompositeMapper = {
           className: "JobDescriptionData"
         }
       }
-    }
-  }
-};
-
-export const ResumeSearchDetailOccupationGroupValueItem: coreClient.CompositeMapper = {
-  serializedName: "ResumeSearchDetailOccupationGroupValueItem",
-  type: {
-    name: "Composite",
-    className: "ResumeSearchDetailOccupationGroupValueItem",
-    modelProperties: {
-      ...OccupationGroup.type.modelProperties,
-      ...ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1
-        .type.modelProperties
     }
   }
 };

@@ -158,7 +158,6 @@
 - [ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1](interfaces/ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.md)
 - [ComponentsEyyf0ZSchemasResumedataAdditionalproperties](interfaces/ComponentsEyyf0ZSchemasResumedataAdditionalproperties.md)
 - [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
-- [ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties](interfaces/ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties.md)
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
@@ -450,7 +449,6 @@
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
-- [ResumeSearchDetailOccupationGroupValueItem](modules.md#resumesearchdetailoccupationgroupvalueitem)
 - [ResumeSearchDetailSkillsValueItem](modules.md#resumesearchdetailskillsvalueitem)
 - [ResumeSearchParametersCustomDataFilterType](modules.md#resumesearchparameterscustomdatafiltertype)
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
@@ -1597,12 +1595,6 @@ ___
 ### ResumeSearchDetailLocationValue
 
 Ƭ **ResumeSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
-
-___
-
-### ResumeSearchDetailOccupationGroupValueItem
-
-Ƭ **ResumeSearchDetailOccupationGroupValueItem**: [`OccupationGroup`](interfaces/OccupationGroup.md) & [`ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1`](interfaces/ComponentsK7P1F5SchemasResumesearchdetailPropertiesOccupationgroupPropertiesValueItemsAllof1.md) & {}
 
 ___
 
