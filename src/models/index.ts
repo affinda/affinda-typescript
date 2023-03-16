@@ -193,7 +193,7 @@ export interface FieldGroup {
 
 export interface Field {
   label: string;
-  slug: string;
+  slug?: string;
   dataPoint: string;
   mandatory?: boolean;
   disabled?: boolean;

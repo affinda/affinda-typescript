@@ -981,7 +981,6 @@ export const Field: coreClient.CompositeMapper = {
       },
       slug: {
         serializedName: "slug",
-        required: true,
         xmlName: "slug",
         type: {
           name: "String"

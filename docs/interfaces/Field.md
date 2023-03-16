@@ -54,4 +54,4 @@ ___
 
 ### slug
 
-• **slug**: `string`
+• `Optional` **slug**: `string`

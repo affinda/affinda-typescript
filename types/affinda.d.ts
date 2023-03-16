@@ -1948,7 +1948,7 @@ export declare interface ExtractorUpdate {
 
 export declare interface Field {
     label: string;
-    slug: string;
+    slug?: string;
     dataPoint: string;
     mandatory?: boolean;
     disabled?: boolean;
