@@ -91,7 +91,7 @@ ___
 
 ### currencyCode
 
-• `Optional` **currencyCode**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **currencyCode**: [`CurrencyCodeAnnotation`](../modules.md#currencycodeannotation)
 
 ___
 

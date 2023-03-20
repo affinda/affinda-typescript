@@ -381,6 +381,7 @@
 - [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
 - [AnnotationContentType](modules.md#annotationcontenttype)
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
+- [CurrencyCodeAnnotation](modules.md#currencycodeannotation)
 - [DateAnnotation](modules.md#dateannotation)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
@@ -1048,6 +1049,12 @@ Defines values for CollectionDateFormatPreference. \
 **DMY** \
 **MDY** \
 **YMD**
+
+___
+
+### CurrencyCodeAnnotation
+
+Ƭ **CurrencyCodeAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`DataPointChoice`](interfaces/DataPointChoice.md)  }
 
 ___
 

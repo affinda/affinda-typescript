@@ -7154,6 +7154,13 @@ export const ResumeData: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      redactedText: {
+        serializedName: "redactedText",
+        xmlName: "redactedText",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -7954,7 +7961,7 @@ export const InvoiceData: coreClient.CompositeMapper = {
         xmlName: "currencyCode",
         type: {
           name: "Composite",
-          className: "TextAnnotation"
+          className: "CurrencyCodeAnnotation"
         }
       },
       customFields: {
@@ -9862,6 +9869,26 @@ export const LocationAnnotation: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "Location"
+        }
+      }
+    }
+  }
+};
+
+export const CurrencyCodeAnnotation: coreClient.CompositeMapper = {
+  serializedName: "CurrencyCodeAnnotation",
+  type: {
+    name: "Composite",
+    className: "CurrencyCodeAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        type: {
+          name: "Composite",
+          className: "DataPointChoice"
         }
       }
     }

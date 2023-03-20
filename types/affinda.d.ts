@@ -1583,6 +1583,10 @@ export declare interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercon
     parsed?: string;
 }
 
+export declare type CurrencyCodeAnnotation = Annotation & {
+    parsed?: DataPointChoice;
+};
+
 export declare interface DataPoint {
     /** Uniquely identify a data point. */
     identifier: string;
@@ -2090,7 +2094,7 @@ export declare interface InvoiceData {
     customerEmail?: InvoiceDataCustomerEmail;
     supplierEmail?: InvoiceDataSupplierEmail;
     supplierWebsite?: InvoiceDataSupplierWebsite;
-    currencyCode?: TextAnnotation;
+    currencyCode?: CurrencyCodeAnnotation;
     /** Dictionary of <any> */
     customFields?: {
         [propertyName: string]: any;
@@ -3015,6 +3019,8 @@ export declare interface ResumeData {
     readonly isResumeProbability?: number;
     /** All of the raw text of the parsed resume, example is shortened for readability */
     rawText?: string;
+    /** Redacted version of the text in the resume, removing PII. */
+    redactedText?: string;
 }
 
 export declare interface ResumeDataName {

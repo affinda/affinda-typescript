@@ -1291,6 +1291,8 @@ export interface ResumeData {
   readonly isResumeProbability?: number;
   /** All of the raw text of the parsed resume, example is shortened for readability */
   rawText?: string;
+  /** Redacted version of the text in the resume, removing PII. */
+  redactedText?: string;
 }
 
 export interface ResumeDataName {
@@ -1429,7 +1431,7 @@ export interface InvoiceData {
   customerEmail?: InvoiceDataCustomerEmail;
   supplierEmail?: InvoiceDataSupplierEmail;
   supplierWebsite?: InvoiceDataSupplierWebsite;
-  currencyCode?: TextAnnotation;
+  currencyCode?: CurrencyCodeAnnotation;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
 }
@@ -1795,6 +1797,10 @@ export type TextAnnotation = Annotation & {
 
 export type LocationAnnotation = Annotation & {
   parsed?: Location;
+};
+
+export type CurrencyCodeAnnotation = Annotation & {
+  parsed?: DataPointChoice;
 };
 
 export type JobTitleAnnotation = Annotation & {
