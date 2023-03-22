@@ -1310,7 +1310,8 @@ export declare interface Annotation {
  * **jobtitle** \
  * **language** \
  * **skill** \
- * **yearsexperience**
+ * **yearsexperience** \
+ * **group**
  */
 export declare type AnnotationContentType = string;
 
@@ -2439,7 +2440,8 @@ export declare enum KnownAnnotationContentType {
     Jobtitle = "jobtitle",
     Language = "language",
     Skill = "skill",
-    Yearsexperience = "yearsexperience"
+    Yearsexperience = "yearsexperience",
+    Group = "group"
 }
 
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */

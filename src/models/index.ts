@@ -2112,7 +2112,8 @@ export enum KnownAnnotationContentType {
   Jobtitle = "jobtitle",
   Language = "language",
   Skill = "skill",
-  Yearsexperience = "yearsexperience"
+  Yearsexperience = "yearsexperience",
+  Group = "group"
 }
 
 /**
@@ -2136,7 +2137,8 @@ export enum KnownAnnotationContentType {
  * **jobtitle** \
  * **language** \
  * **skill** \
- * **yearsexperience**
+ * **yearsexperience** \
+ * **group**
  */
 export type AnnotationContentType = string;
 

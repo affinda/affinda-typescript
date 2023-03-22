@@ -16,6 +16,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Enum](KnownAnnotationContentType.md#enum)
 - [Expectedremuneration](KnownAnnotationContentType.md#expectedremuneration)
 - [Float](KnownAnnotationContentType.md#float)
+- [Group](KnownAnnotationContentType.md#group)
 - [Integer](KnownAnnotationContentType.md#integer)
 - [Jobtitle](KnownAnnotationContentType.md#jobtitle)
 - [Json](KnownAnnotationContentType.md#json)
@@ -73,6 +74,12 @@ ___
 ### Float
 
 • **Float** = `"float"`
+
+___
+
+### Group
+
+• **Group** = `"group"`
 
 ___
 

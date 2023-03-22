@@ -1034,7 +1034,8 @@ Defines values for AnnotationContentType. \
 **jobtitle** \
 **language** \
 **skill** \
-**yearsexperience**
+**yearsexperience** \
+**group**
 
 ___
 
