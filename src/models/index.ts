@@ -13,6 +13,8 @@ export interface Workspace {
   collections?: WorkspaceCollectionsItem[];
   /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
   rejectInvalidDocuments?: boolean;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
   members?: User[];
   /** Number of unvalidated documents in the workspace. */
   unvalidatedDocsCount?: number;
@@ -96,6 +98,8 @@ export interface WorkspaceCreate {
   visibility?: WorkspaceVisibility;
   /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
   rejectInvalidDocuments?: boolean;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
 }
 
 export interface WorkspaceUpdate {
@@ -104,6 +108,8 @@ export interface WorkspaceUpdate {
   visibility?: WorkspaceVisibility;
   /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
   rejectInvalidDocuments?: boolean;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  rejectDuplicates?: string;
 }
 
 export interface PaginatedResponse {
@@ -1705,7 +1711,7 @@ export interface DocumentCreate {
   expiryTime?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
   rejectDuplicates?: string;
 }
 
@@ -2549,7 +2555,7 @@ export interface AffindaAPICreateDocumentOptionalParams
   expiryTime?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
   rejectDuplicates?: string;
 }
 

@@ -57,6 +57,14 @@ export const Workspace: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      rejectDuplicates: {
+        defaultValue: "false",
+        serializedName: "rejectDuplicates",
+        xmlName: "rejectDuplicates",
+        type: {
+          name: "String"
+        }
+      },
       members: {
         serializedName: "members",
         xmlName: "members",
@@ -478,6 +486,14 @@ export const WorkspaceCreate: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      rejectDuplicates: {
+        defaultValue: "false",
+        serializedName: "rejectDuplicates",
+        xmlName: "rejectDuplicates",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -508,6 +524,14 @@ export const WorkspaceUpdate: coreClient.CompositeMapper = {
         xmlName: "rejectInvalidDocuments",
         type: {
           name: "Boolean"
+        }
+      },
+      rejectDuplicates: {
+        defaultValue: "false",
+        serializedName: "rejectDuplicates",
+        xmlName: "rejectDuplicates",
+        type: {
+          name: "String"
         }
       }
     }

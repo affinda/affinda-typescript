@@ -8,6 +8,7 @@
 
 - [name](WorkspaceCreate.md#name)
 - [organization](WorkspaceCreate.md#organization)
+- [rejectDuplicates](WorkspaceCreate.md#rejectduplicates)
 - [rejectInvalidDocuments](WorkspaceCreate.md#rejectinvaliddocuments)
 - [visibility](WorkspaceCreate.md#visibility)
 
@@ -24,6 +25,14 @@ ___
 • **organization**: `string`
 
 Uniquely identify an organization.
+
+___
+
+### rejectDuplicates
+
+• `Optional` **rejectDuplicates**: `string`
+
+If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not.
 
 ___
 

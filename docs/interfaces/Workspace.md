@@ -13,6 +13,7 @@
 - [members](Workspace.md#members)
 - [name](Workspace.md#name)
 - [organization](Workspace.md#organization)
+- [rejectDuplicates](Workspace.md#rejectduplicates)
 - [rejectInvalidDocuments](Workspace.md#rejectinvaliddocuments)
 - [unvalidatedDocsCount](Workspace.md#unvalidateddocscount)
 - [visibility](Workspace.md#visibility)
@@ -62,6 +63,14 @@ ___
 ### organization
 
 • `Optional` **organization**: [`Organization`](Organization.md)
+
+___
+
+### rejectDuplicates
+
+• `Optional` **rejectDuplicates**: `string`
+
+If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not.
 
 ___
 
