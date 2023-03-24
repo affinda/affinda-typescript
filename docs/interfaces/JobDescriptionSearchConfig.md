@@ -17,6 +17,7 @@
 - [displayOccupationGroup](JobDescriptionSearchConfig.md#displayoccupationgroup)
 - [displaySkills](JobDescriptionSearchConfig.md#displayskills)
 - [displayYearsExperience](JobDescriptionSearchConfig.md#displayyearsexperience)
+- [hideToolbar](JobDescriptionSearchConfig.md#hidetoolbar)
 - [indices](JobDescriptionSearchConfig.md#indices)
 - [maxResults](JobDescriptionSearchConfig.md#maxresults)
 - [searchToolTheme](JobDescriptionSearchConfig.md#searchtooltheme)
@@ -100,6 +101,14 @@ ___
 ### displayYearsExperience
 
 • `Optional` **displayYearsExperience**: `boolean`
+
+___
+
+### hideToolbar
+
+• `Optional` **hideToolbar**: `boolean`
+
+Hide the reset/import toolbar.
 
 ___
 

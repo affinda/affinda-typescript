@@ -17,6 +17,7 @@
 - [displayOccupationGroup](ResumeSearchConfig.md#displayoccupationgroup)
 - [displaySkills](ResumeSearchConfig.md#displayskills)
 - [displayYearsExperience](ResumeSearchConfig.md#displayyearsexperience)
+- [hideToolbar](ResumeSearchConfig.md#hidetoolbar)
 - [indices](ResumeSearchConfig.md#indices)
 - [maxResults](ResumeSearchConfig.md#maxresults)
 - [searchToolTheme](ResumeSearchConfig.md#searchtooltheme)
@@ -100,6 +101,14 @@ ___
 ### displayYearsExperience
 
 • `Optional` **displayYearsExperience**: `boolean`
+
+___
+
+### hideToolbar
+
+• `Optional` **hideToolbar**: `boolean`
+
+Hide the reset/import toolbar.
 
 ___
 

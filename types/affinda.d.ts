@@ -2243,6 +2243,8 @@ export declare interface JobDescriptionSearchConfig {
     readonly username?: string;
     /** A list of actions to show in the dropdown in the embedded search tool */
     actions?: JobDescriptionSearchConfigActionsItem[];
+    /** Hide the reset/import toolbar. */
+    hideToolbar?: boolean;
 }
 
 export declare interface JobDescriptionSearchConfigActionsItem {
@@ -3164,6 +3166,8 @@ export declare interface ResumeSearchConfig {
     readonly username?: string;
     /** A list of actions to show in the dropdown in the embedded search tool */
     actions?: ResumeSearchConfigActionsItem[];
+    /** Hide the reset/import toolbar. */
+    hideToolbar?: boolean;
 }
 
 export declare interface ResumeSearchConfigActionsItem {

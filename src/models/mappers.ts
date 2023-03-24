@@ -4760,6 +4760,13 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      hideToolbar: {
+        serializedName: "hideToolbar",
+        xmlName: "hideToolbar",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -6840,6 +6847,13 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
               className: "ResumeSearchConfigActionsItem"
             }
           }
+        }
+      },
+      hideToolbar: {
+        serializedName: "hideToolbar",
+        xmlName: "hideToolbar",
+        type: {
+          name: "Boolean"
         }
       }
     }
