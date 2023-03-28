@@ -11,6 +11,7 @@
 - [rejectDuplicates](WorkspaceCreate.md#rejectduplicates)
 - [rejectInvalidDocuments](WorkspaceCreate.md#rejectinvaliddocuments)
 - [visibility](WorkspaceCreate.md#visibility)
+- [whitelistIngestAddresses](WorkspaceCreate.md#whitelistingestaddresses)
 
 ## Properties
 
@@ -49,3 +50,11 @@ ___
 • `Optional` **visibility**: `string`
 
 Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace.
+
+___
+
+### whitelistIngestAddresses
+
+• `Optional` **whitelistIngestAddresses**: `string`[]
+
+If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info".

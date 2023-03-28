@@ -1343,6 +1343,7 @@ export declare interface Collection {
     unvalidatedDocsCount?: number;
     /** Number of validated documents in the collection. */
     confirmedDocsCount?: number;
+    /** When you send email to this address, any document attached in the body will be uploaded to this collection. */
     ingestEmail?: string;
 }
 
@@ -3555,7 +3556,10 @@ export declare interface Workspace {
     unvalidatedDocsCount?: number;
     /** Number of validated documents in the workspace. */
     confirmedDocsCount?: number;
+    /** When you send email to this address, any document attached in the body will be uploaded to this workspace. */
     ingestEmail?: string;
+    /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
+    whitelistIngestAddresses?: string[];
 }
 
 export declare interface WorkspaceCollectionsItem {
@@ -3591,6 +3595,8 @@ export declare interface WorkspaceCreate {
     rejectInvalidDocuments?: boolean;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
     rejectDuplicates?: string;
+    /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
+    whitelistIngestAddresses?: string[];
 }
 
 export declare interface WorkspaceMembership {
@@ -3616,6 +3622,8 @@ export declare interface WorkspaceUpdate {
     rejectInvalidDocuments?: boolean;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
     rejectDuplicates?: string;
+    /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
+    whitelistIngestAddresses?: string[];
 }
 
 /**

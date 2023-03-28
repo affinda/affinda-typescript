@@ -17,6 +17,7 @@
 - [rejectInvalidDocuments](Workspace.md#rejectinvaliddocuments)
 - [unvalidatedDocsCount](Workspace.md#unvalidateddocscount)
 - [visibility](Workspace.md#visibility)
+- [whitelistIngestAddresses](Workspace.md#whitelistingestaddresses)
 
 ## Properties
 
@@ -45,6 +46,8 @@ ___
 ### ingestEmail
 
 • `Optional` **ingestEmail**: `string`
+
+When you send email to this address, any document attached in the body will be uploaded to this workspace.
 
 ___
 
@@ -95,3 +98,11 @@ ___
 • `Optional` **visibility**: `string`
 
 Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace.
+
+___
+
+### whitelistIngestAddresses
+
+• `Optional` **whitelistIngestAddresses**: `string`[]
+
+If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info".

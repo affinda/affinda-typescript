@@ -99,6 +99,20 @@ export const Workspace: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      whitelistIngestAddresses: {
+        serializedName: "whitelistIngestAddresses",
+        nullable: true,
+        xmlName: "whitelistIngestAddresses",
+        xmlElementName: "WorkspaceWhitelistIngestAddressesItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
       }
     }
   }
@@ -494,6 +508,20 @@ export const WorkspaceCreate: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      whitelistIngestAddresses: {
+        serializedName: "whitelistIngestAddresses",
+        nullable: true,
+        xmlName: "whitelistIngestAddresses",
+        xmlElementName: "WhitelistIngestAddressesItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
       }
     }
   }
@@ -532,6 +560,20 @@ export const WorkspaceUpdate: coreClient.CompositeMapper = {
         xmlName: "rejectDuplicates",
         type: {
           name: "String"
+        }
+      },
+      whitelistIngestAddresses: {
+        serializedName: "whitelistIngestAddresses",
+        nullable: true,
+        xmlName: "whitelistIngestAddresses",
+        xmlElementName: "WhitelistIngestAddressesItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
         }
       }
     }

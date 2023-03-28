@@ -88,6 +88,8 @@ ___
 
 • `Optional` **ingestEmail**: `string`
 
+When you send email to this address, any document attached in the body will be uploaded to this collection.
+
 ___
 
 ### name
