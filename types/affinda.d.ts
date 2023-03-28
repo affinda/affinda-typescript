@@ -1338,9 +1338,7 @@ export declare interface Collection {
     /** Predict the date format from any dates in the document that is not ambiguous. */
     dateFormatFromDocument?: boolean;
     /** Extra configurations specific to an extractor. */
-    extractorConfig?: {
-        [propertyName: string]: any;
-    };
+    extractorConfig?: ExtractorConfig;
     /** Number of unvalidated documents in the collection. */
     unvalidatedDocsCount?: number;
     /** Number of validated documents in the collection. */
@@ -1360,9 +1358,7 @@ export declare interface CollectionCreate {
     /** Predict the date format from any dates in the document that is not ambiguous. */
     dateFormatFromDocument?: boolean;
     /** Extra configurations specific to an extractor. */
-    extractorConfig?: {
-        [propertyName: string]: any;
-    };
+    extractorConfig?: ExtractorConfig;
 }
 
 /**
@@ -1384,9 +1380,7 @@ export declare interface CollectionUpdate {
     /** Predict the date format from any dates in the document that is not ambiguous. */
     dateFormatFromDocument?: boolean;
     /** Extra configurations specific to an extractor. */
-    extractorConfig?: {
-        [propertyName: string]: any;
-    };
+    extractorConfig?: ExtractorConfig;
 }
 
 export declare interface CollectionWorkspace {
@@ -1927,6 +1921,11 @@ export declare interface ExtractorBaseExtractor {
     validatable: boolean;
     isCustom?: boolean;
     createdDt?: Date;
+}
+
+/** Extra configurations specific to an extractor. */
+export declare interface ExtractorConfig {
+    resumeRedact?: RedactConfig;
 }
 
 export declare interface ExtractorCreate {
@@ -2876,6 +2875,17 @@ export declare interface Rectangle {
     y0: number;
     x1: number;
     y1: number;
+}
+
+export declare interface RedactConfig {
+    redactHeadshot?: boolean;
+    redactPersonalDetails?: boolean;
+    redactWorkDetails?: boolean;
+    redactReferees?: boolean;
+    redactEducationDetails?: boolean;
+    redactLocations?: boolean;
+    redactDates?: boolean;
+    redactGender?: boolean;
 }
 
 /**

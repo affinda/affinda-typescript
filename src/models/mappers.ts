@@ -739,11 +739,10 @@ export const Collection: coreClient.CompositeMapper = {
       },
       extractorConfig: {
         serializedName: "extractorConfig",
-        nullable: true,
         xmlName: "extractorConfig",
         type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "Composite",
+          className: "ExtractorConfig"
         }
       },
       unvalidatedDocsCount: {
@@ -1057,6 +1056,90 @@ export const Field: coreClient.CompositeMapper = {
   }
 };
 
+export const ExtractorConfig: coreClient.CompositeMapper = {
+  serializedName: "ExtractorConfig",
+  type: {
+    name: "Composite",
+    className: "ExtractorConfig",
+    modelProperties: {
+      resumeRedact: {
+        serializedName: "resumeRedact",
+        xmlName: "resumeRedact",
+        type: {
+          name: "Composite",
+          className: "RedactConfig"
+        }
+      }
+    }
+  }
+};
+
+export const RedactConfig: coreClient.CompositeMapper = {
+  serializedName: "RedactConfig",
+  type: {
+    name: "Composite",
+    className: "RedactConfig",
+    modelProperties: {
+      redactHeadshot: {
+        serializedName: "redactHeadshot",
+        xmlName: "redactHeadshot",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactPersonalDetails: {
+        serializedName: "redactPersonalDetails",
+        xmlName: "redactPersonalDetails",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactWorkDetails: {
+        serializedName: "redactWorkDetails",
+        xmlName: "redactWorkDetails",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactReferees: {
+        serializedName: "redactReferees",
+        xmlName: "redactReferees",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactEducationDetails: {
+        serializedName: "redactEducationDetails",
+        xmlName: "redactEducationDetails",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactLocations: {
+        serializedName: "redactLocations",
+        xmlName: "redactLocations",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactDates: {
+        serializedName: "redactDates",
+        xmlName: "redactDates",
+        type: {
+          name: "Boolean"
+        }
+      },
+      redactGender: {
+        serializedName: "redactGender",
+        xmlName: "redactGender",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
 export const CollectionCreate: coreClient.CompositeMapper = {
   serializedName: "CollectionCreate",
   type: {
@@ -1127,11 +1210,10 @@ export const CollectionCreate: coreClient.CompositeMapper = {
       },
       extractorConfig: {
         serializedName: "extractorConfig",
-        nullable: true,
         xmlName: "extractorConfig",
         type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "Composite",
+          className: "ExtractorConfig"
         }
       }
     }
@@ -1191,11 +1273,10 @@ export const CollectionUpdate: coreClient.CompositeMapper = {
       },
       extractorConfig: {
         serializedName: "extractorConfig",
-        nullable: true,
         xmlName: "extractorConfig",
         type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "Composite",
+          className: "ExtractorConfig"
         }
       }
     }

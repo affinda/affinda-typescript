@@ -153,7 +153,7 @@ export interface Collection {
   /** Predict the date format from any dates in the document that is not ambiguous. */
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
-  extractorConfig?: { [propertyName: string]: any };
+  extractorConfig?: ExtractorConfig;
   /** Number of unvalidated documents in the collection. */
   unvalidatedDocsCount?: number;
   /** Number of validated documents in the collection. */
@@ -207,6 +207,22 @@ export interface Field {
   fields?: Field[];
 }
 
+/** Extra configurations specific to an extractor. */
+export interface ExtractorConfig {
+  resumeRedact?: RedactConfig;
+}
+
+export interface RedactConfig {
+  redactHeadshot?: boolean;
+  redactPersonalDetails?: boolean;
+  redactWorkDetails?: boolean;
+  redactReferees?: boolean;
+  redactEducationDetails?: boolean;
+  redactLocations?: boolean;
+  redactDates?: boolean;
+  redactGender?: boolean;
+}
+
 export interface CollectionCreate {
   name: string;
   /** Uniquely identify a workspace. */
@@ -219,7 +235,7 @@ export interface CollectionCreate {
   /** Predict the date format from any dates in the document that is not ambiguous. */
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
-  extractorConfig?: { [propertyName: string]: any };
+  extractorConfig?: ExtractorConfig;
 }
 
 export interface CollectionUpdate {
@@ -230,7 +246,7 @@ export interface CollectionUpdate {
   /** Predict the date format from any dates in the document that is not ambiguous. */
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
-  extractorConfig?: { [propertyName: string]: any };
+  extractorConfig?: ExtractorConfig;
 }
 
 export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {

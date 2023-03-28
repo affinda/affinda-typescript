@@ -58,13 +58,9 @@ ___
 
 ### extractorConfig
 
-• `Optional` **extractorConfig**: `Object`
+• `Optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
 
 Extra configurations specific to an extractor.
-
-#### Index signature
-
-▪ [propertyName: `string`]: `any`
 
 ___
 
