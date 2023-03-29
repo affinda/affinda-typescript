@@ -4873,13 +4873,13 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         serializedName: "actions",
         nullable: true,
         xmlName: "actions",
-        xmlElementName: "JobDescriptionSearchConfigActionsItem",
+        xmlElementName: "SearchConfigAction",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "JobDescriptionSearchConfigActionsItem"
+              className: "SearchConfigAction"
             }
           }
         }
@@ -4895,14 +4895,15 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
   }
 };
 
-export const JobDescriptionSearchConfigActionsItem: coreClient.CompositeMapper = {
-  serializedName: "JobDescriptionSearchConfigActionsItem",
+export const SearchConfigAction: coreClient.CompositeMapper = {
+  serializedName: "SearchConfigAction",
   type: {
     name: "Composite",
-    className: "JobDescriptionSearchConfigActionsItem",
+    className: "SearchConfigAction",
     modelProperties: {
       label: {
         serializedName: "label",
+        required: true,
         xmlName: "label",
         type: {
           name: "String"
@@ -4910,6 +4911,7 @@ export const JobDescriptionSearchConfigActionsItem: coreClient.CompositeMapper =
       },
       eventName: {
         serializedName: "eventName",
+        required: true,
         xmlName: "eventName",
         type: {
           name: "String"
@@ -6961,13 +6963,13 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         serializedName: "actions",
         nullable: true,
         xmlName: "actions",
-        xmlElementName: "ResumeSearchConfigActionsItem",
+        xmlElementName: "SearchConfigAction",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "ResumeSearchConfigActionsItem"
+              className: "SearchConfigAction"
             }
           }
         }
@@ -6977,30 +6979,6 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         xmlName: "hideToolbar",
         type: {
           name: "Boolean"
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchConfigActionsItem: coreClient.CompositeMapper = {
-  serializedName: "ResumeSearchConfigActionsItem",
-  type: {
-    name: "Composite",
-    className: "ResumeSearchConfigActionsItem",
-    modelProperties: {
-      label: {
-        serializedName: "label",
-        xmlName: "label",
-        type: {
-          name: "String"
-        }
-      },
-      eventName: {
-        serializedName: "eventName",
-        xmlName: "eventName",
-        type: {
-          name: "String"
         }
       }
     }

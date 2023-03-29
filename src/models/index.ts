@@ -898,16 +898,16 @@ export interface JobDescriptionSearchConfig {
    */
   readonly username?: string;
   /** A list of actions to show in the dropdown in the embedded search tool */
-  actions?: JobDescriptionSearchConfigActionsItem[];
+  actions?: SearchConfigAction[];
   /** Hide the reset/import toolbar. */
   hideToolbar?: boolean;
 }
 
-export interface JobDescriptionSearchConfigActionsItem {
+export interface SearchConfigAction {
   /** Human readable label to display in the UI */
-  label?: string;
+  label: string;
   /** Name of the event to be triggered */
-  eventName?: string;
+  eventName: string;
 }
 
 export interface PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -1254,16 +1254,9 @@ export interface ResumeSearchConfig {
    */
   readonly username?: string;
   /** A list of actions to show in the dropdown in the embedded search tool */
-  actions?: ResumeSearchConfigActionsItem[];
+  actions?: SearchConfigAction[];
   /** Hide the reset/import toolbar. */
   hideToolbar?: boolean;
-}
-
-export interface ResumeSearchConfigActionsItem {
-  /** Human readable label to display in the UI */
-  label?: string;
-  /** Name of the event to be triggered */
-  eventName?: string;
 }
 
 export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {

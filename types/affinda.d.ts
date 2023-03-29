@@ -2242,16 +2242,9 @@ export declare interface JobDescriptionSearchConfig {
      */
     readonly username?: string;
     /** A list of actions to show in the dropdown in the embedded search tool */
-    actions?: JobDescriptionSearchConfigActionsItem[];
+    actions?: SearchConfigAction[];
     /** Hide the reset/import toolbar. */
     hideToolbar?: boolean;
-}
-
-export declare interface JobDescriptionSearchConfigActionsItem {
-    /** Human readable label to display in the UI */
-    label?: string;
-    /** Name of the event to be triggered */
-    eventName?: string;
 }
 
 export declare interface JobDescriptionSearchDetail {
@@ -3176,16 +3169,9 @@ export declare interface ResumeSearchConfig {
      */
     readonly username?: string;
     /** A list of actions to show in the dropdown in the embedded search tool */
-    actions?: ResumeSearchConfigActionsItem[];
+    actions?: SearchConfigAction[];
     /** Hide the reset/import toolbar. */
     hideToolbar?: boolean;
-}
-
-export declare interface ResumeSearchConfigActionsItem {
-    /** Human readable label to display in the UI */
-    label?: string;
-    /** Name of the event to be triggered */
-    eventName?: string;
 }
 
 export declare interface ResumeSearchDetail {
@@ -3460,6 +3446,13 @@ export declare interface RowAnnotation {
     customFields?: {
         [propertyName: string]: any;
     };
+}
+
+export declare interface SearchConfigAction {
+    /** Human readable label to display in the UI */
+    label: string;
+    /** Name of the event to be triggered */
+    eventName: string;
 }
 
 export declare interface SearchExpressionSearchScoreComponent {

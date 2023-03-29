@@ -38,7 +38,7 @@
 
 ### actions
 
-• `Optional` **actions**: [`ResumeSearchConfigActionsItem`](ResumeSearchConfigActionsItem.md)[]
+• `Optional` **actions**: [`SearchConfigAction`](SearchConfigAction.md)[]
 
 A list of actions to show in the dropdown in the embedded search tool
 
