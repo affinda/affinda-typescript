@@ -666,7 +666,8 @@ export interface AnnotationV2Base {
   [property: string]: any;
   id?: number;
   rectangle?: Rectangle;
-  rectangles?: Rectangle[];
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly rectangles?: Rectangle[];
   pageIndex?: number;
   raw?: string;
   /** The overall confidence that the model's prediction is correct */

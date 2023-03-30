@@ -100,7 +100,9 @@ ___
 
 ### rectangles
 
-• `Optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
+• `Optional` `Readonly` **rectangles**: [`Rectangle`](Rectangle.md)[]
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 

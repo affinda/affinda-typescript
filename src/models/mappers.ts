@@ -3636,6 +3636,7 @@ export const AnnotationV2Base: coreClient.CompositeMapper = {
       },
       rectangles: {
         serializedName: "rectangles",
+        readOnly: true,
         nullable: true,
         xmlName: "rectangles",
         xmlElementName: "Rectangle",
