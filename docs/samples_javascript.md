@@ -15,6 +15,9 @@ Document API - Extractor
 Document API - Data Point
 -------------------------
 
+Document API - Annotation
+-------------------------
+
 Document API - Tag
 ------------------
 

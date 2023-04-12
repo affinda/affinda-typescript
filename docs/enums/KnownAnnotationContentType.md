@@ -24,6 +24,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Location](KnownAnnotationContentType.md#location)
 - [Skill](KnownAnnotationContentType.md#skill)
 - [Table](KnownAnnotationContentType.md#table)
+- [TableDeprecated](KnownAnnotationContentType.md#tabledeprecated)
 - [Text](KnownAnnotationContentType.md#text)
 - [Yearsexperience](KnownAnnotationContentType.md#yearsexperience)
 
@@ -122,6 +123,12 @@ ___
 ### Table
 
 • **Table** = `"table"`
+
+___
+
+### TableDeprecated
+
+• **TableDeprecated** = `"table_deprecated"`
 
 ___
 

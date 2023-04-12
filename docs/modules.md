@@ -39,6 +39,10 @@
 
 - [Accreditation](interfaces/Accreditation.md)
 - [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
+- [AffindaAPIBatchCreateAnnotationsOptionalParams](interfaces/AffindaAPIBatchCreateAnnotationsOptionalParams.md)
+- [AffindaAPIBatchDeleteAnnotationsOptionalParams](interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md)
+- [AffindaAPIBatchUpdateAnnotationsOptionalParams](interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md)
+- [AffindaAPICreateAnnotationOptionalParams](interfaces/AffindaAPICreateAnnotationOptionalParams.md)
 - [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
 - [AffindaAPICreateDataPointChoiceOptionalParams](interfaces/AffindaAPICreateDataPointChoiceOptionalParams.md)
 - [AffindaAPICreateDataPointOptionalParams](interfaces/AffindaAPICreateDataPointOptionalParams.md)
@@ -56,6 +60,7 @@
 - [AffindaAPICreateTagOptionalParams](interfaces/AffindaAPICreateTagOptionalParams.md)
 - [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
 - [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
+- [AffindaAPIDeleteAnnotationOptionalParams](interfaces/AffindaAPIDeleteAnnotationOptionalParams.md)
 - [AffindaAPIDeleteCollectionOptionalParams](interfaces/AffindaAPIDeleteCollectionOptionalParams.md)
 - [AffindaAPIDeleteDataPointChoiceOptionalParams](interfaces/AffindaAPIDeleteDataPointChoiceOptionalParams.md)
 - [AffindaAPIDeleteDataPointOptionalParams](interfaces/AffindaAPIDeleteDataPointOptionalParams.md)
@@ -70,6 +75,8 @@
 - [AffindaAPIDeleteTagOptionalParams](interfaces/AffindaAPIDeleteTagOptionalParams.md)
 - [AffindaAPIDeleteWorkspaceMembershipOptionalParams](interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md)
 - [AffindaAPIDeleteWorkspaceOptionalParams](interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md)
+- [AffindaAPIEditDocumentPagesOptionalParams](interfaces/AffindaAPIEditDocumentPagesOptionalParams.md)
+- [AffindaAPIGetAllAnnotationsOptionalParams](interfaces/AffindaAPIGetAllAnnotationsOptionalParams.md)
 - [AffindaAPIGetAllCollectionsOptionalParams](interfaces/AffindaAPIGetAllCollectionsOptionalParams.md)
 - [AffindaAPIGetAllDataPointsOptionalParams](interfaces/AffindaAPIGetAllDataPointsOptionalParams.md)
 - [AffindaAPIGetAllDocumentsOptionalParams](interfaces/AffindaAPIGetAllDocumentsOptionalParams.md)
@@ -83,6 +90,7 @@
 - [AffindaAPIGetAllTagsOptionalParams](interfaces/AffindaAPIGetAllTagsOptionalParams.md)
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
 - [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
+- [AffindaAPIGetAnnotationOptionalParams](interfaces/AffindaAPIGetAnnotationOptionalParams.md)
 - [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
 - [AffindaAPIGetDataPointChoiceOptionalParams](interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md)
 - [AffindaAPIGetDataPointChoicesOptionalParams](interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md)
@@ -107,6 +115,7 @@
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
+- [AffindaAPIUpdateAnnotationOptionalParams](interfaces/AffindaAPIUpdateAnnotationOptionalParams.md)
 - [AffindaAPIUpdateCollectionOptionalParams](interfaces/AffindaAPIUpdateCollectionOptionalParams.md)
 - [AffindaAPIUpdateDataPointChoiceOptionalParams](interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md)
 - [AffindaAPIUpdateDataPointOptionalParams](interfaces/AffindaAPIUpdateDataPointOptionalParams.md)
@@ -121,6 +130,10 @@
 - [AffindaAPIUpdateTagOptionalParams](interfaces/AffindaAPIUpdateTagOptionalParams.md)
 - [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
+- [AnnotationCreate](interfaces/AnnotationCreate.md)
+- [AnnotationCreateParsed](interfaces/AnnotationCreateParsed.md)
+- [AnnotationUpdate](interfaces/AnnotationUpdate.md)
+- [AnnotationUpdateParsed](interfaces/AnnotationUpdateParsed.md)
 - [BaseExtractor](interfaces/BaseExtractor.md)
 - [Collection](interfaces/Collection.md)
 - [CollectionCreate](interfaces/CollectionCreate.md)
@@ -171,6 +184,7 @@
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
 - [Document](interfaces/Document.md)
 - [DocumentCreate](interfaces/DocumentCreate.md)
+- [DocumentEditRequest](interfaces/DocumentEditRequest.md)
 - [DocumentError](interfaces/DocumentError.md)
 - [DocumentMeta](interfaces/DocumentMeta.md)
 - [DocumentMetaChildDocumentsItem](interfaces/DocumentMetaChildDocumentsItem.md)
@@ -178,6 +192,8 @@
 - [DocumentMetaCollectionExtractor](interfaces/DocumentMetaCollectionExtractor.md)
 - [DocumentMetaParentDocument](interfaces/DocumentMetaParentDocument.md)
 - [DocumentMetaWorkspace](interfaces/DocumentMetaWorkspace.md)
+- [DocumentSplit](interfaces/DocumentSplit.md)
+- [DocumentSplitPage](interfaces/DocumentSplitPage.md)
 - [DocumentUpdate](interfaces/DocumentUpdate.md)
 - [Education](interfaces/Education.md)
 - [EducationDates](interfaces/EducationDates.md)
@@ -228,6 +244,9 @@
 - [Location](interfaces/Location.md)
 - [LocationSearchScoreComponent](interfaces/LocationSearchScoreComponent.md)
 - [ManagementLevelSearchScoreComponent](interfaces/ManagementLevelSearchScoreComponent.md)
+- [Meta](interfaces/Meta.md)
+- [MetaChildDocumentsItem](interfaces/MetaChildDocumentsItem.md)
+- [MetaParentDocument](interfaces/MetaParentDocument.md)
 - [OccupationGroup](interfaces/OccupationGroup.md)
 - [OccupationGroupSearchResult](interfaces/OccupationGroupSearchResult.md)
 - [OccupationGroupSearchScoreComponent](interfaces/OccupationGroupSearchScoreComponent.md)
@@ -239,6 +258,7 @@
 - [PageMeta](interfaces/PageMeta.md)
 - [PaginatedResponse](interfaces/PaginatedResponse.md)
 - [Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+- [Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)
@@ -314,6 +334,9 @@
 ### Type aliases
 
 - [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
+- [AffindaAPIBatchCreateAnnotationsResponse](modules.md#affindaapibatchcreateannotationsresponse)
+- [AffindaAPIBatchUpdateAnnotationsResponse](modules.md#affindaapibatchupdateannotationsresponse)
+- [AffindaAPICreateAnnotationResponse](modules.md#affindaapicreateannotationresponse)
 - [AffindaAPICreateCollectionResponse](modules.md#affindaapicreatecollectionresponse)
 - [AffindaAPICreateDataPointChoiceResponse](modules.md#affindaapicreatedatapointchoiceresponse)
 - [AffindaAPICreateDataPointResponse](modules.md#affindaapicreatedatapointresponse)
@@ -331,6 +354,8 @@
 - [AffindaAPICreateTagResponse](modules.md#affindaapicreatetagresponse)
 - [AffindaAPICreateWorkspaceMembershipResponse](modules.md#affindaapicreateworkspacemembershipresponse)
 - [AffindaAPICreateWorkspaceResponse](modules.md#affindaapicreateworkspaceresponse)
+- [AffindaAPIEditDocumentPagesResponse](modules.md#affindaapieditdocumentpagesresponse)
+- [AffindaAPIGetAllAnnotationsResponse](modules.md#affindaapigetallannotationsresponse)
 - [AffindaAPIGetAllCollectionsResponse](modules.md#affindaapigetallcollectionsresponse)
 - [AffindaAPIGetAllDataPointsResponse](modules.md#affindaapigetalldatapointsresponse)
 - [AffindaAPIGetAllDocumentsResponse](modules.md#affindaapigetalldocumentsresponse)
@@ -344,6 +369,7 @@
 - [AffindaAPIGetAllTagsResponse](modules.md#affindaapigetalltagsresponse)
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
 - [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
+- [AffindaAPIGetAnnotationResponse](modules.md#affindaapigetannotationresponse)
 - [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
 - [AffindaAPIGetDataPointChoiceResponse](modules.md#affindaapigetdatapointchoiceresponse)
 - [AffindaAPIGetDataPointChoicesResponse](modules.md#affindaapigetdatapointchoicesresponse)
@@ -367,6 +393,7 @@
 - [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
+- [AffindaAPIUpdateAnnotationResponse](modules.md#affindaapiupdateannotationresponse)
 - [AffindaAPIUpdateCollectionResponse](modules.md#affindaapiupdatecollectionresponse)
 - [AffindaAPIUpdateDataPointChoiceResponse](modules.md#affindaapiupdatedatapointchoiceresponse)
 - [AffindaAPIUpdateDataPointResponse](modules.md#affindaapiupdatedatapointresponse)
@@ -380,6 +407,7 @@
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [AffindaAPIUpdateTagResponse](modules.md#affindaapiupdatetagresponse)
 - [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
+- [AnnotationBatchUpdate](modules.md#annotationbatchupdate)
 - [AnnotationContentType](modules.md#annotationcontenttype)
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
 - [CurrencyCodeAnnotation](modules.md#currencycodeannotation)
@@ -438,6 +466,7 @@
 - [OrganizationRole](modules.md#organizationrole)
 - [OrganizationUserRole](modules.md#organizationuserrole)
 - [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
+- [Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
 - [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
 - [PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema](modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)
 - [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
@@ -468,6 +497,30 @@
 Ƭ **AffindaAPIActivateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
 
 Contains response data for the activateResthookSubscription operation.
+
+___
+
+### AffindaAPIBatchCreateAnnotationsResponse
+
+Ƭ **AffindaAPIBatchCreateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
+
+Contains response data for the batchCreateAnnotations operation.
+
+___
+
+### AffindaAPIBatchUpdateAnnotationsResponse
+
+Ƭ **AffindaAPIBatchUpdateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
+
+Contains response data for the batchUpdateAnnotations operation.
+
+___
+
+### AffindaAPICreateAnnotationResponse
+
+Ƭ **AffindaAPICreateAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
+
+Contains response data for the createAnnotation operation.
 
 ___
 
@@ -607,6 +660,22 @@ Contains response data for the createWorkspace operation.
 
 ___
 
+### AffindaAPIEditDocumentPagesResponse
+
+Ƭ **AffindaAPIEditDocumentPagesResponse**: [`Meta`](interfaces/Meta.md)[]
+
+Contains response data for the editDocumentPages operation.
+
+___
+
+### AffindaAPIGetAllAnnotationsResponse
+
+Ƭ **AffindaAPIGetAllAnnotationsResponse**: [`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
+
+Contains response data for the getAllAnnotations operation.
+
+___
+
 ### AffindaAPIGetAllCollectionsResponse
 
 Ƭ **AffindaAPIGetAllCollectionsResponse**: [`Collection`](interfaces/Collection.md)[]
@@ -708,6 +777,14 @@ ___
 Ƭ **AffindaAPIGetAllWorkspacesResponse**: [`Workspace`](interfaces/Workspace.md)[]
 
 Contains response data for the getAllWorkspaces operation.
+
+___
+
+### AffindaAPIGetAnnotationResponse
+
+Ƭ **AffindaAPIGetAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
+
+Contains response data for the getAnnotation operation.
 
 ___
 
@@ -907,6 +984,14 @@ Contains response data for the respondToInvitation operation.
 
 ___
 
+### AffindaAPIUpdateAnnotationResponse
+
+Ƭ **AffindaAPIUpdateAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
+
+Contains response data for the updateAnnotation operation.
+
+___
+
 ### AffindaAPIUpdateCollectionResponse
 
 Ƭ **AffindaAPIUpdateCollectionResponse**: [`Collection`](interfaces/Collection.md)
@@ -1011,6 +1096,12 @@ Contains response data for the updateWorkspace operation.
 
 ___
 
+### AnnotationBatchUpdate
+
+Ƭ **AnnotationBatchUpdate**: [`AnnotationUpdate`](interfaces/AnnotationUpdate.md) & { `id`: `number`  }
+
+___
+
 ### AnnotationContentType
 
 Ƭ **AnnotationContentType**: `string`
@@ -1036,7 +1127,8 @@ Defines values for AnnotationContentType. \
 **language** \
 **skill** \
 **yearsexperience** \
-**group**
+**group** \
+**table_deprecated**
 
 ___
 
@@ -1485,6 +1577,12 @@ ___
 ### Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema
 
 Ƭ **Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema
+
+Ƭ **Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
 
 ___
 

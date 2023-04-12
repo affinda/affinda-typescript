@@ -401,6 +401,69 @@ export interface DocumentUpdate {
   language?: string;
 }
 
+export interface DocumentEditRequest {
+  splits: DocumentSplit[];
+}
+
+/** Describe a split of a document. */
+export interface DocumentSplit {
+  /** Any object */
+  identifier?: Record<string, unknown>;
+  pages: DocumentSplitPage[];
+}
+
+/** List the pages within this split. Not including a page here will signal that the page should be deleted. */
+export interface DocumentSplitPage {
+  /** Page's ID */
+  id: number;
+  /** Specify a degree of rotation if you want to rotate a page. Possitive number for clockwise rotation, and negative number for counter-clockwise rotation. */
+  rotation?: number;
+}
+
+export interface Meta {
+  /** Uniquely identify a document. */
+  identifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+  ready?: boolean;
+  /** The datetime when the document was ready */
+  readyDt?: Date;
+  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+  failed?: boolean;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** The document's language. */
+  language?: string;
+  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+  pdf?: string;
+  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+  parentDocument?: MetaParentDocument;
+  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+  childDocuments?: MetaChildDocumentsItem[];
+  /** The document's pages. */
+  pages?: PageMeta[];
+  /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
+  isVerified?: boolean;
+  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
+  reviewUrl?: string;
+  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+  ocrConfidence?: number;
+  createdDt?: Date;
+  documentType?: string;
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export interface MetaParentDocument {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
+export interface MetaChildDocumentsItem {
+  /** Uniquely identify a document. */
+  identifier?: string;
+}
+
 export interface ExtractorCreate {
   name: string;
   namePlural?: string;
@@ -429,6 +492,7 @@ export interface DataPoint {
   name: string;
   slug?: string;
   description?: string;
+  /** The different data types of annotations */
   annotationContentType: AnnotationContentType;
   organization?: Organization;
   /** Uniquely identify an extractor. */
@@ -444,6 +508,7 @@ export interface DataPointCreate {
   name?: string;
   slug: string;
   description?: string;
+  /** The different data types of annotations */
   annotationContentType: AnnotationContentType;
   /** Uniquely identify an organization. */
   organization: string;
@@ -489,6 +554,90 @@ export interface DataPointChoiceUpdate {
   synonyms?: string[];
   description?: string;
 }
+
+export interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: (Annotation | null)[];
+}
+
+export interface Annotation {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  /** Annotation's ID */
+  id: number;
+  /** x/y coordinates for the rectangular bounding box containing the data */
+  rectangle: Rectangle | null;
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles: Rectangle[] | null;
+  /** Uniquely identify a document. */
+  document?: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex: number | null;
+  /** Raw data extracted from the before any post-processing */
+  raw: string | null;
+  /** The overall confidence that the model's prediction is correct */
+  confidence: number | null;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence: number | null;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
+  textExtractionConfidence: number | null;
+  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
+  isVerified: boolean;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified: boolean;
+  /** Indicates whether the data has been auto-validated */
+  isAutoVerified: boolean;
+  /** Data point's identifier */
+  dataPoint: string;
+  /** The different data types of annotations */
+  contentType: AnnotationContentType;
+}
+
+export interface Rectangle {
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+}
+
+export interface AnnotationCreate {
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles?: Rectangle[];
+  /** Uniquely identify a document. */
+  document: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex: number | null;
+  /** Data point's identifier */
+  dataPoint: string;
+  /** Raw data extracted from the before any post-processing */
+  raw?: string;
+  parsed?: AnnotationCreateParsed;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified?: boolean;
+  /** The parent annotation's ID */
+  parent?: number;
+}
+
+export interface AnnotationCreateParsed {}
+
+export interface AnnotationUpdate {
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles?: Rectangle[];
+  /** Uniquely identify a document. */
+  document?: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex?: number;
+  /** Raw data extracted from the before any post-processing */
+  raw?: string;
+  parsed?: AnnotationUpdateParsed;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified?: boolean;
+  /** Data point's identifier */
+  dataPoint?: string;
+  /** The parent annotation's ID */
+  parent?: number;
+}
+
+export interface AnnotationUpdateParsed {}
 
 export interface TagCreate {
   name: string;
@@ -835,7 +984,7 @@ export interface OccupationGroupSearchResult {
   match?: boolean;
   code: number;
   name: string;
-  children: OccupationGroup[];
+  children?: OccupationGroup[];
   parents?: OccupationGroup[];
 }
 
@@ -1140,6 +1289,7 @@ export interface EducationDates {
   completionDate?: Date;
   isCurrent?: boolean;
   startDate?: Date;
+  rawText?: string;
 }
 
 export interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
@@ -1352,6 +1502,7 @@ export interface ResumeDataWorkExperienceItemDates {
   endDate?: Date;
   monthsInPosition?: number;
   isCurrent?: boolean;
+  rawText?: string;
 }
 
 export interface ResumeDataWorkExperienceItemOccupation {
@@ -1482,40 +1633,6 @@ export interface RowAnnotation {
   other?: string;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
-}
-
-export interface Annotation {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  id: number;
-  /** x/y coordinates for the rectangular bounding box containing the data */
-  rectangle: Rectangle | null;
-  rectangles: Rectangle[] | null;
-  /** The page number within the document, starting from 0. */
-  pageIndex: number | null;
-  /** Raw data extracted from the before any post-processing */
-  raw: string | null;
-  /** The overall confidence that the model's prediction is correct */
-  confidence: number | null;
-  /** The model's confidence that the text has been classified correctly */
-  classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
-  textExtractionConfidence: number | null;
-  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
-  isVerified: boolean;
-  /** Indicates whether the data has been validated by a human */
-  isClientVerified: boolean;
-  /** Indicates whether the data has been auto-validated */
-  isAutoVerified: boolean;
-  dataPoint: string;
-  contentType: string;
-}
-
-export interface Rectangle {
-  x0: number;
-  y0: number;
-  x1: number;
-  y1: number;
 }
 
 export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
@@ -1769,6 +1886,9 @@ export type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema = 
 export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
+export type Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
 export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
@@ -1796,23 +1916,6 @@ export type JobDescription = Document & {
   extractor: "job-description";
   data?: JobDescriptionData;
 };
-
-export type JobDescriptionSearchDetailLocationValue = Location &
-  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
-
-export type ResumeSearchDetailLocationValue = Location &
-  ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
-
-export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
-
-export type ResumeSearchDetailEducationValueItem = Education &
-  ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
-
-export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
-  ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
-
-export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
-  Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
 
 export type DateAnnotation = Annotation & {
   parsed?: Date;
@@ -1853,6 +1956,28 @@ export type YearsExperienceAnnotation = Annotation & {
   /** Years of experience range */
   parsed?: YearsExperienceAnnotationParsed;
 };
+
+export type AnnotationBatchUpdate = AnnotationUpdate & {
+  /** Annotation's ID */
+  id: number;
+};
+
+export type JobDescriptionSearchDetailLocationValue = Location &
+  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export type ResumeSearchDetailLocationValue = Location &
+  ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
+
+export type ResumeSearchDetailEducationValueItem = Education &
+  ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+
+export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
+  ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
+
+export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
+  Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
 
 export type InvoiceDataPaymentAmountBase = TextAnnotation &
   Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
@@ -2140,7 +2265,8 @@ export enum KnownAnnotationContentType {
   Language = "language",
   Skill = "skill",
   Yearsexperience = "yearsexperience",
-  Group = "group"
+  Group = "group",
+  TableDeprecated = "table_deprecated"
 }
 
 /**
@@ -2165,7 +2291,8 @@ export enum KnownAnnotationContentType {
  * **language** \
  * **skill** \
  * **yearsexperience** \
- * **group**
+ * **group** \
+ * **table_deprecated**
  */
 export type AnnotationContentType = string;
 
@@ -2605,6 +2732,13 @@ export interface AffindaAPIDeleteDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
+export interface AffindaAPIEditDocumentPagesOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the editDocumentPages operation. */
+export type AffindaAPIEditDocumentPagesResponse = Meta[];
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllExtractorsOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by name. */
@@ -2733,6 +2867,56 @@ export type AffindaAPIUpdateDataPointChoiceResponse = DataPointChoice;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteDataPointChoiceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAllAnnotations operation. */
+export type AffindaAPIGetAllAnnotationsResponse = Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPICreateAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createAnnotation operation. */
+export type AffindaAPICreateAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export interface AffindaAPIGetAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAnnotation operation. */
+export type AffindaAPIGetAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateAnnotation operation. */
+export type AffindaAPIUpdateAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIBatchCreateAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchCreateAnnotations operation. */
+export type AffindaAPIBatchCreateAnnotationsResponse = (Annotation | null)[];
+
+/** Optional parameters. */
+export interface AffindaAPIBatchUpdateAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchUpdateAnnotations operation. */
+export type AffindaAPIBatchUpdateAnnotationsResponse = (Annotation | null)[];
+
+/** Optional parameters. */
+export interface AffindaAPIBatchDeleteAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */

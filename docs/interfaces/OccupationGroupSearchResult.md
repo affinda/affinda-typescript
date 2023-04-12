@@ -16,7 +16,7 @@
 
 ### children
 
-• **children**: [`OccupationGroup`](OccupationGroup.md)[]
+• `Optional` **children**: [`OccupationGroup`](OccupationGroup.md)[]
 
 ___
 

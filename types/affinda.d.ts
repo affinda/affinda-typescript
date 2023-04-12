@@ -139,6 +139,16 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteDocument(identifier: string, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
     /**
+     * Split / merge / rotate / delete pages of a document.
+     * Documents with multiple pages can be  into multiple documents, or merged into one document.
+     * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+     *
+     * @param identifier Document's identifier
+     * @param body Describe how the pages should be edited
+     * @param options The options parameters.
+     */
+    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: AffindaAPIEditDocumentPagesOptionalParams): Promise<AffindaAPIEditDocumentPagesResponse>;
+    /**
      * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
      * @param organization Filter by organization.
      * @param options The options parameters.
@@ -227,6 +237,55 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     deleteDataPointChoice(id: number, options?: AffindaAPIDeleteDataPointChoiceOptionalParams): Promise<void>;
+    /**
+     * Returns your annotations.
+     * @param document Filter by document.
+     * @param options The options parameters.
+     */
+    getAllAnnotations(document: string, options?: AffindaAPIGetAllAnnotationsOptionalParams): Promise<AffindaAPIGetAllAnnotationsResponse>;
+    /**
+     * Create a annotation
+     * @param body
+     * @param options The options parameters.
+     */
+    createAnnotation(body: AnnotationCreate, options?: AffindaAPICreateAnnotationOptionalParams): Promise<AffindaAPICreateAnnotationResponse>;
+    /**
+     * Return a specific annotation.
+     * @param id Annotation's ID
+     * @param options The options parameters.
+     */
+    getAnnotation(id: number, options?: AffindaAPIGetAnnotationOptionalParams): Promise<AffindaAPIGetAnnotationResponse>;
+    /**
+     * Update data of an annotation.
+     * @param id Annotation's ID
+     * @param body Annotation data to update
+     * @param options The options parameters.
+     */
+    updateAnnotation(id: number, body: AnnotationUpdate, options?: AffindaAPIUpdateAnnotationOptionalParams): Promise<AffindaAPIUpdateAnnotationResponse>;
+    /**
+     * Deletes the specified annotation from the database.
+     * @param id Annotation's ID
+     * @param options The options parameters.
+     */
+    deleteAnnotation(id: number, options?: AffindaAPIDeleteAnnotationOptionalParams): Promise<void>;
+    /**
+     * Batch create annotations
+     * @param body Array of AnnotationCreate
+     * @param options The options parameters.
+     */
+    batchCreateAnnotations(body: AnnotationCreate[], options?: AffindaAPIBatchCreateAnnotationsOptionalParams): Promise<AffindaAPIBatchCreateAnnotationsResponse>;
+    /**
+     * Batch update annotations
+     * @param body Array of AnnotationBatchUpdate
+     * @param options The options parameters.
+     */
+    batchUpdateAnnotations(body: AnnotationBatchUpdate[], options?: AffindaAPIBatchUpdateAnnotationsOptionalParams): Promise<AffindaAPIBatchUpdateAnnotationsResponse>;
+    /**
+     * Batch delete annotations
+     * @param body Array of annotation IDs to be deleted
+     * @param options The options parameters.
+     */
+    batchDeleteAnnotations(body: number[], options?: AffindaAPIBatchDeleteAnnotationsOptionalParams): Promise<void>;
     /**
      * Returns your tags.
      * @param options The options parameters.
@@ -552,6 +611,24 @@ export declare interface AffindaAPIActivateResthookSubscriptionOptionalParams ex
 /** Contains response data for the activateResthookSubscription operation. */
 export declare type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
 
+/** Optional parameters. */
+export declare interface AffindaAPIBatchCreateAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the batchCreateAnnotations operation. */
+export declare type AffindaAPIBatchCreateAnnotationsResponse = (Annotation | null)[];
+
+/** Optional parameters. */
+export declare interface AffindaAPIBatchDeleteAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface AffindaAPIBatchUpdateAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the batchUpdateAnnotations operation. */
+export declare type AffindaAPIBatchUpdateAnnotationsResponse = (Annotation | null)[];
+
 export declare class AffindaAPIContext extends coreClient.ServiceClient {
     region: Region;
     /**
@@ -561,6 +638,13 @@ export declare class AffindaAPIContext extends coreClient.ServiceClient {
      */
     constructor(credentials: coreAuth.TokenCredential, options?: AffindaAPIOptionalParams);
 }
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createAnnotation operation. */
+export declare type AffindaAPICreateAnnotationResponse = Annotation;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateCollectionOptionalParams extends coreClient.OperationOptions {
@@ -721,6 +805,10 @@ export declare interface AffindaAPICreateWorkspaceOptionalParams extends coreCli
 export declare type AffindaAPICreateWorkspaceResponse = Workspace;
 
 /** Optional parameters. */
+export declare interface AffindaAPIDeleteAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
 export declare interface AffindaAPIDeleteCollectionOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -775,6 +863,20 @@ export declare interface AffindaAPIDeleteWorkspaceMembershipOptionalParams exten
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteWorkspaceOptionalParams extends coreClient.OperationOptions {
 }
+
+/** Optional parameters. */
+export declare interface AffindaAPIEditDocumentPagesOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the editDocumentPages operation. */
+export declare type AffindaAPIEditDocumentPagesResponse = Meta[];
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAllAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllAnnotations operation. */
+export declare type AffindaAPIGetAllAnnotationsResponse = Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllCollectionsOptionalParams extends coreClient.OperationOptions {
@@ -954,6 +1056,13 @@ export declare interface AffindaAPIGetAllWorkspacesOptionalParams extends coreCl
 
 /** Contains response data for the getAllWorkspaces operation. */
 export declare type AffindaAPIGetAllWorkspacesResponse = Workspace[];
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAnnotation operation. */
+export declare type AffindaAPIGetAnnotationResponse = Annotation;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetCollectionOptionalParams extends coreClient.OperationOptions {
@@ -1161,6 +1270,13 @@ export declare interface AffindaAPIRespondToInvitationOptionalParams extends cor
 export declare type AffindaAPIRespondToInvitationResponse = Invitation;
 
 /** Optional parameters. */
+export declare interface AffindaAPIUpdateAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateAnnotation operation. */
+export declare type AffindaAPIUpdateAnnotationResponse = Annotation;
+
+/** Optional parameters. */
 export declare interface AffindaAPIUpdateCollectionOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1265,10 +1381,14 @@ export declare class AffindaCredential implements TokenCredential {
 export declare interface Annotation {
     /** Describes unknown properties. The value of an unknown property can be of "any" type. */
     [property: string]: any;
+    /** Annotation's ID */
     id: number;
     /** x/y coordinates for the rectangular bounding box containing the data */
     rectangle: Rectangle | null;
+    /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
     rectangles: Rectangle[] | null;
+    /** Uniquely identify a document. */
+    document?: string;
     /** The page number within the document, starting from 0. */
     pageIndex: number | null;
     /** Raw data extracted from the before any post-processing */
@@ -1285,9 +1405,16 @@ export declare interface Annotation {
     isClientVerified: boolean;
     /** Indicates whether the data has been auto-validated */
     isAutoVerified: boolean;
+    /** Data point's identifier */
     dataPoint: string;
-    contentType: string;
+    /** The different data types of annotations */
+    contentType: AnnotationContentType;
 }
+
+export declare type AnnotationBatchUpdate = AnnotationUpdate & {
+    /** Annotation's ID */
+    id: number;
+};
 
 /**
  * Defines values for AnnotationContentType. \
@@ -1311,9 +1438,52 @@ export declare interface Annotation {
  * **language** \
  * **skill** \
  * **yearsexperience** \
- * **group**
+ * **group** \
+ * **table_deprecated**
  */
 export declare type AnnotationContentType = string;
+
+export declare interface AnnotationCreate {
+    /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+    rectangles?: Rectangle[];
+    /** Uniquely identify a document. */
+    document: string;
+    /** The page number within the document, starting from 0. */
+    pageIndex: number | null;
+    /** Data point's identifier */
+    dataPoint: string;
+    /** Raw data extracted from the before any post-processing */
+    raw?: string;
+    parsed?: AnnotationCreateParsed;
+    /** Indicates whether the data has been validated by a human */
+    isClientVerified?: boolean;
+    /** The parent annotation's ID */
+    parent?: number;
+}
+
+export declare interface AnnotationCreateParsed {
+}
+
+export declare interface AnnotationUpdate {
+    /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+    rectangles?: Rectangle[];
+    /** Uniquely identify a document. */
+    document?: string;
+    /** The page number within the document, starting from 0. */
+    pageIndex?: number;
+    /** Raw data extracted from the before any post-processing */
+    raw?: string;
+    parsed?: AnnotationUpdateParsed;
+    /** Indicates whether the data has been validated by a human */
+    isClientVerified?: boolean;
+    /** Data point's identifier */
+    dataPoint?: string;
+    /** The parent annotation's ID */
+    parent?: number;
+}
+
+export declare interface AnnotationUpdateParsed {
+}
 
 export declare interface BaseExtractor {
     /** Uniquely identify an extractor. */
@@ -1589,6 +1759,7 @@ export declare interface DataPoint {
     name: string;
     slug?: string;
     description?: string;
+    /** The different data types of annotations */
     annotationContentType: AnnotationContentType;
     organization?: Organization;
     /** Uniquely identify an extractor. */
@@ -1631,6 +1802,7 @@ export declare interface DataPointCreate {
     name?: string;
     slug: string;
     description?: string;
+    /** The different data types of annotations */
     annotationContentType: AnnotationContentType;
     /** Uniquely identify an organization. */
     organization: string;
@@ -1706,6 +1878,10 @@ export declare interface DocumentCreate {
     language?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false" (default), will parse the document normally whether its a duplicate or not. */
     rejectDuplicates?: string;
+}
+
+export declare interface DocumentEditRequest {
+    splits: DocumentSplit[];
 }
 
 export declare interface DocumentError {
@@ -1802,6 +1978,21 @@ export declare interface DocumentMetaWorkspace {
     name?: string;
 }
 
+/** Describe a split of a document. */
+export declare interface DocumentSplit {
+    /** Any object */
+    identifier?: Record<string, unknown>;
+    pages: DocumentSplitPage[];
+}
+
+/** List the pages within this split. Not including a page here will signal that the page should be deleted. */
+export declare interface DocumentSplitPage {
+    /** Page's ID */
+    id: number;
+    /** Specify a degree of rotation if you want to rotate a page. Possitive number for clockwise rotation, and negative number for counter-clockwise rotation. */
+    rotation?: number;
+}
+
 /**
  * Defines values for DocumentState. \
  * {@link KnownDocumentState} can be used interchangeably with DocumentState,
@@ -1844,6 +2035,7 @@ export declare interface EducationDates {
     completionDate?: Date;
     isCurrent?: boolean;
     startDate?: Date;
+    rawText?: string;
 }
 
 export declare interface EducationGrade {
@@ -2436,7 +2628,8 @@ export declare enum KnownAnnotationContentType {
     Language = "language",
     Skill = "skill",
     Yearsexperience = "yearsexperience",
-    Group = "group"
+    Group = "group",
+    TableDeprecated = "table_deprecated"
 }
 
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
@@ -2667,6 +2860,50 @@ export declare interface ManagementLevelSearchScoreComponent {
     score?: number;
 }
 
+export declare interface Meta {
+    /** Uniquely identify a document. */
+    identifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+    ready?: boolean;
+    /** The datetime when the document was ready */
+    readyDt?: Date;
+    /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+    failed?: boolean;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+    /** The document's language. */
+    language?: string;
+    /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+    pdf?: string;
+    /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+    parentDocument?: MetaParentDocument;
+    /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+    childDocuments?: MetaChildDocumentsItem[];
+    /** The document's pages. */
+    pages?: PageMeta[];
+    /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
+    isVerified?: boolean;
+    /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
+    reviewUrl?: string;
+    /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+    ocrConfidence?: number;
+    createdDt?: Date;
+    documentType?: string;
+}
+
+export declare interface MetaChildDocumentsItem {
+    /** Uniquely identify a document. */
+    identifier?: string;
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export declare interface MetaParentDocument {
+    /** Uniquely identify a document. */
+    identifier?: string;
+}
+
 export declare interface OccupationGroup {
     code: number;
     name: string;
@@ -2677,7 +2914,7 @@ export declare interface OccupationGroupSearchResult {
     match?: boolean;
     code: number;
     name: string;
-    children: OccupationGroup[];
+    children?: OccupationGroup[];
     parents?: OccupationGroup[];
 }
 
@@ -2776,6 +3013,12 @@ export declare type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJs
 
 export declare interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
     configOverride?: ResumeSearchConfig;
+}
+
+export declare type Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export declare interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: (Annotation | null)[];
 }
 
 export declare interface Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
@@ -3106,6 +3349,7 @@ export declare interface ResumeDataWorkExperienceItemDates {
     endDate?: Date;
     monthsInPosition?: number;
     isCurrent?: boolean;
+    rawText?: string;
 }
 
 export declare interface ResumeDataWorkExperienceItemOccupation {

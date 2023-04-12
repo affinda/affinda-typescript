@@ -22,6 +22,10 @@
 ### Methods
 
 - [activateResthookSubscription](AffindaAPI.md#activateresthooksubscription)
+- [batchCreateAnnotations](AffindaAPI.md#batchcreateannotations)
+- [batchDeleteAnnotations](AffindaAPI.md#batchdeleteannotations)
+- [batchUpdateAnnotations](AffindaAPI.md#batchupdateannotations)
+- [createAnnotation](AffindaAPI.md#createannotation)
 - [createCollection](AffindaAPI.md#createcollection)
 - [createDataPoint](AffindaAPI.md#createdatapoint)
 - [createDataPointChoice](AffindaAPI.md#createdatapointchoice)
@@ -39,6 +43,7 @@
 - [createTag](AffindaAPI.md#createtag)
 - [createWorkspace](AffindaAPI.md#createworkspace)
 - [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
+- [deleteAnnotation](AffindaAPI.md#deleteannotation)
 - [deleteCollection](AffindaAPI.md#deletecollection)
 - [deleteDataPoint](AffindaAPI.md#deletedatapoint)
 - [deleteDataPointChoice](AffindaAPI.md#deletedatapointchoice)
@@ -53,6 +58,8 @@
 - [deleteTag](AffindaAPI.md#deletetag)
 - [deleteWorkspace](AffindaAPI.md#deleteworkspace)
 - [deleteWorkspaceMembership](AffindaAPI.md#deleteworkspacemembership)
+- [editDocumentPages](AffindaAPI.md#editdocumentpages)
+- [getAllAnnotations](AffindaAPI.md#getallannotations)
 - [getAllCollections](AffindaAPI.md#getallcollections)
 - [getAllDataPoints](AffindaAPI.md#getalldatapoints)
 - [getAllDocuments](AffindaAPI.md#getalldocuments)
@@ -66,6 +73,7 @@
 - [getAllTags](AffindaAPI.md#getalltags)
 - [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
+- [getAnnotation](AffindaAPI.md#getannotation)
 - [getCollection](AffindaAPI.md#getcollection)
 - [getDataPoint](AffindaAPI.md#getdatapoint)
 - [getDataPointChoice](AffindaAPI.md#getdatapointchoice)
@@ -91,6 +99,7 @@
 - [respondToInvitation](AffindaAPI.md#respondtoinvitation)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
+- [updateAnnotation](AffindaAPI.md#updateannotation)
 - [updateCollection](AffindaAPI.md#updatecollection)
 - [updateDataPoint](AffindaAPI.md#updatedatapoint)
 - [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
@@ -167,6 +176,82 @@ that you received to activate the subscription using this endpoint.
 #### Returns
 
 `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+
+___
+
+### batchCreateAnnotations
+
+▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
+
+Batch create annotations
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`AnnotationCreate`](../interfaces/AnnotationCreate.md)[] | Array of AnnotationCreate |
+| `options?` | [`AffindaAPIBatchCreateAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchCreateAnnotationsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
+
+___
+
+### batchDeleteAnnotations
+
+▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`<`void`\>
+
+Batch delete annotations
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | `number`[] | Array of annotation IDs to be deleted |
+| `options?` | [`AffindaAPIBatchDeleteAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### batchUpdateAnnotations
+
+▸ **batchUpdateAnnotations**(`body`, `options?`): `Promise`<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
+
+Batch update annotations
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`AnnotationBatchUpdate`](../modules.md#annotationbatchupdate)[] | Array of AnnotationBatchUpdate |
+| `options?` | [`AffindaAPIBatchUpdateAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
+
+___
+
+### createAnnotation
+
+▸ **createAnnotation**(`body`, `options?`): `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+
+Create a annotation
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`AnnotationCreate`](../interfaces/AnnotationCreate.md) |  |
+| `options?` | [`AffindaAPICreateAnnotationOptionalParams`](../interfaces/AffindaAPICreateAnnotationOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Annotation`](../interfaces/Annotation.md)\>
 
 ___
 
@@ -504,6 +589,25 @@ Create a workspace membership.
 
 ___
 
+### deleteAnnotation
+
+▸ **deleteAnnotation**(`id`, `options?`): `Promise`<`void`\>
+
+Deletes the specified annotation from the database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Annotation's ID |
+| `options?` | [`AffindaAPIDeleteAnnotationOptionalParams`](../interfaces/AffindaAPIDeleteAnnotationOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
 ### deleteCollection
 
 ▸ **deleteCollection**(`identifier`, `options?`): `Promise`<`void`\>
@@ -772,6 +876,47 @@ Remove an user from a workspace.
 
 ___
 
+### editDocumentPages
+
+▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
+
+Split / merge / rotate / delete pages of a document.
+Documents with multiple pages can be  into multiple documents, or merged into one document.
+Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document's identifier |
+| `body` | [`DocumentEditRequest`](../interfaces/DocumentEditRequest.md) | Describe how the pages should be edited |
+| `options?` | [`AffindaAPIEditDocumentPagesOptionalParams`](../interfaces/AffindaAPIEditDocumentPagesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
+
+___
+
+### getAllAnnotations
+
+▸ **getAllAnnotations**(`document`, `options?`): `Promise`<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
+
+Returns your annotations.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `document` | `string` | Filter by document. |
+| `options?` | [`AffindaAPIGetAllAnnotationsOptionalParams`](../interfaces/AffindaAPIGetAllAnnotationsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
+
+___
+
 ### getAllCollections
 
 ▸ **getAllCollections**(`workspace`, `options?`): `Promise`<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
@@ -1007,6 +1152,25 @@ Returns your workspaces.
 #### Returns
 
 `Promise`<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
+
+___
+
+### getAnnotation
+
+▸ **getAnnotation**(`id`, `options?`): `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+
+Return a specific annotation.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Annotation's ID |
+| `options?` | [`AffindaAPIGetAnnotationOptionalParams`](../interfaces/AffindaAPIGetAnnotationOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Annotation`](../interfaces/Annotation.md)\>
 
 ___
 
@@ -1509,6 +1673,26 @@ Send the provided httpRequest.
 #### Inherited from
 
 [AffindaAPIContext](AffindaAPIContext.md).[sendRequest](AffindaAPIContext.md#sendrequest)
+
+___
+
+### updateAnnotation
+
+▸ **updateAnnotation**(`id`, `body`, `options?`): `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+
+Update data of an annotation.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Annotation's ID |
+| `body` | [`AnnotationUpdate`](../interfaces/AnnotationUpdate.md) | Annotation data to update |
+| `options?` | [`AffindaAPIUpdateAnnotationOptionalParams`](../interfaces/AffindaAPIUpdateAnnotationOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Annotation`](../interfaces/Annotation.md)\>
 
 ___
 

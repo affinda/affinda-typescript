@@ -25,6 +25,8 @@
 
 • **annotationContentType**: `string`
 
+The different data types of annotations
+
 ___
 
 ### children

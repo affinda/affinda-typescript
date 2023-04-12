@@ -8,6 +8,7 @@
 
 - [completionDate](EducationDates.md#completiondate)
 - [isCurrent](EducationDates.md#iscurrent)
+- [rawText](EducationDates.md#rawtext)
 - [startDate](EducationDates.md#startdate)
 
 ## Properties
@@ -21,6 +22,12 @@ ___
 ### isCurrent
 
 • `Optional` **isCurrent**: `boolean`
+
+___
+
+### rawText
+
+• `Optional` **rawText**: `string`
 
 ___
 

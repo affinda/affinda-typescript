@@ -16,6 +16,7 @@ Describes unknown properties. The value of an unknown property can be of "any" t
 - [confidence](Annotation.md#confidence)
 - [contentType](Annotation.md#contenttype)
 - [dataPoint](Annotation.md#datapoint)
+- [document](Annotation.md#document)
 - [id](Annotation.md#id)
 - [isAutoVerified](Annotation.md#isautoverified)
 - [isClientVerified](Annotation.md#isclientverified)
@@ -48,17 +49,31 @@ ___
 
 • **contentType**: `string`
 
+The different data types of annotations
+
 ___
 
 ### dataPoint
 
 • **dataPoint**: `string`
 
+Data point's identifier
+
+___
+
+### document
+
+• `Optional` **document**: `string`
+
+Uniquely identify a document.
+
 ___
 
 ### id
 
 • **id**: `number`
+
+Annotation's ID
 
 ___
 
@@ -113,6 +128,8 @@ ___
 ### rectangles
 
 • **rectangles**: ``null`` \| [`Rectangle`](Rectangle.md)[]
+
+x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles.
 
 ___
 
