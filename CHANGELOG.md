@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - rawText is now not nullable
+- OccupationGroupSearchResult.children is now optional
 
 ## [6.3.2] - 2023-03-29
 ### Fixed
