@@ -205,6 +205,7 @@ export interface EducationDates {
   completionDate?: Date;
   isCurrent?: boolean;
   startDate?: Date;
+  rawText?: string;
 }
 
 export interface ResumeDataWorkExperienceItem {
@@ -229,6 +230,7 @@ export interface ResumeDataWorkExperienceItemDates {
   endDate?: Date;
   monthsInPosition?: number;
   isCurrent?: boolean;
+  rawText?: string;
 }
 
 export interface ResumeDataWorkExperienceItemOccupation {

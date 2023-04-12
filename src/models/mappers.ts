@@ -970,6 +970,13 @@ export const EducationDates: coreClient.CompositeMapper = {
         type: {
           name: "Date"
         }
+      },
+      rawText: {
+        serializedName: "rawText",
+        xmlName: "rawText",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -1102,6 +1109,13 @@ export const ResumeDataWorkExperienceItemDates: coreClient.CompositeMapper = {
         xmlName: "isCurrent",
         type: {
           name: "Boolean"
+        }
+      },
+      rawText: {
+        serializedName: "rawText",
+        xmlName: "rawText",
+        type: {
+          name: "String"
         }
       }
     }

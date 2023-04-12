@@ -9,6 +9,7 @@
 - [endDate](ResumeDataWorkExperienceItemDates.md#enddate)
 - [isCurrent](ResumeDataWorkExperienceItemDates.md#iscurrent)
 - [monthsInPosition](ResumeDataWorkExperienceItemDates.md#monthsinposition)
+- [rawText](ResumeDataWorkExperienceItemDates.md#rawtext)
 - [startDate](ResumeDataWorkExperienceItemDates.md#startdate)
 
 ## Properties
@@ -28,6 +29,12 @@ ___
 ### monthsInPosition
 
 • `Optional` **monthsInPosition**: `number`
+
+___
+
+### rawText
+
+• `Optional` **rawText**: `string`
 
 ___
 

@@ -1055,6 +1055,7 @@ export declare interface EducationDates {
     completionDate?: Date;
     isCurrent?: boolean;
     startDate?: Date;
+    rawText?: string;
 }
 
 export declare interface EducationGrade {
@@ -2195,6 +2196,7 @@ export declare interface ResumeDataWorkExperienceItemDates {
     endDate?: Date;
     monthsInPosition?: number;
     isCurrent?: boolean;
+    rawText?: string;
 }
 
 export declare interface ResumeDataWorkExperienceItemOccupation {
