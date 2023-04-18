@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - rawText is now not nullable
 - OccupationGroupSearchResult.children is now optional
 
+### Added
+- Add custom fields to resume and job search configs
+
 ## [6.3.2] - 2023-03-29
 ### Fixed
 - Make search config action fields required

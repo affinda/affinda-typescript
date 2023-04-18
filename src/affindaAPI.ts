@@ -2003,10 +2003,12 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Document
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError
@@ -2253,7 +2255,9 @@ const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
     Parameters.extractor,
     Parameters.slug,
     Parameters.description,
-    Parameters.annotationContentType
+    Parameters.annotationContentType,
+    Parameters.includeChild,
+    Parameters.identifier2
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
