@@ -6,19 +6,19 @@ Known values of [ResumeSearchParametersCustomDataFilterType](../modules.md#resum
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Equals](KnownResumeSearchParametersCustomDataFilterType.md#equals)
 - [Range](KnownResumeSearchParametersCustomDataFilterType.md#range)
 
-## Enumeration members
+## Enumeration Members
 
 ### Equals
 
-• **Equals** = `"equals"`
+• **Equals** = ``"equals"``
 
 ___
 
 ### Range
 
-• **Range** = `"range"`
+• **Range** = ``"range"``

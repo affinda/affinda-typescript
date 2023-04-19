@@ -1,9 +1,9 @@
-import { AccessToken } from '@azure/identity';
+import { AccessToken } from '@azure/core-auth';
 import * as coreAuth from '@azure/core-auth';
 import * as coreClient from '@azure/core-client';
 import * as coreRestPipeline from '@azure/core-rest-pipeline';
-import { GetTokenOptions } from '@azure/identity';
-import { TokenCredential } from '@azure/identity';
+import { GetTokenOptions } from '@azure/core-auth';
+import { TokenCredential } from '@azure/core-auth';
 
 export declare interface Accreditation {
     education?: string;
@@ -1047,7 +1047,7 @@ export declare interface Education {
     organization?: string;
     accreditation?: Accreditation;
     grade?: EducationGrade;
-    location?: Location;
+    location?: Location_2;
     dates?: EducationDates;
 }
 
@@ -1471,7 +1471,7 @@ export declare interface JobDescriptionSearchDetailLocation {
     value?: JobDescriptionSearchDetailLocationValue;
 }
 
-export declare type JobDescriptionSearchDetailLocationValue = Location & Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+export declare type JobDescriptionSearchDetailLocationValue = Location_2 & Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
 export declare interface JobDescriptionSearchDetailManagementLevel {
     level?: ManagementLevel;
@@ -1695,7 +1695,7 @@ export declare interface LanguagesSearchScoreComponent {
     score?: number;
 }
 
-export declare interface Location {
+declare interface Location_2 {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly formatted?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
@@ -1723,9 +1723,10 @@ export declare interface Location {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly longitude?: number;
 }
+export { Location_2 as Location }
 
 export declare type LocationAnnotation = Annotation & {
-    parsed?: Location;
+    parsed?: Location_2;
 };
 
 export declare type LocationAnnotationV2Update = AnnotationV2Base & {
@@ -1733,7 +1734,7 @@ export declare type LocationAnnotationV2Update = AnnotationV2Base & {
     readonly parsed?: LocationAnnotationV2UpdateParsed;
 };
 
-export declare type LocationAnnotationV2UpdateParsed = Location & {};
+export declare type LocationAnnotationV2UpdateParsed = Location_2 & {};
 
 export declare interface LocationSearchScoreComponent {
     value?: string;
@@ -2079,7 +2080,7 @@ export declare interface ResumeData {
     websites?: string[];
     emails?: string[];
     dateOfBirth?: string;
-    location?: Location;
+    location?: Location_2;
     objective?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly languages?: string[];
@@ -2184,7 +2185,7 @@ export declare interface ResumeDataWorkExperienceItem {
     organization?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly industry?: string;
-    location?: Location;
+    location?: Location_2;
     jobDescription?: string;
     dates?: ResumeDataWorkExperienceItemDates;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
@@ -2349,7 +2350,7 @@ export declare interface ResumeSearchDetailLocation {
     value?: ResumeSearchDetailLocationValue;
 }
 
-export declare type ResumeSearchDetailLocationValue = Location & ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+export declare type ResumeSearchDetailLocationValue = Location_2 & ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
 export declare interface ResumeSearchDetailManagementLevel {
     level?: ManagementLevel;

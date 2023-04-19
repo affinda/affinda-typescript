@@ -871,13 +871,16 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.Resume
     },
     400: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     401: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     404: {
-      bodyMapper: Mappers.RequestError
+      bodyMapper: Mappers.RequestError,
+      isError: true
     },
     default: {
       bodyMapper: Mappers.RequestError

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - rawText is now not nullable
 
+### Security
+- Remove dependency on azure/identity, bump other versions to get security fixes
+
 ## [5.3.1] - 2023-03-30
 ### Changed
 - "Rectangles" attribute in Annotation updates to readonly

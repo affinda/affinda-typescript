@@ -231,7 +231,7 @@
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
 - [YearsExperienceAnnotationV2UpdateParsed](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)
 
-### Type aliases
+### Type Aliases
 
 - [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
 - [AffindaAPICreateIndexDocumentResponse](modules.md#affindaapicreateindexdocumentresponse)
@@ -341,7 +341,7 @@
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
 - [YearsExperienceAnnotationV2Update](modules.md#yearsexperienceannotationv2update)
 
-## Type aliases
+## Type Aliases
 
 ### AffindaAPIActivateResthookSubscriptionResponse
 
@@ -1115,9 +1115,9 @@ Defines values for ResumeSkillSourcesItemSection. \
 **NotPopulated** \
 **Header** \
 **Footer** \
-**Skills\/Interests\/Languages** \
-**Training\/Certifications** \
-**Extracurriculars\/Leadership**
+**Skills/Interests/Languages** \
+**Training/Certifications** \
+**Extracurriculars/Leadership**
 
 ___
 
