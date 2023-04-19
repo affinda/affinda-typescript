@@ -6,7 +6,7 @@ Known values of [DateRange](../modules.md#daterange) that the service accepts.
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Month](KnownDateRange.md#month)
 - [Today](KnownDateRange.md#today)
@@ -14,32 +14,32 @@ Known values of [DateRange](../modules.md#daterange) that the service accepts.
 - [Year](KnownDateRange.md#year)
 - [Yesterday](KnownDateRange.md#yesterday)
 
-## Enumeration members
+## Enumeration Members
 
 ### Month
 
-• **Month** = `"month"`
+• **Month** = ``"month"``
 
 ___
 
 ### Today
 
-• **Today** = `"today"`
+• **Today** = ``"today"``
 
 ___
 
 ### Week
 
-• **Week** = `"week"`
+• **Week** = ``"week"``
 
 ___
 
 ### Year
 
-• **Year** = `"year"`
+• **Year** = ``"year"``
 
 ___
 
 ### Yesterday
 
-• **Yesterday** = `"yesterday"`
+• **Yesterday** = ``"yesterday"``

@@ -6,19 +6,19 @@ Known values of [Enum16](../modules.md#enum16) that the service accepts.
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [JobDescriptions](KnownEnum16.md#jobdescriptions)
 - [Resumes](KnownEnum16.md#resumes)
 
-## Enumeration members
+## Enumeration Members
 
 ### JobDescriptions
 
-• **JobDescriptions** = `"job_descriptions"`
+• **JobDescriptions** = ``"job_descriptions"``
 
 ___
 
 ### Resumes
 
-• **Resumes** = `"resumes"`
+• **Resumes** = ``"resumes"``

@@ -6,7 +6,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Boolean](KnownAnnotationContentType.md#boolean)
 - [Cell](KnownAnnotationContentType.md#cell)
@@ -28,116 +28,116 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Text](KnownAnnotationContentType.md#text)
 - [Yearsexperience](KnownAnnotationContentType.md#yearsexperience)
 
-## Enumeration members
+## Enumeration Members
 
 ### Boolean
 
-• **Boolean** = `"boolean"`
+• **Boolean** = ``"boolean"``
 
 ___
 
 ### Cell
 
-• **Cell** = `"cell"`
+• **Cell** = ``"cell"``
 
 ___
 
 ### Date
 
-• **Date** = `"date"`
+• **Date** = ``"date"``
 
 ___
 
 ### Datetime
 
-• **Datetime** = `"datetime"`
+• **Datetime** = ``"datetime"``
 
 ___
 
 ### Decimal
 
-• **Decimal** = `"decimal"`
+• **Decimal** = ``"decimal"``
 
 ___
 
 ### Enum
 
-• **Enum** = `"enum"`
+• **Enum** = ``"enum"``
 
 ___
 
 ### Expectedremuneration
 
-• **Expectedremuneration** = `"expectedremuneration"`
+• **Expectedremuneration** = ``"expectedremuneration"``
 
 ___
 
 ### Float
 
-• **Float** = `"float"`
+• **Float** = ``"float"``
 
 ___
 
 ### Group
 
-• **Group** = `"group"`
+• **Group** = ``"group"``
 
 ___
 
 ### Integer
 
-• **Integer** = `"integer"`
+• **Integer** = ``"integer"``
 
 ___
 
 ### Jobtitle
 
-• **Jobtitle** = `"jobtitle"`
+• **Jobtitle** = ``"jobtitle"``
 
 ___
 
 ### Json
 
-• **Json** = `"json"`
+• **Json** = ``"json"``
 
 ___
 
 ### Language
 
-• **Language** = `"language"`
+• **Language** = ``"language"``
 
 ___
 
 ### Location
 
-• **Location** = `"location"`
+• **Location** = ``"location"``
 
 ___
 
 ### Skill
 
-• **Skill** = `"skill"`
+• **Skill** = ``"skill"``
 
 ___
 
 ### Table
 
-• **Table** = `"table"`
+• **Table** = ``"table"``
 
 ___
 
 ### TableDeprecated
 
-• **TableDeprecated** = `"table_deprecated"`
+• **TableDeprecated** = ``"table_deprecated"``
 
 ___
 
 ### Text
 
-• **Text** = `"text"`
+• **Text** = ``"text"``
 
 ___
 
 ### Yearsexperience
 
-• **Yearsexperience** = `"yearsexperience"`
+• **Yearsexperience** = ``"yearsexperience"``

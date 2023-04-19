@@ -6,19 +6,19 @@ Known values of [OrganizationUserRole](../modules.md#organizationuserrole) that 
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Admin](KnownOrganizationUserRole.md#admin)
 - [Member](KnownOrganizationUserRole.md#member)
 
-## Enumeration members
+## Enumeration Members
 
 ### Admin
 
-• **Admin** = `"admin"`
+• **Admin** = ``"admin"``
 
 ___
 
 ### Member
 
-• **Member** = `"member"`
+• **Member** = ``"member"``

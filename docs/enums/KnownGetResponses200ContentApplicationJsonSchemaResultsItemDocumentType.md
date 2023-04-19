@@ -6,19 +6,19 @@ Known values of [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentT
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [JobDescriptions](KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md#jobdescriptions)
 - [Resumes](KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md#resumes)
 
-## Enumeration members
+## Enumeration Members
 
 ### JobDescriptions
 
-• **JobDescriptions** = `"job_descriptions"`
+• **JobDescriptions** = ``"job_descriptions"``
 
 ___
 
 ### Resumes
 
-• **Resumes** = `"resumes"`
+• **Resumes** = ``"resumes"``

@@ -5,6 +5,6 @@
   "out": "docs",
   "readme": null,
   "plugin": ["typedoc-plugin-markdown"],
-  "disableOutputCheck": true,
+  "cleanOutputDir": true,
   "disableSources": true
 }

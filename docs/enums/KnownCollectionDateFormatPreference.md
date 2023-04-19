@@ -6,26 +6,26 @@ Known values of [CollectionDateFormatPreference](../modules.md#collectiondatefor
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DMY](KnownCollectionDateFormatPreference.md#dmy)
 - [MDY](KnownCollectionDateFormatPreference.md#mdy)
 - [YMD](KnownCollectionDateFormatPreference.md#ymd)
 
-## Enumeration members
+## Enumeration Members
 
 ### DMY
 
-• **DMY** = `"DMY"`
+• **DMY** = ``"DMY"``
 
 ___
 
 ### MDY
 
-• **MDY** = `"MDY"`
+• **MDY** = ``"MDY"``
 
 ___
 
 ### YMD
 
-• **YMD** = `"YMD"`
+• **YMD** = ``"YMD"``

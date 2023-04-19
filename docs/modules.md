@@ -176,7 +176,6 @@
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
-- [CustomFieldConfig](interfaces/CustomFieldConfig.md)
 - [DataPoint](interfaces/DataPoint.md)
 - [DataPointChoice](interfaces/DataPointChoice.md)
 - [DataPointChoiceCreate](interfaces/DataPointChoiceCreate.md)
@@ -332,7 +331,7 @@
 - [WorkspaceUpdate](interfaces/WorkspaceUpdate.md)
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
 
-### Type aliases
+### Type Aliases
 
 - [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
 - [AffindaAPIBatchCreateAnnotationsResponse](modules.md#affindaapibatchcreateannotationsresponse)
@@ -491,7 +490,7 @@
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
 
-## Type aliases
+## Type Aliases
 
 ### AffindaAPIActivateResthookSubscriptionResponse
 
@@ -1750,9 +1749,9 @@ Defines values for ResumeSkillSourcesItemSection. \
 **NotPopulated** \
 **Header** \
 **Footer** \
-**Skills\/Interests\/Languages** \
-**Training\/Certifications** \
-**Extracurriculars\/Leadership**
+**Skills/Interests/Languages** \
+**Training/Certifications** \
+**Extracurriculars/Leadership**
 
 ___
 

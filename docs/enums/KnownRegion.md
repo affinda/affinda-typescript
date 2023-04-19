@@ -6,19 +6,19 @@ Known values of [Region](../modules.md#region) that the service accepts.
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Api](KnownRegion.md#api)
 - [ApiEu1](KnownRegion.md#apieu1)
 
-## Enumeration members
+## Enumeration Members
 
 ### Api
 
-• **Api** = `"api"`
+• **Api** = ``"api"``
 
 ___
 
 ### ApiEu1
 
-• **ApiEu1** = `"api.eu1"`
+• **ApiEu1** = ``"api.eu1"``

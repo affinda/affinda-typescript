@@ -6,19 +6,19 @@ Known values of [OrganizationRole](../modules.md#organizationrole) that the serv
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Admin](KnownOrganizationRole.md#admin)
 - [Member](KnownOrganizationRole.md#member)
 
-## Enumeration members
+## Enumeration Members
 
 ### Admin
 
-• **Admin** = `"admin"`
+• **Admin** = ``"admin"``
 
 ___
 
 ### Member
 
-• **Member** = `"member"`
+• **Member** = ``"member"``

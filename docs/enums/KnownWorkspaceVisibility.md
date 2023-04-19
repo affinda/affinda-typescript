@@ -6,19 +6,19 @@ Known values of [WorkspaceVisibility](../modules.md#workspacevisibility) that th
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Organization](KnownWorkspaceVisibility.md#organization)
 - [Private](KnownWorkspaceVisibility.md#private)
 
-## Enumeration members
+## Enumeration Members
 
 ### Organization
 
-• **Organization** = `"organization"`
+• **Organization** = ``"organization"``
 
 ___
 
 ### Private
 
-• **Private** = `"private"`
+• **Private** = ``"private"``

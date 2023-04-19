@@ -6,26 +6,26 @@ Known values of [ResthookSubscriptionVersion](../modules.md#resthooksubscription
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [V1](KnownResthookSubscriptionVersion.md#v1)
 - [V2](KnownResthookSubscriptionVersion.md#v2)
 - [V3](KnownResthookSubscriptionVersion.md#v3)
 
-## Enumeration members
+## Enumeration Members
 
 ### V1
 
-• **V1** = `"v1"`
+• **V1** = ``"v1"``
 
 ___
 
 ### V2
 
-• **V2** = `"v2"`
+• **V2** = ``"v2"``
 
 ___
 
 ### V3
 
-• **V3** = `"v3"`
+• **V3** = ``"v3"``

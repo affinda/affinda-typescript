@@ -6,26 +6,26 @@ Known values of [Get8ItemsItem](../modules.md#get8itemsitem) that the service ac
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [CreatedDt](KnownGet8ItemsItem.md#createddt)
 - [Extractor](KnownGet8ItemsItem.md#extractor)
 - [FileName](KnownGet8ItemsItem.md#filename)
 
-## Enumeration members
+## Enumeration Members
 
 ### CreatedDt
 
-• **CreatedDt** = `"created_dt"`
+• **CreatedDt** = ``"created_dt"``
 
 ___
 
 ### Extractor
 
-• **Extractor** = `"extractor"`
+• **Extractor** = ``"extractor"``
 
 ___
 
 ### FileName
 
-• **FileName** = `"file_name"`
+• **FileName** = ``"file_name"``

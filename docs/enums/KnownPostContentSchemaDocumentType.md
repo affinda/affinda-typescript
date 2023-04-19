@@ -6,19 +6,19 @@ Known values of [PostContentSchemaDocumentType](../modules.md#postcontentschemad
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [JobDescriptions](KnownPostContentSchemaDocumentType.md#jobdescriptions)
 - [Resumes](KnownPostContentSchemaDocumentType.md#resumes)
 
-## Enumeration members
+## Enumeration Members
 
 ### JobDescriptions
 
-• **JobDescriptions** = `"job_descriptions"`
+• **JobDescriptions** = ``"job_descriptions"``
 
 ___
 
 ### Resumes
 
-• **Resumes** = `"resumes"`
+• **Resumes** = ``"resumes"``

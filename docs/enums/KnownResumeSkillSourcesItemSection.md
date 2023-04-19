@@ -6,7 +6,7 @@ Known values of [ResumeSkillSourcesItemSection](../modules.md#resumeskillsources
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Achievements](KnownResumeSkillSourcesItemSection.md#achievements)
 - [AdditionalInformation](KnownResumeSkillSourcesItemSection.md#additionalinformation)
@@ -29,122 +29,122 @@ Known values of [ResumeSkillSourcesItemSection](../modules.md#resumeskillsources
 - [TrainingCertifications](KnownResumeSkillSourcesItemSection.md#trainingcertifications)
 - [WorkExperience](KnownResumeSkillSourcesItemSection.md#workexperience)
 
-## Enumeration members
+## Enumeration Members
 
 ### Achievements
 
-• **Achievements** = `"Achievements"`
+• **Achievements** = ``"Achievements"``
 
 ___
 
 ### AdditionalInformation
 
-• **AdditionalInformation** = `"AdditionalInformation"`
+• **AdditionalInformation** = ``"AdditionalInformation"``
 
 ___
 
 ### Education
 
-• **Education** = `"Education"`
+• **Education** = ``"Education"``
 
 ___
 
 ### Extracurriculars
 
-• **Extracurriculars** = `"Extracurriculars"`
+• **Extracurriculars** = ``"Extracurriculars"``
 
 ___
 
 ### ExtracurricularsLeadership
 
-• **ExtracurricularsLeadership** = `"Extracurriculars/Leadership"`
+• **ExtracurricularsLeadership** = ``"Extracurriculars/Leadership"``
 
 ___
 
 ### Footer
 
-• **Footer** = `"Footer"`
+• **Footer** = ``"Footer"``
 
 ___
 
 ### Header
 
-• **Header** = `"Header"`
+• **Header** = ``"Header"``
 
 ___
 
 ### NotPopulated
 
-• **NotPopulated** = `"NotPopulated"`
+• **NotPopulated** = ``"NotPopulated"``
 
 ___
 
 ### Organisations
 
-• **Organisations** = `"Organisations"`
+• **Organisations** = ``"Organisations"``
 
 ___
 
 ### Other
 
-• **Other** = `"Other"`
+• **Other** = ``"Other"``
 
 ___
 
 ### PersonalDetails
 
-• **PersonalDetails** = `"PersonalDetails"`
+• **PersonalDetails** = ``"PersonalDetails"``
 
 ___
 
 ### Projects
 
-• **Projects** = `"Projects"`
+• **Projects** = ``"Projects"``
 
 ___
 
 ### Publications
 
-• **Publications** = `"Publications"`
+• **Publications** = ``"Publications"``
 
 ___
 
 ### Referees
 
-• **Referees** = `"Referees"`
+• **Referees** = ``"Referees"``
 
 ___
 
 ### Skills
 
-• **Skills** = `"Skills"`
+• **Skills** = ``"Skills"``
 
 ___
 
 ### SkillsInterestsLanguages
 
-• **SkillsInterestsLanguages** = `"Skills/Interests/Languages"`
+• **SkillsInterestsLanguages** = ``"Skills/Interests/Languages"``
 
 ___
 
 ### Summary
 
-• **Summary** = `"Summary"`
+• **Summary** = ``"Summary"``
 
 ___
 
 ### Training
 
-• **Training** = `"Training"`
+• **Training** = ``"Training"``
 
 ___
 
 ### TrainingCertifications
 
-• **TrainingCertifications** = `"Training/Certifications"`
+• **TrainingCertifications** = ``"Training/Certifications"``
 
 ___
 
 ### WorkExperience
 
-• **WorkExperience** = `"WorkExperience"`
+• **WorkExperience** = ``"WorkExperience"``

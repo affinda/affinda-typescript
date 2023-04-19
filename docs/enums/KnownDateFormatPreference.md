@@ -6,26 +6,26 @@ Known values of [DateFormatPreference](../modules.md#dateformatpreference) that 
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DMY](KnownDateFormatPreference.md#dmy)
 - [MDY](KnownDateFormatPreference.md#mdy)
 - [YMD](KnownDateFormatPreference.md#ymd)
 
-## Enumeration members
+## Enumeration Members
 
 ### DMY
 
-• **DMY** = `"DMY"`
+• **DMY** = ``"DMY"``
 
 ___
 
 ### MDY
 
-• **MDY** = `"MDY"`
+• **MDY** = ``"MDY"``
 
 ___
 
 ### YMD
 
-• **YMD** = `"YMD"`
+• **YMD** = ``"YMD"``

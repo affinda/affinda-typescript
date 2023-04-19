@@ -8,7 +8,6 @@
 
 - [actions](ResumeSearchConfig.md#actions)
 - [allowPdfDownload](ResumeSearchConfig.md#allowpdfdownload)
-- [customFieldsConfig](ResumeSearchConfig.md#customfieldsconfig)
 - [displayEducation](ResumeSearchConfig.md#displayeducation)
 - [displayJobTitle](ResumeSearchConfig.md#displayjobtitle)
 - [displayKeywords](ResumeSearchConfig.md#displaykeywords)
@@ -48,12 +47,6 @@ ___
 ### allowPdfDownload
 
 • `Optional` **allowPdfDownload**: `boolean`
-
-___
-
-### customFieldsConfig
-
-• `Optional` **customFieldsConfig**: [`CustomFieldConfig`](CustomFieldConfig.md)[]
 
 ___
 

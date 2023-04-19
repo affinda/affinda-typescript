@@ -6,26 +6,26 @@ Known values of [InvitationStatus](../modules.md#invitationstatus) that the serv
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Accepted](KnownInvitationStatus.md#accepted)
 - [Declined](KnownInvitationStatus.md#declined)
 - [Pending](KnownInvitationStatus.md#pending)
 
-## Enumeration members
+## Enumeration Members
 
 ### Accepted
 
-• **Accepted** = `"accepted"`
+• **Accepted** = ``"accepted"``
 
 ___
 
 ### Declined
 
-• **Declined** = `"declined"`
+• **Declined** = ``"declined"``
 
 ___
 
 ### Pending
 
-• **Pending** = `"pending"`
+• **Pending** = ``"pending"``

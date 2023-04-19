@@ -1,4 +1,4 @@
-import {AccessToken, GetTokenOptions, TokenCredential} from "@azure/identity";
+import {AccessToken, GetTokenOptions, TokenCredential} from "@azure/core-auth";
 
 
 export class AffindaCredential implements TokenCredential {

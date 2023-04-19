@@ -6,19 +6,19 @@ Known values of [InvitationResponseStatus](../modules.md#invitationresponsestatu
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Accepted](KnownInvitationResponseStatus.md#accepted)
 - [Declined](KnownInvitationResponseStatus.md#declined)
 
-## Enumeration members
+## Enumeration Members
 
 ### Accepted
 
-• **Accepted** = `"accepted"`
+• **Accepted** = ``"accepted"``
 
 ___
 
 ### Declined
 
-• **Declined** = `"declined"`
+• **Declined** = ``"declined"``

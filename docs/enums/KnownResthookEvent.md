@@ -6,7 +6,7 @@ Known values of [ResthookEvent](../modules.md#resthookevent) that the service ac
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DocumentClassifyCompleted](KnownResthookEvent.md#documentclassifycompleted)
 - [DocumentClassifyFailed](KnownResthookEvent.md#documentclassifyfailed)
@@ -23,86 +23,86 @@ Known values of [ResthookEvent](../modules.md#resthookevent) that the service ac
 - [ResumeParseFailed](KnownResthookEvent.md#resumeparsefailed)
 - [ResumeParseSucceeded](KnownResthookEvent.md#resumeparsesucceeded)
 
-## Enumeration members
+## Enumeration Members
 
 ### DocumentClassifyCompleted
 
-• **DocumentClassifyCompleted** = `"document.classify.completed"`
+• **DocumentClassifyCompleted** = ``"document.classify.completed"``
 
 ___
 
 ### DocumentClassifyFailed
 
-• **DocumentClassifyFailed** = `"document.classify.failed"`
+• **DocumentClassifyFailed** = ``"document.classify.failed"``
 
 ___
 
 ### DocumentClassifySucceeded
 
-• **DocumentClassifySucceeded** = `"document.classify.succeeded"`
+• **DocumentClassifySucceeded** = ``"document.classify.succeeded"``
 
 ___
 
 ### DocumentParseCompleted
 
-• **DocumentParseCompleted** = `"document.parse.completed"`
+• **DocumentParseCompleted** = ``"document.parse.completed"``
 
 ___
 
 ### DocumentParseFailed
 
-• **DocumentParseFailed** = `"document.parse.failed"`
+• **DocumentParseFailed** = ``"document.parse.failed"``
 
 ___
 
 ### DocumentParseSucceeded
 
-• **DocumentParseSucceeded** = `"document.parse.succeeded"`
+• **DocumentParseSucceeded** = ``"document.parse.succeeded"``
 
 ___
 
 ### DocumentValidateCompleted
 
-• **DocumentValidateCompleted** = `"document.validate.completed"`
+• **DocumentValidateCompleted** = ``"document.validate.completed"``
 
 ___
 
 ### InvoiceParseCompleted
 
-• **InvoiceParseCompleted** = `"invoice.parse.completed"`
+• **InvoiceParseCompleted** = ``"invoice.parse.completed"``
 
 ___
 
 ### InvoiceParseFailed
 
-• **InvoiceParseFailed** = `"invoice.parse.failed"`
+• **InvoiceParseFailed** = ``"invoice.parse.failed"``
 
 ___
 
 ### InvoiceParseSucceeded
 
-• **InvoiceParseSucceeded** = `"invoice.parse.succeeded"`
+• **InvoiceParseSucceeded** = ``"invoice.parse.succeeded"``
 
 ___
 
 ### InvoiceValidateCompleted
 
-• **InvoiceValidateCompleted** = `"invoice.validate.completed"`
+• **InvoiceValidateCompleted** = ``"invoice.validate.completed"``
 
 ___
 
 ### ResumeParseCompleted
 
-• **ResumeParseCompleted** = `"resume.parse.completed"`
+• **ResumeParseCompleted** = ``"resume.parse.completed"``
 
 ___
 
 ### ResumeParseFailed
 
-• **ResumeParseFailed** = `"resume.parse.failed"`
+• **ResumeParseFailed** = ``"resume.parse.failed"``
 
 ___
 
 ### ResumeParseSucceeded
 
-• **ResumeParseSucceeded** = `"resume.parse.succeeded"`
+• **ResumeParseSucceeded** = ``"resume.parse.succeeded"``

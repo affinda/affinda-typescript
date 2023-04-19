@@ -8,8 +8,6 @@ A JSON-encoded string of the `ResumeData` object.
 
 ▪ [property: `string`]: `any`
 
-Describes unknown properties. The value of an unknown property can be of "any" type.
-
 ## Table of contents
 
 ### Properties

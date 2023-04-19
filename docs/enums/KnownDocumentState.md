@@ -6,7 +6,7 @@ Known values of [DocumentState](../modules.md#documentstate) that the service ac
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Archived](KnownDocumentState.md#archived)
 - [Rejected](KnownDocumentState.md#rejected)
@@ -14,32 +14,32 @@ Known values of [DocumentState](../modules.md#documentstate) that the service ac
 - [Uploaded](KnownDocumentState.md#uploaded)
 - [Validated](KnownDocumentState.md#validated)
 
-## Enumeration members
+## Enumeration Members
 
 ### Archived
 
-• **Archived** = `"archived"`
+• **Archived** = ``"archived"``
 
 ___
 
 ### Rejected
 
-• **Rejected** = `"rejected"`
+• **Rejected** = ``"rejected"``
 
 ___
 
 ### Review
 
-• **Review** = `"review"`
+• **Review** = ``"review"``
 
 ___
 
 ### Uploaded
 
-• **Uploaded** = `"uploaded"`
+• **Uploaded** = ``"uploaded"``
 
 ___
 
 ### Validated
 
-• **Validated** = `"validated"`
+• **Validated** = ``"validated"``
