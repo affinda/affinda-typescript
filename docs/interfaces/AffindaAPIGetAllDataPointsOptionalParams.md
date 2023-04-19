@@ -18,6 +18,8 @@ Optional parameters.
 - [annotationContentType](AffindaAPIGetAllDataPointsOptionalParams.md#annotationcontenttype)
 - [description](AffindaAPIGetAllDataPointsOptionalParams.md#description)
 - [extractor](AffindaAPIGetAllDataPointsOptionalParams.md#extractor)
+- [identifier](AffindaAPIGetAllDataPointsOptionalParams.md#identifier)
+- [includeChild](AffindaAPIGetAllDataPointsOptionalParams.md#includechild)
 - [limit](AffindaAPIGetAllDataPointsOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllDataPointsOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllDataPointsOptionalParams.md#onresponse)
@@ -62,6 +64,22 @@ ___
 • `Optional` **extractor**: `string`
 
 Filter by extractor.
+
+___
+
+### identifier
+
+• `Optional` **identifier**: `string`[]
+
+Filter by specific identifiers.
+
+___
+
+### includeChild
+
+• `Optional` **includeChild**: `boolean`
+
+Whether to show child data points at the top level. <br /> By default child data points are shown nested inside their parent so they are excluded from the top level.
 
 ___
 

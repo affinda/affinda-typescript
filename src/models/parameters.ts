@@ -569,6 +569,34 @@ export const annotationContentType: OperationQueryParameter = {
   }
 };
 
+export const includeChild: OperationQueryParameter = {
+  parameterPath: ["options", "includeChild"],
+  mapper: {
+    serializedName: "include_child",
+    xmlName: "include_child",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const identifier2: OperationQueryParameter = {
+  parameterPath: ["options", "identifier"],
+  mapper: {
+    serializedName: "identifier",
+    xmlName: "identifier",
+    xmlElementName: "DataPointPropertiesIdentifier",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const body9: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: DataPointCreateMapper

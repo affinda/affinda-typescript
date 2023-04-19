@@ -176,6 +176,7 @@
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
+- [CustomFieldConfig](interfaces/CustomFieldConfig.md)
 - [DataPoint](interfaces/DataPoint.md)
 - [DataPointChoice](interfaces/DataPointChoice.md)
 - [DataPointChoiceCreate](interfaces/DataPointChoiceCreate.md)

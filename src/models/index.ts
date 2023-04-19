@@ -1050,6 +1050,7 @@ export interface JobDescriptionSearchConfig {
   actions?: SearchConfigAction[];
   /** Hide the reset/import toolbar. */
   hideToolbar?: boolean;
+  customFieldsConfig?: CustomFieldConfig[];
 }
 
 export interface SearchConfigAction {
@@ -1057,6 +1058,12 @@ export interface SearchConfigAction {
   label: string;
   /** Name of the event to be triggered */
   eventName: string;
+}
+
+export interface CustomFieldConfig {
+  /** Data point identifier. */
+  dataPoint: string;
+  weight: number;
 }
 
 export interface PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -1407,6 +1414,7 @@ export interface ResumeSearchConfig {
   actions?: SearchConfigAction[];
   /** Hide the reset/import toolbar. */
   hideToolbar?: boolean;
+  customFieldsConfig?: CustomFieldConfig[];
 }
 
 export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -2796,6 +2804,10 @@ export interface AffindaAPIGetAllDataPointsOptionalParams
   description?: string;
   /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
   annotationContentType?: string;
+  /** Whether to show child data points at the top level. <br /> By default child data points are shown nested inside their parent so they are excluded from the top level. */
+  includeChild?: boolean;
+  /** Filter by specific identifiers. */
+  identifier?: string[];
 }
 
 /** Contains response data for the getAllDataPoints operation. */

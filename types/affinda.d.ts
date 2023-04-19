@@ -901,6 +901,10 @@ export declare interface AffindaAPIGetAllDataPointsOptionalParams extends coreCl
     description?: string;
     /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
     annotationContentType?: string;
+    /** Whether to show child data points at the top level. <br /> By default child data points are shown nested inside their parent so they are excluded from the top level. */
+    includeChild?: boolean;
+    /** Filter by specific identifiers. */
+    identifier?: string[];
 }
 
 /** Contains response data for the getAllDataPoints operation. */
@@ -1753,6 +1757,12 @@ export declare type CurrencyCodeAnnotation = Annotation & {
     parsed?: DataPointChoice;
 };
 
+export declare interface CustomFieldConfig {
+    /** Data point identifier. */
+    dataPoint: string;
+    weight: number;
+}
+
 export declare interface DataPoint {
     /** Uniquely identify a data point. */
     identifier: string;
@@ -2438,6 +2448,7 @@ export declare interface JobDescriptionSearchConfig {
     actions?: SearchConfigAction[];
     /** Hide the reset/import toolbar. */
     hideToolbar?: boolean;
+    customFieldsConfig?: CustomFieldConfig[];
 }
 
 export declare interface JobDescriptionSearchDetail {
@@ -3418,6 +3429,7 @@ export declare interface ResumeSearchConfig {
     actions?: SearchConfigAction[];
     /** Hide the reset/import toolbar. */
     hideToolbar?: boolean;
+    customFieldsConfig?: CustomFieldConfig[];
 }
 
 export declare interface ResumeSearchDetail {

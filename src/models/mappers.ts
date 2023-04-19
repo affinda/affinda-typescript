@@ -5528,6 +5528,21 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      customFieldsConfig: {
+        serializedName: "customFieldsConfig",
+        nullable: true,
+        xmlName: "customFieldsConfig",
+        xmlElementName: "CustomFieldConfig",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "CustomFieldConfig"
+            }
+          }
+        }
       }
     }
   }
@@ -5553,6 +5568,36 @@ export const SearchConfigAction: coreClient.CompositeMapper = {
         xmlName: "eventName",
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const CustomFieldConfig: coreClient.CompositeMapper = {
+  serializedName: "CustomFieldConfig",
+  type: {
+    name: "Composite",
+    className: "CustomFieldConfig",
+    modelProperties: {
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        xmlName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      weight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "weight",
+        required: true,
+        xmlName: "weight",
+        type: {
+          name: "Number"
         }
       }
     }
@@ -7624,6 +7669,21 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         xmlName: "hideToolbar",
         type: {
           name: "Boolean"
+        }
+      },
+      customFieldsConfig: {
+        serializedName: "customFieldsConfig",
+        nullable: true,
+        xmlName: "customFieldsConfig",
+        xmlElementName: "CustomFieldConfig",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "CustomFieldConfig"
+            }
+          }
         }
       }
     }
