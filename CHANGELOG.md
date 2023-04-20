@@ -5,11 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Security
+- Remove dependency on azure/identity, bump other versions to get security fixes
+
 ### Changed
 - rawText is now not nullable
 
-### Security
-- Remove dependency on azure/identity, bump other versions to get security fixes
+### Fixed
+- Allow rejectDuplicates to be null
 
 ## [5.3.1] - 2023-03-30
 ### Changed

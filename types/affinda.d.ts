@@ -385,7 +385,7 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
@@ -408,7 +408,7 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
@@ -496,7 +496,7 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
@@ -1034,6 +1034,12 @@ export declare interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercon
     parsed?: string;
 }
 
+export declare interface CustomFieldConfig {
+    /** Data point identifier. */
+    dataPoint: string;
+    weight: number;
+}
+
 export declare type DateAnnotation = Annotation & {
     parsed?: Date;
 };
@@ -1274,7 +1280,7 @@ export declare interface InvoiceRequestBody {
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
@@ -1341,7 +1347,7 @@ export declare interface JobDescriptionRequestBody {
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
@@ -1402,6 +1408,7 @@ export declare interface JobDescriptionSearchConfig {
     readonly username?: string;
     /** A list of actions to show in the dropdown in the embedded search tool */
     actions?: JobDescriptionSearchConfigActionsItem[];
+    customFieldsConfig?: CustomFieldConfig[];
 }
 
 export declare interface JobDescriptionSearchConfigActionsItem {
@@ -2223,7 +2230,7 @@ export declare interface ResumeRequestBody {
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
@@ -2284,6 +2291,7 @@ export declare interface ResumeSearchConfig {
     readonly username?: string;
     /** A list of actions to show in the dropdown in the embedded search tool */
     actions?: ResumeSearchConfigActionsItem[];
+    customFieldsConfig?: CustomFieldConfig[];
 }
 
 export declare interface ResumeSearchConfigActionsItem {

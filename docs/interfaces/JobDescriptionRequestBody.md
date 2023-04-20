@@ -63,7 +63,7 @@ ___
 
 • `Optional` **rejectDuplicates**: `string`
 
-If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not.
+If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings.
 
 ___
 

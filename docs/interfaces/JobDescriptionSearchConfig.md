@@ -8,6 +8,7 @@
 
 - [actions](JobDescriptionSearchConfig.md#actions)
 - [allowPdfDownload](JobDescriptionSearchConfig.md#allowpdfdownload)
+- [customFieldsConfig](JobDescriptionSearchConfig.md#customfieldsconfig)
 - [displayEducation](JobDescriptionSearchConfig.md#displayeducation)
 - [displayJobTitle](JobDescriptionSearchConfig.md#displayjobtitle)
 - [displayKeywords](JobDescriptionSearchConfig.md#displaykeywords)
@@ -46,6 +47,12 @@ ___
 ### allowPdfDownload
 
 • `Optional` **allowPdfDownload**: `boolean`
+
+___
+
+### customFieldsConfig
+
+• `Optional` **customFieldsConfig**: [`CustomFieldConfig`](CustomFieldConfig.md)[]
 
 ___
 

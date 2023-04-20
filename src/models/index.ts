@@ -972,6 +972,7 @@ export interface JobDescriptionSearchConfig {
   readonly username?: string;
   /** A list of actions to show in the dropdown in the embedded search tool */
   actions?: JobDescriptionSearchConfigActionsItem[];
+  customFieldsConfig?: CustomFieldConfig[];
 }
 
 export interface JobDescriptionSearchConfigActionsItem {
@@ -979,6 +980,12 @@ export interface JobDescriptionSearchConfigActionsItem {
   label?: string;
   /** Name of the event to be triggered */
   eventName?: string;
+}
+
+export interface CustomFieldConfig {
+  /** Data point identifier. */
+  dataPoint: string;
+  weight: number;
 }
 
 export interface Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -1256,6 +1263,7 @@ export interface ResumeSearchConfig {
   readonly username?: string;
   /** A list of actions to show in the dropdown in the embedded search tool */
   actions?: ResumeSearchConfigActionsItem[];
+  customFieldsConfig?: CustomFieldConfig[];
 }
 
 export interface ResumeSearchConfigActionsItem {
@@ -1368,7 +1376,7 @@ export interface ResumeRequestBody {
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
@@ -1422,7 +1430,7 @@ export interface InvoiceRequestBody {
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
@@ -1442,7 +1450,7 @@ export interface JobDescriptionRequestBody {
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
@@ -1905,7 +1913,7 @@ export interface AffindaAPICreateResumeOptionalParams
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
@@ -2023,7 +2031,7 @@ export interface AffindaAPICreateInvoiceOptionalParams
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
@@ -2070,7 +2078,7 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false" (default), will parse the document normally whether its a duplicate or not. */
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: string;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
