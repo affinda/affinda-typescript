@@ -60,6 +60,7 @@ export const Workspace: coreClient.CompositeMapper = {
       rejectDuplicates: {
         defaultValue: "false",
         serializedName: "rejectDuplicates",
+        nullable: true,
         xmlName: "rejectDuplicates",
         type: {
           name: "String"
@@ -504,6 +505,7 @@ export const WorkspaceCreate: coreClient.CompositeMapper = {
       rejectDuplicates: {
         defaultValue: "false",
         serializedName: "rejectDuplicates",
+        nullable: true,
         xmlName: "rejectDuplicates",
         type: {
           name: "String"
@@ -557,6 +559,7 @@ export const WorkspaceUpdate: coreClient.CompositeMapper = {
       rejectDuplicates: {
         defaultValue: "false",
         serializedName: "rejectDuplicates",
+        nullable: true,
         xmlName: "rejectDuplicates",
         type: {
           name: "String"
@@ -10158,6 +10161,7 @@ export const DocumentCreate: coreClient.CompositeMapper = {
       rejectDuplicates: {
         defaultValue: "false",
         serializedName: "rejectDuplicates",
+        nullable: true,
         xmlName: "rejectDuplicates",
         type: {
           name: "String"
