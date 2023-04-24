@@ -1210,7 +1210,8 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
     Parameters.wait,
     Parameters.rejectDuplicates,
     Parameters.language,
-    Parameters.expiryTime
+    Parameters.expiryTime,
+    Parameters.data1
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],

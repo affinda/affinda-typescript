@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateJobDescriptionOptionalParams.md#abortsignal)
+- [data](AffindaAPICreateJobDescriptionOptionalParams.md#data)
 - [expiryTime](AffindaAPICreateJobDescriptionOptionalParams.md#expirytime)
 - [file](AffindaAPICreateJobDescriptionOptionalParams.md#file)
 - [fileName](AffindaAPICreateJobDescriptionOptionalParams.md#filename)
@@ -39,6 +40,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### data
+
+• `Optional` **data**: [`JobDescriptionDataUpdate`](JobDescriptionDataUpdate.md)
+
+A JSON-encoded string of the `JobDescriptionData` object.
 
 ___
 

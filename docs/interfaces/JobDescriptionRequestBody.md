@@ -8,6 +8,7 @@ JobDescriptionRequestBody
 
 ### Properties
 
+- [data](JobDescriptionRequestBody.md#data)
 - [expiryTime](JobDescriptionRequestBody.md#expirytime)
 - [file](JobDescriptionRequestBody.md#file)
 - [fileName](JobDescriptionRequestBody.md#filename)
@@ -18,6 +19,14 @@ JobDescriptionRequestBody
 - [wait](JobDescriptionRequestBody.md#wait)
 
 ## Properties
+
+### data
+
+• `Optional` **data**: [`JobDescriptionDataUpdate`](JobDescriptionDataUpdate.md)
+
+A JSON-encoded string of the `JobDescriptionData` object.
+
+___
 
 ### expiryTime
 

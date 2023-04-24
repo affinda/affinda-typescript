@@ -92,6 +92,7 @@ export interface ResumeData {
   [property: string]: any;
   name?: ResumeDataName;
   phoneNumbers?: string[];
+  phoneNumberDetails?: ResumeDataPhoneNumberDetailsItem[];
   websites?: string[];
   emails?: string[];
   dateOfBirth?: string;
@@ -143,6 +144,13 @@ export interface ResumeDataName {
   last?: string;
   middle?: string;
   title?: string;
+}
+
+export interface ResumeDataPhoneNumberDetailsItem {
+  rawText?: string;
+  formattedNumber?: string;
+  countryCode?: string;
+  nationalNumber?: string;
 }
 
 export interface Location {
@@ -578,70 +586,6 @@ export interface PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJs
   results?: Meta[];
 }
 
-export interface JobDescription {
-  data: JobDescriptionData | null;
-  meta: Meta;
-  error: ErrorModel;
-}
-
-export interface JobDescriptionData {
-  jobTitle?: JobTitleAnnotation;
-  contactEmail?: TextAnnotation;
-  contactName?: TextAnnotation;
-  contactPhone?: TextAnnotation;
-  startDate?: DateAnnotation;
-  endDate?: DateAnnotation;
-  jobType?: TextAnnotation;
-  languages?: (LanguageAnnotation | null)[];
-  skills?: (SkillAnnotation | null)[];
-  organizationName?: TextAnnotation;
-  organizationWebsite?: TextAnnotation;
-  educationLevel?: TextAnnotation;
-  educationAccreditation?: TextAnnotation;
-  expectedRemuneration?: ExpectedRemunerationAnnotation;
-  location?: LocationAnnotation;
-  certifications?: (TextAnnotation | null)[];
-  yearsExperience?: YearsExperienceAnnotation;
-}
-
-export interface JobTitleParsed {
-  /**
-   * Matching job title to extracted text
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly parsed?: JobTitleParsedParsed;
-}
-
-/** Matching job title to extracted text */
-export interface JobTitleParsedParsed {
-  name?: string;
-  managementLevel?: string;
-  classification?: JobTitleParsedClassification;
-}
-
-export interface JobTitleParsedClassification {
-  socCode?: number;
-  title?: string;
-  minorGroup?: string;
-  subMajorGroup?: string;
-  majorGroup?: string;
-}
-
-export interface ExpectedRemunerationAnnotationParsed {
-  minimum?: number;
-  maximum?: number;
-  currency?: string;
-  unit?: string;
-}
-
-/** Years of experience range */
-export interface YearsExperienceAnnotationParsed {
-  /** Minimum years of experience */
-  minimum?: number;
-  /** Maximum years of experience */
-  maximum?: number;
-}
-
 /** A JSON-encoded string of the `JobDescriptionData` object. */
 export interface JobDescriptionDataUpdate {
   jobTitle?: JobTitleAnnotationUpdate;
@@ -685,6 +629,29 @@ export interface AnnotationV2Base {
   contentType?: string;
 }
 
+export interface JobTitleParsed {
+  /**
+   * Matching job title to extracted text
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly parsed?: JobTitleParsedParsed;
+}
+
+/** Matching job title to extracted text */
+export interface JobTitleParsedParsed {
+  name?: string;
+  managementLevel?: string;
+  classification?: JobTitleParsedClassification;
+}
+
+export interface JobTitleParsedClassification {
+  socCode?: number;
+  title?: string;
+  minorGroup?: string;
+  subMajorGroup?: string;
+  majorGroup?: string;
+}
+
 export interface ExpectedRemunerationAnnotationV2UpdateParsed {
   minimum?: number;
   maximum?: number;
@@ -694,6 +661,47 @@ export interface ExpectedRemunerationAnnotationV2UpdateParsed {
 
 /** Years of experience range */
 export interface YearsExperienceAnnotationV2UpdateParsed {
+  /** Minimum years of experience */
+  minimum?: number;
+  /** Maximum years of experience */
+  maximum?: number;
+}
+
+export interface JobDescription {
+  data: JobDescriptionData | null;
+  meta: Meta;
+  error: ErrorModel;
+}
+
+export interface JobDescriptionData {
+  jobTitle?: JobTitleAnnotation;
+  contactEmail?: TextAnnotation;
+  contactName?: TextAnnotation;
+  contactPhone?: TextAnnotation;
+  startDate?: DateAnnotation;
+  endDate?: DateAnnotation;
+  jobType?: TextAnnotation;
+  languages?: (LanguageAnnotation | null)[];
+  skills?: (SkillAnnotation | null)[];
+  organizationName?: TextAnnotation;
+  organizationWebsite?: TextAnnotation;
+  educationLevel?: TextAnnotation;
+  educationAccreditation?: TextAnnotation;
+  expectedRemuneration?: ExpectedRemunerationAnnotation;
+  location?: LocationAnnotation;
+  certifications?: (TextAnnotation | null)[];
+  yearsExperience?: YearsExperienceAnnotation;
+}
+
+export interface ExpectedRemunerationAnnotationParsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
+/** Years of experience range */
+export interface YearsExperienceAnnotationParsed {
   /** Minimum years of experience */
   minimum?: number;
   /** Maximum years of experience */
@@ -1444,6 +1452,8 @@ export interface JobDescriptionRequestBody {
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the job description. */
   url?: string;
+  /** A JSON-encoded string of the `JobDescriptionData` object. */
+  data?: JobDescriptionDataUpdate;
   /** A random string that uniquely identify the resource. */
   identifier?: string;
   /** Optional filename of the file */
@@ -2084,6 +2094,8 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON-encoded string of the `JobDescriptionData` object. */
+  data?: JobDescriptionDataUpdate;
 }
 
 /** Contains response data for the createJobDescription operation. */

@@ -414,6 +414,8 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON-encoded string of the `JobDescriptionData` object. */
+    data?: JobDescriptionDataUpdate;
 }
 
 /** Contains response data for the createJobDescription operation. */
@@ -1341,6 +1343,8 @@ export declare interface JobDescriptionRequestBody {
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the job description. */
     url?: string;
+    /** A JSON-encoded string of the `JobDescriptionData` object. */
+    data?: JobDescriptionDataUpdate;
     /** A random string that uniquely identify the resource. */
     identifier?: string;
     /** Optional filename of the file */
@@ -2084,6 +2088,7 @@ export declare interface ResumeData {
     [property: string]: any;
     name?: ResumeDataName;
     phoneNumbers?: string[];
+    phoneNumberDetails?: ResumeDataPhoneNumberDetailsItem[];
     websites?: string[];
     emails?: string[];
     dateOfBirth?: string;
@@ -2135,6 +2140,13 @@ export declare interface ResumeDataName {
     last?: string;
     middle?: string;
     title?: string;
+}
+
+export declare interface ResumeDataPhoneNumberDetailsItem {
+    rawText?: string;
+    formattedNumber?: string;
+    countryCode?: string;
+    nationalNumber?: string;
 }
 
 export declare interface ResumeDataRefereesItem {

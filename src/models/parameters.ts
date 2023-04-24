@@ -338,6 +338,11 @@ export const redactGender: OperationParameter = {
   }
 };
 
+export const data1: OperationParameter = {
+  parameterPath: ["options", "data"],
+  mapper: JobDescriptionDataUpdateMapper
+};
+
 export const body1: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionDataUpdateMapper
