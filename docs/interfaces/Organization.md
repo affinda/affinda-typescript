@@ -12,6 +12,7 @@
 - [name](Organization.md#name)
 - [resthookSignatureKey](Organization.md#resthooksignaturekey)
 - [userRole](Organization.md#userrole)
+- [validationToolConfig](Organization.md#validationtoolconfig)
 
 ## Properties
 
@@ -56,3 +57,11 @@ ___
 • `Optional` **userRole**: `string`
 
 The role of the logged in user within the organization.
+
+___
+
+### validationToolConfig
+
+• `Optional` **validationToolConfig**: [`OrganizationValidationToolConfig`](OrganizationValidationToolConfig.md)
+
+Configuration of the embeddable validation tool.

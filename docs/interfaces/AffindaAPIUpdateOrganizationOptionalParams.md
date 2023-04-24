@@ -22,6 +22,7 @@ Optional parameters.
 - [resthookSignatureKey](AffindaAPIUpdateOrganizationOptionalParams.md#resthooksignaturekey)
 - [serializerOptions](AffindaAPIUpdateOrganizationOptionalParams.md#serializeroptions)
 - [tracingOptions](AffindaAPIUpdateOrganizationOptionalParams.md#tracingoptions)
+- [validationToolConfig](AffindaAPIUpdateOrganizationOptionalParams.md#validationtoolconfig)
 
 ## Properties
 
@@ -106,3 +107,11 @@ Options used when tracing is enabled.
 #### Inherited from
 
 coreClient.OperationOptions.tracingOptions
+
+___
+
+### validationToolConfig
+
+• `Optional` **validationToolConfig**: [`ValidationToolConfig`](ValidationToolConfig.md)
+
+Configuration of the embeddable validation tool.

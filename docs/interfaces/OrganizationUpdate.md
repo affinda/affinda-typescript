@@ -9,6 +9,7 @@
 - [avatar](OrganizationUpdate.md#avatar)
 - [name](OrganizationUpdate.md#name)
 - [resthookSignatureKey](OrganizationUpdate.md#resthooksignaturekey)
+- [validationToolConfig](OrganizationUpdate.md#validationtoolconfig)
 
 ## Properties
 
@@ -31,3 +32,11 @@ ___
 • `Optional` **resthookSignatureKey**: `string`
 
 Used to sign webhook payloads so you can verify their integrity.
+
+___
+
+### validationToolConfig
+
+• `Optional` **validationToolConfig**: [`ValidationToolConfig`](ValidationToolConfig.md)
+
+Configuration of the embeddable validation tool.

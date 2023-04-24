@@ -2907,7 +2907,8 @@ const updateOrganizationOperationSpec: coreClient.OperationSpec = {
   formDataParameters: [
     Parameters.avatar,
     Parameters.resthookSignatureKey,
-    Parameters.name2
+    Parameters.name2,
+    Parameters.validationToolConfig
   ],
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.contentType1, Parameters.accept1],

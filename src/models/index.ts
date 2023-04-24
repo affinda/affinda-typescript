@@ -37,6 +37,62 @@ export interface Organization {
   /** Used to sign webhook payloads so you can verify their integrity. */
   resthookSignatureKey?: string;
   isTrial?: boolean;
+  /** Configuration of the embeddable validation tool. */
+  validationToolConfig?: OrganizationValidationToolConfig;
+}
+
+/** Configuration of the embeddable validation tool. */
+export interface OrganizationValidationToolConfig {
+  theme?: ThemeConfig;
+  /** Hide the confirm document button and other actions. */
+  hideActions?: boolean;
+}
+
+export interface ThemeConfig {
+  palette?: ThemeConfigPalette;
+  typography?: ThemeConfigTypography;
+  borderRadius?: number;
+  fontUrl?: string;
+}
+
+export interface ThemeConfigPalette {
+  mode?: ThemeConfigPaletteMode;
+  background?: ThemeConfigPaletteBackground;
+  text?: ThemeConfigPaletteText;
+  divider?: string;
+  primary?: PaletteColorOptions;
+  secondary?: PaletteColorOptions;
+  success?: PaletteColorOptions;
+  annotation?: PaletteColorOptions;
+  error?: PaletteColorOptions;
+  info?: PaletteColorOptions;
+  warning?: PaletteColorOptions;
+}
+
+export interface ThemeConfigPaletteBackground {
+  default?: string;
+  paper?: string;
+}
+
+export interface ThemeConfigPaletteText {
+  primary?: string;
+  secondary?: string;
+  disabled?: string;
+}
+
+export interface PaletteColorOptions {
+  main: string;
+  light?: string;
+  dark?: string;
+  contrastText?: string;
+}
+
+export interface ThemeConfigTypography {
+  fontFamily?: string;
+  fontSize?: string;
+  fontWeightRegular?: string;
+  fontWeightMedium?: string;
+  fontWeightBold?: string;
 }
 
 export interface WorkspaceCollectionsItem {
@@ -651,6 +707,13 @@ export interface TagUpdate {
   workspace?: string;
 }
 
+/** Configuration of the embeddable validation tool. */
+export interface ValidationToolConfig {
+  theme?: ThemeConfig;
+  /** Hide the confirm document button and other actions. */
+  hideActions?: boolean;
+}
+
 export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: OrganizationMembership[];
 }
@@ -1092,7 +1155,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum19;
+  documentType?: Enum20;
 }
 
 export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1875,6 +1938,8 @@ export interface OrganizationUpdate {
   avatar?: coreRestPipeline.RequestBodyType;
   /** Used to sign webhook payloads so you can verify their integrity. */
   resthookSignatureKey?: string;
+  /** Configuration of the embeddable validation tool. */
+  validationToolConfig?: ValidationToolConfig;
 }
 
 /** IndexRequestBody */
@@ -2121,6 +2186,22 @@ export enum KnownOrganizationUserRole {
  * **member**
  */
 export type OrganizationUserRole = string;
+
+/** Known values of {@link ThemeConfigPaletteMode} that the service accepts. */
+export enum KnownThemeConfigPaletteMode {
+  Light = "light",
+  Dark = "dark"
+}
+
+/**
+ * Defines values for ThemeConfigPaletteMode. \
+ * {@link KnownThemeConfigPaletteMode} can be used interchangeably with ThemeConfigPaletteMode,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **light** \
+ * **dark**
+ */
+export type ThemeConfigPaletteMode = string;
 
 /** Known values of {@link WorkspaceVisibility} that the service accepts. */
 export enum KnownWorkspaceVisibility {
@@ -2414,21 +2495,21 @@ export enum KnownVersion {
  */
 export type Version = string;
 
-/** Known values of {@link Enum16} that the service accepts. */
-export enum KnownEnum16 {
+/** Known values of {@link Enum17} that the service accepts. */
+export enum KnownEnum17 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum16. \
- * {@link KnownEnum16} can be used interchangeably with Enum16,
+ * Defines values for Enum17. \
+ * {@link KnownEnum17} can be used interchangeably with Enum17,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum16 = string;
+export type Enum17 = string;
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
 export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
@@ -2462,21 +2543,21 @@ export enum KnownPostContentSchemaDocumentType {
  */
 export type PostContentSchemaDocumentType = string;
 
-/** Known values of {@link Enum19} that the service accepts. */
-export enum KnownEnum19 {
+/** Known values of {@link Enum20} that the service accepts. */
+export enum KnownEnum20 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum19. \
- * {@link KnownEnum19} can be used interchangeably with Enum19,
+ * Defines values for Enum20. \
+ * {@link KnownEnum20} can be used interchangeably with Enum20,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum19 = string;
+export type Enum20 = string;
 
 /** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
 export enum KnownResumeSearchParametersCustomDataFilterType {
@@ -3004,6 +3085,8 @@ export interface AffindaAPIUpdateOrganizationOptionalParams
   /** Used to sign webhook payloads so you can verify their integrity. */
   resthookSignatureKey?: string;
   name?: string;
+  /** Configuration of the embeddable validation tool. */
+  validationToolConfig?: ValidationToolConfig;
 }
 
 /** Contains response data for the updateOrganization operation. */
@@ -3205,7 +3288,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum16;
+  documentType?: Enum17;
 }
 
 /** Contains response data for the getAllIndexes operation. */

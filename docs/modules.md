@@ -12,8 +12,8 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum16](enums/KnownEnum16.md)
-- [KnownEnum19](enums/KnownEnum19.md)
+- [KnownEnum17](enums/KnownEnum17.md)
+- [KnownEnum20](enums/KnownEnum20.md)
 - [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
@@ -26,6 +26,7 @@
 - [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
 - [KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
+- [KnownThemeConfigPaletteMode](enums/KnownThemeConfigPaletteMode.md)
 - [KnownVersion](enums/KnownVersion.md)
 - [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
 
@@ -256,8 +257,10 @@
 - [OrganizationMembership](interfaces/OrganizationMembership.md)
 - [OrganizationMembershipUpdate](interfaces/OrganizationMembershipUpdate.md)
 - [OrganizationUpdate](interfaces/OrganizationUpdate.md)
+- [OrganizationValidationToolConfig](interfaces/OrganizationValidationToolConfig.md)
 - [PageMeta](interfaces/PageMeta.md)
 - [PaginatedResponse](interfaces/PaginatedResponse.md)
+- [PaletteColorOptions](interfaces/PaletteColorOptions.md)
 - [Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
@@ -321,8 +324,14 @@
 - [Tag](interfaces/Tag.md)
 - [TagCreate](interfaces/TagCreate.md)
 - [TagUpdate](interfaces/TagUpdate.md)
+- [ThemeConfig](interfaces/ThemeConfig.md)
+- [ThemeConfigPalette](interfaces/ThemeConfigPalette.md)
+- [ThemeConfigPaletteBackground](interfaces/ThemeConfigPaletteBackground.md)
+- [ThemeConfigPaletteText](interfaces/ThemeConfigPaletteText.md)
+- [ThemeConfigTypography](interfaces/ThemeConfigTypography.md)
 - [User](interfaces/User.md)
 - [UserNullable](interfaces/UserNullable.md)
+- [ValidationToolConfig](interfaces/ValidationToolConfig.md)
 - [Workspace](interfaces/Workspace.md)
 - [WorkspaceCollectionsItem](interfaces/WorkspaceCollectionsItem.md)
 - [WorkspaceCollectionsItemExtractor](interfaces/WorkspaceCollectionsItemExtractor.md)
@@ -419,8 +428,8 @@
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum16](modules.md#enum16)
-- [Enum19](modules.md#enum19)
+- [Enum17](modules.md#enum17)
+- [Enum20](modules.md#enum20)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -487,6 +496,7 @@
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SkillAnnotation](modules.md#skillannotation)
 - [TextAnnotation](modules.md#textannotation)
+- [ThemeConfigPaletteMode](modules.md#themeconfigpalettemode)
 - [Version](modules.md#version)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
@@ -1233,12 +1243,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum16
+### Enum17
 
-Ƭ **Enum16**: `string`
+Ƭ **Enum17**: `string`
 
-Defines values for Enum16. \
-[KnownEnum16](enums/KnownEnum16.md) can be used interchangeably with Enum16,
+Defines values for Enum17. \
+[KnownEnum17](enums/KnownEnum17.md) can be used interchangeably with Enum17,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1246,12 +1256,12 @@ Defines values for Enum16. \
 
 ___
 
-### Enum19
+### Enum20
 
-Ƭ **Enum19**: `string`
+Ƭ **Enum20**: `string`
 
-Defines values for Enum19. \
-[KnownEnum19](enums/KnownEnum19.md) can be used interchangeably with Enum19,
+Defines values for Enum20. \
+[KnownEnum20](enums/KnownEnum20.md) can be used interchangeably with Enum20,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1773,6 +1783,19 @@ ___
 ### TextAnnotation
 
 Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+
+___
+
+### ThemeConfigPaletteMode
+
+Ƭ **ThemeConfigPaletteMode**: `string`
+
+Defines values for ThemeConfigPaletteMode. \
+[KnownThemeConfigPaletteMode](enums/KnownThemeConfigPaletteMode.md) can be used interchangeably with ThemeConfigPaletteMode,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**light** \
+**dark**
 
 ___
 

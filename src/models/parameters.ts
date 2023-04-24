@@ -21,6 +21,7 @@ import {
   AnnotationUpdate as AnnotationUpdateMapper,
   TagCreate as TagCreateMapper,
   TagUpdate as TagUpdateMapper,
+  ValidationToolConfig as ValidationToolConfigMapper,
   OrganizationMembershipUpdate as OrganizationMembershipUpdateMapper,
   InvitationCreate as InvitationCreateMapper,
   InvitationUpdate as InvitationUpdateMapper,
@@ -772,6 +773,11 @@ export const name2: OperationParameter = {
       name: "String"
     }
   }
+};
+
+export const validationToolConfig: OperationParameter = {
+  parameterPath: ["options", "validationToolConfig"],
+  mapper: ValidationToolConfigMapper
 };
 
 export const role: OperationQueryParameter = {

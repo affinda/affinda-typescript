@@ -169,6 +169,314 @@ export const Organization: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      validationToolConfig: {
+        serializedName: "validationToolConfig",
+        xmlName: "validationToolConfig",
+        type: {
+          name: "Composite",
+          className: "OrganizationValidationToolConfig"
+        }
+      }
+    }
+  }
+};
+
+export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
+  serializedName: "OrganizationValidationToolConfig",
+  type: {
+    name: "Composite",
+    className: "OrganizationValidationToolConfig",
+    modelProperties: {
+      theme: {
+        serializedName: "theme",
+        xmlName: "theme",
+        type: {
+          name: "Composite",
+          className: "ThemeConfig"
+        }
+      },
+      hideActions: {
+        serializedName: "hideActions",
+        xmlName: "hideActions",
+        type: {
+          name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const ThemeConfig: coreClient.CompositeMapper = {
+  serializedName: "ThemeConfig",
+  type: {
+    name: "Composite",
+    className: "ThemeConfig",
+    modelProperties: {
+      palette: {
+        serializedName: "palette",
+        xmlName: "palette",
+        type: {
+          name: "Composite",
+          className: "ThemeConfigPalette"
+        }
+      },
+      typography: {
+        serializedName: "typography",
+        xmlName: "typography",
+        type: {
+          name: "Composite",
+          className: "ThemeConfigTypography"
+        }
+      },
+      borderRadius: {
+        serializedName: "borderRadius",
+        xmlName: "borderRadius",
+        type: {
+          name: "Number"
+        }
+      },
+      fontUrl: {
+        serializedName: "fontUrl",
+        xmlName: "fontUrl",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ThemeConfigPalette: coreClient.CompositeMapper = {
+  serializedName: "ThemeConfigPalette",
+  type: {
+    name: "Composite",
+    className: "ThemeConfigPalette",
+    modelProperties: {
+      mode: {
+        serializedName: "mode",
+        xmlName: "mode",
+        type: {
+          name: "String"
+        }
+      },
+      background: {
+        serializedName: "background",
+        xmlName: "background",
+        type: {
+          name: "Composite",
+          className: "ThemeConfigPaletteBackground"
+        }
+      },
+      text: {
+        serializedName: "text",
+        xmlName: "text",
+        type: {
+          name: "Composite",
+          className: "ThemeConfigPaletteText"
+        }
+      },
+      divider: {
+        serializedName: "divider",
+        xmlName: "divider",
+        type: {
+          name: "String"
+        }
+      },
+      primary: {
+        serializedName: "primary",
+        xmlName: "primary",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      },
+      secondary: {
+        serializedName: "secondary",
+        xmlName: "secondary",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      },
+      success: {
+        serializedName: "success",
+        xmlName: "success",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      },
+      annotation: {
+        serializedName: "annotation",
+        xmlName: "annotation",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      },
+      error: {
+        serializedName: "error",
+        xmlName: "error",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      },
+      info: {
+        serializedName: "info",
+        xmlName: "info",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      },
+      warning: {
+        serializedName: "warning",
+        xmlName: "warning",
+        type: {
+          name: "Composite",
+          className: "PaletteColorOptions"
+        }
+      }
+    }
+  }
+};
+
+export const ThemeConfigPaletteBackground: coreClient.CompositeMapper = {
+  serializedName: "ThemeConfigPaletteBackground",
+  type: {
+    name: "Composite",
+    className: "ThemeConfigPaletteBackground",
+    modelProperties: {
+      default: {
+        serializedName: "default",
+        xmlName: "default",
+        type: {
+          name: "String"
+        }
+      },
+      paper: {
+        serializedName: "paper",
+        xmlName: "paper",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ThemeConfigPaletteText: coreClient.CompositeMapper = {
+  serializedName: "ThemeConfigPaletteText",
+  type: {
+    name: "Composite",
+    className: "ThemeConfigPaletteText",
+    modelProperties: {
+      primary: {
+        serializedName: "primary",
+        xmlName: "primary",
+        type: {
+          name: "String"
+        }
+      },
+      secondary: {
+        serializedName: "secondary",
+        xmlName: "secondary",
+        type: {
+          name: "String"
+        }
+      },
+      disabled: {
+        serializedName: "disabled",
+        xmlName: "disabled",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const PaletteColorOptions: coreClient.CompositeMapper = {
+  serializedName: "PaletteColorOptions",
+  type: {
+    name: "Composite",
+    className: "PaletteColorOptions",
+    modelProperties: {
+      main: {
+        serializedName: "main",
+        required: true,
+        xmlName: "main",
+        type: {
+          name: "String"
+        }
+      },
+      light: {
+        serializedName: "light",
+        xmlName: "light",
+        type: {
+          name: "String"
+        }
+      },
+      dark: {
+        serializedName: "dark",
+        xmlName: "dark",
+        type: {
+          name: "String"
+        }
+      },
+      contrastText: {
+        serializedName: "contrastText",
+        xmlName: "contrastText",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ThemeConfigTypography: coreClient.CompositeMapper = {
+  serializedName: "ThemeConfigTypography",
+  type: {
+    name: "Composite",
+    className: "ThemeConfigTypography",
+    modelProperties: {
+      fontFamily: {
+        serializedName: "fontFamily",
+        xmlName: "fontFamily",
+        type: {
+          name: "String"
+        }
+      },
+      fontSize: {
+        serializedName: "fontSize",
+        xmlName: "fontSize",
+        type: {
+          name: "String"
+        }
+      },
+      fontWeightRegular: {
+        serializedName: "fontWeightRegular",
+        xmlName: "fontWeightRegular",
+        type: {
+          name: "String"
+        }
+      },
+      fontWeightMedium: {
+        serializedName: "fontWeightMedium",
+        xmlName: "fontWeightMedium",
+        type: {
+          name: "String"
+        }
+      },
+      fontWeightBold: {
+        serializedName: "fontWeightBold",
+        xmlName: "fontWeightBold",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -3243,6 +3551,31 @@ export const TagUpdate: coreClient.CompositeMapper = {
         xmlName: "workspace",
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ValidationToolConfig: coreClient.CompositeMapper = {
+  serializedName: "ValidationToolConfig",
+  type: {
+    name: "Composite",
+    className: "ValidationToolConfig",
+    modelProperties: {
+      theme: {
+        serializedName: "theme",
+        xmlName: "theme",
+        type: {
+          name: "Composite",
+          className: "ThemeConfig"
+        }
+      },
+      hideActions: {
+        serializedName: "hideActions",
+        xmlName: "hideActions",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -10230,6 +10563,14 @@ export const OrganizationUpdate: coreClient.CompositeMapper = {
         xmlName: "resthookSignatureKey",
         type: {
           name: "String"
+        }
+      },
+      validationToolConfig: {
+        serializedName: "validationToolConfig",
+        xmlName: "validationToolConfig",
+        type: {
+          name: "Composite",
+          className: "ValidationToolConfig"
         }
       }
     }
