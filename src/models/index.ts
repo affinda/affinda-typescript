@@ -1498,6 +1498,7 @@ export interface ResumeData {
   [property: string]: any;
   name?: ResumeDataName;
   phoneNumbers?: string[];
+  phoneNumberDetails?: ResumeDataPhoneNumberDetailsItem[];
   websites?: string[];
   emails?: string[];
   dateOfBirth?: string;
@@ -1549,6 +1550,13 @@ export interface ResumeDataName {
   last?: string;
   middle?: string;
   title?: string;
+}
+
+export interface ResumeDataPhoneNumberDetailsItem {
+  rawText?: string;
+  formattedNumber?: string;
+  countryCode?: string;
+  nationalNumber?: string;
 }
 
 export interface ResumeDataWorkExperienceItem {

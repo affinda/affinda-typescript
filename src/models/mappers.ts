@@ -8099,6 +8099,20 @@ export const ResumeData: coreClient.CompositeMapper = {
           }
         }
       },
+      phoneNumberDetails: {
+        serializedName: "phoneNumberDetails",
+        xmlName: "phoneNumberDetails",
+        xmlElementName: "ResumeDataPhoneNumberDetailsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ResumeDataPhoneNumberDetailsItem"
+            }
+          }
+        }
+      },
       websites: {
         serializedName: "websites",
         xmlName: "websites",
@@ -8383,6 +8397,47 @@ export const ResumeDataName: coreClient.CompositeMapper = {
       title: {
         serializedName: "title",
         xmlName: "title",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeDataPhoneNumberDetailsItem: coreClient.CompositeMapper = {
+  serializedName: "ResumeDataPhoneNumberDetailsItem",
+  type: {
+    name: "Composite",
+    className: "ResumeDataPhoneNumberDetailsItem",
+    modelProperties: {
+      rawText: {
+        serializedName: "rawText",
+        xmlName: "rawText",
+        type: {
+          name: "String"
+        }
+      },
+      formattedNumber: {
+        serializedName: "formattedNumber",
+        nullable: true,
+        xmlName: "formattedNumber",
+        type: {
+          name: "String"
+        }
+      },
+      countryCode: {
+        serializedName: "countryCode",
+        nullable: true,
+        xmlName: "countryCode",
+        type: {
+          name: "String"
+        }
+      },
+      nationalNumber: {
+        serializedName: "nationalNumber",
+        nullable: true,
+        xmlName: "nationalNumber",
         type: {
           name: "String"
         }

@@ -3268,6 +3268,7 @@ export declare interface ResumeData {
     [property: string]: any;
     name?: ResumeDataName;
     phoneNumbers?: string[];
+    phoneNumberDetails?: ResumeDataPhoneNumberDetailsItem[];
     websites?: string[];
     emails?: string[];
     dateOfBirth?: string;
@@ -3319,6 +3320,13 @@ export declare interface ResumeDataName {
     last?: string;
     middle?: string;
     title?: string;
+}
+
+export declare interface ResumeDataPhoneNumberDetailsItem {
+    rawText?: string;
+    formattedNumber?: string;
+    countryCode?: string;
+    nationalNumber?: string;
 }
 
 export declare interface ResumeDataRefereesItem {

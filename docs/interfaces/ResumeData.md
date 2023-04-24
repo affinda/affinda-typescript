@@ -24,6 +24,7 @@ A JSON-encoded string of the `ResumeData` object.
 - [location](ResumeData.md#location)
 - [name](ResumeData.md#name)
 - [objective](ResumeData.md#objective)
+- [phoneNumberDetails](ResumeData.md#phonenumberdetails)
 - [phoneNumbers](ResumeData.md#phonenumbers)
 - [profession](ResumeData.md#profession)
 - [publications](ResumeData.md#publications)
@@ -121,6 +122,12 @@ ___
 ### objective
 
 • `Optional` **objective**: `string`
+
+___
+
+### phoneNumberDetails
+
+• `Optional` **phoneNumberDetails**: [`ResumeDataPhoneNumberDetailsItem`](ResumeDataPhoneNumberDetailsItem.md)[]
 
 ___
 

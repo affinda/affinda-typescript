@@ -285,6 +285,7 @@
 - [ResthookSubscriptionUpdate](interfaces/ResthookSubscriptionUpdate.md)
 - [ResumeData](interfaces/ResumeData.md)
 - [ResumeDataName](interfaces/ResumeDataName.md)
+- [ResumeDataPhoneNumberDetailsItem](interfaces/ResumeDataPhoneNumberDetailsItem.md)
 - [ResumeDataRefereesItem](interfaces/ResumeDataRefereesItem.md)
 - [ResumeDataSectionsItem](interfaces/ResumeDataSectionsItem.md)
 - [ResumeDataSkillsItem](interfaces/ResumeDataSkillsItem.md)
