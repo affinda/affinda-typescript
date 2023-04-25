@@ -1704,6 +1704,20 @@ export const Document: coreClient.CompositeMapper = {
           name: "Composite",
           className: "DocumentError"
         }
+      },
+      warnings: {
+        serializedName: "warnings",
+        xmlName: "warnings",
+        xmlElementName: "DocumentWarning",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DocumentWarning"
+            }
+          }
+        }
       }
     }
   }
@@ -2259,6 +2273,32 @@ export const DocumentError: coreClient.CompositeMapper = {
         serializedName: "errorDetail",
         nullable: true,
         xmlName: "errorDetail",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DocumentWarning: coreClient.CompositeMapper = {
+  serializedName: "DocumentWarning",
+  type: {
+    name: "Composite",
+    className: "DocumentWarning",
+    modelProperties: {
+      warningCode: {
+        serializedName: "warningCode",
+        nullable: true,
+        xmlName: "warningCode",
+        type: {
+          name: "String"
+        }
+      },
+      warningDetail: {
+        serializedName: "warningDetail",
+        nullable: true,
+        xmlName: "warningDetail",
         type: {
           name: "String"
         }

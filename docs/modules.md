@@ -197,6 +197,7 @@
 - [DocumentSplit](interfaces/DocumentSplit.md)
 - [DocumentSplitPage](interfaces/DocumentSplitPage.md)
 - [DocumentUpdate](interfaces/DocumentUpdate.md)
+- [DocumentWarning](interfaces/DocumentWarning.md)
 - [Education](interfaces/Education.md)
 - [EducationDates](interfaces/EducationDates.md)
 - [EducationGrade](interfaces/EducationGrade.md)

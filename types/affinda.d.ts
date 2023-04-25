@@ -936,6 +936,12 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     exclude?: string[];
     /** Exclude documents that are currently being reviewed. */
     inReview?: boolean;
+    /** Filter by failed status. */
+    failed?: boolean;
+    /** Filter by ready status. */
+    ready?: boolean;
+    /** Filter for validatable documents. */
+    validatable?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -945,10 +951,10 @@ export declare type AffindaAPIGetAllDocumentsResponse = PathsOxm5M7V3DocumentsGe
 export declare interface AffindaAPIGetAllExtractorsOptionalParams extends coreClient.OperationOptions {
     /** Filter by name. */
     name?: string;
-    /** Whether to include Affinda's off-the-shelf extractors. */
-    includePublicExtractors?: boolean;
     /** Filter by validatable. */
     validatable?: boolean;
+    /** Whether to include Affinda's off-the-shelf extractors. */
+    includePublicExtractors?: boolean;
 }
 
 /** Contains response data for the getAllExtractors operation. */
@@ -1867,6 +1873,7 @@ declare interface Document_2 {
     };
     meta: DocumentMeta;
     error?: DocumentError;
+    warnings?: DocumentWarning[];
 }
 export { Document_2 as Document }
 
@@ -2033,6 +2040,11 @@ export declare interface DocumentUpdate {
     isArchived?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
+}
+
+export declare interface DocumentWarning {
+    warningCode?: string;
+    warningDetail?: string;
 }
 
 export declare interface Education {

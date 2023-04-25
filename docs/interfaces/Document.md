@@ -10,6 +10,7 @@
 - [error](Document.md#error)
 - [extractor](Document.md#extractor)
 - [meta](Document.md#meta)
+- [warnings](Document.md#warnings)
 
 ## Properties
 
@@ -42,3 +43,9 @@ ___
 ### meta
 
 • **meta**: [`DocumentMeta`](DocumentMeta.md)
+
+___
+
+### warnings
+
+• `Optional` **warnings**: [`DocumentWarning`](DocumentWarning.md)[]

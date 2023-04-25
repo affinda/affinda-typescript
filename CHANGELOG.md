@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Phone number details to Resume Candidate info
+- Add some filters to `GET /documents` endpoint: `failed`, `ready`, `validatable`
 
 ## [6.6.0] - 2023-04-24
 ### Added

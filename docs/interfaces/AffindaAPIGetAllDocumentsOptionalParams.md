@@ -18,18 +18,21 @@ Optional parameters.
 - [collection](AffindaAPIGetAllDocumentsOptionalParams.md#collection)
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
 - [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
+- [failed](AffindaAPIGetAllDocumentsOptionalParams.md#failed)
 - [inReview](AffindaAPIGetAllDocumentsOptionalParams.md#inreview)
 - [includeData](AffindaAPIGetAllDocumentsOptionalParams.md#includedata)
 - [limit](AffindaAPIGetAllDocumentsOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllDocumentsOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllDocumentsOptionalParams.md#onresponse)
 - [ordering](AffindaAPIGetAllDocumentsOptionalParams.md#ordering)
+- [ready](AffindaAPIGetAllDocumentsOptionalParams.md#ready)
 - [requestOptions](AffindaAPIGetAllDocumentsOptionalParams.md#requestoptions)
 - [search](AffindaAPIGetAllDocumentsOptionalParams.md#search)
 - [serializerOptions](AffindaAPIGetAllDocumentsOptionalParams.md#serializeroptions)
 - [state](AffindaAPIGetAllDocumentsOptionalParams.md#state)
 - [tags](AffindaAPIGetAllDocumentsOptionalParams.md#tags)
 - [tracingOptions](AffindaAPIGetAllDocumentsOptionalParams.md#tracingoptions)
+- [validatable](AffindaAPIGetAllDocumentsOptionalParams.md#validatable)
 - [workspace](AffindaAPIGetAllDocumentsOptionalParams.md#workspace)
 
 ## Properties
@@ -67,6 +70,14 @@ ___
 • `Optional` **exclude**: `string`[]
 
 Exclude some documents from the result.
+
+___
+
+### failed
+
+• `Optional` **failed**: `boolean`
+
+Filter by failed status.
 
 ___
 
@@ -121,6 +132,14 @@ ___
 • `Optional` **ordering**: `string`[]
 
 Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported.
+
+___
+
+### ready
+
+• `Optional` **ready**: `boolean`
+
+Filter by ready status.
 
 ___
 
@@ -181,6 +200,14 @@ Options used when tracing is enabled.
 #### Inherited from
 
 coreClient.OperationOptions.tracingOptions
+
+___
+
+### validatable
+
+• `Optional` **validatable**: `boolean`
+
+Filter for validatable documents.
 
 ___
 

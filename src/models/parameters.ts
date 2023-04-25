@@ -314,6 +314,39 @@ export const inReview: OperationQueryParameter = {
   }
 };
 
+export const failed: OperationQueryParameter = {
+  parameterPath: ["options", "failed"],
+  mapper: {
+    serializedName: "failed",
+    xmlName: "failed",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const ready: OperationQueryParameter = {
+  parameterPath: ["options", "ready"],
+  mapper: {
+    serializedName: "ready",
+    xmlName: "ready",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
+export const validatable: OperationQueryParameter = {
+  parameterPath: ["options", "validatable"],
+  mapper: {
+    serializedName: "validatable",
+    xmlName: "validatable",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const contentType1: OperationParameter = {
   parameterPath: ["options", "contentType"],
   mapper: {
@@ -488,17 +521,6 @@ export const includePublicExtractors: OperationQueryParameter = {
   mapper: {
     serializedName: "include_public_extractors",
     xmlName: "include_public_extractors",
-    type: {
-      name: "Boolean"
-    }
-  }
-};
-
-export const validatable: OperationQueryParameter = {
-  parameterPath: ["options", "validatable"],
-  mapper: {
-    serializedName: "validatable",
-    xmlName: "validatable",
     type: {
       name: "Boolean"
     }

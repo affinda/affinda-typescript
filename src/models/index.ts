@@ -324,6 +324,7 @@ export interface Document {
   data?: { [propertyName: string]: any };
   meta: DocumentMeta;
   error?: DocumentError;
+  warnings?: DocumentWarning[];
 }
 
 export interface DocumentMeta {
@@ -441,6 +442,11 @@ export interface UserNullable {
 export interface DocumentError {
   errorCode?: string;
   errorDetail?: string;
+}
+
+export interface DocumentWarning {
+  warningCode?: string;
+  warningDetail?: string;
 }
 
 export interface DocumentUpdate {
@@ -2774,6 +2780,12 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   exclude?: string[];
   /** Exclude documents that are currently being reviewed. */
   inReview?: boolean;
+  /** Filter by failed status. */
+  failed?: boolean;
+  /** Filter by ready status. */
+  ready?: boolean;
+  /** Filter for validatable documents. */
+  validatable?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -2840,10 +2852,10 @@ export interface AffindaAPIGetAllExtractorsOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by name. */
   name?: string;
-  /** Whether to include Affinda's off-the-shelf extractors. */
-  includePublicExtractors?: boolean;
   /** Filter by validatable. */
   validatable?: boolean;
+  /** Whether to include Affinda's off-the-shelf extractors. */
+  includePublicExtractors?: boolean;
 }
 
 /** Contains response data for the getAllExtractors operation. */

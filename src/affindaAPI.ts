@@ -1951,7 +1951,10 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.ordering,
     Parameters.includeData,
     Parameters.exclude,
-    Parameters.inReview
+    Parameters.inReview,
+    Parameters.failed,
+    Parameters.ready,
+    Parameters.validatable
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
@@ -2123,8 +2126,8 @@ const getAllExtractorsOperationSpec: coreClient.OperationSpec = {
   queryParameters: [
     Parameters.organization,
     Parameters.name,
-    Parameters.includePublicExtractors,
-    Parameters.validatable
+    Parameters.validatable,
+    Parameters.includePublicExtractors
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
