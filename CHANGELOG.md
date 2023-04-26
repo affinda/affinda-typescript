@@ -5,8 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [6.7.1] - 2023-04-26
 ### Changed
-- Provide additional filters for data point choices, and allow data point choices to be specified for any existing text field.
 - Provide additional filters for data point choices, and allow data point choices to be specified for any existing text field.
 
 ## [6.7.0] - 2023-04-25
