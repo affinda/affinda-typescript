@@ -1391,6 +1391,13 @@ export const Field: coreClient.CompositeMapper = {
           name: "Number"
         }
       },
+      showDropdown: {
+        serializedName: "showDropdown",
+        xmlName: "showDropdown",
+        type: {
+          name: "Boolean"
+        }
+      },
       fields: {
         serializedName: "fields",
         xmlName: "fields",
@@ -3074,6 +3081,20 @@ export const DataPointChoiceCreate: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      organization: {
+        serializedName: "organization",
+        xmlName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      collection: {
+        serializedName: "collection",
+        xmlName: "collection",
+        type: {
+          name: "String"
+        }
+      },
       label: {
         serializedName: "label",
         required: true,
@@ -3125,6 +3146,20 @@ export const DataPointChoiceUpdate: coreClient.CompositeMapper = {
       dataPoint: {
         serializedName: "dataPoint",
         xmlName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        xmlName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      collection: {
+        serializedName: "collection",
+        xmlName: "collection",
         type: {
           name: "String"
         }

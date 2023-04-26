@@ -12,6 +12,7 @@
 - [fields](Field.md#fields)
 - [label](Field.md#label)
 - [mandatory](Field.md#mandatory)
+- [showDropdown](Field.md#showdropdown)
 - [slug](Field.md#slug)
 
 ## Properties
@@ -49,6 +50,12 @@ ___
 ### mandatory
 
 • `Optional` **mandatory**: `boolean`
+
+___
+
+### showDropdown
+
+• `Optional` **showDropdown**: `boolean`
 
 ___
 

@@ -6,13 +6,23 @@
 
 ### Properties
 
+- [collection](DataPointChoiceUpdate.md#collection)
 - [dataPoint](DataPointChoiceUpdate.md#datapoint)
 - [description](DataPointChoiceUpdate.md#description)
 - [label](DataPointChoiceUpdate.md#label)
+- [organization](DataPointChoiceUpdate.md#organization)
 - [synonyms](DataPointChoiceUpdate.md#synonyms)
 - [value](DataPointChoiceUpdate.md#value)
 
 ## Properties
+
+### collection
+
+• `Optional` **collection**: `string`
+
+Uniquely identify a collection.
+
+___
 
 ### dataPoint
 
@@ -31,6 +41,14 @@ ___
 ### label
 
 • `Optional` **label**: `string`
+
+___
+
+### organization
+
+• `Optional` **organization**: `string`
+
+Uniquely identify an organization.
 
 ___
 

@@ -642,6 +642,18 @@ export const dataPoint: OperationQueryParameter = {
   }
 };
 
+export const collection2: OperationQueryParameter = {
+  parameterPath: "collection",
+  mapper: {
+    serializedName: "collection",
+    required: true,
+    xmlName: "collection",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const body11: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: DataPointChoiceCreateMapper

@@ -656,14 +656,16 @@ export class AffindaAPI extends AffindaAPIContext {
   /**
    * Returns available choices for a specific enum data point.
    * @param dataPoint The data point to get choices for.
+   * @param collection The collection to get choices for.
    * @param options The options parameters.
    */
   getDataPointChoices(
     dataPoint: string,
+    collection: string,
     options?: AffindaAPIGetDataPointChoicesOptionalParams
   ): Promise<AffindaAPIGetDataPointChoicesResponse> {
     return this.sendOperationRequest(
-      { dataPoint, options },
+      { dataPoint, collection, options },
       getDataPointChoicesOperationSpec
     );
   }
@@ -2384,7 +2386,8 @@ const getDataPointChoicesOperationSpec: coreClient.OperationSpec = {
     Parameters.offset,
     Parameters.limit,
     Parameters.search,
-    Parameters.dataPoint
+    Parameters.dataPoint,
+    Parameters.collection2
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],

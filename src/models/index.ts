@@ -268,6 +268,7 @@ export interface Field {
   mandatory?: boolean;
   disabled?: boolean;
   autoValidationThreshold?: number;
+  showDropdown?: boolean;
   fields?: Field[];
 }
 
@@ -602,6 +603,10 @@ export interface DataPointChoice {
 export interface DataPointChoiceCreate {
   /** Uniquely identify a data point. */
   dataPoint: string;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
   label: string;
   value: string;
   synonyms?: string[];
@@ -611,6 +616,10 @@ export interface DataPointChoiceCreate {
 export interface DataPointChoiceUpdate {
   /** Uniquely identify a data point. */
   dataPoint?: string;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
   label?: string;
   value?: string;
   synonyms?: string[];

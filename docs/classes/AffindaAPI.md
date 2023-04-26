@@ -1233,7 +1233,7 @@ ___
 
 ### getDataPointChoices
 
-▸ **getDataPointChoices**(`dataPoint`, `options?`): `Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
+▸ **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
 
 Returns available choices for a specific enum data point.
 
@@ -1242,6 +1242,7 @@ Returns available choices for a specific enum data point.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `dataPoint` | `string` | The data point to get choices for. |
+| `collection` | `string` | The collection to get choices for. |
 | `options?` | [`AffindaAPIGetDataPointChoicesOptionalParams`](../interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md) | The options parameters. |
 
 #### Returns

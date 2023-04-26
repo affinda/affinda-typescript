@@ -210,9 +210,10 @@ export declare class AffindaAPI extends AffindaAPIContext {
     /**
      * Returns available choices for a specific enum data point.
      * @param dataPoint The data point to get choices for.
+     * @param collection The collection to get choices for.
      * @param options The options parameters.
      */
-    getDataPointChoices(dataPoint: string, options?: AffindaAPIGetDataPointChoicesOptionalParams): Promise<AffindaAPIGetDataPointChoicesResponse>;
+    getDataPointChoices(dataPoint: string, collection: string, options?: AffindaAPIGetDataPointChoicesOptionalParams): Promise<AffindaAPIGetDataPointChoicesResponse>;
     /**
      * Create a custom data point choice.
      * @param options The options parameters.
@@ -1801,6 +1802,10 @@ export declare interface DataPointChoice {
 export declare interface DataPointChoiceCreate {
     /** Uniquely identify a data point. */
     dataPoint: string;
+    /** Uniquely identify an organization. */
+    organization?: string;
+    /** Uniquely identify a collection. */
+    collection?: string;
     label: string;
     value: string;
     synonyms?: string[];
@@ -1810,6 +1815,10 @@ export declare interface DataPointChoiceCreate {
 export declare interface DataPointChoiceUpdate {
     /** Uniquely identify a data point. */
     dataPoint?: string;
+    /** Uniquely identify an organization. */
+    organization?: string;
+    /** Uniquely identify a collection. */
+    collection?: string;
     label?: string;
     value?: string;
     synonyms?: string[];
@@ -2175,6 +2184,7 @@ export declare interface Field {
     mandatory?: boolean;
     disabled?: boolean;
     autoValidationThreshold?: number;
+    showDropdown?: boolean;
     fields?: Field[];
 }
 
