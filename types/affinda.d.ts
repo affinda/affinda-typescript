@@ -691,7 +691,7 @@ export declare interface AffindaAPICreateDocumentOptionalParams extends coreClie
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    rejectDuplicates?: boolean;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -1906,7 +1906,7 @@ export declare interface DocumentCreate {
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    rejectDuplicates?: boolean;
 }
 
 export declare interface DocumentEditRequest {

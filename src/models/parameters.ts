@@ -462,11 +462,10 @@ export const language: OperationParameter = {
 export const rejectDuplicates: OperationParameter = {
   parameterPath: ["options", "rejectDuplicates"],
   mapper: {
-    defaultValue: "false",
     serializedName: "rejectDuplicates",
     xmlName: "rejectDuplicates",
     type: {
-      name: "String"
+      name: "Boolean"
     }
   }
 };

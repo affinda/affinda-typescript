@@ -10622,12 +10622,11 @@ export const DocumentCreate: coreClient.CompositeMapper = {
         }
       },
       rejectDuplicates: {
-        defaultValue: "false",
         serializedName: "rejectDuplicates",
         nullable: true,
         xmlName: "rejectDuplicates",
         type: {
-          name: "String"
+          name: "Boolean"
         }
       }
     }
