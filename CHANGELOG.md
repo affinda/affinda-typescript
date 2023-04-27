@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - rawText is now not nullable
+- Allow custom resume fields to be nullable
 
 ### Fixed
 - Allow rejectDuplicates to be null

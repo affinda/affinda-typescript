@@ -385,8 +385,8 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -408,8 +408,8 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -498,8 +498,8 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1282,8 +1282,8 @@ export declare interface InvoiceRequestBody {
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1351,8 +1351,8 @@ export declare interface JobDescriptionRequestBody {
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -2242,8 +2242,8 @@ export declare interface ResumeRequestBody {
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
