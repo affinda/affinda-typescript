@@ -10236,11 +10236,21 @@ export const Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1:
   }
 };
 
+export const ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties: coreClient.CompositeMapper = {
+  serializedName:
+    "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties",
+  type: {
+    name: "Composite",
+    className: "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties"
+  }
+};
+
 export const JobDescriptionData: coreClient.CompositeMapper = {
   serializedName: "JobDescriptionData",
   type: {
     name: "Composite",
     className: "JobDescriptionData",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       jobTitle: {
         serializedName: "jobTitle",

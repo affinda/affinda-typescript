@@ -1874,7 +1874,12 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
+/** For custom fields. E.g. 'isAvailable': true */
+export interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {}
+
 export interface JobDescriptionData {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   jobTitle?: JobTitleAnnotation;
   contactEmail?: TextAnnotation;
   contactName?: TextAnnotation;

@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Remove `include_child` filter from `/data_points` endpoint
 
+### Added
+- Custom fields to Job Descriptions
+
 ## [6.7.1] - 2023-04-26
 ### Changed
 - Provide additional filters for data point choices, and allow data point choices to be specified for any existing text field.

@@ -1750,6 +1750,10 @@ export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEduc
     match?: boolean;
 }
 
+/** For custom fields. E.g. 'isAvailable': true */
+export declare interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {
+}
+
 export declare interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
     raw?: string;
     parsed?: string;
@@ -2396,6 +2400,8 @@ export declare type JobDescription = Document_2 & {
 };
 
 export declare interface JobDescriptionData {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     jobTitle?: JobTitleAnnotation;
     contactEmail?: TextAnnotation;
     contactName?: TextAnnotation;
