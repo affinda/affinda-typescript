@@ -591,17 +591,6 @@ export const annotationContentType: OperationQueryParameter = {
   }
 };
 
-export const includeChild: OperationQueryParameter = {
-  parameterPath: ["options", "includeChild"],
-  mapper: {
-    serializedName: "include_child",
-    xmlName: "include_child",
-    type: {
-      name: "Boolean"
-    }
-  }
-};
-
 export const identifier2: OperationQueryParameter = {
   parameterPath: ["options", "identifier"],
   mapper: {

@@ -2914,8 +2914,6 @@ export interface AffindaAPIGetAllDataPointsOptionalParams
   description?: string;
   /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
   annotationContentType?: string;
-  /** Whether to show child data points at the top level. <br /> By default child data points are shown nested inside their parent so they are excluded from the top level. */
-  includeChild?: boolean;
   /** Filter by specific identifiers. */
   identifier?: string[];
 }

@@ -2261,7 +2261,6 @@ const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
     Parameters.slug,
     Parameters.description,
     Parameters.annotationContentType,
-    Parameters.includeChild,
     Parameters.identifier2
   ],
   urlParameters: [Parameters.region],
