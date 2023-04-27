@@ -4,6 +4,10 @@
 
 A JSON-encoded string of the `JobDescriptionData` object.
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
 ## Table of contents
 
 ### Properties

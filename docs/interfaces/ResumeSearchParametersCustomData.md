@@ -18,11 +18,15 @@
 
 • **dataPoint**: `string`
 
+The data point's slug
+
 ___
 
 ### filterType
 
 • **filterType**: `string`
+
+Data points of "text" type support only "equals" filterType, others support both "equals" and "range"
 
 ___
 
@@ -30,7 +34,7 @@ ___
 
 • **query**: `Record`<`string`, `unknown`\>
 
-'equals' searches require the 'value' key inside the query, and 'range' searches require at least one of 'gte' (greater than or equal) and 'lte' (less than or equal)
+"equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal)
 
 ___
 

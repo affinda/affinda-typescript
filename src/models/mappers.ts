@@ -3154,11 +3154,22 @@ export const PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSc
   }
 };
 
+export const Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties: coreClient.CompositeMapper = {
+  serializedName:
+    "Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties",
+  type: {
+    name: "Composite",
+    className:
+      "Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties"
+  }
+};
+
 export const JobDescriptionDataUpdate: coreClient.CompositeMapper = {
   serializedName: "JobDescriptionDataUpdate",
   type: {
     name: "Composite",
     className: "JobDescriptionDataUpdate",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       jobTitle: {
         serializedName: "jobTitle",
@@ -3634,11 +3645,21 @@ export const JobDescription: coreClient.CompositeMapper = {
   }
 };
 
+export const ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties: coreClient.CompositeMapper = {
+  serializedName:
+    "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties",
+  type: {
+    name: "Composite",
+    className: "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties"
+  }
+};
+
 export const JobDescriptionData: coreClient.CompositeMapper = {
   serializedName: "JobDescriptionData",
   type: {
     name: "Composite",
     className: "JobDescriptionData",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       jobTitle: {
         serializedName: "jobTitle",

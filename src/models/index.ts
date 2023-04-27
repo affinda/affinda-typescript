@@ -586,8 +586,13 @@ export interface PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJs
   results?: Meta[];
 }
 
+/** For custom fields. E.g. 'isAvailable': true */
+export interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {}
+
 /** A JSON-encoded string of the `JobDescriptionData` object. */
 export interface JobDescriptionDataUpdate {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   jobTitle?: JobTitleAnnotationUpdate;
   contactEmail?: TextAnnotationV2Update;
   contactName?: TextAnnotationV2Update;
@@ -673,7 +678,12 @@ export interface JobDescription {
   error: ErrorModel;
 }
 
+/** For custom fields. E.g. 'isAvailable': true */
+export interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {}
+
 export interface JobDescriptionData {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   jobTitle?: JobTitleAnnotation;
   contactEmail?: TextAnnotation;
   contactName?: TextAnnotation;
@@ -1057,9 +1067,11 @@ export interface ResumeSearchParameters {
 }
 
 export interface ResumeSearchParametersCustomData {
+  /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
   filterType: ResumeSearchParametersCustomDataFilterType;
+  /** The data point's slug */
   dataPoint: string;
-  /** 'equals' searches require the 'value' key inside the query, and 'range' searches require at least one of 'gte' (greater than or equal) and 'lte' (less than or equal) */
+  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
   query: Record<string, unknown>;
   required?: boolean;
   weight?: number;

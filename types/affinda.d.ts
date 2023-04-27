@@ -903,6 +903,10 @@ export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftA
     parsed?: string;
 }
 
+/** For custom fields. E.g. 'isAvailable': true */
+export declare interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {
+}
+
 export declare interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
     raw?: string;
     parsed?: string;
@@ -1024,6 +1028,10 @@ export declare interface ComponentsRe6GnoSchemasJobdescriptionsearchdetailProper
 
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
+}
+
+/** For custom fields. E.g. 'isAvailable': true */
+export declare interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {
 }
 
 export declare interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
@@ -1297,6 +1305,8 @@ export declare interface JobDescription {
 }
 
 export declare interface JobDescriptionData {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     jobTitle?: JobTitleAnnotation;
     contactEmail?: TextAnnotation;
     contactName?: TextAnnotation;
@@ -1318,6 +1328,8 @@ export declare interface JobDescriptionData {
 
 /** A JSON-encoded string of the `JobDescriptionData` object. */
 export declare interface JobDescriptionDataUpdate {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     jobTitle?: JobTitleAnnotationUpdate;
     contactEmail?: TextAnnotationV2Update;
     contactName?: TextAnnotationV2Update;
@@ -2469,9 +2481,11 @@ export declare interface ResumeSearchParameters {
 }
 
 export declare interface ResumeSearchParametersCustomData {
+    /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
     filterType: ResumeSearchParametersCustomDataFilterType;
+    /** The data point's slug */
     dataPoint: string;
-    /** 'equals' searches require the 'value' key inside the query, and 'range' searches require at least one of 'gte' (greater than or equal) and 'lte' (less than or equal) */
+    /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
     query: Record<string, unknown>;
     required?: boolean;
     weight?: number;
