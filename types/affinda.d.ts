@@ -2623,6 +2623,10 @@ export declare interface JobDescriptionSearchResult {
     occupationGroup?: OccupationGroupSearchScoreComponent;
     searchExpression: SearchExpressionSearchScoreComponent;
     organizationName: string | null;
+    /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+    customData?: {
+        [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+    };
 }
 
 export declare type JobTitleAnnotation = Annotation & {

@@ -4691,6 +4691,20 @@ export const JobDescriptionSearchResult: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      customData: {
+        serializedName: "customData",
+        xmlName: "customData",
+        type: {
+          name: "Dictionary",
+          value: {
+            type: {
+              name: "Composite",
+              className:
+                "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties"
+            }
+          }
+        }
       }
     }
   }
@@ -4977,6 +4991,41 @@ export const SearchExpressionSearchScoreComponent: coreClient.CompositeMapper = 
       value: {
         serializedName: "value",
         xmlName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      score: {
+        serializedName: "score",
+        nullable: true,
+        xmlName: "score",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties: coreClient.CompositeMapper = {
+  serializedName:
+    "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
+  type: {
+    name: "Composite",
+    className:
+      "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        xmlName: "value",
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        xmlName: "label",
         type: {
           name: "String"
         }
@@ -6890,41 +6939,6 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
                 "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties"
             }
           }
-        }
-      }
-    }
-  }
-};
-
-export const ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties: coreClient.CompositeMapper = {
-  serializedName:
-    "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
-  type: {
-    name: "Composite",
-    className:
-      "ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties",
-    modelProperties: {
-      value: {
-        serializedName: "value",
-        xmlName: "value",
-        type: {
-          name: "String"
-        }
-      },
-      label: {
-        serializedName: "label",
-        required: true,
-        xmlName: "label",
-        type: {
-          name: "String"
-        }
-      },
-      score: {
-        serializedName: "score",
-        nullable: true,
-        xmlName: "score",
-        type: {
-          name: "Number"
         }
       }
     }

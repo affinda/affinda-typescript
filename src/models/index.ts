@@ -904,6 +904,10 @@ export interface JobDescriptionSearchResult {
   occupationGroup?: OccupationGroupSearchScoreComponent;
   searchExpression: SearchExpressionSearchScoreComponent;
   organizationName: string | null;
+  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+  customData?: {
+    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+  };
 }
 
 export interface JobTitleSearchScoreComponent {
@@ -957,6 +961,12 @@ export interface OccupationGroupSearchScoreComponent {
 export interface SearchExpressionSearchScoreComponent {
   label: string;
   value?: string;
+  score?: number;
+}
+
+export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
+  value?: string;
+  label: string;
   score?: number;
 }
 
@@ -1288,12 +1298,6 @@ export interface ResumeSearchResult {
   customData: {
     [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
   };
-}
-
-export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties {
-  value?: string;
-  label: string;
-  score?: number;
 }
 
 export interface ResumeSearchDetail {
