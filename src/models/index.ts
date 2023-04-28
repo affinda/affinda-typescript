@@ -2800,6 +2800,8 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   ready?: boolean;
   /** Filter for validatable documents. */
   validatable?: boolean;
+  /** Filter for documents with challenges. */
+  hasChallenges?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */

@@ -941,6 +941,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     ready?: boolean;
     /** Filter for validatable documents. */
     validatable?: boolean;
+    /** Filter for documents with challenges. */
+    hasChallenges?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */

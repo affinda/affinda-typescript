@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Custom fields to Job Descriptions
+- Add `has_challenges` filter to `GET /documents` endpoint
 
 ## [6.7.1] - 2023-04-26
 ### Changed

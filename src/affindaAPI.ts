@@ -1956,7 +1956,8 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.inReview,
     Parameters.failed,
     Parameters.ready,
-    Parameters.validatable
+    Parameters.validatable,
+    Parameters.hasChallenges
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],

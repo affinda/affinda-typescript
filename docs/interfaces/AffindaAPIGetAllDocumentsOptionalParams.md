@@ -19,6 +19,7 @@ Optional parameters.
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
 - [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
 - [failed](AffindaAPIGetAllDocumentsOptionalParams.md#failed)
+- [hasChallenges](AffindaAPIGetAllDocumentsOptionalParams.md#haschallenges)
 - [inReview](AffindaAPIGetAllDocumentsOptionalParams.md#inreview)
 - [includeData](AffindaAPIGetAllDocumentsOptionalParams.md#includedata)
 - [limit](AffindaAPIGetAllDocumentsOptionalParams.md#limit)
@@ -78,6 +79,14 @@ ___
 • `Optional` **failed**: `boolean`
 
 Filter by failed status.
+
+___
+
+### hasChallenges
+
+• `Optional` **hasChallenges**: `boolean`
+
+Filter for documents with challenges.
 
 ___
 

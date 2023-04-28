@@ -347,6 +347,17 @@ export const validatable: OperationQueryParameter = {
   }
 };
 
+export const hasChallenges: OperationQueryParameter = {
+  parameterPath: ["options", "hasChallenges"],
+  mapper: {
+    serializedName: "has_challenges",
+    xmlName: "has_challenges",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const contentType1: OperationParameter = {
   parameterPath: ["options", "contentType"],
   mapper: {
