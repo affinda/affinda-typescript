@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [customData](JobDescriptionSearchResult.md#customdata)
 - [education](JobDescriptionSearchResult.md#education)
 - [experience](JobDescriptionSearchResult.md#experience)
 - [identifier](JobDescriptionSearchResult.md#identifier)
@@ -21,6 +22,18 @@
 - [skills](JobDescriptionSearchResult.md#skills)
 
 ## Properties
+
+### customData
+
+• `Optional` **customData**: `Object`
+
+Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties>
+
+#### Index signature
+
+▪ [propertyName: `string`]: [`ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties`](ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties.md)
+
+___
 
 ### education
 
