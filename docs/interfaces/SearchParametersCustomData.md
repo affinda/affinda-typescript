@@ -1,16 +1,16 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchParametersCustomData
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / SearchParametersCustomData
 
-# Interface: ResumeSearchParametersCustomData
+# Interface: SearchParametersCustomData
 
 ## Table of contents
 
 ### Properties
 
-- [dataPoint](ResumeSearchParametersCustomData.md#datapoint)
-- [filterType](ResumeSearchParametersCustomData.md#filtertype)
-- [query](ResumeSearchParametersCustomData.md#query)
-- [required](ResumeSearchParametersCustomData.md#required)
-- [weight](ResumeSearchParametersCustomData.md#weight)
+- [dataPoint](SearchParametersCustomData.md#datapoint)
+- [filterType](SearchParametersCustomData.md#filtertype)
+- [query](SearchParametersCustomData.md#query)
+- [required](SearchParametersCustomData.md#required)
+- [weight](SearchParametersCustomData.md#weight)
 
 ## Properties
 

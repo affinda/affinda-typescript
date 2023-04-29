@@ -750,6 +750,7 @@ export interface JobDescriptionSearchParameters {
   managementLevel?: ManagementLevel;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
+  customData?: SearchParametersCustomData[];
 }
 
 export interface ResumeSearchParametersLocation {
@@ -767,6 +768,17 @@ export interface ResumeSearchParametersLocationCoordinates {
 export interface ResumeSearchParametersSkill {
   name?: string;
   required?: boolean;
+}
+
+export interface SearchParametersCustomData {
+  /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
+  filterType: SearchParametersCustomDataFilterType;
+  /** The data point's slug */
+  dataPoint: string;
+  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
+  query: Record<string, unknown>;
+  required?: boolean;
+  weight?: number;
 }
 
 export interface JobDescriptionSearch {
@@ -796,7 +808,7 @@ export interface JobDescriptionSearchResult {
   searchExpression: SearchExpressionSearchScoreComponent;
   organizationName: string | null;
   /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-  customData?: {
+  customData: {
     [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
   };
 }
@@ -1075,17 +1087,6 @@ export interface ResumeSearchParameters {
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
   customData?: ResumeSearchParametersCustomData[];
-}
-
-export interface ResumeSearchParametersCustomData {
-  /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
-  filterType: ResumeSearchParametersCustomDataFilterType;
-  /** The data point's slug */
-  dataPoint: string;
-  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
-  query: Record<string, unknown>;
-  required?: boolean;
-  weight?: number;
 }
 
 export interface ResumeSearch {
@@ -1669,6 +1670,8 @@ export type YearsExperienceAnnotationV2Update = AnnotationV2Base & {
   parsed?: YearsExperienceAnnotationV2UpdateParsed;
 };
 
+export type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
+
 export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroup &
   ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1 & {};
 
@@ -1694,21 +1697,21 @@ export enum KnownRegion {
  */
 export type Region = string;
 
-/** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
-export enum KnownResumeSearchParametersCustomDataFilterType {
+/** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
+export enum KnownSearchParametersCustomDataFilterType {
   Equals = "equals",
   Range = "range"
 }
 
 /**
- * Defines values for ResumeSearchParametersCustomDataFilterType. \
- * {@link KnownResumeSearchParametersCustomDataFilterType} can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
+ * Defines values for SearchParametersCustomDataFilterType. \
+ * {@link KnownSearchParametersCustomDataFilterType} can be used interchangeably with SearchParametersCustomDataFilterType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **equals** \
  * **range**
  */
-export type ResumeSearchParametersCustomDataFilterType = string;
+export type SearchParametersCustomDataFilterType = string;
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {

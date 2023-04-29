@@ -4206,6 +4206,20 @@ export const JobDescriptionSearchParameters: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      customData: {
+        serializedName: "customData",
+        xmlName: "customData",
+        xmlElementName: "SearchParametersCustomData",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "SearchParametersCustomData"
+            }
+          }
+        }
       }
     }
   }
@@ -4298,6 +4312,59 @@ export const ResumeSearchParametersSkill: coreClient.CompositeMapper = {
         xmlName: "required",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const SearchParametersCustomData: coreClient.CompositeMapper = {
+  serializedName: "SearchParametersCustomData",
+  type: {
+    name: "Composite",
+    className: "SearchParametersCustomData",
+    modelProperties: {
+      filterType: {
+        serializedName: "filterType",
+        required: true,
+        xmlName: "filterType",
+        type: {
+          name: "String"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        xmlName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      query: {
+        serializedName: "query",
+        required: true,
+        xmlName: "query",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      required: {
+        serializedName: "required",
+        xmlName: "required",
+        type: {
+          name: "Boolean"
+        }
+      },
+      weight: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "weight",
+        xmlName: "weight",
+        type: {
+          name: "Number"
         }
       }
     }
@@ -4472,6 +4539,7 @@ export const JobDescriptionSearchResult: coreClient.CompositeMapper = {
       },
       customData: {
         serializedName: "customData",
+        required: true,
         xmlName: "customData",
         type: {
           name: "Dictionary",
@@ -6161,59 +6229,6 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
               className: "ResumeSearchParametersCustomData"
             }
           }
-        }
-      }
-    }
-  }
-};
-
-export const ResumeSearchParametersCustomData: coreClient.CompositeMapper = {
-  serializedName: "ResumeSearchParametersCustomData",
-  type: {
-    name: "Composite",
-    className: "ResumeSearchParametersCustomData",
-    modelProperties: {
-      filterType: {
-        serializedName: "filterType",
-        required: true,
-        xmlName: "filterType",
-        type: {
-          name: "String"
-        }
-      },
-      dataPoint: {
-        serializedName: "dataPoint",
-        required: true,
-        xmlName: "dataPoint",
-        type: {
-          name: "String"
-        }
-      },
-      query: {
-        serializedName: "query",
-        required: true,
-        xmlName: "query",
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
-      },
-      required: {
-        serializedName: "required",
-        xmlName: "required",
-        type: {
-          name: "Boolean"
-        }
-      },
-      weight: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: 0
-        },
-        serializedName: "weight",
-        xmlName: "weight",
-        type: {
-          name: "Number"
         }
       }
     }
@@ -9085,6 +9100,17 @@ export const YearsExperienceAnnotationV2Update: coreClient.CompositeMapper = {
           className: "YearsExperienceAnnotationV2UpdateParsed"
         }
       }
+    }
+  }
+};
+
+export const ResumeSearchParametersCustomData: coreClient.CompositeMapper = {
+  serializedName: "ResumeSearchParametersCustomData",
+  type: {
+    name: "Composite",
+    className: "ResumeSearchParametersCustomData",
+    modelProperties: {
+      ...SearchParametersCustomData.type.modelProperties
     }
   }
 };

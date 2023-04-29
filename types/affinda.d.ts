@@ -1559,6 +1559,7 @@ export declare interface JobDescriptionSearchParameters {
     managementLevel?: ManagementLevel;
     managementLevelRequired?: boolean;
     managementLevelWeight?: number;
+    customData?: SearchParametersCustomData[];
 }
 
 export declare interface JobDescriptionSearchResult {
@@ -1577,7 +1578,7 @@ export declare interface JobDescriptionSearchResult {
     searchExpression: SearchExpressionSearchScoreComponent;
     organizationName: string | null;
     /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-    customData?: {
+    customData: {
         [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
     };
 }
@@ -1670,12 +1671,6 @@ export declare enum KnownResthookSubscriptionVersion {
     V3 = "v3"
 }
 
-/** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
-export declare enum KnownResumeSearchParametersCustomDataFilterType {
-    Equals = "equals",
-    Range = "range"
-}
-
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export declare enum KnownResumeSkillSourcesItemSection {
     Achievements = "Achievements",
@@ -1698,6 +1693,12 @@ export declare enum KnownResumeSkillSourcesItemSection {
     SkillsInterestsLanguages = "Skills/Interests/Languages",
     TrainingCertifications = "Training/Certifications",
     ExtracurricularsLeadership = "Extracurriculars/Leadership"
+}
+
+/** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
+export declare enum KnownSearchParametersCustomDataFilterType {
+    Equals = "equals",
+    Range = "range"
 }
 
 /** Known values of {@link Version} that the service accepts. */
@@ -2485,26 +2486,7 @@ export declare interface ResumeSearchParameters {
     customData?: ResumeSearchParametersCustomData[];
 }
 
-export declare interface ResumeSearchParametersCustomData {
-    /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
-    filterType: ResumeSearchParametersCustomDataFilterType;
-    /** The data point's slug */
-    dataPoint: string;
-    /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
-    query: Record<string, unknown>;
-    required?: boolean;
-    weight?: number;
-}
-
-/**
- * Defines values for ResumeSearchParametersCustomDataFilterType. \
- * {@link KnownResumeSearchParametersCustomDataFilterType} can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **equals** \
- * **range**
- */
-export declare type ResumeSearchParametersCustomDataFilterType = string;
+export declare type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
 
 export declare interface ResumeSearchParametersLocation {
     name?: string;
@@ -2612,6 +2594,27 @@ export declare interface SearchExpressionSearchScoreComponent {
 
 /** Defines values for SearchLocationUnit. */
 export declare type SearchLocationUnit = "km" | "mi";
+
+export declare interface SearchParametersCustomData {
+    /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
+    filterType: SearchParametersCustomDataFilterType;
+    /** The data point's slug */
+    dataPoint: string;
+    /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
+    query: Record<string, unknown>;
+    required?: boolean;
+    weight?: number;
+}
+
+/**
+ * Defines values for SearchParametersCustomDataFilterType. \
+ * {@link KnownSearchParametersCustomDataFilterType} can be used interchangeably with SearchParametersCustomDataFilterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **equals** \
+ * **range**
+ */
+export declare type SearchParametersCustomDataFilterType = string;
 
 export declare type SkillAnnotation = Annotation & {
     parsed?: string;
