@@ -736,6 +736,14 @@ export const ResumeDataPhoneNumberDetailsItem: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      internationalCountryCode: {
+        serializedName: "internationalCountryCode",
+        nullable: true,
+        xmlName: "internationalCountryCode",
+        type: {
+          name: "Number"
+        }
+      },
       nationalNumber: {
         serializedName: "nationalNumber",
         nullable: true,

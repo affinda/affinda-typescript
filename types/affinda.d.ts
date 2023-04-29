@@ -2162,6 +2162,7 @@ export declare interface ResumeDataPhoneNumberDetailsItem {
     rawText?: string;
     formattedNumber?: string;
     countryCode?: string;
+    internationalCountryCode?: number;
     nationalNumber?: string;
 }
 

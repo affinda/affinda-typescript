@@ -150,6 +150,7 @@ export interface ResumeDataPhoneNumberDetailsItem {
   rawText?: string;
   formattedNumber?: string;
   countryCode?: string;
+  internationalCountryCode?: number;
   nationalNumber?: string;
 }
 
