@@ -859,6 +859,7 @@ export interface JobDescriptionSearchParameters {
   managementLevel?: ManagementLevel;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
+  customData?: SearchParametersCustomData[];
 }
 
 export interface ResumeSearchParametersLocation {
@@ -876,6 +877,17 @@ export interface ResumeSearchParametersLocationCoordinates {
 export interface ResumeSearchParametersSkill {
   name?: string;
   required?: boolean;
+}
+
+export interface SearchParametersCustomData {
+  /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
+  filterType: SearchParametersCustomDataFilterType;
+  /** The data point's slug */
+  dataPoint: string;
+  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
+  query: Record<string, unknown>;
+  required?: boolean;
+  weight?: number;
 }
 
 export interface JobDescriptionSearch {
@@ -905,7 +917,7 @@ export interface JobDescriptionSearchResult {
   searchExpression: SearchExpressionSearchScoreComponent;
   organizationName: string | null;
   /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-  customData?: {
+  customData: {
     [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
   };
 }
@@ -1180,7 +1192,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum20;
+  documentType?: Enum21;
 }
 
 export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1255,17 +1267,6 @@ export interface ResumeSearchParameters {
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
   customData?: ResumeSearchParametersCustomData[];
-}
-
-export interface ResumeSearchParametersCustomData {
-  /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
-  filterType: ResumeSearchParametersCustomDataFilterType;
-  /** The data point's slug */
-  dataPoint: string;
-  /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
-  query: Record<string, unknown>;
-  required?: boolean;
-  weight?: number;
 }
 
 export interface ResumeSearch {
@@ -1575,6 +1576,7 @@ export interface ResumeDataPhoneNumberDetailsItem {
   rawText?: string;
   formattedNumber?: string;
   countryCode?: string;
+  internationalCountryCode?: number;
   nationalNumber?: string;
 }
 
@@ -2067,6 +2069,8 @@ export type AnnotationBatchUpdate = AnnotationUpdate & {
   id: number;
 };
 
+export type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
+
 export type JobDescriptionSearchDetailLocationValue = Location &
   Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
 
@@ -2527,21 +2531,37 @@ export enum KnownVersion {
  */
 export type Version = string;
 
-/** Known values of {@link Enum17} that the service accepts. */
-export enum KnownEnum17 {
+/** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
+export enum KnownSearchParametersCustomDataFilterType {
+  Equals = "equals",
+  Range = "range"
+}
+
+/**
+ * Defines values for SearchParametersCustomDataFilterType. \
+ * {@link KnownSearchParametersCustomDataFilterType} can be used interchangeably with SearchParametersCustomDataFilterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **equals** \
+ * **range**
+ */
+export type SearchParametersCustomDataFilterType = string;
+
+/** Known values of {@link Enum18} that the service accepts. */
+export enum KnownEnum18 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum17. \
- * {@link KnownEnum17} can be used interchangeably with Enum17,
+ * Defines values for Enum18. \
+ * {@link KnownEnum18} can be used interchangeably with Enum18,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum17 = string;
+export type Enum18 = string;
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
 export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
@@ -2575,37 +2595,21 @@ export enum KnownPostContentSchemaDocumentType {
  */
 export type PostContentSchemaDocumentType = string;
 
-/** Known values of {@link Enum20} that the service accepts. */
-export enum KnownEnum20 {
+/** Known values of {@link Enum21} that the service accepts. */
+export enum KnownEnum21 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum20. \
- * {@link KnownEnum20} can be used interchangeably with Enum20,
+ * Defines values for Enum21. \
+ * {@link KnownEnum21} can be used interchangeably with Enum21,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum20 = string;
-
-/** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
-export enum KnownResumeSearchParametersCustomDataFilterType {
-  Equals = "equals",
-  Range = "range"
-}
-
-/**
- * Defines values for ResumeSearchParametersCustomDataFilterType. \
- * {@link KnownResumeSearchParametersCustomDataFilterType} can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **equals** \
- * **range**
- */
-export type ResumeSearchParametersCustomDataFilterType = string;
+export type Enum21 = string;
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
@@ -3326,7 +3330,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum17;
+  documentType?: Enum18;
 }
 
 /** Contains response data for the getAllIndexes operation. */

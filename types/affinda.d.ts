@@ -975,7 +975,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum17;
+    documentType?: Enum18;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -2094,24 +2094,24 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum17. \
- * {@link KnownEnum17} can be used interchangeably with Enum17,
+ * Defines values for Enum18. \
+ * {@link KnownEnum18} can be used interchangeably with Enum18,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum17 = string;
+export declare type Enum18 = string;
 
 /**
- * Defines values for Enum20. \
- * {@link KnownEnum20} can be used interchangeably with Enum20,
+ * Defines values for Enum21. \
+ * {@link KnownEnum21} can be used interchangeably with Enum21,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum20 = string;
+export declare type Enum21 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2606,6 +2606,7 @@ export declare interface JobDescriptionSearchParameters {
     managementLevel?: ManagementLevel;
     managementLevelRequired?: boolean;
     managementLevelWeight?: number;
+    customData?: SearchParametersCustomData[];
 }
 
 export declare interface JobDescriptionSearchResult {
@@ -2624,7 +2625,7 @@ export declare interface JobDescriptionSearchResult {
     searchExpression: SearchExpressionSearchScoreComponent;
     organizationName: string | null;
     /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-    customData?: {
+    customData: {
         [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
     };
 }
@@ -2717,14 +2718,14 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum17} that the service accepts. */
-export declare enum KnownEnum17 {
+/** Known values of {@link Enum18} that the service accepts. */
+export declare enum KnownEnum18 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum20} that the service accepts. */
-export declare enum KnownEnum20 {
+/** Known values of {@link Enum21} that the service accepts. */
+export declare enum KnownEnum21 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -2804,12 +2805,6 @@ export declare enum KnownResthookSubscriptionVersion {
     V3 = "v3"
 }
 
-/** Known values of {@link ResumeSearchParametersCustomDataFilterType} that the service accepts. */
-export declare enum KnownResumeSearchParametersCustomDataFilterType {
-    Equals = "equals",
-    Range = "range"
-}
-
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export declare enum KnownResumeSkillSourcesItemSection {
     Achievements = "Achievements",
@@ -2832,6 +2827,12 @@ export declare enum KnownResumeSkillSourcesItemSection {
     SkillsInterestsLanguages = "Skills/Interests/Languages",
     TrainingCertifications = "Training/Certifications",
     ExtracurricularsLeadership = "Extracurriculars/Leadership"
+}
+
+/** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
+export declare enum KnownSearchParametersCustomDataFilterType {
+    Equals = "equals",
+    Range = "range"
 }
 
 /** Known values of {@link ThemeConfigPaletteMode} that the service accepts. */
@@ -3102,7 +3103,7 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
 
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum20;
+    documentType?: Enum21;
 }
 
 export declare interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -3358,6 +3359,7 @@ export declare interface ResumeDataPhoneNumberDetailsItem {
     rawText?: string;
     formattedNumber?: string;
     countryCode?: string;
+    internationalCountryCode?: number;
     nationalNumber?: string;
 }
 
@@ -3653,26 +3655,7 @@ export declare interface ResumeSearchParameters {
     customData?: ResumeSearchParametersCustomData[];
 }
 
-export declare interface ResumeSearchParametersCustomData {
-    /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
-    filterType: ResumeSearchParametersCustomDataFilterType;
-    /** The data point's slug */
-    dataPoint: string;
-    /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
-    query: Record<string, unknown>;
-    required?: boolean;
-    weight?: number;
-}
-
-/**
- * Defines values for ResumeSearchParametersCustomDataFilterType. \
- * {@link KnownResumeSearchParametersCustomDataFilterType} can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **equals** \
- * **range**
- */
-export declare type ResumeSearchParametersCustomDataFilterType = string;
+export declare type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
 
 export declare interface ResumeSearchParametersLocation {
     name?: string;
@@ -3787,6 +3770,27 @@ export declare interface SearchExpressionSearchScoreComponent {
 
 /** Defines values for SearchLocationUnit. */
 export declare type SearchLocationUnit = "km" | "mi";
+
+export declare interface SearchParametersCustomData {
+    /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
+    filterType: SearchParametersCustomDataFilterType;
+    /** The data point's slug */
+    dataPoint: string;
+    /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
+    query: Record<string, unknown>;
+    required?: boolean;
+    weight?: number;
+}
+
+/**
+ * Defines values for SearchParametersCustomDataFilterType. \
+ * {@link KnownSearchParametersCustomDataFilterType} can be used interchangeably with SearchParametersCustomDataFilterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **equals** \
+ * **range**
+ */
+export declare type SearchParametersCustomDataFilterType = string;
 
 export declare type SkillAnnotation = Annotation & {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */

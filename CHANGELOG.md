@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add custom data to job description search results
+- Add international_country_code to phone number details
 
 ## [6.8.0] - 2023-04-28
 ### Changed

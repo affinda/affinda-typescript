@@ -8,6 +8,7 @@
 
 - [countryCode](ResumeDataPhoneNumberDetailsItem.md#countrycode)
 - [formattedNumber](ResumeDataPhoneNumberDetailsItem.md#formattednumber)
+- [internationalCountryCode](ResumeDataPhoneNumberDetailsItem.md#internationalcountrycode)
 - [nationalNumber](ResumeDataPhoneNumberDetailsItem.md#nationalnumber)
 - [rawText](ResumeDataPhoneNumberDetailsItem.md#rawtext)
 
@@ -22,6 +23,12 @@ ___
 ### formattedNumber
 
 • `Optional` **formattedNumber**: `string`
+
+___
+
+### internationalCountryCode
+
+• `Optional` **internationalCountryCode**: `number`
 
 ___
 

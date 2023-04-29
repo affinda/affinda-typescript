@@ -50,7 +50,7 @@
 
 ### customData
 
-• `Optional` **customData**: [`ResumeSearchParametersCustomData`](ResumeSearchParametersCustomData.md)[]
+• `Optional` **customData**: [`SearchParametersCustomData`](SearchParametersCustomData.md)[]
 
 ___
 

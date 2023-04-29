@@ -25,7 +25,7 @@
 
 ### customData
 
-• `Optional` **customData**: `Object`
+• **customData**: `Object`
 
 Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties>
 

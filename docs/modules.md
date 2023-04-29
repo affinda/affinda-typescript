@@ -12,8 +12,8 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum17](enums/KnownEnum17.md)
-- [KnownEnum20](enums/KnownEnum20.md)
+- [KnownEnum18](enums/KnownEnum18.md)
+- [KnownEnum21](enums/KnownEnum21.md)
 - [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
@@ -24,8 +24,8 @@
 - [KnownRegion](enums/KnownRegion.md)
 - [KnownResthookEvent](enums/KnownResthookEvent.md)
 - [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
-- [KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
+- [KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md)
 - [KnownThemeConfigPaletteMode](enums/KnownThemeConfigPaletteMode.md)
 - [KnownVersion](enums/KnownVersion.md)
 - [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
@@ -313,7 +313,6 @@
 - [ResumeSearchMatch](interfaces/ResumeSearchMatch.md)
 - [ResumeSearchMatchDetails](interfaces/ResumeSearchMatchDetails.md)
 - [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
-- [ResumeSearchParametersCustomData](interfaces/ResumeSearchParametersCustomData.md)
 - [ResumeSearchParametersLocation](interfaces/ResumeSearchParametersLocation.md)
 - [ResumeSearchParametersLocationCoordinates](interfaces/ResumeSearchParametersLocationCoordinates.md)
 - [ResumeSearchParametersSkill](interfaces/ResumeSearchParametersSkill.md)
@@ -323,6 +322,7 @@
 - [RowAnnotation](interfaces/RowAnnotation.md)
 - [SearchConfigAction](interfaces/SearchConfigAction.md)
 - [SearchExpressionSearchScoreComponent](interfaces/SearchExpressionSearchScoreComponent.md)
+- [SearchParametersCustomData](interfaces/SearchParametersCustomData.md)
 - [SkillsSearchScoreComponent](interfaces/SkillsSearchScoreComponent.md)
 - [Tag](interfaces/Tag.md)
 - [TagCreate](interfaces/TagCreate.md)
@@ -431,8 +431,8 @@
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum17](modules.md#enum17)
-- [Enum20](modules.md#enum20)
+- [Enum18](modules.md#enum18)
+- [Enum21](modules.md#enum21)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -494,9 +494,10 @@
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
 - [ResumeSearchDetailSkillsValueItem](modules.md#resumesearchdetailskillsvalueitem)
-- [ResumeSearchParametersCustomDataFilterType](modules.md#resumesearchparameterscustomdatafiltertype)
+- [ResumeSearchParametersCustomData](modules.md#resumesearchparameterscustomdata)
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
 - [SearchLocationUnit](modules.md#searchlocationunit)
+- [SearchParametersCustomDataFilterType](modules.md#searchparameterscustomdatafiltertype)
 - [SkillAnnotation](modules.md#skillannotation)
 - [TextAnnotation](modules.md#textannotation)
 - [ThemeConfigPaletteMode](modules.md#themeconfigpalettemode)
@@ -1246,12 +1247,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum17
+### Enum18
 
-Ƭ **Enum17**: `string`
+Ƭ **Enum18**: `string`
 
-Defines values for Enum17. \
-[KnownEnum17](enums/KnownEnum17.md) can be used interchangeably with Enum17,
+Defines values for Enum18. \
+[KnownEnum18](enums/KnownEnum18.md) can be used interchangeably with Enum18,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1259,12 +1260,12 @@ Defines values for Enum17. \
 
 ___
 
-### Enum20
+### Enum21
 
-Ƭ **Enum20**: `string`
+Ƭ **Enum21**: `string`
 
-Defines values for Enum20. \
-[KnownEnum20](enums/KnownEnum20.md) can be used interchangeably with Enum20,
+Defines values for Enum21. \
+[KnownEnum21](enums/KnownEnum21.md) can be used interchangeably with Enum21,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1725,16 +1726,9 @@ ___
 
 ___
 
-### ResumeSearchParametersCustomDataFilterType
+### ResumeSearchParametersCustomData
 
-Ƭ **ResumeSearchParametersCustomDataFilterType**: `string`
-
-Defines values for ResumeSearchParametersCustomDataFilterType. \
-[KnownResumeSearchParametersCustomDataFilterType](enums/KnownResumeSearchParametersCustomDataFilterType.md) can be used interchangeably with ResumeSearchParametersCustomDataFilterType,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**equals** \
-**range**
+Ƭ **ResumeSearchParametersCustomData**: [`SearchParametersCustomData`](interfaces/SearchParametersCustomData.md) & {}
 
 ___
 
@@ -1774,6 +1768,19 @@ ___
 Ƭ **SearchLocationUnit**: ``"km"`` \| ``"mi"``
 
 Defines values for SearchLocationUnit.
+
+___
+
+### SearchParametersCustomDataFilterType
+
+Ƭ **SearchParametersCustomDataFilterType**: `string`
+
+Defines values for SearchParametersCustomDataFilterType. \
+[KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md) can be used interchangeably with SearchParametersCustomDataFilterType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**equals** \
+**range**
 
 ___
 

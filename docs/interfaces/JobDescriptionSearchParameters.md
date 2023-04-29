@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [customData](JobDescriptionSearchParameters.md#customdata)
 - [degreeTypes](JobDescriptionSearchParameters.md#degreetypes)
 - [degreeTypesRequired](JobDescriptionSearchParameters.md#degreetypesrequired)
 - [degrees](JobDescriptionSearchParameters.md#degrees)
@@ -37,6 +38,12 @@
 - [yearsExperienceWeight](JobDescriptionSearchParameters.md#yearsexperienceweight)
 
 ## Properties
+
+### customData
+
+• `Optional` **customData**: [`SearchParametersCustomData`](SearchParametersCustomData.md)[]
+
+___
 
 ### degreeTypes
 
