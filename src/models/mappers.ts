@@ -1972,6 +1972,14 @@ export const DocumentMeta: coreClient.CompositeMapper = {
           className: "UserNullable"
         }
       },
+      createdBy: {
+        serializedName: "createdBy",
+        xmlName: "createdBy",
+        type: {
+          name: "Composite",
+          className: "User"
+        }
+      },
       sourceEmail: {
         serializedName: "sourceEmail",
         nullable: true,

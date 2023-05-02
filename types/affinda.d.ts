@@ -1974,6 +1974,7 @@ export declare interface DocumentMeta {
     file?: string;
     tags?: Tag[];
     confirmedBy?: UserNullable;
+    createdBy?: User;
     /** If the document is created via email ingestion, this field stores the email file's URL. */
     sourceEmail?: string;
 }

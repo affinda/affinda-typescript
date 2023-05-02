@@ -11,6 +11,7 @@
 - [collection](DocumentMeta.md#collection)
 - [confirmedBy](DocumentMeta.md#confirmedby)
 - [confirmedDt](DocumentMeta.md#confirmeddt)
+- [createdBy](DocumentMeta.md#createdby)
 - [createdDt](DocumentMeta.md#createddt)
 - [errorCode](DocumentMeta.md#errorcode)
 - [errorDetail](DocumentMeta.md#errordetail)
@@ -67,6 +68,12 @@ ___
 ### confirmedDt
 
 • `Optional` **confirmedDt**: `Date`
+
+___
+
+### createdBy
+
+• `Optional` **createdBy**: [`User`](User.md)
 
 ___
 
