@@ -93,7 +93,7 @@ ___
 
 ### pdf
 
-• **pdf**: `string`
+• **pdf**: ``null`` \| `string`
 
 ___
 

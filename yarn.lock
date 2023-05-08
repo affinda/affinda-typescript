@@ -92,24 +92,24 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@microsoft/api-extractor-model@7.26.6":
-  version "7.26.6"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.26.6.tgz#a0d81cb4eb7a741180a70ecb3583617b3093621d"
-  integrity sha512-vacINIUTAwtN6W2fMbO/JORR8sVfq+DxS++ewSeqy0AM9a55IgMXC04p31IB3vShaFnozcjHLxTOD/eWom0dXA==
+"@microsoft/api-extractor-model@7.26.8":
+  version "7.26.8"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.26.8.tgz#1bff2e53ff787525afd09d7c8da0031c82407948"
+  integrity sha512-ESj3bBJkiMg/8tS0PW4+2rUgTVwOEfy41idTnFgdbVX+O50bN6S99MV6FIPlCZWCnRDcBfwxRXLdAkOQQ0JqGw==
   dependencies:
     "@microsoft/tsdoc" "0.14.2"
     "@microsoft/tsdoc-config" "~0.16.1"
-    "@rushstack/node-core-library" "3.57.0"
+    "@rushstack/node-core-library" "3.58.0"
 
 "@microsoft/api-extractor@^7.34.4":
-  version "7.34.6"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.34.6.tgz#237b46e4301f0321e55837619ceafa1820466650"
-  integrity sha512-TBbJZjUSt4vWjBchnkfmHwmQlwhMfavXIGbuSzN3QJV5n1oqKY+RtkYMEmLtW01OAJ6QsWFVx4tLHHsh608YQw==
+  version "7.34.8"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.34.8.tgz#c39a15d5edde13d6613d192eaadec160d1e362ca"
+  integrity sha512-2Eh1PlZ8wULtH3kyAWcj62gFtjGKRXrEplsCO54vMLjiav3qet454VpSBXwKkXBenBylZRMk3SMBcpcuJ8RnKQ==
   dependencies:
-    "@microsoft/api-extractor-model" "7.26.6"
+    "@microsoft/api-extractor-model" "7.26.8"
     "@microsoft/tsdoc" "0.14.2"
     "@microsoft/tsdoc-config" "~0.16.1"
-    "@rushstack/node-core-library" "3.57.0"
+    "@rushstack/node-core-library" "3.58.0"
     "@rushstack/rig-package" "0.3.18"
     "@rushstack/ts-command-line" "4.13.2"
     colors "~1.2.1"
@@ -190,10 +190,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@rushstack/node-core-library@3.57.0":
-  version "3.57.0"
-  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.57.0.tgz#1a0e433e035b9df28108594e39c856eba633b87f"
-  integrity sha512-uR5I9vLJuknliZXDDqW7nBtiKSO0fYOnvNEUNPQ84rmFYbvDWQGTDx7MREMVGXhfEN5J50xzAtGTPC9xdbia6g==
+"@rushstack/node-core-library@3.58.0":
+  version "3.58.0"
+  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.58.0.tgz#d40c393bfa47949a8b0ca60b0bbbc5c8d1af00c3"
+  integrity sha512-DHAZ3LTOEq2/EGURznpTJDnB3SNE2CKMDXuviQ6afhru6RykE3QoqXkeyjbpLb5ib5cpIRCPE/wykNe0xmQj3w==
   dependencies:
     colors "~1.2.1"
     fs-extra "~7.0.1"
@@ -893,9 +893,9 @@ sprintf-js@~1.0.2:
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
 string-argv@~0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
-  integrity sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.2.tgz#2b6d0ef24b656274d957d54e0a4bbf6153dc02b6"
+  integrity sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==
 
 strip-json-comments@~3.1.1:
   version "3.1.1"
@@ -932,22 +932,16 @@ tslib@^2.2.0:
   integrity sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==
 
 typedoc-plugin-markdown@^3.10.4:
-  version "3.15.2"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.15.2.tgz#6d1c04e048cdf9fbc17652f8e9d674f51888a062"
-  integrity sha512-OPXAL9hhdoVJzH/UaKAz6CBS/s8KlYyLWwnxF7ap0fQCuaMMWShA1JBq4n1SXbiGjx+7DOhOfTKQ5OzwryN3Vw==
+  version "3.15.3"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.15.3.tgz#f5419a32b93efbdc0fcba60ca4de37727aeb8ba9"
+  integrity sha512-idntFYu3vfaY3eaD+w9DeRd0PmNGqGuNLKihPU9poxFGnATJYGn9dPtEhn2QrTdishFMg7jPXAhos+2T6YCWRQ==
   dependencies:
     handlebars "^4.7.7"
-    typedoc-plugin-mdn-links "^3.0.3"
-
-typedoc-plugin-mdn-links@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-mdn-links/-/typedoc-plugin-mdn-links-3.0.3.tgz#da8d1a9750d57333e6c21717b38bfc13d4058de2"
-  integrity sha512-NXhIpwQnsg7BcyMCHVqj3tUK+DL4g3Bt96JbFl4APzTGFkA+iM6GfZ/fn3TAqJ8O0CXG5R9BfWxolw1m1omNuQ==
 
 typedoc@^0.24.0:
-  version "0.24.6"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.24.6.tgz#1f76fac27db9c6626b5b5c79f78f3c813b285827"
-  integrity sha512-c3y3h45xJv3qYwKDAwU6Cl+26CjT0ZvblHzfHJ+SjQDM4p1mZxtgHky4lhmG0+nNarRht8kADfZlbspJWdZarQ==
+  version "0.24.7"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.24.7.tgz#7eeb272a1894b3789acc1a94b3f2ae8e7330ee39"
+  integrity sha512-zzfKDFIZADA+XRIp2rMzLe9xZ6pt12yQOhCr7cD7/PBTjhPmMyMvGrkZ2lPNJitg3Hj1SeiYFNzCsSDrlpxpKw==
   dependencies:
     lunr "^2.3.9"
     marked "^4.3.0"

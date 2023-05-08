@@ -4451,6 +4451,7 @@ export const JobDescriptionSearchResult: coreClient.CompositeMapper = {
       pdf: {
         serializedName: "pdf",
         required: true,
+        nullable: true,
         xmlName: "pdf",
         type: {
           name: "String"
@@ -6315,6 +6316,7 @@ export const ResumeSearchResult: coreClient.CompositeMapper = {
       pdf: {
         serializedName: "pdf",
         required: true,
+        nullable: true,
         xmlName: "pdf",
         type: {
           name: "String"

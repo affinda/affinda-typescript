@@ -1566,7 +1566,7 @@ export declare interface JobDescriptionSearchResult {
     /** A random string that uniquely identify the resource. */
     identifier: string;
     score: number;
-    pdf: string;
+    pdf: string | null;
     jobTitle: JobTitleSearchScoreComponent;
     managementLevel: ManagementLevelSearchScoreComponent;
     experience: ExperienceSearchScoreComponent;
@@ -2509,7 +2509,7 @@ export declare interface ResumeSearchResult {
     /** A random string that uniquely identify the resource. */
     identifier: string;
     score: number;
-    pdf: string;
+    pdf: string | null;
     name?: string;
     jobTitle: JobTitleSearchScoreComponent;
     managementLevel: ManagementLevelSearchScoreComponent;
