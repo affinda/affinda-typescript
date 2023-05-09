@@ -6,10 +6,10 @@
 
 ### Properties
 
-- [rows](InvoiceDataTablesItem.md#rows)
+- [parsed](InvoiceDataTablesItem.md#parsed)
 
 ## Properties
 
-### rows
+### parsed
 
-• `Optional` **rows**: (``null`` \| [`RowAnnotation`](RowAnnotation.md))[]
+• `Optional` **parsed**: [`InvoiceDataTablesPropertiesItemsItem`](InvoiceDataTablesPropertiesItemsItem.md)[]

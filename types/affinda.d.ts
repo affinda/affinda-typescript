@@ -2393,6 +2393,10 @@ export declare type InvoiceDataSupplierVat = TextAnnotation & ComponentsB3U7OaSc
 export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
 
 export declare interface InvoiceDataTablesItem {
+    parsed?: InvoiceDataTablesPropertiesItemsItem[];
+}
+
+export declare interface InvoiceDataTablesPropertiesItemsItem {
     rows?: (RowAnnotation | null)[];
 }
 

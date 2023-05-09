@@ -220,6 +220,7 @@
 - [InvitationUpdate](interfaces/InvitationUpdate.md)
 - [InvoiceData](interfaces/InvoiceData.md)
 - [InvoiceDataTablesItem](interfaces/InvoiceDataTablesItem.md)
+- [InvoiceDataTablesPropertiesItemsItem](interfaces/InvoiceDataTablesPropertiesItemsItem.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)

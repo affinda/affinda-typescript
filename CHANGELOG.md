@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Make "pdf" property in SearchResults nullable
+- Nest line item table rows correctly.
 
 ### Fixed
 - Update python_requires to be PEP compliant

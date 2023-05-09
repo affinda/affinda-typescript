@@ -1716,6 +1716,10 @@ export interface InvoiceData {
 }
 
 export interface InvoiceDataTablesItem {
+  parsed?: InvoiceDataTablesPropertiesItemsItem[];
+}
+
+export interface InvoiceDataTablesPropertiesItemsItem {
   rows?: (RowAnnotation | null)[];
 }
 

@@ -9347,6 +9347,30 @@ export const InvoiceDataTablesItem: coreClient.CompositeMapper = {
     name: "Composite",
     className: "InvoiceDataTablesItem",
     modelProperties: {
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        xmlElementName: "InvoiceDataTablesPropertiesItemsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "InvoiceDataTablesPropertiesItemsItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const InvoiceDataTablesPropertiesItemsItem: coreClient.CompositeMapper = {
+  serializedName: "InvoiceDataTablesPropertiesItemsItem",
+  type: {
+    name: "Composite",
+    className: "InvoiceDataTablesPropertiesItemsItem",
+    modelProperties: {
       rows: {
         serializedName: "rows",
         xmlName: "rows",
