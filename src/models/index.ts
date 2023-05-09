@@ -1674,7 +1674,7 @@ export interface ResumeDataSectionsItem {
 }
 
 export interface InvoiceData {
-  tables?: InvoiceDataTablesItem[];
+  tables?: (TableAnnotation | null)[];
   invoiceDate?: DateAnnotation;
   invoiceOrderDate?: DateAnnotation;
   paymentDateDue?: DateAnnotation;
@@ -1715,29 +1715,23 @@ export interface InvoiceData {
   customFields?: { [propertyName: string]: any };
 }
 
-export interface InvoiceDataTablesItem {
-  parsed?: InvoiceDataTablesPropertiesItemsItem[];
-}
-
-export interface InvoiceDataTablesPropertiesItemsItem {
+export interface TableAnnotationParsed {
   rows?: (RowAnnotation | null)[];
 }
 
-export interface RowAnnotation {
-  code?: string;
-  date?: string;
-  description?: string;
-  unit?: string;
-  unitPrice?: number;
-  quantity?: number;
-  discount?: string;
-  baseTotal?: number;
-  taxRate?: string;
-  taxTotal?: number;
-  total?: number;
-  other?: string;
-  /** Dictionary of <any> */
-  customFields?: { [propertyName: string]: any };
+export interface RowAnnotationParsed {
+  itemCode?: TextAnnotation;
+  itemDate?: DateAnnotation;
+  itemDescription?: TextAnnotation;
+  itemUnit?: TextAnnotation;
+  itemUnitPrice?: FloatAnnotation;
+  itemQuantity?: FloatAnnotation;
+  itemDiscount?: TextAnnotation;
+  itemBaseTotal?: FloatAnnotation;
+  itemTaxRate?: TextAnnotation;
+  itemTaxTotal?: TextAnnotation;
+  itemTotal?: FloatAnnotation;
+  itemOther?: TextAnnotation;
 }
 
 export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
@@ -2029,12 +2023,26 @@ export type JobDescription = Document & {
   data?: JobDescriptionData;
 };
 
+export type TextAnnotation = Annotation & {
+  parsed?: string;
+};
+
 export type DateAnnotation = Annotation & {
   parsed?: Date;
 };
 
-export type TextAnnotation = Annotation & {
-  parsed?: string;
+export type FloatAnnotation = Annotation & {
+  parsed?: number;
+};
+
+export type RowAnnotation = Annotation & {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  parsed?: RowAnnotationParsed;
+};
+
+export type TableAnnotation = Annotation & {
+  parsed?: TableAnnotationParsed;
 };
 
 export type LocationAnnotation = Annotation & {

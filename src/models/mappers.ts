@@ -9029,13 +9029,13 @@ export const InvoiceData: coreClient.CompositeMapper = {
       tables: {
         serializedName: "tables",
         xmlName: "tables",
-        xmlElementName: "InvoiceDataTablesItem",
+        xmlElementName: "TableAnnotation",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "InvoiceDataTablesItem"
+              className: "TableAnnotation"
             }
           }
         }
@@ -9341,35 +9341,11 @@ export const InvoiceData: coreClient.CompositeMapper = {
   }
 };
 
-export const InvoiceDataTablesItem: coreClient.CompositeMapper = {
-  serializedName: "InvoiceDataTablesItem",
+export const TableAnnotationParsed: coreClient.CompositeMapper = {
+  serializedName: "TableAnnotationParsed",
   type: {
     name: "Composite",
-    className: "InvoiceDataTablesItem",
-    modelProperties: {
-      parsed: {
-        serializedName: "parsed",
-        xmlName: "parsed",
-        xmlElementName: "InvoiceDataTablesPropertiesItemsItem",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "InvoiceDataTablesPropertiesItemsItem"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const InvoiceDataTablesPropertiesItemsItem: coreClient.CompositeMapper = {
-  serializedName: "InvoiceDataTablesPropertiesItemsItem",
-  type: {
-    name: "Composite",
-    className: "InvoiceDataTablesPropertiesItemsItem",
+    className: "TableAnnotationParsed",
     modelProperties: {
       rows: {
         serializedName: "rows",
@@ -9389,114 +9365,106 @@ export const InvoiceDataTablesPropertiesItemsItem: coreClient.CompositeMapper = 
   }
 };
 
-export const RowAnnotation: coreClient.CompositeMapper = {
-  serializedName: "RowAnnotation",
+export const RowAnnotationParsed: coreClient.CompositeMapper = {
+  serializedName: "RowAnnotationParsed",
   type: {
     name: "Composite",
-    className: "RowAnnotation",
+    className: "RowAnnotationParsed",
     modelProperties: {
-      code: {
-        serializedName: "code",
-        nullable: true,
-        xmlName: "code",
+      itemCode: {
+        serializedName: "itemCode",
+        xmlName: "itemCode",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "TextAnnotation"
         }
       },
-      date: {
-        serializedName: "date",
-        nullable: true,
-        xmlName: "date",
+      itemDate: {
+        serializedName: "itemDate",
+        xmlName: "itemDate",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "DateAnnotation"
         }
       },
-      description: {
-        serializedName: "description",
-        nullable: true,
-        xmlName: "description",
+      itemDescription: {
+        serializedName: "itemDescription",
+        xmlName: "itemDescription",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "TextAnnotation"
         }
       },
-      unit: {
-        serializedName: "unit",
-        nullable: true,
-        xmlName: "unit",
+      itemUnit: {
+        serializedName: "itemUnit",
+        xmlName: "itemUnit",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "TextAnnotation"
         }
       },
-      unitPrice: {
-        serializedName: "unitPrice",
-        nullable: true,
-        xmlName: "unitPrice",
+      itemUnitPrice: {
+        serializedName: "itemUnitPrice",
+        xmlName: "itemUnitPrice",
         type: {
-          name: "Number"
+          name: "Composite",
+          className: "FloatAnnotation"
         }
       },
-      quantity: {
-        serializedName: "quantity",
-        nullable: true,
-        xmlName: "quantity",
+      itemQuantity: {
+        serializedName: "itemQuantity",
+        xmlName: "itemQuantity",
         type: {
-          name: "Number"
+          name: "Composite",
+          className: "FloatAnnotation"
         }
       },
-      discount: {
-        serializedName: "discount",
-        nullable: true,
-        xmlName: "discount",
+      itemDiscount: {
+        serializedName: "itemDiscount",
+        xmlName: "itemDiscount",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "TextAnnotation"
         }
       },
-      baseTotal: {
-        serializedName: "baseTotal",
-        nullable: true,
-        xmlName: "baseTotal",
+      itemBaseTotal: {
+        serializedName: "itemBaseTotal",
+        xmlName: "itemBaseTotal",
         type: {
-          name: "Number"
+          name: "Composite",
+          className: "FloatAnnotation"
         }
       },
-      taxRate: {
-        serializedName: "taxRate",
-        nullable: true,
-        xmlName: "taxRate",
+      itemTaxRate: {
+        serializedName: "itemTaxRate",
+        xmlName: "itemTaxRate",
         type: {
-          name: "String"
+          name: "Composite",
+          className: "TextAnnotation"
         }
       },
-      taxTotal: {
-        serializedName: "taxTotal",
-        nullable: true,
-        xmlName: "taxTotal",
+      itemTaxTotal: {
+        serializedName: "itemTaxTotal",
+        xmlName: "itemTaxTotal",
         type: {
-          name: "Number"
+          name: "Composite",
+          className: "TextAnnotation"
         }
       },
-      total: {
-        serializedName: "total",
-        nullable: true,
-        xmlName: "total",
+      itemTotal: {
+        serializedName: "itemTotal",
+        xmlName: "itemTotal",
         type: {
-          name: "Number"
+          name: "Composite",
+          className: "FloatAnnotation"
         }
       },
-      other: {
-        serializedName: "other",
-        nullable: true,
-        xmlName: "other",
+      itemOther: {
+        serializedName: "itemOther",
+        xmlName: "itemOther",
         type: {
-          name: "String"
-        }
-      },
-      customFields: {
-        serializedName: "customFields",
-        xmlName: "customFields",
-        type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "Composite",
+          className: "TextAnnotation"
         }
       }
     }
@@ -10990,6 +10958,26 @@ export const JobDescription: coreClient.CompositeMapper = {
   }
 };
 
+export const TextAnnotation: coreClient.CompositeMapper = {
+  serializedName: "TextAnnotation",
+  type: {
+    name: "Composite",
+    className: "TextAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        nullable: true,
+        xmlName: "parsed",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const DateAnnotation: coreClient.CompositeMapper = {
   serializedName: "DateAnnotation",
   type: {
@@ -11010,11 +10998,11 @@ export const DateAnnotation: coreClient.CompositeMapper = {
   }
 };
 
-export const TextAnnotation: coreClient.CompositeMapper = {
-  serializedName: "TextAnnotation",
+export const FloatAnnotation: coreClient.CompositeMapper = {
+  serializedName: "FloatAnnotation",
   type: {
     name: "Composite",
-    className: "TextAnnotation",
+    className: "FloatAnnotation",
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       ...Annotation.type.modelProperties,
@@ -11023,7 +11011,47 @@ export const TextAnnotation: coreClient.CompositeMapper = {
         nullable: true,
         xmlName: "parsed",
         type: {
-          name: "String"
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const RowAnnotation: coreClient.CompositeMapper = {
+  serializedName: "RowAnnotation",
+  type: {
+    name: "Composite",
+    className: "RowAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        type: {
+          name: "Composite",
+          className: "RowAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const TableAnnotation: coreClient.CompositeMapper = {
+  serializedName: "TableAnnotation",
+  type: {
+    name: "Composite",
+    className: "TableAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        xmlName: "parsed",
+        type: {
+          name: "Composite",
+          className: "TableAnnotationParsed"
         }
       }
     }

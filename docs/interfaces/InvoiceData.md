@@ -277,4 +277,4 @@ ___
 
 ### tables
 
-• `Optional` **tables**: [`InvoiceDataTablesItem`](InvoiceDataTablesItem.md)[]
+• `Optional` **tables**: (``null`` \| [`TableAnnotation`](../modules.md#tableannotation))[]

@@ -2198,6 +2198,10 @@ export declare interface FieldGroup {
     fields: Field[];
 }
 
+export declare type FloatAnnotation = Annotation & {
+    parsed?: number;
+};
+
 export declare interface Get200ApplicationJsonPropertiesItemsItem {
     name: string;
     documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
@@ -2291,7 +2295,7 @@ export declare type Invoice = Document_2 & {
 };
 
 export declare interface InvoiceData {
-    tables?: InvoiceDataTablesItem[];
+    tables?: (TableAnnotation | null)[];
     invoiceDate?: DateAnnotation;
     invoiceOrderDate?: DateAnnotation;
     paymentDateDue?: DateAnnotation;
@@ -2391,14 +2395,6 @@ export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & Components
 export declare type InvoiceDataSupplierVat = TextAnnotation & ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
 
 export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
-
-export declare interface InvoiceDataTablesItem {
-    parsed?: InvoiceDataTablesPropertiesItemsItem[];
-}
-
-export declare interface InvoiceDataTablesPropertiesItemsItem {
-    rows?: (RowAnnotation | null)[];
-}
 
 export declare type JobDescription = Document_2 & {
     /** Polymorphic discriminator, which specifies the different types this object can be */
@@ -3741,23 +3737,25 @@ export declare interface ResumeSkillSourcesItem {
  */
 export declare type ResumeSkillSourcesItemSection = string;
 
-export declare interface RowAnnotation {
-    code?: string;
-    date?: string;
-    description?: string;
-    unit?: string;
-    unitPrice?: number;
-    quantity?: number;
-    discount?: string;
-    baseTotal?: number;
-    taxRate?: string;
-    taxTotal?: number;
-    total?: number;
-    other?: string;
-    /** Dictionary of <any> */
-    customFields?: {
-        [propertyName: string]: any;
-    };
+export declare type RowAnnotation = Annotation & {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
+    parsed?: RowAnnotationParsed;
+};
+
+export declare interface RowAnnotationParsed {
+    itemCode?: TextAnnotation;
+    itemDate?: DateAnnotation;
+    itemDescription?: TextAnnotation;
+    itemUnit?: TextAnnotation;
+    itemUnitPrice?: FloatAnnotation;
+    itemQuantity?: FloatAnnotation;
+    itemDiscount?: TextAnnotation;
+    itemBaseTotal?: FloatAnnotation;
+    itemTaxRate?: TextAnnotation;
+    itemTaxTotal?: TextAnnotation;
+    itemTotal?: FloatAnnotation;
+    itemOther?: TextAnnotation;
 }
 
 export declare interface SearchConfigAction {
@@ -3806,6 +3804,14 @@ export declare interface SkillsSearchScoreComponent {
     value?: string;
     label: string;
     score?: number;
+}
+
+export declare type TableAnnotation = Annotation & {
+    parsed?: TableAnnotationParsed;
+};
+
+export declare interface TableAnnotationParsed {
+    rows?: (RowAnnotation | null)[];
 }
 
 export declare interface Tag {

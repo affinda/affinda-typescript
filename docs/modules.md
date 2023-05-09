@@ -219,8 +219,6 @@
 - [InvitationResponse](interfaces/InvitationResponse.md)
 - [InvitationUpdate](interfaces/InvitationUpdate.md)
 - [InvoiceData](interfaces/InvoiceData.md)
-- [InvoiceDataTablesItem](interfaces/InvoiceDataTablesItem.md)
-- [InvoiceDataTablesPropertiesItemsItem](interfaces/InvoiceDataTablesPropertiesItemsItem.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
@@ -320,11 +318,12 @@
 - [ResumeSearchResult](interfaces/ResumeSearchResult.md)
 - [ResumeSkill](interfaces/ResumeSkill.md)
 - [ResumeSkillSourcesItem](interfaces/ResumeSkillSourcesItem.md)
-- [RowAnnotation](interfaces/RowAnnotation.md)
+- [RowAnnotationParsed](interfaces/RowAnnotationParsed.md)
 - [SearchConfigAction](interfaces/SearchConfigAction.md)
 - [SearchExpressionSearchScoreComponent](interfaces/SearchExpressionSearchScoreComponent.md)
 - [SearchParametersCustomData](interfaces/SearchParametersCustomData.md)
 - [SkillsSearchScoreComponent](interfaces/SkillsSearchScoreComponent.md)
+- [TableAnnotationParsed](interfaces/TableAnnotationParsed.md)
 - [Tag](interfaces/Tag.md)
 - [TagCreate](interfaces/TagCreate.md)
 - [TagUpdate](interfaces/TagUpdate.md)
@@ -435,6 +434,7 @@
 - [Enum18](modules.md#enum18)
 - [Enum21](modules.md#enum21)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
+- [FloatAnnotation](modules.md#floatannotation)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
 - [InvitationRespondedBy](modules.md#invitationrespondedby)
@@ -497,9 +497,11 @@
 - [ResumeSearchDetailSkillsValueItem](modules.md#resumesearchdetailskillsvalueitem)
 - [ResumeSearchParametersCustomData](modules.md#resumesearchparameterscustomdata)
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
+- [RowAnnotation](modules.md#rowannotation)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SearchParametersCustomDataFilterType](modules.md#searchparameterscustomdatafiltertype)
 - [SkillAnnotation](modules.md#skillannotation)
+- [TableAnnotation](modules.md#tableannotation)
 - [TextAnnotation](modules.md#textannotation)
 - [ThemeConfigPaletteMode](modules.md#themeconfigpalettemode)
 - [Version](modules.md#version)
@@ -1280,6 +1282,12 @@ ___
 
 ___
 
+### FloatAnnotation
+
+Ƭ **FloatAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `number`  }
+
+___
+
 ### Get8ItemsItem
 
 Ƭ **Get8ItemsItem**: `string`
@@ -1764,6 +1772,12 @@ Defines values for ResumeSkillSourcesItemSection. \
 
 ___
 
+### RowAnnotation
+
+Ƭ **RowAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `[property: string]`: `any`; `parsed?`: [`RowAnnotationParsed`](interfaces/RowAnnotationParsed.md)  }
+
+___
+
 ### SearchLocationUnit
 
 Ƭ **SearchLocationUnit**: ``"km"`` \| ``"mi"``
@@ -1788,6 +1802,12 @@ ___
 ### SkillAnnotation
 
 Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+
+___
+
+### TableAnnotation
+
+Ƭ **TableAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`TableAnnotationParsed`](interfaces/TableAnnotationParsed.md)  }
 
 ___
 
