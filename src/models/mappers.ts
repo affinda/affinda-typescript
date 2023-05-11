@@ -2384,6 +2384,66 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
   }
 };
 
+export const BatchAddTagRequest: coreClient.CompositeMapper = {
+  serializedName: "BatchAddTagRequest",
+  type: {
+    name: "Composite",
+    className: "BatchAddTagRequest",
+    modelProperties: {
+      identifiers: {
+        serializedName: "identifiers",
+        xmlName: "identifiers",
+        xmlElementName: "DocumentMetaPropertiesIdentifier",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      tag: {
+        serializedName: "tag",
+        xmlName: "tag",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const BatchRemoveTagRequest: coreClient.CompositeMapper = {
+  serializedName: "BatchRemoveTagRequest",
+  type: {
+    name: "Composite",
+    className: "BatchRemoveTagRequest",
+    modelProperties: {
+      identifiers: {
+        serializedName: "identifiers",
+        xmlName: "identifiers",
+        xmlElementName: "DocumentMetaPropertiesIdentifier",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      tag: {
+        serializedName: "tag",
+        xmlName: "tag",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
 export const DocumentEditRequest: coreClient.CompositeMapper = {
   serializedName: "DocumentEditRequest",
   type: {
@@ -9448,7 +9508,7 @@ export const RowAnnotationParsed: coreClient.CompositeMapper = {
         xmlName: "itemTaxTotal",
         type: {
           name: "Composite",
-          className: "TextAnnotation"
+          className: "FloatAnnotation"
         }
       },
       itemTotal: {

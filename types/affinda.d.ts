@@ -139,8 +139,23 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteDocument(identifier: string, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
     /**
+     * Add a tag to documents.
+     * Tags are used to group documents together.
+     * Tags can be used to filter documents.
+     *
+     * @param body Specify the tag and the documents to tag
+     * @param options The options parameters.
+     */
+    batchAddTag(body: BatchAddTagRequest, options?: AffindaAPIBatchAddTagOptionalParams): Promise<void>;
+    /**
+     * Remove a tag from documents.
+     * @param body Specify the tag and the documents to remove the tag from
+     * @param options The options parameters.
+     */
+    batchRemoveTag(body: BatchRemoveTagRequest, options?: AffindaAPIBatchRemoveTagOptionalParams): Promise<void>;
+    /**
      * Split / merge / rotate / delete pages of a document.
-     * Documents with multiple pages can be  into multiple documents, or merged into one document.
+     * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
      * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
      *
      * @param identifier Document's identifier
@@ -613,6 +628,10 @@ export declare interface AffindaAPIActivateResthookSubscriptionOptionalParams ex
 export declare type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
+export declare interface AffindaAPIBatchAddTagOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
 export declare interface AffindaAPIBatchCreateAnnotationsOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -621,6 +640,10 @@ export declare type AffindaAPIBatchCreateAnnotationsResponse = (Annotation | nul
 
 /** Optional parameters. */
 export declare interface AffindaAPIBatchDeleteAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface AffindaAPIBatchRemoveTagOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Optional parameters. */
@@ -1506,6 +1529,20 @@ export declare interface BaseExtractor {
     validatable: boolean;
     isCustom?: boolean;
     createdDt?: Date;
+}
+
+export declare interface BatchAddTagRequest {
+    /** List of documents to tag */
+    identifiers?: string[];
+    /** The tag's ID */
+    tag?: number;
+}
+
+export declare interface BatchRemoveTagRequest {
+    /** List of documents to remove tag from */
+    identifiers?: string[];
+    /** The tag's ID */
+    tag?: number;
 }
 
 export declare interface Collection {
@@ -3738,8 +3775,6 @@ export declare interface ResumeSkillSourcesItem {
 export declare type ResumeSkillSourcesItemSection = string;
 
 export declare type RowAnnotation = Annotation & {
-    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-    [property: string]: any;
     parsed?: RowAnnotationParsed;
 };
 
@@ -3753,7 +3788,7 @@ export declare interface RowAnnotationParsed {
     itemDiscount?: TextAnnotation;
     itemBaseTotal?: FloatAnnotation;
     itemTaxRate?: TextAnnotation;
-    itemTaxTotal?: TextAnnotation;
+    itemTaxTotal?: FloatAnnotation;
     itemTotal?: FloatAnnotation;
     itemOther?: TextAnnotation;
 }

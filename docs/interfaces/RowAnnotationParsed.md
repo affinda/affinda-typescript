@@ -71,7 +71,7 @@ ___
 
 ### itemTaxTotal
 
-• `Optional` **itemTaxTotal**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemTaxTotal**: [`FloatAnnotation`](../modules.md#floatannotation)
 
 ___
 

@@ -465,6 +465,20 @@ export interface DocumentUpdate {
   language?: string;
 }
 
+export interface BatchAddTagRequest {
+  /** List of documents to tag */
+  identifiers?: string[];
+  /** The tag's ID */
+  tag?: number;
+}
+
+export interface BatchRemoveTagRequest {
+  /** List of documents to remove tag from */
+  identifiers?: string[];
+  /** The tag's ID */
+  tag?: number;
+}
+
 export interface DocumentEditRequest {
   splits: DocumentSplit[];
 }
@@ -1729,7 +1743,7 @@ export interface RowAnnotationParsed {
   itemDiscount?: TextAnnotation;
   itemBaseTotal?: FloatAnnotation;
   itemTaxRate?: TextAnnotation;
-  itemTaxTotal?: TextAnnotation;
+  itemTaxTotal?: FloatAnnotation;
   itemTotal?: FloatAnnotation;
   itemOther?: TextAnnotation;
 }
@@ -2036,8 +2050,6 @@ export type FloatAnnotation = Annotation & {
 };
 
 export type RowAnnotation = Annotation & {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
   parsed?: RowAnnotationParsed;
 };
 
@@ -2875,6 +2887,14 @@ export type AffindaAPIUpdateDocumentResponse = DocumentUnion;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIBatchAddTagOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIBatchRemoveTagOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */

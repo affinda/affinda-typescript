@@ -22,8 +22,10 @@
 ### Methods
 
 - [activateResthookSubscription](AffindaAPI.md#activateresthooksubscription)
+- [batchAddTag](AffindaAPI.md#batchaddtag)
 - [batchCreateAnnotations](AffindaAPI.md#batchcreateannotations)
 - [batchDeleteAnnotations](AffindaAPI.md#batchdeleteannotations)
+- [batchRemoveTag](AffindaAPI.md#batchremovetag)
 - [batchUpdateAnnotations](AffindaAPI.md#batchupdateannotations)
 - [createAnnotation](AffindaAPI.md#createannotation)
 - [createCollection](AffindaAPI.md#createcollection)
@@ -179,6 +181,27 @@ that you received to activate the subscription using this endpoint.
 
 ___
 
+### batchAddTag
+
+▸ **batchAddTag**(`body`, `options?`): `Promise`<`void`\>
+
+Add a tag to documents.
+Tags are used to group documents together.
+Tags can be used to filter documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`BatchAddTagRequest`](../interfaces/BatchAddTagRequest.md) | Specify the tag and the documents to tag |
+| `options?` | [`AffindaAPIBatchAddTagOptionalParams`](../interfaces/AffindaAPIBatchAddTagOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
 ### batchCreateAnnotations
 
 ▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
@@ -210,6 +233,25 @@ Batch delete annotations
 | :------ | :------ | :------ |
 | `body` | `number`[] | Array of annotation IDs to be deleted |
 | `options?` | [`AffindaAPIBatchDeleteAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### batchRemoveTag
+
+▸ **batchRemoveTag**(`body`, `options?`): `Promise`<`void`\>
+
+Remove a tag from documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`BatchRemoveTagRequest`](../interfaces/BatchRemoveTagRequest.md) | Specify the tag and the documents to remove the tag from |
+| `options?` | [`AffindaAPIBatchRemoveTagOptionalParams`](../interfaces/AffindaAPIBatchRemoveTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -881,7 +923,7 @@ ___
 ▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
 
 Split / merge / rotate / delete pages of a document.
-Documents with multiple pages can be  into multiple documents, or merged into one document.
+Documents with multiple pages can be splitted into multiple documents, or merged into one document.
 Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
 
 #### Parameters

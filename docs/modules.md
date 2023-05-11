@@ -40,8 +40,10 @@
 
 - [Accreditation](interfaces/Accreditation.md)
 - [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
+- [AffindaAPIBatchAddTagOptionalParams](interfaces/AffindaAPIBatchAddTagOptionalParams.md)
 - [AffindaAPIBatchCreateAnnotationsOptionalParams](interfaces/AffindaAPIBatchCreateAnnotationsOptionalParams.md)
 - [AffindaAPIBatchDeleteAnnotationsOptionalParams](interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md)
+- [AffindaAPIBatchRemoveTagOptionalParams](interfaces/AffindaAPIBatchRemoveTagOptionalParams.md)
 - [AffindaAPIBatchUpdateAnnotationsOptionalParams](interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md)
 - [AffindaAPICreateAnnotationOptionalParams](interfaces/AffindaAPICreateAnnotationOptionalParams.md)
 - [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
@@ -136,6 +138,8 @@
 - [AnnotationUpdate](interfaces/AnnotationUpdate.md)
 - [AnnotationUpdateParsed](interfaces/AnnotationUpdateParsed.md)
 - [BaseExtractor](interfaces/BaseExtractor.md)
+- [BatchAddTagRequest](interfaces/BatchAddTagRequest.md)
+- [BatchRemoveTagRequest](interfaces/BatchRemoveTagRequest.md)
 - [Collection](interfaces/Collection.md)
 - [CollectionCreate](interfaces/CollectionCreate.md)
 - [CollectionUpdate](interfaces/CollectionUpdate.md)
@@ -1774,7 +1778,7 @@ ___
 
 ### RowAnnotation
 
-Ƭ **RowAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `[property: string]`: `any`; `parsed?`: [`RowAnnotationParsed`](interfaces/RowAnnotationParsed.md)  }
+Ƭ **RowAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`RowAnnotationParsed`](interfaces/RowAnnotationParsed.md)  }
 
 ___
 
