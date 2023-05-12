@@ -463,6 +463,8 @@ export interface DocumentUpdate {
   isArchived?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
+  /** Specify a custom identifier for the document. */
+  identifier?: string;
 }
 
 export interface BatchAddTagRequest {

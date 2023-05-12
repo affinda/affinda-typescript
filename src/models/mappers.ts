@@ -2379,6 +2379,13 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      identifier: {
+        serializedName: "identifier",
+        xmlName: "identifier",
+        type: {
+          name: "String"
+        }
       }
     }
   }
