@@ -483,6 +483,17 @@ export const rejectDuplicates: OperationParameter = {
   }
 };
 
+export const regionBias: OperationParameter = {
+  parameterPath: ["options", "regionBias"],
+  mapper: {
+    serializedName: "regionBias",
+    xmlName: "regionBias",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const accept1: OperationParameter = {
   parameterPath: "accept",
   mapper: {

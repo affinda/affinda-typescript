@@ -12,6 +12,7 @@
 - [fileName](DocumentCreate.md#filename)
 - [identifier](DocumentCreate.md#identifier)
 - [language](DocumentCreate.md#language)
+- [regionBias](DocumentCreate.md#regionbias)
 - [rejectDuplicates](DocumentCreate.md#rejectduplicates)
 - [url](DocumentCreate.md#url)
 - [wait](DocumentCreate.md#wait)
@@ -64,6 +65,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: `string`
+
+A JSON representation of the RegionBias object.
 
 ___
 

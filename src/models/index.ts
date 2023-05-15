@@ -372,6 +372,7 @@ export interface DocumentMeta {
   createdBy?: User;
   /** If the document is created via email ingestion, this field stores the email file's URL. */
   sourceEmail?: string;
+  regionBias?: RegionBias;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -439,6 +440,15 @@ export interface UserNullable {
   email?: string;
   /** URL of the user's avatar. */
   avatar?: string;
+}
+
+export interface RegionBias {
+  /** A single alpha-2 country code (e.g. AU) used by google geocoding service */
+  country?: string;
+  /** A list of alpha-2 country codes used by Pelias */
+  countries?: string[];
+  /** A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat] */
+  squareCoordinates?: number[];
 }
 
 export interface DocumentError {
@@ -531,6 +541,7 @@ export interface Meta {
   ocrConfidence?: number;
   createdDt?: Date;
   documentType?: string;
+  regionBias?: RegionBias;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -1971,6 +1982,8 @@ export interface DocumentCreate {
   language?: string;
   /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: boolean;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 export interface OrganizationCreate {
@@ -2865,6 +2878,8 @@ export interface AffindaAPICreateDocumentOptionalParams
   language?: string;
   /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
   rejectDuplicates?: boolean;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 /** Contains response data for the createDocument operation. */

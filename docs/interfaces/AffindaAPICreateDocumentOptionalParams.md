@@ -22,6 +22,7 @@ Optional parameters.
 - [identifier](AffindaAPICreateDocumentOptionalParams.md#identifier)
 - [language](AffindaAPICreateDocumentOptionalParams.md#language)
 - [onResponse](AffindaAPICreateDocumentOptionalParams.md#onresponse)
+- [regionBias](AffindaAPICreateDocumentOptionalParams.md#regionbias)
 - [rejectDuplicates](AffindaAPICreateDocumentOptionalParams.md#rejectduplicates)
 - [requestOptions](AffindaAPICreateDocumentOptionalParams.md#requestoptions)
 - [serializerOptions](AffindaAPICreateDocumentOptionalParams.md#serializeroptions)
@@ -103,6 +104,14 @@ May be called multiple times.
 #### Inherited from
 
 coreClient.OperationOptions.onResponse
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: `string`
+
+A JSON representation of the RegionBias object.
 
 ___
 

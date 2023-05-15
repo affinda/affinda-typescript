@@ -31,6 +31,7 @@
 - [pdf](DocumentMeta.md#pdf)
 - [ready](DocumentMeta.md#ready)
 - [readyDt](DocumentMeta.md#readydt)
+- [regionBias](DocumentMeta.md#regionbias)
 - [rejectedDt](DocumentMeta.md#rejecteddt)
 - [reviewUrl](DocumentMeta.md#reviewurl)
 - [sourceEmail](DocumentMeta.md#sourceemail)
@@ -210,6 +211,12 @@ ___
 • `Optional` **readyDt**: `Date`
 
 The datetime when the document was ready
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: [`RegionBias`](RegionBias.md)
 
 ___
 

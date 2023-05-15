@@ -283,6 +283,7 @@
 - [PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [Rectangle](interfaces/Rectangle.md)
 - [RedactConfig](interfaces/RedactConfig.md)
+- [RegionBias](interfaces/RegionBias.md)
 - [RequestError](interfaces/RequestError.md)
 - [RequestErrorErrorsItem](interfaces/RequestErrorErrorsItem.md)
 - [ResthookSubscription](interfaces/ResthookSubscription.md)

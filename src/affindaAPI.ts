@@ -2032,7 +2032,8 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
     Parameters.fileName,
     Parameters.expiryTime,
     Parameters.language,
-    Parameters.rejectDuplicates
+    Parameters.rejectDuplicates,
+    Parameters.regionBias
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType1, Parameters.accept1],

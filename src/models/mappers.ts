@@ -1987,6 +1987,14 @@ export const DocumentMeta: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
+        type: {
+          name: "Composite",
+          className: "RegionBias"
+        }
       }
     }
   }
@@ -2264,6 +2272,52 @@ export const UserNullable: coreClient.CompositeMapper = {
         xmlName: "avatar",
         type: {
           name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const RegionBias: coreClient.CompositeMapper = {
+  serializedName: "RegionBias",
+  type: {
+    name: "Composite",
+    className: "RegionBias",
+    modelProperties: {
+      country: {
+        serializedName: "country",
+        nullable: true,
+        xmlName: "country",
+        type: {
+          name: "String"
+        }
+      },
+      countries: {
+        serializedName: "countries",
+        nullable: true,
+        xmlName: "countries",
+        xmlElementName: "RegionBiasCountriesItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      squareCoordinates: {
+        serializedName: "squareCoordinates",
+        nullable: true,
+        xmlName: "squareCoordinates",
+        xmlElementName: "ArrayItemschema",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
         }
       }
     }
@@ -2672,6 +2726,14 @@ export const Meta: coreClient.CompositeMapper = {
         xmlName: "documentType",
         type: {
           name: "String"
+        }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
+        type: {
+          name: "Composite",
+          className: "RegionBias"
         }
       }
     }
@@ -10743,6 +10805,13 @@ export const DocumentCreate: coreClient.CompositeMapper = {
         xmlName: "rejectDuplicates",
         type: {
           name: "Boolean"
+        }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
+        type: {
+          name: "String"
         }
       }
     }
