@@ -199,6 +199,14 @@ export const Meta: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
+        type: {
+          name: "Composite",
+          className: "RegionBias"
+        }
       }
     }
   }
@@ -291,6 +299,52 @@ export const PageMeta: coreClient.CompositeMapper = {
         xmlName: "rotation",
         type: {
           name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const RegionBias: coreClient.CompositeMapper = {
+  serializedName: "RegionBias",
+  type: {
+    name: "Composite",
+    className: "RegionBias",
+    modelProperties: {
+      country: {
+        serializedName: "country",
+        nullable: true,
+        xmlName: "country",
+        type: {
+          name: "String"
+        }
+      },
+      countries: {
+        serializedName: "countries",
+        nullable: true,
+        xmlName: "countries",
+        xmlElementName: "RegionBiasCountriesItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      squareCoordinates: {
+        serializedName: "squareCoordinates",
+        nullable: true,
+        xmlName: "squareCoordinates",
+        xmlElementName: "ArrayItemschema",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
         }
       }
     }
@@ -3821,6 +3875,13 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "YearsExperienceAnnotation"
+        }
+      },
+      rawText: {
+        serializedName: "rawText",
+        xmlName: "rawText",
+        type: {
+          name: "String"
         }
       }
     }
@@ -7958,6 +8019,13 @@ export const ResumeRequestBody: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -8158,6 +8226,13 @@ export const InvoiceRequestBody: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -8235,6 +8310,13 @@ export const JobDescriptionRequestBody: coreClient.CompositeMapper = {
         serializedName: "expiryTime",
         nullable: true,
         xmlName: "expiryTime",
+        type: {
+          name: "String"
+        }
+      },
+      regionBias: {
+        serializedName: "regionBias",
+        xmlName: "regionBias",
         type: {
           name: "String"
         }

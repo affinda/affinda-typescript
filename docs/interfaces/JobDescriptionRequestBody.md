@@ -14,6 +14,7 @@ JobDescriptionRequestBody
 - [fileName](JobDescriptionRequestBody.md#filename)
 - [identifier](JobDescriptionRequestBody.md#identifier)
 - [language](JobDescriptionRequestBody.md#language)
+- [regionBias](JobDescriptionRequestBody.md#regionbias)
 - [rejectDuplicates](JobDescriptionRequestBody.md#rejectduplicates)
 - [url](JobDescriptionRequestBody.md#url)
 - [wait](JobDescriptionRequestBody.md#wait)
@@ -65,6 +66,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: `string`
+
+A JSON representation of the RegionBias object.
 
 ___
 

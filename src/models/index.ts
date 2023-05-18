@@ -45,6 +45,7 @@ export interface Meta {
   ocrConfidence?: number;
   createdDt?: Date;
   documentType?: string;
+  regionBias?: RegionBias;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -70,6 +71,15 @@ export interface PageMeta {
   width: number;
   /** The degree of rotation applied to the page. Greater than 0 indicates clockwise rotation. Less than 0 indicates counter-clockwise rotation. */
   rotation: number;
+}
+
+export interface RegionBias {
+  /** A single alpha-2 country code (e.g. AU) used by google geocoding service */
+  country?: string;
+  /** A list of alpha-2 country codes used by Pelias */
+  countries?: string[];
+  /** A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat] */
+  squareCoordinates?: number[];
 }
 
 export interface RequestError {
@@ -702,6 +712,8 @@ export interface JobDescriptionData {
   location?: LocationAnnotation;
   certifications?: (TextAnnotation | null)[];
   yearsExperience?: YearsExperienceAnnotation;
+  /** All of the raw text of the parsed job description, example is shortened for readability */
+  rawText?: string;
 }
 
 export interface ExpectedRemunerationAnnotationParsed {
@@ -1408,6 +1420,8 @@ export interface ResumeRequestBody {
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 /** RedactedResumeRequestBody */
@@ -1462,6 +1476,8 @@ export interface InvoiceRequestBody {
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 /** JobDescriptionRequestBody */
@@ -1484,6 +1500,8 @@ export interface JobDescriptionRequestBody {
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 /** IndexRequestBody */
@@ -1949,6 +1967,8 @@ export interface AffindaAPICreateResumeOptionalParams
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 /** Contains response data for the createResume operation. */
@@ -2067,6 +2087,8 @@ export interface AffindaAPICreateInvoiceOptionalParams
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
 }
 
 /** Contains response data for the createInvoice operation. */
@@ -2114,6 +2136,8 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   language?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
   /** A JSON-encoded string of the `JobDescriptionData` object. */
   data?: JobDescriptionDataUpdate;
 }

@@ -22,6 +22,7 @@ Optional parameters.
 - [identifier](AffindaAPICreateJobDescriptionOptionalParams.md#identifier)
 - [language](AffindaAPICreateJobDescriptionOptionalParams.md#language)
 - [onResponse](AffindaAPICreateJobDescriptionOptionalParams.md#onresponse)
+- [regionBias](AffindaAPICreateJobDescriptionOptionalParams.md#regionbias)
 - [rejectDuplicates](AffindaAPICreateJobDescriptionOptionalParams.md#rejectduplicates)
 - [requestOptions](AffindaAPICreateJobDescriptionOptionalParams.md#requestoptions)
 - [serializerOptions](AffindaAPICreateJobDescriptionOptionalParams.md#serializeroptions)
@@ -102,6 +103,14 @@ May be called multiple times.
 #### Inherited from
 
 coreClient.OperationOptions.onResponse
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: `string`
+
+A JSON representation of the RegionBias object.
 
 ___
 

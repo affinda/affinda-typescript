@@ -186,6 +186,7 @@
 - [RedactedResume](interfaces/RedactedResume.md)
 - [RedactedResumeData](interfaces/RedactedResumeData.md)
 - [RedactedResumeRequestBody](interfaces/RedactedResumeRequestBody.md)
+- [RegionBias](interfaces/RegionBias.md)
 - [RequestError](interfaces/RequestError.md)
 - [RequestErrorErrorsItem](interfaces/RequestErrorErrorsItem.md)
 - [ResthookSubscription](interfaces/ResthookSubscription.md)

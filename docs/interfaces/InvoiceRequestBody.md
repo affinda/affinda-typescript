@@ -13,6 +13,7 @@ InvoiceRequestBody
 - [fileName](InvoiceRequestBody.md#filename)
 - [identifier](InvoiceRequestBody.md#identifier)
 - [language](InvoiceRequestBody.md#language)
+- [regionBias](InvoiceRequestBody.md#regionbias)
 - [rejectDuplicates](InvoiceRequestBody.md#rejectduplicates)
 - [url](InvoiceRequestBody.md#url)
 - [wait](InvoiceRequestBody.md#wait)
@@ -56,6 +57,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: `string`
+
+A JSON representation of the RegionBias object.
 
 ___
 

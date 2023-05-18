@@ -391,6 +391,8 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
 }
 
 /** Contains response data for the createInvoice operation. */
@@ -414,6 +416,8 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
     /** A JSON-encoded string of the `JobDescriptionData` object. */
     data?: JobDescriptionDataUpdate;
 }
@@ -504,6 +508,8 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
 }
 
 /** Contains response data for the createResume operation. */
@@ -1296,6 +1302,8 @@ export declare interface InvoiceRequestBody {
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
 }
 
 export declare interface JobDescription {
@@ -1324,6 +1332,8 @@ export declare interface JobDescriptionData {
     location?: LocationAnnotation;
     certifications?: (TextAnnotation | null)[];
     yearsExperience?: YearsExperienceAnnotation;
+    /** All of the raw text of the parsed job description, example is shortened for readability */
+    rawText?: string;
 }
 
 /** A JSON-encoded string of the `JobDescriptionData` object. */
@@ -1369,6 +1379,8 @@ export declare interface JobDescriptionRequestBody {
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
 }
 
 export declare interface JobDescriptionSearch {
@@ -1810,6 +1822,7 @@ export declare interface Meta {
     ocrConfidence?: number;
     createdDt?: Date;
     documentType?: string;
+    regionBias?: RegionBias;
 }
 
 export declare interface MetaChildDocumentsItem {
@@ -2014,6 +2027,15 @@ export declare interface RedactedResumeRequestBody {
  * **api.eu1**
  */
 export declare type Region = string;
+
+export declare interface RegionBias {
+    /** A single alpha-2 country code (e.g. AU) used by google geocoding service */
+    country?: string;
+    /** A list of alpha-2 country codes used by Pelias */
+    countries?: string[];
+    /** A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat] */
+    squareCoordinates?: number[];
+}
 
 export declare interface RequestError {
     type: string;
@@ -2266,6 +2288,8 @@ export declare interface ResumeRequestBody {
     language?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
     expiryTime?: string;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
 }
 
 export declare interface ResumeSearch {

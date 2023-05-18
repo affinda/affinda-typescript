@@ -21,6 +21,7 @@
 - [pdf](Meta.md#pdf)
 - [ready](Meta.md#ready)
 - [readyDt](Meta.md#readydt)
+- [regionBias](Meta.md#regionbias)
 - [reviewUrl](Meta.md#reviewurl)
 
 ## Properties
@@ -138,6 +139,12 @@ ___
 • `Optional` **readyDt**: `Date`
 
 The datetime when the document was ready
+
+___
+
+### regionBias
+
+• `Optional` **regionBias**: [`RegionBias`](RegionBias.md)
 
 ___
 
