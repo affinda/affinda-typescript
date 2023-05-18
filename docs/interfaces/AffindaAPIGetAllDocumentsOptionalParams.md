@@ -102,7 +102,7 @@ ___
 
 • `Optional` **includeData**: `boolean`
 
-By default, this endpoint returns only the meta data of the documents. Set this to `true` will return the detailed data that was parsed, at a performance cost.
+By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint.
 
 ___
 

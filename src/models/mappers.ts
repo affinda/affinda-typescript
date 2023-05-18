@@ -10573,6 +10573,13 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
           name: "Composite",
           className: "YearsExperienceAnnotation"
         }
+      },
+      rawText: {
+        serializedName: "rawText",
+        xmlName: "rawText",
+        type: {
+          name: "String"
+        }
       }
     }
   }
