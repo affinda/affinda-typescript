@@ -24,7 +24,6 @@
 - [location](JobDescriptionData.md#location)
 - [organizationName](JobDescriptionData.md#organizationname)
 - [organizationWebsite](JobDescriptionData.md#organizationwebsite)
-- [rawText](JobDescriptionData.md#rawtext)
 - [skills](JobDescriptionData.md#skills)
 - [startDate](JobDescriptionData.md#startdate)
 - [yearsExperience](JobDescriptionData.md#yearsexperience)
@@ -112,14 +111,6 @@ ___
 ### organizationWebsite
 
 • `Optional` **organizationWebsite**: [`TextAnnotation`](../modules.md#textannotation)
-
-___
-
-### rawText
-
-• `Optional` **rawText**: `string`
-
-All of the raw text of the parsed job description, example is shortened for readability
 
 ___
 

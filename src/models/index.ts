@@ -211,6 +211,7 @@ export interface Collection {
   extractor?: Extractor;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
   fieldsConfigured?: boolean;
   dateFormatPreference?: CollectionDateFormatPreference;
   /** Predict the date format from any dates in the document that is not ambiguous. */
@@ -258,15 +259,35 @@ export interface ExtractorBaseExtractor {
 
 export interface FieldGroup {
   label: string;
-  fields: Field[];
+  fields: FieldDeprecated[];
 }
 
-export interface Field {
+export interface FieldDeprecated {
   label: string;
   slug?: string;
   dataPoint: string;
   mandatory?: boolean;
   disabled?: boolean;
+  autoValidationThreshold?: number;
+  showDropdown?: boolean;
+  fields?: FieldDeprecated[];
+}
+
+export interface FieldsLayout {
+  defaultCategory: FieldCategory;
+  categories: FieldCategory[];
+}
+
+export interface FieldCategory {
+  enabledFields: Field[];
+  disabledFields: Field[];
+}
+
+export interface Field {
+  label: string;
+  /** Data point identifier */
+  dataPoint: string;
+  mandatory?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
   fields?: Field[];
@@ -1929,8 +1950,6 @@ export interface JobDescriptionData {
   location?: LocationAnnotation;
   certifications?: (TextAnnotation | null)[];
   yearsExperience?: YearsExperienceAnnotation;
-  /** All of the raw text of the parsed job description, example is shortened for readability */
-  rawText?: string;
 }
 
 /** Years of experience range */

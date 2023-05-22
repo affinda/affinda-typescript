@@ -1067,6 +1067,14 @@ export const Collection: coreClient.CompositeMapper = {
           }
         }
       },
+      fieldsLayout: {
+        serializedName: "fieldsLayout",
+        xmlName: "fieldsLayout",
+        type: {
+          name: "Composite",
+          className: "FieldsLayout"
+        }
+      },
       fieldsConfigured: {
         serializedName: "fieldsConfigured",
         xmlName: "fieldsConfigured",
@@ -1326,13 +1334,13 @@ export const FieldGroup: coreClient.CompositeMapper = {
         serializedName: "fields",
         required: true,
         xmlName: "fields",
-        xmlElementName: "Field",
+        xmlElementName: "FieldDeprecated",
         type: {
           name: "Sequence",
           element: {
             type: {
               name: "Composite",
-              className: "Field"
+              className: "FieldDeprecated"
             }
           }
         }
@@ -1341,11 +1349,11 @@ export const FieldGroup: coreClient.CompositeMapper = {
   }
 };
 
-export const Field: coreClient.CompositeMapper = {
-  serializedName: "Field",
+export const FieldDeprecated: coreClient.CompositeMapper = {
+  serializedName: "FieldDeprecated",
   type: {
     name: "Composite",
-    className: "Field",
+    className: "FieldDeprecated",
     modelProperties: {
       label: {
         serializedName: "label",
@@ -1386,6 +1394,145 @@ export const Field: coreClient.CompositeMapper = {
       },
       autoValidationThreshold: {
         serializedName: "autoValidationThreshold",
+        xmlName: "autoValidationThreshold",
+        type: {
+          name: "Number"
+        }
+      },
+      showDropdown: {
+        serializedName: "showDropdown",
+        xmlName: "showDropdown",
+        type: {
+          name: "Boolean"
+        }
+      },
+      fields: {
+        serializedName: "fields",
+        xmlName: "fields",
+        xmlElementName: "FieldDeprecated",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldDeprecated"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const FieldsLayout: coreClient.CompositeMapper = {
+  serializedName: "FieldsLayout",
+  type: {
+    name: "Composite",
+    className: "FieldsLayout",
+    modelProperties: {
+      defaultCategory: {
+        serializedName: "defaultCategory",
+        xmlName: "defaultCategory",
+        type: {
+          name: "Composite",
+          className: "FieldCategory"
+        }
+      },
+      categories: {
+        serializedName: "categories",
+        required: true,
+        xmlName: "categories",
+        xmlElementName: "FieldCategory",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "FieldCategory"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const FieldCategory: coreClient.CompositeMapper = {
+  serializedName: "FieldCategory",
+  type: {
+    name: "Composite",
+    className: "FieldCategory",
+    modelProperties: {
+      enabledFields: {
+        serializedName: "enabledFields",
+        required: true,
+        xmlName: "enabledFields",
+        xmlElementName: "Field",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
+      },
+      disabledFields: {
+        serializedName: "disabledFields",
+        required: true,
+        xmlName: "disabledFields",
+        xmlElementName: "Field",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Field: coreClient.CompositeMapper = {
+  serializedName: "Field",
+  type: {
+    name: "Composite",
+    className: "Field",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        required: true,
+        xmlName: "label",
+        type: {
+          name: "String"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        xmlName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      mandatory: {
+        serializedName: "mandatory",
+        xmlName: "mandatory",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoValidationThreshold: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0.9
+        },
+        serializedName: "autoValidationThreshold",
+        nullable: true,
         xmlName: "autoValidationThreshold",
         type: {
           name: "Number"
@@ -10572,13 +10719,6 @@ export const JobDescriptionData: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "YearsExperienceAnnotation"
-        }
-      },
-      rawText: {
-        serializedName: "rawText",
-        xmlName: "rawText",
-        type: {
-          name: "String"
         }
       }
     }

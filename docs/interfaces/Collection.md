@@ -14,6 +14,7 @@
 - [extractorConfig](Collection.md#extractorconfig)
 - [fields](Collection.md#fields)
 - [fieldsConfigured](Collection.md#fieldsconfigured)
+- [fieldsLayout](Collection.md#fieldslayout)
 - [identifier](Collection.md#identifier)
 - [ingestEmail](Collection.md#ingestemail)
 - [name](Collection.md#name)
@@ -73,6 +74,12 @@ ___
 ### fieldsConfigured
 
 • `Optional` **fieldsConfigured**: `boolean`
+
+___
+
+### fieldsLayout
+
+• `Optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
 
 ___
 
