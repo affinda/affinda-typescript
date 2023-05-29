@@ -7836,6 +7836,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
     modelProperties: {
       id: {
         serializedName: "id",
+        required: true,
         xmlName: "id",
         type: {
           name: "Number"
@@ -7843,6 +7844,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
       },
       event: {
         serializedName: "event",
+        required: true,
         xmlName: "event",
         type: {
           name: "String"
@@ -7850,6 +7852,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
       },
       targetUrl: {
         serializedName: "targetUrl",
+        required: true,
         xmlName: "targetUrl",
         type: {
           name: "String"
@@ -7857,6 +7860,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
       },
       active: {
         serializedName: "active",
+        required: true,
         xmlName: "active",
         type: {
           name: "Boolean"
@@ -7864,6 +7868,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
       },
       autoDeactivated: {
         serializedName: "autoDeactivated",
+        required: true,
         xmlName: "autoDeactivated",
         type: {
           name: "Boolean"
@@ -7871,6 +7876,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
       },
       autoDeactivateReason: {
         serializedName: "autoDeactivateReason",
+        required: true,
         xmlName: "autoDeactivateReason",
         type: {
           name: "String"
@@ -7878,6 +7884,7 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
       },
       version: {
         serializedName: "version",
+        required: true,
         xmlName: "version",
         type: {
           name: "String"
