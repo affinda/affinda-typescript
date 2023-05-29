@@ -19,7 +19,7 @@
 
 ### active
 
-• `Optional` **active**: `boolean`
+• **active**: `boolean`
 
 Resthooks only fire for active subscriptions.
 
@@ -27,7 +27,7 @@ ___
 
 ### autoDeactivateReason
 
-• `Optional` **autoDeactivateReason**: `string`
+• **autoDeactivateReason**: `string`
 
 The reason for the subscription being auto deactivated. May contains the error response that the receiver returned.
 
@@ -35,7 +35,7 @@ ___
 
 ### autoDeactivated
 
-• `Optional` **autoDeactivated**: `boolean`
+• **autoDeactivated**: `boolean`
 
 Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time.
 
@@ -43,7 +43,7 @@ ___
 
 ### event
 
-• `Optional` **event**: `string`
+• **event**: `string`
 
 The event name to subscribe to.
 
@@ -51,7 +51,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `number`
+• **id**: `number`
 
 Resthook subscription's ID.
 
@@ -59,13 +59,13 @@ ___
 
 ### organization
 
-• `Optional` **organization**: [`Organization`](Organization.md)
+• **organization**: [`Organization`](Organization.md)
 
 ___
 
 ### targetUrl
 
-• `Optional` **targetUrl**: `string`
+• **targetUrl**: `string`
 
 URL of the resthook's receiver.
 
@@ -73,6 +73,6 @@ ___
 
 ### version
 
-• `Optional` **version**: `string`
+• **version**: `string`
 
 Version of the resthook subscription. Determines the resthook body being fired.

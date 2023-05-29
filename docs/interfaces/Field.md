@@ -8,10 +8,12 @@
 
 - [autoValidationThreshold](Field.md#autovalidationthreshold)
 - [dataPoint](Field.md#datapoint)
+- [disabled](Field.md#disabled)
 - [fields](Field.md#fields)
 - [label](Field.md#label)
 - [mandatory](Field.md#mandatory)
 - [showDropdown](Field.md#showdropdown)
+- [slug](Field.md#slug)
 
 ## Properties
 
@@ -25,7 +27,11 @@ ___
 
 • **dataPoint**: `string`
 
-Data point identifier
+___
+
+### disabled
+
+• `Optional` **disabled**: `boolean`
 
 ___
 
@@ -50,3 +56,9 @@ ___
 ### showDropdown
 
 • `Optional` **showDropdown**: `boolean`
+
+___
+
+### slug
+
+• `Optional` **slug**: `string`

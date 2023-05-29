@@ -211,7 +211,6 @@ export interface Collection {
   extractor?: Extractor;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
-  fieldsLayout?: FieldsLayout;
   fieldsConfigured?: boolean;
   dateFormatPreference?: CollectionDateFormatPreference;
   /** Predict the date format from any dates in the document that is not ambiguous. */
@@ -259,35 +258,15 @@ export interface ExtractorBaseExtractor {
 
 export interface FieldGroup {
   label: string;
-  fields: FieldDeprecated[];
+  fields: Field[];
 }
 
-export interface FieldDeprecated {
+export interface Field {
   label: string;
   slug?: string;
   dataPoint: string;
   mandatory?: boolean;
   disabled?: boolean;
-  autoValidationThreshold?: number;
-  showDropdown?: boolean;
-  fields?: FieldDeprecated[];
-}
-
-export interface FieldsLayout {
-  defaultCategory: FieldCategory;
-  categories: FieldCategory[];
-}
-
-export interface FieldCategory {
-  enabledFields: Field[];
-  disabledFields: Field[];
-}
-
-export interface Field {
-  label: string;
-  /** Data point identifier */
-  dataPoint: string;
-  mandatory?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
   fields?: Field[];
@@ -836,20 +815,20 @@ export interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplica
 
 export interface ResthookSubscription {
   /** Resthook subscription's ID. */
-  id?: number;
+  id: number;
   /** The event name to subscribe to. */
-  event?: ResthookEvent;
-  organization?: Organization;
+  event: ResthookEvent;
+  organization: Organization;
   /** URL of the resthook's receiver. */
-  targetUrl?: string;
+  targetUrl: string;
   /** Resthooks only fire for active subscriptions. */
-  active?: boolean;
+  active: boolean;
   /** Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time. */
-  autoDeactivated?: boolean;
+  autoDeactivated: boolean;
   /** The reason for the subscription being auto deactivated. May contains the error response that the receiver returned. */
-  autoDeactivateReason?: string;
+  autoDeactivateReason: string;
   /** Version of the resthook subscription. Determines the resthook body being fired. */
-  version?: ResthookSubscriptionVersion;
+  version: ResthookSubscriptionVersion;
 }
 
 export interface ResthookSubscriptionCreate {
@@ -1950,6 +1929,8 @@ export interface JobDescriptionData {
   location?: LocationAnnotation;
   certifications?: (TextAnnotation | null)[];
   yearsExperience?: YearsExperienceAnnotation;
+  /** All of the raw text of the parsed job description, example is shortened for readability */
+  rawText?: string;
 }
 
 /** Years of experience range */

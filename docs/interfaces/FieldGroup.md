@@ -13,7 +13,7 @@
 
 ### fields
 
-• **fields**: [`FieldDeprecated`](FieldDeprecated.md)[]
+• **fields**: [`Field`](Field.md)[]
 
 ___
 
