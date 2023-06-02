@@ -6,8 +6,9 @@
 
 ### Enumerations
 
-- [KnownEnum3](enums/KnownEnum3.md)
-- [KnownEnum6](enums/KnownEnum6.md)
+- [KnownEnum1](enums/KnownEnum1.md)
+- [KnownEnum4](enums/KnownEnum4.md)
+- [KnownEnum7](enums/KnownEnum7.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
 - [KnownRegion](enums/KnownRegion.md)
@@ -278,8 +279,9 @@
 - [DateAnnotation](modules.md#dateannotation)
 - [DateAnnotationV2Update](modules.md#dateannotationv2update)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum3](modules.md#enum3)
-- [Enum6](modules.md#enum6)
+- [Enum1](modules.md#enum1)
+- [Enum4](modules.md#enum4)
+- [Enum7](modules.md#enum7)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationV2Update](modules.md#expectedremunerationannotationv2update)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -677,12 +679,24 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum3
+### Enum1
 
-Ƭ **Enum3**: `string`
+Ƭ **Enum1**: `string`
 
-Defines values for Enum3. \
-[KnownEnum3](enums/KnownEnum3.md) can be used interchangeably with Enum3,
+Defines values for Enum1. \
+[KnownEnum1](enums/KnownEnum1.md) can be used interchangeably with Enum1,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**hr-xml**
+
+___
+
+### Enum4
+
+Ƭ **Enum4**: `string`
+
+Defines values for Enum4. \
+[KnownEnum4](enums/KnownEnum4.md) can be used interchangeably with Enum4,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -690,12 +704,12 @@ Defines values for Enum3. \
 
 ___
 
-### Enum6
+### Enum7
 
-Ƭ **Enum6**: `string`
+Ƭ **Enum7**: `string`
 
-Defines values for Enum6. \
-[KnownEnum6](enums/KnownEnum6.md) can be used interchangeably with Enum6,
+Defines values for Enum7. \
+[KnownEnum7](enums/KnownEnum7.md) can be used interchangeably with Enum7,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \

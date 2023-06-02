@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Allow rejectDuplicates to be null
 - Update python_requires to be PEP compliant
+- Set resumes GET document format to be an enum
 
 ### Added
 - Phone number details to Resume Candidate info

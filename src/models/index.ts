@@ -1337,7 +1337,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum6;
+  documentType?: Enum7;
 }
 
 export interface PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1715,6 +1715,20 @@ export enum KnownRegion {
  */
 export type Region = string;
 
+/** Known values of {@link Enum1} that the service accepts. */
+export enum KnownEnum1 {
+  HrXml = "hr-xml"
+}
+
+/**
+ * Defines values for Enum1. \
+ * {@link KnownEnum1} can be used interchangeably with Enum1,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **hr-xml**
+ */
+export type Enum1 = string;
+
 /** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
 export enum KnownSearchParametersCustomDataFilterType {
   Equals = "equals",
@@ -1783,21 +1797,21 @@ export enum KnownResumeSkillSourcesItemSection {
  */
 export type ResumeSkillSourcesItemSection = string;
 
-/** Known values of {@link Enum3} that the service accepts. */
-export enum KnownEnum3 {
+/** Known values of {@link Enum4} that the service accepts. */
+export enum KnownEnum4 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum3. \
- * {@link KnownEnum3} can be used interchangeably with Enum3,
+ * Defines values for Enum4. \
+ * {@link KnownEnum4} can be used interchangeably with Enum4,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum3 = string;
+export type Enum4 = string;
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
 export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
@@ -1831,21 +1845,21 @@ export enum KnownPostContentSchemaDocumentType {
  */
 export type PostContentSchemaDocumentType = string;
 
-/** Known values of {@link Enum6} that the service accepts. */
-export enum KnownEnum6 {
+/** Known values of {@link Enum7} that the service accepts. */
+export enum KnownEnum7 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum6. \
- * {@link KnownEnum6} can be used interchangeably with Enum6,
+ * Defines values for Enum7. \
+ * {@link KnownEnum7} can be used interchangeably with Enum7,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum6 = string;
+export type Enum7 = string;
 
 /** Known values of {@link ResthookEvent} that the service accepts. */
 export enum KnownResthookEvent {
@@ -1978,7 +1992,7 @@ export type AffindaAPICreateResumeResponse = Resume;
 export interface AffindaAPIGetResumeOptionalParams
   extends coreClient.OperationOptions {
   /** Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml". */
-  format?: string;
+  format?: Enum1;
 }
 
 /** Contains response data for the getResume operation. */
@@ -2305,7 +2319,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum3;
+  documentType?: Enum4;
 }
 
 /** Contains response data for the getAllIndexes operation. */

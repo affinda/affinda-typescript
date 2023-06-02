@@ -576,7 +576,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum3;
+    documentType?: Enum4;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -682,7 +682,7 @@ export declare type AffindaAPIGetResthookSubscriptionResponse = ResthookSubscrip
 /** Optional parameters. */
 export declare interface AffindaAPIGetResumeOptionalParams extends coreClient.OperationOptions {
     /** Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml". */
-    format?: string;
+    format?: Enum1;
 }
 
 /** Contains response data for the getResume operation. */
@@ -1098,24 +1098,33 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum3. \
- * {@link KnownEnum3} can be used interchangeably with Enum3,
+ * Defines values for Enum1. \
+ * {@link KnownEnum1} can be used interchangeably with Enum1,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
+ * **hr-xml**
  */
-export declare type Enum3 = string;
+export declare type Enum1 = string;
 
 /**
- * Defines values for Enum6. \
- * {@link KnownEnum6} can be used interchangeably with Enum6,
+ * Defines values for Enum4. \
+ * {@link KnownEnum4} can be used interchangeably with Enum4,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum6 = string;
+export declare type Enum4 = string;
+
+/**
+ * Defines values for Enum7. \
+ * {@link KnownEnum7} can be used interchangeably with Enum7,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export declare type Enum7 = string;
 
 export declare interface ErrorModel {
     errorCode?: string;
@@ -1628,14 +1637,19 @@ export declare interface JobTitleSearchScoreComponent {
     score?: number;
 }
 
-/** Known values of {@link Enum3} that the service accepts. */
-export declare enum KnownEnum3 {
+/** Known values of {@link Enum1} that the service accepts. */
+export declare enum KnownEnum1 {
+    HrXml = "hr-xml"
+}
+
+/** Known values of {@link Enum4} that the service accepts. */
+export declare enum KnownEnum4 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum6} that the service accepts. */
-export declare enum KnownEnum6 {
+/** Known values of {@link Enum7} that the service accepts. */
+export declare enum KnownEnum7 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -1917,7 +1931,7 @@ export declare interface Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentAppl
 
 export declare interface Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum6;
+    documentType?: Enum7;
 }
 
 export declare interface Paths23Ubd8V2ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
