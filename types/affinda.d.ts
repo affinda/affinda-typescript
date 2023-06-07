@@ -108,6 +108,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteCollection(identifier: string, options?: AffindaAPIDeleteCollectionOptionalParams): Promise<void>;
     /**
+     * Create data field for a collection along with a new data point.
+     * @param identifier Collection's identifier
+     * @param body The data field and data point to be created.
+     * @param options The options parameters.
+     */
+    createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: AffindaAPICreateDataFieldForCollectionOptionalParams): Promise<AffindaAPICreateDataFieldForCollectionResponse>;
+    /**
      * Returns all the document summaries for that user, limited to 300 per page.
      * @param options The options parameters.
      */
@@ -618,6 +625,42 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     getResumeSearchSuggestionSkill(skills: string[], options?: AffindaAPIGetResumeSearchSuggestionSkillOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionSkillResponse>;
+    /**
+     * Returns your API users.
+     * @param options The options parameters.
+     */
+    getAllApiUsers(options?: AffindaAPIGetAllApiUsersOptionalParams): Promise<AffindaAPIGetAllApiUsersResponse>;
+    /**
+     * Create an API user
+     * @param body
+     * @param options The options parameters.
+     */
+    createApiUser(body: ApiUserCreate, options?: AffindaAPICreateApiUserOptionalParams): Promise<AffindaAPICreateApiUserResponse>;
+    /**
+     * Return a specific API user.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    getApiUser(id: number, options?: AffindaAPIGetApiUserOptionalParams): Promise<AffindaAPIGetApiUserResponse>;
+    /**
+     * Update data of an API user.
+     * @param id API user's ID
+     * @param body API user to update
+     * @param options The options parameters.
+     */
+    updateApiUser(id: number, body: ApiUserUpdate, options?: AffindaAPIUpdateApiUserOptionalParams): Promise<AffindaAPIUpdateApiUserResponse>;
+    /**
+     * Deletes the specified API user from the database.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    deleteApiUser(id: number, options?: AffindaAPIDeleteApiUserOptionalParams): Promise<void>;
+    /**
+     * Regenerate API key for an API user.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    regenerateApiKeyForApiUser(id: number, options?: AffindaAPIRegenerateApiKeyForApiUserOptionalParams): Promise<AffindaAPIRegenerateApiKeyForApiUserResponse>;
 }
 
 /** Optional parameters. */
@@ -671,11 +714,25 @@ export declare interface AffindaAPICreateAnnotationOptionalParams extends coreCl
 export declare type AffindaAPICreateAnnotationResponse = Annotation;
 
 /** Optional parameters. */
+export declare interface AffindaAPICreateApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createApiUser operation. */
+export declare type AffindaAPICreateApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
 export declare interface AffindaAPICreateCollectionOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Contains response data for the createCollection operation. */
 export declare type AffindaAPICreateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface AffindaAPICreateDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createDataFieldForCollection operation. */
+export declare type AffindaAPICreateDataFieldForCollectionResponse = DataField;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
@@ -835,6 +892,10 @@ export declare interface AffindaAPIDeleteAnnotationOptionalParams extends coreCl
 }
 
 /** Optional parameters. */
+export declare interface AffindaAPIDeleteApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
 export declare interface AffindaAPIDeleteCollectionOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -903,6 +964,15 @@ export declare interface AffindaAPIGetAllAnnotationsOptionalParams extends coreC
 
 /** Contains response data for the getAllAnnotations operation. */
 export declare type AffindaAPIGetAllAnnotationsResponse = Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAllApiUsersOptionalParams extends coreClient.OperationOptions {
+    /** Filter by organization. */
+    organization?: string;
+}
+
+/** Contains response data for the getAllApiUsers operation. */
+export declare type AffindaAPIGetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllCollectionsOptionalParams extends coreClient.OperationOptions {
@@ -1099,6 +1169,13 @@ export declare interface AffindaAPIGetAnnotationOptionalParams extends coreClien
 
 /** Contains response data for the getAnnotation operation. */
 export declare type AffindaAPIGetAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getApiUser operation. */
+export declare type AffindaAPIGetApiUserResponse = ApiUserWithoutKey;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetCollectionOptionalParams extends coreClient.OperationOptions {
@@ -1299,6 +1376,13 @@ export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClie
 }
 
 /** Optional parameters. */
+export declare interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the regenerateApiKeyForApiUser operation. */
+export declare type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
 export declare interface AffindaAPIRespondToInvitationOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1311,6 +1395,13 @@ export declare interface AffindaAPIUpdateAnnotationOptionalParams extends coreCl
 
 /** Contains response data for the updateAnnotation operation. */
 export declare type AffindaAPIUpdateAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateApiUser operation. */
+export declare type AffindaAPIUpdateApiUserResponse = ApiUserWithoutKey;
 
 /** Optional parameters. */
 export declare interface AffindaAPIUpdateCollectionOptionalParams extends coreClient.OperationOptions {
@@ -1523,6 +1614,60 @@ export declare interface AnnotationUpdate {
 export declare interface AnnotationUpdateParsed {
 }
 
+export declare interface ApiUserCreate {
+    name?: string;
+    username?: string;
+    email?: string;
+    /** URL of the user's avatar. */
+    avatar?: string;
+    /** Uniquely identify an organization. */
+    organization: string;
+}
+
+export declare interface ApiUserUpdate {
+    name?: string;
+    username?: string;
+    email?: string;
+    /** URL of the user's avatar. */
+    avatar?: string;
+}
+
+export declare interface ApiUserWithKey {
+    /** Uniquely identify a user. */
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    /** URL of the user's avatar. */
+    avatar: string | null;
+    organizations: ApiUserWithKeyOrganizationsItem[];
+    /** Use this key to authenticate with the API. */
+    apiKey: string;
+}
+
+export declare interface ApiUserWithKeyOrganizationsItem {
+    /** Uniquely identify an organization. */
+    identifier: string;
+    name: string;
+}
+
+export declare interface ApiUserWithoutKey {
+    /** Uniquely identify a user. */
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    /** URL of the user's avatar. */
+    avatar: string | null;
+    organizations: ApiUserWithoutKeyOrganizationsItem[];
+}
+
+export declare interface ApiUserWithoutKeyOrganizationsItem {
+    /** Uniquely identify an organization. */
+    identifier: string;
+    name: string;
+}
+
 export declare interface BaseExtractor {
     /** Uniquely identify an extractor. */
     identifier: string;
@@ -1555,6 +1700,7 @@ export declare interface Collection {
     extractor?: Extractor;
     autoValidationThreshold?: number;
     fields?: FieldGroup[];
+    fieldsLayout?: FieldsLayout;
     fieldsConfigured?: boolean;
     dateFormatPreference?: CollectionDateFormatPreference;
     /** Predict the date format from any dates in the document that is not ambiguous. */
@@ -1577,6 +1723,7 @@ export declare interface CollectionCreate {
     extractor: string;
     autoValidationThreshold?: number;
     fields?: FieldGroup[];
+    fieldsLayout?: FieldsLayout;
     dateFormatPreference?: DateFormatPreference;
     /** Predict the date format from any dates in the document that is not ambiguous. */
     dateFormatFromDocument?: boolean;
@@ -1599,6 +1746,7 @@ export declare interface CollectionUpdate {
     name?: string;
     autoValidationThreshold?: number;
     fields?: FieldGroup[];
+    fieldsLayout?: FieldsLayout;
     dateFormatPreference?: DateFormatPreference;
     /** Predict the date format from any dates in the document that is not ambiguous. */
     dateFormatFromDocument?: boolean;
@@ -1813,6 +1961,64 @@ export declare interface CustomFieldConfig {
     /** Data point identifier. */
     dataPoint: string;
     weight: number;
+}
+
+export declare interface DataField {
+    /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
+    categoryLabel?: string;
+    /** The field to be created. */
+    field: DataFieldField;
+    /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+    dataPoint: DataFieldDataPoint;
+}
+
+export declare interface DataFieldCreate {
+    /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
+    categoryLabel?: string;
+    /** The field to be created. */
+    field: DataFieldCreateField;
+    /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+    dataPoint: DataFieldCreateDataPoint;
+}
+
+/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+export declare interface DataFieldCreateDataPoint {
+    name: string;
+    slug: string;
+    description?: string;
+    /** The different data types of annotations */
+    type: AnnotationContentType;
+    multiple?: boolean;
+    noRect?: boolean;
+}
+
+/** The field to be created. */
+export declare interface DataFieldCreateField {
+    label: string;
+    mandatory?: boolean;
+    showDropdown?: boolean;
+    autoValidationThreshold?: number;
+}
+
+/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+export declare interface DataFieldDataPoint {
+    /** Uniquely identify a data point. */
+    identifier: string;
+    name: string;
+    slug: string;
+    description: string | null;
+    /** The different data types of annotations */
+    type: AnnotationContentType;
+    multiple: boolean;
+    noRect: boolean;
+}
+
+/** The field to be created. */
+export declare interface DataFieldField {
+    label: string;
+    mandatory: boolean;
+    showDropdown: boolean;
+    autoValidationThreshold: number | null;
 }
 
 export declare interface DataPoint {
@@ -2228,18 +2434,39 @@ export declare interface ExtractorUpdate {
 
 export declare interface Field {
     label: string;
+    /** Data point identifier */
+    dataPoint: string;
+    mandatory?: boolean;
+    autoValidationThreshold?: number;
+    showDropdown?: boolean;
+    fields?: Field[];
+}
+
+export declare interface FieldCategory {
+    label: string;
+    enabledFields: Field[];
+    disabledFields: Field[];
+}
+
+export declare interface FieldDeprecated {
+    label: string;
     slug?: string;
     dataPoint: string;
     mandatory?: boolean;
     disabled?: boolean;
     autoValidationThreshold?: number;
     showDropdown?: boolean;
-    fields?: Field[];
+    fields?: FieldDeprecated[];
 }
 
 export declare interface FieldGroup {
     label: string;
-    fields: Field[];
+    fields: FieldDeprecated[];
+}
+
+export declare interface FieldsLayout {
+    defaultCategory: FieldCategory;
+    categories: FieldCategory[];
 }
 
 export declare type FloatAnnotation = Annotation & {
@@ -3129,6 +3356,10 @@ export declare interface PaletteColorOptions {
     contrastText?: string;
 }
 
+export declare interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: ApiUserWithoutKey[];
+}
+
 export declare type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -3153,6 +3384,8 @@ export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJs
     name?: string;
     documentType?: Enum21;
 }
+
+export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results: WorkspaceMembership[];

@@ -11,6 +11,7 @@
 - [dateFormatPreference](CollectionUpdate.md#dateformatpreference)
 - [extractorConfig](CollectionUpdate.md#extractorconfig)
 - [fields](CollectionUpdate.md#fields)
+- [fieldsLayout](CollectionUpdate.md#fieldslayout)
 - [name](CollectionUpdate.md#name)
 
 ## Properties
@@ -46,6 +47,12 @@ ___
 ### fields
 
 • `Optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
+
+___
+
+### fieldsLayout
+
+• `Optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
 
 ___
 

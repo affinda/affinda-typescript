@@ -28,7 +28,9 @@
 - [batchRemoveTag](AffindaAPI.md#batchremovetag)
 - [batchUpdateAnnotations](AffindaAPI.md#batchupdateannotations)
 - [createAnnotation](AffindaAPI.md#createannotation)
+- [createApiUser](AffindaAPI.md#createapiuser)
 - [createCollection](AffindaAPI.md#createcollection)
+- [createDataFieldForCollection](AffindaAPI.md#createdatafieldforcollection)
 - [createDataPoint](AffindaAPI.md#createdatapoint)
 - [createDataPointChoice](AffindaAPI.md#createdatapointchoice)
 - [createDocument](AffindaAPI.md#createdocument)
@@ -46,6 +48,7 @@
 - [createWorkspace](AffindaAPI.md#createworkspace)
 - [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
 - [deleteAnnotation](AffindaAPI.md#deleteannotation)
+- [deleteApiUser](AffindaAPI.md#deleteapiuser)
 - [deleteCollection](AffindaAPI.md#deletecollection)
 - [deleteDataPoint](AffindaAPI.md#deletedatapoint)
 - [deleteDataPointChoice](AffindaAPI.md#deletedatapointchoice)
@@ -62,6 +65,7 @@
 - [deleteWorkspaceMembership](AffindaAPI.md#deleteworkspacemembership)
 - [editDocumentPages](AffindaAPI.md#editdocumentpages)
 - [getAllAnnotations](AffindaAPI.md#getallannotations)
+- [getAllApiUsers](AffindaAPI.md#getallapiusers)
 - [getAllCollections](AffindaAPI.md#getallcollections)
 - [getAllDataPoints](AffindaAPI.md#getalldatapoints)
 - [getAllDocuments](AffindaAPI.md#getalldocuments)
@@ -76,6 +80,7 @@
 - [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
 - [getAnnotation](AffindaAPI.md#getannotation)
+- [getApiUser](AffindaAPI.md#getapiuser)
 - [getCollection](AffindaAPI.md#getcollection)
 - [getDataPoint](AffindaAPI.md#getdatapoint)
 - [getDataPointChoice](AffindaAPI.md#getdatapointchoice)
@@ -98,10 +103,12 @@
 - [getWorkspace](AffindaAPI.md#getworkspace)
 - [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
+- [regenerateApiKeyForApiUser](AffindaAPI.md#regenerateapikeyforapiuser)
 - [respondToInvitation](AffindaAPI.md#respondtoinvitation)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
 - [updateAnnotation](AffindaAPI.md#updateannotation)
+- [updateApiUser](AffindaAPI.md#updateapiuser)
 - [updateCollection](AffindaAPI.md#updatecollection)
 - [updateDataPoint](AffindaAPI.md#updatedatapoint)
 - [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
@@ -297,6 +304,25 @@ Create a annotation
 
 ___
 
+### createApiUser
+
+▸ **createApiUser**(`body`, `options?`): `Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+Create an API user
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`ApiUserCreate`](../interfaces/ApiUserCreate.md) |  |
+| `options?` | [`AffindaAPICreateApiUserOptionalParams`](../interfaces/AffindaAPICreateApiUserOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+___
+
 ### createCollection
 
 ▸ **createCollection**(`body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
@@ -313,6 +339,26 @@ Create a collection
 #### Returns
 
 `Promise`<[`Collection`](../interfaces/Collection.md)\>
+
+___
+
+### createDataFieldForCollection
+
+▸ **createDataFieldForCollection**(`identifier`, `body`, `options?`): `Promise`<[`DataField`](../interfaces/DataField.md)\>
+
+Create data field for a collection along with a new data point.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Collection's identifier |
+| `body` | [`DataFieldCreate`](../interfaces/DataFieldCreate.md) | The data field and data point to be created. |
+| `options?` | [`AffindaAPICreateDataFieldForCollectionOptionalParams`](../interfaces/AffindaAPICreateDataFieldForCollectionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`DataField`](../interfaces/DataField.md)\>
 
 ___
 
@@ -650,6 +696,25 @@ Deletes the specified annotation from the database.
 
 ___
 
+### deleteApiUser
+
+▸ **deleteApiUser**(`id`, `options?`): `Promise`<`void`\>
+
+Deletes the specified API user from the database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | API user's ID |
+| `options?` | [`AffindaAPIDeleteApiUserOptionalParams`](../interfaces/AffindaAPIDeleteApiUserOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
 ### deleteCollection
 
 ▸ **deleteCollection**(`identifier`, `options?`): `Promise`<`void`\>
@@ -959,6 +1024,24 @@ Returns your annotations.
 
 ___
 
+### getAllApiUsers
+
+▸ **getAllApiUsers**(`options?`): `Promise`<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
+
+Returns your API users.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIGetAllApiUsersOptionalParams`](../interfaces/AffindaAPIGetAllApiUsersOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
+
+___
+
 ### getAllCollections
 
 ▸ **getAllCollections**(`workspace`, `options?`): `Promise`<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
@@ -1213,6 +1296,25 @@ Return a specific annotation.
 #### Returns
 
 `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+
+___
+
+### getApiUser
+
+▸ **getApiUser**(`id`, `options?`): `Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+
+Return a specific API user.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | API user's ID |
+| `options?` | [`AffindaAPIGetApiUserOptionalParams`](../interfaces/AffindaAPIGetApiUserOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 ___
 
@@ -1648,6 +1750,25 @@ Returns the list of searchable occupation groups.
 
 ___
 
+### regenerateApiKeyForApiUser
+
+▸ **regenerateApiKeyForApiUser**(`id`, `options?`): `Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+Regenerate API key for an API user.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | API user's ID |
+| `options?` | [`AffindaAPIRegenerateApiKeyForApiUserOptionalParams`](../interfaces/AffindaAPIRegenerateApiKeyForApiUserOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+___
+
 ### respondToInvitation
 
 ▸ **respondToInvitation**(`token`, `body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
@@ -1736,6 +1857,26 @@ Update data of an annotation.
 #### Returns
 
 `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+
+___
+
+### updateApiUser
+
+▸ **updateApiUser**(`id`, `body`, `options?`): `Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+
+Update data of an API user.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | API user's ID |
+| `body` | [`ApiUserUpdate`](../interfaces/ApiUserUpdate.md) | API user to update |
+| `options?` | [`AffindaAPIUpdateApiUserOptionalParams`](../interfaces/AffindaAPIUpdateApiUserOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 ___
 

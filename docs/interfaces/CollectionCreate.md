@@ -12,6 +12,7 @@
 - [extractor](CollectionCreate.md#extractor)
 - [extractorConfig](CollectionCreate.md#extractorconfig)
 - [fields](CollectionCreate.md#fields)
+- [fieldsLayout](CollectionCreate.md#fieldslayout)
 - [name](CollectionCreate.md#name)
 - [workspace](CollectionCreate.md#workspace)
 
@@ -56,6 +57,12 @@ ___
 ### fields
 
 • `Optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
+
+___
+
+### fieldsLayout
+
+• `Optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
 
 ___
 

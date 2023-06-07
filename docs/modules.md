@@ -46,7 +46,9 @@
 - [AffindaAPIBatchRemoveTagOptionalParams](interfaces/AffindaAPIBatchRemoveTagOptionalParams.md)
 - [AffindaAPIBatchUpdateAnnotationsOptionalParams](interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md)
 - [AffindaAPICreateAnnotationOptionalParams](interfaces/AffindaAPICreateAnnotationOptionalParams.md)
+- [AffindaAPICreateApiUserOptionalParams](interfaces/AffindaAPICreateApiUserOptionalParams.md)
 - [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
+- [AffindaAPICreateDataFieldForCollectionOptionalParams](interfaces/AffindaAPICreateDataFieldForCollectionOptionalParams.md)
 - [AffindaAPICreateDataPointChoiceOptionalParams](interfaces/AffindaAPICreateDataPointChoiceOptionalParams.md)
 - [AffindaAPICreateDataPointOptionalParams](interfaces/AffindaAPICreateDataPointOptionalParams.md)
 - [AffindaAPICreateDocumentOptionalParams](interfaces/AffindaAPICreateDocumentOptionalParams.md)
@@ -64,6 +66,7 @@
 - [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
 - [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
 - [AffindaAPIDeleteAnnotationOptionalParams](interfaces/AffindaAPIDeleteAnnotationOptionalParams.md)
+- [AffindaAPIDeleteApiUserOptionalParams](interfaces/AffindaAPIDeleteApiUserOptionalParams.md)
 - [AffindaAPIDeleteCollectionOptionalParams](interfaces/AffindaAPIDeleteCollectionOptionalParams.md)
 - [AffindaAPIDeleteDataPointChoiceOptionalParams](interfaces/AffindaAPIDeleteDataPointChoiceOptionalParams.md)
 - [AffindaAPIDeleteDataPointOptionalParams](interfaces/AffindaAPIDeleteDataPointOptionalParams.md)
@@ -80,6 +83,7 @@
 - [AffindaAPIDeleteWorkspaceOptionalParams](interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md)
 - [AffindaAPIEditDocumentPagesOptionalParams](interfaces/AffindaAPIEditDocumentPagesOptionalParams.md)
 - [AffindaAPIGetAllAnnotationsOptionalParams](interfaces/AffindaAPIGetAllAnnotationsOptionalParams.md)
+- [AffindaAPIGetAllApiUsersOptionalParams](interfaces/AffindaAPIGetAllApiUsersOptionalParams.md)
 - [AffindaAPIGetAllCollectionsOptionalParams](interfaces/AffindaAPIGetAllCollectionsOptionalParams.md)
 - [AffindaAPIGetAllDataPointsOptionalParams](interfaces/AffindaAPIGetAllDataPointsOptionalParams.md)
 - [AffindaAPIGetAllDocumentsOptionalParams](interfaces/AffindaAPIGetAllDocumentsOptionalParams.md)
@@ -94,6 +98,7 @@
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
 - [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
 - [AffindaAPIGetAnnotationOptionalParams](interfaces/AffindaAPIGetAnnotationOptionalParams.md)
+- [AffindaAPIGetApiUserOptionalParams](interfaces/AffindaAPIGetApiUserOptionalParams.md)
 - [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
 - [AffindaAPIGetDataPointChoiceOptionalParams](interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md)
 - [AffindaAPIGetDataPointChoicesOptionalParams](interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md)
@@ -117,8 +122,10 @@
 - [AffindaAPIGetWorkspaceOptionalParams](interfaces/AffindaAPIGetWorkspaceOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
+- [AffindaAPIRegenerateApiKeyForApiUserOptionalParams](interfaces/AffindaAPIRegenerateApiKeyForApiUserOptionalParams.md)
 - [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
 - [AffindaAPIUpdateAnnotationOptionalParams](interfaces/AffindaAPIUpdateAnnotationOptionalParams.md)
+- [AffindaAPIUpdateApiUserOptionalParams](interfaces/AffindaAPIUpdateApiUserOptionalParams.md)
 - [AffindaAPIUpdateCollectionOptionalParams](interfaces/AffindaAPIUpdateCollectionOptionalParams.md)
 - [AffindaAPIUpdateDataPointChoiceOptionalParams](interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md)
 - [AffindaAPIUpdateDataPointOptionalParams](interfaces/AffindaAPIUpdateDataPointOptionalParams.md)
@@ -137,6 +144,12 @@
 - [AnnotationCreateParsed](interfaces/AnnotationCreateParsed.md)
 - [AnnotationUpdate](interfaces/AnnotationUpdate.md)
 - [AnnotationUpdateParsed](interfaces/AnnotationUpdateParsed.md)
+- [ApiUserCreate](interfaces/ApiUserCreate.md)
+- [ApiUserUpdate](interfaces/ApiUserUpdate.md)
+- [ApiUserWithKey](interfaces/ApiUserWithKey.md)
+- [ApiUserWithKeyOrganizationsItem](interfaces/ApiUserWithKeyOrganizationsItem.md)
+- [ApiUserWithoutKey](interfaces/ApiUserWithoutKey.md)
+- [ApiUserWithoutKeyOrganizationsItem](interfaces/ApiUserWithoutKeyOrganizationsItem.md)
 - [BaseExtractor](interfaces/BaseExtractor.md)
 - [BatchAddTagRequest](interfaces/BatchAddTagRequest.md)
 - [BatchRemoveTagRequest](interfaces/BatchRemoveTagRequest.md)
@@ -183,6 +196,12 @@
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
 - [CustomFieldConfig](interfaces/CustomFieldConfig.md)
+- [DataField](interfaces/DataField.md)
+- [DataFieldCreate](interfaces/DataFieldCreate.md)
+- [DataFieldCreateDataPoint](interfaces/DataFieldCreateDataPoint.md)
+- [DataFieldCreateField](interfaces/DataFieldCreateField.md)
+- [DataFieldDataPoint](interfaces/DataFieldDataPoint.md)
+- [DataFieldField](interfaces/DataFieldField.md)
 - [DataPoint](interfaces/DataPoint.md)
 - [DataPointChoice](interfaces/DataPointChoice.md)
 - [DataPointChoiceCreate](interfaces/DataPointChoiceCreate.md)
@@ -215,7 +234,10 @@
 - [ExtractorCreate](interfaces/ExtractorCreate.md)
 - [ExtractorUpdate](interfaces/ExtractorUpdate.md)
 - [Field](interfaces/Field.md)
+- [FieldCategory](interfaces/FieldCategory.md)
+- [FieldDeprecated](interfaces/FieldDeprecated.md)
 - [FieldGroup](interfaces/FieldGroup.md)
+- [FieldsLayout](interfaces/FieldsLayout.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
 - [IndexRequestBody](interfaces/IndexRequestBody.md)
 - [Invitation](interfaces/Invitation.md)
@@ -266,6 +288,7 @@
 - [PageMeta](interfaces/PageMeta.md)
 - [PaginatedResponse](interfaces/PaginatedResponse.md)
 - [PaletteColorOptions](interfaces/PaletteColorOptions.md)
+- [Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
@@ -355,7 +378,9 @@
 - [AffindaAPIBatchCreateAnnotationsResponse](modules.md#affindaapibatchcreateannotationsresponse)
 - [AffindaAPIBatchUpdateAnnotationsResponse](modules.md#affindaapibatchupdateannotationsresponse)
 - [AffindaAPICreateAnnotationResponse](modules.md#affindaapicreateannotationresponse)
+- [AffindaAPICreateApiUserResponse](modules.md#affindaapicreateapiuserresponse)
 - [AffindaAPICreateCollectionResponse](modules.md#affindaapicreatecollectionresponse)
+- [AffindaAPICreateDataFieldForCollectionResponse](modules.md#affindaapicreatedatafieldforcollectionresponse)
 - [AffindaAPICreateDataPointChoiceResponse](modules.md#affindaapicreatedatapointchoiceresponse)
 - [AffindaAPICreateDataPointResponse](modules.md#affindaapicreatedatapointresponse)
 - [AffindaAPICreateDocumentResponse](modules.md#affindaapicreatedocumentresponse)
@@ -374,6 +399,7 @@
 - [AffindaAPICreateWorkspaceResponse](modules.md#affindaapicreateworkspaceresponse)
 - [AffindaAPIEditDocumentPagesResponse](modules.md#affindaapieditdocumentpagesresponse)
 - [AffindaAPIGetAllAnnotationsResponse](modules.md#affindaapigetallannotationsresponse)
+- [AffindaAPIGetAllApiUsersResponse](modules.md#affindaapigetallapiusersresponse)
 - [AffindaAPIGetAllCollectionsResponse](modules.md#affindaapigetallcollectionsresponse)
 - [AffindaAPIGetAllDataPointsResponse](modules.md#affindaapigetalldatapointsresponse)
 - [AffindaAPIGetAllDocumentsResponse](modules.md#affindaapigetalldocumentsresponse)
@@ -388,6 +414,7 @@
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
 - [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
 - [AffindaAPIGetAnnotationResponse](modules.md#affindaapigetannotationresponse)
+- [AffindaAPIGetApiUserResponse](modules.md#affindaapigetapiuserresponse)
 - [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
 - [AffindaAPIGetDataPointChoiceResponse](modules.md#affindaapigetdatapointchoiceresponse)
 - [AffindaAPIGetDataPointChoicesResponse](modules.md#affindaapigetdatapointchoicesresponse)
@@ -410,8 +437,10 @@
 - [AffindaAPIGetWorkspaceMembershipResponse](modules.md#affindaapigetworkspacemembershipresponse)
 - [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
+- [AffindaAPIRegenerateApiKeyForApiUserResponse](modules.md#affindaapiregenerateapikeyforapiuserresponse)
 - [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
 - [AffindaAPIUpdateAnnotationResponse](modules.md#affindaapiupdateannotationresponse)
+- [AffindaAPIUpdateApiUserResponse](modules.md#affindaapiupdateapiuserresponse)
 - [AffindaAPIUpdateCollectionResponse](modules.md#affindaapiupdatecollectionresponse)
 - [AffindaAPIUpdateDataPointChoiceResponse](modules.md#affindaapiupdatedatapointchoiceresponse)
 - [AffindaAPIUpdateDataPointResponse](modules.md#affindaapiupdatedatapointresponse)
@@ -486,6 +515,7 @@
 - [OrganizationUserRole](modules.md#organizationuserrole)
 - [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
 - [Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
+- [Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema](modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)
 - [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
 - [PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema](modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)
 - [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
@@ -547,11 +577,27 @@ Contains response data for the createAnnotation operation.
 
 ___
 
+### AffindaAPICreateApiUserResponse
+
+Ƭ **AffindaAPICreateApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
+
+Contains response data for the createApiUser operation.
+
+___
+
 ### AffindaAPICreateCollectionResponse
 
 Ƭ **AffindaAPICreateCollectionResponse**: [`Collection`](interfaces/Collection.md)
 
 Contains response data for the createCollection operation.
+
+___
+
+### AffindaAPICreateDataFieldForCollectionResponse
+
+Ƭ **AffindaAPICreateDataFieldForCollectionResponse**: [`DataField`](interfaces/DataField.md)
+
+Contains response data for the createDataFieldForCollection operation.
 
 ___
 
@@ -699,6 +745,14 @@ Contains response data for the getAllAnnotations operation.
 
 ___
 
+### AffindaAPIGetAllApiUsersResponse
+
+Ƭ **AffindaAPIGetAllApiUsersResponse**: [`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)
+
+Contains response data for the getAllApiUsers operation.
+
+___
+
 ### AffindaAPIGetAllCollectionsResponse
 
 Ƭ **AffindaAPIGetAllCollectionsResponse**: [`Collection`](interfaces/Collection.md)[]
@@ -808,6 +862,14 @@ ___
 Ƭ **AffindaAPIGetAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
 
 Contains response data for the getAnnotation operation.
+
+___
+
+### AffindaAPIGetApiUserResponse
+
+Ƭ **AffindaAPIGetApiUserResponse**: [`ApiUserWithoutKey`](interfaces/ApiUserWithoutKey.md)
+
+Contains response data for the getApiUser operation.
 
 ___
 
@@ -999,6 +1061,14 @@ Contains response data for the listOccupationGroups operation.
 
 ___
 
+### AffindaAPIRegenerateApiKeyForApiUserResponse
+
+Ƭ **AffindaAPIRegenerateApiKeyForApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
+
+Contains response data for the regenerateApiKeyForApiUser operation.
+
+___
+
 ### AffindaAPIRespondToInvitationResponse
 
 Ƭ **AffindaAPIRespondToInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
@@ -1012,6 +1082,14 @@ ___
 Ƭ **AffindaAPIUpdateAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
 
 Contains response data for the updateAnnotation operation.
+
+___
+
+### AffindaAPIUpdateApiUserResponse
+
+Ƭ **AffindaAPIUpdateApiUserResponse**: [`ApiUserWithoutKey`](interfaces/ApiUserWithoutKey.md)
+
+Contains response data for the updateApiUser operation.
 
 ___
 
@@ -1612,6 +1690,12 @@ ___
 ### Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema
 
 Ƭ **Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
+
+Ƭ **Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
 
 ___
 

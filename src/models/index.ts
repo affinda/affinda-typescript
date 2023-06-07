@@ -211,6 +211,7 @@ export interface Collection {
   extractor?: Extractor;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
   fieldsConfigured?: boolean;
   dateFormatPreference?: CollectionDateFormatPreference;
   /** Predict the date format from any dates in the document that is not ambiguous. */
@@ -258,15 +259,36 @@ export interface ExtractorBaseExtractor {
 
 export interface FieldGroup {
   label: string;
-  fields: Field[];
+  fields: FieldDeprecated[];
 }
 
-export interface Field {
+export interface FieldDeprecated {
   label: string;
   slug?: string;
   dataPoint: string;
   mandatory?: boolean;
   disabled?: boolean;
+  autoValidationThreshold?: number;
+  showDropdown?: boolean;
+  fields?: FieldDeprecated[];
+}
+
+export interface FieldsLayout {
+  defaultCategory: FieldCategory;
+  categories: FieldCategory[];
+}
+
+export interface FieldCategory {
+  label: string;
+  enabledFields: Field[];
+  disabledFields: Field[];
+}
+
+export interface Field {
+  label: string;
+  /** Data point identifier */
+  dataPoint: string;
+  mandatory?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
   fields?: Field[];
@@ -296,6 +318,7 @@ export interface CollectionCreate {
   extractor: string;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
   dateFormatPreference?: DateFormatPreference;
   /** Predict the date format from any dates in the document that is not ambiguous. */
   dateFormatFromDocument?: boolean;
@@ -307,11 +330,70 @@ export interface CollectionUpdate {
   name?: string;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
   dateFormatPreference?: DateFormatPreference;
   /** Predict the date format from any dates in the document that is not ambiguous. */
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
   extractorConfig?: ExtractorConfig;
+}
+
+export interface DataFieldCreate {
+  /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
+  categoryLabel?: string;
+  /** The field to be created. */
+  field: DataFieldCreateField;
+  /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+  dataPoint: DataFieldCreateDataPoint;
+}
+
+/** The field to be created. */
+export interface DataFieldCreateField {
+  label: string;
+  mandatory?: boolean;
+  showDropdown?: boolean;
+  autoValidationThreshold?: number;
+}
+
+/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+export interface DataFieldCreateDataPoint {
+  name: string;
+  slug: string;
+  description?: string;
+  /** The different data types of annotations */
+  type: AnnotationContentType;
+  multiple?: boolean;
+  noRect?: boolean;
+}
+
+export interface DataField {
+  /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
+  categoryLabel?: string;
+  /** The field to be created. */
+  field: DataFieldField;
+  /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+  dataPoint: DataFieldDataPoint;
+}
+
+/** The field to be created. */
+export interface DataFieldField {
+  label: string;
+  mandatory: boolean;
+  showDropdown: boolean;
+  autoValidationThreshold: number | null;
+}
+
+/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+export interface DataFieldDataPoint {
+  /** Uniquely identify a data point. */
+  identifier: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  /** The different data types of annotations */
+  type: AnnotationContentType;
+  multiple: boolean;
+  noRect: boolean;
 }
 
 export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1537,6 +1619,64 @@ export interface ResumeSearchEmbed {
   url?: string;
 }
 
+export interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: ApiUserWithoutKey[];
+}
+
+export interface ApiUserWithoutKey {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+  organizations: ApiUserWithoutKeyOrganizationsItem[];
+}
+
+export interface ApiUserWithoutKeyOrganizationsItem {
+  /** Uniquely identify an organization. */
+  identifier: string;
+  name: string;
+}
+
+export interface ApiUserCreate {
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+  /** Uniquely identify an organization. */
+  organization: string;
+}
+
+export interface ApiUserWithKey {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+  organizations: ApiUserWithKeyOrganizationsItem[];
+  /** Use this key to authenticate with the API. */
+  apiKey: string;
+}
+
+export interface ApiUserWithKeyOrganizationsItem {
+  /** Uniquely identify an organization. */
+  identifier: string;
+  name: string;
+}
+
+export interface ApiUserUpdate {
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+}
+
 /** For custom fields. E.g. 'isAvailable': true */
 export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
 
@@ -2035,6 +2175,9 @@ export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema
 export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
+export type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
 export type Resume = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "resume";
@@ -2333,6 +2476,56 @@ export enum KnownDateFormatPreference {
  */
 export type DateFormatPreference = string;
 
+/** Known values of {@link AnnotationContentType} that the service accepts. */
+export enum KnownAnnotationContentType {
+  Text = "text",
+  Integer = "integer",
+  Float = "float",
+  Decimal = "decimal",
+  Date = "date",
+  Datetime = "datetime",
+  Boolean = "boolean",
+  Enum = "enum",
+  Location = "location",
+  Json = "json",
+  Table = "table",
+  Cell = "cell",
+  Expectedremuneration = "expectedremuneration",
+  Jobtitle = "jobtitle",
+  Language = "language",
+  Skill = "skill",
+  Yearsexperience = "yearsexperience",
+  Group = "group",
+  TableDeprecated = "table_deprecated"
+}
+
+/**
+ * Defines values for AnnotationContentType. \
+ * {@link KnownAnnotationContentType} can be used interchangeably with AnnotationContentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **text** \
+ * **integer** \
+ * **float** \
+ * **decimal** \
+ * **date** \
+ * **datetime** \
+ * **boolean** \
+ * **enum** \
+ * **location** \
+ * **json** \
+ * **table** \
+ * **cell** \
+ * **expectedremuneration** \
+ * **jobtitle** \
+ * **language** \
+ * **skill** \
+ * **yearsexperience** \
+ * **group** \
+ * **table_deprecated**
+ */
+export type AnnotationContentType = string;
+
 /** Known values of {@link DocumentState} that the service accepts. */
 export enum KnownDocumentState {
   Uploaded = "uploaded",
@@ -2412,56 +2605,6 @@ export enum KnownDocumentFormat {
  * **hr-xml**
  */
 export type DocumentFormat = string;
-
-/** Known values of {@link AnnotationContentType} that the service accepts. */
-export enum KnownAnnotationContentType {
-  Text = "text",
-  Integer = "integer",
-  Float = "float",
-  Decimal = "decimal",
-  Date = "date",
-  Datetime = "datetime",
-  Boolean = "boolean",
-  Enum = "enum",
-  Location = "location",
-  Json = "json",
-  Table = "table",
-  Cell = "cell",
-  Expectedremuneration = "expectedremuneration",
-  Jobtitle = "jobtitle",
-  Language = "language",
-  Skill = "skill",
-  Yearsexperience = "yearsexperience",
-  Group = "group",
-  TableDeprecated = "table_deprecated"
-}
-
-/**
- * Defines values for AnnotationContentType. \
- * {@link KnownAnnotationContentType} can be used interchangeably with AnnotationContentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **text** \
- * **integer** \
- * **float** \
- * **decimal** \
- * **date** \
- * **datetime** \
- * **boolean** \
- * **enum** \
- * **location** \
- * **json** \
- * **table** \
- * **cell** \
- * **expectedremuneration** \
- * **jobtitle** \
- * **language** \
- * **skill** \
- * **yearsexperience** \
- * **group** \
- * **table_deprecated**
- */
-export type AnnotationContentType = string;
 
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export enum KnownInvitationStatus {
@@ -2816,6 +2959,13 @@ export type AffindaAPIUpdateCollectionResponse = Collection;
 /** Optional parameters. */
 export interface AffindaAPIDeleteCollectionOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPICreateDataFieldForCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createDataFieldForCollection operation. */
+export type AffindaAPICreateDataFieldForCollectionResponse = DataField;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllDocumentsOptionalParams
@@ -3511,6 +3661,48 @@ export type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
   /** The parsed response body. */
   body: string[];
 };
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllApiUsersOptionalParams
+  extends coreClient.OperationOptions {
+  /** Filter by organization. */
+  organization?: string;
+}
+
+/** Contains response data for the getAllApiUsers operation. */
+export type AffindaAPIGetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPICreateApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createApiUser operation. */
+export type AffindaAPICreateApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
+export interface AffindaAPIGetApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getApiUser operation. */
+export type AffindaAPIGetApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateApiUser operation. */
+export type AffindaAPIUpdateApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the regenerateApiKeyForApiUser operation. */
+export type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams
