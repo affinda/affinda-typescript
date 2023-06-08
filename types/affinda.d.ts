@@ -576,7 +576,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum4;
+    documentType?: Enum5;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -682,7 +682,7 @@ export declare type AffindaAPIGetResthookSubscriptionResponse = ResthookSubscrip
 /** Optional parameters. */
 export declare interface AffindaAPIGetResumeOptionalParams extends coreClient.OperationOptions {
     /** Set this to "hr-xml" to get the response in HR-XML format. Currently the only supported value for this parameter is "hr-xml". */
-    format?: Enum1;
+    format?: Enum2;
 }
 
 /** Contains response data for the getResume operation. */
@@ -1098,33 +1098,33 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum1. \
- * {@link KnownEnum1} can be used interchangeably with Enum1,
+ * Defines values for Enum2. \
+ * {@link KnownEnum2} can be used interchangeably with Enum2,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **hr-xml**
  */
-export declare type Enum1 = string;
+export declare type Enum2 = string;
 
 /**
- * Defines values for Enum4. \
- * {@link KnownEnum4} can be used interchangeably with Enum4,
+ * Defines values for Enum5. \
+ * {@link KnownEnum5} can be used interchangeably with Enum5,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum4 = string;
+export declare type Enum5 = string;
 
 /**
- * Defines values for Enum7. \
- * {@link KnownEnum7} can be used interchangeably with Enum7,
+ * Defines values for Enum8. \
+ * {@link KnownEnum8} can be used interchangeably with Enum8,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum7 = string;
+export declare type Enum8 = string;
 
 export declare interface ErrorModel {
     errorCode?: string;
@@ -1637,19 +1637,19 @@ export declare interface JobTitleSearchScoreComponent {
     score?: number;
 }
 
-/** Known values of {@link Enum1} that the service accepts. */
-export declare enum KnownEnum1 {
+/** Known values of {@link Enum2} that the service accepts. */
+export declare enum KnownEnum2 {
     HrXml = "hr-xml"
 }
 
-/** Known values of {@link Enum4} that the service accepts. */
-export declare enum KnownEnum4 {
+/** Known values of {@link Enum5} that the service accepts. */
+export declare enum KnownEnum5 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum7} that the service accepts. */
-export declare enum KnownEnum7 {
+/** Known values of {@link Enum8} that the service accepts. */
+export declare enum KnownEnum8 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -1695,6 +1695,213 @@ export declare enum KnownResthookSubscriptionVersion {
     V1 = "v1",
     V2 = "v2",
     V3 = "v3"
+}
+
+/** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
+export declare enum KnownResumeDataLanguagesItem {
+    Ainu = "ainu",
+    Akan = "akan",
+    Akkadian = "akkadian",
+    Amharic = "amharic",
+    Anam = "anam",
+    Arabic = "arabic",
+    Aramaic = "aramaic",
+    Arem = "arem",
+    Armenian = "armenian",
+    Awadhi = "awadhi",
+    Aymara = "aymara",
+    Azari = "azari",
+    Bagheli = "bagheli",
+    Bagri = "bagri",
+    Bahasa = "bahasa",
+    Bambara = "bambara",
+    Bangala = "bangala",
+    Bardi = "bardi",
+    Bassa = "bassa",
+    Batak = "batak",
+    Belarusian = "belarusian",
+    Bemba = "bemba",
+    Benga = "benga",
+    Bengali = "bengali",
+    Berber = "berber",
+    Bhojpuri = "bhojpuri",
+    Bislama = "bislama",
+    Brahui = "brahui",
+    Bulgarian = "bulgarian",
+    Bunu = "bunu",
+    Cambodian = "cambodian",
+    Carew = "carew",
+    Carib = "carib",
+    Catalan = "catalan",
+    Cebuano = "cebuano",
+    Chakma = "chakma",
+    Chamorro = "chamorro",
+    Chango = "chango",
+    Chewa = "chewa",
+    Croatian = "croatian",
+    Czech = "czech",
+    Dagbani = "dagbani",
+    Danish = "danish",
+    Dari = "dari",
+    Dayi = "dayi",
+    Dhatki = "dhatki",
+    Dhivehi = "dhivehi",
+    Dinka = "dinka",
+    Dogri = "dogri",
+    Duala = "duala",
+    Dutch = "dutch",
+    English = "english",
+    Esperanto = "esperanto",
+    Estonian = "estonian",
+    Ewondo = "ewondo",
+    Faroese = "faroese",
+    Filipino = "filipino",
+    Finnish = "finnish",
+    Formula = "formula",
+    French = "french",
+    Frisian = "frisian",
+    Friulian = "friulian",
+    Fula = "fula",
+    Gaelic = "gaelic",
+    Galo = "galo",
+    Garhwali = "garhwali",
+    Garifuna = "garifuna",
+    German = "german",
+    Gikuyu = "gikuyu",
+    Gujarati = "gujarati",
+    Gujerati = "gujerati",
+    Gwere = "gwere",
+    Hawaiian = "hawaiian",
+    Haya = "haya",
+    Hebrew = "hebrew",
+    Hindi = "hindi",
+    Hmu = "hmu",
+    Hokkien = "hokkien",
+    Hopi = "hopi",
+    Hungarian = "hungarian",
+    Hup = "hup",
+    Ibanag = "ibanag",
+    Igbo = "igbo",
+    Ilokano = "ilokano",
+    Indonesian = "indonesian",
+    Intermediate = "intermediate",
+    Irish = "irish",
+    Italian = "italian",
+    Japanese = "japanese",
+    Jiba = "jiba",
+    Kachin = "kachin",
+    Kalenjin = "kalenjin",
+    Kamayo = "kamayo",
+    Kannada = "kannada",
+    Kaonde = "kaonde",
+    Kayan = "kayan",
+    Khandeshi = "khandeshi",
+    Khmer = "khmer",
+    Kikuyu = "kikuyu",
+    Kodava = "kodava",
+    Koma = "koma",
+    Kongo = "kongo",
+    Konkani = "konkani",
+    Korean = "korean",
+    Korwa = "korwa",
+    Kreyol = "kreyol",
+    Krio = "krio",
+    Kumaoni = "kumaoni",
+    Kurdish = "kurdish",
+    Kurukh = "kurukh",
+    Kwa = "kwa",
+    Ladino = "ladino",
+    Lango = "lango",
+    Latvian = "latvian",
+    Lawa = "lawa",
+    Lingala = "lingala",
+    Lithuanian = "lithuanian",
+    Lule = "lule",
+    Luxembourgish = "luxembourgish",
+    Magahi = "magahi",
+    Maithili = "maithili",
+    Malay = "malay",
+    Malayalam = "malayalam",
+    Malaysian = "malaysian",
+    Malvi = "malvi",
+    Maninka = "maninka",
+    Manipuri = "manipuri",
+    Manx = "manx",
+    Marathi = "marathi",
+    Mayan = "mayan",
+    Medumba = "medumba",
+    Memoni = "memoni",
+    Mewari = "mewari",
+    Mizo = "mizo",
+    Montenegrin = "montenegrin",
+    Mwan = "mwan",
+    Mwanga = "mwanga",
+    Ndebele = "ndebele",
+    Nepali = "nepali",
+    Nimadi = "nimadi",
+    Oriya = "oriya",
+    Oromo = "oromo",
+    Ovambo = "ovambo",
+    Pamona = "pamona",
+    Pangasinan = "pangasinan",
+    Pashto = "pashto",
+    Phoenician = "phoenician",
+    Polish = "polish",
+    Portuguese = "portuguese",
+    Pulaar = "pulaar",
+    Pular = "pular",
+    Punjabi = "punjabi",
+    Quecha = "quecha",
+    Rajasthani = "rajasthani",
+    Romanian = "romanian",
+    Russian = "russian",
+    Sakha = "sakha",
+    Sango = "sango",
+    Santhali = "santhali",
+    Saraiki = "saraiki",
+    Seim = "seim",
+    Shading = "shading",
+    Shama = "shama",
+    Shan = "shan",
+    Shona = "shona",
+    Silesian = "silesian",
+    Sindhi = "sindhi",
+    Slovak = "slovak",
+    Slovene = "slovene",
+    Soga = "soga",
+    Sogdian = "sogdian",
+    Sotho = "sotho",
+    Spanish = "spanish",
+    Sudanese = "sudanese",
+    Sumerian = "sumerian",
+    Surajpuri = "surajpuri",
+    Surigaonon = "surigaonon",
+    Swati = "swati",
+    Swazi = "swazi",
+    Swedish = "swedish",
+    Tagalog = "tagalog",
+    Tamil = "tamil",
+    Tausug = "tausug",
+    Telugu = "telugu",
+    Tetum = "tetum",
+    Tharu = "tharu",
+    Tibetan = "tibetan",
+    Tigrinya = "tigrinya",
+    Tripuri = "tripuri",
+    Tswana = "tswana",
+    Tulu = "tulu",
+    Turkish = "turkish",
+    Tuwali = "tuwali",
+    Ubi = "ubi",
+    Ukrainian = "ukrainian",
+    Urdu = "urdu",
+    Veps = "veps",
+    Vietnamese = "vietnamese",
+    Wagdi = "wagdi",
+    Waziri = "waziri",
+    Xhosa = "xhosa",
+    Yiddish = "yiddish",
+    Yoruba = "yoruba"
 }
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
@@ -1931,7 +2138,7 @@ export declare interface Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentAppl
 
 export declare interface Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum7;
+    documentType?: Enum8;
 }
 
 export declare interface Paths23Ubd8V2ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -2147,8 +2354,7 @@ export declare interface ResumeData {
     dateOfBirth?: string;
     location?: Location_2;
     objective?: string;
-    /** NOTE: This property will not be serialized. It can only be populated by the server. */
-    readonly languages?: string[];
+    languages?: ResumeDataLanguagesItem[];
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly languageCodes?: string[];
     summary?: string;
@@ -2186,6 +2392,217 @@ export declare interface ResumeData {
     /** Redacted version of the text in the resume, removing PII. */
     redactedText?: string;
 }
+
+/**
+ * Defines values for ResumeDataLanguagesItem. \
+ * {@link KnownResumeDataLanguagesItem} can be used interchangeably with ResumeDataLanguagesItem,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **ainu** \
+ * **akan** \
+ * **akkadian** \
+ * **amharic** \
+ * **anam** \
+ * **arabic** \
+ * **aramaic** \
+ * **arem** \
+ * **armenian** \
+ * **awadhi** \
+ * **aymara** \
+ * **azari** \
+ * **bagheli** \
+ * **bagri** \
+ * **bahasa** \
+ * **bambara** \
+ * **bangala** \
+ * **bardi** \
+ * **bassa** \
+ * **batak** \
+ * **belarusian** \
+ * **bemba** \
+ * **benga** \
+ * **bengali** \
+ * **berber** \
+ * **bhojpuri** \
+ * **bislama** \
+ * **brahui** \
+ * **bulgarian** \
+ * **bunu** \
+ * **cambodian** \
+ * **carew** \
+ * **carib** \
+ * **catalan** \
+ * **cebuano** \
+ * **chakma** \
+ * **chamorro** \
+ * **chango** \
+ * **chewa** \
+ * **croatian** \
+ * **czech** \
+ * **dagbani** \
+ * **danish** \
+ * **dari** \
+ * **dayi** \
+ * **dhatki** \
+ * **dhivehi** \
+ * **dinka** \
+ * **dogri** \
+ * **duala** \
+ * **dutch** \
+ * **english** \
+ * **esperanto** \
+ * **estonian** \
+ * **ewondo** \
+ * **faroese** \
+ * **filipino** \
+ * **finnish** \
+ * **formula** \
+ * **french** \
+ * **frisian** \
+ * **friulian** \
+ * **fula** \
+ * **gaelic** \
+ * **galo** \
+ * **garhwali** \
+ * **garifuna** \
+ * **german** \
+ * **gikuyu** \
+ * **gujarati** \
+ * **gujerati** \
+ * **gwere** \
+ * **hawaiian** \
+ * **haya** \
+ * **hebrew** \
+ * **hindi** \
+ * **hmu** \
+ * **hokkien** \
+ * **hopi** \
+ * **hungarian** \
+ * **hup** \
+ * **ibanag** \
+ * **igbo** \
+ * **ilokano** \
+ * **indonesian** \
+ * **intermediate** \
+ * **irish** \
+ * **italian** \
+ * **japanese** \
+ * **jiba** \
+ * **kachin** \
+ * **kalenjin** \
+ * **kamayo** \
+ * **kannada** \
+ * **kaonde** \
+ * **kayan** \
+ * **khandeshi** \
+ * **khmer** \
+ * **kikuyu** \
+ * **kodava** \
+ * **koma** \
+ * **kongo** \
+ * **konkani** \
+ * **korean** \
+ * **korwa** \
+ * **kreyol** \
+ * **krio** \
+ * **kumaoni** \
+ * **kurdish** \
+ * **kurukh** \
+ * **kwa** \
+ * **ladino** \
+ * **lango** \
+ * **latvian** \
+ * **lawa** \
+ * **lingala** \
+ * **lithuanian** \
+ * **lule** \
+ * **luxembourgish** \
+ * **magahi** \
+ * **maithili** \
+ * **malay** \
+ * **malayalam** \
+ * **malaysian** \
+ * **malvi** \
+ * **maninka** \
+ * **manipuri** \
+ * **manx** \
+ * **marathi** \
+ * **mayan** \
+ * **medumba** \
+ * **memoni** \
+ * **mewari** \
+ * **mizo** \
+ * **montenegrin** \
+ * **mwan** \
+ * **mwanga** \
+ * **ndebele** \
+ * **nepali** \
+ * **nimadi** \
+ * **oriya** \
+ * **oromo** \
+ * **ovambo** \
+ * **pamona** \
+ * **pangasinan** \
+ * **pashto** \
+ * **phoenician** \
+ * **polish** \
+ * **portuguese** \
+ * **pulaar** \
+ * **pular** \
+ * **punjabi** \
+ * **quecha** \
+ * **rajasthani** \
+ * **romanian** \
+ * **russian** \
+ * **sakha** \
+ * **sango** \
+ * **santhali** \
+ * **saraiki** \
+ * **seim** \
+ * **shading** \
+ * **shama** \
+ * **shan** \
+ * **shona** \
+ * **silesian** \
+ * **sindhi** \
+ * **slovak** \
+ * **slovene** \
+ * **soga** \
+ * **sogdian** \
+ * **sotho** \
+ * **spanish** \
+ * **sudanese** \
+ * **sumerian** \
+ * **surajpuri** \
+ * **surigaonon** \
+ * **swati** \
+ * **swazi** \
+ * **swedish** \
+ * **tagalog** \
+ * **tamil** \
+ * **tausug** \
+ * **telugu** \
+ * **tetum** \
+ * **tharu** \
+ * **tibetan** \
+ * **tigrinya** \
+ * **tripuri** \
+ * **tswana** \
+ * **tulu** \
+ * **turkish** \
+ * **tuwali** \
+ * **ubi** \
+ * **ukrainian** \
+ * **urdu** \
+ * **veps** \
+ * **vietnamese** \
+ * **wagdi** \
+ * **waziri** \
+ * **xhosa** \
+ * **yiddish** \
+ * **yoruba**
+ */
+export declare type ResumeDataLanguagesItem = string;
 
 export declare interface ResumeDataName {
     raw?: string;

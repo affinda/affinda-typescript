@@ -6,14 +6,15 @@
 
 ### Enumerations
 
-- [KnownEnum1](enums/KnownEnum1.md)
-- [KnownEnum4](enums/KnownEnum4.md)
-- [KnownEnum7](enums/KnownEnum7.md)
+- [KnownEnum2](enums/KnownEnum2.md)
+- [KnownEnum5](enums/KnownEnum5.md)
+- [KnownEnum8](enums/KnownEnum8.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
 - [KnownRegion](enums/KnownRegion.md)
 - [KnownResthookEvent](enums/KnownResthookEvent.md)
 - [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
+- [KnownResumeDataLanguagesItem](enums/KnownResumeDataLanguagesItem.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
 - [KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md)
 - [KnownVersion](enums/KnownVersion.md)
@@ -279,9 +280,9 @@
 - [DateAnnotation](modules.md#dateannotation)
 - [DateAnnotationV2Update](modules.md#dateannotationv2update)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum1](modules.md#enum1)
-- [Enum4](modules.md#enum4)
-- [Enum7](modules.md#enum7)
+- [Enum2](modules.md#enum2)
+- [Enum5](modules.md#enum5)
+- [Enum8](modules.md#enum8)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationV2Update](modules.md#expectedremunerationannotationv2update)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -333,6 +334,7 @@
 - [Region](modules.md#region)
 - [ResthookEvent](modules.md#resthookevent)
 - [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
+- [ResumeDataLanguagesItem](modules.md#resumedatalanguagesitem)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -679,24 +681,24 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum1
+### Enum2
 
-Ƭ **Enum1**: `string`
+Ƭ **Enum2**: `string`
 
-Defines values for Enum1. \
-[KnownEnum1](enums/KnownEnum1.md) can be used interchangeably with Enum1,
+Defines values for Enum2. \
+[KnownEnum2](enums/KnownEnum2.md) can be used interchangeably with Enum2,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **hr-xml**
 
 ___
 
-### Enum4
+### Enum5
 
-Ƭ **Enum4**: `string`
+Ƭ **Enum5**: `string`
 
-Defines values for Enum4. \
-[KnownEnum4](enums/KnownEnum4.md) can be used interchangeably with Enum4,
+Defines values for Enum5. \
+[KnownEnum5](enums/KnownEnum5.md) can be used interchangeably with Enum5,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -704,12 +706,12 @@ Defines values for Enum4. \
 
 ___
 
-### Enum7
+### Enum8
 
-Ƭ **Enum7**: `string`
+Ƭ **Enum8**: `string`
 
-Defines values for Enum7. \
-[KnownEnum7](enums/KnownEnum7.md) can be used interchangeably with Enum7,
+Defines values for Enum8. \
+[KnownEnum8](enums/KnownEnum8.md) can be used interchangeably with Enum8,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1070,6 +1072,220 @@ Defines values for ResthookSubscriptionVersion. \
 **v1** \
 **v2** \
 **v3**
+
+___
+
+### ResumeDataLanguagesItem
+
+Ƭ **ResumeDataLanguagesItem**: `string`
+
+Defines values for ResumeDataLanguagesItem. \
+[KnownResumeDataLanguagesItem](enums/KnownResumeDataLanguagesItem.md) can be used interchangeably with ResumeDataLanguagesItem,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**ainu** \
+**akan** \
+**akkadian** \
+**amharic** \
+**anam** \
+**arabic** \
+**aramaic** \
+**arem** \
+**armenian** \
+**awadhi** \
+**aymara** \
+**azari** \
+**bagheli** \
+**bagri** \
+**bahasa** \
+**bambara** \
+**bangala** \
+**bardi** \
+**bassa** \
+**batak** \
+**belarusian** \
+**bemba** \
+**benga** \
+**bengali** \
+**berber** \
+**bhojpuri** \
+**bislama** \
+**brahui** \
+**bulgarian** \
+**bunu** \
+**cambodian** \
+**carew** \
+**carib** \
+**catalan** \
+**cebuano** \
+**chakma** \
+**chamorro** \
+**chango** \
+**chewa** \
+**croatian** \
+**czech** \
+**dagbani** \
+**danish** \
+**dari** \
+**dayi** \
+**dhatki** \
+**dhivehi** \
+**dinka** \
+**dogri** \
+**duala** \
+**dutch** \
+**english** \
+**esperanto** \
+**estonian** \
+**ewondo** \
+**faroese** \
+**filipino** \
+**finnish** \
+**formula** \
+**french** \
+**frisian** \
+**friulian** \
+**fula** \
+**gaelic** \
+**galo** \
+**garhwali** \
+**garifuna** \
+**german** \
+**gikuyu** \
+**gujarati** \
+**gujerati** \
+**gwere** \
+**hawaiian** \
+**haya** \
+**hebrew** \
+**hindi** \
+**hmu** \
+**hokkien** \
+**hopi** \
+**hungarian** \
+**hup** \
+**ibanag** \
+**igbo** \
+**ilokano** \
+**indonesian** \
+**intermediate** \
+**irish** \
+**italian** \
+**japanese** \
+**jiba** \
+**kachin** \
+**kalenjin** \
+**kamayo** \
+**kannada** \
+**kaonde** \
+**kayan** \
+**khandeshi** \
+**khmer** \
+**kikuyu** \
+**kodava** \
+**koma** \
+**kongo** \
+**konkani** \
+**korean** \
+**korwa** \
+**kreyol** \
+**krio** \
+**kumaoni** \
+**kurdish** \
+**kurukh** \
+**kwa** \
+**ladino** \
+**lango** \
+**latvian** \
+**lawa** \
+**lingala** \
+**lithuanian** \
+**lule** \
+**luxembourgish** \
+**magahi** \
+**maithili** \
+**malay** \
+**malayalam** \
+**malaysian** \
+**malvi** \
+**maninka** \
+**manipuri** \
+**manx** \
+**marathi** \
+**mayan** \
+**medumba** \
+**memoni** \
+**mewari** \
+**mizo** \
+**montenegrin** \
+**mwan** \
+**mwanga** \
+**ndebele** \
+**nepali** \
+**nimadi** \
+**oriya** \
+**oromo** \
+**ovambo** \
+**pamona** \
+**pangasinan** \
+**pashto** \
+**phoenician** \
+**polish** \
+**portuguese** \
+**pulaar** \
+**pular** \
+**punjabi** \
+**quecha** \
+**rajasthani** \
+**romanian** \
+**russian** \
+**sakha** \
+**sango** \
+**santhali** \
+**saraiki** \
+**seim** \
+**shading** \
+**shama** \
+**shan** \
+**shona** \
+**silesian** \
+**sindhi** \
+**slovak** \
+**slovene** \
+**soga** \
+**sogdian** \
+**sotho** \
+**spanish** \
+**sudanese** \
+**sumerian** \
+**surajpuri** \
+**surigaonon** \
+**swati** \
+**swazi** \
+**swedish** \
+**tagalog** \
+**tamil** \
+**tausug** \
+**telugu** \
+**tetum** \
+**tharu** \
+**tibetan** \
+**tigrinya** \
+**tripuri** \
+**tswana** \
+**tulu** \
+**turkish** \
+**tuwali** \
+**ubi** \
+**ukrainian** \
+**urdu** \
+**veps** \
+**vietnamese** \
+**wagdi** \
+**waziri** \
+**xhosa** \
+**yiddish** \
+**yoruba**
 
 ___
 

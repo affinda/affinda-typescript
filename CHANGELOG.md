@@ -17,7 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Allow rejectDuplicates to be null
-- Update python_requires to be PEP compliant
 - Set resumes GET document format to be an enum
 
 ### Added
@@ -29,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add customData field to JD search param/result serializers
 - rawText field to JobDescription Model
 - Required fields for resthook subscriptions
+- Ability to post/patch languages for resumes in v2
 
 ## [5.3.1] - 2023-03-30
 ### Changed

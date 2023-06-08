@@ -522,7 +522,6 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       languages: {
         serializedName: "languages",
-        readOnly: true,
         xmlName: "languages",
         xmlElementName: "ResumeDataLanguagesItem",
         type: {
