@@ -92,7 +92,9 @@ ___
 
 ### languages
 
-• `Optional` **languages**: `string`[]
+• `Optional` `Readonly` **languages**: `string`[]
+
+NOTE: This property will not be serialized. It can only be populated by the server.
 
 ___
 

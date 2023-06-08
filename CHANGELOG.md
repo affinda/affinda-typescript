@@ -5,8 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [6.10.1] - 2023-06-08
 ### Added
 - Ability to post/patch languages for resumes in v2
+- Add `include_public` parameter to /data_points endpoint
 
 ## [6.10.0] - 2023-06-07
 ### Changed
