@@ -589,6 +589,17 @@ export const organization1: OperationQueryParameter = {
   }
 };
 
+export const includePublic: OperationQueryParameter = {
+  parameterPath: ["options", "includePublic"],
+  mapper: {
+    serializedName: "include_public",
+    xmlName: "include_public",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const extractor: OperationQueryParameter = {
   parameterPath: ["options", "extractor"],
   mapper: {

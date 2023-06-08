@@ -2484,6 +2484,7 @@ const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
     Parameters.offset,
     Parameters.limit,
     Parameters.organization1,
+    Parameters.includePublic,
     Parameters.extractor,
     Parameters.slug,
     Parameters.description,

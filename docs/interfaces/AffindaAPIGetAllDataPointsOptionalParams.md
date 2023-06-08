@@ -19,6 +19,7 @@ Optional parameters.
 - [description](AffindaAPIGetAllDataPointsOptionalParams.md#description)
 - [extractor](AffindaAPIGetAllDataPointsOptionalParams.md#extractor)
 - [identifier](AffindaAPIGetAllDataPointsOptionalParams.md#identifier)
+- [includePublic](AffindaAPIGetAllDataPointsOptionalParams.md#includepublic)
 - [limit](AffindaAPIGetAllDataPointsOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllDataPointsOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllDataPointsOptionalParams.md#onresponse)
@@ -71,6 +72,14 @@ ___
 • `Optional` **identifier**: `string`[]
 
 Filter by specific identifiers.
+
+___
+
+### includePublic
+
+• `Optional` **includePublic**: `boolean`
+
+Allows you to include public data points in the response when you're filtering by organization.
 
 ___
 

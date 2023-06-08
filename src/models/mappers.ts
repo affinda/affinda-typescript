@@ -1537,7 +1537,7 @@ export const Field: coreClient.CompositeMapper = {
       autoValidationThreshold: {
         constraints: {
           InclusiveMaximum: 1,
-          InclusiveMinimum: 0.9
+          InclusiveMinimum: 0
         },
         serializedName: "autoValidationThreshold",
         nullable: true,
@@ -1878,7 +1878,7 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
       autoValidationThreshold: {
         constraints: {
           InclusiveMaximum: 1,
-          InclusiveMinimum: 0.9
+          InclusiveMinimum: 0
         },
         serializedName: "autoValidationThreshold",
         nullable: true,
@@ -2013,7 +2013,7 @@ export const DataFieldField: coreClient.CompositeMapper = {
       autoValidationThreshold: {
         constraints: {
           InclusiveMaximum: 1,
-          InclusiveMinimum: 0.9
+          InclusiveMinimum: 0
         },
         serializedName: "autoValidationThreshold",
         required: true,
@@ -9171,7 +9171,6 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       languages: {
         serializedName: "languages",
-        readOnly: true,
         xmlName: "languages",
         xmlElementName: "ResumeDataLanguagesItem",
         type: {
