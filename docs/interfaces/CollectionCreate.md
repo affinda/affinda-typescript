@@ -7,6 +7,7 @@
 ### Properties
 
 - [autoValidationThreshold](CollectionCreate.md#autovalidationthreshold)
+- [baseExtractor](CollectionCreate.md#baseextractor)
 - [dateFormatFromDocument](CollectionCreate.md#dateformatfromdocument)
 - [dateFormatPreference](CollectionCreate.md#dateformatpreference)
 - [extractor](CollectionCreate.md#extractor)
@@ -21,6 +22,14 @@
 ### autoValidationThreshold
 
 • `Optional` **autoValidationThreshold**: `number`
+
+___
+
+### baseExtractor
+
+• `Optional` **baseExtractor**: `string`
+
+Not applicable, please leave empty.
 
 ___
 
@@ -40,7 +49,7 @@ ___
 
 ### extractor
 
-• **extractor**: `string`
+• `Optional` **extractor**: `string`
 
 Uniquely identify an extractor.
 

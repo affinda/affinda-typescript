@@ -146,6 +146,19 @@ import {
   InvitationResponse,
   AffindaAPIRespondToInvitationOptionalParams,
   AffindaAPIRespondToInvitationResponse,
+  AffindaAPIGetAllApiUsersOptionalParams,
+  AffindaAPIGetAllApiUsersResponse,
+  ApiUserCreate,
+  AffindaAPICreateApiUserOptionalParams,
+  AffindaAPICreateApiUserResponse,
+  AffindaAPIGetApiUserOptionalParams,
+  AffindaAPIGetApiUserResponse,
+  ApiUserUpdate,
+  AffindaAPIUpdateApiUserOptionalParams,
+  AffindaAPIUpdateApiUserResponse,
+  AffindaAPIDeleteApiUserOptionalParams,
+  AffindaAPIRegenerateApiKeyForApiUserOptionalParams,
+  AffindaAPIRegenerateApiKeyForApiUserResponse,
   AffindaAPIGetAllResthookSubscriptionsOptionalParams,
   AffindaAPIGetAllResthookSubscriptionsResponse,
   ResthookSubscriptionCreate,
@@ -201,20 +214,7 @@ import {
   AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams,
   AffindaAPIGetResumeSearchSuggestionJobTitleResponse,
   AffindaAPIGetResumeSearchSuggestionSkillOptionalParams,
-  AffindaAPIGetResumeSearchSuggestionSkillResponse,
-  AffindaAPIGetAllApiUsersOptionalParams,
-  AffindaAPIGetAllApiUsersResponse,
-  ApiUserCreate,
-  AffindaAPICreateApiUserOptionalParams,
-  AffindaAPICreateApiUserResponse,
-  AffindaAPIGetApiUserOptionalParams,
-  AffindaAPIGetApiUserResponse,
-  ApiUserUpdate,
-  AffindaAPIUpdateApiUserOptionalParams,
-  AffindaAPIUpdateApiUserResponse,
-  AffindaAPIDeleteApiUserOptionalParams,
-  AffindaAPIRegenerateApiKeyForApiUserOptionalParams,
-  AffindaAPIRegenerateApiKeyForApiUserResponse
+  AffindaAPIGetResumeSearchSuggestionSkillResponse
 } from "./models";
 
 export class AffindaAPI extends AffindaAPIContext {
@@ -1228,6 +1228,90 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
+   * Returns your API users.
+   * @param options The options parameters.
+   */
+  getAllApiUsers(
+    options?: AffindaAPIGetAllApiUsersOptionalParams
+  ): Promise<AffindaAPIGetAllApiUsersResponse> {
+    return this.sendOperationRequest({ options }, getAllApiUsersOperationSpec);
+  }
+
+  /**
+   * Create an API user
+   * @param body
+   * @param options The options parameters.
+   */
+  createApiUser(
+    body: ApiUserCreate,
+    options?: AffindaAPICreateApiUserOptionalParams
+  ): Promise<AffindaAPICreateApiUserResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createApiUserOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific API user.
+   * @param id API user's ID
+   * @param options The options parameters.
+   */
+  getApiUser(
+    id: number,
+    options?: AffindaAPIGetApiUserOptionalParams
+  ): Promise<AffindaAPIGetApiUserResponse> {
+    return this.sendOperationRequest({ id, options }, getApiUserOperationSpec);
+  }
+
+  /**
+   * Update data of an API user.
+   * @param id API user's ID
+   * @param body API user to update
+   * @param options The options parameters.
+   */
+  updateApiUser(
+    id: number,
+    body: ApiUserUpdate,
+    options?: AffindaAPIUpdateApiUserOptionalParams
+  ): Promise<AffindaAPIUpdateApiUserResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateApiUserOperationSpec
+    );
+  }
+
+  /**
+   * Deletes the specified API user from the database.
+   * @param id API user's ID
+   * @param options The options parameters.
+   */
+  deleteApiUser(
+    id: number,
+    options?: AffindaAPIDeleteApiUserOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { id, options },
+      deleteApiUserOperationSpec
+    );
+  }
+
+  /**
+   * Regenerate API key for an API user.
+   * @param id API user's ID
+   * @param options The options parameters.
+   */
+  regenerateApiKeyForApiUser(
+    id: number,
+    options?: AffindaAPIRegenerateApiKeyForApiUserOptionalParams
+  ): Promise<AffindaAPIRegenerateApiKeyForApiUserResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      regenerateApiKeyForApiUserOperationSpec
+    );
+  }
+
+  /**
    * Returns your resthook subscriptions.
    * @param options The options parameters.
    */
@@ -1638,90 +1722,6 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { skills, options },
       getResumeSearchSuggestionSkillOperationSpec
-    );
-  }
-
-  /**
-   * Returns your API users.
-   * @param options The options parameters.
-   */
-  getAllApiUsers(
-    options?: AffindaAPIGetAllApiUsersOptionalParams
-  ): Promise<AffindaAPIGetAllApiUsersResponse> {
-    return this.sendOperationRequest({ options }, getAllApiUsersOperationSpec);
-  }
-
-  /**
-   * Create an API user
-   * @param body
-   * @param options The options parameters.
-   */
-  createApiUser(
-    body: ApiUserCreate,
-    options?: AffindaAPICreateApiUserOptionalParams
-  ): Promise<AffindaAPICreateApiUserResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createApiUserOperationSpec
-    );
-  }
-
-  /**
-   * Return a specific API user.
-   * @param id API user's ID
-   * @param options The options parameters.
-   */
-  getApiUser(
-    id: number,
-    options?: AffindaAPIGetApiUserOptionalParams
-  ): Promise<AffindaAPIGetApiUserResponse> {
-    return this.sendOperationRequest({ id, options }, getApiUserOperationSpec);
-  }
-
-  /**
-   * Update data of an API user.
-   * @param id API user's ID
-   * @param body API user to update
-   * @param options The options parameters.
-   */
-  updateApiUser(
-    id: number,
-    body: ApiUserUpdate,
-    options?: AffindaAPIUpdateApiUserOptionalParams
-  ): Promise<AffindaAPIUpdateApiUserResponse> {
-    return this.sendOperationRequest(
-      { id, body, options },
-      updateApiUserOperationSpec
-    );
-  }
-
-  /**
-   * Deletes the specified API user from the database.
-   * @param id API user's ID
-   * @param options The options parameters.
-   */
-  deleteApiUser(
-    id: number,
-    options?: AffindaAPIDeleteApiUserOptionalParams
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { id, options },
-      deleteApiUserOperationSpec
-    );
-  }
-
-  /**
-   * Regenerate API key for an API user.
-   * @param id API user's ID
-   * @param options The options parameters.
-   */
-  regenerateApiKeyForApiUser(
-    id: number,
-    options?: AffindaAPIRegenerateApiKeyForApiUserOptionalParams
-  ): Promise<AffindaAPIRegenerateApiKeyForApiUserResponse> {
-    return this.sendOperationRequest(
-      { id, options },
-      regenerateApiKeyForApiUserOperationSpec
     );
   }
 }
@@ -3436,6 +3436,148 @@ const respondToInvitationOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer
 };
+const getAllApiUsersOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.organization1],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const createApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.ApiUserWithKey
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body27,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer
+};
+const getApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ApiUserWithoutKey
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ApiUserWithoutKey
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body28,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer
+};
+const deleteApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const regenerateApiKeyForApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}/regenerate_api_key",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ApiUserWithKey
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer
+};
 const getAllResthookSubscriptionsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/resthook_subscriptions",
   httpMethod: "GET",
@@ -3480,7 +3622,7 @@ const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body27,
+  requestBody: Parameters.body29,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3528,7 +3670,7 @@ const updateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body28,
+  requestBody: Parameters.body30,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3625,7 +3767,7 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body29,
+  requestBody: Parameters.body31,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
@@ -3651,7 +3793,7 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body29,
+  requestBody: Parameters.body31,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3695,7 +3837,7 @@ const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = 
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body30,
+  requestBody: Parameters.body32,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3716,7 +3858,7 @@ const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec 
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body31,
+  requestBody: Parameters.body33,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3841,7 +3983,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body32,
+  requestBody: Parameters.body34,
   urlParameters: [Parameters.region, Parameters.name3],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3887,7 +4029,7 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body33,
+  requestBody: Parameters.body35,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
@@ -3913,7 +4055,7 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body33,
+  requestBody: Parameters.body35,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3995,7 +4137,7 @@ const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body34,
+  requestBody: Parameters.body36,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4016,7 +4158,7 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body35,
+  requestBody: Parameters.body37,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4071,148 +4213,6 @@ const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
   },
   queryParameters: [Parameters.skills],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const getAllApiUsersOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  queryParameters: [Parameters.organization1],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const createApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.ApiUserWithKey
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body36,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer
-};
-const getApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ApiUserWithoutKey
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const updateApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ApiUserWithoutKey
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  requestBody: Parameters.body37,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer
-};
-const deleteApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer
-};
-const regenerateApiKeyForApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}/regenerate_api_key",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ApiUserWithKey
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true
-    },
-    default: {
-      bodyMapper: Mappers.RequestError
-    }
-  },
-  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer
 };

@@ -438,6 +438,42 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     respondToInvitation(token: string, body: InvitationResponse, options?: AffindaAPIRespondToInvitationOptionalParams): Promise<AffindaAPIRespondToInvitationResponse>;
     /**
+     * Returns your API users.
+     * @param options The options parameters.
+     */
+    getAllApiUsers(options?: AffindaAPIGetAllApiUsersOptionalParams): Promise<AffindaAPIGetAllApiUsersResponse>;
+    /**
+     * Create an API user
+     * @param body
+     * @param options The options parameters.
+     */
+    createApiUser(body: ApiUserCreate, options?: AffindaAPICreateApiUserOptionalParams): Promise<AffindaAPICreateApiUserResponse>;
+    /**
+     * Return a specific API user.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    getApiUser(id: number, options?: AffindaAPIGetApiUserOptionalParams): Promise<AffindaAPIGetApiUserResponse>;
+    /**
+     * Update data of an API user.
+     * @param id API user's ID
+     * @param body API user to update
+     * @param options The options parameters.
+     */
+    updateApiUser(id: number, body: ApiUserUpdate, options?: AffindaAPIUpdateApiUserOptionalParams): Promise<AffindaAPIUpdateApiUserResponse>;
+    /**
+     * Deletes the specified API user from the database.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    deleteApiUser(id: number, options?: AffindaAPIDeleteApiUserOptionalParams): Promise<void>;
+    /**
+     * Regenerate API key for an API user.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    regenerateApiKeyForApiUser(id: number, options?: AffindaAPIRegenerateApiKeyForApiUserOptionalParams): Promise<AffindaAPIRegenerateApiKeyForApiUserResponse>;
+    /**
      * Returns your resthook subscriptions.
      * @param options The options parameters.
      */
@@ -625,42 +661,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     getResumeSearchSuggestionSkill(skills: string[], options?: AffindaAPIGetResumeSearchSuggestionSkillOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionSkillResponse>;
-    /**
-     * Returns your API users.
-     * @param options The options parameters.
-     */
-    getAllApiUsers(options?: AffindaAPIGetAllApiUsersOptionalParams): Promise<AffindaAPIGetAllApiUsersResponse>;
-    /**
-     * Create an API user
-     * @param body
-     * @param options The options parameters.
-     */
-    createApiUser(body: ApiUserCreate, options?: AffindaAPICreateApiUserOptionalParams): Promise<AffindaAPICreateApiUserResponse>;
-    /**
-     * Return a specific API user.
-     * @param id API user's ID
-     * @param options The options parameters.
-     */
-    getApiUser(id: number, options?: AffindaAPIGetApiUserOptionalParams): Promise<AffindaAPIGetApiUserResponse>;
-    /**
-     * Update data of an API user.
-     * @param id API user's ID
-     * @param body API user to update
-     * @param options The options parameters.
-     */
-    updateApiUser(id: number, body: ApiUserUpdate, options?: AffindaAPIUpdateApiUserOptionalParams): Promise<AffindaAPIUpdateApiUserResponse>;
-    /**
-     * Deletes the specified API user from the database.
-     * @param id API user's ID
-     * @param options The options parameters.
-     */
-    deleteApiUser(id: number, options?: AffindaAPIDeleteApiUserOptionalParams): Promise<void>;
-    /**
-     * Regenerate API key for an API user.
-     * @param id API user's ID
-     * @param options The options parameters.
-     */
-    regenerateApiKeyForApiUser(id: number, options?: AffindaAPIRegenerateApiKeyForApiUserOptionalParams): Promise<AffindaAPIRegenerateApiKeyForApiUserResponse>;
 }
 
 /** Optional parameters. */
@@ -1722,7 +1722,9 @@ export declare interface CollectionCreate {
     /** Uniquely identify a workspace. */
     workspace: string;
     /** Uniquely identify an extractor. */
-    extractor: string;
+    extractor?: string;
+    /** Not applicable, please leave empty. */
+    baseExtractor?: string;
     autoValidationThreshold?: number;
     fields?: FieldGroup[];
     fieldsLayout?: FieldsLayout;

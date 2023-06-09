@@ -315,7 +315,9 @@ export interface CollectionCreate {
   /** Uniquely identify a workspace. */
   workspace: string;
   /** Uniquely identify an extractor. */
-  extractor: string;
+  extractor?: string;
+  /** Not applicable, please leave empty. */
+  baseExtractor?: string;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
   fieldsLayout?: FieldsLayout;
@@ -889,6 +891,64 @@ export interface InvitationUpdate {
 
 export interface InvitationResponse {
   status?: InvitationResponseStatus;
+}
+
+export interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: ApiUserWithoutKey[];
+}
+
+export interface ApiUserWithoutKey {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+  organizations: ApiUserWithoutKeyOrganizationsItem[];
+}
+
+export interface ApiUserWithoutKeyOrganizationsItem {
+  /** Uniquely identify an organization. */
+  identifier: string;
+  name: string;
+}
+
+export interface ApiUserCreate {
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+  /** Uniquely identify an organization. */
+  organization: string;
+}
+
+export interface ApiUserWithKey {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+  organizations: ApiUserWithKeyOrganizationsItem[];
+  /** Use this key to authenticate with the API. */
+  apiKey: string;
+}
+
+export interface ApiUserWithKeyOrganizationsItem {
+  /** Uniquely identify an organization. */
+  identifier: string;
+  name: string;
+}
+
+export interface ApiUserUpdate {
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
 }
 
 export interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1619,64 +1679,6 @@ export interface ResumeSearchEmbed {
   url?: string;
 }
 
-export interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: ApiUserWithoutKey[];
-}
-
-export interface ApiUserWithoutKey {
-  /** Uniquely identify a user. */
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  /** URL of the user's avatar. */
-  avatar: string | null;
-  organizations: ApiUserWithoutKeyOrganizationsItem[];
-}
-
-export interface ApiUserWithoutKeyOrganizationsItem {
-  /** Uniquely identify an organization. */
-  identifier: string;
-  name: string;
-}
-
-export interface ApiUserCreate {
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-  /** Uniquely identify an organization. */
-  organization: string;
-}
-
-export interface ApiUserWithKey {
-  /** Uniquely identify a user. */
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  /** URL of the user's avatar. */
-  avatar: string | null;
-  organizations: ApiUserWithKeyOrganizationsItem[];
-  /** Use this key to authenticate with the API. */
-  apiKey: string;
-}
-
-export interface ApiUserWithKeyOrganizationsItem {
-  /** Uniquely identify an organization. */
-  identifier: string;
-  name: string;
-}
-
-export interface ApiUserUpdate {
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-}
-
 /** For custom fields. E.g. 'isAvailable': true */
 export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
 
@@ -2172,11 +2174,11 @@ export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicatio
 export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
-export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
-
 export type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type Resume = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
@@ -3434,6 +3436,48 @@ export interface AffindaAPIRespondToInvitationOptionalParams
 export type AffindaAPIRespondToInvitationResponse = Invitation;
 
 /** Optional parameters. */
+export interface AffindaAPIGetAllApiUsersOptionalParams
+  extends coreClient.OperationOptions {
+  /** Filter by organization. */
+  organization?: string;
+}
+
+/** Contains response data for the getAllApiUsers operation. */
+export type AffindaAPIGetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPICreateApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createApiUser operation. */
+export type AffindaAPICreateApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
+export interface AffindaAPIGetApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getApiUser operation. */
+export type AffindaAPIGetApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateApiUser operation. */
+export type AffindaAPIUpdateApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the regenerateApiKeyForApiUser operation. */
+export type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllResthookSubscriptionsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -3663,48 +3707,6 @@ export type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
   /** The parsed response body. */
   body: string[];
 };
-
-/** Optional parameters. */
-export interface AffindaAPIGetAllApiUsersOptionalParams
-  extends coreClient.OperationOptions {
-  /** Filter by organization. */
-  organization?: string;
-}
-
-/** Contains response data for the getAllApiUsers operation. */
-export type AffindaAPIGetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface AffindaAPICreateApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createApiUser operation. */
-export type AffindaAPICreateApiUserResponse = ApiUserWithKey;
-
-/** Optional parameters. */
-export interface AffindaAPIGetApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getApiUser operation. */
-export type AffindaAPIGetApiUserResponse = ApiUserWithoutKey;
-
-/** Optional parameters. */
-export interface AffindaAPIUpdateApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateApiUser operation. */
-export type AffindaAPIUpdateApiUserResponse = ApiUserWithoutKey;
-
-/** Optional parameters. */
-export interface AffindaAPIDeleteApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the regenerateApiKeyForApiUser operation. */
-export type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

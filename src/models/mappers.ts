@@ -1679,8 +1679,14 @@ export const CollectionCreate: coreClient.CompositeMapper = {
       },
       extractor: {
         serializedName: "extractor",
-        required: true,
         xmlName: "extractor",
+        type: {
+          name: "String"
+        }
+      },
+      baseExtractor: {
+        serializedName: "baseExtractor",
+        xmlName: "baseExtractor",
         type: {
           name: "String"
         }
@@ -4492,6 +4498,310 @@ export const InvitationResponse: coreClient.CompositeMapper = {
       status: {
         serializedName: "status",
         xmlName: "status",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  serializedName:
+    "Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1",
+  type: {
+    name: "Composite",
+    className:
+      "Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        xmlName: "results",
+        xmlElementName: "ApiUserWithoutKey",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ApiUserWithoutKey"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ApiUserWithoutKey: coreClient.CompositeMapper = {
+  serializedName: "ApiUserWithoutKey",
+  type: {
+    name: "Composite",
+    className: "ApiUserWithoutKey",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        required: true,
+        xmlName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        required: true,
+        xmlName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        required: true,
+        nullable: true,
+        xmlName: "avatar",
+        type: {
+          name: "String"
+        }
+      },
+      organizations: {
+        serializedName: "organizations",
+        required: true,
+        xmlName: "organizations",
+        xmlElementName: "ApiUserWithoutKeyOrganizationsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ApiUserWithoutKeyOrganizationsItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ApiUserWithoutKeyOrganizationsItem: coreClient.CompositeMapper = {
+  serializedName: "ApiUserWithoutKeyOrganizationsItem",
+  type: {
+    name: "Composite",
+    className: "ApiUserWithoutKeyOrganizationsItem",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        xmlName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ApiUserCreate: coreClient.CompositeMapper = {
+  serializedName: "ApiUserCreate",
+  type: {
+    name: "Composite",
+    className: "ApiUserCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        xmlName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        xmlName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
+        xmlName: "avatar",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        xmlName: "organization",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ApiUserWithKey: coreClient.CompositeMapper = {
+  serializedName: "ApiUserWithKey",
+  type: {
+    name: "Composite",
+    className: "ApiUserWithKey",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        required: true,
+        xmlName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        required: true,
+        xmlName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        required: true,
+        nullable: true,
+        xmlName: "avatar",
+        type: {
+          name: "String"
+        }
+      },
+      organizations: {
+        serializedName: "organizations",
+        required: true,
+        xmlName: "organizations",
+        xmlElementName: "ApiUserWithKeyOrganizationsItem",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ApiUserWithKeyOrganizationsItem"
+            }
+          }
+        }
+      },
+      apiKey: {
+        serializedName: "apiKey",
+        required: true,
+        xmlName: "apiKey",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ApiUserWithKeyOrganizationsItem: coreClient.CompositeMapper = {
+  serializedName: "ApiUserWithKeyOrganizationsItem",
+  type: {
+    name: "Composite",
+    className: "ApiUserWithKeyOrganizationsItem",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        xmlName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ApiUserUpdate: coreClient.CompositeMapper = {
+  serializedName: "ApiUserUpdate",
+  type: {
+    name: "Composite",
+    className: "ApiUserUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        xmlName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        xmlName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
+        xmlName: "avatar",
         type: {
           name: "String"
         }
@@ -8764,310 +9074,6 @@ export const ResumeSearchEmbed: coreClient.CompositeMapper = {
   }
 };
 
-export const Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
-  serializedName:
-    "Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1",
-  type: {
-    name: "Composite",
-    className:
-      "Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1",
-    modelProperties: {
-      results: {
-        serializedName: "results",
-        xmlName: "results",
-        xmlElementName: "ApiUserWithoutKey",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ApiUserWithoutKey"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ApiUserWithoutKey: coreClient.CompositeMapper = {
-  serializedName: "ApiUserWithoutKey",
-  type: {
-    name: "Composite",
-    className: "ApiUserWithoutKey",
-    modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        required: true,
-        xmlName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        required: true,
-        xmlName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        required: true,
-        nullable: true,
-        xmlName: "avatar",
-        type: {
-          name: "String"
-        }
-      },
-      organizations: {
-        serializedName: "organizations",
-        required: true,
-        xmlName: "organizations",
-        xmlElementName: "ApiUserWithoutKeyOrganizationsItem",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ApiUserWithoutKeyOrganizationsItem"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const ApiUserWithoutKeyOrganizationsItem: coreClient.CompositeMapper = {
-  serializedName: "ApiUserWithoutKeyOrganizationsItem",
-  type: {
-    name: "Composite",
-    className: "ApiUserWithoutKeyOrganizationsItem",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        xmlName: "identifier",
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ApiUserCreate: coreClient.CompositeMapper = {
-  serializedName: "ApiUserCreate",
-  type: {
-    name: "Composite",
-    className: "ApiUserCreate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        xmlName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        xmlName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        nullable: true,
-        xmlName: "avatar",
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        required: true,
-        xmlName: "organization",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ApiUserWithKey: coreClient.CompositeMapper = {
-  serializedName: "ApiUserWithKey",
-  type: {
-    name: "Composite",
-    className: "ApiUserWithKey",
-    modelProperties: {
-      id: {
-        serializedName: "id",
-        required: true,
-        xmlName: "id",
-        type: {
-          name: "Number"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        required: true,
-        xmlName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        required: true,
-        xmlName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        required: true,
-        nullable: true,
-        xmlName: "avatar",
-        type: {
-          name: "String"
-        }
-      },
-      organizations: {
-        serializedName: "organizations",
-        required: true,
-        xmlName: "organizations",
-        xmlElementName: "ApiUserWithKeyOrganizationsItem",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ApiUserWithKeyOrganizationsItem"
-            }
-          }
-        }
-      },
-      apiKey: {
-        serializedName: "apiKey",
-        required: true,
-        xmlName: "apiKey",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ApiUserWithKeyOrganizationsItem: coreClient.CompositeMapper = {
-  serializedName: "ApiUserWithKeyOrganizationsItem",
-  type: {
-    name: "Composite",
-    className: "ApiUserWithKeyOrganizationsItem",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        xmlName: "identifier",
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const ApiUserUpdate: coreClient.CompositeMapper = {
-  serializedName: "ApiUserUpdate",
-  type: {
-    name: "Composite",
-    className: "ApiUserUpdate",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        xmlName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        xmlName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        nullable: true,
-        xmlName: "avatar",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const ComponentsEyyf0ZSchemasResumedataAdditionalproperties: coreClient.CompositeMapper = {
   serializedName: "ComponentsEyyf0ZSchemasResumedataAdditionalproperties",
   type: {
@@ -11785,21 +11791,6 @@ export const Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchem
   }
 };
 
-export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  serializedName:
-    "PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema",
-  type: {
-    name: "Composite",
-    className:
-      "PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      ...PaginatedResponse.type.modelProperties,
-      ...Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1
-        .type.modelProperties
-    }
-  }
-};
-
 export const Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   serializedName:
     "Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema",
@@ -11810,6 +11801,21 @@ export const Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema: c
     modelProperties: {
       ...PaginatedResponse.type.modelProperties,
       ...Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  serializedName:
+    "PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema",
+  type: {
+    name: "Composite",
+    className:
+      "PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }

@@ -29,6 +29,8 @@ import {
   InvitationCreate as InvitationCreateMapper,
   InvitationUpdate as InvitationUpdateMapper,
   InvitationResponse as InvitationResponseMapper,
+  ApiUserCreate as ApiUserCreateMapper,
+  ApiUserUpdate as ApiUserUpdateMapper,
   ResthookSubscriptionCreate as ResthookSubscriptionCreateMapper,
   ResthookSubscriptionUpdate as ResthookSubscriptionUpdateMapper,
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
@@ -37,9 +39,7 @@ import {
   PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
   ResumeSearchParameters as ResumeSearchParametersMapper,
   ResumeSearchConfig as ResumeSearchConfigMapper,
-  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
-  ApiUserCreate as ApiUserCreateMapper,
-  ApiUserUpdate as ApiUserUpdateMapper
+  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 } from "../models/mappers";
 
 export const accept: OperationParameter = {
@@ -911,10 +911,20 @@ export const body26: OperationParameter = {
 
 export const body27: OperationParameter = {
   parameterPath: "body",
-  mapper: ResthookSubscriptionCreateMapper
+  mapper: ApiUserCreateMapper
 };
 
 export const body28: OperationParameter = {
+  parameterPath: "body",
+  mapper: ApiUserUpdateMapper
+};
+
+export const body29: OperationParameter = {
+  parameterPath: "body",
+  mapper: ResthookSubscriptionCreateMapper
+};
+
+export const body30: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionUpdateMapper
 };
@@ -931,17 +941,17 @@ export const xHookSecret: OperationParameter = {
   }
 };
 
-export const body29: OperationParameter = {
+export const body31: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchParametersMapper
 };
 
-export const body30: OperationParameter = {
+export const body32: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchConfigMapper
 };
 
-export const body31: OperationParameter = {
+export const body33: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };
@@ -980,12 +990,12 @@ export const name3: OperationURLParameter = {
   }
 };
 
-export const body32: OperationParameter = {
+export const body34: OperationParameter = {
   parameterPath: "body",
   mapper: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
-export const body33: OperationParameter = {
+export const body35: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper
 };
@@ -1171,12 +1181,12 @@ export const managementLevelWeight: OperationQueryParameter = {
   }
 };
 
-export const body34: OperationParameter = {
+export const body36: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchConfigMapper
 };
 
-export const body35: OperationParameter = {
+export const body37: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };
@@ -1217,14 +1227,4 @@ export const skills: OperationQueryParameter = {
     }
   },
   collectionFormat: "Multi"
-};
-
-export const body36: OperationParameter = {
-  parameterPath: "body",
-  mapper: ApiUserCreateMapper
-};
-
-export const body37: OperationParameter = {
-  parameterPath: "body",
-  mapper: ApiUserUpdateMapper
 };
