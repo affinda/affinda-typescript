@@ -2611,6 +2611,8 @@ export declare interface InvoiceData {
     customFields?: {
         [propertyName: string]: any;
     };
+    /** All of the raw text of the parsed invoice. */
+    rawText?: string;
 }
 
 export declare type InvoiceDataBankAccountNumber = TextAnnotation & Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
@@ -3081,6 +3083,213 @@ export declare enum KnownResthookSubscriptionVersion {
     V1 = "v1",
     V2 = "v2",
     V3 = "v3"
+}
+
+/** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
+export declare enum KnownResumeDataLanguagesItem {
+    Ainu = "Ainu",
+    Akan = "Akan",
+    Akkadian = "Akkadian",
+    Amharic = "Amharic",
+    Anam = "Anam",
+    Arabic = "Arabic",
+    Aramaic = "Aramaic",
+    Arem = "Arem",
+    Armenian = "Armenian",
+    Awadhi = "Awadhi",
+    Aymara = "Aymara",
+    Azari = "Azari",
+    Bagheli = "Bagheli",
+    Bagri = "Bagri",
+    Bahasa = "Bahasa",
+    Bambara = "Bambara",
+    Bangala = "Bangala",
+    Bardi = "Bardi",
+    Bassa = "Bassa",
+    Batak = "Batak",
+    Belarusian = "Belarusian",
+    Bemba = "Bemba",
+    Benga = "Benga",
+    Bengali = "Bengali",
+    Berber = "Berber",
+    Bhojpuri = "Bhojpuri",
+    Bislama = "Bislama",
+    Brahui = "Brahui",
+    Bulgarian = "Bulgarian",
+    Bunu = "Bunu",
+    Cambodian = "Cambodian",
+    Carew = "Carew",
+    Carib = "Carib",
+    Catalan = "Catalan",
+    Cebuano = "Cebuano",
+    Chakma = "Chakma",
+    Chamorro = "Chamorro",
+    Chango = "Chango",
+    Chewa = "Chewa",
+    Croatian = "Croatian",
+    Czech = "Czech",
+    Dagbani = "Dagbani",
+    Danish = "Danish",
+    Dari = "Dari",
+    Dayi = "Dayi",
+    Dhatki = "Dhatki",
+    Dhivehi = "Dhivehi",
+    Dinka = "Dinka",
+    Dogri = "Dogri",
+    Duala = "Duala",
+    Dutch = "Dutch",
+    English = "English",
+    Esperanto = "Esperanto",
+    Estonian = "Estonian",
+    Ewondo = "Ewondo",
+    Faroese = "Faroese",
+    Filipino = "Filipino",
+    Finnish = "Finnish",
+    Formula = "Formula",
+    French = "French",
+    Frisian = "Frisian",
+    Friulian = "Friulian",
+    Fula = "Fula",
+    Gaelic = "Gaelic",
+    Galo = "Galo",
+    Garhwali = "Garhwali",
+    Garifuna = "Garifuna",
+    German = "German",
+    Gikuyu = "Gikuyu",
+    Gujarati = "Gujarati",
+    Gujerati = "Gujerati",
+    Gwere = "Gwere",
+    Hawaiian = "Hawaiian",
+    Haya = "Haya",
+    Hebrew = "Hebrew",
+    Hindi = "Hindi",
+    Hmu = "Hmu",
+    Hokkien = "Hokkien",
+    Hopi = "Hopi",
+    Hungarian = "Hungarian",
+    Hup = "Hup",
+    Ibanag = "Ibanag",
+    Igbo = "Igbo",
+    Ilokano = "Ilokano",
+    Indonesian = "Indonesian",
+    Intermediate = "Intermediate",
+    Irish = "Irish",
+    Italian = "Italian",
+    Japanese = "Japanese",
+    Jiba = "Jiba",
+    Kachin = "Kachin",
+    Kalenjin = "Kalenjin",
+    Kamayo = "Kamayo",
+    Kannada = "Kannada",
+    Kaonde = "Kaonde",
+    Kayan = "Kayan",
+    Khandeshi = "Khandeshi",
+    Khmer = "Khmer",
+    Kikuyu = "Kikuyu",
+    Kodava = "Kodava",
+    Koma = "Koma",
+    Kongo = "Kongo",
+    Konkani = "Konkani",
+    Korean = "Korean",
+    Korwa = "Korwa",
+    Kreyol = "Kreyol",
+    Krio = "Krio",
+    Kumaoni = "Kumaoni",
+    Kurdish = "Kurdish",
+    Kurukh = "Kurukh",
+    Kwa = "Kwa",
+    Ladino = "Ladino",
+    Lango = "Lango",
+    Latvian = "Latvian",
+    Lawa = "Lawa",
+    Lingala = "Lingala",
+    Lithuanian = "Lithuanian",
+    Lule = "Lule",
+    Luxembourgish = "Luxembourgish",
+    Magahi = "Magahi",
+    Maithili = "Maithili",
+    Malay = "Malay",
+    Malayalam = "Malayalam",
+    Malaysian = "Malaysian",
+    Malvi = "Malvi",
+    Maninka = "Maninka",
+    Manipuri = "Manipuri",
+    Manx = "Manx",
+    Marathi = "Marathi",
+    Mayan = "Mayan",
+    Medumba = "Medumba",
+    Memoni = "Memoni",
+    Mewari = "Mewari",
+    Mizo = "Mizo",
+    Montenegrin = "Montenegrin",
+    Mwan = "Mwan",
+    Mwanga = "Mwanga",
+    Ndebele = "Ndebele",
+    Nepali = "Nepali",
+    Nimadi = "Nimadi",
+    Oriya = "Oriya",
+    Oromo = "Oromo",
+    Ovambo = "Ovambo",
+    Pamona = "Pamona",
+    Pangasinan = "Pangasinan",
+    Pashto = "Pashto",
+    Phoenician = "Phoenician",
+    Polish = "Polish",
+    Portuguese = "Portuguese",
+    Pulaar = "Pulaar",
+    Pular = "Pular",
+    Punjabi = "Punjabi",
+    Quecha = "Quecha",
+    Rajasthani = "Rajasthani",
+    Romanian = "Romanian",
+    Russian = "Russian",
+    Sakha = "Sakha",
+    Sango = "Sango",
+    Santhali = "Santhali",
+    Saraiki = "Saraiki",
+    Seim = "Seim",
+    Shading = "Shading",
+    Shama = "Shama",
+    Shan = "Shan",
+    Shona = "Shona",
+    Silesian = "Silesian",
+    Sindhi = "Sindhi",
+    Slovak = "Slovak",
+    Slovene = "Slovene",
+    Soga = "Soga",
+    Sogdian = "Sogdian",
+    Sotho = "Sotho",
+    Spanish = "Spanish",
+    Sudanese = "Sudanese",
+    Sumerian = "Sumerian",
+    Surajpuri = "Surajpuri",
+    Surigaonon = "Surigaonon",
+    Swati = "Swati",
+    Swazi = "Swazi",
+    Swedish = "Swedish",
+    Tagalog = "Tagalog",
+    Tamil = "Tamil",
+    Tausug = "Tausug",
+    Telugu = "Telugu",
+    Tetum = "Tetum",
+    Tharu = "Tharu",
+    Tibetan = "Tibetan",
+    Tigrinya = "Tigrinya",
+    Tripuri = "Tripuri",
+    Tswana = "Tswana",
+    Tulu = "Tulu",
+    Turkish = "Turkish",
+    Tuwali = "Tuwali",
+    Ubi = "Ubi",
+    Ukrainian = "Ukrainian",
+    Urdu = "Urdu",
+    Veps = "Veps",
+    Vietnamese = "Vietnamese",
+    Wagdi = "Wagdi",
+    Waziri = "Waziri",
+    Xhosa = "Xhosa",
+    Yiddish = "Yiddish",
+    Yoruba = "Yoruba"
 }
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
@@ -3601,8 +3810,7 @@ export declare interface ResumeData {
     dateOfBirth?: string;
     location?: Location_2;
     objective?: string;
-    /** NOTE: This property will not be serialized. It can only be populated by the server. */
-    readonly languages?: string[];
+    languages?: ResumeDataLanguagesItem[];
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly languageCodes?: string[];
     summary?: string;
@@ -3640,6 +3848,217 @@ export declare interface ResumeData {
     /** Redacted version of the text in the resume, removing PII. */
     redactedText?: string;
 }
+
+/**
+ * Defines values for ResumeDataLanguagesItem. \
+ * {@link KnownResumeDataLanguagesItem} can be used interchangeably with ResumeDataLanguagesItem,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **Ainu** \
+ * **Akan** \
+ * **Akkadian** \
+ * **Amharic** \
+ * **Anam** \
+ * **Arabic** \
+ * **Aramaic** \
+ * **Arem** \
+ * **Armenian** \
+ * **Awadhi** \
+ * **Aymara** \
+ * **Azari** \
+ * **Bagheli** \
+ * **Bagri** \
+ * **Bahasa** \
+ * **Bambara** \
+ * **Bangala** \
+ * **Bardi** \
+ * **Bassa** \
+ * **Batak** \
+ * **Belarusian** \
+ * **Bemba** \
+ * **Benga** \
+ * **Bengali** \
+ * **Berber** \
+ * **Bhojpuri** \
+ * **Bislama** \
+ * **Brahui** \
+ * **Bulgarian** \
+ * **Bunu** \
+ * **Cambodian** \
+ * **Carew** \
+ * **Carib** \
+ * **Catalan** \
+ * **Cebuano** \
+ * **Chakma** \
+ * **Chamorro** \
+ * **Chango** \
+ * **Chewa** \
+ * **Croatian** \
+ * **Czech** \
+ * **Dagbani** \
+ * **Danish** \
+ * **Dari** \
+ * **Dayi** \
+ * **Dhatki** \
+ * **Dhivehi** \
+ * **Dinka** \
+ * **Dogri** \
+ * **Duala** \
+ * **Dutch** \
+ * **English** \
+ * **Esperanto** \
+ * **Estonian** \
+ * **Ewondo** \
+ * **Faroese** \
+ * **Filipino** \
+ * **Finnish** \
+ * **Formula** \
+ * **French** \
+ * **Frisian** \
+ * **Friulian** \
+ * **Fula** \
+ * **Gaelic** \
+ * **Galo** \
+ * **Garhwali** \
+ * **Garifuna** \
+ * **German** \
+ * **Gikuyu** \
+ * **Gujarati** \
+ * **Gujerati** \
+ * **Gwere** \
+ * **Hawaiian** \
+ * **Haya** \
+ * **Hebrew** \
+ * **Hindi** \
+ * **Hmu** \
+ * **Hokkien** \
+ * **Hopi** \
+ * **Hungarian** \
+ * **Hup** \
+ * **Ibanag** \
+ * **Igbo** \
+ * **Ilokano** \
+ * **Indonesian** \
+ * **Intermediate** \
+ * **Irish** \
+ * **Italian** \
+ * **Japanese** \
+ * **Jiba** \
+ * **Kachin** \
+ * **Kalenjin** \
+ * **Kamayo** \
+ * **Kannada** \
+ * **Kaonde** \
+ * **Kayan** \
+ * **Khandeshi** \
+ * **Khmer** \
+ * **Kikuyu** \
+ * **Kodava** \
+ * **Koma** \
+ * **Kongo** \
+ * **Konkani** \
+ * **Korean** \
+ * **Korwa** \
+ * **Kreyol** \
+ * **Krio** \
+ * **Kumaoni** \
+ * **Kurdish** \
+ * **Kurukh** \
+ * **Kwa** \
+ * **Ladino** \
+ * **Lango** \
+ * **Latvian** \
+ * **Lawa** \
+ * **Lingala** \
+ * **Lithuanian** \
+ * **Lule** \
+ * **Luxembourgish** \
+ * **Magahi** \
+ * **Maithili** \
+ * **Malay** \
+ * **Malayalam** \
+ * **Malaysian** \
+ * **Malvi** \
+ * **Maninka** \
+ * **Manipuri** \
+ * **Manx** \
+ * **Marathi** \
+ * **Mayan** \
+ * **Medumba** \
+ * **Memoni** \
+ * **Mewari** \
+ * **Mizo** \
+ * **Montenegrin** \
+ * **Mwan** \
+ * **Mwanga** \
+ * **Ndebele** \
+ * **Nepali** \
+ * **Nimadi** \
+ * **Oriya** \
+ * **Oromo** \
+ * **Ovambo** \
+ * **Pamona** \
+ * **Pangasinan** \
+ * **Pashto** \
+ * **Phoenician** \
+ * **Polish** \
+ * **Portuguese** \
+ * **Pulaar** \
+ * **Pular** \
+ * **Punjabi** \
+ * **Quecha** \
+ * **Rajasthani** \
+ * **Romanian** \
+ * **Russian** \
+ * **Sakha** \
+ * **Sango** \
+ * **Santhali** \
+ * **Saraiki** \
+ * **Seim** \
+ * **Shading** \
+ * **Shama** \
+ * **Shan** \
+ * **Shona** \
+ * **Silesian** \
+ * **Sindhi** \
+ * **Slovak** \
+ * **Slovene** \
+ * **Soga** \
+ * **Sogdian** \
+ * **Sotho** \
+ * **Spanish** \
+ * **Sudanese** \
+ * **Sumerian** \
+ * **Surajpuri** \
+ * **Surigaonon** \
+ * **Swati** \
+ * **Swazi** \
+ * **Swedish** \
+ * **Tagalog** \
+ * **Tamil** \
+ * **Tausug** \
+ * **Telugu** \
+ * **Tetum** \
+ * **Tharu** \
+ * **Tibetan** \
+ * **Tigrinya** \
+ * **Tripuri** \
+ * **Tswana** \
+ * **Tulu** \
+ * **Turkish** \
+ * **Tuwali** \
+ * **Ubi** \
+ * **Ukrainian** \
+ * **Urdu** \
+ * **Veps** \
+ * **Vietnamese** \
+ * **Wagdi** \
+ * **Waziri** \
+ * **Xhosa** \
+ * **Yiddish** \
+ * **Yoruba**
+ */
+export declare type ResumeDataLanguagesItem = string;
 
 export declare interface ResumeDataName {
     raw?: string;

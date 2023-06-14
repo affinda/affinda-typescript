@@ -35,6 +35,7 @@
 - [paymentAmountTotal](InvoiceData.md#paymentamounttotal)
 - [paymentDateDue](InvoiceData.md#paymentdatedue)
 - [paymentReference](InvoiceData.md#paymentreference)
+- [rawText](InvoiceData.md#rawtext)
 - [supplierAddress](InvoiceData.md#supplieraddress)
 - [supplierBusinessNumber](InvoiceData.md#supplierbusinessnumber)
 - [supplierCompanyName](InvoiceData.md#suppliercompanyname)
@@ -224,6 +225,14 @@ ___
 ### paymentReference
 
 • `Optional` **paymentReference**: [`InvoiceDataPaymentReference`](../modules.md#invoicedatapaymentreference)
+
+___
+
+### rawText
+
+• `Optional` **rawText**: `string`
+
+All of the raw text of the parsed invoice.
 
 ___
 

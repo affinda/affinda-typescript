@@ -9177,7 +9177,6 @@ export const ResumeData: coreClient.CompositeMapper = {
       },
       languages: {
         serializedName: "languages",
-        readOnly: true,
         xmlName: "languages",
         xmlElementName: "ResumeDataLanguagesItem",
         type: {
@@ -10232,6 +10231,13 @@ export const InvoiceData: coreClient.CompositeMapper = {
         type: {
           name: "Dictionary",
           value: { type: { name: "any" } }
+        }
+      },
+      rawText: {
+        serializedName: "rawText",
+        xmlName: "rawText",
+        type: {
+          name: "String"
         }
       }
     }
