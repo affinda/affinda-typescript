@@ -1128,6 +1128,13 @@ export const Collection: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      tailoredExtractorRequested: {
+        serializedName: "tailoredExtractorRequested",
+        xmlName: "tailoredExtractorRequested",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }

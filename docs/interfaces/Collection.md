@@ -18,6 +18,7 @@
 - [identifier](Collection.md#identifier)
 - [ingestEmail](Collection.md#ingestemail)
 - [name](Collection.md#name)
+- [tailoredExtractorRequested](Collection.md#tailoredextractorrequested)
 - [unvalidatedDocsCount](Collection.md#unvalidateddocscount)
 - [workspace](Collection.md#workspace)
 
@@ -102,6 +103,14 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### tailoredExtractorRequested
+
+• `Optional` **tailoredExtractorRequested**: `boolean`
+
+Whether a tailored extractor has been requested for this collection.
 
 ___
 

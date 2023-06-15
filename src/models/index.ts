@@ -224,6 +224,8 @@ export interface Collection {
   confirmedDocsCount?: number;
   /** When you send email to this address, any document attached in the body will be uploaded to this collection. */
   ingestEmail?: string;
+  /** Whether a tailored extractor has been requested for this collection. */
+  tailoredExtractorRequested?: boolean;
 }
 
 export interface CollectionWorkspace {
