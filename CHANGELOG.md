@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allow custom job description fields to be nullable
 - Make "pdf" property in SearchResults nullable
 - Nest line item table rows correctly.
+- Make `slug` and `organization` required when creating data point
 
 ### Fixed
 - Allow rejectDuplicates to be null
@@ -29,6 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - rawText field to JobDescription Model
 - Required fields for resthook subscriptions
 - Ability to post/patch languages for resumes in v2
+- Allow create/update data point's `parent` and `displayEnumValue` property
+
+### Removed
+- Remove data point's `similarTo` property
 
 ## [5.3.1] - 2023-03-30
 ### Changed

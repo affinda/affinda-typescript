@@ -9,6 +9,7 @@ Matching job title to extracted text
 ### Properties
 
 - [classification](JobTitleParsedParsed.md#classification)
+- [emsiId](JobTitleParsedParsed.md#emsiid)
 - [managementLevel](JobTitleParsedParsed.md#managementlevel)
 - [name](JobTitleParsedParsed.md#name)
 
@@ -17,6 +18,14 @@ Matching job title to extracted text
 ### classification
 
 • `Optional` **classification**: [`JobTitleParsedClassification`](JobTitleParsedClassification.md)
+
+___
+
+### emsiId
+
+• `Optional` **emsiId**: `string`
+
+EMSI id of the normalised job title.
 
 ___
 

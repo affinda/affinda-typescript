@@ -1260,6 +1260,14 @@ export const ResumeDataWorkExperienceItemOccupation: coreClient.CompositeMapper 
           name: "String"
         }
       },
+      emsiId: {
+        serializedName: "emsiId",
+        nullable: true,
+        xmlName: "emsiId",
+        type: {
+          name: "String"
+        }
+      },
       managementLevel: {
         serializedName: "managementLevel",
         nullable: true,
@@ -3535,6 +3543,14 @@ export const JobTitleParsedParsed: coreClient.CompositeMapper = {
         serializedName: "name",
         nullable: true,
         xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      emsiId: {
+        serializedName: "emsiId",
+        nullable: true,
+        xmlName: "emsiId",
         type: {
           name: "String"
         }

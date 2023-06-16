@@ -7,6 +7,7 @@
 ### Properties
 
 - [classification](ResumeDataWorkExperienceItemOccupation.md#classification)
+- [emsiId](ResumeDataWorkExperienceItemOccupation.md#emsiid)
 - [jobTitle](ResumeDataWorkExperienceItemOccupation.md#jobtitle)
 - [jobTitleNormalized](ResumeDataWorkExperienceItemOccupation.md#jobtitlenormalized)
 - [managementLevel](ResumeDataWorkExperienceItemOccupation.md#managementlevel)
@@ -16,6 +17,14 @@
 ### classification
 
 • `Optional` **classification**: [`Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification`](Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
+
+___
+
+### emsiId
+
+• `Optional` **emsiId**: `string`
+
+EMSI id of the normalised job title.
 
 ___
 

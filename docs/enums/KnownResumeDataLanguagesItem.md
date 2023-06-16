@@ -216,1216 +216,1216 @@ Known values of [ResumeDataLanguagesItem](../modules.md#resumedatalanguagesitem)
 
 ### Ainu
 
-• **Ainu** = ``"ainu"``
+• **Ainu** = ``"Ainu"``
 
 ___
 
 ### Akan
 
-• **Akan** = ``"akan"``
+• **Akan** = ``"Akan"``
 
 ___
 
 ### Akkadian
 
-• **Akkadian** = ``"akkadian"``
+• **Akkadian** = ``"Akkadian"``
 
 ___
 
 ### Amharic
 
-• **Amharic** = ``"amharic"``
+• **Amharic** = ``"Amharic"``
 
 ___
 
 ### Anam
 
-• **Anam** = ``"anam"``
+• **Anam** = ``"Anam"``
 
 ___
 
 ### Arabic
 
-• **Arabic** = ``"arabic"``
+• **Arabic** = ``"Arabic"``
 
 ___
 
 ### Aramaic
 
-• **Aramaic** = ``"aramaic"``
+• **Aramaic** = ``"Aramaic"``
 
 ___
 
 ### Arem
 
-• **Arem** = ``"arem"``
+• **Arem** = ``"Arem"``
 
 ___
 
 ### Armenian
 
-• **Armenian** = ``"armenian"``
+• **Armenian** = ``"Armenian"``
 
 ___
 
 ### Awadhi
 
-• **Awadhi** = ``"awadhi"``
+• **Awadhi** = ``"Awadhi"``
 
 ___
 
 ### Aymara
 
-• **Aymara** = ``"aymara"``
+• **Aymara** = ``"Aymara"``
 
 ___
 
 ### Azari
 
-• **Azari** = ``"azari"``
+• **Azari** = ``"Azari"``
 
 ___
 
 ### Bagheli
 
-• **Bagheli** = ``"bagheli"``
+• **Bagheli** = ``"Bagheli"``
 
 ___
 
 ### Bagri
 
-• **Bagri** = ``"bagri"``
+• **Bagri** = ``"Bagri"``
 
 ___
 
 ### Bahasa
 
-• **Bahasa** = ``"bahasa"``
+• **Bahasa** = ``"Bahasa"``
 
 ___
 
 ### Bambara
 
-• **Bambara** = ``"bambara"``
+• **Bambara** = ``"Bambara"``
 
 ___
 
 ### Bangala
 
-• **Bangala** = ``"bangala"``
+• **Bangala** = ``"Bangala"``
 
 ___
 
 ### Bardi
 
-• **Bardi** = ``"bardi"``
+• **Bardi** = ``"Bardi"``
 
 ___
 
 ### Bassa
 
-• **Bassa** = ``"bassa"``
+• **Bassa** = ``"Bassa"``
 
 ___
 
 ### Batak
 
-• **Batak** = ``"batak"``
+• **Batak** = ``"Batak"``
 
 ___
 
 ### Belarusian
 
-• **Belarusian** = ``"belarusian"``
+• **Belarusian** = ``"Belarusian"``
 
 ___
 
 ### Bemba
 
-• **Bemba** = ``"bemba"``
+• **Bemba** = ``"Bemba"``
 
 ___
 
 ### Benga
 
-• **Benga** = ``"benga"``
+• **Benga** = ``"Benga"``
 
 ___
 
 ### Bengali
 
-• **Bengali** = ``"bengali"``
+• **Bengali** = ``"Bengali"``
 
 ___
 
 ### Berber
 
-• **Berber** = ``"berber"``
+• **Berber** = ``"Berber"``
 
 ___
 
 ### Bhojpuri
 
-• **Bhojpuri** = ``"bhojpuri"``
+• **Bhojpuri** = ``"Bhojpuri"``
 
 ___
 
 ### Bislama
 
-• **Bislama** = ``"bislama"``
+• **Bislama** = ``"Bislama"``
 
 ___
 
 ### Brahui
 
-• **Brahui** = ``"brahui"``
+• **Brahui** = ``"Brahui"``
 
 ___
 
 ### Bulgarian
 
-• **Bulgarian** = ``"bulgarian"``
+• **Bulgarian** = ``"Bulgarian"``
 
 ___
 
 ### Bunu
 
-• **Bunu** = ``"bunu"``
+• **Bunu** = ``"Bunu"``
 
 ___
 
 ### Cambodian
 
-• **Cambodian** = ``"cambodian"``
+• **Cambodian** = ``"Cambodian"``
 
 ___
 
 ### Carew
 
-• **Carew** = ``"carew"``
+• **Carew** = ``"Carew"``
 
 ___
 
 ### Carib
 
-• **Carib** = ``"carib"``
+• **Carib** = ``"Carib"``
 
 ___
 
 ### Catalan
 
-• **Catalan** = ``"catalan"``
+• **Catalan** = ``"Catalan"``
 
 ___
 
 ### Cebuano
 
-• **Cebuano** = ``"cebuano"``
+• **Cebuano** = ``"Cebuano"``
 
 ___
 
 ### Chakma
 
-• **Chakma** = ``"chakma"``
+• **Chakma** = ``"Chakma"``
 
 ___
 
 ### Chamorro
 
-• **Chamorro** = ``"chamorro"``
+• **Chamorro** = ``"Chamorro"``
 
 ___
 
 ### Chango
 
-• **Chango** = ``"chango"``
+• **Chango** = ``"Chango"``
 
 ___
 
 ### Chewa
 
-• **Chewa** = ``"chewa"``
+• **Chewa** = ``"Chewa"``
 
 ___
 
 ### Croatian
 
-• **Croatian** = ``"croatian"``
+• **Croatian** = ``"Croatian"``
 
 ___
 
 ### Czech
 
-• **Czech** = ``"czech"``
+• **Czech** = ``"Czech"``
 
 ___
 
 ### Dagbani
 
-• **Dagbani** = ``"dagbani"``
+• **Dagbani** = ``"Dagbani"``
 
 ___
 
 ### Danish
 
-• **Danish** = ``"danish"``
+• **Danish** = ``"Danish"``
 
 ___
 
 ### Dari
 
-• **Dari** = ``"dari"``
+• **Dari** = ``"Dari"``
 
 ___
 
 ### Dayi
 
-• **Dayi** = ``"dayi"``
+• **Dayi** = ``"Dayi"``
 
 ___
 
 ### Dhatki
 
-• **Dhatki** = ``"dhatki"``
+• **Dhatki** = ``"Dhatki"``
 
 ___
 
 ### Dhivehi
 
-• **Dhivehi** = ``"dhivehi"``
+• **Dhivehi** = ``"Dhivehi"``
 
 ___
 
 ### Dinka
 
-• **Dinka** = ``"dinka"``
+• **Dinka** = ``"Dinka"``
 
 ___
 
 ### Dogri
 
-• **Dogri** = ``"dogri"``
+• **Dogri** = ``"Dogri"``
 
 ___
 
 ### Duala
 
-• **Duala** = ``"duala"``
+• **Duala** = ``"Duala"``
 
 ___
 
 ### Dutch
 
-• **Dutch** = ``"dutch"``
+• **Dutch** = ``"Dutch"``
 
 ___
 
 ### English
 
-• **English** = ``"english"``
+• **English** = ``"English"``
 
 ___
 
 ### Esperanto
 
-• **Esperanto** = ``"esperanto"``
+• **Esperanto** = ``"Esperanto"``
 
 ___
 
 ### Estonian
 
-• **Estonian** = ``"estonian"``
+• **Estonian** = ``"Estonian"``
 
 ___
 
 ### Ewondo
 
-• **Ewondo** = ``"ewondo"``
+• **Ewondo** = ``"Ewondo"``
 
 ___
 
 ### Faroese
 
-• **Faroese** = ``"faroese"``
+• **Faroese** = ``"Faroese"``
 
 ___
 
 ### Filipino
 
-• **Filipino** = ``"filipino"``
+• **Filipino** = ``"Filipino"``
 
 ___
 
 ### Finnish
 
-• **Finnish** = ``"finnish"``
+• **Finnish** = ``"Finnish"``
 
 ___
 
 ### Formula
 
-• **Formula** = ``"formula"``
+• **Formula** = ``"Formula"``
 
 ___
 
 ### French
 
-• **French** = ``"french"``
+• **French** = ``"French"``
 
 ___
 
 ### Frisian
 
-• **Frisian** = ``"frisian"``
+• **Frisian** = ``"Frisian"``
 
 ___
 
 ### Friulian
 
-• **Friulian** = ``"friulian"``
+• **Friulian** = ``"Friulian"``
 
 ___
 
 ### Fula
 
-• **Fula** = ``"fula"``
+• **Fula** = ``"Fula"``
 
 ___
 
 ### Gaelic
 
-• **Gaelic** = ``"gaelic"``
+• **Gaelic** = ``"Gaelic"``
 
 ___
 
 ### Galo
 
-• **Galo** = ``"galo"``
+• **Galo** = ``"Galo"``
 
 ___
 
 ### Garhwali
 
-• **Garhwali** = ``"garhwali"``
+• **Garhwali** = ``"Garhwali"``
 
 ___
 
 ### Garifuna
 
-• **Garifuna** = ``"garifuna"``
+• **Garifuna** = ``"Garifuna"``
 
 ___
 
 ### German
 
-• **German** = ``"german"``
+• **German** = ``"German"``
 
 ___
 
 ### Gikuyu
 
-• **Gikuyu** = ``"gikuyu"``
+• **Gikuyu** = ``"Gikuyu"``
 
 ___
 
 ### Gujarati
 
-• **Gujarati** = ``"gujarati"``
+• **Gujarati** = ``"Gujarati"``
 
 ___
 
 ### Gujerati
 
-• **Gujerati** = ``"gujerati"``
+• **Gujerati** = ``"Gujerati"``
 
 ___
 
 ### Gwere
 
-• **Gwere** = ``"gwere"``
+• **Gwere** = ``"Gwere"``
 
 ___
 
 ### Hawaiian
 
-• **Hawaiian** = ``"hawaiian"``
+• **Hawaiian** = ``"Hawaiian"``
 
 ___
 
 ### Haya
 
-• **Haya** = ``"haya"``
+• **Haya** = ``"Haya"``
 
 ___
 
 ### Hebrew
 
-• **Hebrew** = ``"hebrew"``
+• **Hebrew** = ``"Hebrew"``
 
 ___
 
 ### Hindi
 
-• **Hindi** = ``"hindi"``
+• **Hindi** = ``"Hindi"``
 
 ___
 
 ### Hmu
 
-• **Hmu** = ``"hmu"``
+• **Hmu** = ``"Hmu"``
 
 ___
 
 ### Hokkien
 
-• **Hokkien** = ``"hokkien"``
+• **Hokkien** = ``"Hokkien"``
 
 ___
 
 ### Hopi
 
-• **Hopi** = ``"hopi"``
+• **Hopi** = ``"Hopi"``
 
 ___
 
 ### Hungarian
 
-• **Hungarian** = ``"hungarian"``
+• **Hungarian** = ``"Hungarian"``
 
 ___
 
 ### Hup
 
-• **Hup** = ``"hup"``
+• **Hup** = ``"Hup"``
 
 ___
 
 ### Ibanag
 
-• **Ibanag** = ``"ibanag"``
+• **Ibanag** = ``"Ibanag"``
 
 ___
 
 ### Igbo
 
-• **Igbo** = ``"igbo"``
+• **Igbo** = ``"Igbo"``
 
 ___
 
 ### Ilokano
 
-• **Ilokano** = ``"ilokano"``
+• **Ilokano** = ``"Ilokano"``
 
 ___
 
 ### Indonesian
 
-• **Indonesian** = ``"indonesian"``
+• **Indonesian** = ``"Indonesian"``
 
 ___
 
 ### Intermediate
 
-• **Intermediate** = ``"intermediate"``
+• **Intermediate** = ``"Intermediate"``
 
 ___
 
 ### Irish
 
-• **Irish** = ``"irish"``
+• **Irish** = ``"Irish"``
 
 ___
 
 ### Italian
 
-• **Italian** = ``"italian"``
+• **Italian** = ``"Italian"``
 
 ___
 
 ### Japanese
 
-• **Japanese** = ``"japanese"``
+• **Japanese** = ``"Japanese"``
 
 ___
 
 ### Jiba
 
-• **Jiba** = ``"jiba"``
+• **Jiba** = ``"Jiba"``
 
 ___
 
 ### Kachin
 
-• **Kachin** = ``"kachin"``
+• **Kachin** = ``"Kachin"``
 
 ___
 
 ### Kalenjin
 
-• **Kalenjin** = ``"kalenjin"``
+• **Kalenjin** = ``"Kalenjin"``
 
 ___
 
 ### Kamayo
 
-• **Kamayo** = ``"kamayo"``
+• **Kamayo** = ``"Kamayo"``
 
 ___
 
 ### Kannada
 
-• **Kannada** = ``"kannada"``
+• **Kannada** = ``"Kannada"``
 
 ___
 
 ### Kaonde
 
-• **Kaonde** = ``"kaonde"``
+• **Kaonde** = ``"Kaonde"``
 
 ___
 
 ### Kayan
 
-• **Kayan** = ``"kayan"``
+• **Kayan** = ``"Kayan"``
 
 ___
 
 ### Khandeshi
 
-• **Khandeshi** = ``"khandeshi"``
+• **Khandeshi** = ``"Khandeshi"``
 
 ___
 
 ### Khmer
 
-• **Khmer** = ``"khmer"``
+• **Khmer** = ``"Khmer"``
 
 ___
 
 ### Kikuyu
 
-• **Kikuyu** = ``"kikuyu"``
+• **Kikuyu** = ``"Kikuyu"``
 
 ___
 
 ### Kodava
 
-• **Kodava** = ``"kodava"``
+• **Kodava** = ``"Kodava"``
 
 ___
 
 ### Koma
 
-• **Koma** = ``"koma"``
+• **Koma** = ``"Koma"``
 
 ___
 
 ### Kongo
 
-• **Kongo** = ``"kongo"``
+• **Kongo** = ``"Kongo"``
 
 ___
 
 ### Konkani
 
-• **Konkani** = ``"konkani"``
+• **Konkani** = ``"Konkani"``
 
 ___
 
 ### Korean
 
-• **Korean** = ``"korean"``
+• **Korean** = ``"Korean"``
 
 ___
 
 ### Korwa
 
-• **Korwa** = ``"korwa"``
+• **Korwa** = ``"Korwa"``
 
 ___
 
 ### Kreyol
 
-• **Kreyol** = ``"kreyol"``
+• **Kreyol** = ``"Kreyol"``
 
 ___
 
 ### Krio
 
-• **Krio** = ``"krio"``
+• **Krio** = ``"Krio"``
 
 ___
 
 ### Kumaoni
 
-• **Kumaoni** = ``"kumaoni"``
+• **Kumaoni** = ``"Kumaoni"``
 
 ___
 
 ### Kurdish
 
-• **Kurdish** = ``"kurdish"``
+• **Kurdish** = ``"Kurdish"``
 
 ___
 
 ### Kurukh
 
-• **Kurukh** = ``"kurukh"``
+• **Kurukh** = ``"Kurukh"``
 
 ___
 
 ### Kwa
 
-• **Kwa** = ``"kwa"``
+• **Kwa** = ``"Kwa"``
 
 ___
 
 ### Ladino
 
-• **Ladino** = ``"ladino"``
+• **Ladino** = ``"Ladino"``
 
 ___
 
 ### Lango
 
-• **Lango** = ``"lango"``
+• **Lango** = ``"Lango"``
 
 ___
 
 ### Latvian
 
-• **Latvian** = ``"latvian"``
+• **Latvian** = ``"Latvian"``
 
 ___
 
 ### Lawa
 
-• **Lawa** = ``"lawa"``
+• **Lawa** = ``"Lawa"``
 
 ___
 
 ### Lingala
 
-• **Lingala** = ``"lingala"``
+• **Lingala** = ``"Lingala"``
 
 ___
 
 ### Lithuanian
 
-• **Lithuanian** = ``"lithuanian"``
+• **Lithuanian** = ``"Lithuanian"``
 
 ___
 
 ### Lule
 
-• **Lule** = ``"lule"``
+• **Lule** = ``"Lule"``
 
 ___
 
 ### Luxembourgish
 
-• **Luxembourgish** = ``"luxembourgish"``
+• **Luxembourgish** = ``"Luxembourgish"``
 
 ___
 
 ### Magahi
 
-• **Magahi** = ``"magahi"``
+• **Magahi** = ``"Magahi"``
 
 ___
 
 ### Maithili
 
-• **Maithili** = ``"maithili"``
+• **Maithili** = ``"Maithili"``
 
 ___
 
 ### Malay
 
-• **Malay** = ``"malay"``
+• **Malay** = ``"Malay"``
 
 ___
 
 ### Malayalam
 
-• **Malayalam** = ``"malayalam"``
+• **Malayalam** = ``"Malayalam"``
 
 ___
 
 ### Malaysian
 
-• **Malaysian** = ``"malaysian"``
+• **Malaysian** = ``"Malaysian"``
 
 ___
 
 ### Malvi
 
-• **Malvi** = ``"malvi"``
+• **Malvi** = ``"Malvi"``
 
 ___
 
 ### Maninka
 
-• **Maninka** = ``"maninka"``
+• **Maninka** = ``"Maninka"``
 
 ___
 
 ### Manipuri
 
-• **Manipuri** = ``"manipuri"``
+• **Manipuri** = ``"Manipuri"``
 
 ___
 
 ### Manx
 
-• **Manx** = ``"manx"``
+• **Manx** = ``"Manx"``
 
 ___
 
 ### Marathi
 
-• **Marathi** = ``"marathi"``
+• **Marathi** = ``"Marathi"``
 
 ___
 
 ### Mayan
 
-• **Mayan** = ``"mayan"``
+• **Mayan** = ``"Mayan"``
 
 ___
 
 ### Medumba
 
-• **Medumba** = ``"medumba"``
+• **Medumba** = ``"Medumba"``
 
 ___
 
 ### Memoni
 
-• **Memoni** = ``"memoni"``
+• **Memoni** = ``"Memoni"``
 
 ___
 
 ### Mewari
 
-• **Mewari** = ``"mewari"``
+• **Mewari** = ``"Mewari"``
 
 ___
 
 ### Mizo
 
-• **Mizo** = ``"mizo"``
+• **Mizo** = ``"Mizo"``
 
 ___
 
 ### Montenegrin
 
-• **Montenegrin** = ``"montenegrin"``
+• **Montenegrin** = ``"Montenegrin"``
 
 ___
 
 ### Mwan
 
-• **Mwan** = ``"mwan"``
+• **Mwan** = ``"Mwan"``
 
 ___
 
 ### Mwanga
 
-• **Mwanga** = ``"mwanga"``
+• **Mwanga** = ``"Mwanga"``
 
 ___
 
 ### Ndebele
 
-• **Ndebele** = ``"ndebele"``
+• **Ndebele** = ``"Ndebele"``
 
 ___
 
 ### Nepali
 
-• **Nepali** = ``"nepali"``
+• **Nepali** = ``"Nepali"``
 
 ___
 
 ### Nimadi
 
-• **Nimadi** = ``"nimadi"``
+• **Nimadi** = ``"Nimadi"``
 
 ___
 
 ### Oriya
 
-• **Oriya** = ``"oriya"``
+• **Oriya** = ``"Oriya"``
 
 ___
 
 ### Oromo
 
-• **Oromo** = ``"oromo"``
+• **Oromo** = ``"Oromo"``
 
 ___
 
 ### Ovambo
 
-• **Ovambo** = ``"ovambo"``
+• **Ovambo** = ``"Ovambo"``
 
 ___
 
 ### Pamona
 
-• **Pamona** = ``"pamona"``
+• **Pamona** = ``"Pamona"``
 
 ___
 
 ### Pangasinan
 
-• **Pangasinan** = ``"pangasinan"``
+• **Pangasinan** = ``"Pangasinan"``
 
 ___
 
 ### Pashto
 
-• **Pashto** = ``"pashto"``
+• **Pashto** = ``"Pashto"``
 
 ___
 
 ### Phoenician
 
-• **Phoenician** = ``"phoenician"``
+• **Phoenician** = ``"Phoenician"``
 
 ___
 
 ### Polish
 
-• **Polish** = ``"polish"``
+• **Polish** = ``"Polish"``
 
 ___
 
 ### Portuguese
 
-• **Portuguese** = ``"portuguese"``
+• **Portuguese** = ``"Portuguese"``
 
 ___
 
 ### Pulaar
 
-• **Pulaar** = ``"pulaar"``
+• **Pulaar** = ``"Pulaar"``
 
 ___
 
 ### Pular
 
-• **Pular** = ``"pular"``
+• **Pular** = ``"Pular"``
 
 ___
 
 ### Punjabi
 
-• **Punjabi** = ``"punjabi"``
+• **Punjabi** = ``"Punjabi"``
 
 ___
 
 ### Quecha
 
-• **Quecha** = ``"quecha"``
+• **Quecha** = ``"Quecha"``
 
 ___
 
 ### Rajasthani
 
-• **Rajasthani** = ``"rajasthani"``
+• **Rajasthani** = ``"Rajasthani"``
 
 ___
 
 ### Romanian
 
-• **Romanian** = ``"romanian"``
+• **Romanian** = ``"Romanian"``
 
 ___
 
 ### Russian
 
-• **Russian** = ``"russian"``
+• **Russian** = ``"Russian"``
 
 ___
 
 ### Sakha
 
-• **Sakha** = ``"sakha"``
+• **Sakha** = ``"Sakha"``
 
 ___
 
 ### Sango
 
-• **Sango** = ``"sango"``
+• **Sango** = ``"Sango"``
 
 ___
 
 ### Santhali
 
-• **Santhali** = ``"santhali"``
+• **Santhali** = ``"Santhali"``
 
 ___
 
 ### Saraiki
 
-• **Saraiki** = ``"saraiki"``
+• **Saraiki** = ``"Saraiki"``
 
 ___
 
 ### Seim
 
-• **Seim** = ``"seim"``
+• **Seim** = ``"Seim"``
 
 ___
 
 ### Shading
 
-• **Shading** = ``"shading"``
+• **Shading** = ``"Shading"``
 
 ___
 
 ### Shama
 
-• **Shama** = ``"shama"``
+• **Shama** = ``"Shama"``
 
 ___
 
 ### Shan
 
-• **Shan** = ``"shan"``
+• **Shan** = ``"Shan"``
 
 ___
 
 ### Shona
 
-• **Shona** = ``"shona"``
+• **Shona** = ``"Shona"``
 
 ___
 
 ### Silesian
 
-• **Silesian** = ``"silesian"``
+• **Silesian** = ``"Silesian"``
 
 ___
 
 ### Sindhi
 
-• **Sindhi** = ``"sindhi"``
+• **Sindhi** = ``"Sindhi"``
 
 ___
 
 ### Slovak
 
-• **Slovak** = ``"slovak"``
+• **Slovak** = ``"Slovak"``
 
 ___
 
 ### Slovene
 
-• **Slovene** = ``"slovene"``
+• **Slovene** = ``"Slovene"``
 
 ___
 
 ### Soga
 
-• **Soga** = ``"soga"``
+• **Soga** = ``"Soga"``
 
 ___
 
 ### Sogdian
 
-• **Sogdian** = ``"sogdian"``
+• **Sogdian** = ``"Sogdian"``
 
 ___
 
 ### Sotho
 
-• **Sotho** = ``"sotho"``
+• **Sotho** = ``"Sotho"``
 
 ___
 
 ### Spanish
 
-• **Spanish** = ``"spanish"``
+• **Spanish** = ``"Spanish"``
 
 ___
 
 ### Sudanese
 
-• **Sudanese** = ``"sudanese"``
+• **Sudanese** = ``"Sudanese"``
 
 ___
 
 ### Sumerian
 
-• **Sumerian** = ``"sumerian"``
+• **Sumerian** = ``"Sumerian"``
 
 ___
 
 ### Surajpuri
 
-• **Surajpuri** = ``"surajpuri"``
+• **Surajpuri** = ``"Surajpuri"``
 
 ___
 
 ### Surigaonon
 
-• **Surigaonon** = ``"surigaonon"``
+• **Surigaonon** = ``"Surigaonon"``
 
 ___
 
 ### Swati
 
-• **Swati** = ``"swati"``
+• **Swati** = ``"Swati"``
 
 ___
 
 ### Swazi
 
-• **Swazi** = ``"swazi"``
+• **Swazi** = ``"Swazi"``
 
 ___
 
 ### Swedish
 
-• **Swedish** = ``"swedish"``
+• **Swedish** = ``"Swedish"``
 
 ___
 
 ### Tagalog
 
-• **Tagalog** = ``"tagalog"``
+• **Tagalog** = ``"Tagalog"``
 
 ___
 
 ### Tamil
 
-• **Tamil** = ``"tamil"``
+• **Tamil** = ``"Tamil"``
 
 ___
 
 ### Tausug
 
-• **Tausug** = ``"tausug"``
+• **Tausug** = ``"Tausug"``
 
 ___
 
 ### Telugu
 
-• **Telugu** = ``"telugu"``
+• **Telugu** = ``"Telugu"``
 
 ___
 
 ### Tetum
 
-• **Tetum** = ``"tetum"``
+• **Tetum** = ``"Tetum"``
 
 ___
 
 ### Tharu
 
-• **Tharu** = ``"tharu"``
+• **Tharu** = ``"Tharu"``
 
 ___
 
 ### Tibetan
 
-• **Tibetan** = ``"tibetan"``
+• **Tibetan** = ``"Tibetan"``
 
 ___
 
 ### Tigrinya
 
-• **Tigrinya** = ``"tigrinya"``
+• **Tigrinya** = ``"Tigrinya"``
 
 ___
 
 ### Tripuri
 
-• **Tripuri** = ``"tripuri"``
+• **Tripuri** = ``"Tripuri"``
 
 ___
 
 ### Tswana
 
-• **Tswana** = ``"tswana"``
+• **Tswana** = ``"Tswana"``
 
 ___
 
 ### Tulu
 
-• **Tulu** = ``"tulu"``
+• **Tulu** = ``"Tulu"``
 
 ___
 
 ### Turkish
 
-• **Turkish** = ``"turkish"``
+• **Turkish** = ``"Turkish"``
 
 ___
 
 ### Tuwali
 
-• **Tuwali** = ``"tuwali"``
+• **Tuwali** = ``"Tuwali"``
 
 ___
 
 ### Ubi
 
-• **Ubi** = ``"ubi"``
+• **Ubi** = ``"Ubi"``
 
 ___
 
 ### Ukrainian
 
-• **Ukrainian** = ``"ukrainian"``
+• **Ukrainian** = ``"Ukrainian"``
 
 ___
 
 ### Urdu
 
-• **Urdu** = ``"urdu"``
+• **Urdu** = ``"Urdu"``
 
 ___
 
 ### Veps
 
-• **Veps** = ``"veps"``
+• **Veps** = ``"Veps"``
 
 ___
 
 ### Vietnamese
 
-• **Vietnamese** = ``"vietnamese"``
+• **Vietnamese** = ``"Vietnamese"``
 
 ___
 
 ### Wagdi
 
-• **Wagdi** = ``"wagdi"``
+• **Wagdi** = ``"Wagdi"``
 
 ___
 
 ### Waziri
 
-• **Waziri** = ``"waziri"``
+• **Waziri** = ``"Waziri"``
 
 ___
 
 ### Xhosa
 
-• **Xhosa** = ``"xhosa"``
+• **Xhosa** = ``"Xhosa"``
 
 ___
 
 ### Yiddish
 
-• **Yiddish** = ``"yiddish"``
+• **Yiddish** = ``"Yiddish"``
 
 ___
 
 ### Yoruba
 
-• **Yoruba** = ``"yoruba"``
+• **Yoruba** = ``"Yoruba"``
