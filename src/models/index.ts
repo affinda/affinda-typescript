@@ -563,6 +563,328 @@ export interface DocumentUpdate {
   identifier?: string;
 }
 
+export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
+
+/** For custom fields. E.g. 'isAvailable': true */
+export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
+
+/** A JSON-encoded string of the `ResumeData` object. */
+export interface ResumeData {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  name?: ResumeDataName;
+  phoneNumbers?: string[];
+  phoneNumberDetails?: ResumeDataPhoneNumberDetailsItem[];
+  websites?: string[];
+  emails?: string[];
+  dateOfBirth?: string;
+  location?: Location;
+  objective?: string;
+  languages?: ResumeDataLanguagesItem[];
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly languageCodes?: string[];
+  summary?: string;
+  totalYearsExperience?: number;
+  /**
+   * base64 encoded string
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly headShot?: Uint8Array;
+  education?: Education[];
+  /**
+   * Prediction of the candidate's profession based on recent work experience
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly profession?: string;
+  /**
+   * Linkedin account associated with the candidate
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly linkedin?: string;
+  workExperience?: ResumeDataWorkExperienceItem[];
+  skills?: ResumeDataSkillsItem[];
+  certifications?: string[];
+  publications?: string[];
+  referees?: ResumeDataRefereesItem[];
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly sections?: ResumeDataSectionsItem[];
+  /**
+   * Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly isResumeProbability?: number;
+  /** All of the raw text of the parsed resume, example is shortened for readability */
+  rawText?: string;
+  /** Redacted version of the text in the resume, removing PII. */
+  redactedText?: string;
+}
+
+export interface ResumeDataName {
+  raw?: string;
+  first?: string;
+  last?: string;
+  middle?: string;
+  title?: string;
+}
+
+export interface ResumeDataPhoneNumberDetailsItem {
+  rawText?: string;
+  formattedNumber?: string;
+  countryCode?: string;
+  internationalCountryCode?: number;
+  nationalNumber?: string;
+}
+
+export interface Location {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly formatted?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly postalCode?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly state?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly country?: string;
+  /**
+   * Two letter country code (ISO 3166-1 alpha-2)
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly countryCode?: string;
+  rawInput: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly streetNumber?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly street?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly apartmentNumber?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly city?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly latitude?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly longitude?: number;
+}
+
+export interface Education {
+  id?: number;
+  organization?: string;
+  accreditation?: Accreditation;
+  grade?: EducationGrade;
+  location?: Location;
+  dates?: EducationDates;
+}
+
+export interface Accreditation {
+  education?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly inputStr?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly matchStr?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly educationLevel?: string;
+}
+
+export interface EducationGrade {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  raw?: string;
+  metric?: string;
+  value?: string;
+}
+
+export interface EducationDates {
+  completionDate?: Date;
+  isCurrent?: boolean;
+  startDate?: Date;
+  rawText?: string;
+}
+
+export interface ResumeDataWorkExperienceItem {
+  id?: number;
+  jobTitle?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly socCode?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly socName?: string;
+  organization?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly industry?: string;
+  location?: Location;
+  jobDescription?: string;
+  dates?: ResumeDataWorkExperienceItemDates;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly occupation?: ResumeDataWorkExperienceItemOccupation;
+}
+
+export interface ResumeDataWorkExperienceItemDates {
+  startDate?: Date;
+  endDate?: Date;
+  monthsInPosition?: number;
+  isCurrent?: boolean;
+  rawText?: string;
+}
+
+export interface ResumeDataWorkExperienceItemOccupation {
+  /** The raw (not normalized) job title pulled from the work experience entry */
+  jobTitle?: string;
+  /** Mapped onto the EMSI job title taxonomy if a sufficiently close match exists. */
+  jobTitleNormalized?: string;
+  /** EMSI id of the normalised job title. */
+  emsiId?: string;
+  managementLevel?: ManagementLevel;
+  classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
+}
+
+export interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification {
+  /** SOC2020 classification for this job title */
+  title?: string;
+  /** SOC2020 minor group */
+  minorGroup?: string;
+  /** SOC2020 sub major group */
+  subMajorGroup?: string;
+  /** SOC2020 major group */
+  majorGroup?: string;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  socCode?: number;
+}
+
+export interface ResumeDataSkillsItem {
+  id?: number;
+  /**
+   * EMSI id of this skill.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly emsiId?: string;
+  name?: string;
+  lastUsed?: string;
+  numberOfMonths?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly type?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly count?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly weighting?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly sources?: ResumeDataSkillsPropertiesItemsItem[];
+}
+
+export interface ResumeDataSkillsPropertiesItemsItem {
+  section?: string;
+  /** If this skill is extracted from a "workExperience" section, the "position" is the index of the work experience where this skill is found, with 0 being the first work experience, 1 being the second work experience, and so on. */
+  position?: number;
+  /** If this skill is extracted from a "workExperience" section, the "workExperienceId" is the id of the work experience where this skill is found. */
+  workExperienceId?: number;
+}
+
+export interface ResumeDataRefereesItem {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  name?: string;
+  text?: string;
+  email?: string;
+  number?: string;
+  position?: string;
+}
+
+export interface ResumeDataSectionsItem {
+  sectionType?: string;
+  bbox?: number[];
+  pageIndex?: number;
+  text?: string;
+}
+
+/** For custom fields. E.g. 'isAvailable': true */
+export interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {}
+
+/** A JSON-encoded string of the `JobDescriptionData` object. */
+export interface JobDescriptionDataUpdate {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  jobTitle?: JobTitleAnnotationUpdate;
+  contactEmail?: TextAnnotationUpdate;
+  contactName?: TextAnnotationUpdate;
+  contactPhone?: TextAnnotationUpdate;
+  startDate?: DateAnnotationUpdate;
+  endDate?: DateAnnotationUpdate;
+  jobType?: TextAnnotationUpdate;
+  languages?: (LanguageAnnotationUpdate | null)[];
+  skills?: (SkillAnnotationUpdate | null)[];
+  organizationName?: TextAnnotationUpdate;
+  organizationWebsite?: TextAnnotationUpdate;
+  educationLevel?: TextAnnotationUpdate;
+  educationAccreditation?: TextAnnotationUpdate;
+  expectedRemuneration?: ExpectedRemunerationAnnotationUpdate;
+  location?: LocationAnnotationUpdate;
+  certifications?: (TextAnnotationUpdate | null)[];
+  yearsExperience?: YearsExperienceAnnotationUpdate;
+}
+
+export interface AnnotationBase {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  id?: number;
+  rectangle?: Rectangle;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly rectangles?: Rectangle[];
+  pageIndex?: number;
+  raw?: string;
+  /** The overall confidence that the model's prediction is correct */
+  confidence?: number;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence?: number;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+  textExtractionConfidence?: number;
+  isVerified?: boolean;
+  isClientVerified?: boolean;
+  isAutoVerified?: boolean;
+  dataPoint?: string;
+  contentType?: string;
+}
+
+export interface Rectangle {
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+}
+
+export interface JobTitleParsed {
+  /**
+   * Matching job title to extracted text
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly parsed?: JobTitleParsedParsed;
+}
+
+/** Matching job title to extracted text */
+export interface JobTitleParsedParsed {
+  name?: string;
+  managementLevel?: string;
+  classification?: JobTitleParsedClassification;
+}
+
+export interface JobTitleParsedClassification {
+  socCode?: number;
+  title?: string;
+  minorGroup?: string;
+  subMajorGroup?: string;
+  majorGroup?: string;
+}
+
+export interface ExpectedRemunerationAnnotationUpdateParsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
+/** Years of experience range */
+export interface YearsExperienceAnnotationUpdateParsed {
+  /** Minimum years of experience */
+  minimum?: number;
+  /** Maximum years of experience */
+  maximum?: number;
+}
+
 export interface BatchAddTagRequest {
   /** List of documents to tag */
   identifiers?: string[];
@@ -775,13 +1097,6 @@ export interface Annotation {
   dataPoint: string;
   /** The different data types of annotations */
   contentType: AnnotationContentType;
-}
-
-export interface Rectangle {
-  x0: number;
-  y0: number;
-  x1: number;
-  y1: number;
 }
 
 export interface AnnotationCreate {
@@ -1182,35 +1497,6 @@ export interface JobDescriptionSearchDetailLocation {
   value?: JobDescriptionSearchDetailLocationValue;
 }
 
-export interface Location {
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly formatted?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly postalCode?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly state?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly country?: string;
-  /**
-   * Two letter country code (ISO 3166-1 alpha-2)
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly countryCode?: string;
-  rawInput: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly streetNumber?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly street?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly apartmentNumber?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly city?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly latitude?: number;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly longitude?: number;
-}
-
 export interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
   match?: boolean;
 }
@@ -1364,7 +1650,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum21;
+  documentType?: Enum22;
 }
 
 export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1520,40 +1806,6 @@ export interface ResumeSearchDetailEducationMissing {
   recentGraduate?: boolean;
 }
 
-export interface Education {
-  id?: number;
-  organization?: string;
-  accreditation?: Accreditation;
-  grade?: EducationGrade;
-  location?: Location;
-  dates?: EducationDates;
-}
-
-export interface Accreditation {
-  education?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly inputStr?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly matchStr?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly educationLevel?: string;
-}
-
-export interface EducationGrade {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  raw?: string;
-  metric?: string;
-  value?: string;
-}
-
-export interface EducationDates {
-  completionDate?: Date;
-  isCurrent?: boolean;
-  startDate?: Date;
-  rawText?: string;
-}
-
 export interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
   match?: boolean;
 }
@@ -1679,168 +1931,6 @@ export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicatio
 export interface ResumeSearchEmbed {
   /** The signed URL for the embedable search tool. */
   url?: string;
-}
-
-/** For custom fields. E.g. 'isAvailable': true */
-export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
-
-/** A JSON-encoded string of the `ResumeData` object. */
-export interface ResumeData {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  name?: ResumeDataName;
-  phoneNumbers?: string[];
-  phoneNumberDetails?: ResumeDataPhoneNumberDetailsItem[];
-  websites?: string[];
-  emails?: string[];
-  dateOfBirth?: string;
-  location?: Location;
-  objective?: string;
-  languages?: ResumeDataLanguagesItem[];
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly languageCodes?: string[];
-  summary?: string;
-  totalYearsExperience?: number;
-  /**
-   * base64 encoded string
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly headShot?: Uint8Array;
-  education?: Education[];
-  /**
-   * Prediction of the candidate's profession based on recent work experience
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly profession?: string;
-  /**
-   * Linkedin account associated with the candidate
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly linkedin?: string;
-  workExperience?: ResumeDataWorkExperienceItem[];
-  skills?: ResumeDataSkillsItem[];
-  certifications?: string[];
-  publications?: string[];
-  referees?: ResumeDataRefereesItem[];
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly sections?: ResumeDataSectionsItem[];
-  /**
-   * Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly isResumeProbability?: number;
-  /** All of the raw text of the parsed resume, example is shortened for readability */
-  rawText?: string;
-  /** Redacted version of the text in the resume, removing PII. */
-  redactedText?: string;
-}
-
-export interface ResumeDataName {
-  raw?: string;
-  first?: string;
-  last?: string;
-  middle?: string;
-  title?: string;
-}
-
-export interface ResumeDataPhoneNumberDetailsItem {
-  rawText?: string;
-  formattedNumber?: string;
-  countryCode?: string;
-  internationalCountryCode?: number;
-  nationalNumber?: string;
-}
-
-export interface ResumeDataWorkExperienceItem {
-  id?: number;
-  jobTitle?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly socCode?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly socName?: string;
-  organization?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly industry?: string;
-  location?: Location;
-  jobDescription?: string;
-  dates?: ResumeDataWorkExperienceItemDates;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly occupation?: ResumeDataWorkExperienceItemOccupation;
-}
-
-export interface ResumeDataWorkExperienceItemDates {
-  startDate?: Date;
-  endDate?: Date;
-  monthsInPosition?: number;
-  isCurrent?: boolean;
-  rawText?: string;
-}
-
-export interface ResumeDataWorkExperienceItemOccupation {
-  /** The raw (not normalized) job title pulled from the work experience entry */
-  jobTitle?: string;
-  /** Mapped onto the EMSI job title taxonomy if a sufficiently close match exists. */
-  jobTitleNormalized?: string;
-  managementLevel?: ManagementLevel;
-  classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
-}
-
-export interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification {
-  /** SOC2020 classification for this job title */
-  title?: string;
-  /** SOC2020 minor group */
-  minorGroup?: string;
-  /** SOC2020 sub major group */
-  subMajorGroup?: string;
-  /** SOC2020 major group */
-  majorGroup?: string;
-  /** The 4 digit code representing the SOC2020 classification for this job title */
-  socCode?: number;
-}
-
-export interface ResumeDataSkillsItem {
-  id?: number;
-  /**
-   * EMSI id of this skill.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly emsiId?: string;
-  name?: string;
-  lastUsed?: string;
-  numberOfMonths?: number;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly type?: string;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly count?: number;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly weighting?: number;
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly sources?: ResumeDataSkillsPropertiesItemsItem[];
-}
-
-export interface ResumeDataSkillsPropertiesItemsItem {
-  section?: string;
-  /** If this skill is extracted from a "workExperience" section, the "position" is the index of the work experience where this skill is found, with 0 being the first work experience, 1 being the second work experience, and so on. */
-  position?: number;
-  /** If this skill is extracted from a "workExperience" section, the "workExperienceId" is the id of the work experience where this skill is found. */
-  workExperienceId?: number;
-}
-
-export interface ResumeDataRefereesItem {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  name?: string;
-  text?: string;
-  email?: string;
-  number?: string;
-  position?: string;
-}
-
-export interface ResumeDataSectionsItem {
-  sectionType?: string;
-  bbox?: number[];
-  pageIndex?: number;
-  text?: string;
 }
 
 export interface InvoiceData {
@@ -2202,6 +2292,51 @@ export type JobDescription = Document & {
   data?: JobDescriptionData;
 };
 
+export type LocationAnnotationUpdateParsed = Location & {};
+
+export type JobDescriptionSearchDetailLocationValue = Location &
+  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export type ResumeSearchDetailLocationValue = Location &
+  ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+
+export type ResumeSearchDetailEducationValueItem = Education &
+  ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+
+export type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
+
+export type TextAnnotationUpdate = AnnotationBase & {
+  parsed?: string;
+};
+
+export type DateAnnotationUpdate = AnnotationBase & {
+  parsed?: Date;
+};
+
+export type LanguageAnnotationUpdate = AnnotationBase & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type SkillAnnotationUpdate = AnnotationBase & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotationUpdate = AnnotationBase & {
+  parsed?: ExpectedRemunerationAnnotationUpdateParsed;
+};
+
+export type LocationAnnotationUpdate = AnnotationBase & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: LocationAnnotationUpdateParsed;
+};
+
+export type YearsExperienceAnnotationUpdate = AnnotationBase & {
+  /** Years of experience range */
+  parsed?: YearsExperienceAnnotationUpdateParsed;
+};
+
 export type TextAnnotation = Annotation & {
   parsed?: string;
 };
@@ -2261,16 +2396,7 @@ export type AnnotationBatchUpdate = AnnotationUpdate & {
 
 export type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
 
-export type JobDescriptionSearchDetailLocationValue = Location &
-  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
-
-export type ResumeSearchDetailLocationValue = Location &
-  ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
-
 export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
-
-export type ResumeSearchDetailEducationValueItem = Education &
-  ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
 
 export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
   ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
@@ -2610,248 +2736,6 @@ export enum KnownDocumentFormat {
  * **hr-xml**
  */
 export type DocumentFormat = string;
-
-/** Known values of {@link InvitationStatus} that the service accepts. */
-export enum KnownInvitationStatus {
-  Pending = "pending",
-  Accepted = "accepted",
-  Declined = "declined"
-}
-
-/**
- * Defines values for InvitationStatus. \
- * {@link KnownInvitationStatus} can be used interchangeably with InvitationStatus,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **pending** \
- * **accepted** \
- * **declined**
- */
-export type InvitationStatus = string;
-
-/** Known values of {@link InvitationResponseStatus} that the service accepts. */
-export enum KnownInvitationResponseStatus {
-  Accepted = "accepted",
-  Declined = "declined"
-}
-
-/**
- * Defines values for InvitationResponseStatus. \
- * {@link KnownInvitationResponseStatus} can be used interchangeably with InvitationResponseStatus,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **accepted** \
- * **declined**
- */
-export type InvitationResponseStatus = string;
-
-/** Known values of {@link ResthookEvent} that the service accepts. */
-export enum KnownResthookEvent {
-  ResumeParseSucceeded = "resume.parse.succeeded",
-  ResumeParseFailed = "resume.parse.failed",
-  ResumeParseCompleted = "resume.parse.completed",
-  InvoiceParseSucceeded = "invoice.parse.succeeded",
-  InvoiceParseFailed = "invoice.parse.failed",
-  InvoiceParseCompleted = "invoice.parse.completed",
-  InvoiceValidateCompleted = "invoice.validate.completed",
-  DocumentParseSucceeded = "document.parse.succeeded",
-  DocumentParseFailed = "document.parse.failed",
-  DocumentParseCompleted = "document.parse.completed",
-  DocumentValidateCompleted = "document.validate.completed",
-  DocumentClassifySucceeded = "document.classify.succeeded",
-  DocumentClassifyFailed = "document.classify.failed",
-  DocumentClassifyCompleted = "document.classify.completed"
-}
-
-/**
- * Defines values for ResthookEvent. \
- * {@link KnownResthookEvent} can be used interchangeably with ResthookEvent,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resume.parse.succeeded** \
- * **resume.parse.failed** \
- * **resume.parse.completed** \
- * **invoice.parse.succeeded** \
- * **invoice.parse.failed** \
- * **invoice.parse.completed** \
- * **invoice.validate.completed** \
- * **document.parse.succeeded** \
- * **document.parse.failed** \
- * **document.parse.completed** \
- * **document.validate.completed** \
- * **document.classify.succeeded** \
- * **document.classify.failed** \
- * **document.classify.completed**
- */
-export type ResthookEvent = string;
-
-/** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
-export enum KnownResthookSubscriptionVersion {
-  V1 = "v1",
-  V2 = "v2",
-  V3 = "v3"
-}
-
-/**
- * Defines values for ResthookSubscriptionVersion. \
- * {@link KnownResthookSubscriptionVersion} can be used interchangeably with ResthookSubscriptionVersion,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **v1** \
- * **v2** \
- * **v3**
- */
-export type ResthookSubscriptionVersion = string;
-
-/** Known values of {@link Version} that the service accepts. */
-export enum KnownVersion {
-  V1 = "v1",
-  V2 = "v2",
-  V3 = "v3"
-}
-
-/**
- * Defines values for Version. \
- * {@link KnownVersion} can be used interchangeably with Version,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **v1** \
- * **v2** \
- * **v3**
- */
-export type Version = string;
-
-/** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
-export enum KnownSearchParametersCustomDataFilterType {
-  Equals = "equals",
-  Range = "range"
-}
-
-/**
- * Defines values for SearchParametersCustomDataFilterType. \
- * {@link KnownSearchParametersCustomDataFilterType} can be used interchangeably with SearchParametersCustomDataFilterType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **equals** \
- * **range**
- */
-export type SearchParametersCustomDataFilterType = string;
-
-/** Known values of {@link Enum18} that the service accepts. */
-export enum KnownEnum18 {
-  Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
-}
-
-/**
- * Defines values for Enum18. \
- * {@link KnownEnum18} can be used interchangeably with Enum18,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type Enum18 = string;
-
-/** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
-export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
-  Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
-}
-
-/**
- * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
- * {@link KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType = string;
-
-/** Known values of {@link PostContentSchemaDocumentType} that the service accepts. */
-export enum KnownPostContentSchemaDocumentType {
-  Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
-}
-
-/**
- * Defines values for PostContentSchemaDocumentType. \
- * {@link KnownPostContentSchemaDocumentType} can be used interchangeably with PostContentSchemaDocumentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type PostContentSchemaDocumentType = string;
-
-/** Known values of {@link Enum21} that the service accepts. */
-export enum KnownEnum21 {
-  Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
-}
-
-/**
- * Defines values for Enum21. \
- * {@link KnownEnum21} can be used interchangeably with Enum21,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type Enum21 = string;
-
-/** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
-export enum KnownResumeSkillSourcesItemSection {
-  Achievements = "Achievements",
-  AdditionalInformation = "AdditionalInformation",
-  Education = "Education",
-  Extracurriculars = "Extracurriculars",
-  Organisations = "Organisations",
-  Other = "Other",
-  PersonalDetails = "PersonalDetails",
-  Projects = "Projects",
-  Publications = "Publications",
-  Referees = "Referees",
-  Skills = "Skills",
-  Summary = "Summary",
-  Training = "Training",
-  WorkExperience = "WorkExperience",
-  NotPopulated = "NotPopulated",
-  Header = "Header",
-  Footer = "Footer",
-  SkillsInterestsLanguages = "Skills/Interests/Languages",
-  TrainingCertifications = "Training/Certifications",
-  ExtracurricularsLeadership = "Extracurriculars/Leadership"
-}
-
-/**
- * Defines values for ResumeSkillSourcesItemSection. \
- * {@link KnownResumeSkillSourcesItemSection} can be used interchangeably with ResumeSkillSourcesItemSection,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **Achievements** \
- * **AdditionalInformation** \
- * **Education** \
- * **Extracurriculars** \
- * **Organisations** \
- * **Other** \
- * **PersonalDetails** \
- * **Projects** \
- * **Publications** \
- * **Referees** \
- * **Skills** \
- * **Summary** \
- * **Training** \
- * **WorkExperience** \
- * **NotPopulated** \
- * **Header** \
- * **Footer** \
- * **Skills\/Interests\/Languages** \
- * **Training\/Certifications** \
- * **Extracurriculars\/Leadership**
- */
-export type ResumeSkillSourcesItemSection = string;
 
 /** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
 export enum KnownResumeDataLanguagesItem {
@@ -3270,6 +3154,250 @@ export enum KnownResumeDataLanguagesItem {
  * **Yoruba**
  */
 export type ResumeDataLanguagesItem = string;
+
+/** Known values of {@link InvitationStatus} that the service accepts. */
+export enum KnownInvitationStatus {
+  Pending = "pending",
+  Accepted = "accepted",
+  Declined = "declined"
+}
+
+/**
+ * Defines values for InvitationStatus. \
+ * {@link KnownInvitationStatus} can be used interchangeably with InvitationStatus,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **pending** \
+ * **accepted** \
+ * **declined**
+ */
+export type InvitationStatus = string;
+
+/** Known values of {@link InvitationResponseStatus} that the service accepts. */
+export enum KnownInvitationResponseStatus {
+  Accepted = "accepted",
+  Declined = "declined"
+}
+
+/**
+ * Defines values for InvitationResponseStatus. \
+ * {@link KnownInvitationResponseStatus} can be used interchangeably with InvitationResponseStatus,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **accepted** \
+ * **declined**
+ */
+export type InvitationResponseStatus = string;
+
+/** Known values of {@link ResthookEvent} that the service accepts. */
+export enum KnownResthookEvent {
+  ResumeParseSucceeded = "resume.parse.succeeded",
+  ResumeParseFailed = "resume.parse.failed",
+  ResumeParseCompleted = "resume.parse.completed",
+  InvoiceParseSucceeded = "invoice.parse.succeeded",
+  InvoiceParseFailed = "invoice.parse.failed",
+  InvoiceParseCompleted = "invoice.parse.completed",
+  InvoiceValidateCompleted = "invoice.validate.completed",
+  DocumentParseSucceeded = "document.parse.succeeded",
+  DocumentParseFailed = "document.parse.failed",
+  DocumentParseCompleted = "document.parse.completed",
+  DocumentValidateCompleted = "document.validate.completed",
+  DocumentClassifySucceeded = "document.classify.succeeded",
+  DocumentClassifyFailed = "document.classify.failed",
+  DocumentClassifyCompleted = "document.classify.completed"
+}
+
+/**
+ * Defines values for ResthookEvent. \
+ * {@link KnownResthookEvent} can be used interchangeably with ResthookEvent,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resume.parse.succeeded** \
+ * **resume.parse.failed** \
+ * **resume.parse.completed** \
+ * **invoice.parse.succeeded** \
+ * **invoice.parse.failed** \
+ * **invoice.parse.completed** \
+ * **invoice.validate.completed** \
+ * **document.parse.succeeded** \
+ * **document.parse.failed** \
+ * **document.parse.completed** \
+ * **document.validate.completed** \
+ * **document.classify.succeeded** \
+ * **document.classify.failed** \
+ * **document.classify.completed**
+ */
+export type ResthookEvent = string;
+
+/** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
+export enum KnownResthookSubscriptionVersion {
+  V1 = "v1",
+  V2 = "v2",
+  V3 = "v3"
+}
+
+/**
+ * Defines values for ResthookSubscriptionVersion. \
+ * {@link KnownResthookSubscriptionVersion} can be used interchangeably with ResthookSubscriptionVersion,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **v1** \
+ * **v2** \
+ * **v3**
+ */
+export type ResthookSubscriptionVersion = string;
+
+/** Known values of {@link Version} that the service accepts. */
+export enum KnownVersion {
+  V1 = "v1",
+  V2 = "v2",
+  V3 = "v3"
+}
+
+/**
+ * Defines values for Version. \
+ * {@link KnownVersion} can be used interchangeably with Version,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **v1** \
+ * **v2** \
+ * **v3**
+ */
+export type Version = string;
+
+/** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
+export enum KnownSearchParametersCustomDataFilterType {
+  Equals = "equals",
+  Range = "range"
+}
+
+/**
+ * Defines values for SearchParametersCustomDataFilterType. \
+ * {@link KnownSearchParametersCustomDataFilterType} can be used interchangeably with SearchParametersCustomDataFilterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **equals** \
+ * **range**
+ */
+export type SearchParametersCustomDataFilterType = string;
+
+/** Known values of {@link Enum19} that the service accepts. */
+export enum KnownEnum19 {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for Enum19. \
+ * {@link KnownEnum19} can be used interchangeably with Enum19,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type Enum19 = string;
+
+/** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
+export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
+ * {@link KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType = string;
+
+/** Known values of {@link PostContentSchemaDocumentType} that the service accepts. */
+export enum KnownPostContentSchemaDocumentType {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for PostContentSchemaDocumentType. \
+ * {@link KnownPostContentSchemaDocumentType} can be used interchangeably with PostContentSchemaDocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type PostContentSchemaDocumentType = string;
+
+/** Known values of {@link Enum22} that the service accepts. */
+export enum KnownEnum22 {
+  Resumes = "resumes",
+  JobDescriptions = "job_descriptions"
+}
+
+/**
+ * Defines values for Enum22. \
+ * {@link KnownEnum22} can be used interchangeably with Enum22,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type Enum22 = string;
+
+/** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
+export enum KnownResumeSkillSourcesItemSection {
+  Achievements = "Achievements",
+  AdditionalInformation = "AdditionalInformation",
+  Education = "Education",
+  Extracurriculars = "Extracurriculars",
+  Organisations = "Organisations",
+  Other = "Other",
+  PersonalDetails = "PersonalDetails",
+  Projects = "Projects",
+  Publications = "Publications",
+  Referees = "Referees",
+  Skills = "Skills",
+  Summary = "Summary",
+  Training = "Training",
+  WorkExperience = "WorkExperience",
+  NotPopulated = "NotPopulated",
+  Header = "Header",
+  Footer = "Footer",
+  SkillsInterestsLanguages = "Skills/Interests/Languages",
+  TrainingCertifications = "Training/Certifications",
+  ExtracurricularsLeadership = "Extracurriculars/Leadership"
+}
+
+/**
+ * Defines values for ResumeSkillSourcesItemSection. \
+ * {@link KnownResumeSkillSourcesItemSection} can be used interchangeably with ResumeSkillSourcesItemSection,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **Achievements** \
+ * **AdditionalInformation** \
+ * **Education** \
+ * **Extracurriculars** \
+ * **Organisations** \
+ * **Other** \
+ * **PersonalDetails** \
+ * **Projects** \
+ * **Publications** \
+ * **Referees** \
+ * **Skills** \
+ * **Summary** \
+ * **Training** \
+ * **WorkExperience** \
+ * **NotPopulated** \
+ * **Header** \
+ * **Footer** \
+ * **Skills\/Interests\/Languages** \
+ * **Training\/Certifications** \
+ * **Extracurriculars\/Leadership**
+ */
+export type ResumeSkillSourcesItemSection = string;
+/** Defines values for ManagementLevel. */
+export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
 export type SearchLocationUnit = "km" | "mi";
 /** Defines values for EducationLevel. */
@@ -3279,8 +3407,6 @@ export type EducationLevel =
   | "bachelors"
   | "masters"
   | "doctoral";
-/** Defines values for ManagementLevel. */
-export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllWorkspacesOptionalParams
@@ -3480,6 +3606,13 @@ export type AffindaAPIUpdateDocumentResponse = DocumentUnion;
 /** Optional parameters. */
 export interface AffindaAPIDeleteDocumentOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateDocumentDataOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDocumentData operation. */
+export type AffindaAPIUpdateDocumentDataResponse = DocumentUnion;
 
 /** Optional parameters. */
 export interface AffindaAPIBatchAddTagOptionalParams
@@ -3999,7 +4132,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum18;
+  documentType?: Enum19;
 }
 
 /** Contains response data for the getAllIndexes operation. */

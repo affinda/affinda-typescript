@@ -12,8 +12,8 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum18](enums/KnownEnum18.md)
-- [KnownEnum21](enums/KnownEnum21.md)
+- [KnownEnum19](enums/KnownEnum19.md)
+- [KnownEnum22](enums/KnownEnum22.md)
 - [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
@@ -130,6 +130,7 @@
 - [AffindaAPIUpdateCollectionOptionalParams](interfaces/AffindaAPIUpdateCollectionOptionalParams.md)
 - [AffindaAPIUpdateDataPointChoiceOptionalParams](interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md)
 - [AffindaAPIUpdateDataPointOptionalParams](interfaces/AffindaAPIUpdateDataPointOptionalParams.md)
+- [AffindaAPIUpdateDocumentDataOptionalParams](interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md)
 - [AffindaAPIUpdateDocumentOptionalParams](interfaces/AffindaAPIUpdateDocumentOptionalParams.md)
 - [AffindaAPIUpdateExtractorOptionalParams](interfaces/AffindaAPIUpdateExtractorOptionalParams.md)
 - [AffindaAPIUpdateInvitationOptionalParams](interfaces/AffindaAPIUpdateInvitationOptionalParams.md)
@@ -141,6 +142,7 @@
 - [AffindaAPIUpdateTagOptionalParams](interfaces/AffindaAPIUpdateTagOptionalParams.md)
 - [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
+- [AnnotationBase](interfaces/AnnotationBase.md)
 - [AnnotationCreate](interfaces/AnnotationCreate.md)
 - [AnnotationCreateParsed](interfaces/AnnotationCreateParsed.md)
 - [AnnotationUpdate](interfaces/AnnotationUpdate.md)
@@ -170,6 +172,7 @@
 - [Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1](interfaces/Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1.md)
 - [Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1](interfaces/Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.md)
 - [Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1](interfaces/Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.md)
+- [Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties](interfaces/Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties.md)
 - [Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1](interfaces/Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.md)
 - [Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
@@ -228,6 +231,7 @@
 - [EducationGrade](interfaces/EducationGrade.md)
 - [EducationSearchScoreComponent](interfaces/EducationSearchScoreComponent.md)
 - [ExpectedRemunerationAnnotationParsed](interfaces/ExpectedRemunerationAnnotationParsed.md)
+- [ExpectedRemunerationAnnotationUpdateParsed](interfaces/ExpectedRemunerationAnnotationUpdateParsed.md)
 - [ExperienceSearchScoreComponent](interfaces/ExperienceSearchScoreComponent.md)
 - [Extractor](interfaces/Extractor.md)
 - [ExtractorBaseExtractor](interfaces/ExtractorBaseExtractor.md)
@@ -247,6 +251,7 @@
 - [InvitationUpdate](interfaces/InvitationUpdate.md)
 - [InvoiceData](interfaces/InvoiceData.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
+- [JobDescriptionDataUpdate](interfaces/JobDescriptionDataUpdate.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
 - [JobDescriptionSearchDetail](interfaces/JobDescriptionSearchDetail.md)
@@ -269,6 +274,9 @@
 - [JobDescriptionSearchResult](interfaces/JobDescriptionSearchResult.md)
 - [JobTitleAnnotationParsed](interfaces/JobTitleAnnotationParsed.md)
 - [JobTitleAnnotationParsedClassification](interfaces/JobTitleAnnotationParsedClassification.md)
+- [JobTitleParsed](interfaces/JobTitleParsed.md)
+- [JobTitleParsedClassification](interfaces/JobTitleParsedClassification.md)
+- [JobTitleParsedParsed](interfaces/JobTitleParsedParsed.md)
 - [JobTitleSearchScoreComponent](interfaces/JobTitleSearchScoreComponent.md)
 - [LanguagesSearchScoreComponent](interfaces/LanguagesSearchScoreComponent.md)
 - [Location](interfaces/Location.md)
@@ -304,6 +312,7 @@
 - [PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+- [PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema](interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [Rectangle](interfaces/Rectangle.md)
 - [RedactConfig](interfaces/RedactConfig.md)
@@ -372,6 +381,7 @@
 - [WorkspaceMembershipCreate](interfaces/WorkspaceMembershipCreate.md)
 - [WorkspaceUpdate](interfaces/WorkspaceUpdate.md)
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
+- [YearsExperienceAnnotationUpdateParsed](interfaces/YearsExperienceAnnotationUpdateParsed.md)
 
 ### Type Aliases
 
@@ -445,6 +455,7 @@
 - [AffindaAPIUpdateCollectionResponse](modules.md#affindaapiupdatecollectionresponse)
 - [AffindaAPIUpdateDataPointChoiceResponse](modules.md#affindaapiupdatedatapointchoiceresponse)
 - [AffindaAPIUpdateDataPointResponse](modules.md#affindaapiupdatedatapointresponse)
+- [AffindaAPIUpdateDocumentDataResponse](modules.md#affindaapiupdatedocumentdataresponse)
 - [AffindaAPIUpdateDocumentResponse](modules.md#affindaapiupdatedocumentresponse)
 - [AffindaAPIUpdateExtractorResponse](modules.md#affindaapiupdateextractorresponse)
 - [AffindaAPIUpdateInvitationResponse](modules.md#affindaapiupdateinvitationresponse)
@@ -460,15 +471,17 @@
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
 - [CurrencyCodeAnnotation](modules.md#currencycodeannotation)
 - [DateAnnotation](modules.md#dateannotation)
+- [DateAnnotationUpdate](modules.md#dateannotationupdate)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
 - [DocumentFormat](modules.md#documentformat)
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum18](modules.md#enum18)
-- [Enum21](modules.md#enum21)
+- [Enum19](modules.md#enum19)
+- [Enum22](modules.md#enum22)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
+- [ExpectedRemunerationAnnotationUpdate](modules.md#expectedremunerationannotationupdate)
 - [FloatAnnotation](modules.md#floatannotation)
 - [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
@@ -509,8 +522,12 @@
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
 - [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
+- [JobTitleAnnotationUpdate](modules.md#jobtitleannotationupdate)
 - [LanguageAnnotation](modules.md#languageannotation)
+- [LanguageAnnotationUpdate](modules.md#languageannotationupdate)
 - [LocationAnnotation](modules.md#locationannotation)
+- [LocationAnnotationUpdate](modules.md#locationannotationupdate)
+- [LocationAnnotationUpdateParsed](modules.md#locationannotationupdateparsed)
 - [ManagementLevel](modules.md#managementlevel)
 - [OrganizationRole](modules.md#organizationrole)
 - [OrganizationUserRole](modules.md#organizationuserrole)
@@ -538,12 +555,15 @@
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SearchParametersCustomDataFilterType](modules.md#searchparameterscustomdatafiltertype)
 - [SkillAnnotation](modules.md#skillannotation)
+- [SkillAnnotationUpdate](modules.md#skillannotationupdate)
 - [TableAnnotation](modules.md#tableannotation)
 - [TextAnnotation](modules.md#textannotation)
+- [TextAnnotationUpdate](modules.md#textannotationupdate)
 - [ThemeConfigPaletteMode](modules.md#themeconfigpalettemode)
 - [Version](modules.md#version)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
+- [YearsExperienceAnnotationUpdate](modules.md#yearsexperienceannotationupdate)
 
 ## Type Aliases
 
@@ -1119,6 +1139,14 @@ Contains response data for the updateDataPoint operation.
 
 ___
 
+### AffindaAPIUpdateDocumentDataResponse
+
+Ƭ **AffindaAPIUpdateDocumentDataResponse**: [`DocumentUnion`](modules.md#documentunion)
+
+Contains response data for the updateDocumentData operation.
+
+___
+
 ### AffindaAPIUpdateDocumentResponse
 
 Ƭ **AffindaAPIUpdateDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
@@ -1261,6 +1289,12 @@ ___
 
 ___
 
+### DateAnnotationUpdate
+
+Ƭ **DateAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `Date`  }
+
+___
+
 ### DateFormatPreference
 
 Ƭ **DateFormatPreference**: `string`
@@ -1335,12 +1369,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum18
+### Enum19
 
-Ƭ **Enum18**: `string`
+Ƭ **Enum19**: `string`
 
-Defines values for Enum18. \
-[KnownEnum18](enums/KnownEnum18.md) can be used interchangeably with Enum18,
+Defines values for Enum19. \
+[KnownEnum19](enums/KnownEnum19.md) can be used interchangeably with Enum19,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1348,12 +1382,12 @@ Defines values for Enum18. \
 
 ___
 
-### Enum21
+### Enum22
 
-Ƭ **Enum21**: `string`
+Ƭ **Enum22**: `string`
 
-Defines values for Enum21. \
-[KnownEnum21](enums/KnownEnum21.md) can be used interchangeably with Enum21,
+Defines values for Enum22. \
+[KnownEnum22](enums/KnownEnum22.md) can be used interchangeably with Enum22,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1364,6 +1398,12 @@ ___
 ### ExpectedRemunerationAnnotation
 
 Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
+
+___
+
+### ExpectedRemunerationAnnotationUpdate
+
+Ƭ **ExpectedRemunerationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: [`ExpectedRemunerationAnnotationUpdateParsed`](interfaces/ExpectedRemunerationAnnotationUpdateParsed.md)  }
 
 ___
 
@@ -1637,15 +1677,39 @@ ___
 
 ___
 
+### JobTitleAnnotationUpdate
+
+Ƭ **JobTitleAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & [`JobTitleParsed`](interfaces/JobTitleParsed.md) & {}
+
+___
+
 ### LanguageAnnotation
 
 Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
 
 ___
 
+### LanguageAnnotationUpdate
+
+Ƭ **LanguageAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `string`  }
+
+___
+
 ### LocationAnnotation
 
 Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`Location`](interfaces/Location.md)  }
+
+___
+
+### LocationAnnotationUpdate
+
+Ƭ **LocationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: [`LocationAnnotationUpdateParsed`](modules.md#locationannotationupdateparsed)  }
+
+___
+
+### LocationAnnotationUpdateParsed
+
+Ƭ **LocationAnnotationUpdateParsed**: [`Location`](interfaces/Location.md) & {}
 
 ___
 
@@ -2110,6 +2174,12 @@ ___
 
 ___
 
+### SkillAnnotationUpdate
+
+Ƭ **SkillAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `string`  }
+
+___
+
 ### TableAnnotation
 
 Ƭ **TableAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`TableAnnotationParsed`](interfaces/TableAnnotationParsed.md)  }
@@ -2119,6 +2189,12 @@ ___
 ### TextAnnotation
 
 Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+
+___
+
+### TextAnnotationUpdate
+
+Ƭ **TextAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `string`  }
 
 ___
 
@@ -2165,3 +2241,9 @@ ___
 ### YearsExperienceAnnotation
 
 Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
+
+___
+
+### YearsExperienceAnnotationUpdate
+
+Ƭ **YearsExperienceAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: [`YearsExperienceAnnotationUpdateParsed`](interfaces/YearsExperienceAnnotationUpdateParsed.md)  }

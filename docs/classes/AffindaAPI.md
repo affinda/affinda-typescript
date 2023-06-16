@@ -113,6 +113,7 @@
 - [updateDataPoint](AffindaAPI.md#updatedatapoint)
 - [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
 - [updateDocument](AffindaAPI.md#updatedocument)
+- [updateDocumentData](AffindaAPI.md#updatedocumentdata)
 - [updateExtractor](AffindaAPI.md#updateextractor)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
@@ -1953,6 +1954,28 @@ Update file name, expiry time, or move to another collection, etc.
 | `identifier` | `string` | Document's identifier |
 | `body` | [`DocumentUpdate`](../interfaces/DocumentUpdate.md) | Document data to update |
 | `options?` | [`AffindaAPIUpdateDocumentOptionalParams`](../interfaces/AffindaAPIUpdateDocumentOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+
+___
+
+### updateDocumentData
+
+▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+
+Update data of a document.
+Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
+/annotations/{id}` endpoint or the `POST /annotations/batch_update` endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Resume or Job Description identifier |
+| `body` | [`PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md) | Resume data to update |
+| `options?` | [`AffindaAPIUpdateDocumentDataOptionalParams`](../interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md) | The options parameters. |
 
 #### Returns
 

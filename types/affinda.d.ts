@@ -146,6 +146,15 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteDocument(identifier: string, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
     /**
+     * Update data of a document.
+     * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
+     * /annotations/{id}` endpoint or the `POST /annotations/batch_update` endpoint.
+     * @param identifier Resume or Job Description identifier
+     * @param body Resume data to update
+     * @param options The options parameters.
+     */
+    updateDocumentData(identifier: string, body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPIUpdateDocumentDataOptionalParams): Promise<AffindaAPIUpdateDocumentDataResponse>;
+    /**
      * Add a tag to documents.
      * Tags are used to group documents together.
      * Tags can be used to filter documents.
@@ -1072,7 +1081,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum18;
+    documentType?: Enum19;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -1427,6 +1436,13 @@ export declare interface AffindaAPIUpdateDataPointOptionalParams extends coreCli
 export declare type AffindaAPIUpdateDataPointResponse = DataPoint;
 
 /** Optional parameters. */
+export declare interface AffindaAPIUpdateDocumentDataOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDocumentData operation. */
+export declare type AffindaAPIUpdateDocumentDataResponse = DocumentUnion;
+
+/** Optional parameters. */
 export declare interface AffindaAPIUpdateDocumentOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1540,6 +1556,28 @@ export declare interface Annotation {
     dataPoint: string;
     /** The different data types of annotations */
     contentType: AnnotationContentType;
+}
+
+export declare interface AnnotationBase {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
+    id?: number;
+    rectangle?: Rectangle;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly rectangles?: Rectangle[];
+    pageIndex?: number;
+    raw?: string;
+    /** The overall confidence that the model's prediction is correct */
+    confidence?: number;
+    /** The model's confidence that the text has been classified correctly */
+    classificationConfidence?: number;
+    /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model. */
+    textExtractionConfidence?: number;
+    isVerified?: boolean;
+    isClientVerified?: boolean;
+    isAutoVerified?: boolean;
+    dataPoint?: string;
+    contentType?: string;
 }
 
 export declare type AnnotationBatchUpdate = AnnotationUpdate & {
@@ -1826,6 +1864,10 @@ export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftA
     parsed?: string;
 }
 
+/** For custom fields. E.g. 'isAvailable': true */
+export declare interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {
+}
+
 export declare interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
     raw?: string;
     parsed?: string;
@@ -2104,6 +2146,10 @@ export declare type DateAnnotation = Annotation & {
     parsed?: Date;
 };
 
+export declare type DateAnnotationUpdate = AnnotationBase & {
+    parsed?: Date;
+};
+
 /**
  * Defines values for DateFormatPreference. \
  * {@link KnownDateFormatPreference} can be used interchangeably with DateFormatPreference,
@@ -2351,30 +2397,41 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum18. \
- * {@link KnownEnum18} can be used interchangeably with Enum18,
+ * Defines values for Enum19. \
+ * {@link KnownEnum19} can be used interchangeably with Enum19,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum18 = string;
+export declare type Enum19 = string;
 
 /**
- * Defines values for Enum21. \
- * {@link KnownEnum21} can be used interchangeably with Enum21,
+ * Defines values for Enum22. \
+ * {@link KnownEnum22} can be used interchangeably with Enum22,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum21 = string;
+export declare type Enum22 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
 };
 
 export declare interface ExpectedRemunerationAnnotationParsed {
+    minimum?: number;
+    maximum?: number;
+    currency?: string;
+    unit?: string;
+}
+
+export declare type ExpectedRemunerationAnnotationUpdate = AnnotationBase & {
+    parsed?: ExpectedRemunerationAnnotationUpdateParsed;
+};
+
+export declare interface ExpectedRemunerationAnnotationUpdateParsed {
     minimum?: number;
     maximum?: number;
     currency?: string;
@@ -2705,6 +2762,29 @@ export declare interface JobDescriptionData {
     rawText?: string;
 }
 
+/** A JSON-encoded string of the `JobDescriptionData` object. */
+export declare interface JobDescriptionDataUpdate {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
+    jobTitle?: JobTitleAnnotationUpdate;
+    contactEmail?: TextAnnotationUpdate;
+    contactName?: TextAnnotationUpdate;
+    contactPhone?: TextAnnotationUpdate;
+    startDate?: DateAnnotationUpdate;
+    endDate?: DateAnnotationUpdate;
+    jobType?: TextAnnotationUpdate;
+    languages?: (LanguageAnnotationUpdate | null)[];
+    skills?: (SkillAnnotationUpdate | null)[];
+    organizationName?: TextAnnotationUpdate;
+    organizationWebsite?: TextAnnotationUpdate;
+    educationLevel?: TextAnnotationUpdate;
+    educationAccreditation?: TextAnnotationUpdate;
+    expectedRemuneration?: ExpectedRemunerationAnnotationUpdate;
+    location?: LocationAnnotationUpdate;
+    certifications?: (TextAnnotationUpdate | null)[];
+    yearsExperience?: YearsExperienceAnnotationUpdate;
+}
+
 export declare interface JobDescriptionSearch {
     /** Total number of results */
     count?: number;
@@ -2932,6 +3012,31 @@ export declare interface JobTitleAnnotationParsedClassification {
     majorGroup?: string;
 }
 
+export declare type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
+
+export declare interface JobTitleParsed {
+    /**
+     * Matching job title to extracted text
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly parsed?: JobTitleParsedParsed;
+}
+
+export declare interface JobTitleParsedClassification {
+    socCode?: number;
+    title?: string;
+    minorGroup?: string;
+    subMajorGroup?: string;
+    majorGroup?: string;
+}
+
+/** Matching job title to extracted text */
+export declare interface JobTitleParsedParsed {
+    name?: string;
+    managementLevel?: string;
+    classification?: JobTitleParsedClassification;
+}
+
 export declare interface JobTitleSearchScoreComponent {
     value?: string;
     label: string;
@@ -3000,14 +3105,14 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum18} that the service accepts. */
-export declare enum KnownEnum18 {
+/** Known values of {@link Enum19} that the service accepts. */
+export declare enum KnownEnum19 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum21} that the service accepts. */
-export declare enum KnownEnum21 {
+/** Known values of {@link Enum22} that the service accepts. */
+export declare enum KnownEnum22 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -3348,6 +3453,11 @@ export declare type LanguageAnnotation = Annotation & {
     readonly parsed?: string;
 };
 
+export declare type LanguageAnnotationUpdate = AnnotationBase & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
+};
+
 export declare interface LanguagesSearchScoreComponent {
     value?: string;
     label: string;
@@ -3387,6 +3497,13 @@ export { Location_2 as Location }
 export declare type LocationAnnotation = Annotation & {
     parsed?: Location_2;
 };
+
+export declare type LocationAnnotationUpdate = AnnotationBase & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: LocationAnnotationUpdateParsed;
+};
+
+export declare type LocationAnnotationUpdateParsed = Location_2 & {};
 
 export declare interface LocationSearchScoreComponent {
     value?: string;
@@ -3597,7 +3714,7 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
 
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum21;
+    documentType?: Enum22;
 }
 
 export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -3646,6 +3763,9 @@ export declare interface PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyCo
 }
 
 export declare type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export declare interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {
+}
 
 export declare interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
     /** Number of indexed documents in result */
@@ -4153,6 +4273,8 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     jobTitle?: string;
     /** Mapped onto the EMSI job title taxonomy if a sufficiently close match exists. */
     jobTitleNormalized?: string;
+    /** EMSI id of the normalised job title. */
+    emsiId?: string;
     managementLevel?: ManagementLevel;
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
@@ -4512,6 +4634,11 @@ export declare type SkillAnnotation = Annotation & {
     readonly parsed?: string;
 };
 
+export declare type SkillAnnotationUpdate = AnnotationBase & {
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly parsed?: string;
+};
+
 export declare interface SkillsSearchScoreComponent {
     value?: string;
     label: string;
@@ -4549,6 +4676,10 @@ export declare interface TagUpdate {
 }
 
 export declare type TextAnnotation = Annotation & {
+    parsed?: string;
+};
+
+export declare type TextAnnotationUpdate = AnnotationBase & {
     parsed?: string;
 };
 
@@ -4744,6 +4875,19 @@ export declare type YearsExperienceAnnotation = Annotation & {
 
 /** Years of experience range */
 export declare interface YearsExperienceAnnotationParsed {
+    /** Minimum years of experience */
+    minimum?: number;
+    /** Maximum years of experience */
+    maximum?: number;
+}
+
+export declare type YearsExperienceAnnotationUpdate = AnnotationBase & {
+    /** Years of experience range */
+    parsed?: YearsExperienceAnnotationUpdateParsed;
+};
+
+/** Years of experience range */
+export declare interface YearsExperienceAnnotationUpdateParsed {
     /** Minimum years of experience */
     minimum?: number;
     /** Maximum years of experience */
