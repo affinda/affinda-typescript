@@ -5041,6 +5041,7 @@ export const DataPoint: coreClient.CompositeMapper = {
       },
       slug: {
         serializedName: "slug",
+        required: true,
         xmlName: "slug",
         type: {
           name: "String"
@@ -5093,24 +5094,19 @@ export const DataPoint: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      similarTo: {
-        serializedName: "similarTo",
-        xmlName: "similarTo",
-        xmlElementName: "DataPointSimilarToItem",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "String"
-            }
-          }
-        }
-      },
       displayEnumValue: {
         serializedName: "displayEnumValue",
         xmlName: "displayEnumValue",
         type: {
           name: "Boolean"
+        }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        xmlName: "parent",
+        type: {
+          name: "String"
         }
       },
       children: {
@@ -5139,6 +5135,7 @@ export const DataPointCreate: coreClient.CompositeMapper = {
     modelProperties: {
       name: {
         serializedName: "name",
+        required: true,
         xmlName: "name",
         type: {
           name: "String"
@@ -5197,6 +5194,21 @@ export const DataPointCreate: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        xmlName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        xmlName: "parent",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -5226,6 +5238,21 @@ export const DataPointUpdate: coreClient.CompositeMapper = {
         serializedName: "description",
         nullable: true,
         xmlName: "description",
+        type: {
+          name: "String"
+        }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        xmlName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        xmlName: "parent",
         type: {
           name: "String"
         }

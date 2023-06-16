@@ -33,6 +33,8 @@ ___
 
 • **name**: `string`
 
+Name of the data point.
+
 ___
 
 ### noRect
@@ -44,6 +46,8 @@ ___
 ### slug
 
 • **slug**: `string`
+
+A camelCase string that will be used as the key in the API response.
 
 ___
 

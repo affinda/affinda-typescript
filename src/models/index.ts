@@ -361,7 +361,9 @@ export interface DataFieldCreateField {
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
 export interface DataFieldCreateDataPoint {
+  /** Name of the data point. */
   name: string;
+  /** A camelCase string that will be used as the key in the API response. */
   slug: string;
   description?: string;
   /** The different data types of annotations */
@@ -391,7 +393,9 @@ export interface DataFieldField {
 export interface DataFieldDataPoint {
   /** Uniquely identify a data point. */
   identifier: string;
+  /** Name of the data point. */
   name: string;
+  /** A camelCase string that will be used as the key in the API response. */
   slug: string;
   description: string | null;
   /** The different data types of annotations */
@@ -988,23 +992,29 @@ export interface ExtractorUpdate {
 export interface DataPoint {
   /** Uniquely identify a data point. */
   identifier: string;
+  /** Name of the data point. */
   name: string;
-  slug?: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug: string;
   description?: string;
   /** The different data types of annotations */
   annotationContentType: AnnotationContentType;
-  organization?: Organization;
+  organization: Organization | null;
   /** Uniquely identify an extractor. */
   extractor: string | null;
   multiple?: boolean;
   noRect?: boolean;
-  similarTo?: string[];
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
   children?: DataPoint[];
 }
 
 export interface DataPointCreate {
-  name?: string;
+  /** Name of the data point. */
+  name: string;
+  /** A camelCase string that will be used as the key in the API response. */
   slug: string;
   description?: string;
   /** The different data types of annotations */
@@ -1015,12 +1025,22 @@ export interface DataPointCreate {
   extractor: string;
   multiple?: boolean;
   noRect?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
 }
 
 export interface DataPointUpdate {
+  /** Name of the data point. */
   name?: string;
+  /** A camelCase string that will be used as the key in the API response. */
   slug?: string;
   description?: string;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
 }
 
 export interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {

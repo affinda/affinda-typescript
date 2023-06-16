@@ -16,7 +16,7 @@
 - [name](DataPoint.md#name)
 - [noRect](DataPoint.md#norect)
 - [organization](DataPoint.md#organization)
-- [similarTo](DataPoint.md#similarto)
+- [parent](DataPoint.md#parent)
 - [slug](DataPoint.md#slug)
 
 ## Properties
@@ -44,6 +44,8 @@ ___
 ### displayEnumValue
 
 • `Optional` **displayEnumValue**: `boolean`
+
+If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
 ___
 
@@ -73,6 +75,8 @@ ___
 
 • **name**: `string`
 
+Name of the data point.
+
 ___
 
 ### noRect
@@ -83,16 +87,20 @@ ___
 
 ### organization
 
-• `Optional` **organization**: [`Organization`](Organization.md)
+• **organization**: ``null`` \| [`Organization`](Organization.md)
 
 ___
 
-### similarTo
+### parent
 
-• `Optional` **similarTo**: `string`[]
+• `Optional` **parent**: `string`
+
+The identifier of the parent data point if applicable.
 
 ___
 
 ### slug
 
-• `Optional` **slug**: `string`
+• **slug**: `string`
+
+A camelCase string that will be used as the key in the API response.

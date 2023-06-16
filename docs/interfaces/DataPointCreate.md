@@ -8,11 +8,13 @@
 
 - [annotationContentType](DataPointCreate.md#annotationcontenttype)
 - [description](DataPointCreate.md#description)
+- [displayEnumValue](DataPointCreate.md#displayenumvalue)
 - [extractor](DataPointCreate.md#extractor)
 - [multiple](DataPointCreate.md#multiple)
 - [name](DataPointCreate.md#name)
 - [noRect](DataPointCreate.md#norect)
 - [organization](DataPointCreate.md#organization)
+- [parent](DataPointCreate.md#parent)
 - [slug](DataPointCreate.md#slug)
 
 ## Properties
@@ -28,6 +30,14 @@ ___
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### displayEnumValue
+
+• `Optional` **displayEnumValue**: `boolean`
+
+If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
 ___
 
@@ -47,7 +57,9 @@ ___
 
 ### name
 
-• `Optional` **name**: `string`
+• **name**: `string`
+
+Name of the data point.
 
 ___
 
@@ -65,6 +77,16 @@ Uniquely identify an organization.
 
 ___
 
+### parent
+
+• `Optional` **parent**: `string`
+
+The identifier of the parent data point if applicable.
+
+___
+
 ### slug
 
 • **slug**: `string`
+
+A camelCase string that will be used as the key in the API response.
