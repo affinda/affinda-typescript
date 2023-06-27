@@ -12103,6 +12103,13 @@ export const DocumentCreate: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      lowPriority: {
+        serializedName: "lowPriority",
+        xmlName: "lowPriority",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }

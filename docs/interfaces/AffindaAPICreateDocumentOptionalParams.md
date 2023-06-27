@@ -21,6 +21,7 @@ Optional parameters.
 - [fileName](AffindaAPICreateDocumentOptionalParams.md#filename)
 - [identifier](AffindaAPICreateDocumentOptionalParams.md#identifier)
 - [language](AffindaAPICreateDocumentOptionalParams.md#language)
+- [lowPriority](AffindaAPICreateDocumentOptionalParams.md#lowpriority)
 - [onResponse](AffindaAPICreateDocumentOptionalParams.md#onresponse)
 - [regionBias](AffindaAPICreateDocumentOptionalParams.md#regionbias)
 - [rejectDuplicates](AffindaAPICreateDocumentOptionalParams.md#rejectduplicates)
@@ -90,6 +91,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### lowPriority
+
+• `Optional` **lowPriority**: `boolean`
+
+Explicitly mark this document as low priority.
 
 ___
 

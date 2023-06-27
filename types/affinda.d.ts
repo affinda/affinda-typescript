@@ -783,6 +783,8 @@ export declare interface AffindaAPICreateDocumentOptionalParams extends coreClie
     rejectDuplicates?: boolean;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -2230,6 +2232,8 @@ export declare interface DocumentCreate {
     rejectDuplicates?: boolean;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 export declare interface DocumentEditRequest {

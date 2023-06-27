@@ -12,6 +12,7 @@
 - [fileName](DocumentCreate.md#filename)
 - [identifier](DocumentCreate.md#identifier)
 - [language](DocumentCreate.md#language)
+- [lowPriority](DocumentCreate.md#lowpriority)
 - [regionBias](DocumentCreate.md#regionbias)
 - [rejectDuplicates](DocumentCreate.md#rejectduplicates)
 - [url](DocumentCreate.md#url)
@@ -65,6 +66,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### lowPriority
+
+• `Optional` **lowPriority**: `boolean`
+
+Explicitly mark this document as low priority.
 
 ___
 
