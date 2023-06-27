@@ -1425,6 +1425,8 @@ export interface ResumeRequestBody {
   expiryTime?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: boolean;
 }
 
 /** RedactedResumeRequestBody */
@@ -1481,6 +1483,8 @@ export interface InvoiceRequestBody {
   expiryTime?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: boolean;
 }
 
 /** JobDescriptionRequestBody */
@@ -1505,6 +1509,8 @@ export interface JobDescriptionRequestBody {
   expiryTime?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: boolean;
 }
 
 /** IndexRequestBody */
@@ -2404,6 +2410,8 @@ export interface AffindaAPICreateResumeOptionalParams
   expiryTime?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: boolean;
 }
 
 /** Contains response data for the createResume operation. */
@@ -2524,6 +2532,8 @@ export interface AffindaAPICreateInvoiceOptionalParams
   expiryTime?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: boolean;
 }
 
 /** Contains response data for the createInvoice operation. */
@@ -2573,6 +2583,8 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   expiryTime?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: boolean;
   /** A JSON-encoded string of the `JobDescriptionData` object. */
   data?: JobDescriptionDataUpdate;
 }

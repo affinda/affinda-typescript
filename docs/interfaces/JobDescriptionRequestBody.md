@@ -14,6 +14,7 @@ JobDescriptionRequestBody
 - [fileName](JobDescriptionRequestBody.md#filename)
 - [identifier](JobDescriptionRequestBody.md#identifier)
 - [language](JobDescriptionRequestBody.md#language)
+- [lowPriority](JobDescriptionRequestBody.md#lowpriority)
 - [regionBias](JobDescriptionRequestBody.md#regionbias)
 - [rejectDuplicates](JobDescriptionRequestBody.md#rejectduplicates)
 - [url](JobDescriptionRequestBody.md#url)
@@ -66,6 +67,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### lowPriority
+
+• `Optional` **lowPriority**: `boolean`
+
+Explicitly mark this document as low priority.
 
 ___
 

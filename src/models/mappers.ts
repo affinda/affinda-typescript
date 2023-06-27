@@ -8048,6 +8048,13 @@ export const ResumeRequestBody: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      lowPriority: {
+        serializedName: "lowPriority",
+        xmlName: "lowPriority",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -8255,6 +8262,13 @@ export const InvoiceRequestBody: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      lowPriority: {
+        serializedName: "lowPriority",
+        xmlName: "lowPriority",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -8341,6 +8355,13 @@ export const JobDescriptionRequestBody: coreClient.CompositeMapper = {
         xmlName: "regionBias",
         type: {
           name: "String"
+        }
+      },
+      lowPriority: {
+        serializedName: "lowPriority",
+        xmlName: "lowPriority",
+        type: {
+          name: "Boolean"
         }
       }
     }

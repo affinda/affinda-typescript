@@ -393,6 +393,8 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     expiryTime?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 /** Contains response data for the createInvoice operation. */
@@ -418,6 +420,8 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     expiryTime?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
     /** A JSON-encoded string of the `JobDescriptionData` object. */
     data?: JobDescriptionDataUpdate;
 }
@@ -510,6 +514,8 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     expiryTime?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 /** Contains response data for the createResume operation. */
@@ -1313,6 +1319,8 @@ export declare interface InvoiceRequestBody {
     expiryTime?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 export declare interface JobDescription {
@@ -1390,6 +1398,8 @@ export declare interface JobDescriptionRequestBody {
     expiryTime?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 export declare interface JobDescriptionSearch {
@@ -2725,6 +2735,8 @@ export declare interface ResumeRequestBody {
     expiryTime?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
 }
 
 export declare interface ResumeSearch {

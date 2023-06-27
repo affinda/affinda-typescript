@@ -20,6 +20,7 @@ Optional parameters.
 - [fileName](AffindaAPICreateInvoiceOptionalParams.md#filename)
 - [identifier](AffindaAPICreateInvoiceOptionalParams.md#identifier)
 - [language](AffindaAPICreateInvoiceOptionalParams.md#language)
+- [lowPriority](AffindaAPICreateInvoiceOptionalParams.md#lowpriority)
 - [onResponse](AffindaAPICreateInvoiceOptionalParams.md#onresponse)
 - [regionBias](AffindaAPICreateInvoiceOptionalParams.md#regionbias)
 - [rejectDuplicates](AffindaAPICreateInvoiceOptionalParams.md#rejectduplicates)
@@ -80,6 +81,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### lowPriority
+
+• `Optional` **lowPriority**: `boolean`
+
+Explicitly mark this document as low priority.
 
 ___
 

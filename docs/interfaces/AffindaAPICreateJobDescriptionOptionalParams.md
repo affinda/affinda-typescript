@@ -21,6 +21,7 @@ Optional parameters.
 - [fileName](AffindaAPICreateJobDescriptionOptionalParams.md#filename)
 - [identifier](AffindaAPICreateJobDescriptionOptionalParams.md#identifier)
 - [language](AffindaAPICreateJobDescriptionOptionalParams.md#language)
+- [lowPriority](AffindaAPICreateJobDescriptionOptionalParams.md#lowpriority)
 - [onResponse](AffindaAPICreateJobDescriptionOptionalParams.md#onresponse)
 - [regionBias](AffindaAPICreateJobDescriptionOptionalParams.md#regionbias)
 - [rejectDuplicates](AffindaAPICreateJobDescriptionOptionalParams.md#rejectduplicates)
@@ -89,6 +90,14 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### lowPriority
+
+• `Optional` **lowPriority**: `boolean`
+
+Explicitly mark this document as low priority.
 
 ___
 

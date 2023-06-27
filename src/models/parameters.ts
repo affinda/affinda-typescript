@@ -188,6 +188,17 @@ export const regionBias: OperationParameter = {
   }
 };
 
+export const lowPriority: OperationParameter = {
+  parameterPath: ["options", "lowPriority"],
+  mapper: {
+    serializedName: "lowPriority",
+    xmlName: "lowPriority",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const accept1: OperationParameter = {
   parameterPath: "accept",
   mapper: {

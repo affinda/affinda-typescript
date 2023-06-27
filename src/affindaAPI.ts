@@ -858,7 +858,8 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.rejectDuplicates,
     Parameters.language,
     Parameters.expiryTime,
-    Parameters.regionBias
+    Parameters.regionBias,
+    Parameters.lowPriority
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
@@ -1107,7 +1108,8 @@ const createInvoiceOperationSpec: coreClient.OperationSpec = {
     Parameters.rejectDuplicates,
     Parameters.language,
     Parameters.expiryTime,
-    Parameters.regionBias
+    Parameters.regionBias,
+    Parameters.lowPriority
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
@@ -1214,6 +1216,7 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
     Parameters.language,
     Parameters.expiryTime,
     Parameters.regionBias,
+    Parameters.lowPriority,
     Parameters.data1
   ],
   urlParameters: [Parameters.region],
