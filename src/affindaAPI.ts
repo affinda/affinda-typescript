@@ -1748,8 +1748,6 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 }
 // Operation Specifications
-const xmlSerializer = coreClient.createSerializer(Mappers, /* isXml */ true);
-
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getAllWorkspacesOperationSpec: coreClient.OperationSpec = {
@@ -2225,9 +2223,8 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
   },
   queryParameters: [Parameters.format],
   urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept2],
-  isXML: true,
-  serializer: xmlSerializer
+  headerParameters: [Parameters.accept],
+  serializer
 };
 const updateDocumentOperationSpec: coreClient.OperationSpec = {
   path: "/v3/documents/{identifier}",

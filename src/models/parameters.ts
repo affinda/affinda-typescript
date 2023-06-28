@@ -60,7 +60,6 @@ export const region: OperationURLParameter = {
   mapper: {
     serializedName: "region",
     required: true,
-    xmlName: "region",
     type: {
       name: "String"
     }
@@ -72,7 +71,6 @@ export const organization: OperationQueryParameter = {
   mapper: {
     serializedName: "organization",
     required: true,
-    xmlName: "organization",
     type: {
       name: "String"
     }
@@ -83,7 +81,6 @@ export const name: OperationQueryParameter = {
   parameterPath: ["options", "name"],
   mapper: {
     serializedName: "name",
-    xmlName: "name",
     type: {
       name: "String"
     }
@@ -112,7 +109,6 @@ export const identifier: OperationURLParameter = {
   mapper: {
     serializedName: "identifier",
     required: true,
-    xmlName: "identifier",
     type: {
       name: "String"
     }
@@ -131,7 +127,6 @@ export const offset: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "offset",
-    xmlName: "offset",
     type: {
       name: "Number"
     }
@@ -147,7 +142,6 @@ export const limit: OperationQueryParameter = {
       InclusiveMinimum: 1
     },
     serializedName: "limit",
-    xmlName: "limit",
     type: {
       name: "Number"
     }
@@ -158,7 +152,6 @@ export const workspace: OperationQueryParameter = {
   parameterPath: ["options", "workspace"],
   mapper: {
     serializedName: "workspace",
-    xmlName: "workspace",
     type: {
       name: "String"
     }
@@ -169,7 +162,6 @@ export const user: OperationQueryParameter = {
   parameterPath: ["options", "user"],
   mapper: {
     serializedName: "user",
-    xmlName: "user",
     type: {
       name: "String"
     }
@@ -186,7 +178,6 @@ export const workspace1: OperationQueryParameter = {
   mapper: {
     serializedName: "workspace",
     required: true,
-    xmlName: "workspace",
     type: {
       name: "String"
     }
@@ -212,7 +203,6 @@ export const collection: OperationQueryParameter = {
   parameterPath: ["options", "collection"],
   mapper: {
     serializedName: "collection",
-    xmlName: "collection",
     type: {
       name: "String"
     }
@@ -223,7 +213,6 @@ export const state: OperationQueryParameter = {
   parameterPath: ["options", "state"],
   mapper: {
     serializedName: "state",
-    xmlName: "state",
     type: {
       name: "String"
     }
@@ -234,8 +223,6 @@ export const tags: OperationQueryParameter = {
   parameterPath: ["options", "tags"],
   mapper: {
     serializedName: "tags",
-    xmlName: "tags",
-    xmlElementName: "PropertiesId",
     type: {
       name: "Sequence",
       element: {
@@ -251,7 +238,6 @@ export const createdDt: OperationQueryParameter = {
   parameterPath: ["options", "createdDt"],
   mapper: {
     serializedName: "created_dt",
-    xmlName: "created_dt",
     type: {
       name: "String"
     }
@@ -262,7 +248,6 @@ export const search: OperationQueryParameter = {
   parameterPath: ["options", "search"],
   mapper: {
     serializedName: "search",
-    xmlName: "search",
     type: {
       name: "String"
     }
@@ -273,8 +258,6 @@ export const ordering: OperationQueryParameter = {
   parameterPath: ["options", "ordering"],
   mapper: {
     serializedName: "ordering",
-    xmlName: "ordering",
-    xmlElementName: "Get8ItemsItem",
     type: {
       name: "Sequence",
       element: {
@@ -290,7 +273,6 @@ export const includeData: OperationQueryParameter = {
   parameterPath: ["options", "includeData"],
   mapper: {
     serializedName: "include_data",
-    xmlName: "include_data",
     type: {
       name: "Boolean"
     }
@@ -301,8 +283,6 @@ export const exclude: OperationQueryParameter = {
   parameterPath: ["options", "exclude"],
   mapper: {
     serializedName: "exclude",
-    xmlName: "exclude",
-    xmlElementName: "DocumentMetaPropertiesIdentifier",
     type: {
       name: "Sequence",
       element: {
@@ -318,7 +298,6 @@ export const inReview: OperationQueryParameter = {
   parameterPath: ["options", "inReview"],
   mapper: {
     serializedName: "in_review",
-    xmlName: "in_review",
     type: {
       name: "Boolean"
     }
@@ -329,7 +308,6 @@ export const failed: OperationQueryParameter = {
   parameterPath: ["options", "failed"],
   mapper: {
     serializedName: "failed",
-    xmlName: "failed",
     type: {
       name: "Boolean"
     }
@@ -340,7 +318,6 @@ export const ready: OperationQueryParameter = {
   parameterPath: ["options", "ready"],
   mapper: {
     serializedName: "ready",
-    xmlName: "ready",
     type: {
       name: "Boolean"
     }
@@ -351,7 +328,6 @@ export const validatable: OperationQueryParameter = {
   parameterPath: ["options", "validatable"],
   mapper: {
     serializedName: "validatable",
-    xmlName: "validatable",
     type: {
       name: "Boolean"
     }
@@ -362,7 +338,6 @@ export const hasChallenges: OperationQueryParameter = {
   parameterPath: ["options", "hasChallenges"],
   mapper: {
     serializedName: "has_challenges",
-    xmlName: "has_challenges",
     type: {
       name: "Boolean"
     }
@@ -385,7 +360,6 @@ export const file: OperationParameter = {
   parameterPath: ["options", "file"],
   mapper: {
     serializedName: "file",
-    xmlName: "file",
     type: {
       name: "Stream"
     }
@@ -396,7 +370,6 @@ export const url: OperationParameter = {
   parameterPath: ["options", "url"],
   mapper: {
     serializedName: "url",
-    xmlName: "url",
     type: {
       name: "String"
     }
@@ -407,7 +380,6 @@ export const collection1: OperationParameter = {
   parameterPath: ["options", "collection"],
   mapper: {
     serializedName: "collection",
-    xmlName: "collection",
     type: {
       name: "String"
     }
@@ -418,7 +390,6 @@ export const workspace2: OperationParameter = {
   parameterPath: ["options", "workspace"],
   mapper: {
     serializedName: "workspace",
-    xmlName: "workspace",
     type: {
       name: "String"
     }
@@ -430,7 +401,6 @@ export const wait: OperationParameter = {
   mapper: {
     defaultValue: "true",
     serializedName: "wait",
-    xmlName: "wait",
     type: {
       name: "String"
     }
@@ -441,7 +411,6 @@ export const identifier1: OperationParameter = {
   parameterPath: ["options", "identifier"],
   mapper: {
     serializedName: "identifier",
-    xmlName: "identifier",
     type: {
       name: "String"
     }
@@ -452,7 +421,6 @@ export const fileName: OperationParameter = {
   parameterPath: ["options", "fileName"],
   mapper: {
     serializedName: "fileName",
-    xmlName: "fileName",
     type: {
       name: "String"
     }
@@ -463,7 +431,6 @@ export const expiryTime: OperationParameter = {
   parameterPath: ["options", "expiryTime"],
   mapper: {
     serializedName: "expiryTime",
-    xmlName: "expiryTime",
     type: {
       name: "String"
     }
@@ -474,7 +441,6 @@ export const language: OperationParameter = {
   parameterPath: ["options", "language"],
   mapper: {
     serializedName: "language",
-    xmlName: "language",
     type: {
       name: "String"
     }
@@ -485,7 +451,6 @@ export const rejectDuplicates: OperationParameter = {
   parameterPath: ["options", "rejectDuplicates"],
   mapper: {
     serializedName: "rejectDuplicates",
-    xmlName: "rejectDuplicates",
     type: {
       name: "Boolean"
     }
@@ -496,7 +461,6 @@ export const regionBias: OperationParameter = {
   parameterPath: ["options", "regionBias"],
   mapper: {
     serializedName: "regionBias",
-    xmlName: "regionBias",
     type: {
       name: "String"
     }
@@ -507,7 +471,6 @@ export const lowPriority: OperationParameter = {
   parameterPath: ["options", "lowPriority"],
   mapper: {
     serializedName: "lowPriority",
-    xmlName: "lowPriority",
     type: {
       name: "Boolean"
     }
@@ -526,23 +489,10 @@ export const accept1: OperationParameter = {
   }
 };
 
-export const accept2: OperationParameter = {
-  parameterPath: "accept",
-  mapper: {
-    defaultValue: "application/json, application/xml",
-    isConstant: true,
-    serializedName: "Accept",
-    type: {
-      name: "String"
-    }
-  }
-};
-
 export const format: OperationQueryParameter = {
   parameterPath: ["options", "format"],
   mapper: {
     serializedName: "format",
-    xmlName: "format",
     type: {
       name: "String"
     }
@@ -578,7 +528,6 @@ export const includePublicExtractors: OperationQueryParameter = {
   parameterPath: ["options", "includePublicExtractors"],
   mapper: {
     serializedName: "include_public_extractors",
-    xmlName: "include_public_extractors",
     type: {
       name: "Boolean"
     }
@@ -599,7 +548,6 @@ export const organization1: OperationQueryParameter = {
   parameterPath: ["options", "organization"],
   mapper: {
     serializedName: "organization",
-    xmlName: "organization",
     type: {
       name: "String"
     }
@@ -610,7 +558,6 @@ export const includePublic: OperationQueryParameter = {
   parameterPath: ["options", "includePublic"],
   mapper: {
     serializedName: "include_public",
-    xmlName: "include_public",
     type: {
       name: "Boolean"
     }
@@ -621,7 +568,6 @@ export const extractor: OperationQueryParameter = {
   parameterPath: ["options", "extractor"],
   mapper: {
     serializedName: "extractor",
-    xmlName: "extractor",
     type: {
       name: "String"
     }
@@ -632,7 +578,6 @@ export const slug: OperationQueryParameter = {
   parameterPath: ["options", "slug"],
   mapper: {
     serializedName: "slug",
-    xmlName: "slug",
     type: {
       name: "String"
     }
@@ -643,7 +588,6 @@ export const description: OperationQueryParameter = {
   parameterPath: ["options", "description"],
   mapper: {
     serializedName: "description",
-    xmlName: "description",
     type: {
       name: "String"
     }
@@ -654,7 +598,6 @@ export const annotationContentType: OperationQueryParameter = {
   parameterPath: ["options", "annotationContentType"],
   mapper: {
     serializedName: "annotation_content_type",
-    xmlName: "annotation_content_type",
     type: {
       name: "String"
     }
@@ -665,8 +608,6 @@ export const identifier2: OperationQueryParameter = {
   parameterPath: ["options", "identifier"],
   mapper: {
     serializedName: "identifier",
-    xmlName: "identifier",
-    xmlElementName: "DataPointPropertiesIdentifier",
     type: {
       name: "Sequence",
       element: {
@@ -693,7 +634,6 @@ export const dataPoint: OperationQueryParameter = {
   mapper: {
     serializedName: "data_point",
     required: true,
-    xmlName: "data_point",
     type: {
       name: "String"
     }
@@ -705,7 +645,6 @@ export const collection2: OperationQueryParameter = {
   mapper: {
     serializedName: "collection",
     required: true,
-    xmlName: "collection",
     type: {
       name: "String"
     }
@@ -722,7 +661,6 @@ export const id: OperationURLParameter = {
   mapper: {
     serializedName: "id",
     required: true,
-    xmlName: "id",
     type: {
       name: "Number"
     }
@@ -739,7 +677,6 @@ export const document: OperationQueryParameter = {
   mapper: {
     serializedName: "document",
     required: true,
-    xmlName: "document",
     type: {
       name: "String"
     }
@@ -761,8 +698,6 @@ export const body19: OperationParameter = {
   mapper: {
     serializedName: "body",
     required: true,
-    xmlName: "body",
-    xmlElementName: "AnnotationCreate",
     type: {
       name: "Sequence",
       element: {
@@ -780,8 +715,6 @@ export const body20: OperationParameter = {
   mapper: {
     serializedName: "body",
     required: true,
-    xmlName: "body",
-    xmlElementName: "AnnotationBatchUpdate",
     type: {
       name: "Sequence",
       element: {
@@ -799,8 +732,6 @@ export const body21: OperationParameter = {
   mapper: {
     serializedName: "body",
     required: true,
-    xmlName: "body",
-    xmlElementName: "AnnotationPropertiesId",
     type: {
       name: "Sequence",
       element: {
@@ -827,7 +758,6 @@ export const name1: OperationParameter = {
   mapper: {
     serializedName: "name",
     required: true,
-    xmlName: "name",
     type: {
       name: "String"
     }
@@ -838,7 +768,6 @@ export const avatar: OperationParameter = {
   parameterPath: ["options", "avatar"],
   mapper: {
     serializedName: "avatar",
-    xmlName: "avatar",
     type: {
       name: "Stream"
     }
@@ -849,7 +778,6 @@ export const resthookSignatureKey: OperationParameter = {
   parameterPath: ["options", "resthookSignatureKey"],
   mapper: {
     serializedName: "resthookSignatureKey",
-    xmlName: "resthookSignatureKey",
     type: {
       name: "String"
     }
@@ -860,7 +788,6 @@ export const name2: OperationParameter = {
   parameterPath: ["options", "name"],
   mapper: {
     serializedName: "name",
-    xmlName: "name",
     type: {
       name: "String"
     }
@@ -876,7 +803,6 @@ export const role: OperationQueryParameter = {
   parameterPath: ["options", "role"],
   mapper: {
     serializedName: "role",
-    xmlName: "role",
     type: {
       name: "String"
     }
@@ -892,7 +818,6 @@ export const status: OperationQueryParameter = {
   parameterPath: ["options", "status"],
   mapper: {
     serializedName: "status",
-    xmlName: "status",
     type: {
       name: "String"
     }
@@ -914,7 +839,6 @@ export const token: OperationURLParameter = {
   mapper: {
     serializedName: "token",
     required: true,
-    xmlName: "token",
     type: {
       name: "String"
     }
@@ -951,7 +875,6 @@ export const xHookSecret: OperationParameter = {
   mapper: {
     serializedName: "X-Hook-Secret",
     required: true,
-    xmlName: "X-Hook-Secret",
     type: {
       name: "String"
     }
@@ -977,7 +900,6 @@ export const documentType: OperationQueryParameter = {
   parameterPath: ["options", "documentType"],
   mapper: {
     serializedName: "document_type",
-    xmlName: "document_type",
     type: {
       name: "String"
     }
@@ -988,7 +910,6 @@ export const documentType1: OperationParameter = {
   parameterPath: ["options", "documentType"],
   mapper: {
     serializedName: "documentType",
-    xmlName: "documentType",
     type: {
       name: "String"
     }
@@ -1000,7 +921,6 @@ export const name3: OperationURLParameter = {
   mapper: {
     serializedName: "name",
     required: true,
-    xmlName: "name",
     type: {
       name: "String"
     }
@@ -1022,7 +942,6 @@ export const resume: OperationQueryParameter = {
   mapper: {
     serializedName: "resume",
     required: true,
-    xmlName: "resume",
     type: {
       name: "String"
     }
@@ -1034,7 +953,6 @@ export const jobDescription: OperationQueryParameter = {
   mapper: {
     serializedName: "job_description",
     required: true,
-    xmlName: "job_description",
     type: {
       name: "String"
     }
@@ -1045,7 +963,6 @@ export const index: OperationQueryParameter = {
   parameterPath: ["options", "index"],
   mapper: {
     serializedName: "index",
-    xmlName: "index",
     type: {
       name: "String"
     }
@@ -1056,7 +973,6 @@ export const searchExpression: OperationQueryParameter = {
   parameterPath: ["options", "searchExpression"],
   mapper: {
     serializedName: "search_expression",
-    xmlName: "search_expression",
     type: {
       name: "String"
     }
@@ -1071,7 +987,6 @@ export const jobTitlesWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "job_titles_weight",
-    xmlName: "job_titles_weight",
     type: {
       name: "Number"
     }
@@ -1086,7 +1001,6 @@ export const yearsExperienceWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "years_experience_weight",
-    xmlName: "years_experience_weight",
     type: {
       name: "Number"
     }
@@ -1101,7 +1015,6 @@ export const locationsWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "locations_weight",
-    xmlName: "locations_weight",
     type: {
       name: "Number"
     }
@@ -1116,7 +1029,6 @@ export const languagesWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "languages_weight",
-    xmlName: "languages_weight",
     type: {
       name: "Number"
     }
@@ -1131,7 +1043,6 @@ export const skillsWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "skills_weight",
-    xmlName: "skills_weight",
     type: {
       name: "Number"
     }
@@ -1146,7 +1057,6 @@ export const educationWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "education_weight",
-    xmlName: "education_weight",
     type: {
       name: "Number"
     }
@@ -1161,7 +1071,6 @@ export const searchExpressionWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "search_expression_weight",
-    xmlName: "search_expression_weight",
     type: {
       name: "Number"
     }
@@ -1176,7 +1085,6 @@ export const socCodesWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "soc_codes_weight",
-    xmlName: "soc_codes_weight",
     type: {
       name: "Number"
     }
@@ -1191,7 +1099,6 @@ export const managementLevelWeight: OperationQueryParameter = {
       InclusiveMinimum: 0
     },
     serializedName: "management_level_weight",
-    xmlName: "management_level_weight",
     type: {
       name: "Number"
     }
@@ -1213,8 +1120,6 @@ export const jobTitles: OperationQueryParameter = {
   mapper: {
     serializedName: "job_titles",
     required: true,
-    xmlName: "job_titles",
-    xmlElementName: "Get0ItemsItem",
     type: {
       name: "Sequence",
       element: {
@@ -1232,8 +1137,6 @@ export const skills: OperationQueryParameter = {
   mapper: {
     serializedName: "skills",
     required: true,
-    xmlName: "skills",
-    xmlElementName: "String",
     type: {
       name: "Sequence",
       element: {
