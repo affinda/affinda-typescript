@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fix empty tags and pages keys in response from GET /v3/documents
 
+### Added
+- Add xml response to api spec to GET /v3/documenets to match existing functionality
+
 ## [6.14.0] - 2023-06-27
 ### Added
 - Allow explicitly set a document as low_priority
