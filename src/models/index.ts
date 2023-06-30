@@ -226,6 +226,8 @@ export interface Collection {
   ingestEmail?: string;
   /** Whether a tailored extractor has been requested for this collection. */
   tailoredExtractorRequested?: boolean;
+  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+  allowOpenai?: boolean;
 }
 
 export interface CollectionWorkspace {
@@ -328,6 +330,8 @@ export interface CollectionCreate {
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
   extractorConfig?: ExtractorConfig;
+  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+  allowOpenai?: boolean;
 }
 
 export interface CollectionUpdate {
@@ -340,6 +344,8 @@ export interface CollectionUpdate {
   dateFormatFromDocument?: boolean;
   /** Extra configurations specific to an extractor. */
   extractorConfig?: ExtractorConfig;
+  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+  allowOpenai?: boolean;
 }
 
 export interface DataFieldCreate {
@@ -551,23 +557,8 @@ export interface DocumentWarning {
   warningDetail?: string;
 }
 
-export interface DocumentUpdate {
-  /** Uniquely identify a collection. */
-  collection?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  isConfirmed?: boolean;
-  isRejected?: boolean;
-  isArchived?: boolean;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-  /** Specify a custom identifier for the document. */
-  identifier?: string;
-}
-
-export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
+/** Create resume or job description directly from data. */
+export interface DocumentCreateData {}
 
 /** For custom fields. E.g. 'isAvailable': true */
 export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
@@ -797,6 +788,121 @@ export interface ResumeDataSectionsItem {
 }
 
 /** For custom fields. E.g. 'isAvailable': true */
+export interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {}
+
+export interface JobDescriptionData {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  jobTitle?: JobTitleAnnotation;
+  contactEmail?: TextAnnotation;
+  contactName?: TextAnnotation;
+  contactPhone?: TextAnnotation;
+  startDate?: DateAnnotation;
+  endDate?: DateAnnotation;
+  jobType?: TextAnnotation;
+  languages?: (LanguageAnnotation | null)[];
+  skills?: (SkillAnnotation | null)[];
+  organizationName?: TextAnnotation;
+  organizationWebsite?: TextAnnotation;
+  educationLevel?: TextAnnotation;
+  educationAccreditation?: TextAnnotation;
+  expectedRemuneration?: ExpectedRemunerationAnnotation;
+  location?: LocationAnnotation;
+  certifications?: (TextAnnotation | null)[];
+  yearsExperience?: YearsExperienceAnnotation;
+  /** All of the raw text of the parsed job description, example is shortened for readability */
+  rawText?: string;
+}
+
+/** Years of experience range */
+export interface JobTitleAnnotationParsed {
+  name?: string;
+  managementLevel?: string;
+  classification?: JobTitleAnnotationParsedClassification;
+}
+
+export interface JobTitleAnnotationParsedClassification {
+  socCode?: number;
+  title?: string;
+  minorGroup?: string;
+  subMajorGroup?: string;
+  majorGroup?: string;
+}
+
+export interface Annotation {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  /** Annotation's ID */
+  id: number;
+  /** x/y coordinates for the rectangular bounding box containing the data */
+  rectangle: Rectangle | null;
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles: Rectangle[] | null;
+  /** Uniquely identify a document. */
+  document?: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex: number | null;
+  /** Raw data extracted from the before any post-processing */
+  raw: string | null;
+  /** The overall confidence that the model's prediction is correct */
+  confidence: number | null;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence: number | null;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
+  textExtractionConfidence: number | null;
+  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
+  isVerified: boolean;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified: boolean;
+  /** Indicates whether the data has been auto-validated */
+  isAutoVerified: boolean;
+  /** Data point's identifier */
+  dataPoint: string;
+  /** The different data types of annotations */
+  contentType: AnnotationContentType;
+}
+
+export interface Rectangle {
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+}
+
+export interface ExpectedRemunerationAnnotationParsed {
+  minimum?: number;
+  maximum?: number;
+  currency?: string;
+  unit?: string;
+}
+
+/** Years of experience range */
+export interface YearsExperienceAnnotationParsed {
+  /** Minimum years of experience */
+  minimum?: number;
+  /** Maximum years of experience */
+  maximum?: number;
+}
+
+export interface DocumentUpdate {
+  /** Uniquely identify a collection. */
+  collection?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  isConfirmed?: boolean;
+  isRejected?: boolean;
+  isArchived?: boolean;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** Specify a custom identifier for the document. */
+  identifier?: string;
+}
+
+export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
+
+/** For custom fields. E.g. 'isAvailable': true */
 export interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {}
 
 /** A JSON-encoded string of the `JobDescriptionData` object. */
@@ -842,13 +948,6 @@ export interface AnnotationBase {
   isAutoVerified?: boolean;
   dataPoint?: string;
   contentType?: string;
-}
-
-export interface Rectangle {
-  x0: number;
-  y0: number;
-  x1: number;
-  y1: number;
 }
 
 export interface JobTitleParsed {
@@ -1084,39 +1183,6 @@ export interface DataPointChoiceUpdate {
 
 export interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: (Annotation | null)[];
-}
-
-export interface Annotation {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  /** Annotation's ID */
-  id: number;
-  /** x/y coordinates for the rectangular bounding box containing the data */
-  rectangle: Rectangle | null;
-  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
-  rectangles: Rectangle[] | null;
-  /** Uniquely identify a document. */
-  document?: string;
-  /** The page number within the document, starting from 0. */
-  pageIndex: number | null;
-  /** Raw data extracted from the before any post-processing */
-  raw: string | null;
-  /** The overall confidence that the model's prediction is correct */
-  confidence: number | null;
-  /** The model's confidence that the text has been classified correctly */
-  classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
-  textExtractionConfidence: number | null;
-  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
-  isVerified: boolean;
-  /** Indicates whether the data has been validated by a human */
-  isClientVerified: boolean;
-  /** Indicates whether the data has been auto-validated */
-  isAutoVerified: boolean;
-  /** Data point's identifier */
-  dataPoint: string;
-  /** The different data types of annotations */
-  contentType: AnnotationContentType;
 }
 
 export interface AnnotationCreate {
@@ -2161,68 +2227,13 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
-/** For custom fields. E.g. 'isAvailable': true */
-export interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {}
-
-export interface JobDescriptionData {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  jobTitle?: JobTitleAnnotation;
-  contactEmail?: TextAnnotation;
-  contactName?: TextAnnotation;
-  contactPhone?: TextAnnotation;
-  startDate?: DateAnnotation;
-  endDate?: DateAnnotation;
-  jobType?: TextAnnotation;
-  languages?: (LanguageAnnotation | null)[];
-  skills?: (SkillAnnotation | null)[];
-  organizationName?: TextAnnotation;
-  organizationWebsite?: TextAnnotation;
-  educationLevel?: TextAnnotation;
-  educationAccreditation?: TextAnnotation;
-  expectedRemuneration?: ExpectedRemunerationAnnotation;
-  location?: LocationAnnotation;
-  certifications?: (TextAnnotation | null)[];
-  yearsExperience?: YearsExperienceAnnotation;
-  /** All of the raw text of the parsed job description, example is shortened for readability */
-  rawText?: string;
-}
-
-/** Years of experience range */
-export interface JobTitleAnnotationParsed {
-  name?: string;
-  managementLevel?: string;
-  classification?: JobTitleAnnotationParsedClassification;
-}
-
-export interface JobTitleAnnotationParsedClassification {
-  socCode?: number;
-  title?: string;
-  minorGroup?: string;
-  subMajorGroup?: string;
-  majorGroup?: string;
-}
-
-export interface ExpectedRemunerationAnnotationParsed {
-  minimum?: number;
-  maximum?: number;
-  currency?: string;
-  unit?: string;
-}
-
-/** Years of experience range */
-export interface YearsExperienceAnnotationParsed {
-  /** Minimum years of experience */
-  minimum?: number;
-  /** Maximum years of experience */
-  maximum?: number;
-}
-
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;
+  /** Create resume or job description directly from data. */
+  data?: DocumentCreateData;
   /** Uniquely identify a collection. */
   collection?: string;
   /** Uniquely identify a workspace. */
@@ -2325,6 +2336,58 @@ export type ResumeSearchDetailLocationValue = Location &
 export type ResumeSearchDetailEducationValueItem = Education &
   ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
 
+export type JobTitleAnnotation = Annotation & {
+  /** Years of experience range */
+  parsed?: JobTitleAnnotationParsed;
+};
+
+export type TextAnnotation = Annotation & {
+  parsed?: string;
+};
+
+export type DateAnnotation = Annotation & {
+  parsed?: Date;
+};
+
+export type LanguageAnnotation = Annotation & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type SkillAnnotation = Annotation & {
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly parsed?: string;
+};
+
+export type ExpectedRemunerationAnnotation = Annotation & {
+  parsed?: ExpectedRemunerationAnnotationParsed;
+};
+
+export type LocationAnnotation = Annotation & {
+  parsed?: Location;
+};
+
+export type YearsExperienceAnnotation = Annotation & {
+  /** Years of experience range */
+  parsed?: YearsExperienceAnnotationParsed;
+};
+
+export type FloatAnnotation = Annotation & {
+  parsed?: number;
+};
+
+export type RowAnnotation = Annotation & {
+  parsed?: RowAnnotationParsed;
+};
+
+export type TableAnnotation = Annotation & {
+  parsed?: TableAnnotationParsed;
+};
+
+export type CurrencyCodeAnnotation = Annotation & {
+  parsed?: DataPointChoice;
+};
+
 export type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
 
 export type TextAnnotationUpdate = AnnotationBase & {
@@ -2357,58 +2420,6 @@ export type LocationAnnotationUpdate = AnnotationBase & {
 export type YearsExperienceAnnotationUpdate = AnnotationBase & {
   /** Years of experience range */
   parsed?: YearsExperienceAnnotationUpdateParsed;
-};
-
-export type TextAnnotation = Annotation & {
-  parsed?: string;
-};
-
-export type DateAnnotation = Annotation & {
-  parsed?: Date;
-};
-
-export type FloatAnnotation = Annotation & {
-  parsed?: number;
-};
-
-export type RowAnnotation = Annotation & {
-  parsed?: RowAnnotationParsed;
-};
-
-export type TableAnnotation = Annotation & {
-  parsed?: TableAnnotationParsed;
-};
-
-export type LocationAnnotation = Annotation & {
-  parsed?: Location;
-};
-
-export type CurrencyCodeAnnotation = Annotation & {
-  parsed?: DataPointChoice;
-};
-
-export type JobTitleAnnotation = Annotation & {
-  /** Years of experience range */
-  parsed?: JobTitleAnnotationParsed;
-};
-
-export type LanguageAnnotation = Annotation & {
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly parsed?: string;
-};
-
-export type SkillAnnotation = Annotation & {
-  /** NOTE: This property will not be serialized. It can only be populated by the server. */
-  readonly parsed?: string;
-};
-
-export type ExpectedRemunerationAnnotation = Annotation & {
-  parsed?: ExpectedRemunerationAnnotationParsed;
-};
-
-export type YearsExperienceAnnotation = Annotation & {
-  /** Years of experience range */
-  parsed?: YearsExperienceAnnotationParsed;
 };
 
 export type AnnotationBatchUpdate = AnnotationUpdate & {
@@ -2740,24 +2751,6 @@ export enum KnownGet8ItemsItem {
  * **created_dt**
  */
 export type Get8ItemsItem = string;
-
-/** Known values of {@link DocumentFormat} that the service accepts. */
-export enum KnownDocumentFormat {
-  Json = "json",
-  Xml = "xml",
-  HrXml = "hr-xml"
-}
-
-/**
- * Defines values for DocumentFormat. \
- * {@link KnownDocumentFormat} can be used interchangeably with DocumentFormat,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **json** \
- * **xml** \
- * **hr-xml**
- */
-export type DocumentFormat = string;
 
 /** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
 export enum KnownResumeDataLanguagesItem {
@@ -3177,6 +3170,24 @@ export enum KnownResumeDataLanguagesItem {
  */
 export type ResumeDataLanguagesItem = string;
 
+/** Known values of {@link DocumentFormat} that the service accepts. */
+export enum KnownDocumentFormat {
+  Json = "json",
+  Xml = "xml",
+  HrXml = "hr-xml"
+}
+
+/**
+ * Defines values for DocumentFormat. \
+ * {@link KnownDocumentFormat} can be used interchangeably with DocumentFormat,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **json** \
+ * **xml** \
+ * **hr-xml**
+ */
+export type DocumentFormat = string;
+
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export enum KnownInvitationStatus {
   Pending = "pending",
@@ -3585,6 +3596,8 @@ export interface AffindaAPICreateDocumentOptionalParams
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;
+  /** Create resume or job description directly from data. */
+  data?: DocumentCreateData;
   /** Uniquely identify a collection. */
   collection?: string;
   /** Uniquely identify a workspace. */

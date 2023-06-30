@@ -2187,6 +2187,7 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
   formDataParameters: [
     Parameters.file,
     Parameters.url,
+    Parameters.data,
     Parameters.collection1,
     Parameters.workspace2,
     Parameters.wait,

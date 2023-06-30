@@ -765,6 +765,8 @@ export declare interface AffindaAPICreateDocumentOptionalParams extends coreClie
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
     url?: string;
+    /** Create resume or job description directly from data. */
+    data?: DocumentCreateData;
     /** Uniquely identify a collection. */
     collection?: string;
     /** Uniquely identify a workspace. */
@@ -1757,6 +1759,8 @@ export declare interface Collection {
     ingestEmail?: string;
     /** Whether a tailored extractor has been requested for this collection. */
     tailoredExtractorRequested?: boolean;
+    /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+    allowOpenai?: boolean;
 }
 
 export declare interface CollectionCreate {
@@ -1775,6 +1779,8 @@ export declare interface CollectionCreate {
     dateFormatFromDocument?: boolean;
     /** Extra configurations specific to an extractor. */
     extractorConfig?: ExtractorConfig;
+    /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+    allowOpenai?: boolean;
 }
 
 /**
@@ -1798,6 +1804,8 @@ export declare interface CollectionUpdate {
     dateFormatFromDocument?: boolean;
     /** Extra configurations specific to an extractor. */
     extractorConfig?: ExtractorConfig;
+    /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+    allowOpenai?: boolean;
 }
 
 export declare interface CollectionWorkspace {
@@ -2214,6 +2222,8 @@ export declare interface DocumentCreate {
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
     url?: string;
+    /** Create resume or job description directly from data. */
+    data?: DocumentCreateData;
     /** Uniquely identify a collection. */
     collection?: string;
     /** Uniquely identify a workspace. */
@@ -2234,6 +2244,10 @@ export declare interface DocumentCreate {
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
     lowPriority?: boolean;
+}
+
+/** Create resume or job description directly from data. */
+export declare interface DocumentCreateData {
 }
 
 export declare interface DocumentEditRequest {

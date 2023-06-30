@@ -16,6 +16,7 @@ Optional parameters.
 
 - [abortSignal](AffindaAPICreateDocumentOptionalParams.md#abortsignal)
 - [collection](AffindaAPICreateDocumentOptionalParams.md#collection)
+- [data](AffindaAPICreateDocumentOptionalParams.md#data)
 - [expiryTime](AffindaAPICreateDocumentOptionalParams.md#expirytime)
 - [file](AffindaAPICreateDocumentOptionalParams.md#file)
 - [fileName](AffindaAPICreateDocumentOptionalParams.md#filename)
@@ -51,6 +52,14 @@ ___
 • `Optional` **collection**: `string`
 
 Uniquely identify a collection.
+
+___
+
+### data
+
+• `Optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
+
+Create resume or job description directly from data.
 
 ___
 

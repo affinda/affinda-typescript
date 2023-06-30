@@ -10,6 +10,7 @@ import {
   CollectionCreate as CollectionCreateMapper,
   CollectionUpdate as CollectionUpdateMapper,
   DataFieldCreate as DataFieldCreateMapper,
+  DocumentCreateData as DocumentCreateDataMapper,
   DocumentUpdate as DocumentUpdateMapper,
   PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema as PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchemaMapper,
   BatchAddTagRequest as BatchAddTagRequestMapper,
@@ -374,6 +375,11 @@ export const url: OperationParameter = {
       name: "String"
     }
   }
+};
+
+export const data: OperationParameter = {
+  parameterPath: ["options", "data"],
+  mapper: DocumentCreateDataMapper
 };
 
 export const collection1: OperationParameter = {

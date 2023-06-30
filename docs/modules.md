@@ -214,6 +214,7 @@
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
 - [Document](interfaces/Document.md)
 - [DocumentCreate](interfaces/DocumentCreate.md)
+- [DocumentCreateData](interfaces/DocumentCreateData.md)
 - [DocumentEditRequest](interfaces/DocumentEditRequest.md)
 - [DocumentError](interfaces/DocumentError.md)
 - [DocumentMeta](interfaces/DocumentMeta.md)

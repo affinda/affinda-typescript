@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [allowOpenai](CollectionUpdate.md#allowopenai)
 - [autoValidationThreshold](CollectionUpdate.md#autovalidationthreshold)
 - [dateFormatFromDocument](CollectionUpdate.md#dateformatfromdocument)
 - [dateFormatPreference](CollectionUpdate.md#dateformatpreference)
@@ -15,6 +16,14 @@
 - [name](CollectionUpdate.md#name)
 
 ## Properties
+
+### allowOpenai
+
+• `Optional` **allowOpenai**: `boolean`
+
+Whether to allow OpenAI API to be used to assist in creating a model for this collection.
+
+___
 
 ### autoValidationThreshold
 

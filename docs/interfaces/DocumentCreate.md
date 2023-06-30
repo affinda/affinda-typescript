@@ -7,6 +7,7 @@
 ### Properties
 
 - [collection](DocumentCreate.md#collection)
+- [data](DocumentCreate.md#data)
 - [expiryTime](DocumentCreate.md#expirytime)
 - [file](DocumentCreate.md#file)
 - [fileName](DocumentCreate.md#filename)
@@ -26,6 +27,14 @@
 • `Optional` **collection**: `string`
 
 Uniquely identify a collection.
+
+___
+
+### data
+
+• `Optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
+
+Create resume or job description directly from data.
 
 ___
 

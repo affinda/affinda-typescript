@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [allowOpenai](Collection.md#allowopenai)
 - [autoValidationThreshold](Collection.md#autovalidationthreshold)
 - [confirmedDocsCount](Collection.md#confirmeddocscount)
 - [dateFormatFromDocument](Collection.md#dateformatfromdocument)
@@ -23,6 +24,14 @@
 - [workspace](Collection.md#workspace)
 
 ## Properties
+
+### allowOpenai
+
+• `Optional` **allowOpenai**: `boolean`
+
+Whether to allow OpenAI API to be used to assist in creating a model for this collection.
+
+___
 
 ### autoValidationThreshold
 

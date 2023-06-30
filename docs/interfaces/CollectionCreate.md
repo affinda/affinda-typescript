@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [allowOpenai](CollectionCreate.md#allowopenai)
 - [autoValidationThreshold](CollectionCreate.md#autovalidationthreshold)
 - [baseExtractor](CollectionCreate.md#baseextractor)
 - [dateFormatFromDocument](CollectionCreate.md#dateformatfromdocument)
@@ -18,6 +19,14 @@
 - [workspace](CollectionCreate.md#workspace)
 
 ## Properties
+
+### allowOpenai
+
+• `Optional` **allowOpenai**: `boolean`
+
+Whether to allow OpenAI API to be used to assist in creating a model for this collection.
+
+___
 
 ### autoValidationThreshold
 
