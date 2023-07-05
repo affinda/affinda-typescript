@@ -2,6 +2,10 @@
 
 # Interface: Field
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
 ## Table of contents
 
 ### Properties

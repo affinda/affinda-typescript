@@ -289,6 +289,8 @@ export interface FieldCategory {
 }
 
 export interface Field {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   label: string;
   /** Data point identifier */
   dataPoint: string;
