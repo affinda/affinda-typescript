@@ -797,8 +797,6 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 }
 // Operation Specifications
-const xmlSerializer = coreClient.createSerializer(Mappers, /* isXml */ true);
-
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getAllResumesOperationSpec: coreClient.OperationSpec = {
@@ -890,9 +888,8 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
   },
   queryParameters: [Parameters.format],
   urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept2],
-  isXML: true,
-  serializer: xmlSerializer
+  headerParameters: [Parameters.accept],
+  serializer
 };
 const updateResumeDataOperationSpec: coreClient.OperationSpec = {
   path: "/v2/resumes/{identifier}",
