@@ -1205,7 +1205,6 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
       },
       slug: {
         serializedName: "slug",
-        nullable: true,
         type: {
           name: "String"
         }
@@ -1231,7 +1230,6 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
       },
       autoValidationThreshold: {
         serializedName: "autoValidationThreshold",
-        nullable: true,
         type: {
           name: "Number"
         }
@@ -1333,7 +1331,6 @@ export const Field: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Field",
-    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       label: {
         serializedName: "label",
@@ -7783,6 +7780,7 @@ export const CustomFieldConfig: coreClient.CompositeMapper = {
         }
       },
       weight: {
+        defaultValue: 0.5,
         constraints: {
           InclusiveMaximum: 1,
           InclusiveMinimum: 0

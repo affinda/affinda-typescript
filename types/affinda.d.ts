@@ -2534,8 +2534,6 @@ export declare interface ExtractorUpdate {
 }
 
 export declare interface Field {
-    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-    [property: string]: any;
     label: string;
     /** Data point identifier */
     dataPoint: string;
