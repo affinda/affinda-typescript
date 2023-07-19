@@ -15,6 +15,7 @@
 - [organization](Workspace.md#organization)
 - [rejectDuplicates](Workspace.md#rejectduplicates)
 - [rejectInvalidDocuments](Workspace.md#rejectinvaliddocuments)
+- [splitDocuments](Workspace.md#splitdocuments)
 - [unvalidatedDocsCount](Workspace.md#unvalidateddocscount)
 - [visibility](Workspace.md#visibility)
 - [whitelistIngestAddresses](Workspace.md#whitelistingestaddresses)
@@ -82,6 +83,14 @@ ___
 • `Optional` **rejectInvalidDocuments**: `boolean`
 
 If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed.
+
+___
+
+### splitDocuments
+
+• `Optional` **splitDocuments**: `boolean`
+
+If true, attempt to split documents if multiple documents are detected in a single file.
 
 ___
 

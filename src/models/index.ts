@@ -24,6 +24,8 @@ export interface Workspace {
   ingestEmail?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
+  /** If true, attempt to split documents if multiple documents are detected in a single file. */
+  splitDocuments?: boolean;
 }
 
 export interface Organization {
@@ -161,6 +163,8 @@ export interface WorkspaceCreate {
   rejectDuplicates?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
+  /** If true, attempt to split documents if multiple documents are detected in a single file. */
+  splitDocuments?: boolean;
 }
 
 export interface WorkspaceUpdate {
@@ -173,6 +177,8 @@ export interface WorkspaceUpdate {
   rejectDuplicates?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
+  /** If true, attempt to split documents if multiple documents are detected in a single file. */
+  splitDocuments?: boolean;
 }
 
 export interface PaginatedResponse {
@@ -289,6 +295,8 @@ export interface FieldCategory {
 }
 
 export interface Field {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   label: string;
   /** Data point identifier */
   dataPoint: string;
@@ -1309,6 +1317,8 @@ export interface ApiUserWithoutKey {
   /** URL of the user's avatar. */
   avatar: string | null;
   organizations: ApiUserWithoutKeyOrganizationsItem[];
+  /** The last 4 characters of the API key. */
+  apiKeyLastChars?: string;
 }
 
 export interface ApiUserWithoutKeyOrganizationsItem {
@@ -1338,6 +1348,8 @@ export interface ApiUserWithKey {
   organizations: ApiUserWithKeyOrganizationsItem[];
   /** Use this key to authenticate with the API. */
   apiKey: string;
+  /** The last 4 characters of the API key. */
+  apiKeyLastChars?: string;
 }
 
 export interface ApiUserWithKeyOrganizationsItem {

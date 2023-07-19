@@ -98,6 +98,12 @@ export const Workspace: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      splitDocuments: {
+        serializedName: "splitDocuments",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -726,6 +732,12 @@ export const WorkspaceCreate: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      splitDocuments: {
+        serializedName: "splitDocuments",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -772,6 +784,12 @@ export const WorkspaceUpdate: coreClient.CompositeMapper = {
               name: "String"
             }
           }
+        }
+      },
+      splitDocuments: {
+        serializedName: "splitDocuments",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -1205,6 +1223,7 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
       },
       slug: {
         serializedName: "slug",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -1230,6 +1249,7 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
       },
       autoValidationThreshold: {
         serializedName: "autoValidationThreshold",
+        nullable: true,
         type: {
           name: "Number"
         }
@@ -1331,6 +1351,7 @@ export const Field: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Field",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       label: {
         serializedName: "label",
@@ -5758,6 +5779,12 @@ export const ApiUserWithoutKey: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      apiKeyLastChars: {
+        serializedName: "apiKeyLastChars",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -5884,6 +5911,12 @@ export const ApiUserWithKey: coreClient.CompositeMapper = {
       apiKey: {
         serializedName: "apiKey",
         required: true,
+        type: {
+          name: "String"
+        }
+      },
+      apiKeyLastChars: {
+        serializedName: "apiKeyLastChars",
         type: {
           name: "String"
         }

@@ -1687,6 +1687,8 @@ export declare interface ApiUserWithKey {
     organizations: ApiUserWithKeyOrganizationsItem[];
     /** Use this key to authenticate with the API. */
     apiKey: string;
+    /** The last 4 characters of the API key. */
+    apiKeyLastChars?: string;
 }
 
 export declare interface ApiUserWithKeyOrganizationsItem {
@@ -1704,6 +1706,8 @@ export declare interface ApiUserWithoutKey {
     /** URL of the user's avatar. */
     avatar: string | null;
     organizations: ApiUserWithoutKeyOrganizationsItem[];
+    /** The last 4 characters of the API key. */
+    apiKeyLastChars?: string;
 }
 
 export declare interface ApiUserWithoutKeyOrganizationsItem {
@@ -2534,6 +2538,8 @@ export declare interface ExtractorUpdate {
 }
 
 export declare interface Field {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     label: string;
     /** Data point identifier */
     dataPoint: string;
@@ -4830,6 +4836,8 @@ export declare interface Workspace {
     ingestEmail?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
+    /** If true, attempt to split documents if multiple documents are detected in a single file. */
+    splitDocuments?: boolean;
 }
 
 export declare interface WorkspaceCollectionsItem {
@@ -4867,6 +4875,8 @@ export declare interface WorkspaceCreate {
     rejectDuplicates?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
+    /** If true, attempt to split documents if multiple documents are detected in a single file. */
+    splitDocuments?: boolean;
 }
 
 export declare interface WorkspaceMembership {
@@ -4894,6 +4904,8 @@ export declare interface WorkspaceUpdate {
     rejectDuplicates?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
+    /** If true, attempt to split documents if multiple documents are detected in a single file. */
+    splitDocuments?: boolean;
 }
 
 /**

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Set CustomFieldConfig default to 0.5
+- Make Field.slug nullable and not required
+
+### Deprecated
+- Deprecate Field.slug
+
+### Added
+- Add splitDocuments setting to workspace.
+- Add lastCharacters field to API key.
 
 ## [6.15.0] - 2023-06-30
 ### Added

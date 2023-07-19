@@ -7,6 +7,7 @@
 ### Properties
 
 - [apiKey](ApiUserWithKey.md#apikey)
+- [apiKeyLastChars](ApiUserWithKey.md#apikeylastchars)
 - [avatar](ApiUserWithKey.md#avatar)
 - [email](ApiUserWithKey.md#email)
 - [id](ApiUserWithKey.md#id)
@@ -21,6 +22,14 @@
 • **apiKey**: `string`
 
 Use this key to authenticate with the API.
+
+___
+
+### apiKeyLastChars
+
+• `Optional` **apiKeyLastChars**: `string`
+
+The last 4 characters of the API key.
 
 ___
 

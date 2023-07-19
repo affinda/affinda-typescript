@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [apiKeyLastChars](ApiUserWithoutKey.md#apikeylastchars)
 - [avatar](ApiUserWithoutKey.md#avatar)
 - [email](ApiUserWithoutKey.md#email)
 - [id](ApiUserWithoutKey.md#id)
@@ -14,6 +15,14 @@
 - [username](ApiUserWithoutKey.md#username)
 
 ## Properties
+
+### apiKeyLastChars
+
+• `Optional` **apiKeyLastChars**: `string`
+
+The last 4 characters of the API key.
+
+___
 
 ### avatar
 

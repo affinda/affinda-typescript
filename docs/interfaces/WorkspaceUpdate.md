@@ -9,6 +9,7 @@
 - [name](WorkspaceUpdate.md#name)
 - [rejectDuplicates](WorkspaceUpdate.md#rejectduplicates)
 - [rejectInvalidDocuments](WorkspaceUpdate.md#rejectinvaliddocuments)
+- [splitDocuments](WorkspaceUpdate.md#splitdocuments)
 - [visibility](WorkspaceUpdate.md#visibility)
 - [whitelistIngestAddresses](WorkspaceUpdate.md#whitelistingestaddresses)
 
@@ -33,6 +34,14 @@ ___
 • `Optional` **rejectInvalidDocuments**: `boolean`
 
 If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed.
+
+___
+
+### splitDocuments
+
+• `Optional` **splitDocuments**: `boolean`
+
+If true, attempt to split documents if multiple documents are detected in a single file.
 
 ___
 
