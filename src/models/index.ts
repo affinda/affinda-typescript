@@ -48,6 +48,16 @@ export interface OrganizationValidationToolConfig {
   theme?: ThemeConfig;
   /** Hide the confirm document button and other actions. */
   hideActions?: boolean;
+  /** Hide the collection selector. */
+  hideCollection?: boolean;
+  /** Hide the export menu. */
+  hideExport?: boolean;
+  /** Hide the filename input. */
+  hideFilename?: boolean;
+  /** Hide the tags editor. */
+  hideTags?: boolean;
+  /** Hide the warnings panel. */
+  hideWarnings?: boolean;
 }
 
 export interface ThemeConfig {
@@ -1250,6 +1260,16 @@ export interface ValidationToolConfig {
   theme?: ThemeConfig;
   /** Hide the confirm document button and other actions. */
   hideActions?: boolean;
+  /** Hide the collection selector. */
+  hideCollection?: boolean;
+  /** Hide the export menu. */
+  hideExport?: boolean;
+  /** Hide the filename input. */
+  hideFilename?: boolean;
+  /** Hide the tags editor. */
+  hideTags?: boolean;
+  /** Hide the warnings panel. */
+  hideWarnings?: boolean;
 }
 
 export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {

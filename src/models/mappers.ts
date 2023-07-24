@@ -181,6 +181,36 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      hideCollection: {
+        serializedName: "hideCollection",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideExport: {
+        serializedName: "hideExport",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideFilename: {
+        serializedName: "hideFilename",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideTags: {
+        serializedName: "hideTags",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideWarnings: {
+        serializedName: "hideWarnings",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -5474,6 +5504,36 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
       },
       hideActions: {
         serializedName: "hideActions",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideCollection: {
+        serializedName: "hideCollection",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideExport: {
+        serializedName: "hideExport",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideFilename: {
+        serializedName: "hideFilename",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideTags: {
+        serializedName: "hideTags",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideWarnings: {
+        serializedName: "hideWarnings",
         type: {
           name: "Boolean"
         }
