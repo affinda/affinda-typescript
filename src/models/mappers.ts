@@ -826,6 +826,29 @@ export const WorkspaceUpdate: coreClient.CompositeMapper = {
   }
 };
 
+export const UsageByWorkspace: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UsageByWorkspace",
+    modelProperties: {
+      month: {
+        serializedName: "month",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      count: {
+        serializedName: "count",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
 export const PaginatedResponse: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1381,7 +1404,6 @@ export const Field: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Field",
-    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       label: {
         serializedName: "label",
@@ -1420,8 +1442,8 @@ export const Field: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      fields: {
-        serializedName: "fields",
+      enabledChildFields: {
+        serializedName: "enabledChildFields",
         type: {
           name: "Sequence",
           element: {
@@ -1430,6 +1452,25 @@ export const Field: coreClient.CompositeMapper = {
               className: "Field"
             }
           }
+        }
+      },
+      disabledChildFields: {
+        serializedName: "disabledChildFields",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
+      },
+      slug: {
+        serializedName: "slug",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
@@ -1779,6 +1820,13 @@ export const DataFieldCreateDataPoint: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -1850,6 +1898,32 @@ export const DataFieldField: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      enabledChildFields: {
+        serializedName: "enabledChildFields",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
+      },
+      disabledChildFields: {
+        serializedName: "disabledChildFields",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Field"
+            }
+          }
+        }
       }
     }
   }
@@ -1908,6 +1982,146 @@ export const DataFieldDataPoint: coreClient.CompositeMapper = {
         required: true,
         type: {
           name: "Boolean"
+        }
+      },
+      parent: {
+        serializedName: "parent",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      children: {
+        serializedName: "children",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPoint"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DataPoint: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPoint",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      slug: {
+        serializedName: "slug",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      annotationContentType: {
+        serializedName: "annotationContentType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      },
+      extractor: {
+        serializedName: "extractor",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      multiple: {
+        serializedName: "multiple",
+        type: {
+          name: "Boolean"
+        }
+      },
+      noRect: {
+        serializedName: "noRect",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      children: {
+        serializedName: "children",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPoint"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const UsageByCollection: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UsageByCollection",
+    modelProperties: {
+      month: {
+        serializedName: "month",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      count: {
+        serializedName: "count",
+        required: true,
+        type: {
+          name: "Number"
         }
       }
     }
@@ -4860,102 +5074,6 @@ export const ExtractorUpdate: coreClient.CompositeMapper = {
             type: {
               name: "Composite",
               className: "FieldGroup"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const DataPoint: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DataPoint",
-    modelProperties: {
-      identifier: {
-        serializedName: "identifier",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      name: {
-        serializedName: "name",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      slug: {
-        serializedName: "slug",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      description: {
-        serializedName: "description",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      annotationContentType: {
-        serializedName: "annotationContentType",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      organization: {
-        serializedName: "organization",
-        type: {
-          name: "Composite",
-          className: "Organization"
-        }
-      },
-      extractor: {
-        serializedName: "extractor",
-        required: true,
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      multiple: {
-        serializedName: "multiple",
-        type: {
-          name: "Boolean"
-        }
-      },
-      noRect: {
-        serializedName: "noRect",
-        type: {
-          name: "Boolean"
-        }
-      },
-      displayEnumValue: {
-        serializedName: "displayEnumValue",
-        type: {
-          name: "Boolean"
-        }
-      },
-      parent: {
-        serializedName: "parent",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      children: {
-        serializedName: "children",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "DataPoint"
             }
           }
         }

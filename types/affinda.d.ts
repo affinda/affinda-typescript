@@ -54,6 +54,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteWorkspace(identifier: string, options?: AffindaAPIDeleteWorkspaceOptionalParams): Promise<void>;
     /**
+     * Return monthly credits consumption of a workspace.
+     * The data is updated daily.
+     *
+     * @param identifier Workspace's identifier
+     * @param options The options parameters.
+     */
+    getUsageByWorkspace(identifier: string, options?: AffindaAPIGetUsageByWorkspaceOptionalParams): Promise<AffindaAPIGetUsageByWorkspaceResponse>;
+    /**
      * Returns the memberships of your workspaces.
      * @param options The options parameters.
      */
@@ -114,6 +122,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: AffindaAPICreateDataFieldForCollectionOptionalParams): Promise<AffindaAPICreateDataFieldForCollectionResponse>;
+    /**
+     * Return monthly credits consumption of a collection.
+     * The data is updated daily.
+     *
+     * @param identifier Collection's identifier
+     * @param options The options parameters.
+     */
+    getUsageByCollection(identifier: string, options?: AffindaAPIGetUsageByCollectionOptionalParams): Promise<AffindaAPIGetUsageByCollectionResponse>;
     /**
      * Returns all the document summaries for that user, limited to 300 per page.
      * @param options The options parameters.
@@ -1362,6 +1378,28 @@ export declare interface AffindaAPIGetTagOptionalParams extends coreClient.Opera
 export declare type AffindaAPIGetTagResponse = Tag;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetUsageByCollectionOptionalParams extends coreClient.OperationOptions {
+    /** Start date of the period to retrieve. Format: YYYY-MM */
+    start?: string;
+    /** End date of the period to retrieve. Format: YYYY-MM */
+    end?: string;
+}
+
+/** Contains response data for the getUsageByCollection operation. */
+export declare type AffindaAPIGetUsageByCollectionResponse = UsageByCollection[];
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetUsageByWorkspaceOptionalParams extends coreClient.OperationOptions {
+    /** Start date of the period to retrieve. Format: YYYY-MM */
+    start?: string;
+    /** End date of the period to retrieve. Format: YYYY-MM */
+    end?: string;
+}
+
+/** Contains response data for the getUsageByWorkspace operation. */
+export declare type AffindaAPIGetUsageByWorkspaceResponse = UsageByWorkspace[];
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -2054,6 +2092,8 @@ export declare interface DataFieldCreateDataPoint {
     type: AnnotationContentType;
     multiple?: boolean;
     noRect?: boolean;
+    /** The identifier of the parent data point if applicable. */
+    parent?: string;
 }
 
 /** The field to be created. */
@@ -2077,6 +2117,9 @@ export declare interface DataFieldDataPoint {
     type: AnnotationContentType;
     multiple: boolean;
     noRect: boolean;
+    /** The identifier of the parent data point if applicable. */
+    parent: string | null;
+    children: DataPoint[];
 }
 
 /** The field to be created. */
@@ -2085,6 +2128,8 @@ export declare interface DataFieldField {
     mandatory: boolean;
     showDropdown: boolean;
     autoValidationThreshold: number | null;
+    enabledChildFields: Field[];
+    disabledChildFields: Field[];
 }
 
 export declare interface DataPoint {
@@ -2538,15 +2583,15 @@ export declare interface ExtractorUpdate {
 }
 
 export declare interface Field {
-    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-    [property: string]: any;
     label: string;
     /** Data point identifier */
     dataPoint: string;
     mandatory?: boolean;
     autoValidationThreshold?: number;
     showDropdown?: boolean;
-    fields?: Field[];
+    enabledChildFields?: Field[];
+    disabledChildFields?: Field[];
+    slug?: string;
 }
 
 export declare interface FieldCategory {
@@ -4785,6 +4830,22 @@ export declare interface ThemeConfigTypography {
     fontWeightRegular?: string;
     fontWeightMedium?: string;
     fontWeightBold?: string;
+}
+
+/** Monthly credits consumption */
+export declare interface UsageByCollection {
+    /** Month of the usage */
+    month: string;
+    /** Usage count */
+    count: number;
+}
+
+/** Monthly credits consumption */
+export declare interface UsageByWorkspace {
+    /** Month of the usage */
+    month: string;
+    /** Usage count */
+    count: number;
 }
 
 export declare interface User {

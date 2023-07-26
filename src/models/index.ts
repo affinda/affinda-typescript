@@ -191,6 +191,14 @@ export interface WorkspaceUpdate {
   splitDocuments?: boolean;
 }
 
+/** Monthly credits consumption */
+export interface UsageByWorkspace {
+  /** Month of the usage */
+  month: string;
+  /** Usage count */
+  count: number;
+}
+
 export interface PaginatedResponse {
   /** Number of items in results. */
   count: number;
@@ -305,15 +313,15 @@ export interface FieldCategory {
 }
 
 export interface Field {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
   label: string;
   /** Data point identifier */
   dataPoint: string;
   mandatory?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
-  fields?: Field[];
+  enabledChildFields?: Field[];
+  disabledChildFields?: Field[];
+  slug?: string;
 }
 
 /** Extra configurations specific to an extractor. */
@@ -394,6 +402,8 @@ export interface DataFieldCreateDataPoint {
   type: AnnotationContentType;
   multiple?: boolean;
   noRect?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
 }
 
 export interface DataField {
@@ -411,6 +421,8 @@ export interface DataFieldField {
   mandatory: boolean;
   showDropdown: boolean;
   autoValidationThreshold: number | null;
+  enabledChildFields: Field[];
+  disabledChildFields: Field[];
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -426,6 +438,39 @@ export interface DataFieldDataPoint {
   type: AnnotationContentType;
   multiple: boolean;
   noRect: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent: string | null;
+  children: DataPoint[];
+}
+
+export interface DataPoint {
+  /** Uniquely identify a data point. */
+  identifier: string;
+  /** Name of the data point. */
+  name: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug: string;
+  description?: string;
+  /** The different data types of annotations */
+  annotationContentType: AnnotationContentType;
+  organization: Organization | null;
+  /** Uniquely identify an extractor. */
+  extractor: string | null;
+  multiple?: boolean;
+  noRect?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
+  children?: DataPoint[];
+}
+
+/** Monthly credits consumption */
+export interface UsageByCollection {
+  /** Month of the usage */
+  month: string;
+  /** Usage count */
+  count: number;
 }
 
 export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1104,28 +1149,6 @@ export interface ExtractorUpdate {
   category?: string;
   validatable?: boolean;
   fieldGroups?: FieldGroup[];
-}
-
-export interface DataPoint {
-  /** Uniquely identify a data point. */
-  identifier: string;
-  /** Name of the data point. */
-  name: string;
-  /** A camelCase string that will be used as the key in the API response. */
-  slug: string;
-  description?: string;
-  /** The different data types of annotations */
-  annotationContentType: AnnotationContentType;
-  organization: Organization | null;
-  /** Uniquely identify an extractor. */
-  extractor: string | null;
-  multiple?: boolean;
-  noRect?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
-  /** The identifier of the parent data point if applicable. */
-  parent?: string;
-  children?: DataPoint[];
 }
 
 export interface DataPointCreate {
@@ -3509,6 +3532,18 @@ export interface AffindaAPIDeleteWorkspaceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
+export interface AffindaAPIGetUsageByWorkspaceOptionalParams
+  extends coreClient.OperationOptions {
+  /** Start date of the period to retrieve. Format: YYYY-MM */
+  start?: string;
+  /** End date of the period to retrieve. Format: YYYY-MM */
+  end?: string;
+}
+
+/** Contains response data for the getUsageByWorkspace operation. */
+export type AffindaAPIGetUsageByWorkspaceResponse = UsageByWorkspace[];
+
+/** Optional parameters. */
 export interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -3580,6 +3615,18 @@ export interface AffindaAPICreateDataFieldForCollectionOptionalParams
 
 /** Contains response data for the createDataFieldForCollection operation. */
 export type AffindaAPICreateDataFieldForCollectionResponse = DataField;
+
+/** Optional parameters. */
+export interface AffindaAPIGetUsageByCollectionOptionalParams
+  extends coreClient.OperationOptions {
+  /** Start date of the period to retrieve. Format: YYYY-MM */
+  start?: string;
+  /** End date of the period to retrieve. Format: YYYY-MM */
+  end?: string;
+}
+
+/** Contains response data for the getUsageByCollection operation. */
+export type AffindaAPIGetUsageByCollectionResponse = UsageByCollection[];
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllDocumentsOptionalParams

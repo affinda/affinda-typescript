@@ -119,6 +119,8 @@
 - [AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams.md)
 - [AffindaAPIGetResumeSearchSuggestionSkillOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md)
 - [AffindaAPIGetTagOptionalParams](interfaces/AffindaAPIGetTagOptionalParams.md)
+- [AffindaAPIGetUsageByCollectionOptionalParams](interfaces/AffindaAPIGetUsageByCollectionOptionalParams.md)
+- [AffindaAPIGetUsageByWorkspaceOptionalParams](interfaces/AffindaAPIGetUsageByWorkspaceOptionalParams.md)
 - [AffindaAPIGetWorkspaceMembershipOptionalParams](interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md)
 - [AffindaAPIGetWorkspaceOptionalParams](interfaces/AffindaAPIGetWorkspaceOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
@@ -371,6 +373,8 @@
 - [ThemeConfigPaletteBackground](interfaces/ThemeConfigPaletteBackground.md)
 - [ThemeConfigPaletteText](interfaces/ThemeConfigPaletteText.md)
 - [ThemeConfigTypography](interfaces/ThemeConfigTypography.md)
+- [UsageByCollection](interfaces/UsageByCollection.md)
+- [UsageByWorkspace](interfaces/UsageByWorkspace.md)
 - [User](interfaces/User.md)
 - [UserNullable](interfaces/UserNullable.md)
 - [ValidationToolConfig](interfaces/ValidationToolConfig.md)
@@ -446,6 +450,8 @@
 - [AffindaAPIGetResumeSearchSuggestionJobTitleResponse](modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)
 - [AffindaAPIGetResumeSearchSuggestionSkillResponse](modules.md#affindaapigetresumesearchsuggestionskillresponse)
 - [AffindaAPIGetTagResponse](modules.md#affindaapigettagresponse)
+- [AffindaAPIGetUsageByCollectionResponse](modules.md#affindaapigetusagebycollectionresponse)
+- [AffindaAPIGetUsageByWorkspaceResponse](modules.md#affindaapigetusagebyworkspaceresponse)
 - [AffindaAPIGetWorkspaceMembershipResponse](modules.md#affindaapigetworkspacemembershipresponse)
 - [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
@@ -1057,6 +1063,22 @@ ___
 Ƭ **AffindaAPIGetTagResponse**: [`Tag`](interfaces/Tag.md)
 
 Contains response data for the getTag operation.
+
+___
+
+### AffindaAPIGetUsageByCollectionResponse
+
+Ƭ **AffindaAPIGetUsageByCollectionResponse**: [`UsageByCollection`](interfaces/UsageByCollection.md)[]
+
+Contains response data for the getUsageByCollection operation.
+
+___
+
+### AffindaAPIGetUsageByWorkspaceResponse
+
+Ƭ **AffindaAPIGetUsageByWorkspaceResponse**: [`UsageByWorkspace`](interfaces/UsageByWorkspace.md)[]
+
+Contains response data for the getUsageByWorkspace operation.
 
 ___
 

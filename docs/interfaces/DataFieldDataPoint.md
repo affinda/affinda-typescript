@@ -8,15 +8,23 @@ The data point to be created for this field. If a data point with the same slug 
 
 ### Properties
 
+- [children](DataFieldDataPoint.md#children)
 - [description](DataFieldDataPoint.md#description)
 - [identifier](DataFieldDataPoint.md#identifier)
 - [multiple](DataFieldDataPoint.md#multiple)
 - [name](DataFieldDataPoint.md#name)
 - [noRect](DataFieldDataPoint.md#norect)
+- [parent](DataFieldDataPoint.md#parent)
 - [slug](DataFieldDataPoint.md#slug)
 - [type](DataFieldDataPoint.md#type)
 
 ## Properties
+
+### children
+
+• **children**: [`DataPoint`](DataPoint.md)[]
+
+___
 
 ### description
 
@@ -49,6 +57,14 @@ ___
 ### noRect
 
 • **noRect**: `boolean`
+
+___
+
+### parent
+
+• **parent**: ``null`` \| `string`
+
+The identifier of the parent data point if applicable.
 
 ___
 

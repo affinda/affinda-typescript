@@ -2,20 +2,18 @@
 
 # Interface: Field
 
-## Indexable
-
-▪ [property: `string`]: `any`
-
 ## Table of contents
 
 ### Properties
 
 - [autoValidationThreshold](Field.md#autovalidationthreshold)
 - [dataPoint](Field.md#datapoint)
-- [fields](Field.md#fields)
+- [disabledChildFields](Field.md#disabledchildfields)
+- [enabledChildFields](Field.md#enabledchildfields)
 - [label](Field.md#label)
 - [mandatory](Field.md#mandatory)
 - [showDropdown](Field.md#showdropdown)
+- [slug](Field.md#slug)
 
 ## Properties
 
@@ -33,9 +31,15 @@ Data point identifier
 
 ___
 
-### fields
+### disabledChildFields
 
-• `Optional` **fields**: [`Field`](Field.md)[]
+• `Optional` **disabledChildFields**: [`Field`](Field.md)[]
+
+___
+
+### enabledChildFields
+
+• `Optional` **enabledChildFields**: [`Field`](Field.md)[]
 
 ___
 
@@ -54,3 +58,9 @@ ___
 ### showDropdown
 
 • `Optional` **showDropdown**: `boolean`
+
+___
+
+### slug
+
+• `Optional` **slug**: `string`

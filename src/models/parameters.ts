@@ -121,6 +121,26 @@ export const body1: OperationParameter = {
   mapper: WorkspaceUpdateMapper
 };
 
+export const start: OperationQueryParameter = {
+  parameterPath: ["options", "start"],
+  mapper: {
+    serializedName: "start",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const end: OperationQueryParameter = {
+  parameterPath: ["options", "end"],
+  mapper: {
+    serializedName: "end",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const offset: OperationQueryParameter = {
   parameterPath: ["options", "offset"],
   mapper: {

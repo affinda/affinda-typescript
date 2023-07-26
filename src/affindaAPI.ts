@@ -16,6 +16,8 @@ import {
   AffindaAPIUpdateWorkspaceOptionalParams,
   AffindaAPIUpdateWorkspaceResponse,
   AffindaAPIDeleteWorkspaceOptionalParams,
+  AffindaAPIGetUsageByWorkspaceOptionalParams,
+  AffindaAPIGetUsageByWorkspaceResponse,
   AffindaAPIGetAllWorkspaceMembershipsOptionalParams,
   AffindaAPIGetAllWorkspaceMembershipsResponse,
   WorkspaceMembershipCreate,
@@ -38,6 +40,8 @@ import {
   DataFieldCreate,
   AffindaAPICreateDataFieldForCollectionOptionalParams,
   AffindaAPICreateDataFieldForCollectionResponse,
+  AffindaAPIGetUsageByCollectionOptionalParams,
+  AffindaAPIGetUsageByCollectionResponse,
   AffindaAPIGetAllDocumentsOptionalParams,
   AffindaAPIGetAllDocumentsResponse,
   AffindaAPICreateDocumentOptionalParams,
@@ -311,6 +315,23 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
+   * Return monthly credits consumption of a workspace.
+   * The data is updated daily.
+   *
+   * @param identifier Workspace's identifier
+   * @param options The options parameters.
+   */
+  getUsageByWorkspace(
+    identifier: string,
+    options?: AffindaAPIGetUsageByWorkspaceOptionalParams
+  ): Promise<AffindaAPIGetUsageByWorkspaceResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getUsageByWorkspaceOperationSpec
+    );
+  }
+
+  /**
    * Returns the memberships of your workspaces.
    * @param options The options parameters.
    */
@@ -459,6 +480,23 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, body, options },
       createDataFieldForCollectionOperationSpec
+    );
+  }
+
+  /**
+   * Return monthly credits consumption of a collection.
+   * The data is updated daily.
+   *
+   * @param identifier Collection's identifier
+   * @param options The options parameters.
+   */
+  getUsageByCollection(
+    identifier: string,
+    options?: AffindaAPIGetUsageByCollectionOptionalParams
+  ): Promise<AffindaAPIGetUsageByCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getUsageByCollectionOperationSpec
     );
   }
 
@@ -1873,6 +1911,37 @@ const deleteWorkspaceOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const getUsageByWorkspaceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/workspaces/{identifier}/usage",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "UsageByWorkspace" }
+          }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.start, Parameters.end],
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
+  serializer
+};
 const getAllWorkspaceMembershipsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/workspace_memberships",
   httpMethod: "GET",
@@ -2118,6 +2187,37 @@ const createDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
+  serializer
+};
+const getUsageByCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}/usage",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "UsageByCollection" }
+          }
+        }
+      }
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.start, Parameters.end],
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
   serializer
 };
 const getAllDocumentsOperationSpec: coreClient.OperationSpec = {

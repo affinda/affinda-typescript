@@ -12,6 +12,7 @@ The data point to be created for this field. If a data point with the same slug 
 - [multiple](DataFieldCreateDataPoint.md#multiple)
 - [name](DataFieldCreateDataPoint.md#name)
 - [noRect](DataFieldCreateDataPoint.md#norect)
+- [parent](DataFieldCreateDataPoint.md#parent)
 - [slug](DataFieldCreateDataPoint.md#slug)
 - [type](DataFieldCreateDataPoint.md#type)
 
@@ -40,6 +41,14 @@ ___
 ### noRect
 
 • `Optional` **noRect**: `boolean`
+
+___
+
+### parent
+
+• `Optional` **parent**: `string`
+
+The identifier of the parent data point if applicable.
 
 ___
 

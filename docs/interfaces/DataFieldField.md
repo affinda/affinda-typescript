@@ -9,6 +9,8 @@ The field to be created.
 ### Properties
 
 - [autoValidationThreshold](DataFieldField.md#autovalidationthreshold)
+- [disabledChildFields](DataFieldField.md#disabledchildfields)
+- [enabledChildFields](DataFieldField.md#enabledchildfields)
 - [label](DataFieldField.md#label)
 - [mandatory](DataFieldField.md#mandatory)
 - [showDropdown](DataFieldField.md#showdropdown)
@@ -18,6 +20,18 @@ The field to be created.
 ### autoValidationThreshold
 
 • **autoValidationThreshold**: ``null`` \| `number`
+
+___
+
+### disabledChildFields
+
+• **disabledChildFields**: [`Field`](Field.md)[]
+
+___
+
+### enabledChildFields
+
+• **enabledChildFields**: [`Field`](Field.md)[]
 
 ___
 

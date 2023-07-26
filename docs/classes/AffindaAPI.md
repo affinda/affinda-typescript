@@ -100,6 +100,8 @@
 - [getResumeSearchSuggestionJobTitle](AffindaAPI.md#getresumesearchsuggestionjobtitle)
 - [getResumeSearchSuggestionSkill](AffindaAPI.md#getresumesearchsuggestionskill)
 - [getTag](AffindaAPI.md#gettag)
+- [getUsageByCollection](AffindaAPI.md#getusagebycollection)
+- [getUsageByWorkspace](AffindaAPI.md#getusagebyworkspace)
 - [getWorkspace](AffindaAPI.md#getworkspace)
 - [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
@@ -1692,6 +1694,46 @@ Return a specific tag.
 #### Returns
 
 `Promise`<[`Tag`](../interfaces/Tag.md)\>
+
+___
+
+### getUsageByCollection
+
+▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
+
+Return monthly credits consumption of a collection.
+The data is updated daily.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Collection's identifier |
+| `options?` | [`AffindaAPIGetUsageByCollectionOptionalParams`](../interfaces/AffindaAPIGetUsageByCollectionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
+
+___
+
+### getUsageByWorkspace
+
+▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
+
+Return monthly credits consumption of a workspace.
+The data is updated daily.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Workspace's identifier |
+| `options?` | [`AffindaAPIGetUsageByWorkspaceOptionalParams`](../interfaces/AffindaAPIGetUsageByWorkspaceOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
 
 ___
 
