@@ -27,7 +27,7 @@ export class AffindaAPIContext extends coreClient.ServiceClient {
       credential: credentials
     };
 
-    const packageDetails = `azsdk-js-affinda/6.17.0`;
+    const packageDetails = `azsdk-js-affinda/6.18.0`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
