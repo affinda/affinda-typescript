@@ -12,6 +12,7 @@
 - [displayEnumValue](DataPoint.md#displayenumvalue)
 - [extractor](DataPoint.md#extractor)
 - [identifier](DataPoint.md#identifier)
+- [manualEntry](DataPoint.md#manualentry)
 - [multiple](DataPoint.md#multiple)
 - [name](DataPoint.md#name)
 - [noRect](DataPoint.md#norect)
@@ -62,6 +63,14 @@ ___
 • **identifier**: `string`
 
 Uniquely identify a data point.
+
+___
+
+### manualEntry
+
+• `Optional` **manualEntry**: `boolean`
+
+If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
 
 ___
 

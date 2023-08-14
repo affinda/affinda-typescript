@@ -10,6 +10,7 @@
 - [dataPoint](Field.md#datapoint)
 - [disabledChildFields](Field.md#disabledchildfields)
 - [enabledChildFields](Field.md#enabledchildfields)
+- [fields](Field.md#fields)
 - [label](Field.md#label)
 - [mandatory](Field.md#mandatory)
 - [showDropdown](Field.md#showdropdown)
@@ -40,6 +41,12 @@ ___
 ### enabledChildFields
 
 • `Optional` **enabledChildFields**: [`Field`](Field.md)[]
+
+___
+
+### fields
+
+• `Optional` **fields**: `Record`<`string`, `unknown`\>[]
 
 ___
 

@@ -9,6 +9,7 @@ The data point to be created for this field. If a data point with the same slug 
 ### Properties
 
 - [description](DataFieldCreateDataPoint.md#description)
+- [manualEntry](DataFieldCreateDataPoint.md#manualentry)
 - [multiple](DataFieldCreateDataPoint.md#multiple)
 - [name](DataFieldCreateDataPoint.md#name)
 - [noRect](DataFieldCreateDataPoint.md#norect)
@@ -21,6 +22,14 @@ The data point to be created for this field. If a data point with the same slug 
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### manualEntry
+
+• `Optional` **manualEntry**: `boolean`
+
+If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
 
 ___
 

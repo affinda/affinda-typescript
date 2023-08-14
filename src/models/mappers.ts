@@ -1472,6 +1472,19 @@ export const Field: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      fields: {
+        serializedName: "fields",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
       }
     }
   }
@@ -1827,6 +1840,12 @@ export const DataFieldCreateDataPoint: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      manualEntry: {
+        serializedName: "manualEntry",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -2004,6 +2023,12 @@ export const DataFieldDataPoint: coreClient.CompositeMapper = {
             }
           }
         }
+      },
+      manualEntry: {
+        serializedName: "manualEntry",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -2099,6 +2124,12 @@ export const DataPoint: coreClient.CompositeMapper = {
               className: "DataPoint"
             }
           }
+        }
+      },
+      manualEntry: {
+        serializedName: "manualEntry",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -5152,6 +5183,12 @@ export const DataPointCreate: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
+        }
+      },
+      manualEntry: {
+        serializedName: "manualEntry",
+        type: {
+          name: "Boolean"
         }
       }
     }

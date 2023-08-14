@@ -316,8 +316,6 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Return monthly credits consumption of a workspace.
-   * The data is updated daily.
-   *
    * @param identifier Workspace's identifier
    * @param options The options parameters.
    */
@@ -485,8 +483,6 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Return monthly credits consumption of a collection.
-   * The data is updated daily.
-   *
    * @param identifier Collection's identifier
    * @param options The options parameters.
    */

@@ -10,6 +10,7 @@
 - [description](DataPointCreate.md#description)
 - [displayEnumValue](DataPointCreate.md#displayenumvalue)
 - [extractor](DataPointCreate.md#extractor)
+- [manualEntry](DataPointCreate.md#manualentry)
 - [multiple](DataPointCreate.md#multiple)
 - [name](DataPointCreate.md#name)
 - [noRect](DataPointCreate.md#norect)
@@ -46,6 +47,14 @@ ___
 • **extractor**: `string`
 
 Uniquely identify an extractor.
+
+___
+
+### manualEntry
+
+• `Optional` **manualEntry**: `boolean`
+
+If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
 
 ___
 

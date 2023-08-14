@@ -55,8 +55,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
     deleteWorkspace(identifier: string, options?: AffindaAPIDeleteWorkspaceOptionalParams): Promise<void>;
     /**
      * Return monthly credits consumption of a workspace.
-     * The data is updated daily.
-     *
      * @param identifier Workspace's identifier
      * @param options The options parameters.
      */
@@ -124,8 +122,6 @@ export declare class AffindaAPI extends AffindaAPIContext {
     createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: AffindaAPICreateDataFieldForCollectionOptionalParams): Promise<AffindaAPICreateDataFieldForCollectionResponse>;
     /**
      * Return monthly credits consumption of a collection.
-     * The data is updated daily.
-     *
      * @param identifier Collection's identifier
      * @param options The options parameters.
      */
@@ -2094,6 +2090,8 @@ export declare interface DataFieldCreateDataPoint {
     noRect?: boolean;
     /** The identifier of the parent data point if applicable. */
     parent?: string;
+    /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+    manualEntry?: boolean;
 }
 
 /** The field to be created. */
@@ -2120,6 +2118,8 @@ export declare interface DataFieldDataPoint {
     /** The identifier of the parent data point if applicable. */
     parent: string | null;
     children: DataPoint[];
+    /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+    manualEntry?: boolean;
 }
 
 /** The field to be created. */
@@ -2152,6 +2152,8 @@ export declare interface DataPoint {
     /** The identifier of the parent data point if applicable. */
     parent?: string;
     children?: DataPoint[];
+    /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+    manualEntry?: boolean;
 }
 
 export declare interface DataPointChoice {
@@ -2207,6 +2209,8 @@ export declare interface DataPointCreate {
     displayEnumValue?: boolean;
     /** The identifier of the parent data point if applicable. */
     parent?: string;
+    /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+    manualEntry?: boolean;
 }
 
 export declare interface DataPointUpdate {
@@ -2592,6 +2596,7 @@ export declare interface Field {
     enabledChildFields?: Field[];
     disabledChildFields?: Field[];
     slug?: string;
+    fields?: Record<string, unknown>[];
 }
 
 export declare interface FieldCategory {

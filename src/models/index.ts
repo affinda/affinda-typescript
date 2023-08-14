@@ -322,6 +322,7 @@ export interface Field {
   enabledChildFields?: Field[];
   disabledChildFields?: Field[];
   slug?: string;
+  fields?: Record<string, unknown>[];
 }
 
 /** Extra configurations specific to an extractor. */
@@ -404,6 +405,8 @@ export interface DataFieldCreateDataPoint {
   noRect?: boolean;
   /** The identifier of the parent data point if applicable. */
   parent?: string;
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
 }
 
 export interface DataField {
@@ -441,6 +444,8 @@ export interface DataFieldDataPoint {
   /** The identifier of the parent data point if applicable. */
   parent: string | null;
   children: DataPoint[];
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
 }
 
 export interface DataPoint {
@@ -463,6 +468,8 @@ export interface DataPoint {
   /** The identifier of the parent data point if applicable. */
   parent?: string;
   children?: DataPoint[];
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
 }
 
 /** Monthly credits consumption */
@@ -1169,6 +1176,8 @@ export interface DataPointCreate {
   displayEnumValue?: boolean;
   /** The identifier of the parent data point if applicable. */
   parent?: string;
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
 }
 
 export interface DataPointUpdate {

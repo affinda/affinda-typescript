@@ -1702,7 +1702,6 @@ ___
 ▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
 
 Return monthly credits consumption of a collection.
-The data is updated daily.
 
 #### Parameters
 
@@ -1722,7 +1721,6 @@ ___
 ▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
 
 Return monthly credits consumption of a workspace.
-The data is updated daily.
 
 #### Parameters
 

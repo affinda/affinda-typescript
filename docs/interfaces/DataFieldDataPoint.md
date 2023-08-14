@@ -11,6 +11,7 @@ The data point to be created for this field. If a data point with the same slug 
 - [children](DataFieldDataPoint.md#children)
 - [description](DataFieldDataPoint.md#description)
 - [identifier](DataFieldDataPoint.md#identifier)
+- [manualEntry](DataFieldDataPoint.md#manualentry)
 - [multiple](DataFieldDataPoint.md#multiple)
 - [name](DataFieldDataPoint.md#name)
 - [noRect](DataFieldDataPoint.md#norect)
@@ -37,6 +38,14 @@ ___
 • **identifier**: `string`
 
 Uniquely identify a data point.
+
+___
+
+### manualEntry
+
+• `Optional` **manualEntry**: `boolean`
+
+If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
 
 ___
 
