@@ -8,6 +8,7 @@
 
 - [collections](Workspace.md#collections)
 - [confirmedDocsCount](Workspace.md#confirmeddocscount)
+- [documentSplitter](Workspace.md#documentsplitter)
 - [identifier](Workspace.md#identifier)
 - [ingestEmail](Workspace.md#ingestemail)
 - [members](Workspace.md#members)
@@ -15,7 +16,6 @@
 - [organization](Workspace.md#organization)
 - [rejectDuplicates](Workspace.md#rejectduplicates)
 - [rejectInvalidDocuments](Workspace.md#rejectinvaliddocuments)
-- [splitDocuments](Workspace.md#splitdocuments)
 - [unvalidatedDocsCount](Workspace.md#unvalidateddocscount)
 - [visibility](Workspace.md#visibility)
 - [whitelistIngestAddresses](Workspace.md#whitelistingestaddresses)
@@ -33,6 +33,14 @@ ___
 • `Optional` **confirmedDocsCount**: `number`
 
 Number of validated documents in the workspace.
+
+___
+
+### documentSplitter
+
+• `Optional` **documentSplitter**: `string`
+
+Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split.
 
 ___
 
@@ -83,14 +91,6 @@ ___
 • `Optional` **rejectInvalidDocuments**: `boolean`
 
 If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed.
-
-___
-
-### splitDocuments
-
-• `Optional` **splitDocuments**: `boolean`
-
-If true, attempt to split documents if multiple documents are detected in a single file.
 
 ___
 

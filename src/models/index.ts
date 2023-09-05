@@ -24,8 +24,8 @@ export interface Workspace {
   ingestEmail?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
-  /** If true, attempt to split documents if multiple documents are detected in a single file. */
-  splitDocuments?: boolean;
+  /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
+  documentSplitter?: WorkspaceSplitDocumentsOptions;
 }
 
 export interface Organization {
@@ -173,8 +173,8 @@ export interface WorkspaceCreate {
   rejectDuplicates?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
-  /** If true, attempt to split documents if multiple documents are detected in a single file. */
-  splitDocuments?: boolean;
+  /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
+  documentSplitter?: WorkspaceSplitDocumentsOptions;
 }
 
 export interface WorkspaceUpdate {
@@ -187,8 +187,8 @@ export interface WorkspaceUpdate {
   rejectDuplicates?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
-  /** If true, attempt to split documents if multiple documents are detected in a single file. */
-  splitDocuments?: boolean;
+  /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
+  documentSplitter?: WorkspaceSplitDocumentsOptions;
 }
 
 /** Monthly credits consumption */
@@ -252,6 +252,8 @@ export interface Collection {
   tailoredExtractorRequested?: boolean;
   /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
   allowOpenai?: boolean;
+  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+  trainsExtractor?: boolean;
 }
 
 export interface CollectionWorkspace {
@@ -273,6 +275,7 @@ export interface Extractor {
   isCustom?: boolean;
   fieldGroups?: FieldGroup[];
   createdDt?: Date;
+  lastTrainedDt?: Date;
 }
 
 export interface ExtractorBaseExtractor {
@@ -359,6 +362,8 @@ export interface CollectionCreate {
   extractorConfig?: ExtractorConfig;
   /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
   allowOpenai?: boolean;
+  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+  trainsExtractor?: boolean;
 }
 
 export interface CollectionUpdate {
@@ -373,6 +378,8 @@ export interface CollectionUpdate {
   extractorConfig?: ExtractorConfig;
   /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
   allowOpenai?: boolean;
+  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+  trainsExtractor?: boolean;
 }
 
 export interface DataFieldCreate {
@@ -1800,7 +1807,7 @@ export interface Get200ApplicationJsonPropertiesItemsItem {
 
 export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
   name?: string;
-  documentType?: Enum22;
+  documentType?: Enum23;
 }
 
 export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -2668,6 +2675,26 @@ export enum KnownWorkspaceVisibility {
  */
 export type WorkspaceVisibility = string;
 
+/** Known values of {@link WorkspaceSplitDocumentsOptions} that the service accepts. */
+export enum KnownWorkspaceSplitDocumentsOptions {
+  Leave = "leave",
+  Conservative = "conservative",
+  Recommended = "recommended",
+  Aggressive = "aggressive"
+}
+
+/**
+ * Defines values for WorkspaceSplitDocumentsOptions. \
+ * {@link KnownWorkspaceSplitDocumentsOptions} can be used interchangeably with WorkspaceSplitDocumentsOptions,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **leave** \
+ * **conservative** \
+ * **recommended** \
+ * **aggressive**
+ */
+export type WorkspaceSplitDocumentsOptions = string;
+
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
 export enum KnownCollectionDateFormatPreference {
   DMY = "DMY",
@@ -3378,21 +3405,21 @@ export enum KnownSearchParametersCustomDataFilterType {
  */
 export type SearchParametersCustomDataFilterType = string;
 
-/** Known values of {@link Enum19} that the service accepts. */
-export enum KnownEnum19 {
+/** Known values of {@link Enum20} that the service accepts. */
+export enum KnownEnum20 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum19. \
- * {@link KnownEnum19} can be used interchangeably with Enum19,
+ * Defines values for Enum20. \
+ * {@link KnownEnum20} can be used interchangeably with Enum20,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum19 = string;
+export type Enum20 = string;
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
 export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
@@ -3426,21 +3453,21 @@ export enum KnownPostContentSchemaDocumentType {
  */
 export type PostContentSchemaDocumentType = string;
 
-/** Known values of {@link Enum22} that the service accepts. */
-export enum KnownEnum22 {
+/** Known values of {@link Enum23} that the service accepts. */
+export enum KnownEnum23 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum22. \
- * {@link KnownEnum22} can be used interchangeably with Enum22,
+ * Defines values for Enum23. \
+ * {@link KnownEnum23} can be used interchangeably with Enum23,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum22 = string;
+export type Enum23 = string;
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
@@ -4257,7 +4284,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum19;
+  documentType?: Enum20;
 }
 
 /** Contains response data for the getAllIndexes operation. */

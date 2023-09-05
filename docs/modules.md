@@ -12,8 +12,8 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum19](enums/KnownEnum19.md)
-- [KnownEnum22](enums/KnownEnum22.md)
+- [KnownEnum20](enums/KnownEnum20.md)
+- [KnownEnum23](enums/KnownEnum23.md)
 - [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
@@ -29,6 +29,7 @@
 - [KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md)
 - [KnownThemeConfigPaletteMode](enums/KnownThemeConfigPaletteMode.md)
 - [KnownVersion](enums/KnownVersion.md)
+- [KnownWorkspaceSplitDocumentsOptions](enums/KnownWorkspaceSplitDocumentsOptions.md)
 - [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
 
 ### Classes
@@ -485,8 +486,8 @@
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum19](modules.md#enum19)
-- [Enum22](modules.md#enum22)
+- [Enum20](modules.md#enum20)
+- [Enum23](modules.md#enum23)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationUpdate](modules.md#expectedremunerationannotationupdate)
 - [FloatAnnotation](modules.md#floatannotation)
@@ -568,6 +569,7 @@
 - [TextAnnotationUpdate](modules.md#textannotationupdate)
 - [ThemeConfigPaletteMode](modules.md#themeconfigpalettemode)
 - [Version](modules.md#version)
+- [WorkspaceSplitDocumentsOptions](modules.md#workspacesplitdocumentsoptions)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 - [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
 - [YearsExperienceAnnotationUpdate](modules.md#yearsexperienceannotationupdate)
@@ -1392,12 +1394,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum19
+### Enum20
 
-Ƭ **Enum19**: `string`
+Ƭ **Enum20**: `string`
 
-Defines values for Enum19. \
-[KnownEnum19](enums/KnownEnum19.md) can be used interchangeably with Enum19,
+Defines values for Enum20. \
+[KnownEnum20](enums/KnownEnum20.md) can be used interchangeably with Enum20,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1405,12 +1407,12 @@ Defines values for Enum19. \
 
 ___
 
-### Enum22
+### Enum23
 
-Ƭ **Enum22**: `string`
+Ƭ **Enum23**: `string`
 
-Defines values for Enum22. \
-[KnownEnum22](enums/KnownEnum22.md) can be used interchangeably with Enum22,
+Defines values for Enum23. \
+[KnownEnum23](enums/KnownEnum23.md) can be used interchangeably with Enum23,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -2245,6 +2247,21 @@ Defines values for Version. \
 **v1** \
 **v2** \
 **v3**
+
+___
+
+### WorkspaceSplitDocumentsOptions
+
+Ƭ **WorkspaceSplitDocumentsOptions**: `string`
+
+Defines values for WorkspaceSplitDocumentsOptions. \
+[KnownWorkspaceSplitDocumentsOptions](enums/KnownWorkspaceSplitDocumentsOptions.md) can be used interchangeably with WorkspaceSplitDocumentsOptions,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**leave** \
+**conservative** \
+**recommended** \
+**aggressive**
 
 ___
 

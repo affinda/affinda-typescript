@@ -14,6 +14,7 @@
 - [fields](CollectionUpdate.md#fields)
 - [fieldsLayout](CollectionUpdate.md#fieldslayout)
 - [name](CollectionUpdate.md#name)
+- [trainsExtractor](CollectionUpdate.md#trainsextractor)
 
 ## Properties
 
@@ -68,3 +69,11 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### trainsExtractor
+
+• `Optional` **trainsExtractor**: `boolean`
+
+Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors.

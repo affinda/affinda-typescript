@@ -12,6 +12,7 @@
 - [fieldGroups](Extractor.md#fieldgroups)
 - [identifier](Extractor.md#identifier)
 - [isCustom](Extractor.md#iscustom)
+- [lastTrainedDt](Extractor.md#lasttraineddt)
 - [name](Extractor.md#name)
 - [namePlural](Extractor.md#nameplural)
 - [organization](Extractor.md#organization)
@@ -54,6 +55,12 @@ ___
 ### isCustom
 
 • `Optional` **isCustom**: `boolean`
+
+___
+
+### lastTrainedDt
+
+• `Optional` **lastTrainedDt**: `Date`
 
 ___
 

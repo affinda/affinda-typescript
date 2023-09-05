@@ -1097,7 +1097,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum19;
+    documentType?: Enum20;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -1799,6 +1799,8 @@ export declare interface Collection {
     tailoredExtractorRequested?: boolean;
     /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
     allowOpenai?: boolean;
+    /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+    trainsExtractor?: boolean;
 }
 
 export declare interface CollectionCreate {
@@ -1819,6 +1821,8 @@ export declare interface CollectionCreate {
     extractorConfig?: ExtractorConfig;
     /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
     allowOpenai?: boolean;
+    /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+    trainsExtractor?: boolean;
 }
 
 /**
@@ -1844,6 +1848,8 @@ export declare interface CollectionUpdate {
     extractorConfig?: ExtractorConfig;
     /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
     allowOpenai?: boolean;
+    /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+    trainsExtractor?: boolean;
 }
 
 export declare interface CollectionWorkspace {
@@ -2488,24 +2494,24 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum19. \
- * {@link KnownEnum19} can be used interchangeably with Enum19,
+ * Defines values for Enum20. \
+ * {@link KnownEnum20} can be used interchangeably with Enum20,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum19 = string;
+export declare type Enum20 = string;
 
 /**
- * Defines values for Enum22. \
- * {@link KnownEnum22} can be used interchangeably with Enum22,
+ * Defines values for Enum23. \
+ * {@link KnownEnum23} can be used interchangeably with Enum23,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum22 = string;
+export declare type Enum23 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2547,6 +2553,7 @@ export declare interface Extractor {
     isCustom?: boolean;
     fieldGroups?: FieldGroup[];
     createdDt?: Date;
+    lastTrainedDt?: Date;
 }
 
 export declare interface ExtractorBaseExtractor {
@@ -3199,14 +3206,14 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum19} that the service accepts. */
-export declare enum KnownEnum19 {
+/** Known values of {@link Enum20} that the service accepts. */
+export declare enum KnownEnum20 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum22} that the service accepts. */
-export declare enum KnownEnum22 {
+/** Known values of {@link Enum23} that the service accepts. */
+export declare enum KnownEnum23 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -3536,6 +3543,14 @@ export declare enum KnownVersion {
     V3 = "v3"
 }
 
+/** Known values of {@link WorkspaceSplitDocumentsOptions} that the service accepts. */
+export declare enum KnownWorkspaceSplitDocumentsOptions {
+    Leave = "leave",
+    Conservative = "conservative",
+    Recommended = "recommended",
+    Aggressive = "aggressive"
+}
+
 /** Known values of {@link WorkspaceVisibility} that the service accepts. */
 export declare enum KnownWorkspaceVisibility {
     Organization = "organization",
@@ -3818,7 +3833,7 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
 
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum22;
+    documentType?: Enum23;
 }
 
 export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -4922,8 +4937,8 @@ export declare interface Workspace {
     ingestEmail?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
-    /** If true, attempt to split documents if multiple documents are detected in a single file. */
-    splitDocuments?: boolean;
+    /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
+    documentSplitter?: WorkspaceSplitDocumentsOptions;
 }
 
 export declare interface WorkspaceCollectionsItem {
@@ -4961,8 +4976,8 @@ export declare interface WorkspaceCreate {
     rejectDuplicates?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
-    /** If true, attempt to split documents if multiple documents are detected in a single file. */
-    splitDocuments?: boolean;
+    /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
+    documentSplitter?: WorkspaceSplitDocumentsOptions;
 }
 
 export declare interface WorkspaceMembership {
@@ -4980,6 +4995,18 @@ export declare interface WorkspaceMembershipCreate {
     user?: number;
 }
 
+/**
+ * Defines values for WorkspaceSplitDocumentsOptions. \
+ * {@link KnownWorkspaceSplitDocumentsOptions} can be used interchangeably with WorkspaceSplitDocumentsOptions,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **leave** \
+ * **conservative** \
+ * **recommended** \
+ * **aggressive**
+ */
+export declare type WorkspaceSplitDocumentsOptions = string;
+
 export declare interface WorkspaceUpdate {
     name?: string;
     /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
@@ -4990,8 +5017,8 @@ export declare interface WorkspaceUpdate {
     rejectDuplicates?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
-    /** If true, attempt to split documents if multiple documents are detected in a single file. */
-    splitDocuments?: boolean;
+    /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
+    documentSplitter?: WorkspaceSplitDocumentsOptions;
 }
 
 /**

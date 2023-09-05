@@ -876,9 +876,9 @@ semver@~7.5.4:
     lru-cache "^6.0.0"
 
 shiki@^0.14.1:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.3.tgz#d1a93c463942bdafb9866d74d619a4347d0bbf64"
-  integrity sha512-U3S/a+b0KS+UkTyMjoNojvTgrBHjgp7L6ovhFVZsXmBGnVdQ4K4U9oK0z63w538S91ATngv1vXigHCSWOwnr+g==
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.4.tgz#2454969b466a5f75067d0f2fa0d7426d32881b20"
+  integrity sha512-IXCRip2IQzKwxArNNq1S+On4KPML3Yyn8Zzs/xRgcgOWIr8ntIK3IKzjFPfjy/7kt9ZMjc+FItfqHRBg8b6tNQ==
   dependencies:
     ansi-sequence-parser "^1.1.0"
     jsonc-parser "^3.2.0"
@@ -948,9 +948,9 @@ tslib@^2.2.0:
   integrity sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==
 
 typedoc-plugin-markdown@^3.10.4:
-  version "3.15.4"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.15.4.tgz#928755d9cf8e2f12c98229920a251760a82247b6"
-  integrity sha512-KpjFL/NDrQAbY147oIoOgob2vAdEchsMcTVd6+e6H2lC1l5xhi48bhP/fMJI7qYQ8th5nubervgqw51z7gY66A==
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.16.0.tgz#98da250271aafade8b6740a8116a97cd3941abcd"
+  integrity sha512-eeiC78fDNGFwemPIHiwRC+mEC7W5jwt3fceUev2gJ2nFnXpVHo8eRrpC9BLWZDee6ehnz/sPmNjizbXwpfaTBw==
   dependencies:
     handlebars "^4.7.7"
 

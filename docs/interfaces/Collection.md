@@ -20,6 +20,7 @@
 - [ingestEmail](Collection.md#ingestemail)
 - [name](Collection.md#name)
 - [tailoredExtractorRequested](Collection.md#tailoredextractorrequested)
+- [trainsExtractor](Collection.md#trainsextractor)
 - [unvalidatedDocsCount](Collection.md#unvalidateddocscount)
 - [workspace](Collection.md#workspace)
 
@@ -120,6 +121,14 @@ ___
 • `Optional` **tailoredExtractorRequested**: `boolean`
 
 Whether a tailored extractor has been requested for this collection.
+
+___
+
+### trainsExtractor
+
+• `Optional` **trainsExtractor**: `boolean`
+
+Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors.
 
 ___
 

@@ -99,10 +99,10 @@ export const Workspace: coreClient.CompositeMapper = {
           }
         }
       },
-      splitDocuments: {
-        serializedName: "splitDocuments",
+      documentSplitter: {
+        serializedName: "documentSplitter",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       }
     }
@@ -763,10 +763,10 @@ export const WorkspaceCreate: coreClient.CompositeMapper = {
           }
         }
       },
-      splitDocuments: {
-        serializedName: "splitDocuments",
+      documentSplitter: {
+        serializedName: "documentSplitter",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       }
     }
@@ -816,10 +816,10 @@ export const WorkspaceUpdate: coreClient.CompositeMapper = {
           }
         }
       },
-      splitDocuments: {
-        serializedName: "splitDocuments",
+      documentSplitter: {
+        serializedName: "documentSplitter",
         type: {
-          name: "Boolean"
+          name: "String"
         }
       }
     }
@@ -1068,6 +1068,12 @@ export const Collection: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      trainsExtractor: {
+        serializedName: "trainsExtractor",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -1176,6 +1182,13 @@ export const Extractor: coreClient.CompositeMapper = {
       },
       createdDt: {
         serializedName: "createdDt",
+        type: {
+          name: "DateTime"
+        }
+      },
+      lastTrainedDt: {
+        serializedName: "lastTrainedDt",
+        nullable: true,
         type: {
           name: "DateTime"
         }
@@ -1647,6 +1660,12 @@ export const CollectionCreate: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      trainsExtractor: {
+        serializedName: "trainsExtractor",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -1713,6 +1732,12 @@ export const CollectionUpdate: coreClient.CompositeMapper = {
       allowOpenai: {
         defaultValue: false,
         serializedName: "allowOpenai",
+        type: {
+          name: "Boolean"
+        }
+      },
+      trainsExtractor: {
+        serializedName: "trainsExtractor",
         type: {
           name: "Boolean"
         }

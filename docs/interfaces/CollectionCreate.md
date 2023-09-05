@@ -16,6 +16,7 @@
 - [fields](CollectionCreate.md#fields)
 - [fieldsLayout](CollectionCreate.md#fieldslayout)
 - [name](CollectionCreate.md#name)
+- [trainsExtractor](CollectionCreate.md#trainsextractor)
 - [workspace](CollectionCreate.md#workspace)
 
 ## Properties
@@ -87,6 +88,14 @@ ___
 ### name
 
 • **name**: `string`
+
+___
+
+### trainsExtractor
+
+• `Optional` **trainsExtractor**: `boolean`
+
+Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors.
 
 ___
 
