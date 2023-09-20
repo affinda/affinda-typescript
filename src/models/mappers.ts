@@ -211,6 +211,18 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      restrictDocumentSplitting: {
+        serializedName: "restrictDocumentSplitting",
+        type: {
+          name: "Boolean"
+        }
+      },
+      disableCurrencyFormatting: {
+        serializedName: "disableCurrencyFormatting",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -5717,6 +5729,18 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      restrictDocumentSplitting: {
+        serializedName: "restrictDocumentSplitting",
+        type: {
+          name: "Boolean"
+        }
+      },
+      disableCurrencyFormatting: {
+        serializedName: "disableCurrencyFormatting",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -6270,6 +6294,13 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
           className: "Organization"
         }
       },
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "Composite",
+          className: "ResthookSubscriptionWorkspace"
+        }
+      },
       targetUrl: {
         serializedName: "targetUrl",
         required: true,
@@ -6309,6 +6340,36 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
   }
 };
 
+export const ResthookSubscriptionWorkspace: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResthookSubscriptionWorkspace",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "Composite",
+          className: "Organization"
+        }
+      }
+    }
+  }
+};
+
 export const ResthookSubscriptionCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -6330,6 +6391,12 @@ export const ResthookSubscriptionCreate: coreClient.CompositeMapper = {
       },
       organization: {
         serializedName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
         type: {
           name: "String"
         }
@@ -6357,6 +6424,12 @@ export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
       },
       organization: {
         serializedName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      workspace: {
+        serializedName: "workspace",
         type: {
           name: "String"
         }

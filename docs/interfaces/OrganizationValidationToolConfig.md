@@ -8,15 +8,25 @@ Configuration of the embeddable validation tool.
 
 ### Properties
 
+- [disableCurrencyFormatting](OrganizationValidationToolConfig.md#disablecurrencyformatting)
 - [hideActions](OrganizationValidationToolConfig.md#hideactions)
 - [hideCollection](OrganizationValidationToolConfig.md#hidecollection)
 - [hideExport](OrganizationValidationToolConfig.md#hideexport)
 - [hideFilename](OrganizationValidationToolConfig.md#hidefilename)
 - [hideTags](OrganizationValidationToolConfig.md#hidetags)
 - [hideWarnings](OrganizationValidationToolConfig.md#hidewarnings)
+- [restrictDocumentSplitting](OrganizationValidationToolConfig.md#restrictdocumentsplitting)
 - [theme](OrganizationValidationToolConfig.md#theme)
 
 ## Properties
+
+### disableCurrencyFormatting
+
+• `Optional` **disableCurrencyFormatting**: `boolean`
+
+Disables currency formatting of decimals values.
+
+___
 
 ### hideActions
 
@@ -63,6 +73,14 @@ ___
 • `Optional` **hideWarnings**: `boolean`
 
 Hide the warnings panel.
+
+___
+
+### restrictDocumentSplitting
+
+• `Optional` **restrictDocumentSplitting**: `boolean`
+
+Disables the page editor after a document has been split once.
 
 ___
 

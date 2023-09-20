@@ -58,6 +58,10 @@ export interface OrganizationValidationToolConfig {
   hideTags?: boolean;
   /** Hide the warnings panel. */
   hideWarnings?: boolean;
+  /** Disables the page editor after a document has been split once. */
+  restrictDocumentSplitting?: boolean;
+  /** Disables currency formatting of decimals values. */
+  disableCurrencyFormatting?: boolean;
 }
 
 export interface ThemeConfig {
@@ -1309,6 +1313,10 @@ export interface ValidationToolConfig {
   hideTags?: boolean;
   /** Hide the warnings panel. */
   hideWarnings?: boolean;
+  /** Disables the page editor after a document has been split once. */
+  restrictDocumentSplitting?: boolean;
+  /** Disables currency formatting of decimals values. */
+  disableCurrencyFormatting?: boolean;
 }
 
 export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1434,7 +1442,8 @@ export interface ResthookSubscription {
   id: number;
   /** The event name to subscribe to. */
   event: ResthookEvent;
-  organization: Organization;
+  organization: Organization | null;
+  workspace: ResthookSubscriptionWorkspace | null;
   /** URL of the resthook's receiver. */
   targetUrl: string;
   /** Resthooks only fire for active subscriptions. */
@@ -1447,12 +1456,20 @@ export interface ResthookSubscription {
   version: ResthookSubscriptionVersion;
 }
 
+export interface ResthookSubscriptionWorkspace {
+  /** Uniquely identify a workspace. */
+  identifier: string;
+  name: string;
+  organization: Organization;
+}
+
 export interface ResthookSubscriptionCreate {
   /** URL of the resthook's receiver. */
   targetUrl: string;
   /** The event name to subscribe to. */
   event: ResthookEvent;
   organization?: string;
+  workspace?: string;
   /** Version of the resthook subscription. Determines the resthook body being fired. */
   version?: Version;
 }
@@ -1462,6 +1479,8 @@ export interface ResthookSubscriptionUpdate {
   event?: ResthookEvent;
   /** Uniquely identify an organization. */
   organization?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
   /** Version of the resthook subscription. Determines the resthook body being fired. */
   version?: Version;
 }

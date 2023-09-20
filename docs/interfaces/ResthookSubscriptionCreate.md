@@ -10,6 +10,7 @@
 - [organization](ResthookSubscriptionCreate.md#organization)
 - [targetUrl](ResthookSubscriptionCreate.md#targeturl)
 - [version](ResthookSubscriptionCreate.md#version)
+- [workspace](ResthookSubscriptionCreate.md#workspace)
 
 ## Properties
 
@@ -40,3 +41,9 @@ ___
 • `Optional` **version**: `string`
 
 Version of the resthook subscription. Determines the resthook body being fired.
+
+___
+
+### workspace
+
+• `Optional` **workspace**: `string`

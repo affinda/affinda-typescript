@@ -326,6 +326,7 @@
 - [ResthookSubscription](interfaces/ResthookSubscription.md)
 - [ResthookSubscriptionCreate](interfaces/ResthookSubscriptionCreate.md)
 - [ResthookSubscriptionUpdate](interfaces/ResthookSubscriptionUpdate.md)
+- [ResthookSubscriptionWorkspace](interfaces/ResthookSubscriptionWorkspace.md)
 - [ResumeData](interfaces/ResumeData.md)
 - [ResumeDataName](interfaces/ResumeDataName.md)
 - [ResumeDataPhoneNumberDetailsItem](interfaces/ResumeDataPhoneNumberDetailsItem.md)

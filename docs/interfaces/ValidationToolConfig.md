@@ -8,15 +8,25 @@ Configuration of the embeddable validation tool.
 
 ### Properties
 
+- [disableCurrencyFormatting](ValidationToolConfig.md#disablecurrencyformatting)
 - [hideActions](ValidationToolConfig.md#hideactions)
 - [hideCollection](ValidationToolConfig.md#hidecollection)
 - [hideExport](ValidationToolConfig.md#hideexport)
 - [hideFilename](ValidationToolConfig.md#hidefilename)
 - [hideTags](ValidationToolConfig.md#hidetags)
 - [hideWarnings](ValidationToolConfig.md#hidewarnings)
+- [restrictDocumentSplitting](ValidationToolConfig.md#restrictdocumentsplitting)
 - [theme](ValidationToolConfig.md#theme)
 
 ## Properties
+
+### disableCurrencyFormatting
+
+• `Optional` **disableCurrencyFormatting**: `boolean`
+
+Disables currency formatting of decimals values.
+
+___
 
 ### hideActions
 
@@ -63,6 +73,14 @@ ___
 • `Optional` **hideWarnings**: `boolean`
 
 Hide the warnings panel.
+
+___
+
+### restrictDocumentSplitting
+
+• `Optional` **restrictDocumentSplitting**: `boolean`
+
+Disables the page editor after a document has been split once.
 
 ___
 

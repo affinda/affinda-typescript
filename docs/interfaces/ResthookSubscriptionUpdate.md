@@ -9,6 +9,7 @@
 - [event](ResthookSubscriptionUpdate.md#event)
 - [organization](ResthookSubscriptionUpdate.md#organization)
 - [version](ResthookSubscriptionUpdate.md#version)
+- [workspace](ResthookSubscriptionUpdate.md#workspace)
 
 ## Properties
 
@@ -33,3 +34,11 @@ ___
 • `Optional` **version**: `string`
 
 Version of the resthook subscription. Determines the resthook body being fired.
+
+___
+
+### workspace
+
+• `Optional` **workspace**: `string`
+
+Uniquely identify a workspace.

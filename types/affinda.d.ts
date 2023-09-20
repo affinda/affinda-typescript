@@ -3775,6 +3775,10 @@ export declare interface OrganizationValidationToolConfig {
     hideTags?: boolean;
     /** Hide the warnings panel. */
     hideWarnings?: boolean;
+    /** Disables the page editor after a document has been split once. */
+    restrictDocumentSplitting?: boolean;
+    /** Disables currency formatting of decimals values. */
+    disableCurrencyFormatting?: boolean;
 }
 
 export declare interface PageMeta {
@@ -3989,7 +3993,8 @@ export declare interface ResthookSubscription {
     id: number;
     /** The event name to subscribe to. */
     event: ResthookEvent;
-    organization: Organization;
+    organization: Organization | null;
+    workspace: ResthookSubscriptionWorkspace | null;
     /** URL of the resthook's receiver. */
     targetUrl: string;
     /** Resthooks only fire for active subscriptions. */
@@ -4008,6 +4013,7 @@ export declare interface ResthookSubscriptionCreate {
     /** The event name to subscribe to. */
     event: ResthookEvent;
     organization?: string;
+    workspace?: string;
     /** Version of the resthook subscription. Determines the resthook body being fired. */
     version?: Version;
 }
@@ -4017,6 +4023,8 @@ export declare interface ResthookSubscriptionUpdate {
     event?: ResthookEvent;
     /** Uniquely identify an organization. */
     organization?: string;
+    /** Uniquely identify a workspace. */
+    workspace?: string;
     /** Version of the resthook subscription. Determines the resthook body being fired. */
     version?: Version;
 }
@@ -4031,6 +4039,13 @@ export declare interface ResthookSubscriptionUpdate {
  * **v3**
  */
 export declare type ResthookSubscriptionVersion = string;
+
+export declare interface ResthookSubscriptionWorkspace {
+    /** Uniquely identify a workspace. */
+    identifier: string;
+    name: string;
+    organization: Organization;
+}
 
 export declare type Resume = Document_2 & {
     /** Polymorphic discriminator, which specifies the different types this object can be */
@@ -4903,6 +4918,10 @@ export declare interface ValidationToolConfig {
     hideTags?: boolean;
     /** Hide the warnings panel. */
     hideWarnings?: boolean;
+    /** Disables the page editor after a document has been split once. */
+    restrictDocumentSplitting?: boolean;
+    /** Disables currency formatting of decimals values. */
+    disableCurrencyFormatting?: boolean;
 }
 
 /**
