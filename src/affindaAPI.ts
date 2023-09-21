@@ -711,13 +711,14 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
-   * After a subscription is sucessfully created, we'll send a POST request to your target URL with a
-   * `X-Hook-Secret` header.
-   * You need to response to this request with a 200 status code to confirm your subscribe intention.
+   * After a subscription is successfully created, we'll send a POST request to your target URL with a
+   * `X-Hook-Secret` header. <br />
+   * You need to response to this request with a 200 status code to confirm your subscribe intention. <br
+   * />
    * Then, you need to use the `X-Hook-Secret` to activate the subscription using the
-   * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint.
-   * For more information, see our help article here - [How do I create a
-   * webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
+   * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint. <br />
+   * For more information and detailed instructions, [see our webhooks documentation
+   * here.](https://docs.affinda.com/docs/webhooks)
    * @param body
    * @param options The options parameters.
    */
@@ -797,6 +798,8 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 }
 // Operation Specifications
+const xmlSerializer = coreClient.createSerializer(Mappers, /* isXml */ true);
+
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getAllResumesOperationSpec: coreClient.OperationSpec = {
@@ -878,6 +881,10 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
       isError: true
     },
+    403: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
     404: {
       bodyMapper: Mappers.RequestError,
       isError: true
@@ -888,8 +895,9 @@ const getResumeOperationSpec: coreClient.OperationSpec = {
   },
   queryParameters: [Parameters.format],
   urlParameters: [Parameters.region, Parameters.identifier1],
-  headerParameters: [Parameters.accept],
-  serializer
+  headerParameters: [Parameters.accept2],
+  isXML: true,
+  serializer: xmlSerializer
 };
 const updateResumeDataOperationSpec: coreClient.OperationSpec = {
   path: "/v2/resumes/{identifier}",

@@ -14,6 +14,7 @@ Known values of [ResthookEvent](../modules.md#resthookevent) that the service ac
 - [DocumentParseCompleted](KnownResthookEvent.md#documentparsecompleted)
 - [DocumentParseFailed](KnownResthookEvent.md#documentparsefailed)
 - [DocumentParseSucceeded](KnownResthookEvent.md#documentparsesucceeded)
+- [DocumentRejected](KnownResthookEvent.md#documentrejected)
 - [DocumentValidateCompleted](KnownResthookEvent.md#documentvalidatecompleted)
 - [InvoiceParseCompleted](KnownResthookEvent.md#invoiceparsecompleted)
 - [InvoiceParseFailed](KnownResthookEvent.md#invoiceparsefailed)
@@ -58,6 +59,12 @@ ___
 ### DocumentParseSucceeded
 
 • **DocumentParseSucceeded** = ``"document.parse.succeeded"``
+
+___
+
+### DocumentRejected
+
+• **DocumentRejected** = ``"document.rejected"``
 
 ___
 

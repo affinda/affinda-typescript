@@ -1,8 +1,6 @@
-Typescript Client Library for Affinda Resume Parser API
-=======================================================
+# Typescript Client Library for Affinda Resume Parser API
 
-
-![affinda logo](https://github.com/affinda/affinda-typescript/blob/master/affinda_logo.png)
+![affinda logo](https://api.affinda.com/static/documentation/affinda_logo_light.png)
 [![license](https://img.shields.io/github/license/affinda/affinda-typescript)](https://choosealicense.com/licenses/mit/)
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/affinda/affinda-typescript)
@@ -18,30 +16,27 @@ and [autorest.typescript](https://github.com/Azure/autorest.typescript).
 
 [Package (NPM)](https://www.npmjs.com/package/@affinda/affinda)
 
-*NOTE: You are viewing a deprecated version of the documentation, this release is only compatible with `v2` of the
+_NOTE: You are viewing a deprecated version of the documentation, this release is only compatible with `v2` of the
 Affinda API. Please go to [the master branch](https://github.com/affinda/affinda-typescript/tree/master) to view the
-latest revision.*
+latest revision._
 
-Installation
-------------
+## Installation
 
 ```bash
 npm install @affinda/affinda
 ```
 
-API Version Compatibility
--------------------------
+## API Version Compatibility
 
 The Affinda API is currently on `v3`, with breaking changes meant the release of new versions of the client library.
 Please see below for which versions are compatible with which API version.
 
 | Affinda API version | `affinda-typescript` versions |
-|---------------------|-------------------------------|
+| ------------------- | ----------------------------- |
 | v2                  | 0.1.0 - 5.x.x                 |
 | v3                  | \>= 6.x.x                     |
 
-Quickstart
-----------
+## Quickstart
 
 ### Currently supported environments
 
@@ -67,47 +62,51 @@ npm build
 Example parsing a resume:
 
 ```javascript
-const {AffindaCredential, AffindaAPI} = require("@affinda/affinda");
+const { AffindaCredential, AffindaAPI } = require("@affinda/affinda");
 const fs = require("fs");
 
-const credential = new AffindaCredential("REPLACE_TOKEN")
-const client = new AffindaAPI(credential)
+const credential = new AffindaCredential("REPLACE_TOKEN");
+const client = new AffindaAPI(credential);
 const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
 
-client.createResume({file: readStream}).then((result) => {
+client
+  .createResume({ file: readStream })
+  .then((result) => {
     console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
+    console.dir(result);
+  })
+  .catch((err) => {
     console.log("An error occurred:");
     console.error(err);
-});
+  });
 
 // Can also use a URL:
 
-client.createResume({url: "https://api.affinda.com/static/sample_resumes/example.docx"}).then((result) => {
+client
+  .createResume({
+    url: "https://api.affinda.com/static/sample_resumes/example.docx",
+  })
+  .then((result) => {
     console.log("Returned data:");
-    console.dir(result)
-}).catch((err) => {
+    console.dir(result);
+  })
+  .catch((err) => {
     console.log("An error occurred:");
     console.error(err);
-});
-
+  });
 ```
 
-API reference
--------------
+## API reference
 
 A full API reference generated with [typedoc](https://github.com/TypeStrong/typedoc)
 is [available here](./docs/modules.md)
 
-Samples
--------
+## Samples
 
 Samples are available for [NodeJS](./docs/samples_nodejs.md) amd also for [javascript](./docs/samples_javascript.md)
 intended for use in a browser.
 
-Troubleshooting
----------------
+## Troubleshooting
 
 ### Logging
 
@@ -115,11 +114,11 @@ Enabling logging may help uncover useful information about failures. In order to
 responses, set the `AZURE_LOG_LEVEL` environment variable to `info`. Alternatively, logging can be enabled at runtime by
 calling `setLogLevel` in the `@azure/logger`:
 
-````javascript
-import {setLogLevel} from "@azure/logger";
+```javascript
+import { setLogLevel } from "@azure/logger";
 
 setLogLevel("info");
-````
+```
 
 For more detailed instructions on how to enable logs, you can look at
 the [@azure/logger](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/core/logger) package docs.
