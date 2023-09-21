@@ -3347,7 +3347,8 @@ export enum KnownResthookEvent {
   DocumentValidateCompleted = "document.validate.completed",
   DocumentClassifySucceeded = "document.classify.succeeded",
   DocumentClassifyFailed = "document.classify.failed",
-  DocumentClassifyCompleted = "document.classify.completed"
+  DocumentClassifyCompleted = "document.classify.completed",
+  DocumentRejected = "document.rejected"
 }
 
 /**
@@ -3368,7 +3369,8 @@ export enum KnownResthookEvent {
  * **document.validate.completed** \
  * **document.classify.succeeded** \
  * **document.classify.failed** \
- * **document.classify.completed**
+ * **document.classify.completed** \
+ * **document.rejected**
  */
 export type ResthookEvent = string;
 

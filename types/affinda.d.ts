@@ -500,14 +500,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     getAllResthookSubscriptions(options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams): Promise<AffindaAPIGetAllResthookSubscriptionsResponse>;
     /**
-     * After a subscription is sucessfully created, we'll send a POST request to your target URL with a
+     * After a subscription is successfully created, we'll send a POST request to your target URL with a
      * `X-Hook-Secret` header. <br />
      * You need to response to this request with a 200 status code to confirm your subscribe intention. <br
      * />
      * Then, you need to use the `X-Hook-Secret` to activate the subscription using the
      * [/resthook_subscriptions/activate](#post-/v3/resthook_subscriptions/activate) endpoint. <br />
-     * For more information, see our help article here - [How do I create a
-     * webhook?](https://help.affinda.com/hc/en-au/articles/11474095148569-How-do-I-create-a-webhook)
+     * For more information and detailed instructions, [see our webhooks documentation
+     * here.](https://docs.affinda.com/docs/webhooks)
      * @param body
      * @param options The options parameters.
      */
@@ -3283,7 +3283,8 @@ export declare enum KnownResthookEvent {
     DocumentValidateCompleted = "document.validate.completed",
     DocumentClassifySucceeded = "document.classify.succeeded",
     DocumentClassifyFailed = "document.classify.failed",
-    DocumentClassifyCompleted = "document.classify.completed"
+    DocumentClassifyCompleted = "document.classify.completed",
+    DocumentRejected = "document.rejected"
 }
 
 /** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
@@ -3984,7 +3985,8 @@ export declare interface RequestErrorErrorsItem {
  * **document.validate.completed** \
  * **document.classify.succeeded** \
  * **document.classify.failed** \
- * **document.classify.completed**
+ * **document.classify.completed** \
+ * **document.rejected**
  */
 export declare type ResthookEvent = string;
 

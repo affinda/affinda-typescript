@@ -1868,7 +1868,8 @@ Defines values for ResthookEvent. \
 **document.validate.completed** \
 **document.classify.succeeded** \
 **document.classify.failed** \
-**document.classify.completed**
+**document.classify.completed** \
+**document.rejected**
 
 ___
 
