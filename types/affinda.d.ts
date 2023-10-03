@@ -282,6 +282,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     deleteDataPointChoice(id: number, options?: AffindaAPIDeleteDataPointChoiceOptionalParams): Promise<void>;
     /**
+     * Replace choices of a data point. Existing choices and incoming choices are matched base on their
+     * `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
+     * choices will be deleted.
+     * @param options The options parameters.
+     */
+    replaceDataPointChoices(options?: AffindaAPIReplaceDataPointChoicesOptionalParams): Promise<AffindaAPIReplaceDataPointChoicesResponse>;
+    /**
      * Returns your annotations.
      * @param document Filter by document.
      * @param options The options parameters.
@@ -1432,6 +1439,15 @@ export declare interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams exte
 export declare type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
 
 /** Optional parameters. */
+export declare interface AffindaAPIReplaceDataPointChoicesOptionalParams extends coreClient.OperationOptions {
+    /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+    body?: DataPointChoiceReplaceRequest;
+}
+
+/** Contains response data for the replaceDataPointChoices operation. */
+export declare type AffindaAPIReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
+
+/** Optional parameters. */
 export declare interface AffindaAPIRespondToInvitationOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1942,6 +1958,12 @@ export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperie
     majorGroup?: string;
     /** The 4 digit code representing the SOC2020 classification for this job title */
     socCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    minorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    subMajorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    majorGroupCode?: number;
 }
 
 export declare interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
@@ -2182,6 +2204,44 @@ export declare interface DataPointChoiceCreate {
     value: string;
     synonyms?: string[];
     description?: string;
+}
+
+export declare interface DataPointChoiceForReplace {
+    value: string;
+    label?: string;
+    synonyms?: string[];
+    description?: string;
+}
+
+/** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+export declare interface DataPointChoiceReplaceRequest {
+    /** Uniquely identify a data point. */
+    dataPoint: string;
+    /** Uniquely identify a collection. */
+    collection?: string;
+    /** Uniquely identify an organization. */
+    organization?: string;
+    /** Incoming choices to replace existing choices of a data point. Existing choices and incoming choices are matched base on their `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming choices will be deleted. */
+    choices: DataPointChoiceForReplace[];
+}
+
+export declare interface DataPointChoiceReplaceResponse {
+    /** Uniquely identify a data point. */
+    dataPoint: string;
+    /** Uniquely identify a collection. */
+    collection: string | null;
+    /** Uniquely identify an organization. */
+    organization: string | null;
+    choices: DataPointChoiceReplaceResponseChoicesItem[];
+}
+
+export declare interface DataPointChoiceReplaceResponseChoicesItem {
+    /** Data point choice's ID */
+    id: number;
+    value: string;
+    label: string;
+    synonyms: string[] | null;
+    description: string | null;
 }
 
 export declare interface DataPointChoiceUpdate {
@@ -3111,6 +3171,12 @@ export declare interface JobTitleAnnotationParsedClassification {
     minorGroup?: string;
     subMajorGroup?: string;
     majorGroup?: string;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    minorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    subMajorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    majorGroupCode?: number;
 }
 
 export declare type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
@@ -3129,6 +3195,12 @@ export declare interface JobTitleParsedClassification {
     minorGroup?: string;
     subMajorGroup?: string;
     majorGroup?: string;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    minorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    subMajorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    majorGroupCode?: number;
 }
 
 /** Matching job title to extracted text */
@@ -3920,6 +3992,7 @@ export declare type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentAppli
 export declare type PostContentSchemaDocumentType = string;
 
 export declare interface Rectangle {
+    pageIndex?: number;
     x0: number;
     y0: number;
     x1: number;

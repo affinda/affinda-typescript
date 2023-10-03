@@ -22,6 +22,7 @@ import {
   DataPointUpdate as DataPointUpdateMapper,
   DataPointChoiceCreate as DataPointChoiceCreateMapper,
   DataPointChoiceUpdate as DataPointChoiceUpdateMapper,
+  DataPointChoiceReplaceRequest as DataPointChoiceReplaceRequestMapper,
   AnnotationCreate as AnnotationCreateMapper,
   AnnotationUpdate as AnnotationUpdateMapper,
   TagCreate as TagCreateMapper,
@@ -698,6 +699,11 @@ export const body16: OperationParameter = {
   mapper: DataPointChoiceUpdateMapper
 };
 
+export const body17: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: DataPointChoiceReplaceRequestMapper
+};
+
 export const document: OperationQueryParameter = {
   parameterPath: "document",
   mapper: {
@@ -709,17 +715,17 @@ export const document: OperationQueryParameter = {
   }
 };
 
-export const body17: OperationParameter = {
+export const body18: OperationParameter = {
   parameterPath: "body",
   mapper: AnnotationCreateMapper
 };
 
-export const body18: OperationParameter = {
+export const body19: OperationParameter = {
   parameterPath: "body",
   mapper: AnnotationUpdateMapper
 };
 
-export const body19: OperationParameter = {
+export const body20: OperationParameter = {
   parameterPath: "body",
   mapper: {
     serializedName: "body",
@@ -736,7 +742,7 @@ export const body19: OperationParameter = {
   }
 };
 
-export const body20: OperationParameter = {
+export const body21: OperationParameter = {
   parameterPath: "body",
   mapper: {
     serializedName: "body",
@@ -753,7 +759,7 @@ export const body20: OperationParameter = {
   }
 };
 
-export const body21: OperationParameter = {
+export const body22: OperationParameter = {
   parameterPath: "body",
   mapper: {
     serializedName: "body",
@@ -769,12 +775,12 @@ export const body21: OperationParameter = {
   }
 };
 
-export const body22: OperationParameter = {
+export const body23: OperationParameter = {
   parameterPath: "body",
   mapper: TagCreateMapper
 };
 
-export const body23: OperationParameter = {
+export const body24: OperationParameter = {
   parameterPath: "body",
   mapper: TagUpdateMapper
 };
@@ -835,7 +841,7 @@ export const role: OperationQueryParameter = {
   }
 };
 
-export const body24: OperationParameter = {
+export const body25: OperationParameter = {
   parameterPath: "body",
   mapper: OrganizationMembershipUpdateMapper
 };
@@ -850,12 +856,12 @@ export const status: OperationQueryParameter = {
   }
 };
 
-export const body25: OperationParameter = {
+export const body26: OperationParameter = {
   parameterPath: "body",
   mapper: InvitationCreateMapper
 };
 
-export const body26: OperationParameter = {
+export const body27: OperationParameter = {
   parameterPath: "body",
   mapper: InvitationUpdateMapper
 };
@@ -871,27 +877,27 @@ export const token: OperationURLParameter = {
   }
 };
 
-export const body27: OperationParameter = {
+export const body28: OperationParameter = {
   parameterPath: "body",
   mapper: InvitationResponseMapper
 };
 
-export const body28: OperationParameter = {
+export const body29: OperationParameter = {
   parameterPath: "body",
   mapper: ApiUserCreateMapper
 };
 
-export const body29: OperationParameter = {
+export const body30: OperationParameter = {
   parameterPath: "body",
   mapper: ApiUserUpdateMapper
 };
 
-export const body30: OperationParameter = {
+export const body31: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionCreateMapper
 };
 
-export const body31: OperationParameter = {
+export const body32: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionUpdateMapper
 };
@@ -907,17 +913,17 @@ export const xHookSecret: OperationParameter = {
   }
 };
 
-export const body32: OperationParameter = {
+export const body33: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchParametersMapper
 };
 
-export const body33: OperationParameter = {
+export const body34: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchConfigMapper
 };
 
-export const body34: OperationParameter = {
+export const body35: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };
@@ -953,12 +959,12 @@ export const name3: OperationURLParameter = {
   }
 };
 
-export const body35: OperationParameter = {
+export const body36: OperationParameter = {
   parameterPath: "body",
   mapper: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
-export const body36: OperationParameter = {
+export const body37: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper
 };
@@ -1131,12 +1137,12 @@ export const managementLevelWeight: OperationQueryParameter = {
   }
 };
 
-export const body37: OperationParameter = {
+export const body38: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchConfigMapper
 };
 
-export const body38: OperationParameter = {
+export const body39: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };

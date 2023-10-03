@@ -821,6 +821,12 @@ export interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItems
   majorGroup?: string;
   /** The 4 digit code representing the SOC2020 classification for this job title */
   socCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  minorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  subMajorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  majorGroupCode?: number;
 }
 
 export interface ResumeDataSkillsItem {
@@ -908,6 +914,12 @@ export interface JobTitleAnnotationParsedClassification {
   minorGroup?: string;
   subMajorGroup?: string;
   majorGroup?: string;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  minorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  subMajorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  majorGroupCode?: number;
 }
 
 export interface Annotation {
@@ -944,6 +956,7 @@ export interface Annotation {
 }
 
 export interface Rectangle {
+  pageIndex?: number;
   x0: number;
   y0: number;
   x1: number;
@@ -1052,6 +1065,12 @@ export interface JobTitleParsedClassification {
   minorGroup?: string;
   subMajorGroup?: string;
   majorGroup?: string;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  minorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  subMajorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  majorGroupCode?: number;
 }
 
 export interface ExpectedRemunerationAnnotationUpdateParsed {
@@ -1240,6 +1259,44 @@ export interface DataPointChoiceUpdate {
   value?: string;
   synonyms?: string[];
   description?: string;
+}
+
+/** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+export interface DataPointChoiceReplaceRequest {
+  /** Uniquely identify a data point. */
+  dataPoint: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Incoming choices to replace existing choices of a data point. Existing choices and incoming choices are matched base on their `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming choices will be deleted. */
+  choices: DataPointChoiceForReplace[];
+}
+
+export interface DataPointChoiceForReplace {
+  value: string;
+  label?: string;
+  synonyms?: string[];
+  description?: string;
+}
+
+export interface DataPointChoiceReplaceResponse {
+  /** Uniquely identify a data point. */
+  dataPoint: string;
+  /** Uniquely identify a collection. */
+  collection: string | null;
+  /** Uniquely identify an organization. */
+  organization: string | null;
+  choices: DataPointChoiceReplaceResponseChoicesItem[];
+}
+
+export interface DataPointChoiceReplaceResponseChoicesItem {
+  /** Data point choice's ID */
+  id: number;
+  value: string;
+  label: string;
+  synonyms: string[] | null;
+  description: string | null;
 }
 
 export interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -3936,6 +3993,16 @@ export type AffindaAPIUpdateDataPointChoiceResponse = DataPointChoice;
 /** Optional parameters. */
 export interface AffindaAPIDeleteDataPointChoiceOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIReplaceDataPointChoicesOptionalParams
+  extends coreClient.OperationOptions {
+  /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+  body?: DataPointChoiceReplaceRequest;
+}
+
+/** Contains response data for the replaceDataPointChoices operation. */
+export type AffindaAPIReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllAnnotationsOptionalParams

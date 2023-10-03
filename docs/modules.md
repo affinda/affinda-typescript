@@ -127,6 +127,7 @@
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIRegenerateApiKeyForApiUserOptionalParams](interfaces/AffindaAPIRegenerateApiKeyForApiUserOptionalParams.md)
+- [AffindaAPIReplaceDataPointChoicesOptionalParams](interfaces/AffindaAPIReplaceDataPointChoicesOptionalParams.md)
 - [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
 - [AffindaAPIUpdateAnnotationOptionalParams](interfaces/AffindaAPIUpdateAnnotationOptionalParams.md)
 - [AffindaAPIUpdateApiUserOptionalParams](interfaces/AffindaAPIUpdateApiUserOptionalParams.md)
@@ -212,6 +213,10 @@
 - [DataPoint](interfaces/DataPoint.md)
 - [DataPointChoice](interfaces/DataPointChoice.md)
 - [DataPointChoiceCreate](interfaces/DataPointChoiceCreate.md)
+- [DataPointChoiceForReplace](interfaces/DataPointChoiceForReplace.md)
+- [DataPointChoiceReplaceRequest](interfaces/DataPointChoiceReplaceRequest.md)
+- [DataPointChoiceReplaceResponse](interfaces/DataPointChoiceReplaceResponse.md)
+- [DataPointChoiceReplaceResponseChoicesItem](interfaces/DataPointChoiceReplaceResponseChoicesItem.md)
 - [DataPointChoiceUpdate](interfaces/DataPointChoiceUpdate.md)
 - [DataPointCreate](interfaces/DataPointCreate.md)
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
@@ -458,6 +463,7 @@
 - [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIRegenerateApiKeyForApiUserResponse](modules.md#affindaapiregenerateapikeyforapiuserresponse)
+- [AffindaAPIReplaceDataPointChoicesResponse](modules.md#affindaapireplacedatapointchoicesresponse)
 - [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
 - [AffindaAPIUpdateAnnotationResponse](modules.md#affindaapiupdateannotationresponse)
 - [AffindaAPIUpdateApiUserResponse](modules.md#affindaapiupdateapiuserresponse)
@@ -1114,6 +1120,14 @@ ___
 Ƭ **AffindaAPIRegenerateApiKeyForApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
 
 Contains response data for the regenerateApiKeyForApiUser operation.
+
+___
+
+### AffindaAPIReplaceDataPointChoicesResponse
+
+Ƭ **AffindaAPIReplaceDataPointChoicesResponse**: [`DataPointChoiceReplaceResponse`](interfaces/DataPointChoiceReplaceResponse.md)
+
+Contains response data for the replaceDataPointChoices operation.
 
 ___
 

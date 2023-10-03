@@ -106,6 +106,7 @@
 - [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [regenerateApiKeyForApiUser](AffindaAPI.md#regenerateapikeyforapiuser)
+- [replaceDataPointChoices](AffindaAPI.md#replacedatapointchoices)
 - [respondToInvitation](AffindaAPI.md#respondtoinvitation)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
@@ -1807,6 +1808,26 @@ Regenerate API key for an API user.
 #### Returns
 
 `Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+___
+
+### replaceDataPointChoices
+
+▸ **replaceDataPointChoices**(`options?`): `Promise`<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
+
+Replace choices of a data point. Existing choices and incoming choices are matched base on their
+`value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
+choices will be deleted.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIReplaceDataPointChoicesOptionalParams`](../interfaces/AffindaAPIReplaceDataPointChoicesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
 
 ___
 

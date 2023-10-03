@@ -3641,6 +3641,24 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         type: {
           name: "Number"
         }
+      },
+      minorGroupCode: {
+        serializedName: "minorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      subMajorGroupCode: {
+        serializedName: "subMajorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      majorGroupCode: {
+        serializedName: "majorGroupCode",
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -4061,6 +4079,24 @@ export const JobTitleAnnotationParsedClassification: coreClient.CompositeMapper 
         type: {
           name: "String"
         }
+      },
+      minorGroupCode: {
+        serializedName: "minorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      subMajorGroupCode: {
+        serializedName: "subMajorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      majorGroupCode: {
+        serializedName: "majorGroupCode",
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -4190,6 +4226,12 @@ export const Rectangle: coreClient.CompositeMapper = {
     name: "Composite",
     className: "Rectangle",
     modelProperties: {
+      pageIndex: {
+        serializedName: "pageIndex",
+        type: {
+          name: "Number"
+        }
+      },
       x0: {
         serializedName: "x0",
         required: true,
@@ -4683,6 +4725,24 @@ export const JobTitleParsedClassification: coreClient.CompositeMapper = {
         serializedName: "majorGroup",
         type: {
           name: "String"
+        }
+      },
+      minorGroupCode: {
+        serializedName: "minorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      subMajorGroupCode: {
+        serializedName: "subMajorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      majorGroupCode: {
+        serializedName: "majorGroupCode",
+        type: {
+          name: "Number"
         }
       }
     }
@@ -5454,6 +5514,184 @@ export const DataPointChoiceUpdate: coreClient.CompositeMapper = {
       },
       description: {
         serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoiceReplaceRequest: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoiceReplaceRequest",
+    modelProperties: {
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      collection: {
+        serializedName: "collection",
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        type: {
+          name: "String"
+        }
+      },
+      choices: {
+        serializedName: "choices",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPointChoiceForReplace"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoiceForReplace: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoiceForReplace",
+    modelProperties: {
+      value: {
+        serializedName: "value",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        type: {
+          name: "String"
+        }
+      },
+      synonyms: {
+        serializedName: "synonyms",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoiceReplaceResponse: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoiceReplaceResponse",
+    modelProperties: {
+      dataPoint: {
+        serializedName: "dataPoint",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      collection: {
+        serializedName: "collection",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      choices: {
+        serializedName: "choices",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DataPointChoiceReplaceResponseChoicesItem"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DataPointChoiceReplaceResponseChoicesItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DataPointChoiceReplaceResponseChoicesItem",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      value: {
+        serializedName: "value",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      label: {
+        serializedName: "label",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      synonyms: {
+        serializedName: "synonyms",
+        required: true,
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      },
+      description: {
+        serializedName: "description",
+        required: true,
         nullable: true,
         type: {
           name: "String"

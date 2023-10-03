@@ -7,9 +7,12 @@
 ### Properties
 
 - [majorGroup](JobTitleAnnotationParsedClassification.md#majorgroup)
+- [majorGroupCode](JobTitleAnnotationParsedClassification.md#majorgroupcode)
 - [minorGroup](JobTitleAnnotationParsedClassification.md#minorgroup)
+- [minorGroupCode](JobTitleAnnotationParsedClassification.md#minorgroupcode)
 - [socCode](JobTitleAnnotationParsedClassification.md#soccode)
 - [subMajorGroup](JobTitleAnnotationParsedClassification.md#submajorgroup)
+- [subMajorGroupCode](JobTitleAnnotationParsedClassification.md#submajorgroupcode)
 - [title](JobTitleAnnotationParsedClassification.md#title)
 
 ## Properties
@@ -20,9 +23,25 @@
 
 ___
 
+### majorGroupCode
+
+• `Optional` **majorGroupCode**: `number`
+
+The 4 digit code representing the SOC2020 classification for this job title
+
+___
+
 ### minorGroup
 
 • `Optional` **minorGroup**: `string`
+
+___
+
+### minorGroupCode
+
+• `Optional` **minorGroupCode**: `number`
+
+The 4 digit code representing the SOC2020 classification for this job title
 
 ___
 
@@ -35,6 +54,14 @@ ___
 ### subMajorGroup
 
 • `Optional` **subMajorGroup**: `string`
+
+___
+
+### subMajorGroupCode
+
+• `Optional` **subMajorGroupCode**: `number`
+
+The 4 digit code representing the SOC2020 classification for this job title
 
 ___
 
