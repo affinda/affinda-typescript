@@ -1332,6 +1332,27 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         type: {
           name: "Number"
         }
+      },
+      minorGroupCode: {
+        serializedName: "minorGroupCode",
+        xmlName: "minorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      subMajorGroupCode: {
+        serializedName: "subMajorGroupCode",
+        xmlName: "subMajorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      majorGroupCode: {
+        serializedName: "majorGroupCode",
+        xmlName: "majorGroupCode",
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -2357,6 +2378,13 @@ export const Rectangle: coreClient.CompositeMapper = {
     name: "Composite",
     className: "Rectangle",
     modelProperties: {
+      pageIndex: {
+        serializedName: "pageIndex",
+        xmlName: "pageIndex",
+        type: {
+          name: "Number"
+        }
+      },
       x0: {
         serializedName: "x0",
         required: true,
@@ -3614,6 +3642,27 @@ export const JobTitleParsedClassification: coreClient.CompositeMapper = {
         xmlName: "majorGroup",
         type: {
           name: "String"
+        }
+      },
+      minorGroupCode: {
+        serializedName: "minorGroupCode",
+        xmlName: "minorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      subMajorGroupCode: {
+        serializedName: "subMajorGroupCode",
+        xmlName: "subMajorGroupCode",
+        type: {
+          name: "Number"
+        }
+      },
+      majorGroupCode: {
+        serializedName: "majorGroupCode",
+        xmlName: "majorGroupCode",
+        type: {
+          name: "Number"
         }
       }
     }

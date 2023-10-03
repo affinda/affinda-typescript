@@ -940,6 +940,12 @@ export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperie
     majorGroup?: string;
     /** The 4 digit code representing the SOC2020 classification for this job title */
     socCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    minorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    subMajorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    majorGroupCode?: number;
 }
 
 export declare interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
@@ -1633,6 +1639,12 @@ export declare interface JobTitleParsedClassification {
     minorGroup?: string;
     subMajorGroup?: string;
     majorGroup?: string;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    minorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    subMajorGroupCode?: number;
+    /** The 4 digit code representing the SOC2020 classification for this job title */
+    majorGroupCode?: number;
 }
 
 /** Matching job title to extracted text */
@@ -2202,6 +2214,7 @@ export declare interface PathsYg099PV2IndexNameDocumentsPostRequestbodyContentAp
 export declare type PostContentSchemaDocumentType = string;
 
 export declare interface Rectangle {
+    pageIndex?: number;
     x0: number;
     y0: number;
     x1: number;

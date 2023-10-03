@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.6.0] - 2023-10-03
+### Added
+- Add SOC group codes to classification
+
 ## [5.5.0] - 2023-09-21
 ### Changed
 - Set CustomFieldConfig default to 0.5

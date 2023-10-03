@@ -273,6 +273,12 @@ export interface Components1TryetgSchemasResumedataPropertiesWorkexperienceItems
   majorGroup?: string;
   /** The 4 digit code representing the SOC2020 classification for this job title */
   socCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  minorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  subMajorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  majorGroupCode?: number;
 }
 
 export interface ResumeDataSkillsItem {
@@ -443,6 +449,7 @@ export interface Annotation {
 }
 
 export interface Rectangle {
+  pageIndex?: number;
   x0: number;
   y0: number;
   x1: number;
@@ -669,6 +676,12 @@ export interface JobTitleParsedClassification {
   minorGroup?: string;
   subMajorGroup?: string;
   majorGroup?: string;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  minorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  subMajorGroupCode?: number;
+  /** The 4 digit code representing the SOC2020 classification for this job title */
+  majorGroupCode?: number;
 }
 
 export interface ExpectedRemunerationAnnotationV2UpdateParsed {
