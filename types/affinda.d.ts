@@ -380,8 +380,10 @@ export declare interface AffindaAPICreateInvoiceOptionalParams extends coreClien
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the invoice. */
     url?: string;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -407,8 +409,10 @@ export declare interface AffindaAPICreateJobDescriptionOptionalParams extends co
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the job description. */
     url?: string;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -455,8 +459,10 @@ export declare interface AffindaAPICreateRedactedResumeOptionalParams extends co
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the resume. */
     url?: string;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -501,8 +507,10 @@ export declare interface AffindaAPICreateResumeOptionalParams extends coreClient
     url?: string;
     /** A JSON-encoded string of the `ResumeData` object. */
     data?: ResumeData;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -595,6 +603,8 @@ export declare interface AffindaAPIGetAllInvoicesOptionalParams extends coreClie
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
+    /** Filter for documents with this custom identifier. */
+    customIdentifier?: string;
 }
 
 /** Contains response data for the getAllInvoices operation. */
@@ -606,6 +616,8 @@ export declare interface AffindaAPIGetAllJobDescriptionsOptionalParams extends c
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
+    /** Filter for documents with this custom identifier. */
+    customIdentifier?: string;
 }
 
 /** Contains response data for the getAllJobDescriptions operation. */
@@ -617,6 +629,8 @@ export declare interface AffindaAPIGetAllRedactedResumesOptionalParams extends c
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
+    /** Filter for documents with this custom identifier. */
+    customIdentifier?: string;
 }
 
 /** Contains response data for the getAllRedactedResumes operation. */
@@ -639,6 +653,8 @@ export declare interface AffindaAPIGetAllResumesOptionalParams extends coreClien
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
+    /** Filter for documents with this custom identifier. */
+    customIdentifier?: string;
 }
 
 /** Contains response data for the getAllResumes operation. */
@@ -1312,8 +1328,10 @@ export declare interface InvoiceRequestBody {
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the invoice. */
     url?: string;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -1391,8 +1409,10 @@ export declare interface JobDescriptionRequestBody {
     url?: string;
     /** A JSON-encoded string of the `JobDescriptionData` object. */
     data?: JobDescriptionDataUpdate;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -2039,8 +2059,10 @@ export declare interface ManagementLevelSearchScoreComponent {
 }
 
 export declare interface Meta {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
+    /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -2073,13 +2095,13 @@ export declare interface Meta {
 }
 
 export declare interface MetaChildDocumentsItem {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
 export declare interface MetaParentDocument {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
 }
 
@@ -2110,6 +2132,8 @@ export declare interface PageMeta {
     pageIndex: number;
     /** The URL to the image of the page. */
     image: string | null;
+    /** The URL to the translated image of the page. */
+    imageTranslated?: string;
     /** Height of the page's image in px. */
     height: number;
     /** Width of the page's image in px. */
@@ -2236,8 +2260,10 @@ export declare interface RedactedResumeData {
 export declare interface RedactedResumeRequestBody {
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
     file?: coreRestPipeline.RequestBodyType;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** URL to download the resume. */
@@ -2737,8 +2763,10 @@ export declare interface ResumeRequestBody {
     url?: string;
     /** A JSON-encoded string of the `ResumeData` object. */
     data?: ResumeData;
-    /** A random string that uniquely identify the resource. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */

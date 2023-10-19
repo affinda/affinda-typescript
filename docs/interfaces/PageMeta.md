@@ -9,6 +9,7 @@
 - [height](PageMeta.md#height)
 - [id](PageMeta.md#id)
 - [image](PageMeta.md#image)
+- [imageTranslated](PageMeta.md#imagetranslated)
 - [pageIndex](PageMeta.md#pageindex)
 - [rotation](PageMeta.md#rotation)
 - [width](PageMeta.md#width)
@@ -34,6 +35,14 @@ ___
 • **image**: ``null`` \| `string`
 
 The URL to the image of the page.
+
+___
+
+### imageTranslated
+
+• `Optional` **imageTranslated**: `string`
+
+The URL to the translated image of the page.
 
 ___
 

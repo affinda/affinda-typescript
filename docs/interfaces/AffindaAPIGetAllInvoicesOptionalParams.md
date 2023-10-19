@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPIGetAllInvoicesOptionalParams.md#abortsignal)
+- [customIdentifier](AffindaAPIGetAllInvoicesOptionalParams.md#customidentifier)
 - [limit](AffindaAPIGetAllInvoicesOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllInvoicesOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllInvoicesOptionalParams.md#onresponse)
@@ -33,6 +34,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Filter for documents with this custom identifier.
 
 ___
 

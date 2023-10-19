@@ -822,7 +822,11 @@ const getAllResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.customIdentifier
+  ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
@@ -854,6 +858,7 @@ const createResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.url,
     Parameters.data,
     Parameters.identifier,
+    Parameters.customIdentifier1,
     Parameters.fileName,
     Parameters.wait,
     Parameters.rejectDuplicates,
@@ -965,7 +970,11 @@ const getAllRedactedResumesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.customIdentifier
+  ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
@@ -996,6 +1005,7 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.file,
     Parameters.url,
     Parameters.identifier,
+    Parameters.customIdentifier1,
     Parameters.fileName,
     Parameters.wait,
     Parameters.language,
@@ -1077,7 +1087,11 @@ const getAllInvoicesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.customIdentifier
+  ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
@@ -1108,6 +1122,7 @@ const createInvoiceOperationSpec: coreClient.OperationSpec = {
     Parameters.file,
     Parameters.url,
     Parameters.identifier,
+    Parameters.customIdentifier1,
     Parameters.fileName,
     Parameters.wait,
     Parameters.rejectDuplicates,
@@ -1184,7 +1199,11 @@ const getAllJobDescriptionsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.customIdentifier
+  ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer
@@ -1215,6 +1234,7 @@ const createJobDescriptionOperationSpec: coreClient.OperationSpec = {
     Parameters.file,
     Parameters.url,
     Parameters.identifier,
+    Parameters.customIdentifier1,
     Parameters.fileName,
     Parameters.wait,
     Parameters.rejectDuplicates,

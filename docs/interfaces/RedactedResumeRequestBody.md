@@ -8,6 +8,7 @@ RedactedResumeRequestBody
 
 ### Properties
 
+- [customIdentifier](RedactedResumeRequestBody.md#customidentifier)
 - [expiryTime](RedactedResumeRequestBody.md#expirytime)
 - [file](RedactedResumeRequestBody.md#file)
 - [fileName](RedactedResumeRequestBody.md#filename)
@@ -25,6 +26,14 @@ RedactedResumeRequestBody
 - [wait](RedactedResumeRequestBody.md#wait)
 
 ## Properties
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
+
+___
 
 ### expiryTime
 
@@ -54,7 +63,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-A random string that uniquely identify the resource.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

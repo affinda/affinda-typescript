@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateResumeOptionalParams.md#abortsignal)
+- [customIdentifier](AffindaAPICreateResumeOptionalParams.md#customidentifier)
 - [data](AffindaAPICreateResumeOptionalParams.md#data)
 - [expiryTime](AffindaAPICreateResumeOptionalParams.md#expirytime)
 - [file](AffindaAPICreateResumeOptionalParams.md#file)
@@ -42,6 +43,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
 
 ___
 
@@ -81,7 +90,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-A random string that uniquely identify the resource.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

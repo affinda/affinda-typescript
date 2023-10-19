@@ -15,8 +15,10 @@ export interface PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchema
 }
 
 export interface Meta {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
+  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -50,12 +52,12 @@ export interface Meta {
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
 export interface MetaParentDocument {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
 }
 
 export interface MetaChildDocumentsItem {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
 }
 
@@ -65,6 +67,8 @@ export interface PageMeta {
   pageIndex: number;
   /** The URL to the image of the page. */
   image: string | null;
+  /** The URL to the translated image of the page. */
+  imageTranslated?: string;
   /** Height of the page's image in px. */
   height: number;
   /** Width of the page's image in px. */
@@ -1424,8 +1428,10 @@ export interface ResumeRequestBody {
   url?: string;
   /** A JSON-encoded string of the `ResumeData` object. */
   data?: ResumeData;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -1446,8 +1452,10 @@ export interface ResumeRequestBody {
 export interface RedactedResumeRequestBody {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** URL to download the resume. */
@@ -1482,8 +1490,10 @@ export interface InvoiceRequestBody {
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the invoice. */
   url?: string;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -1508,8 +1518,10 @@ export interface JobDescriptionRequestBody {
   url?: string;
   /** A JSON-encoded string of the `JobDescriptionData` object. */
   data?: JobDescriptionDataUpdate;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -2397,6 +2409,8 @@ export interface AffindaAPIGetAllResumesOptionalParams
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter for documents with this custom identifier. */
+  customIdentifier?: string;
 }
 
 /** Contains response data for the getAllResumes operation. */
@@ -2411,8 +2425,10 @@ export interface AffindaAPICreateResumeOptionalParams
   url?: string;
   /** A JSON-encoded string of the `ResumeData` object. */
   data?: ResumeData;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -2460,6 +2476,8 @@ export interface AffindaAPIGetAllRedactedResumesOptionalParams
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter for documents with this custom identifier. */
+  customIdentifier?: string;
 }
 
 /** Contains response data for the getAllRedactedResumes operation. */
@@ -2472,8 +2490,10 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the resume. */
   url?: string;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -2521,6 +2541,8 @@ export interface AffindaAPIGetAllInvoicesOptionalParams
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter for documents with this custom identifier. */
+  customIdentifier?: string;
 }
 
 /** Contains response data for the getAllInvoices operation. */
@@ -2533,8 +2555,10 @@ export interface AffindaAPICreateInvoiceOptionalParams
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the invoice. */
   url?: string;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -2572,6 +2596,8 @@ export interface AffindaAPIGetAllJobDescriptionsOptionalParams
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter for documents with this custom identifier. */
+  customIdentifier?: string;
 }
 
 /** Contains response data for the getAllJobDescriptions operation. */
@@ -2584,8 +2610,10 @@ export interface AffindaAPICreateJobDescriptionOptionalParams
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the job description. */
   url?: string;
-  /** A random string that uniquely identify the resource. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */

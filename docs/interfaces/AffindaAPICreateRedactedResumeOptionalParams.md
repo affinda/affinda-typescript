@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateRedactedResumeOptionalParams.md#abortsignal)
+- [customIdentifier](AffindaAPICreateRedactedResumeOptionalParams.md#customidentifier)
 - [expiryTime](AffindaAPICreateRedactedResumeOptionalParams.md#expirytime)
 - [file](AffindaAPICreateRedactedResumeOptionalParams.md#file)
 - [fileName](AffindaAPICreateRedactedResumeOptionalParams.md#filename)
@@ -49,6 +50,14 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
+
+___
+
 ### expiryTime
 
 • `Optional` **expiryTime**: `string`
@@ -77,7 +86,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-A random string that uniquely identify the resource.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

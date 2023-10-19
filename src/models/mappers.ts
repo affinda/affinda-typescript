@@ -73,6 +73,14 @@ export const Meta: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        nullable: true,
+        xmlName: "customIdentifier",
+        type: {
+          name: "String"
+        }
+      },
       fileName: {
         serializedName: "fileName",
         nullable: true,
@@ -273,6 +281,14 @@ export const PageMeta: coreClient.CompositeMapper = {
         required: true,
         nullable: true,
         xmlName: "image",
+        type: {
+          name: "String"
+        }
+      },
+      imageTranslated: {
+        serializedName: "imageTranslated",
+        nullable: true,
+        xmlName: "imageTranslated",
         type: {
           name: "String"
         }
@@ -8052,6 +8068,13 @@ export const ResumeRequestBody: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        xmlName: "customIdentifier",
+        type: {
+          name: "String"
+        }
+      },
       fileName: {
         serializedName: "fileName",
         nullable: true,
@@ -8126,6 +8149,13 @@ export const RedactedResumeRequestBody: coreClient.CompositeMapper = {
       identifier: {
         serializedName: "identifier",
         xmlName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        xmlName: "customIdentifier",
         type: {
           name: "String"
         }
@@ -8266,6 +8296,13 @@ export const InvoiceRequestBody: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        xmlName: "customIdentifier",
+        type: {
+          name: "String"
+        }
+      },
       fileName: {
         serializedName: "fileName",
         nullable: true,
@@ -8356,6 +8393,13 @@ export const JobDescriptionRequestBody: coreClient.CompositeMapper = {
       identifier: {
         serializedName: "identifier",
         xmlName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        xmlName: "customIdentifier",
         type: {
           name: "String"
         }

@@ -71,6 +71,17 @@ export const limit: OperationQueryParameter = {
   }
 };
 
+export const customIdentifier: OperationQueryParameter = {
+  parameterPath: ["options", "customIdentifier"],
+  mapper: {
+    serializedName: "custom_identifier",
+    xmlName: "custom_identifier",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const contentType: OperationParameter = {
   parameterPath: ["options", "contentType"],
   mapper: {
@@ -115,6 +126,17 @@ export const identifier: OperationParameter = {
   mapper: {
     serializedName: "identifier",
     xmlName: "identifier",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const customIdentifier1: OperationParameter = {
+  parameterPath: ["options", "customIdentifier"],
+  mapper: {
+    serializedName: "customIdentifier",
+    xmlName: "customIdentifier",
     type: {
       name: "String"
     }

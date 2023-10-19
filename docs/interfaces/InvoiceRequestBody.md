@@ -8,6 +8,7 @@ InvoiceRequestBody
 
 ### Properties
 
+- [customIdentifier](InvoiceRequestBody.md#customidentifier)
 - [expiryTime](InvoiceRequestBody.md#expirytime)
 - [file](InvoiceRequestBody.md#file)
 - [fileName](InvoiceRequestBody.md#filename)
@@ -20,6 +21,14 @@ InvoiceRequestBody
 - [wait](InvoiceRequestBody.md#wait)
 
 ## Properties
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
+
+___
 
 ### expiryTime
 
@@ -49,7 +58,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-A random string that uniquely identify the resource.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

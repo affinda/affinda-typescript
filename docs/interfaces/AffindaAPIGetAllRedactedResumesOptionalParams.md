@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPIGetAllRedactedResumesOptionalParams.md#abortsignal)
+- [customIdentifier](AffindaAPIGetAllRedactedResumesOptionalParams.md#customidentifier)
 - [limit](AffindaAPIGetAllRedactedResumesOptionalParams.md#limit)
 - [offset](AffindaAPIGetAllRedactedResumesOptionalParams.md#offset)
 - [onResponse](AffindaAPIGetAllRedactedResumesOptionalParams.md#onresponse)
@@ -33,6 +34,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Filter for documents with this custom identifier.
 
 ___
 

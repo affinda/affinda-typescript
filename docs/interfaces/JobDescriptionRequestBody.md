@@ -8,6 +8,7 @@ JobDescriptionRequestBody
 
 ### Properties
 
+- [customIdentifier](JobDescriptionRequestBody.md#customidentifier)
 - [data](JobDescriptionRequestBody.md#data)
 - [expiryTime](JobDescriptionRequestBody.md#expirytime)
 - [file](JobDescriptionRequestBody.md#file)
@@ -21,6 +22,14 @@ JobDescriptionRequestBody
 - [wait](JobDescriptionRequestBody.md#wait)
 
 ## Properties
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
+
+___
 
 ### data
 
@@ -58,7 +67,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-A random string that uniquely identify the resource.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

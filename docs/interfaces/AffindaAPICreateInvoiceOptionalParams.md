@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPICreateInvoiceOptionalParams.md#abortsignal)
+- [customIdentifier](AffindaAPICreateInvoiceOptionalParams.md#customidentifier)
 - [expiryTime](AffindaAPICreateInvoiceOptionalParams.md#expirytime)
 - [file](AffindaAPICreateInvoiceOptionalParams.md#file)
 - [fileName](AffindaAPICreateInvoiceOptionalParams.md#filename)
@@ -41,6 +42,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
 
 ___
 
@@ -72,7 +81,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-A random string that uniquely identify the resource.
+Deprecated in favor of `customIdentifier`.
 
 ___
 
