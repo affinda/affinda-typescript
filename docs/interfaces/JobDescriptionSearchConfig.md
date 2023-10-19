@@ -18,6 +18,7 @@
 - [displayOccupationGroup](JobDescriptionSearchConfig.md#displayoccupationgroup)
 - [displaySkills](JobDescriptionSearchConfig.md#displayskills)
 - [displayYearsExperience](JobDescriptionSearchConfig.md#displayyearsexperience)
+- [hideSidePanel](JobDescriptionSearchConfig.md#hidesidepanel)
 - [hideToolbar](JobDescriptionSearchConfig.md#hidetoolbar)
 - [indices](JobDescriptionSearchConfig.md#indices)
 - [maxResults](JobDescriptionSearchConfig.md#maxresults)
@@ -108,6 +109,14 @@ ___
 ### displayYearsExperience
 
 • `Optional` **displayYearsExperience**: `boolean`
+
+___
+
+### hideSidePanel
+
+• `Optional` **hideSidePanel**: `boolean`
+
+Hide the entire side panel.
 
 ___
 

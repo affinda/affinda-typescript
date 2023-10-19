@@ -29,7 +29,7 @@ ___
 
 • **document**: `string`
 
-Uniquely identify a document.
+Unique identifier for the document
 
 ___
 

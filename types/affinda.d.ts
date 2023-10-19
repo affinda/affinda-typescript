@@ -792,8 +792,10 @@ export declare interface AffindaAPICreateDocumentOptionalParams extends coreClie
     workspace?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** Specify a custom identifier for the document. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1072,6 +1074,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     validatable?: boolean;
     /** Filter for documents with challenges. */
     hasChallenges?: boolean;
+    /** Filter for documents with this custom identifier. */
+    customIdentifier?: string;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -1588,7 +1592,7 @@ export declare interface Annotation {
     rectangle: Rectangle | null;
     /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
     rectangles: Rectangle[] | null;
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     document?: string;
     /** The page number within the document, starting from 0. */
     pageIndex: number | null;
@@ -1669,7 +1673,7 @@ export declare type AnnotationContentType = string;
 export declare interface AnnotationCreate {
     /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
     rectangles?: Rectangle[];
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     document: string;
     /** The page number within the document, starting from 0. */
     pageIndex: number | null;
@@ -1690,7 +1694,7 @@ export declare interface AnnotationCreateParsed {
 export declare interface AnnotationUpdate {
     /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
     rectangles?: Rectangle[];
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     document?: string;
     /** The page number within the document, starting from 0. */
     pageIndex?: number;
@@ -2325,7 +2329,7 @@ export declare type DateRange = string;
 
 declare interface Document_2 {
     /** Polymorphic discriminator, which specifies the different types this object can be */
-    extractor: "resume" | "invoice" | "job-description";
+    extractor: "resume" | "invoice" | "job-description" | "resume-redact";
     /** Dictionary of <any> */
     data?: {
         [propertyName: string]: any;
@@ -2349,8 +2353,10 @@ export declare interface DocumentCreate {
     workspace?: string;
     /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
     wait?: string;
-    /** Specify a custom identifier for the document. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -2390,8 +2396,10 @@ export declare interface DocumentError {
 export declare type DocumentFormat = string;
 
 export declare interface DocumentMeta {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier: string;
+    /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -2437,7 +2445,7 @@ export declare interface DocumentMeta {
 }
 
 export declare interface DocumentMetaChildDocumentsItem {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
 }
 
@@ -2459,7 +2467,7 @@ export declare interface DocumentMetaCollectionExtractor {
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
 export declare interface DocumentMetaParentDocument {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
 }
 
@@ -2497,7 +2505,7 @@ export declare interface DocumentSplitPage {
  */
 export declare type DocumentState = string;
 
-export declare type DocumentUnion = Document_2 | Resume | Invoice | JobDescription;
+export declare type DocumentUnion = Document_2 | Resume | Invoice | JobDescription | ResumeRedact;
 
 export declare interface DocumentUpdate {
     /** Uniquely identify a collection. */
@@ -2511,8 +2519,10 @@ export declare interface DocumentUpdate {
     isArchived?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
-    /** Specify a custom identifier for the document. */
+    /** Deprecated in favor of `customIdentifier`. */
     identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
 }
 
 export declare interface DocumentWarning {
@@ -3001,6 +3011,8 @@ export declare interface JobDescriptionSearchConfig {
     actions?: SearchConfigAction[];
     /** Hide the reset/import toolbar. */
     hideToolbar?: boolean;
+    /** Hide the entire side panel. */
+    hideSidePanel?: boolean;
     customFieldsConfig?: CustomFieldConfig[];
 }
 
@@ -3703,8 +3715,10 @@ export declare interface ManagementLevelSearchScoreComponent {
 }
 
 export declare interface Meta {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
+    /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+    customIdentifier?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -3737,13 +3751,13 @@ export declare interface Meta {
 }
 
 export declare interface MetaChildDocumentsItem {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
 export declare interface MetaParentDocument {
-    /** Uniquely identify a document. */
+    /** Unique identifier for the document */
     identifier?: string;
 }
 
@@ -3848,10 +3862,12 @@ export declare interface OrganizationValidationToolConfig {
     hideTags?: boolean;
     /** Hide the warnings panel. */
     hideWarnings?: boolean;
-    /** Disables the page editor after a document has been split once. */
+    /** Disable the page editor after a document has been split once. */
     restrictDocumentSplitting?: boolean;
-    /** Disables currency formatting of decimals values. */
+    /** Disable currency formatting of decimals values. */
     disableCurrencyFormatting?: boolean;
+    /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
+    disableEditDocumentMetadata?: boolean;
 }
 
 export declare interface PageMeta {
@@ -3860,6 +3876,8 @@ export declare interface PageMeta {
     pageIndex: number;
     /** The URL to the image of the page. */
     image: string | null;
+    /** The URL to the translated image of the page. */
+    imageTranslated?: string;
     /** Height of the page's image in px. */
     height: number;
     /** Width of the page's image in px. */
@@ -4488,6 +4506,17 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
+export declare type ResumeRedact = Document_2 & {
+    /** Polymorphic discriminator, which specifies the different types this object can be */
+    extractor: "resume-redact";
+    data?: ResumeRedactData;
+};
+
+export declare interface ResumeRedactData {
+    /** URL to download the redacted resume. */
+    redactedPdf?: string;
+}
+
 export declare interface ResumeSearch {
     /** Total number of results */
     count?: number;
@@ -4543,6 +4572,8 @@ export declare interface ResumeSearchConfig {
     actions?: SearchConfigAction[];
     /** Hide the reset/import toolbar. */
     hideToolbar?: boolean;
+    /** Hide the entire side panel. */
+    hideSidePanel?: boolean;
     customFieldsConfig?: CustomFieldConfig[];
 }
 
@@ -4993,10 +5024,12 @@ export declare interface ValidationToolConfig {
     hideTags?: boolean;
     /** Hide the warnings panel. */
     hideWarnings?: boolean;
-    /** Disables the page editor after a document has been split once. */
+    /** Disable the page editor after a document has been split once. */
     restrictDocumentSplitting?: boolean;
-    /** Disables currency formatting of decimals values. */
+    /** Disable currency formatting of decimals values. */
     disableCurrencyFormatting?: boolean;
+    /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
+    disableEditDocumentMetadata?: boolean;
 }
 
 /**

@@ -8,6 +8,7 @@
 
 - [childDocuments](Meta.md#childdocuments)
 - [createdDt](Meta.md#createddt)
+- [customIdentifier](Meta.md#customidentifier)
 - [documentType](Meta.md#documenttype)
 - [expiryTime](Meta.md#expirytime)
 - [failed](Meta.md#failed)
@@ -37,6 +38,14 @@ ___
 ### createdDt
 
 • `Optional` **createdDt**: `Date`
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique.
 
 ___
 
@@ -74,7 +83,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Uniquely identify a document.
+Unique identifier for the document
 
 ___
 

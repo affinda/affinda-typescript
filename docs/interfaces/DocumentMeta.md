@@ -13,6 +13,7 @@
 - [confirmedDt](DocumentMeta.md#confirmeddt)
 - [createdBy](DocumentMeta.md#createdby)
 - [createdDt](DocumentMeta.md#createddt)
+- [customIdentifier](DocumentMeta.md#customidentifier)
 - [errorCode](DocumentMeta.md#errorcode)
 - [errorDetail](DocumentMeta.md#errordetail)
 - [expiryTime](DocumentMeta.md#expirytime)
@@ -84,6 +85,14 @@ ___
 
 ___
 
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique.
+
+___
+
 ### errorCode
 
 • `Optional` **errorCode**: `string`
@@ -132,7 +141,7 @@ ___
 
 • **identifier**: `string`
 
-Uniquely identify a document.
+Unique identifier for the document
 
 ___
 

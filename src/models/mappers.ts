@@ -223,6 +223,12 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      disableEditDocumentMetadata: {
+        serializedName: "disableEditDocumentMetadata",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -2284,6 +2290,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       fileName: {
         serializedName: "fileName",
         nullable: true,
@@ -2559,6 +2572,13 @@ export const PageMeta: coreClient.CompositeMapper = {
       image: {
         serializedName: "image",
         required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      imageTranslated: {
+        serializedName: "imageTranslated",
         nullable: true,
         type: {
           name: "String"
@@ -4379,6 +4399,12 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -4941,6 +4967,13 @@ export const Meta: coreClient.CompositeMapper = {
     modelProperties: {
       identifier: {
         serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -5976,6 +6009,12 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
       },
       disableCurrencyFormatting: {
         serializedName: "disableCurrencyFormatting",
+        type: {
+          name: "Boolean"
+        }
+      },
+      disableEditDocumentMetadata: {
+        serializedName: "disableEditDocumentMetadata",
         type: {
           name: "Boolean"
         }
@@ -8311,6 +8350,12 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      hideSidePanel: {
+        serializedName: "hideSidePanel",
+        type: {
+          name: "Boolean"
+        }
+      },
       customFieldsConfig: {
         serializedName: "customFieldsConfig",
         nullable: true,
@@ -9949,6 +9994,12 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      hideSidePanel: {
+        serializedName: "hideSidePanel",
+        type: {
+          name: "Boolean"
+        }
+      },
       customFieldsConfig: {
         serializedName: "customFieldsConfig",
         nullable: true,
@@ -11089,6 +11140,21 @@ export const Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1:
   }
 };
 
+export const ResumeRedactData: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeRedactData",
+    modelProperties: {
+      redactedPdf: {
+        serializedName: "redactedPdf",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const DocumentCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -11135,6 +11201,12 @@ export const DocumentCreate: coreClient.CompositeMapper = {
       },
       identifier: {
         serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      customIdentifier: {
+        serializedName: "customIdentifier",
         type: {
           name: "String"
         }
@@ -11436,6 +11508,26 @@ export const JobDescription: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "JobDescriptionData"
+        }
+      }
+    }
+  }
+};
+
+export const ResumeRedact: coreClient.CompositeMapper = {
+  serializedName: "resume-redact",
+  type: {
+    name: "Composite",
+    className: "ResumeRedact",
+    uberParent: "Document",
+    polymorphicDiscriminator: Document.type.polymorphicDiscriminator,
+    modelProperties: {
+      ...Document.type.modelProperties,
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "ResumeRedactData"
         }
       }
     }
@@ -12288,5 +12380,6 @@ export let discriminators = {
   Document: Document,
   "Document.resume": Resume,
   "Document.invoice": Invoice,
-  "Document.job-description": JobDescription
+  "Document.job-description": JobDescription,
+  "Document.resume-redact": ResumeRedact
 };

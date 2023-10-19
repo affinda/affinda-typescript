@@ -2269,7 +2269,8 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.failed,
     Parameters.ready,
     Parameters.validatable,
-    Parameters.hasChallenges
+    Parameters.hasChallenges,
+    Parameters.customIdentifier
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
@@ -2305,6 +2306,7 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
     Parameters.workspace2,
     Parameters.wait,
     Parameters.identifier1,
+    Parameters.customIdentifier1,
     Parameters.fileName,
     Parameters.expiryTime,
     Parameters.language,

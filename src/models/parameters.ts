@@ -366,6 +366,16 @@ export const hasChallenges: OperationQueryParameter = {
   }
 };
 
+export const customIdentifier: OperationQueryParameter = {
+  parameterPath: ["options", "customIdentifier"],
+  mapper: {
+    serializedName: "custom_identifier",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const contentType1: OperationParameter = {
   parameterPath: ["options", "contentType"],
   mapper: {
@@ -438,6 +448,16 @@ export const identifier1: OperationParameter = {
   parameterPath: ["options", "identifier"],
   mapper: {
     serializedName: "identifier",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const customIdentifier1: OperationParameter = {
+  parameterPath: ["options", "customIdentifier"],
+  mapper: {
+    serializedName: "customIdentifier",
     type: {
       name: "String"
     }

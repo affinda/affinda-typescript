@@ -342,6 +342,7 @@
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
+- [ResumeRedactData](interfaces/ResumeRedactData.md)
 - [ResumeSearch](interfaces/ResumeSearch.md)
 - [ResumeSearchConfig](interfaces/ResumeSearchConfig.md)
 - [ResumeSearchDetail](interfaces/ResumeSearchDetail.md)
@@ -560,6 +561,7 @@
 - [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
 - [Resume](modules.md#resume)
 - [ResumeDataLanguagesItem](modules.md#resumedatalanguagesitem)
+- [ResumeRedact](modules.md#resumeredact)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -1397,7 +1399,7 @@ ___
 
 ### DocumentUnion
 
-Ƭ **DocumentUnion**: [`Document`](interfaces/Document.md) \| [`Resume`](modules.md#resume) \| [`Invoice`](modules.md#invoice) \| [`JobDescription`](modules.md#jobdescription)
+Ƭ **DocumentUnion**: [`Document`](interfaces/Document.md) \| [`Resume`](modules.md#resume) \| [`Invoice`](modules.md#invoice) \| [`JobDescription`](modules.md#jobdescription) \| [`ResumeRedact`](modules.md#resumeredact)
 
 ___
 
@@ -2118,6 +2120,12 @@ Defines values for ResumeDataLanguagesItem. \
 **Xhosa** \
 **Yiddish** \
 **Yoruba**
+
+___
+
+### ResumeRedact
+
+Ƭ **ResumeRedact**: [`Document`](interfaces/Document.md) & { `data?`: [`ResumeRedactData`](interfaces/ResumeRedactData.md) ; `extractor`: ``"resume-redact"``  }
 
 ___
 

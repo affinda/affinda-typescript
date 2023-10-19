@@ -16,6 +16,7 @@ Optional parameters.
 
 - [abortSignal](AffindaAPICreateDocumentOptionalParams.md#abortsignal)
 - [collection](AffindaAPICreateDocumentOptionalParams.md#collection)
+- [customIdentifier](AffindaAPICreateDocumentOptionalParams.md#customidentifier)
 - [data](AffindaAPICreateDocumentOptionalParams.md#data)
 - [expiryTime](AffindaAPICreateDocumentOptionalParams.md#expirytime)
 - [file](AffindaAPICreateDocumentOptionalParams.md#file)
@@ -55,6 +56,14 @@ Uniquely identify a collection.
 
 ___
 
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
+
+___
+
 ### data
 
 • `Optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
@@ -91,7 +100,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Specify a custom identifier for the document.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

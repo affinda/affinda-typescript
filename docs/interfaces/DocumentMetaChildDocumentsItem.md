@@ -14,4 +14,4 @@
 
 • `Optional` **identifier**: `string`
 
-Uniquely identify a document.
+Unique identifier for the document

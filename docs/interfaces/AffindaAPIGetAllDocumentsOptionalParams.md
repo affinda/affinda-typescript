@@ -17,6 +17,7 @@ Optional parameters.
 - [abortSignal](AffindaAPIGetAllDocumentsOptionalParams.md#abortsignal)
 - [collection](AffindaAPIGetAllDocumentsOptionalParams.md#collection)
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
+- [customIdentifier](AffindaAPIGetAllDocumentsOptionalParams.md#customidentifier)
 - [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
 - [failed](AffindaAPIGetAllDocumentsOptionalParams.md#failed)
 - [hasChallenges](AffindaAPIGetAllDocumentsOptionalParams.md#haschallenges)
@@ -63,6 +64,14 @@ ___
 • `Optional` **createdDt**: `string`
 
 Filter by created datetime.
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Filter for documents with this custom identifier.
 
 ___
 

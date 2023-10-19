@@ -16,4 +16,4 @@ If this document is part of a splitted document, this attribute points to the or
 
 • `Optional` **identifier**: `string`
 
-Uniquely identify a document.
+Unique identifier for the document

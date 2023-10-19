@@ -9,6 +9,7 @@ Configuration of the embeddable validation tool.
 ### Properties
 
 - [disableCurrencyFormatting](OrganizationValidationToolConfig.md#disablecurrencyformatting)
+- [disableEditDocumentMetadata](OrganizationValidationToolConfig.md#disableeditdocumentmetadata)
 - [hideActions](OrganizationValidationToolConfig.md#hideactions)
 - [hideCollection](OrganizationValidationToolConfig.md#hidecollection)
 - [hideExport](OrganizationValidationToolConfig.md#hideexport)
@@ -24,7 +25,15 @@ Configuration of the embeddable validation tool.
 
 • `Optional` **disableCurrencyFormatting**: `boolean`
 
-Disables currency formatting of decimals values.
+Disable currency formatting of decimals values.
+
+___
+
+### disableEditDocumentMetadata
+
+• `Optional` **disableEditDocumentMetadata**: `boolean`
+
+Disable editing document metadata. Makes the collection selector, filename input and tags editor read only.
 
 ___
 
@@ -80,7 +89,7 @@ ___
 
 • `Optional` **restrictDocumentSplitting**: `boolean`
 
-Disables the page editor after a document has been split once.
+Disable the page editor after a document has been split once.
 
 ___
 

@@ -34,7 +34,7 @@ ___
 
 ### extractor
 
-• **extractor**: ``"resume"`` \| ``"invoice"`` \| ``"job-description"``
+• **extractor**: ``"resume"`` \| ``"invoice"`` \| ``"job-description"`` \| ``"resume-redact"``
 
 Polymorphic discriminator, which specifies the different types this object can be
 

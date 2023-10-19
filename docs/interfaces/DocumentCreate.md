@@ -7,6 +7,7 @@
 ### Properties
 
 - [collection](DocumentCreate.md#collection)
+- [customIdentifier](DocumentCreate.md#customidentifier)
 - [data](DocumentCreate.md#data)
 - [expiryTime](DocumentCreate.md#expirytime)
 - [file](DocumentCreate.md#file)
@@ -27,6 +28,14 @@
 • `Optional` **collection**: `string`
 
 Uniquely identify a collection.
+
+___
+
+### customIdentifier
+
+• `Optional` **customIdentifier**: `string`
+
+Specify a custom identifier for the document if you need one, not required to be unique.
 
 ___
 
@@ -66,7 +75,7 @@ ___
 
 • `Optional` **identifier**: `string`
 
-Specify a custom identifier for the document.
+Deprecated in favor of `customIdentifier`.
 
 ___
 

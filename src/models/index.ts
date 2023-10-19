@@ -1,7 +1,12 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
 
-export type DocumentUnion = Document | Resume | Invoice | JobDescription;
+export type DocumentUnion =
+  | Document
+  | Resume
+  | Invoice
+  | JobDescription
+  | ResumeRedact;
 
 export interface Workspace {
   /** Uniquely identify a workspace. */
@@ -58,10 +63,12 @@ export interface OrganizationValidationToolConfig {
   hideTags?: boolean;
   /** Hide the warnings panel. */
   hideWarnings?: boolean;
-  /** Disables the page editor after a document has been split once. */
+  /** Disable the page editor after a document has been split once. */
   restrictDocumentSplitting?: boolean;
-  /** Disables currency formatting of decimals values. */
+  /** Disable currency formatting of decimals values. */
   disableCurrencyFormatting?: boolean;
+  /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
+  disableEditDocumentMetadata?: boolean;
 }
 
 export interface ThemeConfig {
@@ -497,7 +504,7 @@ export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSche
 
 export interface Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
-  extractor: "resume" | "invoice" | "job-description";
+  extractor: "resume" | "invoice" | "job-description" | "resume-redact";
   /** Dictionary of <any> */
   data?: { [propertyName: string]: any };
   meta: DocumentMeta;
@@ -506,8 +513,10 @@ export interface Document {
 }
 
 export interface DocumentMeta {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier: string;
+  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -554,12 +563,12 @@ export interface DocumentMeta {
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
 export interface DocumentMetaParentDocument {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
 }
 
 export interface DocumentMetaChildDocumentsItem {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
 }
 
@@ -569,6 +578,8 @@ export interface PageMeta {
   pageIndex: number;
   /** The URL to the image of the page. */
   image: string | null;
+  /** The URL to the translated image of the page. */
+  imageTranslated?: string;
   /** Height of the page's image in px. */
   height: number;
   /** Width of the page's image in px. */
@@ -931,7 +942,7 @@ export interface Annotation {
   rectangle: Rectangle | null;
   /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
   rectangles: Rectangle[] | null;
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   document?: string;
   /** The page number within the document, starting from 0. */
   pageIndex: number | null;
@@ -990,8 +1001,10 @@ export interface DocumentUpdate {
   isArchived?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
-  /** Specify a custom identifier for the document. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
 }
 
 export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
@@ -1122,8 +1135,10 @@ export interface DocumentSplitPage {
 }
 
 export interface Meta {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
+  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
@@ -1157,12 +1172,12 @@ export interface Meta {
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
 export interface MetaParentDocument {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
 }
 
 export interface MetaChildDocumentsItem {
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   identifier?: string;
 }
 
@@ -1306,7 +1321,7 @@ export interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonS
 export interface AnnotationCreate {
   /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
   rectangles?: Rectangle[];
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   document: string;
   /** The page number within the document, starting from 0. */
   pageIndex: number | null;
@@ -1326,7 +1341,7 @@ export interface AnnotationCreateParsed {}
 export interface AnnotationUpdate {
   /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
   rectangles?: Rectangle[];
-  /** Uniquely identify a document. */
+  /** Unique identifier for the document */
   document?: string;
   /** The page number within the document, starting from 0. */
   pageIndex?: number;
@@ -1370,10 +1385,12 @@ export interface ValidationToolConfig {
   hideTags?: boolean;
   /** Hide the warnings panel. */
   hideWarnings?: boolean;
-  /** Disables the page editor after a document has been split once. */
+  /** Disable the page editor after a document has been split once. */
   restrictDocumentSplitting?: boolean;
-  /** Disables currency formatting of decimals values. */
+  /** Disable currency formatting of decimals values. */
   disableCurrencyFormatting?: boolean;
+  /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
+  disableEditDocumentMetadata?: boolean;
 }
 
 export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1841,6 +1858,8 @@ export interface JobDescriptionSearchConfig {
   actions?: SearchConfigAction[];
   /** Hide the reset/import toolbar. */
   hideToolbar?: boolean;
+  /** Hide the entire side panel. */
+  hideSidePanel?: boolean;
   customFieldsConfig?: CustomFieldConfig[];
 }
 
@@ -2154,6 +2173,8 @@ export interface ResumeSearchConfig {
   actions?: SearchConfigAction[];
   /** Hide the reset/import toolbar. */
   hideToolbar?: boolean;
+  /** Hide the entire side panel. */
+  hideSidePanel?: boolean;
   customFieldsConfig?: CustomFieldConfig[];
 }
 
@@ -2374,6 +2395,11 @@ export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAll
   parsed?: string;
 }
 
+export interface ResumeRedactData {
+  /** URL to download the redacted resume. */
+  redactedPdf?: string;
+}
+
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -2387,8 +2413,10 @@ export interface DocumentCreate {
   workspace?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** Specify a custom identifier for the document. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -2470,6 +2498,12 @@ export type JobDescription = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "job-description";
   data?: JobDescriptionData;
+};
+
+export type ResumeRedact = Document & {
+  /** Polymorphic discriminator, which specifies the different types this object can be */
+  extractor: "resume-redact";
+  data?: ResumeRedactData;
 };
 
 export type LocationAnnotationUpdateParsed = Location & {};
@@ -3777,6 +3811,8 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   validatable?: boolean;
   /** Filter for documents with challenges. */
   hasChallenges?: boolean;
+  /** Filter for documents with this custom identifier. */
+  customIdentifier?: string;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -3797,8 +3833,10 @@ export interface AffindaAPICreateDocumentOptionalParams
   workspace?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
   wait?: string;
-  /** Specify a custom identifier for the document. */
+  /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
