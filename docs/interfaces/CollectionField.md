@@ -1,18 +1,16 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataFieldCreateField
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / CollectionField
 
-# Interface: DataFieldCreateField
-
-The field to be created.
+# Interface: CollectionField
 
 ## Table of contents
 
 ### Properties
 
-- [autoValidationThreshold](DataFieldCreateField.md#autovalidationthreshold)
-- [displayEnumValue](DataFieldCreateField.md#displayenumvalue)
-- [label](DataFieldCreateField.md#label)
-- [mandatory](DataFieldCreateField.md#mandatory)
-- [showDropdown](DataFieldCreateField.md#showdropdown)
+- [autoValidationThreshold](CollectionField.md#autovalidationthreshold)
+- [displayEnumValue](CollectionField.md#displayenumvalue)
+- [label](CollectionField.md#label)
+- [mandatory](CollectionField.md#mandatory)
+- [showDropdown](CollectionField.md#showdropdown)
 
 ## Properties
 
@@ -32,7 +30,7 @@ ___
 
 ### label
 
-• **label**: `string`
+• `Optional` **label**: `string`
 
 ___
 

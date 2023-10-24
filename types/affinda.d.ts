@@ -121,6 +121,21 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: AffindaAPICreateDataFieldForCollectionOptionalParams): Promise<AffindaAPICreateDataFieldForCollectionResponse>;
     /**
+     * Get a data field for a collection assosciated with a data point
+     * @param identifier Collection's identifier
+     * @param datapointIdentifier Datapoint's identifier
+     * @param options The options parameters.
+     */
+    getDataFieldForCollection(identifier: string, datapointIdentifier: string, options?: AffindaAPIGetDataFieldForCollectionOptionalParams): Promise<AffindaAPIGetDataFieldForCollectionResponse>;
+    /**
+     * Update data field for a collection assosciated with a data point
+     * @param identifier Collection's identifier
+     * @param datapointIdentifier Datapoint's identifier
+     * @param body Data field properties to update
+     * @param options The options parameters.
+     */
+    updateDataFieldForCollection(identifier: string, datapointIdentifier: string, body: CollectionField, options?: AffindaAPIUpdateDataFieldForCollectionOptionalParams): Promise<AffindaAPIUpdateDataFieldForCollectionResponse>;
+    /**
      * Return monthly credits consumption of a collection.
      * @param identifier Collection's identifier
      * @param options The options parameters.
@@ -1223,6 +1238,13 @@ export declare interface AffindaAPIGetCollectionOptionalParams extends coreClien
 export declare type AffindaAPIGetCollectionResponse = Collection;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getDataFieldForCollection operation. */
+export declare type AffindaAPIGetDataFieldForCollectionResponse = CollectionField;
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetDataPointChoiceOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1478,6 +1500,13 @@ export declare interface AffindaAPIUpdateCollectionOptionalParams extends coreCl
 
 /** Contains response data for the updateCollection operation. */
 export declare type AffindaAPIUpdateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDataFieldForCollection operation. */
+export declare type AffindaAPIUpdateDataFieldForCollectionResponse = CollectionField;
 
 /** Optional parameters. */
 export declare interface AffindaAPIUpdateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
@@ -1856,6 +1885,15 @@ export declare interface CollectionCreate {
  */
 export declare type CollectionDateFormatPreference = string;
 
+export declare interface CollectionField {
+    label?: string;
+    mandatory?: boolean;
+    showDropdown?: boolean;
+    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+    displayEnumValue?: boolean;
+    autoValidationThreshold?: number;
+}
+
 export declare interface CollectionUpdate {
     name?: string;
     autoValidationThreshold?: number;
@@ -2131,6 +2169,8 @@ export declare interface DataFieldCreateField {
     label: string;
     mandatory?: boolean;
     showDropdown?: boolean;
+    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+    displayEnumValue?: boolean;
     autoValidationThreshold?: number;
 }
 
@@ -2159,6 +2199,8 @@ export declare interface DataFieldField {
     label: string;
     mandatory: boolean;
     showDropdown: boolean;
+    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+    displayEnumValue: boolean;
     autoValidationThreshold: number | null;
     enabledChildFields: Field[];
     disabledChildFields: Field[];
@@ -2179,8 +2221,6 @@ export declare interface DataPoint {
     extractor: string | null;
     multiple?: boolean;
     noRect?: boolean;
-    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-    displayEnumValue?: boolean;
     /** The identifier of the parent data point if applicable. */
     parent?: string;
     children?: DataPoint[];
@@ -2275,8 +2315,6 @@ export declare interface DataPointCreate {
     extractor: string;
     multiple?: boolean;
     noRect?: boolean;
-    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-    displayEnumValue?: boolean;
     /** The identifier of the parent data point if applicable. */
     parent?: string;
     /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
@@ -2289,8 +2327,6 @@ export declare interface DataPointUpdate {
     /** A camelCase string that will be used as the key in the API response. */
     slug?: string;
     description?: string;
-    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-    displayEnumValue?: boolean;
     /** The identifier of the parent data point if applicable. */
     parent?: string;
 }
@@ -2670,6 +2706,8 @@ export declare interface Field {
     mandatory?: boolean;
     autoValidationThreshold?: number;
     showDropdown?: boolean;
+    /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+    displayEnumValue?: boolean;
     enabledChildFields?: Field[];
     disabledChildFields?: Field[];
     slug?: string;
@@ -2690,6 +2728,7 @@ export declare interface FieldDeprecated {
     disabled?: boolean;
     autoValidationThreshold?: number;
     showDropdown?: boolean;
+    displayEnumValue?: boolean;
     fields?: FieldDeprecated[];
 }
 

@@ -7,7 +7,6 @@
 ### Properties
 
 - [description](DataPointUpdate.md#description)
-- [displayEnumValue](DataPointUpdate.md#displayenumvalue)
 - [name](DataPointUpdate.md#name)
 - [parent](DataPointUpdate.md#parent)
 - [slug](DataPointUpdate.md#slug)
@@ -17,14 +16,6 @@
 ### description
 
 • `Optional` **description**: `string`
-
-___
-
-### displayEnumValue
-
-• `Optional` **displayEnumValue**: `boolean`
-
-If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
 ___
 

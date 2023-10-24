@@ -10,6 +10,7 @@ The field to be created.
 
 - [autoValidationThreshold](DataFieldField.md#autovalidationthreshold)
 - [disabledChildFields](DataFieldField.md#disabledchildfields)
+- [displayEnumValue](DataFieldField.md#displayenumvalue)
 - [enabledChildFields](DataFieldField.md#enabledchildfields)
 - [label](DataFieldField.md#label)
 - [mandatory](DataFieldField.md#mandatory)
@@ -26,6 +27,14 @@ ___
 ### disabledChildFields
 
 • **disabledChildFields**: [`Field`](Field.md)[]
+
+___
+
+### displayEnumValue
+
+• **displayEnumValue**: `boolean`
+
+If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
 ___
 

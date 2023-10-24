@@ -312,6 +312,7 @@ export interface FieldDeprecated {
   disabled?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
+  displayEnumValue?: boolean;
   fields?: FieldDeprecated[];
 }
 
@@ -333,6 +334,8 @@ export interface Field {
   mandatory?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
   enabledChildFields?: Field[];
   disabledChildFields?: Field[];
   slug?: string;
@@ -407,6 +410,8 @@ export interface DataFieldCreateField {
   label: string;
   mandatory?: boolean;
   showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
   autoValidationThreshold?: number;
 }
 
@@ -441,6 +446,8 @@ export interface DataFieldField {
   label: string;
   mandatory: boolean;
   showDropdown: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue: boolean;
   autoValidationThreshold: number | null;
   enabledChildFields: Field[];
   disabledChildFields: Field[];
@@ -481,13 +488,20 @@ export interface DataPoint {
   extractor: string | null;
   multiple?: boolean;
   noRect?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
   /** The identifier of the parent data point if applicable. */
   parent?: string;
   children?: DataPoint[];
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
   manualEntry?: boolean;
+}
+
+export interface CollectionField {
+  label?: string;
+  mandatory?: boolean;
+  showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  autoValidationThreshold?: number;
 }
 
 /** Monthly credits consumption */
@@ -1217,8 +1231,6 @@ export interface DataPointCreate {
   extractor: string;
   multiple?: boolean;
   noRect?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
   /** The identifier of the parent data point if applicable. */
   parent?: string;
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
@@ -1231,8 +1243,6 @@ export interface DataPointUpdate {
   /** A camelCase string that will be used as the key in the API response. */
   slug?: string;
   description?: string;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
   /** The identifier of the parent data point if applicable. */
   parent?: string;
 }
@@ -3763,6 +3773,20 @@ export interface AffindaAPICreateDataFieldForCollectionOptionalParams
 
 /** Contains response data for the createDataFieldForCollection operation. */
 export type AffindaAPICreateDataFieldForCollectionResponse = DataField;
+
+/** Optional parameters. */
+export interface AffindaAPIGetDataFieldForCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDataFieldForCollection operation. */
+export type AffindaAPIGetDataFieldForCollectionResponse = CollectionField;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateDataFieldForCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDataFieldForCollection operation. */
+export type AffindaAPIUpdateDataFieldForCollectionResponse = CollectionField;
 
 /** Optional parameters. */
 export interface AffindaAPIGetUsageByCollectionOptionalParams

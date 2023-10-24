@@ -1344,6 +1344,12 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
       fields: {
         serializedName: "fields",
         type: {
@@ -1469,6 +1475,12 @@ export const Field: coreClient.CompositeMapper = {
       },
       showDropdown: {
         serializedName: "showDropdown",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
         type: {
           name: "Boolean"
         }
@@ -1817,6 +1829,12 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
       autoValidationThreshold: {
         constraints: {
           InclusiveMaximum: 1,
@@ -1944,6 +1962,13 @@ export const DataFieldField: coreClient.CompositeMapper = {
       },
       showDropdown: {
         serializedName: "showDropdown",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
         required: true,
         type: {
           name: "Boolean"
@@ -2144,12 +2169,6 @@ export const DataPoint: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      displayEnumValue: {
-        serializedName: "displayEnumValue",
-        type: {
-          name: "Boolean"
-        }
-      },
       parent: {
         serializedName: "parent",
         nullable: true,
@@ -2173,6 +2192,50 @@ export const DataPoint: coreClient.CompositeMapper = {
         serializedName: "manualEntry",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const CollectionField: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "CollectionField",
+    modelProperties: {
+      label: {
+        serializedName: "label",
+        type: {
+          name: "String"
+        }
+      },
+      mandatory: {
+        serializedName: "mandatory",
+        type: {
+          name: "Boolean"
+        }
+      },
+      showDropdown: {
+        serializedName: "showDropdown",
+        type: {
+          name: "Boolean"
+        }
+      },
+      displayEnumValue: {
+        serializedName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
+      autoValidationThreshold: {
+        constraints: {
+          InclusiveMaximum: 1,
+          InclusiveMinimum: 0
+        },
+        serializedName: "autoValidationThreshold",
+        nullable: true,
+        type: {
+          name: "Number"
         }
       }
     }
@@ -5302,12 +5365,6 @@ export const DataPointCreate: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      displayEnumValue: {
-        serializedName: "displayEnumValue",
-        type: {
-          name: "Boolean"
-        }
-      },
       parent: {
         serializedName: "parent",
         nullable: true,
@@ -5347,12 +5404,6 @@ export const DataPointUpdate: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
-        }
-      },
-      displayEnumValue: {
-        serializedName: "displayEnumValue",
-        type: {
-          name: "Boolean"
         }
       },
       parent: {

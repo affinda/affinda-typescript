@@ -9,6 +9,7 @@
 - [autoValidationThreshold](Field.md#autovalidationthreshold)
 - [dataPoint](Field.md#datapoint)
 - [disabledChildFields](Field.md#disabledchildfields)
+- [displayEnumValue](Field.md#displayenumvalue)
 - [enabledChildFields](Field.md#enabledchildfields)
 - [fields](Field.md#fields)
 - [label](Field.md#label)
@@ -35,6 +36,14 @@ ___
 ### disabledChildFields
 
 • `Optional` **disabledChildFields**: [`Field`](Field.md)[]
+
+___
+
+### displayEnumValue
+
+• `Optional` **displayEnumValue**: `boolean`
+
+If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
 ___
 

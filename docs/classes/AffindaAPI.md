@@ -82,6 +82,7 @@
 - [getAnnotation](AffindaAPI.md#getannotation)
 - [getApiUser](AffindaAPI.md#getapiuser)
 - [getCollection](AffindaAPI.md#getcollection)
+- [getDataFieldForCollection](AffindaAPI.md#getdatafieldforcollection)
 - [getDataPoint](AffindaAPI.md#getdatapoint)
 - [getDataPointChoice](AffindaAPI.md#getdatapointchoice)
 - [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
@@ -113,6 +114,7 @@
 - [updateAnnotation](AffindaAPI.md#updateannotation)
 - [updateApiUser](AffindaAPI.md#updateapiuser)
 - [updateCollection](AffindaAPI.md#updatecollection)
+- [updateDataFieldForCollection](AffindaAPI.md#updatedatafieldforcollection)
 - [updateDataPoint](AffindaAPI.md#updatedatapoint)
 - [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
 - [updateDocument](AffindaAPI.md#updatedocument)
@@ -1341,6 +1343,26 @@ Return a specific collection.
 
 ___
 
+### getDataFieldForCollection
+
+▸ **getDataFieldForCollection**(`identifier`, `datapointIdentifier`, `options?`): `Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+
+Get a data field for a collection assosciated with a data point
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Collection's identifier |
+| `datapointIdentifier` | `string` | Datapoint's identifier |
+| `options?` | [`AffindaAPIGetDataFieldForCollectionOptionalParams`](../interfaces/AffindaAPIGetDataFieldForCollectionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+
+___
+
 ### getDataPoint
 
 ▸ **getDataPoint**(`identifier`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
@@ -1959,6 +1981,27 @@ Update data of a collection.
 #### Returns
 
 `Promise`<[`Collection`](../interfaces/Collection.md)\>
+
+___
+
+### updateDataFieldForCollection
+
+▸ **updateDataFieldForCollection**(`identifier`, `datapointIdentifier`, `body`, `options?`): `Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+
+Update data field for a collection assosciated with a data point
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Collection's identifier |
+| `datapointIdentifier` | `string` | Datapoint's identifier |
+| `body` | [`CollectionField`](../interfaces/CollectionField.md) | Data field properties to update |
+| `options?` | [`AffindaAPIUpdateDataFieldForCollectionOptionalParams`](../interfaces/AffindaAPIUpdateDataFieldForCollectionOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 ___
 

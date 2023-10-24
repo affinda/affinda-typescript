@@ -102,6 +102,7 @@
 - [AffindaAPIGetAnnotationOptionalParams](interfaces/AffindaAPIGetAnnotationOptionalParams.md)
 - [AffindaAPIGetApiUserOptionalParams](interfaces/AffindaAPIGetApiUserOptionalParams.md)
 - [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
+- [AffindaAPIGetDataFieldForCollectionOptionalParams](interfaces/AffindaAPIGetDataFieldForCollectionOptionalParams.md)
 - [AffindaAPIGetDataPointChoiceOptionalParams](interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md)
 - [AffindaAPIGetDataPointChoicesOptionalParams](interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md)
 - [AffindaAPIGetDataPointOptionalParams](interfaces/AffindaAPIGetDataPointOptionalParams.md)
@@ -132,6 +133,7 @@
 - [AffindaAPIUpdateAnnotationOptionalParams](interfaces/AffindaAPIUpdateAnnotationOptionalParams.md)
 - [AffindaAPIUpdateApiUserOptionalParams](interfaces/AffindaAPIUpdateApiUserOptionalParams.md)
 - [AffindaAPIUpdateCollectionOptionalParams](interfaces/AffindaAPIUpdateCollectionOptionalParams.md)
+- [AffindaAPIUpdateDataFieldForCollectionOptionalParams](interfaces/AffindaAPIUpdateDataFieldForCollectionOptionalParams.md)
 - [AffindaAPIUpdateDataPointChoiceOptionalParams](interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md)
 - [AffindaAPIUpdateDataPointOptionalParams](interfaces/AffindaAPIUpdateDataPointOptionalParams.md)
 - [AffindaAPIUpdateDocumentDataOptionalParams](interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md)
@@ -162,6 +164,7 @@
 - [BatchRemoveTagRequest](interfaces/BatchRemoveTagRequest.md)
 - [Collection](interfaces/Collection.md)
 - [CollectionCreate](interfaces/CollectionCreate.md)
+- [CollectionField](interfaces/CollectionField.md)
 - [CollectionUpdate](interfaces/CollectionUpdate.md)
 - [CollectionWorkspace](interfaces/CollectionWorkspace.md)
 - [Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1](interfaces/Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.md)
@@ -440,6 +443,7 @@
 - [AffindaAPIGetAnnotationResponse](modules.md#affindaapigetannotationresponse)
 - [AffindaAPIGetApiUserResponse](modules.md#affindaapigetapiuserresponse)
 - [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
+- [AffindaAPIGetDataFieldForCollectionResponse](modules.md#affindaapigetdatafieldforcollectionresponse)
 - [AffindaAPIGetDataPointChoiceResponse](modules.md#affindaapigetdatapointchoiceresponse)
 - [AffindaAPIGetDataPointChoicesResponse](modules.md#affindaapigetdatapointchoicesresponse)
 - [AffindaAPIGetDataPointResponse](modules.md#affindaapigetdatapointresponse)
@@ -469,6 +473,7 @@
 - [AffindaAPIUpdateAnnotationResponse](modules.md#affindaapiupdateannotationresponse)
 - [AffindaAPIUpdateApiUserResponse](modules.md#affindaapiupdateapiuserresponse)
 - [AffindaAPIUpdateCollectionResponse](modules.md#affindaapiupdatecollectionresponse)
+- [AffindaAPIUpdateDataFieldForCollectionResponse](modules.md#affindaapiupdatedatafieldforcollectionresponse)
 - [AffindaAPIUpdateDataPointChoiceResponse](modules.md#affindaapiupdatedatapointchoiceresponse)
 - [AffindaAPIUpdateDataPointResponse](modules.md#affindaapiupdatedatapointresponse)
 - [AffindaAPIUpdateDocumentDataResponse](modules.md#affindaapiupdatedocumentdataresponse)
@@ -921,6 +926,14 @@ Contains response data for the getCollection operation.
 
 ___
 
+### AffindaAPIGetDataFieldForCollectionResponse
+
+Ƭ **AffindaAPIGetDataFieldForCollectionResponse**: [`CollectionField`](interfaces/CollectionField.md)
+
+Contains response data for the getDataFieldForCollection operation.
+
+___
+
 ### AffindaAPIGetDataPointChoiceResponse
 
 Ƭ **AffindaAPIGetDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
@@ -1162,6 +1175,14 @@ ___
 Ƭ **AffindaAPIUpdateCollectionResponse**: [`Collection`](interfaces/Collection.md)
 
 Contains response data for the updateCollection operation.
+
+___
+
+### AffindaAPIUpdateDataFieldForCollectionResponse
+
+Ƭ **AffindaAPIUpdateDataFieldForCollectionResponse**: [`CollectionField`](interfaces/CollectionField.md)
+
+Contains response data for the updateDataFieldForCollection operation.
 
 ___
 

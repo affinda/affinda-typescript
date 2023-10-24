@@ -9,6 +9,7 @@
 - [autoValidationThreshold](FieldDeprecated.md#autovalidationthreshold)
 - [dataPoint](FieldDeprecated.md#datapoint)
 - [disabled](FieldDeprecated.md#disabled)
+- [displayEnumValue](FieldDeprecated.md#displayenumvalue)
 - [fields](FieldDeprecated.md#fields)
 - [label](FieldDeprecated.md#label)
 - [mandatory](FieldDeprecated.md#mandatory)
@@ -32,6 +33,12 @@ ___
 ### disabled
 
 • `Optional` **disabled**: `boolean`
+
+___
+
+### displayEnumValue
+
+• `Optional` **displayEnumValue**: `boolean`
 
 ___
 

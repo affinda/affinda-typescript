@@ -9,7 +9,6 @@
 - [annotationContentType](DataPoint.md#annotationcontenttype)
 - [children](DataPoint.md#children)
 - [description](DataPoint.md#description)
-- [displayEnumValue](DataPoint.md#displayenumvalue)
 - [extractor](DataPoint.md#extractor)
 - [identifier](DataPoint.md#identifier)
 - [manualEntry](DataPoint.md#manualentry)
@@ -39,14 +38,6 @@ ___
 ### description
 
 • `Optional` **description**: `string`
-
-___
-
-### displayEnumValue
-
-• `Optional` **displayEnumValue**: `boolean`
-
-If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
 ___
 
