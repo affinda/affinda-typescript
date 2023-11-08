@@ -1073,8 +1073,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     createdDt?: DateRange;
     /** Partial, case-insensitive match with file name or tag name. */
     search?: string;
-    /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. */
-    ordering?: Get8ItemsItem[];
+    /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. Supported values include: 'file_name', 'extractor', 'created_dt', 'validated_dt', 'archived_dt' and 'parsed__<dataPointSlug>'. */
+    ordering?: string[];
     /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint. */
     includeData?: boolean;
     /** Exclude some documents from the result. */
@@ -1123,7 +1123,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum20;
+    documentType?: Enum19;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -1620,9 +1620,9 @@ export declare interface Annotation {
     /** x/y coordinates for the rectangular bounding box containing the data */
     rectangle: Rectangle | null;
     /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
-    rectangles: Rectangle[] | null;
+    rectangles: Rectangle[];
     /** Unique identifier for the document */
-    document?: string;
+    document: string;
     /** The page number within the document, starting from 0. */
     pageIndex: number | null;
     /** Raw data extracted from the before any post-processing */
@@ -1643,6 +1643,8 @@ export declare interface Annotation {
     dataPoint: string;
     /** The different data types of annotations */
     contentType: AnnotationContentType;
+    /** The parent annotation's ID */
+    parent?: number;
 }
 
 export declare interface AnnotationBase {
@@ -2600,24 +2602,24 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum20. \
- * {@link KnownEnum20} can be used interchangeably with Enum20,
+ * Defines values for Enum19. \
+ * {@link KnownEnum19} can be used interchangeably with Enum19,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum20 = string;
+export declare type Enum19 = string;
 
 /**
- * Defines values for Enum23. \
- * {@link KnownEnum23} can be used interchangeably with Enum23,
+ * Defines values for Enum22. \
+ * {@link KnownEnum22} can be used interchangeably with Enum22,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum23 = string;
+export declare type Enum22 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2750,17 +2752,6 @@ export declare interface Get200ApplicationJsonPropertiesItemsItem {
     name: string;
     documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
 }
-
-/**
- * Defines values for Get8ItemsItem. \
- * {@link KnownGet8ItemsItem} can be used interchangeably with Get8ItemsItem,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **file_name** \
- * **extractor** \
- * **created_dt**
- */
-export declare type Get8ItemsItem = string;
 
 /**
  * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
@@ -3329,23 +3320,16 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum20} that the service accepts. */
-export declare enum KnownEnum20 {
+/** Known values of {@link Enum19} that the service accepts. */
+export declare enum KnownEnum19 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum23} that the service accepts. */
-export declare enum KnownEnum23 {
+/** Known values of {@link Enum22} that the service accepts. */
+export declare enum KnownEnum22 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
-}
-
-/** Known values of {@link Get8ItemsItem} that the service accepts. */
-export declare enum KnownGet8ItemsItem {
-    FileName = "file_name",
-    Extractor = "extractor",
-    CreatedDt = "created_dt"
 }
 
 /** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
@@ -3967,7 +3951,7 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
 
 export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
     name?: string;
-    documentType?: Enum23;
+    documentType?: Enum22;
 }
 
 export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};

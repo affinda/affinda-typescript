@@ -12,9 +12,8 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownEnum20](enums/KnownEnum20.md)
-- [KnownEnum23](enums/KnownEnum23.md)
-- [KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md)
+- [KnownEnum19](enums/KnownEnum19.md)
+- [KnownEnum22](enums/KnownEnum22.md)
 - [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
 - [KnownInvitationStatus](enums/KnownInvitationStatus.md)
@@ -499,12 +498,11 @@
 - [DocumentState](modules.md#documentstate)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum20](modules.md#enum20)
-- [Enum23](modules.md#enum23)
+- [Enum19](modules.md#enum19)
+- [Enum22](modules.md#enum22)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationUpdate](modules.md#expectedremunerationannotationupdate)
 - [FloatAnnotation](modules.md#floatannotation)
-- [Get8ItemsItem](modules.md#get8itemsitem)
 - [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
 - [InvitationRespondedBy](modules.md#invitationrespondedby)
 - [InvitationResponseStatus](modules.md#invitationresponsestatus)
@@ -1292,7 +1290,7 @@ ___
 
 ### AnnotationBatchUpdate
 
-Ƭ **AnnotationBatchUpdate**: [`AnnotationUpdate`](interfaces/AnnotationUpdate.md) & { `id`: `number`  }
+Ƭ **AnnotationBatchUpdate**: [`AnnotationUpdate`](interfaces/AnnotationUpdate.md) & \{ `id`: `number`  }
 
 ___
 
@@ -1342,19 +1340,19 @@ ___
 
 ### CurrencyCodeAnnotation
 
-Ƭ **CurrencyCodeAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`DataPointChoice`](interfaces/DataPointChoice.md)  }
+Ƭ **CurrencyCodeAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`DataPointChoice`](interfaces/DataPointChoice.md)  }
 
 ___
 
 ### DateAnnotation
 
-Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `Date`  }
+Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `Date`  }
 
 ___
 
 ### DateAnnotationUpdate
 
-Ƭ **DateAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `Date`  }
+Ƭ **DateAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `Date`  }
 
 ___
 
@@ -1432,12 +1430,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum20
+### Enum19
 
-Ƭ **Enum20**: `string`
+Ƭ **Enum19**: `string`
 
-Defines values for Enum20. \
-[KnownEnum20](enums/KnownEnum20.md) can be used interchangeably with Enum20,
+Defines values for Enum19. \
+[KnownEnum19](enums/KnownEnum19.md) can be used interchangeably with Enum19,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1445,12 +1443,12 @@ Defines values for Enum20. \
 
 ___
 
-### Enum23
+### Enum22
 
-Ƭ **Enum23**: `string`
+Ƭ **Enum22**: `string`
 
-Defines values for Enum23. \
-[KnownEnum23](enums/KnownEnum23.md) can be used interchangeably with Enum23,
+Defines values for Enum22. \
+[KnownEnum22](enums/KnownEnum22.md) can be used interchangeably with Enum22,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1460,33 +1458,19 @@ ___
 
 ### ExpectedRemunerationAnnotation
 
-Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
+Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
 
 ___
 
 ### ExpectedRemunerationAnnotationUpdate
 
-Ƭ **ExpectedRemunerationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: [`ExpectedRemunerationAnnotationUpdateParsed`](interfaces/ExpectedRemunerationAnnotationUpdateParsed.md)  }
+Ƭ **ExpectedRemunerationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationUpdateParsed`](interfaces/ExpectedRemunerationAnnotationUpdateParsed.md)  }
 
 ___
 
 ### FloatAnnotation
 
-Ƭ **FloatAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `number`  }
-
-___
-
-### Get8ItemsItem
-
-Ƭ **Get8ItemsItem**: `string`
-
-Defines values for Get8ItemsItem. \
-[KnownGet8ItemsItem](enums/KnownGet8ItemsItem.md) can be used interchangeably with Get8ItemsItem,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**file_name** \
-**extractor** \
-**created_dt**
+Ƭ **FloatAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `number`  }
 
 ___
 
@@ -1538,7 +1522,7 @@ ___
 
 ### Invoice
 
-Ƭ **Invoice**: [`Document`](interfaces/Document.md) & { `data?`: [`InvoiceData`](interfaces/InvoiceData.md) ; `extractor`: ``"invoice"``  }
+Ƭ **Invoice**: [`Document`](interfaces/Document.md) & \{ `data?`: [`InvoiceData`](interfaces/InvoiceData.md) ; `extractor`: ``"invoice"``  }
 
 ___
 
@@ -1718,7 +1702,7 @@ ___
 
 ### JobDescription
 
-Ƭ **JobDescription**: [`Document`](interfaces/Document.md) & { `data?`: [`JobDescriptionData`](interfaces/JobDescriptionData.md) ; `extractor`: ``"job-description"``  }
+Ƭ **JobDescription**: [`Document`](interfaces/Document.md) & \{ `data?`: [`JobDescriptionData`](interfaces/JobDescriptionData.md) ; `extractor`: ``"job-description"``  }
 
 ___
 
@@ -1736,7 +1720,7 @@ ___
 
 ### JobTitleAnnotation
 
-Ƭ **JobTitleAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`JobTitleAnnotationParsed`](interfaces/JobTitleAnnotationParsed.md)  }
+Ƭ **JobTitleAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`JobTitleAnnotationParsed`](interfaces/JobTitleAnnotationParsed.md)  }
 
 ___
 
@@ -1748,25 +1732,25 @@ ___
 
 ### LanguageAnnotation
 
-Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### LanguageAnnotationUpdate
 
-Ƭ **LanguageAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `string`  }
+Ƭ **LanguageAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### LocationAnnotation
 
-Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`Location`](interfaces/Location.md)  }
+Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`Location`](interfaces/Location.md)  }
 
 ___
 
 ### LocationAnnotationUpdate
 
-Ƭ **LocationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: [`LocationAnnotationUpdateParsed`](modules.md#locationannotationupdateparsed)  }
+Ƭ **LocationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: [`LocationAnnotationUpdateParsed`](modules.md#locationannotationupdateparsed)  }
 
 ___
 
@@ -1926,7 +1910,7 @@ ___
 
 ### Resume
 
-Ƭ **Resume**: [`Document`](interfaces/Document.md) & { `data?`: [`ResumeData`](interfaces/ResumeData.md) ; `extractor`: ``"resume"``  }
+Ƭ **Resume**: [`Document`](interfaces/Document.md) & \{ `data?`: [`ResumeData`](interfaces/ResumeData.md) ; `extractor`: ``"resume"``  }
 
 ___
 
@@ -2146,7 +2130,7 @@ ___
 
 ### ResumeRedact
 
-Ƭ **ResumeRedact**: [`Document`](interfaces/Document.md) & { `data?`: [`ResumeRedactData`](interfaces/ResumeRedactData.md) ; `extractor`: ``"resume-redact"``  }
+Ƭ **ResumeRedact**: [`Document`](interfaces/Document.md) & \{ `data?`: [`ResumeRedactData`](interfaces/ResumeRedactData.md) ; `extractor`: ``"resume-redact"``  }
 
 ___
 
@@ -2213,7 +2197,7 @@ ___
 
 ### RowAnnotation
 
-Ƭ **RowAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`RowAnnotationParsed`](interfaces/RowAnnotationParsed.md)  }
+Ƭ **RowAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`RowAnnotationParsed`](interfaces/RowAnnotationParsed.md)  }
 
 ___
 
@@ -2240,31 +2224,31 @@ ___
 
 ### SkillAnnotation
 
-Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### SkillAnnotationUpdate
 
-Ƭ **SkillAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `string`  }
+Ƭ **SkillAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### TableAnnotation
 
-Ƭ **TableAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`TableAnnotationParsed`](interfaces/TableAnnotationParsed.md)  }
+Ƭ **TableAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`TableAnnotationParsed`](interfaces/TableAnnotationParsed.md)  }
 
 ___
 
 ### TextAnnotation
 
-Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### TextAnnotationUpdate
 
-Ƭ **TextAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: `string`  }
+Ƭ **TextAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `string`  }
 
 ___
 
@@ -2325,10 +2309,10 @@ ___
 
 ### YearsExperienceAnnotation
 
-Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
+Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
 
 ___
 
 ### YearsExperienceAnnotationUpdate
 
-Ƭ **YearsExperienceAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & { `parsed?`: [`YearsExperienceAnnotationUpdateParsed`](interfaces/YearsExperienceAnnotationUpdateParsed.md)  }
+Ƭ **YearsExperienceAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: [`YearsExperienceAnnotationUpdateParsed`](interfaces/YearsExperienceAnnotationUpdateParsed.md)  }

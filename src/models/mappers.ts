@@ -70,12 +70,18 @@ export const Workspace: coreClient.CompositeMapper = {
         }
       },
       unvalidatedDocsCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "unvalidatedDocsCount",
         type: {
           name: "Number"
         }
       },
       confirmedDocsCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "confirmedDocsCount",
         type: {
           name: "Number"
@@ -501,6 +507,9 @@ export const WorkspaceCollectionsItem: coreClient.CompositeMapper = {
         }
       },
       unvalidatedDocsCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "unvalidatedDocsCount",
         nullable: true,
         type: {
@@ -508,6 +517,9 @@ export const WorkspaceCollectionsItem: coreClient.CompositeMapper = {
         }
       },
       confirmedDocsCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "confirmedDocsCount",
         nullable: true,
         type: {
@@ -636,6 +648,9 @@ export const User: coreClient.CompositeMapper = {
     className: "User",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         type: {
           name: "Number"
@@ -873,6 +888,9 @@ export const PaginatedResponse: coreClient.CompositeMapper = {
     className: "PaginatedResponse",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         required: true,
         type: {
@@ -960,6 +978,9 @@ export const WorkspaceMembershipCreate: coreClient.CompositeMapper = {
         }
       },
       user: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "user",
         type: {
           name: "Number"
@@ -1055,6 +1076,9 @@ export const Collection: coreClient.CompositeMapper = {
         }
       },
       unvalidatedDocsCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "unvalidatedDocsCount",
         nullable: true,
         type: {
@@ -1062,6 +1086,9 @@ export const Collection: coreClient.CompositeMapper = {
         }
       },
       confirmedDocsCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "confirmedDocsCount",
         nullable: true,
         type: {
@@ -2619,6 +2646,9 @@ export const PageMeta: coreClient.CompositeMapper = {
     className: "PageMeta",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -2626,6 +2656,9 @@ export const PageMeta: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         required: true,
         type: {
@@ -2662,6 +2695,10 @@ export const PageMeta: coreClient.CompositeMapper = {
         }
       },
       rotation: {
+        constraints: {
+          InclusiveMaximum: 360,
+          InclusiveMinimum: -360
+        },
         serializedName: "rotation",
         required: true,
         type: {
@@ -2763,6 +2800,9 @@ export const Tag: coreClient.CompositeMapper = {
     className: "Tag",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -2784,6 +2824,9 @@ export const Tag: coreClient.CompositeMapper = {
         }
       },
       documentCount: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "documentCount",
         required: true,
         type: {
@@ -2800,6 +2843,9 @@ export const UserNullable: coreClient.CompositeMapper = {
     className: "UserNullable",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         type: {
           name: "Number"
@@ -3046,6 +3092,9 @@ export const ResumeData: coreClient.CompositeMapper = {
         }
       },
       totalYearsExperience: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "totalYearsExperience",
         nullable: true,
         type: {
@@ -3248,6 +3297,9 @@ export const ResumeDataPhoneNumberDetailsItem: coreClient.CompositeMapper = {
         }
       },
       internationalCountryCode: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "internationalCountryCode",
         nullable: true,
         type: {
@@ -3375,6 +3427,9 @@ export const Education: coreClient.CompositeMapper = {
     className: "Education",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         type: {
           name: "Number"
@@ -3526,6 +3581,9 @@ export const ResumeDataWorkExperienceItem: coreClient.CompositeMapper = {
     className: "ResumeDataWorkExperienceItem",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         type: {
           name: "Number"
@@ -3621,6 +3679,9 @@ export const ResumeDataWorkExperienceItemDates: coreClient.CompositeMapper = {
         }
       },
       monthsInPosition: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "monthsInPosition",
         nullable: true,
         type: {
@@ -3720,24 +3781,40 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         }
       },
       socCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "socCode",
         type: {
           name: "Number"
         }
       },
       minorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "minorGroupCode",
         type: {
           name: "Number"
         }
       },
       subMajorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "subMajorGroupCode",
         type: {
           name: "Number"
         }
       },
       majorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "majorGroupCode",
         type: {
           name: "Number"
@@ -3753,6 +3830,9 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
     className: "ResumeDataSkillsItem",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         type: {
           name: "Number"
@@ -3780,6 +3860,9 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
         }
       },
       numberOfMonths: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "numberOfMonths",
         nullable: true,
         type: {
@@ -3794,6 +3877,9 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
         }
       },
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         readOnly: true,
         nullable: true,
@@ -4164,18 +4250,30 @@ export const JobTitleAnnotationParsedClassification: coreClient.CompositeMapper 
         }
       },
       minorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "minorGroupCode",
         type: {
           name: "Number"
         }
       },
       subMajorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "subMajorGroupCode",
         type: {
           name: "Number"
         }
       },
       majorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "majorGroupCode",
         type: {
           name: "Number"
@@ -4192,6 +4290,9 @@ export const Annotation: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -4208,7 +4309,6 @@ export const Annotation: coreClient.CompositeMapper = {
       rectangles: {
         serializedName: "rectangles",
         required: true,
-        nullable: true,
         type: {
           name: "Sequence",
           element: {
@@ -4221,11 +4321,15 @@ export const Annotation: coreClient.CompositeMapper = {
       },
       document: {
         serializedName: "document",
+        required: true,
         type: {
           name: "String"
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         required: true,
         nullable: true,
@@ -4299,6 +4403,13 @@ export const Annotation: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -4310,6 +4421,9 @@ export const Rectangle: coreClient.CompositeMapper = {
     className: "Rectangle",
     modelProperties: {
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         type: {
           name: "Number"
@@ -5007,6 +5121,9 @@ export const DocumentSplitPage: coreClient.CompositeMapper = {
     className: "DocumentSplitPage",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -5014,6 +5131,10 @@ export const DocumentSplitPage: coreClient.CompositeMapper = {
         }
       },
       rotation: {
+        constraints: {
+          InclusiveMaximum: 360,
+          InclusiveMinimum: -360
+        },
         serializedName: "rotation",
         type: {
           name: "Number"
@@ -5445,6 +5566,9 @@ export const DataPointChoice: coreClient.CompositeMapper = {
     className: "DataPointChoice",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -5740,6 +5864,9 @@ export const DataPointChoiceReplaceResponseChoicesItem: coreClient.CompositeMapp
     className: "DataPointChoiceReplaceResponseChoicesItem",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -5814,7 +5941,6 @@ export const AnnotationCreate: coreClient.CompositeMapper = {
     modelProperties: {
       rectangles: {
         serializedName: "rectangles",
-        nullable: true,
         type: {
           name: "Sequence",
           element: {
@@ -5833,6 +5959,9 @@ export const AnnotationCreate: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         required: true,
         nullable: true,
@@ -5892,7 +6021,6 @@ export const AnnotationUpdate: coreClient.CompositeMapper = {
     modelProperties: {
       rectangles: {
         serializedName: "rectangles",
-        nullable: true,
         type: {
           name: "Sequence",
           element: {
@@ -5910,6 +6038,9 @@ export const AnnotationUpdate: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         nullable: true,
         type: {
@@ -6324,6 +6455,9 @@ export const ApiUserWithoutKey: coreClient.CompositeMapper = {
     className: "ApiUserWithoutKey",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -6452,6 +6586,9 @@ export const ApiUserWithKey: coreClient.CompositeMapper = {
     className: "ApiUserWithKey",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {
@@ -7119,6 +7256,9 @@ export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
       },
       distance: {
         defaultValue: 100,
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "distance",
         type: {
           name: "Number"
@@ -7233,6 +7373,9 @@ export const JobDescriptionSearch: coreClient.CompositeMapper = {
     className: "JobDescriptionSearch",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         type: {
           name: "Number"
@@ -8005,6 +8148,9 @@ export const JobDescriptionSearchDetailExperience: coreClient.CompositeMapper = 
     className: "JobDescriptionSearchDetailExperience",
     modelProperties: {
       minimumExperience: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "minimumExperience",
         nullable: true,
         type: {
@@ -8012,6 +8158,9 @@ export const JobDescriptionSearchDetailExperience: coreClient.CompositeMapper = 
         }
       },
       maximumExperience: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "maximumExperience",
         nullable: true,
         type: {
@@ -8228,6 +8377,9 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         }
       },
       maxResults: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "maxResults",
         nullable: true,
         type: {
@@ -8369,6 +8521,9 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         }
       },
       userId: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "userId",
         readOnly: true,
         type: {
@@ -8513,6 +8668,9 @@ export const PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema: core
     className: "PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "count",
         type: {
           name: "Number"
@@ -8599,6 +8757,9 @@ export const PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJso
       "PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "count",
         type: {
           name: "Number"
@@ -8748,6 +8909,9 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         }
       },
       yearsExperienceMin: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "yearsExperienceMin",
         nullable: true,
         type: {
@@ -8755,6 +8919,9 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         }
       },
       yearsExperienceMax: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "yearsExperienceMax",
         nullable: true,
         type: {
@@ -9040,6 +9207,9 @@ export const ResumeSearch: coreClient.CompositeMapper = {
     className: "ResumeSearch",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         type: {
           name: "Number"
@@ -9538,6 +9708,9 @@ export const ResumeSkill: coreClient.CompositeMapper = {
         }
       },
       numberOfMonths: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "numberOfMonths",
         nullable: true,
         type: {
@@ -9579,6 +9752,9 @@ export const ResumeSkillSourcesItem: coreClient.CompositeMapper = {
         }
       },
       position: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "position",
         nullable: true,
         type: {
@@ -9611,6 +9787,9 @@ export const ResumeSearchDetailExperience: coreClient.CompositeMapper = {
     className: "ResumeSearchDetailExperience",
     modelProperties: {
       years: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "years",
         nullable: true,
         type: {
@@ -9872,6 +10051,9 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         }
       },
       maxResults: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "maxResults",
         nullable: true,
         type: {
@@ -10013,6 +10195,9 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         }
       },
       userId: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "userId",
         readOnly: true,
         type: {
@@ -11996,6 +12181,9 @@ export const AnnotationBatchUpdate: coreClient.CompositeMapper = {
     modelProperties: {
       ...AnnotationUpdate.type.modelProperties,
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         type: {

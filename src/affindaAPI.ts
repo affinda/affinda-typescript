@@ -3930,7 +3930,7 @@ const getResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id1],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -3954,7 +3954,7 @@ const updateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body33,
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id1],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
   serializer
@@ -3976,7 +3976,7 @@ const deleteResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.id1],
   headerParameters: [Parameters.accept],
   serializer
 };

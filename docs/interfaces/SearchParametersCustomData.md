@@ -32,7 +32,7 @@ ___
 
 ### query
 
-• **query**: `Record`<`string`, `unknown`\>
+• **query**: `Record`\<`string`, `unknown`\>
 
 "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal)
 

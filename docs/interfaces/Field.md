@@ -55,7 +55,7 @@ ___
 
 ### fields
 
-• `Optional` **fields**: `Record`<`string`, `unknown`\>[]
+• `Optional` **fields**: `Record`\<`string`, `unknown`\>[]
 
 ___
 

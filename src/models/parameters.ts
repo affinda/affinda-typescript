@@ -265,6 +265,9 @@ export const tags: OperationQueryParameter = {
     type: {
       name: "Sequence",
       element: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         type: {
           name: "Number"
         }
@@ -723,6 +726,9 @@ export const body16: OperationParameter = {
 export const id: OperationURLParameter = {
   parameterPath: "id",
   mapper: {
+    constraints: {
+      InclusiveMinimum: 1
+    },
     serializedName: "id",
     required: true,
     type: {
@@ -804,6 +810,9 @@ export const body23: OperationParameter = {
     type: {
       name: "Sequence",
       element: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         type: {
           name: "Number"
         }
@@ -932,6 +941,17 @@ export const body31: OperationParameter = {
 export const body32: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionCreateMapper
+};
+
+export const id1: OperationURLParameter = {
+  parameterPath: "id",
+  mapper: {
+    serializedName: "id",
+    required: true,
+    type: {
+      name: "Number"
+    }
+  }
 };
 
 export const body33: OperationParameter = {

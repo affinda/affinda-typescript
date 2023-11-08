@@ -20,6 +20,7 @@
 - [isClientVerified](Annotation.md#isclientverified)
 - [isVerified](Annotation.md#isverified)
 - [pageIndex](Annotation.md#pageindex)
+- [parent](Annotation.md#parent)
 - [raw](Annotation.md#raw)
 - [rectangle](Annotation.md#rectangle)
 - [rectangles](Annotation.md#rectangles)
@@ -61,7 +62,7 @@ ___
 
 ### document
 
-• `Optional` **document**: `string`
+• **document**: `string`
 
 Unique identifier for the document
 
@@ -107,6 +108,14 @@ The page number within the document, starting from 0.
 
 ___
 
+### parent
+
+• `Optional` **parent**: `number`
+
+The parent annotation's ID
+
+___
+
 ### raw
 
 • **raw**: ``null`` \| `string`
@@ -125,7 +134,7 @@ ___
 
 ### rectangles
 
-• **rectangles**: ``null`` \| [`Rectangle`](Rectangle.md)[]
+• **rectangles**: [`Rectangle`](Rectangle.md)[]
 
 x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles.
 

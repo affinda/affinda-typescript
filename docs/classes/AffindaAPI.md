@@ -174,7 +174,7 @@ ___
 
 ### activateResthookSubscription
 
-▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
 header. <br />
@@ -190,13 +190,13 @@ that you received to activate the subscription using this endpoint.
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### batchAddTag
 
-▸ **batchAddTag**(`body`, `options?`): `Promise`<`void`\>
+▸ **batchAddTag**(`body`, `options?`): `Promise`\<`void`\>
 
 Add a tag to documents.
 Tags are used to group documents together.
@@ -211,13 +211,13 @@ Tags can be used to filter documents.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### batchCreateAnnotations
 
-▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
+▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`\<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
 
 Batch create annotations
 
@@ -230,13 +230,13 @@ Batch create annotations
 
 #### Returns
 
-`Promise`<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
+`Promise`\<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
 
 ___
 
 ### batchDeleteAnnotations
 
-▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`<`void`\>
+▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`\<`void`\>
 
 Batch delete annotations
 
@@ -249,13 +249,13 @@ Batch delete annotations
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### batchRemoveTag
 
-▸ **batchRemoveTag**(`body`, `options?`): `Promise`<`void`\>
+▸ **batchRemoveTag**(`body`, `options?`): `Promise`\<`void`\>
 
 Remove a tag from documents.
 
@@ -268,13 +268,13 @@ Remove a tag from documents.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### batchUpdateAnnotations
 
-▸ **batchUpdateAnnotations**(`body`, `options?`): `Promise`<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
+▸ **batchUpdateAnnotations**(`body`, `options?`): `Promise`\<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
 
 Batch update annotations
 
@@ -287,13 +287,13 @@ Batch update annotations
 
 #### Returns
 
-`Promise`<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
+`Promise`\<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
 
 ___
 
 ### createAnnotation
 
-▸ **createAnnotation**(`body`, `options?`): `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+▸ **createAnnotation**(`body`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 Create a annotation
 
@@ -306,13 +306,13 @@ Create a annotation
 
 #### Returns
 
-`Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+`Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 ___
 
 ### createApiUser
 
-▸ **createApiUser**(`body`, `options?`): `Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+▸ **createApiUser**(`body`, `options?`): `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
 
 Create an API user
 
@@ -325,13 +325,13 @@ Create an API user
 
 #### Returns
 
-`Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+`Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
 
 ___
 
 ### createCollection
 
-▸ **createCollection**(`body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
+▸ **createCollection**(`body`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 Create a collection
 
@@ -344,13 +344,13 @@ Create a collection
 
 #### Returns
 
-`Promise`<[`Collection`](../interfaces/Collection.md)\>
+`Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 ___
 
 ### createDataFieldForCollection
 
-▸ **createDataFieldForCollection**(`identifier`, `body`, `options?`): `Promise`<[`DataField`](../interfaces/DataField.md)\>
+▸ **createDataFieldForCollection**(`identifier`, `body`, `options?`): `Promise`\<[`DataField`](../interfaces/DataField.md)\>
 
 Create data field for a collection along with a new data point.
 
@@ -364,13 +364,13 @@ Create data field for a collection along with a new data point.
 
 #### Returns
 
-`Promise`<[`DataField`](../interfaces/DataField.md)\>
+`Promise`\<[`DataField`](../interfaces/DataField.md)\>
 
 ___
 
 ### createDataPoint
 
-▸ **createDataPoint**(`options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+▸ **createDataPoint**(`options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Create a custom data point.
 
@@ -382,13 +382,13 @@ Create a custom data point.
 
 #### Returns
 
-`Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+`Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 ___
 
 ### createDataPointChoice
 
-▸ **createDataPointChoice**(`options?`): `Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+▸ **createDataPointChoice**(`options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 Create a custom data point choice.
 
@@ -400,13 +400,13 @@ Create a custom data point choice.
 
 #### Returns
 
-`Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+`Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 ___
 
 ### createDocument
 
-▸ **createDocument**(`options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+▸ **createDocument**(`options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Uploads a document for parsing. When successful, returns an `identifier` in the response for
 subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
@@ -420,13 +420,13 @@ processing status and retrieve results.<br/>
 
 #### Returns
 
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
 ### createExtractor
 
-▸ **createExtractor**(`options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+▸ **createExtractor**(`options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 Create a custom extractor.
 
@@ -438,13 +438,13 @@ Create a custom extractor.
 
 #### Returns
 
-`Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+`Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 ___
 
 ### createIndex
 
-▸ **createIndex**(`options?`): `Promise`<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndex**(`options?`): `Promise`\<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
 
 Create an index for the search tool
 
@@ -456,13 +456,13 @@ Create an index for the search tool
 
 #### Returns
 
-`Promise`<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`\<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### createIndexDocument
 
-▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`\<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 Create an indexed document for the search tool
 
@@ -476,13 +476,13 @@ Create an indexed document for the search tool
 
 #### Returns
 
-`Promise`<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`\<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### createInvitation
 
-▸ **createInvitation**(`body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+▸ **createInvitation**(`body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Create a new invitation.
 
@@ -495,13 +495,13 @@ Create a new invitation.
 
 #### Returns
 
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 ___
 
 ### createJobDescriptionSearch
 
-▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
+▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
 Searches through parsed job descriptions. You can search with custom criterias or a resume.
 
@@ -514,13 +514,13 @@ Searches through parsed job descriptions. You can search with custom criterias o
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
+`Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
 ___
 
 ### createJobDescriptionSearchEmbedUrl
 
-▸ **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+▸ **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
 
 Create and return a signed URL of the job description search tool which then can be embedded on a
 web page. An optional parameter `config_override` can be passed to override the user-level
@@ -534,13 +534,13 @@ configurations of the embeddable search tool.
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+`Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
 
 ___
 
 ### createOrganization
 
-▸ **createOrganization**(`name`, `options?`): `Promise`<[`Organization`](../interfaces/Organization.md)\>
+▸ **createOrganization**(`name`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 Create a new organization.
 
@@ -553,13 +553,13 @@ Create a new organization.
 
 #### Returns
 
-`Promise`<[`Organization`](../interfaces/Organization.md)\>
+`Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 ___
 
 ### createResthookSubscription
 
-▸ **createResthookSubscription**(`body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **createResthookSubscription**(`body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After a subscription is successfully created, we'll send a POST request to your target URL with a
 `X-Hook-Secret` header. <br />
@@ -579,13 +579,13 @@ here.](https://docs.affinda.com/docs/webhooks)
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### createResumeSearch
 
-▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+▸ **createResumeSearch**(`body`, `options?`): `Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
 job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
@@ -602,13 +602,13 @@ the custom criteria.
 
 #### Returns
 
-`Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+`Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 ___
 
 ### createResumeSearchEmbedUrl
 
-▸ **createResumeSearchEmbedUrl**(`options?`): `Promise`<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
+▸ **createResumeSearchEmbedUrl**(`options?`): `Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
 Create and return a signed URL of the resume search tool which then can be embedded on a web page.
 An optional parameter `config_override` can be passed to override the user-level configurations of
@@ -622,13 +622,13 @@ the embeddable resume search tool.
 
 #### Returns
 
-`Promise`<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
+`Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
 ___
 
 ### createTag
 
-▸ **createTag**(`body`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
+▸ **createTag**(`body`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 Create a tag
 
@@ -641,13 +641,13 @@ Create a tag
 
 #### Returns
 
-`Promise`<[`Tag`](../interfaces/Tag.md)\>
+`Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 ___
 
 ### createWorkspace
 
-▸ **createWorkspace**(`body`, `options?`): `Promise`<[`Workspace`](../interfaces/Workspace.md)\>
+▸ **createWorkspace**(`body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 Create a workspace
 
@@ -660,13 +660,13 @@ Create a workspace
 
 #### Returns
 
-`Promise`<[`Workspace`](../interfaces/Workspace.md)\>
+`Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 ___
 
 ### createWorkspaceMembership
 
-▸ **createWorkspaceMembership**(`body`, `options?`): `Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
+▸ **createWorkspaceMembership**(`body`, `options?`): `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
 Create a workspace membership.
 
@@ -679,13 +679,13 @@ Create a workspace membership.
 
 #### Returns
 
-`Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
+`Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
 ___
 
 ### deleteAnnotation
 
-▸ **deleteAnnotation**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteAnnotation**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified annotation from the database.
 
@@ -698,13 +698,13 @@ Deletes the specified annotation from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteApiUser
 
-▸ **deleteApiUser**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteApiUser**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified API user from the database.
 
@@ -717,13 +717,13 @@ Deletes the specified API user from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteCollection
 
-▸ **deleteCollection**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteCollection**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified collection from the database.
 
@@ -736,13 +736,13 @@ Deletes the specified collection from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteDataPoint
 
-▸ **deleteDataPoint**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteDataPoint**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified data point from the database.
 
@@ -755,13 +755,13 @@ Deletes the specified data point from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteDataPointChoice
 
-▸ **deleteDataPointChoice**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteDataPointChoice**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified data point choice from the database.
 
@@ -774,13 +774,13 @@ Deletes the specified data point choice from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteDocument
 
-▸ **deleteDocument**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteDocument**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified document from the database.
 
@@ -793,13 +793,13 @@ Deletes the specified document from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteExtractor
 
-▸ **deleteExtractor**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteExtractor**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified extractor from the database.
 
@@ -812,13 +812,13 @@ Deletes the specified extractor from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteIndex
 
-▸ **deleteIndex**(`name`, `options?`): `Promise`<`void`\>
+▸ **deleteIndex**(`name`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified index from the database
 
@@ -831,13 +831,13 @@ Deletes the specified index from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteIndexDocument
 
-▸ **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified indexed document from the database
 
@@ -851,13 +851,13 @@ Delete the specified indexed document from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteInvitation
 
-▸ **deleteInvitation**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteInvitation**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified invitation from the database.
 
@@ -870,13 +870,13 @@ Delete the specified invitation from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteOrganization
 
-▸ **deleteOrganization**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteOrganization**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified organization from the database.
 
@@ -889,13 +889,13 @@ Delete the specified organization from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteOrganizationMembership
 
-▸ **deleteOrganizationMembership**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteOrganizationMembership**(`identifier`, `options?`): `Promise`\<`void`\>
 
 The admin users can use this endpoint to remove member from their organization. Other users can also
 use this to leave their organization.
@@ -909,13 +909,13 @@ use this to leave their organization.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteResthookSubscription
 
-▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified resthook subscription from the database.
 
@@ -928,13 +928,13 @@ Deletes the specified resthook subscription from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteTag
 
-▸ **deleteTag**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteTag**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified tag from the database.
 
@@ -947,13 +947,13 @@ Deletes the specified tag from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteWorkspace
 
-▸ **deleteWorkspace**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteWorkspace**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified workspace from the database.
 
@@ -966,13 +966,13 @@ Deletes the specified workspace from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteWorkspaceMembership
 
-▸ **deleteWorkspaceMembership**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteWorkspaceMembership**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Remove an user from a workspace.
 
@@ -985,13 +985,13 @@ Remove an user from a workspace.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### editDocumentPages
 
-▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
+▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`\<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
 
 Split / merge / rotate / delete pages of a document.
 Documents with multiple pages can be splitted into multiple documents, or merged into one document.
@@ -1007,13 +1007,13 @@ Each page can also be rotated. Edit operations will trigger re-parsing of the do
 
 #### Returns
 
-`Promise`<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
+`Promise`\<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
 
 ___
 
 ### getAllAnnotations
 
-▸ **getAllAnnotations**(`document`, `options?`): `Promise`<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllAnnotations**(`document`, `options?`): `Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
 
 Returns your annotations.
 
@@ -1026,13 +1026,13 @@ Returns your annotations.
 
 #### Returns
 
-`Promise`<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllApiUsers
 
-▸ **getAllApiUsers**(`options?`): `Promise`<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
+▸ **getAllApiUsers**(`options?`): `Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
 
 Returns your API users.
 
@@ -1044,13 +1044,13 @@ Returns your API users.
 
 #### Returns
 
-`Promise`<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllCollections
 
-▸ **getAllCollections**(`workspace`, `options?`): `Promise`<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
+▸ **getAllCollections**(`workspace`, `options?`): `Promise`\<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
 
 Returns your collections.
 
@@ -1063,13 +1063,13 @@ Returns your collections.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
+`Promise`\<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
 
 ___
 
 ### getAllDataPoints
 
-▸ **getAllDataPoints**(`options?`): `Promise`<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
+▸ **getAllDataPoints**(`options?`): `Promise`\<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
 
 Returns your custom data points as well as Affinda's off-the-shelf data points.
 
@@ -1081,13 +1081,13 @@ Returns your custom data points as well as Affinda's off-the-shelf data points.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
+`Promise`\<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
 
 ___
 
 ### getAllDocuments
 
-▸ **getAllDocuments**(`options?`): `Promise`<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllDocuments**(`options?`): `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
 
 Returns all the document summaries for that user, limited to 300 per page.
 
@@ -1099,13 +1099,13 @@ Returns all the document summaries for that user, limited to 300 per page.
 
 #### Returns
 
-`Promise`<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllExtractors
 
-▸ **getAllExtractors**(`organization`, `options?`): `Promise`<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
+▸ **getAllExtractors**(`organization`, `options?`): `Promise`\<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
 
 Returns your custom extractors as well as Affinda's off-the-shelf extractors.
 
@@ -1118,13 +1118,13 @@ Returns your custom extractors as well as Affinda's off-the-shelf extractors.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
+`Promise`\<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
 
 ___
 
 ### getAllIndexDocuments
 
-▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`\<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexed documents for that index
 
@@ -1137,13 +1137,13 @@ Returns all the indexed documents for that index
 
 #### Returns
 
-`Promise`<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`\<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllIndexes
 
-▸ **getAllIndexes**(`options?`): `Promise`<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexes
 
@@ -1155,13 +1155,13 @@ Returns all the indexes
 
 #### Returns
 
-`Promise`<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllInvitations
 
-▸ **getAllInvitations**(`options?`): `Promise`<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllInvitations**(`options?`): `Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
 
 Get list of all invitations you created or sent to you.
 
@@ -1173,13 +1173,13 @@ Get list of all invitations you created or sent to you.
 
 #### Returns
 
-`Promise`<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllOrganizationMemberships
 
-▸ **getAllOrganizationMemberships**(`options?`): `Promise`<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllOrganizationMemberships**(`options?`): `Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
 
 Returns all the organization memberships
 
@@ -1191,13 +1191,13 @@ Returns all the organization memberships
 
 #### Returns
 
-`Promise`<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllOrganizations
 
-▸ **getAllOrganizations**(`options?`): `Promise`<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
+▸ **getAllOrganizations**(`options?`): `Promise`\<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
 
 Returns all the organizations
 
@@ -1209,13 +1209,13 @@ Returns all the organizations
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
+`Promise`\<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
 
 ___
 
 ### getAllResthookSubscriptions
 
-▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllResthookSubscriptions**(`options?`): `Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 Returns your resthook subscriptions.
 
@@ -1227,13 +1227,13 @@ Returns your resthook subscriptions.
 
 #### Returns
 
-`Promise`<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllTags
 
-▸ **getAllTags**(`options?`): `Promise`<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+▸ **getAllTags**(`options?`): `Promise`\<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
 
 Returns your tags.
 
@@ -1245,13 +1245,13 @@ Returns your tags.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+`Promise`\<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
 
 ___
 
 ### getAllWorkspaceMemberships
 
-▸ **getAllWorkspaceMemberships**(`options?`): `Promise`<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllWorkspaceMemberships**(`options?`): `Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
 
 Returns the memberships of your workspaces.
 
@@ -1263,13 +1263,13 @@ Returns the memberships of your workspaces.
 
 #### Returns
 
-`Promise`<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllWorkspaces
 
-▸ **getAllWorkspaces**(`organization`, `options?`): `Promise`<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
+▸ **getAllWorkspaces**(`organization`, `options?`): `Promise`\<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
 
 Returns your workspaces.
 
@@ -1282,13 +1282,13 @@ Returns your workspaces.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
+`Promise`\<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
 
 ___
 
 ### getAnnotation
 
-▸ **getAnnotation**(`id`, `options?`): `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+▸ **getAnnotation**(`id`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 Return a specific annotation.
 
@@ -1301,13 +1301,13 @@ Return a specific annotation.
 
 #### Returns
 
-`Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+`Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 ___
 
 ### getApiUser
 
-▸ **getApiUser**(`id`, `options?`): `Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+▸ **getApiUser**(`id`, `options?`): `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 Return a specific API user.
 
@@ -1320,13 +1320,13 @@ Return a specific API user.
 
 #### Returns
 
-`Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+`Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 ___
 
 ### getCollection
 
-▸ **getCollection**(`identifier`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
+▸ **getCollection**(`identifier`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 Return a specific collection.
 
@@ -1339,13 +1339,13 @@ Return a specific collection.
 
 #### Returns
 
-`Promise`<[`Collection`](../interfaces/Collection.md)\>
+`Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 ___
 
 ### getDataFieldForCollection
 
-▸ **getDataFieldForCollection**(`identifier`, `datapointIdentifier`, `options?`): `Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+▸ **getDataFieldForCollection**(`identifier`, `datapointIdentifier`, `options?`): `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 Get a data field for a collection assosciated with a data point
 
@@ -1359,13 +1359,13 @@ Get a data field for a collection assosciated with a data point
 
 #### Returns
 
-`Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+`Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 ___
 
 ### getDataPoint
 
-▸ **getDataPoint**(`identifier`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+▸ **getDataPoint**(`identifier`, `options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Return a specific data point.
 
@@ -1378,13 +1378,13 @@ Return a specific data point.
 
 #### Returns
 
-`Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+`Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 ___
 
 ### getDataPointChoice
 
-▸ **getDataPointChoice**(`id`, `options?`): `Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+▸ **getDataPointChoice**(`id`, `options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 Return a specific data point choice.
 
@@ -1397,13 +1397,13 @@ Return a specific data point choice.
 
 #### Returns
 
-`Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+`Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 ___
 
 ### getDataPointChoices
 
-▸ **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
+▸ **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
 
 Returns available choices for a specific enum data point.
 
@@ -1417,13 +1417,13 @@ Returns available choices for a specific enum data point.
 
 #### Returns
 
-`Promise`<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getDocument
 
-▸ **getDocument**(`identifier`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+▸ **getDocument**(`identifier`, `options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Return a specific document.
 
@@ -1436,13 +1436,13 @@ Return a specific document.
 
 #### Returns
 
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
 ### getExtractor
 
-▸ **getExtractor**(`identifier`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+▸ **getExtractor**(`identifier`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 Return a specific extractor.
 
@@ -1455,13 +1455,13 @@ Return a specific extractor.
 
 #### Returns
 
-`Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+`Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 ___
 
 ### getInvitation
 
-▸ **getInvitation**(`identifier`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+▸ **getInvitation**(`identifier`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Get detail of an invitation.
 
@@ -1474,13 +1474,13 @@ Get detail of an invitation.
 
 #### Returns
 
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 ___
 
 ### getInvitationByToken
 
-▸ **getInvitationByToken**(`token`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+▸ **getInvitationByToken**(`token`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Get detail of an invitation using a secret token. This allows users who have not registered/logged
 in to view the invitation.
@@ -1494,13 +1494,13 @@ in to view the invitation.
 
 #### Returns
 
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 ___
 
 ### getJobDescriptionSearchConfig
 
-▸ **getJobDescriptionSearchConfig**(`options?`): `Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+▸ **getJobDescriptionSearchConfig**(`options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 Return configurations such as which fields can be displayed in the logged in user's embeddable job
 description search tool, what are their weights, what is the maximum number of results that can be
@@ -1514,13 +1514,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+`Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 ___
 
 ### getJobDescriptionSearchDetail
 
-▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
+▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this job description.
@@ -1537,13 +1537,13 @@ The `identifier` is the unique ID returned via the
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
+`Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
 ___
 
 ### getOrganization
 
-▸ **getOrganization**(`identifier`, `options?`): `Promise`<[`Organization`](../interfaces/Organization.md)\>
+▸ **getOrganization**(`identifier`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 Get detail of an organization.
 
@@ -1556,13 +1556,13 @@ Get detail of an organization.
 
 #### Returns
 
-`Promise`<[`Organization`](../interfaces/Organization.md)\>
+`Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 ___
 
 ### getOrganizationMembership
 
-▸ **getOrganizationMembership**(`identifier`, `options?`): `Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+▸ **getOrganizationMembership**(`identifier`, `options?`): `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
 Get detail of an organization membership.
 
@@ -1575,13 +1575,13 @@ Get detail of an organization membership.
 
 #### Returns
 
-`Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+`Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
 ___
 
 ### getResthookSubscription
 
-▸ **getResthookSubscription**(`id`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **getResthookSubscription**(`id`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Return a specific resthook subscription.
 
@@ -1594,13 +1594,13 @@ Return a specific resthook subscription.
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### getResumeSearchConfig
 
-▸ **getResumeSearchConfig**(`options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+▸ **getResumeSearchConfig**(`options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 Return configurations such as which fields can be displayed in the logged in user's embeddable
 resume search tool, what are their weights, what is the maximum number of results that can be
@@ -1614,13 +1614,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+`Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 ___
 
 ### getResumeSearchDetail
 
-▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this resume.
@@ -1636,13 +1636,13 @@ The `identifier` is the unique ID returned via the [/resume_search](#post-/resum
 
 #### Returns
 
-`Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+`Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
 
 ___
 
 ### getResumeSearchMatch
 
-▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 Get the matching score between a resume and a job description. The score ranges between 0 and 1,
 with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
@@ -1659,13 +1659,13 @@ match the score returned from POST
 
 #### Returns
 
-`Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+`Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 ___
 
 ### getResumeSearchSuggestionJobTitle
 
-▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`\<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
 
 Provided one or more job titles, get related suggestions for your search.
 
@@ -1678,13 +1678,13 @@ Provided one or more job titles, get related suggestions for your search.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+`Promise`\<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
 
 ___
 
 ### getResumeSearchSuggestionSkill
 
-▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`\<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
 
 Provided one or more skills, get related suggestions for your search.
 
@@ -1697,13 +1697,13 @@ Provided one or more skills, get related suggestions for your search.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+`Promise`\<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
 
 ___
 
 ### getTag
 
-▸ **getTag**(`id`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
+▸ **getTag**(`id`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 Return a specific tag.
 
@@ -1716,13 +1716,13 @@ Return a specific tag.
 
 #### Returns
 
-`Promise`<[`Tag`](../interfaces/Tag.md)\>
+`Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 ___
 
 ### getUsageByCollection
 
-▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
+▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`\<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
 
 Return monthly credits consumption of a collection.
 
@@ -1735,13 +1735,13 @@ Return monthly credits consumption of a collection.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
+`Promise`\<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
 
 ___
 
 ### getUsageByWorkspace
 
-▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
+▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`\<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
 
 Return monthly credits consumption of a workspace.
 
@@ -1754,13 +1754,13 @@ Return monthly credits consumption of a workspace.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
+`Promise`\<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
 
 ___
 
 ### getWorkspace
 
-▸ **getWorkspace**(`identifier`, `options?`): `Promise`<[`Workspace`](../interfaces/Workspace.md)\>
+▸ **getWorkspace**(`identifier`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 Return a specific workspace.
 
@@ -1773,13 +1773,13 @@ Return a specific workspace.
 
 #### Returns
 
-`Promise`<[`Workspace`](../interfaces/Workspace.md)\>
+`Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 ___
 
 ### getWorkspaceMembership
 
-▸ **getWorkspaceMembership**(`identifier`, `options?`): `Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
+▸ **getWorkspaceMembership**(`identifier`, `options?`): `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
 Return a specific workspace membership.
 
@@ -1792,13 +1792,13 @@ Return a specific workspace membership.
 
 #### Returns
 
-`Promise`<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
+`Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
 ___
 
 ### listOccupationGroups
 
-▸ **listOccupationGroups**(`options?`): `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+▸ **listOccupationGroups**(`options?`): `Promise`\<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
 
 Returns the list of searchable occupation groups.
 
@@ -1810,13 +1810,13 @@ Returns the list of searchable occupation groups.
 
 #### Returns
 
-`Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+`Promise`\<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
 
 ___
 
 ### regenerateApiKeyForApiUser
 
-▸ **regenerateApiKeyForApiUser**(`id`, `options?`): `Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+▸ **regenerateApiKeyForApiUser**(`id`, `options?`): `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
 
 Regenerate API key for an API user.
 
@@ -1829,13 +1829,13 @@ Regenerate API key for an API user.
 
 #### Returns
 
-`Promise`<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+`Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
 
 ___
 
 ### replaceDataPointChoices
 
-▸ **replaceDataPointChoices**(`options?`): `Promise`<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
+▸ **replaceDataPointChoices**(`options?`): `Promise`\<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
 
 Replace choices of a data point. Existing choices and incoming choices are matched base on their
 `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
@@ -1849,13 +1849,13 @@ choices will be deleted.
 
 #### Returns
 
-`Promise`<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
+`Promise`\<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
 
 ___
 
 ### respondToInvitation
 
-▸ **respondToInvitation**(`token`, `body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+▸ **respondToInvitation**(`token`, `body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Choose to accept or decline an invitation.
 
@@ -1869,13 +1869,13 @@ Choose to accept or decline an invitation.
 
 #### Returns
 
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 ___
 
 ### sendOperationRequest
 
-▸ **sendOperationRequest**<`T`\>(`operationArguments`, `operationSpec`): `Promise`<`T`\>
+▸ **sendOperationRequest**\<`T`\>(`operationArguments`, `operationSpec`): `Promise`\<`T`\>
 
 Send an HTTP request that is populated using the provided OperationSpec.
 
@@ -1894,7 +1894,7 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Inherited from
 
@@ -1904,7 +1904,7 @@ ___
 
 ### sendRequest
 
-▸ **sendRequest**(`request`): `Promise`<`PipelineResponse`\>
+▸ **sendRequest**(`request`): `Promise`\<`PipelineResponse`\>
 
 Send the provided httpRequest.
 
@@ -1916,7 +1916,7 @@ Send the provided httpRequest.
 
 #### Returns
 
-`Promise`<`PipelineResponse`\>
+`Promise`\<`PipelineResponse`\>
 
 #### Inherited from
 
@@ -1926,7 +1926,7 @@ ___
 
 ### updateAnnotation
 
-▸ **updateAnnotation**(`id`, `body`, `options?`): `Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+▸ **updateAnnotation**(`id`, `body`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 Update data of an annotation.
 
@@ -1940,13 +1940,13 @@ Update data of an annotation.
 
 #### Returns
 
-`Promise`<[`Annotation`](../interfaces/Annotation.md)\>
+`Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 ___
 
 ### updateApiUser
 
-▸ **updateApiUser**(`id`, `body`, `options?`): `Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+▸ **updateApiUser**(`id`, `body`, `options?`): `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 Update data of an API user.
 
@@ -1960,13 +1960,13 @@ Update data of an API user.
 
 #### Returns
 
-`Promise`<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+`Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 ___
 
 ### updateCollection
 
-▸ **updateCollection**(`identifier`, `body`, `options?`): `Promise`<[`Collection`](../interfaces/Collection.md)\>
+▸ **updateCollection**(`identifier`, `body`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 Update data of a collection.
 
@@ -1980,13 +1980,13 @@ Update data of a collection.
 
 #### Returns
 
-`Promise`<[`Collection`](../interfaces/Collection.md)\>
+`Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 ___
 
 ### updateDataFieldForCollection
 
-▸ **updateDataFieldForCollection**(`identifier`, `datapointIdentifier`, `body`, `options?`): `Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+▸ **updateDataFieldForCollection**(`identifier`, `datapointIdentifier`, `body`, `options?`): `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 Update data field for a collection assosciated with a data point
 
@@ -2001,13 +2001,13 @@ Update data field for a collection assosciated with a data point
 
 #### Returns
 
-`Promise`<[`CollectionField`](../interfaces/CollectionField.md)\>
+`Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 ___
 
 ### updateDataPoint
 
-▸ **updateDataPoint**(`identifier`, `body`, `options?`): `Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+▸ **updateDataPoint**(`identifier`, `body`, `options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Update data of a data point.
 
@@ -2021,13 +2021,13 @@ Update data of a data point.
 
 #### Returns
 
-`Promise`<[`DataPoint`](../interfaces/DataPoint.md)\>
+`Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 ___
 
 ### updateDataPointChoice
 
-▸ **updateDataPointChoice**(`id`, `body`, `options?`): `Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+▸ **updateDataPointChoice**(`id`, `body`, `options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 Update data of a data point choice.
 
@@ -2041,13 +2041,13 @@ Update data of a data point choice.
 
 #### Returns
 
-`Promise`<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+`Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 ___
 
 ### updateDocument
 
-▸ **updateDocument**(`identifier`, `body`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+▸ **updateDocument**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Update file name, expiry time, or move to another collection, etc.
 
@@ -2061,13 +2061,13 @@ Update file name, expiry time, or move to another collection, etc.
 
 #### Returns
 
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
 ### updateDocumentData
 
-▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 Update data of a document.
 Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
@@ -2083,13 +2083,13 @@ Only applicable for resumes and job descriptions. For other document types, plea
 
 #### Returns
 
-`Promise`<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
 
 ___
 
 ### updateExtractor
 
-▸ **updateExtractor**(`identifier`, `body`, `options?`): `Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+▸ **updateExtractor**(`identifier`, `body`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 Update data of an extractor.
 
@@ -2103,13 +2103,13 @@ Update data of an extractor.
 
 #### Returns
 
-`Promise`<[`Extractor`](../interfaces/Extractor.md)\>
+`Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 ___
 
 ### updateInvitation
 
-▸ **updateInvitation**(`identifier`, `body`, `options?`): `Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+▸ **updateInvitation**(`identifier`, `body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Update the detail of an invitation.
 
@@ -2123,13 +2123,13 @@ Update the detail of an invitation.
 
 #### Returns
 
-`Promise`<[`Invitation`](../interfaces/Invitation.md)\>
+`Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 ___
 
 ### updateJobDescriptionSearchConfig
 
-▸ **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+▸ **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 Update configurations such as which fields can be displayed in the logged in user's embeddable job
 description search tool, what are their weights, what is the maximum number of results that can be
@@ -2144,13 +2144,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+`Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 ___
 
 ### updateOrganization
 
-▸ **updateOrganization**(`identifier`, `options?`): `Promise`<[`Organization`](../interfaces/Organization.md)\>
+▸ **updateOrganization**(`identifier`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 Update the detail of an organization.
 
@@ -2163,13 +2163,13 @@ Update the detail of an organization.
 
 #### Returns
 
-`Promise`<[`Organization`](../interfaces/Organization.md)\>
+`Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 ___
 
 ### updateOrganizationMembership
 
-▸ **updateOrganizationMembership**(`identifier`, `body`, `options?`): `Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+▸ **updateOrganizationMembership**(`identifier`, `body`, `options?`): `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
 The admin users can use this endpoint to update the role of the members within their organization.
 
@@ -2183,13 +2183,13 @@ The admin users can use this endpoint to update the role of the members within t
 
 #### Returns
 
-`Promise`<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+`Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
 ___
 
 ### updateResthookSubscription
 
-▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Update data of a resthook subscription.
 
@@ -2203,13 +2203,13 @@ Update data of a resthook subscription.
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### updateResumeSearchConfig
 
-▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 Update configurations such as which fields can be displayed in the logged in user's embeddable
 resume search tool, what are their weights, what is the maximum number of results that can be
@@ -2224,13 +2224,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+`Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 ___
 
 ### updateTag
 
-▸ **updateTag**(`id`, `body`, `options?`): `Promise`<[`Tag`](../interfaces/Tag.md)\>
+▸ **updateTag**(`id`, `body`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 Update data of an tag.
 
@@ -2244,13 +2244,13 @@ Update data of an tag.
 
 #### Returns
 
-`Promise`<[`Tag`](../interfaces/Tag.md)\>
+`Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 ___
 
 ### updateWorkspace
 
-▸ **updateWorkspace**(`identifier`, `body`, `options?`): `Promise`<[`Workspace`](../interfaces/Workspace.md)\>
+▸ **updateWorkspace**(`identifier`, `body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 Update a workspace.
 
@@ -2264,4 +2264,4 @@ Update a workspace.
 
 #### Returns
 
-`Promise`<[`Workspace`](../interfaces/Workspace.md)\>
+`Promise`\<[`Workspace`](../interfaces/Workspace.md)\>

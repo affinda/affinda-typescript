@@ -42,7 +42,7 @@
 
 ### getToken
 
-▸ **getToken**(`scopes`, `options?`): `Promise`<``null`` \| `AccessToken`\>
+▸ **getToken**(`scopes`, `options?`): `Promise`\<``null`` \| `AccessToken`\>
 
 #### Parameters
 
@@ -53,7 +53,7 @@
 
 #### Returns
 
-`Promise`<``null`` \| `AccessToken`\>
+`Promise`\<``null`` \| `AccessToken`\>
 
 #### Implementation of
 
