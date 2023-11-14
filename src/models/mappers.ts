@@ -8662,34 +8662,12 @@ export const JobDescriptionSearchEmbed: coreClient.CompositeMapper = {
   }
 };
 
-export const PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema",
+    className:
+      "Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1",
     modelProperties: {
-      count: {
-        constraints: {
-          InclusiveMinimum: 1
-        },
-        serializedName: "count",
-        type: {
-          name: "Number"
-        }
-      },
-      next: {
-        serializedName: "next",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
-      previous: {
-        serializedName: "previous",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      },
       results: {
         serializedName: "results",
         type: {
@@ -8697,7 +8675,7 @@ export const PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema: core
           element: {
             type: {
               name: "Composite",
-              className: "Get200ApplicationJsonPropertiesItemsItem"
+              className: "Index"
             }
           }
         }
@@ -8706,10 +8684,81 @@ export const PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema: core
   }
 };
 
-export const Get200ApplicationJsonPropertiesItemsItem: coreClient.CompositeMapper = {
+export const Index: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "Get200ApplicationJsonPropertiesItemsItem",
+    className: "Index",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      documentType: {
+        serializedName: "documentType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      user: {
+        serializedName: "user",
+        type: {
+          name: "Composite",
+          className: "IndexUser"
+        }
+      }
+    }
+  }
+};
+
+export const IndexUser: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "IndexUser",
+    modelProperties: {
+      id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const IndexCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "IndexCreate",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -8728,20 +8777,13 @@ export const Get200ApplicationJsonPropertiesItemsItem: coreClient.CompositeMappe
   }
 };
 
-export const Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const IndexUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema",
+    className: "IndexUpdate",
     modelProperties: {
       name: {
         serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      documentType: {
-        serializedName: "documentType",
         type: {
           name: "String"
         }
@@ -8786,8 +8828,7 @@ export const PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJso
           element: {
             type: {
               name: "Composite",
-              className:
-                "Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems"
+              className: "Get200ApplicationJsonPropertiesItemsItem"
             }
           }
         }
@@ -8796,11 +8837,10 @@ export const PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJso
   }
 };
 
-export const Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems: coreClient.CompositeMapper = {
+export const Get200ApplicationJsonPropertiesItemsItem: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className:
-      "Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems",
+    className: "Get200ApplicationJsonPropertiesItemsItem",
     modelProperties: {
       document: {
         serializedName: "document",
@@ -11555,27 +11595,6 @@ export const OrganizationUpdate: coreClient.CompositeMapper = {
   }
 };
 
-export const IndexRequestBody: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "IndexRequestBody",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      documentType: {
-        serializedName: "documentType",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const InvitationRespondedBy: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -11685,6 +11704,18 @@ export const PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplication
     modelProperties: {
       ...PaginatedResponse.type.modelProperties,
       ...Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }

@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](AffindaAPIGetDocumentOptionalParams.md#abortsignal)
+- [compact](AffindaAPIGetDocumentOptionalParams.md#compact)
 - [format](AffindaAPIGetDocumentOptionalParams.md#format)
 - [onResponse](AffindaAPIGetDocumentOptionalParams.md#onresponse)
 - [requestOptions](AffindaAPIGetDocumentOptionalParams.md#requestoptions)
@@ -32,6 +33,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### compact
+
+• `Optional` **compact**: `boolean`
+
+If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false".
 
 ___
 

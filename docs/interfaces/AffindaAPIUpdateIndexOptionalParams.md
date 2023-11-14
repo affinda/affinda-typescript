@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPICreateIndexOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIUpdateIndexOptionalParams
 
-# Interface: AffindaAPICreateIndexOptionalParams
+# Interface: AffindaAPIUpdateIndexOptionalParams
 
 Optional parameters.
 
@@ -8,17 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPICreateIndexOptionalParams`**
+  ↳ **`AffindaAPIUpdateIndexOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPICreateIndexOptionalParams.md#abortsignal)
-- [onResponse](AffindaAPICreateIndexOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPICreateIndexOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPICreateIndexOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPICreateIndexOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIUpdateIndexOptionalParams.md#abortsignal)
+- [onResponse](AffindaAPIUpdateIndexOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIUpdateIndexOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIUpdateIndexOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIUpdateIndexOptionalParams.md#tracingoptions)
 
 ## Properties
 

@@ -1897,24 +1897,41 @@ export interface JobDescriptionSearchEmbed {
   url?: string;
 }
 
-export interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema {
-  /** Number of indexes in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: Get200ApplicationJsonPropertiesItemsItem[];
+export interface Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Index[];
 }
 
-export interface Get200ApplicationJsonPropertiesItemsItem {
+export interface Index {
+  /** Unique index name */
   name: string;
-  documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
+  documentType: IndexDocumentType;
+  /**
+   * The user who created this index
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly user: IndexUser;
 }
 
-export interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
+/** The user who created this index */
+export interface IndexUser {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+}
+
+/** IndexRequestBody */
+export interface IndexCreate {
+  /** Unique index name */
+  name: string;
+  documentType?: DocumentType;
+}
+
+export interface IndexUpdate {
+  /** Unique index name */
   name?: string;
-  documentType?: Enum22;
 }
 
 export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1924,10 +1941,10 @@ export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicatio
   next?: string;
   /** URL to request previous page of results */
   previous?: string;
-  results?: Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+  results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
-export interface Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+export interface Get200ApplicationJsonPropertiesItemsItem {
   document?: string;
 }
 
@@ -2461,12 +2478,6 @@ export interface OrganizationUpdate {
   validationToolConfig?: ValidationToolConfig;
 }
 
-/** IndexRequestBody */
-export interface IndexRequestBody {
-  name?: string;
-  documentType?: PostContentSchemaDocumentType;
-}
-
 export type InvitationRespondedBy = User & {};
 
 export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
@@ -2492,6 +2503,9 @@ export type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = P
 
 export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type Resume = Document & {
   /** Polymorphic discriminator, which specifies the different types this object can be */
@@ -3527,53 +3541,37 @@ export enum KnownEnum19 {
  */
 export type Enum19 = string;
 
-/** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
-export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
+/** Known values of {@link IndexDocumentType} that the service accepts. */
+export enum KnownIndexDocumentType {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
- * {@link KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+ * Defines values for IndexDocumentType. \
+ * {@link KnownIndexDocumentType} can be used interchangeably with IndexDocumentType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType = string;
+export type IndexDocumentType = string;
 
-/** Known values of {@link PostContentSchemaDocumentType} that the service accepts. */
-export enum KnownPostContentSchemaDocumentType {
+/** Known values of {@link DocumentType} that the service accepts. */
+export enum KnownDocumentType {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for PostContentSchemaDocumentType. \
- * {@link KnownPostContentSchemaDocumentType} can be used interchangeably with PostContentSchemaDocumentType,
+ * Defines values for DocumentType. \
+ * {@link KnownDocumentType} can be used interchangeably with DocumentType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type PostContentSchemaDocumentType = string;
-
-/** Known values of {@link Enum22} that the service accepts. */
-export enum KnownEnum22 {
-  Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
-}
-
-/**
- * Defines values for Enum22. \
- * {@link KnownEnum22} can be used interchangeably with Enum22,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type Enum22 = string;
+export type DocumentType = string;
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
@@ -3821,6 +3819,8 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
   hasChallenges?: boolean;
   /** Filter for documents with this custom identifier. */
   customIdentifier?: string;
+  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+  compact?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -3865,6 +3865,8 @@ export type AffindaAPICreateDocumentResponse = DocumentUnion;
 /** Optional parameters. */
 export interface AffindaAPIGetDocumentOptionalParams
   extends coreClient.OperationOptions {
+  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+  compact?: boolean;
   /** Specify which format you want the response to be. Default is "json" */
   format?: DocumentFormat;
 }
@@ -4426,13 +4428,17 @@ export type AffindaAPIGetAllIndexesResponse = PathsDvrcp3V3IndexGetResponses200C
 
 /** Optional parameters. */
 export interface AffindaAPICreateIndexOptionalParams
-  extends coreClient.OperationOptions {
-  name?: string;
-  documentType?: PostContentSchemaDocumentType;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the createIndex operation. */
-export type AffindaAPICreateIndexResponse = Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateIndexResponse = Index;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateIndexOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateIndex operation. */
+export type AffindaAPIUpdateIndexResponse = Index;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteIndexOptionalParams

@@ -16,6 +16,7 @@ Optional parameters.
 
 - [abortSignal](AffindaAPIGetAllDocumentsOptionalParams.md#abortsignal)
 - [collection](AffindaAPIGetAllDocumentsOptionalParams.md#collection)
+- [compact](AffindaAPIGetAllDocumentsOptionalParams.md#compact)
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
 - [customIdentifier](AffindaAPIGetAllDocumentsOptionalParams.md#customidentifier)
 - [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
@@ -56,6 +57,14 @@ ___
 • `Optional` **collection**: `string`
 
 Filter by collection.
+
+___
+
+### compact
+
+• `Optional` **compact**: `boolean`
+
+If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false".
 
 ___
 

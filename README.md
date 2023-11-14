@@ -66,7 +66,7 @@ const client = new AffindaAPI(credential);
 const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
 
 client
-  .createResume({ file: readStream })
+  .createDocument({ file: readStream })
   .then((result) => {
     console.log("Returned data:");
     console.dir(result);
@@ -79,7 +79,7 @@ client
 // Can also use a URL:
 
 client
-  .createResume({
+  .createDocument({
     url: "https://api.affinda.com/static/sample_resumes/example.docx",
   })
   .then((result) => {

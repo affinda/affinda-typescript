@@ -120,6 +120,7 @@
 - [updateDocument](AffindaAPI.md#updatedocument)
 - [updateDocumentData](AffindaAPI.md#updatedocumentdata)
 - [updateExtractor](AffindaAPI.md#updateextractor)
+- [updateIndex](AffindaAPI.md#updateindex)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateOrganization](AffindaAPI.md#updateorganization)
@@ -444,7 +445,7 @@ ___
 
 ### createIndex
 
-▸ **createIndex**(`options?`): `Promise`\<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndex**(`body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
 
 Create an index for the search tool
 
@@ -452,11 +453,12 @@ Create an index for the search tool
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `body` | [`IndexCreate`](../interfaces/IndexCreate.md) | Index to create |
 | `options?` | [`AffindaAPICreateIndexOptionalParams`](../interfaces/AffindaAPICreateIndexOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`\<[`Index`](../interfaces/Index.md)\>
 
 ___
 
@@ -1143,7 +1145,7 @@ ___
 
 ### getAllIndexes
 
-▸ **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)\>
 
 Returns all the indexes
 
@@ -1155,7 +1157,7 @@ Returns all the indexes
 
 #### Returns
 
-`Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)\>
 
 ___
 
@@ -2104,6 +2106,26 @@ Update data of an extractor.
 #### Returns
 
 `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
+
+___
+
+### updateIndex
+
+▸ **updateIndex**(`name`, `body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
+
+Updates the specified index
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `body` | [`IndexUpdate`](../interfaces/IndexUpdate.md) | Index data to update |
+| `options?` | [`AffindaAPIUpdateIndexOptionalParams`](../interfaces/AffindaAPIUpdateIndexOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Index`](../interfaces/Index.md)\>
 
 ___
 

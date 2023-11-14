@@ -612,9 +612,17 @@ export declare class AffindaAPI extends AffindaAPIContext {
     getAllIndexes(options?: AffindaAPIGetAllIndexesOptionalParams): Promise<AffindaAPIGetAllIndexesResponse>;
     /**
      * Create an index for the search tool
+     * @param body Index to create
      * @param options The options parameters.
      */
-    createIndex(options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
+    createIndex(body: IndexCreate, options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
+    /**
+     * Updates the specified index
+     * @param name Index name
+     * @param body Index data to update
+     * @param options The options parameters.
+     */
+    updateIndex(name: string, body: IndexUpdate, options?: AffindaAPIUpdateIndexOptionalParams): Promise<AffindaAPIUpdateIndexResponse>;
     /**
      * Deletes the specified index from the database
      * @param name Index name
@@ -845,12 +853,10 @@ export declare type AffindaAPICreateIndexDocumentResponse = PathsFte27NV3IndexNa
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateIndexOptionalParams extends coreClient.OperationOptions {
-    name?: string;
-    documentType?: PostContentSchemaDocumentType;
 }
 
 /** Contains response data for the createIndex operation. */
-export declare type AffindaAPICreateIndexResponse = Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema;
+export declare type AffindaAPICreateIndexResponse = Index;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateInvitationOptionalParams extends coreClient.OperationOptions {
@@ -1091,6 +1097,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     hasChallenges?: boolean;
     /** Filter for documents with this custom identifier. */
     customIdentifier?: string;
+    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+    compact?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -1273,6 +1281,8 @@ export declare type AffindaAPIGetDataPointResponse = DataPoint;
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetDocumentOptionalParams extends coreClient.OperationOptions {
+    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+    compact?: boolean;
     /** Specify which format you want the response to be. Default is "json" */
     format?: DocumentFormat;
 }
@@ -1542,6 +1552,13 @@ export declare interface AffindaAPIUpdateExtractorOptionalParams extends coreCli
 
 /** Contains response data for the updateExtractor operation. */
 export declare type AffindaAPIUpdateExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateIndexOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateIndex operation. */
+export declare type AffindaAPIUpdateIndexResponse = Index;
 
 /** Optional parameters. */
 export declare interface AffindaAPIUpdateInvitationOptionalParams extends coreClient.OperationOptions {
@@ -2543,6 +2560,17 @@ export declare interface DocumentSplitPage {
  */
 export declare type DocumentState = string;
 
+/**
+ * Defines values for DocumentType. \
+ * {@link KnownDocumentType} can be used interchangeably with DocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+declare type DocumentType_2 = string;
+export { DocumentType_2 as DocumentType }
+
 export declare type DocumentUnion = Document_2 | Resume | Invoice | JobDescription | ResumeRedact;
 
 export declare interface DocumentUpdate {
@@ -2610,16 +2638,6 @@ export declare interface EducationSearchScoreComponent {
  * **job_descriptions**
  */
 export declare type Enum19 = string;
-
-/**
- * Defines values for Enum22. \
- * {@link KnownEnum22} can be used interchangeably with Enum22,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export declare type Enum22 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2749,24 +2767,50 @@ export declare type FloatAnnotation = Annotation & {
 };
 
 export declare interface Get200ApplicationJsonPropertiesItemsItem {
+    document?: string;
+}
+
+export declare interface Index {
+    /** Unique index name */
     name: string;
-    documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
+    documentType: IndexDocumentType;
+    /**
+     * The user who created this index
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly user: IndexUser;
+}
+
+/** IndexRequestBody */
+export declare interface IndexCreate {
+    /** Unique index name */
+    name: string;
+    documentType?: DocumentType_2;
 }
 
 /**
- * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
- * {@link KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+ * Defines values for IndexDocumentType. \
+ * {@link KnownIndexDocumentType} can be used interchangeably with IndexDocumentType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType = string;
+export declare type IndexDocumentType = string;
 
-/** IndexRequestBody */
-export declare interface IndexRequestBody {
+export declare interface IndexUpdate {
+    /** Unique index name */
     name?: string;
-    documentType?: PostContentSchemaDocumentType;
+}
+
+/** The user who created this index */
+export declare interface IndexUser {
+    /** Uniquely identify a user. */
+    id: number;
+    name: string;
+    email: string;
+    /** URL of the user's avatar. */
+    avatar: string | null;
 }
 
 export declare interface Invitation {
@@ -3320,20 +3364,20 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
+/** Known values of {@link DocumentType} that the service accepts. */
+export declare enum KnownDocumentType {
+    Resumes = "resumes",
+    JobDescriptions = "job_descriptions"
+}
+
 /** Known values of {@link Enum19} that the service accepts. */
 export declare enum KnownEnum19 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum22} that the service accepts. */
-export declare enum KnownEnum22 {
-    Resumes = "resumes",
-    JobDescriptions = "job_descriptions"
-}
-
-/** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
-export declare enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
+/** Known values of {@link IndexDocumentType} that the service accepts. */
+export declare enum KnownIndexDocumentType {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -3361,12 +3405,6 @@ export declare enum KnownOrganizationRole {
 export declare enum KnownOrganizationUserRole {
     Admin = "admin",
     Member = "member"
-}
-
-/** Known values of {@link PostContentSchemaDocumentType} that the service accepts. */
-export declare enum KnownPostContentSchemaDocumentType {
-    Resumes = "resumes",
-    JobDescriptions = "job_descriptions"
 }
 
 /** Known values of {@link Region} that the service accepts. */
@@ -3941,17 +3979,8 @@ export declare interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicat
     results?: (Annotation | null)[];
 }
 
-export declare interface Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
-    document?: string;
-}
-
 export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: ResthookSubscription[];
-}
-
-export declare interface Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema {
-    name?: string;
-    documentType?: Enum22;
 }
 
 export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -3964,6 +3993,10 @@ export declare interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentAppl
     results?: DataPointChoice[];
 }
 
+export declare interface Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: Index[];
+}
+
 export declare interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: OrganizationMembership[];
 }
@@ -3972,15 +4005,7 @@ export declare interface PathsCl024WV3IndexNameDocumentsPostRequestbodyContentAp
     document?: string;
 }
 
-export declare interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema {
-    /** Number of indexes in result */
-    count?: number;
-    /** URL to request next page of results */
-    next?: string;
-    /** URL to request previous page of results */
-    previous?: string;
-    results?: Get200ApplicationJsonPropertiesItemsItem[];
-}
+export declare type PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
     /** Unique identifier for the document. */
@@ -4011,7 +4036,7 @@ export declare interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentAp
     next?: string;
     /** URL to request previous page of results */
     previous?: string;
-    results?: Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+    results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
 export declare type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -4021,16 +4046,6 @@ export declare type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentAp
 export declare type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
-
-/**
- * Defines values for PostContentSchemaDocumentType. \
- * {@link KnownPostContentSchemaDocumentType} can be used interchangeably with PostContentSchemaDocumentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export declare type PostContentSchemaDocumentType = string;
 
 export declare interface Rectangle {
     pageIndex?: number;

@@ -12,14 +12,13 @@
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
+- [KnownDocumentType](enums/KnownDocumentType.md)
 - [KnownEnum19](enums/KnownEnum19.md)
-- [KnownEnum22](enums/KnownEnum22.md)
-- [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
+- [KnownIndexDocumentType](enums/KnownIndexDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
 - [KnownInvitationStatus](enums/KnownInvitationStatus.md)
 - [KnownOrganizationRole](enums/KnownOrganizationRole.md)
 - [KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md)
-- [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
 - [KnownRegion](enums/KnownRegion.md)
 - [KnownResthookEvent](enums/KnownResthookEvent.md)
 - [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
@@ -138,6 +137,7 @@
 - [AffindaAPIUpdateDocumentDataOptionalParams](interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md)
 - [AffindaAPIUpdateDocumentOptionalParams](interfaces/AffindaAPIUpdateDocumentOptionalParams.md)
 - [AffindaAPIUpdateExtractorOptionalParams](interfaces/AffindaAPIUpdateExtractorOptionalParams.md)
+- [AffindaAPIUpdateIndexOptionalParams](interfaces/AffindaAPIUpdateIndexOptionalParams.md)
 - [AffindaAPIUpdateInvitationOptionalParams](interfaces/AffindaAPIUpdateInvitationOptionalParams.md)
 - [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateOrganizationMembershipOptionalParams](interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md)
@@ -255,7 +255,10 @@
 - [FieldGroup](interfaces/FieldGroup.md)
 - [FieldsLayout](interfaces/FieldsLayout.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
-- [IndexRequestBody](interfaces/IndexRequestBody.md)
+- [Index](interfaces/Index.md)
+- [IndexCreate](interfaces/IndexCreate.md)
+- [IndexUpdate](interfaces/IndexUpdate.md)
+- [IndexUser](interfaces/IndexUser.md)
 - [Invitation](interfaces/Invitation.md)
 - [InvitationCreate](interfaces/InvitationCreate.md)
 - [InvitationResponse](interfaces/InvitationResponse.md)
@@ -311,14 +314,12 @@
 - [Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
-- [Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths1Kdm1ZxV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
 - [Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1.md)
-- [Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
-- [PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema](interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
 - [PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
 - [PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1.md)
@@ -478,6 +479,7 @@
 - [AffindaAPIUpdateDocumentDataResponse](modules.md#affindaapiupdatedocumentdataresponse)
 - [AffindaAPIUpdateDocumentResponse](modules.md#affindaapiupdatedocumentresponse)
 - [AffindaAPIUpdateExtractorResponse](modules.md#affindaapiupdateextractorresponse)
+- [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
 - [AffindaAPIUpdateInvitationResponse](modules.md#affindaapiupdateinvitationresponse)
 - [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
 - [AffindaAPIUpdateOrganizationMembershipResponse](modules.md#affindaapiupdateorganizationmembershipresponse)
@@ -496,14 +498,14 @@
 - [DateRange](modules.md#daterange)
 - [DocumentFormat](modules.md#documentformat)
 - [DocumentState](modules.md#documentstate)
+- [DocumentType](modules.md#documenttype)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
 - [Enum19](modules.md#enum19)
-- [Enum22](modules.md#enum22)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationUpdate](modules.md#expectedremunerationannotationupdate)
 - [FloatAnnotation](modules.md#floatannotation)
-- [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
+- [IndexDocumentType](modules.md#indexdocumenttype)
 - [InvitationRespondedBy](modules.md#invitationrespondedby)
 - [InvitationResponseStatus](modules.md#invitationresponsestatus)
 - [InvitationStatus](modules.md#invitationstatus)
@@ -553,12 +555,12 @@
 - [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
 - [Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
 - [Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema](modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)
+- [PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema](modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)
 - [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
 - [PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema](modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)
 - [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
 - [PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema](modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)
 - [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
-- [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
 - [Region](modules.md#region)
 - [ResthookEvent](modules.md#resthookevent)
 - [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
@@ -686,7 +688,7 @@ ___
 
 ### AffindaAPICreateIndexResponse
 
-Ƭ **AffindaAPICreateIndexResponse**: [`Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema`](interfaces/Paths1TvfqeiV3IndexPostResponses201ContentApplicationJsonSchema.md)
+Ƭ **AffindaAPICreateIndexResponse**: [`Index`](interfaces/Index.md)
 
 Contains response data for the createIndex operation.
 
@@ -838,7 +840,7 @@ ___
 
 ### AffindaAPIGetAllIndexesResponse
 
-Ƭ **AffindaAPIGetAllIndexesResponse**: [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
+Ƭ **AffindaAPIGetAllIndexesResponse**: [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)
 
 Contains response data for the getAllIndexes operation.
 
@@ -1224,6 +1226,14 @@ Contains response data for the updateExtractor operation.
 
 ___
 
+### AffindaAPIUpdateIndexResponse
+
+Ƭ **AffindaAPIUpdateIndexResponse**: [`Index`](interfaces/Index.md)
+
+Contains response data for the updateIndex operation.
+
+___
+
 ### AffindaAPIUpdateInvitationResponse
 
 Ƭ **AffindaAPIUpdateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
@@ -1416,6 +1426,19 @@ Defines values for DocumentState. \
 
 ___
 
+### DocumentType
+
+Ƭ **DocumentType**: `string`
+
+Defines values for DocumentType. \
+[KnownDocumentType](enums/KnownDocumentType.md) can be used interchangeably with DocumentType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
+
+___
+
 ### DocumentUnion
 
 Ƭ **DocumentUnion**: [`Document`](interfaces/Document.md) \| [`Resume`](modules.md#resume) \| [`Invoice`](modules.md#invoice) \| [`JobDescription`](modules.md#jobdescription) \| [`ResumeRedact`](modules.md#resumeredact)
@@ -1443,19 +1466,6 @@ Defines values for Enum19. \
 
 ___
 
-### Enum22
-
-Ƭ **Enum22**: `string`
-
-Defines values for Enum22. \
-[KnownEnum22](enums/KnownEnum22.md) can be used interchangeably with Enum22,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**resumes** \
-**job_descriptions**
-
-___
-
 ### ExpectedRemunerationAnnotation
 
 Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
@@ -1474,12 +1484,12 @@ ___
 
 ___
 
-### GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType
+### IndexDocumentType
 
-Ƭ **GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType**: `string`
+Ƭ **IndexDocumentType**: `string`
 
-Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
-[KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md) can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+Defines values for IndexDocumentType. \
+[KnownIndexDocumentType](enums/KnownIndexDocumentType.md) can be used interchangeably with IndexDocumentType,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1812,6 +1822,12 @@ ___
 
 ___
 
+### PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema
+
+Ƭ **PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
 ### PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
 
 Ƭ **PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
@@ -1839,19 +1855,6 @@ ___
 ### PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
 
 Ƭ **PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PostContentSchemaDocumentType
-
-Ƭ **PostContentSchemaDocumentType**: `string`
-
-Defines values for PostContentSchemaDocumentType. \
-[KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md) can be used interchangeably with PostContentSchemaDocumentType,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**resumes** \
-**job_descriptions**
 
 ___
 

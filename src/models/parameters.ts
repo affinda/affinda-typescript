@@ -40,6 +40,8 @@ import {
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
   JobDescriptionSearchConfig as JobDescriptionSearchConfigMapper,
   PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
+  IndexCreate as IndexCreateMapper,
+  IndexUpdate as IndexUpdateMapper,
   PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
   ResumeSearchParameters as ResumeSearchParametersMapper,
   ResumeSearchConfig as ResumeSearchConfigMapper,
@@ -392,6 +394,16 @@ export const customIdentifier: OperationQueryParameter = {
     serializedName: "custom_identifier",
     type: {
       name: "String"
+    }
+  }
+};
+
+export const compact: OperationQueryParameter = {
+  parameterPath: ["options", "compact"],
+  mapper: {
+    serializedName: "compact",
+    type: {
+      name: "Boolean"
     }
   }
 };
@@ -995,14 +1007,14 @@ export const documentType: OperationQueryParameter = {
   }
 };
 
-export const documentType1: OperationParameter = {
-  parameterPath: ["options", "documentType"],
-  mapper: {
-    serializedName: "documentType",
-    type: {
-      name: "String"
-    }
-  }
+export const body37: OperationParameter = {
+  parameterPath: "body",
+  mapper: IndexCreateMapper
+};
+
+export const body38: OperationParameter = {
+  parameterPath: "body",
+  mapper: IndexUpdateMapper
 };
 
 export const name3: OperationURLParameter = {
@@ -1016,12 +1028,12 @@ export const name3: OperationURLParameter = {
   }
 };
 
-export const body37: OperationParameter = {
+export const body39: OperationParameter = {
   parameterPath: "body",
   mapper: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
-export const body38: OperationParameter = {
+export const body40: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper
 };
@@ -1194,12 +1206,12 @@ export const managementLevelWeight: OperationQueryParameter = {
   }
 };
 
-export const body39: OperationParameter = {
+export const body41: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchConfigMapper
 };
 
-export const body40: OperationParameter = {
+export const body42: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
 };

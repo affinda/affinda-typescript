@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.26.0] - 2023-11-14
+### Added
+- Add PATCH /index/<name> endpoint
+- Add user to Index object
+- Add "compact" query parameter to GET /documents/<identifier> endpoint
+- Add "compact" query parameter to POST /documents endpoint
+
+### Changed
+- Updated readme example
+
 ## [6.25.0] - 2023-11-08
 ### Added
 - Add `parent` field to `Annotation`
