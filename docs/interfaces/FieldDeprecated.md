@@ -8,11 +8,15 @@
 
 - [autoValidationThreshold](FieldDeprecated.md#autovalidationthreshold)
 - [dataPoint](FieldDeprecated.md#datapoint)
+- [dataSource](FieldDeprecated.md#datasource)
 - [disabled](FieldDeprecated.md#disabled)
 - [displayEnumValue](FieldDeprecated.md#displayenumvalue)
+- [dropNullEnums](FieldDeprecated.md#dropnullenums)
+- [fieldType](FieldDeprecated.md#fieldtype)
 - [fields](FieldDeprecated.md#fields)
 - [label](FieldDeprecated.md#label)
 - [mandatory](FieldDeprecated.md#mandatory)
+- [mapping](FieldDeprecated.md#mapping)
 - [showDropdown](FieldDeprecated.md#showdropdown)
 - [slug](FieldDeprecated.md#slug)
 
@@ -30,6 +34,14 @@ ___
 
 ___
 
+### dataSource
+
+• `Optional` **dataSource**: `string`
+
+Data source mapping identifier
+
+___
+
 ### disabled
 
 • `Optional` **disabled**: `boolean`
@@ -39,6 +51,22 @@ ___
 ### displayEnumValue
 
 • `Optional` **displayEnumValue**: `boolean`
+
+___
+
+### dropNullEnums
+
+• `Optional` **dropNullEnums**: `boolean`
+
+If True, any dropdown annotations that fail to be mapped will be discarded
+
+___
+
+### fieldType
+
+• **fieldType**: `string`
+
+The different data types of annotations
 
 ___
 
@@ -57,6 +85,14 @@ ___
 ### mandatory
 
 • `Optional` **mandatory**: `boolean`
+
+___
+
+### mapping
+
+• `Optional` **mapping**: `string`
+
+Defines how the data point is mapped to the data source
 
 ___
 

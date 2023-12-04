@@ -46,6 +46,8 @@ export interface Organization {
   isTrial?: boolean;
   /** Configuration of the embeddable validation tool. */
   validationToolConfig?: OrganizationValidationToolConfig;
+  /** Whether to show the custom field creation in the UI. */
+  showCustomFieldCreation?: boolean;
 }
 
 /** Configuration of the embeddable validation tool. */
@@ -307,11 +309,19 @@ export interface FieldGroup {
 export interface FieldDeprecated {
   label: string;
   slug?: string;
+  /** The different data types of annotations */
+  fieldType: AnnotationContentType;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
   dataPoint: string;
   mandatory?: boolean;
   disabled?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
+  /** If True, any dropdown annotations that fail to be mapped will be discarded */
+  dropNullEnums?: boolean;
   displayEnumValue?: boolean;
   fields?: FieldDeprecated[];
 }
@@ -331,11 +341,19 @@ export interface Field {
   label: string;
   /** Data point identifier */
   dataPoint: string;
+  /** The different data types of annotations */
+  fieldType: AnnotationContentType;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
   mandatory?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
+  /** If True, any dropdown annotations that fail to be mapped will be discarded */
+  dropNullEnums?: boolean;
   enabledChildFields?: Field[];
   disabledChildFields?: Field[];
   slug?: string;
@@ -362,9 +380,9 @@ export interface CollectionCreate {
   name: string;
   /** Uniquely identify a workspace. */
   workspace: string;
-  /** Uniquely identify an extractor. */
+  /** Uniquely identify an extractor. Required if you are not a super user. */
   extractor?: string;
-  /** Not applicable, please leave empty. */
+  /** Not applicable, please leave empty. This feature is reserved for super user. */
   baseExtractor?: string;
   autoValidationThreshold?: number;
   fields?: FieldGroup[];
@@ -408,11 +426,15 @@ export interface DataFieldCreate {
 /** The field to be created. */
 export interface DataFieldCreateField {
   label: string;
+  /** The different data types of annotations */
+  fieldType?: AnnotationContentType;
   mandatory?: boolean;
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
   autoValidationThreshold?: number;
+  /** Data source mapping identifier */
+  dataSource?: string;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -444,6 +466,8 @@ export interface DataField {
 /** The field to be created. */
 export interface DataFieldField {
   label: string;
+  /** The different data types of annotations */
+  fieldType?: AnnotationContentType;
   mandatory: boolean;
   showDropdown: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
@@ -451,6 +475,8 @@ export interface DataFieldField {
   autoValidationThreshold: number | null;
   enabledChildFields: Field[];
   disabledChildFields: Field[];
+  /** Data source mapping identifier */
+  dataSource?: string;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -471,6 +497,7 @@ export interface DataFieldDataPoint {
   children: DataPoint[];
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
   manualEntry?: boolean;
+  availableDataSources?: MappingDataSource[];
 }
 
 export interface DataPoint {
@@ -491,8 +518,27 @@ export interface DataPoint {
   /** The identifier of the parent data point if applicable. */
   parent?: string;
   children?: DataPoint[];
+  availableDataSources?: MappingDataSource[];
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
   manualEntry?: boolean;
+}
+
+/** A mapping data source is used to map from raw data found by our AI models to records in your database. */
+export interface MappingDataSource {
+  /**
+   * Uniquely identify a mapping data source.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly identifier: string;
+  name?: string;
+  /** Attribute in the schema which uniquely identifiers the value */
+  keyProperty: string;
+  /** Attribute in the schema which is used to display the value */
+  displayProperty: string;
+  /** The organization that this mapping data source belongs to. */
+  organization: string | null;
+  /** The schema of the mapping data source. */
+  schema?: Record<string, unknown>;
 }
 
 export interface CollectionField {
@@ -1369,6 +1415,24 @@ export interface AnnotationUpdate {
 }
 
 export interface AnnotationUpdateParsed {}
+
+/** A mapping data source is used to map from raw data found by our AI models to records in your database. */
+export interface MappingDataSourceCreate {
+  name?: string;
+  /** The organization that this mapping data source belongs to. */
+  organization: string;
+  /** Attribute in the schema which uniquely identifiers the value */
+  keyProperty?: string;
+  /** Attribute in the schema which is used to display the value */
+  displayProperty?: string;
+  values?: Record<string, unknown>[];
+  /** The schema of the mapping data source. */
+  schema?: Record<string, unknown>;
+}
+
+export interface Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Record<string, unknown>[];
+}
 
 export interface TagCreate {
   name: string;
@@ -2429,6 +2493,27 @@ export interface ResumeRedactData {
   redactedPdf?: string;
 }
 
+export interface DateRangeAnnotationParsed {
+  start?: DateRangeValue;
+  end?: DateRangeValue;
+}
+
+export interface DateRangeValue {
+  date?: Date;
+  isCurrent?: boolean;
+  day?: number;
+  month?: number;
+  year?: number;
+}
+
+export interface PhoneNumberAnnotationParsed {
+  rawText?: string;
+  formattedNumber?: string;
+  countryCode?: string;
+  internationalCountryCode?: number;
+  nationalNumber?: string;
+}
+
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -2491,6 +2576,9 @@ export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSch
 
 export type Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -2593,6 +2681,14 @@ export type TableAnnotation = Annotation & {
 
 export type CurrencyCodeAnnotation = Annotation & {
   parsed?: DataPointChoice;
+};
+
+export type DateRangeAnnotation = Annotation & {
+  parsed?: DateRangeAnnotationParsed;
+};
+
+export type PhoneNumberAnnotation = Annotation & {
+  parsed?: PhoneNumberAnnotationParsed;
 };
 
 export type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
@@ -2831,6 +2927,60 @@ export enum KnownWorkspaceSplitDocumentsOptions {
  */
 export type WorkspaceSplitDocumentsOptions = string;
 
+/** Known values of {@link AnnotationContentType} that the service accepts. */
+export enum KnownAnnotationContentType {
+  Text = "text",
+  Integer = "integer",
+  Float = "float",
+  Decimal = "decimal",
+  Date = "date",
+  Datetime = "datetime",
+  Daterange = "daterange",
+  Boolean = "boolean",
+  Enum = "enum",
+  Location = "location",
+  Phonenumber = "phonenumber",
+  Json = "json",
+  Table = "table",
+  Cell = "cell",
+  Expectedremuneration = "expectedremuneration",
+  Jobtitle = "jobtitle",
+  Language = "language",
+  Skill = "skill",
+  Yearsexperience = "yearsexperience",
+  Group = "group",
+  TableDeprecated = "table_deprecated"
+}
+
+/**
+ * Defines values for AnnotationContentType. \
+ * {@link KnownAnnotationContentType} can be used interchangeably with AnnotationContentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **text** \
+ * **integer** \
+ * **float** \
+ * **decimal** \
+ * **date** \
+ * **datetime** \
+ * **daterange** \
+ * **boolean** \
+ * **enum** \
+ * **location** \
+ * **phonenumber** \
+ * **json** \
+ * **table** \
+ * **cell** \
+ * **expectedremuneration** \
+ * **jobtitle** \
+ * **language** \
+ * **skill** \
+ * **yearsexperience** \
+ * **group** \
+ * **table_deprecated**
+ */
+export type AnnotationContentType = string;
+
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
 export enum KnownCollectionDateFormatPreference {
   DMY = "DMY",
@@ -2866,56 +3016,6 @@ export enum KnownDateFormatPreference {
  * **YMD**
  */
 export type DateFormatPreference = string;
-
-/** Known values of {@link AnnotationContentType} that the service accepts. */
-export enum KnownAnnotationContentType {
-  Text = "text",
-  Integer = "integer",
-  Float = "float",
-  Decimal = "decimal",
-  Date = "date",
-  Datetime = "datetime",
-  Boolean = "boolean",
-  Enum = "enum",
-  Location = "location",
-  Json = "json",
-  Table = "table",
-  Cell = "cell",
-  Expectedremuneration = "expectedremuneration",
-  Jobtitle = "jobtitle",
-  Language = "language",
-  Skill = "skill",
-  Yearsexperience = "yearsexperience",
-  Group = "group",
-  TableDeprecated = "table_deprecated"
-}
-
-/**
- * Defines values for AnnotationContentType. \
- * {@link KnownAnnotationContentType} can be used interchangeably with AnnotationContentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **text** \
- * **integer** \
- * **float** \
- * **decimal** \
- * **date** \
- * **datetime** \
- * **boolean** \
- * **enum** \
- * **location** \
- * **json** \
- * **table** \
- * **cell** \
- * **expectedremuneration** \
- * **jobtitle** \
- * **language** \
- * **skill** \
- * **yearsexperience** \
- * **group** \
- * **table_deprecated**
- */
-export type AnnotationContentType = string;
 
 /** Known values of {@link DocumentState} that the service accepts. */
 export enum KnownDocumentState {
@@ -4100,6 +4200,72 @@ export type AffindaAPIBatchUpdateAnnotationsResponse = (Annotation | null)[];
 
 /** Optional parameters. */
 export interface AffindaAPIBatchDeleteAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPICreateMappingDataSourceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createMappingDataSource operation. */
+export type AffindaAPICreateMappingDataSourceResponse = MappingDataSource;
+
+/** Optional parameters. */
+export interface AffindaAPIGetMappingDataSourceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getMappingDataSource operation. */
+export type AffindaAPIGetMappingDataSourceResponse = MappingDataSource;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteMappingDataSourceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIListMappingDataSourceValuesOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Search for specific values */
+  search?: string;
+}
+
+/** Contains response data for the listMappingDataSourceValues operation. */
+export type AffindaAPIListMappingDataSourceValuesResponse = Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPIReplaceMappingDataSourceValuesOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the replaceMappingDataSourceValues operation. */
+export type AffindaAPIReplaceMappingDataSourceValuesResponse = Record<
+  string,
+  unknown
+>[];
+
+/** Optional parameters. */
+export interface AffindaAPIAddMappingDataSourceValueOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the addMappingDataSourceValue operation. */
+export type AffindaAPIAddMappingDataSourceValueResponse = Record<
+  string,
+  unknown
+>;
+
+/** Optional parameters. */
+export interface AffindaAPIGetMappingDataSourceValueOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getMappingDataSourceValue operation. */
+export type AffindaAPIGetMappingDataSourceValueResponse = Record<
+  string,
+  unknown
+>;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteMappingDataSourceValueOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */

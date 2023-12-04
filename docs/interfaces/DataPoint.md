@@ -7,6 +7,7 @@
 ### Properties
 
 - [annotationContentType](DataPoint.md#annotationcontenttype)
+- [availableDataSources](DataPoint.md#availabledatasources)
 - [children](DataPoint.md#children)
 - [description](DataPoint.md#description)
 - [extractor](DataPoint.md#extractor)
@@ -26,6 +27,12 @@
 • **annotationContentType**: `string`
 
 The different data types of annotations
+
+___
+
+### availableDataSources
+
+• `Optional` **availableDataSources**: [`MappingDataSource`](MappingDataSource.md)[]
 
 ___
 

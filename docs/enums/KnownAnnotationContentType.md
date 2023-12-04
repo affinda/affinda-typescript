@@ -11,6 +11,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Boolean](KnownAnnotationContentType.md#boolean)
 - [Cell](KnownAnnotationContentType.md#cell)
 - [Date](KnownAnnotationContentType.md#date)
+- [Daterange](KnownAnnotationContentType.md#daterange)
 - [Datetime](KnownAnnotationContentType.md#datetime)
 - [Decimal](KnownAnnotationContentType.md#decimal)
 - [Enum](KnownAnnotationContentType.md#enum)
@@ -22,6 +23,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Json](KnownAnnotationContentType.md#json)
 - [Language](KnownAnnotationContentType.md#language)
 - [Location](KnownAnnotationContentType.md#location)
+- [Phonenumber](KnownAnnotationContentType.md#phonenumber)
 - [Skill](KnownAnnotationContentType.md#skill)
 - [Table](KnownAnnotationContentType.md#table)
 - [TableDeprecated](KnownAnnotationContentType.md#tabledeprecated)
@@ -45,6 +47,12 @@ ___
 ### Date
 
 • **Date** = ``"date"``
+
+___
+
+### Daterange
+
+• **Daterange** = ``"daterange"``
 
 ___
 
@@ -111,6 +119,12 @@ ___
 ### Location
 
 • **Location** = ``"location"``
+
+___
+
+### Phonenumber
+
+• **Phonenumber** = ``"phonenumber"``
 
 ___
 

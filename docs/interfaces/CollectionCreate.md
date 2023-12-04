@@ -39,7 +39,7 @@ ___
 
 • `Optional` **baseExtractor**: `string`
 
-Not applicable, please leave empty.
+Not applicable, please leave empty. This feature is reserved for super user.
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **extractor**: `string`
 
-Uniquely identify an extractor.
+Uniquely identify an extractor. Required if you are not a super user.
 
 ___
 

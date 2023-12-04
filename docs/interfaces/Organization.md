@@ -11,6 +11,7 @@
 - [isTrial](Organization.md#istrial)
 - [name](Organization.md#name)
 - [resthookSignatureKey](Organization.md#resthooksignaturekey)
+- [showCustomFieldCreation](Organization.md#showcustomfieldcreation)
 - [userRole](Organization.md#userrole)
 - [validationToolConfig](Organization.md#validationtoolconfig)
 
@@ -49,6 +50,14 @@ ___
 • `Optional` **resthookSignatureKey**: `string`
 
 Used to sign webhook payloads so you can verify their integrity.
+
+___
+
+### showCustomFieldCreation
+
+• `Optional` **showCustomFieldCreation**: `boolean`
+
+Whether to show the custom field creation in the UI.
 
 ___
 

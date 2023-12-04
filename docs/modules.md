@@ -40,6 +40,7 @@
 
 - [Accreditation](interfaces/Accreditation.md)
 - [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
+- [AffindaAPIAddMappingDataSourceValueOptionalParams](interfaces/AffindaAPIAddMappingDataSourceValueOptionalParams.md)
 - [AffindaAPIBatchAddTagOptionalParams](interfaces/AffindaAPIBatchAddTagOptionalParams.md)
 - [AffindaAPIBatchCreateAnnotationsOptionalParams](interfaces/AffindaAPIBatchCreateAnnotationsOptionalParams.md)
 - [AffindaAPIBatchDeleteAnnotationsOptionalParams](interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md)
@@ -58,6 +59,7 @@
 - [AffindaAPICreateInvitationOptionalParams](interfaces/AffindaAPICreateInvitationOptionalParams.md)
 - [AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateJobDescriptionSearchOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md)
+- [AffindaAPICreateMappingDataSourceOptionalParams](interfaces/AffindaAPICreateMappingDataSourceOptionalParams.md)
 - [AffindaAPICreateOrganizationOptionalParams](interfaces/AffindaAPICreateOrganizationOptionalParams.md)
 - [AffindaAPICreateResthookSubscriptionOptionalParams](interfaces/AffindaAPICreateResthookSubscriptionOptionalParams.md)
 - [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
@@ -75,6 +77,8 @@
 - [AffindaAPIDeleteIndexDocumentOptionalParams](interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md)
 - [AffindaAPIDeleteIndexOptionalParams](interfaces/AffindaAPIDeleteIndexOptionalParams.md)
 - [AffindaAPIDeleteInvitationOptionalParams](interfaces/AffindaAPIDeleteInvitationOptionalParams.md)
+- [AffindaAPIDeleteMappingDataSourceOptionalParams](interfaces/AffindaAPIDeleteMappingDataSourceOptionalParams.md)
+- [AffindaAPIDeleteMappingDataSourceValueOptionalParams](interfaces/AffindaAPIDeleteMappingDataSourceValueOptionalParams.md)
 - [AffindaAPIDeleteOrganizationMembershipOptionalParams](interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md)
 - [AffindaAPIDeleteOrganizationOptionalParams](interfaces/AffindaAPIDeleteOrganizationOptionalParams.md)
 - [AffindaAPIDeleteResthookSubscriptionOptionalParams](interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md)
@@ -110,6 +114,8 @@
 - [AffindaAPIGetInvitationOptionalParams](interfaces/AffindaAPIGetInvitationOptionalParams.md)
 - [AffindaAPIGetJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIGetJobDescriptionSearchDetailOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md)
+- [AffindaAPIGetMappingDataSourceOptionalParams](interfaces/AffindaAPIGetMappingDataSourceOptionalParams.md)
+- [AffindaAPIGetMappingDataSourceValueOptionalParams](interfaces/AffindaAPIGetMappingDataSourceValueOptionalParams.md)
 - [AffindaAPIGetOrganizationMembershipOptionalParams](interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md)
 - [AffindaAPIGetOrganizationOptionalParams](interfaces/AffindaAPIGetOrganizationOptionalParams.md)
 - [AffindaAPIGetResthookSubscriptionOptionalParams](interfaces/AffindaAPIGetResthookSubscriptionOptionalParams.md)
@@ -123,10 +129,12 @@
 - [AffindaAPIGetUsageByWorkspaceOptionalParams](interfaces/AffindaAPIGetUsageByWorkspaceOptionalParams.md)
 - [AffindaAPIGetWorkspaceMembershipOptionalParams](interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md)
 - [AffindaAPIGetWorkspaceOptionalParams](interfaces/AffindaAPIGetWorkspaceOptionalParams.md)
+- [AffindaAPIListMappingDataSourceValuesOptionalParams](interfaces/AffindaAPIListMappingDataSourceValuesOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
 - [AffindaAPIRegenerateApiKeyForApiUserOptionalParams](interfaces/AffindaAPIRegenerateApiKeyForApiUserOptionalParams.md)
 - [AffindaAPIReplaceDataPointChoicesOptionalParams](interfaces/AffindaAPIReplaceDataPointChoicesOptionalParams.md)
+- [AffindaAPIReplaceMappingDataSourceValuesOptionalParams](interfaces/AffindaAPIReplaceMappingDataSourceValuesOptionalParams.md)
 - [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
 - [AffindaAPIUpdateAnnotationOptionalParams](interfaces/AffindaAPIUpdateAnnotationOptionalParams.md)
 - [AffindaAPIUpdateApiUserOptionalParams](interfaces/AffindaAPIUpdateApiUserOptionalParams.md)
@@ -222,6 +230,8 @@
 - [DataPointChoiceUpdate](interfaces/DataPointChoiceUpdate.md)
 - [DataPointCreate](interfaces/DataPointCreate.md)
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
+- [DateRangeAnnotationParsed](interfaces/DateRangeAnnotationParsed.md)
+- [DateRangeValue](interfaces/DateRangeValue.md)
 - [Document](interfaces/Document.md)
 - [DocumentCreate](interfaces/DocumentCreate.md)
 - [DocumentCreateData](interfaces/DocumentCreateData.md)
@@ -296,6 +306,8 @@
 - [Location](interfaces/Location.md)
 - [LocationSearchScoreComponent](interfaces/LocationSearchScoreComponent.md)
 - [ManagementLevelSearchScoreComponent](interfaces/ManagementLevelSearchScoreComponent.md)
+- [MappingDataSource](interfaces/MappingDataSource.md)
+- [MappingDataSourceCreate](interfaces/MappingDataSourceCreate.md)
 - [Meta](interfaces/Meta.md)
 - [MetaChildDocumentsItem](interfaces/MetaChildDocumentsItem.md)
 - [MetaParentDocument](interfaces/MetaParentDocument.md)
@@ -314,6 +326,7 @@
 - [Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md)
@@ -326,6 +339,7 @@
 - [PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema](interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
+- [PhoneNumberAnnotationParsed](interfaces/PhoneNumberAnnotationParsed.md)
 - [Rectangle](interfaces/Rectangle.md)
 - [RedactConfig](interfaces/RedactConfig.md)
 - [RegionBias](interfaces/RegionBias.md)
@@ -402,6 +416,7 @@
 ### Type Aliases
 
 - [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
+- [AffindaAPIAddMappingDataSourceValueResponse](modules.md#affindaapiaddmappingdatasourcevalueresponse)
 - [AffindaAPIBatchCreateAnnotationsResponse](modules.md#affindaapibatchcreateannotationsresponse)
 - [AffindaAPIBatchUpdateAnnotationsResponse](modules.md#affindaapibatchupdateannotationsresponse)
 - [AffindaAPICreateAnnotationResponse](modules.md#affindaapicreateannotationresponse)
@@ -417,6 +432,7 @@
 - [AffindaAPICreateInvitationResponse](modules.md#affindaapicreateinvitationresponse)
 - [AffindaAPICreateJobDescriptionSearchEmbedUrlResponse](modules.md#affindaapicreatejobdescriptionsearchembedurlresponse)
 - [AffindaAPICreateJobDescriptionSearchResponse](modules.md#affindaapicreatejobdescriptionsearchresponse)
+- [AffindaAPICreateMappingDataSourceResponse](modules.md#affindaapicreatemappingdatasourceresponse)
 - [AffindaAPICreateOrganizationResponse](modules.md#affindaapicreateorganizationresponse)
 - [AffindaAPICreateResthookSubscriptionResponse](modules.md#affindaapicreateresthooksubscriptionresponse)
 - [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
@@ -453,6 +469,8 @@
 - [AffindaAPIGetInvitationResponse](modules.md#affindaapigetinvitationresponse)
 - [AffindaAPIGetJobDescriptionSearchConfigResponse](modules.md#affindaapigetjobdescriptionsearchconfigresponse)
 - [AffindaAPIGetJobDescriptionSearchDetailResponse](modules.md#affindaapigetjobdescriptionsearchdetailresponse)
+- [AffindaAPIGetMappingDataSourceResponse](modules.md#affindaapigetmappingdatasourceresponse)
+- [AffindaAPIGetMappingDataSourceValueResponse](modules.md#affindaapigetmappingdatasourcevalueresponse)
 - [AffindaAPIGetOrganizationMembershipResponse](modules.md#affindaapigetorganizationmembershipresponse)
 - [AffindaAPIGetOrganizationResponse](modules.md#affindaapigetorganizationresponse)
 - [AffindaAPIGetResthookSubscriptionResponse](modules.md#affindaapigetresthooksubscriptionresponse)
@@ -466,9 +484,11 @@
 - [AffindaAPIGetUsageByWorkspaceResponse](modules.md#affindaapigetusagebyworkspaceresponse)
 - [AffindaAPIGetWorkspaceMembershipResponse](modules.md#affindaapigetworkspacemembershipresponse)
 - [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
+- [AffindaAPIListMappingDataSourceValuesResponse](modules.md#affindaapilistmappingdatasourcevaluesresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
 - [AffindaAPIRegenerateApiKeyForApiUserResponse](modules.md#affindaapiregenerateapikeyforapiuserresponse)
 - [AffindaAPIReplaceDataPointChoicesResponse](modules.md#affindaapireplacedatapointchoicesresponse)
+- [AffindaAPIReplaceMappingDataSourceValuesResponse](modules.md#affindaapireplacemappingdatasourcevaluesresponse)
 - [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
 - [AffindaAPIUpdateAnnotationResponse](modules.md#affindaapiupdateannotationresponse)
 - [AffindaAPIUpdateApiUserResponse](modules.md#affindaapiupdateapiuserresponse)
@@ -496,6 +516,7 @@
 - [DateAnnotationUpdate](modules.md#dateannotationupdate)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
+- [DateRangeAnnotation](modules.md#daterangeannotation)
 - [DocumentFormat](modules.md#documentformat)
 - [DocumentState](modules.md#documentstate)
 - [DocumentType](modules.md#documenttype)
@@ -554,6 +575,7 @@
 - [OrganizationUserRole](modules.md#organizationuserrole)
 - [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
 - [Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
+- [Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema](modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)
 - [Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema](modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)
 - [PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema](modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)
 - [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
@@ -561,6 +583,7 @@
 - [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
 - [PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema](modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)
 - [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
+- [PhoneNumberAnnotation](modules.md#phonenumberannotation)
 - [Region](modules.md#region)
 - [ResthookEvent](modules.md#resthookevent)
 - [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
@@ -595,6 +618,14 @@
 Ƭ **AffindaAPIActivateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
 
 Contains response data for the activateResthookSubscription operation.
+
+___
+
+### AffindaAPIAddMappingDataSourceValueResponse
+
+Ƭ **AffindaAPIAddMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
+
+Contains response data for the addMappingDataSourceValue operation.
 
 ___
 
@@ -715,6 +746,14 @@ ___
 Ƭ **AffindaAPICreateJobDescriptionSearchResponse**: [`JobDescriptionSearch`](interfaces/JobDescriptionSearch.md)
 
 Contains response data for the createJobDescriptionSearch operation.
+
+___
+
+### AffindaAPICreateMappingDataSourceResponse
+
+Ƭ **AffindaAPICreateMappingDataSourceResponse**: [`MappingDataSource`](interfaces/MappingDataSource.md)
+
+Contains response data for the createMappingDataSource operation.
 
 ___
 
@@ -1006,6 +1045,22 @@ Contains response data for the getJobDescriptionSearchDetail operation.
 
 ___
 
+### AffindaAPIGetMappingDataSourceResponse
+
+Ƭ **AffindaAPIGetMappingDataSourceResponse**: [`MappingDataSource`](interfaces/MappingDataSource.md)
+
+Contains response data for the getMappingDataSource operation.
+
+___
+
+### AffindaAPIGetMappingDataSourceValueResponse
+
+Ƭ **AffindaAPIGetMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
+
+Contains response data for the getMappingDataSourceValue operation.
+
+___
+
 ### AffindaAPIGetOrganizationMembershipResponse
 
 Ƭ **AffindaAPIGetOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
@@ -1122,6 +1177,14 @@ Contains response data for the getWorkspace operation.
 
 ___
 
+### AffindaAPIListMappingDataSourceValuesResponse
+
+Ƭ **AffindaAPIListMappingDataSourceValuesResponse**: [`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)
+
+Contains response data for the listMappingDataSourceValues operation.
+
+___
+
 ### AffindaAPIListOccupationGroupsResponse
 
 Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
@@ -1143,6 +1206,14 @@ ___
 Ƭ **AffindaAPIReplaceDataPointChoicesResponse**: [`DataPointChoiceReplaceResponse`](interfaces/DataPointChoiceReplaceResponse.md)
 
 Contains response data for the replaceDataPointChoices operation.
+
+___
+
+### AffindaAPIReplaceMappingDataSourceValuesResponse
+
+Ƭ **AffindaAPIReplaceMappingDataSourceValuesResponse**: `Record`\<`string`, `unknown`\>[]
+
+Contains response data for the replaceMappingDataSourceValues operation.
 
 ___
 
@@ -1318,9 +1389,11 @@ Defines values for AnnotationContentType. \
 **decimal** \
 **date** \
 **datetime** \
+**daterange** \
 **boolean** \
 **enum** \
 **location** \
+**phonenumber** \
 **json** \
 **table** \
 **cell** \
@@ -1393,6 +1466,12 @@ Defines values for DateRange. \
 **week** \
 **month** \
 **year**
+
+___
+
+### DateRangeAnnotation
+
+Ƭ **DateRangeAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`DateRangeAnnotationParsed`](interfaces/DateRangeAnnotationParsed.md)  }
 
 ___
 
@@ -1816,6 +1895,12 @@ ___
 
 ___
 
+### Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema
+
+Ƭ **Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
 ### Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
 
 Ƭ **Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
@@ -1855,6 +1940,12 @@ ___
 ### PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
 
 Ƭ **PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### PhoneNumberAnnotation
+
+Ƭ **PhoneNumberAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`PhoneNumberAnnotationParsed`](interfaces/PhoneNumberAnnotationParsed.md)  }
 
 ___
 

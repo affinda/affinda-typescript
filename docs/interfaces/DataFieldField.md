@@ -9,9 +9,11 @@ The field to be created.
 ### Properties
 
 - [autoValidationThreshold](DataFieldField.md#autovalidationthreshold)
+- [dataSource](DataFieldField.md#datasource)
 - [disabledChildFields](DataFieldField.md#disabledchildfields)
 - [displayEnumValue](DataFieldField.md#displayenumvalue)
 - [enabledChildFields](DataFieldField.md#enabledchildfields)
+- [fieldType](DataFieldField.md#fieldtype)
 - [label](DataFieldField.md#label)
 - [mandatory](DataFieldField.md#mandatory)
 - [showDropdown](DataFieldField.md#showdropdown)
@@ -21,6 +23,14 @@ The field to be created.
 ### autoValidationThreshold
 
 • **autoValidationThreshold**: ``null`` \| `number`
+
+___
+
+### dataSource
+
+• `Optional` **dataSource**: `string`
+
+Data source mapping identifier
 
 ___
 
@@ -41,6 +51,14 @@ ___
 ### enabledChildFields
 
 • **enabledChildFields**: [`Field`](Field.md)[]
+
+___
+
+### fieldType
+
+• `Optional` **fieldType**: `string`
+
+The different data types of annotations
 
 ___
 

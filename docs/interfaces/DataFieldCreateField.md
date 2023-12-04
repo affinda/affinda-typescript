@@ -9,7 +9,9 @@ The field to be created.
 ### Properties
 
 - [autoValidationThreshold](DataFieldCreateField.md#autovalidationthreshold)
+- [dataSource](DataFieldCreateField.md#datasource)
 - [displayEnumValue](DataFieldCreateField.md#displayenumvalue)
+- [fieldType](DataFieldCreateField.md#fieldtype)
 - [label](DataFieldCreateField.md#label)
 - [mandatory](DataFieldCreateField.md#mandatory)
 - [showDropdown](DataFieldCreateField.md#showdropdown)
@@ -22,11 +24,27 @@ The field to be created.
 
 ___
 
+### dataSource
+
+• `Optional` **dataSource**: `string`
+
+Data source mapping identifier
+
+___
+
 ### displayEnumValue
 
 • `Optional` **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
+
+___
+
+### fieldType
+
+• `Optional` **fieldType**: `string`
+
+The different data types of annotations
 
 ___
 

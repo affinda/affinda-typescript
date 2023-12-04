@@ -165,6 +165,12 @@ export const Organization: coreClient.CompositeMapper = {
           name: "Composite",
           className: "OrganizationValidationToolConfig"
         }
+      },
+      showCustomFieldCreation: {
+        serializedName: "showCustomFieldCreation",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -1339,6 +1345,27 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      fieldType: {
+        serializedName: "fieldType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      dataSource: {
+        serializedName: "dataSource",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      mapping: {
+        serializedName: "mapping",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       dataPoint: {
         serializedName: "dataPoint",
         required: true,
@@ -1367,6 +1394,12 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
       },
       showDropdown: {
         serializedName: "showDropdown",
+        type: {
+          name: "Boolean"
+        }
+      },
+      dropNullEnums: {
+        serializedName: "dropNullEnums",
         type: {
           name: "Boolean"
         }
@@ -1483,6 +1516,27 @@ export const Field: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      fieldType: {
+        serializedName: "fieldType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      dataSource: {
+        serializedName: "dataSource",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      mapping: {
+        serializedName: "mapping",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       mandatory: {
         serializedName: "mandatory",
         type: {
@@ -1508,6 +1562,12 @@ export const Field: coreClient.CompositeMapper = {
       },
       displayEnumValue: {
         serializedName: "displayEnumValue",
+        type: {
+          name: "Boolean"
+        }
+      },
+      dropNullEnums: {
+        serializedName: "dropNullEnums",
         type: {
           name: "Boolean"
         }
@@ -1844,6 +1904,12 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      fieldType: {
+        serializedName: "fieldType",
+        type: {
+          name: "String"
+        }
+      },
       mandatory: {
         serializedName: "mandatory",
         type: {
@@ -1871,6 +1937,13 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number"
+        }
+      },
+      dataSource: {
+        serializedName: "dataSource",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
@@ -1980,6 +2053,12 @@ export const DataFieldField: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      fieldType: {
+        serializedName: "fieldType",
+        type: {
+          name: "String"
+        }
+      },
       mandatory: {
         serializedName: "mandatory",
         required: true,
@@ -2037,6 +2116,13 @@ export const DataFieldField: coreClient.CompositeMapper = {
               className: "Field"
             }
           }
+        }
+      },
+      dataSource: {
+        serializedName: "dataSource",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
@@ -2123,6 +2209,18 @@ export const DataFieldDataPoint: coreClient.CompositeMapper = {
         serializedName: "manualEntry",
         type: {
           name: "Boolean"
+        }
+      },
+      availableDataSources: {
+        serializedName: "availableDataSources",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "MappingDataSource"
+            }
+          }
         }
       }
     }
@@ -2215,10 +2313,75 @@ export const DataPoint: coreClient.CompositeMapper = {
           }
         }
       },
+      availableDataSources: {
+        serializedName: "availableDataSources",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "MappingDataSource"
+            }
+          }
+        }
+      },
       manualEntry: {
         serializedName: "manualEntry",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const MappingDataSource: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "MappingDataSource",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        readOnly: true,
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      keyProperty: {
+        serializedName: "keyProperty",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      displayProperty: {
+        serializedName: "displayProperty",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      schema: {
+        serializedName: "schema",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
         }
       }
     }
@@ -6088,6 +6251,82 @@ export const AnnotationUpdateParsed: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "AnnotationUpdateParsed"
+  }
+};
+
+export const MappingDataSourceCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "MappingDataSourceCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      keyProperty: {
+        serializedName: "keyProperty",
+        type: {
+          name: "String"
+        }
+      },
+      displayProperty: {
+        serializedName: "displayProperty",
+        type: {
+          name: "String"
+        }
+      },
+      values: {
+        serializedName: "values",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      },
+      schema: {
+        serializedName: "schema",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      }
+    }
+  }
+};
+
+export const Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      }
+    }
   }
 };
 
@@ -11431,6 +11670,117 @@ export const ResumeRedactData: coreClient.CompositeMapper = {
   }
 };
 
+export const DateRangeAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DateRangeAnnotationParsed",
+    modelProperties: {
+      start: {
+        serializedName: "start",
+        type: {
+          name: "Composite",
+          className: "DateRangeValue"
+        }
+      },
+      end: {
+        serializedName: "end",
+        type: {
+          name: "Composite",
+          className: "DateRangeValue"
+        }
+      }
+    }
+  }
+};
+
+export const DateRangeValue: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DateRangeValue",
+    modelProperties: {
+      date: {
+        serializedName: "date",
+        type: {
+          name: "Date"
+        }
+      },
+      isCurrent: {
+        serializedName: "isCurrent",
+        type: {
+          name: "Boolean"
+        }
+      },
+      day: {
+        serializedName: "day",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      month: {
+        serializedName: "month",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      year: {
+        serializedName: "year",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const PhoneNumberAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PhoneNumberAnnotationParsed",
+    modelProperties: {
+      rawText: {
+        serializedName: "rawText",
+        type: {
+          name: "String"
+        }
+      },
+      formattedNumber: {
+        serializedName: "formattedNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      countryCode: {
+        serializedName: "countryCode",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      internationalCountryCode: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
+        serializedName: "internationalCountryCode",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      nationalNumber: {
+        serializedName: "nationalNumber",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const DocumentCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -11652,6 +12002,19 @@ export const Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchem
     modelProperties: {
       ...PaginatedResponse.type.modelProperties,
       ...Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }
@@ -12059,6 +12422,42 @@ export const CurrencyCodeAnnotation: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "DataPointChoice"
+        }
+      }
+    }
+  }
+};
+
+export const DateRangeAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DateRangeAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "DateRangeAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const PhoneNumberAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PhoneNumberAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "PhoneNumberAnnotationParsed"
         }
       }
     }

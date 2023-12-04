@@ -8,6 +8,7 @@ The data point to be created for this field. If a data point with the same slug 
 
 ### Properties
 
+- [availableDataSources](DataFieldDataPoint.md#availabledatasources)
 - [children](DataFieldDataPoint.md#children)
 - [description](DataFieldDataPoint.md#description)
 - [identifier](DataFieldDataPoint.md#identifier)
@@ -20,6 +21,12 @@ The data point to be created for this field. If a data point with the same slug 
 - [type](DataFieldDataPoint.md#type)
 
 ## Properties
+
+### availableDataSources
+
+• `Optional` **availableDataSources**: [`MappingDataSource`](MappingDataSource.md)[]
+
+___
 
 ### children
 
