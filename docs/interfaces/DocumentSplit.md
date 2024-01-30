@@ -15,9 +15,9 @@ Describe a split of a document.
 
 ### identifier
 
-• `Optional` **identifier**: `Record`\<`string`, `unknown`\>
+• `Optional` **identifier**: `any`
 
-Any object
+Anything
 
 ___
 

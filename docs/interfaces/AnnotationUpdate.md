@@ -59,7 +59,9 @@ ___
 
 ### parsed
 
-• `Optional` **parsed**: [`AnnotationUpdateParsed`](AnnotationUpdateParsed.md)
+• `Optional` **parsed**: `any`
+
+Anything
 
 ___
 

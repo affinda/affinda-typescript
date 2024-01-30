@@ -2,6 +2,10 @@
 
 # Interface: FieldDeprecated
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
 ## Table of contents
 
 ### Properties
@@ -11,7 +15,7 @@
 - [dataSource](FieldDeprecated.md#datasource)
 - [disabled](FieldDeprecated.md#disabled)
 - [displayEnumValue](FieldDeprecated.md#displayenumvalue)
-- [dropNullEnums](FieldDeprecated.md#dropnullenums)
+- [dropNull](FieldDeprecated.md#dropnull)
 - [fieldType](FieldDeprecated.md#fieldtype)
 - [fields](FieldDeprecated.md#fields)
 - [label](FieldDeprecated.md#label)
@@ -54,11 +58,11 @@ ___
 
 ___
 
-### dropNullEnums
+### dropNull
 
-• `Optional` **dropNullEnums**: `boolean`
+• `Optional` **dropNull**: `boolean`
 
-If True, any dropdown annotations that fail to be mapped will be discarded
+If True, any dropdown annotations that fail to parse to a value will be discarded
 
 ___
 

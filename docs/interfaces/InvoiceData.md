@@ -45,6 +45,7 @@
 - [supplierVat](InvoiceData.md#suppliervat)
 - [supplierWebsite](InvoiceData.md#supplierwebsite)
 - [tables](InvoiceData.md#tables)
+- [tablesBeta](InvoiceData.md#tablesbeta)
 
 ## Properties
 
@@ -287,3 +288,9 @@ ___
 ### tables
 
 • `Optional` **tables**: (``null`` \| [`TableAnnotation`](../modules.md#tableannotation))[]
+
+___
+
+### tablesBeta
+
+• `Optional` **tablesBeta**: (``null`` \| [`TableBetaAnnotation`](../modules.md#tablebetaannotation))[]

@@ -36,6 +36,7 @@
 - [rejectedDt](DocumentMeta.md#rejecteddt)
 - [reviewUrl](DocumentMeta.md#reviewurl)
 - [sourceEmail](DocumentMeta.md#sourceemail)
+- [sourceEmailAddress](DocumentMeta.md#sourceemailaddress)
 - [tags](DocumentMeta.md#tags)
 - [workspace](DocumentMeta.md#workspace)
 
@@ -246,6 +247,14 @@ ___
 • `Optional` **sourceEmail**: `string`
 
 If the document is created via email ingestion, this field stores the email file's URL.
+
+___
+
+### sourceEmailAddress
+
+• `Optional` **sourceEmailAddress**: `string`
+
+If the document is created via email ingestion, this field stores the email's From address.
 
 ___
 

@@ -14,6 +14,7 @@ The field to be created.
 - [fieldType](DataFieldCreateField.md#fieldtype)
 - [label](DataFieldCreateField.md#label)
 - [mandatory](DataFieldCreateField.md#mandatory)
+- [mapping](DataFieldCreateField.md#mapping)
 - [showDropdown](DataFieldCreateField.md#showdropdown)
 
 ## Properties
@@ -57,6 +58,14 @@ ___
 ### mandatory
 
 • `Optional` **mandatory**: `boolean`
+
+___
+
+### mapping
+
+• `Optional` **mapping**: `string`
+
+Defines how the data point is mapped to the data source
 
 ___
 

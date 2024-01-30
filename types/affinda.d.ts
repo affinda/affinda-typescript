@@ -360,6 +360,11 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     createMappingDataSource(body: MappingDataSourceCreate, options?: AffindaAPICreateMappingDataSourceOptionalParams): Promise<AffindaAPICreateMappingDataSourceResponse>;
     /**
+     * Returns the list of all custom mapping data sources.
+     * @param options The options parameters.
+     */
+    listMappingDataSources(options?: AffindaAPIListMappingDataSourcesOptionalParams): Promise<AffindaAPIListMappingDataSourcesResponse>;
+    /**
      * Return a specific mapping data source.
      * @param identifier Mapping data source's identifier
      * @param options The options parameters.
@@ -405,6 +410,37 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param options The options parameters.
      */
     deleteMappingDataSourceValue(identifier: string, value: string, options?: AffindaAPIDeleteMappingDataSourceValueOptionalParams): Promise<void>;
+    /**
+     * Create a custom mapping.
+     * @param body
+     * @param options The options parameters.
+     */
+    createMapping(body: MappingCreate, options?: AffindaAPICreateMappingOptionalParams): Promise<AffindaAPICreateMappingResponse>;
+    /**
+     * Returns the list of all custom data mappings.
+     * @param mappingDataSource Mapping data source's identifier
+     * @param options The options parameters.
+     */
+    listMappings(mappingDataSource: string, options?: AffindaAPIListMappingsOptionalParams): Promise<AffindaAPIListMappingsResponse>;
+    /**
+     * Return a specific mapping.
+     * @param identifier Mapping's identifier
+     * @param options The options parameters.
+     */
+    getMapping(identifier: string, options?: AffindaAPIGetMappingOptionalParams): Promise<AffindaAPIGetMappingResponse>;
+    /**
+     * Delete the specified mapping from the database.
+     * @param identifier Mapping's identifier
+     * @param options The options parameters.
+     */
+    deleteMapping(identifier: string, options?: AffindaAPIDeleteMappingOptionalParams): Promise<void>;
+    /**
+     * Updates a specific mapping.
+     * @param identifier Mapping's identifier
+     * @param body
+     * @param options The options parameters.
+     */
+    updateMapping(identifier: string, body: MappingUpdate, options?: AffindaAPIUpdateMappingOptionalParams): Promise<AffindaAPIUpdateMappingResponse>;
     /**
      * Returns your tags.
      * @param options The options parameters.
@@ -952,6 +988,13 @@ export declare interface AffindaAPICreateMappingDataSourceOptionalParams extends
 export declare type AffindaAPICreateMappingDataSourceResponse = MappingDataSource;
 
 /** Optional parameters. */
+export declare interface AffindaAPICreateMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createMapping operation. */
+export declare type AffindaAPICreateMappingResponse = Mapping;
+
+/** Optional parameters. */
 export declare interface AffindaAPICreateOrganizationOptionalParams extends coreClient.OperationOptions {
     /** Upload avatar for the organization. */
     avatar?: coreRestPipeline.RequestBodyType;
@@ -1055,6 +1098,10 @@ export declare interface AffindaAPIDeleteMappingDataSourceOptionalParams extends
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface AffindaAPIDeleteMappingOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Optional parameters. */
@@ -1415,6 +1462,13 @@ export declare interface AffindaAPIGetMappingDataSourceValueOptionalParams exten
 export declare type AffindaAPIGetMappingDataSourceValueResponse = Record<string, unknown>;
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getMapping operation. */
+export declare type AffindaAPIGetMappingResponse = Mapping;
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1542,6 +1596,17 @@ export declare interface AffindaAPIGetWorkspaceOptionalParams extends coreClient
 export declare type AffindaAPIGetWorkspaceResponse = Workspace;
 
 /** Optional parameters. */
+export declare interface AffindaAPIListMappingDataSourcesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the listMappingDataSources operation. */
+export declare type AffindaAPIListMappingDataSourcesResponse = Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
 export declare interface AffindaAPIListMappingDataSourceValuesOptionalParams extends coreClient.OperationOptions {
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
@@ -1553,6 +1618,17 @@ export declare interface AffindaAPIListMappingDataSourceValuesOptionalParams ext
 
 /** Contains response data for the listMappingDataSourceValues operation. */
 export declare type AffindaAPIListMappingDataSourceValuesResponse = Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface AffindaAPIListMappingsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the listMappings operation. */
+export declare type AffindaAPIListMappingsResponse = Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export declare interface AffindaAPIListOccupationGroupsOptionalParams extends coreClient.OperationOptions {
@@ -1682,6 +1758,13 @@ export declare interface AffindaAPIUpdateJobDescriptionSearchConfigOptionalParam
 
 /** Contains response data for the updateJobDescriptionSearchConfig operation. */
 export declare type AffindaAPIUpdateJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+
+/** Optional parameters. */
+export declare interface AffindaAPIUpdateMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateMapping operation. */
+export declare type AffindaAPIUpdateMappingResponse = Mapping;
 
 /** Optional parameters. */
 export declare interface AffindaAPIUpdateOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
@@ -1818,14 +1901,15 @@ export declare type AnnotationBatchUpdate = AnnotationUpdate & {
  * **phonenumber** \
  * **json** \
  * **table** \
- * **cell** \
  * **expectedremuneration** \
  * **jobtitle** \
  * **language** \
  * **skill** \
  * **yearsexperience** \
  * **group** \
- * **table_deprecated**
+ * **table_deprecated** \
+ * **url** \
+ * **image**
  */
 export declare type AnnotationContentType = string;
 
@@ -1840,14 +1924,12 @@ export declare interface AnnotationCreate {
     dataPoint: string;
     /** Raw data extracted from the before any post-processing */
     raw?: string;
-    parsed?: AnnotationCreateParsed;
+    /** Anything */
+    parsed?: any;
     /** Indicates whether the data has been validated by a human */
     isClientVerified?: boolean;
     /** The parent annotation's ID */
     parent?: number;
-}
-
-export declare interface AnnotationCreateParsed {
 }
 
 export declare interface AnnotationUpdate {
@@ -1859,16 +1941,14 @@ export declare interface AnnotationUpdate {
     pageIndex?: number;
     /** Raw data extracted from the before any post-processing */
     raw?: string;
-    parsed?: AnnotationUpdateParsed;
+    /** Anything */
+    parsed?: any;
     /** Indicates whether the data has been validated by a human */
     isClientVerified?: boolean;
     /** Data point's identifier */
     dataPoint?: string;
     /** The parent annotation's ID */
     parent?: number;
-}
-
-export declare interface AnnotationUpdateParsed {
 }
 
 export declare interface ApiUserCreate {
@@ -2022,6 +2102,10 @@ export declare interface CollectionField {
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue?: boolean;
     autoValidationThreshold?: number;
+    /** Data source mapping identifier */
+    dataSource?: string;
+    /** Defines how the data point is mapped to the data source */
+    mapping?: string;
 }
 
 export declare interface CollectionUpdate {
@@ -2104,10 +2188,6 @@ export declare interface Components1QdassaSchemasInvoicedataPropertiesBanksortco
 export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
     raw?: string;
     parsed?: string;
-}
-
-/** For custom fields. E.g. 'isAvailable': true */
-export declare interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {
 }
 
 export declare interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
@@ -2213,10 +2293,6 @@ export declare interface ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamou
     parsed?: string;
 }
 
-/** For custom fields. E.g. 'isAvailable': true */
-export declare interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {
-}
-
 export declare interface ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {
     match?: boolean;
 }
@@ -2233,10 +2309,6 @@ export declare interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAd
 
 export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
     match?: boolean;
-}
-
-/** For custom fields. E.g. 'isAvailable': true */
-export declare interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {
 }
 
 export declare interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
@@ -2306,6 +2378,8 @@ export declare interface DataFieldCreateField {
     autoValidationThreshold?: number;
     /** Data source mapping identifier */
     dataSource?: string;
+    /** Defines how the data point is mapped to the data source */
+    mapping?: string;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -2343,6 +2417,8 @@ export declare interface DataFieldField {
     disabledChildFields: Field[];
     /** Data source mapping identifier */
     dataSource?: string;
+    /** Defines how the data point is mapped to the data source */
+    mapping?: string;
 }
 
 export declare interface DataPoint {
@@ -2634,6 +2710,8 @@ export declare interface DocumentMeta {
     createdBy?: User;
     /** If the document is created via email ingestion, this field stores the email file's URL. */
     sourceEmail?: string;
+    /** If the document is created via email ingestion, this field stores the email's From address. */
+    sourceEmailAddress?: string;
     regionBias?: RegionBias;
 }
 
@@ -2672,8 +2750,8 @@ export declare interface DocumentMetaWorkspace {
 
 /** Describe a split of a document. */
 export declare interface DocumentSplit {
-    /** Any object */
-    identifier?: Record<string, unknown>;
+    /** Anything */
+    identifier?: any;
     pages: DocumentSplitPage[];
 }
 
@@ -2858,6 +2936,8 @@ export declare interface ExtractorUpdate {
 }
 
 export declare interface Field {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     label: string;
     /** Data point identifier */
     dataPoint: string;
@@ -2872,8 +2952,8 @@ export declare interface Field {
     showDropdown?: boolean;
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue?: boolean;
-    /** If True, any dropdown annotations that fail to be mapped will be discarded */
-    dropNullEnums?: boolean;
+    /** If True, any dropdown annotations that fail to parse to a value will be discarded */
+    dropNull?: boolean;
     enabledChildFields?: Field[];
     disabledChildFields?: Field[];
     slug?: string;
@@ -2887,6 +2967,8 @@ export declare interface FieldCategory {
 }
 
 export declare interface FieldDeprecated {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
     label: string;
     slug?: string;
     /** The different data types of annotations */
@@ -2900,8 +2982,8 @@ export declare interface FieldDeprecated {
     disabled?: boolean;
     autoValidationThreshold?: number;
     showDropdown?: boolean;
-    /** If True, any dropdown annotations that fail to be mapped will be discarded */
-    dropNullEnums?: boolean;
+    /** If True, any dropdown annotations that fail to parse to a value will be discarded */
+    dropNull?: boolean;
     displayEnumValue?: boolean;
     fields?: FieldDeprecated[];
 }
@@ -3029,6 +3111,7 @@ export declare type Invoice = Document_2 & {
 
 export declare interface InvoiceData {
     tables?: (TableAnnotation | null)[];
+    tablesBeta?: (TableBetaAnnotation | null)[];
     invoiceDate?: DateAnnotation;
     invoiceOrderDate?: DateAnnotation;
     paymentDateDue?: DateAnnotation;
@@ -3471,14 +3554,15 @@ export declare enum KnownAnnotationContentType {
     Phonenumber = "phonenumber",
     Json = "json",
     Table = "table",
-    Cell = "cell",
     Expectedremuneration = "expectedremuneration",
     Jobtitle = "jobtitle",
     Language = "language",
     Skill = "skill",
     Yearsexperience = "yearsexperience",
     Group = "group",
-    TableDeprecated = "table_deprecated"
+    TableDeprecated = "table_deprecated",
+    Url = "url",
+    Image = "image"
 }
 
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
@@ -3931,6 +4015,30 @@ export declare interface ManagementLevelSearchScoreComponent {
     score?: number;
 }
 
+/** A mapping allows you to specify specific settings regarding a lookup against a MappingDataSource should be applied. */
+export declare interface Mapping {
+    /**
+     * Uniquely identify a mapping.
+     * NOTE: This property will not be serialized. It can only be populated by the server.
+     */
+    readonly identifier: string;
+    /** The organization that this mapping belongs to. */
+    organization?: string;
+    /** The mapping data source this mapping applies to. */
+    dataSource: string | null;
+    /** Higher values will result in more strict matching. */
+    scoreCutoff?: number;
+}
+
+export declare interface MappingCreate {
+    /** The mapping data source this mapping applies to. */
+    dataSource: string | null;
+    /** Higher values will result in more strict matching. */
+    scoreCutoff?: number;
+    /** The organization that this mapping belongs to. */
+    organization?: string;
+}
+
 /** A mapping data source is used to map from raw data found by our AI models to records in your database. */
 export declare interface MappingDataSource {
     /**
@@ -3961,6 +4069,11 @@ export declare interface MappingDataSourceCreate {
     values?: Record<string, unknown>[];
     /** The schema of the mapping data source. */
     schema?: Record<string, unknown>;
+}
+
+export declare interface MappingUpdate {
+    /** Higher values will result in more strict matching. */
+    scoreCutoff?: number;
 }
 
 export declare interface Meta {
@@ -4157,6 +4270,8 @@ export declare interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplication
     results?: ApiUserWithoutKey[];
 }
 
+export declare type Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
 export declare type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -4169,6 +4284,8 @@ export declare interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicat
     results?: (Annotation | null)[];
 }
 
+export declare type Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
 export declare interface Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: Record<string, unknown>[];
 }
@@ -4178,6 +4295,10 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
 }
 
 export declare type Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export declare interface Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: MappingDataSource[];
+}
 
 export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
@@ -4240,6 +4361,10 @@ export declare type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonS
 export declare type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export declare type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export declare interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
+    results?: Mapping[];
+}
 
 export declare type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
@@ -5078,6 +5203,25 @@ export declare interface RowAnnotationParsed {
     itemOther?: TextAnnotation;
 }
 
+export declare type RowBetaAnnotation = Annotation & {
+    parsed?: RowBetaAnnotationParsed;
+};
+
+export declare interface RowBetaAnnotationParsed {
+    itemCodeBeta?: TextAnnotation;
+    itemDateBeta?: DateAnnotation;
+    itemDescriptionBeta?: TextAnnotation;
+    itemUnitBeta?: TextAnnotation;
+    itemUnitPriceBeta?: FloatAnnotation;
+    itemQuantityBeta?: FloatAnnotation;
+    itemDiscountBeta?: TextAnnotation;
+    itemBaseTotalBeta?: FloatAnnotation;
+    itemTaxRateBeta?: TextAnnotation;
+    itemTaxTotalBeta?: FloatAnnotation;
+    itemTotalBeta?: FloatAnnotation;
+    itemOtherBeta?: TextAnnotation;
+}
+
 export declare interface SearchConfigAction {
     /** Human readable label to display in the UI */
     label: string;
@@ -5137,6 +5281,14 @@ export declare type TableAnnotation = Annotation & {
 
 export declare interface TableAnnotationParsed {
     rows?: (RowAnnotation | null)[];
+}
+
+export declare type TableBetaAnnotation = Annotation & {
+    parsed?: TableBetaAnnotationParsed;
+};
+
+export declare interface TableBetaAnnotationParsed {
+    rows?: (RowBetaAnnotation | null)[];
 }
 
 export declare interface Tag {
@@ -5217,6 +5369,15 @@ export declare interface ThemeConfigTypography {
     fontWeightRegular?: string;
     fontWeightMedium?: string;
     fontWeightBold?: string;
+}
+
+export declare type UrlAnnotation = Annotation & {
+    parsed?: UrlAnnotationParsed;
+};
+
+export declare interface UrlAnnotationParsed {
+    url?: string;
+    domain?: string;
 }
 
 /** Monthly credits consumption */

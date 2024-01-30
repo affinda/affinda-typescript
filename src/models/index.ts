@@ -307,6 +307,8 @@ export interface FieldGroup {
 }
 
 export interface FieldDeprecated {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   label: string;
   slug?: string;
   /** The different data types of annotations */
@@ -320,8 +322,8 @@ export interface FieldDeprecated {
   disabled?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
-  /** If True, any dropdown annotations that fail to be mapped will be discarded */
-  dropNullEnums?: boolean;
+  /** If True, any dropdown annotations that fail to parse to a value will be discarded */
+  dropNull?: boolean;
   displayEnumValue?: boolean;
   fields?: FieldDeprecated[];
 }
@@ -338,6 +340,8 @@ export interface FieldCategory {
 }
 
 export interface Field {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   label: string;
   /** Data point identifier */
   dataPoint: string;
@@ -352,8 +356,8 @@ export interface Field {
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
-  /** If True, any dropdown annotations that fail to be mapped will be discarded */
-  dropNullEnums?: boolean;
+  /** If True, any dropdown annotations that fail to parse to a value will be discarded */
+  dropNull?: boolean;
   enabledChildFields?: Field[];
   disabledChildFields?: Field[];
   slug?: string;
@@ -435,6 +439,8 @@ export interface DataFieldCreateField {
   autoValidationThreshold?: number;
   /** Data source mapping identifier */
   dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -477,6 +483,8 @@ export interface DataFieldField {
   disabledChildFields: Field[];
   /** Data source mapping identifier */
   dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -548,6 +556,10 @@ export interface CollectionField {
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
   autoValidationThreshold?: number;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
 }
 
 /** Monthly credits consumption */
@@ -618,6 +630,8 @@ export interface DocumentMeta {
   createdBy?: User;
   /** If the document is created via email ingestion, this field stores the email file's URL. */
   sourceEmail?: string;
+  /** If the document is created via email ingestion, this field stores the email's From address. */
+  sourceEmailAddress?: string;
   regionBias?: RegionBias;
 }
 
@@ -711,9 +725,6 @@ export interface DocumentWarning {
 
 /** Create resume or job description directly from data. */
 export interface DocumentCreateData {}
-
-/** For custom fields. E.g. 'isAvailable': true */
-export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
 
 /** A JSON-encoded string of the `ResumeData` object. */
 export interface ResumeData {
@@ -945,9 +956,6 @@ export interface ResumeDataSectionsItem {
   text?: string;
 }
 
-/** For custom fields. E.g. 'isAvailable': true */
-export interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {}
-
 export interface JobDescriptionData {
   /** Describes unknown properties. The value of an unknown property can be of "any" type. */
   [property: string]: any;
@@ -1071,9 +1079,6 @@ export interface DocumentUpdate {
 
 export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
 
-/** For custom fields. E.g. 'isAvailable': true */
-export interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {}
-
 /** A JSON-encoded string of the `JobDescriptionData` object. */
 export interface JobDescriptionDataUpdate {
   /** Describes unknown properties. The value of an unknown property can be of "any" type. */
@@ -1183,8 +1188,8 @@ export interface DocumentEditRequest {
 
 /** Describe a split of a document. */
 export interface DocumentSplit {
-  /** Any object */
-  identifier?: Record<string, unknown>;
+  /** Anything */
+  identifier?: any;
   pages: DocumentSplitPage[];
 }
 
@@ -1387,14 +1392,13 @@ export interface AnnotationCreate {
   dataPoint: string;
   /** Raw data extracted from the before any post-processing */
   raw?: string;
-  parsed?: AnnotationCreateParsed;
+  /** Anything */
+  parsed?: any;
   /** Indicates whether the data has been validated by a human */
   isClientVerified?: boolean;
   /** The parent annotation's ID */
   parent?: number;
 }
-
-export interface AnnotationCreateParsed {}
 
 export interface AnnotationUpdate {
   /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
@@ -1405,7 +1409,8 @@ export interface AnnotationUpdate {
   pageIndex?: number;
   /** Raw data extracted from the before any post-processing */
   raw?: string;
-  parsed?: AnnotationUpdateParsed;
+  /** Anything */
+  parsed?: any;
   /** Indicates whether the data has been validated by a human */
   isClientVerified?: boolean;
   /** Data point's identifier */
@@ -1413,8 +1418,6 @@ export interface AnnotationUpdate {
   /** The parent annotation's ID */
   parent?: number;
 }
-
-export interface AnnotationUpdateParsed {}
 
 /** A mapping data source is used to map from raw data found by our AI models to records in your database. */
 export interface MappingDataSourceCreate {
@@ -1430,8 +1433,45 @@ export interface MappingDataSourceCreate {
   schema?: Record<string, unknown>;
 }
 
+export interface Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: MappingDataSource[];
+}
+
 export interface Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: Record<string, unknown>[];
+}
+
+export interface MappingCreate {
+  /** The mapping data source this mapping applies to. */
+  dataSource: string | null;
+  /** Higher values will result in more strict matching. */
+  scoreCutoff?: number;
+  /** The organization that this mapping belongs to. */
+  organization?: string;
+}
+
+/** A mapping allows you to specify specific settings regarding a lookup against a MappingDataSource should be applied. */
+export interface Mapping {
+  /**
+   * Uniquely identify a mapping.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly identifier: string;
+  /** The organization that this mapping belongs to. */
+  organization?: string;
+  /** The mapping data source this mapping applies to. */
+  dataSource: string | null;
+  /** Higher values will result in more strict matching. */
+  scoreCutoff?: number;
+}
+
+export interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Mapping[];
+}
+
+export interface MappingUpdate {
+  /** Higher values will result in more strict matching. */
+  scoreCutoff?: number;
 }
 
 export interface TagCreate {
@@ -2282,6 +2322,7 @@ export interface ResumeSearchEmbed {
 
 export interface InvoiceData {
   tables?: (TableAnnotation | null)[];
+  tablesBeta?: (TableBetaAnnotation | null)[];
   invoiceDate?: DateAnnotation;
   invoiceOrderDate?: DateAnnotation;
   paymentDateDue?: DateAnnotation;
@@ -2341,6 +2382,25 @@ export interface RowAnnotationParsed {
   itemTaxTotal?: FloatAnnotation;
   itemTotal?: FloatAnnotation;
   itemOther?: TextAnnotation;
+}
+
+export interface TableBetaAnnotationParsed {
+  rows?: (RowBetaAnnotation | null)[];
+}
+
+export interface RowBetaAnnotationParsed {
+  itemCodeBeta?: TextAnnotation;
+  itemDateBeta?: DateAnnotation;
+  itemDescriptionBeta?: TextAnnotation;
+  itemUnitBeta?: TextAnnotation;
+  itemUnitPriceBeta?: FloatAnnotation;
+  itemQuantityBeta?: FloatAnnotation;
+  itemDiscountBeta?: TextAnnotation;
+  itemBaseTotalBeta?: FloatAnnotation;
+  itemTaxRateBeta?: TextAnnotation;
+  itemTaxTotalBeta?: FloatAnnotation;
+  itemTotalBeta?: FloatAnnotation;
+  itemOtherBeta?: TextAnnotation;
 }
 
 export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
@@ -2514,6 +2574,11 @@ export interface PhoneNumberAnnotationParsed {
   nationalNumber?: string;
 }
 
+export interface UrlAnnotationParsed {
+  url?: string;
+  domain?: string;
+}
+
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -2577,8 +2642,14 @@ export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSch
 export type Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
+export type Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
 export type Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -2679,6 +2750,14 @@ export type TableAnnotation = Annotation & {
   parsed?: TableAnnotationParsed;
 };
 
+export type RowBetaAnnotation = Annotation & {
+  parsed?: RowBetaAnnotationParsed;
+};
+
+export type TableBetaAnnotation = Annotation & {
+  parsed?: TableBetaAnnotationParsed;
+};
+
 export type CurrencyCodeAnnotation = Annotation & {
   parsed?: DataPointChoice;
 };
@@ -2689,6 +2768,10 @@ export type DateRangeAnnotation = Annotation & {
 
 export type PhoneNumberAnnotation = Annotation & {
   parsed?: PhoneNumberAnnotationParsed;
+};
+
+export type UrlAnnotation = Annotation & {
+  parsed?: UrlAnnotationParsed;
 };
 
 export type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
@@ -2942,14 +3025,15 @@ export enum KnownAnnotationContentType {
   Phonenumber = "phonenumber",
   Json = "json",
   Table = "table",
-  Cell = "cell",
   Expectedremuneration = "expectedremuneration",
   Jobtitle = "jobtitle",
   Language = "language",
   Skill = "skill",
   Yearsexperience = "yearsexperience",
   Group = "group",
-  TableDeprecated = "table_deprecated"
+  TableDeprecated = "table_deprecated",
+  Url = "url",
+  Image = "image"
 }
 
 /**
@@ -2970,14 +3054,15 @@ export enum KnownAnnotationContentType {
  * **phonenumber** \
  * **json** \
  * **table** \
- * **cell** \
  * **expectedremuneration** \
  * **jobtitle** \
  * **language** \
  * **skill** \
  * **yearsexperience** \
  * **group** \
- * **table_deprecated**
+ * **table_deprecated** \
+ * **url** \
+ * **image**
  */
 export type AnnotationContentType = string;
 
@@ -4210,6 +4295,18 @@ export interface AffindaAPICreateMappingDataSourceOptionalParams
 export type AffindaAPICreateMappingDataSourceResponse = MappingDataSource;
 
 /** Optional parameters. */
+export interface AffindaAPIListMappingDataSourcesOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the listMappingDataSources operation. */
+export type AffindaAPIListMappingDataSourcesResponse = Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
 export interface AffindaAPIGetMappingDataSourceOptionalParams
   extends coreClient.OperationOptions {}
 
@@ -4267,6 +4364,43 @@ export type AffindaAPIGetMappingDataSourceValueResponse = Record<
 /** Optional parameters. */
 export interface AffindaAPIDeleteMappingDataSourceValueOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPICreateMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createMapping operation. */
+export type AffindaAPICreateMappingResponse = Mapping;
+
+/** Optional parameters. */
+export interface AffindaAPIListMappingsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the listMappings operation. */
+export type AffindaAPIListMappingsResponse = Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface AffindaAPIGetMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getMapping operation. */
+export type AffindaAPIGetMappingResponse = Mapping;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateMapping operation. */
+export type AffindaAPIUpdateMappingResponse = Mapping;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllTagsOptionalParams

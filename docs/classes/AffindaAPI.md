@@ -41,6 +41,7 @@
 - [createInvitation](AffindaAPI.md#createinvitation)
 - [createJobDescriptionSearch](AffindaAPI.md#createjobdescriptionsearch)
 - [createJobDescriptionSearchEmbedUrl](AffindaAPI.md#createjobdescriptionsearchembedurl)
+- [createMapping](AffindaAPI.md#createmapping)
 - [createMappingDataSource](AffindaAPI.md#createmappingdatasource)
 - [createOrganization](AffindaAPI.md#createorganization)
 - [createResthookSubscription](AffindaAPI.md#createresthooksubscription)
@@ -59,6 +60,7 @@
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
 - [deleteInvitation](AffindaAPI.md#deleteinvitation)
+- [deleteMapping](AffindaAPI.md#deletemapping)
 - [deleteMappingDataSource](AffindaAPI.md#deletemappingdatasource)
 - [deleteMappingDataSourceValue](AffindaAPI.md#deletemappingdatasourcevalue)
 - [deleteOrganization](AffindaAPI.md#deleteorganization)
@@ -96,6 +98,7 @@
 - [getInvitationByToken](AffindaAPI.md#getinvitationbytoken)
 - [getJobDescriptionSearchConfig](AffindaAPI.md#getjobdescriptionsearchconfig)
 - [getJobDescriptionSearchDetail](AffindaAPI.md#getjobdescriptionsearchdetail)
+- [getMapping](AffindaAPI.md#getmapping)
 - [getMappingDataSource](AffindaAPI.md#getmappingdatasource)
 - [getMappingDataSourceValue](AffindaAPI.md#getmappingdatasourcevalue)
 - [getOrganization](AffindaAPI.md#getorganization)
@@ -112,6 +115,8 @@
 - [getWorkspace](AffindaAPI.md#getworkspace)
 - [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
 - [listMappingDataSourceValues](AffindaAPI.md#listmappingdatasourcevalues)
+- [listMappingDataSources](AffindaAPI.md#listmappingdatasources)
+- [listMappings](AffindaAPI.md#listmappings)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [regenerateApiKeyForApiUser](AffindaAPI.md#regenerateapikeyforapiuser)
 - [replaceDataPointChoices](AffindaAPI.md#replacedatapointchoices)
@@ -131,6 +136,7 @@
 - [updateIndex](AffindaAPI.md#updateindex)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
+- [updateMapping](AffindaAPI.md#updatemapping)
 - [updateOrganization](AffindaAPI.md#updateorganization)
 - [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
 - [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
@@ -568,6 +574,25 @@ configurations of the embeddable search tool.
 
 ___
 
+### createMapping
+
+▸ **createMapping**(`body`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+
+Create a custom mapping.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`MappingCreate`](../interfaces/MappingCreate.md) |  |
+| `options?` | [`AffindaAPICreateMappingOptionalParams`](../interfaces/AffindaAPICreateMappingOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+
+___
+
 ### createMappingDataSource
 
 ▸ **createMappingDataSource**(`body`, `options?`): `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
@@ -916,6 +941,25 @@ Delete the specified invitation from the database.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Invitation identifier. |
 | `options?` | [`AffindaAPIDeleteInvitationOptionalParams`](../interfaces/AffindaAPIDeleteInvitationOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<`void`\>
+
+___
+
+### deleteMapping
+
+▸ **deleteMapping**(`identifier`, `options?`): `Promise`\<`void`\>
+
+Delete the specified mapping from the database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Mapping's identifier |
+| `options?` | [`AffindaAPIDeleteMappingOptionalParams`](../interfaces/AffindaAPIDeleteMappingOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1629,6 +1673,25 @@ The `identifier` is the unique ID returned via the
 
 ___
 
+### getMapping
+
+▸ **getMapping**(`identifier`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+
+Return a specific mapping.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Mapping's identifier |
+| `options?` | [`AffindaAPIGetMappingOptionalParams`](../interfaces/AffindaAPIGetMappingOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+
+___
+
 ### getMappingDataSource
 
 ▸ **getMappingDataSource**(`identifier`, `options?`): `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
@@ -1939,6 +2002,43 @@ Returns the list of all values in a mapping data source
 #### Returns
 
 `Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)\>
+
+___
+
+### listMappingDataSources
+
+▸ **listMappingDataSources**(`options?`): `Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths11qdcofv3mappingdatasourcesgetresponses200contentapplicationjsonschema)\>
+
+Returns the list of all custom mapping data sources.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`AffindaAPIListMappingDataSourcesOptionalParams`](../interfaces/AffindaAPIListMappingDataSourcesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths11qdcofv3mappingdatasourcesgetresponses200contentapplicationjsonschema)\>
+
+___
+
+### listMappings
+
+▸ **listMappings**(`mappingDataSource`, `options?`): `Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1dpvb2pv3mappingsgetresponses200contentapplicationjsonschema)\>
+
+Returns the list of all custom data mappings.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `mappingDataSource` | `string` | Mapping data source's identifier |
+| `options?` | [`AffindaAPIListMappingsOptionalParams`](../interfaces/AffindaAPIListMappingsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1dpvb2pv3mappingsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
@@ -2331,6 +2431,26 @@ returned, etc.
 #### Returns
 
 `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+
+___
+
+### updateMapping
+
+▸ **updateMapping**(`identifier`, `body`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+
+Updates a specific mapping.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Mapping's identifier |
+| `body` | [`MappingUpdate`](../interfaces/MappingUpdate.md) |  |
+| `options?` | [`AffindaAPIUpdateMappingOptionalParams`](../interfaces/AffindaAPIUpdateMappingOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
 ___
 

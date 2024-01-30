@@ -9,7 +9,6 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 ### Enumeration Members
 
 - [Boolean](KnownAnnotationContentType.md#boolean)
-- [Cell](KnownAnnotationContentType.md#cell)
 - [Date](KnownAnnotationContentType.md#date)
 - [Daterange](KnownAnnotationContentType.md#daterange)
 - [Datetime](KnownAnnotationContentType.md#datetime)
@@ -18,6 +17,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Expectedremuneration](KnownAnnotationContentType.md#expectedremuneration)
 - [Float](KnownAnnotationContentType.md#float)
 - [Group](KnownAnnotationContentType.md#group)
+- [Image](KnownAnnotationContentType.md#image)
 - [Integer](KnownAnnotationContentType.md#integer)
 - [Jobtitle](KnownAnnotationContentType.md#jobtitle)
 - [Json](KnownAnnotationContentType.md#json)
@@ -28,6 +28,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Table](KnownAnnotationContentType.md#table)
 - [TableDeprecated](KnownAnnotationContentType.md#tabledeprecated)
 - [Text](KnownAnnotationContentType.md#text)
+- [Url](KnownAnnotationContentType.md#url)
 - [Yearsexperience](KnownAnnotationContentType.md#yearsexperience)
 
 ## Enumeration Members
@@ -35,12 +36,6 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 ### Boolean
 
 • **Boolean** = ``"boolean"``
-
-___
-
-### Cell
-
-• **Cell** = ``"cell"``
 
 ___
 
@@ -89,6 +84,12 @@ ___
 ### Group
 
 • **Group** = ``"group"``
+
+___
+
+### Image
+
+• **Image** = ``"image"``
 
 ___
 
@@ -149,6 +150,12 @@ ___
 ### Text
 
 • **Text** = ``"text"``
+
+___
+
+### Url
+
+• **Url** = ``"url"``
 
 ___
 

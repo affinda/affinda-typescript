@@ -119,6 +119,8 @@ import {
   MappingDataSourceCreate,
   AffindaAPICreateMappingDataSourceOptionalParams,
   AffindaAPICreateMappingDataSourceResponse,
+  AffindaAPIListMappingDataSourcesOptionalParams,
+  AffindaAPIListMappingDataSourcesResponse,
   AffindaAPIGetMappingDataSourceOptionalParams,
   AffindaAPIGetMappingDataSourceResponse,
   AffindaAPIDeleteMappingDataSourceOptionalParams,
@@ -131,6 +133,17 @@ import {
   AffindaAPIGetMappingDataSourceValueOptionalParams,
   AffindaAPIGetMappingDataSourceValueResponse,
   AffindaAPIDeleteMappingDataSourceValueOptionalParams,
+  MappingCreate,
+  AffindaAPICreateMappingOptionalParams,
+  AffindaAPICreateMappingResponse,
+  AffindaAPIListMappingsOptionalParams,
+  AffindaAPIListMappingsResponse,
+  AffindaAPIGetMappingOptionalParams,
+  AffindaAPIGetMappingResponse,
+  AffindaAPIDeleteMappingOptionalParams,
+  MappingUpdate,
+  AffindaAPIUpdateMappingOptionalParams,
+  AffindaAPIUpdateMappingResponse,
   AffindaAPIGetAllTagsOptionalParams,
   AffindaAPIGetAllTagsResponse,
   TagCreate,
@@ -1072,6 +1085,19 @@ export class AffindaAPI extends AffindaAPIContext {
   }
 
   /**
+   * Returns the list of all custom mapping data sources.
+   * @param options The options parameters.
+   */
+  listMappingDataSources(
+    options?: AffindaAPIListMappingDataSourcesOptionalParams
+  ): Promise<AffindaAPIListMappingDataSourcesResponse> {
+    return this.sendOperationRequest(
+      { options },
+      listMappingDataSourcesOperationSpec
+    );
+  }
+
+  /**
    * Return a specific mapping data source.
    * @param identifier Mapping data source's identifier
    * @param options The options parameters.
@@ -1181,6 +1207,83 @@ export class AffindaAPI extends AffindaAPIContext {
     return this.sendOperationRequest(
       { identifier, value, options },
       deleteMappingDataSourceValueOperationSpec
+    );
+  }
+
+  /**
+   * Create a custom mapping.
+   * @param body
+   * @param options The options parameters.
+   */
+  createMapping(
+    body: MappingCreate,
+    options?: AffindaAPICreateMappingOptionalParams
+  ): Promise<AffindaAPICreateMappingResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createMappingOperationSpec
+    );
+  }
+
+  /**
+   * Returns the list of all custom data mappings.
+   * @param mappingDataSource Mapping data source's identifier
+   * @param options The options parameters.
+   */
+  listMappings(
+    mappingDataSource: string,
+    options?: AffindaAPIListMappingsOptionalParams
+  ): Promise<AffindaAPIListMappingsResponse> {
+    return this.sendOperationRequest(
+      { mappingDataSource, options },
+      listMappingsOperationSpec
+    );
+  }
+
+  /**
+   * Return a specific mapping.
+   * @param identifier Mapping's identifier
+   * @param options The options parameters.
+   */
+  getMapping(
+    identifier: string,
+    options?: AffindaAPIGetMappingOptionalParams
+  ): Promise<AffindaAPIGetMappingResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getMappingOperationSpec
+    );
+  }
+
+  /**
+   * Delete the specified mapping from the database.
+   * @param identifier Mapping's identifier
+   * @param options The options parameters.
+   */
+  deleteMapping(
+    identifier: string,
+    options?: AffindaAPIDeleteMappingOptionalParams
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteMappingOperationSpec
+    );
+  }
+
+  /**
+   * Updates a specific mapping.
+   * @param identifier Mapping's identifier
+   * @param body
+   * @param options The options parameters.
+   */
+  updateMapping(
+    identifier: string,
+    body: MappingUpdate,
+    options?: AffindaAPIUpdateMappingOptionalParams
+  ): Promise<AffindaAPIUpdateMappingResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateMappingOperationSpec
     );
   }
 
@@ -3395,6 +3498,31 @@ const createMappingDataSourceOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer
 };
+const listMappingDataSourcesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [Parameters.offset, Parameters.limit],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
 const getMappingDataSourceOperationSpec: coreClient.OperationSpec = {
   path: "/v3/mapping_data_sources/{identifier}",
   httpMethod: "GET",
@@ -3569,6 +3697,129 @@ const deleteMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer
 };
+const createMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Mapping
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body27,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer
+};
+const listMappingsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.mappingDataSource
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const getMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Mapping
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const deleteMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
+  serializer
+};
+const updateMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Mapping
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body28,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer
+};
 const getAllTagsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/tags",
   httpMethod: "GET",
@@ -3617,7 +3868,7 @@ const createTagOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body27,
+  requestBody: Parameters.body29,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3665,7 +3916,7 @@ const updateTagOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body28,
+  requestBody: Parameters.body30,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3893,7 +4144,7 @@ const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body29,
+  requestBody: Parameters.body31,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3970,7 +4221,7 @@ const createInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body30,
+  requestBody: Parameters.body32,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4018,7 +4269,7 @@ const updateInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body31,
+  requestBody: Parameters.body33,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4083,7 +4334,7 @@ const respondToInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body32,
+  requestBody: Parameters.body34,
   urlParameters: [Parameters.region, Parameters.token],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4133,7 +4384,7 @@ const createApiUserOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body33,
+  requestBody: Parameters.body35,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4181,7 +4432,7 @@ const updateApiUserOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body34,
+  requestBody: Parameters.body36,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4275,7 +4526,7 @@ const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body35,
+  requestBody: Parameters.body37,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4323,7 +4574,7 @@ const updateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body36,
+  requestBody: Parameters.body38,
   urlParameters: [Parameters.region, Parameters.id1],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4420,7 +4671,7 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body37,
+  requestBody: Parameters.body39,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
@@ -4446,7 +4697,7 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body37,
+  requestBody: Parameters.body39,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4490,7 +4741,7 @@ const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec = 
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body38,
+  requestBody: Parameters.body40,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4511,7 +4762,7 @@ const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec 
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body39,
+  requestBody: Parameters.body41,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4565,7 +4816,7 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body40,
+  requestBody: Parameters.body42,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4590,7 +4841,7 @@ const updateIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body41,
+  requestBody: Parameters.body43,
   urlParameters: [Parameters.region, Parameters.name3],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4661,7 +4912,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body42,
+  requestBody: Parameters.body44,
   urlParameters: [Parameters.region, Parameters.name3],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4707,7 +4958,7 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body43,
+  requestBody: Parameters.body45,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
@@ -4733,7 +4984,7 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body43,
+  requestBody: Parameters.body45,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4815,7 +5066,7 @@ const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body44,
+  requestBody: Parameters.body46,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4836,7 +5087,7 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body45,
+  requestBody: Parameters.body47,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",

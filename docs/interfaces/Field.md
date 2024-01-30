@@ -2,6 +2,10 @@
 
 # Interface: Field
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
 ## Table of contents
 
 ### Properties
@@ -11,7 +15,7 @@
 - [dataSource](Field.md#datasource)
 - [disabledChildFields](Field.md#disabledchildfields)
 - [displayEnumValue](Field.md#displayenumvalue)
-- [dropNullEnums](Field.md#dropnullenums)
+- [dropNull](Field.md#dropnull)
 - [enabledChildFields](Field.md#enabledchildfields)
 - [fieldType](Field.md#fieldtype)
 - [fields](Field.md#fields)
@@ -59,11 +63,11 @@ If true, both the value and the label for the enums will appear in the dropdown 
 
 ___
 
-### dropNullEnums
+### dropNull
 
-• `Optional` **dropNullEnums**: `boolean`
+• `Optional` **dropNull**: `boolean`
 
-If True, any dropdown annotations that fail to be mapped will be discarded
+If True, any dropdown annotations that fail to parse to a value will be discarded
 
 ___
 

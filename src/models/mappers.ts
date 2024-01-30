@@ -1330,6 +1330,7 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "FieldDeprecated",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       label: {
         serializedName: "label",
@@ -1398,8 +1399,8 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      dropNullEnums: {
-        serializedName: "dropNullEnums",
+      dropNull: {
+        serializedName: "dropNull",
         type: {
           name: "Boolean"
         }
@@ -1501,6 +1502,7 @@ export const Field: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Field",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       label: {
         serializedName: "label",
@@ -1566,8 +1568,8 @@ export const Field: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
-      dropNullEnums: {
-        serializedName: "dropNullEnums",
+      dropNull: {
+        serializedName: "dropNull",
         type: {
           name: "Boolean"
         }
@@ -1945,6 +1947,13 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      mapping: {
+        serializedName: "mapping",
+        nullable: true,
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -2120,6 +2129,13 @@ export const DataFieldField: coreClient.CompositeMapper = {
       },
       dataSource: {
         serializedName: "dataSource",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      mapping: {
+        serializedName: "mapping",
         nullable: true,
         type: {
           name: "String"
@@ -2426,6 +2442,20 @@ export const CollectionField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number"
+        }
+      },
+      dataSource: {
+        serializedName: "dataSource",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      mapping: {
+        serializedName: "mapping",
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
@@ -2757,6 +2787,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
       },
       sourceEmail: {
         serializedName: "sourceEmail",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      sourceEmailAddress: {
+        serializedName: "sourceEmailAddress",
         nullable: true,
         type: {
           name: "String"
@@ -3133,13 +3170,6 @@ export const DocumentCreateData: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "DocumentCreateData"
-  }
-};
-
-export const ComponentsEyyf0ZSchemasResumedataAdditionalproperties: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ComponentsEyyf0ZSchemasResumedataAdditionalproperties"
   }
 };
 
@@ -4190,13 +4220,6 @@ export const ResumeDataSectionsItem: coreClient.CompositeMapper = {
   }
 };
 
-export const ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties"
-  }
-};
-
 export const JobDescriptionData: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -4758,14 +4781,6 @@ export const PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApp
   }
 };
 
-export const Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties"
-  }
-};
-
 export const JobDescriptionDataUpdate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -5257,8 +5272,7 @@ export const DocumentSplit: coreClient.CompositeMapper = {
       identifier: {
         serializedName: "identifier",
         type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "any"
         }
       },
       pages: {
@@ -6149,8 +6163,7 @@ export const AnnotationCreate: coreClient.CompositeMapper = {
       parsed: {
         serializedName: "parsed",
         type: {
-          name: "Composite",
-          className: "AnnotationCreateParsed"
+          name: "any"
         }
       },
       isClientVerified: {
@@ -6167,13 +6180,6 @@ export const AnnotationCreate: coreClient.CompositeMapper = {
         }
       }
     }
-  }
-};
-
-export const AnnotationCreateParsed: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "AnnotationCreateParsed"
   }
 };
 
@@ -6220,8 +6226,7 @@ export const AnnotationUpdate: coreClient.CompositeMapper = {
       parsed: {
         serializedName: "parsed",
         type: {
-          name: "Composite",
-          className: "AnnotationUpdateParsed"
+          name: "any"
         }
       },
       isClientVerified: {
@@ -6244,13 +6249,6 @@ export const AnnotationUpdate: coreClient.CompositeMapper = {
         }
       }
     }
-  }
-};
-
-export const AnnotationUpdateParsed: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "AnnotationUpdateParsed"
   }
 };
 
@@ -6308,6 +6306,28 @@ export const MappingDataSourceCreate: coreClient.CompositeMapper = {
   }
 };
 
+export const Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "MappingDataSource"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
 export const Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -6324,6 +6344,114 @@ export const Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200Cont
               value: { type: { name: "any" } }
             }
           }
+        }
+      }
+    }
+  }
+};
+
+export const MappingCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "MappingCreate",
+    modelProperties: {
+      dataSource: {
+        serializedName: "dataSource",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      scoreCutoff: {
+        serializedName: "scoreCutoff",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const Mapping: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Mapping",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        readOnly: true,
+        type: {
+          name: "String"
+        }
+      },
+      organization: {
+        serializedName: "organization",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      dataSource: {
+        serializedName: "dataSource",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      scoreCutoff: {
+        serializedName: "scoreCutoff",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Mapping"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const MappingUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "MappingUpdate",
+    modelProperties: {
+      scoreCutoff: {
+        serializedName: "scoreCutoff",
+        nullable: true,
+        type: {
+          name: "Number"
         }
       }
     }
@@ -10581,6 +10709,18 @@ export const InvoiceData: coreClient.CompositeMapper = {
           }
         }
       },
+      tablesBeta: {
+        serializedName: "tablesBeta",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "TableBetaAnnotation"
+            }
+          }
+        }
+      },
       invoiceDate: {
         serializedName: "invoiceDate",
         type: {
@@ -10956,6 +11096,120 @@ export const RowAnnotationParsed: coreClient.CompositeMapper = {
       },
       itemOther: {
         serializedName: "itemOther",
+        type: {
+          name: "Composite",
+          className: "TextAnnotation"
+        }
+      }
+    }
+  }
+};
+
+export const TableBetaAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TableBetaAnnotationParsed",
+    modelProperties: {
+      rows: {
+        serializedName: "rows",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "RowBetaAnnotation"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const RowBetaAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "RowBetaAnnotationParsed",
+    modelProperties: {
+      itemCodeBeta: {
+        serializedName: "itemCodeBeta",
+        type: {
+          name: "Composite",
+          className: "TextAnnotation"
+        }
+      },
+      itemDateBeta: {
+        serializedName: "itemDateBeta",
+        type: {
+          name: "Composite",
+          className: "DateAnnotation"
+        }
+      },
+      itemDescriptionBeta: {
+        serializedName: "itemDescriptionBeta",
+        type: {
+          name: "Composite",
+          className: "TextAnnotation"
+        }
+      },
+      itemUnitBeta: {
+        serializedName: "itemUnitBeta",
+        type: {
+          name: "Composite",
+          className: "TextAnnotation"
+        }
+      },
+      itemUnitPriceBeta: {
+        serializedName: "itemUnitPriceBeta",
+        type: {
+          name: "Composite",
+          className: "FloatAnnotation"
+        }
+      },
+      itemQuantityBeta: {
+        serializedName: "itemQuantityBeta",
+        type: {
+          name: "Composite",
+          className: "FloatAnnotation"
+        }
+      },
+      itemDiscountBeta: {
+        serializedName: "itemDiscountBeta",
+        type: {
+          name: "Composite",
+          className: "TextAnnotation"
+        }
+      },
+      itemBaseTotalBeta: {
+        serializedName: "itemBaseTotalBeta",
+        type: {
+          name: "Composite",
+          className: "FloatAnnotation"
+        }
+      },
+      itemTaxRateBeta: {
+        serializedName: "itemTaxRateBeta",
+        type: {
+          name: "Composite",
+          className: "TextAnnotation"
+        }
+      },
+      itemTaxTotalBeta: {
+        serializedName: "itemTaxTotalBeta",
+        type: {
+          name: "Composite",
+          className: "FloatAnnotation"
+        }
+      },
+      itemTotalBeta: {
+        serializedName: "itemTotalBeta",
+        type: {
+          name: "Composite",
+          className: "FloatAnnotation"
+        }
+      },
+      itemOtherBeta: {
+        serializedName: "itemOtherBeta",
         type: {
           name: "Composite",
           className: "TextAnnotation"
@@ -11781,6 +12035,29 @@ export const PhoneNumberAnnotationParsed: coreClient.CompositeMapper = {
   }
 };
 
+export const UrlAnnotationParsed: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UrlAnnotationParsed",
+    modelProperties: {
+      url: {
+        serializedName: "url",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      domain: {
+        serializedName: "domain",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const DocumentCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -12007,6 +12284,19 @@ export const Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchem
   }
 };
 
+export const Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
 export const Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -12015,6 +12305,19 @@ export const Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200Cont
     modelProperties: {
       ...PaginatedResponse.type.modelProperties,
       ...Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }
@@ -12410,6 +12713,42 @@ export const TableAnnotation: coreClient.CompositeMapper = {
   }
 };
 
+export const RowBetaAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "RowBetaAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "RowBetaAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const TableBetaAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TableBetaAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "TableBetaAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
 export const CurrencyCodeAnnotation: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -12458,6 +12797,24 @@ export const PhoneNumberAnnotation: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "PhoneNumberAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const UrlAnnotation: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UrlAnnotation",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "Composite",
+          className: "UrlAnnotationParsed"
         }
       }
     }

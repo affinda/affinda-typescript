@@ -7,9 +7,11 @@
 ### Properties
 
 - [autoValidationThreshold](CollectionField.md#autovalidationthreshold)
+- [dataSource](CollectionField.md#datasource)
 - [displayEnumValue](CollectionField.md#displayenumvalue)
 - [label](CollectionField.md#label)
 - [mandatory](CollectionField.md#mandatory)
+- [mapping](CollectionField.md#mapping)
 - [showDropdown](CollectionField.md#showdropdown)
 
 ## Properties
@@ -17,6 +19,14 @@
 ### autoValidationThreshold
 
 • `Optional` **autoValidationThreshold**: `number`
+
+___
+
+### dataSource
+
+• `Optional` **dataSource**: `string`
+
+Data source mapping identifier
 
 ___
 
@@ -37,6 +47,14 @@ ___
 ### mandatory
 
 • `Optional` **mandatory**: `boolean`
+
+___
+
+### mapping
+
+• `Optional` **mapping**: `string`
+
+Defines how the data point is mapped to the data source
 
 ___
 
