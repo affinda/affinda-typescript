@@ -2641,7 +2641,8 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.validatable,
     Parameters.hasChallenges,
     Parameters.customIdentifier,
-    Parameters.compact
+    Parameters.compact,
+    Parameters.count
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],

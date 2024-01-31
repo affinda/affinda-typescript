@@ -17,6 +17,7 @@ Optional parameters.
 - [abortSignal](AffindaAPIGetAllDocumentsOptionalParams.md#abortsignal)
 - [collection](AffindaAPIGetAllDocumentsOptionalParams.md#collection)
 - [compact](AffindaAPIGetAllDocumentsOptionalParams.md#compact)
+- [count](AffindaAPIGetAllDocumentsOptionalParams.md#count)
 - [createdDt](AffindaAPIGetAllDocumentsOptionalParams.md#createddt)
 - [customIdentifier](AffindaAPIGetAllDocumentsOptionalParams.md#customidentifier)
 - [exclude](AffindaAPIGetAllDocumentsOptionalParams.md#exclude)
@@ -65,6 +66,14 @@ ___
 • `Optional` **compact**: `boolean`
 
 If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false".
+
+___
+
+### count
+
+• `Optional` **count**: `boolean`
+
+If "false", the documents count is not computed, thus saving time for large collections. Default is "true".
 
 ___
 

@@ -1221,6 +1221,8 @@ export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreCli
     customIdentifier?: string;
     /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
     compact?: boolean;
+    /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
+    count?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.29.0] - 2024-01-31
+### Added
+- Add sourceEmailAddress to DocumentMeta model
+
 ## [6.28.0] - 2024-01-30
 ### Added
 - Added "website" data point type

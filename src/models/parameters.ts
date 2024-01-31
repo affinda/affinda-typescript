@@ -411,6 +411,16 @@ export const compact: OperationQueryParameter = {
   }
 };
 
+export const count: OperationQueryParameter = {
+  parameterPath: ["options", "count"],
+  mapper: {
+    serializedName: "count",
+    type: {
+      name: "Boolean"
+    }
+  }
+};
+
 export const contentType1: OperationParameter = {
   parameterPath: ["options", "contentType"],
   mapper: {
