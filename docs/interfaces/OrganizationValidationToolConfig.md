@@ -12,8 +12,12 @@ Configuration of the embeddable validation tool.
 - [disableEditDocumentMetadata](OrganizationValidationToolConfig.md#disableeditdocumentmetadata)
 - [hideActions](OrganizationValidationToolConfig.md#hideactions)
 - [hideCollection](OrganizationValidationToolConfig.md#hidecollection)
+- [hideEditPages](OrganizationValidationToolConfig.md#hideeditpages)
 - [hideExport](OrganizationValidationToolConfig.md#hideexport)
 - [hideFilename](OrganizationValidationToolConfig.md#hidefilename)
+- [hideReject](OrganizationValidationToolConfig.md#hidereject)
+- [hideReparse](OrganizationValidationToolConfig.md#hidereparse)
+- [hideRunOcr](OrganizationValidationToolConfig.md#hiderunocr)
 - [hideTags](OrganizationValidationToolConfig.md#hidetags)
 - [hideWarnings](OrganizationValidationToolConfig.md#hidewarnings)
 - [restrictDocumentSplitting](OrganizationValidationToolConfig.md#restrictdocumentsplitting)
@@ -53,6 +57,14 @@ Hide the collection selector.
 
 ___
 
+### hideEditPages
+
+• `Optional` **hideEditPages**: `boolean`
+
+Hide the edit pages button.
+
+___
+
 ### hideExport
 
 • `Optional` **hideExport**: `boolean`
@@ -66,6 +78,30 @@ ___
 • `Optional` **hideFilename**: `boolean`
 
 Hide the filename input.
+
+___
+
+### hideReject
+
+• `Optional` **hideReject**: `boolean`
+
+Hide the reject document button.
+
+___
+
+### hideReparse
+
+• `Optional` **hideReparse**: `boolean`
+
+Hide the reparse button.
+
+___
+
+### hideRunOcr
+
+• `Optional` **hideRunOcr**: `boolean`
+
+Hide the run OCR button.
 
 ___
 

@@ -33,8 +33,10 @@
 - [ready](DocumentMeta.md#ready)
 - [readyDt](DocumentMeta.md#readydt)
 - [regionBias](DocumentMeta.md#regionbias)
+- [rejectedBy](DocumentMeta.md#rejectedby)
 - [rejectedDt](DocumentMeta.md#rejecteddt)
 - [reviewUrl](DocumentMeta.md#reviewurl)
+- [skipParse](DocumentMeta.md#skipparse)
 - [sourceEmail](DocumentMeta.md#sourceemail)
 - [sourceEmailAddress](DocumentMeta.md#sourceemailaddress)
 - [tags](DocumentMeta.md#tags)
@@ -230,6 +232,12 @@ ___
 
 ___
 
+### rejectedBy
+
+• `Optional` **rejectedBy**: [`UserNullable`](UserNullable.md)
+
+___
+
 ### rejectedDt
 
 • `Optional` **rejectedDt**: `Date`
@@ -239,6 +247,12 @@ ___
 ### reviewUrl
 
 • `Optional` **reviewUrl**: `string`
+
+___
+
+### skipParse
+
+• `Optional` **skipParse**: `boolean`
 
 ___
 

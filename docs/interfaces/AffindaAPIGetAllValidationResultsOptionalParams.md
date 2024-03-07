@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllIndexDocumentsOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIGetAllValidationResultsOptionalParams
 
-# Interface: AffindaAPIGetAllIndexDocumentsOptionalParams
+# Interface: AffindaAPIGetAllValidationResultsOptionalParams
 
 Optional parameters.
 
@@ -8,19 +8,19 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`AffindaAPIGetAllIndexDocumentsOptionalParams`**
+  ↳ **`AffindaAPIGetAllValidationResultsOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](AffindaAPIGetAllIndexDocumentsOptionalParams.md#abortsignal)
-- [limit](AffindaAPIGetAllIndexDocumentsOptionalParams.md#limit)
-- [offset](AffindaAPIGetAllIndexDocumentsOptionalParams.md#offset)
-- [onResponse](AffindaAPIGetAllIndexDocumentsOptionalParams.md#onresponse)
-- [requestOptions](AffindaAPIGetAllIndexDocumentsOptionalParams.md#requestoptions)
-- [serializerOptions](AffindaAPIGetAllIndexDocumentsOptionalParams.md#serializeroptions)
-- [tracingOptions](AffindaAPIGetAllIndexDocumentsOptionalParams.md#tracingoptions)
+- [abortSignal](AffindaAPIGetAllValidationResultsOptionalParams.md#abortsignal)
+- [limit](AffindaAPIGetAllValidationResultsOptionalParams.md#limit)
+- [offset](AffindaAPIGetAllValidationResultsOptionalParams.md#offset)
+- [onResponse](AffindaAPIGetAllValidationResultsOptionalParams.md#onresponse)
+- [requestOptions](AffindaAPIGetAllValidationResultsOptionalParams.md#requestoptions)
+- [serializerOptions](AffindaAPIGetAllValidationResultsOptionalParams.md#serializeroptions)
+- [tracingOptions](AffindaAPIGetAllValidationResultsOptionalParams.md#tracingoptions)
 
 ## Properties
 

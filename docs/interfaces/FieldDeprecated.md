@@ -15,6 +15,7 @@
 - [dataSource](FieldDeprecated.md#datasource)
 - [disabled](FieldDeprecated.md#disabled)
 - [displayEnumValue](FieldDeprecated.md#displayenumvalue)
+- [displayRawText](FieldDeprecated.md#displayrawtext)
 - [dropNull](FieldDeprecated.md#dropnull)
 - [fieldType](FieldDeprecated.md#fieldtype)
 - [fields](FieldDeprecated.md#fields)
@@ -55,6 +56,12 @@ ___
 ### displayEnumValue
 
 • `Optional` **displayEnumValue**: `boolean`
+
+___
+
+### displayRawText
+
+• `Optional` **displayRawText**: `boolean`
 
 ___
 

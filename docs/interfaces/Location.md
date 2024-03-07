@@ -13,9 +13,11 @@
 - [formatted](Location.md#formatted)
 - [latitude](Location.md#latitude)
 - [longitude](Location.md#longitude)
+- [poBox](Location.md#pobox)
 - [postalCode](Location.md#postalcode)
 - [rawInput](Location.md#rawinput)
 - [state](Location.md#state)
+- [stateCode](Location.md#statecode)
 - [street](Location.md#street)
 - [streetNumber](Location.md#streetnumber)
 
@@ -78,6 +80,14 @@ NOTE: This property will not be serialized. It can only be populated by the serv
 
 ___
 
+### poBox
+
+• `Optional` `Readonly` **poBox**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
 ### postalCode
 
 • `Optional` `Readonly` **postalCode**: `string`
@@ -95,6 +105,14 @@ ___
 ### state
 
 • `Optional` `Readonly` **state**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### stateCode
+
+• `Optional` `Readonly` **stateCode**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 

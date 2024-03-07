@@ -11,6 +11,7 @@ The field to be created.
 - [autoValidationThreshold](DataFieldCreateField.md#autovalidationthreshold)
 - [dataSource](DataFieldCreateField.md#datasource)
 - [displayEnumValue](DataFieldCreateField.md#displayenumvalue)
+- [displayRawText](DataFieldCreateField.md#displayrawtext)
 - [fieldType](DataFieldCreateField.md#fieldtype)
 - [label](DataFieldCreateField.md#label)
 - [mandatory](DataFieldCreateField.md#mandatory)
@@ -38,6 +39,14 @@ ___
 • `Optional` **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
+
+___
+
+### displayRawText
+
+• `Optional` **displayRawText**: `boolean`
+
+If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type.
 
 ___
 

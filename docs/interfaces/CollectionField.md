@@ -9,6 +9,7 @@
 - [autoValidationThreshold](CollectionField.md#autovalidationthreshold)
 - [dataSource](CollectionField.md#datasource)
 - [displayEnumValue](CollectionField.md#displayenumvalue)
+- [displayRawText](CollectionField.md#displayrawtext)
 - [label](CollectionField.md#label)
 - [mandatory](CollectionField.md#mandatory)
 - [mapping](CollectionField.md#mapping)
@@ -35,6 +36,14 @@ ___
 • `Optional` **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
+
+___
+
+### displayRawText
+
+• `Optional` **displayRawText**: `string`
+
+Defines how the data point is mapped to the data source
 
 ___
 

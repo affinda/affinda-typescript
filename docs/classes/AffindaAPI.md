@@ -48,6 +48,7 @@
 - [createResumeSearch](AffindaAPI.md#createresumesearch)
 - [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
 - [createTag](AffindaAPI.md#createtag)
+- [createValidationResult](AffindaAPI.md#createvalidationresult)
 - [createWorkspace](AffindaAPI.md#createworkspace)
 - [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
 - [deleteAnnotation](AffindaAPI.md#deleteannotation)
@@ -67,6 +68,7 @@
 - [deleteOrganizationMembership](AffindaAPI.md#deleteorganizationmembership)
 - [deleteResthookSubscription](AffindaAPI.md#deleteresthooksubscription)
 - [deleteTag](AffindaAPI.md#deletetag)
+- [deleteValidationResult](AffindaAPI.md#deletevalidationresult)
 - [deleteWorkspace](AffindaAPI.md#deleteworkspace)
 - [deleteWorkspaceMembership](AffindaAPI.md#deleteworkspacemembership)
 - [editDocumentPages](AffindaAPI.md#editdocumentpages)
@@ -83,6 +85,7 @@
 - [getAllOrganizations](AffindaAPI.md#getallorganizations)
 - [getAllResthookSubscriptions](AffindaAPI.md#getallresthooksubscriptions)
 - [getAllTags](AffindaAPI.md#getalltags)
+- [getAllValidationResults](AffindaAPI.md#getallvalidationresults)
 - [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
 - [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
 - [getAnnotation](AffindaAPI.md#getannotation)
@@ -112,6 +115,7 @@
 - [getTag](AffindaAPI.md#gettag)
 - [getUsageByCollection](AffindaAPI.md#getusagebycollection)
 - [getUsageByWorkspace](AffindaAPI.md#getusagebyworkspace)
+- [getValidationResult](AffindaAPI.md#getvalidationresult)
 - [getWorkspace](AffindaAPI.md#getworkspace)
 - [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
 - [listMappingDataSourceValues](AffindaAPI.md#listmappingdatasourcevalues)
@@ -142,6 +146,7 @@
 - [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
 - [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
 - [updateTag](AffindaAPI.md#updatetag)
+- [updateValidationResult](AffindaAPI.md#updatevalidationresult)
 - [updateWorkspace](AffindaAPI.md#updateworkspace)
 
 ## Constructors
@@ -271,7 +276,7 @@ ___
 
 ### batchDeleteAnnotations
 
-▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`\<`void`\>
+▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
 
 Batch delete annotations
 
@@ -284,7 +289,7 @@ Batch delete annotations
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
 
 ___
 
@@ -328,7 +333,7 @@ ___
 
 ### createAnnotation
 
-▸ **createAnnotation**(`body`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
+▸ **createAnnotation**(`body`, `options?`): `Promise`\<[`AnnotationWithValidationResults`](../modules.md#annotationwithvalidationresults)\>
 
 Create a annotation
 
@@ -341,7 +346,7 @@ Create a annotation
 
 #### Returns
 
-`Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
+`Promise`\<[`AnnotationWithValidationResults`](../modules.md#annotationwithvalidationresults)\>
 
 ___
 
@@ -719,6 +724,25 @@ Create a tag
 
 ___
 
+### createValidationResult
+
+▸ **createValidationResult**(`body`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+
+Create a validation result.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`ValidationResultCreate`](../interfaces/ValidationResultCreate.md) |  |
+| `options?` | [`AffindaAPICreateValidationResultOptionalParams`](../interfaces/AffindaAPICreateValidationResultOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+
+___
+
 ### createWorkspace
 
 ▸ **createWorkspace**(`body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
@@ -759,7 +783,7 @@ ___
 
 ### deleteAnnotation
 
-▸ **deleteAnnotation**(`id`, `options?`): `Promise`\<`void`\>
+▸ **deleteAnnotation**(`id`, `options?`): `Promise`\<[`AnotationDelete`](../interfaces/AnotationDelete.md)\>
 
 Deletes the specified annotation from the database.
 
@@ -772,7 +796,7 @@ Deletes the specified annotation from the database.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<[`AnotationDelete`](../interfaces/AnotationDelete.md)\>
 
 ___
 
@@ -1083,6 +1107,25 @@ Deletes the specified tag from the database.
 
 ___
 
+### deleteValidationResult
+
+▸ **deleteValidationResult**(`id`, `options?`): `Promise`\<`void`\>
+
+Remove validation result.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Validation result's ID. |
+| `options?` | [`AffindaAPIDeleteValidationResultOptionalParams`](../interfaces/AffindaAPIDeleteValidationResultOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<`void`\>
+
+___
+
 ### deleteWorkspace
 
 ▸ **deleteWorkspace**(`identifier`, `options?`): `Promise`\<`void`\>
@@ -1378,6 +1421,25 @@ Returns your tags.
 #### Returns
 
 `Promise`\<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+
+___
+
+### getAllValidationResults
+
+▸ **getAllValidationResults**(`document`, `options?`): `Promise`\<[`AffindaAPIGetAllValidationResultsResponse`](../modules.md#affindaapigetallvalidationresultsresponse)\>
+
+Returns the validation results of a document.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `document` | `string` | Filter by document. |
+| `options?` | [`AffindaAPIGetAllValidationResultsOptionalParams`](../interfaces/AffindaAPIGetAllValidationResultsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`AffindaAPIGetAllValidationResultsResponse`](../modules.md#affindaapigetallvalidationresultsresponse)\>
 
 ___
 
@@ -1945,6 +2007,25 @@ Return monthly credits consumption of a workspace.
 #### Returns
 
 `Promise`\<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
+
+___
+
+### getValidationResult
+
+▸ **getValidationResult**(`id`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+
+Return a specific validation result.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Validation result's ID. |
+| `options?` | [`AffindaAPIGetValidationResultOptionalParams`](../interfaces/AffindaAPIGetValidationResultOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
 ___
 
@@ -2551,6 +2632,26 @@ Update data of an tag.
 #### Returns
 
 `Promise`\<[`Tag`](../interfaces/Tag.md)\>
+
+___
+
+### updateValidationResult
+
+▸ **updateValidationResult**(`id`, `body`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+
+Update a validation result.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | Validation result's ID. |
+| `body` | [`ValidationResultUpdate`](../interfaces/ValidationResultUpdate.md) | Validation result data to update |
+| `options?` | [`AffindaAPIUpdateValidationResultOptionalParams`](../interfaces/AffindaAPIUpdateValidationResultOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
 ___
 

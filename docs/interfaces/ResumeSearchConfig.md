@@ -18,6 +18,7 @@
 - [displayOccupationGroup](ResumeSearchConfig.md#displayoccupationgroup)
 - [displaySkills](ResumeSearchConfig.md#displayskills)
 - [displayYearsExperience](ResumeSearchConfig.md#displayyearsexperience)
+- [distanceUnit](ResumeSearchConfig.md#distanceunit)
 - [hideSidePanel](ResumeSearchConfig.md#hidesidepanel)
 - [hideToolbar](ResumeSearchConfig.md#hidetoolbar)
 - [indices](ResumeSearchConfig.md#indices)
@@ -112,6 +113,14 @@ ___
 
 ___
 
+### distanceUnit
+
+• `Optional` **distanceUnit**: `string`
+
+The unit of distance to use for location based searches
+
+___
+
 ### hideSidePanel
 
 • `Optional` **hideSidePanel**: `boolean`
@@ -146,13 +155,9 @@ ___
 
 ### searchToolTheme
 
-• `Optional` **searchToolTheme**: `Object`
+• `Optional` **searchToolTheme**: [`ThemeConfig`](ThemeConfig.md)
 
 Customize the theme of the embeded search tool.
-
-#### Index signature
-
-▪ [propertyName: `string`]: `any`
 
 ___
 

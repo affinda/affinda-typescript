@@ -28,7 +28,9 @@ ___
 
 ### background
 
-• `Optional` **background**: [`ThemeConfigPaletteBackground`](ThemeConfigPaletteBackground.md)
+• `Optional` **background**: `any`
+
+Anything
 
 ___
 

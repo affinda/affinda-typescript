@@ -16,8 +16,10 @@ Optional parameters.
 
 - [abortSignal](AffindaAPICreateDocumentOptionalParams.md#abortsignal)
 - [collection](AffindaAPICreateDocumentOptionalParams.md#collection)
+- [compact](AffindaAPICreateDocumentOptionalParams.md#compact)
 - [customIdentifier](AffindaAPICreateDocumentOptionalParams.md#customidentifier)
 - [data](AffindaAPICreateDocumentOptionalParams.md#data)
+- [deleteAfterParse](AffindaAPICreateDocumentOptionalParams.md#deleteafterparse)
 - [expiryTime](AffindaAPICreateDocumentOptionalParams.md#expirytime)
 - [file](AffindaAPICreateDocumentOptionalParams.md#file)
 - [fileName](AffindaAPICreateDocumentOptionalParams.md#filename)
@@ -56,6 +58,14 @@ Uniquely identify a collection.
 
 ___
 
+### compact
+
+• `Optional` **compact**: `boolean`
+
+If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result.
+
+___
+
 ### customIdentifier
 
 • `Optional` **customIdentifier**: `string`
@@ -69,6 +79,14 @@ ___
 • `Optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
 
 Create resume or job description directly from data.
+
+___
+
+### deleteAfterParse
+
+• `Optional` **deleteAfterParse**: `boolean`
+
+If true, no data will be stored after parsing. Only compatible with requests where wait: True.
 
 ___
 

@@ -11,6 +11,7 @@
 - [baseExtractor](CollectionCreate.md#baseextractor)
 - [dateFormatFromDocument](CollectionCreate.md#dateformatfromdocument)
 - [dateFormatPreference](CollectionCreate.md#dateformatpreference)
+- [disableConfirmationIfValidationRulesFail](CollectionCreate.md#disableconfirmationifvalidationrulesfail)
 - [extractor](CollectionCreate.md#extractor)
 - [extractorConfig](CollectionCreate.md#extractorconfig)
 - [fields](CollectionCreate.md#fields)
@@ -54,6 +55,14 @@ ___
 ### dateFormatPreference
 
 • `Optional` **dateFormatPreference**: `string`
+
+___
+
+### disableConfirmationIfValidationRulesFail
+
+• `Optional` **disableConfirmationIfValidationRulesFail**: `boolean`
+
+If True, users cannot validate documents with missing mandatory fields, or failing validation rules.
 
 ___
 

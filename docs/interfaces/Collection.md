@@ -7,10 +7,12 @@
 ### Properties
 
 - [allowOpenai](Collection.md#allowopenai)
+- [autoValidateIfValidationRulesPass](Collection.md#autovalidateifvalidationrulespass)
 - [autoValidationThreshold](Collection.md#autovalidationthreshold)
 - [confirmedDocsCount](Collection.md#confirmeddocscount)
 - [dateFormatFromDocument](Collection.md#dateformatfromdocument)
 - [dateFormatPreference](Collection.md#dateformatpreference)
+- [disableConfirmationIfValidationRulesFail](Collection.md#disableconfirmationifvalidationrulesfail)
 - [extractor](Collection.md#extractor)
 - [extractorConfig](Collection.md#extractorconfig)
 - [fields](Collection.md#fields)
@@ -31,6 +33,12 @@
 • `Optional` **allowOpenai**: `boolean`
 
 Whether to allow OpenAI API to be used to assist in creating a model for this collection.
+
+___
+
+### autoValidateIfValidationRulesPass
+
+• `Optional` **autoValidateIfValidationRulesPass**: `boolean`
 
 ___
 
@@ -59,6 +67,14 @@ ___
 ### dateFormatPreference
 
 • `Optional` **dateFormatPreference**: `string`
+
+___
+
+### disableConfirmationIfValidationRulesFail
+
+• `Optional` **disableConfirmationIfValidationRulesFail**: `boolean`
+
+If True, users cannot validate documents with missing mandatory fields, or failing validation rules.
 
 ___
 

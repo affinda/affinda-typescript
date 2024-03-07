@@ -22,7 +22,9 @@ ___
 
 ### fontSize
 
-• `Optional` **fontSize**: `string`
+• `Optional` **fontSize**: `any`
+
+Anything
 
 ___
 

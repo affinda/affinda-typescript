@@ -12,6 +12,7 @@ The field to be created.
 - [dataSource](DataFieldField.md#datasource)
 - [disabledChildFields](DataFieldField.md#disabledchildfields)
 - [displayEnumValue](DataFieldField.md#displayenumvalue)
+- [displayRawText](DataFieldField.md#displayrawtext)
 - [enabledChildFields](DataFieldField.md#enabledchildfields)
 - [fieldType](DataFieldField.md#fieldtype)
 - [label](DataFieldField.md#label)
@@ -46,6 +47,14 @@ ___
 • **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
+
+___
+
+### displayRawText
+
+• `Optional` **displayRawText**: `boolean`
+
+If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type.
 
 ___
 
@@ -85,4 +94,4 @@ ___
 
 ### showDropdown
 
-• **showDropdown**: `boolean`
+• `Optional` **showDropdown**: `boolean`

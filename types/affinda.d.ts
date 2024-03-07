@@ -207,6 +207,37 @@ export declare class AffindaAPI extends AffindaAPIContext {
      */
     editDocumentPages(identifier: string, body: DocumentEditRequest, options?: AffindaAPIEditDocumentPagesOptionalParams): Promise<AffindaAPIEditDocumentPagesResponse>;
     /**
+     * Returns the validation results of a document.
+     * @param document Filter by document.
+     * @param options The options parameters.
+     */
+    getAllValidationResults(document: string, options?: AffindaAPIGetAllValidationResultsOptionalParams): Promise<AffindaAPIGetAllValidationResultsResponse>;
+    /**
+     * Create a validation result.
+     * @param body
+     * @param options The options parameters.
+     */
+    createValidationResult(body: ValidationResultCreate, options?: AffindaAPICreateValidationResultOptionalParams): Promise<AffindaAPICreateValidationResultResponse>;
+    /**
+     * Return a specific validation result.
+     * @param id Validation result's ID.
+     * @param options The options parameters.
+     */
+    getValidationResult(id: number, options?: AffindaAPIGetValidationResultOptionalParams): Promise<AffindaAPIGetValidationResultResponse>;
+    /**
+     * Update a validation result.
+     * @param id Validation result's ID.
+     * @param body Validation result data to update
+     * @param options The options parameters.
+     */
+    updateValidationResult(id: number, body: ValidationResultUpdate, options?: AffindaAPIUpdateValidationResultOptionalParams): Promise<AffindaAPIUpdateValidationResultResponse>;
+    /**
+     * Remove validation result.
+     * @param id Validation result's ID.
+     * @param options The options parameters.
+     */
+    deleteValidationResult(id: number, options?: AffindaAPIDeleteValidationResultOptionalParams): Promise<void>;
+    /**
      * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
      * @param organization Filter by organization.
      * @param options The options parameters.
@@ -333,7 +364,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param id Annotation's ID
      * @param options The options parameters.
      */
-    deleteAnnotation(id: number, options?: AffindaAPIDeleteAnnotationOptionalParams): Promise<void>;
+    deleteAnnotation(id: number, options?: AffindaAPIDeleteAnnotationOptionalParams): Promise<AffindaAPIDeleteAnnotationResponse>;
     /**
      * Batch create annotations
      * @param body Array of AnnotationCreate
@@ -351,7 +382,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Array of annotation IDs to be deleted
      * @param options The options parameters.
      */
-    batchDeleteAnnotations(body: number[], options?: AffindaAPIBatchDeleteAnnotationsOptionalParams): Promise<void>;
+    batchDeleteAnnotations(body: number[], options?: AffindaAPIBatchDeleteAnnotationsOptionalParams): Promise<AffindaAPIBatchDeleteAnnotationsResponse>;
     /**
      * Create a custom mapping data source.
      * @param body A mapping data source is used to map from raw data found by our AI models to records in
@@ -832,6 +863,9 @@ export declare type AffindaAPIBatchCreateAnnotationsResponse = (Annotation | nul
 export declare interface AffindaAPIBatchDeleteAnnotationsOptionalParams extends coreClient.OperationOptions {
 }
 
+/** Contains response data for the batchDeleteAnnotations operation. */
+export declare type AffindaAPIBatchDeleteAnnotationsResponse = BatchDeleteAnnotationsResponse;
+
 /** Optional parameters. */
 export declare interface AffindaAPIBatchRemoveTagOptionalParams extends coreClient.OperationOptions {
 }
@@ -858,7 +892,7 @@ export declare interface AffindaAPICreateAnnotationOptionalParams extends coreCl
 }
 
 /** Contains response data for the createAnnotation operation. */
-export declare type AffindaAPICreateAnnotationResponse = Annotation;
+export declare type AffindaAPICreateAnnotationResponse = AnnotationWithValidationResults;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateApiUserOptionalParams extends coreClient.OperationOptions {
@@ -927,6 +961,10 @@ export declare interface AffindaAPICreateDocumentOptionalParams extends coreClie
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
     lowPriority?: boolean;
+    /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
+    compact?: boolean;
+    /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
+    deleteAfterParse?: boolean;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -1039,6 +1077,13 @@ export declare interface AffindaAPICreateTagOptionalParams extends coreClient.Op
 export declare type AffindaAPICreateTagResponse = Tag;
 
 /** Optional parameters. */
+export declare interface AffindaAPICreateValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createValidationResult operation. */
+export declare type AffindaAPICreateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
 export declare interface AffindaAPICreateWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1055,6 +1100,9 @@ export declare type AffindaAPICreateWorkspaceResponse = Workspace;
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteAnnotationOptionalParams extends coreClient.OperationOptions {
 }
+
+/** Contains response data for the deleteAnnotation operation. */
+export declare type AffindaAPIDeleteAnnotationResponse = AnotationDelete;
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteApiUserOptionalParams extends coreClient.OperationOptions {
@@ -1118,6 +1166,10 @@ export declare interface AffindaAPIDeleteResthookSubscriptionOptionalParams exte
 
 /** Optional parameters. */
 export declare interface AffindaAPIDeleteTagOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface AffindaAPIDeleteValidationResultOptionalParams extends coreClient.OperationOptions {
 }
 
 /** Optional parameters. */
@@ -1243,6 +1295,10 @@ export declare type AffindaAPIGetAllExtractorsResponse = Extractor[];
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllIndexDocumentsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
 }
 
 /** Contains response data for the getAllIndexDocuments operation. */
@@ -1255,7 +1311,7 @@ export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClien
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum19;
+    documentType?: Enum20;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -1323,6 +1379,17 @@ export declare interface AffindaAPIGetAllTagsOptionalParams extends coreClient.O
 
 /** Contains response data for the getAllTags operation. */
 export declare type AffindaAPIGetAllTagsResponse = Tag[];
+
+/** Optional parameters. */
+export declare interface AffindaAPIGetAllValidationResultsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the getAllValidationResults operation. */
+export declare type AffindaAPIGetAllValidationResultsResponse = ValidationResult[];
 
 /** Optional parameters. */
 export declare interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams extends coreClient.OperationOptions {
@@ -1584,6 +1651,13 @@ export declare interface AffindaAPIGetUsageByWorkspaceOptionalParams extends cor
 export declare type AffindaAPIGetUsageByWorkspaceResponse = UsageByWorkspace[];
 
 /** Optional parameters. */
+export declare interface AffindaAPIGetValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getValidationResult operation. */
+export declare type AffindaAPIGetValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
 export declare interface AffindaAPIGetWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1811,6 +1885,13 @@ export declare interface AffindaAPIUpdateTagOptionalParams extends coreClient.Op
 export declare type AffindaAPIUpdateTagResponse = Tag;
 
 /** Optional parameters. */
+export declare interface AffindaAPIUpdateValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateValidationResult operation. */
+export declare type AffindaAPIUpdateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
 export declare interface AffindaAPIUpdateWorkspaceOptionalParams extends coreClient.OperationOptions {
 }
 
@@ -1932,6 +2013,8 @@ export declare interface AnnotationCreate {
     isClientVerified?: boolean;
     /** The parent annotation's ID */
     parent?: number;
+    /** The validation results created, changed or deleted as a result of creating the annotation. */
+    validationResults?: (ChangedValidationResults | null)[];
 }
 
 export declare interface AnnotationUpdate {
@@ -1951,6 +2034,18 @@ export declare interface AnnotationUpdate {
     dataPoint?: string;
     /** The parent annotation's ID */
     parent?: number;
+    /** The validation results created, changed or deleted as a result of updating the annotation. */
+    validationResults?: (ChangedValidationResults | null)[];
+}
+
+export declare type AnnotationWithValidationResults = Annotation & {
+    /** List of validation results for this annotation. */
+    validationResults?: ValidationResult[];
+};
+
+export declare interface AnotationDelete {
+    /** The validation results created, changed or deleted as a result of deleting the annotation. */
+    validationResults?: Record<string, unknown>;
 }
 
 export declare interface ApiUserCreate {
@@ -2028,11 +2123,27 @@ export declare interface BatchAddTagRequest {
     tag?: number;
 }
 
+export declare interface BatchDeleteAnnotationsResponse {
+    /** The validation results created, changed or deleted as a result of deleting the annotations. */
+    validationResults?: Record<string, unknown>;
+}
+
 export declare interface BatchRemoveTagRequest {
     /** List of documents to remove tag from */
     identifiers?: string[];
     /** The tag's ID */
     tag?: number;
+}
+
+export declare interface ChangedValidationResults {
+    /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+    [property: string]: any;
+    /** List of validation results created during this operation. */
+    created?: ValidationResult[];
+    /** List of validation results updated during this operation. */
+    updated?: ValidationResult[];
+    /** List of validation results deleted during this operation. */
+    deleted?: ValidationResult[];
 }
 
 export declare interface Collection {
@@ -2042,6 +2153,7 @@ export declare interface Collection {
     workspace?: CollectionWorkspace;
     extractor?: Extractor;
     autoValidationThreshold?: number;
+    autoValidateIfValidationRulesPass?: boolean;
     fields?: FieldGroup[];
     fieldsLayout?: FieldsLayout;
     fieldsConfigured?: boolean;
@@ -2062,6 +2174,8 @@ export declare interface Collection {
     allowOpenai?: boolean;
     /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
     trainsExtractor?: boolean;
+    /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+    disableConfirmationIfValidationRulesFail?: boolean;
 }
 
 export declare interface CollectionCreate {
@@ -2084,6 +2198,8 @@ export declare interface CollectionCreate {
     allowOpenai?: boolean;
     /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
     trainsExtractor?: boolean;
+    /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+    disableConfirmationIfValidationRulesFail?: boolean;
 }
 
 /**
@@ -2108,6 +2224,8 @@ export declare interface CollectionField {
     dataSource?: string;
     /** Defines how the data point is mapped to the data source */
     mapping?: string;
+    /** Defines how the data point is mapped to the data source */
+    displayRawText?: string;
 }
 
 export declare interface CollectionUpdate {
@@ -2124,6 +2242,8 @@ export declare interface CollectionUpdate {
     allowOpenai?: boolean;
     /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
     trainsExtractor?: boolean;
+    /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+    disableConfirmationIfValidationRulesFail?: boolean;
 }
 
 export declare interface CollectionWorkspace {
@@ -2170,6 +2290,11 @@ export declare interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfa
 export declare interface Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
     raw?: string;
     parsed?: string;
+}
+
+export declare interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1 {
+    default?: string;
+    paper?: string;
 }
 
 export declare interface Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
@@ -2382,6 +2507,8 @@ export declare interface DataFieldCreateField {
     dataSource?: string;
     /** Defines how the data point is mapped to the data source */
     mapping?: string;
+    /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+    displayRawText?: boolean;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -2411,7 +2538,7 @@ export declare interface DataFieldField {
     /** The different data types of annotations */
     fieldType?: AnnotationContentType;
     mandatory: boolean;
-    showDropdown: boolean;
+    showDropdown?: boolean;
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue: boolean;
     autoValidationThreshold: number | null;
@@ -2421,6 +2548,8 @@ export declare interface DataFieldField {
     dataSource?: string;
     /** Defines how the data point is mapped to the data source */
     mapping?: string;
+    /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+    displayRawText?: boolean;
 }
 
 export declare interface DataPoint {
@@ -2640,6 +2769,10 @@ export declare interface DocumentCreate {
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
     lowPriority?: boolean;
+    /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
+    compact?: boolean;
+    /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
+    deleteAfterParse?: boolean;
 }
 
 /** Create resume or job description directly from data. */
@@ -2698,9 +2831,12 @@ export declare interface DocumentMeta {
     workspace: DocumentMetaWorkspace;
     archivedDt?: Date;
     isArchived?: boolean;
+    skipParse?: boolean;
     confirmedDt?: Date;
+    confirmedBy?: UserNullable;
     isConfirmed?: boolean;
     rejectedDt?: Date;
+    rejectedBy?: UserNullable;
     isRejected?: boolean;
     createdDt?: Date;
     errorCode?: string;
@@ -2708,7 +2844,6 @@ export declare interface DocumentMeta {
     /** URL to view the file. */
     file?: string;
     tags?: Tag[];
-    confirmedBy?: UserNullable;
     createdBy?: User;
     /** If the document is created via email ingestion, this field stores the email file's URL. */
     sourceEmail?: string;
@@ -2727,6 +2862,7 @@ export declare interface DocumentMetaCollection {
     identifier: string;
     name?: string;
     extractor?: DocumentMetaCollectionExtractor;
+    validationRules?: ValidationRule[];
 }
 
 export declare interface DocumentMetaCollectionExtractor {
@@ -2801,6 +2937,7 @@ export declare interface DocumentUpdate {
     isConfirmed?: boolean;
     isRejected?: boolean;
     isArchived?: boolean;
+    skipParse?: boolean;
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** Deprecated in favor of `customIdentifier`. */
@@ -2848,14 +2985,14 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum19. \
- * {@link KnownEnum19} can be used interchangeably with Enum19,
+ * Defines values for Enum20. \
+ * {@link KnownEnum20} can be used interchangeably with Enum20,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum19 = string;
+export declare type Enum20 = string;
 
 export declare type ExpectedRemunerationAnnotation = Annotation & {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2959,6 +3096,8 @@ export declare interface Field {
     enabledChildFields?: Field[];
     disabledChildFields?: Field[];
     slug?: string;
+    /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+    displayRawText?: boolean;
     fields?: Record<string, unknown>[];
 }
 
@@ -2984,6 +3123,7 @@ export declare interface FieldDeprecated {
     disabled?: boolean;
     autoValidationThreshold?: number;
     showDropdown?: boolean;
+    displayRawText?: boolean;
     /** If True, any dropdown annotations that fail to parse to a value will be discarded */
     dropNull?: boolean;
     displayEnumValue?: boolean;
@@ -3307,9 +3447,7 @@ export declare interface JobDescriptionSearchConfig {
     /** Controls whether or not the index dropdown is displayed to the user */
     showIndexDropdown?: boolean;
     /** Customize the theme of the embeded search tool. */
-    searchToolTheme?: {
-        [propertyName: string]: any;
-    };
+    searchToolTheme?: JobDescriptionSearchConfigSearchToolTheme;
     /**
      * ID of the logged in user.
      * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -3327,7 +3465,22 @@ export declare interface JobDescriptionSearchConfig {
     /** Hide the entire side panel. */
     hideSidePanel?: boolean;
     customFieldsConfig?: CustomFieldConfig[];
+    /** The unit of distance to use for location based searches */
+    distanceUnit?: JobDescriptionSearchConfigDistanceUnit;
 }
+
+/**
+ * Defines values for JobDescriptionSearchConfigDistanceUnit. \
+ * {@link KnownJobDescriptionSearchConfigDistanceUnit} can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export declare type JobDescriptionSearchConfigDistanceUnit = string;
+
+/** Customize the theme of the embeded search tool. */
+export declare type JobDescriptionSearchConfigSearchToolTheme = ThemeConfig & {};
 
 export declare interface JobDescriptionSearchDetail {
     jobTitle?: JobDescriptionSearchDetailJobTitle;
@@ -3612,8 +3765,8 @@ export declare enum KnownDocumentType {
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum19} that the service accepts. */
-export declare enum KnownEnum19 {
+/** Known values of {@link Enum20} that the service accepts. */
+export declare enum KnownEnum20 {
     Resumes = "resumes",
     JobDescriptions = "job_descriptions"
 }
@@ -3637,6 +3790,12 @@ export declare enum KnownInvitationStatus {
     Declined = "declined"
 }
 
+/** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
+export declare enum KnownJobDescriptionSearchConfigDistanceUnit {
+    Mi = "mi",
+    Km = "km"
+}
+
 /** Known values of {@link OrganizationRole} that the service accepts. */
 export declare enum KnownOrganizationRole {
     Admin = "admin",
@@ -3652,7 +3811,8 @@ export declare enum KnownOrganizationUserRole {
 /** Known values of {@link Region} that the service accepts. */
 export declare enum KnownRegion {
     Api = "api",
-    ApiEu1 = "api.eu1"
+    ApiEu1 = "api.eu1",
+    ApiUs1 = "api.us1"
 }
 
 /** Known values of {@link ResthookEvent} that the service accepts. */
@@ -3671,7 +3831,8 @@ export declare enum KnownResthookEvent {
     DocumentClassifySucceeded = "document.classify.succeeded",
     DocumentClassifyFailed = "document.classify.failed",
     DocumentClassifyCompleted = "document.classify.completed",
-    DocumentRejected = "document.rejected"
+    DocumentRejected = "document.rejected",
+    AnnotationValidated = "annotation.validated"
 }
 
 /** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
@@ -3888,6 +4049,12 @@ export declare enum KnownResumeDataLanguagesItem {
     Yoruba = "Yoruba"
 }
 
+/** Known values of {@link ResumeSearchConfigDistanceUnit} that the service accepts. */
+export declare enum KnownResumeSearchConfigDistanceUnit {
+    Mi = "mi",
+    Km = "km"
+}
+
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export declare enum KnownResumeSkillSourcesItemSection {
     Achievements = "Achievements",
@@ -3969,6 +4136,8 @@ declare interface Location_2 {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly state?: string;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly stateCode?: string;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly country?: string;
     /**
      * Two letter country code (ISO 3166-1 alpha-2)
@@ -3988,6 +4157,8 @@ declare interface Location_2 {
     readonly latitude?: number;
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly longitude?: number;
+    /** NOTE: This property will not be serialized. It can only be populated by the server. */
+    readonly poBox?: string;
 }
 export { Location_2 as Location }
 
@@ -4220,10 +4391,18 @@ export declare interface OrganizationValidationToolConfig {
     hideActions?: boolean;
     /** Hide the collection selector. */
     hideCollection?: boolean;
+    /** Hide the edit pages button. */
+    hideEditPages?: boolean;
     /** Hide the export menu. */
     hideExport?: boolean;
     /** Hide the filename input. */
     hideFilename?: boolean;
+    /** Hide the reject document button. */
+    hideReject?: boolean;
+    /** Hide the reparse button. */
+    hideReparse?: boolean;
+    /** Hide the run OCR button. */
+    hideRunOcr?: boolean;
     /** Hide the tags editor. */
     hideTags?: boolean;
     /** Hide the warnings panel. */
@@ -4407,7 +4586,8 @@ export declare interface RedactConfig {
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **api** \
- * **api.eu1**
+ * **api.eu1** \
+ * **api.us1**
  */
 export declare type Region = string;
 
@@ -4418,6 +4598,12 @@ export declare interface RegionBias {
     countries?: string[];
     /** A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat] */
     squareCoordinates?: number[];
+    /**
+     * If true, the location must be within the region, as opposed to prefering locations within the region.
+     * Default to false.
+     *
+     */
+    strict?: boolean;
 }
 
 export declare interface RequestError {
@@ -4450,7 +4636,8 @@ export declare interface RequestErrorErrorsItem {
  * **document.classify.succeeded** \
  * **document.classify.failed** \
  * **document.classify.completed** \
- * **document.rejected**
+ * **document.rejected** \
+ * **annotation.validated**
  */
 export declare type ResthookEvent = string;
 
@@ -4928,9 +5115,7 @@ export declare interface ResumeSearchConfig {
     /** Controls whether or not the index dropdown is displayed to the user */
     showIndexDropdown?: boolean;
     /** Customize the theme of the embeded search tool. */
-    searchToolTheme?: {
-        [propertyName: string]: any;
-    };
+    searchToolTheme?: ResumeSearchConfigSearchToolTheme;
     /**
      * ID of the logged in user.
      * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -4948,7 +5133,22 @@ export declare interface ResumeSearchConfig {
     /** Hide the entire side panel. */
     hideSidePanel?: boolean;
     customFieldsConfig?: CustomFieldConfig[];
+    /** The unit of distance to use for location based searches */
+    distanceUnit?: ResumeSearchConfigDistanceUnit;
 }
+
+/**
+ * Defines values for ResumeSearchConfigDistanceUnit. \
+ * {@link KnownResumeSearchConfigDistanceUnit} can be used interchangeably with ResumeSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export declare type ResumeSearchConfigDistanceUnit = string;
+
+/** Customize the theme of the embeded search tool. */
+export declare type ResumeSearchConfigSearchToolTheme = ThemeConfig & {};
 
 export declare interface ResumeSearchDetail {
     jobTitle?: ResumeSearchDetailJobTitle;
@@ -5332,7 +5532,8 @@ export declare interface ThemeConfig {
 
 export declare interface ThemeConfigPalette {
     mode?: ThemeConfigPaletteMode;
-    background?: ThemeConfigPaletteBackground;
+    /** Anything */
+    background?: any;
     text?: ThemeConfigPaletteText;
     divider?: string;
     primary?: PaletteColorOptions;
@@ -5342,11 +5543,6 @@ export declare interface ThemeConfigPalette {
     error?: PaletteColorOptions;
     info?: PaletteColorOptions;
     warning?: PaletteColorOptions;
-}
-
-export declare interface ThemeConfigPaletteBackground {
-    default?: string;
-    paper?: string;
 }
 
 /**
@@ -5367,7 +5563,8 @@ export declare interface ThemeConfigPaletteText {
 
 export declare interface ThemeConfigTypography {
     fontFamily?: string;
-    fontSize?: string;
+    /** Anything */
+    fontSize?: any;
     fontWeightRegular?: string;
     fontWeightMedium?: string;
     fontWeightBold?: string;
@@ -5418,6 +5615,56 @@ export declare interface UserNullable {
     avatar?: string;
 }
 
+/** Validation result arising from a ValidationRule */
+export declare interface ValidationResult {
+    /** Validation Result's ID */
+    id: number;
+    /** List of annotation ids that were validated */
+    annotations: number[];
+    /** Whether the validation passed or not */
+    passed: boolean;
+    /** The hot-dog case slug of the validation rule that was applied */
+    ruleSlug: string;
+    /** Message explaining why the validation failed */
+    message: string;
+    /** Unique identifier for the document */
+    document: string;
+}
+
+export declare interface ValidationResultCreate {
+    /** List of annotation ids that were validated */
+    annotations: number[];
+    /** Whether the validation passed or not */
+    passed?: boolean;
+    /** The hot-dog case slug of the validation rule that was applied */
+    ruleSlug: string;
+    /** Message explaining why the validation failed */
+    message: string;
+    /** Unique identifier for the document */
+    document: string;
+}
+
+export declare interface ValidationResultUpdate {
+    /** List of annotation ids that were validated */
+    annotations?: number[];
+    /** Whether the validation passed or not */
+    passed?: boolean;
+    /** The hot-dog case slug of the validation rule that was applied */
+    ruleSlug?: string;
+    /** Message explaining why the validation failed */
+    message?: string;
+    /** Unique identifier for the document */
+    document?: string;
+}
+
+/** A validation rule for a collection */
+export declare interface ValidationRule {
+    /** The slug of the validation rule, in lowercase snake_case */
+    slug: string;
+    /** The data point identifier that this validation rule applies to, can be an empty list if the rule doens't use any data points as sources */
+    dataPoints: string[];
+}
+
 /** Configuration of the embeddable validation tool. */
 export declare interface ValidationToolConfig {
     theme?: ThemeConfig;
@@ -5425,10 +5672,18 @@ export declare interface ValidationToolConfig {
     hideActions?: boolean;
     /** Hide the collection selector. */
     hideCollection?: boolean;
+    /** Hide the edit pages button. */
+    hideEditPages?: boolean;
     /** Hide the export menu. */
     hideExport?: boolean;
     /** Hide the filename input. */
     hideFilename?: boolean;
+    /** Hide the reject document button. */
+    hideReject?: boolean;
+    /** Hide the reparse button. */
+    hideReparse?: boolean;
+    /** Hide the run OCR button. */
+    hideRunOcr?: boolean;
     /** Hide the tags editor. */
     hideTags?: boolean;
     /** Hide the warnings panel. */

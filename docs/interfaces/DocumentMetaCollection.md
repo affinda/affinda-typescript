@@ -9,6 +9,7 @@
 - [extractor](DocumentMetaCollection.md#extractor)
 - [identifier](DocumentMetaCollection.md#identifier)
 - [name](DocumentMetaCollection.md#name)
+- [validationRules](DocumentMetaCollection.md#validationrules)
 
 ## Properties
 
@@ -29,3 +30,9 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### validationRules
+
+• `Optional` **validationRules**: [`ValidationRule`](ValidationRule.md)[]

@@ -12,8 +12,12 @@ Configuration of the embeddable validation tool.
 - [disableEditDocumentMetadata](ValidationToolConfig.md#disableeditdocumentmetadata)
 - [hideActions](ValidationToolConfig.md#hideactions)
 - [hideCollection](ValidationToolConfig.md#hidecollection)
+- [hideEditPages](ValidationToolConfig.md#hideeditpages)
 - [hideExport](ValidationToolConfig.md#hideexport)
 - [hideFilename](ValidationToolConfig.md#hidefilename)
+- [hideReject](ValidationToolConfig.md#hidereject)
+- [hideReparse](ValidationToolConfig.md#hidereparse)
+- [hideRunOcr](ValidationToolConfig.md#hiderunocr)
 - [hideTags](ValidationToolConfig.md#hidetags)
 - [hideWarnings](ValidationToolConfig.md#hidewarnings)
 - [restrictDocumentSplitting](ValidationToolConfig.md#restrictdocumentsplitting)
@@ -53,6 +57,14 @@ Hide the collection selector.
 
 ___
 
+### hideEditPages
+
+• `Optional` **hideEditPages**: `boolean`
+
+Hide the edit pages button.
+
+___
+
 ### hideExport
 
 • `Optional` **hideExport**: `boolean`
@@ -66,6 +78,30 @@ ___
 • `Optional` **hideFilename**: `boolean`
 
 Hide the filename input.
+
+___
+
+### hideReject
+
+• `Optional` **hideReject**: `boolean`
+
+Hide the reject document button.
+
+___
+
+### hideReparse
+
+• `Optional` **hideReparse**: `boolean`
+
+Hide the reparse button.
+
+___
+
+### hideRunOcr
+
+• `Optional` **hideRunOcr**: `boolean`
+
+Hide the run OCR button.
 
 ___
 

@@ -15,6 +15,7 @@
 - [isConfirmed](DocumentUpdate.md#isconfirmed)
 - [isRejected](DocumentUpdate.md#isrejected)
 - [language](DocumentUpdate.md#language)
+- [skipParse](DocumentUpdate.md#skipparse)
 
 ## Properties
 
@@ -81,3 +82,9 @@ ___
 • `Optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
+
+___
+
+### skipParse
+
+• `Optional` **skipParse**: `boolean`

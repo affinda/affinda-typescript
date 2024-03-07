@@ -15,6 +15,7 @@
 - [dataSource](Field.md#datasource)
 - [disabledChildFields](Field.md#disabledchildfields)
 - [displayEnumValue](Field.md#displayenumvalue)
+- [displayRawText](Field.md#displayrawtext)
 - [dropNull](Field.md#dropnull)
 - [enabledChildFields](Field.md#enabledchildfields)
 - [fieldType](Field.md#fieldtype)
@@ -60,6 +61,14 @@ ___
 • `Optional` **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
+
+___
+
+### displayRawText
+
+• `Optional` **displayRawText**: `boolean`
+
+If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type.
 
 ___
 

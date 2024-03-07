@@ -200,6 +200,12 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      hideEditPages: {
+        serializedName: "hideEditPages",
+        type: {
+          name: "Boolean"
+        }
+      },
       hideExport: {
         serializedName: "hideExport",
         type: {
@@ -208,6 +214,24 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
       },
       hideFilename: {
         serializedName: "hideFilename",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideReject: {
+        serializedName: "hideReject",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideReparse: {
+        serializedName: "hideReparse",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideRunOcr: {
+        serializedName: "hideRunOcr",
         type: {
           name: "Boolean"
         }
@@ -295,8 +319,7 @@ export const ThemeConfigPalette: coreClient.CompositeMapper = {
       background: {
         serializedName: "background",
         type: {
-          name: "Composite",
-          className: "ThemeConfigPaletteBackground"
+          name: "any"
         }
       },
       text: {
@@ -359,27 +382,6 @@ export const ThemeConfigPalette: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "PaletteColorOptions"
-        }
-      }
-    }
-  }
-};
-
-export const ThemeConfigPaletteBackground: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ThemeConfigPaletteBackground",
-    modelProperties: {
-      default: {
-        serializedName: "default",
-        type: {
-          name: "String"
-        }
-      },
-      paper: {
-        serializedName: "paper",
-        type: {
-          name: "String"
         }
       }
     }
@@ -461,7 +463,7 @@ export const ThemeConfigTypography: coreClient.CompositeMapper = {
       fontSize: {
         serializedName: "fontSize",
         type: {
-          name: "String"
+          name: "any"
         }
       },
       fontWeightRegular: {
@@ -1034,6 +1036,12 @@ export const Collection: coreClient.CompositeMapper = {
           name: "Number"
         }
       },
+      autoValidateIfValidationRulesPass: {
+        serializedName: "autoValidateIfValidationRulesPass",
+        type: {
+          name: "Boolean"
+        }
+      },
       fields: {
         serializedName: "fields",
         nullable: true,
@@ -1122,6 +1130,13 @@ export const Collection: coreClient.CompositeMapper = {
       },
       trainsExtractor: {
         serializedName: "trainsExtractor",
+        type: {
+          name: "Boolean"
+        }
+      },
+      disableConfirmationIfValidationRulesFail: {
+        defaultValue: false,
+        serializedName: "disableConfirmationIfValidationRulesFail",
         type: {
           name: "Boolean"
         }
@@ -1399,6 +1414,12 @@ export const FieldDeprecated: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      displayRawText: {
+        serializedName: "displayRawText",
+        type: {
+          name: "Boolean"
+        }
+      },
       dropNull: {
         serializedName: "dropNull",
         type: {
@@ -1605,6 +1626,12 @@ export const Field: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      displayRawText: {
+        serializedName: "displayRawText",
+        type: {
+          name: "Boolean"
+        }
+      },
       fields: {
         serializedName: "fields",
         nullable: true,
@@ -1785,6 +1812,13 @@ export const CollectionCreate: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      disableConfirmationIfValidationRulesFail: {
+        defaultValue: false,
+        serializedName: "disableConfirmationIfValidationRulesFail",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -1857,6 +1891,13 @@ export const CollectionUpdate: coreClient.CompositeMapper = {
       },
       trainsExtractor: {
         serializedName: "trainsExtractor",
+        type: {
+          name: "Boolean"
+        }
+      },
+      disableConfirmationIfValidationRulesFail: {
+        defaultValue: false,
+        serializedName: "disableConfirmationIfValidationRulesFail",
         type: {
           name: "Boolean"
         }
@@ -1953,6 +1994,12 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
+        }
+      },
+      displayRawText: {
+        serializedName: "displayRawText",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -2077,7 +2124,6 @@ export const DataFieldField: coreClient.CompositeMapper = {
       },
       showDropdown: {
         serializedName: "showDropdown",
-        required: true,
         type: {
           name: "Boolean"
         }
@@ -2139,6 +2185,12 @@ export const DataFieldField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "String"
+        }
+      },
+      displayRawText: {
+        serializedName: "displayRawText",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -2457,6 +2509,13 @@ export const CollectionField: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      displayRawText: {
+        serializedName: "displayRawText",
+        nullable: true,
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -2706,11 +2765,24 @@ export const DocumentMeta: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      skipParse: {
+        serializedName: "skipParse",
+        type: {
+          name: "Boolean"
+        }
+      },
       confirmedDt: {
         serializedName: "confirmedDt",
         nullable: true,
         type: {
           name: "DateTime"
+        }
+      },
+      confirmedBy: {
+        serializedName: "confirmedBy",
+        type: {
+          name: "Composite",
+          className: "UserNullable"
         }
       },
       isConfirmed: {
@@ -2724,6 +2796,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "DateTime"
+        }
+      },
+      rejectedBy: {
+        serializedName: "rejectedBy",
+        type: {
+          name: "Composite",
+          className: "UserNullable"
         }
       },
       isRejected: {
@@ -2769,13 +2848,6 @@ export const DocumentMeta: coreClient.CompositeMapper = {
               className: "Tag"
             }
           }
-        }
-      },
-      confirmedBy: {
-        serializedName: "confirmedBy",
-        type: {
-          name: "Composite",
-          className: "UserNullable"
         }
       },
       createdBy: {
@@ -2933,6 +3005,18 @@ export const DocumentMetaCollection: coreClient.CompositeMapper = {
           name: "Composite",
           className: "DocumentMetaCollectionExtractor"
         }
+      },
+      validationRules: {
+        serializedName: "validationRules",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ValidationRule"
+            }
+          }
+        }
       }
     }
   }
@@ -2972,6 +3056,37 @@ export const DocumentMetaCollectionExtractor: coreClient.CompositeMapper = {
   }
 };
 
+export const ValidationRule: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ValidationRule",
+    modelProperties: {
+      slug: {
+        constraints: {
+          Pattern: new RegExp("^[a-z0-9_]+$")
+        },
+        serializedName: "slug",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      dataPoints: {
+        serializedName: "dataPoints",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
 export const DocumentMetaWorkspace: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -2986,6 +3101,49 @@ export const DocumentMetaWorkspace: coreClient.CompositeMapper = {
       },
       name: {
         serializedName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const UserNullable: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "UserNullable",
+    modelProperties: {
+      id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
+        serializedName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      username: {
+        serializedName: "username",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        nullable: true,
         type: {
           name: "String"
         }
@@ -3037,49 +3195,6 @@ export const Tag: coreClient.CompositeMapper = {
   }
 };
 
-export const UserNullable: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "UserNullable",
-    modelProperties: {
-      id: {
-        constraints: {
-          InclusiveMinimum: 1
-        },
-        serializedName: "id",
-        type: {
-          name: "Number"
-        }
-      },
-      name: {
-        serializedName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      username: {
-        serializedName: "username",
-        type: {
-          name: "String"
-        }
-      },
-      email: {
-        serializedName: "email",
-        type: {
-          name: "String"
-        }
-      },
-      avatar: {
-        serializedName: "avatar",
-        nullable: true,
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const RegionBias: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -3114,6 +3229,12 @@ export const RegionBias: coreClient.CompositeMapper = {
               name: "Number"
             }
           }
+        }
+      },
+      strict: {
+        serializedName: "strict",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -3539,6 +3660,14 @@ export const Location: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      stateCode: {
+        serializedName: "stateCode",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
       country: {
         serializedName: "country",
         readOnly: true,
@@ -3608,6 +3737,14 @@ export const Location: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number"
+        }
+      },
+      poBox: {
+        serializedName: "poBox",
+        readOnly: true,
+        nullable: true,
+        type: {
+          name: "String"
         }
       }
     }
@@ -4750,6 +4887,12 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      skipParse: {
+        serializedName: "skipParse",
+        type: {
+          name: "Boolean"
+        }
+      },
       language: {
         serializedName: "language",
         nullable: true,
@@ -5490,6 +5633,166 @@ export const MetaChildDocumentsItem: coreClient.CompositeMapper = {
   }
 };
 
+export const ValidationResult: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ValidationResult",
+    modelProperties: {
+      id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      annotations: {
+        serializedName: "annotations",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
+        }
+      },
+      passed: {
+        serializedName: "passed",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      ruleSlug: {
+        constraints: {
+          Pattern: new RegExp("^[a-z0-9][a-z0-9-]*[a-z0-9]$")
+        },
+        serializedName: "ruleSlug",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      message: {
+        serializedName: "message",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      document: {
+        serializedName: "document",
+        required: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ValidationResultCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ValidationResultCreate",
+    modelProperties: {
+      annotations: {
+        serializedName: "annotations",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
+        }
+      },
+      passed: {
+        serializedName: "passed",
+        type: {
+          name: "Boolean"
+        }
+      },
+      ruleSlug: {
+        constraints: {
+          Pattern: new RegExp("^[a-z0-9][a-z0-9-]*[a-z0-9]$")
+        },
+        serializedName: "ruleSlug",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      message: {
+        serializedName: "message",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      document: {
+        serializedName: "document",
+        required: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ValidationResultUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ValidationResultUpdate",
+    modelProperties: {
+      annotations: {
+        serializedName: "annotations",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number"
+            }
+          }
+        }
+      },
+      passed: {
+        serializedName: "passed",
+        type: {
+          name: "Boolean"
+        }
+      },
+      ruleSlug: {
+        constraints: {
+          Pattern: new RegExp("^[a-z0-9][a-z0-9-]*[a-z0-9]$")
+        },
+        serializedName: "ruleSlug",
+        type: {
+          name: "String"
+        }
+      },
+      message: {
+        serializedName: "message",
+        type: {
+          name: "String"
+        }
+      },
+      document: {
+        serializedName: "document",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const ExtractorCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -6178,6 +6481,64 @@ export const AnnotationCreate: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      validationResults: {
+        serializedName: "validationResults",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ChangedValidationResults"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ChangedValidationResults: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ChangedValidationResults",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      created: {
+        serializedName: "created",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ValidationResult"
+            }
+          }
+        }
+      },
+      updated: {
+        serializedName: "updated",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ValidationResult"
+            }
+          }
+        }
+      },
+      deleted: {
+        serializedName: "deleted",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ValidationResult"
+            }
+          }
+        }
       }
     }
   }
@@ -6246,6 +6607,50 @@ export const AnnotationUpdate: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number"
+        }
+      },
+      validationResults: {
+        serializedName: "validationResults",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ChangedValidationResults"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AnotationDelete: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "AnotationDelete",
+    modelProperties: {
+      validationResults: {
+        serializedName: "validationResults",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      }
+    }
+  }
+};
+
+export const BatchDeleteAnnotationsResponse: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "BatchDeleteAnnotationsResponse",
+    modelProperties: {
+      validationResults: {
+        serializedName: "validationResults",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
         }
       }
     }
@@ -6526,6 +6931,12 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      hideEditPages: {
+        serializedName: "hideEditPages",
+        type: {
+          name: "Boolean"
+        }
+      },
       hideExport: {
         serializedName: "hideExport",
         type: {
@@ -6534,6 +6945,24 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
       },
       hideFilename: {
         serializedName: "hideFilename",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideReject: {
+        serializedName: "hideReject",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideReparse: {
+        serializedName: "hideReparse",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hideRunOcr: {
+        serializedName: "hideRunOcr",
         type: {
           name: "Boolean"
         }
@@ -8881,10 +9310,9 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
       },
       searchToolTheme: {
         serializedName: "searchToolTheme",
-        nullable: true,
         type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "Composite",
+          className: "JobDescriptionSearchConfigSearchToolTheme"
         }
       },
       userId: {
@@ -8940,6 +9368,12 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
               className: "CustomFieldConfig"
             }
           }
+        }
+      },
+      distanceUnit: {
+        serializedName: "distanceUnit",
+        type: {
+          name: "String"
         }
       }
     }
@@ -10595,10 +11029,9 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
       },
       searchToolTheme: {
         serializedName: "searchToolTheme",
-        nullable: true,
         type: {
-          name: "Dictionary",
-          value: { type: { name: "any" } }
+          name: "Composite",
+          className: "ResumeSearchConfigSearchToolTheme"
         }
       },
       userId: {
@@ -10654,6 +11087,12 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
               className: "CustomFieldConfig"
             }
           }
+        }
+      },
+      distanceUnit: {
+        serializedName: "distanceUnit",
+        type: {
+          name: "String"
         }
       }
     }
@@ -12058,6 +12497,28 @@ export const UrlAnnotationParsed: coreClient.CompositeMapper = {
   }
 };
 
+export const Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1",
+    modelProperties: {
+      default: {
+        serializedName: "default",
+        type: {
+          name: "String"
+        }
+      },
+      paper: {
+        serializedName: "paper",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const DocumentCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -12153,6 +12614,18 @@ export const DocumentCreate: coreClient.CompositeMapper = {
         type: {
           name: "Boolean"
         }
+      },
+      compact: {
+        serializedName: "compact",
+        type: {
+          name: "Boolean"
+        }
+      },
+      deleteAfterParse: {
+        serializedName: "deleteAfterParse",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -12218,6 +12691,26 @@ export const OrganizationUpdate: coreClient.CompositeMapper = {
           className: "ValidationToolConfig"
         }
       }
+    }
+  }
+};
+
+export const JobDescriptionSearchConfigSearchToolTheme: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "JobDescriptionSearchConfigSearchToolTheme",
+    modelProperties: {
+      ...ThemeConfig.type.modelProperties
+    }
+  }
+};
+
+export const ResumeSearchConfigSearchToolTheme: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ResumeSearchConfigSearchToolTheme",
+    modelProperties: {
+      ...ThemeConfig.type.modelProperties
     }
   }
 };
@@ -12653,6 +13146,29 @@ export const YearsExperienceAnnotation: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "YearsExperienceAnnotationParsed"
+        }
+      }
+    }
+  }
+};
+
+export const AnnotationWithValidationResults: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "AnnotationWithValidationResults",
+    additionalProperties: { type: { name: "Object" } },
+    modelProperties: {
+      ...Annotation.type.modelProperties,
+      validationResults: {
+        serializedName: "validationResults",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ValidationResult"
+            }
+          }
         }
       }
     }

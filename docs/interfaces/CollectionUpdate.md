@@ -10,6 +10,7 @@
 - [autoValidationThreshold](CollectionUpdate.md#autovalidationthreshold)
 - [dateFormatFromDocument](CollectionUpdate.md#dateformatfromdocument)
 - [dateFormatPreference](CollectionUpdate.md#dateformatpreference)
+- [disableConfirmationIfValidationRulesFail](CollectionUpdate.md#disableconfirmationifvalidationrulesfail)
 - [extractorConfig](CollectionUpdate.md#extractorconfig)
 - [fields](CollectionUpdate.md#fields)
 - [fieldsLayout](CollectionUpdate.md#fieldslayout)
@@ -43,6 +44,14 @@ ___
 ### dateFormatPreference
 
 • `Optional` **dateFormatPreference**: `string`
+
+___
+
+### disableConfirmationIfValidationRulesFail
+
+• `Optional` **disableConfirmationIfValidationRulesFail**: `boolean`
+
+If True, users cannot validate documents with missing mandatory fields, or failing validation rules.
 
 ___
 

@@ -18,6 +18,7 @@
 - [displayOccupationGroup](JobDescriptionSearchConfig.md#displayoccupationgroup)
 - [displaySkills](JobDescriptionSearchConfig.md#displayskills)
 - [displayYearsExperience](JobDescriptionSearchConfig.md#displayyearsexperience)
+- [distanceUnit](JobDescriptionSearchConfig.md#distanceunit)
 - [hideSidePanel](JobDescriptionSearchConfig.md#hidesidepanel)
 - [hideToolbar](JobDescriptionSearchConfig.md#hidetoolbar)
 - [indices](JobDescriptionSearchConfig.md#indices)
@@ -112,6 +113,14 @@ ___
 
 ___
 
+### distanceUnit
+
+• `Optional` **distanceUnit**: `string`
+
+The unit of distance to use for location based searches
+
+___
+
 ### hideSidePanel
 
 • `Optional` **hideSidePanel**: `boolean`
@@ -146,13 +155,9 @@ ___
 
 ### searchToolTheme
 
-• `Optional` **searchToolTheme**: `Object`
+• `Optional` **searchToolTheme**: [`ThemeConfig`](ThemeConfig.md)
 
 Customize the theme of the embeded search tool.
-
-#### Index signature
-
-▪ [propertyName: `string`]: `any`
 
 ___
 

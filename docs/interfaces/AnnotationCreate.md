@@ -14,6 +14,7 @@
 - [parsed](AnnotationCreate.md#parsed)
 - [raw](AnnotationCreate.md#raw)
 - [rectangles](AnnotationCreate.md#rectangles)
+- [validationResults](AnnotationCreate.md#validationresults)
 
 ## Properties
 
@@ -78,3 +79,11 @@ ___
 • `Optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
 
 x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles.
+
+___
+
+### validationResults
+
+• `Optional` **validationResults**: (``null`` \| [`ChangedValidationResults`](ChangedValidationResults.md))[]
+
+The validation results created, changed or deleted as a result of creating the annotation.

@@ -7,8 +7,10 @@
 ### Properties
 
 - [collection](DocumentCreate.md#collection)
+- [compact](DocumentCreate.md#compact)
 - [customIdentifier](DocumentCreate.md#customidentifier)
 - [data](DocumentCreate.md#data)
+- [deleteAfterParse](DocumentCreate.md#deleteafterparse)
 - [expiryTime](DocumentCreate.md#expirytime)
 - [file](DocumentCreate.md#file)
 - [fileName](DocumentCreate.md#filename)
@@ -31,6 +33,14 @@ Uniquely identify a collection.
 
 ___
 
+### compact
+
+• `Optional` **compact**: `boolean`
+
+If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result.
+
+___
+
 ### customIdentifier
 
 • `Optional` **customIdentifier**: `string`
@@ -44,6 +54,14 @@ ___
 • `Optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
 
 Create resume or job description directly from data.
+
+___
+
+### deleteAfterParse
+
+• `Optional` **deleteAfterParse**: `boolean`
+
+If true, no data will be stored after parsing. Only compatible with requests where wait: True.
 
 ___
 

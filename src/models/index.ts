@@ -57,10 +57,18 @@ export interface OrganizationValidationToolConfig {
   hideActions?: boolean;
   /** Hide the collection selector. */
   hideCollection?: boolean;
+  /** Hide the edit pages button. */
+  hideEditPages?: boolean;
   /** Hide the export menu. */
   hideExport?: boolean;
   /** Hide the filename input. */
   hideFilename?: boolean;
+  /** Hide the reject document button. */
+  hideReject?: boolean;
+  /** Hide the reparse button. */
+  hideReparse?: boolean;
+  /** Hide the run OCR button. */
+  hideRunOcr?: boolean;
   /** Hide the tags editor. */
   hideTags?: boolean;
   /** Hide the warnings panel. */
@@ -82,7 +90,8 @@ export interface ThemeConfig {
 
 export interface ThemeConfigPalette {
   mode?: ThemeConfigPaletteMode;
-  background?: ThemeConfigPaletteBackground;
+  /** Anything */
+  background?: any;
   text?: ThemeConfigPaletteText;
   divider?: string;
   primary?: PaletteColorOptions;
@@ -92,11 +101,6 @@ export interface ThemeConfigPalette {
   error?: PaletteColorOptions;
   info?: PaletteColorOptions;
   warning?: PaletteColorOptions;
-}
-
-export interface ThemeConfigPaletteBackground {
-  default?: string;
-  paper?: string;
 }
 
 export interface ThemeConfigPaletteText {
@@ -114,7 +118,8 @@ export interface PaletteColorOptions {
 
 export interface ThemeConfigTypography {
   fontFamily?: string;
-  fontSize?: string;
+  /** Anything */
+  fontSize?: any;
   fontWeightRegular?: string;
   fontWeightMedium?: string;
   fontWeightBold?: string;
@@ -247,6 +252,7 @@ export interface Collection {
   workspace?: CollectionWorkspace;
   extractor?: Extractor;
   autoValidationThreshold?: number;
+  autoValidateIfValidationRulesPass?: boolean;
   fields?: FieldGroup[];
   fieldsLayout?: FieldsLayout;
   fieldsConfigured?: boolean;
@@ -267,6 +273,8 @@ export interface Collection {
   allowOpenai?: boolean;
   /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
   trainsExtractor?: boolean;
+  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+  disableConfirmationIfValidationRulesFail?: boolean;
 }
 
 export interface CollectionWorkspace {
@@ -322,6 +330,7 @@ export interface FieldDeprecated {
   disabled?: boolean;
   autoValidationThreshold?: number;
   showDropdown?: boolean;
+  displayRawText?: boolean;
   /** If True, any dropdown annotations that fail to parse to a value will be discarded */
   dropNull?: boolean;
   displayEnumValue?: boolean;
@@ -361,6 +370,8 @@ export interface Field {
   enabledChildFields?: Field[];
   disabledChildFields?: Field[];
   slug?: string;
+  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+  displayRawText?: boolean;
   fields?: Record<string, unknown>[];
 }
 
@@ -400,6 +411,8 @@ export interface CollectionCreate {
   allowOpenai?: boolean;
   /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
   trainsExtractor?: boolean;
+  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+  disableConfirmationIfValidationRulesFail?: boolean;
 }
 
 export interface CollectionUpdate {
@@ -416,6 +429,8 @@ export interface CollectionUpdate {
   allowOpenai?: boolean;
   /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
   trainsExtractor?: boolean;
+  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+  disableConfirmationIfValidationRulesFail?: boolean;
 }
 
 export interface DataFieldCreate {
@@ -441,6 +456,8 @@ export interface DataFieldCreateField {
   dataSource?: string;
   /** Defines how the data point is mapped to the data source */
   mapping?: string;
+  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+  displayRawText?: boolean;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -475,7 +492,7 @@ export interface DataFieldField {
   /** The different data types of annotations */
   fieldType?: AnnotationContentType;
   mandatory: boolean;
-  showDropdown: boolean;
+  showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue: boolean;
   autoValidationThreshold: number | null;
@@ -485,6 +502,8 @@ export interface DataFieldField {
   dataSource?: string;
   /** Defines how the data point is mapped to the data source */
   mapping?: string;
+  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+  displayRawText?: boolean;
 }
 
 /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
@@ -560,6 +579,8 @@ export interface CollectionField {
   dataSource?: string;
   /** Defines how the data point is mapped to the data source */
   mapping?: string;
+  /** Defines how the data point is mapped to the data source */
+  displayRawText?: string;
 }
 
 /** Monthly credits consumption */
@@ -616,9 +637,12 @@ export interface DocumentMeta {
   workspace: DocumentMetaWorkspace;
   archivedDt?: Date;
   isArchived?: boolean;
+  skipParse?: boolean;
   confirmedDt?: Date;
+  confirmedBy?: UserNullable;
   isConfirmed?: boolean;
   rejectedDt?: Date;
+  rejectedBy?: UserNullable;
   isRejected?: boolean;
   createdDt?: Date;
   errorCode?: string;
@@ -626,7 +650,6 @@ export interface DocumentMeta {
   /** URL to view the file. */
   file?: string;
   tags?: Tag[];
-  confirmedBy?: UserNullable;
   createdBy?: User;
   /** If the document is created via email ingestion, this field stores the email file's URL. */
   sourceEmail?: string;
@@ -667,6 +690,7 @@ export interface DocumentMetaCollection {
   identifier: string;
   name?: string;
   extractor?: DocumentMetaCollectionExtractor;
+  validationRules?: ValidationRule[];
 }
 
 export interface DocumentMetaCollectionExtractor {
@@ -678,20 +702,18 @@ export interface DocumentMetaCollectionExtractor {
   validatable?: boolean;
 }
 
+/** A validation rule for a collection */
+export interface ValidationRule {
+  /** The slug of the validation rule, in lowercase snake_case */
+  slug: string;
+  /** The data point identifier that this validation rule applies to, can be an empty list if the rule doens't use any data points as sources */
+  dataPoints: string[];
+}
+
 export interface DocumentMetaWorkspace {
   /** Uniquely identify a workspace. */
   identifier: string;
   name?: string;
-}
-
-export interface Tag {
-  /** Uniquely identify a tag. */
-  id: number;
-  name: string;
-  /** Uniquely identify a workspace. */
-  workspace: string;
-  /** Number of documents tagged with this. */
-  documentCount: number;
 }
 
 export interface UserNullable {
@@ -704,6 +726,16 @@ export interface UserNullable {
   avatar?: string;
 }
 
+export interface Tag {
+  /** Uniquely identify a tag. */
+  id: number;
+  name: string;
+  /** Uniquely identify a workspace. */
+  workspace: string;
+  /** Number of documents tagged with this. */
+  documentCount: number;
+}
+
 export interface RegionBias {
   /** A single alpha-2 country code (e.g. AU) used by google geocoding service */
   country?: string;
@@ -711,6 +743,12 @@ export interface RegionBias {
   countries?: string[];
   /** A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat] */
   squareCoordinates?: number[];
+  /**
+   * If true, the location must be within the region, as opposed to prefering locations within the region.
+   * Default to false.
+   *
+   */
+  strict?: boolean;
 }
 
 export interface DocumentError {
@@ -801,6 +839,8 @@ export interface Location {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly state?: string;
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly stateCode?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly country?: string;
   /**
    * Two letter country code (ISO 3166-1 alpha-2)
@@ -820,6 +860,8 @@ export interface Location {
   readonly latitude?: number;
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly longitude?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly poBox?: string;
 }
 
 export interface Education {
@@ -1069,6 +1111,7 @@ export interface DocumentUpdate {
   isConfirmed?: boolean;
   isRejected?: boolean;
   isArchived?: boolean;
+  skipParse?: boolean;
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** Deprecated in favor of `customIdentifier`. */
@@ -1248,6 +1291,48 @@ export interface MetaChildDocumentsItem {
   identifier?: string;
 }
 
+/** Validation result arising from a ValidationRule */
+export interface ValidationResult {
+  /** Validation Result's ID */
+  id: number;
+  /** List of annotation ids that were validated */
+  annotations: number[];
+  /** Whether the validation passed or not */
+  passed: boolean;
+  /** The hot-dog case slug of the validation rule that was applied */
+  ruleSlug: string;
+  /** Message explaining why the validation failed */
+  message: string;
+  /** Unique identifier for the document */
+  document: string;
+}
+
+export interface ValidationResultCreate {
+  /** List of annotation ids that were validated */
+  annotations: number[];
+  /** Whether the validation passed or not */
+  passed?: boolean;
+  /** The hot-dog case slug of the validation rule that was applied */
+  ruleSlug: string;
+  /** Message explaining why the validation failed */
+  message: string;
+  /** Unique identifier for the document */
+  document: string;
+}
+
+export interface ValidationResultUpdate {
+  /** List of annotation ids that were validated */
+  annotations?: number[];
+  /** Whether the validation passed or not */
+  passed?: boolean;
+  /** The hot-dog case slug of the validation rule that was applied */
+  ruleSlug?: string;
+  /** Message explaining why the validation failed */
+  message?: string;
+  /** Unique identifier for the document */
+  document?: string;
+}
+
 export interface ExtractorCreate {
   name: string;
   namePlural?: string;
@@ -1398,6 +1483,19 @@ export interface AnnotationCreate {
   isClientVerified?: boolean;
   /** The parent annotation's ID */
   parent?: number;
+  /** The validation results created, changed or deleted as a result of creating the annotation. */
+  validationResults?: (ChangedValidationResults | null)[];
+}
+
+export interface ChangedValidationResults {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  /** List of validation results created during this operation. */
+  created?: ValidationResult[];
+  /** List of validation results updated during this operation. */
+  updated?: ValidationResult[];
+  /** List of validation results deleted during this operation. */
+  deleted?: ValidationResult[];
 }
 
 export interface AnnotationUpdate {
@@ -1417,6 +1515,18 @@ export interface AnnotationUpdate {
   dataPoint?: string;
   /** The parent annotation's ID */
   parent?: number;
+  /** The validation results created, changed or deleted as a result of updating the annotation. */
+  validationResults?: (ChangedValidationResults | null)[];
+}
+
+export interface AnotationDelete {
+  /** The validation results created, changed or deleted as a result of deleting the annotation. */
+  validationResults?: Record<string, unknown>;
+}
+
+export interface BatchDeleteAnnotationsResponse {
+  /** The validation results created, changed or deleted as a result of deleting the annotations. */
+  validationResults?: Record<string, unknown>;
 }
 
 /** A mapping data source is used to map from raw data found by our AI models to records in your database. */
@@ -1493,10 +1603,18 @@ export interface ValidationToolConfig {
   hideActions?: boolean;
   /** Hide the collection selector. */
   hideCollection?: boolean;
+  /** Hide the edit pages button. */
+  hideEditPages?: boolean;
   /** Hide the export menu. */
   hideExport?: boolean;
   /** Hide the filename input. */
   hideFilename?: boolean;
+  /** Hide the reject document button. */
+  hideReject?: boolean;
+  /** Hide the reparse button. */
+  hideReparse?: boolean;
+  /** Hide the run OCR button. */
+  hideRunOcr?: boolean;
   /** Hide the tags editor. */
   hideTags?: boolean;
   /** Hide the warnings panel. */
@@ -1959,7 +2077,7 @@ export interface JobDescriptionSearchConfig {
   /** Controls whether or not the index dropdown is displayed to the user */
   showIndexDropdown?: boolean;
   /** Customize the theme of the embeded search tool. */
-  searchToolTheme?: { [propertyName: string]: any };
+  searchToolTheme?: JobDescriptionSearchConfigSearchToolTheme;
   /**
    * ID of the logged in user.
    * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -1977,6 +2095,8 @@ export interface JobDescriptionSearchConfig {
   /** Hide the entire side panel. */
   hideSidePanel?: boolean;
   customFieldsConfig?: CustomFieldConfig[];
+  /** The unit of distance to use for location based searches */
+  distanceUnit?: JobDescriptionSearchConfigDistanceUnit;
 }
 
 export interface SearchConfigAction {
@@ -2291,7 +2411,7 @@ export interface ResumeSearchConfig {
   /** Controls whether or not the index dropdown is displayed to the user */
   showIndexDropdown?: boolean;
   /** Customize the theme of the embeded search tool. */
-  searchToolTheme?: { [propertyName: string]: any };
+  searchToolTheme?: ResumeSearchConfigSearchToolTheme;
   /**
    * ID of the logged in user.
    * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -2309,6 +2429,8 @@ export interface ResumeSearchConfig {
   /** Hide the entire side panel. */
   hideSidePanel?: boolean;
   customFieldsConfig?: CustomFieldConfig[];
+  /** The unit of distance to use for location based searches */
+  distanceUnit?: ResumeSearchConfigDistanceUnit;
 }
 
 export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
@@ -2579,6 +2701,11 @@ export interface UrlAnnotationParsed {
   domain?: string;
 }
 
+export interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1 {
+  default?: string;
+  paper?: string;
+}
+
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
   file?: coreRestPipeline.RequestBodyType;
@@ -2608,6 +2735,10 @@ export interface DocumentCreate {
   regionBias?: string;
   /** Explicitly mark this document as low priority. */
   lowPriority?: boolean;
+  /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
+  compact?: boolean;
+  /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
+  deleteAfterParse?: boolean;
 }
 
 export interface OrganizationCreate {
@@ -2627,6 +2758,12 @@ export interface OrganizationUpdate {
   /** Configuration of the embeddable validation tool. */
   validationToolConfig?: ValidationToolConfig;
 }
+
+/** Customize the theme of the embeded search tool. */
+export type JobDescriptionSearchConfigSearchToolTheme = ThemeConfig & {};
+
+/** Customize the theme of the embeded search tool. */
+export type ResumeSearchConfigSearchToolTheme = ThemeConfig & {};
 
 export type InvitationRespondedBy = User & {};
 
@@ -2736,6 +2873,11 @@ export type LocationAnnotation = Annotation & {
 export type YearsExperienceAnnotation = Annotation & {
   /** Years of experience range */
   parsed?: YearsExperienceAnnotationParsed;
+};
+
+export type AnnotationWithValidationResults = Annotation & {
+  /** List of validation results for this annotation. */
+  validationResults?: ValidationResult[];
 };
 
 export type FloatAnnotation = Annotation & {
@@ -2913,7 +3055,8 @@ export type InvoiceDataSupplierWebsite = TextAnnotation &
 /** Known values of {@link Region} that the service accepts. */
 export enum KnownRegion {
   Api = "api",
-  ApiEu1 = "api.eu1"
+  ApiEu1 = "api.eu1",
+  ApiUs1 = "api.us1"
 }
 
 /**
@@ -2922,7 +3065,8 @@ export enum KnownRegion {
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **api** \
- * **api.eu1**
+ * **api.eu1** \
+ * **api.us1**
  */
 export type Region = string;
 
@@ -3632,7 +3776,8 @@ export enum KnownResthookEvent {
   DocumentClassifySucceeded = "document.classify.succeeded",
   DocumentClassifyFailed = "document.classify.failed",
   DocumentClassifyCompleted = "document.classify.completed",
-  DocumentRejected = "document.rejected"
+  DocumentRejected = "document.rejected",
+  AnnotationValidated = "annotation.validated"
 }
 
 /**
@@ -3654,7 +3799,8 @@ export enum KnownResthookEvent {
  * **document.classify.succeeded** \
  * **document.classify.failed** \
  * **document.classify.completed** \
- * **document.rejected**
+ * **document.rejected** \
+ * **annotation.validated**
  */
 export type ResthookEvent = string;
 
@@ -3710,21 +3856,37 @@ export enum KnownSearchParametersCustomDataFilterType {
  */
 export type SearchParametersCustomDataFilterType = string;
 
-/** Known values of {@link Enum19} that the service accepts. */
-export enum KnownEnum19 {
+/** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
+export enum KnownJobDescriptionSearchConfigDistanceUnit {
+  Mi = "mi",
+  Km = "km"
+}
+
+/**
+ * Defines values for JobDescriptionSearchConfigDistanceUnit. \
+ * {@link KnownJobDescriptionSearchConfigDistanceUnit} can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export type JobDescriptionSearchConfigDistanceUnit = string;
+
+/** Known values of {@link Enum20} that the service accepts. */
+export enum KnownEnum20 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum19. \
- * {@link KnownEnum19} can be used interchangeably with Enum19,
+ * Defines values for Enum20. \
+ * {@link KnownEnum20} can be used interchangeably with Enum20,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum19 = string;
+export type Enum20 = string;
 
 /** Known values of {@link IndexDocumentType} that the service accepts. */
 export enum KnownIndexDocumentType {
@@ -3809,6 +3971,22 @@ export enum KnownResumeSkillSourcesItemSection {
  * **Extracurriculars\/Leadership**
  */
 export type ResumeSkillSourcesItemSection = string;
+
+/** Known values of {@link ResumeSearchConfigDistanceUnit} that the service accepts. */
+export enum KnownResumeSearchConfigDistanceUnit {
+  Mi = "mi",
+  Km = "km"
+}
+
+/**
+ * Defines values for ResumeSearchConfigDistanceUnit. \
+ * {@link KnownResumeSearchConfigDistanceUnit} can be used interchangeably with ResumeSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export type ResumeSearchConfigDistanceUnit = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -4044,6 +4222,10 @@ export interface AffindaAPICreateDocumentOptionalParams
   regionBias?: string;
   /** Explicitly mark this document as low priority. */
   lowPriority?: boolean;
+  /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
+  compact?: boolean;
+  /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
+  deleteAfterParse?: boolean;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -4093,6 +4275,43 @@ export interface AffindaAPIEditDocumentPagesOptionalParams
 
 /** Contains response data for the editDocumentPages operation. */
 export type AffindaAPIEditDocumentPagesResponse = Meta[];
+
+/** Optional parameters. */
+export interface AffindaAPIGetAllValidationResultsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the getAllValidationResults operation. */
+export type AffindaAPIGetAllValidationResultsResponse = ValidationResult[];
+
+/** Optional parameters. */
+export interface AffindaAPICreateValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createValidationResult operation. */
+export type AffindaAPICreateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export interface AffindaAPIGetValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getValidationResult operation. */
+export type AffindaAPIGetValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateValidationResult operation. */
+export type AffindaAPIUpdateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export interface AffindaAPIDeleteValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllExtractorsOptionalParams
@@ -4251,7 +4470,7 @@ export interface AffindaAPICreateAnnotationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createAnnotation operation. */
-export type AffindaAPICreateAnnotationResponse = Annotation;
+export type AffindaAPICreateAnnotationResponse = AnnotationWithValidationResults;
 
 /** Optional parameters. */
 export interface AffindaAPIGetAnnotationOptionalParams
@@ -4271,6 +4490,9 @@ export type AffindaAPIUpdateAnnotationResponse = Annotation;
 export interface AffindaAPIDeleteAnnotationOptionalParams
   extends coreClient.OperationOptions {}
 
+/** Contains response data for the deleteAnnotation operation. */
+export type AffindaAPIDeleteAnnotationResponse = AnotationDelete;
+
 /** Optional parameters. */
 export interface AffindaAPIBatchCreateAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
@@ -4288,6 +4510,9 @@ export type AffindaAPIBatchUpdateAnnotationsResponse = (Annotation | null)[];
 /** Optional parameters. */
 export interface AffindaAPIBatchDeleteAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchDeleteAnnotations operation. */
+export type AffindaAPIBatchDeleteAnnotationsResponse = BatchDeleteAnnotationsResponse;
 
 /** Optional parameters. */
 export interface AffindaAPICreateMappingDataSourceOptionalParams
@@ -4722,7 +4947,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum19;
+  documentType?: Enum20;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -4748,7 +4973,12 @@ export interface AffindaAPIDeleteIndexOptionalParams
 
 /** Optional parameters. */
 export interface AffindaAPIGetAllIndexDocumentsOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
 
 /** Contains response data for the getAllIndexDocuments operation. */
 export type AffindaAPIGetAllIndexDocumentsResponse = PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema;

@@ -13,16 +13,18 @@
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
 - [KnownDocumentType](enums/KnownDocumentType.md)
-- [KnownEnum19](enums/KnownEnum19.md)
+- [KnownEnum20](enums/KnownEnum20.md)
 - [KnownIndexDocumentType](enums/KnownIndexDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
 - [KnownInvitationStatus](enums/KnownInvitationStatus.md)
+- [KnownJobDescriptionSearchConfigDistanceUnit](enums/KnownJobDescriptionSearchConfigDistanceUnit.md)
 - [KnownOrganizationRole](enums/KnownOrganizationRole.md)
 - [KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md)
 - [KnownRegion](enums/KnownRegion.md)
 - [KnownResthookEvent](enums/KnownResthookEvent.md)
 - [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
 - [KnownResumeDataLanguagesItem](enums/KnownResumeDataLanguagesItem.md)
+- [KnownResumeSearchConfigDistanceUnit](enums/KnownResumeSearchConfigDistanceUnit.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
 - [KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md)
 - [KnownThemeConfigPaletteMode](enums/KnownThemeConfigPaletteMode.md)
@@ -66,6 +68,7 @@
 - [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
 - [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
 - [AffindaAPICreateTagOptionalParams](interfaces/AffindaAPICreateTagOptionalParams.md)
+- [AffindaAPICreateValidationResultOptionalParams](interfaces/AffindaAPICreateValidationResultOptionalParams.md)
 - [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
 - [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
 - [AffindaAPIDeleteAnnotationOptionalParams](interfaces/AffindaAPIDeleteAnnotationOptionalParams.md)
@@ -85,6 +88,7 @@
 - [AffindaAPIDeleteOrganizationOptionalParams](interfaces/AffindaAPIDeleteOrganizationOptionalParams.md)
 - [AffindaAPIDeleteResthookSubscriptionOptionalParams](interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md)
 - [AffindaAPIDeleteTagOptionalParams](interfaces/AffindaAPIDeleteTagOptionalParams.md)
+- [AffindaAPIDeleteValidationResultOptionalParams](interfaces/AffindaAPIDeleteValidationResultOptionalParams.md)
 - [AffindaAPIDeleteWorkspaceMembershipOptionalParams](interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md)
 - [AffindaAPIDeleteWorkspaceOptionalParams](interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md)
 - [AffindaAPIEditDocumentPagesOptionalParams](interfaces/AffindaAPIEditDocumentPagesOptionalParams.md)
@@ -101,6 +105,7 @@
 - [AffindaAPIGetAllOrganizationsOptionalParams](interfaces/AffindaAPIGetAllOrganizationsOptionalParams.md)
 - [AffindaAPIGetAllResthookSubscriptionsOptionalParams](interfaces/AffindaAPIGetAllResthookSubscriptionsOptionalParams.md)
 - [AffindaAPIGetAllTagsOptionalParams](interfaces/AffindaAPIGetAllTagsOptionalParams.md)
+- [AffindaAPIGetAllValidationResultsOptionalParams](interfaces/AffindaAPIGetAllValidationResultsOptionalParams.md)
 - [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
 - [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
 - [AffindaAPIGetAnnotationOptionalParams](interfaces/AffindaAPIGetAnnotationOptionalParams.md)
@@ -130,6 +135,7 @@
 - [AffindaAPIGetTagOptionalParams](interfaces/AffindaAPIGetTagOptionalParams.md)
 - [AffindaAPIGetUsageByCollectionOptionalParams](interfaces/AffindaAPIGetUsageByCollectionOptionalParams.md)
 - [AffindaAPIGetUsageByWorkspaceOptionalParams](interfaces/AffindaAPIGetUsageByWorkspaceOptionalParams.md)
+- [AffindaAPIGetValidationResultOptionalParams](interfaces/AffindaAPIGetValidationResultOptionalParams.md)
 - [AffindaAPIGetWorkspaceMembershipOptionalParams](interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md)
 - [AffindaAPIGetWorkspaceOptionalParams](interfaces/AffindaAPIGetWorkspaceOptionalParams.md)
 - [AffindaAPIListMappingDataSourceValuesOptionalParams](interfaces/AffindaAPIListMappingDataSourceValuesOptionalParams.md)
@@ -159,11 +165,13 @@
 - [AffindaAPIUpdateResthookSubscriptionOptionalParams](interfaces/AffindaAPIUpdateResthookSubscriptionOptionalParams.md)
 - [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateTagOptionalParams](interfaces/AffindaAPIUpdateTagOptionalParams.md)
+- [AffindaAPIUpdateValidationResultOptionalParams](interfaces/AffindaAPIUpdateValidationResultOptionalParams.md)
 - [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [AnnotationBase](interfaces/AnnotationBase.md)
 - [AnnotationCreate](interfaces/AnnotationCreate.md)
 - [AnnotationUpdate](interfaces/AnnotationUpdate.md)
+- [AnotationDelete](interfaces/AnotationDelete.md)
 - [ApiUserCreate](interfaces/ApiUserCreate.md)
 - [ApiUserUpdate](interfaces/ApiUserUpdate.md)
 - [ApiUserWithKey](interfaces/ApiUserWithKey.md)
@@ -172,7 +180,9 @@
 - [ApiUserWithoutKeyOrganizationsItem](interfaces/ApiUserWithoutKeyOrganizationsItem.md)
 - [BaseExtractor](interfaces/BaseExtractor.md)
 - [BatchAddTagRequest](interfaces/BatchAddTagRequest.md)
+- [BatchDeleteAnnotationsResponse](interfaces/BatchDeleteAnnotationsResponse.md)
 - [BatchRemoveTagRequest](interfaces/BatchRemoveTagRequest.md)
+- [ChangedValidationResults](interfaces/ChangedValidationResults.md)
 - [Collection](interfaces/Collection.md)
 - [CollectionCreate](interfaces/CollectionCreate.md)
 - [CollectionField](interfaces/CollectionField.md)
@@ -186,6 +196,7 @@
 - [Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md)
 - [Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1](interfaces/Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.md)
 - [Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1](interfaces/Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1.md)
+- [Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1](interfaces/Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1.md)
 - [Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1](interfaces/Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1.md)
 - [Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1](interfaces/Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1.md)
 - [Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1](interfaces/Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.md)
@@ -403,7 +414,6 @@
 - [TagUpdate](interfaces/TagUpdate.md)
 - [ThemeConfig](interfaces/ThemeConfig.md)
 - [ThemeConfigPalette](interfaces/ThemeConfigPalette.md)
-- [ThemeConfigPaletteBackground](interfaces/ThemeConfigPaletteBackground.md)
 - [ThemeConfigPaletteText](interfaces/ThemeConfigPaletteText.md)
 - [ThemeConfigTypography](interfaces/ThemeConfigTypography.md)
 - [UrlAnnotationParsed](interfaces/UrlAnnotationParsed.md)
@@ -411,6 +421,10 @@
 - [UsageByWorkspace](interfaces/UsageByWorkspace.md)
 - [User](interfaces/User.md)
 - [UserNullable](interfaces/UserNullable.md)
+- [ValidationResult](interfaces/ValidationResult.md)
+- [ValidationResultCreate](interfaces/ValidationResultCreate.md)
+- [ValidationResultUpdate](interfaces/ValidationResultUpdate.md)
+- [ValidationRule](interfaces/ValidationRule.md)
 - [ValidationToolConfig](interfaces/ValidationToolConfig.md)
 - [Workspace](interfaces/Workspace.md)
 - [WorkspaceCollectionsItem](interfaces/WorkspaceCollectionsItem.md)
@@ -427,6 +441,7 @@
 - [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
 - [AffindaAPIAddMappingDataSourceValueResponse](modules.md#affindaapiaddmappingdatasourcevalueresponse)
 - [AffindaAPIBatchCreateAnnotationsResponse](modules.md#affindaapibatchcreateannotationsresponse)
+- [AffindaAPIBatchDeleteAnnotationsResponse](modules.md#affindaapibatchdeleteannotationsresponse)
 - [AffindaAPIBatchUpdateAnnotationsResponse](modules.md#affindaapibatchupdateannotationsresponse)
 - [AffindaAPICreateAnnotationResponse](modules.md#affindaapicreateannotationresponse)
 - [AffindaAPICreateApiUserResponse](modules.md#affindaapicreateapiuserresponse)
@@ -448,8 +463,10 @@
 - [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
 - [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
 - [AffindaAPICreateTagResponse](modules.md#affindaapicreatetagresponse)
+- [AffindaAPICreateValidationResultResponse](modules.md#affindaapicreatevalidationresultresponse)
 - [AffindaAPICreateWorkspaceMembershipResponse](modules.md#affindaapicreateworkspacemembershipresponse)
 - [AffindaAPICreateWorkspaceResponse](modules.md#affindaapicreateworkspaceresponse)
+- [AffindaAPIDeleteAnnotationResponse](modules.md#affindaapideleteannotationresponse)
 - [AffindaAPIEditDocumentPagesResponse](modules.md#affindaapieditdocumentpagesresponse)
 - [AffindaAPIGetAllAnnotationsResponse](modules.md#affindaapigetallannotationsresponse)
 - [AffindaAPIGetAllApiUsersResponse](modules.md#affindaapigetallapiusersresponse)
@@ -464,6 +481,7 @@
 - [AffindaAPIGetAllOrganizationsResponse](modules.md#affindaapigetallorganizationsresponse)
 - [AffindaAPIGetAllResthookSubscriptionsResponse](modules.md#affindaapigetallresthooksubscriptionsresponse)
 - [AffindaAPIGetAllTagsResponse](modules.md#affindaapigetalltagsresponse)
+- [AffindaAPIGetAllValidationResultsResponse](modules.md#affindaapigetallvalidationresultsresponse)
 - [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
 - [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
 - [AffindaAPIGetAnnotationResponse](modules.md#affindaapigetannotationresponse)
@@ -493,6 +511,7 @@
 - [AffindaAPIGetTagResponse](modules.md#affindaapigettagresponse)
 - [AffindaAPIGetUsageByCollectionResponse](modules.md#affindaapigetusagebycollectionresponse)
 - [AffindaAPIGetUsageByWorkspaceResponse](modules.md#affindaapigetusagebyworkspaceresponse)
+- [AffindaAPIGetValidationResultResponse](modules.md#affindaapigetvalidationresultresponse)
 - [AffindaAPIGetWorkspaceMembershipResponse](modules.md#affindaapigetworkspacemembershipresponse)
 - [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
 - [AffindaAPIListMappingDataSourceValuesResponse](modules.md#affindaapilistmappingdatasourcevaluesresponse)
@@ -521,9 +540,11 @@
 - [AffindaAPIUpdateResthookSubscriptionResponse](modules.md#affindaapiupdateresthooksubscriptionresponse)
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [AffindaAPIUpdateTagResponse](modules.md#affindaapiupdatetagresponse)
+- [AffindaAPIUpdateValidationResultResponse](modules.md#affindaapiupdatevalidationresultresponse)
 - [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
 - [AnnotationBatchUpdate](modules.md#annotationbatchupdate)
 - [AnnotationContentType](modules.md#annotationcontenttype)
+- [AnnotationWithValidationResults](modules.md#annotationwithvalidationresults)
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
 - [CurrencyCodeAnnotation](modules.md#currencycodeannotation)
 - [DateAnnotation](modules.md#dateannotation)
@@ -536,7 +557,7 @@
 - [DocumentType](modules.md#documenttype)
 - [DocumentUnion](modules.md#documentunion)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum19](modules.md#enum19)
+- [Enum20](modules.md#enum20)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationUpdate](modules.md#expectedremunerationannotationupdate)
 - [FloatAnnotation](modules.md#floatannotation)
@@ -575,6 +596,8 @@
 - [InvoiceDataSupplierVat](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
 - [JobDescription](modules.md#jobdescription)
+- [JobDescriptionSearchConfigDistanceUnit](modules.md#jobdescriptionsearchconfigdistanceunit)
+- [JobDescriptionSearchConfigSearchToolTheme](modules.md#jobdescriptionsearchconfigsearchtooltheme)
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
 - [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
@@ -606,6 +629,8 @@
 - [Resume](modules.md#resume)
 - [ResumeDataLanguagesItem](modules.md#resumedatalanguagesitem)
 - [ResumeRedact](modules.md#resumeredact)
+- [ResumeSearchConfigDistanceUnit](modules.md#resumesearchconfigdistanceunit)
+- [ResumeSearchConfigSearchToolTheme](modules.md#resumesearchconfigsearchtooltheme)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -656,6 +681,14 @@ Contains response data for the batchCreateAnnotations operation.
 
 ___
 
+### AffindaAPIBatchDeleteAnnotationsResponse
+
+Ƭ **AffindaAPIBatchDeleteAnnotationsResponse**: [`BatchDeleteAnnotationsResponse`](interfaces/BatchDeleteAnnotationsResponse.md)
+
+Contains response data for the batchDeleteAnnotations operation.
+
+___
+
 ### AffindaAPIBatchUpdateAnnotationsResponse
 
 Ƭ **AffindaAPIBatchUpdateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
@@ -666,7 +699,7 @@ ___
 
 ### AffindaAPICreateAnnotationResponse
 
-Ƭ **AffindaAPICreateAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
+Ƭ **AffindaAPICreateAnnotationResponse**: [`AnnotationWithValidationResults`](modules.md#annotationwithvalidationresults)
 
 Contains response data for the createAnnotation operation.
 
@@ -824,6 +857,14 @@ Contains response data for the createTag operation.
 
 ___
 
+### AffindaAPICreateValidationResultResponse
+
+Ƭ **AffindaAPICreateValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
+
+Contains response data for the createValidationResult operation.
+
+___
+
 ### AffindaAPICreateWorkspaceMembershipResponse
 
 Ƭ **AffindaAPICreateWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
@@ -837,6 +878,14 @@ ___
 Ƭ **AffindaAPICreateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
 
 Contains response data for the createWorkspace operation.
+
+___
+
+### AffindaAPIDeleteAnnotationResponse
+
+Ƭ **AffindaAPIDeleteAnnotationResponse**: [`AnotationDelete`](interfaces/AnotationDelete.md)
+
+Contains response data for the deleteAnnotation operation.
 
 ___
 
@@ -949,6 +998,14 @@ ___
 Ƭ **AffindaAPIGetAllTagsResponse**: [`Tag`](interfaces/Tag.md)[]
 
 Contains response data for the getAllTags operation.
+
+___
+
+### AffindaAPIGetAllValidationResultsResponse
+
+Ƭ **AffindaAPIGetAllValidationResultsResponse**: [`ValidationResult`](interfaces/ValidationResult.md)[]
+
+Contains response data for the getAllValidationResults operation.
 
 ___
 
@@ -1196,6 +1253,14 @@ Contains response data for the getUsageByWorkspace operation.
 
 ___
 
+### AffindaAPIGetValidationResultResponse
+
+Ƭ **AffindaAPIGetValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
+
+Contains response data for the getValidationResult operation.
+
+___
+
 ### AffindaAPIGetWorkspaceMembershipResponse
 
 Ƭ **AffindaAPIGetWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
@@ -1420,6 +1485,14 @@ Contains response data for the updateTag operation.
 
 ___
 
+### AffindaAPIUpdateValidationResultResponse
+
+Ƭ **AffindaAPIUpdateValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
+
+Contains response data for the updateValidationResult operation.
+
+___
+
 ### AffindaAPIUpdateWorkspaceResponse
 
 Ƭ **AffindaAPIUpdateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
@@ -1464,6 +1537,12 @@ Defines values for AnnotationContentType. \
 **table_deprecated** \
 **url** \
 **image**
+
+___
+
+### AnnotationWithValidationResults
+
+Ƭ **AnnotationWithValidationResults**: [`Annotation`](interfaces/Annotation.md) & \{ `validationResults?`: [`ValidationResult`](interfaces/ValidationResult.md)[]  }
 
 ___
 
@@ -1592,12 +1671,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum19
+### Enum20
 
-Ƭ **Enum19**: `string`
+Ƭ **Enum20**: `string`
 
-Defines values for Enum19. \
-[KnownEnum19](enums/KnownEnum19.md) can be used interchangeably with Enum19,
+Defines values for Enum20. \
+[KnownEnum20](enums/KnownEnum20.md) can be used interchangeably with Enum20,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1855,6 +1934,27 @@ ___
 
 ___
 
+### JobDescriptionSearchConfigDistanceUnit
+
+Ƭ **JobDescriptionSearchConfigDistanceUnit**: `string`
+
+Defines values for JobDescriptionSearchConfigDistanceUnit. \
+[KnownJobDescriptionSearchConfigDistanceUnit](enums/KnownJobDescriptionSearchConfigDistanceUnit.md) can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**mi** \
+**km**
+
+___
+
+### JobDescriptionSearchConfigSearchToolTheme
+
+Ƭ **JobDescriptionSearchConfigSearchToolTheme**: [`ThemeConfig`](interfaces/ThemeConfig.md) & {}
+
+Customize the theme of the embeded search tool.
+
+___
+
 ### JobDescriptionSearchDetailLocationValue
 
 Ƭ **JobDescriptionSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
@@ -2030,7 +2130,8 @@ Defines values for Region. \
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **api** \
-**api.eu1**
+**api.eu1** \
+**api.us1**
 
 ___
 
@@ -2056,7 +2157,8 @@ Defines values for ResthookEvent. \
 **document.classify.succeeded** \
 **document.classify.failed** \
 **document.classify.completed** \
-**document.rejected**
+**document.rejected** \
+**annotation.validated**
 
 ___
 
@@ -2297,6 +2399,27 @@ ___
 ### ResumeRedact
 
 Ƭ **ResumeRedact**: [`Document`](interfaces/Document.md) & \{ `data?`: [`ResumeRedactData`](interfaces/ResumeRedactData.md) ; `extractor`: ``"resume-redact"``  }
+
+___
+
+### ResumeSearchConfigDistanceUnit
+
+Ƭ **ResumeSearchConfigDistanceUnit**: `string`
+
+Defines values for ResumeSearchConfigDistanceUnit. \
+[KnownResumeSearchConfigDistanceUnit](enums/KnownResumeSearchConfigDistanceUnit.md) can be used interchangeably with ResumeSearchConfigDistanceUnit,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**mi** \
+**km**
+
+___
+
+### ResumeSearchConfigSearchToolTheme
+
+Ƭ **ResumeSearchConfigSearchToolTheme**: [`ThemeConfig`](interfaces/ThemeConfig.md) & {}
+
+Customize the theme of the embeded search tool.
 
 ___
 
