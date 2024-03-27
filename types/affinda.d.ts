@@ -933,7 +933,7 @@ export declare type AffindaAPICreateDataPointResponse = DataPoint;
 
 /** Optional parameters. */
 export declare interface AffindaAPICreateDocumentOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
     url?: string;
@@ -1961,10 +1961,28 @@ export declare interface AnnotationBase {
     contentType?: string;
 }
 
-export declare type AnnotationBatchUpdate = AnnotationUpdate & {
+export declare interface AnnotationBatchUpdate {
     /** Annotation's ID */
     id: number;
-};
+    /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+    rectangles?: Rectangle[];
+    /** Unique identifier for the document */
+    document?: string;
+    /** The page number within the document, starting from 0. */
+    pageIndex?: number;
+    /** Raw data extracted from the before any post-processing */
+    raw?: string;
+    /** Anything */
+    parsed?: any;
+    /** Indicates whether the data has been validated by a human */
+    isClientVerified?: boolean;
+    /** Data point's identifier */
+    dataPoint?: string;
+    /** The parent annotation's ID */
+    parent?: number;
+    /** The validation results created, changed or deleted as a result of updating the annotation. */
+    validationResults?: (ChangedValidationResults | null)[];
+}
 
 /**
  * Defines values for AnnotationContentType. \
@@ -2741,7 +2759,7 @@ declare interface Document_2 {
 export { Document_2 as Document }
 
 export declare interface DocumentCreate {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
     url?: string;
@@ -4283,6 +4301,7 @@ export declare interface Meta {
     createdDt?: Date;
     documentType?: string;
     regionBias?: RegionBias;
+    isOcrd?: boolean;
 }
 
 export declare interface MetaChildDocumentsItem {

@@ -169,6 +169,7 @@
 - [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [AnnotationBase](interfaces/AnnotationBase.md)
+- [AnnotationBatchUpdate](interfaces/AnnotationBatchUpdate.md)
 - [AnnotationCreate](interfaces/AnnotationCreate.md)
 - [AnnotationUpdate](interfaces/AnnotationUpdate.md)
 - [AnotationDelete](interfaces/AnotationDelete.md)
@@ -542,7 +543,6 @@
 - [AffindaAPIUpdateTagResponse](modules.md#affindaapiupdatetagresponse)
 - [AffindaAPIUpdateValidationResultResponse](modules.md#affindaapiupdatevalidationresultresponse)
 - [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
-- [AnnotationBatchUpdate](modules.md#annotationbatchupdate)
 - [AnnotationContentType](modules.md#annotationcontenttype)
 - [AnnotationWithValidationResults](modules.md#annotationwithvalidationresults)
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
@@ -1498,12 +1498,6 @@ ___
 Ƭ **AffindaAPIUpdateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
 
 Contains response data for the updateWorkspace operation.
-
-___
-
-### AnnotationBatchUpdate
-
-Ƭ **AnnotationBatchUpdate**: [`AnnotationUpdate`](interfaces/AnnotationUpdate.md) & \{ `id`: `number`  }
 
 ___
 

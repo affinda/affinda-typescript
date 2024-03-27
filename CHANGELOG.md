@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.31.0] - 2024-03-27
+### Added
+- Add AnnotationBatchUpdate endpoint
+
 ## [6.30.0] - 2024-03-07
 ### Added
 - Add validation_results endpoints

@@ -77,7 +77,7 @@ ___
 
 • `Optional` **file**: `RequestBodyType`
 
-File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG
+File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP
 
 ___
 

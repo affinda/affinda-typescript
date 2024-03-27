@@ -1278,6 +1278,7 @@ export interface Meta {
   createdDt?: Date;
   documentType?: string;
   regionBias?: RegionBias;
+  isOcrd?: boolean;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -1522,6 +1523,29 @@ export interface AnnotationUpdate {
 export interface AnotationDelete {
   /** The validation results created, changed or deleted as a result of deleting the annotation. */
   validationResults?: Record<string, unknown>;
+}
+
+export interface AnnotationBatchUpdate {
+  /** Annotation's ID */
+  id: number;
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles?: Rectangle[];
+  /** Unique identifier for the document */
+  document?: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex?: number;
+  /** Raw data extracted from the before any post-processing */
+  raw?: string;
+  /** Anything */
+  parsed?: any;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified?: boolean;
+  /** Data point's identifier */
+  dataPoint?: string;
+  /** The parent annotation's ID */
+  parent?: number;
+  /** The validation results created, changed or deleted as a result of updating the annotation. */
+  validationResults?: (ChangedValidationResults | null)[];
 }
 
 export interface BatchDeleteAnnotationsResponse {
@@ -2707,7 +2731,7 @@ export interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesB
 }
 
 export interface DocumentCreate {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;
@@ -2948,11 +2972,6 @@ export type LocationAnnotationUpdate = AnnotationBase & {
 export type YearsExperienceAnnotationUpdate = AnnotationBase & {
   /** Years of experience range */
   parsed?: YearsExperienceAnnotationUpdateParsed;
-};
-
-export type AnnotationBatchUpdate = AnnotationUpdate & {
-  /** Annotation's ID */
-  id: number;
 };
 
 export type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
@@ -4194,7 +4213,7 @@ export type AffindaAPIGetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetRespons
 /** Optional parameters. */
 export interface AffindaAPICreateDocumentOptionalParams
   extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;

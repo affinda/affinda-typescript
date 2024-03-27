@@ -322,7 +322,7 @@ Batch update annotations
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | [`AnnotationBatchUpdate`](../modules.md#annotationbatchupdate)[] | Array of AnnotationBatchUpdate |
+| `body` | [`AnnotationBatchUpdate`](../interfaces/AnnotationBatchUpdate.md)[] | Array of AnnotationBatchUpdate |
 | `options?` | [`AffindaAPIBatchUpdateAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md) | The options parameters. |
 
 #### Returns

@@ -5598,6 +5598,12 @@ export const Meta: coreClient.CompositeMapper = {
           name: "Composite",
           className: "RegionBias"
         }
+      },
+      isOcrd: {
+        serializedName: "isOcrd",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -6635,6 +6641,97 @@ export const AnotationDelete: coreClient.CompositeMapper = {
         type: {
           name: "Dictionary",
           value: { type: { name: "any" } }
+        }
+      }
+    }
+  }
+};
+
+export const AnnotationBatchUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "AnnotationBatchUpdate",
+    modelProperties: {
+      id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
+        serializedName: "id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      },
+      rectangles: {
+        serializedName: "rectangles",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Rectangle"
+            }
+          }
+        }
+      },
+      document: {
+        serializedName: "document",
+        type: {
+          name: "String"
+        }
+      },
+      pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
+        serializedName: "pageIndex",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      raw: {
+        serializedName: "raw",
+        nullable: true,
+        type: {
+          name: "String"
+        }
+      },
+      parsed: {
+        serializedName: "parsed",
+        type: {
+          name: "any"
+        }
+      },
+      isClientVerified: {
+        serializedName: "isClientVerified",
+        type: {
+          name: "Boolean"
+        }
+      },
+      dataPoint: {
+        serializedName: "dataPoint",
+        type: {
+          name: "String"
+        }
+      },
+      parent: {
+        serializedName: "parent",
+        nullable: true,
+        type: {
+          name: "Number"
+        }
+      },
+      validationResults: {
+        serializedName: "validationResults",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ChangedValidationResults"
+            }
+          }
         }
       }
     }
@@ -13471,26 +13568,6 @@ export const YearsExperienceAnnotationUpdate: coreClient.CompositeMapper = {
         type: {
           name: "Composite",
           className: "YearsExperienceAnnotationUpdateParsed"
-        }
-      }
-    }
-  }
-};
-
-export const AnnotationBatchUpdate: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "AnnotationBatchUpdate",
-    modelProperties: {
-      ...AnnotationUpdate.type.modelProperties,
-      id: {
-        constraints: {
-          InclusiveMinimum: 1
-        },
-        serializedName: "id",
-        required: true,
-        type: {
-          name: "Number"
         }
       }
     }
