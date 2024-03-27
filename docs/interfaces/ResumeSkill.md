@@ -2,6 +2,14 @@
 
 # Interface: ResumeSkill
 
+## Hierarchy
+
+- **`ResumeSkill`**
+
+  ↳ [`ResumeSearchDetailSkillsValueItem`](ResumeSearchDetailSkillsValueItem.md)
+
+  ↳ [`ResumeSearchDetailLanguagesValueItem`](ResumeSearchDetailLanguagesValueItem.md)
+
 ## Table of contents
 
 ### Properties

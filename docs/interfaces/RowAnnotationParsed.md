@@ -23,70 +23,70 @@
 
 ### itemBaseTotal
 
-• `Optional` **itemBaseTotal**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemBaseTotal**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemCode
 
-• `Optional` **itemCode**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemCode**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemDate
 
-• `Optional` **itemDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **itemDate**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### itemDescription
 
-• `Optional` **itemDescription**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemDescription**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemDiscount
 
-• `Optional` **itemDiscount**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemDiscount**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemOther
 
-• `Optional` **itemOther**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemOther**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemQuantity
 
-• `Optional` **itemQuantity**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemQuantity**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemTaxRate
 
-• `Optional` **itemTaxRate**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemTaxRate**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemTaxTotal
 
-• `Optional` **itemTaxTotal**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemTaxTotal**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemTotal
 
-• `Optional` **itemTotal**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemTotal**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemUnit
 
-• `Optional` **itemUnit**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemUnit**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemUnitPrice
 
-• `Optional` **itemUnitPrice**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemUnitPrice**: [`FloatAnnotation`](FloatAnnotation.md)

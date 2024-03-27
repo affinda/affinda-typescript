@@ -2,6 +2,12 @@
 
 # Interface: Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1
 
+## Hierarchy
+
+- **`Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1`**
+
+  ↳ [`InvoiceDataBankIban`](InvoiceDataBankIban.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

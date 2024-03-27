@@ -2,6 +2,12 @@
 
 # Interface: Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1
 
+## Hierarchy
+
+- **`Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1`**
+
+  ↳ [`InvoiceDataCustomerEmail`](InvoiceDataCustomerEmail.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

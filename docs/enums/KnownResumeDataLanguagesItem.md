@@ -218,11 +218,15 @@ Known values of [ResumeDataLanguagesItem](../modules.md#resumedatalanguagesitem)
 
 • **Ainu** = ``"Ainu"``
 
+Ainu
+
 ___
 
 ### Akan
 
 • **Akan** = ``"Akan"``
+
+Akan
 
 ___
 
@@ -230,11 +234,15 @@ ___
 
 • **Akkadian** = ``"Akkadian"``
 
+Akkadian
+
 ___
 
 ### Amharic
 
 • **Amharic** = ``"Amharic"``
+
+Amharic
 
 ___
 
@@ -242,11 +250,15 @@ ___
 
 • **Anam** = ``"Anam"``
 
+Anam
+
 ___
 
 ### Arabic
 
 • **Arabic** = ``"Arabic"``
+
+Arabic
 
 ___
 
@@ -254,11 +266,15 @@ ___
 
 • **Aramaic** = ``"Aramaic"``
 
+Aramaic
+
 ___
 
 ### Arem
 
 • **Arem** = ``"Arem"``
+
+Arem
 
 ___
 
@@ -266,11 +282,15 @@ ___
 
 • **Armenian** = ``"Armenian"``
 
+Armenian
+
 ___
 
 ### Awadhi
 
 • **Awadhi** = ``"Awadhi"``
+
+Awadhi
 
 ___
 
@@ -278,11 +298,15 @@ ___
 
 • **Aymara** = ``"Aymara"``
 
+Aymara
+
 ___
 
 ### Azari
 
 • **Azari** = ``"Azari"``
+
+Azari
 
 ___
 
@@ -290,11 +314,15 @@ ___
 
 • **Bagheli** = ``"Bagheli"``
 
+Bagheli
+
 ___
 
 ### Bagri
 
 • **Bagri** = ``"Bagri"``
+
+Bagri
 
 ___
 
@@ -302,11 +330,15 @@ ___
 
 • **Bahasa** = ``"Bahasa"``
 
+Bahasa
+
 ___
 
 ### Bambara
 
 • **Bambara** = ``"Bambara"``
+
+Bambara
 
 ___
 
@@ -314,11 +346,15 @@ ___
 
 • **Bangala** = ``"Bangala"``
 
+Bangala
+
 ___
 
 ### Bardi
 
 • **Bardi** = ``"Bardi"``
+
+Bardi
 
 ___
 
@@ -326,11 +362,15 @@ ___
 
 • **Bassa** = ``"Bassa"``
 
+Bassa
+
 ___
 
 ### Batak
 
 • **Batak** = ``"Batak"``
+
+Batak
 
 ___
 
@@ -338,11 +378,15 @@ ___
 
 • **Belarusian** = ``"Belarusian"``
 
+Belarusian
+
 ___
 
 ### Bemba
 
 • **Bemba** = ``"Bemba"``
+
+Bemba
 
 ___
 
@@ -350,11 +394,15 @@ ___
 
 • **Benga** = ``"Benga"``
 
+Benga
+
 ___
 
 ### Bengali
 
 • **Bengali** = ``"Bengali"``
+
+Bengali
 
 ___
 
@@ -362,11 +410,15 @@ ___
 
 • **Berber** = ``"Berber"``
 
+Berber
+
 ___
 
 ### Bhojpuri
 
 • **Bhojpuri** = ``"Bhojpuri"``
+
+Bhojpuri
 
 ___
 
@@ -374,11 +426,15 @@ ___
 
 • **Bislama** = ``"Bislama"``
 
+Bislama
+
 ___
 
 ### Brahui
 
 • **Brahui** = ``"Brahui"``
+
+Brahui
 
 ___
 
@@ -386,11 +442,15 @@ ___
 
 • **Bulgarian** = ``"Bulgarian"``
 
+Bulgarian
+
 ___
 
 ### Bunu
 
 • **Bunu** = ``"Bunu"``
+
+Bunu
 
 ___
 
@@ -398,11 +458,15 @@ ___
 
 • **Cambodian** = ``"Cambodian"``
 
+Cambodian
+
 ___
 
 ### Carew
 
 • **Carew** = ``"Carew"``
+
+Carew
 
 ___
 
@@ -410,11 +474,15 @@ ___
 
 • **Carib** = ``"Carib"``
 
+Carib
+
 ___
 
 ### Catalan
 
 • **Catalan** = ``"Catalan"``
+
+Catalan
 
 ___
 
@@ -422,11 +490,15 @@ ___
 
 • **Cebuano** = ``"Cebuano"``
 
+Cebuano
+
 ___
 
 ### Chakma
 
 • **Chakma** = ``"Chakma"``
+
+Chakma
 
 ___
 
@@ -434,11 +506,15 @@ ___
 
 • **Chamorro** = ``"Chamorro"``
 
+Chamorro
+
 ___
 
 ### Chango
 
 • **Chango** = ``"Chango"``
+
+Chango
 
 ___
 
@@ -446,11 +522,15 @@ ___
 
 • **Chewa** = ``"Chewa"``
 
+Chewa
+
 ___
 
 ### Croatian
 
 • **Croatian** = ``"Croatian"``
+
+Croatian
 
 ___
 
@@ -458,11 +538,15 @@ ___
 
 • **Czech** = ``"Czech"``
 
+Czech
+
 ___
 
 ### Dagbani
 
 • **Dagbani** = ``"Dagbani"``
+
+Dagbani
 
 ___
 
@@ -470,11 +554,15 @@ ___
 
 • **Danish** = ``"Danish"``
 
+Danish
+
 ___
 
 ### Dari
 
 • **Dari** = ``"Dari"``
+
+Dari
 
 ___
 
@@ -482,11 +570,15 @@ ___
 
 • **Dayi** = ``"Dayi"``
 
+Dayi
+
 ___
 
 ### Dhatki
 
 • **Dhatki** = ``"Dhatki"``
+
+Dhatki
 
 ___
 
@@ -494,11 +586,15 @@ ___
 
 • **Dhivehi** = ``"Dhivehi"``
 
+Dhivehi
+
 ___
 
 ### Dinka
 
 • **Dinka** = ``"Dinka"``
+
+Dinka
 
 ___
 
@@ -506,11 +602,15 @@ ___
 
 • **Dogri** = ``"Dogri"``
 
+Dogri
+
 ___
 
 ### Duala
 
 • **Duala** = ``"Duala"``
+
+Duala
 
 ___
 
@@ -518,11 +618,15 @@ ___
 
 • **Dutch** = ``"Dutch"``
 
+Dutch
+
 ___
 
 ### English
 
 • **English** = ``"English"``
+
+English
 
 ___
 
@@ -530,11 +634,15 @@ ___
 
 • **Esperanto** = ``"Esperanto"``
 
+Esperanto
+
 ___
 
 ### Estonian
 
 • **Estonian** = ``"Estonian"``
+
+Estonian
 
 ___
 
@@ -542,11 +650,15 @@ ___
 
 • **Ewondo** = ``"Ewondo"``
 
+Ewondo
+
 ___
 
 ### Faroese
 
 • **Faroese** = ``"Faroese"``
+
+Faroese
 
 ___
 
@@ -554,11 +666,15 @@ ___
 
 • **Filipino** = ``"Filipino"``
 
+Filipino
+
 ___
 
 ### Finnish
 
 • **Finnish** = ``"Finnish"``
+
+Finnish
 
 ___
 
@@ -566,11 +682,15 @@ ___
 
 • **Formula** = ``"Formula"``
 
+Formula
+
 ___
 
 ### French
 
 • **French** = ``"French"``
+
+French
 
 ___
 
@@ -578,11 +698,15 @@ ___
 
 • **Frisian** = ``"Frisian"``
 
+Frisian
+
 ___
 
 ### Friulian
 
 • **Friulian** = ``"Friulian"``
+
+Friulian
 
 ___
 
@@ -590,11 +714,15 @@ ___
 
 • **Fula** = ``"Fula"``
 
+Fula
+
 ___
 
 ### Gaelic
 
 • **Gaelic** = ``"Gaelic"``
+
+Gaelic
 
 ___
 
@@ -602,11 +730,15 @@ ___
 
 • **Galo** = ``"Galo"``
 
+Galo
+
 ___
 
 ### Garhwali
 
 • **Garhwali** = ``"Garhwali"``
+
+Garhwali
 
 ___
 
@@ -614,11 +746,15 @@ ___
 
 • **Garifuna** = ``"Garifuna"``
 
+Garifuna
+
 ___
 
 ### German
 
 • **German** = ``"German"``
+
+German
 
 ___
 
@@ -626,11 +762,15 @@ ___
 
 • **Gikuyu** = ``"Gikuyu"``
 
+Gikuyu
+
 ___
 
 ### Gujarati
 
 • **Gujarati** = ``"Gujarati"``
+
+Gujarati
 
 ___
 
@@ -638,11 +778,15 @@ ___
 
 • **Gujerati** = ``"Gujerati"``
 
+Gujerati
+
 ___
 
 ### Gwere
 
 • **Gwere** = ``"Gwere"``
+
+Gwere
 
 ___
 
@@ -650,11 +794,15 @@ ___
 
 • **Hawaiian** = ``"Hawaiian"``
 
+Hawaiian
+
 ___
 
 ### Haya
 
 • **Haya** = ``"Haya"``
+
+Haya
 
 ___
 
@@ -662,11 +810,15 @@ ___
 
 • **Hebrew** = ``"Hebrew"``
 
+Hebrew
+
 ___
 
 ### Hindi
 
 • **Hindi** = ``"Hindi"``
+
+Hindi
 
 ___
 
@@ -674,11 +826,15 @@ ___
 
 • **Hmu** = ``"Hmu"``
 
+Hmu
+
 ___
 
 ### Hokkien
 
 • **Hokkien** = ``"Hokkien"``
+
+Hokkien
 
 ___
 
@@ -686,11 +842,15 @@ ___
 
 • **Hopi** = ``"Hopi"``
 
+Hopi
+
 ___
 
 ### Hungarian
 
 • **Hungarian** = ``"Hungarian"``
+
+Hungarian
 
 ___
 
@@ -698,11 +858,15 @@ ___
 
 • **Hup** = ``"Hup"``
 
+Hup
+
 ___
 
 ### Ibanag
 
 • **Ibanag** = ``"Ibanag"``
+
+Ibanag
 
 ___
 
@@ -710,11 +874,15 @@ ___
 
 • **Igbo** = ``"Igbo"``
 
+Igbo
+
 ___
 
 ### Ilokano
 
 • **Ilokano** = ``"Ilokano"``
+
+Ilokano
 
 ___
 
@@ -722,11 +890,15 @@ ___
 
 • **Indonesian** = ``"Indonesian"``
 
+Indonesian
+
 ___
 
 ### Intermediate
 
 • **Intermediate** = ``"Intermediate"``
+
+Intermediate
 
 ___
 
@@ -734,11 +906,15 @@ ___
 
 • **Irish** = ``"Irish"``
 
+Irish
+
 ___
 
 ### Italian
 
 • **Italian** = ``"Italian"``
+
+Italian
 
 ___
 
@@ -746,11 +922,15 @@ ___
 
 • **Japanese** = ``"Japanese"``
 
+Japanese
+
 ___
 
 ### Jiba
 
 • **Jiba** = ``"Jiba"``
+
+Jiba
 
 ___
 
@@ -758,11 +938,15 @@ ___
 
 • **Kachin** = ``"Kachin"``
 
+Kachin
+
 ___
 
 ### Kalenjin
 
 • **Kalenjin** = ``"Kalenjin"``
+
+Kalenjin
 
 ___
 
@@ -770,11 +954,15 @@ ___
 
 • **Kamayo** = ``"Kamayo"``
 
+Kamayo
+
 ___
 
 ### Kannada
 
 • **Kannada** = ``"Kannada"``
+
+Kannada
 
 ___
 
@@ -782,11 +970,15 @@ ___
 
 • **Kaonde** = ``"Kaonde"``
 
+Kaonde
+
 ___
 
 ### Kayan
 
 • **Kayan** = ``"Kayan"``
+
+Kayan
 
 ___
 
@@ -794,11 +986,15 @@ ___
 
 • **Khandeshi** = ``"Khandeshi"``
 
+Khandeshi
+
 ___
 
 ### Khmer
 
 • **Khmer** = ``"Khmer"``
+
+Khmer
 
 ___
 
@@ -806,11 +1002,15 @@ ___
 
 • **Kikuyu** = ``"Kikuyu"``
 
+Kikuyu
+
 ___
 
 ### Kodava
 
 • **Kodava** = ``"Kodava"``
+
+Kodava
 
 ___
 
@@ -818,11 +1018,15 @@ ___
 
 • **Koma** = ``"Koma"``
 
+Koma
+
 ___
 
 ### Kongo
 
 • **Kongo** = ``"Kongo"``
+
+Kongo
 
 ___
 
@@ -830,11 +1034,15 @@ ___
 
 • **Konkani** = ``"Konkani"``
 
+Konkani
+
 ___
 
 ### Korean
 
 • **Korean** = ``"Korean"``
+
+Korean
 
 ___
 
@@ -842,11 +1050,15 @@ ___
 
 • **Korwa** = ``"Korwa"``
 
+Korwa
+
 ___
 
 ### Kreyol
 
 • **Kreyol** = ``"Kreyol"``
+
+Kreyol
 
 ___
 
@@ -854,11 +1066,15 @@ ___
 
 • **Krio** = ``"Krio"``
 
+Krio
+
 ___
 
 ### Kumaoni
 
 • **Kumaoni** = ``"Kumaoni"``
+
+Kumaoni
 
 ___
 
@@ -866,11 +1082,15 @@ ___
 
 • **Kurdish** = ``"Kurdish"``
 
+Kurdish
+
 ___
 
 ### Kurukh
 
 • **Kurukh** = ``"Kurukh"``
+
+Kurukh
 
 ___
 
@@ -878,11 +1098,15 @@ ___
 
 • **Kwa** = ``"Kwa"``
 
+Kwa
+
 ___
 
 ### Ladino
 
 • **Ladino** = ``"Ladino"``
+
+Ladino
 
 ___
 
@@ -890,11 +1114,15 @@ ___
 
 • **Lango** = ``"Lango"``
 
+Lango
+
 ___
 
 ### Latvian
 
 • **Latvian** = ``"Latvian"``
+
+Latvian
 
 ___
 
@@ -902,11 +1130,15 @@ ___
 
 • **Lawa** = ``"Lawa"``
 
+Lawa
+
 ___
 
 ### Lingala
 
 • **Lingala** = ``"Lingala"``
+
+Lingala
 
 ___
 
@@ -914,11 +1146,15 @@ ___
 
 • **Lithuanian** = ``"Lithuanian"``
 
+Lithuanian
+
 ___
 
 ### Lule
 
 • **Lule** = ``"Lule"``
+
+Lule
 
 ___
 
@@ -926,11 +1162,15 @@ ___
 
 • **Luxembourgish** = ``"Luxembourgish"``
 
+Luxembourgish
+
 ___
 
 ### Magahi
 
 • **Magahi** = ``"Magahi"``
+
+Magahi
 
 ___
 
@@ -938,11 +1178,15 @@ ___
 
 • **Maithili** = ``"Maithili"``
 
+Maithili
+
 ___
 
 ### Malay
 
 • **Malay** = ``"Malay"``
+
+Malay
 
 ___
 
@@ -950,11 +1194,15 @@ ___
 
 • **Malayalam** = ``"Malayalam"``
 
+Malayalam
+
 ___
 
 ### Malaysian
 
 • **Malaysian** = ``"Malaysian"``
+
+Malaysian
 
 ___
 
@@ -962,11 +1210,15 @@ ___
 
 • **Malvi** = ``"Malvi"``
 
+Malvi
+
 ___
 
 ### Maninka
 
 • **Maninka** = ``"Maninka"``
+
+Maninka
 
 ___
 
@@ -974,11 +1226,15 @@ ___
 
 • **Manipuri** = ``"Manipuri"``
 
+Manipuri
+
 ___
 
 ### Manx
 
 • **Manx** = ``"Manx"``
+
+Manx
 
 ___
 
@@ -986,11 +1242,15 @@ ___
 
 • **Marathi** = ``"Marathi"``
 
+Marathi
+
 ___
 
 ### Mayan
 
 • **Mayan** = ``"Mayan"``
+
+Mayan
 
 ___
 
@@ -998,11 +1258,15 @@ ___
 
 • **Medumba** = ``"Medumba"``
 
+Medumba
+
 ___
 
 ### Memoni
 
 • **Memoni** = ``"Memoni"``
+
+Memoni
 
 ___
 
@@ -1010,11 +1274,15 @@ ___
 
 • **Mewari** = ``"Mewari"``
 
+Mewari
+
 ___
 
 ### Mizo
 
 • **Mizo** = ``"Mizo"``
+
+Mizo
 
 ___
 
@@ -1022,11 +1290,15 @@ ___
 
 • **Montenegrin** = ``"Montenegrin"``
 
+Montenegrin
+
 ___
 
 ### Mwan
 
 • **Mwan** = ``"Mwan"``
+
+Mwan
 
 ___
 
@@ -1034,11 +1306,15 @@ ___
 
 • **Mwanga** = ``"Mwanga"``
 
+Mwanga
+
 ___
 
 ### Ndebele
 
 • **Ndebele** = ``"Ndebele"``
+
+Ndebele
 
 ___
 
@@ -1046,11 +1322,15 @@ ___
 
 • **Nepali** = ``"Nepali"``
 
+Nepali
+
 ___
 
 ### Nimadi
 
 • **Nimadi** = ``"Nimadi"``
+
+Nimadi
 
 ___
 
@@ -1058,11 +1338,15 @@ ___
 
 • **Oriya** = ``"Oriya"``
 
+Oriya
+
 ___
 
 ### Oromo
 
 • **Oromo** = ``"Oromo"``
+
+Oromo
 
 ___
 
@@ -1070,11 +1354,15 @@ ___
 
 • **Ovambo** = ``"Ovambo"``
 
+Ovambo
+
 ___
 
 ### Pamona
 
 • **Pamona** = ``"Pamona"``
+
+Pamona
 
 ___
 
@@ -1082,11 +1370,15 @@ ___
 
 • **Pangasinan** = ``"Pangasinan"``
 
+Pangasinan
+
 ___
 
 ### Pashto
 
 • **Pashto** = ``"Pashto"``
+
+Pashto
 
 ___
 
@@ -1094,11 +1386,15 @@ ___
 
 • **Phoenician** = ``"Phoenician"``
 
+Phoenician
+
 ___
 
 ### Polish
 
 • **Polish** = ``"Polish"``
+
+Polish
 
 ___
 
@@ -1106,11 +1402,15 @@ ___
 
 • **Portuguese** = ``"Portuguese"``
 
+Portuguese
+
 ___
 
 ### Pulaar
 
 • **Pulaar** = ``"Pulaar"``
+
+Pulaar
 
 ___
 
@@ -1118,11 +1418,15 @@ ___
 
 • **Pular** = ``"Pular"``
 
+Pular
+
 ___
 
 ### Punjabi
 
 • **Punjabi** = ``"Punjabi"``
+
+Punjabi
 
 ___
 
@@ -1130,11 +1434,15 @@ ___
 
 • **Quecha** = ``"Quecha"``
 
+Quecha
+
 ___
 
 ### Rajasthani
 
 • **Rajasthani** = ``"Rajasthani"``
+
+Rajasthani
 
 ___
 
@@ -1142,11 +1450,15 @@ ___
 
 • **Romanian** = ``"Romanian"``
 
+Romanian
+
 ___
 
 ### Russian
 
 • **Russian** = ``"Russian"``
+
+Russian
 
 ___
 
@@ -1154,11 +1466,15 @@ ___
 
 • **Sakha** = ``"Sakha"``
 
+Sakha
+
 ___
 
 ### Sango
 
 • **Sango** = ``"Sango"``
+
+Sango
 
 ___
 
@@ -1166,11 +1482,15 @@ ___
 
 • **Santhali** = ``"Santhali"``
 
+Santhali
+
 ___
 
 ### Saraiki
 
 • **Saraiki** = ``"Saraiki"``
+
+Saraiki
 
 ___
 
@@ -1178,11 +1498,15 @@ ___
 
 • **Seim** = ``"Seim"``
 
+Seim
+
 ___
 
 ### Shading
 
 • **Shading** = ``"Shading"``
+
+Shading
 
 ___
 
@@ -1190,11 +1514,15 @@ ___
 
 • **Shama** = ``"Shama"``
 
+Shama
+
 ___
 
 ### Shan
 
 • **Shan** = ``"Shan"``
+
+Shan
 
 ___
 
@@ -1202,11 +1530,15 @@ ___
 
 • **Shona** = ``"Shona"``
 
+Shona
+
 ___
 
 ### Silesian
 
 • **Silesian** = ``"Silesian"``
+
+Silesian
 
 ___
 
@@ -1214,11 +1546,15 @@ ___
 
 • **Sindhi** = ``"Sindhi"``
 
+Sindhi
+
 ___
 
 ### Slovak
 
 • **Slovak** = ``"Slovak"``
+
+Slovak
 
 ___
 
@@ -1226,11 +1562,15 @@ ___
 
 • **Slovene** = ``"Slovene"``
 
+Slovene
+
 ___
 
 ### Soga
 
 • **Soga** = ``"Soga"``
+
+Soga
 
 ___
 
@@ -1238,11 +1578,15 @@ ___
 
 • **Sogdian** = ``"Sogdian"``
 
+Sogdian
+
 ___
 
 ### Sotho
 
 • **Sotho** = ``"Sotho"``
+
+Sotho
 
 ___
 
@@ -1250,11 +1594,15 @@ ___
 
 • **Spanish** = ``"Spanish"``
 
+Spanish
+
 ___
 
 ### Sudanese
 
 • **Sudanese** = ``"Sudanese"``
+
+Sudanese
 
 ___
 
@@ -1262,11 +1610,15 @@ ___
 
 • **Sumerian** = ``"Sumerian"``
 
+Sumerian
+
 ___
 
 ### Surajpuri
 
 • **Surajpuri** = ``"Surajpuri"``
+
+Surajpuri
 
 ___
 
@@ -1274,11 +1626,15 @@ ___
 
 • **Surigaonon** = ``"Surigaonon"``
 
+Surigaonon
+
 ___
 
 ### Swati
 
 • **Swati** = ``"Swati"``
+
+Swati
 
 ___
 
@@ -1286,11 +1642,15 @@ ___
 
 • **Swazi** = ``"Swazi"``
 
+Swazi
+
 ___
 
 ### Swedish
 
 • **Swedish** = ``"Swedish"``
+
+Swedish
 
 ___
 
@@ -1298,11 +1658,15 @@ ___
 
 • **Tagalog** = ``"Tagalog"``
 
+Tagalog
+
 ___
 
 ### Tamil
 
 • **Tamil** = ``"Tamil"``
+
+Tamil
 
 ___
 
@@ -1310,11 +1674,15 @@ ___
 
 • **Tausug** = ``"Tausug"``
 
+Tausug
+
 ___
 
 ### Telugu
 
 • **Telugu** = ``"Telugu"``
+
+Telugu
 
 ___
 
@@ -1322,11 +1690,15 @@ ___
 
 • **Tetum** = ``"Tetum"``
 
+Tetum
+
 ___
 
 ### Tharu
 
 • **Tharu** = ``"Tharu"``
+
+Tharu
 
 ___
 
@@ -1334,11 +1706,15 @@ ___
 
 • **Tibetan** = ``"Tibetan"``
 
+Tibetan
+
 ___
 
 ### Tigrinya
 
 • **Tigrinya** = ``"Tigrinya"``
+
+Tigrinya
 
 ___
 
@@ -1346,11 +1722,15 @@ ___
 
 • **Tripuri** = ``"Tripuri"``
 
+Tripuri
+
 ___
 
 ### Tswana
 
 • **Tswana** = ``"Tswana"``
+
+Tswana
 
 ___
 
@@ -1358,11 +1738,15 @@ ___
 
 • **Tulu** = ``"Tulu"``
 
+Tulu
+
 ___
 
 ### Turkish
 
 • **Turkish** = ``"Turkish"``
+
+Turkish
 
 ___
 
@@ -1370,11 +1754,15 @@ ___
 
 • **Tuwali** = ``"Tuwali"``
 
+Tuwali
+
 ___
 
 ### Ubi
 
 • **Ubi** = ``"Ubi"``
+
+Ubi
 
 ___
 
@@ -1382,11 +1770,15 @@ ___
 
 • **Ukrainian** = ``"Ukrainian"``
 
+Ukrainian
+
 ___
 
 ### Urdu
 
 • **Urdu** = ``"Urdu"``
+
+Urdu
 
 ___
 
@@ -1394,11 +1786,15 @@ ___
 
 • **Veps** = ``"Veps"``
 
+Veps
+
 ___
 
 ### Vietnamese
 
 • **Vietnamese** = ``"Vietnamese"``
+
+Vietnamese
 
 ___
 
@@ -1406,11 +1802,15 @@ ___
 
 • **Wagdi** = ``"Wagdi"``
 
+Wagdi
+
 ___
 
 ### Waziri
 
 • **Waziri** = ``"Waziri"``
+
+Waziri
 
 ___
 
@@ -1418,14 +1818,20 @@ ___
 
 • **Xhosa** = ``"Xhosa"``
 
+Xhosa
+
 ___
 
 ### Yiddish
 
 • **Yiddish** = ``"Yiddish"``
 
+Yiddish
+
 ___
 
 ### Yoruba
 
 • **Yoruba** = ``"Yoruba"``
+
+Yoruba

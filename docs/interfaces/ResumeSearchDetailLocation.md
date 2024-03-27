@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`ResumeSearchDetailLocationValue`](../modules.md#resumesearchdetaillocationvalue)
+• `Optional` **value**: [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)

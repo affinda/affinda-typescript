@@ -17,8 +17,12 @@ Known values of [OrganizationRole](../modules.md#organizationrole) that the serv
 
 • **Admin** = ``"admin"``
 
+Admin
+
 ___
 
 ### Member
 
 • **Member** = ``"member"``
+
+Member

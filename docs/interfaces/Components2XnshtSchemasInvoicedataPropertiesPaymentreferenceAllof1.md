@@ -2,6 +2,12 @@
 
 # Interface: Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1
 
+## Hierarchy
+
+- **`Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1`**
+
+  ↳ [`InvoiceDataPaymentReference`](InvoiceDataPaymentReference.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

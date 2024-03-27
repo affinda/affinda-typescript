@@ -155,7 +155,7 @@ ___
 
 ### searchToolTheme
 
-• `Optional` **searchToolTheme**: [`ThemeConfig`](ThemeConfig.md)
+• `Optional` **searchToolTheme**: [`ResumeSearchConfigSearchToolTheme`](ResumeSearchConfigSearchToolTheme.md)
 
 Customize the theme of the embeded search tool.
 

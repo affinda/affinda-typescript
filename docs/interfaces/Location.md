@@ -2,6 +2,16 @@
 
 # Interface: Location
 
+## Hierarchy
+
+- **`Location`**
+
+  ↳ [`LocationAnnotationUpdateParsed`](LocationAnnotationUpdateParsed.md)
+
+  ↳ [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
+
+  ↳ [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
+
 ## Table of contents
 
 ### Properties

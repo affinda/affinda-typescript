@@ -2,6 +2,12 @@
 
 # Interface: User
 
+## Hierarchy
+
+- **`User`**
+
+  ↳ [`InvitationRespondedBy`](InvitationRespondedBy.md)
+
 ## Table of contents
 
 ### Properties

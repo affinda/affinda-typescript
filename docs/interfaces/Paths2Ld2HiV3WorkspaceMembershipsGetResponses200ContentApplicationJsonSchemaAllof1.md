@@ -2,6 +2,12 @@
 
 # Interface: Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

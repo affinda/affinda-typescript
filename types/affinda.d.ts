@@ -15,7 +15,22 @@ export declare interface Accreditation {
     readonly educationLevel?: string;
 }
 
-export declare class AffindaAPI extends AffindaAPIContext {
+/** Optional parameters. */
+export declare interface ActivateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the activateResthookSubscription operation. */
+export declare type ActivateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export declare interface AddMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the addMappingDataSourceValue operation. */
+export declare type AddMappingDataSourceValueResponse = Record<string, unknown>;
+
+export declare class AffindaAPI extends coreClient.ServiceClient {
+    region: Region;
     /**
      * Initializes a new instance of the AffindaAPI class.
      * @param credentials Subscription credentials which uniquely identify client subscription.
@@ -27,106 +42,106 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param organization Filter by organization.
      * @param options The options parameters.
      */
-    getAllWorkspaces(organization: string, options?: AffindaAPIGetAllWorkspacesOptionalParams): Promise<AffindaAPIGetAllWorkspacesResponse>;
+    getAllWorkspaces(organization: string, options?: GetAllWorkspacesOptionalParams): Promise<GetAllWorkspacesResponse>;
     /**
      * Create a workspace
      * @param body Workspace to create
      * @param options The options parameters.
      */
-    createWorkspace(body: WorkspaceCreate, options?: AffindaAPICreateWorkspaceOptionalParams): Promise<AffindaAPICreateWorkspaceResponse>;
+    createWorkspace(body: WorkspaceCreate, options?: CreateWorkspaceOptionalParams): Promise<CreateWorkspaceResponse>;
     /**
      * Return a specific workspace.
      * @param identifier Workspace's identifier
      * @param options The options parameters.
      */
-    getWorkspace(identifier: string, options?: AffindaAPIGetWorkspaceOptionalParams): Promise<AffindaAPIGetWorkspaceResponse>;
+    getWorkspace(identifier: string, options?: GetWorkspaceOptionalParams): Promise<GetWorkspaceResponse>;
     /**
      * Update a workspace.
      * @param identifier Workspace's identifier
      * @param body Workspace data to update
      * @param options The options parameters.
      */
-    updateWorkspace(identifier: string, body: WorkspaceUpdate, options?: AffindaAPIUpdateWorkspaceOptionalParams): Promise<AffindaAPIUpdateWorkspaceResponse>;
+    updateWorkspace(identifier: string, body: WorkspaceUpdate, options?: UpdateWorkspaceOptionalParams): Promise<UpdateWorkspaceResponse>;
     /**
      * Deletes the specified workspace from the database.
      * @param identifier Workspace's identifier
      * @param options The options parameters.
      */
-    deleteWorkspace(identifier: string, options?: AffindaAPIDeleteWorkspaceOptionalParams): Promise<void>;
+    deleteWorkspace(identifier: string, options?: DeleteWorkspaceOptionalParams): Promise<void>;
     /**
      * Return monthly credits consumption of a workspace.
      * @param identifier Workspace's identifier
      * @param options The options parameters.
      */
-    getUsageByWorkspace(identifier: string, options?: AffindaAPIGetUsageByWorkspaceOptionalParams): Promise<AffindaAPIGetUsageByWorkspaceResponse>;
+    getUsageByWorkspace(identifier: string, options?: GetUsageByWorkspaceOptionalParams): Promise<GetUsageByWorkspaceResponse>;
     /**
      * Returns the memberships of your workspaces.
      * @param options The options parameters.
      */
-    getAllWorkspaceMemberships(options?: AffindaAPIGetAllWorkspaceMembershipsOptionalParams): Promise<AffindaAPIGetAllWorkspaceMembershipsResponse>;
+    getAllWorkspaceMemberships(options?: GetAllWorkspaceMembershipsOptionalParams): Promise<GetAllWorkspaceMembershipsResponse>;
     /**
      * Create a workspace membership.
      * @param body
      * @param options The options parameters.
      */
-    createWorkspaceMembership(body: WorkspaceMembershipCreate, options?: AffindaAPICreateWorkspaceMembershipOptionalParams): Promise<AffindaAPICreateWorkspaceMembershipResponse>;
+    createWorkspaceMembership(body: WorkspaceMembershipCreate, options?: CreateWorkspaceMembershipOptionalParams): Promise<CreateWorkspaceMembershipResponse>;
     /**
      * Return a specific workspace membership.
      * @param identifier Workspace membership's identifier.
      * @param options The options parameters.
      */
-    getWorkspaceMembership(identifier: string, options?: AffindaAPIGetWorkspaceMembershipOptionalParams): Promise<AffindaAPIGetWorkspaceMembershipResponse>;
+    getWorkspaceMembership(identifier: string, options?: GetWorkspaceMembershipOptionalParams): Promise<GetWorkspaceMembershipResponse>;
     /**
      * Remove an user from a workspace.
      * @param identifier Workspace membership's identifier.
      * @param options The options parameters.
      */
-    deleteWorkspaceMembership(identifier: string, options?: AffindaAPIDeleteWorkspaceMembershipOptionalParams): Promise<void>;
+    deleteWorkspaceMembership(identifier: string, options?: DeleteWorkspaceMembershipOptionalParams): Promise<void>;
     /**
      * Returns your collections.
      * @param workspace Filter by workspace.
      * @param options The options parameters.
      */
-    getAllCollections(workspace: string, options?: AffindaAPIGetAllCollectionsOptionalParams): Promise<AffindaAPIGetAllCollectionsResponse>;
+    getAllCollections(workspace: string, options?: GetAllCollectionsOptionalParams): Promise<GetAllCollectionsResponse>;
     /**
      * Create a collection
      * @param body
      * @param options The options parameters.
      */
-    createCollection(body: CollectionCreate, options?: AffindaAPICreateCollectionOptionalParams): Promise<AffindaAPICreateCollectionResponse>;
+    createCollection(body: CollectionCreate, options?: CreateCollectionOptionalParams): Promise<CreateCollectionResponse>;
     /**
      * Return a specific collection.
      * @param identifier Collection's identifier
      * @param options The options parameters.
      */
-    getCollection(identifier: string, options?: AffindaAPIGetCollectionOptionalParams): Promise<AffindaAPIGetCollectionResponse>;
+    getCollection(identifier: string, options?: GetCollectionOptionalParams): Promise<GetCollectionResponse>;
     /**
      * Update data of a collection.
      * @param identifier Collection's identifier
      * @param body Collection data to update
      * @param options The options parameters.
      */
-    updateCollection(identifier: string, body: CollectionUpdate, options?: AffindaAPIUpdateCollectionOptionalParams): Promise<AffindaAPIUpdateCollectionResponse>;
+    updateCollection(identifier: string, body: CollectionUpdate, options?: UpdateCollectionOptionalParams): Promise<UpdateCollectionResponse>;
     /**
      * Deletes the specified collection from the database.
      * @param identifier Collection's identifier
      * @param options The options parameters.
      */
-    deleteCollection(identifier: string, options?: AffindaAPIDeleteCollectionOptionalParams): Promise<void>;
+    deleteCollection(identifier: string, options?: DeleteCollectionOptionalParams): Promise<void>;
     /**
      * Create data field for a collection along with a new data point.
      * @param identifier Collection's identifier
      * @param body The data field and data point to be created.
      * @param options The options parameters.
      */
-    createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: AffindaAPICreateDataFieldForCollectionOptionalParams): Promise<AffindaAPICreateDataFieldForCollectionResponse>;
+    createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: CreateDataFieldForCollectionOptionalParams): Promise<CreateDataFieldForCollectionResponse>;
     /**
      * Get a data field for a collection assosciated with a data point
      * @param identifier Collection's identifier
      * @param datapointIdentifier Datapoint's identifier
      * @param options The options parameters.
      */
-    getDataFieldForCollection(identifier: string, datapointIdentifier: string, options?: AffindaAPIGetDataFieldForCollectionOptionalParams): Promise<AffindaAPIGetDataFieldForCollectionResponse>;
+    getDataFieldForCollection(identifier: string, datapointIdentifier: string, options?: GetDataFieldForCollectionOptionalParams): Promise<GetDataFieldForCollectionResponse>;
     /**
      * Update data field for a collection assosciated with a data point
      * @param identifier Collection's identifier
@@ -134,44 +149,44 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Data field properties to update
      * @param options The options parameters.
      */
-    updateDataFieldForCollection(identifier: string, datapointIdentifier: string, body: CollectionField, options?: AffindaAPIUpdateDataFieldForCollectionOptionalParams): Promise<AffindaAPIUpdateDataFieldForCollectionResponse>;
+    updateDataFieldForCollection(identifier: string, datapointIdentifier: string, body: CollectionField, options?: UpdateDataFieldForCollectionOptionalParams): Promise<UpdateDataFieldForCollectionResponse>;
     /**
      * Return monthly credits consumption of a collection.
      * @param identifier Collection's identifier
      * @param options The options parameters.
      */
-    getUsageByCollection(identifier: string, options?: AffindaAPIGetUsageByCollectionOptionalParams): Promise<AffindaAPIGetUsageByCollectionResponse>;
+    getUsageByCollection(identifier: string, options?: GetUsageByCollectionOptionalParams): Promise<GetUsageByCollectionResponse>;
     /**
      * Returns all the document summaries for that user, limited to 300 per page.
      * @param options The options parameters.
      */
-    getAllDocuments(options?: AffindaAPIGetAllDocumentsOptionalParams): Promise<AffindaAPIGetAllDocumentsResponse>;
+    getAllDocuments(options?: GetAllDocumentsOptionalParams): Promise<GetAllDocumentsResponse>;
     /**
      * Uploads a document for parsing. When successful, returns an `identifier` in the response for
      * subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
      * processing status and retrieve results.<br/>
      * @param options The options parameters.
      */
-    createDocument(options?: AffindaAPICreateDocumentOptionalParams): Promise<AffindaAPICreateDocumentResponse>;
+    createDocument(options?: CreateDocumentOptionalParams): Promise<CreateDocumentResponse>;
     /**
      * Return a specific document.
      * @param identifier Document's identifier
      * @param options The options parameters.
      */
-    getDocument(identifier: string, options?: AffindaAPIGetDocumentOptionalParams): Promise<AffindaAPIGetDocumentResponse>;
+    getDocument(identifier: string, options?: GetDocumentOptionalParams): Promise<GetDocumentResponse>;
     /**
      * Update file name, expiry time, or move to another collection, etc.
      * @param identifier Document's identifier
      * @param body Document data to update
      * @param options The options parameters.
      */
-    updateDocument(identifier: string, body: DocumentUpdate, options?: AffindaAPIUpdateDocumentOptionalParams): Promise<AffindaAPIUpdateDocumentResponse>;
+    updateDocument(identifier: string, body: DocumentUpdate, options?: UpdateDocumentOptionalParams): Promise<UpdateDocumentResponse>;
     /**
      * Deletes the specified document from the database.
      * @param identifier Document's identifier
      * @param options The options parameters.
      */
-    deleteDocument(identifier: string, options?: AffindaAPIDeleteDocumentOptionalParams): Promise<void>;
+    deleteDocument(identifier: string, options?: DeleteDocumentOptionalParams): Promise<void>;
     /**
      * Update data of a document.
      * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
@@ -180,7 +195,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Resume data to update
      * @param options The options parameters.
      */
-    updateDocumentData(identifier: string, body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPIUpdateDocumentDataOptionalParams): Promise<AffindaAPIUpdateDocumentDataResponse>;
+    updateDocumentData(identifier: string, body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema, options?: UpdateDocumentDataOptionalParams): Promise<UpdateDocumentDataResponse>;
     /**
      * Add a tag to documents.
      * Tags are used to group documents together.
@@ -189,13 +204,13 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Specify the tag and the documents to tag
      * @param options The options parameters.
      */
-    batchAddTag(body: BatchAddTagRequest, options?: AffindaAPIBatchAddTagOptionalParams): Promise<void>;
+    batchAddTag(body: BatchAddTagRequest, options?: BatchAddTagOptionalParams): Promise<void>;
     /**
      * Remove a tag from documents.
      * @param body Specify the tag and the documents to remove the tag from
      * @param options The options parameters.
      */
-    batchRemoveTag(body: BatchRemoveTagRequest, options?: AffindaAPIBatchRemoveTagOptionalParams): Promise<void>;
+    batchRemoveTag(body: BatchRemoveTagRequest, options?: BatchRemoveTagOptionalParams): Promise<void>;
     /**
      * Split / merge / rotate / delete pages of a document.
      * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
@@ -205,442 +220,442 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Describe how the pages should be edited
      * @param options The options parameters.
      */
-    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: AffindaAPIEditDocumentPagesOptionalParams): Promise<AffindaAPIEditDocumentPagesResponse>;
+    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: EditDocumentPagesOptionalParams): Promise<EditDocumentPagesResponse>;
     /**
      * Returns the validation results of a document.
      * @param document Filter by document.
      * @param options The options parameters.
      */
-    getAllValidationResults(document: string, options?: AffindaAPIGetAllValidationResultsOptionalParams): Promise<AffindaAPIGetAllValidationResultsResponse>;
+    getAllValidationResults(document: string, options?: GetAllValidationResultsOptionalParams): Promise<GetAllValidationResultsResponse>;
     /**
      * Create a validation result.
      * @param body
      * @param options The options parameters.
      */
-    createValidationResult(body: ValidationResultCreate, options?: AffindaAPICreateValidationResultOptionalParams): Promise<AffindaAPICreateValidationResultResponse>;
+    createValidationResult(body: ValidationResultCreate, options?: CreateValidationResultOptionalParams): Promise<CreateValidationResultResponse>;
     /**
      * Return a specific validation result.
      * @param id Validation result's ID.
      * @param options The options parameters.
      */
-    getValidationResult(id: number, options?: AffindaAPIGetValidationResultOptionalParams): Promise<AffindaAPIGetValidationResultResponse>;
+    getValidationResult(id: number, options?: GetValidationResultOptionalParams): Promise<GetValidationResultResponse>;
     /**
      * Update a validation result.
      * @param id Validation result's ID.
      * @param body Validation result data to update
      * @param options The options parameters.
      */
-    updateValidationResult(id: number, body: ValidationResultUpdate, options?: AffindaAPIUpdateValidationResultOptionalParams): Promise<AffindaAPIUpdateValidationResultResponse>;
+    updateValidationResult(id: number, body: ValidationResultUpdate, options?: UpdateValidationResultOptionalParams): Promise<UpdateValidationResultResponse>;
     /**
      * Remove validation result.
      * @param id Validation result's ID.
      * @param options The options parameters.
      */
-    deleteValidationResult(id: number, options?: AffindaAPIDeleteValidationResultOptionalParams): Promise<void>;
+    deleteValidationResult(id: number, options?: DeleteValidationResultOptionalParams): Promise<void>;
     /**
      * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
      * @param organization Filter by organization.
      * @param options The options parameters.
      */
-    getAllExtractors(organization: string, options?: AffindaAPIGetAllExtractorsOptionalParams): Promise<AffindaAPIGetAllExtractorsResponse>;
+    getAllExtractors(organization: string, options?: GetAllExtractorsOptionalParams): Promise<GetAllExtractorsResponse>;
     /**
      * Create a custom extractor.
      * @param options The options parameters.
      */
-    createExtractor(options?: AffindaAPICreateExtractorOptionalParams): Promise<AffindaAPICreateExtractorResponse>;
+    createExtractor(options?: CreateExtractorOptionalParams): Promise<CreateExtractorResponse>;
     /**
      * Return a specific extractor.
      * @param identifier Extractor's identifier
      * @param options The options parameters.
      */
-    getExtractor(identifier: string, options?: AffindaAPIGetExtractorOptionalParams): Promise<AffindaAPIGetExtractorResponse>;
+    getExtractor(identifier: string, options?: GetExtractorOptionalParams): Promise<GetExtractorResponse>;
     /**
      * Update data of an extractor.
      * @param identifier Extractor's identifier
      * @param body Extractor data to update
      * @param options The options parameters.
      */
-    updateExtractor(identifier: string, body: ExtractorUpdate, options?: AffindaAPIUpdateExtractorOptionalParams): Promise<AffindaAPIUpdateExtractorResponse>;
+    updateExtractor(identifier: string, body: ExtractorUpdate, options?: UpdateExtractorOptionalParams): Promise<UpdateExtractorResponse>;
     /**
      * Deletes the specified extractor from the database.
      * @param identifier Extractor's identifier
      * @param options The options parameters.
      */
-    deleteExtractor(identifier: string, options?: AffindaAPIDeleteExtractorOptionalParams): Promise<void>;
+    deleteExtractor(identifier: string, options?: DeleteExtractorOptionalParams): Promise<void>;
     /**
      * Returns your custom data points as well as Affinda's off-the-shelf data points.
      * @param options The options parameters.
      */
-    getAllDataPoints(options?: AffindaAPIGetAllDataPointsOptionalParams): Promise<AffindaAPIGetAllDataPointsResponse>;
+    getAllDataPoints(options?: GetAllDataPointsOptionalParams): Promise<GetAllDataPointsResponse>;
     /**
      * Create a custom data point.
      * @param options The options parameters.
      */
-    createDataPoint(options?: AffindaAPICreateDataPointOptionalParams): Promise<AffindaAPICreateDataPointResponse>;
+    createDataPoint(options?: CreateDataPointOptionalParams): Promise<CreateDataPointResponse>;
     /**
      * Return a specific data point.
      * @param identifier Data point's identifier
      * @param options The options parameters.
      */
-    getDataPoint(identifier: string, options?: AffindaAPIGetDataPointOptionalParams): Promise<AffindaAPIGetDataPointResponse>;
+    getDataPoint(identifier: string, options?: GetDataPointOptionalParams): Promise<GetDataPointResponse>;
     /**
      * Update data of a data point.
      * @param identifier DataPoint's identifier
      * @param body Data point to update
      * @param options The options parameters.
      */
-    updateDataPoint(identifier: string, body: DataPointUpdate, options?: AffindaAPIUpdateDataPointOptionalParams): Promise<AffindaAPIUpdateDataPointResponse>;
+    updateDataPoint(identifier: string, body: DataPointUpdate, options?: UpdateDataPointOptionalParams): Promise<UpdateDataPointResponse>;
     /**
      * Deletes the specified data point from the database.
      * @param identifier DataPoint's identifier
      * @param options The options parameters.
      */
-    deleteDataPoint(identifier: string, options?: AffindaAPIDeleteDataPointOptionalParams): Promise<void>;
+    deleteDataPoint(identifier: string, options?: DeleteDataPointOptionalParams): Promise<void>;
     /**
      * Returns available choices for a specific enum data point.
      * @param dataPoint The data point to get choices for.
      * @param collection The collection to get choices for.
      * @param options The options parameters.
      */
-    getDataPointChoices(dataPoint: string, collection: string, options?: AffindaAPIGetDataPointChoicesOptionalParams): Promise<AffindaAPIGetDataPointChoicesResponse>;
+    getDataPointChoices(dataPoint: string, collection: string, options?: GetDataPointChoicesOptionalParams): Promise<GetDataPointChoicesResponse>;
     /**
      * Create a custom data point choice.
      * @param options The options parameters.
      */
-    createDataPointChoice(options?: AffindaAPICreateDataPointChoiceOptionalParams): Promise<AffindaAPICreateDataPointChoiceResponse>;
+    createDataPointChoice(options?: CreateDataPointChoiceOptionalParams): Promise<CreateDataPointChoiceResponse>;
     /**
      * Return a specific data point choice.
      * @param id Data point choice's ID
      * @param options The options parameters.
      */
-    getDataPointChoice(id: number, options?: AffindaAPIGetDataPointChoiceOptionalParams): Promise<AffindaAPIGetDataPointChoiceResponse>;
+    getDataPointChoice(id: number, options?: GetDataPointChoiceOptionalParams): Promise<GetDataPointChoiceResponse>;
     /**
      * Update data of a data point choice.
      * @param id Data point choice's ID
      * @param body Data point choice to update
      * @param options The options parameters.
      */
-    updateDataPointChoice(id: number, body: DataPointChoiceUpdate, options?: AffindaAPIUpdateDataPointChoiceOptionalParams): Promise<AffindaAPIUpdateDataPointChoiceResponse>;
+    updateDataPointChoice(id: number, body: DataPointChoiceUpdate, options?: UpdateDataPointChoiceOptionalParams): Promise<UpdateDataPointChoiceResponse>;
     /**
      * Deletes the specified data point choice from the database.
      * @param id Data point choice's ID
      * @param options The options parameters.
      */
-    deleteDataPointChoice(id: number, options?: AffindaAPIDeleteDataPointChoiceOptionalParams): Promise<void>;
+    deleteDataPointChoice(id: number, options?: DeleteDataPointChoiceOptionalParams): Promise<void>;
     /**
      * Replace choices of a data point. Existing choices and incoming choices are matched base on their
      * `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
      * choices will be deleted.
      * @param options The options parameters.
      */
-    replaceDataPointChoices(options?: AffindaAPIReplaceDataPointChoicesOptionalParams): Promise<AffindaAPIReplaceDataPointChoicesResponse>;
+    replaceDataPointChoices(options?: ReplaceDataPointChoicesOptionalParams): Promise<ReplaceDataPointChoicesResponse>;
     /**
      * Returns your annotations.
      * @param document Filter by document.
      * @param options The options parameters.
      */
-    getAllAnnotations(document: string, options?: AffindaAPIGetAllAnnotationsOptionalParams): Promise<AffindaAPIGetAllAnnotationsResponse>;
+    getAllAnnotations(document: string, options?: GetAllAnnotationsOptionalParams): Promise<GetAllAnnotationsResponse>;
     /**
      * Create a annotation
      * @param body
      * @param options The options parameters.
      */
-    createAnnotation(body: AnnotationCreate, options?: AffindaAPICreateAnnotationOptionalParams): Promise<AffindaAPICreateAnnotationResponse>;
+    createAnnotation(body: AnnotationCreate, options?: CreateAnnotationOptionalParams): Promise<CreateAnnotationResponse>;
     /**
      * Return a specific annotation.
      * @param id Annotation's ID
      * @param options The options parameters.
      */
-    getAnnotation(id: number, options?: AffindaAPIGetAnnotationOptionalParams): Promise<AffindaAPIGetAnnotationResponse>;
+    getAnnotation(id: number, options?: GetAnnotationOptionalParams): Promise<GetAnnotationResponse>;
     /**
      * Update data of an annotation.
      * @param id Annotation's ID
      * @param body Annotation data to update
      * @param options The options parameters.
      */
-    updateAnnotation(id: number, body: AnnotationUpdate, options?: AffindaAPIUpdateAnnotationOptionalParams): Promise<AffindaAPIUpdateAnnotationResponse>;
+    updateAnnotation(id: number, body: AnnotationUpdate, options?: UpdateAnnotationOptionalParams): Promise<UpdateAnnotationResponse>;
     /**
      * Deletes the specified annotation from the database.
      * @param id Annotation's ID
      * @param options The options parameters.
      */
-    deleteAnnotation(id: number, options?: AffindaAPIDeleteAnnotationOptionalParams): Promise<AffindaAPIDeleteAnnotationResponse>;
+    deleteAnnotation(id: number, options?: DeleteAnnotationOptionalParams): Promise<DeleteAnnotationResponse>;
     /**
      * Batch create annotations
      * @param body Array of AnnotationCreate
      * @param options The options parameters.
      */
-    batchCreateAnnotations(body: AnnotationCreate[], options?: AffindaAPIBatchCreateAnnotationsOptionalParams): Promise<AffindaAPIBatchCreateAnnotationsResponse>;
+    batchCreateAnnotations(body: AnnotationCreate[], options?: BatchCreateAnnotationsOptionalParams): Promise<BatchCreateAnnotationsResponse>;
     /**
      * Batch update annotations
      * @param body Array of AnnotationBatchUpdate
      * @param options The options parameters.
      */
-    batchUpdateAnnotations(body: AnnotationBatchUpdate[], options?: AffindaAPIBatchUpdateAnnotationsOptionalParams): Promise<AffindaAPIBatchUpdateAnnotationsResponse>;
+    batchUpdateAnnotations(body: AnnotationBatchUpdate[], options?: BatchUpdateAnnotationsOptionalParams): Promise<BatchUpdateAnnotationsResponse>;
     /**
      * Batch delete annotations
      * @param body Array of annotation IDs to be deleted
      * @param options The options parameters.
      */
-    batchDeleteAnnotations(body: number[], options?: AffindaAPIBatchDeleteAnnotationsOptionalParams): Promise<AffindaAPIBatchDeleteAnnotationsResponse>;
+    batchDeleteAnnotations(body: number[], options?: BatchDeleteAnnotationsOptionalParams): Promise<BatchDeleteAnnotationsOperationResponse>;
     /**
      * Create a custom mapping data source.
      * @param body A mapping data source is used to map from raw data found by our AI models to records in
      *             your database.
      * @param options The options parameters.
      */
-    createMappingDataSource(body: MappingDataSourceCreate, options?: AffindaAPICreateMappingDataSourceOptionalParams): Promise<AffindaAPICreateMappingDataSourceResponse>;
+    createMappingDataSource(body: MappingDataSourceCreate, options?: CreateMappingDataSourceOptionalParams): Promise<CreateMappingDataSourceResponse>;
     /**
      * Returns the list of all custom mapping data sources.
      * @param options The options parameters.
      */
-    listMappingDataSources(options?: AffindaAPIListMappingDataSourcesOptionalParams): Promise<AffindaAPIListMappingDataSourcesResponse>;
+    listMappingDataSources(options?: ListMappingDataSourcesOptionalParams): Promise<ListMappingDataSourcesResponse>;
     /**
      * Return a specific mapping data source.
      * @param identifier Mapping data source's identifier
      * @param options The options parameters.
      */
-    getMappingDataSource(identifier: string, options?: AffindaAPIGetMappingDataSourceOptionalParams): Promise<AffindaAPIGetMappingDataSourceResponse>;
+    getMappingDataSource(identifier: string, options?: GetMappingDataSourceOptionalParams): Promise<GetMappingDataSourceResponse>;
     /**
      * Delete the specified mapping data source from the database.
      * @param identifier Mapping data source's identifier
      * @param options The options parameters.
      */
-    deleteMappingDataSource(identifier: string, options?: AffindaAPIDeleteMappingDataSourceOptionalParams): Promise<void>;
+    deleteMappingDataSource(identifier: string, options?: DeleteMappingDataSourceOptionalParams): Promise<void>;
     /**
      * Returns the list of all values in a mapping data source
      * @param identifier Mapping data source's identifier
      * @param options The options parameters.
      */
-    listMappingDataSourceValues(identifier: string, options?: AffindaAPIListMappingDataSourceValuesOptionalParams): Promise<AffindaAPIListMappingDataSourceValuesResponse>;
+    listMappingDataSourceValues(identifier: string, options?: ListMappingDataSourceValuesOptionalParams): Promise<ListMappingDataSourceValuesResponse>;
     /**
      * Replaces the list of all values in a mapping data source
      * @param identifier Mapping data source's identifier
      * @param body Array of AnyObject
      * @param options The options parameters.
      */
-    replaceMappingDataSourceValues(identifier: string, body: Record<string, unknown>[], options?: AffindaAPIReplaceMappingDataSourceValuesOptionalParams): Promise<AffindaAPIReplaceMappingDataSourceValuesResponse>;
+    replaceMappingDataSourceValues(identifier: string, body: Record<string, unknown>[], options?: ReplaceMappingDataSourceValuesOptionalParams): Promise<ReplaceMappingDataSourceValuesResponse>;
     /**
      * Adds a value to a mapping data source
      * @param identifier Mapping data source's identifier
      * @param body Any object
      * @param options The options parameters.
      */
-    addMappingDataSourceValue(identifier: string, body: Record<string, unknown>, options?: AffindaAPIAddMappingDataSourceValueOptionalParams): Promise<AffindaAPIAddMappingDataSourceValueResponse>;
+    addMappingDataSourceValue(identifier: string, body: Record<string, unknown>, options?: AddMappingDataSourceValueOptionalParams): Promise<AddMappingDataSourceValueResponse>;
     /**
      * Return a specific mapping dta source value.
      * @param identifier Mapping data source's identifier
      * @param value Mapping Data Source Value's value
      * @param options The options parameters.
      */
-    getMappingDataSourceValue(identifier: string, value: string, options?: AffindaAPIGetMappingDataSourceValueOptionalParams): Promise<AffindaAPIGetMappingDataSourceValueResponse>;
+    getMappingDataSourceValue(identifier: string, value: string, options?: GetMappingDataSourceValueOptionalParams): Promise<GetMappingDataSourceValueResponse>;
     /**
      * Delete the specified mapping data source value from the database.
      * @param identifier Mapping data source's identifier
      * @param value Mapping Data Source Value's value
      * @param options The options parameters.
      */
-    deleteMappingDataSourceValue(identifier: string, value: string, options?: AffindaAPIDeleteMappingDataSourceValueOptionalParams): Promise<void>;
+    deleteMappingDataSourceValue(identifier: string, value: string, options?: DeleteMappingDataSourceValueOptionalParams): Promise<void>;
     /**
      * Create a custom mapping.
      * @param body
      * @param options The options parameters.
      */
-    createMapping(body: MappingCreate, options?: AffindaAPICreateMappingOptionalParams): Promise<AffindaAPICreateMappingResponse>;
+    createMapping(body: MappingCreate, options?: CreateMappingOptionalParams): Promise<CreateMappingResponse>;
     /**
      * Returns the list of all custom data mappings.
      * @param mappingDataSource Mapping data source's identifier
      * @param options The options parameters.
      */
-    listMappings(mappingDataSource: string, options?: AffindaAPIListMappingsOptionalParams): Promise<AffindaAPIListMappingsResponse>;
+    listMappings(mappingDataSource: string, options?: ListMappingsOptionalParams): Promise<ListMappingsResponse>;
     /**
      * Return a specific mapping.
      * @param identifier Mapping's identifier
      * @param options The options parameters.
      */
-    getMapping(identifier: string, options?: AffindaAPIGetMappingOptionalParams): Promise<AffindaAPIGetMappingResponse>;
+    getMapping(identifier: string, options?: GetMappingOptionalParams): Promise<GetMappingResponse>;
     /**
      * Delete the specified mapping from the database.
      * @param identifier Mapping's identifier
      * @param options The options parameters.
      */
-    deleteMapping(identifier: string, options?: AffindaAPIDeleteMappingOptionalParams): Promise<void>;
+    deleteMapping(identifier: string, options?: DeleteMappingOptionalParams): Promise<void>;
     /**
      * Updates a specific mapping.
      * @param identifier Mapping's identifier
      * @param body
      * @param options The options parameters.
      */
-    updateMapping(identifier: string, body: MappingUpdate, options?: AffindaAPIUpdateMappingOptionalParams): Promise<AffindaAPIUpdateMappingResponse>;
+    updateMapping(identifier: string, body: MappingUpdate, options?: UpdateMappingOptionalParams): Promise<UpdateMappingResponse>;
     /**
      * Returns your tags.
      * @param options The options parameters.
      */
-    getAllTags(options?: AffindaAPIGetAllTagsOptionalParams): Promise<AffindaAPIGetAllTagsResponse>;
+    getAllTags(options?: GetAllTagsOptionalParams): Promise<GetAllTagsResponse>;
     /**
      * Create a tag
      * @param body
      * @param options The options parameters.
      */
-    createTag(body: TagCreate, options?: AffindaAPICreateTagOptionalParams): Promise<AffindaAPICreateTagResponse>;
+    createTag(body: TagCreate, options?: CreateTagOptionalParams): Promise<CreateTagResponse>;
     /**
      * Return a specific tag.
      * @param id Tag's ID
      * @param options The options parameters.
      */
-    getTag(id: number, options?: AffindaAPIGetTagOptionalParams): Promise<AffindaAPIGetTagResponse>;
+    getTag(id: number, options?: GetTagOptionalParams): Promise<GetTagResponse>;
     /**
      * Update data of an tag.
      * @param id Tag's ID
      * @param body Tag data to update
      * @param options The options parameters.
      */
-    updateTag(id: number, body: TagUpdate, options?: AffindaAPIUpdateTagOptionalParams): Promise<AffindaAPIUpdateTagResponse>;
+    updateTag(id: number, body: TagUpdate, options?: UpdateTagOptionalParams): Promise<UpdateTagResponse>;
     /**
      * Deletes the specified tag from the database.
      * @param id Tag's ID
      * @param options The options parameters.
      */
-    deleteTag(id: number, options?: AffindaAPIDeleteTagOptionalParams): Promise<void>;
+    deleteTag(id: number, options?: DeleteTagOptionalParams): Promise<void>;
     /**
      * Returns all the organizations
      * @param options The options parameters.
      */
-    getAllOrganizations(options?: AffindaAPIGetAllOrganizationsOptionalParams): Promise<AffindaAPIGetAllOrganizationsResponse>;
+    getAllOrganizations(options?: GetAllOrganizationsOptionalParams): Promise<GetAllOrganizationsResponse>;
     /**
      * Create a new organization.
      * @param name
      * @param options The options parameters.
      */
-    createOrganization(name: string, options?: AffindaAPICreateOrganizationOptionalParams): Promise<AffindaAPICreateOrganizationResponse>;
+    createOrganization(name: string, options?: CreateOrganizationOptionalParams): Promise<CreateOrganizationResponse>;
     /**
      * Get detail of an organization.
      * @param identifier Organization identifier.
      * @param options The options parameters.
      */
-    getOrganization(identifier: string, options?: AffindaAPIGetOrganizationOptionalParams): Promise<AffindaAPIGetOrganizationResponse>;
+    getOrganization(identifier: string, options?: GetOrganizationOptionalParams): Promise<GetOrganizationResponse>;
     /**
      * Update the detail of an organization.
      * @param identifier Organization identifier.
      * @param options The options parameters.
      */
-    updateOrganization(identifier: string, options?: AffindaAPIUpdateOrganizationOptionalParams): Promise<AffindaAPIUpdateOrganizationResponse>;
+    updateOrganization(identifier: string, options?: UpdateOrganizationOptionalParams): Promise<UpdateOrganizationResponse>;
     /**
      * Delete the specified organization from the database.
      * @param identifier Organization identifier.
      * @param options The options parameters.
      */
-    deleteOrganization(identifier: string, options?: AffindaAPIDeleteOrganizationOptionalParams): Promise<void>;
+    deleteOrganization(identifier: string, options?: DeleteOrganizationOptionalParams): Promise<void>;
     /**
      * Returns all the organization memberships
      * @param options The options parameters.
      */
-    getAllOrganizationMemberships(options?: AffindaAPIGetAllOrganizationMembershipsOptionalParams): Promise<AffindaAPIGetAllOrganizationMembershipsResponse>;
+    getAllOrganizationMemberships(options?: GetAllOrganizationMembershipsOptionalParams): Promise<GetAllOrganizationMembershipsResponse>;
     /**
      * Get detail of an organization membership.
      * @param identifier Membership identifier.
      * @param options The options parameters.
      */
-    getOrganizationMembership(identifier: string, options?: AffindaAPIGetOrganizationMembershipOptionalParams): Promise<AffindaAPIGetOrganizationMembershipResponse>;
+    getOrganizationMembership(identifier: string, options?: GetOrganizationMembershipOptionalParams): Promise<GetOrganizationMembershipResponse>;
     /**
      * The admin users can use this endpoint to update the role of the members within their organization.
      * @param identifier Membership identifier.
      * @param body
      * @param options The options parameters.
      */
-    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: AffindaAPIUpdateOrganizationMembershipOptionalParams): Promise<AffindaAPIUpdateOrganizationMembershipResponse>;
+    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: UpdateOrganizationMembershipOptionalParams): Promise<UpdateOrganizationMembershipResponse>;
     /**
      * The admin users can use this endpoint to remove member from their organization. Other users can also
      * use this to leave their organization.
      * @param identifier Membership identifier.
      * @param options The options parameters.
      */
-    deleteOrganizationMembership(identifier: string, options?: AffindaAPIDeleteOrganizationMembershipOptionalParams): Promise<void>;
+    deleteOrganizationMembership(identifier: string, options?: DeleteOrganizationMembershipOptionalParams): Promise<void>;
     /**
      * Get list of all invitations you created or sent to you.
      * @param options The options parameters.
      */
-    getAllInvitations(options?: AffindaAPIGetAllInvitationsOptionalParams): Promise<AffindaAPIGetAllInvitationsResponse>;
+    getAllInvitations(options?: GetAllInvitationsOptionalParams): Promise<GetAllInvitationsResponse>;
     /**
      * Create a new invitation.
      * @param body Invitation to create.
      * @param options The options parameters.
      */
-    createInvitation(body: InvitationCreate, options?: AffindaAPICreateInvitationOptionalParams): Promise<AffindaAPICreateInvitationResponse>;
+    createInvitation(body: InvitationCreate, options?: CreateInvitationOptionalParams): Promise<CreateInvitationResponse>;
     /**
      * Get detail of an invitation.
      * @param identifier Invitation identifier.
      * @param options The options parameters.
      */
-    getInvitation(identifier: string, options?: AffindaAPIGetInvitationOptionalParams): Promise<AffindaAPIGetInvitationResponse>;
+    getInvitation(identifier: string, options?: GetInvitationOptionalParams): Promise<GetInvitationResponse>;
     /**
      * Update the detail of an invitation.
      * @param identifier Invitation identifier.
      * @param body
      * @param options The options parameters.
      */
-    updateInvitation(identifier: string, body: InvitationUpdate, options?: AffindaAPIUpdateInvitationOptionalParams): Promise<AffindaAPIUpdateInvitationResponse>;
+    updateInvitation(identifier: string, body: InvitationUpdate, options?: UpdateInvitationOptionalParams): Promise<UpdateInvitationResponse>;
     /**
      * Delete the specified invitation from the database.
      * @param identifier Invitation identifier.
      * @param options The options parameters.
      */
-    deleteInvitation(identifier: string, options?: AffindaAPIDeleteInvitationOptionalParams): Promise<void>;
+    deleteInvitation(identifier: string, options?: DeleteInvitationOptionalParams): Promise<void>;
     /**
      * Get detail of an invitation using a secret token. This allows users who have not registered/logged
      * in to view the invitation.
      * @param token Invitation token.
      * @param options The options parameters.
      */
-    getInvitationByToken(token: string, options?: AffindaAPIGetInvitationByTokenOptionalParams): Promise<AffindaAPIGetInvitationByTokenResponse>;
+    getInvitationByToken(token: string, options?: GetInvitationByTokenOptionalParams): Promise<GetInvitationByTokenResponse>;
     /**
      * Choose to accept or decline an invitation.
      * @param token Invitation token.
      * @param body
      * @param options The options parameters.
      */
-    respondToInvitation(token: string, body: InvitationResponse, options?: AffindaAPIRespondToInvitationOptionalParams): Promise<AffindaAPIRespondToInvitationResponse>;
+    respondToInvitation(token: string, body: InvitationResponse, options?: RespondToInvitationOptionalParams): Promise<RespondToInvitationResponse>;
     /**
      * Returns your API users.
      * @param options The options parameters.
      */
-    getAllApiUsers(options?: AffindaAPIGetAllApiUsersOptionalParams): Promise<AffindaAPIGetAllApiUsersResponse>;
+    getAllApiUsers(options?: GetAllApiUsersOptionalParams): Promise<GetAllApiUsersResponse>;
     /**
      * Create an API user
      * @param body
      * @param options The options parameters.
      */
-    createApiUser(body: ApiUserCreate, options?: AffindaAPICreateApiUserOptionalParams): Promise<AffindaAPICreateApiUserResponse>;
+    createApiUser(body: ApiUserCreate, options?: CreateApiUserOptionalParams): Promise<CreateApiUserResponse>;
     /**
      * Return a specific API user.
      * @param id API user's ID
      * @param options The options parameters.
      */
-    getApiUser(id: number, options?: AffindaAPIGetApiUserOptionalParams): Promise<AffindaAPIGetApiUserResponse>;
+    getApiUser(id: number, options?: GetApiUserOptionalParams): Promise<GetApiUserResponse>;
     /**
      * Update data of an API user.
      * @param id API user's ID
      * @param body API user to update
      * @param options The options parameters.
      */
-    updateApiUser(id: number, body: ApiUserUpdate, options?: AffindaAPIUpdateApiUserOptionalParams): Promise<AffindaAPIUpdateApiUserResponse>;
+    updateApiUser(id: number, body: ApiUserUpdate, options?: UpdateApiUserOptionalParams): Promise<UpdateApiUserResponse>;
     /**
      * Deletes the specified API user from the database.
      * @param id API user's ID
      * @param options The options parameters.
      */
-    deleteApiUser(id: number, options?: AffindaAPIDeleteApiUserOptionalParams): Promise<void>;
+    deleteApiUser(id: number, options?: DeleteApiUserOptionalParams): Promise<void>;
     /**
      * Regenerate API key for an API user.
      * @param id API user's ID
      * @param options The options parameters.
      */
-    regenerateApiKeyForApiUser(id: number, options?: AffindaAPIRegenerateApiKeyForApiUserOptionalParams): Promise<AffindaAPIRegenerateApiKeyForApiUserResponse>;
+    regenerateApiKeyForApiUser(id: number, options?: RegenerateApiKeyForApiUserOptionalParams): Promise<RegenerateApiKeyForApiUserResponse>;
     /**
      * Returns your resthook subscriptions.
      * @param options The options parameters.
      */
-    getAllResthookSubscriptions(options?: AffindaAPIGetAllResthookSubscriptionsOptionalParams): Promise<AffindaAPIGetAllResthookSubscriptionsResponse>;
+    getAllResthookSubscriptions(options?: GetAllResthookSubscriptionsOptionalParams): Promise<GetAllResthookSubscriptionsResponse>;
     /**
      * After a subscription is successfully created, we'll send a POST request to your target URL with a
      * `X-Hook-Secret` header. <br />
@@ -653,26 +668,26 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body
      * @param options The options parameters.
      */
-    createResthookSubscription(body: ResthookSubscriptionCreate, options?: AffindaAPICreateResthookSubscriptionOptionalParams): Promise<AffindaAPICreateResthookSubscriptionResponse>;
+    createResthookSubscription(body: ResthookSubscriptionCreate, options?: CreateResthookSubscriptionOptionalParams): Promise<CreateResthookSubscriptionResponse>;
     /**
      * Return a specific resthook subscription.
      * @param id Resthook subscription's ID
      * @param options The options parameters.
      */
-    getResthookSubscription(id: number, options?: AffindaAPIGetResthookSubscriptionOptionalParams): Promise<AffindaAPIGetResthookSubscriptionResponse>;
+    getResthookSubscription(id: number, options?: GetResthookSubscriptionOptionalParams): Promise<GetResthookSubscriptionResponse>;
     /**
      * Update data of a resthook subscription.
      * @param id ResthookSubscription's ID
      * @param body ResthookSubscription data to update
      * @param options The options parameters.
      */
-    updateResthookSubscription(id: number, body: ResthookSubscriptionUpdate, options?: AffindaAPIUpdateResthookSubscriptionOptionalParams): Promise<AffindaAPIUpdateResthookSubscriptionResponse>;
+    updateResthookSubscription(id: number, body: ResthookSubscriptionUpdate, options?: UpdateResthookSubscriptionOptionalParams): Promise<UpdateResthookSubscriptionResponse>;
     /**
      * Deletes the specified resthook subscription from the database.
      * @param id ResthookSubscription's ID
      * @param options The options parameters.
      */
-    deleteResthookSubscription(id: number, options?: AffindaAPIDeleteResthookSubscriptionOptionalParams): Promise<void>;
+    deleteResthookSubscription(id: number, options?: DeleteResthookSubscriptionOptionalParams): Promise<void>;
     /**
      * After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
      * header. <br />
@@ -681,18 +696,18 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param xHookSecret The secret received when creating a subscription.
      * @param options The options parameters.
      */
-    activateResthookSubscription(xHookSecret: string, options?: AffindaAPIActivateResthookSubscriptionOptionalParams): Promise<AffindaAPIActivateResthookSubscriptionResponse>;
+    activateResthookSubscription(xHookSecret: string, options?: ActivateResthookSubscriptionOptionalParams): Promise<ActivateResthookSubscriptionResponse>;
     /**
      * Returns the list of searchable occupation groups.
      * @param options The options parameters.
      */
-    listOccupationGroups(options?: AffindaAPIListOccupationGroupsOptionalParams): Promise<AffindaAPIListOccupationGroupsResponse>;
+    listOccupationGroups(options?: ListOccupationGroupsOptionalParams): Promise<ListOccupationGroupsResponse>;
     /**
      * Searches through parsed job descriptions. You can search with custom criterias or a resume.
      * @param body Search parameters
      * @param options The options parameters.
      */
-    createJobDescriptionSearch(body: JobDescriptionSearchParameters | null, options?: AffindaAPICreateJobDescriptionSearchOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchResponse>;
+    createJobDescriptionSearch(body: JobDescriptionSearchParameters | null, options?: CreateJobDescriptionSearchOptionalParams): Promise<CreateJobDescriptionSearchResponse>;
     /**
      * This contains more detailed information about the matching score of the search criteria, or which
      * search criteria is missing in this job description.
@@ -702,14 +717,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    getJobDescriptionSearchDetail(identifier: string, body: JobDescriptionSearchParameters | null, options?: AffindaAPIGetJobDescriptionSearchDetailOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchDetailResponse>;
+    getJobDescriptionSearchDetail(identifier: string, body: JobDescriptionSearchParameters | null, options?: GetJobDescriptionSearchDetailOptionalParams): Promise<GetJobDescriptionSearchDetailResponse>;
     /**
      * Return configurations such as which fields can be displayed in the logged in user's embeddable job
      * description search tool, what are their weights, what is the maximum number of results that can be
      * returned, etc.
      * @param options The options parameters.
      */
-    getJobDescriptionSearchConfig(options?: AffindaAPIGetJobDescriptionSearchConfigOptionalParams): Promise<AffindaAPIGetJobDescriptionSearchConfigResponse>;
+    getJobDescriptionSearchConfig(options?: GetJobDescriptionSearchConfigOptionalParams): Promise<GetJobDescriptionSearchConfigResponse>;
     /**
      * Update configurations such as which fields can be displayed in the logged in user's embeddable job
      * description search tool, what are their weights, what is the maximum number of results that can be
@@ -717,58 +732,58 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body
      * @param options The options parameters.
      */
-    updateJobDescriptionSearchConfig(body: JobDescriptionSearchConfig, options?: AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams): Promise<AffindaAPIUpdateJobDescriptionSearchConfigResponse>;
+    updateJobDescriptionSearchConfig(body: JobDescriptionSearchConfig, options?: UpdateJobDescriptionSearchConfigOptionalParams): Promise<UpdateJobDescriptionSearchConfigResponse>;
     /**
      * Create and return a signed URL of the job description search tool which then can be embedded on a
      * web page. An optional parameter `config_override` can be passed to override the user-level
      * configurations of the embeddable search tool.
      * @param options The options parameters.
      */
-    createJobDescriptionSearchEmbedUrl(options?: AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateJobDescriptionSearchEmbedUrlResponse>;
+    createJobDescriptionSearchEmbedUrl(options?: CreateJobDescriptionSearchEmbedUrlOptionalParams): Promise<CreateJobDescriptionSearchEmbedUrlResponse>;
     /**
      * Returns all the indexes
      * @param options The options parameters.
      */
-    getAllIndexes(options?: AffindaAPIGetAllIndexesOptionalParams): Promise<AffindaAPIGetAllIndexesResponse>;
+    getAllIndexes(options?: GetAllIndexesOptionalParams): Promise<GetAllIndexesResponse>;
     /**
      * Create an index for the search tool
      * @param body Index to create
      * @param options The options parameters.
      */
-    createIndex(body: IndexCreate, options?: AffindaAPICreateIndexOptionalParams): Promise<AffindaAPICreateIndexResponse>;
+    createIndex(body: IndexCreate, options?: CreateIndexOptionalParams): Promise<CreateIndexResponse>;
     /**
      * Updates the specified index
      * @param name Index name
      * @param body Index data to update
      * @param options The options parameters.
      */
-    updateIndex(name: string, body: IndexUpdate, options?: AffindaAPIUpdateIndexOptionalParams): Promise<AffindaAPIUpdateIndexResponse>;
+    updateIndex(name: string, body: IndexUpdate, options?: UpdateIndexOptionalParams): Promise<UpdateIndexResponse>;
     /**
      * Deletes the specified index from the database
      * @param name Index name
      * @param options The options parameters.
      */
-    deleteIndex(name: string, options?: AffindaAPIDeleteIndexOptionalParams): Promise<void>;
+    deleteIndex(name: string, options?: DeleteIndexOptionalParams): Promise<void>;
     /**
      * Returns all the indexed documents for that index
      * @param name Index name
      * @param options The options parameters.
      */
-    getAllIndexDocuments(name: string, options?: AffindaAPIGetAllIndexDocumentsOptionalParams): Promise<AffindaAPIGetAllIndexDocumentsResponse>;
+    getAllIndexDocuments(name: string, options?: GetAllIndexDocumentsOptionalParams): Promise<GetAllIndexDocumentsResponse>;
     /**
      * Create an indexed document for the search tool
      * @param name Index name
      * @param body Document to index
      * @param options The options parameters.
      */
-    createIndexDocument(name: string, body: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema, options?: AffindaAPICreateIndexDocumentOptionalParams): Promise<AffindaAPICreateIndexDocumentResponse>;
+    createIndexDocument(name: string, body: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema, options?: CreateIndexDocumentOptionalParams): Promise<CreateIndexDocumentResponse>;
     /**
      * Delete the specified indexed document from the database
      * @param name Index name
      * @param identifier Document identifier
      * @param options The options parameters.
      */
-    deleteIndexDocument(name: string, identifier: string, options?: AffindaAPIDeleteIndexDocumentOptionalParams): Promise<void>;
+    deleteIndexDocument(name: string, identifier: string, options?: DeleteIndexDocumentOptionalParams): Promise<void>;
     /**
      * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
      * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
@@ -778,7 +793,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    createResumeSearch(body: ResumeSearchParameters, options?: AffindaAPICreateResumeSearchOptionalParams): Promise<AffindaAPICreateResumeSearchResponse>;
+    createResumeSearch(body: ResumeSearchParameters, options?: CreateResumeSearchOptionalParams): Promise<CreateResumeSearchResponse>;
     /**
      * This contains more detailed information about the matching score of the search criteria, or which
      * search criteria is missing in this resume.
@@ -787,7 +802,7 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body Search parameters
      * @param options The options parameters.
      */
-    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: AffindaAPIGetResumeSearchDetailOptionalParams): Promise<AffindaAPIGetResumeSearchDetailResponse>;
+    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: GetResumeSearchDetailOptionalParams): Promise<GetResumeSearchDetailResponse>;
     /**
      * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
      * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
@@ -797,14 +812,14 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param jobDescription Identify the job description to match.
      * @param options The options parameters.
      */
-    getResumeSearchMatch(resume: string, jobDescription: string, options?: AffindaAPIGetResumeSearchMatchOptionalParams): Promise<AffindaAPIGetResumeSearchMatchResponse>;
+    getResumeSearchMatch(resume: string, jobDescription: string, options?: GetResumeSearchMatchOptionalParams): Promise<GetResumeSearchMatchResponse>;
     /**
      * Return configurations such as which fields can be displayed in the logged in user's embeddable
      * resume search tool, what are their weights, what is the maximum number of results that can be
      * returned, etc.
      * @param options The options parameters.
      */
-    getResumeSearchConfig(options?: AffindaAPIGetResumeSearchConfigOptionalParams): Promise<AffindaAPIGetResumeSearchConfigResponse>;
+    getResumeSearchConfig(options?: GetResumeSearchConfigOptionalParams): Promise<GetResumeSearchConfigResponse>;
     /**
      * Update configurations such as which fields can be displayed in the logged in user's embeddable
      * resume search tool, what are their weights, what is the maximum number of results that can be
@@ -812,906 +827,27 @@ export declare class AffindaAPI extends AffindaAPIContext {
      * @param body
      * @param options The options parameters.
      */
-    updateResumeSearchConfig(body: ResumeSearchConfig, options?: AffindaAPIUpdateResumeSearchConfigOptionalParams): Promise<AffindaAPIUpdateResumeSearchConfigResponse>;
+    updateResumeSearchConfig(body: ResumeSearchConfig, options?: UpdateResumeSearchConfigOptionalParams): Promise<UpdateResumeSearchConfigResponse>;
     /**
      * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
      * An optional parameter `config_override` can be passed to override the user-level configurations of
      * the embeddable resume search tool.
      * @param options The options parameters.
      */
-    createResumeSearchEmbedUrl(options?: AffindaAPICreateResumeSearchEmbedUrlOptionalParams): Promise<AffindaAPICreateResumeSearchEmbedUrlResponse>;
+    createResumeSearchEmbedUrl(options?: CreateResumeSearchEmbedUrlOptionalParams): Promise<CreateResumeSearchEmbedUrlResponse>;
     /**
      * Provided one or more job titles, get related suggestions for your search.
      * @param jobTitles Job title to query suggestions for
      * @param options The options parameters.
      */
-    getResumeSearchSuggestionJobTitle(jobTitles: string[], options?: AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionJobTitleResponse>;
+    getResumeSearchSuggestionJobTitle(jobTitles: string[], options?: GetResumeSearchSuggestionJobTitleOptionalParams): Promise<GetResumeSearchSuggestionJobTitleResponse>;
     /**
      * Provided one or more skills, get related suggestions for your search.
      * @param skills Skill to query suggestions for
      * @param options The options parameters.
      */
-    getResumeSearchSuggestionSkill(skills: string[], options?: AffindaAPIGetResumeSearchSuggestionSkillOptionalParams): Promise<AffindaAPIGetResumeSearchSuggestionSkillResponse>;
+    getResumeSearchSuggestionSkill(skills: string[], options?: GetResumeSearchSuggestionSkillOptionalParams): Promise<GetResumeSearchSuggestionSkillResponse>;
 }
-
-/** Optional parameters. */
-export declare interface AffindaAPIActivateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the activateResthookSubscription operation. */
-export declare type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
-
-/** Optional parameters. */
-export declare interface AffindaAPIAddMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the addMappingDataSourceValue operation. */
-export declare type AffindaAPIAddMappingDataSourceValueResponse = Record<string, unknown>;
-
-/** Optional parameters. */
-export declare interface AffindaAPIBatchAddTagOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIBatchCreateAnnotationsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the batchCreateAnnotations operation. */
-export declare type AffindaAPIBatchCreateAnnotationsResponse = (Annotation | null)[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIBatchDeleteAnnotationsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the batchDeleteAnnotations operation. */
-export declare type AffindaAPIBatchDeleteAnnotationsResponse = BatchDeleteAnnotationsResponse;
-
-/** Optional parameters. */
-export declare interface AffindaAPIBatchRemoveTagOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIBatchUpdateAnnotationsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the batchUpdateAnnotations operation. */
-export declare type AffindaAPIBatchUpdateAnnotationsResponse = (Annotation | null)[];
-
-export declare class AffindaAPIContext extends coreClient.ServiceClient {
-    region: Region;
-    /**
-     * Initializes a new instance of the AffindaAPIContext class.
-     * @param credentials Subscription credentials which uniquely identify client subscription.
-     * @param options The parameter options
-     */
-    constructor(credentials: coreAuth.TokenCredential, options?: AffindaAPIOptionalParams);
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateAnnotationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createAnnotation operation. */
-export declare type AffindaAPICreateAnnotationResponse = AnnotationWithValidationResults;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateApiUserOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createApiUser operation. */
-export declare type AffindaAPICreateApiUserResponse = ApiUserWithKey;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createCollection operation. */
-export declare type AffindaAPICreateCollectionResponse = Collection;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createDataFieldForCollection operation. */
-export declare type AffindaAPICreateDataFieldForCollectionResponse = DataField;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
-    body?: DataPointChoiceCreate;
-}
-
-/** Contains response data for the createDataPointChoice operation. */
-export declare type AffindaAPICreateDataPointChoiceResponse = DataPointChoice;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateDataPointOptionalParams extends coreClient.OperationOptions {
-    body?: DataPointCreate;
-}
-
-/** Contains response data for the createDataPoint operation. */
-export declare type AffindaAPICreateDataPointResponse = DataPoint;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateDocumentOptionalParams extends coreClient.OperationOptions {
-    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
-    file?: coreRestPipeline.RequestBodyType;
-    /** URL to download the document. */
-    url?: string;
-    /** Create resume or job description directly from data. */
-    data?: DocumentCreateData;
-    /** Uniquely identify a collection. */
-    collection?: string;
-    /** Uniquely identify a workspace. */
-    workspace?: string;
-    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-    wait?: string;
-    /** Deprecated in favor of `customIdentifier`. */
-    identifier?: string;
-    /** Specify a custom identifier for the document if you need one, not required to be unique. */
-    customIdentifier?: string;
-    /** Optional filename of the file */
-    fileName?: string;
-    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-    expiryTime?: string;
-    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-    language?: string;
-    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: boolean;
-    /** A JSON representation of the RegionBias object. */
-    regionBias?: string;
-    /** Explicitly mark this document as low priority. */
-    lowPriority?: boolean;
-    /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
-    compact?: boolean;
-    /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
-    deleteAfterParse?: boolean;
-}
-
-/** Contains response data for the createDocument operation. */
-export declare type AffindaAPICreateDocumentResponse = DocumentUnion;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateExtractorOptionalParams extends coreClient.OperationOptions {
-    body?: ExtractorCreate;
-}
-
-/** Contains response data for the createExtractor operation. */
-export declare type AffindaAPICreateExtractorResponse = Extractor;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateIndexDocumentOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createIndexDocument operation. */
-export declare type AffindaAPICreateIndexDocumentResponse = PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateIndexOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createIndex operation. */
-export declare type AffindaAPICreateIndexResponse = Index;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateInvitationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createInvitation operation. */
-export declare type AffindaAPICreateInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams extends coreClient.OperationOptions {
-    body?: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema;
-}
-
-/** Contains response data for the createJobDescriptionSearchEmbedUrl operation. */
-export declare type AffindaAPICreateJobDescriptionSearchEmbedUrlResponse = JobDescriptionSearchEmbed;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateJobDescriptionSearchOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the createJobDescriptionSearch operation. */
-export declare type AffindaAPICreateJobDescriptionSearchResponse = JobDescriptionSearch;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateMappingDataSourceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createMappingDataSource operation. */
-export declare type AffindaAPICreateMappingDataSourceResponse = MappingDataSource;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateMappingOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createMapping operation. */
-export declare type AffindaAPICreateMappingResponse = Mapping;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateOrganizationOptionalParams extends coreClient.OperationOptions {
-    /** Upload avatar for the organization. */
-    avatar?: coreRestPipeline.RequestBodyType;
-    /** Used to sign webhook payloads so you can verify their integrity. */
-    resthookSignatureKey?: string;
-}
-
-/** Contains response data for the createOrganization operation. */
-export declare type AffindaAPICreateOrganizationResponse = Organization;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createResthookSubscription operation. */
-export declare type AffindaAPICreateResthookSubscriptionResponse = ResthookSubscription;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams extends coreClient.OperationOptions {
-    body?: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
-}
-
-/** Contains response data for the createResumeSearchEmbedUrl operation. */
-export declare type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateResumeSearchOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the createResumeSearch operation. */
-export declare type AffindaAPICreateResumeSearchResponse = ResumeSearch;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateTagOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createTag operation. */
-export declare type AffindaAPICreateTagResponse = Tag;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateValidationResultOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createValidationResult operation. */
-export declare type AffindaAPICreateValidationResultResponse = ValidationResult;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createWorkspaceMembership operation. */
-export declare type AffindaAPICreateWorkspaceMembershipResponse = WorkspaceMembership;
-
-/** Optional parameters. */
-export declare interface AffindaAPICreateWorkspaceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the createWorkspace operation. */
-export declare type AffindaAPICreateWorkspaceResponse = Workspace;
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteAnnotationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the deleteAnnotation operation. */
-export declare type AffindaAPIDeleteAnnotationResponse = AnotationDelete;
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteApiUserOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteDataPointChoiceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteDataPointOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteDocumentOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteExtractorOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteIndexDocumentOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteIndexOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteInvitationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteMappingDataSourceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteMappingOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteOrganizationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteTagOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteValidationResultOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIDeleteWorkspaceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Optional parameters. */
-export declare interface AffindaAPIEditDocumentPagesOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the editDocumentPages operation. */
-export declare type AffindaAPIEditDocumentPagesResponse = Meta[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllAnnotationsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getAllAnnotations operation. */
-export declare type AffindaAPIGetAllAnnotationsResponse = Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllApiUsersOptionalParams extends coreClient.OperationOptions {
-    /** Filter by organization. */
-    organization?: string;
-}
-
-/** Contains response data for the getAllApiUsers operation. */
-export declare type AffindaAPIGetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllCollectionsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getAllCollections operation. */
-export declare type AffindaAPIGetAllCollectionsResponse = Collection[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllDataPointsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter by organization. */
-    organization?: string;
-    /** Allows you to include public data points in the response when you're filtering by organization. */
-    includePublic?: boolean;
-    /** Filter by extractor. */
-    extractor?: string;
-    /** Filter by slug. */
-    slug?: string;
-    /** Filter by description. */
-    description?: string;
-    /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
-    annotationContentType?: string;
-    /** Filter by specific identifiers. */
-    identifier?: string[];
-}
-
-/** Contains response data for the getAllDataPoints operation. */
-export declare type AffindaAPIGetAllDataPointsResponse = DataPoint[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllDocumentsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter by workspace. */
-    workspace?: string;
-    /** Filter by collection. */
-    collection?: string;
-    /** Filter by the document's state. */
-    state?: DocumentState;
-    /** Filter by tag's IDs. */
-    tags?: number[];
-    /** Filter by created datetime. */
-    createdDt?: DateRange;
-    /** Partial, case-insensitive match with file name or tag name. */
-    search?: string;
-    /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. Supported values include: 'file_name', 'extractor', 'created_dt', 'validated_dt', 'archived_dt' and 'parsed__<dataPointSlug>'. */
-    ordering?: string[];
-    /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint. */
-    includeData?: boolean;
-    /** Exclude some documents from the result. */
-    exclude?: string[];
-    /** Exclude documents that are currently being reviewed. */
-    inReview?: boolean;
-    /** Filter by failed status. */
-    failed?: boolean;
-    /** Filter by ready status. */
-    ready?: boolean;
-    /** Filter for validatable documents. */
-    validatable?: boolean;
-    /** Filter for documents with challenges. */
-    hasChallenges?: boolean;
-    /** Filter for documents with this custom identifier. */
-    customIdentifier?: string;
-    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
-    compact?: boolean;
-    /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
-    count?: boolean;
-}
-
-/** Contains response data for the getAllDocuments operation. */
-export declare type AffindaAPIGetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllExtractorsOptionalParams extends coreClient.OperationOptions {
-    /** Filter by name. */
-    name?: string;
-    /** Filter by validatable. */
-    validatable?: boolean;
-    /** Whether to include Affinda's off-the-shelf extractors. */
-    includePublicExtractors?: boolean;
-}
-
-/** Contains response data for the getAllExtractors operation. */
-export declare type AffindaAPIGetAllExtractorsResponse = Extractor[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllIndexDocumentsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the getAllIndexDocuments operation. */
-export declare type AffindaAPIGetAllIndexDocumentsResponse = PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllIndexesOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter indices by a document type */
-    documentType?: Enum20;
-}
-
-/** Contains response data for the getAllIndexes operation. */
-export declare type AffindaAPIGetAllIndexesResponse = PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllInvitationsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter by organization. */
-    organization?: string;
-    /** Filter by role. */
-    role?: OrganizationRole;
-    /** Filter by status. */
-    status?: InvitationStatus;
-}
-
-/** Contains response data for the getAllInvitations operation. */
-export declare type AffindaAPIGetAllInvitationsResponse = Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllOrganizationMembershipsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter by organization. */
-    organization?: string;
-    /** Filter by role. */
-    role?: OrganizationRole;
-}
-
-/** Contains response data for the getAllOrganizationMemberships operation. */
-export declare type AffindaAPIGetAllOrganizationMembershipsResponse = PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllOrganizationsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getAllOrganizations operation. */
-export declare type AffindaAPIGetAllOrganizationsResponse = Organization[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllResthookSubscriptionsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the getAllResthookSubscriptions operation. */
-export declare type AffindaAPIGetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllTagsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter by workspace. */
-    workspace?: string;
-}
-
-/** Contains response data for the getAllTags operation. */
-export declare type AffindaAPIGetAllTagsResponse = Tag[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllValidationResultsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the getAllValidationResults operation. */
-export declare type AffindaAPIGetAllValidationResultsResponse = ValidationResult[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter by workspace. */
-    workspace?: string;
-    /** Partial text match on user's email, case-insensitive. */
-    user?: string;
-}
-
-/** Contains response data for the getAllWorkspaceMemberships operation. */
-export declare type AffindaAPIGetAllWorkspaceMembershipsResponse = PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAllWorkspacesOptionalParams extends coreClient.OperationOptions {
-    /** Filter by name. */
-    name?: string;
-}
-
-/** Contains response data for the getAllWorkspaces operation. */
-export declare type AffindaAPIGetAllWorkspacesResponse = Workspace[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetAnnotationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getAnnotation operation. */
-export declare type AffindaAPIGetAnnotationResponse = Annotation;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetApiUserOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getApiUser operation. */
-export declare type AffindaAPIGetApiUserResponse = ApiUserWithoutKey;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getCollection operation. */
-export declare type AffindaAPIGetCollectionResponse = Collection;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getDataFieldForCollection operation. */
-export declare type AffindaAPIGetDataFieldForCollectionResponse = CollectionField;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetDataPointChoiceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getDataPointChoice operation. */
-export declare type AffindaAPIGetDataPointChoiceResponse = DataPointChoice;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetDataPointChoicesOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Filter choices by searching for a substring. */
-    search?: string;
-}
-
-/** Contains response data for the getDataPointChoices operation. */
-export declare type AffindaAPIGetDataPointChoicesResponse = PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetDataPointOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getDataPoint operation. */
-export declare type AffindaAPIGetDataPointResponse = DataPoint;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetDocumentOptionalParams extends coreClient.OperationOptions {
-    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
-    compact?: boolean;
-    /** Specify which format you want the response to be. Default is "json" */
-    format?: DocumentFormat;
-}
-
-/** Contains response data for the getDocument operation. */
-export declare type AffindaAPIGetDocumentResponse = DocumentUnion;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetExtractorOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getExtractor operation. */
-export declare type AffindaAPIGetExtractorResponse = Extractor;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetInvitationByTokenOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getInvitationByToken operation. */
-export declare type AffindaAPIGetInvitationByTokenResponse = Invitation;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetInvitationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getInvitation operation. */
-export declare type AffindaAPIGetInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetJobDescriptionSearchConfigOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getJobDescriptionSearchConfig operation. */
-export declare type AffindaAPIGetJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetJobDescriptionSearchDetailOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getJobDescriptionSearchDetail operation. */
-export declare type AffindaAPIGetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetMappingDataSourceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getMappingDataSource operation. */
-export declare type AffindaAPIGetMappingDataSourceResponse = MappingDataSource;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getMappingDataSourceValue operation. */
-export declare type AffindaAPIGetMappingDataSourceValueResponse = Record<string, unknown>;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetMappingOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getMapping operation. */
-export declare type AffindaAPIGetMappingResponse = Mapping;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getOrganizationMembership operation. */
-export declare type AffindaAPIGetOrganizationMembershipResponse = OrganizationMembership;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetOrganizationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getOrganization operation. */
-export declare type AffindaAPIGetOrganizationResponse = Organization;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getResthookSubscription operation. */
-export declare type AffindaAPIGetResthookSubscriptionResponse = ResthookSubscription;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetResumeSearchConfigOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getResumeSearchConfig operation. */
-export declare type AffindaAPIGetResumeSearchConfigResponse = ResumeSearchConfig;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetResumeSearchDetailOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getResumeSearchDetail operation. */
-export declare type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetResumeSearchMatchOptionalParams extends coreClient.OperationOptions {
-    /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
-    index?: string;
-    /** Add keywords to the search criteria. */
-    searchExpression?: string;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    jobTitlesWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    yearsExperienceWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    locationsWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    languagesWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    skillsWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    educationWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    searchExpressionWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    socCodesWeight?: number;
-    /** How important is this criteria to the matching score, range from 0 to 1. */
-    managementLevelWeight?: number;
-}
-
-/** Contains response data for the getResumeSearchMatch operation. */
-export declare type AffindaAPIGetResumeSearchMatchResponse = ResumeSearchMatch;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
-export declare type AffindaAPIGetResumeSearchSuggestionJobTitleResponse = {
-    /** The parsed response body. */
-    body: string[];
-};
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetResumeSearchSuggestionSkillOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getResumeSearchSuggestionSkill operation. */
-export declare type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
-    /** The parsed response body. */
-    body: string[];
-};
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetTagOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getTag operation. */
-export declare type AffindaAPIGetTagResponse = Tag;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetUsageByCollectionOptionalParams extends coreClient.OperationOptions {
-    /** Start date of the period to retrieve. Format: YYYY-MM */
-    start?: string;
-    /** End date of the period to retrieve. Format: YYYY-MM */
-    end?: string;
-}
-
-/** Contains response data for the getUsageByCollection operation. */
-export declare type AffindaAPIGetUsageByCollectionResponse = UsageByCollection[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetUsageByWorkspaceOptionalParams extends coreClient.OperationOptions {
-    /** Start date of the period to retrieve. Format: YYYY-MM */
-    start?: string;
-    /** End date of the period to retrieve. Format: YYYY-MM */
-    end?: string;
-}
-
-/** Contains response data for the getUsageByWorkspace operation. */
-export declare type AffindaAPIGetUsageByWorkspaceResponse = UsageByWorkspace[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetValidationResultOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getValidationResult operation. */
-export declare type AffindaAPIGetValidationResultResponse = ValidationResult;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getWorkspaceMembership operation. */
-export declare type AffindaAPIGetWorkspaceMembershipResponse = WorkspaceMembership;
-
-/** Optional parameters. */
-export declare interface AffindaAPIGetWorkspaceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the getWorkspace operation. */
-export declare type AffindaAPIGetWorkspaceResponse = Workspace;
-
-/** Optional parameters. */
-export declare interface AffindaAPIListMappingDataSourcesOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the listMappingDataSources operation. */
-export declare type AffindaAPIListMappingDataSourcesResponse = Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIListMappingDataSourceValuesOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-    /** Search for specific values */
-    search?: string;
-}
-
-/** Contains response data for the listMappingDataSourceValues operation. */
-export declare type AffindaAPIListMappingDataSourceValuesResponse = Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIListMappingsOptionalParams extends coreClient.OperationOptions {
-    /** The number of documents to skip before starting to collect the result set. */
-    offset?: number;
-    /** The numbers of results to return. */
-    limit?: number;
-}
-
-/** Contains response data for the listMappings operation. */
-export declare type AffindaAPIListMappingsResponse = Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface AffindaAPIListOccupationGroupsOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the listOccupationGroups operation. */
-export declare type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
 export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClientOptions {
@@ -1720,183 +856,6 @@ export declare interface AffindaAPIOptionalParams extends coreClient.ServiceClie
     /** Overrides client endpoint. */
     endpoint?: string;
 }
-
-/** Optional parameters. */
-export declare interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the regenerateApiKeyForApiUser operation. */
-export declare type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
-
-/** Optional parameters. */
-export declare interface AffindaAPIReplaceDataPointChoicesOptionalParams extends coreClient.OperationOptions {
-    /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
-    body?: DataPointChoiceReplaceRequest;
-}
-
-/** Contains response data for the replaceDataPointChoices operation. */
-export declare type AffindaAPIReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
-
-/** Optional parameters. */
-export declare interface AffindaAPIReplaceMappingDataSourceValuesOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the replaceMappingDataSourceValues operation. */
-export declare type AffindaAPIReplaceMappingDataSourceValuesResponse = Record<string, unknown>[];
-
-/** Optional parameters. */
-export declare interface AffindaAPIRespondToInvitationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the respondToInvitation operation. */
-export declare type AffindaAPIRespondToInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateAnnotationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateAnnotation operation. */
-export declare type AffindaAPIUpdateAnnotationResponse = Annotation;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateApiUserOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateApiUser operation. */
-export declare type AffindaAPIUpdateApiUserResponse = ApiUserWithoutKey;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateCollection operation. */
-export declare type AffindaAPIUpdateCollectionResponse = Collection;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateDataFieldForCollection operation. */
-export declare type AffindaAPIUpdateDataFieldForCollectionResponse = CollectionField;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateDataPointChoice operation. */
-export declare type AffindaAPIUpdateDataPointChoiceResponse = DataPointChoice;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateDataPointOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateDataPoint operation. */
-export declare type AffindaAPIUpdateDataPointResponse = DataPoint;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateDocumentDataOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateDocumentData operation. */
-export declare type AffindaAPIUpdateDocumentDataResponse = DocumentUnion;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateDocumentOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateDocument operation. */
-export declare type AffindaAPIUpdateDocumentResponse = DocumentUnion;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateExtractorOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateExtractor operation. */
-export declare type AffindaAPIUpdateExtractorResponse = Extractor;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateIndexOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateIndex operation. */
-export declare type AffindaAPIUpdateIndexResponse = Index;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateInvitationOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateInvitation operation. */
-export declare type AffindaAPIUpdateInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateJobDescriptionSearchConfig operation. */
-export declare type AffindaAPIUpdateJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateMappingOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateMapping operation. */
-export declare type AffindaAPIUpdateMappingResponse = Mapping;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateOrganizationMembership operation. */
-export declare type AffindaAPIUpdateOrganizationMembershipResponse = OrganizationMembership;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateOrganizationOptionalParams extends coreClient.OperationOptions {
-    /** Upload avatar for the organization. */
-    avatar?: coreRestPipeline.RequestBodyType;
-    /** Used to sign webhook payloads so you can verify their integrity. */
-    resthookSignatureKey?: string;
-    name?: string;
-    /** Configuration of the embeddable validation tool. */
-    validationToolConfig?: ValidationToolConfig;
-}
-
-/** Contains response data for the updateOrganization operation. */
-export declare type AffindaAPIUpdateOrganizationResponse = Organization;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateResthookSubscription operation. */
-export declare type AffindaAPIUpdateResthookSubscriptionResponse = ResthookSubscription;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateResumeSearchConfigOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateResumeSearchConfig operation. */
-export declare type AffindaAPIUpdateResumeSearchConfigResponse = ResumeSearchConfig;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateTagOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateTag operation. */
-export declare type AffindaAPIUpdateTagResponse = Tag;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateValidationResultOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateValidationResult operation. */
-export declare type AffindaAPIUpdateValidationResultResponse = ValidationResult;
-
-/** Optional parameters. */
-export declare interface AffindaAPIUpdateWorkspaceOptionalParams extends coreClient.OperationOptions {
-}
-
-/** Contains response data for the updateWorkspace operation. */
-export declare type AffindaAPIUpdateWorkspaceResponse = Workspace;
 
 export declare class AffindaCredential implements TokenCredential {
     token: string;
@@ -2056,10 +1015,10 @@ export declare interface AnnotationUpdate {
     validationResults?: (ChangedValidationResults | null)[];
 }
 
-export declare type AnnotationWithValidationResults = Annotation & {
+export declare interface AnnotationWithValidationResults extends Annotation {
     /** List of validation results for this annotation. */
     validationResults?: ValidationResult[];
-};
+}
 
 export declare interface AnotationDelete {
     /** The validation results created, changed or deleted as a result of deleting the annotation. */
@@ -2134,6 +1093,10 @@ export declare interface BaseExtractor {
     createdDt?: Date;
 }
 
+/** Optional parameters. */
+export declare interface BatchAddTagOptionalParams extends coreClient.OperationOptions {
+}
+
 export declare interface BatchAddTagRequest {
     /** List of documents to tag */
     identifiers?: string[];
@@ -2141,9 +1104,27 @@ export declare interface BatchAddTagRequest {
     tag?: number;
 }
 
+/** Optional parameters. */
+export declare interface BatchCreateAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the batchCreateAnnotations operation. */
+export declare type BatchCreateAnnotationsResponse = (Annotation | null)[];
+
+/** Contains response data for the batchDeleteAnnotations operation. */
+export declare type BatchDeleteAnnotationsOperationResponse = BatchDeleteAnnotationsResponse;
+
+/** Optional parameters. */
+export declare interface BatchDeleteAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
 export declare interface BatchDeleteAnnotationsResponse {
     /** The validation results created, changed or deleted as a result of deleting the annotations. */
     validationResults?: Record<string, unknown>;
+}
+
+/** Optional parameters. */
+export declare interface BatchRemoveTagOptionalParams extends coreClient.OperationOptions {
 }
 
 export declare interface BatchRemoveTagRequest {
@@ -2152,6 +1133,13 @@ export declare interface BatchRemoveTagRequest {
     /** The tag's ID */
     tag?: number;
 }
+
+/** Optional parameters. */
+export declare interface BatchUpdateAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the batchUpdateAnnotations operation. */
+export declare type BatchUpdateAnnotationsResponse = (Annotation | null)[];
 
 export declare interface ChangedValidationResults {
     /** Describes unknown properties. The value of an unknown property can be of "any" type. */
@@ -2272,22 +1260,22 @@ export declare interface CollectionWorkspace {
 }
 
 export declare interface Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
@@ -2296,17 +1284,17 @@ export declare interface Components159Ji55SchemasResumesearchdetailPropertiesLan
 }
 
 export declare interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
@@ -2316,27 +1304,27 @@ export declare interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePro
 }
 
 export declare interface Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
@@ -2364,77 +1352,77 @@ export declare interface Components1TryetgSchemasResumedataPropertiesWorkexperie
 }
 
 export declare interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
@@ -2457,18 +1445,228 @@ export declare interface ComponentsSxu0N3SchemasResumesearchdetailPropertiesEduc
 }
 
 export declare interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
 export declare interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {
-    raw?: string;
+    raw: string | null;
     parsed?: string;
 }
 
-export declare type CurrencyCodeAnnotation = Annotation & {
+/** Optional parameters. */
+export declare interface CreateAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createAnnotation operation. */
+export declare type CreateAnnotationResponse = AnnotationWithValidationResults;
+
+/** Optional parameters. */
+export declare interface CreateApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createApiUser operation. */
+export declare type CreateApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
+export declare interface CreateCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createCollection operation. */
+export declare type CreateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface CreateDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createDataFieldForCollection operation. */
+export declare type CreateDataFieldForCollectionResponse = DataField;
+
+/** Optional parameters. */
+export declare interface CreateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+    body?: DataPointChoiceCreate;
+}
+
+/** Contains response data for the createDataPointChoice operation. */
+export declare type CreateDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
+export declare interface CreateDataPointOptionalParams extends coreClient.OperationOptions {
+    body?: DataPointCreate;
+}
+
+/** Contains response data for the createDataPoint operation. */
+export declare type CreateDataPointResponse = DataPoint;
+
+/** Optional parameters. */
+export declare interface CreateDocumentOptionalParams extends coreClient.OperationOptions {
+    /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
+    file?: coreRestPipeline.RequestBodyType;
+    /** URL to download the document. */
+    url?: string;
+    /** Create resume or job description directly from data. */
+    data?: DocumentCreateData;
+    /** Uniquely identify a collection. */
+    collection?: string;
+    /** Uniquely identify a workspace. */
+    workspace?: string;
+    /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+    wait?: string;
+    /** Deprecated in favor of `customIdentifier`. */
+    identifier?: string;
+    /** Specify a custom identifier for the document if you need one, not required to be unique. */
+    customIdentifier?: string;
+    /** Optional filename of the file */
+    fileName?: string;
+    /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+    expiryTime?: string;
+    /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+    language?: string;
+    /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+    rejectDuplicates?: boolean;
+    /** A JSON representation of the RegionBias object. */
+    regionBias?: string;
+    /** Explicitly mark this document as low priority. */
+    lowPriority?: boolean;
+    /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
+    compact?: boolean;
+    /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
+    deleteAfterParse?: boolean;
+}
+
+/** Contains response data for the createDocument operation. */
+export declare type CreateDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export declare interface CreateExtractorOptionalParams extends coreClient.OperationOptions {
+    body?: ExtractorCreate;
+}
+
+/** Contains response data for the createExtractor operation. */
+export declare type CreateExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export declare interface CreateIndexDocumentOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createIndexDocument operation. */
+export declare type CreateIndexDocumentResponse = PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface CreateIndexOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createIndex operation. */
+export declare type CreateIndexResponse = Index;
+
+/** Optional parameters. */
+export declare interface CreateInvitationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createInvitation operation. */
+export declare type CreateInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export declare interface CreateJobDescriptionSearchEmbedUrlOptionalParams extends coreClient.OperationOptions {
+    body?: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createJobDescriptionSearchEmbedUrl operation. */
+export declare type CreateJobDescriptionSearchEmbedUrlResponse = JobDescriptionSearchEmbed;
+
+/** Optional parameters. */
+export declare interface CreateJobDescriptionSearchOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the createJobDescriptionSearch operation. */
+export declare type CreateJobDescriptionSearchResponse = JobDescriptionSearch;
+
+/** Optional parameters. */
+export declare interface CreateMappingDataSourceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createMappingDataSource operation. */
+export declare type CreateMappingDataSourceResponse = MappingDataSource;
+
+/** Optional parameters. */
+export declare interface CreateMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createMapping operation. */
+export declare type CreateMappingResponse = Mapping;
+
+/** Optional parameters. */
+export declare interface CreateOrganizationOptionalParams extends coreClient.OperationOptions {
+    /** Upload avatar for the organization. */
+    avatar?: coreRestPipeline.RequestBodyType;
+    /** Used to sign webhook payloads so you can verify their integrity. */
+    resthookSignatureKey?: string;
+}
+
+/** Contains response data for the createOrganization operation. */
+export declare type CreateOrganizationResponse = Organization;
+
+/** Optional parameters. */
+export declare interface CreateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createResthookSubscription operation. */
+export declare type CreateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export declare interface CreateResumeSearchEmbedUrlOptionalParams extends coreClient.OperationOptions {
+    body?: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createResumeSearchEmbedUrl operation. */
+export declare type CreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
+
+/** Optional parameters. */
+export declare interface CreateResumeSearchOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the createResumeSearch operation. */
+export declare type CreateResumeSearchResponse = ResumeSearch;
+
+/** Optional parameters. */
+export declare interface CreateTagOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createTag operation. */
+export declare type CreateTagResponse = Tag;
+
+/** Optional parameters. */
+export declare interface CreateValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createValidationResult operation. */
+export declare type CreateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export declare interface CreateWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createWorkspaceMembership operation. */
+export declare type CreateWorkspaceMembershipResponse = WorkspaceMembership;
+
+/** Optional parameters. */
+export declare interface CreateWorkspaceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the createWorkspace operation. */
+export declare type CreateWorkspaceResponse = Workspace;
+
+export declare interface CurrencyCodeAnnotation extends Annotation {
     parsed?: DataPointChoice;
-};
+}
 
 export declare interface CustomFieldConfig {
     /** Data point identifier. */
@@ -2509,6 +1707,8 @@ export declare interface DataFieldCreateDataPoint {
     parent?: string;
     /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
     manualEntry?: boolean;
+    /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+    mappingDataSource?: string;
 }
 
 /** The field to be created. */
@@ -2589,6 +1789,8 @@ export declare interface DataPoint {
     parent?: string;
     children?: DataPoint[];
     availableDataSources?: MappingDataSource[];
+    /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+    mappingDataSource?: string;
     /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
     manualEntry?: boolean;
 }
@@ -2684,6 +1886,8 @@ export declare interface DataPointCreate {
     parent?: string;
     /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
     manualEntry?: boolean;
+    /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+    mappingDataSource?: string;
 }
 
 export declare interface DataPointUpdate {
@@ -2694,15 +1898,17 @@ export declare interface DataPointUpdate {
     description?: string;
     /** The identifier of the parent data point if applicable. */
     parent?: string;
+    /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+    mappingDataSource?: string;
 }
 
-export declare type DateAnnotation = Annotation & {
+export declare interface DateAnnotation extends Annotation {
     parsed?: Date;
-};
+}
 
-export declare type DateAnnotationUpdate = AnnotationBase & {
+export declare interface DateAnnotationUpdate extends AnnotationBase {
     parsed?: Date;
-};
+}
 
 /**
  * Defines values for DateFormatPreference. \
@@ -2728,9 +1934,9 @@ export declare type DateFormatPreference = string;
  */
 export declare type DateRange = string;
 
-export declare type DateRangeAnnotation = Annotation & {
+export declare interface DateRangeAnnotation extends Annotation {
     parsed?: DateRangeAnnotationParsed;
-};
+}
 
 export declare interface DateRangeAnnotationParsed {
     start?: DateRangeValue;
@@ -2743,6 +1949,89 @@ export declare interface DateRangeValue {
     day?: number;
     month?: number;
     year?: number;
+}
+
+/** Optional parameters. */
+export declare interface DeleteAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the deleteAnnotation operation. */
+export declare type DeleteAnnotationResponse = AnotationDelete;
+
+/** Optional parameters. */
+export declare interface DeleteApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteDataPointOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteDocumentOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteExtractorOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteIndexDocumentOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteIndexOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteInvitationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteMappingDataSourceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteOrganizationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteTagOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Optional parameters. */
+export declare interface DeleteWorkspaceOptionalParams extends coreClient.OperationOptions {
 }
 
 declare interface Document_2 {
@@ -2969,6 +2258,13 @@ export declare interface DocumentWarning {
     warningDetail?: string;
 }
 
+/** Optional parameters. */
+export declare interface EditDocumentPagesOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the editDocumentPages operation. */
+export declare type EditDocumentPagesResponse = Meta[];
+
 export declare interface Education {
     id?: number;
     organization?: string;
@@ -3012,9 +2308,9 @@ export declare interface EducationSearchScoreComponent {
  */
 export declare type Enum20 = string;
 
-export declare type ExpectedRemunerationAnnotation = Annotation & {
+export declare interface ExpectedRemunerationAnnotation extends Annotation {
     parsed?: ExpectedRemunerationAnnotationParsed;
-};
+}
 
 export declare interface ExpectedRemunerationAnnotationParsed {
     minimum?: number;
@@ -3023,9 +2319,9 @@ export declare interface ExpectedRemunerationAnnotationParsed {
     unit?: string;
 }
 
-export declare type ExpectedRemunerationAnnotationUpdate = AnnotationBase & {
+export declare interface ExpectedRemunerationAnnotationUpdate extends AnnotationBase {
     parsed?: ExpectedRemunerationAnnotationUpdateParsed;
-};
+}
 
 export declare interface ExpectedRemunerationAnnotationUpdateParsed {
     minimum?: number;
@@ -3158,13 +2454,497 @@ export declare interface FieldsLayout {
     categories: FieldCategory[];
 }
 
-export declare type FloatAnnotation = Annotation & {
+export declare interface FloatAnnotation extends Annotation {
     parsed?: number;
-};
+}
 
 export declare interface Get200ApplicationJsonPropertiesItemsItem {
     document?: string;
 }
+
+/** Optional parameters. */
+export declare interface GetAllAnnotationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllAnnotations operation. */
+export declare type GetAllAnnotationsResponse = Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllApiUsersOptionalParams extends coreClient.OperationOptions {
+    /** Filter by organization. */
+    organization?: string;
+}
+
+/** Contains response data for the getAllApiUsers operation. */
+export declare type GetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllCollectionsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllCollections operation. */
+export declare type GetAllCollectionsResponse = Collection[];
+
+/** Optional parameters. */
+export declare interface GetAllDataPointsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by organization. */
+    organization?: string;
+    /** Allows you to include public data points in the response when you're filtering by organization. */
+    includePublic?: boolean;
+    /** Filter by extractor. */
+    extractor?: string;
+    /** Filter by slug. */
+    slug?: string;
+    /** Filter by description. */
+    description?: string;
+    /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
+    annotationContentType?: string;
+    /** Filter by specific identifiers. */
+    identifier?: string[];
+}
+
+/** Contains response data for the getAllDataPoints operation. */
+export declare type GetAllDataPointsResponse = DataPoint[];
+
+/** Optional parameters. */
+export declare interface GetAllDocumentsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by workspace. */
+    workspace?: string;
+    /** Filter by collection. */
+    collection?: string;
+    /** Filter by the document's state. */
+    state?: DocumentState;
+    /** Filter by tag's IDs. */
+    tags?: number[];
+    /** Filter by created datetime. */
+    createdDt?: DateRange;
+    /** Partial, case-insensitive match with file name or tag name. */
+    search?: string;
+    /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. Supported values include: 'file_name', 'extractor', 'created_dt', 'validated_dt', 'archived_dt' and 'parsed__<dataPointSlug>'. */
+    ordering?: string[];
+    /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint. */
+    includeData?: boolean;
+    /** Exclude some documents from the result. */
+    exclude?: string[];
+    /** Exclude documents that are currently being reviewed. */
+    inReview?: boolean;
+    /** Filter by failed status. */
+    failed?: boolean;
+    /** Filter by ready status. */
+    ready?: boolean;
+    /** Filter for validatable documents. */
+    validatable?: boolean;
+    /** Filter for documents with challenges. */
+    hasChallenges?: boolean;
+    /** Filter for documents with this custom identifier. */
+    customIdentifier?: string;
+    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+    compact?: boolean;
+    /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
+    count?: boolean;
+}
+
+/** Contains response data for the getAllDocuments operation. */
+export declare type GetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllExtractorsOptionalParams extends coreClient.OperationOptions {
+    /** Filter by name. */
+    name?: string;
+    /** Filter by validatable. */
+    validatable?: boolean;
+    /** Whether to include Affinda's off-the-shelf extractors. */
+    includePublicExtractors?: boolean;
+}
+
+/** Contains response data for the getAllExtractors operation. */
+export declare type GetAllExtractorsResponse = Extractor[];
+
+/** Optional parameters. */
+export declare interface GetAllIndexDocumentsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the getAllIndexDocuments operation. */
+export declare type GetAllIndexDocumentsResponse = PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllIndexesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter indices by a document type */
+    documentType?: Enum20;
+}
+
+/** Contains response data for the getAllIndexes operation. */
+export declare type GetAllIndexesResponse = PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllInvitationsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by organization. */
+    organization?: string;
+    /** Filter by role. */
+    role?: OrganizationRole;
+    /** Filter by status. */
+    status?: InvitationStatus;
+}
+
+/** Contains response data for the getAllInvitations operation. */
+export declare type GetAllInvitationsResponse = Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllOrganizationMembershipsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by organization. */
+    organization?: string;
+    /** Filter by role. */
+    role?: OrganizationRole;
+}
+
+/** Contains response data for the getAllOrganizationMemberships operation. */
+export declare type GetAllOrganizationMembershipsResponse = PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllOrganizationsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAllOrganizations operation. */
+export declare type GetAllOrganizationsResponse = Organization[];
+
+/** Optional parameters. */
+export declare interface GetAllResthookSubscriptionsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the getAllResthookSubscriptions operation. */
+export declare type GetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by workspace. */
+    workspace?: string;
+}
+
+/** Contains response data for the getAllTags operation. */
+export declare type GetAllTagsResponse = Tag[];
+
+/** Optional parameters. */
+export declare interface GetAllValidationResultsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the getAllValidationResults operation. */
+export declare type GetAllValidationResultsResponse = ValidationResult[];
+
+/** Optional parameters. */
+export declare interface GetAllWorkspaceMembershipsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by workspace. */
+    workspace?: string;
+    /** Partial text match on user's email, case-insensitive. */
+    user?: string;
+}
+
+/** Contains response data for the getAllWorkspaceMemberships operation. */
+export declare type GetAllWorkspaceMembershipsResponse = PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetAllWorkspacesOptionalParams extends coreClient.OperationOptions {
+    /** Filter by name. */
+    name?: string;
+}
+
+/** Contains response data for the getAllWorkspaces operation. */
+export declare type GetAllWorkspacesResponse = Workspace[];
+
+/** Optional parameters. */
+export declare interface GetAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getAnnotation operation. */
+export declare type GetAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export declare interface GetApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getApiUser operation. */
+export declare type GetApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export declare interface GetCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getCollection operation. */
+export declare type GetCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface GetDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getDataFieldForCollection operation. */
+export declare type GetDataFieldForCollectionResponse = CollectionField;
+
+/** Optional parameters. */
+export declare interface GetDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getDataPointChoice operation. */
+export declare type GetDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
+export declare interface GetDataPointChoicesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter choices by searching for a substring. */
+    search?: string;
+}
+
+/** Contains response data for the getDataPointChoices operation. */
+export declare type GetDataPointChoicesResponse = PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface GetDataPointOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getDataPoint operation. */
+export declare type GetDataPointResponse = DataPoint;
+
+/** Optional parameters. */
+export declare interface GetDocumentOptionalParams extends coreClient.OperationOptions {
+    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+    compact?: boolean;
+    /** Specify which format you want the response to be. Default is "json" */
+    format?: DocumentFormat;
+}
+
+/** Contains response data for the getDocument operation. */
+export declare type GetDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export declare interface GetExtractorOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getExtractor operation. */
+export declare type GetExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export declare interface GetInvitationByTokenOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getInvitationByToken operation. */
+export declare type GetInvitationByTokenResponse = Invitation;
+
+/** Optional parameters. */
+export declare interface GetInvitationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getInvitation operation. */
+export declare type GetInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export declare interface GetJobDescriptionSearchConfigOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getJobDescriptionSearchConfig operation. */
+export declare type GetJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+
+/** Optional parameters. */
+export declare interface GetJobDescriptionSearchDetailOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getJobDescriptionSearchDetail operation. */
+export declare type GetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
+
+/** Optional parameters. */
+export declare interface GetMappingDataSourceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getMappingDataSource operation. */
+export declare type GetMappingDataSourceResponse = MappingDataSource;
+
+/** Optional parameters. */
+export declare interface GetMappingDataSourceValueOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getMappingDataSourceValue operation. */
+export declare type GetMappingDataSourceValueResponse = Record<string, unknown>;
+
+/** Optional parameters. */
+export declare interface GetMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getMapping operation. */
+export declare type GetMappingResponse = Mapping;
+
+/** Optional parameters. */
+export declare interface GetOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getOrganizationMembership operation. */
+export declare type GetOrganizationMembershipResponse = OrganizationMembership;
+
+/** Optional parameters. */
+export declare interface GetOrganizationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getOrganization operation. */
+export declare type GetOrganizationResponse = Organization;
+
+/** Optional parameters. */
+export declare interface GetResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResthookSubscription operation. */
+export declare type GetResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export declare interface GetResumeSearchConfigOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResumeSearchConfig operation. */
+export declare type GetResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export declare interface GetResumeSearchDetailOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResumeSearchDetail operation. */
+export declare type GetResumeSearchDetailResponse = ResumeSearchDetail;
+
+/** Optional parameters. */
+export declare interface GetResumeSearchMatchOptionalParams extends coreClient.OperationOptions {
+    /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
+    index?: string;
+    /** Add keywords to the search criteria. */
+    searchExpression?: string;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    jobTitlesWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    yearsExperienceWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    locationsWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    languagesWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    skillsWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    educationWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    searchExpressionWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    socCodesWeight?: number;
+    /** How important is this criteria to the matching score, range from 0 to 1. */
+    managementLevelWeight?: number;
+}
+
+/** Contains response data for the getResumeSearchMatch operation. */
+export declare type GetResumeSearchMatchResponse = ResumeSearchMatch;
+
+/** Optional parameters. */
+export declare interface GetResumeSearchSuggestionJobTitleOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
+export declare type GetResumeSearchSuggestionJobTitleResponse = {
+    /** The parsed response body. */
+    body: string[];
+};
+
+/** Optional parameters. */
+export declare interface GetResumeSearchSuggestionSkillOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getResumeSearchSuggestionSkill operation. */
+export declare type GetResumeSearchSuggestionSkillResponse = {
+    /** The parsed response body. */
+    body: string[];
+};
+
+/** Optional parameters. */
+export declare interface GetTagOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getTag operation. */
+export declare type GetTagResponse = Tag;
+
+/** Optional parameters. */
+export declare interface GetUsageByCollectionOptionalParams extends coreClient.OperationOptions {
+    /** Start date of the period to retrieve. Format: YYYY-MM */
+    start?: string;
+    /** End date of the period to retrieve. Format: YYYY-MM */
+    end?: string;
+}
+
+/** Contains response data for the getUsageByCollection operation. */
+export declare type GetUsageByCollectionResponse = UsageByCollection[];
+
+/** Optional parameters. */
+export declare interface GetUsageByWorkspaceOptionalParams extends coreClient.OperationOptions {
+    /** Start date of the period to retrieve. Format: YYYY-MM */
+    start?: string;
+    /** End date of the period to retrieve. Format: YYYY-MM */
+    end?: string;
+}
+
+/** Contains response data for the getUsageByWorkspace operation. */
+export declare type GetUsageByWorkspaceResponse = UsageByWorkspace[];
+
+/** Optional parameters. */
+export declare interface GetValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getValidationResult operation. */
+export declare type GetValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export declare interface GetWorkspaceMembershipOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getWorkspaceMembership operation. */
+export declare type GetWorkspaceMembershipResponse = WorkspaceMembership;
+
+/** Optional parameters. */
+export declare interface GetWorkspaceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getWorkspace operation. */
+export declare type GetWorkspaceResponse = Workspace;
 
 export declare interface Index {
     /** Unique index name */
@@ -3232,7 +3012,8 @@ export declare interface InvitationCreate {
     role: OrganizationRole;
 }
 
-export declare type InvitationRespondedBy = User & {};
+export declare interface InvitationRespondedBy extends User {
+}
 
 export declare interface InvitationResponse {
     status?: InvitationResponseStatus;
@@ -3263,11 +3044,11 @@ export declare interface InvitationUpdate {
     role?: OrganizationRole;
 }
 
-export declare type Invoice = Document_2 & {
+export declare interface Invoice extends Document_2 {
     /** Polymorphic discriminator, which specifies the different types this object can be */
     extractor: "invoice";
     data?: InvoiceData;
-};
+}
 
 export declare interface InvoiceData {
     tables?: (TableAnnotation | null)[];
@@ -3316,69 +3097,98 @@ export declare interface InvoiceData {
     rawText?: string;
 }
 
-export declare type InvoiceDataBankAccountNumber = TextAnnotation & Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
+export declare interface InvoiceDataBankAccountNumber extends TextAnnotation, Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {
+}
 
-export declare type InvoiceDataBankBsb = TextAnnotation & Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
+export declare interface InvoiceDataBankBsb extends TextAnnotation, Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
+}
 
-export declare type InvoiceDataBankIban = TextAnnotation & Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
+export declare interface InvoiceDataBankIban extends TextAnnotation, Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
+}
 
-export declare type InvoiceDataBankSortCode = TextAnnotation & Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
+export declare interface InvoiceDataBankSortCode extends TextAnnotation, Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {
+}
 
-export declare type InvoiceDataBankSwift = TextAnnotation & Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
+export declare interface InvoiceDataBankSwift extends TextAnnotation, Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
+}
 
-export declare type InvoiceDataBpayBillerCode = TextAnnotation & ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
+export declare interface InvoiceDataBpayBillerCode extends TextAnnotation, ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {
+}
 
-export declare type InvoiceDataBpayReference = TextAnnotation & ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 & {};
+export declare interface InvoiceDataBpayReference extends TextAnnotation, ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
+}
 
-export declare type InvoiceDataCustomerBusinessNumber = TextAnnotation & Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 & {};
+export declare interface InvoiceDataCustomerBusinessNumber extends TextAnnotation, Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
+}
 
-export declare type InvoiceDataCustomerCompanyName = TextAnnotation & Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 & {};
+export declare interface InvoiceDataCustomerCompanyName extends TextAnnotation, Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
+}
 
-export declare type InvoiceDataCustomerContactName = TextAnnotation & ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
+export declare interface InvoiceDataCustomerContactName extends TextAnnotation, ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {
+}
 
-export declare type InvoiceDataCustomerEmail = TextAnnotation & Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 & {};
+export declare interface InvoiceDataCustomerEmail extends TextAnnotation, Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {
+}
 
-export declare type InvoiceDataCustomerNumber = TextAnnotation & Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 & {};
+export declare interface InvoiceDataCustomerNumber extends TextAnnotation, Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
+}
 
-export declare type InvoiceDataCustomerPhoneNumber = TextAnnotation & Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
+export declare interface InvoiceDataCustomerPhoneNumber extends TextAnnotation, Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {
+}
 
-export declare type InvoiceDataCustomerVat = TextAnnotation & ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
+export declare interface InvoiceDataCustomerVat extends TextAnnotation, ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
+}
 
-export declare type InvoiceDataInvoiceNumber = TextAnnotation & Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
+export declare interface InvoiceDataInvoiceNumber extends TextAnnotation, Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {
+}
 
-export declare type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation & ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 & {};
+export declare interface InvoiceDataInvoicePurchaseOrderNumber extends TextAnnotation, ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {
+}
 
-export declare type InvoiceDataPaymentAmountBase = TextAnnotation & Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
+export declare interface InvoiceDataPaymentAmountBase extends TextAnnotation, Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
+}
 
-export declare type InvoiceDataPaymentAmountDue = TextAnnotation & ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 & {};
+export declare interface InvoiceDataPaymentAmountDue extends TextAnnotation, ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {
+}
 
-export declare type InvoiceDataPaymentAmountPaid = TextAnnotation & Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 & {};
+export declare interface InvoiceDataPaymentAmountPaid extends TextAnnotation, Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
+}
 
-export declare type InvoiceDataPaymentAmountTax = TextAnnotation & Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 & {};
+export declare interface InvoiceDataPaymentAmountTax extends TextAnnotation, Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {
+}
 
-export declare type InvoiceDataPaymentAmountTotal = TextAnnotation & Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 & {};
+export declare interface InvoiceDataPaymentAmountTotal extends TextAnnotation, Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {
+}
 
-export declare type InvoiceDataPaymentReference = TextAnnotation & Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 & {};
+export declare interface InvoiceDataPaymentReference extends TextAnnotation, Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {
+}
 
-export declare type InvoiceDataSupplierBusinessNumber = TextAnnotation & Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 & {};
+export declare interface InvoiceDataSupplierBusinessNumber extends TextAnnotation, Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {
+}
 
-export declare type InvoiceDataSupplierCompanyName = TextAnnotation & Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 & {};
+export declare interface InvoiceDataSupplierCompanyName extends TextAnnotation, Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {
+}
 
-export declare type InvoiceDataSupplierEmail = TextAnnotation & Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 & {};
+export declare interface InvoiceDataSupplierEmail extends TextAnnotation, Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {
+}
 
-export declare type InvoiceDataSupplierFax = TextAnnotation & Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 & {};
+export declare interface InvoiceDataSupplierFax extends TextAnnotation, Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
+}
 
-export declare type InvoiceDataSupplierPhoneNumber = TextAnnotation & Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
+export declare interface InvoiceDataSupplierPhoneNumber extends TextAnnotation, Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
+}
 
-export declare type InvoiceDataSupplierVat = TextAnnotation & ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
+export declare interface InvoiceDataSupplierVat extends TextAnnotation, ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
+}
 
-export declare type InvoiceDataSupplierWebsite = TextAnnotation & Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
+export declare interface InvoiceDataSupplierWebsite extends TextAnnotation, Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
+}
 
-export declare type JobDescription = Document_2 & {
+export declare interface JobDescription extends Document_2 {
     /** Polymorphic discriminator, which specifies the different types this object can be */
     extractor: "job-description";
     data?: JobDescriptionData;
-};
+}
 
 export declare interface JobDescriptionData {
     /** Describes unknown properties. The value of an unknown property can be of "any" type. */
@@ -3498,7 +3308,8 @@ export declare interface JobDescriptionSearchConfig {
 export declare type JobDescriptionSearchConfigDistanceUnit = string;
 
 /** Customize the theme of the embeded search tool. */
-export declare type JobDescriptionSearchConfigSearchToolTheme = ThemeConfig & {};
+export declare interface JobDescriptionSearchConfigSearchToolTheme extends ThemeConfig {
+}
 
 export declare interface JobDescriptionSearchDetail {
     jobTitle?: JobDescriptionSearchDetailJobTitle;
@@ -3560,7 +3371,8 @@ export declare interface JobDescriptionSearchDetailLocation {
     value?: JobDescriptionSearchDetailLocationValue;
 }
 
-export declare type JobDescriptionSearchDetailLocationValue = Location_2 & Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+export declare interface JobDescriptionSearchDetailLocationValue extends Location_2, Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
+}
 
 export declare interface JobDescriptionSearchDetailManagementLevel {
     level?: ManagementLevel;
@@ -3572,7 +3384,8 @@ export declare interface JobDescriptionSearchDetailOccupationGroup {
     value?: JobDescriptionSearchDetailOccupationGroupValue;
 }
 
-export declare type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
+export declare interface JobDescriptionSearchDetailOccupationGroupValue extends OccupationGroupSearchResult {
+}
 
 export declare interface JobDescriptionSearchDetailSearchExpression {
     missing?: string[];
@@ -3649,10 +3462,10 @@ export declare interface JobDescriptionSearchResult {
     };
 }
 
-export declare type JobTitleAnnotation = Annotation & {
+export declare interface JobTitleAnnotation extends Annotation {
     /** Years of experience range */
     parsed?: JobTitleAnnotationParsed;
-};
+}
 
 /** Years of experience range */
 export declare interface JobTitleAnnotationParsed {
@@ -3675,7 +3488,8 @@ export declare interface JobTitleAnnotationParsedClassification {
     majorGroupCode?: number;
 }
 
-export declare type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
+export declare interface JobTitleAnnotationUpdate extends AnnotationBase, JobTitleParsed {
+}
 
 export declare interface JobTitleParsed {
     /**
@@ -3714,437 +3528,797 @@ export declare interface JobTitleSearchScoreComponent {
 
 /** Known values of {@link AnnotationContentType} that the service accepts. */
 export declare enum KnownAnnotationContentType {
+    /** Text */
     Text = "text",
+    /** Integer */
     Integer = "integer",
+    /** Float */
     Float = "float",
+    /** Decimal */
     Decimal = "decimal",
+    /** Date */
     Date = "date",
+    /** Datetime */
     Datetime = "datetime",
+    /** Daterange */
     Daterange = "daterange",
+    /** Boolean */
     Boolean = "boolean",
+    /** Enum */
     Enum = "enum",
+    /** Location */
     Location = "location",
+    /** Phonenumber */
     Phonenumber = "phonenumber",
+    /** Json */
     Json = "json",
+    /** Table */
     Table = "table",
+    /** Expectedremuneration */
     Expectedremuneration = "expectedremuneration",
+    /** Jobtitle */
     Jobtitle = "jobtitle",
+    /** Language */
     Language = "language",
+    /** Skill */
     Skill = "skill",
+    /** Yearsexperience */
     Yearsexperience = "yearsexperience",
+    /** Group */
     Group = "group",
+    /** TableDeprecated */
     TableDeprecated = "table_deprecated",
+    /** Url */
     Url = "url",
+    /** Image */
     Image = "image"
 }
 
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
 export declare enum KnownCollectionDateFormatPreference {
+    /** DMY */
     DMY = "DMY",
+    /** MDY */
     MDY = "MDY",
+    /** YMD */
     YMD = "YMD"
 }
 
 /** Known values of {@link DateFormatPreference} that the service accepts. */
 export declare enum KnownDateFormatPreference {
+    /** DMY */
     DMY = "DMY",
+    /** MDY */
     MDY = "MDY",
+    /** YMD */
     YMD = "YMD"
 }
 
 /** Known values of {@link DateRange} that the service accepts. */
 export declare enum KnownDateRange {
+    /** Today */
     Today = "today",
+    /** Yesterday */
     Yesterday = "yesterday",
+    /** Week */
     Week = "week",
+    /** Month */
     Month = "month",
+    /** Year */
     Year = "year"
 }
 
 /** Known values of {@link DocumentFormat} that the service accepts. */
 export declare enum KnownDocumentFormat {
+    /** Json */
     Json = "json",
+    /** Xml */
     Xml = "xml",
+    /** HrXml */
     HrXml = "hr-xml"
 }
 
 /** Known values of {@link DocumentState} that the service accepts. */
 export declare enum KnownDocumentState {
+    /** Uploaded */
     Uploaded = "uploaded",
+    /** Review */
     Review = "review",
+    /** Validated */
     Validated = "validated",
+    /** Archived */
     Archived = "archived",
+    /** Rejected */
     Rejected = "rejected"
 }
 
 /** Known values of {@link DocumentType} that the service accepts. */
 export declare enum KnownDocumentType {
+    /** Resumes */
     Resumes = "resumes",
+    /** JobDescriptions */
     JobDescriptions = "job_descriptions"
 }
 
 /** Known values of {@link Enum20} that the service accepts. */
 export declare enum KnownEnum20 {
+    /** Resumes */
     Resumes = "resumes",
+    /** JobDescriptions */
     JobDescriptions = "job_descriptions"
 }
 
 /** Known values of {@link IndexDocumentType} that the service accepts. */
 export declare enum KnownIndexDocumentType {
+    /** Resumes */
     Resumes = "resumes",
+    /** JobDescriptions */
     JobDescriptions = "job_descriptions"
 }
 
 /** Known values of {@link InvitationResponseStatus} that the service accepts. */
 export declare enum KnownInvitationResponseStatus {
+    /** Accepted */
     Accepted = "accepted",
+    /** Declined */
     Declined = "declined"
 }
 
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export declare enum KnownInvitationStatus {
+    /** Pending */
     Pending = "pending",
+    /** Accepted */
     Accepted = "accepted",
+    /** Declined */
     Declined = "declined"
 }
 
 /** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
 export declare enum KnownJobDescriptionSearchConfigDistanceUnit {
+    /** Mi */
     Mi = "mi",
+    /** Km */
     Km = "km"
 }
 
 /** Known values of {@link OrganizationRole} that the service accepts. */
 export declare enum KnownOrganizationRole {
+    /** Admin */
     Admin = "admin",
+    /** Member */
     Member = "member"
 }
 
 /** Known values of {@link OrganizationUserRole} that the service accepts. */
 export declare enum KnownOrganizationUserRole {
+    /** Admin */
     Admin = "admin",
+    /** Member */
     Member = "member"
 }
 
 /** Known values of {@link Region} that the service accepts. */
 export declare enum KnownRegion {
+    /** Api */
     Api = "api",
+    /** ApiEu1 */
     ApiEu1 = "api.eu1",
+    /** ApiUs1 */
     ApiUs1 = "api.us1"
 }
 
 /** Known values of {@link ResthookEvent} that the service accepts. */
 export declare enum KnownResthookEvent {
+    /** ResumeParseSucceeded */
     ResumeParseSucceeded = "resume.parse.succeeded",
+    /** ResumeParseFailed */
     ResumeParseFailed = "resume.parse.failed",
+    /** ResumeParseCompleted */
     ResumeParseCompleted = "resume.parse.completed",
+    /** InvoiceParseSucceeded */
     InvoiceParseSucceeded = "invoice.parse.succeeded",
+    /** InvoiceParseFailed */
     InvoiceParseFailed = "invoice.parse.failed",
+    /** InvoiceParseCompleted */
     InvoiceParseCompleted = "invoice.parse.completed",
+    /** InvoiceValidateCompleted */
     InvoiceValidateCompleted = "invoice.validate.completed",
+    /** DocumentParseSucceeded */
     DocumentParseSucceeded = "document.parse.succeeded",
+    /** DocumentParseFailed */
     DocumentParseFailed = "document.parse.failed",
+    /** DocumentParseCompleted */
     DocumentParseCompleted = "document.parse.completed",
+    /** DocumentValidateCompleted */
     DocumentValidateCompleted = "document.validate.completed",
+    /** DocumentClassifySucceeded */
     DocumentClassifySucceeded = "document.classify.succeeded",
+    /** DocumentClassifyFailed */
     DocumentClassifyFailed = "document.classify.failed",
+    /** DocumentClassifyCompleted */
     DocumentClassifyCompleted = "document.classify.completed",
+    /** DocumentRejected */
     DocumentRejected = "document.rejected",
+    /** AnnotationValidated */
     AnnotationValidated = "annotation.validated"
 }
 
 /** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
 export declare enum KnownResthookSubscriptionVersion {
+    /** V1 */
     V1 = "v1",
+    /** V2 */
     V2 = "v2",
+    /** V3 */
     V3 = "v3"
 }
 
 /** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
 export declare enum KnownResumeDataLanguagesItem {
+    /** Ainu */
     Ainu = "Ainu",
+    /** Akan */
     Akan = "Akan",
+    /** Akkadian */
     Akkadian = "Akkadian",
+    /** Amharic */
     Amharic = "Amharic",
+    /** Anam */
     Anam = "Anam",
+    /** Arabic */
     Arabic = "Arabic",
+    /** Aramaic */
     Aramaic = "Aramaic",
+    /** Arem */
     Arem = "Arem",
+    /** Armenian */
     Armenian = "Armenian",
+    /** Awadhi */
     Awadhi = "Awadhi",
+    /** Aymara */
     Aymara = "Aymara",
+    /** Azari */
     Azari = "Azari",
+    /** Bagheli */
     Bagheli = "Bagheli",
+    /** Bagri */
     Bagri = "Bagri",
+    /** Bahasa */
     Bahasa = "Bahasa",
+    /** Bambara */
     Bambara = "Bambara",
+    /** Bangala */
     Bangala = "Bangala",
+    /** Bardi */
     Bardi = "Bardi",
+    /** Bassa */
     Bassa = "Bassa",
+    /** Batak */
     Batak = "Batak",
+    /** Belarusian */
     Belarusian = "Belarusian",
+    /** Bemba */
     Bemba = "Bemba",
+    /** Benga */
     Benga = "Benga",
+    /** Bengali */
     Bengali = "Bengali",
+    /** Berber */
     Berber = "Berber",
+    /** Bhojpuri */
     Bhojpuri = "Bhojpuri",
+    /** Bislama */
     Bislama = "Bislama",
+    /** Brahui */
     Brahui = "Brahui",
+    /** Bulgarian */
     Bulgarian = "Bulgarian",
+    /** Bunu */
     Bunu = "Bunu",
+    /** Cambodian */
     Cambodian = "Cambodian",
+    /** Carew */
     Carew = "Carew",
+    /** Carib */
     Carib = "Carib",
+    /** Catalan */
     Catalan = "Catalan",
+    /** Cebuano */
     Cebuano = "Cebuano",
+    /** Chakma */
     Chakma = "Chakma",
+    /** Chamorro */
     Chamorro = "Chamorro",
+    /** Chango */
     Chango = "Chango",
+    /** Chewa */
     Chewa = "Chewa",
+    /** Croatian */
     Croatian = "Croatian",
+    /** Czech */
     Czech = "Czech",
+    /** Dagbani */
     Dagbani = "Dagbani",
+    /** Danish */
     Danish = "Danish",
+    /** Dari */
     Dari = "Dari",
+    /** Dayi */
     Dayi = "Dayi",
+    /** Dhatki */
     Dhatki = "Dhatki",
+    /** Dhivehi */
     Dhivehi = "Dhivehi",
+    /** Dinka */
     Dinka = "Dinka",
+    /** Dogri */
     Dogri = "Dogri",
+    /** Duala */
     Duala = "Duala",
+    /** Dutch */
     Dutch = "Dutch",
+    /** English */
     English = "English",
+    /** Esperanto */
     Esperanto = "Esperanto",
+    /** Estonian */
     Estonian = "Estonian",
+    /** Ewondo */
     Ewondo = "Ewondo",
+    /** Faroese */
     Faroese = "Faroese",
+    /** Filipino */
     Filipino = "Filipino",
+    /** Finnish */
     Finnish = "Finnish",
+    /** Formula */
     Formula = "Formula",
+    /** French */
     French = "French",
+    /** Frisian */
     Frisian = "Frisian",
+    /** Friulian */
     Friulian = "Friulian",
+    /** Fula */
     Fula = "Fula",
+    /** Gaelic */
     Gaelic = "Gaelic",
+    /** Galo */
     Galo = "Galo",
+    /** Garhwali */
     Garhwali = "Garhwali",
+    /** Garifuna */
     Garifuna = "Garifuna",
+    /** German */
     German = "German",
+    /** Gikuyu */
     Gikuyu = "Gikuyu",
+    /** Gujarati */
     Gujarati = "Gujarati",
+    /** Gujerati */
     Gujerati = "Gujerati",
+    /** Gwere */
     Gwere = "Gwere",
+    /** Hawaiian */
     Hawaiian = "Hawaiian",
+    /** Haya */
     Haya = "Haya",
+    /** Hebrew */
     Hebrew = "Hebrew",
+    /** Hindi */
     Hindi = "Hindi",
+    /** Hmu */
     Hmu = "Hmu",
+    /** Hokkien */
     Hokkien = "Hokkien",
+    /** Hopi */
     Hopi = "Hopi",
+    /** Hungarian */
     Hungarian = "Hungarian",
+    /** Hup */
     Hup = "Hup",
+    /** Ibanag */
     Ibanag = "Ibanag",
+    /** Igbo */
     Igbo = "Igbo",
+    /** Ilokano */
     Ilokano = "Ilokano",
+    /** Indonesian */
     Indonesian = "Indonesian",
+    /** Intermediate */
     Intermediate = "Intermediate",
+    /** Irish */
     Irish = "Irish",
+    /** Italian */
     Italian = "Italian",
+    /** Japanese */
     Japanese = "Japanese",
+    /** Jiba */
     Jiba = "Jiba",
+    /** Kachin */
     Kachin = "Kachin",
+    /** Kalenjin */
     Kalenjin = "Kalenjin",
+    /** Kamayo */
     Kamayo = "Kamayo",
+    /** Kannada */
     Kannada = "Kannada",
+    /** Kaonde */
     Kaonde = "Kaonde",
+    /** Kayan */
     Kayan = "Kayan",
+    /** Khandeshi */
     Khandeshi = "Khandeshi",
+    /** Khmer */
     Khmer = "Khmer",
+    /** Kikuyu */
     Kikuyu = "Kikuyu",
+    /** Kodava */
     Kodava = "Kodava",
+    /** Koma */
     Koma = "Koma",
+    /** Kongo */
     Kongo = "Kongo",
+    /** Konkani */
     Konkani = "Konkani",
+    /** Korean */
     Korean = "Korean",
+    /** Korwa */
     Korwa = "Korwa",
+    /** Kreyol */
     Kreyol = "Kreyol",
+    /** Krio */
     Krio = "Krio",
+    /** Kumaoni */
     Kumaoni = "Kumaoni",
+    /** Kurdish */
     Kurdish = "Kurdish",
+    /** Kurukh */
     Kurukh = "Kurukh",
+    /** Kwa */
     Kwa = "Kwa",
+    /** Ladino */
     Ladino = "Ladino",
+    /** Lango */
     Lango = "Lango",
+    /** Latvian */
     Latvian = "Latvian",
+    /** Lawa */
     Lawa = "Lawa",
+    /** Lingala */
     Lingala = "Lingala",
+    /** Lithuanian */
     Lithuanian = "Lithuanian",
+    /** Lule */
     Lule = "Lule",
+    /** Luxembourgish */
     Luxembourgish = "Luxembourgish",
+    /** Magahi */
     Magahi = "Magahi",
+    /** Maithili */
     Maithili = "Maithili",
+    /** Malay */
     Malay = "Malay",
+    /** Malayalam */
     Malayalam = "Malayalam",
+    /** Malaysian */
     Malaysian = "Malaysian",
+    /** Malvi */
     Malvi = "Malvi",
+    /** Maninka */
     Maninka = "Maninka",
+    /** Manipuri */
     Manipuri = "Manipuri",
+    /** Manx */
     Manx = "Manx",
+    /** Marathi */
     Marathi = "Marathi",
+    /** Mayan */
     Mayan = "Mayan",
+    /** Medumba */
     Medumba = "Medumba",
+    /** Memoni */
     Memoni = "Memoni",
+    /** Mewari */
     Mewari = "Mewari",
+    /** Mizo */
     Mizo = "Mizo",
+    /** Montenegrin */
     Montenegrin = "Montenegrin",
+    /** Mwan */
     Mwan = "Mwan",
+    /** Mwanga */
     Mwanga = "Mwanga",
+    /** Ndebele */
     Ndebele = "Ndebele",
+    /** Nepali */
     Nepali = "Nepali",
+    /** Nimadi */
     Nimadi = "Nimadi",
+    /** Oriya */
     Oriya = "Oriya",
+    /** Oromo */
     Oromo = "Oromo",
+    /** Ovambo */
     Ovambo = "Ovambo",
+    /** Pamona */
     Pamona = "Pamona",
+    /** Pangasinan */
     Pangasinan = "Pangasinan",
+    /** Pashto */
     Pashto = "Pashto",
+    /** Phoenician */
     Phoenician = "Phoenician",
+    /** Polish */
     Polish = "Polish",
+    /** Portuguese */
     Portuguese = "Portuguese",
+    /** Pulaar */
     Pulaar = "Pulaar",
+    /** Pular */
     Pular = "Pular",
+    /** Punjabi */
     Punjabi = "Punjabi",
+    /** Quecha */
     Quecha = "Quecha",
+    /** Rajasthani */
     Rajasthani = "Rajasthani",
+    /** Romanian */
     Romanian = "Romanian",
+    /** Russian */
     Russian = "Russian",
+    /** Sakha */
     Sakha = "Sakha",
+    /** Sango */
     Sango = "Sango",
+    /** Santhali */
     Santhali = "Santhali",
+    /** Saraiki */
     Saraiki = "Saraiki",
+    /** Seim */
     Seim = "Seim",
+    /** Shading */
     Shading = "Shading",
+    /** Shama */
     Shama = "Shama",
+    /** Shan */
     Shan = "Shan",
+    /** Shona */
     Shona = "Shona",
+    /** Silesian */
     Silesian = "Silesian",
+    /** Sindhi */
     Sindhi = "Sindhi",
+    /** Slovak */
     Slovak = "Slovak",
+    /** Slovene */
     Slovene = "Slovene",
+    /** Soga */
     Soga = "Soga",
+    /** Sogdian */
     Sogdian = "Sogdian",
+    /** Sotho */
     Sotho = "Sotho",
+    /** Spanish */
     Spanish = "Spanish",
+    /** Sudanese */
     Sudanese = "Sudanese",
+    /** Sumerian */
     Sumerian = "Sumerian",
+    /** Surajpuri */
     Surajpuri = "Surajpuri",
+    /** Surigaonon */
     Surigaonon = "Surigaonon",
+    /** Swati */
     Swati = "Swati",
+    /** Swazi */
     Swazi = "Swazi",
+    /** Swedish */
     Swedish = "Swedish",
+    /** Tagalog */
     Tagalog = "Tagalog",
+    /** Tamil */
     Tamil = "Tamil",
+    /** Tausug */
     Tausug = "Tausug",
+    /** Telugu */
     Telugu = "Telugu",
+    /** Tetum */
     Tetum = "Tetum",
+    /** Tharu */
     Tharu = "Tharu",
+    /** Tibetan */
     Tibetan = "Tibetan",
+    /** Tigrinya */
     Tigrinya = "Tigrinya",
+    /** Tripuri */
     Tripuri = "Tripuri",
+    /** Tswana */
     Tswana = "Tswana",
+    /** Tulu */
     Tulu = "Tulu",
+    /** Turkish */
     Turkish = "Turkish",
+    /** Tuwali */
     Tuwali = "Tuwali",
+    /** Ubi */
     Ubi = "Ubi",
+    /** Ukrainian */
     Ukrainian = "Ukrainian",
+    /** Urdu */
     Urdu = "Urdu",
+    /** Veps */
     Veps = "Veps",
+    /** Vietnamese */
     Vietnamese = "Vietnamese",
+    /** Wagdi */
     Wagdi = "Wagdi",
+    /** Waziri */
     Waziri = "Waziri",
+    /** Xhosa */
     Xhosa = "Xhosa",
+    /** Yiddish */
     Yiddish = "Yiddish",
+    /** Yoruba */
     Yoruba = "Yoruba"
 }
 
 /** Known values of {@link ResumeSearchConfigDistanceUnit} that the service accepts. */
 export declare enum KnownResumeSearchConfigDistanceUnit {
+    /** Mi */
     Mi = "mi",
+    /** Km */
     Km = "km"
 }
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export declare enum KnownResumeSkillSourcesItemSection {
+    /** Achievements */
     Achievements = "Achievements",
+    /** AdditionalInformation */
     AdditionalInformation = "AdditionalInformation",
+    /** Education */
     Education = "Education",
+    /** Extracurriculars */
     Extracurriculars = "Extracurriculars",
+    /** Organisations */
     Organisations = "Organisations",
+    /** Other */
     Other = "Other",
+    /** PersonalDetails */
     PersonalDetails = "PersonalDetails",
+    /** Projects */
     Projects = "Projects",
+    /** Publications */
     Publications = "Publications",
+    /** Referees */
     Referees = "Referees",
+    /** Skills */
     Skills = "Skills",
+    /** Summary */
     Summary = "Summary",
+    /** Training */
     Training = "Training",
+    /** WorkExperience */
     WorkExperience = "WorkExperience",
+    /** NotPopulated */
     NotPopulated = "NotPopulated",
+    /** Header */
     Header = "Header",
+    /** Footer */
     Footer = "Footer",
+    /** SkillsInterestsLanguages */
     SkillsInterestsLanguages = "Skills/Interests/Languages",
+    /** TrainingCertifications */
     TrainingCertifications = "Training/Certifications",
+    /** ExtracurricularsLeadership */
     ExtracurricularsLeadership = "Extracurriculars/Leadership"
 }
 
 /** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
 export declare enum KnownSearchParametersCustomDataFilterType {
+    /** Equals */
     Equals = "equals",
+    /** Range */
     Range = "range"
 }
 
 /** Known values of {@link ThemeConfigPaletteMode} that the service accepts. */
 export declare enum KnownThemeConfigPaletteMode {
+    /** Light */
     Light = "light",
+    /** Dark */
     Dark = "dark"
 }
 
 /** Known values of {@link Version} that the service accepts. */
 export declare enum KnownVersion {
+    /** V1 */
     V1 = "v1",
+    /** V2 */
     V2 = "v2",
+    /** V3 */
     V3 = "v3"
 }
 
 /** Known values of {@link WorkspaceSplitDocumentsOptions} that the service accepts. */
 export declare enum KnownWorkspaceSplitDocumentsOptions {
+    /** Leave */
     Leave = "leave",
+    /** Conservative */
     Conservative = "conservative",
+    /** Recommended */
     Recommended = "recommended",
+    /** Aggressive */
     Aggressive = "aggressive"
 }
 
 /** Known values of {@link WorkspaceVisibility} that the service accepts. */
 export declare enum KnownWorkspaceVisibility {
+    /** Organization */
     Organization = "organization",
+    /** Private */
     Private = "private"
 }
 
-export declare type LanguageAnnotation = Annotation & {
+export declare interface LanguageAnnotation extends Annotation {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly parsed?: string;
-};
+}
 
-export declare type LanguageAnnotationUpdate = AnnotationBase & {
+export declare interface LanguageAnnotationUpdate extends AnnotationBase {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly parsed?: string;
-};
+}
 
 export declare interface LanguagesSearchScoreComponent {
     value?: string;
     label: string;
     score?: number;
 }
+
+/** Optional parameters. */
+export declare interface ListMappingDataSourcesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the listMappingDataSources operation. */
+export declare type ListMappingDataSourcesResponse = Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface ListMappingDataSourceValuesOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Search for specific values */
+    search?: string;
+}
+
+/** Contains response data for the listMappingDataSourceValues operation. */
+export declare type ListMappingDataSourceValuesResponse = Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface ListMappingsOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+}
+
+/** Contains response data for the listMappings operation. */
+export declare type ListMappingsResponse = Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface ListOccupationGroupsOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the listOccupationGroups operation. */
+export declare type ListOccupationGroupsResponse = OccupationGroup[];
 
 declare interface Location_2 {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
@@ -4180,16 +4354,17 @@ declare interface Location_2 {
 }
 export { Location_2 as Location }
 
-export declare type LocationAnnotation = Annotation & {
+export declare interface LocationAnnotation extends Annotation {
     parsed?: Location_2;
-};
+}
 
-export declare type LocationAnnotationUpdate = AnnotationBase & {
+export declare interface LocationAnnotationUpdate extends AnnotationBase {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly parsed?: LocationAnnotationUpdateParsed;
-};
+}
 
-export declare type LocationAnnotationUpdateParsed = Location_2 & {};
+export declare interface LocationAnnotationUpdateParsed extends Location_2 {
+}
 
 export declare interface LocationSearchScoreComponent {
     value?: string;
@@ -4470,21 +4645,25 @@ export declare interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplication
     results?: ApiUserWithoutKey[];
 }
 
-export declare type Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
-export declare type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
     configOverride?: ResumeSearchConfig;
 }
 
-export declare type Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: (Annotation | null)[];
 }
 
-export declare type Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: Record<string, unknown>[];
@@ -4494,13 +4673,15 @@ export declare interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200Conten
     results?: ResthookSubscription[];
 }
 
-export declare type Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: MappingDataSource[];
 }
 
-export declare type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results: WorkspaceMembership[];
@@ -4522,7 +4703,8 @@ export declare interface PathsCl024WV3IndexNameDocumentsPostRequestbodyContentAp
     document?: string;
 }
 
-export declare type PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
     /** Unique identifier for the document. */
@@ -4541,7 +4723,8 @@ export declare interface PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyCo
     configOverride?: JobDescriptionSearchConfig;
 }
 
-export declare type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {
 }
@@ -4556,21 +4739,25 @@ export declare interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentAp
     results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
-export declare type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
-export declare type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
-export declare type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
 export declare interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
     results?: Mapping[];
 }
 
-export declare type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse & Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export declare interface PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema extends PaginatedResponse, Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
+}
 
-export declare type PhoneNumberAnnotation = Annotation & {
+export declare interface PhoneNumberAnnotation extends Annotation {
     parsed?: PhoneNumberAnnotationParsed;
-};
+}
 
 export declare interface PhoneNumberAnnotationParsed {
     rawText?: string;
@@ -4599,6 +4786,13 @@ export declare interface RedactConfig {
     redactGender?: boolean;
 }
 
+/** Optional parameters. */
+export declare interface RegenerateApiKeyForApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the regenerateApiKeyForApiUser operation. */
+export declare type RegenerateApiKeyForApiUserResponse = ApiUserWithKey;
+
 /**
  * Defines values for Region. \
  * {@link KnownRegion} can be used interchangeably with Region,
@@ -4625,6 +4819,22 @@ export declare interface RegionBias {
     strict?: boolean;
 }
 
+/** Optional parameters. */
+export declare interface ReplaceDataPointChoicesOptionalParams extends coreClient.OperationOptions {
+    /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+    body?: DataPointChoiceReplaceRequest;
+}
+
+/** Contains response data for the replaceDataPointChoices operation. */
+export declare type ReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
+
+/** Optional parameters. */
+export declare interface ReplaceMappingDataSourceValuesOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the replaceMappingDataSourceValues operation. */
+export declare type ReplaceMappingDataSourceValuesResponse = Record<string, unknown>[];
+
 export declare interface RequestError {
     type: string;
     errors: RequestErrorErrorsItem[];
@@ -4635,6 +4845,13 @@ export declare interface RequestErrorErrorsItem {
     code: string;
     detail: string;
 }
+
+/** Optional parameters. */
+export declare interface RespondToInvitationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the respondToInvitation operation. */
+export declare type RespondToInvitationResponse = Invitation;
 
 /**
  * Defines values for ResthookEvent. \
@@ -4719,12 +4936,12 @@ export declare interface ResthookSubscriptionWorkspace {
     organization: Organization;
 }
 
-export declare type Resume = Document_2 & {
+export declare interface Resume extends Document_2 {
     /** Polymorphic discriminator, which specifies the different types this object can be */
     extractor: "resume";
     /** A JSON-encoded string of the `ResumeData` object. */
     data?: ResumeData;
-};
+}
 
 /** A JSON-encoded string of the `ResumeData` object. */
 export declare interface ResumeData {
@@ -5085,11 +5302,11 @@ export declare interface ResumeDataWorkExperienceItemOccupation {
     classification?: Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification;
 }
 
-export declare type ResumeRedact = Document_2 & {
+export declare interface ResumeRedact extends Document_2 {
     /** Polymorphic discriminator, which specifies the different types this object can be */
     extractor: "resume-redact";
     data?: ResumeRedactData;
-};
+}
 
 export declare interface ResumeRedactData {
     /** URL to download the redacted resume. */
@@ -5167,7 +5384,8 @@ export declare interface ResumeSearchConfig {
 export declare type ResumeSearchConfigDistanceUnit = string;
 
 /** Customize the theme of the embeded search tool. */
-export declare type ResumeSearchConfigSearchToolTheme = ThemeConfig & {};
+export declare interface ResumeSearchConfigSearchToolTheme extends ThemeConfig {
+}
 
 export declare interface ResumeSearchDetail {
     jobTitle?: ResumeSearchDetailJobTitle;
@@ -5194,7 +5412,8 @@ export declare interface ResumeSearchDetailEducationMissing {
     recentGraduate?: boolean;
 }
 
-export declare type ResumeSearchDetailEducationValueItem = Education & ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+export declare interface ResumeSearchDetailEducationValueItem extends Education, ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {
+}
 
 export declare interface ResumeSearchDetailExperience {
     years?: number;
@@ -5219,14 +5438,16 @@ export declare interface ResumeSearchDetailLanguages {
     value?: ResumeSearchDetailLanguagesValueItem[];
 }
 
-export declare type ResumeSearchDetailLanguagesValueItem = ResumeSkill & Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
+export declare interface ResumeSearchDetailLanguagesValueItem extends ResumeSkill, Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {
+}
 
 export declare interface ResumeSearchDetailLocation {
     missing?: ResumeSearchParametersLocation[];
     value?: ResumeSearchDetailLocationValue;
 }
 
-export declare type ResumeSearchDetailLocationValue = Location_2 & ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+export declare interface ResumeSearchDetailLocationValue extends Location_2, ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {
+}
 
 export declare interface ResumeSearchDetailManagementLevel {
     level?: ManagementLevel;
@@ -5248,7 +5469,8 @@ export declare interface ResumeSearchDetailSkills {
     value?: ResumeSearchDetailSkillsValueItem[];
 }
 
-export declare type ResumeSearchDetailSkillsValueItem = ResumeSkill & ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
+export declare interface ResumeSearchDetailSkillsValueItem extends ResumeSkill, ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {
+}
 
 export declare interface ResumeSearchEmbed {
     /** The signed URL for the embedable search tool. */
@@ -5324,7 +5546,8 @@ export declare interface ResumeSearchParameters {
     customData?: ResumeSearchParametersCustomData[];
 }
 
-export declare type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
+export declare interface ResumeSearchParametersCustomData extends SearchParametersCustomData {
+}
 
 export declare interface ResumeSearchParametersLocation {
     name?: string;
@@ -5405,9 +5628,9 @@ export declare interface ResumeSkillSourcesItem {
  */
 export declare type ResumeSkillSourcesItemSection = string;
 
-export declare type RowAnnotation = Annotation & {
+export declare interface RowAnnotation extends Annotation {
     parsed?: RowAnnotationParsed;
-};
+}
 
 export declare interface RowAnnotationParsed {
     itemCode?: TextAnnotation;
@@ -5424,9 +5647,9 @@ export declare interface RowAnnotationParsed {
     itemOther?: TextAnnotation;
 }
 
-export declare type RowBetaAnnotation = Annotation & {
+export declare interface RowBetaAnnotation extends Annotation {
     parsed?: RowBetaAnnotationParsed;
-};
+}
 
 export declare interface RowBetaAnnotationParsed {
     itemCodeBeta?: TextAnnotation;
@@ -5480,15 +5703,15 @@ export declare interface SearchParametersCustomData {
  */
 export declare type SearchParametersCustomDataFilterType = string;
 
-export declare type SkillAnnotation = Annotation & {
+export declare interface SkillAnnotation extends Annotation {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly parsed?: string;
-};
+}
 
-export declare type SkillAnnotationUpdate = AnnotationBase & {
+export declare interface SkillAnnotationUpdate extends AnnotationBase {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
     readonly parsed?: string;
-};
+}
 
 export declare interface SkillsSearchScoreComponent {
     value?: string;
@@ -5496,17 +5719,17 @@ export declare interface SkillsSearchScoreComponent {
     score?: number;
 }
 
-export declare type TableAnnotation = Annotation & {
+export declare interface TableAnnotation extends Annotation {
     parsed?: TableAnnotationParsed;
-};
+}
 
 export declare interface TableAnnotationParsed {
     rows?: (RowAnnotation | null)[];
 }
 
-export declare type TableBetaAnnotation = Annotation & {
+export declare interface TableBetaAnnotation extends Annotation {
     parsed?: TableBetaAnnotationParsed;
-};
+}
 
 export declare interface TableBetaAnnotationParsed {
     rows?: (RowBetaAnnotation | null)[];
@@ -5534,13 +5757,13 @@ export declare interface TagUpdate {
     workspace?: string;
 }
 
-export declare type TextAnnotation = Annotation & {
+export declare interface TextAnnotation extends Annotation {
     parsed?: string;
-};
+}
 
-export declare type TextAnnotationUpdate = AnnotationBase & {
+export declare interface TextAnnotationUpdate extends AnnotationBase {
     parsed?: string;
-};
+}
 
 export declare interface ThemeConfig {
     palette?: ThemeConfigPalette;
@@ -5589,9 +5812,156 @@ export declare interface ThemeConfigTypography {
     fontWeightBold?: string;
 }
 
-export declare type UrlAnnotation = Annotation & {
+/** Optional parameters. */
+export declare interface UpdateAnnotationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateAnnotation operation. */
+export declare type UpdateAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export declare interface UpdateApiUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateApiUser operation. */
+export declare type UpdateApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export declare interface UpdateCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateCollection operation. */
+export declare type UpdateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export declare interface UpdateDataFieldForCollectionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDataFieldForCollection operation. */
+export declare type UpdateDataFieldForCollectionResponse = CollectionField;
+
+/** Optional parameters. */
+export declare interface UpdateDataPointChoiceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDataPointChoice operation. */
+export declare type UpdateDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
+export declare interface UpdateDataPointOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDataPoint operation. */
+export declare type UpdateDataPointResponse = DataPoint;
+
+/** Optional parameters. */
+export declare interface UpdateDocumentDataOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDocumentData operation. */
+export declare type UpdateDocumentDataResponse = DocumentUnion;
+
+/** Optional parameters. */
+export declare interface UpdateDocumentOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateDocument operation. */
+export declare type UpdateDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export declare interface UpdateExtractorOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateExtractor operation. */
+export declare type UpdateExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export declare interface UpdateIndexOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateIndex operation. */
+export declare type UpdateIndexResponse = Index;
+
+/** Optional parameters. */
+export declare interface UpdateInvitationOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateInvitation operation. */
+export declare type UpdateInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export declare interface UpdateJobDescriptionSearchConfigOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateJobDescriptionSearchConfig operation. */
+export declare type UpdateJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+
+/** Optional parameters. */
+export declare interface UpdateMappingOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateMapping operation. */
+export declare type UpdateMappingResponse = Mapping;
+
+/** Optional parameters. */
+export declare interface UpdateOrganizationMembershipOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateOrganizationMembership operation. */
+export declare type UpdateOrganizationMembershipResponse = OrganizationMembership;
+
+/** Optional parameters. */
+export declare interface UpdateOrganizationOptionalParams extends coreClient.OperationOptions {
+    /** Upload avatar for the organization. */
+    avatar?: coreRestPipeline.RequestBodyType;
+    /** Used to sign webhook payloads so you can verify their integrity. */
+    resthookSignatureKey?: string;
+    name?: string;
+    /** Configuration of the embeddable validation tool. */
+    validationToolConfig?: ValidationToolConfig;
+}
+
+/** Contains response data for the updateOrganization operation. */
+export declare type UpdateOrganizationResponse = Organization;
+
+/** Optional parameters. */
+export declare interface UpdateResthookSubscriptionOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateResthookSubscription operation. */
+export declare type UpdateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export declare interface UpdateResumeSearchConfigOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateResumeSearchConfig operation. */
+export declare type UpdateResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export declare interface UpdateTagOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateTag operation. */
+export declare type UpdateTagResponse = Tag;
+
+/** Optional parameters. */
+export declare interface UpdateValidationResultOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateValidationResult operation. */
+export declare type UpdateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export declare interface UpdateWorkspaceOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the updateWorkspace operation. */
+export declare type UpdateWorkspaceResponse = Workspace;
+
+export declare interface UrlAnnotation extends Annotation {
     parsed?: UrlAnnotationParsed;
-};
+}
 
 export declare interface UrlAnnotationParsed {
     url?: string;
@@ -5841,10 +6211,10 @@ export declare interface WorkspaceUpdate {
  */
 export declare type WorkspaceVisibility = string;
 
-export declare type YearsExperienceAnnotation = Annotation & {
+export declare interface YearsExperienceAnnotation extends Annotation {
     /** Years of experience range */
     parsed?: YearsExperienceAnnotationParsed;
-};
+}
 
 /** Years of experience range */
 export declare interface YearsExperienceAnnotationParsed {
@@ -5854,10 +6224,10 @@ export declare interface YearsExperienceAnnotationParsed {
     maximum?: number;
 }
 
-export declare type YearsExperienceAnnotationUpdate = AnnotationBase & {
+export declare interface YearsExperienceAnnotationUpdate extends AnnotationBase {
     /** Years of experience range */
     parsed?: YearsExperienceAnnotationUpdateParsed;
-};
+}
 
 /** Years of experience range */
 export declare interface YearsExperienceAnnotationUpdateParsed {

@@ -18,14 +18,20 @@ Known values of [DocumentFormat](../modules.md#documentformat) that the service 
 
 • **HrXml** = ``"hr-xml"``
 
+HrXml
+
 ___
 
 ### Json
 
 • **Json** = ``"json"``
 
+Json
+
 ___
 
 ### Xml
 
 • **Xml** = ``"xml"``
+
+Xml

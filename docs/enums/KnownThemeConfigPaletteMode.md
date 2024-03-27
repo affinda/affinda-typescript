@@ -17,8 +17,12 @@ Known values of [ThemeConfigPaletteMode](../modules.md#themeconfigpalettemode) t
 
 • **Dark** = ``"dark"``
 
+Dark
+
 ___
 
 ### Light
 
 • **Light** = ``"light"``
+
+Light

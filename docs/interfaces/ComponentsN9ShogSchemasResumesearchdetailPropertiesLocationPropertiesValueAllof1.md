@@ -2,6 +2,12 @@
 
 # Interface: ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1
 
+## Hierarchy
+
+- **`ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1`**
+
+  ↳ [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
+
 ## Table of contents
 
 ### Properties

@@ -17,8 +17,12 @@ Known values of [DocumentType](../modules.md#documenttype) that the service acce
 
 • **JobDescriptions** = ``"job_descriptions"``
 
+JobDescriptions
+
 ___
 
 ### Resumes
 
 • **Resumes** = ``"resumes"``
+
+Resumes

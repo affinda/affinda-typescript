@@ -2,6 +2,12 @@
 
 # Interface: Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1
 
+## Hierarchy
+
+- **`Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1`**
+
+  ↳ [`InvoiceDataSupplierEmail`](InvoiceDataSupplierEmail.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

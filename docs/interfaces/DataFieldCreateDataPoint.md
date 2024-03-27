@@ -10,6 +10,7 @@ The data point to be created for this field. If a data point with the same slug 
 
 - [description](DataFieldCreateDataPoint.md#description)
 - [manualEntry](DataFieldCreateDataPoint.md#manualentry)
+- [mappingDataSource](DataFieldCreateDataPoint.md#mappingdatasource)
 - [multiple](DataFieldCreateDataPoint.md#multiple)
 - [name](DataFieldCreateDataPoint.md#name)
 - [noRect](DataFieldCreateDataPoint.md#norect)
@@ -30,6 +31,14 @@ ___
 • `Optional` **manualEntry**: `boolean`
 
 If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
+
+___
+
+### mappingDataSource
+
+• `Optional` **mappingDataSource**: `string`
+
+If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching.
 
 ___
 

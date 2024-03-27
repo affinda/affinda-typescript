@@ -2,6 +2,12 @@
 
 # Interface: Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1
 
+## Hierarchy
+
+- **`Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1`**
+
+  ↳ [`InvoiceDataBankAccountNumber`](InvoiceDataBankAccountNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

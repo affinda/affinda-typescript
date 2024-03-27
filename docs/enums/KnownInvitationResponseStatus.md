@@ -17,8 +17,12 @@ Known values of [InvitationResponseStatus](../modules.md#invitationresponsestatu
 
 • **Accepted** = ``"accepted"``
 
+Accepted
+
 ___
 
 ### Declined
 
 • **Declined** = ``"declined"``
+
+Declined

@@ -2,6 +2,12 @@
 
 # Interface: Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1
 
+## Hierarchy
+
+- **`Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1`**
+
+  ↳ [`InvoiceDataPaymentAmountTotal`](InvoiceDataPaymentAmountTotal.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

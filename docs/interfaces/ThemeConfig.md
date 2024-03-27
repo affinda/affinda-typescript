@@ -2,6 +2,14 @@
 
 # Interface: ThemeConfig
 
+## Hierarchy
+
+- **`ThemeConfig`**
+
+  ↳ [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
+
+  ↳ [`ResumeSearchConfigSearchToolTheme`](ResumeSearchConfigSearchToolTheme.md)
+
 ## Table of contents
 
 ### Properties

@@ -35,143 +35,20 @@
 ### Classes
 
 - [AffindaAPI](classes/AffindaAPI.md)
-- [AffindaAPIContext](classes/AffindaAPIContext.md)
 - [AffindaCredential](classes/AffindaCredential.md)
 
 ### Interfaces
 
 - [Accreditation](interfaces/Accreditation.md)
-- [AffindaAPIActivateResthookSubscriptionOptionalParams](interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md)
-- [AffindaAPIAddMappingDataSourceValueOptionalParams](interfaces/AffindaAPIAddMappingDataSourceValueOptionalParams.md)
-- [AffindaAPIBatchAddTagOptionalParams](interfaces/AffindaAPIBatchAddTagOptionalParams.md)
-- [AffindaAPIBatchCreateAnnotationsOptionalParams](interfaces/AffindaAPIBatchCreateAnnotationsOptionalParams.md)
-- [AffindaAPIBatchDeleteAnnotationsOptionalParams](interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md)
-- [AffindaAPIBatchRemoveTagOptionalParams](interfaces/AffindaAPIBatchRemoveTagOptionalParams.md)
-- [AffindaAPIBatchUpdateAnnotationsOptionalParams](interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md)
-- [AffindaAPICreateAnnotationOptionalParams](interfaces/AffindaAPICreateAnnotationOptionalParams.md)
-- [AffindaAPICreateApiUserOptionalParams](interfaces/AffindaAPICreateApiUserOptionalParams.md)
-- [AffindaAPICreateCollectionOptionalParams](interfaces/AffindaAPICreateCollectionOptionalParams.md)
-- [AffindaAPICreateDataFieldForCollectionOptionalParams](interfaces/AffindaAPICreateDataFieldForCollectionOptionalParams.md)
-- [AffindaAPICreateDataPointChoiceOptionalParams](interfaces/AffindaAPICreateDataPointChoiceOptionalParams.md)
-- [AffindaAPICreateDataPointOptionalParams](interfaces/AffindaAPICreateDataPointOptionalParams.md)
-- [AffindaAPICreateDocumentOptionalParams](interfaces/AffindaAPICreateDocumentOptionalParams.md)
-- [AffindaAPICreateExtractorOptionalParams](interfaces/AffindaAPICreateExtractorOptionalParams.md)
-- [AffindaAPICreateIndexDocumentOptionalParams](interfaces/AffindaAPICreateIndexDocumentOptionalParams.md)
-- [AffindaAPICreateIndexOptionalParams](interfaces/AffindaAPICreateIndexOptionalParams.md)
-- [AffindaAPICreateInvitationOptionalParams](interfaces/AffindaAPICreateInvitationOptionalParams.md)
-- [AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md)
-- [AffindaAPICreateJobDescriptionSearchOptionalParams](interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md)
-- [AffindaAPICreateMappingDataSourceOptionalParams](interfaces/AffindaAPICreateMappingDataSourceOptionalParams.md)
-- [AffindaAPICreateMappingOptionalParams](interfaces/AffindaAPICreateMappingOptionalParams.md)
-- [AffindaAPICreateOrganizationOptionalParams](interfaces/AffindaAPICreateOrganizationOptionalParams.md)
-- [AffindaAPICreateResthookSubscriptionOptionalParams](interfaces/AffindaAPICreateResthookSubscriptionOptionalParams.md)
-- [AffindaAPICreateResumeSearchEmbedUrlOptionalParams](interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md)
-- [AffindaAPICreateResumeSearchOptionalParams](interfaces/AffindaAPICreateResumeSearchOptionalParams.md)
-- [AffindaAPICreateTagOptionalParams](interfaces/AffindaAPICreateTagOptionalParams.md)
-- [AffindaAPICreateValidationResultOptionalParams](interfaces/AffindaAPICreateValidationResultOptionalParams.md)
-- [AffindaAPICreateWorkspaceMembershipOptionalParams](interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md)
-- [AffindaAPICreateWorkspaceOptionalParams](interfaces/AffindaAPICreateWorkspaceOptionalParams.md)
-- [AffindaAPIDeleteAnnotationOptionalParams](interfaces/AffindaAPIDeleteAnnotationOptionalParams.md)
-- [AffindaAPIDeleteApiUserOptionalParams](interfaces/AffindaAPIDeleteApiUserOptionalParams.md)
-- [AffindaAPIDeleteCollectionOptionalParams](interfaces/AffindaAPIDeleteCollectionOptionalParams.md)
-- [AffindaAPIDeleteDataPointChoiceOptionalParams](interfaces/AffindaAPIDeleteDataPointChoiceOptionalParams.md)
-- [AffindaAPIDeleteDataPointOptionalParams](interfaces/AffindaAPIDeleteDataPointOptionalParams.md)
-- [AffindaAPIDeleteDocumentOptionalParams](interfaces/AffindaAPIDeleteDocumentOptionalParams.md)
-- [AffindaAPIDeleteExtractorOptionalParams](interfaces/AffindaAPIDeleteExtractorOptionalParams.md)
-- [AffindaAPIDeleteIndexDocumentOptionalParams](interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md)
-- [AffindaAPIDeleteIndexOptionalParams](interfaces/AffindaAPIDeleteIndexOptionalParams.md)
-- [AffindaAPIDeleteInvitationOptionalParams](interfaces/AffindaAPIDeleteInvitationOptionalParams.md)
-- [AffindaAPIDeleteMappingDataSourceOptionalParams](interfaces/AffindaAPIDeleteMappingDataSourceOptionalParams.md)
-- [AffindaAPIDeleteMappingDataSourceValueOptionalParams](interfaces/AffindaAPIDeleteMappingDataSourceValueOptionalParams.md)
-- [AffindaAPIDeleteMappingOptionalParams](interfaces/AffindaAPIDeleteMappingOptionalParams.md)
-- [AffindaAPIDeleteOrganizationMembershipOptionalParams](interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md)
-- [AffindaAPIDeleteOrganizationOptionalParams](interfaces/AffindaAPIDeleteOrganizationOptionalParams.md)
-- [AffindaAPIDeleteResthookSubscriptionOptionalParams](interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md)
-- [AffindaAPIDeleteTagOptionalParams](interfaces/AffindaAPIDeleteTagOptionalParams.md)
-- [AffindaAPIDeleteValidationResultOptionalParams](interfaces/AffindaAPIDeleteValidationResultOptionalParams.md)
-- [AffindaAPIDeleteWorkspaceMembershipOptionalParams](interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md)
-- [AffindaAPIDeleteWorkspaceOptionalParams](interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md)
-- [AffindaAPIEditDocumentPagesOptionalParams](interfaces/AffindaAPIEditDocumentPagesOptionalParams.md)
-- [AffindaAPIGetAllAnnotationsOptionalParams](interfaces/AffindaAPIGetAllAnnotationsOptionalParams.md)
-- [AffindaAPIGetAllApiUsersOptionalParams](interfaces/AffindaAPIGetAllApiUsersOptionalParams.md)
-- [AffindaAPIGetAllCollectionsOptionalParams](interfaces/AffindaAPIGetAllCollectionsOptionalParams.md)
-- [AffindaAPIGetAllDataPointsOptionalParams](interfaces/AffindaAPIGetAllDataPointsOptionalParams.md)
-- [AffindaAPIGetAllDocumentsOptionalParams](interfaces/AffindaAPIGetAllDocumentsOptionalParams.md)
-- [AffindaAPIGetAllExtractorsOptionalParams](interfaces/AffindaAPIGetAllExtractorsOptionalParams.md)
-- [AffindaAPIGetAllIndexDocumentsOptionalParams](interfaces/AffindaAPIGetAllIndexDocumentsOptionalParams.md)
-- [AffindaAPIGetAllIndexesOptionalParams](interfaces/AffindaAPIGetAllIndexesOptionalParams.md)
-- [AffindaAPIGetAllInvitationsOptionalParams](interfaces/AffindaAPIGetAllInvitationsOptionalParams.md)
-- [AffindaAPIGetAllOrganizationMembershipsOptionalParams](interfaces/AffindaAPIGetAllOrganizationMembershipsOptionalParams.md)
-- [AffindaAPIGetAllOrganizationsOptionalParams](interfaces/AffindaAPIGetAllOrganizationsOptionalParams.md)
-- [AffindaAPIGetAllResthookSubscriptionsOptionalParams](interfaces/AffindaAPIGetAllResthookSubscriptionsOptionalParams.md)
-- [AffindaAPIGetAllTagsOptionalParams](interfaces/AffindaAPIGetAllTagsOptionalParams.md)
-- [AffindaAPIGetAllValidationResultsOptionalParams](interfaces/AffindaAPIGetAllValidationResultsOptionalParams.md)
-- [AffindaAPIGetAllWorkspaceMembershipsOptionalParams](interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md)
-- [AffindaAPIGetAllWorkspacesOptionalParams](interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md)
-- [AffindaAPIGetAnnotationOptionalParams](interfaces/AffindaAPIGetAnnotationOptionalParams.md)
-- [AffindaAPIGetApiUserOptionalParams](interfaces/AffindaAPIGetApiUserOptionalParams.md)
-- [AffindaAPIGetCollectionOptionalParams](interfaces/AffindaAPIGetCollectionOptionalParams.md)
-- [AffindaAPIGetDataFieldForCollectionOptionalParams](interfaces/AffindaAPIGetDataFieldForCollectionOptionalParams.md)
-- [AffindaAPIGetDataPointChoiceOptionalParams](interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md)
-- [AffindaAPIGetDataPointChoicesOptionalParams](interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md)
-- [AffindaAPIGetDataPointOptionalParams](interfaces/AffindaAPIGetDataPointOptionalParams.md)
-- [AffindaAPIGetDocumentOptionalParams](interfaces/AffindaAPIGetDocumentOptionalParams.md)
-- [AffindaAPIGetExtractorOptionalParams](interfaces/AffindaAPIGetExtractorOptionalParams.md)
-- [AffindaAPIGetInvitationByTokenOptionalParams](interfaces/AffindaAPIGetInvitationByTokenOptionalParams.md)
-- [AffindaAPIGetInvitationOptionalParams](interfaces/AffindaAPIGetInvitationOptionalParams.md)
-- [AffindaAPIGetJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchConfigOptionalParams.md)
-- [AffindaAPIGetJobDescriptionSearchDetailOptionalParams](interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md)
-- [AffindaAPIGetMappingDataSourceOptionalParams](interfaces/AffindaAPIGetMappingDataSourceOptionalParams.md)
-- [AffindaAPIGetMappingDataSourceValueOptionalParams](interfaces/AffindaAPIGetMappingDataSourceValueOptionalParams.md)
-- [AffindaAPIGetMappingOptionalParams](interfaces/AffindaAPIGetMappingOptionalParams.md)
-- [AffindaAPIGetOrganizationMembershipOptionalParams](interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md)
-- [AffindaAPIGetOrganizationOptionalParams](interfaces/AffindaAPIGetOrganizationOptionalParams.md)
-- [AffindaAPIGetResthookSubscriptionOptionalParams](interfaces/AffindaAPIGetResthookSubscriptionOptionalParams.md)
-- [AffindaAPIGetResumeSearchConfigOptionalParams](interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md)
-- [AffindaAPIGetResumeSearchDetailOptionalParams](interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md)
-- [AffindaAPIGetResumeSearchMatchOptionalParams](interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md)
-- [AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams.md)
-- [AffindaAPIGetResumeSearchSuggestionSkillOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md)
-- [AffindaAPIGetTagOptionalParams](interfaces/AffindaAPIGetTagOptionalParams.md)
-- [AffindaAPIGetUsageByCollectionOptionalParams](interfaces/AffindaAPIGetUsageByCollectionOptionalParams.md)
-- [AffindaAPIGetUsageByWorkspaceOptionalParams](interfaces/AffindaAPIGetUsageByWorkspaceOptionalParams.md)
-- [AffindaAPIGetValidationResultOptionalParams](interfaces/AffindaAPIGetValidationResultOptionalParams.md)
-- [AffindaAPIGetWorkspaceMembershipOptionalParams](interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md)
-- [AffindaAPIGetWorkspaceOptionalParams](interfaces/AffindaAPIGetWorkspaceOptionalParams.md)
-- [AffindaAPIListMappingDataSourceValuesOptionalParams](interfaces/AffindaAPIListMappingDataSourceValuesOptionalParams.md)
-- [AffindaAPIListMappingDataSourcesOptionalParams](interfaces/AffindaAPIListMappingDataSourcesOptionalParams.md)
-- [AffindaAPIListMappingsOptionalParams](interfaces/AffindaAPIListMappingsOptionalParams.md)
-- [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
+- [ActivateResthookSubscriptionOptionalParams](interfaces/ActivateResthookSubscriptionOptionalParams.md)
+- [AddMappingDataSourceValueOptionalParams](interfaces/AddMappingDataSourceValueOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
-- [AffindaAPIRegenerateApiKeyForApiUserOptionalParams](interfaces/AffindaAPIRegenerateApiKeyForApiUserOptionalParams.md)
-- [AffindaAPIReplaceDataPointChoicesOptionalParams](interfaces/AffindaAPIReplaceDataPointChoicesOptionalParams.md)
-- [AffindaAPIReplaceMappingDataSourceValuesOptionalParams](interfaces/AffindaAPIReplaceMappingDataSourceValuesOptionalParams.md)
-- [AffindaAPIRespondToInvitationOptionalParams](interfaces/AffindaAPIRespondToInvitationOptionalParams.md)
-- [AffindaAPIUpdateAnnotationOptionalParams](interfaces/AffindaAPIUpdateAnnotationOptionalParams.md)
-- [AffindaAPIUpdateApiUserOptionalParams](interfaces/AffindaAPIUpdateApiUserOptionalParams.md)
-- [AffindaAPIUpdateCollectionOptionalParams](interfaces/AffindaAPIUpdateCollectionOptionalParams.md)
-- [AffindaAPIUpdateDataFieldForCollectionOptionalParams](interfaces/AffindaAPIUpdateDataFieldForCollectionOptionalParams.md)
-- [AffindaAPIUpdateDataPointChoiceOptionalParams](interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md)
-- [AffindaAPIUpdateDataPointOptionalParams](interfaces/AffindaAPIUpdateDataPointOptionalParams.md)
-- [AffindaAPIUpdateDocumentDataOptionalParams](interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md)
-- [AffindaAPIUpdateDocumentOptionalParams](interfaces/AffindaAPIUpdateDocumentOptionalParams.md)
-- [AffindaAPIUpdateExtractorOptionalParams](interfaces/AffindaAPIUpdateExtractorOptionalParams.md)
-- [AffindaAPIUpdateIndexOptionalParams](interfaces/AffindaAPIUpdateIndexOptionalParams.md)
-- [AffindaAPIUpdateInvitationOptionalParams](interfaces/AffindaAPIUpdateInvitationOptionalParams.md)
-- [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
-- [AffindaAPIUpdateMappingOptionalParams](interfaces/AffindaAPIUpdateMappingOptionalParams.md)
-- [AffindaAPIUpdateOrganizationMembershipOptionalParams](interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md)
-- [AffindaAPIUpdateOrganizationOptionalParams](interfaces/AffindaAPIUpdateOrganizationOptionalParams.md)
-- [AffindaAPIUpdateResthookSubscriptionOptionalParams](interfaces/AffindaAPIUpdateResthookSubscriptionOptionalParams.md)
-- [AffindaAPIUpdateResumeSearchConfigOptionalParams](interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md)
-- [AffindaAPIUpdateTagOptionalParams](interfaces/AffindaAPIUpdateTagOptionalParams.md)
-- [AffindaAPIUpdateValidationResultOptionalParams](interfaces/AffindaAPIUpdateValidationResultOptionalParams.md)
-- [AffindaAPIUpdateWorkspaceOptionalParams](interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md)
 - [Annotation](interfaces/Annotation.md)
 - [AnnotationBase](interfaces/AnnotationBase.md)
 - [AnnotationBatchUpdate](interfaces/AnnotationBatchUpdate.md)
 - [AnnotationCreate](interfaces/AnnotationCreate.md)
 - [AnnotationUpdate](interfaces/AnnotationUpdate.md)
+- [AnnotationWithValidationResults](interfaces/AnnotationWithValidationResults.md)
 - [AnotationDelete](interfaces/AnotationDelete.md)
 - [ApiUserCreate](interfaces/ApiUserCreate.md)
 - [ApiUserUpdate](interfaces/ApiUserUpdate.md)
@@ -180,9 +57,14 @@
 - [ApiUserWithoutKey](interfaces/ApiUserWithoutKey.md)
 - [ApiUserWithoutKeyOrganizationsItem](interfaces/ApiUserWithoutKeyOrganizationsItem.md)
 - [BaseExtractor](interfaces/BaseExtractor.md)
+- [BatchAddTagOptionalParams](interfaces/BatchAddTagOptionalParams.md)
 - [BatchAddTagRequest](interfaces/BatchAddTagRequest.md)
+- [BatchCreateAnnotationsOptionalParams](interfaces/BatchCreateAnnotationsOptionalParams.md)
+- [BatchDeleteAnnotationsOptionalParams](interfaces/BatchDeleteAnnotationsOptionalParams.md)
 - [BatchDeleteAnnotationsResponse](interfaces/BatchDeleteAnnotationsResponse.md)
+- [BatchRemoveTagOptionalParams](interfaces/BatchRemoveTagOptionalParams.md)
 - [BatchRemoveTagRequest](interfaces/BatchRemoveTagRequest.md)
+- [BatchUpdateAnnotationsOptionalParams](interfaces/BatchUpdateAnnotationsOptionalParams.md)
 - [ChangedValidationResults](interfaces/ChangedValidationResults.md)
 - [Collection](interfaces/Collection.md)
 - [CollectionCreate](interfaces/CollectionCreate.md)
@@ -226,6 +108,30 @@
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
+- [CreateAnnotationOptionalParams](interfaces/CreateAnnotationOptionalParams.md)
+- [CreateApiUserOptionalParams](interfaces/CreateApiUserOptionalParams.md)
+- [CreateCollectionOptionalParams](interfaces/CreateCollectionOptionalParams.md)
+- [CreateDataFieldForCollectionOptionalParams](interfaces/CreateDataFieldForCollectionOptionalParams.md)
+- [CreateDataPointChoiceOptionalParams](interfaces/CreateDataPointChoiceOptionalParams.md)
+- [CreateDataPointOptionalParams](interfaces/CreateDataPointOptionalParams.md)
+- [CreateDocumentOptionalParams](interfaces/CreateDocumentOptionalParams.md)
+- [CreateExtractorOptionalParams](interfaces/CreateExtractorOptionalParams.md)
+- [CreateIndexDocumentOptionalParams](interfaces/CreateIndexDocumentOptionalParams.md)
+- [CreateIndexOptionalParams](interfaces/CreateIndexOptionalParams.md)
+- [CreateInvitationOptionalParams](interfaces/CreateInvitationOptionalParams.md)
+- [CreateJobDescriptionSearchEmbedUrlOptionalParams](interfaces/CreateJobDescriptionSearchEmbedUrlOptionalParams.md)
+- [CreateJobDescriptionSearchOptionalParams](interfaces/CreateJobDescriptionSearchOptionalParams.md)
+- [CreateMappingDataSourceOptionalParams](interfaces/CreateMappingDataSourceOptionalParams.md)
+- [CreateMappingOptionalParams](interfaces/CreateMappingOptionalParams.md)
+- [CreateOrganizationOptionalParams](interfaces/CreateOrganizationOptionalParams.md)
+- [CreateResthookSubscriptionOptionalParams](interfaces/CreateResthookSubscriptionOptionalParams.md)
+- [CreateResumeSearchEmbedUrlOptionalParams](interfaces/CreateResumeSearchEmbedUrlOptionalParams.md)
+- [CreateResumeSearchOptionalParams](interfaces/CreateResumeSearchOptionalParams.md)
+- [CreateTagOptionalParams](interfaces/CreateTagOptionalParams.md)
+- [CreateValidationResultOptionalParams](interfaces/CreateValidationResultOptionalParams.md)
+- [CreateWorkspaceMembershipOptionalParams](interfaces/CreateWorkspaceMembershipOptionalParams.md)
+- [CreateWorkspaceOptionalParams](interfaces/CreateWorkspaceOptionalParams.md)
+- [CurrencyCodeAnnotation](interfaces/CurrencyCodeAnnotation.md)
 - [CustomFieldConfig](interfaces/CustomFieldConfig.md)
 - [DataField](interfaces/DataField.md)
 - [DataFieldCreate](interfaces/DataFieldCreate.md)
@@ -243,8 +149,31 @@
 - [DataPointChoiceUpdate](interfaces/DataPointChoiceUpdate.md)
 - [DataPointCreate](interfaces/DataPointCreate.md)
 - [DataPointUpdate](interfaces/DataPointUpdate.md)
+- [DateAnnotation](interfaces/DateAnnotation.md)
+- [DateAnnotationUpdate](interfaces/DateAnnotationUpdate.md)
+- [DateRangeAnnotation](interfaces/DateRangeAnnotation.md)
 - [DateRangeAnnotationParsed](interfaces/DateRangeAnnotationParsed.md)
 - [DateRangeValue](interfaces/DateRangeValue.md)
+- [DeleteAnnotationOptionalParams](interfaces/DeleteAnnotationOptionalParams.md)
+- [DeleteApiUserOptionalParams](interfaces/DeleteApiUserOptionalParams.md)
+- [DeleteCollectionOptionalParams](interfaces/DeleteCollectionOptionalParams.md)
+- [DeleteDataPointChoiceOptionalParams](interfaces/DeleteDataPointChoiceOptionalParams.md)
+- [DeleteDataPointOptionalParams](interfaces/DeleteDataPointOptionalParams.md)
+- [DeleteDocumentOptionalParams](interfaces/DeleteDocumentOptionalParams.md)
+- [DeleteExtractorOptionalParams](interfaces/DeleteExtractorOptionalParams.md)
+- [DeleteIndexDocumentOptionalParams](interfaces/DeleteIndexDocumentOptionalParams.md)
+- [DeleteIndexOptionalParams](interfaces/DeleteIndexOptionalParams.md)
+- [DeleteInvitationOptionalParams](interfaces/DeleteInvitationOptionalParams.md)
+- [DeleteMappingDataSourceOptionalParams](interfaces/DeleteMappingDataSourceOptionalParams.md)
+- [DeleteMappingDataSourceValueOptionalParams](interfaces/DeleteMappingDataSourceValueOptionalParams.md)
+- [DeleteMappingOptionalParams](interfaces/DeleteMappingOptionalParams.md)
+- [DeleteOrganizationMembershipOptionalParams](interfaces/DeleteOrganizationMembershipOptionalParams.md)
+- [DeleteOrganizationOptionalParams](interfaces/DeleteOrganizationOptionalParams.md)
+- [DeleteResthookSubscriptionOptionalParams](interfaces/DeleteResthookSubscriptionOptionalParams.md)
+- [DeleteTagOptionalParams](interfaces/DeleteTagOptionalParams.md)
+- [DeleteValidationResultOptionalParams](interfaces/DeleteValidationResultOptionalParams.md)
+- [DeleteWorkspaceMembershipOptionalParams](interfaces/DeleteWorkspaceMembershipOptionalParams.md)
+- [DeleteWorkspaceOptionalParams](interfaces/DeleteWorkspaceOptionalParams.md)
 - [Document](interfaces/Document.md)
 - [DocumentCreate](interfaces/DocumentCreate.md)
 - [DocumentCreateData](interfaces/DocumentCreateData.md)
@@ -260,11 +189,14 @@
 - [DocumentSplitPage](interfaces/DocumentSplitPage.md)
 - [DocumentUpdate](interfaces/DocumentUpdate.md)
 - [DocumentWarning](interfaces/DocumentWarning.md)
+- [EditDocumentPagesOptionalParams](interfaces/EditDocumentPagesOptionalParams.md)
 - [Education](interfaces/Education.md)
 - [EducationDates](interfaces/EducationDates.md)
 - [EducationGrade](interfaces/EducationGrade.md)
 - [EducationSearchScoreComponent](interfaces/EducationSearchScoreComponent.md)
+- [ExpectedRemunerationAnnotation](interfaces/ExpectedRemunerationAnnotation.md)
 - [ExpectedRemunerationAnnotationParsed](interfaces/ExpectedRemunerationAnnotationParsed.md)
+- [ExpectedRemunerationAnnotationUpdate](interfaces/ExpectedRemunerationAnnotationUpdate.md)
 - [ExpectedRemunerationAnnotationUpdateParsed](interfaces/ExpectedRemunerationAnnotationUpdateParsed.md)
 - [ExperienceSearchScoreComponent](interfaces/ExperienceSearchScoreComponent.md)
 - [Extractor](interfaces/Extractor.md)
@@ -277,20 +209,100 @@
 - [FieldDeprecated](interfaces/FieldDeprecated.md)
 - [FieldGroup](interfaces/FieldGroup.md)
 - [FieldsLayout](interfaces/FieldsLayout.md)
+- [FloatAnnotation](interfaces/FloatAnnotation.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
+- [GetAllAnnotationsOptionalParams](interfaces/GetAllAnnotationsOptionalParams.md)
+- [GetAllApiUsersOptionalParams](interfaces/GetAllApiUsersOptionalParams.md)
+- [GetAllCollectionsOptionalParams](interfaces/GetAllCollectionsOptionalParams.md)
+- [GetAllDataPointsOptionalParams](interfaces/GetAllDataPointsOptionalParams.md)
+- [GetAllDocumentsOptionalParams](interfaces/GetAllDocumentsOptionalParams.md)
+- [GetAllExtractorsOptionalParams](interfaces/GetAllExtractorsOptionalParams.md)
+- [GetAllIndexDocumentsOptionalParams](interfaces/GetAllIndexDocumentsOptionalParams.md)
+- [GetAllIndexesOptionalParams](interfaces/GetAllIndexesOptionalParams.md)
+- [GetAllInvitationsOptionalParams](interfaces/GetAllInvitationsOptionalParams.md)
+- [GetAllOrganizationMembershipsOptionalParams](interfaces/GetAllOrganizationMembershipsOptionalParams.md)
+- [GetAllOrganizationsOptionalParams](interfaces/GetAllOrganizationsOptionalParams.md)
+- [GetAllResthookSubscriptionsOptionalParams](interfaces/GetAllResthookSubscriptionsOptionalParams.md)
+- [GetAllTagsOptionalParams](interfaces/GetAllTagsOptionalParams.md)
+- [GetAllValidationResultsOptionalParams](interfaces/GetAllValidationResultsOptionalParams.md)
+- [GetAllWorkspaceMembershipsOptionalParams](interfaces/GetAllWorkspaceMembershipsOptionalParams.md)
+- [GetAllWorkspacesOptionalParams](interfaces/GetAllWorkspacesOptionalParams.md)
+- [GetAnnotationOptionalParams](interfaces/GetAnnotationOptionalParams.md)
+- [GetApiUserOptionalParams](interfaces/GetApiUserOptionalParams.md)
+- [GetCollectionOptionalParams](interfaces/GetCollectionOptionalParams.md)
+- [GetDataFieldForCollectionOptionalParams](interfaces/GetDataFieldForCollectionOptionalParams.md)
+- [GetDataPointChoiceOptionalParams](interfaces/GetDataPointChoiceOptionalParams.md)
+- [GetDataPointChoicesOptionalParams](interfaces/GetDataPointChoicesOptionalParams.md)
+- [GetDataPointOptionalParams](interfaces/GetDataPointOptionalParams.md)
+- [GetDocumentOptionalParams](interfaces/GetDocumentOptionalParams.md)
+- [GetExtractorOptionalParams](interfaces/GetExtractorOptionalParams.md)
+- [GetInvitationByTokenOptionalParams](interfaces/GetInvitationByTokenOptionalParams.md)
+- [GetInvitationOptionalParams](interfaces/GetInvitationOptionalParams.md)
+- [GetJobDescriptionSearchConfigOptionalParams](interfaces/GetJobDescriptionSearchConfigOptionalParams.md)
+- [GetJobDescriptionSearchDetailOptionalParams](interfaces/GetJobDescriptionSearchDetailOptionalParams.md)
+- [GetMappingDataSourceOptionalParams](interfaces/GetMappingDataSourceOptionalParams.md)
+- [GetMappingDataSourceValueOptionalParams](interfaces/GetMappingDataSourceValueOptionalParams.md)
+- [GetMappingOptionalParams](interfaces/GetMappingOptionalParams.md)
+- [GetOrganizationMembershipOptionalParams](interfaces/GetOrganizationMembershipOptionalParams.md)
+- [GetOrganizationOptionalParams](interfaces/GetOrganizationOptionalParams.md)
+- [GetResthookSubscriptionOptionalParams](interfaces/GetResthookSubscriptionOptionalParams.md)
+- [GetResumeSearchConfigOptionalParams](interfaces/GetResumeSearchConfigOptionalParams.md)
+- [GetResumeSearchDetailOptionalParams](interfaces/GetResumeSearchDetailOptionalParams.md)
+- [GetResumeSearchMatchOptionalParams](interfaces/GetResumeSearchMatchOptionalParams.md)
+- [GetResumeSearchSuggestionJobTitleOptionalParams](interfaces/GetResumeSearchSuggestionJobTitleOptionalParams.md)
+- [GetResumeSearchSuggestionSkillOptionalParams](interfaces/GetResumeSearchSuggestionSkillOptionalParams.md)
+- [GetTagOptionalParams](interfaces/GetTagOptionalParams.md)
+- [GetUsageByCollectionOptionalParams](interfaces/GetUsageByCollectionOptionalParams.md)
+- [GetUsageByWorkspaceOptionalParams](interfaces/GetUsageByWorkspaceOptionalParams.md)
+- [GetValidationResultOptionalParams](interfaces/GetValidationResultOptionalParams.md)
+- [GetWorkspaceMembershipOptionalParams](interfaces/GetWorkspaceMembershipOptionalParams.md)
+- [GetWorkspaceOptionalParams](interfaces/GetWorkspaceOptionalParams.md)
 - [Index](interfaces/Index.md)
 - [IndexCreate](interfaces/IndexCreate.md)
 - [IndexUpdate](interfaces/IndexUpdate.md)
 - [IndexUser](interfaces/IndexUser.md)
 - [Invitation](interfaces/Invitation.md)
 - [InvitationCreate](interfaces/InvitationCreate.md)
+- [InvitationRespondedBy](interfaces/InvitationRespondedBy.md)
 - [InvitationResponse](interfaces/InvitationResponse.md)
 - [InvitationUpdate](interfaces/InvitationUpdate.md)
+- [Invoice](interfaces/Invoice.md)
 - [InvoiceData](interfaces/InvoiceData.md)
+- [InvoiceDataBankAccountNumber](interfaces/InvoiceDataBankAccountNumber.md)
+- [InvoiceDataBankBsb](interfaces/InvoiceDataBankBsb.md)
+- [InvoiceDataBankIban](interfaces/InvoiceDataBankIban.md)
+- [InvoiceDataBankSortCode](interfaces/InvoiceDataBankSortCode.md)
+- [InvoiceDataBankSwift](interfaces/InvoiceDataBankSwift.md)
+- [InvoiceDataBpayBillerCode](interfaces/InvoiceDataBpayBillerCode.md)
+- [InvoiceDataBpayReference](interfaces/InvoiceDataBpayReference.md)
+- [InvoiceDataCustomerBusinessNumber](interfaces/InvoiceDataCustomerBusinessNumber.md)
+- [InvoiceDataCustomerCompanyName](interfaces/InvoiceDataCustomerCompanyName.md)
+- [InvoiceDataCustomerContactName](interfaces/InvoiceDataCustomerContactName.md)
+- [InvoiceDataCustomerEmail](interfaces/InvoiceDataCustomerEmail.md)
+- [InvoiceDataCustomerNumber](interfaces/InvoiceDataCustomerNumber.md)
+- [InvoiceDataCustomerPhoneNumber](interfaces/InvoiceDataCustomerPhoneNumber.md)
+- [InvoiceDataCustomerVat](interfaces/InvoiceDataCustomerVat.md)
+- [InvoiceDataInvoiceNumber](interfaces/InvoiceDataInvoiceNumber.md)
+- [InvoiceDataInvoicePurchaseOrderNumber](interfaces/InvoiceDataInvoicePurchaseOrderNumber.md)
+- [InvoiceDataPaymentAmountBase](interfaces/InvoiceDataPaymentAmountBase.md)
+- [InvoiceDataPaymentAmountDue](interfaces/InvoiceDataPaymentAmountDue.md)
+- [InvoiceDataPaymentAmountPaid](interfaces/InvoiceDataPaymentAmountPaid.md)
+- [InvoiceDataPaymentAmountTax](interfaces/InvoiceDataPaymentAmountTax.md)
+- [InvoiceDataPaymentAmountTotal](interfaces/InvoiceDataPaymentAmountTotal.md)
+- [InvoiceDataPaymentReference](interfaces/InvoiceDataPaymentReference.md)
+- [InvoiceDataSupplierBusinessNumber](interfaces/InvoiceDataSupplierBusinessNumber.md)
+- [InvoiceDataSupplierCompanyName](interfaces/InvoiceDataSupplierCompanyName.md)
+- [InvoiceDataSupplierEmail](interfaces/InvoiceDataSupplierEmail.md)
+- [InvoiceDataSupplierFax](interfaces/InvoiceDataSupplierFax.md)
+- [InvoiceDataSupplierPhoneNumber](interfaces/InvoiceDataSupplierPhoneNumber.md)
+- [InvoiceDataSupplierVat](interfaces/InvoiceDataSupplierVat.md)
+- [InvoiceDataSupplierWebsite](interfaces/InvoiceDataSupplierWebsite.md)
+- [JobDescription](interfaces/JobDescription.md)
 - [JobDescriptionData](interfaces/JobDescriptionData.md)
 - [JobDescriptionDataUpdate](interfaces/JobDescriptionDataUpdate.md)
 - [JobDescriptionSearch](interfaces/JobDescriptionSearch.md)
 - [JobDescriptionSearchConfig](interfaces/JobDescriptionSearchConfig.md)
+- [JobDescriptionSearchConfigSearchToolTheme](interfaces/JobDescriptionSearchConfigSearchToolTheme.md)
 - [JobDescriptionSearchDetail](interfaces/JobDescriptionSearchDetail.md)
 - [JobDescriptionSearchDetailEducation](interfaces/JobDescriptionSearchDetailEducation.md)
 - [JobDescriptionSearchDetailEducationMissing](interfaces/JobDescriptionSearchDetailEducationMissing.md)
@@ -301,22 +313,35 @@
 - [JobDescriptionSearchDetailLanguages](interfaces/JobDescriptionSearchDetailLanguages.md)
 - [JobDescriptionSearchDetailLanguagesValueItem](interfaces/JobDescriptionSearchDetailLanguagesValueItem.md)
 - [JobDescriptionSearchDetailLocation](interfaces/JobDescriptionSearchDetailLocation.md)
+- [JobDescriptionSearchDetailLocationValue](interfaces/JobDescriptionSearchDetailLocationValue.md)
 - [JobDescriptionSearchDetailManagementLevel](interfaces/JobDescriptionSearchDetailManagementLevel.md)
 - [JobDescriptionSearchDetailOccupationGroup](interfaces/JobDescriptionSearchDetailOccupationGroup.md)
+- [JobDescriptionSearchDetailOccupationGroupValue](interfaces/JobDescriptionSearchDetailOccupationGroupValue.md)
 - [JobDescriptionSearchDetailSearchExpression](interfaces/JobDescriptionSearchDetailSearchExpression.md)
 - [JobDescriptionSearchDetailSkills](interfaces/JobDescriptionSearchDetailSkills.md)
 - [JobDescriptionSearchDetailSkillsValueItem](interfaces/JobDescriptionSearchDetailSkillsValueItem.md)
 - [JobDescriptionSearchEmbed](interfaces/JobDescriptionSearchEmbed.md)
 - [JobDescriptionSearchParameters](interfaces/JobDescriptionSearchParameters.md)
 - [JobDescriptionSearchResult](interfaces/JobDescriptionSearchResult.md)
+- [JobTitleAnnotation](interfaces/JobTitleAnnotation.md)
 - [JobTitleAnnotationParsed](interfaces/JobTitleAnnotationParsed.md)
 - [JobTitleAnnotationParsedClassification](interfaces/JobTitleAnnotationParsedClassification.md)
+- [JobTitleAnnotationUpdate](interfaces/JobTitleAnnotationUpdate.md)
 - [JobTitleParsed](interfaces/JobTitleParsed.md)
 - [JobTitleParsedClassification](interfaces/JobTitleParsedClassification.md)
 - [JobTitleParsedParsed](interfaces/JobTitleParsedParsed.md)
 - [JobTitleSearchScoreComponent](interfaces/JobTitleSearchScoreComponent.md)
+- [LanguageAnnotation](interfaces/LanguageAnnotation.md)
+- [LanguageAnnotationUpdate](interfaces/LanguageAnnotationUpdate.md)
 - [LanguagesSearchScoreComponent](interfaces/LanguagesSearchScoreComponent.md)
+- [ListMappingDataSourceValuesOptionalParams](interfaces/ListMappingDataSourceValuesOptionalParams.md)
+- [ListMappingDataSourcesOptionalParams](interfaces/ListMappingDataSourcesOptionalParams.md)
+- [ListMappingsOptionalParams](interfaces/ListMappingsOptionalParams.md)
+- [ListOccupationGroupsOptionalParams](interfaces/ListOccupationGroupsOptionalParams.md)
 - [Location](interfaces/Location.md)
+- [LocationAnnotation](interfaces/LocationAnnotation.md)
+- [LocationAnnotationUpdate](interfaces/LocationAnnotationUpdate.md)
+- [LocationAnnotationUpdateParsed](interfaces/LocationAnnotationUpdateParsed.md)
 - [LocationSearchScoreComponent](interfaces/LocationSearchScoreComponent.md)
 - [ManagementLevelSearchScoreComponent](interfaces/ManagementLevelSearchScoreComponent.md)
 - [Mapping](interfaces/Mapping.md)
@@ -340,33 +365,51 @@
 - [PaginatedResponse](interfaces/PaginatedResponse.md)
 - [PaletteColorOptions](interfaces/PaletteColorOptions.md)
 - [Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema](interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)
+- [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)
 - [Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+- [Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)
 - [Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema](interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)
 - [Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema](interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)
 - [Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema](interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)
 - [Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema](interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
+- [PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema](interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
 - [PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
 - [PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+- [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)
 - [PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema](interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
+- [PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)
+- [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)
+- [PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema](interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)
 - [PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)
+- [PhoneNumberAnnotation](interfaces/PhoneNumberAnnotation.md)
 - [PhoneNumberAnnotationParsed](interfaces/PhoneNumberAnnotationParsed.md)
 - [Rectangle](interfaces/Rectangle.md)
 - [RedactConfig](interfaces/RedactConfig.md)
+- [RegenerateApiKeyForApiUserOptionalParams](interfaces/RegenerateApiKeyForApiUserOptionalParams.md)
 - [RegionBias](interfaces/RegionBias.md)
+- [ReplaceDataPointChoicesOptionalParams](interfaces/ReplaceDataPointChoicesOptionalParams.md)
+- [ReplaceMappingDataSourceValuesOptionalParams](interfaces/ReplaceMappingDataSourceValuesOptionalParams.md)
 - [RequestError](interfaces/RequestError.md)
 - [RequestErrorErrorsItem](interfaces/RequestErrorErrorsItem.md)
+- [RespondToInvitationOptionalParams](interfaces/RespondToInvitationOptionalParams.md)
 - [ResthookSubscription](interfaces/ResthookSubscription.md)
 - [ResthookSubscriptionCreate](interfaces/ResthookSubscriptionCreate.md)
 - [ResthookSubscriptionUpdate](interfaces/ResthookSubscriptionUpdate.md)
 - [ResthookSubscriptionWorkspace](interfaces/ResthookSubscriptionWorkspace.md)
+- [Resume](interfaces/Resume.md)
 - [ResumeData](interfaces/ResumeData.md)
 - [ResumeDataName](interfaces/ResumeDataName.md)
 - [ResumeDataPhoneNumberDetailsItem](interfaces/ResumeDataPhoneNumberDetailsItem.md)
@@ -377,46 +420,82 @@
 - [ResumeDataWorkExperienceItem](interfaces/ResumeDataWorkExperienceItem.md)
 - [ResumeDataWorkExperienceItemDates](interfaces/ResumeDataWorkExperienceItemDates.md)
 - [ResumeDataWorkExperienceItemOccupation](interfaces/ResumeDataWorkExperienceItemOccupation.md)
+- [ResumeRedact](interfaces/ResumeRedact.md)
 - [ResumeRedactData](interfaces/ResumeRedactData.md)
 - [ResumeSearch](interfaces/ResumeSearch.md)
 - [ResumeSearchConfig](interfaces/ResumeSearchConfig.md)
+- [ResumeSearchConfigSearchToolTheme](interfaces/ResumeSearchConfigSearchToolTheme.md)
 - [ResumeSearchDetail](interfaces/ResumeSearchDetail.md)
 - [ResumeSearchDetailEducation](interfaces/ResumeSearchDetailEducation.md)
 - [ResumeSearchDetailEducationMissing](interfaces/ResumeSearchDetailEducationMissing.md)
+- [ResumeSearchDetailEducationValueItem](interfaces/ResumeSearchDetailEducationValueItem.md)
 - [ResumeSearchDetailExperience](interfaces/ResumeSearchDetailExperience.md)
 - [ResumeSearchDetailJobTitle](interfaces/ResumeSearchDetailJobTitle.md)
 - [ResumeSearchDetailJobTitleValueItem](interfaces/ResumeSearchDetailJobTitleValueItem.md)
 - [ResumeSearchDetailLanguages](interfaces/ResumeSearchDetailLanguages.md)
+- [ResumeSearchDetailLanguagesValueItem](interfaces/ResumeSearchDetailLanguagesValueItem.md)
 - [ResumeSearchDetailLocation](interfaces/ResumeSearchDetailLocation.md)
+- [ResumeSearchDetailLocationValue](interfaces/ResumeSearchDetailLocationValue.md)
 - [ResumeSearchDetailManagementLevel](interfaces/ResumeSearchDetailManagementLevel.md)
 - [ResumeSearchDetailOccupationGroup](interfaces/ResumeSearchDetailOccupationGroup.md)
 - [ResumeSearchDetailSearchExpression](interfaces/ResumeSearchDetailSearchExpression.md)
 - [ResumeSearchDetailSkills](interfaces/ResumeSearchDetailSkills.md)
+- [ResumeSearchDetailSkillsValueItem](interfaces/ResumeSearchDetailSkillsValueItem.md)
 - [ResumeSearchEmbed](interfaces/ResumeSearchEmbed.md)
 - [ResumeSearchMatch](interfaces/ResumeSearchMatch.md)
 - [ResumeSearchMatchDetails](interfaces/ResumeSearchMatchDetails.md)
 - [ResumeSearchParameters](interfaces/ResumeSearchParameters.md)
+- [ResumeSearchParametersCustomData](interfaces/ResumeSearchParametersCustomData.md)
 - [ResumeSearchParametersLocation](interfaces/ResumeSearchParametersLocation.md)
 - [ResumeSearchParametersLocationCoordinates](interfaces/ResumeSearchParametersLocationCoordinates.md)
 - [ResumeSearchParametersSkill](interfaces/ResumeSearchParametersSkill.md)
 - [ResumeSearchResult](interfaces/ResumeSearchResult.md)
 - [ResumeSkill](interfaces/ResumeSkill.md)
 - [ResumeSkillSourcesItem](interfaces/ResumeSkillSourcesItem.md)
+- [RowAnnotation](interfaces/RowAnnotation.md)
 - [RowAnnotationParsed](interfaces/RowAnnotationParsed.md)
+- [RowBetaAnnotation](interfaces/RowBetaAnnotation.md)
 - [RowBetaAnnotationParsed](interfaces/RowBetaAnnotationParsed.md)
 - [SearchConfigAction](interfaces/SearchConfigAction.md)
 - [SearchExpressionSearchScoreComponent](interfaces/SearchExpressionSearchScoreComponent.md)
 - [SearchParametersCustomData](interfaces/SearchParametersCustomData.md)
+- [SkillAnnotation](interfaces/SkillAnnotation.md)
+- [SkillAnnotationUpdate](interfaces/SkillAnnotationUpdate.md)
 - [SkillsSearchScoreComponent](interfaces/SkillsSearchScoreComponent.md)
+- [TableAnnotation](interfaces/TableAnnotation.md)
 - [TableAnnotationParsed](interfaces/TableAnnotationParsed.md)
+- [TableBetaAnnotation](interfaces/TableBetaAnnotation.md)
 - [TableBetaAnnotationParsed](interfaces/TableBetaAnnotationParsed.md)
 - [Tag](interfaces/Tag.md)
 - [TagCreate](interfaces/TagCreate.md)
 - [TagUpdate](interfaces/TagUpdate.md)
+- [TextAnnotation](interfaces/TextAnnotation.md)
+- [TextAnnotationUpdate](interfaces/TextAnnotationUpdate.md)
 - [ThemeConfig](interfaces/ThemeConfig.md)
 - [ThemeConfigPalette](interfaces/ThemeConfigPalette.md)
 - [ThemeConfigPaletteText](interfaces/ThemeConfigPaletteText.md)
 - [ThemeConfigTypography](interfaces/ThemeConfigTypography.md)
+- [UpdateAnnotationOptionalParams](interfaces/UpdateAnnotationOptionalParams.md)
+- [UpdateApiUserOptionalParams](interfaces/UpdateApiUserOptionalParams.md)
+- [UpdateCollectionOptionalParams](interfaces/UpdateCollectionOptionalParams.md)
+- [UpdateDataFieldForCollectionOptionalParams](interfaces/UpdateDataFieldForCollectionOptionalParams.md)
+- [UpdateDataPointChoiceOptionalParams](interfaces/UpdateDataPointChoiceOptionalParams.md)
+- [UpdateDataPointOptionalParams](interfaces/UpdateDataPointOptionalParams.md)
+- [UpdateDocumentDataOptionalParams](interfaces/UpdateDocumentDataOptionalParams.md)
+- [UpdateDocumentOptionalParams](interfaces/UpdateDocumentOptionalParams.md)
+- [UpdateExtractorOptionalParams](interfaces/UpdateExtractorOptionalParams.md)
+- [UpdateIndexOptionalParams](interfaces/UpdateIndexOptionalParams.md)
+- [UpdateInvitationOptionalParams](interfaces/UpdateInvitationOptionalParams.md)
+- [UpdateJobDescriptionSearchConfigOptionalParams](interfaces/UpdateJobDescriptionSearchConfigOptionalParams.md)
+- [UpdateMappingOptionalParams](interfaces/UpdateMappingOptionalParams.md)
+- [UpdateOrganizationMembershipOptionalParams](interfaces/UpdateOrganizationMembershipOptionalParams.md)
+- [UpdateOrganizationOptionalParams](interfaces/UpdateOrganizationOptionalParams.md)
+- [UpdateResthookSubscriptionOptionalParams](interfaces/UpdateResthookSubscriptionOptionalParams.md)
+- [UpdateResumeSearchConfigOptionalParams](interfaces/UpdateResumeSearchConfigOptionalParams.md)
+- [UpdateTagOptionalParams](interfaces/UpdateTagOptionalParams.md)
+- [UpdateValidationResultOptionalParams](interfaces/UpdateValidationResultOptionalParams.md)
+- [UpdateWorkspaceOptionalParams](interfaces/UpdateWorkspaceOptionalParams.md)
+- [UrlAnnotation](interfaces/UrlAnnotation.md)
 - [UrlAnnotationParsed](interfaces/UrlAnnotationParsed.md)
 - [UsageByCollection](interfaces/UsageByCollection.md)
 - [UsageByWorkspace](interfaces/UsageByWorkspace.md)
@@ -434,1070 +513,162 @@
 - [WorkspaceMembership](interfaces/WorkspaceMembership.md)
 - [WorkspaceMembershipCreate](interfaces/WorkspaceMembershipCreate.md)
 - [WorkspaceUpdate](interfaces/WorkspaceUpdate.md)
+- [YearsExperienceAnnotation](interfaces/YearsExperienceAnnotation.md)
 - [YearsExperienceAnnotationParsed](interfaces/YearsExperienceAnnotationParsed.md)
+- [YearsExperienceAnnotationUpdate](interfaces/YearsExperienceAnnotationUpdate.md)
 - [YearsExperienceAnnotationUpdateParsed](interfaces/YearsExperienceAnnotationUpdateParsed.md)
 
 ### Type Aliases
 
-- [AffindaAPIActivateResthookSubscriptionResponse](modules.md#affindaapiactivateresthooksubscriptionresponse)
-- [AffindaAPIAddMappingDataSourceValueResponse](modules.md#affindaapiaddmappingdatasourcevalueresponse)
-- [AffindaAPIBatchCreateAnnotationsResponse](modules.md#affindaapibatchcreateannotationsresponse)
-- [AffindaAPIBatchDeleteAnnotationsResponse](modules.md#affindaapibatchdeleteannotationsresponse)
-- [AffindaAPIBatchUpdateAnnotationsResponse](modules.md#affindaapibatchupdateannotationsresponse)
-- [AffindaAPICreateAnnotationResponse](modules.md#affindaapicreateannotationresponse)
-- [AffindaAPICreateApiUserResponse](modules.md#affindaapicreateapiuserresponse)
-- [AffindaAPICreateCollectionResponse](modules.md#affindaapicreatecollectionresponse)
-- [AffindaAPICreateDataFieldForCollectionResponse](modules.md#affindaapicreatedatafieldforcollectionresponse)
-- [AffindaAPICreateDataPointChoiceResponse](modules.md#affindaapicreatedatapointchoiceresponse)
-- [AffindaAPICreateDataPointResponse](modules.md#affindaapicreatedatapointresponse)
-- [AffindaAPICreateDocumentResponse](modules.md#affindaapicreatedocumentresponse)
-- [AffindaAPICreateExtractorResponse](modules.md#affindaapicreateextractorresponse)
-- [AffindaAPICreateIndexDocumentResponse](modules.md#affindaapicreateindexdocumentresponse)
-- [AffindaAPICreateIndexResponse](modules.md#affindaapicreateindexresponse)
-- [AffindaAPICreateInvitationResponse](modules.md#affindaapicreateinvitationresponse)
-- [AffindaAPICreateJobDescriptionSearchEmbedUrlResponse](modules.md#affindaapicreatejobdescriptionsearchembedurlresponse)
-- [AffindaAPICreateJobDescriptionSearchResponse](modules.md#affindaapicreatejobdescriptionsearchresponse)
-- [AffindaAPICreateMappingDataSourceResponse](modules.md#affindaapicreatemappingdatasourceresponse)
-- [AffindaAPICreateMappingResponse](modules.md#affindaapicreatemappingresponse)
-- [AffindaAPICreateOrganizationResponse](modules.md#affindaapicreateorganizationresponse)
-- [AffindaAPICreateResthookSubscriptionResponse](modules.md#affindaapicreateresthooksubscriptionresponse)
-- [AffindaAPICreateResumeSearchEmbedUrlResponse](modules.md#affindaapicreateresumesearchembedurlresponse)
-- [AffindaAPICreateResumeSearchResponse](modules.md#affindaapicreateresumesearchresponse)
-- [AffindaAPICreateTagResponse](modules.md#affindaapicreatetagresponse)
-- [AffindaAPICreateValidationResultResponse](modules.md#affindaapicreatevalidationresultresponse)
-- [AffindaAPICreateWorkspaceMembershipResponse](modules.md#affindaapicreateworkspacemembershipresponse)
-- [AffindaAPICreateWorkspaceResponse](modules.md#affindaapicreateworkspaceresponse)
-- [AffindaAPIDeleteAnnotationResponse](modules.md#affindaapideleteannotationresponse)
-- [AffindaAPIEditDocumentPagesResponse](modules.md#affindaapieditdocumentpagesresponse)
-- [AffindaAPIGetAllAnnotationsResponse](modules.md#affindaapigetallannotationsresponse)
-- [AffindaAPIGetAllApiUsersResponse](modules.md#affindaapigetallapiusersresponse)
-- [AffindaAPIGetAllCollectionsResponse](modules.md#affindaapigetallcollectionsresponse)
-- [AffindaAPIGetAllDataPointsResponse](modules.md#affindaapigetalldatapointsresponse)
-- [AffindaAPIGetAllDocumentsResponse](modules.md#affindaapigetalldocumentsresponse)
-- [AffindaAPIGetAllExtractorsResponse](modules.md#affindaapigetallextractorsresponse)
-- [AffindaAPIGetAllIndexDocumentsResponse](modules.md#affindaapigetallindexdocumentsresponse)
-- [AffindaAPIGetAllIndexesResponse](modules.md#affindaapigetallindexesresponse)
-- [AffindaAPIGetAllInvitationsResponse](modules.md#affindaapigetallinvitationsresponse)
-- [AffindaAPIGetAllOrganizationMembershipsResponse](modules.md#affindaapigetallorganizationmembershipsresponse)
-- [AffindaAPIGetAllOrganizationsResponse](modules.md#affindaapigetallorganizationsresponse)
-- [AffindaAPIGetAllResthookSubscriptionsResponse](modules.md#affindaapigetallresthooksubscriptionsresponse)
-- [AffindaAPIGetAllTagsResponse](modules.md#affindaapigetalltagsresponse)
-- [AffindaAPIGetAllValidationResultsResponse](modules.md#affindaapigetallvalidationresultsresponse)
-- [AffindaAPIGetAllWorkspaceMembershipsResponse](modules.md#affindaapigetallworkspacemembershipsresponse)
-- [AffindaAPIGetAllWorkspacesResponse](modules.md#affindaapigetallworkspacesresponse)
-- [AffindaAPIGetAnnotationResponse](modules.md#affindaapigetannotationresponse)
-- [AffindaAPIGetApiUserResponse](modules.md#affindaapigetapiuserresponse)
-- [AffindaAPIGetCollectionResponse](modules.md#affindaapigetcollectionresponse)
-- [AffindaAPIGetDataFieldForCollectionResponse](modules.md#affindaapigetdatafieldforcollectionresponse)
-- [AffindaAPIGetDataPointChoiceResponse](modules.md#affindaapigetdatapointchoiceresponse)
-- [AffindaAPIGetDataPointChoicesResponse](modules.md#affindaapigetdatapointchoicesresponse)
-- [AffindaAPIGetDataPointResponse](modules.md#affindaapigetdatapointresponse)
-- [AffindaAPIGetDocumentResponse](modules.md#affindaapigetdocumentresponse)
-- [AffindaAPIGetExtractorResponse](modules.md#affindaapigetextractorresponse)
-- [AffindaAPIGetInvitationByTokenResponse](modules.md#affindaapigetinvitationbytokenresponse)
-- [AffindaAPIGetInvitationResponse](modules.md#affindaapigetinvitationresponse)
-- [AffindaAPIGetJobDescriptionSearchConfigResponse](modules.md#affindaapigetjobdescriptionsearchconfigresponse)
-- [AffindaAPIGetJobDescriptionSearchDetailResponse](modules.md#affindaapigetjobdescriptionsearchdetailresponse)
-- [AffindaAPIGetMappingDataSourceResponse](modules.md#affindaapigetmappingdatasourceresponse)
-- [AffindaAPIGetMappingDataSourceValueResponse](modules.md#affindaapigetmappingdatasourcevalueresponse)
-- [AffindaAPIGetMappingResponse](modules.md#affindaapigetmappingresponse)
-- [AffindaAPIGetOrganizationMembershipResponse](modules.md#affindaapigetorganizationmembershipresponse)
-- [AffindaAPIGetOrganizationResponse](modules.md#affindaapigetorganizationresponse)
-- [AffindaAPIGetResthookSubscriptionResponse](modules.md#affindaapigetresthooksubscriptionresponse)
-- [AffindaAPIGetResumeSearchConfigResponse](modules.md#affindaapigetresumesearchconfigresponse)
-- [AffindaAPIGetResumeSearchDetailResponse](modules.md#affindaapigetresumesearchdetailresponse)
-- [AffindaAPIGetResumeSearchMatchResponse](modules.md#affindaapigetresumesearchmatchresponse)
-- [AffindaAPIGetResumeSearchSuggestionJobTitleResponse](modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)
-- [AffindaAPIGetResumeSearchSuggestionSkillResponse](modules.md#affindaapigetresumesearchsuggestionskillresponse)
-- [AffindaAPIGetTagResponse](modules.md#affindaapigettagresponse)
-- [AffindaAPIGetUsageByCollectionResponse](modules.md#affindaapigetusagebycollectionresponse)
-- [AffindaAPIGetUsageByWorkspaceResponse](modules.md#affindaapigetusagebyworkspaceresponse)
-- [AffindaAPIGetValidationResultResponse](modules.md#affindaapigetvalidationresultresponse)
-- [AffindaAPIGetWorkspaceMembershipResponse](modules.md#affindaapigetworkspacemembershipresponse)
-- [AffindaAPIGetWorkspaceResponse](modules.md#affindaapigetworkspaceresponse)
-- [AffindaAPIListMappingDataSourceValuesResponse](modules.md#affindaapilistmappingdatasourcevaluesresponse)
-- [AffindaAPIListMappingDataSourcesResponse](modules.md#affindaapilistmappingdatasourcesresponse)
-- [AffindaAPIListMappingsResponse](modules.md#affindaapilistmappingsresponse)
-- [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
-- [AffindaAPIRegenerateApiKeyForApiUserResponse](modules.md#affindaapiregenerateapikeyforapiuserresponse)
-- [AffindaAPIReplaceDataPointChoicesResponse](modules.md#affindaapireplacedatapointchoicesresponse)
-- [AffindaAPIReplaceMappingDataSourceValuesResponse](modules.md#affindaapireplacemappingdatasourcevaluesresponse)
-- [AffindaAPIRespondToInvitationResponse](modules.md#affindaapirespondtoinvitationresponse)
-- [AffindaAPIUpdateAnnotationResponse](modules.md#affindaapiupdateannotationresponse)
-- [AffindaAPIUpdateApiUserResponse](modules.md#affindaapiupdateapiuserresponse)
-- [AffindaAPIUpdateCollectionResponse](modules.md#affindaapiupdatecollectionresponse)
-- [AffindaAPIUpdateDataFieldForCollectionResponse](modules.md#affindaapiupdatedatafieldforcollectionresponse)
-- [AffindaAPIUpdateDataPointChoiceResponse](modules.md#affindaapiupdatedatapointchoiceresponse)
-- [AffindaAPIUpdateDataPointResponse](modules.md#affindaapiupdatedatapointresponse)
-- [AffindaAPIUpdateDocumentDataResponse](modules.md#affindaapiupdatedocumentdataresponse)
-- [AffindaAPIUpdateDocumentResponse](modules.md#affindaapiupdatedocumentresponse)
-- [AffindaAPIUpdateExtractorResponse](modules.md#affindaapiupdateextractorresponse)
-- [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
-- [AffindaAPIUpdateInvitationResponse](modules.md#affindaapiupdateinvitationresponse)
-- [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
-- [AffindaAPIUpdateMappingResponse](modules.md#affindaapiupdatemappingresponse)
-- [AffindaAPIUpdateOrganizationMembershipResponse](modules.md#affindaapiupdateorganizationmembershipresponse)
-- [AffindaAPIUpdateOrganizationResponse](modules.md#affindaapiupdateorganizationresponse)
-- [AffindaAPIUpdateResthookSubscriptionResponse](modules.md#affindaapiupdateresthooksubscriptionresponse)
-- [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
-- [AffindaAPIUpdateTagResponse](modules.md#affindaapiupdatetagresponse)
-- [AffindaAPIUpdateValidationResultResponse](modules.md#affindaapiupdatevalidationresultresponse)
-- [AffindaAPIUpdateWorkspaceResponse](modules.md#affindaapiupdateworkspaceresponse)
+- [ActivateResthookSubscriptionResponse](modules.md#activateresthooksubscriptionresponse)
+- [AddMappingDataSourceValueResponse](modules.md#addmappingdatasourcevalueresponse)
 - [AnnotationContentType](modules.md#annotationcontenttype)
-- [AnnotationWithValidationResults](modules.md#annotationwithvalidationresults)
+- [BatchCreateAnnotationsResponse](modules.md#batchcreateannotationsresponse)
+- [BatchDeleteAnnotationsOperationResponse](modules.md#batchdeleteannotationsoperationresponse)
+- [BatchUpdateAnnotationsResponse](modules.md#batchupdateannotationsresponse)
 - [CollectionDateFormatPreference](modules.md#collectiondateformatpreference)
-- [CurrencyCodeAnnotation](modules.md#currencycodeannotation)
-- [DateAnnotation](modules.md#dateannotation)
-- [DateAnnotationUpdate](modules.md#dateannotationupdate)
+- [CreateAnnotationResponse](modules.md#createannotationresponse)
+- [CreateApiUserResponse](modules.md#createapiuserresponse)
+- [CreateCollectionResponse](modules.md#createcollectionresponse)
+- [CreateDataFieldForCollectionResponse](modules.md#createdatafieldforcollectionresponse)
+- [CreateDataPointChoiceResponse](modules.md#createdatapointchoiceresponse)
+- [CreateDataPointResponse](modules.md#createdatapointresponse)
+- [CreateDocumentResponse](modules.md#createdocumentresponse)
+- [CreateExtractorResponse](modules.md#createextractorresponse)
+- [CreateIndexDocumentResponse](modules.md#createindexdocumentresponse)
+- [CreateIndexResponse](modules.md#createindexresponse)
+- [CreateInvitationResponse](modules.md#createinvitationresponse)
+- [CreateJobDescriptionSearchEmbedUrlResponse](modules.md#createjobdescriptionsearchembedurlresponse)
+- [CreateJobDescriptionSearchResponse](modules.md#createjobdescriptionsearchresponse)
+- [CreateMappingDataSourceResponse](modules.md#createmappingdatasourceresponse)
+- [CreateMappingResponse](modules.md#createmappingresponse)
+- [CreateOrganizationResponse](modules.md#createorganizationresponse)
+- [CreateResthookSubscriptionResponse](modules.md#createresthooksubscriptionresponse)
+- [CreateResumeSearchEmbedUrlResponse](modules.md#createresumesearchembedurlresponse)
+- [CreateResumeSearchResponse](modules.md#createresumesearchresponse)
+- [CreateTagResponse](modules.md#createtagresponse)
+- [CreateValidationResultResponse](modules.md#createvalidationresultresponse)
+- [CreateWorkspaceMembershipResponse](modules.md#createworkspacemembershipresponse)
+- [CreateWorkspaceResponse](modules.md#createworkspaceresponse)
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
-- [DateRangeAnnotation](modules.md#daterangeannotation)
+- [DeleteAnnotationResponse](modules.md#deleteannotationresponse)
 - [DocumentFormat](modules.md#documentformat)
 - [DocumentState](modules.md#documentstate)
 - [DocumentType](modules.md#documenttype)
 - [DocumentUnion](modules.md#documentunion)
+- [EditDocumentPagesResponse](modules.md#editdocumentpagesresponse)
 - [EducationLevel](modules.md#educationlevel)
 - [Enum20](modules.md#enum20)
-- [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
-- [ExpectedRemunerationAnnotationUpdate](modules.md#expectedremunerationannotationupdate)
-- [FloatAnnotation](modules.md#floatannotation)
+- [GetAllAnnotationsResponse](modules.md#getallannotationsresponse)
+- [GetAllApiUsersResponse](modules.md#getallapiusersresponse)
+- [GetAllCollectionsResponse](modules.md#getallcollectionsresponse)
+- [GetAllDataPointsResponse](modules.md#getalldatapointsresponse)
+- [GetAllDocumentsResponse](modules.md#getalldocumentsresponse)
+- [GetAllExtractorsResponse](modules.md#getallextractorsresponse)
+- [GetAllIndexDocumentsResponse](modules.md#getallindexdocumentsresponse)
+- [GetAllIndexesResponse](modules.md#getallindexesresponse)
+- [GetAllInvitationsResponse](modules.md#getallinvitationsresponse)
+- [GetAllOrganizationMembershipsResponse](modules.md#getallorganizationmembershipsresponse)
+- [GetAllOrganizationsResponse](modules.md#getallorganizationsresponse)
+- [GetAllResthookSubscriptionsResponse](modules.md#getallresthooksubscriptionsresponse)
+- [GetAllTagsResponse](modules.md#getalltagsresponse)
+- [GetAllValidationResultsResponse](modules.md#getallvalidationresultsresponse)
+- [GetAllWorkspaceMembershipsResponse](modules.md#getallworkspacemembershipsresponse)
+- [GetAllWorkspacesResponse](modules.md#getallworkspacesresponse)
+- [GetAnnotationResponse](modules.md#getannotationresponse)
+- [GetApiUserResponse](modules.md#getapiuserresponse)
+- [GetCollectionResponse](modules.md#getcollectionresponse)
+- [GetDataFieldForCollectionResponse](modules.md#getdatafieldforcollectionresponse)
+- [GetDataPointChoiceResponse](modules.md#getdatapointchoiceresponse)
+- [GetDataPointChoicesResponse](modules.md#getdatapointchoicesresponse)
+- [GetDataPointResponse](modules.md#getdatapointresponse)
+- [GetDocumentResponse](modules.md#getdocumentresponse)
+- [GetExtractorResponse](modules.md#getextractorresponse)
+- [GetInvitationByTokenResponse](modules.md#getinvitationbytokenresponse)
+- [GetInvitationResponse](modules.md#getinvitationresponse)
+- [GetJobDescriptionSearchConfigResponse](modules.md#getjobdescriptionsearchconfigresponse)
+- [GetJobDescriptionSearchDetailResponse](modules.md#getjobdescriptionsearchdetailresponse)
+- [GetMappingDataSourceResponse](modules.md#getmappingdatasourceresponse)
+- [GetMappingDataSourceValueResponse](modules.md#getmappingdatasourcevalueresponse)
+- [GetMappingResponse](modules.md#getmappingresponse)
+- [GetOrganizationMembershipResponse](modules.md#getorganizationmembershipresponse)
+- [GetOrganizationResponse](modules.md#getorganizationresponse)
+- [GetResthookSubscriptionResponse](modules.md#getresthooksubscriptionresponse)
+- [GetResumeSearchConfigResponse](modules.md#getresumesearchconfigresponse)
+- [GetResumeSearchDetailResponse](modules.md#getresumesearchdetailresponse)
+- [GetResumeSearchMatchResponse](modules.md#getresumesearchmatchresponse)
+- [GetResumeSearchSuggestionJobTitleResponse](modules.md#getresumesearchsuggestionjobtitleresponse)
+- [GetResumeSearchSuggestionSkillResponse](modules.md#getresumesearchsuggestionskillresponse)
+- [GetTagResponse](modules.md#gettagresponse)
+- [GetUsageByCollectionResponse](modules.md#getusagebycollectionresponse)
+- [GetUsageByWorkspaceResponse](modules.md#getusagebyworkspaceresponse)
+- [GetValidationResultResponse](modules.md#getvalidationresultresponse)
+- [GetWorkspaceMembershipResponse](modules.md#getworkspacemembershipresponse)
+- [GetWorkspaceResponse](modules.md#getworkspaceresponse)
 - [IndexDocumentType](modules.md#indexdocumenttype)
-- [InvitationRespondedBy](modules.md#invitationrespondedby)
 - [InvitationResponseStatus](modules.md#invitationresponsestatus)
 - [InvitationStatus](modules.md#invitationstatus)
-- [Invoice](modules.md#invoice)
-- [InvoiceDataBankAccountNumber](modules.md#invoicedatabankaccountnumber)
-- [InvoiceDataBankBsb](modules.md#invoicedatabankbsb)
-- [InvoiceDataBankIban](modules.md#invoicedatabankiban)
-- [InvoiceDataBankSortCode](modules.md#invoicedatabanksortcode)
-- [InvoiceDataBankSwift](modules.md#invoicedatabankswift)
-- [InvoiceDataBpayBillerCode](modules.md#invoicedatabpaybillercode)
-- [InvoiceDataBpayReference](modules.md#invoicedatabpayreference)
-- [InvoiceDataCustomerBusinessNumber](modules.md#invoicedatacustomerbusinessnumber)
-- [InvoiceDataCustomerCompanyName](modules.md#invoicedatacustomercompanyname)
-- [InvoiceDataCustomerContactName](modules.md#invoicedatacustomercontactname)
-- [InvoiceDataCustomerEmail](modules.md#invoicedatacustomeremail)
-- [InvoiceDataCustomerNumber](modules.md#invoicedatacustomernumber)
-- [InvoiceDataCustomerPhoneNumber](modules.md#invoicedatacustomerphonenumber)
-- [InvoiceDataCustomerVat](modules.md#invoicedatacustomervat)
-- [InvoiceDataInvoiceNumber](modules.md#invoicedatainvoicenumber)
-- [InvoiceDataInvoicePurchaseOrderNumber](modules.md#invoicedatainvoicepurchaseordernumber)
-- [InvoiceDataPaymentAmountBase](modules.md#invoicedatapaymentamountbase)
-- [InvoiceDataPaymentAmountDue](modules.md#invoicedatapaymentamountdue)
-- [InvoiceDataPaymentAmountPaid](modules.md#invoicedatapaymentamountpaid)
-- [InvoiceDataPaymentAmountTax](modules.md#invoicedatapaymentamounttax)
-- [InvoiceDataPaymentAmountTotal](modules.md#invoicedatapaymentamounttotal)
-- [InvoiceDataPaymentReference](modules.md#invoicedatapaymentreference)
-- [InvoiceDataSupplierBusinessNumber](modules.md#invoicedatasupplierbusinessnumber)
-- [InvoiceDataSupplierCompanyName](modules.md#invoicedatasuppliercompanyname)
-- [InvoiceDataSupplierEmail](modules.md#invoicedatasupplieremail)
-- [InvoiceDataSupplierFax](modules.md#invoicedatasupplierfax)
-- [InvoiceDataSupplierPhoneNumber](modules.md#invoicedatasupplierphonenumber)
-- [InvoiceDataSupplierVat](modules.md#invoicedatasuppliervat)
-- [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
-- [JobDescription](modules.md#jobdescription)
 - [JobDescriptionSearchConfigDistanceUnit](modules.md#jobdescriptionsearchconfigdistanceunit)
-- [JobDescriptionSearchConfigSearchToolTheme](modules.md#jobdescriptionsearchconfigsearchtooltheme)
-- [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
-- [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
-- [JobTitleAnnotation](modules.md#jobtitleannotation)
-- [JobTitleAnnotationUpdate](modules.md#jobtitleannotationupdate)
-- [LanguageAnnotation](modules.md#languageannotation)
-- [LanguageAnnotationUpdate](modules.md#languageannotationupdate)
-- [LocationAnnotation](modules.md#locationannotation)
-- [LocationAnnotationUpdate](modules.md#locationannotationupdate)
-- [LocationAnnotationUpdateParsed](modules.md#locationannotationupdateparsed)
+- [ListMappingDataSourceValuesResponse](modules.md#listmappingdatasourcevaluesresponse)
+- [ListMappingDataSourcesResponse](modules.md#listmappingdatasourcesresponse)
+- [ListMappingsResponse](modules.md#listmappingsresponse)
+- [ListOccupationGroupsResponse](modules.md#listoccupationgroupsresponse)
 - [ManagementLevel](modules.md#managementlevel)
 - [OrganizationRole](modules.md#organizationrole)
 - [OrganizationUserRole](modules.md#organizationuserrole)
-- [Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema](modules.md#paths11qdcofv3mappingdatasourcesgetresponses200contentapplicationjsonschema)
-- [Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
-- [Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
-- [Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema](modules.md#paths1dpvb2pv3mappingsgetresponses200contentapplicationjsonschema)
-- [Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema](modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)
-- [Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema](modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)
-- [PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema](modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)
-- [PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
-- [PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema](modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)
-- [PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
-- [PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema](modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)
-- [PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
-- [PhoneNumberAnnotation](modules.md#phonenumberannotation)
+- [RegenerateApiKeyForApiUserResponse](modules.md#regenerateapikeyforapiuserresponse)
 - [Region](modules.md#region)
+- [ReplaceDataPointChoicesResponse](modules.md#replacedatapointchoicesresponse)
+- [ReplaceMappingDataSourceValuesResponse](modules.md#replacemappingdatasourcevaluesresponse)
+- [RespondToInvitationResponse](modules.md#respondtoinvitationresponse)
 - [ResthookEvent](modules.md#resthookevent)
 - [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
-- [Resume](modules.md#resume)
 - [ResumeDataLanguagesItem](modules.md#resumedatalanguagesitem)
-- [ResumeRedact](modules.md#resumeredact)
 - [ResumeSearchConfigDistanceUnit](modules.md#resumesearchconfigdistanceunit)
-- [ResumeSearchConfigSearchToolTheme](modules.md#resumesearchconfigsearchtooltheme)
-- [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
-- [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
-- [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
-- [ResumeSearchDetailSkillsValueItem](modules.md#resumesearchdetailskillsvalueitem)
-- [ResumeSearchParametersCustomData](modules.md#resumesearchparameterscustomdata)
 - [ResumeSkillSourcesItemSection](modules.md#resumeskillsourcesitemsection)
-- [RowAnnotation](modules.md#rowannotation)
-- [RowBetaAnnotation](modules.md#rowbetaannotation)
 - [SearchLocationUnit](modules.md#searchlocationunit)
 - [SearchParametersCustomDataFilterType](modules.md#searchparameterscustomdatafiltertype)
-- [SkillAnnotation](modules.md#skillannotation)
-- [SkillAnnotationUpdate](modules.md#skillannotationupdate)
-- [TableAnnotation](modules.md#tableannotation)
-- [TableBetaAnnotation](modules.md#tablebetaannotation)
-- [TextAnnotation](modules.md#textannotation)
-- [TextAnnotationUpdate](modules.md#textannotationupdate)
 - [ThemeConfigPaletteMode](modules.md#themeconfigpalettemode)
-- [UrlAnnotation](modules.md#urlannotation)
+- [UpdateAnnotationResponse](modules.md#updateannotationresponse)
+- [UpdateApiUserResponse](modules.md#updateapiuserresponse)
+- [UpdateCollectionResponse](modules.md#updatecollectionresponse)
+- [UpdateDataFieldForCollectionResponse](modules.md#updatedatafieldforcollectionresponse)
+- [UpdateDataPointChoiceResponse](modules.md#updatedatapointchoiceresponse)
+- [UpdateDataPointResponse](modules.md#updatedatapointresponse)
+- [UpdateDocumentDataResponse](modules.md#updatedocumentdataresponse)
+- [UpdateDocumentResponse](modules.md#updatedocumentresponse)
+- [UpdateExtractorResponse](modules.md#updateextractorresponse)
+- [UpdateIndexResponse](modules.md#updateindexresponse)
+- [UpdateInvitationResponse](modules.md#updateinvitationresponse)
+- [UpdateJobDescriptionSearchConfigResponse](modules.md#updatejobdescriptionsearchconfigresponse)
+- [UpdateMappingResponse](modules.md#updatemappingresponse)
+- [UpdateOrganizationMembershipResponse](modules.md#updateorganizationmembershipresponse)
+- [UpdateOrganizationResponse](modules.md#updateorganizationresponse)
+- [UpdateResthookSubscriptionResponse](modules.md#updateresthooksubscriptionresponse)
+- [UpdateResumeSearchConfigResponse](modules.md#updateresumesearchconfigresponse)
+- [UpdateTagResponse](modules.md#updatetagresponse)
+- [UpdateValidationResultResponse](modules.md#updatevalidationresultresponse)
+- [UpdateWorkspaceResponse](modules.md#updateworkspaceresponse)
 - [Version](modules.md#version)
 - [WorkspaceSplitDocumentsOptions](modules.md#workspacesplitdocumentsoptions)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
-- [YearsExperienceAnnotation](modules.md#yearsexperienceannotation)
-- [YearsExperienceAnnotationUpdate](modules.md#yearsexperienceannotationupdate)
 
 ## Type Aliases
 
-### AffindaAPIActivateResthookSubscriptionResponse
+### ActivateResthookSubscriptionResponse
 
-Ƭ **AffindaAPIActivateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+Ƭ **ActivateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
 
 Contains response data for the activateResthookSubscription operation.
 
 ___
 
-### AffindaAPIAddMappingDataSourceValueResponse
+### AddMappingDataSourceValueResponse
 
-Ƭ **AffindaAPIAddMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
+Ƭ **AddMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
 
 Contains response data for the addMappingDataSourceValue operation.
-
-___
-
-### AffindaAPIBatchCreateAnnotationsResponse
-
-Ƭ **AffindaAPIBatchCreateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
-
-Contains response data for the batchCreateAnnotations operation.
-
-___
-
-### AffindaAPIBatchDeleteAnnotationsResponse
-
-Ƭ **AffindaAPIBatchDeleteAnnotationsResponse**: [`BatchDeleteAnnotationsResponse`](interfaces/BatchDeleteAnnotationsResponse.md)
-
-Contains response data for the batchDeleteAnnotations operation.
-
-___
-
-### AffindaAPIBatchUpdateAnnotationsResponse
-
-Ƭ **AffindaAPIBatchUpdateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
-
-Contains response data for the batchUpdateAnnotations operation.
-
-___
-
-### AffindaAPICreateAnnotationResponse
-
-Ƭ **AffindaAPICreateAnnotationResponse**: [`AnnotationWithValidationResults`](modules.md#annotationwithvalidationresults)
-
-Contains response data for the createAnnotation operation.
-
-___
-
-### AffindaAPICreateApiUserResponse
-
-Ƭ **AffindaAPICreateApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
-
-Contains response data for the createApiUser operation.
-
-___
-
-### AffindaAPICreateCollectionResponse
-
-Ƭ **AffindaAPICreateCollectionResponse**: [`Collection`](interfaces/Collection.md)
-
-Contains response data for the createCollection operation.
-
-___
-
-### AffindaAPICreateDataFieldForCollectionResponse
-
-Ƭ **AffindaAPICreateDataFieldForCollectionResponse**: [`DataField`](interfaces/DataField.md)
-
-Contains response data for the createDataFieldForCollection operation.
-
-___
-
-### AffindaAPICreateDataPointChoiceResponse
-
-Ƭ **AffindaAPICreateDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
-
-Contains response data for the createDataPointChoice operation.
-
-___
-
-### AffindaAPICreateDataPointResponse
-
-Ƭ **AffindaAPICreateDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
-
-Contains response data for the createDataPoint operation.
-
-___
-
-### AffindaAPICreateDocumentResponse
-
-Ƭ **AffindaAPICreateDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
-
-Contains response data for the createDocument operation.
-
-___
-
-### AffindaAPICreateExtractorResponse
-
-Ƭ **AffindaAPICreateExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
-
-Contains response data for the createExtractor operation.
-
-___
-
-### AffindaAPICreateIndexDocumentResponse
-
-Ƭ **AffindaAPICreateIndexDocumentResponse**: [`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
-
-Contains response data for the createIndexDocument operation.
-
-___
-
-### AffindaAPICreateIndexResponse
-
-Ƭ **AffindaAPICreateIndexResponse**: [`Index`](interfaces/Index.md)
-
-Contains response data for the createIndex operation.
-
-___
-
-### AffindaAPICreateInvitationResponse
-
-Ƭ **AffindaAPICreateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
-
-Contains response data for the createInvitation operation.
-
-___
-
-### AffindaAPICreateJobDescriptionSearchEmbedUrlResponse
-
-Ƭ **AffindaAPICreateJobDescriptionSearchEmbedUrlResponse**: [`JobDescriptionSearchEmbed`](interfaces/JobDescriptionSearchEmbed.md)
-
-Contains response data for the createJobDescriptionSearchEmbedUrl operation.
-
-___
-
-### AffindaAPICreateJobDescriptionSearchResponse
-
-Ƭ **AffindaAPICreateJobDescriptionSearchResponse**: [`JobDescriptionSearch`](interfaces/JobDescriptionSearch.md)
-
-Contains response data for the createJobDescriptionSearch operation.
-
-___
-
-### AffindaAPICreateMappingDataSourceResponse
-
-Ƭ **AffindaAPICreateMappingDataSourceResponse**: [`MappingDataSource`](interfaces/MappingDataSource.md)
-
-Contains response data for the createMappingDataSource operation.
-
-___
-
-### AffindaAPICreateMappingResponse
-
-Ƭ **AffindaAPICreateMappingResponse**: [`Mapping`](interfaces/Mapping.md)
-
-Contains response data for the createMapping operation.
-
-___
-
-### AffindaAPICreateOrganizationResponse
-
-Ƭ **AffindaAPICreateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
-
-Contains response data for the createOrganization operation.
-
-___
-
-### AffindaAPICreateResthookSubscriptionResponse
-
-Ƭ **AffindaAPICreateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
-
-Contains response data for the createResthookSubscription operation.
-
-___
-
-### AffindaAPICreateResumeSearchEmbedUrlResponse
-
-Ƭ **AffindaAPICreateResumeSearchEmbedUrlResponse**: [`ResumeSearchEmbed`](interfaces/ResumeSearchEmbed.md)
-
-Contains response data for the createResumeSearchEmbedUrl operation.
-
-___
-
-### AffindaAPICreateResumeSearchResponse
-
-Ƭ **AffindaAPICreateResumeSearchResponse**: [`ResumeSearch`](interfaces/ResumeSearch.md)
-
-Contains response data for the createResumeSearch operation.
-
-___
-
-### AffindaAPICreateTagResponse
-
-Ƭ **AffindaAPICreateTagResponse**: [`Tag`](interfaces/Tag.md)
-
-Contains response data for the createTag operation.
-
-___
-
-### AffindaAPICreateValidationResultResponse
-
-Ƭ **AffindaAPICreateValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
-
-Contains response data for the createValidationResult operation.
-
-___
-
-### AffindaAPICreateWorkspaceMembershipResponse
-
-Ƭ **AffindaAPICreateWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
-
-Contains response data for the createWorkspaceMembership operation.
-
-___
-
-### AffindaAPICreateWorkspaceResponse
-
-Ƭ **AffindaAPICreateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
-
-Contains response data for the createWorkspace operation.
-
-___
-
-### AffindaAPIDeleteAnnotationResponse
-
-Ƭ **AffindaAPIDeleteAnnotationResponse**: [`AnotationDelete`](interfaces/AnotationDelete.md)
-
-Contains response data for the deleteAnnotation operation.
-
-___
-
-### AffindaAPIEditDocumentPagesResponse
-
-Ƭ **AffindaAPIEditDocumentPagesResponse**: [`Meta`](interfaces/Meta.md)[]
-
-Contains response data for the editDocumentPages operation.
-
-___
-
-### AffindaAPIGetAllAnnotationsResponse
-
-Ƭ **AffindaAPIGetAllAnnotationsResponse**: [`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllAnnotations operation.
-
-___
-
-### AffindaAPIGetAllApiUsersResponse
-
-Ƭ **AffindaAPIGetAllApiUsersResponse**: [`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllApiUsers operation.
-
-___
-
-### AffindaAPIGetAllCollectionsResponse
-
-Ƭ **AffindaAPIGetAllCollectionsResponse**: [`Collection`](interfaces/Collection.md)[]
-
-Contains response data for the getAllCollections operation.
-
-___
-
-### AffindaAPIGetAllDataPointsResponse
-
-Ƭ **AffindaAPIGetAllDataPointsResponse**: [`DataPoint`](interfaces/DataPoint.md)[]
-
-Contains response data for the getAllDataPoints operation.
-
-___
-
-### AffindaAPIGetAllDocumentsResponse
-
-Ƭ **AffindaAPIGetAllDocumentsResponse**: [`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllDocuments operation.
-
-___
-
-### AffindaAPIGetAllExtractorsResponse
-
-Ƭ **AffindaAPIGetAllExtractorsResponse**: [`Extractor`](interfaces/Extractor.md)[]
-
-Contains response data for the getAllExtractors operation.
-
-___
-
-### AffindaAPIGetAllIndexDocumentsResponse
-
-Ƭ **AffindaAPIGetAllIndexDocumentsResponse**: [`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
-
-Contains response data for the getAllIndexDocuments operation.
-
-___
-
-### AffindaAPIGetAllIndexesResponse
-
-Ƭ **AffindaAPIGetAllIndexesResponse**: [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllIndexes operation.
-
-___
-
-### AffindaAPIGetAllInvitationsResponse
-
-Ƭ **AffindaAPIGetAllInvitationsResponse**: [`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllInvitations operation.
-
-___
-
-### AffindaAPIGetAllOrganizationMembershipsResponse
-
-Ƭ **AffindaAPIGetAllOrganizationMembershipsResponse**: [`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllOrganizationMemberships operation.
-
-___
-
-### AffindaAPIGetAllOrganizationsResponse
-
-Ƭ **AffindaAPIGetAllOrganizationsResponse**: [`Organization`](interfaces/Organization.md)[]
-
-Contains response data for the getAllOrganizations operation.
-
-___
-
-### AffindaAPIGetAllResthookSubscriptionsResponse
-
-Ƭ **AffindaAPIGetAllResthookSubscriptionsResponse**: [`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllResthookSubscriptions operation.
-
-___
-
-### AffindaAPIGetAllTagsResponse
-
-Ƭ **AffindaAPIGetAllTagsResponse**: [`Tag`](interfaces/Tag.md)[]
-
-Contains response data for the getAllTags operation.
-
-___
-
-### AffindaAPIGetAllValidationResultsResponse
-
-Ƭ **AffindaAPIGetAllValidationResultsResponse**: [`ValidationResult`](interfaces/ValidationResult.md)[]
-
-Contains response data for the getAllValidationResults operation.
-
-___
-
-### AffindaAPIGetAllWorkspaceMembershipsResponse
-
-Ƭ **AffindaAPIGetAllWorkspaceMembershipsResponse**: [`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getAllWorkspaceMemberships operation.
-
-___
-
-### AffindaAPIGetAllWorkspacesResponse
-
-Ƭ **AffindaAPIGetAllWorkspacesResponse**: [`Workspace`](interfaces/Workspace.md)[]
-
-Contains response data for the getAllWorkspaces operation.
-
-___
-
-### AffindaAPIGetAnnotationResponse
-
-Ƭ **AffindaAPIGetAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
-
-Contains response data for the getAnnotation operation.
-
-___
-
-### AffindaAPIGetApiUserResponse
-
-Ƭ **AffindaAPIGetApiUserResponse**: [`ApiUserWithoutKey`](interfaces/ApiUserWithoutKey.md)
-
-Contains response data for the getApiUser operation.
-
-___
-
-### AffindaAPIGetCollectionResponse
-
-Ƭ **AffindaAPIGetCollectionResponse**: [`Collection`](interfaces/Collection.md)
-
-Contains response data for the getCollection operation.
-
-___
-
-### AffindaAPIGetDataFieldForCollectionResponse
-
-Ƭ **AffindaAPIGetDataFieldForCollectionResponse**: [`CollectionField`](interfaces/CollectionField.md)
-
-Contains response data for the getDataFieldForCollection operation.
-
-___
-
-### AffindaAPIGetDataPointChoiceResponse
-
-Ƭ **AffindaAPIGetDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
-
-Contains response data for the getDataPointChoice operation.
-
-___
-
-### AffindaAPIGetDataPointChoicesResponse
-
-Ƭ **AffindaAPIGetDataPointChoicesResponse**: [`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)
-
-Contains response data for the getDataPointChoices operation.
-
-___
-
-### AffindaAPIGetDataPointResponse
-
-Ƭ **AffindaAPIGetDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
-
-Contains response data for the getDataPoint operation.
-
-___
-
-### AffindaAPIGetDocumentResponse
-
-Ƭ **AffindaAPIGetDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
-
-Contains response data for the getDocument operation.
-
-___
-
-### AffindaAPIGetExtractorResponse
-
-Ƭ **AffindaAPIGetExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
-
-Contains response data for the getExtractor operation.
-
-___
-
-### AffindaAPIGetInvitationByTokenResponse
-
-Ƭ **AffindaAPIGetInvitationByTokenResponse**: [`Invitation`](interfaces/Invitation.md)
-
-Contains response data for the getInvitationByToken operation.
-
-___
-
-### AffindaAPIGetInvitationResponse
-
-Ƭ **AffindaAPIGetInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
-
-Contains response data for the getInvitation operation.
-
-___
-
-### AffindaAPIGetJobDescriptionSearchConfigResponse
-
-Ƭ **AffindaAPIGetJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
-
-Contains response data for the getJobDescriptionSearchConfig operation.
-
-___
-
-### AffindaAPIGetJobDescriptionSearchDetailResponse
-
-Ƭ **AffindaAPIGetJobDescriptionSearchDetailResponse**: [`JobDescriptionSearchDetail`](interfaces/JobDescriptionSearchDetail.md)
-
-Contains response data for the getJobDescriptionSearchDetail operation.
-
-___
-
-### AffindaAPIGetMappingDataSourceResponse
-
-Ƭ **AffindaAPIGetMappingDataSourceResponse**: [`MappingDataSource`](interfaces/MappingDataSource.md)
-
-Contains response data for the getMappingDataSource operation.
-
-___
-
-### AffindaAPIGetMappingDataSourceValueResponse
-
-Ƭ **AffindaAPIGetMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
-
-Contains response data for the getMappingDataSourceValue operation.
-
-___
-
-### AffindaAPIGetMappingResponse
-
-Ƭ **AffindaAPIGetMappingResponse**: [`Mapping`](interfaces/Mapping.md)
-
-Contains response data for the getMapping operation.
-
-___
-
-### AffindaAPIGetOrganizationMembershipResponse
-
-Ƭ **AffindaAPIGetOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
-
-Contains response data for the getOrganizationMembership operation.
-
-___
-
-### AffindaAPIGetOrganizationResponse
-
-Ƭ **AffindaAPIGetOrganizationResponse**: [`Organization`](interfaces/Organization.md)
-
-Contains response data for the getOrganization operation.
-
-___
-
-### AffindaAPIGetResthookSubscriptionResponse
-
-Ƭ **AffindaAPIGetResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
-
-Contains response data for the getResthookSubscription operation.
-
-___
-
-### AffindaAPIGetResumeSearchConfigResponse
-
-Ƭ **AffindaAPIGetResumeSearchConfigResponse**: [`ResumeSearchConfig`](interfaces/ResumeSearchConfig.md)
-
-Contains response data for the getResumeSearchConfig operation.
-
-___
-
-### AffindaAPIGetResumeSearchDetailResponse
-
-Ƭ **AffindaAPIGetResumeSearchDetailResponse**: [`ResumeSearchDetail`](interfaces/ResumeSearchDetail.md)
-
-Contains response data for the getResumeSearchDetail operation.
-
-___
-
-### AffindaAPIGetResumeSearchMatchResponse
-
-Ƭ **AffindaAPIGetResumeSearchMatchResponse**: [`ResumeSearchMatch`](interfaces/ResumeSearchMatch.md)
-
-Contains response data for the getResumeSearchMatch operation.
-
-___
-
-### AffindaAPIGetResumeSearchSuggestionJobTitleResponse
-
-Ƭ **AffindaAPIGetResumeSearchSuggestionJobTitleResponse**: `Object`
-
-Contains response data for the getResumeSearchSuggestionJobTitle operation.
-
-#### Type declaration
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | `string`[] | The parsed response body. |
-
-___
-
-### AffindaAPIGetResumeSearchSuggestionSkillResponse
-
-Ƭ **AffindaAPIGetResumeSearchSuggestionSkillResponse**: `Object`
-
-Contains response data for the getResumeSearchSuggestionSkill operation.
-
-#### Type declaration
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | `string`[] | The parsed response body. |
-
-___
-
-### AffindaAPIGetTagResponse
-
-Ƭ **AffindaAPIGetTagResponse**: [`Tag`](interfaces/Tag.md)
-
-Contains response data for the getTag operation.
-
-___
-
-### AffindaAPIGetUsageByCollectionResponse
-
-Ƭ **AffindaAPIGetUsageByCollectionResponse**: [`UsageByCollection`](interfaces/UsageByCollection.md)[]
-
-Contains response data for the getUsageByCollection operation.
-
-___
-
-### AffindaAPIGetUsageByWorkspaceResponse
-
-Ƭ **AffindaAPIGetUsageByWorkspaceResponse**: [`UsageByWorkspace`](interfaces/UsageByWorkspace.md)[]
-
-Contains response data for the getUsageByWorkspace operation.
-
-___
-
-### AffindaAPIGetValidationResultResponse
-
-Ƭ **AffindaAPIGetValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
-
-Contains response data for the getValidationResult operation.
-
-___
-
-### AffindaAPIGetWorkspaceMembershipResponse
-
-Ƭ **AffindaAPIGetWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
-
-Contains response data for the getWorkspaceMembership operation.
-
-___
-
-### AffindaAPIGetWorkspaceResponse
-
-Ƭ **AffindaAPIGetWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
-
-Contains response data for the getWorkspace operation.
-
-___
-
-### AffindaAPIListMappingDataSourceValuesResponse
-
-Ƭ **AffindaAPIListMappingDataSourceValuesResponse**: [`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)
-
-Contains response data for the listMappingDataSourceValues operation.
-
-___
-
-### AffindaAPIListMappingDataSourcesResponse
-
-Ƭ **AffindaAPIListMappingDataSourcesResponse**: [`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](modules.md#paths11qdcofv3mappingdatasourcesgetresponses200contentapplicationjsonschema)
-
-Contains response data for the listMappingDataSources operation.
-
-___
-
-### AffindaAPIListMappingsResponse
-
-Ƭ **AffindaAPIListMappingsResponse**: [`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](modules.md#paths1dpvb2pv3mappingsgetresponses200contentapplicationjsonschema)
-
-Contains response data for the listMappings operation.
-
-___
-
-### AffindaAPIListOccupationGroupsResponse
-
-Ƭ **AffindaAPIListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
-
-Contains response data for the listOccupationGroups operation.
-
-___
-
-### AffindaAPIRegenerateApiKeyForApiUserResponse
-
-Ƭ **AffindaAPIRegenerateApiKeyForApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
-
-Contains response data for the regenerateApiKeyForApiUser operation.
-
-___
-
-### AffindaAPIReplaceDataPointChoicesResponse
-
-Ƭ **AffindaAPIReplaceDataPointChoicesResponse**: [`DataPointChoiceReplaceResponse`](interfaces/DataPointChoiceReplaceResponse.md)
-
-Contains response data for the replaceDataPointChoices operation.
-
-___
-
-### AffindaAPIReplaceMappingDataSourceValuesResponse
-
-Ƭ **AffindaAPIReplaceMappingDataSourceValuesResponse**: `Record`\<`string`, `unknown`\>[]
-
-Contains response data for the replaceMappingDataSourceValues operation.
-
-___
-
-### AffindaAPIRespondToInvitationResponse
-
-Ƭ **AffindaAPIRespondToInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
-
-Contains response data for the respondToInvitation operation.
-
-___
-
-### AffindaAPIUpdateAnnotationResponse
-
-Ƭ **AffindaAPIUpdateAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
-
-Contains response data for the updateAnnotation operation.
-
-___
-
-### AffindaAPIUpdateApiUserResponse
-
-Ƭ **AffindaAPIUpdateApiUserResponse**: [`ApiUserWithoutKey`](interfaces/ApiUserWithoutKey.md)
-
-Contains response data for the updateApiUser operation.
-
-___
-
-### AffindaAPIUpdateCollectionResponse
-
-Ƭ **AffindaAPIUpdateCollectionResponse**: [`Collection`](interfaces/Collection.md)
-
-Contains response data for the updateCollection operation.
-
-___
-
-### AffindaAPIUpdateDataFieldForCollectionResponse
-
-Ƭ **AffindaAPIUpdateDataFieldForCollectionResponse**: [`CollectionField`](interfaces/CollectionField.md)
-
-Contains response data for the updateDataFieldForCollection operation.
-
-___
-
-### AffindaAPIUpdateDataPointChoiceResponse
-
-Ƭ **AffindaAPIUpdateDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
-
-Contains response data for the updateDataPointChoice operation.
-
-___
-
-### AffindaAPIUpdateDataPointResponse
-
-Ƭ **AffindaAPIUpdateDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
-
-Contains response data for the updateDataPoint operation.
-
-___
-
-### AffindaAPIUpdateDocumentDataResponse
-
-Ƭ **AffindaAPIUpdateDocumentDataResponse**: [`DocumentUnion`](modules.md#documentunion)
-
-Contains response data for the updateDocumentData operation.
-
-___
-
-### AffindaAPIUpdateDocumentResponse
-
-Ƭ **AffindaAPIUpdateDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
-
-Contains response data for the updateDocument operation.
-
-___
-
-### AffindaAPIUpdateExtractorResponse
-
-Ƭ **AffindaAPIUpdateExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
-
-Contains response data for the updateExtractor operation.
-
-___
-
-### AffindaAPIUpdateIndexResponse
-
-Ƭ **AffindaAPIUpdateIndexResponse**: [`Index`](interfaces/Index.md)
-
-Contains response data for the updateIndex operation.
-
-___
-
-### AffindaAPIUpdateInvitationResponse
-
-Ƭ **AffindaAPIUpdateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
-
-Contains response data for the updateInvitation operation.
-
-___
-
-### AffindaAPIUpdateJobDescriptionSearchConfigResponse
-
-Ƭ **AffindaAPIUpdateJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
-
-Contains response data for the updateJobDescriptionSearchConfig operation.
-
-___
-
-### AffindaAPIUpdateMappingResponse
-
-Ƭ **AffindaAPIUpdateMappingResponse**: [`Mapping`](interfaces/Mapping.md)
-
-Contains response data for the updateMapping operation.
-
-___
-
-### AffindaAPIUpdateOrganizationMembershipResponse
-
-Ƭ **AffindaAPIUpdateOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
-
-Contains response data for the updateOrganizationMembership operation.
-
-___
-
-### AffindaAPIUpdateOrganizationResponse
-
-Ƭ **AffindaAPIUpdateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
-
-Contains response data for the updateOrganization operation.
-
-___
-
-### AffindaAPIUpdateResthookSubscriptionResponse
-
-Ƭ **AffindaAPIUpdateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
-
-Contains response data for the updateResthookSubscription operation.
-
-___
-
-### AffindaAPIUpdateResumeSearchConfigResponse
-
-Ƭ **AffindaAPIUpdateResumeSearchConfigResponse**: [`ResumeSearchConfig`](interfaces/ResumeSearchConfig.md)
-
-Contains response data for the updateResumeSearchConfig operation.
-
-___
-
-### AffindaAPIUpdateTagResponse
-
-Ƭ **AffindaAPIUpdateTagResponse**: [`Tag`](interfaces/Tag.md)
-
-Contains response data for the updateTag operation.
-
-___
-
-### AffindaAPIUpdateValidationResultResponse
-
-Ƭ **AffindaAPIUpdateValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
-
-Contains response data for the updateValidationResult operation.
-
-___
-
-### AffindaAPIUpdateWorkspaceResponse
-
-Ƭ **AffindaAPIUpdateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
-
-Contains response data for the updateWorkspace operation.
 
 ___
 
@@ -1534,9 +705,27 @@ Defines values for AnnotationContentType. \
 
 ___
 
-### AnnotationWithValidationResults
+### BatchCreateAnnotationsResponse
 
-Ƭ **AnnotationWithValidationResults**: [`Annotation`](interfaces/Annotation.md) & \{ `validationResults?`: [`ValidationResult`](interfaces/ValidationResult.md)[]  }
+Ƭ **BatchCreateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
+
+Contains response data for the batchCreateAnnotations operation.
+
+___
+
+### BatchDeleteAnnotationsOperationResponse
+
+Ƭ **BatchDeleteAnnotationsOperationResponse**: [`BatchDeleteAnnotationsResponse`](interfaces/BatchDeleteAnnotationsResponse.md)
+
+Contains response data for the batchDeleteAnnotations operation.
+
+___
+
+### BatchUpdateAnnotationsResponse
+
+Ƭ **BatchUpdateAnnotationsResponse**: ([`Annotation`](interfaces/Annotation.md) \| ``null``)[]
+
+Contains response data for the batchUpdateAnnotations operation.
 
 ___
 
@@ -1554,21 +743,187 @@ Defines values for CollectionDateFormatPreference. \
 
 ___
 
-### CurrencyCodeAnnotation
+### CreateAnnotationResponse
 
-Ƭ **CurrencyCodeAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`DataPointChoice`](interfaces/DataPointChoice.md)  }
+Ƭ **CreateAnnotationResponse**: [`AnnotationWithValidationResults`](interfaces/AnnotationWithValidationResults.md)
 
-___
-
-### DateAnnotation
-
-Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `Date`  }
+Contains response data for the createAnnotation operation.
 
 ___
 
-### DateAnnotationUpdate
+### CreateApiUserResponse
 
-Ƭ **DateAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `Date`  }
+Ƭ **CreateApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
+
+Contains response data for the createApiUser operation.
+
+___
+
+### CreateCollectionResponse
+
+Ƭ **CreateCollectionResponse**: [`Collection`](interfaces/Collection.md)
+
+Contains response data for the createCollection operation.
+
+___
+
+### CreateDataFieldForCollectionResponse
+
+Ƭ **CreateDataFieldForCollectionResponse**: [`DataField`](interfaces/DataField.md)
+
+Contains response data for the createDataFieldForCollection operation.
+
+___
+
+### CreateDataPointChoiceResponse
+
+Ƭ **CreateDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
+
+Contains response data for the createDataPointChoice operation.
+
+___
+
+### CreateDataPointResponse
+
+Ƭ **CreateDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
+
+Contains response data for the createDataPoint operation.
+
+___
+
+### CreateDocumentResponse
+
+Ƭ **CreateDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
+
+Contains response data for the createDocument operation.
+
+___
+
+### CreateExtractorResponse
+
+Ƭ **CreateExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
+
+Contains response data for the createExtractor operation.
+
+___
+
+### CreateIndexDocumentResponse
+
+Ƭ **CreateIndexDocumentResponse**: [`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
+
+Contains response data for the createIndexDocument operation.
+
+___
+
+### CreateIndexResponse
+
+Ƭ **CreateIndexResponse**: [`Index`](interfaces/Index.md)
+
+Contains response data for the createIndex operation.
+
+___
+
+### CreateInvitationResponse
+
+Ƭ **CreateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the createInvitation operation.
+
+___
+
+### CreateJobDescriptionSearchEmbedUrlResponse
+
+Ƭ **CreateJobDescriptionSearchEmbedUrlResponse**: [`JobDescriptionSearchEmbed`](interfaces/JobDescriptionSearchEmbed.md)
+
+Contains response data for the createJobDescriptionSearchEmbedUrl operation.
+
+___
+
+### CreateJobDescriptionSearchResponse
+
+Ƭ **CreateJobDescriptionSearchResponse**: [`JobDescriptionSearch`](interfaces/JobDescriptionSearch.md)
+
+Contains response data for the createJobDescriptionSearch operation.
+
+___
+
+### CreateMappingDataSourceResponse
+
+Ƭ **CreateMappingDataSourceResponse**: [`MappingDataSource`](interfaces/MappingDataSource.md)
+
+Contains response data for the createMappingDataSource operation.
+
+___
+
+### CreateMappingResponse
+
+Ƭ **CreateMappingResponse**: [`Mapping`](interfaces/Mapping.md)
+
+Contains response data for the createMapping operation.
+
+___
+
+### CreateOrganizationResponse
+
+Ƭ **CreateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
+
+Contains response data for the createOrganization operation.
+
+___
+
+### CreateResthookSubscriptionResponse
+
+Ƭ **CreateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the createResthookSubscription operation.
+
+___
+
+### CreateResumeSearchEmbedUrlResponse
+
+Ƭ **CreateResumeSearchEmbedUrlResponse**: [`ResumeSearchEmbed`](interfaces/ResumeSearchEmbed.md)
+
+Contains response data for the createResumeSearchEmbedUrl operation.
+
+___
+
+### CreateResumeSearchResponse
+
+Ƭ **CreateResumeSearchResponse**: [`ResumeSearch`](interfaces/ResumeSearch.md)
+
+Contains response data for the createResumeSearch operation.
+
+___
+
+### CreateTagResponse
+
+Ƭ **CreateTagResponse**: [`Tag`](interfaces/Tag.md)
+
+Contains response data for the createTag operation.
+
+___
+
+### CreateValidationResultResponse
+
+Ƭ **CreateValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
+
+Contains response data for the createValidationResult operation.
+
+___
+
+### CreateWorkspaceMembershipResponse
+
+Ƭ **CreateWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
+
+Contains response data for the createWorkspaceMembership operation.
+
+___
+
+### CreateWorkspaceResponse
+
+Ƭ **CreateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
+
+Contains response data for the createWorkspace operation.
 
 ___
 
@@ -1602,9 +957,11 @@ Defines values for DateRange. \
 
 ___
 
-### DateRangeAnnotation
+### DeleteAnnotationResponse
 
-Ƭ **DateRangeAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`DateRangeAnnotationParsed`](interfaces/DateRangeAnnotationParsed.md)  }
+Ƭ **DeleteAnnotationResponse**: [`AnotationDelete`](interfaces/AnotationDelete.md)
+
+Contains response data for the deleteAnnotation operation.
 
 ___
 
@@ -1653,7 +1010,15 @@ ___
 
 ### DocumentUnion
 
-Ƭ **DocumentUnion**: [`Document`](interfaces/Document.md) \| [`Resume`](modules.md#resume) \| [`Invoice`](modules.md#invoice) \| [`JobDescription`](modules.md#jobdescription) \| [`ResumeRedact`](modules.md#resumeredact)
+Ƭ **DocumentUnion**: [`Document`](interfaces/Document.md) \| [`Resume`](interfaces/Resume.md) \| [`Invoice`](interfaces/Invoice.md) \| [`JobDescription`](interfaces/JobDescription.md) \| [`ResumeRedact`](interfaces/ResumeRedact.md)
+
+___
+
+### EditDocumentPagesResponse
+
+Ƭ **EditDocumentPagesResponse**: [`Meta`](interfaces/Meta.md)[]
+
+Contains response data for the editDocumentPages operation.
 
 ___
 
@@ -1678,21 +1043,383 @@ Defines values for Enum20. \
 
 ___
 
-### ExpectedRemunerationAnnotation
+### GetAllAnnotationsResponse
 
-Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
+Ƭ **GetAllAnnotationsResponse**: [`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)
 
-___
-
-### ExpectedRemunerationAnnotationUpdate
-
-Ƭ **ExpectedRemunerationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationUpdateParsed`](interfaces/ExpectedRemunerationAnnotationUpdateParsed.md)  }
+Contains response data for the getAllAnnotations operation.
 
 ___
 
-### FloatAnnotation
+### GetAllApiUsersResponse
 
-Ƭ **FloatAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `number`  }
+Ƭ **GetAllApiUsersResponse**: [`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllApiUsers operation.
+
+___
+
+### GetAllCollectionsResponse
+
+Ƭ **GetAllCollectionsResponse**: [`Collection`](interfaces/Collection.md)[]
+
+Contains response data for the getAllCollections operation.
+
+___
+
+### GetAllDataPointsResponse
+
+Ƭ **GetAllDataPointsResponse**: [`DataPoint`](interfaces/DataPoint.md)[]
+
+Contains response data for the getAllDataPoints operation.
+
+___
+
+### GetAllDocumentsResponse
+
+Ƭ **GetAllDocumentsResponse**: [`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllDocuments operation.
+
+___
+
+### GetAllExtractorsResponse
+
+Ƭ **GetAllExtractorsResponse**: [`Extractor`](interfaces/Extractor.md)[]
+
+Contains response data for the getAllExtractors operation.
+
+___
+
+### GetAllIndexDocumentsResponse
+
+Ƭ **GetAllIndexDocumentsResponse**: [`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllIndexDocuments operation.
+
+___
+
+### GetAllIndexesResponse
+
+Ƭ **GetAllIndexesResponse**: [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllIndexes operation.
+
+___
+
+### GetAllInvitationsResponse
+
+Ƭ **GetAllInvitationsResponse**: [`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllInvitations operation.
+
+___
+
+### GetAllOrganizationMembershipsResponse
+
+Ƭ **GetAllOrganizationMembershipsResponse**: [`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllOrganizationMemberships operation.
+
+___
+
+### GetAllOrganizationsResponse
+
+Ƭ **GetAllOrganizationsResponse**: [`Organization`](interfaces/Organization.md)[]
+
+Contains response data for the getAllOrganizations operation.
+
+___
+
+### GetAllResthookSubscriptionsResponse
+
+Ƭ **GetAllResthookSubscriptionsResponse**: [`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllResthookSubscriptions operation.
+
+___
+
+### GetAllTagsResponse
+
+Ƭ **GetAllTagsResponse**: [`Tag`](interfaces/Tag.md)[]
+
+Contains response data for the getAllTags operation.
+
+___
+
+### GetAllValidationResultsResponse
+
+Ƭ **GetAllValidationResultsResponse**: [`ValidationResult`](interfaces/ValidationResult.md)[]
+
+Contains response data for the getAllValidationResults operation.
+
+___
+
+### GetAllWorkspaceMembershipsResponse
+
+Ƭ **GetAllWorkspaceMembershipsResponse**: [`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getAllWorkspaceMemberships operation.
+
+___
+
+### GetAllWorkspacesResponse
+
+Ƭ **GetAllWorkspacesResponse**: [`Workspace`](interfaces/Workspace.md)[]
+
+Contains response data for the getAllWorkspaces operation.
+
+___
+
+### GetAnnotationResponse
+
+Ƭ **GetAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
+
+Contains response data for the getAnnotation operation.
+
+___
+
+### GetApiUserResponse
+
+Ƭ **GetApiUserResponse**: [`ApiUserWithoutKey`](interfaces/ApiUserWithoutKey.md)
+
+Contains response data for the getApiUser operation.
+
+___
+
+### GetCollectionResponse
+
+Ƭ **GetCollectionResponse**: [`Collection`](interfaces/Collection.md)
+
+Contains response data for the getCollection operation.
+
+___
+
+### GetDataFieldForCollectionResponse
+
+Ƭ **GetDataFieldForCollectionResponse**: [`CollectionField`](interfaces/CollectionField.md)
+
+Contains response data for the getDataFieldForCollection operation.
+
+___
+
+### GetDataPointChoiceResponse
+
+Ƭ **GetDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
+
+Contains response data for the getDataPointChoice operation.
+
+___
+
+### GetDataPointChoicesResponse
+
+Ƭ **GetDataPointChoicesResponse**: [`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)
+
+Contains response data for the getDataPointChoices operation.
+
+___
+
+### GetDataPointResponse
+
+Ƭ **GetDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
+
+Contains response data for the getDataPoint operation.
+
+___
+
+### GetDocumentResponse
+
+Ƭ **GetDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
+
+Contains response data for the getDocument operation.
+
+___
+
+### GetExtractorResponse
+
+Ƭ **GetExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
+
+Contains response data for the getExtractor operation.
+
+___
+
+### GetInvitationByTokenResponse
+
+Ƭ **GetInvitationByTokenResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the getInvitationByToken operation.
+
+___
+
+### GetInvitationResponse
+
+Ƭ **GetInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the getInvitation operation.
+
+___
+
+### GetJobDescriptionSearchConfigResponse
+
+Ƭ **GetJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
+
+Contains response data for the getJobDescriptionSearchConfig operation.
+
+___
+
+### GetJobDescriptionSearchDetailResponse
+
+Ƭ **GetJobDescriptionSearchDetailResponse**: [`JobDescriptionSearchDetail`](interfaces/JobDescriptionSearchDetail.md)
+
+Contains response data for the getJobDescriptionSearchDetail operation.
+
+___
+
+### GetMappingDataSourceResponse
+
+Ƭ **GetMappingDataSourceResponse**: [`MappingDataSource`](interfaces/MappingDataSource.md)
+
+Contains response data for the getMappingDataSource operation.
+
+___
+
+### GetMappingDataSourceValueResponse
+
+Ƭ **GetMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
+
+Contains response data for the getMappingDataSourceValue operation.
+
+___
+
+### GetMappingResponse
+
+Ƭ **GetMappingResponse**: [`Mapping`](interfaces/Mapping.md)
+
+Contains response data for the getMapping operation.
+
+___
+
+### GetOrganizationMembershipResponse
+
+Ƭ **GetOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
+
+Contains response data for the getOrganizationMembership operation.
+
+___
+
+### GetOrganizationResponse
+
+Ƭ **GetOrganizationResponse**: [`Organization`](interfaces/Organization.md)
+
+Contains response data for the getOrganization operation.
+
+___
+
+### GetResthookSubscriptionResponse
+
+Ƭ **GetResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the getResthookSubscription operation.
+
+___
+
+### GetResumeSearchConfigResponse
+
+Ƭ **GetResumeSearchConfigResponse**: [`ResumeSearchConfig`](interfaces/ResumeSearchConfig.md)
+
+Contains response data for the getResumeSearchConfig operation.
+
+___
+
+### GetResumeSearchDetailResponse
+
+Ƭ **GetResumeSearchDetailResponse**: [`ResumeSearchDetail`](interfaces/ResumeSearchDetail.md)
+
+Contains response data for the getResumeSearchDetail operation.
+
+___
+
+### GetResumeSearchMatchResponse
+
+Ƭ **GetResumeSearchMatchResponse**: [`ResumeSearchMatch`](interfaces/ResumeSearchMatch.md)
+
+Contains response data for the getResumeSearchMatch operation.
+
+___
+
+### GetResumeSearchSuggestionJobTitleResponse
+
+Ƭ **GetResumeSearchSuggestionJobTitleResponse**: `Object`
+
+Contains response data for the getResumeSearchSuggestionJobTitle operation.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | `string`[] | The parsed response body. |
+
+___
+
+### GetResumeSearchSuggestionSkillResponse
+
+Ƭ **GetResumeSearchSuggestionSkillResponse**: `Object`
+
+Contains response data for the getResumeSearchSuggestionSkill operation.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | `string`[] | The parsed response body. |
+
+___
+
+### GetTagResponse
+
+Ƭ **GetTagResponse**: [`Tag`](interfaces/Tag.md)
+
+Contains response data for the getTag operation.
+
+___
+
+### GetUsageByCollectionResponse
+
+Ƭ **GetUsageByCollectionResponse**: [`UsageByCollection`](interfaces/UsageByCollection.md)[]
+
+Contains response data for the getUsageByCollection operation.
+
+___
+
+### GetUsageByWorkspaceResponse
+
+Ƭ **GetUsageByWorkspaceResponse**: [`UsageByWorkspace`](interfaces/UsageByWorkspace.md)[]
+
+Contains response data for the getUsageByWorkspace operation.
+
+___
+
+### GetValidationResultResponse
+
+Ƭ **GetValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
+
+Contains response data for the getValidationResult operation.
+
+___
+
+### GetWorkspaceMembershipResponse
+
+Ƭ **GetWorkspaceMembershipResponse**: [`WorkspaceMembership`](interfaces/WorkspaceMembership.md)
+
+Contains response data for the getWorkspaceMembership operation.
+
+___
+
+### GetWorkspaceResponse
+
+Ƭ **GetWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
+
+Contains response data for the getWorkspace operation.
 
 ___
 
@@ -1706,12 +1433,6 @@ Defines values for IndexDocumentType. \
 ### Known values supported by the service
 **resumes** \
 **job_descriptions**
-
-___
-
-### InvitationRespondedBy
-
-Ƭ **InvitationRespondedBy**: [`User`](interfaces/User.md) & {}
 
 ___
 
@@ -1742,192 +1463,6 @@ Defines values for InvitationStatus. \
 
 ___
 
-### Invoice
-
-Ƭ **Invoice**: [`Document`](interfaces/Document.md) & \{ `data?`: [`InvoiceData`](interfaces/InvoiceData.md) ; `extractor`: ``"invoice"``  }
-
-___
-
-### InvoiceDataBankAccountNumber
-
-Ƭ **InvoiceDataBankAccountNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1`](interfaces/Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1.md) & {}
-
-___
-
-### InvoiceDataBankBsb
-
-Ƭ **InvoiceDataBankBsb**: [`TextAnnotation`](modules.md#textannotation) & [`Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1`](interfaces/Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.md) & {}
-
-___
-
-### InvoiceDataBankIban
-
-Ƭ **InvoiceDataBankIban**: [`TextAnnotation`](modules.md#textannotation) & [`Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1`](interfaces/Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.md) & {}
-
-___
-
-### InvoiceDataBankSortCode
-
-Ƭ **InvoiceDataBankSortCode**: [`TextAnnotation`](modules.md#textannotation) & [`Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1`](interfaces/Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.md) & {}
-
-___
-
-### InvoiceDataBankSwift
-
-Ƭ **InvoiceDataBankSwift**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1`](interfaces/Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.md) & {}
-
-___
-
-### InvoiceDataBpayBillerCode
-
-Ƭ **InvoiceDataBpayBillerCode**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1`](interfaces/ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1.md) & {}
-
-___
-
-### InvoiceDataBpayReference
-
-Ƭ **InvoiceDataBpayReference**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1`](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerBusinessNumber
-
-Ƭ **InvoiceDataCustomerBusinessNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1`](interfaces/Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerCompanyName
-
-Ƭ **InvoiceDataCustomerCompanyName**: [`TextAnnotation`](modules.md#textannotation) & [`Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1`](interfaces/Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerContactName
-
-Ƭ **InvoiceDataCustomerContactName**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1`](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerEmail
-
-Ƭ **InvoiceDataCustomerEmail**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1`](interfaces/Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerNumber
-
-Ƭ **InvoiceDataCustomerNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1`](interfaces/Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerPhoneNumber
-
-Ƭ **InvoiceDataCustomerPhoneNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1`](interfaces/Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1.md) & {}
-
-___
-
-### InvoiceDataCustomerVat
-
-Ƭ **InvoiceDataCustomerVat**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1`](interfaces/ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.md) & {}
-
-___
-
-### InvoiceDataInvoiceNumber
-
-Ƭ **InvoiceDataInvoiceNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1`](interfaces/Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1.md) & {}
-
-___
-
-### InvoiceDataInvoicePurchaseOrderNumber
-
-Ƭ **InvoiceDataInvoicePurchaseOrderNumber**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1`](interfaces/ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1.md) & {}
-
-___
-
-### InvoiceDataPaymentAmountBase
-
-Ƭ **InvoiceDataPaymentAmountBase**: [`TextAnnotation`](modules.md#textannotation) & [`Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1`](interfaces/Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1.md) & {}
-
-___
-
-### InvoiceDataPaymentAmountDue
-
-Ƭ **InvoiceDataPaymentAmountDue**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1`](interfaces/ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.md) & {}
-
-___
-
-### InvoiceDataPaymentAmountPaid
-
-Ƭ **InvoiceDataPaymentAmountPaid**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1`](interfaces/Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1.md) & {}
-
-___
-
-### InvoiceDataPaymentAmountTax
-
-Ƭ **InvoiceDataPaymentAmountTax**: [`TextAnnotation`](modules.md#textannotation) & [`Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1`](interfaces/Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1.md) & {}
-
-___
-
-### InvoiceDataPaymentAmountTotal
-
-Ƭ **InvoiceDataPaymentAmountTotal**: [`TextAnnotation`](modules.md#textannotation) & [`Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1`](interfaces/Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1.md) & {}
-
-___
-
-### InvoiceDataPaymentReference
-
-Ƭ **InvoiceDataPaymentReference**: [`TextAnnotation`](modules.md#textannotation) & [`Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1`](interfaces/Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierBusinessNumber
-
-Ƭ **InvoiceDataSupplierBusinessNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1`](interfaces/Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierCompanyName
-
-Ƭ **InvoiceDataSupplierCompanyName**: [`TextAnnotation`](modules.md#textannotation) & [`Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1`](interfaces/Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierEmail
-
-Ƭ **InvoiceDataSupplierEmail**: [`TextAnnotation`](modules.md#textannotation) & [`Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1`](interfaces/Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierFax
-
-Ƭ **InvoiceDataSupplierFax**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1`](interfaces/Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierPhoneNumber
-
-Ƭ **InvoiceDataSupplierPhoneNumber**: [`TextAnnotation`](modules.md#textannotation) & [`Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1`](interfaces/Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierVat
-
-Ƭ **InvoiceDataSupplierVat**: [`TextAnnotation`](modules.md#textannotation) & [`ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1`](interfaces/ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.md) & {}
-
-___
-
-### InvoiceDataSupplierWebsite
-
-Ƭ **InvoiceDataSupplierWebsite**: [`TextAnnotation`](modules.md#textannotation) & [`Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1`](interfaces/Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.md) & {}
-
-___
-
-### JobDescription
-
-Ƭ **JobDescription**: [`Document`](interfaces/Document.md) & \{ `data?`: [`JobDescriptionData`](interfaces/JobDescriptionData.md) ; `extractor`: ``"job-description"``  }
-
-___
-
 ### JobDescriptionSearchConfigDistanceUnit
 
 Ƭ **JobDescriptionSearchConfigDistanceUnit**: `string`
@@ -1941,65 +1476,35 @@ Defines values for JobDescriptionSearchConfigDistanceUnit. \
 
 ___
 
-### JobDescriptionSearchConfigSearchToolTheme
+### ListMappingDataSourceValuesResponse
 
-Ƭ **JobDescriptionSearchConfigSearchToolTheme**: [`ThemeConfig`](interfaces/ThemeConfig.md) & {}
+Ƭ **ListMappingDataSourceValuesResponse**: [`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)
 
-Customize the theme of the embeded search tool.
-
-___
-
-### JobDescriptionSearchDetailLocationValue
-
-Ƭ **JobDescriptionSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
+Contains response data for the listMappingDataSourceValues operation.
 
 ___
 
-### JobDescriptionSearchDetailOccupationGroupValue
+### ListMappingDataSourcesResponse
 
-Ƭ **JobDescriptionSearchDetailOccupationGroupValue**: [`OccupationGroupSearchResult`](interfaces/OccupationGroupSearchResult.md) & {}
+Ƭ **ListMappingDataSourcesResponse**: [`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)
 
-___
-
-### JobTitleAnnotation
-
-Ƭ **JobTitleAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`JobTitleAnnotationParsed`](interfaces/JobTitleAnnotationParsed.md)  }
+Contains response data for the listMappingDataSources operation.
 
 ___
 
-### JobTitleAnnotationUpdate
+### ListMappingsResponse
 
-Ƭ **JobTitleAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & [`JobTitleParsed`](interfaces/JobTitleParsed.md) & {}
+Ƭ **ListMappingsResponse**: [`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)
 
-___
-
-### LanguageAnnotation
-
-Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
+Contains response data for the listMappings operation.
 
 ___
 
-### LanguageAnnotationUpdate
+### ListOccupationGroupsResponse
 
-Ƭ **LanguageAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `string`  }
+Ƭ **ListOccupationGroupsResponse**: [`OccupationGroup`](interfaces/OccupationGroup.md)[]
 
-___
-
-### LocationAnnotation
-
-Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`Location`](interfaces/Location.md)  }
-
-___
-
-### LocationAnnotationUpdate
-
-Ƭ **LocationAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: [`LocationAnnotationUpdateParsed`](modules.md#locationannotationupdateparsed)  }
-
-___
-
-### LocationAnnotationUpdateParsed
-
-Ƭ **LocationAnnotationUpdateParsed**: [`Location`](interfaces/Location.md) & {}
+Contains response data for the listOccupationGroups operation.
 
 ___
 
@@ -2037,81 +1542,11 @@ Defines values for OrganizationUserRole. \
 
 ___
 
-### Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema
+### RegenerateApiKeyForApiUserResponse
 
-Ƭ **Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+Ƭ **RegenerateApiKeyForApiUserResponse**: [`ApiUserWithKey`](interfaces/ApiUserWithKey.md)
 
-___
-
-### Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema
-
-Ƭ **Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
-
-Ƭ **Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema
-
-Ƭ **PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
-
-Ƭ **PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
-
-Ƭ **PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
-
-___
-
-### PhoneNumberAnnotation
-
-Ƭ **PhoneNumberAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`PhoneNumberAnnotationParsed`](interfaces/PhoneNumberAnnotationParsed.md)  }
+Contains response data for the regenerateApiKeyForApiUser operation.
 
 ___
 
@@ -2126,6 +1561,30 @@ Defines values for Region. \
 **api** \
 **api.eu1** \
 **api.us1**
+
+___
+
+### ReplaceDataPointChoicesResponse
+
+Ƭ **ReplaceDataPointChoicesResponse**: [`DataPointChoiceReplaceResponse`](interfaces/DataPointChoiceReplaceResponse.md)
+
+Contains response data for the replaceDataPointChoices operation.
+
+___
+
+### ReplaceMappingDataSourceValuesResponse
+
+Ƭ **ReplaceMappingDataSourceValuesResponse**: `Record`\<`string`, `unknown`\>[]
+
+Contains response data for the replaceMappingDataSourceValues operation.
+
+___
+
+### RespondToInvitationResponse
+
+Ƭ **RespondToInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the respondToInvitation operation.
 
 ___
 
@@ -2167,12 +1626,6 @@ Defines values for ResthookSubscriptionVersion. \
 **v1** \
 **v2** \
 **v3**
-
-___
-
-### Resume
-
-Ƭ **Resume**: [`Document`](interfaces/Document.md) & \{ `data?`: [`ResumeData`](interfaces/ResumeData.md) ; `extractor`: ``"resume"``  }
 
 ___
 
@@ -2390,12 +1843,6 @@ Defines values for ResumeDataLanguagesItem. \
 
 ___
 
-### ResumeRedact
-
-Ƭ **ResumeRedact**: [`Document`](interfaces/Document.md) & \{ `data?`: [`ResumeRedactData`](interfaces/ResumeRedactData.md) ; `extractor`: ``"resume-redact"``  }
-
-___
-
 ### ResumeSearchConfigDistanceUnit
 
 Ƭ **ResumeSearchConfigDistanceUnit**: `string`
@@ -2406,44 +1853,6 @@ Defines values for ResumeSearchConfigDistanceUnit. \
 ### Known values supported by the service
 **mi** \
 **km**
-
-___
-
-### ResumeSearchConfigSearchToolTheme
-
-Ƭ **ResumeSearchConfigSearchToolTheme**: [`ThemeConfig`](interfaces/ThemeConfig.md) & {}
-
-Customize the theme of the embeded search tool.
-
-___
-
-### ResumeSearchDetailEducationValueItem
-
-Ƭ **ResumeSearchDetailEducationValueItem**: [`Education`](interfaces/Education.md) & [`ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1`](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md) & {}
-
-___
-
-### ResumeSearchDetailLanguagesValueItem
-
-Ƭ **ResumeSearchDetailLanguagesValueItem**: [`ResumeSkill`](interfaces/ResumeSkill.md) & [`Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1`](interfaces/Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1.md) & {}
-
-___
-
-### ResumeSearchDetailLocationValue
-
-Ƭ **ResumeSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
-
-___
-
-### ResumeSearchDetailSkillsValueItem
-
-Ƭ **ResumeSearchDetailSkillsValueItem**: [`ResumeSkill`](interfaces/ResumeSkill.md) & [`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md) & {}
-
-___
-
-### ResumeSearchParametersCustomData
-
-Ƭ **ResumeSearchParametersCustomData**: [`SearchParametersCustomData`](interfaces/SearchParametersCustomData.md) & {}
 
 ___
 
@@ -2478,18 +1887,6 @@ Defines values for ResumeSkillSourcesItemSection. \
 
 ___
 
-### RowAnnotation
-
-Ƭ **RowAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`RowAnnotationParsed`](interfaces/RowAnnotationParsed.md)  }
-
-___
-
-### RowBetaAnnotation
-
-Ƭ **RowBetaAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`RowBetaAnnotationParsed`](interfaces/RowBetaAnnotationParsed.md)  }
-
-___
-
 ### SearchLocationUnit
 
 Ƭ **SearchLocationUnit**: ``"km"`` \| ``"mi"``
@@ -2511,42 +1908,6 @@ Defines values for SearchParametersCustomDataFilterType. \
 
 ___
 
-### SkillAnnotation
-
-Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
-
-___
-
-### SkillAnnotationUpdate
-
-Ƭ **SkillAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `string`  }
-
-___
-
-### TableAnnotation
-
-Ƭ **TableAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`TableAnnotationParsed`](interfaces/TableAnnotationParsed.md)  }
-
-___
-
-### TableBetaAnnotation
-
-Ƭ **TableBetaAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`TableBetaAnnotationParsed`](interfaces/TableBetaAnnotationParsed.md)  }
-
-___
-
-### TextAnnotation
-
-Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
-
-___
-
-### TextAnnotationUpdate
-
-Ƭ **TextAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: `string`  }
-
-___
-
 ### ThemeConfigPaletteMode
 
 Ƭ **ThemeConfigPaletteMode**: `string`
@@ -2560,9 +1921,163 @@ Defines values for ThemeConfigPaletteMode. \
 
 ___
 
-### UrlAnnotation
+### UpdateAnnotationResponse
 
-Ƭ **UrlAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`UrlAnnotationParsed`](interfaces/UrlAnnotationParsed.md)  }
+Ƭ **UpdateAnnotationResponse**: [`Annotation`](interfaces/Annotation.md)
+
+Contains response data for the updateAnnotation operation.
+
+___
+
+### UpdateApiUserResponse
+
+Ƭ **UpdateApiUserResponse**: [`ApiUserWithoutKey`](interfaces/ApiUserWithoutKey.md)
+
+Contains response data for the updateApiUser operation.
+
+___
+
+### UpdateCollectionResponse
+
+Ƭ **UpdateCollectionResponse**: [`Collection`](interfaces/Collection.md)
+
+Contains response data for the updateCollection operation.
+
+___
+
+### UpdateDataFieldForCollectionResponse
+
+Ƭ **UpdateDataFieldForCollectionResponse**: [`CollectionField`](interfaces/CollectionField.md)
+
+Contains response data for the updateDataFieldForCollection operation.
+
+___
+
+### UpdateDataPointChoiceResponse
+
+Ƭ **UpdateDataPointChoiceResponse**: [`DataPointChoice`](interfaces/DataPointChoice.md)
+
+Contains response data for the updateDataPointChoice operation.
+
+___
+
+### UpdateDataPointResponse
+
+Ƭ **UpdateDataPointResponse**: [`DataPoint`](interfaces/DataPoint.md)
+
+Contains response data for the updateDataPoint operation.
+
+___
+
+### UpdateDocumentDataResponse
+
+Ƭ **UpdateDocumentDataResponse**: [`DocumentUnion`](modules.md#documentunion)
+
+Contains response data for the updateDocumentData operation.
+
+___
+
+### UpdateDocumentResponse
+
+Ƭ **UpdateDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
+
+Contains response data for the updateDocument operation.
+
+___
+
+### UpdateExtractorResponse
+
+Ƭ **UpdateExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
+
+Contains response data for the updateExtractor operation.
+
+___
+
+### UpdateIndexResponse
+
+Ƭ **UpdateIndexResponse**: [`Index`](interfaces/Index.md)
+
+Contains response data for the updateIndex operation.
+
+___
+
+### UpdateInvitationResponse
+
+Ƭ **UpdateInvitationResponse**: [`Invitation`](interfaces/Invitation.md)
+
+Contains response data for the updateInvitation operation.
+
+___
+
+### UpdateJobDescriptionSearchConfigResponse
+
+Ƭ **UpdateJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
+
+Contains response data for the updateJobDescriptionSearchConfig operation.
+
+___
+
+### UpdateMappingResponse
+
+Ƭ **UpdateMappingResponse**: [`Mapping`](interfaces/Mapping.md)
+
+Contains response data for the updateMapping operation.
+
+___
+
+### UpdateOrganizationMembershipResponse
+
+Ƭ **UpdateOrganizationMembershipResponse**: [`OrganizationMembership`](interfaces/OrganizationMembership.md)
+
+Contains response data for the updateOrganizationMembership operation.
+
+___
+
+### UpdateOrganizationResponse
+
+Ƭ **UpdateOrganizationResponse**: [`Organization`](interfaces/Organization.md)
+
+Contains response data for the updateOrganization operation.
+
+___
+
+### UpdateResthookSubscriptionResponse
+
+Ƭ **UpdateResthookSubscriptionResponse**: [`ResthookSubscription`](interfaces/ResthookSubscription.md)
+
+Contains response data for the updateResthookSubscription operation.
+
+___
+
+### UpdateResumeSearchConfigResponse
+
+Ƭ **UpdateResumeSearchConfigResponse**: [`ResumeSearchConfig`](interfaces/ResumeSearchConfig.md)
+
+Contains response data for the updateResumeSearchConfig operation.
+
+___
+
+### UpdateTagResponse
+
+Ƭ **UpdateTagResponse**: [`Tag`](interfaces/Tag.md)
+
+Contains response data for the updateTag operation.
+
+___
+
+### UpdateValidationResultResponse
+
+Ƭ **UpdateValidationResultResponse**: [`ValidationResult`](interfaces/ValidationResult.md)
+
+Contains response data for the updateValidationResult operation.
+
+___
+
+### UpdateWorkspaceResponse
+
+Ƭ **UpdateWorkspaceResponse**: [`Workspace`](interfaces/Workspace.md)
+
+Contains response data for the updateWorkspace operation.
 
 ___
 
@@ -2605,15 +2120,3 @@ Defines values for WorkspaceVisibility. \
 ### Known values supported by the service
 **organization** \
 **private**
-
-___
-
-### YearsExperienceAnnotation
-
-Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
-
-___
-
-### YearsExperienceAnnotationUpdate
-
-Ƭ **YearsExperienceAnnotationUpdate**: [`AnnotationBase`](interfaces/AnnotationBase.md) & \{ `parsed?`: [`YearsExperienceAnnotationUpdateParsed`](interfaces/YearsExperienceAnnotationUpdateParsed.md)  }

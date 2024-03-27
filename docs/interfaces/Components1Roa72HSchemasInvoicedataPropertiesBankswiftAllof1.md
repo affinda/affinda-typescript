@@ -2,6 +2,12 @@
 
 # Interface: Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1
 
+## Hierarchy
+
+- **`Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1`**
+
+  ↳ [`InvoiceDataBankSwift`](InvoiceDataBankSwift.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

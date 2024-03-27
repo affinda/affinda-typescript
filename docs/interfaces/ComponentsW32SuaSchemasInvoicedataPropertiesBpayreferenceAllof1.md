@@ -2,6 +2,12 @@
 
 # Interface: ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1
 
+## Hierarchy
+
+- **`ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1`**
+
+  ↳ [`InvoiceDataBpayReference`](InvoiceDataBpayReference.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

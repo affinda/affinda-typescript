@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`JobDescriptionSearchDetailLocationValue`](../modules.md#jobdescriptionsearchdetaillocationvalue)
+• `Optional` **value**: [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)

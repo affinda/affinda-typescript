@@ -2,6 +2,46 @@
 
 # Interface: Annotation
 
+## Hierarchy
+
+- **`Annotation`**
+
+  ↳ [`JobTitleAnnotation`](JobTitleAnnotation.md)
+
+  ↳ [`TextAnnotation`](TextAnnotation.md)
+
+  ↳ [`DateAnnotation`](DateAnnotation.md)
+
+  ↳ [`LanguageAnnotation`](LanguageAnnotation.md)
+
+  ↳ [`SkillAnnotation`](SkillAnnotation.md)
+
+  ↳ [`ExpectedRemunerationAnnotation`](ExpectedRemunerationAnnotation.md)
+
+  ↳ [`LocationAnnotation`](LocationAnnotation.md)
+
+  ↳ [`YearsExperienceAnnotation`](YearsExperienceAnnotation.md)
+
+  ↳ [`AnnotationWithValidationResults`](AnnotationWithValidationResults.md)
+
+  ↳ [`FloatAnnotation`](FloatAnnotation.md)
+
+  ↳ [`RowAnnotation`](RowAnnotation.md)
+
+  ↳ [`TableAnnotation`](TableAnnotation.md)
+
+  ↳ [`RowBetaAnnotation`](RowBetaAnnotation.md)
+
+  ↳ [`TableBetaAnnotation`](TableBetaAnnotation.md)
+
+  ↳ [`CurrencyCodeAnnotation`](CurrencyCodeAnnotation.md)
+
+  ↳ [`DateRangeAnnotation`](DateRangeAnnotation.md)
+
+  ↳ [`PhoneNumberAnnotation`](PhoneNumberAnnotation.md)
+
+  ↳ [`UrlAnnotation`](UrlAnnotation.md)
+
 ## Indexable
 
 ▪ [property: `string`]: `any`

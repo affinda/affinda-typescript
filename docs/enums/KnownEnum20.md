@@ -17,8 +17,12 @@ Known values of [Enum20](../modules.md#enum20) that the service accepts.
 
 • **JobDescriptions** = ``"job_descriptions"``
 
+JobDescriptions
+
 ___
 
 ### Resumes
 
 • **Resumes** = ``"resumes"``
+
+Resumes

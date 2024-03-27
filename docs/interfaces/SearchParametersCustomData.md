@@ -2,6 +2,12 @@
 
 # Interface: SearchParametersCustomData
 
+## Hierarchy
+
+- **`SearchParametersCustomData`**
+
+  ↳ [`ResumeSearchParametersCustomData`](ResumeSearchParametersCustomData.md)
+
 ## Table of contents
 
 ### Properties

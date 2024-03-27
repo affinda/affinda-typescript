@@ -2,6 +2,12 @@
 
 # Interface: Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1
 
+## Hierarchy
+
+- **`Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1`**
+
+  ↳ [`InvoiceDataPaymentAmountPaid`](InvoiceDataPaymentAmountPaid.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

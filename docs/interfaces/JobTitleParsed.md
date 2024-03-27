@@ -2,6 +2,12 @@
 
 # Interface: JobTitleParsed
 
+## Hierarchy
+
+- **`JobTitleParsed`**
+
+  ↳ [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
+
 ## Table of contents
 
 ### Properties

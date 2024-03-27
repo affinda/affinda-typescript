@@ -19,11 +19,15 @@ Known values of [WorkspaceSplitDocumentsOptions](../modules.md#workspacesplitdoc
 
 • **Aggressive** = ``"aggressive"``
 
+Aggressive
+
 ___
 
 ### Conservative
 
 • **Conservative** = ``"conservative"``
+
+Conservative
 
 ___
 
@@ -31,8 +35,12 @@ ___
 
 • **Leave** = ``"leave"``
 
+Leave
+
 ___
 
 ### Recommended
 
 • **Recommended** = ``"recommended"``
+
+Recommended

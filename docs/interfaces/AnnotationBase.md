@@ -2,6 +2,26 @@
 
 # Interface: AnnotationBase
 
+## Hierarchy
+
+- **`AnnotationBase`**
+
+  ↳ [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
+
+  ↳ [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+
+  ↳ [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
+
+  ↳ [`LanguageAnnotationUpdate`](LanguageAnnotationUpdate.md)
+
+  ↳ [`SkillAnnotationUpdate`](SkillAnnotationUpdate.md)
+
+  ↳ [`ExpectedRemunerationAnnotationUpdate`](ExpectedRemunerationAnnotationUpdate.md)
+
+  ↳ [`LocationAnnotationUpdate`](LocationAnnotationUpdate.md)
+
+  ↳ [`YearsExperienceAnnotationUpdate`](YearsExperienceAnnotationUpdate.md)
+
 ## Indexable
 
 ▪ [property: `string`]: `any`

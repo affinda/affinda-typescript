@@ -17,8 +17,12 @@ Known values of [WorkspaceVisibility](../modules.md#workspacevisibility) that th
 
 • **Organization** = ``"organization"``
 
+Organization
+
 ___
 
 ### Private
 
 • **Private** = ``"private"``
+
+Private

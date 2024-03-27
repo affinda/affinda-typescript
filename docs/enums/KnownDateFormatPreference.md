@@ -18,14 +18,20 @@ Known values of [DateFormatPreference](../modules.md#dateformatpreference) that 
 
 • **DMY** = ``"DMY"``
 
+DMY
+
 ___
 
 ### MDY
 
 • **MDY** = ``"MDY"``
 
+MDY
+
 ___
 
 ### YMD
 
 • **YMD** = ``"YMD"``
+
+YMD

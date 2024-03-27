@@ -2,6 +2,12 @@
 
 # Interface: Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1
 
+## Hierarchy
+
+- **`Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1`**
+
+  ↳ [`InvoiceDataSupplierFax`](InvoiceDataSupplierFax.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

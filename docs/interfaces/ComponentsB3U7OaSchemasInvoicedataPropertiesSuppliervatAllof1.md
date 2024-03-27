@@ -2,6 +2,12 @@
 
 # Interface: ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1
 
+## Hierarchy
+
+- **`ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1`**
+
+  ↳ [`InvoiceDataSupplierVat`](InvoiceDataSupplierVat.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

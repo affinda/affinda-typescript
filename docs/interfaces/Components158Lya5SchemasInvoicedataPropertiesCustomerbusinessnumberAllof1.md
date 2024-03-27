@@ -2,6 +2,12 @@
 
 # Interface: Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1
 
+## Hierarchy
+
+- **`Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1`**
+
+  ↳ [`InvoiceDataCustomerBusinessNumber`](InvoiceDataCustomerBusinessNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

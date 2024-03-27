@@ -17,8 +17,12 @@ Known values of [SearchParametersCustomDataFilterType](../modules.md#searchparam
 
 • **Equals** = ``"equals"``
 
+Equals
+
 ___
 
 ### Range
 
 • **Range** = ``"range"``
+
+Range

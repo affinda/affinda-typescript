@@ -2,6 +2,12 @@
 
 # Interface: Education
 
+## Hierarchy
+
+- **`Education`**
+
+  ↳ [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)
+
 ## Table of contents
 
 ### Properties

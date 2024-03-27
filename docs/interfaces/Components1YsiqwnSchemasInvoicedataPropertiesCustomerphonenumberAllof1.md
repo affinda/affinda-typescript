@@ -2,6 +2,12 @@
 
 # Interface: Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1
 
+## Hierarchy
+
+- **`Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1`**
+
+  ↳ [`InvoiceDataCustomerPhoneNumber`](InvoiceDataCustomerPhoneNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

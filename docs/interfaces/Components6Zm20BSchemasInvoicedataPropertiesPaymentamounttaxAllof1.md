@@ -2,6 +2,12 @@
 
 # Interface: Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1
 
+## Hierarchy
+
+- **`Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1`**
+
+  ↳ [`InvoiceDataPaymentAmountTax`](InvoiceDataPaymentAmountTax.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

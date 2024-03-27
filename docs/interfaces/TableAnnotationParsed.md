@@ -12,4 +12,4 @@
 
 ### rows
 
-• `Optional` **rows**: (``null`` \| [`RowAnnotation`](../modules.md#rowannotation))[]
+• `Optional` **rows**: (``null`` \| [`RowAnnotation`](RowAnnotation.md))[]

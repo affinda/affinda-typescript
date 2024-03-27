@@ -2,6 +2,12 @@
 
 # Interface: Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1
 
+## Hierarchy
+
+- **`Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1`**
+
+  ↳ [`InvoiceDataCustomerCompanyName`](InvoiceDataCustomerCompanyName.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

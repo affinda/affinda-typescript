@@ -2,6 +2,12 @@
 
 # Interface: Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1
 
+## Hierarchy
+
+- **`Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1`**
+
+  ↳ [`InvoiceDataSupplierPhoneNumber`](InvoiceDataSupplierPhoneNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

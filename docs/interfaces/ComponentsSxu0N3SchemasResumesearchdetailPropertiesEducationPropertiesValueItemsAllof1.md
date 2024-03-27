@@ -2,6 +2,12 @@
 
 # Interface: ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1
 
+## Hierarchy
+
+- **`ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1`**
+
+  ↳ [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)
+
 ## Table of contents
 
 ### Properties

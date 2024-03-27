@@ -37,11 +37,15 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 
 • **Boolean** = ``"boolean"``
 
+Boolean
+
 ___
 
 ### Date
 
 • **Date** = ``"date"``
+
+Date
 
 ___
 
@@ -49,11 +53,15 @@ ___
 
 • **Daterange** = ``"daterange"``
 
+Daterange
+
 ___
 
 ### Datetime
 
 • **Datetime** = ``"datetime"``
+
+Datetime
 
 ___
 
@@ -61,11 +69,15 @@ ___
 
 • **Decimal** = ``"decimal"``
 
+Decimal
+
 ___
 
 ### Enum
 
 • **Enum** = ``"enum"``
+
+Enum
 
 ___
 
@@ -73,11 +85,15 @@ ___
 
 • **Expectedremuneration** = ``"expectedremuneration"``
 
+Expectedremuneration
+
 ___
 
 ### Float
 
 • **Float** = ``"float"``
+
+Float
 
 ___
 
@@ -85,11 +101,15 @@ ___
 
 • **Group** = ``"group"``
 
+Group
+
 ___
 
 ### Image
 
 • **Image** = ``"image"``
+
+Image
 
 ___
 
@@ -97,11 +117,15 @@ ___
 
 • **Integer** = ``"integer"``
 
+Integer
+
 ___
 
 ### Jobtitle
 
 • **Jobtitle** = ``"jobtitle"``
+
+Jobtitle
 
 ___
 
@@ -109,11 +133,15 @@ ___
 
 • **Json** = ``"json"``
 
+Json
+
 ___
 
 ### Language
 
 • **Language** = ``"language"``
+
+Language
 
 ___
 
@@ -121,11 +149,15 @@ ___
 
 • **Location** = ``"location"``
 
+Location
+
 ___
 
 ### Phonenumber
 
 • **Phonenumber** = ``"phonenumber"``
+
+Phonenumber
 
 ___
 
@@ -133,11 +165,15 @@ ___
 
 • **Skill** = ``"skill"``
 
+Skill
+
 ___
 
 ### Table
 
 • **Table** = ``"table"``
+
+Table
 
 ___
 
@@ -145,11 +181,15 @@ ___
 
 • **TableDeprecated** = ``"table_deprecated"``
 
+TableDeprecated
+
 ___
 
 ### Text
 
 • **Text** = ``"text"``
+
+Text
 
 ___
 
@@ -157,8 +197,12 @@ ___
 
 • **Url** = ``"url"``
 
+Url
+
 ___
 
 ### Yearsexperience
 
 • **Yearsexperience** = ``"yearsexperience"``
+
+Yearsexperience

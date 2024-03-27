@@ -2,6 +2,12 @@
 
 # Interface: Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1
 
+## Hierarchy
+
+- **`Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1`**
+
+  ↳ [`InvoiceDataSupplierWebsite`](InvoiceDataSupplierWebsite.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

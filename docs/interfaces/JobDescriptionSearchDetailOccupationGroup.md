@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`OccupationGroupSearchResult`](OccupationGroupSearchResult.md)
+• `Optional` **value**: [`JobDescriptionSearchDetailOccupationGroupValue`](JobDescriptionSearchDetailOccupationGroupValue.md)

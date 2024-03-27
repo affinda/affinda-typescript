@@ -2,6 +2,12 @@
 
 # Interface: Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

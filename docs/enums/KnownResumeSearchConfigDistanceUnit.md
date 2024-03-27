@@ -17,8 +17,12 @@ Known values of [ResumeSearchConfigDistanceUnit](../modules.md#resumesearchconfi
 
 • **Km** = ``"km"``
 
+Km
+
 ___
 
 ### Mi
 
 • **Mi** = ``"mi"``
+
+Mi

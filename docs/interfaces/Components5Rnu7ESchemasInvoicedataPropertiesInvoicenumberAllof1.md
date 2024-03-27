@@ -2,6 +2,12 @@
 
 # Interface: Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1
 
+## Hierarchy
+
+- **`Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1`**
+
+  ↳ [`InvoiceDataInvoiceNumber`](InvoiceDataInvoiceNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

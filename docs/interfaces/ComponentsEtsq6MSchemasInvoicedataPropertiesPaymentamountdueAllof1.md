@@ -2,6 +2,12 @@
 
 # Interface: ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1
 
+## Hierarchy
+
+- **`ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1`**
+
+  ↳ [`InvoiceDataPaymentAmountDue`](InvoiceDataPaymentAmountDue.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

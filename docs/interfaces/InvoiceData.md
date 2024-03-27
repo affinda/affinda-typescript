@@ -51,49 +51,49 @@
 
 ### bankAccountNumber
 
-• `Optional` **bankAccountNumber**: [`InvoiceDataBankAccountNumber`](../modules.md#invoicedatabankaccountnumber)
+• `Optional` **bankAccountNumber**: [`InvoiceDataBankAccountNumber`](InvoiceDataBankAccountNumber.md)
 
 ___
 
 ### bankBsb
 
-• `Optional` **bankBsb**: [`InvoiceDataBankBsb`](../modules.md#invoicedatabankbsb)
+• `Optional` **bankBsb**: [`InvoiceDataBankBsb`](InvoiceDataBankBsb.md)
 
 ___
 
 ### bankIban
 
-• `Optional` **bankIban**: [`InvoiceDataBankIban`](../modules.md#invoicedatabankiban)
+• `Optional` **bankIban**: [`InvoiceDataBankIban`](InvoiceDataBankIban.md)
 
 ___
 
 ### bankSortCode
 
-• `Optional` **bankSortCode**: [`InvoiceDataBankSortCode`](../modules.md#invoicedatabanksortcode)
+• `Optional` **bankSortCode**: [`InvoiceDataBankSortCode`](InvoiceDataBankSortCode.md)
 
 ___
 
 ### bankSwift
 
-• `Optional` **bankSwift**: [`InvoiceDataBankSwift`](../modules.md#invoicedatabankswift)
+• `Optional` **bankSwift**: [`InvoiceDataBankSwift`](InvoiceDataBankSwift.md)
 
 ___
 
 ### bpayBillerCode
 
-• `Optional` **bpayBillerCode**: [`InvoiceDataBpayBillerCode`](../modules.md#invoicedatabpaybillercode)
+• `Optional` **bpayBillerCode**: [`InvoiceDataBpayBillerCode`](InvoiceDataBpayBillerCode.md)
 
 ___
 
 ### bpayReference
 
-• `Optional` **bpayReference**: [`InvoiceDataBpayReference`](../modules.md#invoicedatabpayreference)
+• `Optional` **bpayReference**: [`InvoiceDataBpayReference`](InvoiceDataBpayReference.md)
 
 ___
 
 ### currencyCode
 
-• `Optional` **currencyCode**: [`CurrencyCodeAnnotation`](../modules.md#currencycodeannotation)
+• `Optional` **currencyCode**: [`CurrencyCodeAnnotation`](CurrencyCodeAnnotation.md)
 
 ___
 
@@ -111,121 +111,121 @@ ___
 
 ### customerBillingAddress
 
-• `Optional` **customerBillingAddress**: [`LocationAnnotation`](../modules.md#locationannotation)
+• `Optional` **customerBillingAddress**: [`LocationAnnotation`](LocationAnnotation.md)
 
 ___
 
 ### customerBusinessNumber
 
-• `Optional` **customerBusinessNumber**: [`InvoiceDataCustomerBusinessNumber`](../modules.md#invoicedatacustomerbusinessnumber)
+• `Optional` **customerBusinessNumber**: [`InvoiceDataCustomerBusinessNumber`](InvoiceDataCustomerBusinessNumber.md)
 
 ___
 
 ### customerCompanyName
 
-• `Optional` **customerCompanyName**: [`InvoiceDataCustomerCompanyName`](../modules.md#invoicedatacustomercompanyname)
+• `Optional` **customerCompanyName**: [`InvoiceDataCustomerCompanyName`](InvoiceDataCustomerCompanyName.md)
 
 ___
 
 ### customerContactName
 
-• `Optional` **customerContactName**: [`InvoiceDataCustomerContactName`](../modules.md#invoicedatacustomercontactname)
+• `Optional` **customerContactName**: [`InvoiceDataCustomerContactName`](InvoiceDataCustomerContactName.md)
 
 ___
 
 ### customerDeliveryAddress
 
-• `Optional` **customerDeliveryAddress**: [`LocationAnnotation`](../modules.md#locationannotation)
+• `Optional` **customerDeliveryAddress**: [`LocationAnnotation`](LocationAnnotation.md)
 
 ___
 
 ### customerEmail
 
-• `Optional` **customerEmail**: [`InvoiceDataCustomerEmail`](../modules.md#invoicedatacustomeremail)
+• `Optional` **customerEmail**: [`InvoiceDataCustomerEmail`](InvoiceDataCustomerEmail.md)
 
 ___
 
 ### customerNumber
 
-• `Optional` **customerNumber**: [`InvoiceDataCustomerNumber`](../modules.md#invoicedatacustomernumber)
+• `Optional` **customerNumber**: [`InvoiceDataCustomerNumber`](InvoiceDataCustomerNumber.md)
 
 ___
 
 ### customerPhoneNumber
 
-• `Optional` **customerPhoneNumber**: [`InvoiceDataCustomerPhoneNumber`](../modules.md#invoicedatacustomerphonenumber)
+• `Optional` **customerPhoneNumber**: [`InvoiceDataCustomerPhoneNumber`](InvoiceDataCustomerPhoneNumber.md)
 
 ___
 
 ### customerVat
 
-• `Optional` **customerVat**: [`InvoiceDataCustomerVat`](../modules.md#invoicedatacustomervat)
+• `Optional` **customerVat**: [`InvoiceDataCustomerVat`](InvoiceDataCustomerVat.md)
 
 ___
 
 ### invoiceDate
 
-• `Optional` **invoiceDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **invoiceDate**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### invoiceNumber
 
-• `Optional` **invoiceNumber**: [`InvoiceDataInvoiceNumber`](../modules.md#invoicedatainvoicenumber)
+• `Optional` **invoiceNumber**: [`InvoiceDataInvoiceNumber`](InvoiceDataInvoiceNumber.md)
 
 ___
 
 ### invoiceOrderDate
 
-• `Optional` **invoiceOrderDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **invoiceOrderDate**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### invoicePurchaseOrderNumber
 
-• `Optional` **invoicePurchaseOrderNumber**: [`InvoiceDataInvoicePurchaseOrderNumber`](../modules.md#invoicedatainvoicepurchaseordernumber)
+• `Optional` **invoicePurchaseOrderNumber**: [`InvoiceDataInvoicePurchaseOrderNumber`](InvoiceDataInvoicePurchaseOrderNumber.md)
 
 ___
 
 ### paymentAmountBase
 
-• `Optional` **paymentAmountBase**: [`InvoiceDataPaymentAmountBase`](../modules.md#invoicedatapaymentamountbase)
+• `Optional` **paymentAmountBase**: [`InvoiceDataPaymentAmountBase`](InvoiceDataPaymentAmountBase.md)
 
 ___
 
 ### paymentAmountDue
 
-• `Optional` **paymentAmountDue**: [`InvoiceDataPaymentAmountDue`](../modules.md#invoicedatapaymentamountdue)
+• `Optional` **paymentAmountDue**: [`InvoiceDataPaymentAmountDue`](InvoiceDataPaymentAmountDue.md)
 
 ___
 
 ### paymentAmountPaid
 
-• `Optional` **paymentAmountPaid**: [`InvoiceDataPaymentAmountPaid`](../modules.md#invoicedatapaymentamountpaid)
+• `Optional` **paymentAmountPaid**: [`InvoiceDataPaymentAmountPaid`](InvoiceDataPaymentAmountPaid.md)
 
 ___
 
 ### paymentAmountTax
 
-• `Optional` **paymentAmountTax**: [`InvoiceDataPaymentAmountTax`](../modules.md#invoicedatapaymentamounttax)
+• `Optional` **paymentAmountTax**: [`InvoiceDataPaymentAmountTax`](InvoiceDataPaymentAmountTax.md)
 
 ___
 
 ### paymentAmountTotal
 
-• `Optional` **paymentAmountTotal**: [`InvoiceDataPaymentAmountTotal`](../modules.md#invoicedatapaymentamounttotal)
+• `Optional` **paymentAmountTotal**: [`InvoiceDataPaymentAmountTotal`](InvoiceDataPaymentAmountTotal.md)
 
 ___
 
 ### paymentDateDue
 
-• `Optional` **paymentDateDue**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **paymentDateDue**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### paymentReference
 
-• `Optional` **paymentReference**: [`InvoiceDataPaymentReference`](../modules.md#invoicedatapaymentreference)
+• `Optional` **paymentReference**: [`InvoiceDataPaymentReference`](InvoiceDataPaymentReference.md)
 
 ___
 
@@ -239,58 +239,58 @@ ___
 
 ### supplierAddress
 
-• `Optional` **supplierAddress**: [`LocationAnnotation`](../modules.md#locationannotation)
+• `Optional` **supplierAddress**: [`LocationAnnotation`](LocationAnnotation.md)
 
 ___
 
 ### supplierBusinessNumber
 
-• `Optional` **supplierBusinessNumber**: [`InvoiceDataSupplierBusinessNumber`](../modules.md#invoicedatasupplierbusinessnumber)
+• `Optional` **supplierBusinessNumber**: [`InvoiceDataSupplierBusinessNumber`](InvoiceDataSupplierBusinessNumber.md)
 
 ___
 
 ### supplierCompanyName
 
-• `Optional` **supplierCompanyName**: [`InvoiceDataSupplierCompanyName`](../modules.md#invoicedatasuppliercompanyname)
+• `Optional` **supplierCompanyName**: [`InvoiceDataSupplierCompanyName`](InvoiceDataSupplierCompanyName.md)
 
 ___
 
 ### supplierEmail
 
-• `Optional` **supplierEmail**: [`InvoiceDataSupplierEmail`](../modules.md#invoicedatasupplieremail)
+• `Optional` **supplierEmail**: [`InvoiceDataSupplierEmail`](InvoiceDataSupplierEmail.md)
 
 ___
 
 ### supplierFax
 
-• `Optional` **supplierFax**: [`InvoiceDataSupplierFax`](../modules.md#invoicedatasupplierfax)
+• `Optional` **supplierFax**: [`InvoiceDataSupplierFax`](InvoiceDataSupplierFax.md)
 
 ___
 
 ### supplierPhoneNumber
 
-• `Optional` **supplierPhoneNumber**: [`InvoiceDataSupplierPhoneNumber`](../modules.md#invoicedatasupplierphonenumber)
+• `Optional` **supplierPhoneNumber**: [`InvoiceDataSupplierPhoneNumber`](InvoiceDataSupplierPhoneNumber.md)
 
 ___
 
 ### supplierVat
 
-• `Optional` **supplierVat**: [`InvoiceDataSupplierVat`](../modules.md#invoicedatasuppliervat)
+• `Optional` **supplierVat**: [`InvoiceDataSupplierVat`](InvoiceDataSupplierVat.md)
 
 ___
 
 ### supplierWebsite
 
-• `Optional` **supplierWebsite**: [`InvoiceDataSupplierWebsite`](../modules.md#invoicedatasupplierwebsite)
+• `Optional` **supplierWebsite**: [`InvoiceDataSupplierWebsite`](InvoiceDataSupplierWebsite.md)
 
 ___
 
 ### tables
 
-• `Optional` **tables**: (``null`` \| [`TableAnnotation`](../modules.md#tableannotation))[]
+• `Optional` **tables**: (``null`` \| [`TableAnnotation`](TableAnnotation.md))[]
 
 ___
 
 ### tablesBeta
 
-• `Optional` **tablesBeta**: (``null`` \| [`TableBetaAnnotation`](../modules.md#tablebetaannotation))[]
+• `Optional` **tablesBeta**: (``null`` \| [`TableBetaAnnotation`](TableBetaAnnotation.md))[]

@@ -20,11 +20,15 @@ Known values of [DocumentState](../modules.md#documentstate) that the service ac
 
 • **Archived** = ``"archived"``
 
+Archived
+
 ___
 
 ### Rejected
 
 • **Rejected** = ``"rejected"``
+
+Rejected
 
 ___
 
@@ -32,14 +36,20 @@ ___
 
 • **Review** = ``"review"``
 
+Review
+
 ___
 
 ### Uploaded
 
 • **Uploaded** = ``"uploaded"``
 
+Uploaded
+
 ___
 
 ### Validated
 
 • **Validated** = ``"validated"``
+
+Validated

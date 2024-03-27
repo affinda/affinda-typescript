@@ -31,11 +31,15 @@ Known values of [ResthookEvent](../modules.md#resthookevent) that the service ac
 
 • **AnnotationValidated** = ``"annotation.validated"``
 
+AnnotationValidated
+
 ___
 
 ### DocumentClassifyCompleted
 
 • **DocumentClassifyCompleted** = ``"document.classify.completed"``
+
+DocumentClassifyCompleted
 
 ___
 
@@ -43,11 +47,15 @@ ___
 
 • **DocumentClassifyFailed** = ``"document.classify.failed"``
 
+DocumentClassifyFailed
+
 ___
 
 ### DocumentClassifySucceeded
 
 • **DocumentClassifySucceeded** = ``"document.classify.succeeded"``
+
+DocumentClassifySucceeded
 
 ___
 
@@ -55,11 +63,15 @@ ___
 
 • **DocumentParseCompleted** = ``"document.parse.completed"``
 
+DocumentParseCompleted
+
 ___
 
 ### DocumentParseFailed
 
 • **DocumentParseFailed** = ``"document.parse.failed"``
+
+DocumentParseFailed
 
 ___
 
@@ -67,11 +79,15 @@ ___
 
 • **DocumentParseSucceeded** = ``"document.parse.succeeded"``
 
+DocumentParseSucceeded
+
 ___
 
 ### DocumentRejected
 
 • **DocumentRejected** = ``"document.rejected"``
+
+DocumentRejected
 
 ___
 
@@ -79,11 +95,15 @@ ___
 
 • **DocumentValidateCompleted** = ``"document.validate.completed"``
 
+DocumentValidateCompleted
+
 ___
 
 ### InvoiceParseCompleted
 
 • **InvoiceParseCompleted** = ``"invoice.parse.completed"``
+
+InvoiceParseCompleted
 
 ___
 
@@ -91,11 +111,15 @@ ___
 
 • **InvoiceParseFailed** = ``"invoice.parse.failed"``
 
+InvoiceParseFailed
+
 ___
 
 ### InvoiceParseSucceeded
 
 • **InvoiceParseSucceeded** = ``"invoice.parse.succeeded"``
+
+InvoiceParseSucceeded
 
 ___
 
@@ -103,11 +127,15 @@ ___
 
 • **InvoiceValidateCompleted** = ``"invoice.validate.completed"``
 
+InvoiceValidateCompleted
+
 ___
 
 ### ResumeParseCompleted
 
 • **ResumeParseCompleted** = ``"resume.parse.completed"``
+
+ResumeParseCompleted
 
 ___
 
@@ -115,8 +143,12 @@ ___
 
 • **ResumeParseFailed** = ``"resume.parse.failed"``
 
+ResumeParseFailed
+
 ___
 
 ### ResumeParseSucceeded
 
 • **ResumeParseSucceeded** = ``"resume.parse.succeeded"``
+
+ResumeParseSucceeded

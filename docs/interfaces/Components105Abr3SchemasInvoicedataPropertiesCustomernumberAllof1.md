@@ -2,6 +2,12 @@
 
 # Interface: Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1
 
+## Hierarchy
+
+- **`Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1`**
+
+  ↳ [`InvoiceDataCustomerNumber`](InvoiceDataCustomerNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

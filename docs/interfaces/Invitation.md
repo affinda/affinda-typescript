@@ -62,7 +62,7 @@ ___
 
 ### respondedBy
 
-• `Optional` **respondedBy**: [`User`](User.md)
+• `Optional` **respondedBy**: [`InvitationRespondedBy`](InvitationRespondedBy.md)
 
 ___
 

@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`ResumeSearchDetailLanguagesValueItem`](../modules.md#resumesearchdetaillanguagesvalueitem)[]
+• `Optional` **value**: [`ResumeSearchDetailLanguagesValueItem`](ResumeSearchDetailLanguagesValueItem.md)[]

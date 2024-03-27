@@ -2,6 +2,12 @@
 
 # Interface: Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1
 
+## Hierarchy
+
+- **`Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1`**
+
+  ↳ [`InvoiceDataBankBsb`](InvoiceDataBankBsb.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

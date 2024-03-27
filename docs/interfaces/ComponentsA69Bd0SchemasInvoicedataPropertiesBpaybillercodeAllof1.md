@@ -2,6 +2,12 @@
 
 # Interface: ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1
 
+## Hierarchy
+
+- **`ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1`**
+
+  ↳ [`InvoiceDataBpayBillerCode`](InvoiceDataBpayBillerCode.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

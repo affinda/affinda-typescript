@@ -2,6 +2,12 @@
 
 # Interface: Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1
 
+## Hierarchy
+
+- **`Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1`**
+
+  ↳ [`InvoiceDataSupplierBusinessNumber`](InvoiceDataSupplierBusinessNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

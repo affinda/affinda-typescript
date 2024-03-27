@@ -2,6 +2,12 @@
 
 # Interface: Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1
 
+## Hierarchy
+
+- **`Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1`**
+
+  ↳ [`InvoiceDataPaymentAmountBase`](InvoiceDataPaymentAmountBase.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

@@ -2,6 +2,12 @@
 
 # Interface: ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1
 
+## Hierarchy
+
+- **`ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1`**
+
+  ↳ [`InvoiceDataCustomerContactName`](InvoiceDataCustomerContactName.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

@@ -475,6 +475,8 @@ export interface DataFieldCreateDataPoint {
   parent?: string;
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
   manualEntry?: boolean;
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
 }
 
 export interface DataField {
@@ -546,6 +548,8 @@ export interface DataPoint {
   parent?: string;
   children?: DataPoint[];
   availableDataSources?: MappingDataSource[];
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
   manualEntry?: boolean;
 }
@@ -1374,6 +1378,8 @@ export interface DataPointCreate {
   parent?: string;
   /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
   manualEntry?: boolean;
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
 }
 
 export interface DataPointUpdate {
@@ -1384,6 +1390,8 @@ export interface DataPointUpdate {
   description?: string;
   /** The identifier of the parent data point if applicable. */
   parent?: string;
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
 }
 
 export interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1913,7 +1921,9 @@ export interface JobDescriptionSearchResult {
   organizationName: string | null;
   /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
   customData: {
-    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+    [
+      propertyName: string
+    ]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
   };
 }
 
@@ -2284,7 +2294,9 @@ export interface ResumeSearchResult {
   searchExpression: SearchExpressionSearchScoreComponent;
   /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
   customData: {
-    [propertyName: string]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+    [
+      propertyName: string
+    ]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
   };
 }
 
@@ -2550,147 +2562,147 @@ export interface RowBetaAnnotationParsed {
 }
 
 export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
@@ -2784,298 +2796,352 @@ export interface OrganizationUpdate {
 }
 
 /** Customize the theme of the embeded search tool. */
-export type JobDescriptionSearchConfigSearchToolTheme = ThemeConfig & {};
+export interface JobDescriptionSearchConfigSearchToolTheme
+  extends ThemeConfig {}
 
 /** Customize the theme of the embeded search tool. */
-export type ResumeSearchConfigSearchToolTheme = ThemeConfig & {};
+export interface ResumeSearchConfigSearchToolTheme extends ThemeConfig {}
 
-export type InvitationRespondedBy = User & {};
+export interface InvitationRespondedBy extends User {}
 
-export type PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
-  Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+export interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export type Resume = Document & {
+export interface Resume extends Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "resume";
   /** A JSON-encoded string of the `ResumeData` object. */
   data?: ResumeData;
-};
+}
 
-export type Invoice = Document & {
+export interface Invoice extends Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "invoice";
   data?: InvoiceData;
-};
+}
 
-export type JobDescription = Document & {
+export interface JobDescription extends Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "job-description";
   data?: JobDescriptionData;
-};
+}
 
-export type ResumeRedact = Document & {
+export interface ResumeRedact extends Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
   extractor: "resume-redact";
   data?: ResumeRedactData;
-};
+}
 
-export type LocationAnnotationUpdateParsed = Location & {};
+export interface LocationAnnotationUpdateParsed extends Location {}
 
-export type JobDescriptionSearchDetailLocationValue = Location &
-  Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+export interface JobDescriptionSearchDetailLocationValue
+  extends Location,
+    Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {}
 
-export type ResumeSearchDetailLocationValue = Location &
-  ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 & {};
+export interface ResumeSearchDetailLocationValue
+  extends Location,
+    ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {}
 
-export type ResumeSearchDetailEducationValueItem = Education &
-  ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 & {};
+export interface ResumeSearchDetailEducationValueItem
+  extends Education,
+    ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {}
 
-export type JobTitleAnnotation = Annotation & {
+export interface JobTitleAnnotation extends Annotation {
   /** Years of experience range */
   parsed?: JobTitleAnnotationParsed;
-};
+}
 
-export type TextAnnotation = Annotation & {
+export interface TextAnnotation extends Annotation {
   parsed?: string;
-};
+}
 
-export type DateAnnotation = Annotation & {
+export interface DateAnnotation extends Annotation {
   parsed?: Date;
-};
+}
 
-export type LanguageAnnotation = Annotation & {
+export interface LanguageAnnotation extends Annotation {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly parsed?: string;
-};
+}
 
-export type SkillAnnotation = Annotation & {
+export interface SkillAnnotation extends Annotation {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly parsed?: string;
-};
+}
 
-export type ExpectedRemunerationAnnotation = Annotation & {
+export interface ExpectedRemunerationAnnotation extends Annotation {
   parsed?: ExpectedRemunerationAnnotationParsed;
-};
+}
 
-export type LocationAnnotation = Annotation & {
+export interface LocationAnnotation extends Annotation {
   parsed?: Location;
-};
+}
 
-export type YearsExperienceAnnotation = Annotation & {
+export interface YearsExperienceAnnotation extends Annotation {
   /** Years of experience range */
   parsed?: YearsExperienceAnnotationParsed;
-};
+}
 
-export type AnnotationWithValidationResults = Annotation & {
+export interface AnnotationWithValidationResults extends Annotation {
   /** List of validation results for this annotation. */
   validationResults?: ValidationResult[];
-};
+}
 
-export type FloatAnnotation = Annotation & {
+export interface FloatAnnotation extends Annotation {
   parsed?: number;
-};
+}
 
-export type RowAnnotation = Annotation & {
+export interface RowAnnotation extends Annotation {
   parsed?: RowAnnotationParsed;
-};
+}
 
-export type TableAnnotation = Annotation & {
+export interface TableAnnotation extends Annotation {
   parsed?: TableAnnotationParsed;
-};
+}
 
-export type RowBetaAnnotation = Annotation & {
+export interface RowBetaAnnotation extends Annotation {
   parsed?: RowBetaAnnotationParsed;
-};
+}
 
-export type TableBetaAnnotation = Annotation & {
+export interface TableBetaAnnotation extends Annotation {
   parsed?: TableBetaAnnotationParsed;
-};
+}
 
-export type CurrencyCodeAnnotation = Annotation & {
+export interface CurrencyCodeAnnotation extends Annotation {
   parsed?: DataPointChoice;
-};
+}
 
-export type DateRangeAnnotation = Annotation & {
+export interface DateRangeAnnotation extends Annotation {
   parsed?: DateRangeAnnotationParsed;
-};
+}
 
-export type PhoneNumberAnnotation = Annotation & {
+export interface PhoneNumberAnnotation extends Annotation {
   parsed?: PhoneNumberAnnotationParsed;
-};
+}
 
-export type UrlAnnotation = Annotation & {
+export interface UrlAnnotation extends Annotation {
   parsed?: UrlAnnotationParsed;
-};
+}
 
-export type JobTitleAnnotationUpdate = AnnotationBase & JobTitleParsed & {};
+export interface JobTitleAnnotationUpdate
+  extends AnnotationBase,
+    JobTitleParsed {}
 
-export type TextAnnotationUpdate = AnnotationBase & {
+export interface TextAnnotationUpdate extends AnnotationBase {
   parsed?: string;
-};
+}
 
-export type DateAnnotationUpdate = AnnotationBase & {
+export interface DateAnnotationUpdate extends AnnotationBase {
   parsed?: Date;
-};
+}
 
-export type LanguageAnnotationUpdate = AnnotationBase & {
+export interface LanguageAnnotationUpdate extends AnnotationBase {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly parsed?: string;
-};
+}
 
-export type SkillAnnotationUpdate = AnnotationBase & {
+export interface SkillAnnotationUpdate extends AnnotationBase {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly parsed?: string;
-};
+}
 
-export type ExpectedRemunerationAnnotationUpdate = AnnotationBase & {
+export interface ExpectedRemunerationAnnotationUpdate extends AnnotationBase {
   parsed?: ExpectedRemunerationAnnotationUpdateParsed;
-};
+}
 
-export type LocationAnnotationUpdate = AnnotationBase & {
+export interface LocationAnnotationUpdate extends AnnotationBase {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly parsed?: LocationAnnotationUpdateParsed;
-};
+}
 
-export type YearsExperienceAnnotationUpdate = AnnotationBase & {
+export interface YearsExperienceAnnotationUpdate extends AnnotationBase {
   /** Years of experience range */
   parsed?: YearsExperienceAnnotationUpdateParsed;
-};
+}
 
-export type ResumeSearchParametersCustomData = SearchParametersCustomData & {};
+export interface ResumeSearchParametersCustomData
+  extends SearchParametersCustomData {}
 
-export type JobDescriptionSearchDetailOccupationGroupValue = OccupationGroupSearchResult & {};
+export interface JobDescriptionSearchDetailOccupationGroupValue
+  extends OccupationGroupSearchResult {}
 
-export type ResumeSearchDetailSkillsValueItem = ResumeSkill &
-  ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 & {};
+export interface ResumeSearchDetailSkillsValueItem
+  extends ResumeSkill,
+    ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {}
 
-export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
-  Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 & {};
+export interface ResumeSearchDetailLanguagesValueItem
+  extends ResumeSkill,
+    Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {}
 
-export type InvoiceDataPaymentAmountBase = TextAnnotation &
-  Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 & {};
+export interface InvoiceDataPaymentAmountBase
+  extends TextAnnotation,
+    Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {}
 
-export type InvoiceDataPaymentAmountTax = TextAnnotation &
-  Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 & {};
+export interface InvoiceDataPaymentAmountTax
+  extends TextAnnotation,
+    Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {}
 
-export type InvoiceDataPaymentAmountTotal = TextAnnotation &
-  Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 & {};
+export interface InvoiceDataPaymentAmountTotal
+  extends TextAnnotation,
+    Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {}
 
-export type InvoiceDataPaymentAmountPaid = TextAnnotation &
-  Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 & {};
+export interface InvoiceDataPaymentAmountPaid
+  extends TextAnnotation,
+    Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {}
 
-export type InvoiceDataPaymentAmountDue = TextAnnotation &
-  ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 & {};
+export interface InvoiceDataPaymentAmountDue
+  extends TextAnnotation,
+    ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {}
 
-export type InvoiceDataInvoiceNumber = TextAnnotation &
-  Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 & {};
+export interface InvoiceDataInvoiceNumber
+  extends TextAnnotation,
+    Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {}
 
-export type InvoiceDataInvoicePurchaseOrderNumber = TextAnnotation &
-  ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 & {};
+export interface InvoiceDataInvoicePurchaseOrderNumber
+  extends TextAnnotation,
+    ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {}
 
-export type InvoiceDataSupplierBusinessNumber = TextAnnotation &
-  Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 & {};
+export interface InvoiceDataSupplierBusinessNumber
+  extends TextAnnotation,
+    Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {}
 
-export type InvoiceDataCustomerNumber = TextAnnotation &
-  Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 & {};
+export interface InvoiceDataCustomerNumber
+  extends TextAnnotation,
+    Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {}
 
-export type InvoiceDataCustomerBusinessNumber = TextAnnotation &
-  Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 & {};
+export interface InvoiceDataCustomerBusinessNumber
+  extends TextAnnotation,
+    Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {}
 
-export type InvoiceDataPaymentReference = TextAnnotation &
-  Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 & {};
+export interface InvoiceDataPaymentReference
+  extends TextAnnotation,
+    Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {}
 
-export type InvoiceDataBankAccountNumber = TextAnnotation &
-  Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 & {};
+export interface InvoiceDataBankAccountNumber
+  extends TextAnnotation,
+    Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {}
 
-export type InvoiceDataSupplierVat = TextAnnotation &
-  ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 & {};
+export interface InvoiceDataSupplierVat
+  extends TextAnnotation,
+    ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {}
 
-export type InvoiceDataCustomerVat = TextAnnotation &
-  ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 & {};
+export interface InvoiceDataCustomerVat
+  extends TextAnnotation,
+    ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {}
 
-export type InvoiceDataBpayBillerCode = TextAnnotation &
-  ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 & {};
+export interface InvoiceDataBpayBillerCode
+  extends TextAnnotation,
+    ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {}
 
-export type InvoiceDataBpayReference = TextAnnotation &
-  ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 & {};
+export interface InvoiceDataBpayReference
+  extends TextAnnotation,
+    ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {}
 
-export type InvoiceDataBankSortCode = TextAnnotation &
-  Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 & {};
+export interface InvoiceDataBankSortCode
+  extends TextAnnotation,
+    Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {}
 
-export type InvoiceDataBankIban = TextAnnotation &
-  Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 & {};
+export interface InvoiceDataBankIban
+  extends TextAnnotation,
+    Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {}
 
-export type InvoiceDataBankSwift = TextAnnotation &
-  Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 & {};
+export interface InvoiceDataBankSwift
+  extends TextAnnotation,
+    Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {}
 
-export type InvoiceDataBankBsb = TextAnnotation &
-  Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 & {};
+export interface InvoiceDataBankBsb
+  extends TextAnnotation,
+    Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {}
 
-export type InvoiceDataCustomerContactName = TextAnnotation &
-  ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 & {};
+export interface InvoiceDataCustomerContactName
+  extends TextAnnotation,
+    ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {}
 
-export type InvoiceDataCustomerCompanyName = TextAnnotation &
-  Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 & {};
+export interface InvoiceDataCustomerCompanyName
+  extends TextAnnotation,
+    Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {}
 
-export type InvoiceDataSupplierCompanyName = TextAnnotation &
-  Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 & {};
+export interface InvoiceDataSupplierCompanyName
+  extends TextAnnotation,
+    Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {}
 
-export type InvoiceDataCustomerPhoneNumber = TextAnnotation &
-  Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 & {};
+export interface InvoiceDataCustomerPhoneNumber
+  extends TextAnnotation,
+    Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {}
 
-export type InvoiceDataSupplierPhoneNumber = TextAnnotation &
-  Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 & {};
+export interface InvoiceDataSupplierPhoneNumber
+  extends TextAnnotation,
+    Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {}
 
-export type InvoiceDataSupplierFax = TextAnnotation &
-  Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 & {};
+export interface InvoiceDataSupplierFax
+  extends TextAnnotation,
+    Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {}
 
-export type InvoiceDataCustomerEmail = TextAnnotation &
-  Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 & {};
+export interface InvoiceDataCustomerEmail
+  extends TextAnnotation,
+    Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {}
 
-export type InvoiceDataSupplierEmail = TextAnnotation &
-  Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 & {};
+export interface InvoiceDataSupplierEmail
+  extends TextAnnotation,
+    Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {}
 
-export type InvoiceDataSupplierWebsite = TextAnnotation &
-  Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 & {};
+export interface InvoiceDataSupplierWebsite
+  extends TextAnnotation,
+    Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {}
 
 /** Known values of {@link Region} that the service accepts. */
 export enum KnownRegion {
+  /** Api */
   Api = "api",
+  /** ApiEu1 */
   ApiEu1 = "api.eu1",
-  ApiUs1 = "api.us1"
+  /** ApiUs1 */
+  ApiUs1 = "api.us1",
 }
 
 /**
@@ -3091,8 +3157,10 @@ export type Region = string;
 
 /** Known values of {@link OrganizationRole} that the service accepts. */
 export enum KnownOrganizationRole {
+  /** Admin */
   Admin = "admin",
-  Member = "member"
+  /** Member */
+  Member = "member",
 }
 
 /**
@@ -3107,8 +3175,10 @@ export type OrganizationRole = string;
 
 /** Known values of {@link OrganizationUserRole} that the service accepts. */
 export enum KnownOrganizationUserRole {
+  /** Admin */
   Admin = "admin",
-  Member = "member"
+  /** Member */
+  Member = "member",
 }
 
 /**
@@ -3123,8 +3193,10 @@ export type OrganizationUserRole = string;
 
 /** Known values of {@link ThemeConfigPaletteMode} that the service accepts. */
 export enum KnownThemeConfigPaletteMode {
+  /** Light */
   Light = "light",
-  Dark = "dark"
+  /** Dark */
+  Dark = "dark",
 }
 
 /**
@@ -3139,8 +3211,10 @@ export type ThemeConfigPaletteMode = string;
 
 /** Known values of {@link WorkspaceVisibility} that the service accepts. */
 export enum KnownWorkspaceVisibility {
+  /** Organization */
   Organization = "organization",
-  Private = "private"
+  /** Private */
+  Private = "private",
 }
 
 /**
@@ -3155,10 +3229,14 @@ export type WorkspaceVisibility = string;
 
 /** Known values of {@link WorkspaceSplitDocumentsOptions} that the service accepts. */
 export enum KnownWorkspaceSplitDocumentsOptions {
+  /** Leave */
   Leave = "leave",
+  /** Conservative */
   Conservative = "conservative",
+  /** Recommended */
   Recommended = "recommended",
-  Aggressive = "aggressive"
+  /** Aggressive */
+  Aggressive = "aggressive",
 }
 
 /**
@@ -3175,28 +3253,50 @@ export type WorkspaceSplitDocumentsOptions = string;
 
 /** Known values of {@link AnnotationContentType} that the service accepts. */
 export enum KnownAnnotationContentType {
+  /** Text */
   Text = "text",
+  /** Integer */
   Integer = "integer",
+  /** Float */
   Float = "float",
+  /** Decimal */
   Decimal = "decimal",
+  /** Date */
   Date = "date",
+  /** Datetime */
   Datetime = "datetime",
+  /** Daterange */
   Daterange = "daterange",
+  /** Boolean */
   Boolean = "boolean",
+  /** Enum */
   Enum = "enum",
+  /** Location */
   Location = "location",
+  /** Phonenumber */
   Phonenumber = "phonenumber",
+  /** Json */
   Json = "json",
+  /** Table */
   Table = "table",
+  /** Expectedremuneration */
   Expectedremuneration = "expectedremuneration",
+  /** Jobtitle */
   Jobtitle = "jobtitle",
+  /** Language */
   Language = "language",
+  /** Skill */
   Skill = "skill",
+  /** Yearsexperience */
   Yearsexperience = "yearsexperience",
+  /** Group */
   Group = "group",
+  /** TableDeprecated */
   TableDeprecated = "table_deprecated",
+  /** Url */
   Url = "url",
-  Image = "image"
+  /** Image */
+  Image = "image",
 }
 
 /**
@@ -3231,9 +3331,12 @@ export type AnnotationContentType = string;
 
 /** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
 export enum KnownCollectionDateFormatPreference {
+  /** DMY */
   DMY = "DMY",
+  /** MDY */
   MDY = "MDY",
-  YMD = "YMD"
+  /** YMD */
+  YMD = "YMD",
 }
 
 /**
@@ -3249,9 +3352,12 @@ export type CollectionDateFormatPreference = string;
 
 /** Known values of {@link DateFormatPreference} that the service accepts. */
 export enum KnownDateFormatPreference {
+  /** DMY */
   DMY = "DMY",
+  /** MDY */
   MDY = "MDY",
-  YMD = "YMD"
+  /** YMD */
+  YMD = "YMD",
 }
 
 /**
@@ -3267,11 +3373,16 @@ export type DateFormatPreference = string;
 
 /** Known values of {@link DocumentState} that the service accepts. */
 export enum KnownDocumentState {
+  /** Uploaded */
   Uploaded = "uploaded",
+  /** Review */
   Review = "review",
+  /** Validated */
   Validated = "validated",
+  /** Archived */
   Archived = "archived",
-  Rejected = "rejected"
+  /** Rejected */
+  Rejected = "rejected",
 }
 
 /**
@@ -3289,11 +3400,16 @@ export type DocumentState = string;
 
 /** Known values of {@link DateRange} that the service accepts. */
 export enum KnownDateRange {
+  /** Today */
   Today = "today",
+  /** Yesterday */
   Yesterday = "yesterday",
+  /** Week */
   Week = "week",
+  /** Month */
   Month = "month",
-  Year = "year"
+  /** Year */
+  Year = "year",
 }
 
 /**
@@ -3311,209 +3427,412 @@ export type DateRange = string;
 
 /** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
 export enum KnownResumeDataLanguagesItem {
+  /** Ainu */
   Ainu = "Ainu",
+  /** Akan */
   Akan = "Akan",
+  /** Akkadian */
   Akkadian = "Akkadian",
+  /** Amharic */
   Amharic = "Amharic",
+  /** Anam */
   Anam = "Anam",
+  /** Arabic */
   Arabic = "Arabic",
+  /** Aramaic */
   Aramaic = "Aramaic",
+  /** Arem */
   Arem = "Arem",
+  /** Armenian */
   Armenian = "Armenian",
+  /** Awadhi */
   Awadhi = "Awadhi",
+  /** Aymara */
   Aymara = "Aymara",
+  /** Azari */
   Azari = "Azari",
+  /** Bagheli */
   Bagheli = "Bagheli",
+  /** Bagri */
   Bagri = "Bagri",
+  /** Bahasa */
   Bahasa = "Bahasa",
+  /** Bambara */
   Bambara = "Bambara",
+  /** Bangala */
   Bangala = "Bangala",
+  /** Bardi */
   Bardi = "Bardi",
+  /** Bassa */
   Bassa = "Bassa",
+  /** Batak */
   Batak = "Batak",
+  /** Belarusian */
   Belarusian = "Belarusian",
+  /** Bemba */
   Bemba = "Bemba",
+  /** Benga */
   Benga = "Benga",
+  /** Bengali */
   Bengali = "Bengali",
+  /** Berber */
   Berber = "Berber",
+  /** Bhojpuri */
   Bhojpuri = "Bhojpuri",
+  /** Bislama */
   Bislama = "Bislama",
+  /** Brahui */
   Brahui = "Brahui",
+  /** Bulgarian */
   Bulgarian = "Bulgarian",
+  /** Bunu */
   Bunu = "Bunu",
+  /** Cambodian */
   Cambodian = "Cambodian",
+  /** Carew */
   Carew = "Carew",
+  /** Carib */
   Carib = "Carib",
+  /** Catalan */
   Catalan = "Catalan",
+  /** Cebuano */
   Cebuano = "Cebuano",
+  /** Chakma */
   Chakma = "Chakma",
+  /** Chamorro */
   Chamorro = "Chamorro",
+  /** Chango */
   Chango = "Chango",
+  /** Chewa */
   Chewa = "Chewa",
+  /** Croatian */
   Croatian = "Croatian",
+  /** Czech */
   Czech = "Czech",
+  /** Dagbani */
   Dagbani = "Dagbani",
+  /** Danish */
   Danish = "Danish",
+  /** Dari */
   Dari = "Dari",
+  /** Dayi */
   Dayi = "Dayi",
+  /** Dhatki */
   Dhatki = "Dhatki",
+  /** Dhivehi */
   Dhivehi = "Dhivehi",
+  /** Dinka */
   Dinka = "Dinka",
+  /** Dogri */
   Dogri = "Dogri",
+  /** Duala */
   Duala = "Duala",
+  /** Dutch */
   Dutch = "Dutch",
+  /** English */
   English = "English",
+  /** Esperanto */
   Esperanto = "Esperanto",
+  /** Estonian */
   Estonian = "Estonian",
+  /** Ewondo */
   Ewondo = "Ewondo",
+  /** Faroese */
   Faroese = "Faroese",
+  /** Filipino */
   Filipino = "Filipino",
+  /** Finnish */
   Finnish = "Finnish",
+  /** Formula */
   Formula = "Formula",
+  /** French */
   French = "French",
+  /** Frisian */
   Frisian = "Frisian",
+  /** Friulian */
   Friulian = "Friulian",
+  /** Fula */
   Fula = "Fula",
+  /** Gaelic */
   Gaelic = "Gaelic",
+  /** Galo */
   Galo = "Galo",
+  /** Garhwali */
   Garhwali = "Garhwali",
+  /** Garifuna */
   Garifuna = "Garifuna",
+  /** German */
   German = "German",
+  /** Gikuyu */
   Gikuyu = "Gikuyu",
+  /** Gujarati */
   Gujarati = "Gujarati",
+  /** Gujerati */
   Gujerati = "Gujerati",
+  /** Gwere */
   Gwere = "Gwere",
+  /** Hawaiian */
   Hawaiian = "Hawaiian",
+  /** Haya */
   Haya = "Haya",
+  /** Hebrew */
   Hebrew = "Hebrew",
+  /** Hindi */
   Hindi = "Hindi",
+  /** Hmu */
   Hmu = "Hmu",
+  /** Hokkien */
   Hokkien = "Hokkien",
+  /** Hopi */
   Hopi = "Hopi",
+  /** Hungarian */
   Hungarian = "Hungarian",
+  /** Hup */
   Hup = "Hup",
+  /** Ibanag */
   Ibanag = "Ibanag",
+  /** Igbo */
   Igbo = "Igbo",
+  /** Ilokano */
   Ilokano = "Ilokano",
+  /** Indonesian */
   Indonesian = "Indonesian",
+  /** Intermediate */
   Intermediate = "Intermediate",
+  /** Irish */
   Irish = "Irish",
+  /** Italian */
   Italian = "Italian",
+  /** Japanese */
   Japanese = "Japanese",
+  /** Jiba */
   Jiba = "Jiba",
+  /** Kachin */
   Kachin = "Kachin",
+  /** Kalenjin */
   Kalenjin = "Kalenjin",
+  /** Kamayo */
   Kamayo = "Kamayo",
+  /** Kannada */
   Kannada = "Kannada",
+  /** Kaonde */
   Kaonde = "Kaonde",
+  /** Kayan */
   Kayan = "Kayan",
+  /** Khandeshi */
   Khandeshi = "Khandeshi",
+  /** Khmer */
   Khmer = "Khmer",
+  /** Kikuyu */
   Kikuyu = "Kikuyu",
+  /** Kodava */
   Kodava = "Kodava",
+  /** Koma */
   Koma = "Koma",
+  /** Kongo */
   Kongo = "Kongo",
+  /** Konkani */
   Konkani = "Konkani",
+  /** Korean */
   Korean = "Korean",
+  /** Korwa */
   Korwa = "Korwa",
+  /** Kreyol */
   Kreyol = "Kreyol",
+  /** Krio */
   Krio = "Krio",
+  /** Kumaoni */
   Kumaoni = "Kumaoni",
+  /** Kurdish */
   Kurdish = "Kurdish",
+  /** Kurukh */
   Kurukh = "Kurukh",
+  /** Kwa */
   Kwa = "Kwa",
+  /** Ladino */
   Ladino = "Ladino",
+  /** Lango */
   Lango = "Lango",
+  /** Latvian */
   Latvian = "Latvian",
+  /** Lawa */
   Lawa = "Lawa",
+  /** Lingala */
   Lingala = "Lingala",
+  /** Lithuanian */
   Lithuanian = "Lithuanian",
+  /** Lule */
   Lule = "Lule",
+  /** Luxembourgish */
   Luxembourgish = "Luxembourgish",
+  /** Magahi */
   Magahi = "Magahi",
+  /** Maithili */
   Maithili = "Maithili",
+  /** Malay */
   Malay = "Malay",
+  /** Malayalam */
   Malayalam = "Malayalam",
+  /** Malaysian */
   Malaysian = "Malaysian",
+  /** Malvi */
   Malvi = "Malvi",
+  /** Maninka */
   Maninka = "Maninka",
+  /** Manipuri */
   Manipuri = "Manipuri",
+  /** Manx */
   Manx = "Manx",
+  /** Marathi */
   Marathi = "Marathi",
+  /** Mayan */
   Mayan = "Mayan",
+  /** Medumba */
   Medumba = "Medumba",
+  /** Memoni */
   Memoni = "Memoni",
+  /** Mewari */
   Mewari = "Mewari",
+  /** Mizo */
   Mizo = "Mizo",
+  /** Montenegrin */
   Montenegrin = "Montenegrin",
+  /** Mwan */
   Mwan = "Mwan",
+  /** Mwanga */
   Mwanga = "Mwanga",
+  /** Ndebele */
   Ndebele = "Ndebele",
+  /** Nepali */
   Nepali = "Nepali",
+  /** Nimadi */
   Nimadi = "Nimadi",
+  /** Oriya */
   Oriya = "Oriya",
+  /** Oromo */
   Oromo = "Oromo",
+  /** Ovambo */
   Ovambo = "Ovambo",
+  /** Pamona */
   Pamona = "Pamona",
+  /** Pangasinan */
   Pangasinan = "Pangasinan",
+  /** Pashto */
   Pashto = "Pashto",
+  /** Phoenician */
   Phoenician = "Phoenician",
+  /** Polish */
   Polish = "Polish",
+  /** Portuguese */
   Portuguese = "Portuguese",
+  /** Pulaar */
   Pulaar = "Pulaar",
+  /** Pular */
   Pular = "Pular",
+  /** Punjabi */
   Punjabi = "Punjabi",
+  /** Quecha */
   Quecha = "Quecha",
+  /** Rajasthani */
   Rajasthani = "Rajasthani",
+  /** Romanian */
   Romanian = "Romanian",
+  /** Russian */
   Russian = "Russian",
+  /** Sakha */
   Sakha = "Sakha",
+  /** Sango */
   Sango = "Sango",
+  /** Santhali */
   Santhali = "Santhali",
+  /** Saraiki */
   Saraiki = "Saraiki",
+  /** Seim */
   Seim = "Seim",
+  /** Shading */
   Shading = "Shading",
+  /** Shama */
   Shama = "Shama",
+  /** Shan */
   Shan = "Shan",
+  /** Shona */
   Shona = "Shona",
+  /** Silesian */
   Silesian = "Silesian",
+  /** Sindhi */
   Sindhi = "Sindhi",
+  /** Slovak */
   Slovak = "Slovak",
+  /** Slovene */
   Slovene = "Slovene",
+  /** Soga */
   Soga = "Soga",
+  /** Sogdian */
   Sogdian = "Sogdian",
+  /** Sotho */
   Sotho = "Sotho",
+  /** Spanish */
   Spanish = "Spanish",
+  /** Sudanese */
   Sudanese = "Sudanese",
+  /** Sumerian */
   Sumerian = "Sumerian",
+  /** Surajpuri */
   Surajpuri = "Surajpuri",
+  /** Surigaonon */
   Surigaonon = "Surigaonon",
+  /** Swati */
   Swati = "Swati",
+  /** Swazi */
   Swazi = "Swazi",
+  /** Swedish */
   Swedish = "Swedish",
+  /** Tagalog */
   Tagalog = "Tagalog",
+  /** Tamil */
   Tamil = "Tamil",
+  /** Tausug */
   Tausug = "Tausug",
+  /** Telugu */
   Telugu = "Telugu",
+  /** Tetum */
   Tetum = "Tetum",
+  /** Tharu */
   Tharu = "Tharu",
+  /** Tibetan */
   Tibetan = "Tibetan",
+  /** Tigrinya */
   Tigrinya = "Tigrinya",
+  /** Tripuri */
   Tripuri = "Tripuri",
+  /** Tswana */
   Tswana = "Tswana",
+  /** Tulu */
   Tulu = "Tulu",
+  /** Turkish */
   Turkish = "Turkish",
+  /** Tuwali */
   Tuwali = "Tuwali",
+  /** Ubi */
   Ubi = "Ubi",
+  /** Ukrainian */
   Ukrainian = "Ukrainian",
+  /** Urdu */
   Urdu = "Urdu",
+  /** Veps */
   Veps = "Veps",
+  /** Vietnamese */
   Vietnamese = "Vietnamese",
+  /** Wagdi */
   Wagdi = "Wagdi",
+  /** Waziri */
   Waziri = "Waziri",
+  /** Xhosa */
   Xhosa = "Xhosa",
+  /** Yiddish */
   Yiddish = "Yiddish",
-  Yoruba = "Yoruba"
+  /** Yoruba */
+  Yoruba = "Yoruba",
 }
 
 /**
@@ -3729,9 +4048,12 @@ export type ResumeDataLanguagesItem = string;
 
 /** Known values of {@link DocumentFormat} that the service accepts. */
 export enum KnownDocumentFormat {
+  /** Json */
   Json = "json",
+  /** Xml */
   Xml = "xml",
-  HrXml = "hr-xml"
+  /** HrXml */
+  HrXml = "hr-xml",
 }
 
 /**
@@ -3747,9 +4069,12 @@ export type DocumentFormat = string;
 
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export enum KnownInvitationStatus {
+  /** Pending */
   Pending = "pending",
+  /** Accepted */
   Accepted = "accepted",
-  Declined = "declined"
+  /** Declined */
+  Declined = "declined",
 }
 
 /**
@@ -3765,8 +4090,10 @@ export type InvitationStatus = string;
 
 /** Known values of {@link InvitationResponseStatus} that the service accepts. */
 export enum KnownInvitationResponseStatus {
+  /** Accepted */
   Accepted = "accepted",
-  Declined = "declined"
+  /** Declined */
+  Declined = "declined",
 }
 
 /**
@@ -3781,22 +4108,38 @@ export type InvitationResponseStatus = string;
 
 /** Known values of {@link ResthookEvent} that the service accepts. */
 export enum KnownResthookEvent {
+  /** ResumeParseSucceeded */
   ResumeParseSucceeded = "resume.parse.succeeded",
+  /** ResumeParseFailed */
   ResumeParseFailed = "resume.parse.failed",
+  /** ResumeParseCompleted */
   ResumeParseCompleted = "resume.parse.completed",
+  /** InvoiceParseSucceeded */
   InvoiceParseSucceeded = "invoice.parse.succeeded",
+  /** InvoiceParseFailed */
   InvoiceParseFailed = "invoice.parse.failed",
+  /** InvoiceParseCompleted */
   InvoiceParseCompleted = "invoice.parse.completed",
+  /** InvoiceValidateCompleted */
   InvoiceValidateCompleted = "invoice.validate.completed",
+  /** DocumentParseSucceeded */
   DocumentParseSucceeded = "document.parse.succeeded",
+  /** DocumentParseFailed */
   DocumentParseFailed = "document.parse.failed",
+  /** DocumentParseCompleted */
   DocumentParseCompleted = "document.parse.completed",
+  /** DocumentValidateCompleted */
   DocumentValidateCompleted = "document.validate.completed",
+  /** DocumentClassifySucceeded */
   DocumentClassifySucceeded = "document.classify.succeeded",
+  /** DocumentClassifyFailed */
   DocumentClassifyFailed = "document.classify.failed",
+  /** DocumentClassifyCompleted */
   DocumentClassifyCompleted = "document.classify.completed",
+  /** DocumentRejected */
   DocumentRejected = "document.rejected",
-  AnnotationValidated = "annotation.validated"
+  /** AnnotationValidated */
+  AnnotationValidated = "annotation.validated",
 }
 
 /**
@@ -3825,9 +4168,12 @@ export type ResthookEvent = string;
 
 /** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
 export enum KnownResthookSubscriptionVersion {
+  /** V1 */
   V1 = "v1",
+  /** V2 */
   V2 = "v2",
-  V3 = "v3"
+  /** V3 */
+  V3 = "v3",
 }
 
 /**
@@ -3843,9 +4189,12 @@ export type ResthookSubscriptionVersion = string;
 
 /** Known values of {@link Version} that the service accepts. */
 export enum KnownVersion {
+  /** V1 */
   V1 = "v1",
+  /** V2 */
   V2 = "v2",
-  V3 = "v3"
+  /** V3 */
+  V3 = "v3",
 }
 
 /**
@@ -3861,8 +4210,10 @@ export type Version = string;
 
 /** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
 export enum KnownSearchParametersCustomDataFilterType {
+  /** Equals */
   Equals = "equals",
-  Range = "range"
+  /** Range */
+  Range = "range",
 }
 
 /**
@@ -3877,8 +4228,10 @@ export type SearchParametersCustomDataFilterType = string;
 
 /** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
 export enum KnownJobDescriptionSearchConfigDistanceUnit {
+  /** Mi */
   Mi = "mi",
-  Km = "km"
+  /** Km */
+  Km = "km",
 }
 
 /**
@@ -3893,8 +4246,10 @@ export type JobDescriptionSearchConfigDistanceUnit = string;
 
 /** Known values of {@link Enum20} that the service accepts. */
 export enum KnownEnum20 {
+  /** Resumes */
   Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
+  /** JobDescriptions */
+  JobDescriptions = "job_descriptions",
 }
 
 /**
@@ -3909,8 +4264,10 @@ export type Enum20 = string;
 
 /** Known values of {@link IndexDocumentType} that the service accepts. */
 export enum KnownIndexDocumentType {
+  /** Resumes */
   Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
+  /** JobDescriptions */
+  JobDescriptions = "job_descriptions",
 }
 
 /**
@@ -3925,8 +4282,10 @@ export type IndexDocumentType = string;
 
 /** Known values of {@link DocumentType} that the service accepts. */
 export enum KnownDocumentType {
+  /** Resumes */
   Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
+  /** JobDescriptions */
+  JobDescriptions = "job_descriptions",
 }
 
 /**
@@ -3941,26 +4300,46 @@ export type DocumentType = string;
 
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
+  /** Achievements */
   Achievements = "Achievements",
+  /** AdditionalInformation */
   AdditionalInformation = "AdditionalInformation",
+  /** Education */
   Education = "Education",
+  /** Extracurriculars */
   Extracurriculars = "Extracurriculars",
+  /** Organisations */
   Organisations = "Organisations",
+  /** Other */
   Other = "Other",
+  /** PersonalDetails */
   PersonalDetails = "PersonalDetails",
+  /** Projects */
   Projects = "Projects",
+  /** Publications */
   Publications = "Publications",
+  /** Referees */
   Referees = "Referees",
+  /** Skills */
   Skills = "Skills",
+  /** Summary */
   Summary = "Summary",
+  /** Training */
   Training = "Training",
+  /** WorkExperience */
   WorkExperience = "WorkExperience",
+  /** NotPopulated */
   NotPopulated = "NotPopulated",
+  /** Header */
   Header = "Header",
+  /** Footer */
   Footer = "Footer",
+  /** SkillsInterestsLanguages */
   SkillsInterestsLanguages = "Skills/Interests/Languages",
+  /** TrainingCertifications */
   TrainingCertifications = "Training/Certifications",
-  ExtracurricularsLeadership = "Extracurriculars/Leadership"
+  /** ExtracurricularsLeadership */
+  ExtracurricularsLeadership = "Extracurriculars/Leadership",
 }
 
 /**
@@ -3993,8 +4372,10 @@ export type ResumeSkillSourcesItemSection = string;
 
 /** Known values of {@link ResumeSearchConfigDistanceUnit} that the service accepts. */
 export enum KnownResumeSearchConfigDistanceUnit {
+  /** Mi */
   Mi = "mi",
-  Km = "km"
+  /** Km */
+  Km = "km",
 }
 
 /**
@@ -4019,42 +4400,42 @@ export type EducationLevel =
   | "doctoral";
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllWorkspacesOptionalParams
+export interface GetAllWorkspacesOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by name. */
   name?: string;
 }
 
 /** Contains response data for the getAllWorkspaces operation. */
-export type AffindaAPIGetAllWorkspacesResponse = Workspace[];
+export type GetAllWorkspacesResponse = Workspace[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateWorkspaceOptionalParams
+export interface CreateWorkspaceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createWorkspace operation. */
-export type AffindaAPICreateWorkspaceResponse = Workspace;
+export type CreateWorkspaceResponse = Workspace;
 
 /** Optional parameters. */
-export interface AffindaAPIGetWorkspaceOptionalParams
+export interface GetWorkspaceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getWorkspace operation. */
-export type AffindaAPIGetWorkspaceResponse = Workspace;
+export type GetWorkspaceResponse = Workspace;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateWorkspaceOptionalParams
+export interface UpdateWorkspaceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateWorkspace operation. */
-export type AffindaAPIUpdateWorkspaceResponse = Workspace;
+export type UpdateWorkspaceResponse = Workspace;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteWorkspaceOptionalParams
+export interface DeleteWorkspaceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetUsageByWorkspaceOptionalParams
+export interface GetUsageByWorkspaceOptionalParams
   extends coreClient.OperationOptions {
   /** Start date of the period to retrieve. Format: YYYY-MM */
   start?: string;
@@ -4063,10 +4444,10 @@ export interface AffindaAPIGetUsageByWorkspaceOptionalParams
 }
 
 /** Contains response data for the getUsageByWorkspace operation. */
-export type AffindaAPIGetUsageByWorkspaceResponse = UsageByWorkspace[];
+export type GetUsageByWorkspaceResponse = UsageByWorkspace[];
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams
+export interface GetAllWorkspaceMembershipsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4079,81 +4460,82 @@ export interface AffindaAPIGetAllWorkspaceMembershipsOptionalParams
 }
 
 /** Contains response data for the getAllWorkspaceMemberships operation. */
-export type AffindaAPIGetAllWorkspaceMembershipsResponse = PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema;
+export type GetAllWorkspaceMembershipsResponse =
+  PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateWorkspaceMembershipOptionalParams
+export interface CreateWorkspaceMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createWorkspaceMembership operation. */
-export type AffindaAPICreateWorkspaceMembershipResponse = WorkspaceMembership;
+export type CreateWorkspaceMembershipResponse = WorkspaceMembership;
 
 /** Optional parameters. */
-export interface AffindaAPIGetWorkspaceMembershipOptionalParams
+export interface GetWorkspaceMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getWorkspaceMembership operation. */
-export type AffindaAPIGetWorkspaceMembershipResponse = WorkspaceMembership;
+export type GetWorkspaceMembershipResponse = WorkspaceMembership;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteWorkspaceMembershipOptionalParams
+export interface DeleteWorkspaceMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllCollectionsOptionalParams
+export interface GetAllCollectionsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllCollections operation. */
-export type AffindaAPIGetAllCollectionsResponse = Collection[];
+export type GetAllCollectionsResponse = Collection[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateCollectionOptionalParams
+export interface CreateCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createCollection operation. */
-export type AffindaAPICreateCollectionResponse = Collection;
+export type CreateCollectionResponse = Collection;
 
 /** Optional parameters. */
-export interface AffindaAPIGetCollectionOptionalParams
+export interface GetCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getCollection operation. */
-export type AffindaAPIGetCollectionResponse = Collection;
+export type GetCollectionResponse = Collection;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateCollectionOptionalParams
+export interface UpdateCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateCollection operation. */
-export type AffindaAPIUpdateCollectionResponse = Collection;
+export type UpdateCollectionResponse = Collection;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteCollectionOptionalParams
+export interface DeleteCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPICreateDataFieldForCollectionOptionalParams
+export interface CreateDataFieldForCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createDataFieldForCollection operation. */
-export type AffindaAPICreateDataFieldForCollectionResponse = DataField;
+export type CreateDataFieldForCollectionResponse = DataField;
 
 /** Optional parameters. */
-export interface AffindaAPIGetDataFieldForCollectionOptionalParams
+export interface GetDataFieldForCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getDataFieldForCollection operation. */
-export type AffindaAPIGetDataFieldForCollectionResponse = CollectionField;
+export type GetDataFieldForCollectionResponse = CollectionField;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateDataFieldForCollectionOptionalParams
+export interface UpdateDataFieldForCollectionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateDataFieldForCollection operation. */
-export type AffindaAPIUpdateDataFieldForCollectionResponse = CollectionField;
+export type UpdateDataFieldForCollectionResponse = CollectionField;
 
 /** Optional parameters. */
-export interface AffindaAPIGetUsageByCollectionOptionalParams
+export interface GetUsageByCollectionOptionalParams
   extends coreClient.OperationOptions {
   /** Start date of the period to retrieve. Format: YYYY-MM */
   start?: string;
@@ -4162,10 +4544,10 @@ export interface AffindaAPIGetUsageByCollectionOptionalParams
 }
 
 /** Contains response data for the getUsageByCollection operation. */
-export type AffindaAPIGetUsageByCollectionResponse = UsageByCollection[];
+export type GetUsageByCollectionResponse = UsageByCollection[];
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllDocumentsOptionalParams
+export interface GetAllDocumentsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4208,10 +4590,11 @@ export interface AffindaAPIGetAllDocumentsOptionalParams
 }
 
 /** Contains response data for the getAllDocuments operation. */
-export type AffindaAPIGetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
+export type GetAllDocumentsResponse =
+  PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateDocumentOptionalParams
+export interface CreateDocumentOptionalParams
   extends coreClient.OperationOptions {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
@@ -4248,11 +4631,10 @@ export interface AffindaAPICreateDocumentOptionalParams
 }
 
 /** Contains response data for the createDocument operation. */
-export type AffindaAPICreateDocumentResponse = DocumentUnion;
+export type CreateDocumentResponse = DocumentUnion;
 
 /** Optional parameters. */
-export interface AffindaAPIGetDocumentOptionalParams
-  extends coreClient.OperationOptions {
+export interface GetDocumentOptionalParams extends coreClient.OperationOptions {
   /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
   compact?: boolean;
   /** Specify which format you want the response to be. Default is "json" */
@@ -4260,43 +4642,43 @@ export interface AffindaAPIGetDocumentOptionalParams
 }
 
 /** Contains response data for the getDocument operation. */
-export type AffindaAPIGetDocumentResponse = DocumentUnion;
+export type GetDocumentResponse = DocumentUnion;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateDocumentOptionalParams
+export interface UpdateDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateDocument operation. */
-export type AffindaAPIUpdateDocumentResponse = DocumentUnion;
+export type UpdateDocumentResponse = DocumentUnion;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteDocumentOptionalParams
+export interface DeleteDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateDocumentDataOptionalParams
+export interface UpdateDocumentDataOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateDocumentData operation. */
-export type AffindaAPIUpdateDocumentDataResponse = DocumentUnion;
+export type UpdateDocumentDataResponse = DocumentUnion;
 
 /** Optional parameters. */
-export interface AffindaAPIBatchAddTagOptionalParams
+export interface BatchAddTagOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIBatchRemoveTagOptionalParams
+export interface BatchRemoveTagOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIEditDocumentPagesOptionalParams
+export interface EditDocumentPagesOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the editDocumentPages operation. */
-export type AffindaAPIEditDocumentPagesResponse = Meta[];
+export type EditDocumentPagesResponse = Meta[];
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllValidationResultsOptionalParams
+export interface GetAllValidationResultsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4305,35 +4687,35 @@ export interface AffindaAPIGetAllValidationResultsOptionalParams
 }
 
 /** Contains response data for the getAllValidationResults operation. */
-export type AffindaAPIGetAllValidationResultsResponse = ValidationResult[];
+export type GetAllValidationResultsResponse = ValidationResult[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateValidationResultOptionalParams
+export interface CreateValidationResultOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createValidationResult operation. */
-export type AffindaAPICreateValidationResultResponse = ValidationResult;
+export type CreateValidationResultResponse = ValidationResult;
 
 /** Optional parameters. */
-export interface AffindaAPIGetValidationResultOptionalParams
+export interface GetValidationResultOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getValidationResult operation. */
-export type AffindaAPIGetValidationResultResponse = ValidationResult;
+export type GetValidationResultResponse = ValidationResult;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateValidationResultOptionalParams
+export interface UpdateValidationResultOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateValidationResult operation. */
-export type AffindaAPIUpdateValidationResultResponse = ValidationResult;
+export type UpdateValidationResultResponse = ValidationResult;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteValidationResultOptionalParams
+export interface DeleteValidationResultOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllExtractorsOptionalParams
+export interface GetAllExtractorsOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by name. */
   name?: string;
@@ -4344,37 +4726,37 @@ export interface AffindaAPIGetAllExtractorsOptionalParams
 }
 
 /** Contains response data for the getAllExtractors operation. */
-export type AffindaAPIGetAllExtractorsResponse = Extractor[];
+export type GetAllExtractorsResponse = Extractor[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateExtractorOptionalParams
+export interface CreateExtractorOptionalParams
   extends coreClient.OperationOptions {
   body?: ExtractorCreate;
 }
 
 /** Contains response data for the createExtractor operation. */
-export type AffindaAPICreateExtractorResponse = Extractor;
+export type CreateExtractorResponse = Extractor;
 
 /** Optional parameters. */
-export interface AffindaAPIGetExtractorOptionalParams
+export interface GetExtractorOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getExtractor operation. */
-export type AffindaAPIGetExtractorResponse = Extractor;
+export type GetExtractorResponse = Extractor;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateExtractorOptionalParams
+export interface UpdateExtractorOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateExtractor operation. */
-export type AffindaAPIUpdateExtractorResponse = Extractor;
+export type UpdateExtractorResponse = Extractor;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteExtractorOptionalParams
+export interface DeleteExtractorOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllDataPointsOptionalParams
+export interface GetAllDataPointsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4397,37 +4779,37 @@ export interface AffindaAPIGetAllDataPointsOptionalParams
 }
 
 /** Contains response data for the getAllDataPoints operation. */
-export type AffindaAPIGetAllDataPointsResponse = DataPoint[];
+export type GetAllDataPointsResponse = DataPoint[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateDataPointOptionalParams
+export interface CreateDataPointOptionalParams
   extends coreClient.OperationOptions {
   body?: DataPointCreate;
 }
 
 /** Contains response data for the createDataPoint operation. */
-export type AffindaAPICreateDataPointResponse = DataPoint;
+export type CreateDataPointResponse = DataPoint;
 
 /** Optional parameters. */
-export interface AffindaAPIGetDataPointOptionalParams
+export interface GetDataPointOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getDataPoint operation. */
-export type AffindaAPIGetDataPointResponse = DataPoint;
+export type GetDataPointResponse = DataPoint;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateDataPointOptionalParams
+export interface UpdateDataPointOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateDataPoint operation. */
-export type AffindaAPIUpdateDataPointResponse = DataPoint;
+export type UpdateDataPointResponse = DataPoint;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteDataPointOptionalParams
+export interface DeleteDataPointOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetDataPointChoicesOptionalParams
+export interface GetDataPointChoicesOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4438,110 +4820,113 @@ export interface AffindaAPIGetDataPointChoicesOptionalParams
 }
 
 /** Contains response data for the getDataPointChoices operation. */
-export type AffindaAPIGetDataPointChoicesResponse = PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
+export type GetDataPointChoicesResponse =
+  PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateDataPointChoiceOptionalParams
+export interface CreateDataPointChoiceOptionalParams
   extends coreClient.OperationOptions {
   body?: DataPointChoiceCreate;
 }
 
 /** Contains response data for the createDataPointChoice operation. */
-export type AffindaAPICreateDataPointChoiceResponse = DataPointChoice;
+export type CreateDataPointChoiceResponse = DataPointChoice;
 
 /** Optional parameters. */
-export interface AffindaAPIGetDataPointChoiceOptionalParams
+export interface GetDataPointChoiceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getDataPointChoice operation. */
-export type AffindaAPIGetDataPointChoiceResponse = DataPointChoice;
+export type GetDataPointChoiceResponse = DataPointChoice;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateDataPointChoiceOptionalParams
+export interface UpdateDataPointChoiceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateDataPointChoice operation. */
-export type AffindaAPIUpdateDataPointChoiceResponse = DataPointChoice;
+export type UpdateDataPointChoiceResponse = DataPointChoice;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteDataPointChoiceOptionalParams
+export interface DeleteDataPointChoiceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIReplaceDataPointChoicesOptionalParams
+export interface ReplaceDataPointChoicesOptionalParams
   extends coreClient.OperationOptions {
   /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
   body?: DataPointChoiceReplaceRequest;
 }
 
 /** Contains response data for the replaceDataPointChoices operation. */
-export type AffindaAPIReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
+export type ReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllAnnotationsOptionalParams
+export interface GetAllAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllAnnotations operation. */
-export type AffindaAPIGetAllAnnotationsResponse = Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
+export type GetAllAnnotationsResponse =
+  Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateAnnotationOptionalParams
+export interface CreateAnnotationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createAnnotation operation. */
-export type AffindaAPICreateAnnotationResponse = AnnotationWithValidationResults;
+export type CreateAnnotationResponse = AnnotationWithValidationResults;
 
 /** Optional parameters. */
-export interface AffindaAPIGetAnnotationOptionalParams
+export interface GetAnnotationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAnnotation operation. */
-export type AffindaAPIGetAnnotationResponse = Annotation;
+export type GetAnnotationResponse = Annotation;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateAnnotationOptionalParams
+export interface UpdateAnnotationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateAnnotation operation. */
-export type AffindaAPIUpdateAnnotationResponse = Annotation;
+export type UpdateAnnotationResponse = Annotation;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteAnnotationOptionalParams
+export interface DeleteAnnotationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the deleteAnnotation operation. */
-export type AffindaAPIDeleteAnnotationResponse = AnotationDelete;
+export type DeleteAnnotationResponse = AnotationDelete;
 
 /** Optional parameters. */
-export interface AffindaAPIBatchCreateAnnotationsOptionalParams
+export interface BatchCreateAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the batchCreateAnnotations operation. */
-export type AffindaAPIBatchCreateAnnotationsResponse = (Annotation | null)[];
+export type BatchCreateAnnotationsResponse = (Annotation | null)[];
 
 /** Optional parameters. */
-export interface AffindaAPIBatchUpdateAnnotationsOptionalParams
+export interface BatchUpdateAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the batchUpdateAnnotations operation. */
-export type AffindaAPIBatchUpdateAnnotationsResponse = (Annotation | null)[];
+export type BatchUpdateAnnotationsResponse = (Annotation | null)[];
 
 /** Optional parameters. */
-export interface AffindaAPIBatchDeleteAnnotationsOptionalParams
+export interface BatchDeleteAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the batchDeleteAnnotations operation. */
-export type AffindaAPIBatchDeleteAnnotationsResponse = BatchDeleteAnnotationsResponse;
+export type BatchDeleteAnnotationsOperationResponse =
+  BatchDeleteAnnotationsResponse;
 
 /** Optional parameters. */
-export interface AffindaAPICreateMappingDataSourceOptionalParams
+export interface CreateMappingDataSourceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createMappingDataSource operation. */
-export type AffindaAPICreateMappingDataSourceResponse = MappingDataSource;
+export type CreateMappingDataSourceResponse = MappingDataSource;
 
 /** Optional parameters. */
-export interface AffindaAPIListMappingDataSourcesOptionalParams
+export interface ListMappingDataSourcesOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4550,21 +4935,22 @@ export interface AffindaAPIListMappingDataSourcesOptionalParams
 }
 
 /** Contains response data for the listMappingDataSources operation. */
-export type AffindaAPIListMappingDataSourcesResponse = Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema;
+export type ListMappingDataSourcesResponse =
+  Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPIGetMappingDataSourceOptionalParams
+export interface GetMappingDataSourceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getMappingDataSource operation. */
-export type AffindaAPIGetMappingDataSourceResponse = MappingDataSource;
+export type GetMappingDataSourceResponse = MappingDataSource;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteMappingDataSourceOptionalParams
+export interface DeleteMappingDataSourceOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIListMappingDataSourceValuesOptionalParams
+export interface ListMappingDataSourceValuesOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4575,51 +4961,43 @@ export interface AffindaAPIListMappingDataSourceValuesOptionalParams
 }
 
 /** Contains response data for the listMappingDataSourceValues operation. */
-export type AffindaAPIListMappingDataSourceValuesResponse = Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema;
+export type ListMappingDataSourceValuesResponse =
+  Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPIReplaceMappingDataSourceValuesOptionalParams
+export interface ReplaceMappingDataSourceValuesOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the replaceMappingDataSourceValues operation. */
-export type AffindaAPIReplaceMappingDataSourceValuesResponse = Record<
-  string,
-  unknown
->[];
+export type ReplaceMappingDataSourceValuesResponse = Record<string, unknown>[];
 
 /** Optional parameters. */
-export interface AffindaAPIAddMappingDataSourceValueOptionalParams
+export interface AddMappingDataSourceValueOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the addMappingDataSourceValue operation. */
-export type AffindaAPIAddMappingDataSourceValueResponse = Record<
-  string,
-  unknown
->;
+export type AddMappingDataSourceValueResponse = Record<string, unknown>;
 
 /** Optional parameters. */
-export interface AffindaAPIGetMappingDataSourceValueOptionalParams
+export interface GetMappingDataSourceValueOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getMappingDataSourceValue operation. */
-export type AffindaAPIGetMappingDataSourceValueResponse = Record<
-  string,
-  unknown
->;
+export type GetMappingDataSourceValueResponse = Record<string, unknown>;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteMappingDataSourceValueOptionalParams
+export interface DeleteMappingDataSourceValueOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPICreateMappingOptionalParams
+export interface CreateMappingOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createMapping operation. */
-export type AffindaAPICreateMappingResponse = Mapping;
+export type CreateMappingResponse = Mapping;
 
 /** Optional parameters. */
-export interface AffindaAPIListMappingsOptionalParams
+export interface ListMappingsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4628,29 +5006,28 @@ export interface AffindaAPIListMappingsOptionalParams
 }
 
 /** Contains response data for the listMappings operation. */
-export type AffindaAPIListMappingsResponse = Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
+export type ListMappingsResponse =
+  Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPIGetMappingOptionalParams
-  extends coreClient.OperationOptions {}
+export interface GetMappingOptionalParams extends coreClient.OperationOptions {}
 
 /** Contains response data for the getMapping operation. */
-export type AffindaAPIGetMappingResponse = Mapping;
+export type GetMappingResponse = Mapping;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteMappingOptionalParams
+export interface DeleteMappingOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateMappingOptionalParams
+export interface UpdateMappingOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateMapping operation. */
-export type AffindaAPIUpdateMappingResponse = Mapping;
+export type UpdateMappingResponse = Mapping;
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllTagsOptionalParams
-  extends coreClient.OperationOptions {
+export interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
@@ -4660,42 +5037,38 @@ export interface AffindaAPIGetAllTagsOptionalParams
 }
 
 /** Contains response data for the getAllTags operation. */
-export type AffindaAPIGetAllTagsResponse = Tag[];
+export type GetAllTagsResponse = Tag[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateTagOptionalParams
-  extends coreClient.OperationOptions {}
+export interface CreateTagOptionalParams extends coreClient.OperationOptions {}
 
 /** Contains response data for the createTag operation. */
-export type AffindaAPICreateTagResponse = Tag;
+export type CreateTagResponse = Tag;
 
 /** Optional parameters. */
-export interface AffindaAPIGetTagOptionalParams
-  extends coreClient.OperationOptions {}
+export interface GetTagOptionalParams extends coreClient.OperationOptions {}
 
 /** Contains response data for the getTag operation. */
-export type AffindaAPIGetTagResponse = Tag;
+export type GetTagResponse = Tag;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateTagOptionalParams
-  extends coreClient.OperationOptions {}
+export interface UpdateTagOptionalParams extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateTag operation. */
-export type AffindaAPIUpdateTagResponse = Tag;
+export type UpdateTagResponse = Tag;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteTagOptionalParams
-  extends coreClient.OperationOptions {}
+export interface DeleteTagOptionalParams extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllOrganizationsOptionalParams
+export interface GetAllOrganizationsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getAllOrganizations operation. */
-export type AffindaAPIGetAllOrganizationsResponse = Organization[];
+export type GetAllOrganizationsResponse = Organization[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateOrganizationOptionalParams
+export interface CreateOrganizationOptionalParams
   extends coreClient.OperationOptions {
   /** Upload avatar for the organization. */
   avatar?: coreRestPipeline.RequestBodyType;
@@ -4704,17 +5077,17 @@ export interface AffindaAPICreateOrganizationOptionalParams
 }
 
 /** Contains response data for the createOrganization operation. */
-export type AffindaAPICreateOrganizationResponse = Organization;
+export type CreateOrganizationResponse = Organization;
 
 /** Optional parameters. */
-export interface AffindaAPIGetOrganizationOptionalParams
+export interface GetOrganizationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getOrganization operation. */
-export type AffindaAPIGetOrganizationResponse = Organization;
+export type GetOrganizationResponse = Organization;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateOrganizationOptionalParams
+export interface UpdateOrganizationOptionalParams
   extends coreClient.OperationOptions {
   /** Upload avatar for the organization. */
   avatar?: coreRestPipeline.RequestBodyType;
@@ -4726,14 +5099,14 @@ export interface AffindaAPIUpdateOrganizationOptionalParams
 }
 
 /** Contains response data for the updateOrganization operation. */
-export type AffindaAPIUpdateOrganizationResponse = Organization;
+export type UpdateOrganizationResponse = Organization;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteOrganizationOptionalParams
+export interface DeleteOrganizationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllOrganizationMembershipsOptionalParams
+export interface GetAllOrganizationMembershipsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4746,28 +5119,29 @@ export interface AffindaAPIGetAllOrganizationMembershipsOptionalParams
 }
 
 /** Contains response data for the getAllOrganizationMemberships operation. */
-export type AffindaAPIGetAllOrganizationMembershipsResponse = PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
+export type GetAllOrganizationMembershipsResponse =
+  PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPIGetOrganizationMembershipOptionalParams
+export interface GetOrganizationMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getOrganizationMembership operation. */
-export type AffindaAPIGetOrganizationMembershipResponse = OrganizationMembership;
+export type GetOrganizationMembershipResponse = OrganizationMembership;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateOrganizationMembershipOptionalParams
+export interface UpdateOrganizationMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateOrganizationMembership operation. */
-export type AffindaAPIUpdateOrganizationMembershipResponse = OrganizationMembership;
+export type UpdateOrganizationMembershipResponse = OrganizationMembership;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteOrganizationMembershipOptionalParams
+export interface DeleteOrganizationMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllInvitationsOptionalParams
+export interface GetAllInvitationsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4782,91 +5156,92 @@ export interface AffindaAPIGetAllInvitationsOptionalParams
 }
 
 /** Contains response data for the getAllInvitations operation. */
-export type AffindaAPIGetAllInvitationsResponse = Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
+export type GetAllInvitationsResponse =
+  Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateInvitationOptionalParams
+export interface CreateInvitationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createInvitation operation. */
-export type AffindaAPICreateInvitationResponse = Invitation;
+export type CreateInvitationResponse = Invitation;
 
 /** Optional parameters. */
-export interface AffindaAPIGetInvitationOptionalParams
+export interface GetInvitationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getInvitation operation. */
-export type AffindaAPIGetInvitationResponse = Invitation;
+export type GetInvitationResponse = Invitation;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateInvitationOptionalParams
+export interface UpdateInvitationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateInvitation operation. */
-export type AffindaAPIUpdateInvitationResponse = Invitation;
+export type UpdateInvitationResponse = Invitation;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteInvitationOptionalParams
+export interface DeleteInvitationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetInvitationByTokenOptionalParams
+export interface GetInvitationByTokenOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getInvitationByToken operation. */
-export type AffindaAPIGetInvitationByTokenResponse = Invitation;
+export type GetInvitationByTokenResponse = Invitation;
 
 /** Optional parameters. */
-export interface AffindaAPIRespondToInvitationOptionalParams
+export interface RespondToInvitationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the respondToInvitation operation. */
-export type AffindaAPIRespondToInvitationResponse = Invitation;
+export type RespondToInvitationResponse = Invitation;
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllApiUsersOptionalParams
+export interface GetAllApiUsersOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by organization. */
   organization?: string;
 }
 
 /** Contains response data for the getAllApiUsers operation. */
-export type AffindaAPIGetAllApiUsersResponse = Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
+export type GetAllApiUsersResponse =
+  Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateApiUserOptionalParams
+export interface CreateApiUserOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createApiUser operation. */
-export type AffindaAPICreateApiUserResponse = ApiUserWithKey;
+export type CreateApiUserResponse = ApiUserWithKey;
 
 /** Optional parameters. */
-export interface AffindaAPIGetApiUserOptionalParams
-  extends coreClient.OperationOptions {}
+export interface GetApiUserOptionalParams extends coreClient.OperationOptions {}
 
 /** Contains response data for the getApiUser operation. */
-export type AffindaAPIGetApiUserResponse = ApiUserWithoutKey;
+export type GetApiUserResponse = ApiUserWithoutKey;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateApiUserOptionalParams
+export interface UpdateApiUserOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateApiUser operation. */
-export type AffindaAPIUpdateApiUserResponse = ApiUserWithoutKey;
+export type UpdateApiUserResponse = ApiUserWithoutKey;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteApiUserOptionalParams
+export interface DeleteApiUserOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIRegenerateApiKeyForApiUserOptionalParams
+export interface RegenerateApiKeyForApiUserOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the regenerateApiKeyForApiUser operation. */
-export type AffindaAPIRegenerateApiKeyForApiUserResponse = ApiUserWithKey;
+export type RegenerateApiKeyForApiUserResponse = ApiUserWithKey;
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllResthookSubscriptionsOptionalParams
+export interface GetAllResthookSubscriptionsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4875,49 +5250,50 @@ export interface AffindaAPIGetAllResthookSubscriptionsOptionalParams
 }
 
 /** Contains response data for the getAllResthookSubscriptions operation. */
-export type AffindaAPIGetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema;
+export type GetAllResthookSubscriptionsResponse =
+  PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateResthookSubscriptionOptionalParams
+export interface CreateResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createResthookSubscription operation. */
-export type AffindaAPICreateResthookSubscriptionResponse = ResthookSubscription;
+export type CreateResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResthookSubscriptionOptionalParams
+export interface GetResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getResthookSubscription operation. */
-export type AffindaAPIGetResthookSubscriptionResponse = ResthookSubscription;
+export type GetResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateResthookSubscriptionOptionalParams
+export interface UpdateResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateResthookSubscription operation. */
-export type AffindaAPIUpdateResthookSubscriptionResponse = ResthookSubscription;
+export type UpdateResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteResthookSubscriptionOptionalParams
+export interface DeleteResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIActivateResthookSubscriptionOptionalParams
+export interface ActivateResthookSubscriptionOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the activateResthookSubscription operation. */
-export type AffindaAPIActivateResthookSubscriptionResponse = ResthookSubscription;
+export type ActivateResthookSubscriptionResponse = ResthookSubscription;
 
 /** Optional parameters. */
-export interface AffindaAPIListOccupationGroupsOptionalParams
+export interface ListOccupationGroupsOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the listOccupationGroups operation. */
-export type AffindaAPIListOccupationGroupsResponse = OccupationGroup[];
+export type ListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
-export interface AffindaAPICreateJobDescriptionSearchOptionalParams
+export interface CreateJobDescriptionSearchOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4926,40 +5302,42 @@ export interface AffindaAPICreateJobDescriptionSearchOptionalParams
 }
 
 /** Contains response data for the createJobDescriptionSearch operation. */
-export type AffindaAPICreateJobDescriptionSearchResponse = JobDescriptionSearch;
+export type CreateJobDescriptionSearchResponse = JobDescriptionSearch;
 
 /** Optional parameters. */
-export interface AffindaAPIGetJobDescriptionSearchDetailOptionalParams
+export interface GetJobDescriptionSearchDetailOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getJobDescriptionSearchDetail operation. */
-export type AffindaAPIGetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
+export type GetJobDescriptionSearchDetailResponse = JobDescriptionSearchDetail;
 
 /** Optional parameters. */
-export interface AffindaAPIGetJobDescriptionSearchConfigOptionalParams
+export interface GetJobDescriptionSearchConfigOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getJobDescriptionSearchConfig operation. */
-export type AffindaAPIGetJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+export type GetJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams
+export interface UpdateJobDescriptionSearchConfigOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateJobDescriptionSearchConfig operation. */
-export type AffindaAPIUpdateJobDescriptionSearchConfigResponse = JobDescriptionSearchConfig;
+export type UpdateJobDescriptionSearchConfigResponse =
+  JobDescriptionSearchConfig;
 
 /** Optional parameters. */
-export interface AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams
+export interface CreateJobDescriptionSearchEmbedUrlOptionalParams
   extends coreClient.OperationOptions {
   body?: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema;
 }
 
 /** Contains response data for the createJobDescriptionSearchEmbedUrl operation. */
-export type AffindaAPICreateJobDescriptionSearchEmbedUrlResponse = JobDescriptionSearchEmbed;
+export type CreateJobDescriptionSearchEmbedUrlResponse =
+  JobDescriptionSearchEmbed;
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllIndexesOptionalParams
+export interface GetAllIndexesOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4970,28 +5348,29 @@ export interface AffindaAPIGetAllIndexesOptionalParams
 }
 
 /** Contains response data for the getAllIndexes operation. */
-export type AffindaAPIGetAllIndexesResponse = PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema;
+export type GetAllIndexesResponse =
+  PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateIndexOptionalParams
+export interface CreateIndexOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createIndex operation. */
-export type AffindaAPICreateIndexResponse = Index;
+export type CreateIndexResponse = Index;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateIndexOptionalParams
+export interface UpdateIndexOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateIndex operation. */
-export type AffindaAPIUpdateIndexResponse = Index;
+export type UpdateIndexResponse = Index;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteIndexOptionalParams
+export interface DeleteIndexOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPIGetAllIndexDocumentsOptionalParams
+export interface GetAllIndexDocumentsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -5000,21 +5379,23 @@ export interface AffindaAPIGetAllIndexDocumentsOptionalParams
 }
 
 /** Contains response data for the getAllIndexDocuments operation. */
-export type AffindaAPIGetAllIndexDocumentsResponse = PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
+export type GetAllIndexDocumentsResponse =
+  PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPICreateIndexDocumentOptionalParams
+export interface CreateIndexDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the createIndexDocument operation. */
-export type AffindaAPICreateIndexDocumentResponse = PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
+export type CreateIndexDocumentResponse =
+  PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface AffindaAPIDeleteIndexDocumentOptionalParams
+export interface DeleteIndexDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface AffindaAPICreateResumeSearchOptionalParams
+export interface CreateResumeSearchOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -5023,17 +5404,17 @@ export interface AffindaAPICreateResumeSearchOptionalParams
 }
 
 /** Contains response data for the createResumeSearch operation. */
-export type AffindaAPICreateResumeSearchResponse = ResumeSearch;
+export type CreateResumeSearchResponse = ResumeSearch;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchDetailOptionalParams
+export interface GetResumeSearchDetailOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getResumeSearchDetail operation. */
-export type AffindaAPIGetResumeSearchDetailResponse = ResumeSearchDetail;
+export type GetResumeSearchDetailResponse = ResumeSearchDetail;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchMatchOptionalParams
+export interface GetResumeSearchMatchOptionalParams
   extends coreClient.OperationOptions {
   /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
   index?: string;
@@ -5060,47 +5441,47 @@ export interface AffindaAPIGetResumeSearchMatchOptionalParams
 }
 
 /** Contains response data for the getResumeSearchMatch operation. */
-export type AffindaAPIGetResumeSearchMatchResponse = ResumeSearchMatch;
+export type GetResumeSearchMatchResponse = ResumeSearchMatch;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchConfigOptionalParams
+export interface GetResumeSearchConfigOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getResumeSearchConfig operation. */
-export type AffindaAPIGetResumeSearchConfigResponse = ResumeSearchConfig;
+export type GetResumeSearchConfigResponse = ResumeSearchConfig;
 
 /** Optional parameters. */
-export interface AffindaAPIUpdateResumeSearchConfigOptionalParams
+export interface UpdateResumeSearchConfigOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the updateResumeSearchConfig operation. */
-export type AffindaAPIUpdateResumeSearchConfigResponse = ResumeSearchConfig;
+export type UpdateResumeSearchConfigResponse = ResumeSearchConfig;
 
 /** Optional parameters. */
-export interface AffindaAPICreateResumeSearchEmbedUrlOptionalParams
+export interface CreateResumeSearchEmbedUrlOptionalParams
   extends coreClient.OperationOptions {
   body?: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
 }
 
 /** Contains response data for the createResumeSearchEmbedUrl operation. */
-export type AffindaAPICreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
+export type CreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams
+export interface GetResumeSearchSuggestionJobTitleOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
-export type AffindaAPIGetResumeSearchSuggestionJobTitleResponse = {
+export type GetResumeSearchSuggestionJobTitleResponse = {
   /** The parsed response body. */
   body: string[];
 };
 
 /** Optional parameters. */
-export interface AffindaAPIGetResumeSearchSuggestionSkillOptionalParams
+export interface GetResumeSearchSuggestionSkillOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Contains response data for the getResumeSearchSuggestionSkill operation. */
-export type AffindaAPIGetResumeSearchSuggestionSkillResponse = {
+export type GetResumeSearchSuggestionSkillResponse = {
   /** The parsed response body. */
   body: string[];
 };

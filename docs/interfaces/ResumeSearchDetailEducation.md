@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`ResumeSearchDetailEducationValueItem`](../modules.md#resumesearchdetaileducationvalueitem)[]
+• `Optional` **value**: [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)[]

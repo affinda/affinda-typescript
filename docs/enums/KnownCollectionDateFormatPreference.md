@@ -18,14 +18,20 @@ Known values of [CollectionDateFormatPreference](../modules.md#collectiondatefor
 
 • **DMY** = ``"DMY"``
 
+DMY
+
 ___
 
 ### MDY
 
 • **MDY** = ``"MDY"``
 
+MDY
+
 ___
 
 ### YMD
 
 • **YMD** = ``"YMD"``
+
+YMD

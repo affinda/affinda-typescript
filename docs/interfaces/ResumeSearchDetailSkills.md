@@ -19,4 +19,4 @@ ___
 
 ### value
 
-• `Optional` **value**: [`ResumeSearchDetailSkillsValueItem`](../modules.md#resumesearchdetailskillsvalueitem)[]
+• `Optional` **value**: [`ResumeSearchDetailSkillsValueItem`](ResumeSearchDetailSkillsValueItem.md)[]

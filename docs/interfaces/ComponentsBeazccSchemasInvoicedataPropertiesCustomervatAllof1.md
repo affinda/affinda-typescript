@@ -2,6 +2,12 @@
 
 # Interface: ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1
 
+## Hierarchy
+
+- **`ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1`**
+
+  ↳ [`InvoiceDataCustomerVat`](InvoiceDataCustomerVat.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

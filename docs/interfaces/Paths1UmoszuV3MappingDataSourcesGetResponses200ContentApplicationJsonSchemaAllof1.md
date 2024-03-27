@@ -2,6 +2,12 @@
 
 # Interface: Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

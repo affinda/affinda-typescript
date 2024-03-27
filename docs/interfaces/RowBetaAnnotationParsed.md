@@ -23,70 +23,70 @@
 
 ### itemBaseTotalBeta
 
-• `Optional` **itemBaseTotalBeta**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemBaseTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemCodeBeta
 
-• `Optional` **itemCodeBeta**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemCodeBeta**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemDateBeta
 
-• `Optional` **itemDateBeta**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **itemDateBeta**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### itemDescriptionBeta
 
-• `Optional` **itemDescriptionBeta**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemDescriptionBeta**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemDiscountBeta
 
-• `Optional` **itemDiscountBeta**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemDiscountBeta**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemOtherBeta
 
-• `Optional` **itemOtherBeta**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemOtherBeta**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemQuantityBeta
 
-• `Optional` **itemQuantityBeta**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemQuantityBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemTaxRateBeta
 
-• `Optional` **itemTaxRateBeta**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemTaxRateBeta**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemTaxTotalBeta
 
-• `Optional` **itemTaxTotalBeta**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemTaxTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemTotalBeta
 
-• `Optional` **itemTotalBeta**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
 ___
 
 ### itemUnitBeta
 
-• `Optional` **itemUnitBeta**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **itemUnitBeta**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### itemUnitPriceBeta
 
-• `Optional` **itemUnitPriceBeta**: [`FloatAnnotation`](../modules.md#floatannotation)
+• `Optional` **itemUnitPriceBeta**: [`FloatAnnotation`](FloatAnnotation.md)

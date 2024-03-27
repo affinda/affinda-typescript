@@ -2,6 +2,12 @@
 
 # Interface: ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1
 
+## Hierarchy
+
+- **`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`**
+
+  ↳ [`ResumeSearchDetailSkillsValueItem`](ResumeSearchDetailSkillsValueItem.md)
+
 ## Table of contents
 
 ### Properties

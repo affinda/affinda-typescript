@@ -17,8 +17,12 @@ Known values of [JobDescriptionSearchConfigDistanceUnit](../modules.md#jobdescri
 
 • **Km** = ``"km"``
 
+Km
+
 ___
 
 ### Mi
 
 • **Mi** = ``"mi"``
+
+Mi

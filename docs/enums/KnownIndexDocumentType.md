@@ -17,8 +17,12 @@ Known values of [IndexDocumentType](../modules.md#indexdocumenttype) that the se
 
 • **JobDescriptions** = ``"job_descriptions"``
 
+JobDescriptions
+
 ___
 
 ### Resumes
 
 • **Resumes** = ``"resumes"``
+
+Resumes

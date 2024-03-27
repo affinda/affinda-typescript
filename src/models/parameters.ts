@@ -1,7 +1,7 @@
 import {
   OperationParameter,
   OperationURLParameter,
-  OperationQueryParameter
+  OperationQueryParameter,
 } from "@azure/core-client";
 import {
   WorkspaceCreate as WorkspaceCreateMapper,
@@ -50,7 +50,7 @@ import {
   PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
   ResumeSearchParameters as ResumeSearchParametersMapper,
   ResumeSearchConfig as ResumeSearchConfigMapper,
-  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
 } from "../models/mappers";
 
 export const accept: OperationParameter = {
@@ -60,9 +60,9 @@ export const accept: OperationParameter = {
     isConstant: true,
     serializedName: "Accept",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const region: OperationURLParameter = {
@@ -71,9 +71,9 @@ export const region: OperationURLParameter = {
     serializedName: "region",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const organization: OperationQueryParameter = {
@@ -82,9 +82,9 @@ export const organization: OperationQueryParameter = {
     serializedName: "organization",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const name: OperationQueryParameter = {
@@ -92,9 +92,9 @@ export const name: OperationQueryParameter = {
   mapper: {
     serializedName: "name",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const contentType: OperationParameter = {
@@ -104,14 +104,14 @@ export const contentType: OperationParameter = {
     isConstant: true,
     serializedName: "Content-Type",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body: OperationParameter = {
   parameterPath: "body",
-  mapper: WorkspaceCreateMapper
+  mapper: WorkspaceCreateMapper,
 };
 
 export const identifier: OperationURLParameter = {
@@ -120,14 +120,14 @@ export const identifier: OperationURLParameter = {
     serializedName: "identifier",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body1: OperationParameter = {
   parameterPath: "body",
-  mapper: WorkspaceUpdateMapper
+  mapper: WorkspaceUpdateMapper,
 };
 
 export const start: OperationQueryParameter = {
@@ -135,9 +135,9 @@ export const start: OperationQueryParameter = {
   mapper: {
     serializedName: "start",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const end: OperationQueryParameter = {
@@ -145,22 +145,22 @@ export const end: OperationQueryParameter = {
   mapper: {
     serializedName: "end",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const offset: OperationQueryParameter = {
   parameterPath: ["options", "offset"],
   mapper: {
     constraints: {
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "offset",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const limit: OperationQueryParameter = {
@@ -169,13 +169,13 @@ export const limit: OperationQueryParameter = {
     defaultValue: 300,
     constraints: {
       InclusiveMaximum: 300,
-      InclusiveMinimum: 1
+      InclusiveMinimum: 1,
     },
     serializedName: "limit",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const workspace: OperationQueryParameter = {
@@ -183,9 +183,9 @@ export const workspace: OperationQueryParameter = {
   mapper: {
     serializedName: "workspace",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const user: OperationQueryParameter = {
@@ -193,14 +193,14 @@ export const user: OperationQueryParameter = {
   mapper: {
     serializedName: "user",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body2: OperationParameter = {
   parameterPath: "body",
-  mapper: WorkspaceMembershipCreateMapper
+  mapper: WorkspaceMembershipCreateMapper,
 };
 
 export const workspace1: OperationQueryParameter = {
@@ -209,24 +209,24 @@ export const workspace1: OperationQueryParameter = {
     serializedName: "workspace",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body3: OperationParameter = {
   parameterPath: "body",
-  mapper: CollectionCreateMapper
+  mapper: CollectionCreateMapper,
 };
 
 export const body4: OperationParameter = {
   parameterPath: "body",
-  mapper: CollectionUpdateMapper
+  mapper: CollectionUpdateMapper,
 };
 
 export const body5: OperationParameter = {
   parameterPath: "body",
-  mapper: DataFieldCreateMapper
+  mapper: DataFieldCreateMapper,
 };
 
 export const datapointIdentifier: OperationURLParameter = {
@@ -235,14 +235,14 @@ export const datapointIdentifier: OperationURLParameter = {
     serializedName: "datapoint_identifier",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body6: OperationParameter = {
   parameterPath: "body",
-  mapper: CollectionFieldMapper
+  mapper: CollectionFieldMapper,
 };
 
 export const collection: OperationQueryParameter = {
@@ -250,9 +250,9 @@ export const collection: OperationQueryParameter = {
   mapper: {
     serializedName: "collection",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const state: OperationQueryParameter = {
@@ -260,9 +260,9 @@ export const state: OperationQueryParameter = {
   mapper: {
     serializedName: "state",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const tags: OperationQueryParameter = {
@@ -273,14 +273,14 @@ export const tags: OperationQueryParameter = {
       name: "Sequence",
       element: {
         constraints: {
-          InclusiveMinimum: 1
+          InclusiveMinimum: 1,
         },
         type: {
-          name: "Number"
-        }
-      }
-    }
-  }
+          name: "Number",
+        },
+      },
+    },
+  },
 };
 
 export const createdDt: OperationQueryParameter = {
@@ -288,9 +288,9 @@ export const createdDt: OperationQueryParameter = {
   mapper: {
     serializedName: "created_dt",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const search: OperationQueryParameter = {
@@ -298,9 +298,9 @@ export const search: OperationQueryParameter = {
   mapper: {
     serializedName: "search",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const ordering: OperationQueryParameter = {
@@ -311,11 +311,11 @@ export const ordering: OperationQueryParameter = {
       name: "Sequence",
       element: {
         type: {
-          name: "String"
-        }
-      }
-    }
-  }
+          name: "String",
+        },
+      },
+    },
+  },
 };
 
 export const includeData: OperationQueryParameter = {
@@ -323,9 +323,9 @@ export const includeData: OperationQueryParameter = {
   mapper: {
     serializedName: "include_data",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const exclude: OperationQueryParameter = {
@@ -336,11 +336,11 @@ export const exclude: OperationQueryParameter = {
       name: "Sequence",
       element: {
         type: {
-          name: "String"
-        }
-      }
-    }
-  }
+          name: "String",
+        },
+      },
+    },
+  },
 };
 
 export const inReview: OperationQueryParameter = {
@@ -348,9 +348,9 @@ export const inReview: OperationQueryParameter = {
   mapper: {
     serializedName: "in_review",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const failed: OperationQueryParameter = {
@@ -358,9 +358,9 @@ export const failed: OperationQueryParameter = {
   mapper: {
     serializedName: "failed",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const ready: OperationQueryParameter = {
@@ -368,9 +368,9 @@ export const ready: OperationQueryParameter = {
   mapper: {
     serializedName: "ready",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const validatable: OperationQueryParameter = {
@@ -378,9 +378,9 @@ export const validatable: OperationQueryParameter = {
   mapper: {
     serializedName: "validatable",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const hasChallenges: OperationQueryParameter = {
@@ -388,9 +388,9 @@ export const hasChallenges: OperationQueryParameter = {
   mapper: {
     serializedName: "has_challenges",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const customIdentifier: OperationQueryParameter = {
@@ -398,9 +398,9 @@ export const customIdentifier: OperationQueryParameter = {
   mapper: {
     serializedName: "custom_identifier",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const compact: OperationQueryParameter = {
@@ -408,9 +408,9 @@ export const compact: OperationQueryParameter = {
   mapper: {
     serializedName: "compact",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const count: OperationQueryParameter = {
@@ -418,9 +418,9 @@ export const count: OperationQueryParameter = {
   mapper: {
     serializedName: "count",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const contentType1: OperationParameter = {
@@ -430,9 +430,9 @@ export const contentType1: OperationParameter = {
     isConstant: true,
     serializedName: "Content-Type",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const file: OperationParameter = {
@@ -440,9 +440,9 @@ export const file: OperationParameter = {
   mapper: {
     serializedName: "file",
     type: {
-      name: "Stream"
-    }
-  }
+      name: "Stream",
+    },
+  },
 };
 
 export const url: OperationParameter = {
@@ -450,14 +450,14 @@ export const url: OperationParameter = {
   mapper: {
     serializedName: "url",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const data: OperationParameter = {
   parameterPath: ["options", "data"],
-  mapper: DocumentCreateDataMapper
+  mapper: DocumentCreateDataMapper,
 };
 
 export const collection1: OperationParameter = {
@@ -465,9 +465,9 @@ export const collection1: OperationParameter = {
   mapper: {
     serializedName: "collection",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const workspace2: OperationParameter = {
@@ -475,9 +475,9 @@ export const workspace2: OperationParameter = {
   mapper: {
     serializedName: "workspace",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const wait: OperationParameter = {
@@ -486,9 +486,9 @@ export const wait: OperationParameter = {
     defaultValue: "true",
     serializedName: "wait",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const identifier1: OperationParameter = {
@@ -496,9 +496,9 @@ export const identifier1: OperationParameter = {
   mapper: {
     serializedName: "identifier",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const customIdentifier1: OperationParameter = {
@@ -506,9 +506,9 @@ export const customIdentifier1: OperationParameter = {
   mapper: {
     serializedName: "customIdentifier",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const fileName: OperationParameter = {
@@ -516,9 +516,9 @@ export const fileName: OperationParameter = {
   mapper: {
     serializedName: "fileName",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const expiryTime: OperationParameter = {
@@ -526,9 +526,9 @@ export const expiryTime: OperationParameter = {
   mapper: {
     serializedName: "expiryTime",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const language: OperationParameter = {
@@ -536,9 +536,9 @@ export const language: OperationParameter = {
   mapper: {
     serializedName: "language",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const rejectDuplicates: OperationParameter = {
@@ -546,9 +546,9 @@ export const rejectDuplicates: OperationParameter = {
   mapper: {
     serializedName: "rejectDuplicates",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const regionBias: OperationParameter = {
@@ -556,9 +556,9 @@ export const regionBias: OperationParameter = {
   mapper: {
     serializedName: "regionBias",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const lowPriority: OperationParameter = {
@@ -566,9 +566,9 @@ export const lowPriority: OperationParameter = {
   mapper: {
     serializedName: "lowPriority",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const compact1: OperationParameter = {
@@ -576,9 +576,9 @@ export const compact1: OperationParameter = {
   mapper: {
     serializedName: "compact",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const deleteAfterParse: OperationParameter = {
@@ -586,9 +586,9 @@ export const deleteAfterParse: OperationParameter = {
   mapper: {
     serializedName: "deleteAfterParse",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const accept1: OperationParameter = {
@@ -598,9 +598,9 @@ export const accept1: OperationParameter = {
     isConstant: true,
     serializedName: "Accept",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const format: OperationQueryParameter = {
@@ -608,34 +608,35 @@ export const format: OperationQueryParameter = {
   mapper: {
     serializedName: "format",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body7: OperationParameter = {
   parameterPath: "body",
-  mapper: DocumentUpdateMapper
+  mapper: DocumentUpdateMapper,
 };
 
 export const body8: OperationParameter = {
   parameterPath: "body",
-  mapper: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper:
+    PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchemaMapper,
 };
 
 export const body9: OperationParameter = {
   parameterPath: "body",
-  mapper: BatchAddTagRequestMapper
+  mapper: BatchAddTagRequestMapper,
 };
 
 export const body10: OperationParameter = {
   parameterPath: "body",
-  mapper: BatchRemoveTagRequestMapper
+  mapper: BatchRemoveTagRequestMapper,
 };
 
 export const body11: OperationParameter = {
   parameterPath: "body",
-  mapper: DocumentEditRequestMapper
+  mapper: DocumentEditRequestMapper,
 };
 
 export const document: OperationQueryParameter = {
@@ -644,33 +645,33 @@ export const document: OperationQueryParameter = {
     serializedName: "document",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body12: OperationParameter = {
   parameterPath: "body",
-  mapper: ValidationResultCreateMapper
+  mapper: ValidationResultCreateMapper,
 };
 
 export const id: OperationURLParameter = {
   parameterPath: "id",
   mapper: {
     constraints: {
-      InclusiveMinimum: 1
+      InclusiveMinimum: 1,
     },
     serializedName: "id",
     required: true,
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const body13: OperationParameter = {
   parameterPath: "body",
-  mapper: ValidationResultUpdateMapper
+  mapper: ValidationResultUpdateMapper,
 };
 
 export const includePublicExtractors: OperationQueryParameter = {
@@ -678,19 +679,19 @@ export const includePublicExtractors: OperationQueryParameter = {
   mapper: {
     serializedName: "include_public_extractors",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const body14: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: ExtractorCreateMapper
+  mapper: ExtractorCreateMapper,
 };
 
 export const body15: OperationParameter = {
   parameterPath: "body",
-  mapper: ExtractorUpdateMapper
+  mapper: ExtractorUpdateMapper,
 };
 
 export const organization1: OperationQueryParameter = {
@@ -698,9 +699,9 @@ export const organization1: OperationQueryParameter = {
   mapper: {
     serializedName: "organization",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const includePublic: OperationQueryParameter = {
@@ -708,9 +709,9 @@ export const includePublic: OperationQueryParameter = {
   mapper: {
     serializedName: "include_public",
     type: {
-      name: "Boolean"
-    }
-  }
+      name: "Boolean",
+    },
+  },
 };
 
 export const extractor: OperationQueryParameter = {
@@ -718,9 +719,9 @@ export const extractor: OperationQueryParameter = {
   mapper: {
     serializedName: "extractor",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const slug: OperationQueryParameter = {
@@ -728,9 +729,9 @@ export const slug: OperationQueryParameter = {
   mapper: {
     serializedName: "slug",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const description: OperationQueryParameter = {
@@ -738,9 +739,9 @@ export const description: OperationQueryParameter = {
   mapper: {
     serializedName: "description",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const annotationContentType: OperationQueryParameter = {
@@ -748,9 +749,9 @@ export const annotationContentType: OperationQueryParameter = {
   mapper: {
     serializedName: "annotation_content_type",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const identifier2: OperationQueryParameter = {
@@ -761,21 +762,21 @@ export const identifier2: OperationQueryParameter = {
       name: "Sequence",
       element: {
         type: {
-          name: "String"
-        }
-      }
-    }
-  }
+          name: "String",
+        },
+      },
+    },
+  },
 };
 
 export const body16: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: DataPointCreateMapper
+  mapper: DataPointCreateMapper,
 };
 
 export const body17: OperationParameter = {
   parameterPath: "body",
-  mapper: DataPointUpdateMapper
+  mapper: DataPointUpdateMapper,
 };
 
 export const dataPoint: OperationQueryParameter = {
@@ -784,9 +785,9 @@ export const dataPoint: OperationQueryParameter = {
     serializedName: "data_point",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const collection2: OperationQueryParameter = {
@@ -795,34 +796,34 @@ export const collection2: OperationQueryParameter = {
     serializedName: "collection",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body18: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: DataPointChoiceCreateMapper
+  mapper: DataPointChoiceCreateMapper,
 };
 
 export const body19: OperationParameter = {
   parameterPath: "body",
-  mapper: DataPointChoiceUpdateMapper
+  mapper: DataPointChoiceUpdateMapper,
 };
 
 export const body20: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: DataPointChoiceReplaceRequestMapper
+  mapper: DataPointChoiceReplaceRequestMapper,
 };
 
 export const body21: OperationParameter = {
   parameterPath: "body",
-  mapper: AnnotationCreateMapper
+  mapper: AnnotationCreateMapper,
 };
 
 export const body22: OperationParameter = {
   parameterPath: "body",
-  mapper: AnnotationUpdateMapper
+  mapper: AnnotationUpdateMapper,
 };
 
 export const body23: OperationParameter = {
@@ -835,11 +836,11 @@ export const body23: OperationParameter = {
       element: {
         type: {
           name: "Composite",
-          className: "AnnotationCreate"
-        }
-      }
-    }
-  }
+          className: "AnnotationCreate",
+        },
+      },
+    },
+  },
 };
 
 export const body24: OperationParameter = {
@@ -852,11 +853,11 @@ export const body24: OperationParameter = {
       element: {
         type: {
           name: "Composite",
-          className: "AnnotationBatchUpdate"
-        }
-      }
-    }
-  }
+          className: "AnnotationBatchUpdate",
+        },
+      },
+    },
+  },
 };
 
 export const body25: OperationParameter = {
@@ -868,19 +869,19 @@ export const body25: OperationParameter = {
       name: "Sequence",
       element: {
         constraints: {
-          InclusiveMinimum: 1
+          InclusiveMinimum: 1,
         },
         type: {
-          name: "Number"
-        }
-      }
-    }
-  }
+          name: "Number",
+        },
+      },
+    },
+  },
 };
 
 export const body26: OperationParameter = {
   parameterPath: "body",
-  mapper: MappingDataSourceCreateMapper
+  mapper: MappingDataSourceCreateMapper,
 };
 
 export const body27: OperationParameter = {
@@ -893,11 +894,11 @@ export const body27: OperationParameter = {
       element: {
         type: {
           name: "Dictionary",
-          value: { type: { name: "any" } }
-        }
-      }
-    }
-  }
+          value: { type: { name: "any" } },
+        },
+      },
+    },
+  },
 };
 
 export const body28: OperationParameter = {
@@ -907,9 +908,9 @@ export const body28: OperationParameter = {
     required: true,
     type: {
       name: "Dictionary",
-      value: { type: { name: "any" } }
-    }
-  }
+      value: { type: { name: "any" } },
+    },
+  },
 };
 
 export const value: OperationURLParameter = {
@@ -918,14 +919,14 @@ export const value: OperationURLParameter = {
     serializedName: "value",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body29: OperationParameter = {
   parameterPath: "body",
-  mapper: MappingCreateMapper
+  mapper: MappingCreateMapper,
 };
 
 export const mappingDataSource: OperationQueryParameter = {
@@ -934,24 +935,24 @@ export const mappingDataSource: OperationQueryParameter = {
     serializedName: "mapping_data_source",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body30: OperationParameter = {
   parameterPath: "body",
-  mapper: MappingUpdateMapper
+  mapper: MappingUpdateMapper,
 };
 
 export const body31: OperationParameter = {
   parameterPath: "body",
-  mapper: TagCreateMapper
+  mapper: TagCreateMapper,
 };
 
 export const body32: OperationParameter = {
   parameterPath: "body",
-  mapper: TagUpdateMapper
+  mapper: TagUpdateMapper,
 };
 
 export const name1: OperationParameter = {
@@ -960,9 +961,9 @@ export const name1: OperationParameter = {
     serializedName: "name",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const avatar: OperationParameter = {
@@ -970,9 +971,9 @@ export const avatar: OperationParameter = {
   mapper: {
     serializedName: "avatar",
     type: {
-      name: "Stream"
-    }
-  }
+      name: "Stream",
+    },
+  },
 };
 
 export const resthookSignatureKey: OperationParameter = {
@@ -980,9 +981,9 @@ export const resthookSignatureKey: OperationParameter = {
   mapper: {
     serializedName: "resthookSignatureKey",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const name2: OperationParameter = {
@@ -990,14 +991,14 @@ export const name2: OperationParameter = {
   mapper: {
     serializedName: "name",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const validationToolConfig: OperationParameter = {
   parameterPath: ["options", "validationToolConfig"],
-  mapper: ValidationToolConfigMapper
+  mapper: ValidationToolConfigMapper,
 };
 
 export const role: OperationQueryParameter = {
@@ -1005,14 +1006,14 @@ export const role: OperationQueryParameter = {
   mapper: {
     serializedName: "role",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body33: OperationParameter = {
   parameterPath: "body",
-  mapper: OrganizationMembershipUpdateMapper
+  mapper: OrganizationMembershipUpdateMapper,
 };
 
 export const status: OperationQueryParameter = {
@@ -1020,19 +1021,19 @@ export const status: OperationQueryParameter = {
   mapper: {
     serializedName: "status",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body34: OperationParameter = {
   parameterPath: "body",
-  mapper: InvitationCreateMapper
+  mapper: InvitationCreateMapper,
 };
 
 export const body35: OperationParameter = {
   parameterPath: "body",
-  mapper: InvitationUpdateMapper
+  mapper: InvitationUpdateMapper,
 };
 
 export const token: OperationURLParameter = {
@@ -1041,29 +1042,29 @@ export const token: OperationURLParameter = {
     serializedName: "token",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body36: OperationParameter = {
   parameterPath: "body",
-  mapper: InvitationResponseMapper
+  mapper: InvitationResponseMapper,
 };
 
 export const body37: OperationParameter = {
   parameterPath: "body",
-  mapper: ApiUserCreateMapper
+  mapper: ApiUserCreateMapper,
 };
 
 export const body38: OperationParameter = {
   parameterPath: "body",
-  mapper: ApiUserUpdateMapper
+  mapper: ApiUserUpdateMapper,
 };
 
 export const body39: OperationParameter = {
   parameterPath: "body",
-  mapper: ResthookSubscriptionCreateMapper
+  mapper: ResthookSubscriptionCreateMapper,
 };
 
 export const id1: OperationURLParameter = {
@@ -1072,14 +1073,14 @@ export const id1: OperationURLParameter = {
     serializedName: "id",
     required: true,
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const body40: OperationParameter = {
   parameterPath: "body",
-  mapper: ResthookSubscriptionUpdateMapper
+  mapper: ResthookSubscriptionUpdateMapper,
 };
 
 export const xHookSecret: OperationParameter = {
@@ -1088,24 +1089,25 @@ export const xHookSecret: OperationParameter = {
     serializedName: "X-Hook-Secret",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body41: OperationParameter = {
   parameterPath: "body",
-  mapper: JobDescriptionSearchParametersMapper
+  mapper: JobDescriptionSearchParametersMapper,
 };
 
 export const body42: OperationParameter = {
   parameterPath: "body",
-  mapper: JobDescriptionSearchConfigMapper
+  mapper: JobDescriptionSearchConfigMapper,
 };
 
 export const body43: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper:
+    PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
 };
 
 export const documentType: OperationQueryParameter = {
@@ -1113,19 +1115,19 @@ export const documentType: OperationQueryParameter = {
   mapper: {
     serializedName: "document_type",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body44: OperationParameter = {
   parameterPath: "body",
-  mapper: IndexCreateMapper
+  mapper: IndexCreateMapper,
 };
 
 export const body45: OperationParameter = {
   parameterPath: "body",
-  mapper: IndexUpdateMapper
+  mapper: IndexUpdateMapper,
 };
 
 export const name3: OperationURLParameter = {
@@ -1134,19 +1136,20 @@ export const name3: OperationURLParameter = {
     serializedName: "name",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const body46: OperationParameter = {
   parameterPath: "body",
-  mapper: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper:
+    PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
 };
 
 export const body47: OperationParameter = {
   parameterPath: "body",
-  mapper: ResumeSearchParametersMapper
+  mapper: ResumeSearchParametersMapper,
 };
 
 export const resume: OperationQueryParameter = {
@@ -1155,9 +1158,9 @@ export const resume: OperationQueryParameter = {
     serializedName: "resume",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const jobDescription: OperationQueryParameter = {
@@ -1166,9 +1169,9 @@ export const jobDescription: OperationQueryParameter = {
     serializedName: "job_description",
     required: true,
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const index: OperationQueryParameter = {
@@ -1176,9 +1179,9 @@ export const index: OperationQueryParameter = {
   mapper: {
     serializedName: "index",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const searchExpression: OperationQueryParameter = {
@@ -1186,9 +1189,9 @@ export const searchExpression: OperationQueryParameter = {
   mapper: {
     serializedName: "search_expression",
     type: {
-      name: "String"
-    }
-  }
+      name: "String",
+    },
+  },
 };
 
 export const jobTitlesWeight: OperationQueryParameter = {
@@ -1196,13 +1199,13 @@ export const jobTitlesWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "job_titles_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const yearsExperienceWeight: OperationQueryParameter = {
@@ -1210,13 +1213,13 @@ export const yearsExperienceWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "years_experience_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const locationsWeight: OperationQueryParameter = {
@@ -1224,13 +1227,13 @@ export const locationsWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "locations_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const languagesWeight: OperationQueryParameter = {
@@ -1238,13 +1241,13 @@ export const languagesWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "languages_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const skillsWeight: OperationQueryParameter = {
@@ -1252,13 +1255,13 @@ export const skillsWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "skills_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const educationWeight: OperationQueryParameter = {
@@ -1266,13 +1269,13 @@ export const educationWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "education_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const searchExpressionWeight: OperationQueryParameter = {
@@ -1280,13 +1283,13 @@ export const searchExpressionWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "search_expression_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const socCodesWeight: OperationQueryParameter = {
@@ -1294,13 +1297,13 @@ export const socCodesWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "soc_codes_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const managementLevelWeight: OperationQueryParameter = {
@@ -1308,23 +1311,24 @@ export const managementLevelWeight: OperationQueryParameter = {
   mapper: {
     constraints: {
       InclusiveMaximum: 1,
-      InclusiveMinimum: 0
+      InclusiveMinimum: 0,
     },
     serializedName: "management_level_weight",
     type: {
-      name: "Number"
-    }
-  }
+      name: "Number",
+    },
+  },
 };
 
 export const body48: OperationParameter = {
   parameterPath: "body",
-  mapper: ResumeSearchConfigMapper
+  mapper: ResumeSearchConfigMapper,
 };
 
 export const body49: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper:
+    Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
 };
 
 export const jobTitles: OperationQueryParameter = {
@@ -1336,12 +1340,12 @@ export const jobTitles: OperationQueryParameter = {
       name: "Sequence",
       element: {
         type: {
-          name: "String"
-        }
-      }
-    }
+          name: "String",
+        },
+      },
+    },
   },
-  collectionFormat: "Multi"
+  collectionFormat: "Multi",
 };
 
 export const skills: OperationQueryParameter = {
@@ -1353,10 +1357,10 @@ export const skills: OperationQueryParameter = {
       name: "Sequence",
       element: {
         type: {
-          name: "String"
-        }
-      }
-    }
+          name: "String",
+        },
+      },
+    },
   },
-  collectionFormat: "Multi"
+  collectionFormat: "Multi",
 };

@@ -2,6 +2,12 @@
 
 # Interface: PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

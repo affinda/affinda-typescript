@@ -12,4 +12,4 @@
 
 ### rows
 
-• `Optional` **rows**: (``null`` \| [`RowBetaAnnotation`](../modules.md#rowbetaannotation))[]
+• `Optional` **rows**: (``null`` \| [`RowBetaAnnotation`](RowBetaAnnotation.md))[]

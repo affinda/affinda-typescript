@@ -2,6 +2,12 @@
 
 # Interface: Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

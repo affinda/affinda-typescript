@@ -2,6 +2,12 @@
 
 # Interface: OccupationGroupSearchResult
 
+## Hierarchy
+
+- **`OccupationGroupSearchResult`**
+
+  ↳ [`JobDescriptionSearchDetailOccupationGroupValue`](JobDescriptionSearchDetailOccupationGroupValue.md)
+
 ## Table of contents
 
 ### Properties

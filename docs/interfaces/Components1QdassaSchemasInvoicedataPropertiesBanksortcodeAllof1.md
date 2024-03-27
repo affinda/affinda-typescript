@@ -2,6 +2,12 @@
 
 # Interface: Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1
 
+## Hierarchy
+
+- **`Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1`**
+
+  ↳ [`InvoiceDataBankSortCode`](InvoiceDataBankSortCode.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

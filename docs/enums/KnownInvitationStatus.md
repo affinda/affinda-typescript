@@ -18,14 +18,20 @@ Known values of [InvitationStatus](../modules.md#invitationstatus) that the serv
 
 • **Accepted** = ``"accepted"``
 
+Accepted
+
 ___
 
 ### Declined
 
 • **Declined** = ``"declined"``
 
+Declined
+
 ___
 
 ### Pending
 
 • **Pending** = ``"pending"``
+
+Pending

@@ -2,6 +2,12 @@
 
 # Interface: ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1
 
+## Hierarchy
+
+- **`ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1`**
+
+  ↳ [`InvoiceDataInvoicePurchaseOrderNumber`](InvoiceDataInvoicePurchaseOrderNumber.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

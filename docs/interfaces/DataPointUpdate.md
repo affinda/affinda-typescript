@@ -7,6 +7,7 @@
 ### Properties
 
 - [description](DataPointUpdate.md#description)
+- [mappingDataSource](DataPointUpdate.md#mappingdatasource)
 - [name](DataPointUpdate.md#name)
 - [parent](DataPointUpdate.md#parent)
 - [slug](DataPointUpdate.md#slug)
@@ -16,6 +17,14 @@
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### mappingDataSource
+
+• `Optional` **mappingDataSource**: `string`
+
+If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching.
 
 ___
 

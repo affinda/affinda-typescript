@@ -35,11 +35,15 @@ Known values of [ResumeSkillSourcesItemSection](../modules.md#resumeskillsources
 
 • **Achievements** = ``"Achievements"``
 
+Achievements
+
 ___
 
 ### AdditionalInformation
 
 • **AdditionalInformation** = ``"AdditionalInformation"``
+
+AdditionalInformation
 
 ___
 
@@ -47,11 +51,15 @@ ___
 
 • **Education** = ``"Education"``
 
+Education
+
 ___
 
 ### Extracurriculars
 
 • **Extracurriculars** = ``"Extracurriculars"``
+
+Extracurriculars
 
 ___
 
@@ -59,11 +67,15 @@ ___
 
 • **ExtracurricularsLeadership** = ``"Extracurriculars/Leadership"``
 
+ExtracurricularsLeadership
+
 ___
 
 ### Footer
 
 • **Footer** = ``"Footer"``
+
+Footer
 
 ___
 
@@ -71,11 +83,15 @@ ___
 
 • **Header** = ``"Header"``
 
+Header
+
 ___
 
 ### NotPopulated
 
 • **NotPopulated** = ``"NotPopulated"``
+
+NotPopulated
 
 ___
 
@@ -83,11 +99,15 @@ ___
 
 • **Organisations** = ``"Organisations"``
 
+Organisations
+
 ___
 
 ### Other
 
 • **Other** = ``"Other"``
+
+Other
 
 ___
 
@@ -95,11 +115,15 @@ ___
 
 • **PersonalDetails** = ``"PersonalDetails"``
 
+PersonalDetails
+
 ___
 
 ### Projects
 
 • **Projects** = ``"Projects"``
+
+Projects
 
 ___
 
@@ -107,11 +131,15 @@ ___
 
 • **Publications** = ``"Publications"``
 
+Publications
+
 ___
 
 ### Referees
 
 • **Referees** = ``"Referees"``
+
+Referees
 
 ___
 
@@ -119,11 +147,15 @@ ___
 
 • **Skills** = ``"Skills"``
 
+Skills
+
 ___
 
 ### SkillsInterestsLanguages
 
 • **SkillsInterestsLanguages** = ``"Skills/Interests/Languages"``
+
+SkillsInterestsLanguages
 
 ___
 
@@ -131,11 +163,15 @@ ___
 
 • **Summary** = ``"Summary"``
 
+Summary
+
 ___
 
 ### Training
 
 • **Training** = ``"Training"``
+
+Training
 
 ___
 
@@ -143,8 +179,12 @@ ___
 
 • **TrainingCertifications** = ``"Training/Certifications"``
 
+TrainingCertifications
+
 ___
 
 ### WorkExperience
 
 • **WorkExperience** = ``"WorkExperience"``
+
+WorkExperience

@@ -2,6 +2,12 @@
 
 # Interface: Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1
 
+## Hierarchy
+
+- **`Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1`**
+
+  ↳ [`InvoiceDataSupplierCompanyName`](InvoiceDataSupplierCompanyName.md)
+
 ## Table of contents
 
 ### Properties
@@ -19,4 +25,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`

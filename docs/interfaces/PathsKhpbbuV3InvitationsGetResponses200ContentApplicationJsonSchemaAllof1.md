@@ -2,6 +2,12 @@
 
 # Interface: PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

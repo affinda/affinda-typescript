@@ -2,6 +2,12 @@
 
 # Interface: PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1
 
+## Hierarchy
+
+- **`PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1`**
+
+  ↳ [`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)
+
 ## Table of contents
 
 ### Properties

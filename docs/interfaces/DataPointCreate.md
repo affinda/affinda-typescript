@@ -10,6 +10,7 @@
 - [description](DataPointCreate.md#description)
 - [extractor](DataPointCreate.md#extractor)
 - [manualEntry](DataPointCreate.md#manualentry)
+- [mappingDataSource](DataPointCreate.md#mappingdatasource)
 - [multiple](DataPointCreate.md#multiple)
 - [name](DataPointCreate.md#name)
 - [noRect](DataPointCreate.md#norect)
@@ -46,6 +47,14 @@ ___
 • `Optional` **manualEntry**: `boolean`
 
 If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
+
+___
+
+### mappingDataSource
+
+• `Optional` **mappingDataSource**: `string`
+
+If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching.
 
 ___
 

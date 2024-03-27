@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-- [`AffindaAPIContext`](AffindaAPIContext.md)
+- `ServiceClient`
 
   ↳ **`AffindaAPI`**
 
@@ -166,7 +166,7 @@ Initializes a new instance of the AffindaAPI class.
 
 #### Overrides
 
-[AffindaAPIContext](AffindaAPIContext.md).[constructor](AffindaAPIContext.md#constructor)
+coreClient.ServiceClient.constructor
 
 ## Properties
 
@@ -178,17 +178,13 @@ The pipeline used by this client to make requests
 
 #### Inherited from
 
-[AffindaAPIContext](AffindaAPIContext.md).[pipeline](AffindaAPIContext.md#pipeline)
+coreClient.ServiceClient.pipeline
 
 ___
 
 ### region
 
 • **region**: `string`
-
-#### Inherited from
-
-[AffindaAPIContext](AffindaAPIContext.md).[region](AffindaAPIContext.md#region)
 
 ## Methods
 
@@ -206,7 +202,7 @@ that you received to activate the subscription using this endpoint.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `xHookSecret` | `string` | The secret received when creating a subscription. |
-| `options?` | [`AffindaAPIActivateResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIActivateResthookSubscriptionOptionalParams.md) | The options parameters. |
+| `options?` | [`ActivateResthookSubscriptionOptionalParams`](../interfaces/ActivateResthookSubscriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -216,7 +212,7 @@ ___
 
 ### addMappingDataSourceValue
 
-▸ **addMappingDataSourceValue**(`identifier`, `body`, `options?`): `Promise`\<[`AffindaAPIAddMappingDataSourceValueResponse`](../modules.md#affindaapiaddmappingdatasourcevalueresponse)\>
+▸ **addMappingDataSourceValue**(`identifier`, `body`, `options?`): `Promise`\<[`AddMappingDataSourceValueResponse`](../modules.md#addmappingdatasourcevalueresponse)\>
 
 Adds a value to a mapping data source
 
@@ -226,11 +222,11 @@ Adds a value to a mapping data source
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
 | `body` | `Record`\<`string`, `unknown`\> | Any object |
-| `options?` | [`AffindaAPIAddMappingDataSourceValueOptionalParams`](../interfaces/AffindaAPIAddMappingDataSourceValueOptionalParams.md) | The options parameters. |
+| `options?` | [`AddMappingDataSourceValueOptionalParams`](../interfaces/AddMappingDataSourceValueOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIAddMappingDataSourceValueResponse`](../modules.md#affindaapiaddmappingdatasourcevalueresponse)\>
+`Promise`\<[`AddMappingDataSourceValueResponse`](../modules.md#addmappingdatasourcevalueresponse)\>
 
 ___
 
@@ -247,7 +243,7 @@ Tags can be used to filter documents.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`BatchAddTagRequest`](../interfaces/BatchAddTagRequest.md) | Specify the tag and the documents to tag |
-| `options?` | [`AffindaAPIBatchAddTagOptionalParams`](../interfaces/AffindaAPIBatchAddTagOptionalParams.md) | The options parameters. |
+| `options?` | [`BatchAddTagOptionalParams`](../interfaces/BatchAddTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -257,7 +253,7 @@ ___
 
 ### batchCreateAnnotations
 
-▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`\<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
+▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`\<[`BatchCreateAnnotationsResponse`](../modules.md#batchcreateannotationsresponse)\>
 
 Batch create annotations
 
@@ -266,11 +262,11 @@ Batch create annotations
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`AnnotationCreate`](../interfaces/AnnotationCreate.md)[] | Array of AnnotationCreate |
-| `options?` | [`AffindaAPIBatchCreateAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchCreateAnnotationsOptionalParams.md) | The options parameters. |
+| `options?` | [`BatchCreateAnnotationsOptionalParams`](../interfaces/BatchCreateAnnotationsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIBatchCreateAnnotationsResponse`](../modules.md#affindaapibatchcreateannotationsresponse)\>
+`Promise`\<[`BatchCreateAnnotationsResponse`](../modules.md#batchcreateannotationsresponse)\>
 
 ___
 
@@ -285,7 +281,7 @@ Batch delete annotations
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | `number`[] | Array of annotation IDs to be deleted |
-| `options?` | [`AffindaAPIBatchDeleteAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchDeleteAnnotationsOptionalParams.md) | The options parameters. |
+| `options?` | [`BatchDeleteAnnotationsOptionalParams`](../interfaces/BatchDeleteAnnotationsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -304,7 +300,7 @@ Remove a tag from documents.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`BatchRemoveTagRequest`](../interfaces/BatchRemoveTagRequest.md) | Specify the tag and the documents to remove the tag from |
-| `options?` | [`AffindaAPIBatchRemoveTagOptionalParams`](../interfaces/AffindaAPIBatchRemoveTagOptionalParams.md) | The options parameters. |
+| `options?` | [`BatchRemoveTagOptionalParams`](../interfaces/BatchRemoveTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -314,7 +310,7 @@ ___
 
 ### batchUpdateAnnotations
 
-▸ **batchUpdateAnnotations**(`body`, `options?`): `Promise`\<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
+▸ **batchUpdateAnnotations**(`body`, `options?`): `Promise`\<[`BatchUpdateAnnotationsResponse`](../modules.md#batchupdateannotationsresponse)\>
 
 Batch update annotations
 
@@ -323,17 +319,17 @@ Batch update annotations
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`AnnotationBatchUpdate`](../interfaces/AnnotationBatchUpdate.md)[] | Array of AnnotationBatchUpdate |
-| `options?` | [`AffindaAPIBatchUpdateAnnotationsOptionalParams`](../interfaces/AffindaAPIBatchUpdateAnnotationsOptionalParams.md) | The options parameters. |
+| `options?` | [`BatchUpdateAnnotationsOptionalParams`](../interfaces/BatchUpdateAnnotationsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIBatchUpdateAnnotationsResponse`](../modules.md#affindaapibatchupdateannotationsresponse)\>
+`Promise`\<[`BatchUpdateAnnotationsResponse`](../modules.md#batchupdateannotationsresponse)\>
 
 ___
 
 ### createAnnotation
 
-▸ **createAnnotation**(`body`, `options?`): `Promise`\<[`AnnotationWithValidationResults`](../modules.md#annotationwithvalidationresults)\>
+▸ **createAnnotation**(`body`, `options?`): `Promise`\<[`AnnotationWithValidationResults`](../interfaces/AnnotationWithValidationResults.md)\>
 
 Create a annotation
 
@@ -342,11 +338,11 @@ Create a annotation
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`AnnotationCreate`](../interfaces/AnnotationCreate.md) |  |
-| `options?` | [`AffindaAPICreateAnnotationOptionalParams`](../interfaces/AffindaAPICreateAnnotationOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateAnnotationOptionalParams`](../interfaces/CreateAnnotationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AnnotationWithValidationResults`](../modules.md#annotationwithvalidationresults)\>
+`Promise`\<[`AnnotationWithValidationResults`](../interfaces/AnnotationWithValidationResults.md)\>
 
 ___
 
@@ -361,7 +357,7 @@ Create an API user
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`ApiUserCreate`](../interfaces/ApiUserCreate.md) |  |
-| `options?` | [`AffindaAPICreateApiUserOptionalParams`](../interfaces/AffindaAPICreateApiUserOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateApiUserOptionalParams`](../interfaces/CreateApiUserOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -380,7 +376,7 @@ Create a collection
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`CollectionCreate`](../interfaces/CollectionCreate.md) |  |
-| `options?` | [`AffindaAPICreateCollectionOptionalParams`](../interfaces/AffindaAPICreateCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateCollectionOptionalParams`](../interfaces/CreateCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -400,7 +396,7 @@ Create data field for a collection along with a new data point.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
 | `body` | [`DataFieldCreate`](../interfaces/DataFieldCreate.md) | The data field and data point to be created. |
-| `options?` | [`AffindaAPICreateDataFieldForCollectionOptionalParams`](../interfaces/AffindaAPICreateDataFieldForCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateDataFieldForCollectionOptionalParams`](../interfaces/CreateDataFieldForCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -418,7 +414,7 @@ Create a custom data point.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateDataPointOptionalParams`](../interfaces/AffindaAPICreateDataPointOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateDataPointOptionalParams`](../interfaces/CreateDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -436,7 +432,7 @@ Create a custom data point choice.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateDataPointChoiceOptionalParams`](../interfaces/AffindaAPICreateDataPointChoiceOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateDataPointChoiceOptionalParams`](../interfaces/CreateDataPointChoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -456,7 +452,7 @@ processing status and retrieve results.<br/>
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateDocumentOptionalParams`](../interfaces/AffindaAPICreateDocumentOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateDocumentOptionalParams`](../interfaces/CreateDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -474,7 +470,7 @@ Create a custom extractor.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateExtractorOptionalParams`](../interfaces/AffindaAPICreateExtractorOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateExtractorOptionalParams`](../interfaces/CreateExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -493,7 +489,7 @@ Create an index for the search tool
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`IndexCreate`](../interfaces/IndexCreate.md) | Index to create |
-| `options?` | [`AffindaAPICreateIndexOptionalParams`](../interfaces/AffindaAPICreateIndexOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateIndexOptionalParams`](../interfaces/CreateIndexOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -513,7 +509,7 @@ Create an indexed document for the search tool
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
 | `body` | [`PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md) | Document to index |
-| `options?` | [`AffindaAPICreateIndexDocumentOptionalParams`](../interfaces/AffindaAPICreateIndexDocumentOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateIndexDocumentOptionalParams`](../interfaces/CreateIndexDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -532,7 +528,7 @@ Create a new invitation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`InvitationCreate`](../interfaces/InvitationCreate.md) | Invitation to create. |
-| `options?` | [`AffindaAPICreateInvitationOptionalParams`](../interfaces/AffindaAPICreateInvitationOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateInvitationOptionalParams`](../interfaces/CreateInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -551,7 +547,7 @@ Searches through parsed job descriptions. You can search with custom criterias o
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
-| `options?` | [`AffindaAPICreateJobDescriptionSearchOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionSearchOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateJobDescriptionSearchOptionalParams`](../interfaces/CreateJobDescriptionSearchOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -571,7 +567,7 @@ configurations of the embeddable search tool.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams`](../interfaces/AffindaAPICreateJobDescriptionSearchEmbedUrlOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateJobDescriptionSearchEmbedUrlOptionalParams`](../interfaces/CreateJobDescriptionSearchEmbedUrlOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -590,7 +586,7 @@ Create a custom mapping.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`MappingCreate`](../interfaces/MappingCreate.md) |  |
-| `options?` | [`AffindaAPICreateMappingOptionalParams`](../interfaces/AffindaAPICreateMappingOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateMappingOptionalParams`](../interfaces/CreateMappingOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -609,7 +605,7 @@ Create a custom mapping data source.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`MappingDataSourceCreate`](../interfaces/MappingDataSourceCreate.md) | A mapping data source is used to map from raw data found by our AI models to records in your database. |
-| `options?` | [`AffindaAPICreateMappingDataSourceOptionalParams`](../interfaces/AffindaAPICreateMappingDataSourceOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateMappingDataSourceOptionalParams`](../interfaces/CreateMappingDataSourceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -628,7 +624,7 @@ Create a new organization.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` |  |
-| `options?` | [`AffindaAPICreateOrganizationOptionalParams`](../interfaces/AffindaAPICreateOrganizationOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateOrganizationOptionalParams`](../interfaces/CreateOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -654,7 +650,7 @@ here.](https://docs.affinda.com/docs/webhooks)
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`ResthookSubscriptionCreate`](../interfaces/ResthookSubscriptionCreate.md) |  |
-| `options?` | [`AffindaAPICreateResthookSubscriptionOptionalParams`](../interfaces/AffindaAPICreateResthookSubscriptionOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateResthookSubscriptionOptionalParams`](../interfaces/CreateResthookSubscriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -677,7 +673,7 @@ the custom criteria.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
-| `options?` | [`AffindaAPICreateResumeSearchOptionalParams`](../interfaces/AffindaAPICreateResumeSearchOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateResumeSearchOptionalParams`](../interfaces/CreateResumeSearchOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -697,7 +693,7 @@ the embeddable resume search tool.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPICreateResumeSearchEmbedUrlOptionalParams`](../interfaces/AffindaAPICreateResumeSearchEmbedUrlOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateResumeSearchEmbedUrlOptionalParams`](../interfaces/CreateResumeSearchEmbedUrlOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -716,7 +712,7 @@ Create a tag
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`TagCreate`](../interfaces/TagCreate.md) |  |
-| `options?` | [`AffindaAPICreateTagOptionalParams`](../interfaces/AffindaAPICreateTagOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateTagOptionalParams`](../interfaces/CreateTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -735,7 +731,7 @@ Create a validation result.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`ValidationResultCreate`](../interfaces/ValidationResultCreate.md) |  |
-| `options?` | [`AffindaAPICreateValidationResultOptionalParams`](../interfaces/AffindaAPICreateValidationResultOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateValidationResultOptionalParams`](../interfaces/CreateValidationResultOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -754,7 +750,7 @@ Create a workspace
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`WorkspaceCreate`](../interfaces/WorkspaceCreate.md) | Workspace to create |
-| `options?` | [`AffindaAPICreateWorkspaceOptionalParams`](../interfaces/AffindaAPICreateWorkspaceOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateWorkspaceOptionalParams`](../interfaces/CreateWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -773,7 +769,7 @@ Create a workspace membership.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`WorkspaceMembershipCreate`](../interfaces/WorkspaceMembershipCreate.md) |  |
-| `options?` | [`AffindaAPICreateWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPICreateWorkspaceMembershipOptionalParams.md) | The options parameters. |
+| `options?` | [`CreateWorkspaceMembershipOptionalParams`](../interfaces/CreateWorkspaceMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -792,7 +788,7 @@ Deletes the specified annotation from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Annotation's ID |
-| `options?` | [`AffindaAPIDeleteAnnotationOptionalParams`](../interfaces/AffindaAPIDeleteAnnotationOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteAnnotationOptionalParams`](../interfaces/DeleteAnnotationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -811,7 +807,7 @@ Deletes the specified API user from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | API user's ID |
-| `options?` | [`AffindaAPIDeleteApiUserOptionalParams`](../interfaces/AffindaAPIDeleteApiUserOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteApiUserOptionalParams`](../interfaces/DeleteApiUserOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -830,7 +826,7 @@ Deletes the specified collection from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
-| `options?` | [`AffindaAPIDeleteCollectionOptionalParams`](../interfaces/AffindaAPIDeleteCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteCollectionOptionalParams`](../interfaces/DeleteCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -849,7 +845,7 @@ Deletes the specified data point from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | DataPoint's identifier |
-| `options?` | [`AffindaAPIDeleteDataPointOptionalParams`](../interfaces/AffindaAPIDeleteDataPointOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteDataPointOptionalParams`](../interfaces/DeleteDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -868,7 +864,7 @@ Deletes the specified data point choice from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Data point choice's ID |
-| `options?` | [`AffindaAPIDeleteDataPointChoiceOptionalParams`](../interfaces/AffindaAPIDeleteDataPointChoiceOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteDataPointChoiceOptionalParams`](../interfaces/DeleteDataPointChoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -887,7 +883,7 @@ Deletes the specified document from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Document's identifier |
-| `options?` | [`AffindaAPIDeleteDocumentOptionalParams`](../interfaces/AffindaAPIDeleteDocumentOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteDocumentOptionalParams`](../interfaces/DeleteDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -906,7 +902,7 @@ Deletes the specified extractor from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Extractor's identifier |
-| `options?` | [`AffindaAPIDeleteExtractorOptionalParams`](../interfaces/AffindaAPIDeleteExtractorOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteExtractorOptionalParams`](../interfaces/DeleteExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -925,7 +921,7 @@ Deletes the specified index from the database
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
-| `options?` | [`AffindaAPIDeleteIndexOptionalParams`](../interfaces/AffindaAPIDeleteIndexOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteIndexOptionalParams`](../interfaces/DeleteIndexOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -945,7 +941,7 @@ Delete the specified indexed document from the database
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
 | `identifier` | `string` | Document identifier |
-| `options?` | [`AffindaAPIDeleteIndexDocumentOptionalParams`](../interfaces/AffindaAPIDeleteIndexDocumentOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteIndexDocumentOptionalParams`](../interfaces/DeleteIndexDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -964,7 +960,7 @@ Delete the specified invitation from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Invitation identifier. |
-| `options?` | [`AffindaAPIDeleteInvitationOptionalParams`](../interfaces/AffindaAPIDeleteInvitationOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteInvitationOptionalParams`](../interfaces/DeleteInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -983,7 +979,7 @@ Delete the specified mapping from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping's identifier |
-| `options?` | [`AffindaAPIDeleteMappingOptionalParams`](../interfaces/AffindaAPIDeleteMappingOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteMappingOptionalParams`](../interfaces/DeleteMappingOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1002,7 +998,7 @@ Delete the specified mapping data source from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
-| `options?` | [`AffindaAPIDeleteMappingDataSourceOptionalParams`](../interfaces/AffindaAPIDeleteMappingDataSourceOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteMappingDataSourceOptionalParams`](../interfaces/DeleteMappingDataSourceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1022,7 +1018,7 @@ Delete the specified mapping data source value from the database.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
 | `value` | `string` | Mapping Data Source Value's value |
-| `options?` | [`AffindaAPIDeleteMappingDataSourceValueOptionalParams`](../interfaces/AffindaAPIDeleteMappingDataSourceValueOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteMappingDataSourceValueOptionalParams`](../interfaces/DeleteMappingDataSourceValueOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1041,7 +1037,7 @@ Delete the specified organization from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Organization identifier. |
-| `options?` | [`AffindaAPIDeleteOrganizationOptionalParams`](../interfaces/AffindaAPIDeleteOrganizationOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteOrganizationOptionalParams`](../interfaces/DeleteOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1061,7 +1057,7 @@ use this to leave their organization.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Membership identifier. |
-| `options?` | [`AffindaAPIDeleteOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIDeleteOrganizationMembershipOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteOrganizationMembershipOptionalParams`](../interfaces/DeleteOrganizationMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1080,7 +1076,7 @@ Deletes the specified resthook subscription from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | ResthookSubscription's ID |
-| `options?` | [`AffindaAPIDeleteResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIDeleteResthookSubscriptionOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteResthookSubscriptionOptionalParams`](../interfaces/DeleteResthookSubscriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1099,7 +1095,7 @@ Deletes the specified tag from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Tag's ID |
-| `options?` | [`AffindaAPIDeleteTagOptionalParams`](../interfaces/AffindaAPIDeleteTagOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteTagOptionalParams`](../interfaces/DeleteTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1118,7 +1114,7 @@ Remove validation result.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Validation result's ID. |
-| `options?` | [`AffindaAPIDeleteValidationResultOptionalParams`](../interfaces/AffindaAPIDeleteValidationResultOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteValidationResultOptionalParams`](../interfaces/DeleteValidationResultOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1137,7 +1133,7 @@ Deletes the specified workspace from the database.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Workspace's identifier |
-| `options?` | [`AffindaAPIDeleteWorkspaceOptionalParams`](../interfaces/AffindaAPIDeleteWorkspaceOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteWorkspaceOptionalParams`](../interfaces/DeleteWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1156,7 +1152,7 @@ Remove an user from a workspace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Workspace membership's identifier. |
-| `options?` | [`AffindaAPIDeleteWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPIDeleteWorkspaceMembershipOptionalParams.md) | The options parameters. |
+| `options?` | [`DeleteWorkspaceMembershipOptionalParams`](../interfaces/DeleteWorkspaceMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1166,7 +1162,7 @@ ___
 
 ### editDocumentPages
 
-▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`\<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
+▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`\<[`EditDocumentPagesResponse`](../modules.md#editdocumentpagesresponse)\>
 
 Split / merge / rotate / delete pages of a document.
 Documents with multiple pages can be splitted into multiple documents, or merged into one document.
@@ -1178,17 +1174,17 @@ Each page can also be rotated. Edit operations will trigger re-parsing of the do
 | :------ | :------ | :------ |
 | `identifier` | `string` | Document's identifier |
 | `body` | [`DocumentEditRequest`](../interfaces/DocumentEditRequest.md) | Describe how the pages should be edited |
-| `options?` | [`AffindaAPIEditDocumentPagesOptionalParams`](../interfaces/AffindaAPIEditDocumentPagesOptionalParams.md) | The options parameters. |
+| `options?` | [`EditDocumentPagesOptionalParams`](../interfaces/EditDocumentPagesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIEditDocumentPagesResponse`](../modules.md#affindaapieditdocumentpagesresponse)\>
+`Promise`\<[`EditDocumentPagesResponse`](../modules.md#editdocumentpagesresponse)\>
 
 ___
 
 ### getAllAnnotations
 
-▸ **getAllAnnotations**(`document`, `options?`): `Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllAnnotations**(`document`, `options?`): `Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns your annotations.
 
@@ -1197,17 +1193,17 @@ Returns your annotations.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `document` | `string` | Filter by document. |
-| `options?` | [`AffindaAPIGetAllAnnotationsOptionalParams`](../interfaces/AffindaAPIGetAllAnnotationsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllAnnotationsOptionalParams`](../interfaces/GetAllAnnotationsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d5zg6mv3annotationsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllApiUsers
 
-▸ **getAllApiUsers**(`options?`): `Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
+▸ **getAllApiUsers**(`options?`): `Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns your API users.
 
@@ -1215,17 +1211,17 @@ Returns your API users.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllApiUsersOptionalParams`](../interfaces/AffindaAPIGetAllApiUsersOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllApiUsersOptionalParams`](../interfaces/GetAllApiUsersOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../modules.md#paths26civ0v3apiusersgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllCollections
 
-▸ **getAllCollections**(`workspace`, `options?`): `Promise`\<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
+▸ **getAllCollections**(`workspace`, `options?`): `Promise`\<[`GetAllCollectionsResponse`](../modules.md#getallcollectionsresponse)\>
 
 Returns your collections.
 
@@ -1234,17 +1230,17 @@ Returns your collections.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `workspace` | `string` | Filter by workspace. |
-| `options?` | [`AffindaAPIGetAllCollectionsOptionalParams`](../interfaces/AffindaAPIGetAllCollectionsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllCollectionsOptionalParams`](../interfaces/GetAllCollectionsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllCollectionsResponse`](../modules.md#affindaapigetallcollectionsresponse)\>
+`Promise`\<[`GetAllCollectionsResponse`](../modules.md#getallcollectionsresponse)\>
 
 ___
 
 ### getAllDataPoints
 
-▸ **getAllDataPoints**(`options?`): `Promise`\<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
+▸ **getAllDataPoints**(`options?`): `Promise`\<[`GetAllDataPointsResponse`](../modules.md#getalldatapointsresponse)\>
 
 Returns your custom data points as well as Affinda's off-the-shelf data points.
 
@@ -1252,17 +1248,17 @@ Returns your custom data points as well as Affinda's off-the-shelf data points.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllDataPointsOptionalParams`](../interfaces/AffindaAPIGetAllDataPointsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllDataPointsOptionalParams`](../interfaces/GetAllDataPointsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllDataPointsResponse`](../modules.md#affindaapigetalldatapointsresponse)\>
+`Promise`\<[`GetAllDataPointsResponse`](../modules.md#getalldatapointsresponse)\>
 
 ___
 
 ### getAllDocuments
 
-▸ **getAllDocuments**(`options?`): `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllDocuments**(`options?`): `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the document summaries for that user, limited to 300 per page.
 
@@ -1270,17 +1266,17 @@ Returns all the document summaries for that user, limited to 300 per page.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllDocumentsOptionalParams`](../interfaces/AffindaAPIGetAllDocumentsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllDocumentsOptionalParams`](../interfaces/GetAllDocumentsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsoxm5m7v3documentsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllExtractors
 
-▸ **getAllExtractors**(`organization`, `options?`): `Promise`\<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
+▸ **getAllExtractors**(`organization`, `options?`): `Promise`\<[`GetAllExtractorsResponse`](../modules.md#getallextractorsresponse)\>
 
 Returns your custom extractors as well as Affinda's off-the-shelf extractors.
 
@@ -1289,11 +1285,11 @@ Returns your custom extractors as well as Affinda's off-the-shelf extractors.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `organization` | `string` | Filter by organization. |
-| `options?` | [`AffindaAPIGetAllExtractorsOptionalParams`](../interfaces/AffindaAPIGetAllExtractorsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllExtractorsOptionalParams`](../interfaces/GetAllExtractorsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllExtractorsResponse`](../modules.md#affindaapigetallextractorsresponse)\>
+`Promise`\<[`GetAllExtractorsResponse`](../modules.md#getallextractorsresponse)\>
 
 ___
 
@@ -1308,7 +1304,7 @@ Returns all the indexed documents for that index
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
-| `options?` | [`AffindaAPIGetAllIndexDocumentsOptionalParams`](../interfaces/AffindaAPIGetAllIndexDocumentsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllIndexDocumentsOptionalParams`](../interfaces/GetAllIndexDocumentsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1318,7 +1314,7 @@ ___
 
 ### getAllIndexes
 
-▸ **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)\>
+▸ **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexes
 
@@ -1326,17 +1322,17 @@ Returns all the indexes
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllIndexesOptionalParams`](../interfaces/AffindaAPIGetAllIndexesOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllIndexesOptionalParams`](../interfaces/GetAllIndexesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsdvrcp3v3indexgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllInvitations
 
-▸ **getAllInvitations**(`options?`): `Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllInvitations**(`options?`): `Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Get list of all invitations you created or sent to you.
 
@@ -1344,17 +1340,17 @@ Get list of all invitations you created or sent to you.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllInvitationsOptionalParams`](../interfaces/AffindaAPIGetAllInvitationsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllInvitationsOptionalParams`](../interfaces/GetAllInvitationsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18wh2vcv3invitationsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllOrganizationMemberships
 
-▸ **getAllOrganizationMemberships**(`options?`): `Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllOrganizationMemberships**(`options?`): `Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the organization memberships
 
@@ -1362,17 +1358,17 @@ Returns all the organization memberships
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllOrganizationMembershipsOptionalParams`](../interfaces/AffindaAPIGetAllOrganizationMembershipsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllOrganizationMembershipsOptionalParams`](../interfaces/GetAllOrganizationMembershipsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsq5os5rv3organizationmembershipsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllOrganizations
 
-▸ **getAllOrganizations**(`options?`): `Promise`\<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
+▸ **getAllOrganizations**(`options?`): `Promise`\<[`GetAllOrganizationsResponse`](../modules.md#getallorganizationsresponse)\>
 
 Returns all the organizations
 
@@ -1380,17 +1376,17 @@ Returns all the organizations
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllOrganizationsOptionalParams`](../interfaces/AffindaAPIGetAllOrganizationsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllOrganizationsOptionalParams`](../interfaces/GetAllOrganizationsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllOrganizationsResponse`](../modules.md#affindaapigetallorganizationsresponse)\>
+`Promise`\<[`GetAllOrganizationsResponse`](../modules.md#getallorganizationsresponse)\>
 
 ___
 
 ### getAllResthookSubscriptions
 
-▸ **getAllResthookSubscriptions**(`options?`): `Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllResthookSubscriptions**(`options?`): `Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns your resthook subscriptions.
 
@@ -1398,17 +1394,17 @@ Returns your resthook subscriptions.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllResthookSubscriptionsOptionalParams`](../interfaces/AffindaAPIGetAllResthookSubscriptionsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllResthookSubscriptionsOptionalParams`](../interfaces/GetAllResthookSubscriptionsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsvz5kj2v3resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllTags
 
-▸ **getAllTags**(`options?`): `Promise`\<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+▸ **getAllTags**(`options?`): `Promise`\<[`GetAllTagsResponse`](../modules.md#getalltagsresponse)\>
 
 Returns your tags.
 
@@ -1416,17 +1412,17 @@ Returns your tags.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllTagsOptionalParams`](../interfaces/AffindaAPIGetAllTagsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllTagsOptionalParams`](../interfaces/GetAllTagsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllTagsResponse`](../modules.md#affindaapigetalltagsresponse)\>
+`Promise`\<[`GetAllTagsResponse`](../modules.md#getalltagsresponse)\>
 
 ___
 
 ### getAllValidationResults
 
-▸ **getAllValidationResults**(`document`, `options?`): `Promise`\<[`AffindaAPIGetAllValidationResultsResponse`](../modules.md#affindaapigetallvalidationresultsresponse)\>
+▸ **getAllValidationResults**(`document`, `options?`): `Promise`\<[`GetAllValidationResultsResponse`](../modules.md#getallvalidationresultsresponse)\>
 
 Returns the validation results of a document.
 
@@ -1435,17 +1431,17 @@ Returns the validation results of a document.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `document` | `string` | Filter by document. |
-| `options?` | [`AffindaAPIGetAllValidationResultsOptionalParams`](../interfaces/AffindaAPIGetAllValidationResultsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllValidationResultsOptionalParams`](../interfaces/GetAllValidationResultsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllValidationResultsResponse`](../modules.md#affindaapigetallvalidationresultsresponse)\>
+`Promise`\<[`GetAllValidationResultsResponse`](../modules.md#getallvalidationresultsresponse)\>
 
 ___
 
 ### getAllWorkspaceMemberships
 
-▸ **getAllWorkspaceMemberships**(`options?`): `Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllWorkspaceMemberships**(`options?`): `Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the memberships of your workspaces.
 
@@ -1453,17 +1449,17 @@ Returns the memberships of your workspaces.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetAllWorkspaceMembershipsOptionalParams`](../interfaces/AffindaAPIGetAllWorkspaceMembershipsOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllWorkspaceMembershipsOptionalParams`](../interfaces/GetAllWorkspaceMembershipsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsz1juagv3workspacemembershipsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllWorkspaces
 
-▸ **getAllWorkspaces**(`organization`, `options?`): `Promise`\<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
+▸ **getAllWorkspaces**(`organization`, `options?`): `Promise`\<[`GetAllWorkspacesResponse`](../modules.md#getallworkspacesresponse)\>
 
 Returns your workspaces.
 
@@ -1472,11 +1468,11 @@ Returns your workspaces.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `organization` | `string` | Filter by organization. |
-| `options?` | [`AffindaAPIGetAllWorkspacesOptionalParams`](../interfaces/AffindaAPIGetAllWorkspacesOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAllWorkspacesOptionalParams`](../interfaces/GetAllWorkspacesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetAllWorkspacesResponse`](../modules.md#affindaapigetallworkspacesresponse)\>
+`Promise`\<[`GetAllWorkspacesResponse`](../modules.md#getallworkspacesresponse)\>
 
 ___
 
@@ -1491,7 +1487,7 @@ Return a specific annotation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Annotation's ID |
-| `options?` | [`AffindaAPIGetAnnotationOptionalParams`](../interfaces/AffindaAPIGetAnnotationOptionalParams.md) | The options parameters. |
+| `options?` | [`GetAnnotationOptionalParams`](../interfaces/GetAnnotationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1510,7 +1506,7 @@ Return a specific API user.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | API user's ID |
-| `options?` | [`AffindaAPIGetApiUserOptionalParams`](../interfaces/AffindaAPIGetApiUserOptionalParams.md) | The options parameters. |
+| `options?` | [`GetApiUserOptionalParams`](../interfaces/GetApiUserOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1529,7 +1525,7 @@ Return a specific collection.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
-| `options?` | [`AffindaAPIGetCollectionOptionalParams`](../interfaces/AffindaAPIGetCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`GetCollectionOptionalParams`](../interfaces/GetCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1549,7 +1545,7 @@ Get a data field for a collection assosciated with a data point
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
 | `datapointIdentifier` | `string` | Datapoint's identifier |
-| `options?` | [`AffindaAPIGetDataFieldForCollectionOptionalParams`](../interfaces/AffindaAPIGetDataFieldForCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`GetDataFieldForCollectionOptionalParams`](../interfaces/GetDataFieldForCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1568,7 +1564,7 @@ Return a specific data point.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Data point's identifier |
-| `options?` | [`AffindaAPIGetDataPointOptionalParams`](../interfaces/AffindaAPIGetDataPointOptionalParams.md) | The options parameters. |
+| `options?` | [`GetDataPointOptionalParams`](../interfaces/GetDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1587,7 +1583,7 @@ Return a specific data point choice.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Data point choice's ID |
-| `options?` | [`AffindaAPIGetDataPointChoiceOptionalParams`](../interfaces/AffindaAPIGetDataPointChoiceOptionalParams.md) | The options parameters. |
+| `options?` | [`GetDataPointChoiceOptionalParams`](../interfaces/GetDataPointChoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1597,7 +1593,7 @@ ___
 
 ### getDataPointChoices
 
-▸ **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
+▸ **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns available choices for a specific enum data point.
 
@@ -1607,11 +1603,11 @@ Returns available choices for a specific enum data point.
 | :------ | :------ | :------ |
 | `dataPoint` | `string` | The data point to get choices for. |
 | `collection` | `string` | The collection to get choices for. |
-| `options?` | [`AffindaAPIGetDataPointChoicesOptionalParams`](../interfaces/AffindaAPIGetDataPointChoicesOptionalParams.md) | The options parameters. |
+| `options?` | [`GetDataPointChoicesOptionalParams`](../interfaces/GetDataPointChoicesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmnwxgv3datapointchoicesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
@@ -1626,7 +1622,7 @@ Return a specific document.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Document's identifier |
-| `options?` | [`AffindaAPIGetDocumentOptionalParams`](../interfaces/AffindaAPIGetDocumentOptionalParams.md) | The options parameters. |
+| `options?` | [`GetDocumentOptionalParams`](../interfaces/GetDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1645,7 +1641,7 @@ Return a specific extractor.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Extractor's identifier |
-| `options?` | [`AffindaAPIGetExtractorOptionalParams`](../interfaces/AffindaAPIGetExtractorOptionalParams.md) | The options parameters. |
+| `options?` | [`GetExtractorOptionalParams`](../interfaces/GetExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1664,7 +1660,7 @@ Get detail of an invitation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Invitation identifier. |
-| `options?` | [`AffindaAPIGetInvitationOptionalParams`](../interfaces/AffindaAPIGetInvitationOptionalParams.md) | The options parameters. |
+| `options?` | [`GetInvitationOptionalParams`](../interfaces/GetInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1684,7 +1680,7 @@ in to view the invitation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `token` | `string` | Invitation token. |
-| `options?` | [`AffindaAPIGetInvitationByTokenOptionalParams`](../interfaces/AffindaAPIGetInvitationByTokenOptionalParams.md) | The options parameters. |
+| `options?` | [`GetInvitationByTokenOptionalParams`](../interfaces/GetInvitationByTokenOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1704,7 +1700,7 @@ returned, etc.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetJobDescriptionSearchConfigOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
+| `options?` | [`GetJobDescriptionSearchConfigOptionalParams`](../interfaces/GetJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1727,7 +1723,7 @@ The `identifier` is the unique ID returned via the
 | :------ | :------ | :------ |
 | `identifier` | `string` | Job Description identifier |
 | `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
-| `options?` | [`AffindaAPIGetJobDescriptionSearchDetailOptionalParams`](../interfaces/AffindaAPIGetJobDescriptionSearchDetailOptionalParams.md) | The options parameters. |
+| `options?` | [`GetJobDescriptionSearchDetailOptionalParams`](../interfaces/GetJobDescriptionSearchDetailOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1746,7 +1742,7 @@ Return a specific mapping.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping's identifier |
-| `options?` | [`AffindaAPIGetMappingOptionalParams`](../interfaces/AffindaAPIGetMappingOptionalParams.md) | The options parameters. |
+| `options?` | [`GetMappingOptionalParams`](../interfaces/GetMappingOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1765,7 +1761,7 @@ Return a specific mapping data source.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
-| `options?` | [`AffindaAPIGetMappingDataSourceOptionalParams`](../interfaces/AffindaAPIGetMappingDataSourceOptionalParams.md) | The options parameters. |
+| `options?` | [`GetMappingDataSourceOptionalParams`](../interfaces/GetMappingDataSourceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1775,7 +1771,7 @@ ___
 
 ### getMappingDataSourceValue
 
-▸ **getMappingDataSourceValue**(`identifier`, `value`, `options?`): `Promise`\<[`AffindaAPIGetMappingDataSourceValueResponse`](../modules.md#affindaapigetmappingdatasourcevalueresponse)\>
+▸ **getMappingDataSourceValue**(`identifier`, `value`, `options?`): `Promise`\<[`GetMappingDataSourceValueResponse`](../modules.md#getmappingdatasourcevalueresponse)\>
 
 Return a specific mapping dta source value.
 
@@ -1785,11 +1781,11 @@ Return a specific mapping dta source value.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
 | `value` | `string` | Mapping Data Source Value's value |
-| `options?` | [`AffindaAPIGetMappingDataSourceValueOptionalParams`](../interfaces/AffindaAPIGetMappingDataSourceValueOptionalParams.md) | The options parameters. |
+| `options?` | [`GetMappingDataSourceValueOptionalParams`](../interfaces/GetMappingDataSourceValueOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetMappingDataSourceValueResponse`](../modules.md#affindaapigetmappingdatasourcevalueresponse)\>
+`Promise`\<[`GetMappingDataSourceValueResponse`](../modules.md#getmappingdatasourcevalueresponse)\>
 
 ___
 
@@ -1804,7 +1800,7 @@ Get detail of an organization.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Organization identifier. |
-| `options?` | [`AffindaAPIGetOrganizationOptionalParams`](../interfaces/AffindaAPIGetOrganizationOptionalParams.md) | The options parameters. |
+| `options?` | [`GetOrganizationOptionalParams`](../interfaces/GetOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1823,7 +1819,7 @@ Get detail of an organization membership.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Membership identifier. |
-| `options?` | [`AffindaAPIGetOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIGetOrganizationMembershipOptionalParams.md) | The options parameters. |
+| `options?` | [`GetOrganizationMembershipOptionalParams`](../interfaces/GetOrganizationMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1842,7 +1838,7 @@ Return a specific resthook subscription.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Resthook subscription's ID |
-| `options?` | [`AffindaAPIGetResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIGetResthookSubscriptionOptionalParams.md) | The options parameters. |
+| `options?` | [`GetResthookSubscriptionOptionalParams`](../interfaces/GetResthookSubscriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1862,7 +1858,7 @@ returned, etc.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIGetResumeSearchConfigOptionalParams`](../interfaces/AffindaAPIGetResumeSearchConfigOptionalParams.md) | The options parameters. |
+| `options?` | [`GetResumeSearchConfigOptionalParams`](../interfaces/GetResumeSearchConfigOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1884,7 +1880,7 @@ The `identifier` is the unique ID returned via the [/resume_search](#post-/resum
 | :------ | :------ | :------ |
 | `identifier` | `string` | Resume identifier |
 | `body` | [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
-| `options?` | [`AffindaAPIGetResumeSearchDetailOptionalParams`](../interfaces/AffindaAPIGetResumeSearchDetailOptionalParams.md) | The options parameters. |
+| `options?` | [`GetResumeSearchDetailOptionalParams`](../interfaces/GetResumeSearchDetailOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1907,7 +1903,7 @@ match the score returned from POST
 | :------ | :------ | :------ |
 | `resume` | `string` | Identify the resume to match. |
 | `jobDescription` | `string` | Identify the job description to match. |
-| `options?` | [`AffindaAPIGetResumeSearchMatchOptionalParams`](../interfaces/AffindaAPIGetResumeSearchMatchOptionalParams.md) | The options parameters. |
+| `options?` | [`GetResumeSearchMatchOptionalParams`](../interfaces/GetResumeSearchMatchOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1917,7 +1913,7 @@ ___
 
 ### getResumeSearchSuggestionJobTitle
 
-▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`\<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`\<[`GetResumeSearchSuggestionJobTitleResponse`](../modules.md#getresumesearchsuggestionjobtitleresponse)\>
 
 Provided one or more job titles, get related suggestions for your search.
 
@@ -1926,17 +1922,17 @@ Provided one or more job titles, get related suggestions for your search.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `jobTitles` | `string`[] | Job title to query suggestions for |
-| `options?` | [`AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams`](../interfaces/AffindaAPIGetResumeSearchSuggestionJobTitleOptionalParams.md) | The options parameters. |
+| `options?` | [`GetResumeSearchSuggestionJobTitleOptionalParams`](../interfaces/GetResumeSearchSuggestionJobTitleOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+`Promise`\<[`GetResumeSearchSuggestionJobTitleResponse`](../modules.md#getresumesearchsuggestionjobtitleresponse)\>
 
 ___
 
 ### getResumeSearchSuggestionSkill
 
-▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`\<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`\<[`GetResumeSearchSuggestionSkillResponse`](../modules.md#getresumesearchsuggestionskillresponse)\>
 
 Provided one or more skills, get related suggestions for your search.
 
@@ -1945,11 +1941,11 @@ Provided one or more skills, get related suggestions for your search.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `skills` | `string`[] | Skill to query suggestions for |
-| `options?` | [`AffindaAPIGetResumeSearchSuggestionSkillOptionalParams`](../interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md) | The options parameters. |
+| `options?` | [`GetResumeSearchSuggestionSkillOptionalParams`](../interfaces/GetResumeSearchSuggestionSkillOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+`Promise`\<[`GetResumeSearchSuggestionSkillResponse`](../modules.md#getresumesearchsuggestionskillresponse)\>
 
 ___
 
@@ -1964,7 +1960,7 @@ Return a specific tag.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Tag's ID |
-| `options?` | [`AffindaAPIGetTagOptionalParams`](../interfaces/AffindaAPIGetTagOptionalParams.md) | The options parameters. |
+| `options?` | [`GetTagOptionalParams`](../interfaces/GetTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1974,7 +1970,7 @@ ___
 
 ### getUsageByCollection
 
-▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`\<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
+▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`\<[`GetUsageByCollectionResponse`](../modules.md#getusagebycollectionresponse)\>
 
 Return monthly credits consumption of a collection.
 
@@ -1983,17 +1979,17 @@ Return monthly credits consumption of a collection.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
-| `options?` | [`AffindaAPIGetUsageByCollectionOptionalParams`](../interfaces/AffindaAPIGetUsageByCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`GetUsageByCollectionOptionalParams`](../interfaces/GetUsageByCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetUsageByCollectionResponse`](../modules.md#affindaapigetusagebycollectionresponse)\>
+`Promise`\<[`GetUsageByCollectionResponse`](../modules.md#getusagebycollectionresponse)\>
 
 ___
 
 ### getUsageByWorkspace
 
-▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`\<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
+▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`\<[`GetUsageByWorkspaceResponse`](../modules.md#getusagebyworkspaceresponse)\>
 
 Return monthly credits consumption of a workspace.
 
@@ -2002,11 +1998,11 @@ Return monthly credits consumption of a workspace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Workspace's identifier |
-| `options?` | [`AffindaAPIGetUsageByWorkspaceOptionalParams`](../interfaces/AffindaAPIGetUsageByWorkspaceOptionalParams.md) | The options parameters. |
+| `options?` | [`GetUsageByWorkspaceOptionalParams`](../interfaces/GetUsageByWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIGetUsageByWorkspaceResponse`](../modules.md#affindaapigetusagebyworkspaceresponse)\>
+`Promise`\<[`GetUsageByWorkspaceResponse`](../modules.md#getusagebyworkspaceresponse)\>
 
 ___
 
@@ -2021,7 +2017,7 @@ Return a specific validation result.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | Validation result's ID. |
-| `options?` | [`AffindaAPIGetValidationResultOptionalParams`](../interfaces/AffindaAPIGetValidationResultOptionalParams.md) | The options parameters. |
+| `options?` | [`GetValidationResultOptionalParams`](../interfaces/GetValidationResultOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2040,7 +2036,7 @@ Return a specific workspace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Workspace's identifier |
-| `options?` | [`AffindaAPIGetWorkspaceOptionalParams`](../interfaces/AffindaAPIGetWorkspaceOptionalParams.md) | The options parameters. |
+| `options?` | [`GetWorkspaceOptionalParams`](../interfaces/GetWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2059,7 +2055,7 @@ Return a specific workspace membership.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Workspace membership's identifier. |
-| `options?` | [`AffindaAPIGetWorkspaceMembershipOptionalParams`](../interfaces/AffindaAPIGetWorkspaceMembershipOptionalParams.md) | The options parameters. |
+| `options?` | [`GetWorkspaceMembershipOptionalParams`](../interfaces/GetWorkspaceMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2069,7 +2065,7 @@ ___
 
 ### listMappingDataSourceValues
 
-▸ **listMappingDataSourceValues**(`identifier`, `options?`): `Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)\>
+▸ **listMappingDataSourceValues**(`identifier`, `options?`): `Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the list of all values in a mapping data source
 
@@ -2078,17 +2074,17 @@ Returns the list of all values in a mapping data source
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
-| `options?` | [`AffindaAPIListMappingDataSourceValuesOptionalParams`](../interfaces/AffindaAPIListMappingDataSourceValuesOptionalParams.md) | The options parameters. |
+| `options?` | [`ListMappingDataSourceValuesOptionalParams`](../interfaces/ListMappingDataSourceValuesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1qr7bnyv3mappingdatasourcesidentifiervaluesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### listMappingDataSources
 
-▸ **listMappingDataSources**(`options?`): `Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths11qdcofv3mappingdatasourcesgetresponses200contentapplicationjsonschema)\>
+▸ **listMappingDataSources**(`options?`): `Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the list of all custom mapping data sources.
 
@@ -2096,17 +2092,17 @@ Returns the list of all custom mapping data sources.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIListMappingDataSourcesOptionalParams`](../interfaces/AffindaAPIListMappingDataSourcesOptionalParams.md) | The options parameters. |
+| `options?` | [`ListMappingDataSourcesOptionalParams`](../interfaces/ListMappingDataSourcesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths11qdcofv3mappingdatasourcesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### listMappings
 
-▸ **listMappings**(`mappingDataSource`, `options?`): `Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1dpvb2pv3mappingsgetresponses200contentapplicationjsonschema)\>
+▸ **listMappings**(`mappingDataSource`, `options?`): `Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the list of all custom data mappings.
 
@@ -2115,17 +2111,17 @@ Returns the list of all custom data mappings.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `mappingDataSource` | `string` | Mapping data source's identifier |
-| `options?` | [`AffindaAPIListMappingsOptionalParams`](../interfaces/AffindaAPIListMappingsOptionalParams.md) | The options parameters. |
+| `options?` | [`ListMappingsOptionalParams`](../interfaces/ListMappingsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1dpvb2pv3mappingsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### listOccupationGroups
 
-▸ **listOccupationGroups**(`options?`): `Promise`\<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+▸ **listOccupationGroups**(`options?`): `Promise`\<[`ListOccupationGroupsResponse`](../modules.md#listoccupationgroupsresponse)\>
 
 Returns the list of searchable occupation groups.
 
@@ -2133,11 +2129,11 @@ Returns the list of searchable occupation groups.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIListOccupationGroupsOptionalParams`](../interfaces/AffindaAPIListOccupationGroupsOptionalParams.md) | The options parameters. |
+| `options?` | [`ListOccupationGroupsOptionalParams`](../interfaces/ListOccupationGroupsOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+`Promise`\<[`ListOccupationGroupsResponse`](../modules.md#listoccupationgroupsresponse)\>
 
 ___
 
@@ -2152,7 +2148,7 @@ Regenerate API key for an API user.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `number` | API user's ID |
-| `options?` | [`AffindaAPIRegenerateApiKeyForApiUserOptionalParams`](../interfaces/AffindaAPIRegenerateApiKeyForApiUserOptionalParams.md) | The options parameters. |
+| `options?` | [`RegenerateApiKeyForApiUserOptionalParams`](../interfaces/RegenerateApiKeyForApiUserOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2172,7 +2168,7 @@ choices will be deleted.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | [`AffindaAPIReplaceDataPointChoicesOptionalParams`](../interfaces/AffindaAPIReplaceDataPointChoicesOptionalParams.md) | The options parameters. |
+| `options?` | [`ReplaceDataPointChoicesOptionalParams`](../interfaces/ReplaceDataPointChoicesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2182,7 +2178,7 @@ ___
 
 ### replaceMappingDataSourceValues
 
-▸ **replaceMappingDataSourceValues**(`identifier`, `body`, `options?`): `Promise`\<[`AffindaAPIReplaceMappingDataSourceValuesResponse`](../modules.md#affindaapireplacemappingdatasourcevaluesresponse)\>
+▸ **replaceMappingDataSourceValues**(`identifier`, `body`, `options?`): `Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../modules.md#replacemappingdatasourcevaluesresponse)\>
 
 Replaces the list of all values in a mapping data source
 
@@ -2192,11 +2188,11 @@ Replaces the list of all values in a mapping data source
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping data source's identifier |
 | `body` | `Record`\<`string`, `unknown`\>[] | Array of AnyObject |
-| `options?` | [`AffindaAPIReplaceMappingDataSourceValuesOptionalParams`](../interfaces/AffindaAPIReplaceMappingDataSourceValuesOptionalParams.md) | The options parameters. |
+| `options?` | [`ReplaceMappingDataSourceValuesOptionalParams`](../interfaces/ReplaceMappingDataSourceValuesOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`\<[`AffindaAPIReplaceMappingDataSourceValuesResponse`](../modules.md#affindaapireplacemappingdatasourcevaluesresponse)\>
+`Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../modules.md#replacemappingdatasourcevaluesresponse)\>
 
 ___
 
@@ -2212,7 +2208,7 @@ Choose to accept or decline an invitation.
 | :------ | :------ | :------ |
 | `token` | `string` | Invitation token. |
 | `body` | [`InvitationResponse`](../interfaces/InvitationResponse.md) |  |
-| `options?` | [`AffindaAPIRespondToInvitationOptionalParams`](../interfaces/AffindaAPIRespondToInvitationOptionalParams.md) | The options parameters. |
+| `options?` | [`RespondToInvitationOptionalParams`](../interfaces/RespondToInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2245,7 +2241,7 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 #### Inherited from
 
-[AffindaAPIContext](AffindaAPIContext.md).[sendOperationRequest](AffindaAPIContext.md#sendoperationrequest)
+coreClient.ServiceClient.sendOperationRequest
 
 ___
 
@@ -2267,7 +2263,7 @@ Send the provided httpRequest.
 
 #### Inherited from
 
-[AffindaAPIContext](AffindaAPIContext.md).[sendRequest](AffindaAPIContext.md#sendrequest)
+coreClient.ServiceClient.sendRequest
 
 ___
 
@@ -2283,7 +2279,7 @@ Update data of an annotation.
 | :------ | :------ | :------ |
 | `id` | `number` | Annotation's ID |
 | `body` | [`AnnotationUpdate`](../interfaces/AnnotationUpdate.md) | Annotation data to update |
-| `options?` | [`AffindaAPIUpdateAnnotationOptionalParams`](../interfaces/AffindaAPIUpdateAnnotationOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateAnnotationOptionalParams`](../interfaces/UpdateAnnotationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2303,7 +2299,7 @@ Update data of an API user.
 | :------ | :------ | :------ |
 | `id` | `number` | API user's ID |
 | `body` | [`ApiUserUpdate`](../interfaces/ApiUserUpdate.md) | API user to update |
-| `options?` | [`AffindaAPIUpdateApiUserOptionalParams`](../interfaces/AffindaAPIUpdateApiUserOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateApiUserOptionalParams`](../interfaces/UpdateApiUserOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2323,7 +2319,7 @@ Update data of a collection.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Collection's identifier |
 | `body` | [`CollectionUpdate`](../interfaces/CollectionUpdate.md) | Collection data to update |
-| `options?` | [`AffindaAPIUpdateCollectionOptionalParams`](../interfaces/AffindaAPIUpdateCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateCollectionOptionalParams`](../interfaces/UpdateCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2344,7 +2340,7 @@ Update data field for a collection assosciated with a data point
 | `identifier` | `string` | Collection's identifier |
 | `datapointIdentifier` | `string` | Datapoint's identifier |
 | `body` | [`CollectionField`](../interfaces/CollectionField.md) | Data field properties to update |
-| `options?` | [`AffindaAPIUpdateDataFieldForCollectionOptionalParams`](../interfaces/AffindaAPIUpdateDataFieldForCollectionOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateDataFieldForCollectionOptionalParams`](../interfaces/UpdateDataFieldForCollectionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2364,7 +2360,7 @@ Update data of a data point.
 | :------ | :------ | :------ |
 | `identifier` | `string` | DataPoint's identifier |
 | `body` | [`DataPointUpdate`](../interfaces/DataPointUpdate.md) | Data point to update |
-| `options?` | [`AffindaAPIUpdateDataPointOptionalParams`](../interfaces/AffindaAPIUpdateDataPointOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateDataPointOptionalParams`](../interfaces/UpdateDataPointOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2384,7 +2380,7 @@ Update data of a data point choice.
 | :------ | :------ | :------ |
 | `id` | `number` | Data point choice's ID |
 | `body` | [`DataPointChoiceUpdate`](../interfaces/DataPointChoiceUpdate.md) | Data point choice to update |
-| `options?` | [`AffindaAPIUpdateDataPointChoiceOptionalParams`](../interfaces/AffindaAPIUpdateDataPointChoiceOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateDataPointChoiceOptionalParams`](../interfaces/UpdateDataPointChoiceOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2404,7 +2400,7 @@ Update file name, expiry time, or move to another collection, etc.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Document's identifier |
 | `body` | [`DocumentUpdate`](../interfaces/DocumentUpdate.md) | Document data to update |
-| `options?` | [`AffindaAPIUpdateDocumentOptionalParams`](../interfaces/AffindaAPIUpdateDocumentOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateDocumentOptionalParams`](../interfaces/UpdateDocumentOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2426,7 +2422,7 @@ Only applicable for resumes and job descriptions. For other document types, plea
 | :------ | :------ | :------ |
 | `identifier` | `string` | Resume or Job Description identifier |
 | `body` | [`PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md) | Resume data to update |
-| `options?` | [`AffindaAPIUpdateDocumentDataOptionalParams`](../interfaces/AffindaAPIUpdateDocumentDataOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateDocumentDataOptionalParams`](../interfaces/UpdateDocumentDataOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2446,7 +2442,7 @@ Update data of an extractor.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Extractor's identifier |
 | `body` | [`ExtractorUpdate`](../interfaces/ExtractorUpdate.md) | Extractor data to update |
-| `options?` | [`AffindaAPIUpdateExtractorOptionalParams`](../interfaces/AffindaAPIUpdateExtractorOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateExtractorOptionalParams`](../interfaces/UpdateExtractorOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2466,7 +2462,7 @@ Updates the specified index
 | :------ | :------ | :------ |
 | `name` | `string` | Index name |
 | `body` | [`IndexUpdate`](../interfaces/IndexUpdate.md) | Index data to update |
-| `options?` | [`AffindaAPIUpdateIndexOptionalParams`](../interfaces/AffindaAPIUpdateIndexOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateIndexOptionalParams`](../interfaces/UpdateIndexOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2486,7 +2482,7 @@ Update the detail of an invitation.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Invitation identifier. |
 | `body` | [`InvitationUpdate`](../interfaces/InvitationUpdate.md) |  |
-| `options?` | [`AffindaAPIUpdateInvitationOptionalParams`](../interfaces/AffindaAPIUpdateInvitationOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateInvitationOptionalParams`](../interfaces/UpdateInvitationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2507,7 +2503,7 @@ returned, etc.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md) |  |
-| `options?` | [`AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams`](../interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateJobDescriptionSearchConfigOptionalParams`](../interfaces/UpdateJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2527,7 +2523,7 @@ Updates a specific mapping.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Mapping's identifier |
 | `body` | [`MappingUpdate`](../interfaces/MappingUpdate.md) |  |
-| `options?` | [`AffindaAPIUpdateMappingOptionalParams`](../interfaces/AffindaAPIUpdateMappingOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateMappingOptionalParams`](../interfaces/UpdateMappingOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2546,7 +2542,7 @@ Update the detail of an organization.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `identifier` | `string` | Organization identifier. |
-| `options?` | [`AffindaAPIUpdateOrganizationOptionalParams`](../interfaces/AffindaAPIUpdateOrganizationOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateOrganizationOptionalParams`](../interfaces/UpdateOrganizationOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2566,7 +2562,7 @@ The admin users can use this endpoint to update the role of the members within t
 | :------ | :------ | :------ |
 | `identifier` | `string` | Membership identifier. |
 | `body` | [`OrganizationMembershipUpdate`](../interfaces/OrganizationMembershipUpdate.md) |  |
-| `options?` | [`AffindaAPIUpdateOrganizationMembershipOptionalParams`](../interfaces/AffindaAPIUpdateOrganizationMembershipOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateOrganizationMembershipOptionalParams`](../interfaces/UpdateOrganizationMembershipOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2586,7 +2582,7 @@ Update data of a resthook subscription.
 | :------ | :------ | :------ |
 | `id` | `number` | ResthookSubscription's ID |
 | `body` | [`ResthookSubscriptionUpdate`](../interfaces/ResthookSubscriptionUpdate.md) | ResthookSubscription data to update |
-| `options?` | [`AffindaAPIUpdateResthookSubscriptionOptionalParams`](../interfaces/AffindaAPIUpdateResthookSubscriptionOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateResthookSubscriptionOptionalParams`](../interfaces/UpdateResthookSubscriptionOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2607,7 +2603,7 @@ returned, etc.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body` | [`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md) |  |
-| `options?` | [`AffindaAPIUpdateResumeSearchConfigOptionalParams`](../interfaces/AffindaAPIUpdateResumeSearchConfigOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateResumeSearchConfigOptionalParams`](../interfaces/UpdateResumeSearchConfigOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2627,7 +2623,7 @@ Update data of an tag.
 | :------ | :------ | :------ |
 | `id` | `number` | Tag's ID |
 | `body` | [`TagUpdate`](../interfaces/TagUpdate.md) | Tag data to update |
-| `options?` | [`AffindaAPIUpdateTagOptionalParams`](../interfaces/AffindaAPIUpdateTagOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateTagOptionalParams`](../interfaces/UpdateTagOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2647,7 +2643,7 @@ Update a validation result.
 | :------ | :------ | :------ |
 | `id` | `number` | Validation result's ID. |
 | `body` | [`ValidationResultUpdate`](../interfaces/ValidationResultUpdate.md) | Validation result data to update |
-| `options?` | [`AffindaAPIUpdateValidationResultOptionalParams`](../interfaces/AffindaAPIUpdateValidationResultOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateValidationResultOptionalParams`](../interfaces/UpdateValidationResultOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -2667,7 +2663,7 @@ Update a workspace.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Workspace's identifier |
 | `body` | [`WorkspaceUpdate`](../interfaces/WorkspaceUpdate.md) | Workspace data to update |
-| `options?` | [`AffindaAPIUpdateWorkspaceOptionalParams`](../interfaces/AffindaAPIUpdateWorkspaceOptionalParams.md) | The options parameters. |
+| `options?` | [`UpdateWorkspaceOptionalParams`](../interfaces/UpdateWorkspaceOptionalParams.md) | The options parameters. |
 
 #### Returns
 

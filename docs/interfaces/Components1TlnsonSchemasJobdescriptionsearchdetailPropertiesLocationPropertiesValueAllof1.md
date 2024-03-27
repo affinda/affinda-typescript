@@ -2,6 +2,12 @@
 
 # Interface: Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
 
+## Hierarchy
+
+- **`Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1`**
+
+  ↳ [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
+
 ## Table of contents
 
 ### Properties

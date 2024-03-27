@@ -2,6 +2,18 @@
 
 # Interface: Document
 
+## Hierarchy
+
+- **`Document`**
+
+  ↳ [`Resume`](Resume.md)
+
+  ↳ [`Invoice`](Invoice.md)
+
+  ↳ [`JobDescription`](JobDescription.md)
+
+  ↳ [`ResumeRedact`](ResumeRedact.md)
+
 ## Table of contents
 
 ### Properties

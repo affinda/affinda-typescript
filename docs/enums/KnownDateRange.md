@@ -20,11 +20,15 @@ Known values of [DateRange](../modules.md#daterange) that the service accepts.
 
 • **Month** = ``"month"``
 
+Month
+
 ___
 
 ### Today
 
 • **Today** = ``"today"``
+
+Today
 
 ___
 
@@ -32,14 +36,20 @@ ___
 
 • **Week** = ``"week"``
 
+Week
+
 ___
 
 ### Year
 
 • **Year** = ``"year"``
 
+Year
+
 ___
 
 ### Yesterday
 
 • **Yesterday** = ``"yesterday"``
+
+Yesterday

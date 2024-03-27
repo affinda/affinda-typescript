@@ -18,14 +18,20 @@ Known values of [Version](../modules.md#version) that the service accepts.
 
 • **V1** = ``"v1"``
 
+V1
+
 ___
 
 ### V2
 
 • **V2** = ``"v2"``
 
+V2
+
 ___
 
 ### V3
 
 • **V3** = ``"v3"``
+
+V3

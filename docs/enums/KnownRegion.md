@@ -18,14 +18,20 @@ Known values of [Region](../modules.md#region) that the service accepts.
 
 • **Api** = ``"api"``
 
+Api
+
 ___
 
 ### ApiEu1
 
 • **ApiEu1** = ``"api.eu1"``
 
+ApiEu1
+
 ___
 
 ### ApiUs1
 
 • **ApiUs1** = ``"api.us1"``
+
+ApiUs1

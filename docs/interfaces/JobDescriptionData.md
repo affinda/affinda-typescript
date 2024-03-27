@@ -33,85 +33,85 @@
 
 ### certifications
 
-• `Optional` **certifications**: (``null`` \| [`TextAnnotation`](../modules.md#textannotation))[]
+• `Optional` **certifications**: (``null`` \| [`TextAnnotation`](TextAnnotation.md))[]
 
 ___
 
 ### contactEmail
 
-• `Optional` **contactEmail**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **contactEmail**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### contactName
 
-• `Optional` **contactName**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **contactName**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### contactPhone
 
-• `Optional` **contactPhone**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **contactPhone**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### educationAccreditation
 
-• `Optional` **educationAccreditation**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **educationAccreditation**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### educationLevel
 
-• `Optional` **educationLevel**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **educationLevel**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### endDate
 
-• `Optional` **endDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **endDate**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### expectedRemuneration
 
-• `Optional` **expectedRemuneration**: [`ExpectedRemunerationAnnotation`](../modules.md#expectedremunerationannotation)
+• `Optional` **expectedRemuneration**: [`ExpectedRemunerationAnnotation`](ExpectedRemunerationAnnotation.md)
 
 ___
 
 ### jobTitle
 
-• `Optional` **jobTitle**: [`JobTitleAnnotation`](../modules.md#jobtitleannotation)
+• `Optional` **jobTitle**: [`JobTitleAnnotation`](JobTitleAnnotation.md)
 
 ___
 
 ### jobType
 
-• `Optional` **jobType**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **jobType**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### languages
 
-• `Optional` **languages**: (``null`` \| [`LanguageAnnotation`](../modules.md#languageannotation))[]
+• `Optional` **languages**: (``null`` \| [`LanguageAnnotation`](LanguageAnnotation.md))[]
 
 ___
 
 ### location
 
-• `Optional` **location**: [`LocationAnnotation`](../modules.md#locationannotation)
+• `Optional` **location**: [`LocationAnnotation`](LocationAnnotation.md)
 
 ___
 
 ### organizationName
 
-• `Optional` **organizationName**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **organizationName**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### organizationWebsite
 
-• `Optional` **organizationWebsite**: [`TextAnnotation`](../modules.md#textannotation)
+• `Optional` **organizationWebsite**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -125,16 +125,16 @@ ___
 
 ### skills
 
-• `Optional` **skills**: (``null`` \| [`SkillAnnotation`](../modules.md#skillannotation))[]
+• `Optional` **skills**: (``null`` \| [`SkillAnnotation`](SkillAnnotation.md))[]
 
 ___
 
 ### startDate
 
-• `Optional` **startDate**: [`DateAnnotation`](../modules.md#dateannotation)
+• `Optional` **startDate**: [`DateAnnotation`](DateAnnotation.md)
 
 ___
 
 ### yearsExperience
 
-• `Optional` **yearsExperience**: [`YearsExperienceAnnotation`](../modules.md#yearsexperienceannotation)
+• `Optional` **yearsExperience**: [`YearsExperienceAnnotation`](YearsExperienceAnnotation.md)
