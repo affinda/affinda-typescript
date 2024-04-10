@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.8.0] - 2024-04-10
+### Added
+- Add US1 region
+- Add strict attribute to RegionBias
+- Add isOcrd to document metadata
+
+### Fixed
+- Fix invoiceData annotation required fields to match underling text annotation
+
+### Changed
+- Bump v2 compatible client autorest.typescript to 6.0.0-beta.13
+- Reduce maximum limit from 300 to 100 and remove default value
+
 ## [5.7.0] - 2023-10-19
 ### Added
 - Add field custom_identifier to DocumentMeta model

@@ -71,8 +71,12 @@ import {
   AffindaAPIGetResumeSearchSuggestionSkillResponse,
   AffindaAPIGetAllIndexesOptionalParams,
   AffindaAPIGetAllIndexesResponse,
+  IndexCreate,
   AffindaAPICreateIndexOptionalParams,
   AffindaAPICreateIndexResponse,
+  IndexUpdate,
+  AffindaAPIUpdateIndexOptionalParams,
+  AffindaAPIUpdateIndexResponse,
   AffindaAPIDeleteIndexOptionalParams,
   AffindaAPIGetAllIndexDocumentsOptionalParams,
   AffindaAPIGetAllIndexDocumentsResponse,
@@ -612,12 +616,34 @@ export class AffindaAPI extends AffindaAPIContext {
 
   /**
    * Create an index for the search tool
+   * @param body Index to create
    * @param options The options parameters.
    */
   createIndex(
+    body: IndexCreate,
     options?: AffindaAPICreateIndexOptionalParams
   ): Promise<AffindaAPICreateIndexResponse> {
-    return this.sendOperationRequest({ options }, createIndexOperationSpec);
+    return this.sendOperationRequest(
+      { body, options },
+      createIndexOperationSpec
+    );
+  }
+
+  /**
+   * Updates the specified index
+   * @param name Index name
+   * @param body Index data to update
+   * @param options The options parameters.
+   */
+  updateIndex(
+    name: string,
+    body: IndexUpdate,
+    options?: AffindaAPIUpdateIndexOptionalParams
+  ): Promise<AffindaAPIUpdateIndexResponse> {
+    return this.sendOperationRequest(
+      { name, body, options },
+      updateIndexOperationSpec
+    );
   }
 
   /**
@@ -1017,7 +1043,8 @@ const createRedactedResumeOperationSpec: coreClient.OperationSpec = {
     Parameters.redactReferees,
     Parameters.redactLocations,
     Parameters.redactDates,
-    Parameters.redactGender
+    Parameters.redactGender,
+    Parameters.redactPdfMetadata
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType, Parameters.accept1],
@@ -1453,7 +1480,7 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body5,
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [Parameters.offset, Parameters.limit1],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -1673,8 +1700,7 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
   httpMethod: "POST",
   responses: {
     201: {
-      bodyMapper:
-        Mappers.Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema
+      bodyMapper: Mappers.Index
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -1688,9 +1714,35 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  formDataParameters: [Parameters.name, Parameters.documentType1],
+  requestBody: Parameters.body8,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType, Parameters.accept1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer
+};
+const updateIndexOperationSpec: coreClient.OperationSpec = {
+  path: "/v2/index/{name}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Index
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true
+    },
+    default: {
+      bodyMapper: Mappers.RequestError
+    }
+  },
+  requestBody: Parameters.body9,
+  urlParameters: [Parameters.region, Parameters.name],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer
 };
 const deleteIndexOperationSpec: coreClient.OperationSpec = {
@@ -1710,7 +1762,7 @@ const deleteIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.name],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1734,7 +1786,7 @@ const getAllIndexDocumentsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.name],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1758,8 +1810,8 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body8,
-  urlParameters: [Parameters.region, Parameters.name1],
+  requestBody: Parameters.body10,
+  urlParameters: [Parameters.region, Parameters.name],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer
@@ -1781,7 +1833,7 @@ const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.name1],
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.name],
   headerParameters: [Parameters.accept],
   serializer
 };
@@ -1857,7 +1909,7 @@ const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body9,
+  requestBody: Parameters.body11,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
@@ -1905,7 +1957,7 @@ const updateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError
     }
   },
-  requestBody: Parameters.body10,
+  requestBody: Parameters.body12,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",

@@ -18,6 +18,7 @@
 - [displayOccupationGroup](JobDescriptionSearchConfig.md#displayoccupationgroup)
 - [displaySkills](JobDescriptionSearchConfig.md#displayskills)
 - [displayYearsExperience](JobDescriptionSearchConfig.md#displayyearsexperience)
+- [distanceUnit](JobDescriptionSearchConfig.md#distanceunit)
 - [indices](JobDescriptionSearchConfig.md#indices)
 - [maxResults](JobDescriptionSearchConfig.md#maxresults)
 - [searchToolTheme](JobDescriptionSearchConfig.md#searchtooltheme)
@@ -107,6 +108,14 @@ ___
 ### displayYearsExperience
 
 • `Optional` **displayYearsExperience**: `boolean`
+
+___
+
+### distanceUnit
+
+• `Optional` **distanceUnit**: `string`
+
+The unit of distance to use for location based searches
 
 ___
 

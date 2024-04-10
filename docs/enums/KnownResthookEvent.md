@@ -8,6 +8,7 @@ Known values of [ResthookEvent](../modules.md#resthookevent) that the service ac
 
 ### Enumeration Members
 
+- [AnnotationValidated](KnownResthookEvent.md#annotationvalidated)
 - [DocumentClassifyCompleted](KnownResthookEvent.md#documentclassifycompleted)
 - [DocumentClassifyFailed](KnownResthookEvent.md#documentclassifyfailed)
 - [DocumentClassifySucceeded](KnownResthookEvent.md#documentclassifysucceeded)
@@ -25,6 +26,12 @@ Known values of [ResthookEvent](../modules.md#resthookevent) that the service ac
 - [ResumeParseSucceeded](KnownResthookEvent.md#resumeparsesucceeded)
 
 ## Enumeration Members
+
+### AnnotationValidated
+
+• **AnnotationValidated** = ``"annotation.validated"``
+
+___
 
 ### DocumentClassifyCompleted
 

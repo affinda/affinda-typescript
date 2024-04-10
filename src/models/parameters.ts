@@ -12,6 +12,8 @@ import {
   ResumeSearchParameters as ResumeSearchParametersMapper,
   ResumeSearchConfig as ResumeSearchConfigMapper,
   Paths23Ubd8V2ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths23Ubd8V2ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
+  IndexCreate as IndexCreateMapper,
+  IndexUpdate as IndexUpdateMapper,
   PathsYg099PV2IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsYg099PV2IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
   ResthookSubscriptionCreate as ResthookSubscriptionCreateMapper,
   ResthookSubscriptionUpdate as ResthookSubscriptionUpdateMapper
@@ -58,9 +60,8 @@ export const offset: OperationQueryParameter = {
 export const limit: OperationQueryParameter = {
   parameterPath: ["options", "limit"],
   mapper: {
-    defaultValue: 300,
     constraints: {
-      InclusiveMaximum: 300,
+      InclusiveMaximum: 100,
       InclusiveMinimum: 1
     },
     serializedName: "limit",
@@ -381,6 +382,18 @@ export const redactGender: OperationParameter = {
   }
 };
 
+export const redactPdfMetadata: OperationParameter = {
+  parameterPath: ["options", "redactPdfMetadata"],
+  mapper: {
+    defaultValue: "true",
+    serializedName: "redactPdfMetadata",
+    xmlName: "redactPdfMetadata",
+    type: {
+      name: "String"
+    }
+  }
+};
+
 export const data1: OperationParameter = {
   parameterPath: ["options", "data"],
   mapper: JobDescriptionDataUpdateMapper
@@ -409,6 +422,21 @@ export const body4: OperationParameter = {
 export const body5: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper
+};
+
+export const limit1: OperationQueryParameter = {
+  parameterPath: ["options", "limit"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 50,
+      InclusiveMinimum: 1
+    },
+    serializedName: "limit",
+    xmlName: "limit",
+    type: {
+      name: "Number"
+    }
+  }
 };
 
 export const resume: OperationQueryParameter = {
@@ -651,29 +679,17 @@ export const documentType: OperationQueryParameter = {
   }
 };
 
-export const name: OperationParameter = {
-  parameterPath: ["options", "name"],
-  mapper: {
-    serializedName: "name",
-    xmlName: "name",
-    type: {
-      name: "String"
-    }
-  }
+export const body8: OperationParameter = {
+  parameterPath: "body",
+  mapper: IndexCreateMapper
 };
 
-export const documentType1: OperationParameter = {
-  parameterPath: ["options", "documentType"],
-  mapper: {
-    serializedName: "documentType",
-    xmlName: "documentType",
-    type: {
-      name: "String"
-    }
-  }
+export const body9: OperationParameter = {
+  parameterPath: "body",
+  mapper: IndexUpdateMapper
 };
 
-export const name1: OperationURLParameter = {
+export const name: OperationURLParameter = {
   parameterPath: "name",
   mapper: {
     serializedName: "name",
@@ -685,12 +701,12 @@ export const name1: OperationURLParameter = {
   }
 };
 
-export const body8: OperationParameter = {
+export const body10: OperationParameter = {
   parameterPath: "body",
   mapper: PathsYg099PV2IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
-export const body9: OperationParameter = {
+export const body11: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionCreateMapper
 };
@@ -698,6 +714,9 @@ export const body9: OperationParameter = {
 export const id: OperationURLParameter = {
   parameterPath: "id",
   mapper: {
+    constraints: {
+      InclusiveMinimum: 1
+    },
     serializedName: "id",
     required: true,
     xmlName: "id",
@@ -707,7 +726,7 @@ export const id: OperationURLParameter = {
   }
 };
 
-export const body10: OperationParameter = {
+export const body12: OperationParameter = {
   parameterPath: "body",
   mapper: ResthookSubscriptionUpdateMapper
 };

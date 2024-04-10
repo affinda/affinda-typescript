@@ -19,6 +19,7 @@ RedactedResumeRequestBody
 - [redactGender](RedactedResumeRequestBody.md#redactgender)
 - [redactHeadshot](RedactedResumeRequestBody.md#redactheadshot)
 - [redactLocations](RedactedResumeRequestBody.md#redactlocations)
+- [redactPdfMetadata](RedactedResumeRequestBody.md#redactpdfmetadata)
 - [redactPersonalDetails](RedactedResumeRequestBody.md#redactpersonaldetails)
 - [redactReferees](RedactedResumeRequestBody.md#redactreferees)
 - [redactWorkDetails](RedactedResumeRequestBody.md#redactworkdetails)
@@ -47,7 +48,7 @@ ___
 
 • `Optional` **file**: `RequestBodyType`
 
-File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG
+File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP
 
 ___
 
@@ -112,6 +113,14 @@ ___
 • `Optional` **redactLocations**: `string`
 
 Whether to redact location names
+
+___
+
+### redactPdfMetadata
+
+• `Optional` **redactPdfMetadata**: `string`
+
+Whether to redact PDF metadata
 
 ___
 

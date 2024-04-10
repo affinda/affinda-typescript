@@ -48,6 +48,7 @@ export interface Meta {
   createdDt?: Date;
   documentType?: string;
   regionBias?: RegionBias;
+  isOcrd?: boolean;
 }
 
 /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
@@ -84,6 +85,12 @@ export interface RegionBias {
   countries?: string[];
   /** A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat] */
   squareCoordinates?: number[];
+  /**
+   * If true, the location must be within the region, as opposed to prefering locations within the region.
+   * Default to false.
+   *
+   */
+  strict?: boolean;
 }
 
 export interface RequestError {
@@ -96,9 +103,6 @@ export interface RequestErrorErrorsItem {
   code: string;
   detail: string;
 }
-
-/** For custom fields. E.g. 'isAvailable': true */
-export interface ComponentsEyyf0ZSchemasResumedataAdditionalproperties {}
 
 /** A JSON-encoded string of the `ResumeData` object. */
 export interface ResumeData {
@@ -175,6 +179,8 @@ export interface Location {
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly state?: string;
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly stateCode?: string;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly country?: string;
   /**
    * Two letter country code (ISO 3166-1 alpha-2)
@@ -194,6 +200,8 @@ export interface Location {
   readonly latitude?: number;
   /** NOTE: This property will not be serialized. It can only be populated by the server. */
   readonly longitude?: number;
+  /** NOTE: This property will not be serialized. It can only be populated by the server. */
+  readonly poBox?: string;
 }
 
 export interface Education {
@@ -461,156 +469,153 @@ export interface Rectangle {
 }
 
 export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
-  raw?: string;
+  raw: string | null;
   parsed?: string;
 }
 
 export interface PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
   results?: Meta[];
 }
-
-/** For custom fields. E.g. 'isAvailable': true */
-export interface Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties {}
 
 /** A JSON-encoded string of the `JobDescriptionData` object. */
 export interface JobDescriptionDataUpdate {
@@ -708,9 +713,6 @@ export interface JobDescription {
   meta: Meta;
   error: ErrorModel;
 }
-
-/** For custom fields. E.g. 'isAvailable': true */
-export interface ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties {}
 
 export interface JobDescriptionData {
   /** Describes unknown properties. The value of an unknown property can be of "any" type. */
@@ -1046,6 +1048,8 @@ export interface JobDescriptionSearchConfig {
   /** A list of actions to show in the dropdown in the embedded search tool */
   actions?: JobDescriptionSearchConfigActionsItem[];
   customFieldsConfig?: CustomFieldConfig[];
+  /** The unit of distance to use for location based searches */
+  distanceUnit?: JobDescriptionSearchConfigDistanceUnit;
 }
 
 export interface JobDescriptionSearchConfigActionsItem {
@@ -1322,6 +1326,8 @@ export interface ResumeSearchConfig {
   /** A list of actions to show in the dropdown in the embedded search tool */
   actions?: ResumeSearchConfigActionsItem[];
   customFieldsConfig?: CustomFieldConfig[];
+  /** The unit of distance to use for location based searches */
+  distanceUnit?: ResumeSearchConfigDistanceUnit;
 }
 
 export interface ResumeSearchConfigActionsItem {
@@ -1340,24 +1346,41 @@ export interface ResumeSearchEmbed {
   url?: string;
 }
 
-export interface Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema {
-  /** Number of indexes in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: Get200ApplicationJsonPropertiesItemsItem[];
+export interface Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Index[];
 }
 
-export interface Get200ApplicationJsonPropertiesItemsItem {
+export interface Index {
+  /** Unique index name */
   name: string;
-  documentType?: GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType;
+  documentType: IndexDocumentType;
+  /**
+   * The user who created this index
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly user: IndexUser;
 }
 
-export interface Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema {
+/** The user who created this index */
+export interface IndexUser {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+}
+
+/** IndexRequestBody */
+export interface IndexCreate {
+  /** Unique index name */
+  name: string;
+  documentType?: DocumentType;
+}
+
+export interface IndexUpdate {
+  /** Unique index name */
   name?: string;
-  documentType?: Enum8;
 }
 
 export interface PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
@@ -1367,10 +1390,10 @@ export interface PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicatio
   next?: string;
   /** URL to request previous page of results */
   previous?: string;
-  results?: Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems[];
+  results?: Get200ApplicationJsonPropertiesItemsItem[];
 }
 
-export interface Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems {
+export interface Get200ApplicationJsonPropertiesItemsItem {
   document?: string;
 }
 
@@ -1422,7 +1445,7 @@ export interface ResthookSubscriptionUpdate {
 
 /** ResumeRequestBody */
 export interface ResumeRequestBody {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the resume. */
   url?: string;
@@ -1450,7 +1473,7 @@ export interface ResumeRequestBody {
 
 /** RedactedResumeRequestBody */
 export interface RedactedResumeRequestBody {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** Deprecated in favor of `customIdentifier`. */
   identifier?: string;
@@ -1480,13 +1503,15 @@ export interface RedactedResumeRequestBody {
   redactDates?: string;
   /** Whether to redact gender */
   redactGender?: string;
+  /** Whether to redact PDF metadata */
+  redactPdfMetadata?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
   expiryTime?: string;
 }
 
 /** InvoiceRequestBody */
 export interface InvoiceRequestBody {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the invoice. */
   url?: string;
@@ -1512,7 +1537,7 @@ export interface InvoiceRequestBody {
 
 /** JobDescriptionRequestBody */
 export interface JobDescriptionRequestBody {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the job description. */
   url?: string;
@@ -1538,12 +1563,6 @@ export interface JobDescriptionRequestBody {
   lowPriority?: boolean;
 }
 
-/** IndexRequestBody */
-export interface IndexRequestBody {
-  name?: string;
-  documentType?: PostContentSchemaDocumentType;
-}
-
 export type Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
@@ -1555,6 +1574,9 @@ export type PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema = P
 
 export type PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
+
+export type Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
+  Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1 & {};
 
 export type PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema = PaginatedResponse &
   PathsDd1FapV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 & {};
@@ -1736,7 +1758,8 @@ export type ResumeSearchDetailLanguagesValueItem = ResumeSkill &
 /** Known values of {@link Region} that the service accepts. */
 export enum KnownRegion {
   Api = "api",
-  ApiEu1 = "api.eu1"
+  ApiEu1 = "api.eu1",
+  ApiUs1 = "api.us1"
 }
 
 /**
@@ -1745,7 +1768,8 @@ export enum KnownRegion {
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **api** \
- * **api.eu1**
+ * **api.eu1** \
+ * **api.us1**
  */
 export type Region = string;
 
@@ -2197,6 +2221,22 @@ export enum KnownSearchParametersCustomDataFilterType {
  */
 export type SearchParametersCustomDataFilterType = string;
 
+/** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
+export enum KnownJobDescriptionSearchConfigDistanceUnit {
+  Mi = "mi",
+  Km = "km"
+}
+
+/**
+ * Defines values for JobDescriptionSearchConfigDistanceUnit. \
+ * {@link KnownJobDescriptionSearchConfigDistanceUnit} can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export type JobDescriptionSearchConfigDistanceUnit = string;
+
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
   Achievements = "Achievements",
@@ -2249,69 +2289,69 @@ export enum KnownResumeSkillSourcesItemSection {
  */
 export type ResumeSkillSourcesItemSection = string;
 
-/** Known values of {@link Enum5} that the service accepts. */
-export enum KnownEnum5 {
+/** Known values of {@link ResumeSearchConfigDistanceUnit} that the service accepts. */
+export enum KnownResumeSearchConfigDistanceUnit {
+  Mi = "mi",
+  Km = "km"
+}
+
+/**
+ * Defines values for ResumeSearchConfigDistanceUnit. \
+ * {@link KnownResumeSearchConfigDistanceUnit} can be used interchangeably with ResumeSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export type ResumeSearchConfigDistanceUnit = string;
+
+/** Known values of {@link Enum7} that the service accepts. */
+export enum KnownEnum7 {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for Enum5. \
- * {@link KnownEnum5} can be used interchangeably with Enum5,
+ * Defines values for Enum7. \
+ * {@link KnownEnum7} can be used interchangeably with Enum7,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum5 = string;
+export type Enum7 = string;
 
-/** Known values of {@link GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} that the service accepts. */
-export enum KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType {
+/** Known values of {@link IndexDocumentType} that the service accepts. */
+export enum KnownIndexDocumentType {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
- * {@link KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType} can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+ * Defines values for IndexDocumentType. \
+ * {@link KnownIndexDocumentType} can be used interchangeably with IndexDocumentType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType = string;
+export type IndexDocumentType = string;
 
-/** Known values of {@link PostContentSchemaDocumentType} that the service accepts. */
-export enum KnownPostContentSchemaDocumentType {
+/** Known values of {@link DocumentType} that the service accepts. */
+export enum KnownDocumentType {
   Resumes = "resumes",
   JobDescriptions = "job_descriptions"
 }
 
 /**
- * Defines values for PostContentSchemaDocumentType. \
- * {@link KnownPostContentSchemaDocumentType} can be used interchangeably with PostContentSchemaDocumentType,
+ * Defines values for DocumentType. \
+ * {@link KnownDocumentType} can be used interchangeably with DocumentType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type PostContentSchemaDocumentType = string;
-
-/** Known values of {@link Enum8} that the service accepts. */
-export enum KnownEnum8 {
-  Resumes = "resumes",
-  JobDescriptions = "job_descriptions"
-}
-
-/**
- * Defines values for Enum8. \
- * {@link KnownEnum8} can be used interchangeably with Enum8,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type Enum8 = string;
+export type DocumentType = string;
 
 /** Known values of {@link ResthookEvent} that the service accepts. */
 export enum KnownResthookEvent {
@@ -2329,7 +2369,8 @@ export enum KnownResthookEvent {
   DocumentClassifySucceeded = "document.classify.succeeded",
   DocumentClassifyFailed = "document.classify.failed",
   DocumentClassifyCompleted = "document.classify.completed",
-  DocumentRejected = "document.rejected"
+  DocumentRejected = "document.rejected",
+  AnnotationValidated = "annotation.validated"
 }
 
 /**
@@ -2351,7 +2392,8 @@ export enum KnownResthookEvent {
  * **document.classify.succeeded** \
  * **document.classify.failed** \
  * **document.classify.completed** \
- * **document.rejected**
+ * **document.rejected** \
+ * **annotation.validated**
  */
 export type ResthookEvent = string;
 
@@ -2419,7 +2461,7 @@ export type AffindaAPIGetAllResumesResponse = Paths14VxierV2ResumesGetResponses2
 /** Optional parameters. */
 export interface AffindaAPICreateResumeOptionalParams
   extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the resume. */
   url?: string;
@@ -2486,7 +2528,7 @@ export type AffindaAPIGetAllRedactedResumesResponse = Paths1D957B5V2RedactedResu
 /** Optional parameters. */
 export interface AffindaAPICreateRedactedResumeOptionalParams
   extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the resume. */
   url?: string;
@@ -2518,6 +2560,8 @@ export interface AffindaAPICreateRedactedResumeOptionalParams
   redactDates?: string;
   /** Whether to redact gender */
   redactGender?: string;
+  /** Whether to redact PDF metadata */
+  redactPdfMetadata?: string;
 }
 
 /** Contains response data for the createRedactedResume operation. */
@@ -2551,7 +2595,7 @@ export type AffindaAPIGetAllInvoicesResponse = PathsGfm23QV2InvoicesGetResponses
 /** Optional parameters. */
 export interface AffindaAPICreateInvoiceOptionalParams
   extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the invoice. */
   url?: string;
@@ -2606,7 +2650,7 @@ export type AffindaAPIGetAllJobDescriptionsResponse = PathsChbpqfV2JobDescriptio
 /** Optional parameters. */
 export interface AffindaAPICreateJobDescriptionOptionalParams
   extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the job description. */
   url?: string;
@@ -2795,7 +2839,7 @@ export interface AffindaAPIGetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum5;
+  documentType?: Enum7;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -2803,13 +2847,17 @@ export type AffindaAPIGetAllIndexesResponse = Paths18Iqsr4V2IndexGetResponses200
 
 /** Optional parameters. */
 export interface AffindaAPICreateIndexOptionalParams
-  extends coreClient.OperationOptions {
-  name?: string;
-  documentType?: PostContentSchemaDocumentType;
-}
+  extends coreClient.OperationOptions {}
 
 /** Contains response data for the createIndex operation. */
-export type AffindaAPICreateIndexResponse = Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema;
+export type AffindaAPICreateIndexResponse = Index;
+
+/** Optional parameters. */
+export interface AffindaAPIUpdateIndexOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateIndex operation. */
+export type AffindaAPIUpdateIndexResponse = Index;
 
 /** Optional parameters. */
 export interface AffindaAPIDeleteIndexOptionalParams

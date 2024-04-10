@@ -67,7 +67,7 @@ ___
 
 ### sendOperationRequest
 
-▸ **sendOperationRequest**<`T`\>(`operationArguments`, `operationSpec`): `Promise`<`T`\>
+▸ **sendOperationRequest**\<`T`\>(`operationArguments`, `operationSpec`): `Promise`\<`T`\>
 
 Send an HTTP request that is populated using the provided OperationSpec.
 
@@ -86,7 +86,7 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Inherited from
 
@@ -96,7 +96,7 @@ ___
 
 ### sendRequest
 
-▸ **sendRequest**(`request`): `Promise`<`PipelineResponse`\>
+▸ **sendRequest**(`request`): `Promise`\<`PipelineResponse`\>
 
 Send the provided httpRequest.
 
@@ -108,7 +108,7 @@ Send the provided httpRequest.
 
 #### Returns
 
-`Promise`<`PipelineResponse`\>
+`Promise`\<`PipelineResponse`\>
 
 #### Inherited from
 

@@ -14,6 +14,7 @@
 - [failed](Meta.md#failed)
 - [fileName](Meta.md#filename)
 - [identifier](Meta.md#identifier)
+- [isOcrd](Meta.md#isocrd)
 - [isVerified](Meta.md#isverified)
 - [language](Meta.md#language)
 - [ocrConfidence](Meta.md#ocrconfidence)
@@ -84,6 +85,12 @@ ___
 • `Optional` **identifier**: `string`
 
 Unique identifier for the document
+
+___
+
+### isOcrd
+
+• `Optional` **isOcrd**: `boolean`
 
 ___
 

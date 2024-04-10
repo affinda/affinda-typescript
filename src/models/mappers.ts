@@ -7,6 +7,9 @@ export const PaginatedResponse: coreClient.CompositeMapper = {
     className: "PaginatedResponse",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         required: true,
         xmlName: "count",
@@ -215,6 +218,13 @@ export const Meta: coreClient.CompositeMapper = {
           name: "Composite",
           className: "RegionBias"
         }
+      },
+      isOcrd: {
+        serializedName: "isOcrd",
+        xmlName: "isOcrd",
+        type: {
+          name: "Boolean"
+        }
       }
     }
   }
@@ -261,6 +271,9 @@ export const PageMeta: coreClient.CompositeMapper = {
     className: "PageMeta",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         xmlName: "id",
@@ -269,6 +282,9 @@ export const PageMeta: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         required: true,
         xmlName: "pageIndex",
@@ -310,6 +326,10 @@ export const PageMeta: coreClient.CompositeMapper = {
         }
       },
       rotation: {
+        constraints: {
+          InclusiveMaximum: 360,
+          InclusiveMinimum: -360
+        },
         serializedName: "rotation",
         required: true,
         xmlName: "rotation",
@@ -361,6 +381,13 @@ export const RegionBias: coreClient.CompositeMapper = {
               name: "Number"
             }
           }
+        }
+      },
+      strict: {
+        serializedName: "strict",
+        xmlName: "strict",
+        type: {
+          name: "Boolean"
         }
       }
     }
@@ -432,14 +459,6 @@ export const RequestErrorErrorsItem: coreClient.CompositeMapper = {
         }
       }
     }
-  }
-};
-
-export const ComponentsEyyf0ZSchemasResumedataAdditionalproperties: coreClient.CompositeMapper = {
-  serializedName: "ComponentsEyyf0ZSchemasResumedataAdditionalproperties",
-  type: {
-    name: "Composite",
-    className: "ComponentsEyyf0ZSchemasResumedataAdditionalproperties"
   }
 };
 
@@ -573,6 +592,9 @@ export const ResumeData: coreClient.CompositeMapper = {
         }
       },
       totalYearsExperience: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "totalYearsExperience",
         nullable: true,
         xmlName: "totalYearsExperience",
@@ -705,6 +727,10 @@ export const ResumeData: coreClient.CompositeMapper = {
         }
       },
       isResumeProbability: {
+        constraints: {
+          InclusiveMaximum: 100,
+          InclusiveMinimum: 0
+        },
         serializedName: "isResumeProbability",
         readOnly: true,
         nullable: true,
@@ -806,6 +832,9 @@ export const ResumeDataPhoneNumberDetailsItem: coreClient.CompositeMapper = {
         }
       },
       internationalCountryCode: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "internationalCountryCode",
         nullable: true,
         xmlName: "internationalCountryCode",
@@ -854,6 +883,15 @@ export const Location: coreClient.CompositeMapper = {
         readOnly: true,
         nullable: true,
         xmlName: "state",
+        type: {
+          name: "String"
+        }
+      },
+      stateCode: {
+        serializedName: "stateCode",
+        readOnly: true,
+        nullable: true,
+        xmlName: "stateCode",
         type: {
           name: "String"
         }
@@ -937,6 +975,15 @@ export const Location: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      poBox: {
+        serializedName: "poBox",
+        readOnly: true,
+        nullable: true,
+        xmlName: "poBox",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -949,6 +996,9 @@ export const Education: coreClient.CompositeMapper = {
     className: "Education",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         xmlName: "id",
         type: {
@@ -1121,6 +1171,9 @@ export const ResumeDataWorkExperienceItem: coreClient.CompositeMapper = {
     className: "ResumeDataWorkExperienceItem",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         xmlName: "id",
         type: {
@@ -1229,6 +1282,9 @@ export const ResumeDataWorkExperienceItemDates: coreClient.CompositeMapper = {
         }
       },
       monthsInPosition: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "monthsInPosition",
         nullable: true,
         xmlName: "monthsInPosition",
@@ -1343,6 +1399,10 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         }
       },
       socCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "socCode",
         xmlName: "socCode",
         type: {
@@ -1350,6 +1410,10 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         }
       },
       minorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "minorGroupCode",
         xmlName: "minorGroupCode",
         type: {
@@ -1357,6 +1421,10 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         }
       },
       subMajorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "subMajorGroupCode",
         xmlName: "subMajorGroupCode",
         type: {
@@ -1364,6 +1432,10 @@ export const Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsProp
         }
       },
       majorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 1
+        },
         serializedName: "majorGroupCode",
         xmlName: "majorGroupCode",
         type: {
@@ -1381,6 +1453,9 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
     className: "ResumeDataSkillsItem",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         xmlName: "id",
         type: {
@@ -1412,6 +1487,9 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
         }
       },
       numberOfMonths: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "numberOfMonths",
         nullable: true,
         xmlName: "numberOfMonths",
@@ -1428,6 +1506,9 @@ export const ResumeDataSkillsItem: coreClient.CompositeMapper = {
         }
       },
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         readOnly: true,
         nullable: true,
@@ -1478,6 +1559,9 @@ export const ResumeDataSkillsPropertiesItemsItem: coreClient.CompositeMapper = {
         }
       },
       position: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "position",
         nullable: true,
         xmlName: "position",
@@ -1486,6 +1570,9 @@ export const ResumeDataSkillsPropertiesItemsItem: coreClient.CompositeMapper = {
         }
       },
       workExperienceId: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "workExperienceId",
         nullable: true,
         xmlName: "workExperienceId",
@@ -1578,6 +1665,9 @@ export const ResumeDataSectionsItem: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         xmlName: "pageIndex",
         type: {
@@ -2269,6 +2359,9 @@ export const Annotation: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         xmlName: "id",
@@ -2301,6 +2394,9 @@ export const Annotation: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         required: true,
         nullable: true,
@@ -2395,6 +2491,9 @@ export const Rectangle: coreClient.CompositeMapper = {
     className: "Rectangle",
     modelProperties: {
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         xmlName: "pageIndex",
         type: {
@@ -2447,6 +2546,7 @@ export const Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2475,6 +2575,7 @@ export const Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1:
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2503,6 +2604,7 @@ export const Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2531,6 +2633,7 @@ export const Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2559,6 +2662,7 @@ export const ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1:
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2587,6 +2691,7 @@ export const Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1: co
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2615,6 +2720,7 @@ export const ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernum
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2643,6 +2749,7 @@ export const Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberA
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2671,6 +2778,7 @@ export const Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1: 
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2699,6 +2807,7 @@ export const Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumber
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2727,6 +2836,7 @@ export const Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1:
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2755,6 +2865,7 @@ export const Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2782,6 +2893,7 @@ export const ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1: core
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2809,6 +2921,7 @@ export const ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1: core
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2837,6 +2950,7 @@ export const ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1: c
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2865,6 +2979,7 @@ export const ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1: co
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2893,6 +3008,7 @@ export const Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1: co
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2919,6 +3035,7 @@ export const Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1: coreCl
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2946,6 +3063,7 @@ export const Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1: coreC
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -2972,6 +3090,7 @@ export const Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1: coreCli
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3000,6 +3119,7 @@ export const ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllo
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3028,6 +3148,7 @@ export const Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAll
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3056,6 +3177,7 @@ export const Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAll
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3084,6 +3206,7 @@ export const Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAll
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3112,6 +3235,7 @@ export const Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAll
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3139,6 +3263,7 @@ export const Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1: cor
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3167,6 +3292,7 @@ export const Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1: c
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3195,6 +3321,7 @@ export const Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1: c
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3223,6 +3350,7 @@ export const Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1:
     modelProperties: {
       raw: {
         serializedName: "raw",
+        required: true,
         nullable: true,
         xmlName: "raw",
         type: {
@@ -3264,16 +3392,6 @@ export const PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSc
         }
       }
     }
-  }
-};
-
-export const Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties: coreClient.CompositeMapper = {
-  serializedName:
-    "Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties",
-  type: {
-    name: "Composite",
-    className:
-      "Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties"
   }
 };
 
@@ -3450,6 +3568,9 @@ export const AnnotationV2Base: coreClient.CompositeMapper = {
     additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         xmlName: "id",
         type: {
@@ -3481,6 +3602,9 @@ export const AnnotationV2Base: coreClient.CompositeMapper = {
         }
       },
       pageIndex: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "pageIndex",
         nullable: true,
         xmlName: "pageIndex",
@@ -3661,6 +3785,10 @@ export const JobTitleParsedClassification: coreClient.CompositeMapper = {
         }
       },
       minorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 0
+        },
         serializedName: "minorGroupCode",
         xmlName: "minorGroupCode",
         type: {
@@ -3668,6 +3796,10 @@ export const JobTitleParsedClassification: coreClient.CompositeMapper = {
         }
       },
       subMajorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 0
+        },
         serializedName: "subMajorGroupCode",
         xmlName: "subMajorGroupCode",
         type: {
@@ -3675,6 +3807,10 @@ export const JobTitleParsedClassification: coreClient.CompositeMapper = {
         }
       },
       majorGroupCode: {
+        constraints: {
+          InclusiveMaximum: 9999,
+          InclusiveMinimum: 0
+        },
         serializedName: "majorGroupCode",
         xmlName: "majorGroupCode",
         type: {
@@ -3784,15 +3920,6 @@ export const JobDescription: coreClient.CompositeMapper = {
         }
       }
     }
-  }
-};
-
-export const ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties: coreClient.CompositeMapper = {
-  serializedName:
-    "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties",
-  type: {
-    name: "Composite",
-    className: "ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties"
   }
 };
 
@@ -4390,6 +4517,9 @@ export const ResumeSearchParametersLocation: coreClient.CompositeMapper = {
       },
       distance: {
         defaultValue: 100,
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "distance",
         xmlName: "distance",
         type: {
@@ -4519,6 +4649,9 @@ export const JobDescriptionSearch: coreClient.CompositeMapper = {
     className: "JobDescriptionSearch",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         xmlName: "count",
         type: {
@@ -5403,6 +5536,9 @@ export const JobDescriptionSearchDetailExperience: coreClient.CompositeMapper = 
     className: "JobDescriptionSearchDetailExperience",
     modelProperties: {
       minimumExperience: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "minimumExperience",
         nullable: true,
         xmlName: "minimumExperience",
@@ -5411,6 +5547,9 @@ export const JobDescriptionSearchDetailExperience: coreClient.CompositeMapper = 
         }
       },
       maximumExperience: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "maximumExperience",
         nullable: true,
         xmlName: "maximumExperience",
@@ -5467,6 +5606,9 @@ export const OccupationGroup: coreClient.CompositeMapper = {
     className: "OccupationGroup",
     modelProperties: {
       code: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "code",
         required: true,
         xmlName: "code",
@@ -5672,6 +5814,9 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         }
       },
       maxResults: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "maxResults",
         nullable: true,
         xmlName: "maxResults",
@@ -5836,6 +5981,9 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
         }
       },
       userId: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "userId",
         readOnly: true,
         xmlName: "userId",
@@ -5879,6 +6027,13 @@ export const JobDescriptionSearchConfig: coreClient.CompositeMapper = {
               className: "CustomFieldConfig"
             }
           }
+        }
+      },
+      distanceUnit: {
+        serializedName: "distanceUnit",
+        xmlName: "distanceUnit",
+        type: {
+          name: "String"
         }
       }
     }
@@ -6052,6 +6207,9 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         }
       },
       yearsExperienceMin: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "yearsExperienceMin",
         nullable: true,
         xmlName: "yearsExperienceMin",
@@ -6060,6 +6218,9 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         }
       },
       yearsExperienceMax: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "yearsExperienceMax",
         nullable: true,
         xmlName: "yearsExperienceMax",
@@ -6385,6 +6546,9 @@ export const ResumeSearch: coreClient.CompositeMapper = {
     className: "ResumeSearch",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         xmlName: "count",
         type: {
@@ -6957,6 +7121,9 @@ export const ResumeSkill: coreClient.CompositeMapper = {
         }
       },
       numberOfMonths: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "numberOfMonths",
         nullable: true,
         xmlName: "numberOfMonths",
@@ -7004,6 +7171,9 @@ export const ResumeSkillSourcesItem: coreClient.CompositeMapper = {
         }
       },
       position: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "position",
         nullable: true,
         xmlName: "position",
@@ -7041,6 +7211,9 @@ export const ResumeSearchDetailExperience: coreClient.CompositeMapper = {
     className: "ResumeSearchDetailExperience",
     modelProperties: {
       years: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "years",
         nullable: true,
         xmlName: "years",
@@ -7402,6 +7575,9 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         }
       },
       maxResults: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "maxResults",
         nullable: true,
         xmlName: "maxResults",
@@ -7566,6 +7742,9 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
         }
       },
       userId: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "userId",
         readOnly: true,
         xmlName: "userId",
@@ -7609,6 +7788,13 @@ export const ResumeSearchConfig: coreClient.CompositeMapper = {
               className: "CustomFieldConfig"
             }
           }
+        }
+      },
+      distanceUnit: {
+        serializedName: "distanceUnit",
+        xmlName: "distanceUnit",
+        type: {
+          name: "String"
         }
       }
     }
@@ -7676,14 +7862,166 @@ export const ResumeSearchEmbed: coreClient.CompositeMapper = {
   }
 };
 
-export const Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+export const Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1: coreClient.CompositeMapper = {
   serializedName:
-    "Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema",
+    "Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1",
   type: {
     name: "Composite",
-    className: "Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema",
+    className:
+      "Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        xmlName: "results",
+        xmlElementName: "Index",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "Index"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const Index: coreClient.CompositeMapper = {
+  serializedName: "Index",
+  type: {
+    name: "Composite",
+    className: "Index",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      documentType: {
+        serializedName: "documentType",
+        required: true,
+        xmlName: "documentType",
+        type: {
+          name: "String"
+        }
+      },
+      user: {
+        serializedName: "user",
+        xmlName: "user",
+        type: {
+          name: "Composite",
+          className: "IndexUser"
+        }
+      }
+    }
+  }
+};
+
+export const IndexUser: coreClient.CompositeMapper = {
+  serializedName: "IndexUser",
+  type: {
+    name: "Composite",
+    className: "IndexUser",
+    modelProperties: {
+      id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
+        serializedName: "id",
+        required: true,
+        xmlName: "id",
+        type: {
+          name: "Number"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      email: {
+        serializedName: "email",
+        required: true,
+        xmlName: "email",
+        type: {
+          name: "String"
+        }
+      },
+      avatar: {
+        serializedName: "avatar",
+        required: true,
+        nullable: true,
+        xmlName: "avatar",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const IndexCreate: coreClient.CompositeMapper = {
+  serializedName: "IndexCreate",
+  type: {
+    name: "Composite",
+    className: "IndexCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      documentType: {
+        serializedName: "documentType",
+        xmlName: "documentType",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const IndexUpdate: coreClient.CompositeMapper = {
+  serializedName: "IndexUpdate",
+  type: {
+    name: "Composite",
+    className: "IndexUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        xmlName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  serializedName:
+    "PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema",
+  type: {
+    name: "Composite",
+    className:
+      "PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema",
     modelProperties: {
       count: {
+        constraints: {
+          InclusiveMinimum: 0
+        },
         serializedName: "count",
         xmlName: "count",
         type: {
@@ -7729,110 +8067,6 @@ export const Get200ApplicationJsonPropertiesItemsItem: coreClient.CompositeMappe
   type: {
     name: "Composite",
     className: "Get200ApplicationJsonPropertiesItemsItem",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        required: true,
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      documentType: {
-        serializedName: "documentType",
-        xmlName: "documentType",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  serializedName:
-    "Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema",
-  type: {
-    name: "Composite",
-    className:
-      "Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      documentType: {
-        serializedName: "documentType",
-        xmlName: "documentType",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  serializedName:
-    "PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema",
-  type: {
-    name: "Composite",
-    className:
-      "PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      count: {
-        serializedName: "count",
-        xmlName: "count",
-        type: {
-          name: "Number"
-        }
-      },
-      next: {
-        serializedName: "next",
-        nullable: true,
-        xmlName: "next",
-        type: {
-          name: "String"
-        }
-      },
-      previous: {
-        serializedName: "previous",
-        nullable: true,
-        xmlName: "previous",
-        type: {
-          name: "String"
-        }
-      },
-      results: {
-        serializedName: "results",
-        xmlName: "results",
-        xmlElementName:
-          "Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems",
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className:
-                "Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems"
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-export const Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems: coreClient.CompositeMapper = {
-  serializedName:
-    "Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems",
-  type: {
-    name: "Composite",
-    className:
-      "Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems",
     modelProperties: {
       document: {
         serializedName: "document",
@@ -7916,6 +8150,9 @@ export const ResthookSubscription: coreClient.CompositeMapper = {
     className: "ResthookSubscription",
     modelProperties: {
       id: {
+        constraints: {
+          InclusiveMinimum: 1
+        },
         serializedName: "id",
         required: true,
         xmlName: "id",
@@ -8256,6 +8493,14 @@ export const RedactedResumeRequestBody: coreClient.CompositeMapper = {
           name: "String"
         }
       },
+      redactPdfMetadata: {
+        defaultValue: "true",
+        serializedName: "redactPdfMetadata",
+        xmlName: "redactPdfMetadata",
+        type: {
+          name: "String"
+        }
+      },
       expiryTime: {
         serializedName: "expiryTime",
         nullable: true,
@@ -8462,30 +8707,6 @@ export const JobDescriptionRequestBody: coreClient.CompositeMapper = {
   }
 };
 
-export const IndexRequestBody: coreClient.CompositeMapper = {
-  serializedName: "IndexRequestBody",
-  type: {
-    name: "Composite",
-    className: "IndexRequestBody",
-    modelProperties: {
-      name: {
-        serializedName: "name",
-        xmlName: "name",
-        type: {
-          name: "String"
-        }
-      },
-      documentType: {
-        serializedName: "documentType",
-        xmlName: "documentType",
-        type: {
-          name: "String"
-        }
-      }
-    }
-  }
-};
-
 export const Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   serializedName:
     "Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema",
@@ -8541,6 +8762,20 @@ export const PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSc
     modelProperties: {
       ...PaginatedResponse.type.modelProperties,
       ...PathsV2IwngV2JobDescriptionsGetResponses200ContentApplicationJsonSchemaAllof1
+        .type.modelProperties
+    }
+  }
+};
+
+export const Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  serializedName:
+    "Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema",
+  type: {
+    name: "Composite",
+    className: "Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema",
+    modelProperties: {
+      ...PaginatedResponse.type.modelProperties,
+      ...Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1
         .type.modelProperties
     }
   }

@@ -9,6 +9,7 @@
 - [countries](RegionBias.md#countries)
 - [country](RegionBias.md#country)
 - [squareCoordinates](RegionBias.md#squarecoordinates)
+- [strict](RegionBias.md#strict)
 
 ## Properties
 
@@ -33,3 +34,12 @@ ___
 • `Optional` **squareCoordinates**: `number`[]
 
 A list of coordinates used by Pelias in the shape of [min_lon, min_lat, max_lon, max_lat]
+
+___
+
+### strict
+
+• `Optional` **strict**: `boolean`
+
+If true, the location must be within the region, as opposed to prefering locations within the region.
+Default to false.

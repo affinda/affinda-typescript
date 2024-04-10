@@ -18,6 +18,7 @@
 - [displayOccupationGroup](ResumeSearchConfig.md#displayoccupationgroup)
 - [displaySkills](ResumeSearchConfig.md#displayskills)
 - [displayYearsExperience](ResumeSearchConfig.md#displayyearsexperience)
+- [distanceUnit](ResumeSearchConfig.md#distanceunit)
 - [indices](ResumeSearchConfig.md#indices)
 - [maxResults](ResumeSearchConfig.md#maxresults)
 - [searchToolTheme](ResumeSearchConfig.md#searchtooltheme)
@@ -107,6 +108,14 @@ ___
 ### displayYearsExperience
 
 • `Optional` **displayYearsExperience**: `boolean`
+
+___
+
+### distanceUnit
+
+• `Optional` **distanceUnit**: `string`
+
+The unit of distance to use for location based searches
 
 ___
 

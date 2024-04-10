@@ -62,6 +62,7 @@
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
 - [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
 - [sendRequest](AffindaAPI.md#sendrequest)
+- [updateIndex](AffindaAPI.md#updateindex)
 - [updateJobDescriptionData](AffindaAPI.md#updatejobdescriptiondata)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
@@ -113,7 +114,7 @@ ___
 
 ### activateResthookSubscription
 
-▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
 header.
@@ -129,13 +130,13 @@ that you received to activate the subscription using this endpoint.
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### createIndex
 
-▸ **createIndex**(`options?`): `Promise`<[`Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndex**(`body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
 
 Create an index for the search tool
 
@@ -143,17 +144,18 @@ Create an index for the search tool
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `body` | [`IndexCreate`](../interfaces/IndexCreate.md) | Index to create |
 | `options?` | [`AffindaAPICreateIndexOptionalParams`](../interfaces/AffindaAPICreateIndexOptionalParams.md) | The options parameters. |
 
 #### Returns
 
-`Promise`<[`Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`\<[`Index`](../interfaces/Index.md)\>
 
 ___
 
 ### createIndexDocument
 
-▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`<[`Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`\<[`Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 Create an indexed document for the search tool
 
@@ -167,13 +169,13 @@ Create an indexed document for the search tool
 
 #### Returns
 
-`Promise`<[`Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+`Promise`\<[`Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### createInvoice
 
-▸ **createInvoice**(`options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+▸ **createInvoice**(`options?`): `Promise`\<[`Invoice`](../interfaces/Invoice.md)\>
 
 Uploads an invoice for parsing.
 When successful, returns an `identifier` in the response for subsequent use with the
@@ -188,13 +190,13 @@ retrieve results.
 
 #### Returns
 
-`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+`Promise`\<[`Invoice`](../interfaces/Invoice.md)\>
 
 ___
 
 ### createJobDescription
 
-▸ **createJobDescription**(`options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+▸ **createJobDescription**(`options?`): `Promise`\<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 Uploads a job description for parsing.
 When successful, returns an `identifier` in the response for subsequent use with the
@@ -212,13 +214,13 @@ argument provided must be a JSON-encoded string. Data uploads will not impact up
 
 #### Returns
 
-`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+`Promise`\<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
 ### createJobDescriptionSearch
 
-▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
+▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
 Searches through parsed job descriptions. You can search with custom criterias or a resume.
 
@@ -231,13 +233,13 @@ Searches through parsed job descriptions. You can search with custom criterias o
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
+`Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
 ___
 
 ### createJobDescriptionSearchEmbedUrl
 
-▸ **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+▸ **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
 
 Create and return a signed URL of the job description search tool which then can be embedded on a
 web page. An optional parameter `config_override` can be passed to override the user-level
@@ -251,13 +253,13 @@ configurations of the embeddable search tool.
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+`Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
 
 ___
 
 ### createRedactedResume
 
-▸ **createRedactedResume**(`options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
+▸ **createRedactedResume**(`options?`): `Promise`\<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
 Uploads a resume for redacting.
 
@@ -269,13 +271,13 @@ Uploads a resume for redacting.
 
 #### Returns
 
-`Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
+`Promise`\<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
 ___
 
 ### createResthookSubscription
 
-▸ **createResthookSubscription**(`body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **createResthookSubscription**(`body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After a subscription is successfully created, we'll send a POST request to your target URL with a
 `X-Hook-Secret` header. <br />
@@ -295,13 +297,13 @@ here.](https://docs.affinda.com/docs/webhooks)
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### createResume
 
-▸ **createResume**(`options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
+▸ **createResume**(`options?`): `Promise`\<[`Resume`](../interfaces/Resume.md)\>
 
 Uploads a resume for parsing. When successful, returns an `identifier` in the response for
 subsequent use with the [/resumes/{identifier}](#get-/resumes/-identifier-) endpoint to check
@@ -318,13 +320,13 @@ provided must be a JSON-encoded string. Data uploads will not impact upon parsin
 
 #### Returns
 
-`Promise`<[`Resume`](../interfaces/Resume.md)\>
+`Promise`\<[`Resume`](../interfaces/Resume.md)\>
 
 ___
 
 ### createResumeSearch
 
-▸ **createResumeSearch**(`body`, `options?`): `Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+▸ **createResumeSearch**(`body`, `options?`): `Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
 job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
@@ -341,13 +343,13 @@ the custom criteria.
 
 #### Returns
 
-`Promise`<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+`Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 ___
 
 ### createResumeSearchEmbedUrl
 
-▸ **createResumeSearchEmbedUrl**(`options?`): `Promise`<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
+▸ **createResumeSearchEmbedUrl**(`options?`): `Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
 Create and return a signed URL of the resume search tool which then can be embedded on a web page.
 An optional parameter `config_override` can be passed to override the user-level configurations of
@@ -361,13 +363,13 @@ the embeddable resume search tool.
 
 #### Returns
 
-`Promise`<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
+`Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
 ___
 
 ### deleteIndex
 
-▸ **deleteIndex**(`name`, `options?`): `Promise`<`void`\>
+▸ **deleteIndex**(`name`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified index from the database
 
@@ -380,13 +382,13 @@ Deletes the specified index from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteIndexDocument
 
-▸ **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified indexed document from the database
 
@@ -400,13 +402,13 @@ Delete the specified indexed document from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteInvoice
 
-▸ **deleteInvoice**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteInvoice**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified invoice from the database. Note, any invoices deleted from the database will no
 longer be used in any tailored customer models.
@@ -420,13 +422,13 @@ longer be used in any tailored customer models.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteJobDescription
 
-▸ **deleteJobDescription**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteJobDescription**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified job description from the database
 
@@ -439,13 +441,13 @@ Deletes the specified job description from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteRedactedResume
 
-▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteRedactedResume**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified resume from the database
 
@@ -458,13 +460,13 @@ Deletes the specified resume from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteResthookSubscription
 
-▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`<`void`\>
+▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified resthook subscription from the database.
 
@@ -477,13 +479,13 @@ Deletes the specified resthook subscription from the database.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### deleteResume
 
-▸ **deleteResume**(`identifier`, `options?`): `Promise`<`void`\>
+▸ **deleteResume**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified resume from the database
 
@@ -496,13 +498,13 @@ Deletes the specified resume from the database
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 ___
 
 ### getAllIndexDocuments
 
-▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`<[`PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`\<[`PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexed documents for that index
 
@@ -515,13 +517,13 @@ Returns all the indexed documents for that index
 
 #### Returns
 
-`Promise`<[`PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`\<[`PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 ___
 
 ### getAllIndexes
 
-▸ **getAllIndexes**(`options?`): `Promise`<[`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema.md)\>
+▸ **getAllIndexes**(`options?`): `Promise`\<[`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18iqsr4v2indexgetresponses200contentapplicationjsonschema)\>
 
 Returns all the indexes
 
@@ -533,13 +535,13 @@ Returns all the indexes
 
 #### Returns
 
-`Promise`<[`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`\<[`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](../modules.md#paths18iqsr4v2indexgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllInvoices
 
-▸ **getAllInvoices**(`options?`): `Promise`<[`PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)\>
+▸ **getAllInvoices**(`options?`): `Promise`\<[`PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)\>
 
 Returns all the invoice summaries for that user, limited to 300 per page.
 
@@ -551,13 +553,13 @@ Returns all the invoice summaries for that user, limited to 300 per page.
 
 #### Returns
 
-`Promise`<[`PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllJobDescriptions
 
-▸ **getAllJobDescriptions**(`options?`): `Promise`<[`PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllJobDescriptions**(`options?`): `Promise`\<[`PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)\>
 
 Returns all the job descriptions for that user, limited to 300 per page.
 
@@ -569,13 +571,13 @@ Returns all the job descriptions for that user, limited to 300 per page.
 
 #### Returns
 
-`Promise`<[`PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllRedactedResumes
 
-▸ **getAllRedactedResumes**(`options?`): `Promise`<[`Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)\>
+▸ **getAllRedactedResumes**(`options?`): `Promise`\<[`Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)\>
 
 Returns all the redacted resume information for that resume
 
@@ -587,13 +589,13 @@ Returns all the redacted resume information for that resume
 
 #### Returns
 
-`Promise`<[`Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllResthookSubscriptions
 
-▸ **getAllResthookSubscriptions**(`options?`): `Promise`<[`PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+▸ **getAllResthookSubscriptions**(`options?`): `Promise`\<[`PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 Returns your resthook subscriptions.
 
@@ -605,13 +607,13 @@ Returns your resthook subscriptions.
 
 #### Returns
 
-`Promise`<[`PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getAllResumes
 
-▸ **getAllResumes**(`options?`): `Promise`<[`Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)\>
+▸ **getAllResumes**(`options?`): `Promise`\<[`Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)\>
 
 Returns all the resume summaries for that user, limited to 300 per page.
 
@@ -623,13 +625,13 @@ Returns all the resume summaries for that user, limited to 300 per page.
 
 #### Returns
 
-`Promise`<[`Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)\>
+`Promise`\<[`Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema`](../modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)\>
 
 ___
 
 ### getInvoice
 
-▸ **getInvoice**(`identifier`, `options?`): `Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+▸ **getInvoice**(`identifier`, `options?`): `Promise`\<[`Invoice`](../interfaces/Invoice.md)\>
 
 Returns all the parse results for that invoice if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the invoice via the
@@ -644,13 +646,13 @@ The `identifier` is the unique ID returned after POST-ing the invoice via the
 
 #### Returns
 
-`Promise`<[`Invoice`](../interfaces/Invoice.md)\>
+`Promise`\<[`Invoice`](../interfaces/Invoice.md)\>
 
 ___
 
 ### getJobDescription
 
-▸ **getJobDescription**(`identifier`, `options?`): `Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+▸ **getJobDescription**(`identifier`, `options?`): `Promise`\<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 Returns all the results for that job description if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the resume via the
@@ -665,13 +667,13 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Returns
 
-`Promise`<[`JobDescription`](../interfaces/JobDescription.md)\>
+`Promise`\<[`JobDescription`](../interfaces/JobDescription.md)\>
 
 ___
 
 ### getJobDescriptionSearchConfig
 
-▸ **getJobDescriptionSearchConfig**(`options?`): `Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+▸ **getJobDescriptionSearchConfig**(`options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 Return configurations such as which fields can be displayed in the logged in user's embeddable job
 description search tool, what are their weights, what is the maximum number of results that can be
@@ -685,13 +687,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+`Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 ___
 
 ### getJobDescriptionSearchDetail
 
-▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
+▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this job description.
@@ -708,13 +710,13 @@ The `identifier` is the unique ID returned via the
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
+`Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
 ___
 
 ### getRedactedResume
 
-▸ **getRedactedResume**(`identifier`, `options?`): `Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
+▸ **getRedactedResume**(`identifier`, `options?`): `Promise`\<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
 Returns all the redaction results for that resume if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the resume via the
@@ -729,13 +731,13 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Returns
 
-`Promise`<[`RedactedResume`](../interfaces/RedactedResume.md)\>
+`Promise`\<[`RedactedResume`](../interfaces/RedactedResume.md)\>
 
 ___
 
 ### getResthookSubscription
 
-▸ **getResthookSubscription**(`id`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **getResthookSubscription**(`id`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Return a specific resthook subscription.
 
@@ -748,13 +750,13 @@ Return a specific resthook subscription.
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### getResume
 
-▸ **getResume**(`identifier`, `options?`): `Promise`<[`Resume`](../interfaces/Resume.md)\>
+▸ **getResume**(`identifier`, `options?`): `Promise`\<[`Resume`](../interfaces/Resume.md)\>
 
 Returns all the parse results for that resume if processing is completed.
 The `identifier` is the unique ID returned after POST-ing the resume via the
@@ -769,13 +771,13 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Returns
 
-`Promise`<[`Resume`](../interfaces/Resume.md)\>
+`Promise`\<[`Resume`](../interfaces/Resume.md)\>
 
 ___
 
 ### getResumeSearchConfig
 
-▸ **getResumeSearchConfig**(`options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+▸ **getResumeSearchConfig**(`options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 Return configurations such as which fields can be displayed in the logged in user's embeddable
 resume search tool, what are their weights, what is the maximum number of results that can be
@@ -789,13 +791,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+`Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 ___
 
 ### getResumeSearchDetail
 
-▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this resume.
@@ -811,13 +813,13 @@ The `identifier` is the unique ID returned via the [/resume_search](#post-/resum
 
 #### Returns
 
-`Promise`<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+`Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
 
 ___
 
 ### getResumeSearchMatch
 
-▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 Get the matching score between a resume and a job description. The score ranges between 0 and 1,
 with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
@@ -834,13 +836,13 @@ match the score returned from POST
 
 #### Returns
 
-`Promise`<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+`Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 ___
 
 ### getResumeSearchSuggestionJobTitle
 
-▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`\<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
 
 Provided one or more job titles, get related suggestions for your search.
 
@@ -853,13 +855,13 @@ Provided one or more job titles, get related suggestions for your search.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
+`Promise`\<[`AffindaAPIGetResumeSearchSuggestionJobTitleResponse`](../modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)\>
 
 ___
 
 ### getResumeSearchSuggestionSkill
 
-▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`\<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
 
 Provided one or more skills, get related suggestions for your search.
 
@@ -872,13 +874,13 @@ Provided one or more skills, get related suggestions for your search.
 
 #### Returns
 
-`Promise`<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
+`Promise`\<[`AffindaAPIGetResumeSearchSuggestionSkillResponse`](../modules.md#affindaapigetresumesearchsuggestionskillresponse)\>
 
 ___
 
 ### listOccupationGroups
 
-▸ **listOccupationGroups**(`options?`): `Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+▸ **listOccupationGroups**(`options?`): `Promise`\<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
 
 Returns the list of searchable occupation groups.
 
@@ -890,13 +892,13 @@ Returns the list of searchable occupation groups.
 
 #### Returns
 
-`Promise`<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
+`Promise`\<[`AffindaAPIListOccupationGroupsResponse`](../modules.md#affindaapilistoccupationgroupsresponse)\>
 
 ___
 
 ### sendOperationRequest
 
-▸ **sendOperationRequest**<`T`\>(`operationArguments`, `operationSpec`): `Promise`<`T`\>
+▸ **sendOperationRequest**\<`T`\>(`operationArguments`, `operationSpec`): `Promise`\<`T`\>
 
 Send an HTTP request that is populated using the provided OperationSpec.
 
@@ -915,7 +917,7 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Inherited from
 
@@ -925,7 +927,7 @@ ___
 
 ### sendRequest
 
-▸ **sendRequest**(`request`): `Promise`<`PipelineResponse`\>
+▸ **sendRequest**(`request`): `Promise`\<`PipelineResponse`\>
 
 Send the provided httpRequest.
 
@@ -937,7 +939,7 @@ Send the provided httpRequest.
 
 #### Returns
 
-`Promise`<`PipelineResponse`\>
+`Promise`\<`PipelineResponse`\>
 
 #### Inherited from
 
@@ -945,9 +947,29 @@ Send the provided httpRequest.
 
 ___
 
+### updateIndex
+
+▸ **updateIndex**(`name`, `body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
+
+Updates the specified index
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `body` | [`IndexUpdate`](../interfaces/IndexUpdate.md) | Index data to update |
+| `options?` | [`AffindaAPIUpdateIndexOptionalParams`](../interfaces/AffindaAPIUpdateIndexOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`Index`](../interfaces/Index.md)\>
+
+___
+
 ### updateJobDescriptionData
 
-▸ **updateJobDescriptionData**(`identifier`, `body`, `options?`): `Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
+▸ **updateJobDescriptionData**(`identifier`, `body`, `options?`): `Promise`\<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
 
 Update data of a job description.
 The `identifier` is the unique ID returned after POST-ing the job description via the
@@ -963,13 +985,13 @@ The `identifier` is the unique ID returned after POST-ing the job description vi
 
 #### Returns
 
-`Promise`<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
+`Promise`\<[`JobDescriptionData`](../interfaces/JobDescriptionData.md)\>
 
 ___
 
 ### updateJobDescriptionSearchConfig
 
-▸ **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+▸ **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 Update configurations such as which fields can be displayed in the logged in user's embeddable job
 description search tool, what are their weights, what is the maximum number of results that can be
@@ -984,13 +1006,13 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+`Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 ___
 
 ### updateResthookSubscription
 
-▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Update data of a resthook subscription.
 
@@ -1004,13 +1026,13 @@ Update data of a resthook subscription.
 
 #### Returns
 
-`Promise`<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+`Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 ___
 
 ### updateResumeData
 
-▸ **updateResumeData**(`identifier`, `body`, `options?`): `Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
+▸ **updateResumeData**(`identifier`, `body`, `options?`): `Promise`\<[`ResumeData`](../interfaces/ResumeData.md)\>
 
 Update data of a parsed resume.
 The `identifier` is the unique ID returned after POST-ing the resume via the
@@ -1026,13 +1048,13 @@ The `identifier` is the unique ID returned after POST-ing the resume via the
 
 #### Returns
 
-`Promise`<[`ResumeData`](../interfaces/ResumeData.md)\>
+`Promise`\<[`ResumeData`](../interfaces/ResumeData.md)\>
 
 ___
 
 ### updateResumeSearchConfig
 
-▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 Update configurations such as which fields can be displayed in the logged in user's embeddable
 resume search tool, what are their weights, what is the maximum number of results that can be
@@ -1047,4 +1069,4 @@ returned, etc.
 
 #### Returns
 
-`Promise`<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+`Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>

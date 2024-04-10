@@ -39,4 +39,4 @@ ___
 
 ### results
 
-• `Optional` **results**: [`Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems`](Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)[]
+• `Optional` **results**: [`Get200ApplicationJsonPropertiesItemsItem`](Get200ApplicationJsonPropertiesItemsItem.md)[]

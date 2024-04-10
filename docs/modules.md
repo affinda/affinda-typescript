@@ -6,15 +6,16 @@
 
 ### Enumerations
 
+- [KnownDocumentType](enums/KnownDocumentType.md)
 - [KnownEnum2](enums/KnownEnum2.md)
-- [KnownEnum5](enums/KnownEnum5.md)
-- [KnownEnum8](enums/KnownEnum8.md)
-- [KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md)
-- [KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md)
+- [KnownEnum7](enums/KnownEnum7.md)
+- [KnownIndexDocumentType](enums/KnownIndexDocumentType.md)
+- [KnownJobDescriptionSearchConfigDistanceUnit](enums/KnownJobDescriptionSearchConfigDistanceUnit.md)
 - [KnownRegion](enums/KnownRegion.md)
 - [KnownResthookEvent](enums/KnownResthookEvent.md)
 - [KnownResthookSubscriptionVersion](enums/KnownResthookSubscriptionVersion.md)
 - [KnownResumeDataLanguagesItem](enums/KnownResumeDataLanguagesItem.md)
+- [KnownResumeSearchConfigDistanceUnit](enums/KnownResumeSearchConfigDistanceUnit.md)
 - [KnownResumeSkillSourcesItemSection](enums/KnownResumeSkillSourcesItemSection.md)
 - [KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md)
 - [KnownVersion](enums/KnownVersion.md)
@@ -68,6 +69,7 @@
 - [AffindaAPIGetResumeSearchSuggestionSkillOptionalParams](interfaces/AffindaAPIGetResumeSearchSuggestionSkillOptionalParams.md)
 - [AffindaAPIListOccupationGroupsOptionalParams](interfaces/AffindaAPIListOccupationGroupsOptionalParams.md)
 - [AffindaAPIOptionalParams](interfaces/AffindaAPIOptionalParams.md)
+- [AffindaAPIUpdateIndexOptionalParams](interfaces/AffindaAPIUpdateIndexOptionalParams.md)
 - [AffindaAPIUpdateJobDescriptionDataOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionDataOptionalParams.md)
 - [AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams](interfaces/AffindaAPIUpdateJobDescriptionSearchConfigOptionalParams.md)
 - [AffindaAPIUpdateResthookSubscriptionOptionalParams](interfaces/AffindaAPIUpdateResthookSubscriptionOptionalParams.md)
@@ -87,7 +89,6 @@
 - [Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1](interfaces/Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1.md)
 - [Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1](interfaces/Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.md)
 - [Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1](interfaces/Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.md)
-- [Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties](interfaces/Components1Rpp8I6SchemasJobdescriptiondataupdateAdditionalproperties.md)
 - [Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1](interfaces/Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.md)
 - [Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification](interfaces/Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
@@ -106,13 +107,11 @@
 - [ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1](interfaces/ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.md)
 - [ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1](interfaces/ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.md)
 - [ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1](interfaces/ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.md)
-- [ComponentsEyyf0ZSchemasResumedataAdditionalproperties](interfaces/ComponentsEyyf0ZSchemasResumedataAdditionalproperties.md)
 - [ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](interfaces/ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
 - [ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1](interfaces/ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md)
 - [ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties](interfaces/ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties.md)
 - [ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1](interfaces/ComponentsRe6GnoSchemasJobdescriptionsearchdetailPropertiesOccupationgroupPropertiesValueAllof1.md)
 - [ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md)
-- [ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties](interfaces/ComponentsTk0GmxSchemasJobdescriptiondataAdditionalproperties.md)
 - [ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1](interfaces/ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.md)
 - [ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1](interfaces/ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1.md)
 - [CustomFieldConfig](interfaces/CustomFieldConfig.md)
@@ -125,7 +124,10 @@
 - [ExpectedRemunerationAnnotationV2UpdateParsed](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)
 - [ExperienceSearchScoreComponent](interfaces/ExperienceSearchScoreComponent.md)
 - [Get200ApplicationJsonPropertiesItemsItem](interfaces/Get200ApplicationJsonPropertiesItemsItem.md)
-- [IndexRequestBody](interfaces/IndexRequestBody.md)
+- [Index](interfaces/Index.md)
+- [IndexCreate](interfaces/IndexCreate.md)
+- [IndexUpdate](interfaces/IndexUpdate.md)
+- [IndexUser](interfaces/IndexUser.md)
 - [Invoice](interfaces/Invoice.md)
 - [InvoiceData](interfaces/InvoiceData.md)
 - [InvoiceDataTablesItem](interfaces/InvoiceDataTablesItem.md)
@@ -173,11 +175,9 @@
 - [PaginatedResponse](interfaces/PaginatedResponse.md)
 - [Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema](interfaces/Paths14R8PdgV2IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)
 - [Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths15O3Zn5V2JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
-- [Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems](interfaces/Paths16Tz5M5V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchemaPropertiesResultsItems.md)
-- [Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema](interfaces/Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema.md)
 - [Paths18ZzckpV2InvoicesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths18ZzckpV2InvoicesGetResponses200ContentApplicationJsonSchemaAllof1.md)
+- [Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1.md)
 - [Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/Paths1Q5Zfv5V2RedactedResumesGetResponses200ContentApplicationJsonSchemaAllof1.md)
-- [Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema](interfaces/Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema.md)
 - [Paths23Ubd8V2ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema](interfaces/Paths23Ubd8V2ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 - [PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema](interfaces/PathsAf7Nd4V2IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)
 - [PathsDd1FapV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1](interfaces/PathsDd1FapV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1.md)
@@ -272,6 +272,7 @@
 - [AffindaAPIGetResumeSearchSuggestionJobTitleResponse](modules.md#affindaapigetresumesearchsuggestionjobtitleresponse)
 - [AffindaAPIGetResumeSearchSuggestionSkillResponse](modules.md#affindaapigetresumesearchsuggestionskillresponse)
 - [AffindaAPIListOccupationGroupsResponse](modules.md#affindaapilistoccupationgroupsresponse)
+- [AffindaAPIUpdateIndexResponse](modules.md#affindaapiupdateindexresponse)
 - [AffindaAPIUpdateJobDescriptionDataResponse](modules.md#affindaapiupdatejobdescriptiondataresponse)
 - [AffindaAPIUpdateJobDescriptionSearchConfigResponse](modules.md#affindaapiupdatejobdescriptionsearchconfigresponse)
 - [AffindaAPIUpdateResthookSubscriptionResponse](modules.md#affindaapiupdateresthooksubscriptionresponse)
@@ -279,13 +280,13 @@
 - [AffindaAPIUpdateResumeSearchConfigResponse](modules.md#affindaapiupdateresumesearchconfigresponse)
 - [DateAnnotation](modules.md#dateannotation)
 - [DateAnnotationV2Update](modules.md#dateannotationv2update)
+- [DocumentType](modules.md#documenttype)
 - [EducationLevel](modules.md#educationlevel)
 - [Enum2](modules.md#enum2)
-- [Enum5](modules.md#enum5)
-- [Enum8](modules.md#enum8)
+- [Enum7](modules.md#enum7)
 - [ExpectedRemunerationAnnotation](modules.md#expectedremunerationannotation)
 - [ExpectedRemunerationAnnotationV2Update](modules.md#expectedremunerationannotationv2update)
-- [GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](modules.md#getresponses200contentapplicationjsonschemaresultsitemdocumenttype)
+- [IndexDocumentType](modules.md#indexdocumenttype)
 - [InvoiceDataBankAccountNumber](modules.md#invoicedatabankaccountnumber)
 - [InvoiceDataBankBsb](modules.md#invoicedatabankbsb)
 - [InvoiceDataBankIban](modules.md#invoicedatabankiban)
@@ -315,6 +316,7 @@
 - [InvoiceDataSupplierPhoneNumber](modules.md#invoicedatasupplierphonenumber)
 - [InvoiceDataSupplierVat](modules.md#invoicedatasuppliervat)
 - [InvoiceDataSupplierWebsite](modules.md#invoicedatasupplierwebsite)
+- [JobDescriptionSearchConfigDistanceUnit](modules.md#jobdescriptionsearchconfigdistanceunit)
 - [JobDescriptionSearchDetailLocationValue](modules.md#jobdescriptionsearchdetaillocationvalue)
 - [JobDescriptionSearchDetailOccupationGroupValue](modules.md#jobdescriptionsearchdetailoccupationgroupvalue)
 - [JobTitleAnnotation](modules.md#jobtitleannotation)
@@ -326,15 +328,16 @@
 - [LocationAnnotationV2UpdateParsed](modules.md#locationannotationv2updateparsed)
 - [ManagementLevel](modules.md#managementlevel)
 - [Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema](modules.md#paths14vxierv2resumesgetresponses200contentapplicationjsonschema)
+- [Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema](modules.md#paths18iqsr4v2indexgetresponses200contentapplicationjsonschema)
 - [Paths1D957B5V2RedactedResumesGetResponses200ContentApplicationJsonSchema](modules.md#paths1d957b5v2redactedresumesgetresponses200contentapplicationjsonschema)
 - [PathsChbpqfV2JobDescriptionsGetResponses200ContentApplicationJsonSchema](modules.md#pathschbpqfv2jobdescriptionsgetresponses200contentapplicationjsonschema)
 - [PathsGfm23QV2InvoicesGetResponses200ContentApplicationJsonSchema](modules.md#pathsgfm23qv2invoicesgetresponses200contentapplicationjsonschema)
 - [PathsMda0LlV2ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema](modules.md#pathsmda0llv2resthooksubscriptionsgetresponses200contentapplicationjsonschema)
-- [PostContentSchemaDocumentType](modules.md#postcontentschemadocumenttype)
 - [Region](modules.md#region)
 - [ResthookEvent](modules.md#resthookevent)
 - [ResthookSubscriptionVersion](modules.md#resthooksubscriptionversion)
 - [ResumeDataLanguagesItem](modules.md#resumedatalanguagesitem)
+- [ResumeSearchConfigDistanceUnit](modules.md#resumesearchconfigdistanceunit)
 - [ResumeSearchDetailEducationValueItem](modules.md#resumesearchdetaileducationvalueitem)
 - [ResumeSearchDetailLanguagesValueItem](modules.md#resumesearchdetaillanguagesvalueitem)
 - [ResumeSearchDetailLocationValue](modules.md#resumesearchdetaillocationvalue)
@@ -371,7 +374,7 @@ ___
 
 ### AffindaAPICreateIndexResponse
 
-Ƭ **AffindaAPICreateIndexResponse**: [`Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema`](interfaces/Paths1Sikw07V2IndexPostResponses201ContentApplicationJsonSchema.md)
+Ƭ **AffindaAPICreateIndexResponse**: [`Index`](interfaces/Index.md)
 
 Contains response data for the createIndex operation.
 
@@ -459,7 +462,7 @@ ___
 
 ### AffindaAPIGetAllIndexesResponse
 
-Ƭ **AffindaAPIGetAllIndexesResponse**: [`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](interfaces/Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema.md)
+Ƭ **AffindaAPIGetAllIndexesResponse**: [`Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema`](modules.md#paths18iqsr4v2indexgetresponses200contentapplicationjsonschema)
 
 Contains response data for the getAllIndexes operation.
 
@@ -621,6 +624,14 @@ Contains response data for the listOccupationGroups operation.
 
 ___
 
+### AffindaAPIUpdateIndexResponse
+
+Ƭ **AffindaAPIUpdateIndexResponse**: [`Index`](interfaces/Index.md)
+
+Contains response data for the updateIndex operation.
+
+___
+
 ### AffindaAPIUpdateJobDescriptionDataResponse
 
 Ƭ **AffindaAPIUpdateJobDescriptionDataResponse**: [`JobDescriptionData`](interfaces/JobDescriptionData.md)
@@ -663,13 +674,26 @@ ___
 
 ### DateAnnotation
 
-Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `Date`  }
+Ƭ **DateAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `Date`  }
 
 ___
 
 ### DateAnnotationV2Update
 
-Ƭ **DateAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `Date`  }
+Ƭ **DateAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: `Date`  }
+
+___
+
+### DocumentType
+
+Ƭ **DocumentType**: `string`
+
+Defines values for DocumentType. \
+[KnownDocumentType](enums/KnownDocumentType.md) can be used interchangeably with DocumentType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
 
 ___
 
@@ -693,25 +717,12 @@ Defines values for Enum2. \
 
 ___
 
-### Enum5
+### Enum7
 
-Ƭ **Enum5**: `string`
+Ƭ **Enum7**: `string`
 
-Defines values for Enum5. \
-[KnownEnum5](enums/KnownEnum5.md) can be used interchangeably with Enum5,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**resumes** \
-**job_descriptions**
-
-___
-
-### Enum8
-
-Ƭ **Enum8**: `string`
-
-Defines values for Enum8. \
-[KnownEnum8](enums/KnownEnum8.md) can be used interchangeably with Enum8,
+Defines values for Enum7. \
+[KnownEnum7](enums/KnownEnum7.md) can be used interchangeably with Enum7,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -721,22 +732,22 @@ ___
 
 ### ExpectedRemunerationAnnotation
 
-Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
+Ƭ **ExpectedRemunerationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationParsed`](interfaces/ExpectedRemunerationAnnotationParsed.md)  }
 
 ___
 
 ### ExpectedRemunerationAnnotationV2Update
 
-Ƭ **ExpectedRemunerationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`ExpectedRemunerationAnnotationV2UpdateParsed`](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)  }
+Ƭ **ExpectedRemunerationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: [`ExpectedRemunerationAnnotationV2UpdateParsed`](interfaces/ExpectedRemunerationAnnotationV2UpdateParsed.md)  }
 
 ___
 
-### GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType
+### IndexDocumentType
 
-Ƭ **GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType**: `string`
+Ƭ **IndexDocumentType**: `string`
 
-Defines values for GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType. \
-[KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType](enums/KnownGetResponses200ContentApplicationJsonSchemaResultsItemDocumentType.md) can be used interchangeably with GetResponses200ContentApplicationJsonSchemaResultsItemDocumentType,
+Defines values for IndexDocumentType. \
+[KnownIndexDocumentType](enums/KnownIndexDocumentType.md) can be used interchangeably with IndexDocumentType,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -918,6 +929,19 @@ ___
 
 ___
 
+### JobDescriptionSearchConfigDistanceUnit
+
+Ƭ **JobDescriptionSearchConfigDistanceUnit**: `string`
+
+Defines values for JobDescriptionSearchConfigDistanceUnit. \
+[KnownJobDescriptionSearchConfigDistanceUnit](enums/KnownJobDescriptionSearchConfigDistanceUnit.md) can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**mi** \
+**km**
+
+___
+
 ### JobDescriptionSearchDetailLocationValue
 
 Ƭ **JobDescriptionSearchDetailLocationValue**: [`Location`](interfaces/Location.md) & [`Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1`](interfaces/Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md) & {}
@@ -944,25 +968,25 @@ ___
 
 ### LanguageAnnotation
 
-Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+Ƭ **LanguageAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### LanguageAnnotationV2Update
 
-Ƭ **LanguageAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+Ƭ **LanguageAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### LocationAnnotation
 
-Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`Location`](interfaces/Location.md)  }
+Ƭ **LocationAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`Location`](interfaces/Location.md)  }
 
 ___
 
 ### LocationAnnotationV2Update
 
-Ƭ **LocationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`LocationAnnotationV2UpdateParsed`](modules.md#locationannotationv2updateparsed)  }
+Ƭ **LocationAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: [`LocationAnnotationV2UpdateParsed`](modules.md#locationannotationv2updateparsed)  }
 
 ___
 
@@ -983,6 +1007,12 @@ ___
 ### Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema
 
 Ƭ **Paths14VxierV2ResumesGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/PathsX4VofmV2ResumesGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
+
+___
+
+### Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema
+
+Ƭ **Paths18Iqsr4V2IndexGetResponses200ContentApplicationJsonSchema**: [`PaginatedResponse`](interfaces/PaginatedResponse.md) & [`Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1`](interfaces/Paths1BqdurzV2IndexGetResponses200ContentApplicationJsonSchemaAllof1.md) & {}
 
 ___
 
@@ -1010,19 +1040,6 @@ ___
 
 ___
 
-### PostContentSchemaDocumentType
-
-Ƭ **PostContentSchemaDocumentType**: `string`
-
-Defines values for PostContentSchemaDocumentType. \
-[KnownPostContentSchemaDocumentType](enums/KnownPostContentSchemaDocumentType.md) can be used interchangeably with PostContentSchemaDocumentType,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**resumes** \
-**job_descriptions**
-
-___
-
 ### Region
 
 Ƭ **Region**: `string`
@@ -1032,7 +1049,8 @@ Defines values for Region. \
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **api** \
-**api.eu1**
+**api.eu1** \
+**api.us1**
 
 ___
 
@@ -1058,7 +1076,8 @@ Defines values for ResthookEvent. \
 **document.classify.succeeded** \
 **document.classify.failed** \
 **document.classify.completed** \
-**document.rejected**
+**document.rejected** \
+**annotation.validated**
 
 ___
 
@@ -1290,6 +1309,19 @@ Defines values for ResumeDataLanguagesItem. \
 
 ___
 
+### ResumeSearchConfigDistanceUnit
+
+Ƭ **ResumeSearchConfigDistanceUnit**: `string`
+
+Defines values for ResumeSearchConfigDistanceUnit. \
+[KnownResumeSearchConfigDistanceUnit](enums/KnownResumeSearchConfigDistanceUnit.md) can be used interchangeably with ResumeSearchConfigDistanceUnit,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**mi** \
+**km**
+
+___
+
 ### ResumeSearchDetailEducationValueItem
 
 Ƭ **ResumeSearchDetailEducationValueItem**: [`Education`](interfaces/Education.md) & [`ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1`](interfaces/ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1.md) & {}
@@ -1374,25 +1406,25 @@ ___
 
 ### SkillAnnotation
 
-Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+Ƭ **SkillAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### SkillAnnotationV2Update
 
-Ƭ **SkillAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+Ƭ **SkillAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### TextAnnotation
 
-Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: `string`  }
+Ƭ **TextAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: `string`  }
 
 ___
 
 ### TextAnnotationV2Update
 
-Ƭ **TextAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: `string`  }
+Ƭ **TextAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: `string`  }
 
 ___
 
@@ -1412,10 +1444,10 @@ ___
 
 ### YearsExperienceAnnotation
 
-Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & { `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
+Ƭ **YearsExperienceAnnotation**: [`Annotation`](interfaces/Annotation.md) & \{ `parsed?`: [`YearsExperienceAnnotationParsed`](interfaces/YearsExperienceAnnotationParsed.md)  }
 
 ___
 
 ### YearsExperienceAnnotationV2Update
 
-Ƭ **YearsExperienceAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & { `parsed?`: [`YearsExperienceAnnotationV2UpdateParsed`](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)  }
+Ƭ **YearsExperienceAnnotationV2Update**: [`AnnotationV2Base`](interfaces/AnnotationV2Base.md) & \{ `parsed?`: [`YearsExperienceAnnotationV2UpdateParsed`](interfaces/YearsExperienceAnnotationV2UpdateParsed.md)  }

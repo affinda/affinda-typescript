@@ -19,4 +19,4 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `string`
+• **raw**: ``null`` \| `string`
