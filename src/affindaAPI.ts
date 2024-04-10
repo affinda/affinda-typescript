@@ -302,7 +302,7 @@ export class AffindaAPI extends coreClient.ServiceClient {
       credential: credentials,
     };
 
-    const packageDetails = `azsdk-js-affinda/7.0.0`;
+    const packageDetails = `azsdk-js-affinda/7.1.0`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
@@ -2836,6 +2836,7 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
     Parameters.lowPriority,
     Parameters.compact1,
     Parameters.deleteAfterParse,
+    Parameters.enableValidationTool,
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType1, Parameters.accept1],
@@ -3868,7 +3869,12 @@ const listMappingDataSourceValuesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  queryParameters: [Parameters.offset, Parameters.limit, Parameters.search],
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.search,
+    Parameters.annotation,
+  ],
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer,
@@ -5245,7 +5251,7 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
     },
   },
   requestBody: Parameters.body47,
-  queryParameters: [Parameters.offset, Parameters.limit],
+  queryParameters: [Parameters.offset, Parameters.limit1],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",

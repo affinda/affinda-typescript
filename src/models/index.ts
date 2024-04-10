@@ -2775,6 +2775,8 @@ export interface DocumentCreate {
   compact?: boolean;
   /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
   deleteAfterParse?: boolean;
+  /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
+  enableValidationTool?: boolean;
 }
 
 export interface OrganizationCreate {
@@ -4628,6 +4630,8 @@ export interface CreateDocumentOptionalParams
   compact?: boolean;
   /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
   deleteAfterParse?: boolean;
+  /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
+  enableValidationTool?: boolean;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -4958,6 +4962,8 @@ export interface ListMappingDataSourceValuesOptionalParams
   limit?: number;
   /** Search for specific values */
   search?: string;
+  /** Filter based on annotation ID */
+  annotation?: number;
 }
 
 /** Contains response data for the listMappingDataSourceValues operation. */

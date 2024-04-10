@@ -11,6 +11,7 @@
 - [customIdentifier](DocumentCreate.md#customidentifier)
 - [data](DocumentCreate.md#data)
 - [deleteAfterParse](DocumentCreate.md#deleteafterparse)
+- [enableValidationTool](DocumentCreate.md#enablevalidationtool)
 - [expiryTime](DocumentCreate.md#expirytime)
 - [file](DocumentCreate.md#file)
 - [fileName](DocumentCreate.md#filename)
@@ -62,6 +63,14 @@ ___
 • `Optional` **deleteAfterParse**: `boolean`
 
 If true, no data will be stored after parsing. Only compatible with requests where wait: True.
+
+___
+
+### enableValidationTool
+
+• `Optional` **enableValidationTool**: `boolean`
+
+If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed.
 
 ___
 

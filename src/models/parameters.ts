@@ -166,9 +166,8 @@ export const offset: OperationQueryParameter = {
 export const limit: OperationQueryParameter = {
   parameterPath: ["options", "limit"],
   mapper: {
-    defaultValue: 300,
     constraints: {
-      InclusiveMaximum: 300,
+      InclusiveMaximum: 100,
       InclusiveMinimum: 1,
     },
     serializedName: "limit",
@@ -591,6 +590,16 @@ export const deleteAfterParse: OperationParameter = {
   },
 };
 
+export const enableValidationTool: OperationParameter = {
+  parameterPath: ["options", "enableValidationTool"],
+  mapper: {
+    serializedName: "enableValidationTool",
+    type: {
+      name: "Boolean",
+    },
+  },
+};
+
 export const accept1: OperationParameter = {
   parameterPath: "accept",
   mapper: {
@@ -884,6 +893,16 @@ export const body26: OperationParameter = {
   mapper: MappingDataSourceCreateMapper,
 };
 
+export const annotation: OperationQueryParameter = {
+  parameterPath: ["options", "annotation"],
+  mapper: {
+    serializedName: "annotation",
+    type: {
+      name: "Number",
+    },
+  },
+};
+
 export const body27: OperationParameter = {
   parameterPath: "body",
   mapper: {
@@ -1150,6 +1169,20 @@ export const body46: OperationParameter = {
 export const body47: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper,
+};
+
+export const limit1: OperationQueryParameter = {
+  parameterPath: ["options", "limit"],
+  mapper: {
+    constraints: {
+      InclusiveMaximum: 50,
+      InclusiveMinimum: 1,
+    },
+    serializedName: "limit",
+    type: {
+      name: "Number",
+    },
+  },
 };
 
 export const resume: OperationQueryParameter = {

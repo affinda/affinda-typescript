@@ -12857,6 +12857,12 @@ export const DocumentCreate: coreClient.CompositeMapper = {
           name: "Boolean",
         },
       },
+      enableValidationTool: {
+        serializedName: "enableValidationTool",
+        type: {
+          name: "Boolean",
+        },
+      },
     },
   },
 };

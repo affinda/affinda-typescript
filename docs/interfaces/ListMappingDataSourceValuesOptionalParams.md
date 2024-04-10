@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](ListMappingDataSourceValuesOptionalParams.md#abortsignal)
+- [annotation](ListMappingDataSourceValuesOptionalParams.md#annotation)
 - [limit](ListMappingDataSourceValuesOptionalParams.md#limit)
 - [offset](ListMappingDataSourceValuesOptionalParams.md#offset)
 - [onResponse](ListMappingDataSourceValuesOptionalParams.md#onresponse)
@@ -34,6 +35,14 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
+
+___
+
+### annotation
+
+• `Optional` **annotation**: `number`
+
+Filter based on annotation ID
 
 ___
 

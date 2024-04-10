@@ -20,6 +20,7 @@ Optional parameters.
 - [customIdentifier](CreateDocumentOptionalParams.md#customidentifier)
 - [data](CreateDocumentOptionalParams.md#data)
 - [deleteAfterParse](CreateDocumentOptionalParams.md#deleteafterparse)
+- [enableValidationTool](CreateDocumentOptionalParams.md#enablevalidationtool)
 - [expiryTime](CreateDocumentOptionalParams.md#expirytime)
 - [file](CreateDocumentOptionalParams.md#file)
 - [fileName](CreateDocumentOptionalParams.md#filename)
@@ -87,6 +88,14 @@ ___
 • `Optional` **deleteAfterParse**: `boolean`
 
 If true, no data will be stored after parsing. Only compatible with requests where wait: True.
+
+___
+
+### enableValidationTool
+
+• `Optional` **enableValidationTool**: `boolean`
+
+If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed.
 
 ___
 
