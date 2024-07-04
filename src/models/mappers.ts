@@ -1590,6 +1590,12 @@ export const Field: coreClient.CompositeMapper = {
           name: "Boolean",
         },
       },
+      hideEnumDetail: {
+        serializedName: "hideEnumDetail",
+        type: {
+          name: "Boolean",
+        },
+      },
       dropNull: {
         serializedName: "dropNull",
         type: {
@@ -2482,6 +2488,12 @@ export const CollectionField: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      fieldType: {
+        serializedName: "fieldType",
+        type: {
+          name: "String",
+        },
+      },
       mandatory: {
         serializedName: "mandatory",
         type: {
@@ -2849,6 +2861,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
       },
       file: {
         serializedName: "file",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+      html: {
+        serializedName: "html",
         nullable: true,
         type: {
           name: "String",
@@ -5692,6 +5711,7 @@ export const ValidationResult: coreClient.CompositeMapper = {
       passed: {
         serializedName: "passed",
         required: true,
+        nullable: true,
         type: {
           name: "Boolean",
         },
@@ -5743,6 +5763,7 @@ export const ValidationResultCreate: coreClient.CompositeMapper = {
       },
       passed: {
         serializedName: "passed",
+        nullable: true,
         type: {
           name: "Boolean",
         },
@@ -5793,6 +5814,7 @@ export const ValidationResultUpdate: coreClient.CompositeMapper = {
       },
       passed: {
         serializedName: "passed",
+        nullable: true,
         type: {
           name: "Boolean",
         },
@@ -5816,6 +5838,27 @@ export const ValidationResultUpdate: coreClient.CompositeMapper = {
         serializedName: "document",
         type: {
           name: "String",
+        },
+      },
+    },
+  },
+};
+
+export const BatchDeleteValidationResultsRequest: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "BatchDeleteValidationResultsRequest",
+    modelProperties: {
+      ids: {
+        serializedName: "ids",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Number",
+            },
+          },
         },
       },
     },
@@ -6921,6 +6964,13 @@ export const MappingCreate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      orderBy: {
+        serializedName: "orderBy",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
     },
   },
 };
@@ -6960,6 +7010,13 @@ export const Mapping: coreClient.CompositeMapper = {
           name: "Number",
         },
       },
+      orderBy: {
+        serializedName: "orderBy",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
     },
   },
 };
@@ -6997,6 +7054,13 @@ export const MappingUpdate: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number",
+        },
+      },
+      orderBy: {
+        serializedName: "orderBy",
+        nullable: true,
+        type: {
+          name: "String",
         },
       },
     },
@@ -11353,161 +11417,161 @@ export const InvoiceData: coreClient.CompositeMapper = {
         serializedName: "paymentAmountBase",
         type: {
           name: "Composite",
-          className: "InvoiceDataPaymentAmountBase",
+          className: "TextAnnotation",
         },
       },
       paymentAmountTax: {
         serializedName: "paymentAmountTax",
         type: {
           name: "Composite",
-          className: "InvoiceDataPaymentAmountTax",
+          className: "TextAnnotation",
         },
       },
       paymentAmountTotal: {
         serializedName: "paymentAmountTotal",
         type: {
           name: "Composite",
-          className: "InvoiceDataPaymentAmountTotal",
+          className: "TextAnnotation",
         },
       },
       paymentAmountPaid: {
         serializedName: "paymentAmountPaid",
         type: {
           name: "Composite",
-          className: "InvoiceDataPaymentAmountPaid",
+          className: "TextAnnotation",
         },
       },
       paymentAmountDue: {
         serializedName: "paymentAmountDue",
         type: {
           name: "Composite",
-          className: "InvoiceDataPaymentAmountDue",
+          className: "TextAnnotation",
         },
       },
       invoiceNumber: {
         serializedName: "invoiceNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataInvoiceNumber",
+          className: "TextAnnotation",
         },
       },
       invoicePurchaseOrderNumber: {
         serializedName: "invoicePurchaseOrderNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataInvoicePurchaseOrderNumber",
+          className: "TextAnnotation",
         },
       },
       supplierBusinessNumber: {
         serializedName: "supplierBusinessNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierBusinessNumber",
+          className: "TextAnnotation",
         },
       },
       customerNumber: {
         serializedName: "customerNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerNumber",
+          className: "TextAnnotation",
         },
       },
       customerBusinessNumber: {
         serializedName: "customerBusinessNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerBusinessNumber",
+          className: "TextAnnotation",
         },
       },
       paymentReference: {
         serializedName: "paymentReference",
         type: {
           name: "Composite",
-          className: "InvoiceDataPaymentReference",
+          className: "TextAnnotation",
         },
       },
       bankAccountNumber: {
         serializedName: "bankAccountNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataBankAccountNumber",
+          className: "TextAnnotation",
         },
       },
       supplierVat: {
         serializedName: "supplierVat",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierVat",
+          className: "TextAnnotation",
         },
       },
       customerVat: {
         serializedName: "customerVat",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerVat",
+          className: "TextAnnotation",
         },
       },
       bpayBillerCode: {
         serializedName: "bpayBillerCode",
         type: {
           name: "Composite",
-          className: "InvoiceDataBpayBillerCode",
+          className: "TextAnnotation",
         },
       },
       bpayReference: {
         serializedName: "bpayReference",
         type: {
           name: "Composite",
-          className: "InvoiceDataBpayReference",
+          className: "TextAnnotation",
         },
       },
       bankSortCode: {
         serializedName: "bankSortCode",
         type: {
           name: "Composite",
-          className: "InvoiceDataBankSortCode",
+          className: "TextAnnotation",
         },
       },
       bankIban: {
         serializedName: "bankIban",
         type: {
           name: "Composite",
-          className: "InvoiceDataBankIban",
+          className: "TextAnnotation",
         },
       },
       bankSwift: {
         serializedName: "bankSwift",
         type: {
           name: "Composite",
-          className: "InvoiceDataBankSwift",
+          className: "TextAnnotation",
         },
       },
       bankBsb: {
         serializedName: "bankBsb",
         type: {
           name: "Composite",
-          className: "InvoiceDataBankBsb",
+          className: "TextAnnotation",
         },
       },
       customerContactName: {
         serializedName: "customerContactName",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerContactName",
+          className: "TextAnnotation",
         },
       },
       customerCompanyName: {
         serializedName: "customerCompanyName",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerCompanyName",
+          className: "TextAnnotation",
         },
       },
       supplierCompanyName: {
         serializedName: "supplierCompanyName",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierCompanyName",
+          className: "TextAnnotation",
         },
       },
       customerBillingAddress: {
@@ -11535,42 +11599,42 @@ export const InvoiceData: coreClient.CompositeMapper = {
         serializedName: "customerPhoneNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerPhoneNumber",
+          className: "TextAnnotation",
         },
       },
       supplierPhoneNumber: {
         serializedName: "supplierPhoneNumber",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierPhoneNumber",
+          className: "TextAnnotation",
         },
       },
       supplierFax: {
         serializedName: "supplierFax",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierFax",
+          className: "TextAnnotation",
         },
       },
       customerEmail: {
         serializedName: "customerEmail",
         type: {
           name: "Composite",
-          className: "InvoiceDataCustomerEmail",
+          className: "TextAnnotation",
         },
       },
       supplierEmail: {
         serializedName: "supplierEmail",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierEmail",
+          className: "TextAnnotation",
         },
       },
       supplierWebsite: {
         serializedName: "supplierWebsite",
         type: {
           name: "Composite",
-          className: "InvoiceDataSupplierWebsite",
+          className: "TextAnnotation",
         },
       },
       currencyCode: {
@@ -11825,757 +11889,6 @@ export const RowBetaAnnotationParsed: coreClient.CompositeMapper = {
     },
   },
 };
-
-export const Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className: "Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className: "Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className: "Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
-
-export const Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className:
-        "Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1",
-      modelProperties: {
-        raw: {
-          serializedName: "raw",
-          required: true,
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-        parsed: {
-          serializedName: "parsed",
-          nullable: true,
-          type: {
-            name: "String",
-          },
-        },
-      },
-    },
-  };
 
 export const ResumeRedactData: coreClient.CompositeMapper = {
   type: {
@@ -13775,384 +13088,6 @@ export const ResumeSearchDetailLanguagesValueItem: coreClient.CompositeMapper =
       },
     },
   };
-
-export const InvoiceDataPaymentAmountBase: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataPaymentAmountBase",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataPaymentAmountTax: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataPaymentAmountTax",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataPaymentAmountTotal: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataPaymentAmountTotal",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataPaymentAmountPaid: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataPaymentAmountPaid",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataPaymentAmountDue: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataPaymentAmountDue",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataInvoiceNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataInvoiceNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataInvoicePurchaseOrderNumber: coreClient.CompositeMapper =
-  {
-    type: {
-      name: "Composite",
-      className: "InvoiceDataInvoicePurchaseOrderNumber",
-      additionalProperties: { type: { name: "Object" } },
-      modelProperties: {
-        ...TextAnnotation.type.modelProperties,
-        ...ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1
-          .type.modelProperties,
-      },
-    },
-  };
-
-export const InvoiceDataSupplierBusinessNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierBusinessNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerBusinessNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerBusinessNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataPaymentReference: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataPaymentReference",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBankAccountNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBankAccountNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataSupplierVat: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierVat",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerVat: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerVat",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBpayBillerCode: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBpayBillerCode",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBpayReference: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBpayReference",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBankSortCode: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBankSortCode",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBankIban: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBankIban",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBankSwift: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBankSwift",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataBankBsb: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataBankBsb",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerContactName: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerContactName",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerCompanyName: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerCompanyName",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataSupplierCompanyName: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierCompanyName",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerPhoneNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerPhoneNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataSupplierPhoneNumber: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierPhoneNumber",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1
-        .type.modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataSupplierFax: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierFax",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataCustomerEmail: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataCustomerEmail",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataSupplierEmail: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierEmail",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1.type
-        .modelProperties,
-    },
-  },
-};
-
-export const InvoiceDataSupplierWebsite: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "InvoiceDataSupplierWebsite",
-    additionalProperties: { type: { name: "Object" } },
-    modelProperties: {
-      ...TextAnnotation.type.modelProperties,
-      ...Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1.type
-        .modelProperties,
-    },
-  },
-};
 
 export let discriminators = {
   Document: Document,

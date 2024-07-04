@@ -25,7 +25,9 @@
 - [addMappingDataSourceValue](AffindaAPI.md#addmappingdatasourcevalue)
 - [batchAddTag](AffindaAPI.md#batchaddtag)
 - [batchCreateAnnotations](AffindaAPI.md#batchcreateannotations)
+- [batchCreateValidationResults](AffindaAPI.md#batchcreatevalidationresults)
 - [batchDeleteAnnotations](AffindaAPI.md#batchdeleteannotations)
+- [batchDeleteValidationResults](AffindaAPI.md#batchdeletevalidationresults)
 - [batchRemoveTag](AffindaAPI.md#batchremovetag)
 - [batchUpdateAnnotations](AffindaAPI.md#batchupdateannotations)
 - [createAnnotation](AffindaAPI.md#createannotation)
@@ -122,6 +124,7 @@
 - [listMappingDataSources](AffindaAPI.md#listmappingdatasources)
 - [listMappings](AffindaAPI.md#listmappings)
 - [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
+- [reIndexDocument](AffindaAPI.md#reindexdocument)
 - [regenerateApiKeyForApiUser](AffindaAPI.md#regenerateapikeyforapiuser)
 - [replaceDataPointChoices](AffindaAPI.md#replacedatapointchoices)
 - [replaceMappingDataSourceValues](AffindaAPI.md#replacemappingdatasourcevalues)
@@ -270,6 +273,25 @@ Batch create annotations
 
 ___
 
+### batchCreateValidationResults
+
+▸ **batchCreateValidationResults**(`body`, `options?`): `Promise`\<[`BatchCreateValidationResultsResponse`](../modules.md#batchcreatevalidationresultsresponse)\>
+
+Batch create validation results.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`ValidationResultCreate`](../interfaces/ValidationResultCreate.md)[] | Array of ValidationResultCreate |
+| `options?` | [`BatchCreateValidationResultsOptionalParams`](../interfaces/BatchCreateValidationResultsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`BatchCreateValidationResultsResponse`](../modules.md#batchcreatevalidationresultsresponse)\>
+
+___
+
 ### batchDeleteAnnotations
 
 ▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
@@ -286,6 +308,25 @@ Batch delete annotations
 #### Returns
 
 `Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
+
+___
+
+### batchDeleteValidationResults
+
+▸ **batchDeleteValidationResults**(`body`, `options?`): `Promise`\<`void`\>
+
+Batch delete validation results
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`BatchDeleteValidationResultsRequest`](../interfaces/BatchDeleteValidationResultsRequest.md) |  |
+| `options?` | [`BatchDeleteValidationResultsOptionalParams`](../interfaces/BatchDeleteValidationResultsOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<`void`\>
 
 ___
 
@@ -2134,6 +2175,29 @@ Returns the list of searchable occupation groups.
 #### Returns
 
 `Promise`\<[`ListOccupationGroupsResponse`](../modules.md#listoccupationgroupsresponse)\>
+
+___
+
+### reIndexDocument
+
+▸ **reIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
+
+Re-index a document.
+This is relevant if you updated the document's data via the /annotations endpoint, and want to
+refresh
+the document's data in the search index.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Index name |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`ReIndexDocumentOptionalParams`](../interfaces/ReIndexDocumentOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<`void`\>
 
 ___
 

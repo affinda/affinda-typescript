@@ -20,6 +20,7 @@
 - [failed](DocumentMeta.md#failed)
 - [file](DocumentMeta.md#file)
 - [fileName](DocumentMeta.md#filename)
+- [html](DocumentMeta.md#html)
 - [identifier](DocumentMeta.md#identifier)
 - [isArchived](DocumentMeta.md#isarchived)
 - [isConfirmed](DocumentMeta.md#isconfirmed)
@@ -137,6 +138,14 @@ ___
 • `Optional` **fileName**: `string`
 
 Optional filename of the file
+
+___
+
+### html
+
+• `Optional` **html**: `string`
+
+URL to view the file converted to HTML.
 
 ___
 

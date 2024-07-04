@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.2.0] - 2024-07-04
+### Added
+- Added filter and sort options for mapping data source endpoint
+- Ability to filter index by name
+
+### Removed
+- Removed unnecessary models of InvoiceData fields
+
 ## [7.1.0] - 2024-04-10
 ### Changed
 - Reduce maximum limit from 300 to 100 and remove default value

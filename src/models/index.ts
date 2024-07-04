@@ -365,6 +365,8 @@ export interface Field {
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
+  /** If true, the hoverable enum value detail icon will be hidden. */
+  hideEnumDetail?: boolean;
   /** If True, any dropdown annotations that fail to parse to a value will be discarded */
   dropNull?: boolean;
   enabledChildFields?: Field[];
@@ -574,6 +576,8 @@ export interface MappingDataSource {
 
 export interface CollectionField {
   label?: string;
+  /** The different data types of annotations */
+  fieldType?: AnnotationContentType;
   mandatory?: boolean;
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
@@ -653,6 +657,8 @@ export interface DocumentMeta {
   errorDetail?: string;
   /** URL to view the file. */
   file?: string;
+  /** URL to view the file converted to HTML. */
+  html?: string;
   tags?: Tag[];
   createdBy?: User;
   /** If the document is created via email ingestion, this field stores the email file's URL. */
@@ -1302,8 +1308,8 @@ export interface ValidationResult {
   id: number;
   /** List of annotation ids that were validated */
   annotations: number[];
-  /** Whether the validation passed or not */
-  passed: boolean;
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed: boolean | null;
   /** The hot-dog case slug of the validation rule that was applied */
   ruleSlug: string;
   /** Message explaining why the validation failed */
@@ -1315,7 +1321,7 @@ export interface ValidationResult {
 export interface ValidationResultCreate {
   /** List of annotation ids that were validated */
   annotations: number[];
-  /** Whether the validation passed or not */
+  /** Whether the validation passed or not, null if the validation was not applicable */
   passed?: boolean;
   /** The hot-dog case slug of the validation rule that was applied */
   ruleSlug: string;
@@ -1328,7 +1334,7 @@ export interface ValidationResultCreate {
 export interface ValidationResultUpdate {
   /** List of annotation ids that were validated */
   annotations?: number[];
-  /** Whether the validation passed or not */
+  /** Whether the validation passed or not, null if the validation was not applicable */
   passed?: boolean;
   /** The hot-dog case slug of the validation rule that was applied */
   ruleSlug?: string;
@@ -1336,6 +1342,11 @@ export interface ValidationResultUpdate {
   message?: string;
   /** Unique identifier for the document */
   document?: string;
+}
+
+export interface BatchDeleteValidationResultsRequest {
+  /** List of validation result IDs to delete. */
+  ids: number[];
 }
 
 export interface ExtractorCreate {
@@ -1590,6 +1601,8 @@ export interface MappingCreate {
   scoreCutoff?: number;
   /** The organization that this mapping belongs to. */
   organization?: string;
+  /** The field to order the results by. Leave blank for ordering by relevance. */
+  orderBy?: string;
 }
 
 /** A mapping allows you to specify specific settings regarding a lookup against a MappingDataSource should be applied. */
@@ -1605,6 +1618,8 @@ export interface Mapping {
   dataSource: string | null;
   /** Higher values will result in more strict matching. */
   scoreCutoff?: number;
+  /** The field to order the results by. Leave blank for ordering by relevance. */
+  orderBy?: string;
 }
 
 export interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -1614,6 +1629,8 @@ export interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchem
 export interface MappingUpdate {
   /** Higher values will result in more strict matching. */
   scoreCutoff?: number;
+  /** The field to order the results by. Leave blank for ordering by relevance. */
+  orderBy?: string;
 }
 
 export interface TagCreate {
@@ -2484,38 +2501,38 @@ export interface InvoiceData {
   invoiceDate?: DateAnnotation;
   invoiceOrderDate?: DateAnnotation;
   paymentDateDue?: DateAnnotation;
-  paymentAmountBase?: InvoiceDataPaymentAmountBase;
-  paymentAmountTax?: InvoiceDataPaymentAmountTax;
-  paymentAmountTotal?: InvoiceDataPaymentAmountTotal;
-  paymentAmountPaid?: InvoiceDataPaymentAmountPaid;
-  paymentAmountDue?: InvoiceDataPaymentAmountDue;
-  invoiceNumber?: InvoiceDataInvoiceNumber;
-  invoicePurchaseOrderNumber?: InvoiceDataInvoicePurchaseOrderNumber;
-  supplierBusinessNumber?: InvoiceDataSupplierBusinessNumber;
-  customerNumber?: InvoiceDataCustomerNumber;
-  customerBusinessNumber?: InvoiceDataCustomerBusinessNumber;
-  paymentReference?: InvoiceDataPaymentReference;
-  bankAccountNumber?: InvoiceDataBankAccountNumber;
-  supplierVat?: InvoiceDataSupplierVat;
-  customerVat?: InvoiceDataCustomerVat;
-  bpayBillerCode?: InvoiceDataBpayBillerCode;
-  bpayReference?: InvoiceDataBpayReference;
-  bankSortCode?: InvoiceDataBankSortCode;
-  bankIban?: InvoiceDataBankIban;
-  bankSwift?: InvoiceDataBankSwift;
-  bankBsb?: InvoiceDataBankBsb;
-  customerContactName?: InvoiceDataCustomerContactName;
-  customerCompanyName?: InvoiceDataCustomerCompanyName;
-  supplierCompanyName?: InvoiceDataSupplierCompanyName;
+  paymentAmountBase?: TextAnnotation;
+  paymentAmountTax?: TextAnnotation;
+  paymentAmountTotal?: TextAnnotation;
+  paymentAmountPaid?: TextAnnotation;
+  paymentAmountDue?: TextAnnotation;
+  invoiceNumber?: TextAnnotation;
+  invoicePurchaseOrderNumber?: TextAnnotation;
+  supplierBusinessNumber?: TextAnnotation;
+  customerNumber?: TextAnnotation;
+  customerBusinessNumber?: TextAnnotation;
+  paymentReference?: TextAnnotation;
+  bankAccountNumber?: TextAnnotation;
+  supplierVat?: TextAnnotation;
+  customerVat?: TextAnnotation;
+  bpayBillerCode?: TextAnnotation;
+  bpayReference?: TextAnnotation;
+  bankSortCode?: TextAnnotation;
+  bankIban?: TextAnnotation;
+  bankSwift?: TextAnnotation;
+  bankBsb?: TextAnnotation;
+  customerContactName?: TextAnnotation;
+  customerCompanyName?: TextAnnotation;
+  supplierCompanyName?: TextAnnotation;
   customerBillingAddress?: LocationAnnotation;
   customerDeliveryAddress?: LocationAnnotation;
   supplierAddress?: LocationAnnotation;
-  customerPhoneNumber?: InvoiceDataCustomerPhoneNumber;
-  supplierPhoneNumber?: InvoiceDataSupplierPhoneNumber;
-  supplierFax?: InvoiceDataSupplierFax;
-  customerEmail?: InvoiceDataCustomerEmail;
-  supplierEmail?: InvoiceDataSupplierEmail;
-  supplierWebsite?: InvoiceDataSupplierWebsite;
+  customerPhoneNumber?: TextAnnotation;
+  supplierPhoneNumber?: TextAnnotation;
+  supplierFax?: TextAnnotation;
+  customerEmail?: TextAnnotation;
+  supplierEmail?: TextAnnotation;
+  supplierWebsite?: TextAnnotation;
   currencyCode?: CurrencyCodeAnnotation;
   /** Dictionary of <any> */
   customFields?: { [propertyName: string]: any };
@@ -2559,151 +2576,6 @@ export interface RowBetaAnnotationParsed {
   itemTaxTotalBeta?: FloatAnnotation;
   itemTotalBeta?: FloatAnnotation;
   itemOtherBeta?: TextAnnotation;
-}
-
-export interface Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {
-  raw: string | null;
-  parsed?: string;
-}
-
-export interface Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {
-  raw: string | null;
-  parsed?: string;
 }
 
 export interface ResumeRedactData {
@@ -3019,122 +2891,6 @@ export interface ResumeSearchDetailSkillsValueItem
 export interface ResumeSearchDetailLanguagesValueItem
   extends ResumeSkill,
     Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {}
-
-export interface InvoiceDataPaymentAmountBase
-  extends TextAnnotation,
-    Components1W3SqeuSchemasInvoicedataPropertiesPaymentamountbaseAllof1 {}
-
-export interface InvoiceDataPaymentAmountTax
-  extends TextAnnotation,
-    Components6Zm20BSchemasInvoicedataPropertiesPaymentamounttaxAllof1 {}
-
-export interface InvoiceDataPaymentAmountTotal
-  extends TextAnnotation,
-    Components4A2PzvSchemasInvoicedataPropertiesPaymentamounttotalAllof1 {}
-
-export interface InvoiceDataPaymentAmountPaid
-  extends TextAnnotation,
-    Components1Vvtu5NSchemasInvoicedataPropertiesPaymentamountpaidAllof1 {}
-
-export interface InvoiceDataPaymentAmountDue
-  extends TextAnnotation,
-    ComponentsEtsq6MSchemasInvoicedataPropertiesPaymentamountdueAllof1 {}
-
-export interface InvoiceDataInvoiceNumber
-  extends TextAnnotation,
-    Components5Rnu7ESchemasInvoicedataPropertiesInvoicenumberAllof1 {}
-
-export interface InvoiceDataInvoicePurchaseOrderNumber
-  extends TextAnnotation,
-    ComponentsAq75Z8SchemasInvoicedataPropertiesInvoicepurchaseordernumberAllof1 {}
-
-export interface InvoiceDataSupplierBusinessNumber
-  extends TextAnnotation,
-    Components5D6NjySchemasInvoicedataPropertiesSupplierbusinessnumberAllof1 {}
-
-export interface InvoiceDataCustomerNumber
-  extends TextAnnotation,
-    Components105Abr3SchemasInvoicedataPropertiesCustomernumberAllof1 {}
-
-export interface InvoiceDataCustomerBusinessNumber
-  extends TextAnnotation,
-    Components158Lya5SchemasInvoicedataPropertiesCustomerbusinessnumberAllof1 {}
-
-export interface InvoiceDataPaymentReference
-  extends TextAnnotation,
-    Components2XnshtSchemasInvoicedataPropertiesPaymentreferenceAllof1 {}
-
-export interface InvoiceDataBankAccountNumber
-  extends TextAnnotation,
-    Components74A7C1SchemasInvoicedataPropertiesBankaccountnumberAllof1 {}
-
-export interface InvoiceDataSupplierVat
-  extends TextAnnotation,
-    ComponentsB3U7OaSchemasInvoicedataPropertiesSuppliervatAllof1 {}
-
-export interface InvoiceDataCustomerVat
-  extends TextAnnotation,
-    ComponentsBeazccSchemasInvoicedataPropertiesCustomervatAllof1 {}
-
-export interface InvoiceDataBpayBillerCode
-  extends TextAnnotation,
-    ComponentsA69Bd0SchemasInvoicedataPropertiesBpaybillercodeAllof1 {}
-
-export interface InvoiceDataBpayReference
-  extends TextAnnotation,
-    ComponentsW32SuaSchemasInvoicedataPropertiesBpayreferenceAllof1 {}
-
-export interface InvoiceDataBankSortCode
-  extends TextAnnotation,
-    Components1QdassaSchemasInvoicedataPropertiesBanksortcodeAllof1 {}
-
-export interface InvoiceDataBankIban
-  extends TextAnnotation,
-    Components1127QwqSchemasInvoicedataPropertiesBankibanAllof1 {}
-
-export interface InvoiceDataBankSwift
-  extends TextAnnotation,
-    Components1Roa72HSchemasInvoicedataPropertiesBankswiftAllof1 {}
-
-export interface InvoiceDataBankBsb
-  extends TextAnnotation,
-    Components1RrxgkvSchemasInvoicedataPropertiesBankbsbAllof1 {}
-
-export interface InvoiceDataCustomerContactName
-  extends TextAnnotation,
-    ComponentsWv2QrxSchemasInvoicedataPropertiesCustomercontactnameAllof1 {}
-
-export interface InvoiceDataCustomerCompanyName
-  extends TextAnnotation,
-    Components1O8OpknSchemasInvoicedataPropertiesCustomercompanynameAllof1 {}
-
-export interface InvoiceDataSupplierCompanyName
-  extends TextAnnotation,
-    Components1P4Fl61SchemasInvoicedataPropertiesSuppliercompanynameAllof1 {}
-
-export interface InvoiceDataCustomerPhoneNumber
-  extends TextAnnotation,
-    Components1YsiqwnSchemasInvoicedataPropertiesCustomerphonenumberAllof1 {}
-
-export interface InvoiceDataSupplierPhoneNumber
-  extends TextAnnotation,
-    Components1Hr2XldSchemasInvoicedataPropertiesSupplierphonenumberAllof1 {}
-
-export interface InvoiceDataSupplierFax
-  extends TextAnnotation,
-    Components1Fe3VqtSchemasInvoicedataPropertiesSupplierfaxAllof1 {}
-
-export interface InvoiceDataCustomerEmail
-  extends TextAnnotation,
-    Components1Y7HcurSchemasInvoicedataPropertiesCustomeremailAllof1 {}
-
-export interface InvoiceDataSupplierEmail
-  extends TextAnnotation,
-    Components10Thcs2SchemasInvoicedataPropertiesSupplieremailAllof1 {}
-
-export interface InvoiceDataSupplierWebsite
-  extends TextAnnotation,
-    Components17JmwpjSchemasInvoicedataPropertiesSupplierwebsiteAllof1 {}
 
 /** Known values of {@link Region} that the service accepts. */
 export enum KnownRegion {
@@ -4719,6 +4475,17 @@ export interface DeleteValidationResultOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
+export interface BatchCreateValidationResultsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchCreateValidationResults operation. */
+export type BatchCreateValidationResultsResponse = ValidationResult[];
+
+/** Optional parameters. */
+export interface BatchDeleteValidationResultsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
 export interface GetAllExtractorsOptionalParams
   extends coreClient.OperationOptions {
   /** Filter by name. */
@@ -4932,10 +4699,16 @@ export type CreateMappingDataSourceResponse = MappingDataSource;
 /** Optional parameters. */
 export interface ListMappingDataSourcesOptionalParams
   extends coreClient.OperationOptions {
+  /** Filter by name. */
+  name?: string;
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter by organization. */
+  organization?: string;
+  /** Filter by identifier. */
+  identifier?: string;
 }
 
 /** Contains response data for the listMappingDataSources operation. */
@@ -5345,6 +5118,8 @@ export type CreateJobDescriptionSearchEmbedUrlResponse =
 /** Optional parameters. */
 export interface GetAllIndexesOptionalParams
   extends coreClient.OperationOptions {
+  /** Filter indices by name */
+  name?: string;
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
@@ -5398,6 +5173,10 @@ export type CreateIndexDocumentResponse =
 
 /** Optional parameters. */
 export interface DeleteIndexDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface ReIndexDocumentOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */

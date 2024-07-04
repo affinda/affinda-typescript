@@ -15,9 +15,12 @@ Optional parameters.
 ### Properties
 
 - [abortSignal](ListMappingDataSourcesOptionalParams.md#abortsignal)
+- [identifier](ListMappingDataSourcesOptionalParams.md#identifier)
 - [limit](ListMappingDataSourcesOptionalParams.md#limit)
+- [name](ListMappingDataSourcesOptionalParams.md#name)
 - [offset](ListMappingDataSourcesOptionalParams.md#offset)
 - [onResponse](ListMappingDataSourcesOptionalParams.md#onresponse)
+- [organization](ListMappingDataSourcesOptionalParams.md#organization)
 - [requestOptions](ListMappingDataSourcesOptionalParams.md#requestoptions)
 - [serializerOptions](ListMappingDataSourcesOptionalParams.md#serializeroptions)
 - [tracingOptions](ListMappingDataSourcesOptionalParams.md#tracingoptions)
@@ -36,11 +39,27 @@ coreClient.OperationOptions.abortSignal
 
 ___
 
+### identifier
+
+• `Optional` **identifier**: `string`
+
+Filter by identifier.
+
+___
+
 ### limit
 
 • `Optional` **limit**: `number`
 
 The numbers of results to return.
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+Filter by name.
 
 ___
 
@@ -63,6 +82,14 @@ May be called multiple times.
 #### Inherited from
 
 coreClient.OperationOptions.onResponse
+
+___
+
+### organization
+
+• `Optional` **organization**: `string`
+
+Filter by organization.
 
 ___
 

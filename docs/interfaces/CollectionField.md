@@ -10,6 +10,7 @@
 - [dataSource](CollectionField.md#datasource)
 - [displayEnumValue](CollectionField.md#displayenumvalue)
 - [displayRawText](CollectionField.md#displayrawtext)
+- [fieldType](CollectionField.md#fieldtype)
 - [label](CollectionField.md#label)
 - [mandatory](CollectionField.md#mandatory)
 - [mapping](CollectionField.md#mapping)
@@ -44,6 +45,14 @@ ___
 • `Optional` **displayRawText**: `string`
 
 Defines how the data point is mapped to the data source
+
+___
+
+### fieldType
+
+• `Optional` **fieldType**: `string`
+
+The different data types of annotations
 
 ___
 

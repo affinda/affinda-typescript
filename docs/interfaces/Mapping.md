@@ -10,6 +10,7 @@ A mapping allows you to specify specific settings regarding a lookup against a M
 
 - [dataSource](Mapping.md#datasource)
 - [identifier](Mapping.md#identifier)
+- [orderBy](Mapping.md#orderby)
 - [organization](Mapping.md#organization)
 - [scoreCutoff](Mapping.md#scorecutoff)
 
@@ -29,6 +30,14 @@ ___
 
 Uniquely identify a mapping.
 NOTE: This property will not be serialized. It can only be populated by the server.
+
+___
+
+### orderBy
+
+• `Optional` **orderBy**: `string`
+
+The field to order the results by. Leave blank for ordering by relevance.
 
 ___
 

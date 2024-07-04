@@ -42,7 +42,7 @@ ___
 
 • `Optional` **passed**: `boolean`
 
-Whether the validation passed or not
+Whether the validation passed or not, null if the validation was not applicable
 
 ___
 

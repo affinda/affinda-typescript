@@ -1,6 +1,6 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllIndexesOptionalParams
+[@affinda/affinda](../README.md) / [Exports](../modules.md) / ReIndexDocumentOptionalParams
 
-# Interface: GetAllIndexesOptionalParams
+# Interface: ReIndexDocumentOptionalParams
 
 Optional parameters.
 
@@ -8,21 +8,17 @@ Optional parameters.
 
 - `OperationOptions`
 
-  ↳ **`GetAllIndexesOptionalParams`**
+  ↳ **`ReIndexDocumentOptionalParams`**
 
 ## Table of contents
 
 ### Properties
 
-- [abortSignal](GetAllIndexesOptionalParams.md#abortsignal)
-- [documentType](GetAllIndexesOptionalParams.md#documenttype)
-- [limit](GetAllIndexesOptionalParams.md#limit)
-- [name](GetAllIndexesOptionalParams.md#name)
-- [offset](GetAllIndexesOptionalParams.md#offset)
-- [onResponse](GetAllIndexesOptionalParams.md#onresponse)
-- [requestOptions](GetAllIndexesOptionalParams.md#requestoptions)
-- [serializerOptions](GetAllIndexesOptionalParams.md#serializeroptions)
-- [tracingOptions](GetAllIndexesOptionalParams.md#tracingoptions)
+- [abortSignal](ReIndexDocumentOptionalParams.md#abortsignal)
+- [onResponse](ReIndexDocumentOptionalParams.md#onresponse)
+- [requestOptions](ReIndexDocumentOptionalParams.md#requestoptions)
+- [serializerOptions](ReIndexDocumentOptionalParams.md#serializeroptions)
+- [tracingOptions](ReIndexDocumentOptionalParams.md#tracingoptions)
 
 ## Properties
 
@@ -35,38 +31,6 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 coreClient.OperationOptions.abortSignal
-
-___
-
-### documentType
-
-• `Optional` **documentType**: `string`
-
-Filter indices by a document type
-
-___
-
-### limit
-
-• `Optional` **limit**: `number`
-
-The numbers of results to return.
-
-___
-
-### name
-
-• `Optional` **name**: `string`
-
-Filter indices by name
-
-___
-
-### offset
-
-• `Optional` **offset**: `number`
-
-The number of documents to skip before starting to collect the result set.
 
 ___
 

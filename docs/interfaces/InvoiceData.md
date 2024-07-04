@@ -51,43 +51,43 @@
 
 ### bankAccountNumber
 
-• `Optional` **bankAccountNumber**: [`InvoiceDataBankAccountNumber`](InvoiceDataBankAccountNumber.md)
+• `Optional` **bankAccountNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### bankBsb
 
-• `Optional` **bankBsb**: [`InvoiceDataBankBsb`](InvoiceDataBankBsb.md)
+• `Optional` **bankBsb**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### bankIban
 
-• `Optional` **bankIban**: [`InvoiceDataBankIban`](InvoiceDataBankIban.md)
+• `Optional` **bankIban**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### bankSortCode
 
-• `Optional` **bankSortCode**: [`InvoiceDataBankSortCode`](InvoiceDataBankSortCode.md)
+• `Optional` **bankSortCode**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### bankSwift
 
-• `Optional` **bankSwift**: [`InvoiceDataBankSwift`](InvoiceDataBankSwift.md)
+• `Optional` **bankSwift**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### bpayBillerCode
 
-• `Optional` **bpayBillerCode**: [`InvoiceDataBpayBillerCode`](InvoiceDataBpayBillerCode.md)
+• `Optional` **bpayBillerCode**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### bpayReference
 
-• `Optional` **bpayReference**: [`InvoiceDataBpayReference`](InvoiceDataBpayReference.md)
+• `Optional` **bpayReference**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -117,19 +117,19 @@ ___
 
 ### customerBusinessNumber
 
-• `Optional` **customerBusinessNumber**: [`InvoiceDataCustomerBusinessNumber`](InvoiceDataCustomerBusinessNumber.md)
+• `Optional` **customerBusinessNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### customerCompanyName
 
-• `Optional` **customerCompanyName**: [`InvoiceDataCustomerCompanyName`](InvoiceDataCustomerCompanyName.md)
+• `Optional` **customerCompanyName**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### customerContactName
 
-• `Optional` **customerContactName**: [`InvoiceDataCustomerContactName`](InvoiceDataCustomerContactName.md)
+• `Optional` **customerContactName**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -141,25 +141,25 @@ ___
 
 ### customerEmail
 
-• `Optional` **customerEmail**: [`InvoiceDataCustomerEmail`](InvoiceDataCustomerEmail.md)
+• `Optional` **customerEmail**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### customerNumber
 
-• `Optional` **customerNumber**: [`InvoiceDataCustomerNumber`](InvoiceDataCustomerNumber.md)
+• `Optional` **customerNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### customerPhoneNumber
 
-• `Optional` **customerPhoneNumber**: [`InvoiceDataCustomerPhoneNumber`](InvoiceDataCustomerPhoneNumber.md)
+• `Optional` **customerPhoneNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### customerVat
 
-• `Optional` **customerVat**: [`InvoiceDataCustomerVat`](InvoiceDataCustomerVat.md)
+• `Optional` **customerVat**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 ### invoiceNumber
 
-• `Optional` **invoiceNumber**: [`InvoiceDataInvoiceNumber`](InvoiceDataInvoiceNumber.md)
+• `Optional` **invoiceNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -183,37 +183,37 @@ ___
 
 ### invoicePurchaseOrderNumber
 
-• `Optional` **invoicePurchaseOrderNumber**: [`InvoiceDataInvoicePurchaseOrderNumber`](InvoiceDataInvoicePurchaseOrderNumber.md)
+• `Optional` **invoicePurchaseOrderNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### paymentAmountBase
 
-• `Optional` **paymentAmountBase**: [`InvoiceDataPaymentAmountBase`](InvoiceDataPaymentAmountBase.md)
+• `Optional` **paymentAmountBase**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### paymentAmountDue
 
-• `Optional` **paymentAmountDue**: [`InvoiceDataPaymentAmountDue`](InvoiceDataPaymentAmountDue.md)
+• `Optional` **paymentAmountDue**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### paymentAmountPaid
 
-• `Optional` **paymentAmountPaid**: [`InvoiceDataPaymentAmountPaid`](InvoiceDataPaymentAmountPaid.md)
+• `Optional` **paymentAmountPaid**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### paymentAmountTax
 
-• `Optional` **paymentAmountTax**: [`InvoiceDataPaymentAmountTax`](InvoiceDataPaymentAmountTax.md)
+• `Optional` **paymentAmountTax**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### paymentAmountTotal
 
-• `Optional` **paymentAmountTotal**: [`InvoiceDataPaymentAmountTotal`](InvoiceDataPaymentAmountTotal.md)
+• `Optional` **paymentAmountTotal**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -225,7 +225,7 @@ ___
 
 ### paymentReference
 
-• `Optional` **paymentReference**: [`InvoiceDataPaymentReference`](InvoiceDataPaymentReference.md)
+• `Optional` **paymentReference**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
@@ -245,43 +245,43 @@ ___
 
 ### supplierBusinessNumber
 
-• `Optional` **supplierBusinessNumber**: [`InvoiceDataSupplierBusinessNumber`](InvoiceDataSupplierBusinessNumber.md)
+• `Optional` **supplierBusinessNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### supplierCompanyName
 
-• `Optional` **supplierCompanyName**: [`InvoiceDataSupplierCompanyName`](InvoiceDataSupplierCompanyName.md)
+• `Optional` **supplierCompanyName**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### supplierEmail
 
-• `Optional` **supplierEmail**: [`InvoiceDataSupplierEmail`](InvoiceDataSupplierEmail.md)
+• `Optional` **supplierEmail**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### supplierFax
 
-• `Optional` **supplierFax**: [`InvoiceDataSupplierFax`](InvoiceDataSupplierFax.md)
+• `Optional` **supplierFax**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### supplierPhoneNumber
 
-• `Optional` **supplierPhoneNumber**: [`InvoiceDataSupplierPhoneNumber`](InvoiceDataSupplierPhoneNumber.md)
+• `Optional` **supplierPhoneNumber**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### supplierVat
 
-• `Optional` **supplierVat**: [`InvoiceDataSupplierVat`](InvoiceDataSupplierVat.md)
+• `Optional` **supplierVat**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 
 ### supplierWebsite
 
-• `Optional` **supplierWebsite**: [`InvoiceDataSupplierWebsite`](InvoiceDataSupplierWebsite.md)
+• `Optional` **supplierWebsite**: [`TextAnnotation`](TextAnnotation.md)
 
 ___
 

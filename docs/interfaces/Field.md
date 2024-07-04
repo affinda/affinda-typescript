@@ -20,6 +20,7 @@
 - [enabledChildFields](Field.md#enabledchildfields)
 - [fieldType](Field.md#fieldtype)
 - [fields](Field.md#fields)
+- [hideEnumDetail](Field.md#hideenumdetail)
 - [label](Field.md#label)
 - [mandatory](Field.md#mandatory)
 - [mapping](Field.md#mapping)
@@ -97,6 +98,14 @@ ___
 ### fields
 
 • `Optional` **fields**: `Record`\<`string`, `unknown`\>[]
+
+___
+
+### hideEnumDetail
+
+• `Optional` **hideEnumDetail**: `boolean`
+
+If true, the hoverable enum value detail icon will be hidden.
 
 ___
 

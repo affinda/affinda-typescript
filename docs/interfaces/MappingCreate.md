@@ -7,6 +7,7 @@
 ### Properties
 
 - [dataSource](MappingCreate.md#datasource)
+- [orderBy](MappingCreate.md#orderby)
 - [organization](MappingCreate.md#organization)
 - [scoreCutoff](MappingCreate.md#scorecutoff)
 
@@ -17,6 +18,14 @@
 • **dataSource**: ``null`` \| `string`
 
 The mapping data source this mapping applies to.
+
+___
+
+### orderBy
+
+• `Optional` **orderBy**: `string`
+
+The field to order the results by. Leave blank for ordering by relevance.
 
 ___
 

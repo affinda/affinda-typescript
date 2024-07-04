@@ -8,64 +8,6 @@
 
   ↳ **`TextAnnotation`**
 
-  ↳↳ [`InvoiceDataPaymentAmountBase`](InvoiceDataPaymentAmountBase.md)
-
-  ↳↳ [`InvoiceDataPaymentAmountTax`](InvoiceDataPaymentAmountTax.md)
-
-  ↳↳ [`InvoiceDataPaymentAmountTotal`](InvoiceDataPaymentAmountTotal.md)
-
-  ↳↳ [`InvoiceDataPaymentAmountPaid`](InvoiceDataPaymentAmountPaid.md)
-
-  ↳↳ [`InvoiceDataPaymentAmountDue`](InvoiceDataPaymentAmountDue.md)
-
-  ↳↳ [`InvoiceDataInvoiceNumber`](InvoiceDataInvoiceNumber.md)
-
-  ↳↳ [`InvoiceDataInvoicePurchaseOrderNumber`](InvoiceDataInvoicePurchaseOrderNumber.md)
-
-  ↳↳ [`InvoiceDataSupplierBusinessNumber`](InvoiceDataSupplierBusinessNumber.md)
-
-  ↳↳ [`InvoiceDataCustomerNumber`](InvoiceDataCustomerNumber.md)
-
-  ↳↳ [`InvoiceDataCustomerBusinessNumber`](InvoiceDataCustomerBusinessNumber.md)
-
-  ↳↳ [`InvoiceDataPaymentReference`](InvoiceDataPaymentReference.md)
-
-  ↳↳ [`InvoiceDataBankAccountNumber`](InvoiceDataBankAccountNumber.md)
-
-  ↳↳ [`InvoiceDataSupplierVat`](InvoiceDataSupplierVat.md)
-
-  ↳↳ [`InvoiceDataCustomerVat`](InvoiceDataCustomerVat.md)
-
-  ↳↳ [`InvoiceDataBpayBillerCode`](InvoiceDataBpayBillerCode.md)
-
-  ↳↳ [`InvoiceDataBpayReference`](InvoiceDataBpayReference.md)
-
-  ↳↳ [`InvoiceDataBankSortCode`](InvoiceDataBankSortCode.md)
-
-  ↳↳ [`InvoiceDataBankIban`](InvoiceDataBankIban.md)
-
-  ↳↳ [`InvoiceDataBankSwift`](InvoiceDataBankSwift.md)
-
-  ↳↳ [`InvoiceDataBankBsb`](InvoiceDataBankBsb.md)
-
-  ↳↳ [`InvoiceDataCustomerContactName`](InvoiceDataCustomerContactName.md)
-
-  ↳↳ [`InvoiceDataCustomerCompanyName`](InvoiceDataCustomerCompanyName.md)
-
-  ↳↳ [`InvoiceDataSupplierCompanyName`](InvoiceDataSupplierCompanyName.md)
-
-  ↳↳ [`InvoiceDataCustomerPhoneNumber`](InvoiceDataCustomerPhoneNumber.md)
-
-  ↳↳ [`InvoiceDataSupplierPhoneNumber`](InvoiceDataSupplierPhoneNumber.md)
-
-  ↳↳ [`InvoiceDataSupplierFax`](InvoiceDataSupplierFax.md)
-
-  ↳↳ [`InvoiceDataCustomerEmail`](InvoiceDataCustomerEmail.md)
-
-  ↳↳ [`InvoiceDataSupplierEmail`](InvoiceDataSupplierEmail.md)
-
-  ↳↳ [`InvoiceDataSupplierWebsite`](InvoiceDataSupplierWebsite.md)
-
 ## Table of contents
 
 ### Properties
