@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.3.0] - 2024-07-08
+### Added
+- Ability to set workspace for MappingDataSource
+
 ## [7.2.0] - 2024-07-04
 ### Added
 - Added filter and sort options for mapping data source endpoint

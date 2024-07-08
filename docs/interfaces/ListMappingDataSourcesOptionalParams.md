@@ -24,6 +24,7 @@ Optional parameters.
 - [requestOptions](ListMappingDataSourcesOptionalParams.md#requestoptions)
 - [serializerOptions](ListMappingDataSourcesOptionalParams.md#serializeroptions)
 - [tracingOptions](ListMappingDataSourcesOptionalParams.md#tracingoptions)
+- [workspace](ListMappingDataSourcesOptionalParams.md#workspace)
 
 ## Properties
 
@@ -126,3 +127,11 @@ Options used when tracing is enabled.
 #### Inherited from
 
 coreClient.OperationOptions.tracingOptions
+
+___
+
+### workspace
+
+• `Optional` **workspace**: `string`
+
+Filter by workspace.

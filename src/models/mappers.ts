@@ -2466,6 +2466,14 @@ export const MappingDataSource: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      workspace: {
+        serializedName: "workspace",
+        required: true,
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
       schema: {
         serializedName: "schema",
         type: {
@@ -6851,7 +6859,14 @@ export const MappingDataSourceCreate: coreClient.CompositeMapper = {
       },
       organization: {
         serializedName: "organization",
-        required: true,
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+      workspace: {
+        serializedName: "workspace",
+        nullable: true,
         type: {
           name: "String",
         },

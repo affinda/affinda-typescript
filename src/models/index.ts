@@ -570,6 +570,8 @@ export interface MappingDataSource {
   displayProperty: string;
   /** The organization that this mapping data source belongs to. */
   organization: string | null;
+  /** The workspace that this mapping data source belongs to. */
+  workspace: string | null;
   /** The schema of the mapping data source. */
   schema?: Record<string, unknown>;
 }
@@ -1576,7 +1578,9 @@ export interface BatchDeleteAnnotationsResponse {
 export interface MappingDataSourceCreate {
   name?: string;
   /** The organization that this mapping data source belongs to. */
-  organization: string;
+  organization?: string;
+  /** The workspace that this mapping data source belongs to. */
+  workspace?: string;
   /** Attribute in the schema which uniquely identifiers the value */
   keyProperty?: string;
   /** Attribute in the schema which is used to display the value */
@@ -4705,6 +4709,8 @@ export interface ListMappingDataSourcesOptionalParams
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter by workspace. */
+  workspace?: string;
   /** Filter by organization. */
   organization?: string;
   /** Filter by identifier. */

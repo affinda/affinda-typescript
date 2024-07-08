@@ -14,6 +14,7 @@ A mapping data source is used to map from raw data found by our AI models to rec
 - [name](MappingDataSource.md#name)
 - [organization](MappingDataSource.md#organization)
 - [schema](MappingDataSource.md#schema)
+- [workspace](MappingDataSource.md#workspace)
 
 ## Properties
 
@@ -61,3 +62,11 @@ ___
 • `Optional` **schema**: `Record`\<`string`, `unknown`\>
 
 The schema of the mapping data source.
+
+___
+
+### workspace
+
+• **workspace**: ``null`` \| `string`
+
+The workspace that this mapping data source belongs to.
