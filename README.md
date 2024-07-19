@@ -99,7 +99,7 @@ is [available here](./docs/modules.md)
 
 ## Samples
 
-Samples are available for [NodeJS](./docs/samples_nodejs.md) amd also for [javascript](./docs/samples_javascript.md)
+Samples are available for [NodeJS](./docs/samples_nodejs.md) and also for [javascript](./docs/samples_javascript.md)
 intended for use in a browser.
 
 ## Troubleshooting
