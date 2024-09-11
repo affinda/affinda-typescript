@@ -1037,7 +1037,15 @@ export const Collection: coreClient.CompositeMapper = {
           name: "Number",
         },
       },
+      enableAutoValidationThreshold: {
+        defaultValue: false,
+        serializedName: "enableAutoValidationThreshold",
+        type: {
+          name: "Boolean",
+        },
+      },
       autoValidateIfValidationRulesPass: {
+        defaultValue: false,
         serializedName: "autoValidateIfValidationRulesPass",
         type: {
           name: "Boolean",
@@ -1578,6 +1586,13 @@ export const Field: coreClient.CompositeMapper = {
           name: "Number",
         },
       },
+      enableAutoValidationThreshold: {
+        serializedName: "enableAutoValidationThreshold",
+        nullable: true,
+        type: {
+          name: "Boolean",
+        },
+      },
       showDropdown: {
         serializedName: "showDropdown",
         type: {
@@ -1766,6 +1781,13 @@ export const CollectionCreate: coreClient.CompositeMapper = {
           name: "Number",
         },
       },
+      enableAutoValidationThreshold: {
+        defaultValue: false,
+        serializedName: "enableAutoValidationThreshold",
+        type: {
+          name: "Boolean",
+        },
+      },
       fields: {
         serializedName: "fields",
         nullable: true,
@@ -1846,6 +1868,13 @@ export const CollectionUpdate: coreClient.CompositeMapper = {
         serializedName: "autoValidationThreshold",
         type: {
           name: "Number",
+        },
+      },
+      enableAutoValidationThreshold: {
+        defaultValue: false,
+        serializedName: "enableAutoValidationThreshold",
+        type: {
+          name: "Boolean",
         },
       },
       fields: {
@@ -1987,6 +2016,13 @@ export const DataFieldCreateField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number",
+        },
+      },
+      enableAutoValidationThreshold: {
+        serializedName: "enableAutoValidationThreshold",
+        nullable: true,
+        type: {
+          name: "Boolean",
         },
       },
       dataSource: {
@@ -2159,6 +2195,13 @@ export const DataFieldField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number",
+        },
+      },
+      enableAutoValidationThreshold: {
+        serializedName: "enableAutoValidationThreshold",
+        nullable: true,
+        type: {
+          name: "Boolean",
         },
       },
       enabledChildFields: {
@@ -2529,6 +2572,13 @@ export const CollectionField: coreClient.CompositeMapper = {
         nullable: true,
         type: {
           name: "Number",
+        },
+      },
+      enableAutoValidationThreshold: {
+        serializedName: "enableAutoValidationThreshold",
+        nullable: true,
+        type: {
+          name: "Boolean",
         },
       },
       dataSource: {
@@ -2936,6 +2986,13 @@ export const DocumentMetaParentDocument: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
     },
   },
 };
@@ -2947,6 +3004,13 @@ export const DocumentMetaChildDocumentsItem: coreClient.CompositeMapper = {
     modelProperties: {
       identifier: {
         serializedName: "identifier",
+        type: {
+          name: "String",
+        },
+      },
+      customIdentifier: {
+        serializedName: "customIdentifier",
+        nullable: true,
         type: {
           name: "String",
         },
@@ -12170,25 +12234,25 @@ export const DocumentCreate: coreClient.CompositeMapper = {
       lowPriority: {
         serializedName: "lowPriority",
         type: {
-          name: "Boolean",
+          name: "String",
         },
       },
       compact: {
         serializedName: "compact",
         type: {
-          name: "Boolean",
+          name: "String",
         },
       },
       deleteAfterParse: {
         serializedName: "deleteAfterParse",
         type: {
-          name: "Boolean",
+          name: "String",
         },
       },
       enableValidationTool: {
         serializedName: "enableValidationTool",
         type: {
-          name: "Boolean",
+          name: "String",
         },
       },
     },

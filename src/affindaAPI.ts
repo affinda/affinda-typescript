@@ -307,7 +307,7 @@ export class AffindaAPI extends coreClient.ServiceClient {
       credential: credentials,
     };
 
-    const packageDetails = `azsdk-js-affinda/7.3.0`;
+    const packageDetails = `azsdk-js-affinda/7.3.1`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
@@ -4249,7 +4249,12 @@ const getAllTagsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  queryParameters: [Parameters.offset, Parameters.limit, Parameters.workspace],
+  queryParameters: [
+    Parameters.name,
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.workspace,
+  ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer,

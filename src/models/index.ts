@@ -252,6 +252,7 @@ export interface Collection {
   workspace?: CollectionWorkspace;
   extractor?: Extractor;
   autoValidationThreshold?: number;
+  enableAutoValidationThreshold?: boolean;
   autoValidateIfValidationRulesPass?: boolean;
   fields?: FieldGroup[];
   fieldsLayout?: FieldsLayout;
@@ -361,7 +362,10 @@ export interface Field {
   /** Defines how the data point is mapped to the data source */
   mapping?: string;
   mandatory?: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
   autoValidationThreshold?: number;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
@@ -402,6 +406,7 @@ export interface CollectionCreate {
   /** Not applicable, please leave empty. This feature is reserved for super user. */
   baseExtractor?: string;
   autoValidationThreshold?: number;
+  enableAutoValidationThreshold?: boolean;
   fields?: FieldGroup[];
   fieldsLayout?: FieldsLayout;
   dateFormatPreference?: DateFormatPreference;
@@ -420,6 +425,7 @@ export interface CollectionCreate {
 export interface CollectionUpdate {
   name?: string;
   autoValidationThreshold?: number;
+  enableAutoValidationThreshold?: boolean;
   fields?: FieldGroup[];
   fieldsLayout?: FieldsLayout;
   dateFormatPreference?: DateFormatPreference;
@@ -453,7 +459,10 @@ export interface DataFieldCreateField {
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
   autoValidationThreshold?: number;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
   /** Data source mapping identifier */
   dataSource?: string;
   /** Defines how the data point is mapped to the data source */
@@ -499,7 +508,10 @@ export interface DataFieldField {
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
   autoValidationThreshold: number | null;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
   enabledChildFields: Field[];
   disabledChildFields: Field[];
   /** Data source mapping identifier */
@@ -584,7 +596,10 @@ export interface CollectionField {
   showDropdown?: boolean;
   /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
   displayEnumValue?: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
   autoValidationThreshold?: number;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
   /** Data source mapping identifier */
   dataSource?: string;
   /** Defines how the data point is mapped to the data source */
@@ -674,11 +689,15 @@ export interface DocumentMeta {
 export interface DocumentMetaParentDocument {
   /** Unique identifier for the document */
   identifier?: string;
+  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+  customIdentifier?: string;
 }
 
 export interface DocumentMetaChildDocumentsItem {
   /** Unique identifier for the document */
   identifier?: string;
+  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+  customIdentifier?: string;
 }
 
 export interface PageMeta {
@@ -2646,13 +2665,13 @@ export interface DocumentCreate {
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
   /** Explicitly mark this document as low priority. */
-  lowPriority?: boolean;
+  lowPriority?: string;
   /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
-  compact?: boolean;
+  compact?: string;
   /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
-  deleteAfterParse?: boolean;
+  deleteAfterParse?: string;
   /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
-  enableValidationTool?: boolean;
+  enableValidationTool?: string;
 }
 
 export interface OrganizationCreate {
@@ -4385,13 +4404,13 @@ export interface CreateDocumentOptionalParams
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
   /** Explicitly mark this document as low priority. */
-  lowPriority?: boolean;
+  lowPriority?: string;
   /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
-  compact?: boolean;
+  compact?: string;
   /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
-  deleteAfterParse?: boolean;
+  deleteAfterParse?: string;
   /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
-  enableValidationTool?: boolean;
+  enableValidationTool?: string;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -4813,6 +4832,8 @@ export type UpdateMappingResponse = Mapping;
 
 /** Optional parameters. */
 export interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
+  /** Filter by name. */
+  name?: string;
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */

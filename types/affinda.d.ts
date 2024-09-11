@@ -1198,6 +1198,7 @@ export declare interface Collection {
     workspace?: CollectionWorkspace;
     extractor?: Extractor;
     autoValidationThreshold?: number;
+    enableAutoValidationThreshold?: boolean;
     autoValidateIfValidationRulesPass?: boolean;
     fields?: FieldGroup[];
     fieldsLayout?: FieldsLayout;
@@ -1232,6 +1233,7 @@ export declare interface CollectionCreate {
     /** Not applicable, please leave empty. This feature is reserved for super user. */
     baseExtractor?: string;
     autoValidationThreshold?: number;
+    enableAutoValidationThreshold?: boolean;
     fields?: FieldGroup[];
     fieldsLayout?: FieldsLayout;
     dateFormatPreference?: DateFormatPreference;
@@ -1266,7 +1268,10 @@ export declare interface CollectionField {
     showDropdown?: boolean;
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue?: boolean;
+    /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
     autoValidationThreshold?: number;
+    /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+    enableAutoValidationThreshold?: boolean;
     /** Data source mapping identifier */
     dataSource?: string;
     /** Defines how the data point is mapped to the data source */
@@ -1278,6 +1283,7 @@ export declare interface CollectionField {
 export declare interface CollectionUpdate {
     name?: string;
     autoValidationThreshold?: number;
+    enableAutoValidationThreshold?: boolean;
     fields?: FieldGroup[];
     fieldsLayout?: FieldsLayout;
     dateFormatPreference?: DateFormatPreference;
@@ -1423,13 +1429,13 @@ export declare interface CreateDocumentOptionalParams extends coreClient.Operati
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
-    lowPriority?: boolean;
+    lowPriority?: string;
     /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
-    compact?: boolean;
+    compact?: string;
     /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
-    deleteAfterParse?: boolean;
+    deleteAfterParse?: string;
     /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
-    enableValidationTool?: boolean;
+    enableValidationTool?: string;
 }
 
 /** Contains response data for the createDocument operation. */
@@ -1618,7 +1624,10 @@ export declare interface DataFieldCreateField {
     showDropdown?: boolean;
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue?: boolean;
+    /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
     autoValidationThreshold?: number;
+    /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+    enableAutoValidationThreshold?: boolean;
     /** Data source mapping identifier */
     dataSource?: string;
     /** Defines how the data point is mapped to the data source */
@@ -1657,7 +1666,10 @@ export declare interface DataFieldField {
     showDropdown?: boolean;
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue: boolean;
+    /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
     autoValidationThreshold: number | null;
+    /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+    enableAutoValidationThreshold?: boolean;
     enabledChildFields: Field[];
     disabledChildFields: Field[];
     /** Data source mapping identifier */
@@ -1973,13 +1985,13 @@ export declare interface DocumentCreate {
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
-    lowPriority?: boolean;
+    lowPriority?: string;
     /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
-    compact?: boolean;
+    compact?: string;
     /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
-    deleteAfterParse?: boolean;
+    deleteAfterParse?: string;
     /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
-    enableValidationTool?: boolean;
+    enableValidationTool?: string;
 }
 
 /** Create resume or job description directly from data. */
@@ -2064,6 +2076,8 @@ export declare interface DocumentMeta {
 export declare interface DocumentMetaChildDocumentsItem {
     /** Unique identifier for the document */
     identifier?: string;
+    /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+    customIdentifier?: string;
 }
 
 export declare interface DocumentMetaCollection {
@@ -2087,6 +2101,8 @@ export declare interface DocumentMetaCollectionExtractor {
 export declare interface DocumentMetaParentDocument {
     /** Unique identifier for the document */
     identifier?: string;
+    /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+    customIdentifier?: string;
 }
 
 export declare interface DocumentMetaWorkspace {
@@ -2303,7 +2319,10 @@ export declare interface Field {
     /** Defines how the data point is mapped to the data source */
     mapping?: string;
     mandatory?: boolean;
+    /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
     autoValidationThreshold?: number;
+    /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+    enableAutoValidationThreshold?: boolean;
     showDropdown?: boolean;
     /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
     displayEnumValue?: boolean;
@@ -2550,6 +2569,8 @@ export declare type GetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookS
 
 /** Optional parameters. */
 export declare interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
+    /** Filter by name. */
+    name?: string;
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
     /** The numbers of results to return. */

@@ -13,6 +13,7 @@ The field to be created.
 - [disabledChildFields](DataFieldField.md#disabledchildfields)
 - [displayEnumValue](DataFieldField.md#displayenumvalue)
 - [displayRawText](DataFieldField.md#displayrawtext)
+- [enableAutoValidationThreshold](DataFieldField.md#enableautovalidationthreshold)
 - [enabledChildFields](DataFieldField.md#enabledchildfields)
 - [fieldType](DataFieldField.md#fieldtype)
 - [label](DataFieldField.md#label)
@@ -25,6 +26,8 @@ The field to be created.
 ### autoValidationThreshold
 
 • **autoValidationThreshold**: ``null`` \| `number`
+
+Threshold for auto validation. If null, uses the collection's autoValidationThreshold.
 
 ___
 
@@ -55,6 +58,14 @@ ___
 • `Optional` **displayRawText**: `boolean`
 
 If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type.
+
+___
+
+### enableAutoValidationThreshold
+
+• `Optional` **enableAutoValidationThreshold**: `boolean`
+
+If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection
 
 ___
 

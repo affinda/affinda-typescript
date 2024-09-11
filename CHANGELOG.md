@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.3.1] - 2024-09-11
+### Added
+- Allow filter tags by name
+- Added enableValidationThreshold to collection and field objects
+
+### Fixed
+- Conflicting types for boolean flags
+
 ## [7.3.0] - 2024-07-08
 ### Added
 - Ability to set workspace for MappingDataSource

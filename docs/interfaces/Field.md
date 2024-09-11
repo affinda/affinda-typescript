@@ -17,6 +17,7 @@
 - [displayEnumValue](Field.md#displayenumvalue)
 - [displayRawText](Field.md#displayrawtext)
 - [dropNull](Field.md#dropnull)
+- [enableAutoValidationThreshold](Field.md#enableautovalidationthreshold)
 - [enabledChildFields](Field.md#enabledchildfields)
 - [fieldType](Field.md#fieldtype)
 - [fields](Field.md#fields)
@@ -32,6 +33,8 @@
 ### autoValidationThreshold
 
 • `Optional` **autoValidationThreshold**: `number`
+
+Threshold for auto validation. If null, uses the collection's autoValidationThreshold.
 
 ___
 
@@ -78,6 +81,14 @@ ___
 • `Optional` **dropNull**: `boolean`
 
 If True, any dropdown annotations that fail to parse to a value will be discarded
+
+___
+
+### enableAutoValidationThreshold
+
+• `Optional` **enableAutoValidationThreshold**: `boolean`
+
+If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection
 
 ___
 

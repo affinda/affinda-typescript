@@ -16,6 +16,7 @@ Optional parameters.
 
 - [abortSignal](GetAllTagsOptionalParams.md#abortsignal)
 - [limit](GetAllTagsOptionalParams.md#limit)
+- [name](GetAllTagsOptionalParams.md#name)
 - [offset](GetAllTagsOptionalParams.md#offset)
 - [onResponse](GetAllTagsOptionalParams.md#onresponse)
 - [requestOptions](GetAllTagsOptionalParams.md#requestoptions)
@@ -42,6 +43,14 @@ ___
 • `Optional` **limit**: `number`
 
 The numbers of results to return.
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+Filter by name.
 
 ___
 

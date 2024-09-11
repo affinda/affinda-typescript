@@ -566,7 +566,7 @@ export const lowPriority: OperationParameter = {
   mapper: {
     serializedName: "lowPriority",
     type: {
-      name: "Boolean",
+      name: "String",
     },
   },
 };
@@ -576,7 +576,7 @@ export const compact1: OperationParameter = {
   mapper: {
     serializedName: "compact",
     type: {
-      name: "Boolean",
+      name: "String",
     },
   },
 };
@@ -586,7 +586,7 @@ export const deleteAfterParse: OperationParameter = {
   mapper: {
     serializedName: "deleteAfterParse",
     type: {
-      name: "Boolean",
+      name: "String",
     },
   },
 };
@@ -596,7 +596,7 @@ export const enableValidationTool: OperationParameter = {
   mapper: {
     serializedName: "enableValidationTool",
     type: {
-      name: "Boolean",
+      name: "String",
     },
   },
 };

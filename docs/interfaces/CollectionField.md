@@ -10,6 +10,7 @@
 - [dataSource](CollectionField.md#datasource)
 - [displayEnumValue](CollectionField.md#displayenumvalue)
 - [displayRawText](CollectionField.md#displayrawtext)
+- [enableAutoValidationThreshold](CollectionField.md#enableautovalidationthreshold)
 - [fieldType](CollectionField.md#fieldtype)
 - [label](CollectionField.md#label)
 - [mandatory](CollectionField.md#mandatory)
@@ -21,6 +22,8 @@
 ### autoValidationThreshold
 
 • `Optional` **autoValidationThreshold**: `number`
+
+Threshold for auto validation. If null, uses the collection's autoValidationThreshold.
 
 ___
 
@@ -45,6 +48,14 @@ ___
 • `Optional` **displayRawText**: `string`
 
 Defines how the data point is mapped to the data source
+
+___
+
+### enableAutoValidationThreshold
+
+• `Optional` **enableAutoValidationThreshold**: `boolean`
+
+If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection
 
 ___
 

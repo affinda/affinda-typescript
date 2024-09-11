@@ -36,7 +36,7 @@ ___
 
 ### compact
 
-• `Optional` **compact**: `boolean`
+• `Optional` **compact**: `string`
 
 If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result.
 
@@ -60,7 +60,7 @@ ___
 
 ### deleteAfterParse
 
-• `Optional` **deleteAfterParse**: `boolean`
+• `Optional` **deleteAfterParse**: `string`
 
 If true, no data will be stored after parsing. Only compatible with requests where wait: True.
 
@@ -68,7 +68,7 @@ ___
 
 ### enableValidationTool
 
-• `Optional` **enableValidationTool**: `boolean`
+• `Optional` **enableValidationTool**: `string`
 
 If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed.
 
@@ -116,7 +116,7 @@ ___
 
 ### lowPriority
 
-• `Optional` **lowPriority**: `boolean`
+• `Optional` **lowPriority**: `string`
 
 Explicitly mark this document as low priority.
 
