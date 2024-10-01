@@ -6,9 +6,9 @@
 
 - **`ThemeConfig`**
 
-  ↳ [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
-
   ↳ [`ResumeSearchConfigSearchToolTheme`](ResumeSearchConfigSearchToolTheme.md)
+
+  ↳ [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
 
 ## Table of contents
 

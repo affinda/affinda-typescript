@@ -11,13 +11,15 @@
 - [KnownDateFormatPreference](enums/KnownDateFormatPreference.md)
 - [KnownDateRange](enums/KnownDateRange.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
+- [KnownDocumentSplitterType](enums/KnownDocumentSplitterType.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
 - [KnownDocumentType](enums/KnownDocumentType.md)
-- [KnownEnum20](enums/KnownEnum20.md)
+- [KnownEnum23](enums/KnownEnum23.md)
 - [KnownIndexDocumentType](enums/KnownIndexDocumentType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
 - [KnownInvitationStatus](enums/KnownInvitationStatus.md)
 - [KnownJobDescriptionSearchConfigDistanceUnit](enums/KnownJobDescriptionSearchConfigDistanceUnit.md)
+- [KnownLLMModelType](enums/KnownLLMModelType.md)
 - [KnownOrganizationRole](enums/KnownOrganizationRole.md)
 - [KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md)
 - [KnownRegion](enums/KnownRegion.md)
@@ -29,7 +31,6 @@
 - [KnownSearchParametersCustomDataFilterType](enums/KnownSearchParametersCustomDataFilterType.md)
 - [KnownThemeConfigPaletteMode](enums/KnownThemeConfigPaletteMode.md)
 - [KnownVersion](enums/KnownVersion.md)
-- [KnownWorkspaceSplitDocumentsOptions](enums/KnownWorkspaceSplitDocumentsOptions.md)
 - [KnownWorkspaceVisibility](enums/KnownWorkspaceVisibility.md)
 
 ### Classes
@@ -161,6 +162,7 @@
 - [DocumentMetaWorkspace](interfaces/DocumentMetaWorkspace.md)
 - [DocumentSplit](interfaces/DocumentSplit.md)
 - [DocumentSplitPage](interfaces/DocumentSplitPage.md)
+- [DocumentSplitter](interfaces/DocumentSplitter.md)
 - [DocumentUpdate](interfaces/DocumentUpdate.md)
 - [DocumentWarning](interfaces/DocumentWarning.md)
 - [EditDocumentPagesOptionalParams](interfaces/EditDocumentPagesOptionalParams.md)
@@ -189,6 +191,7 @@
 - [GetAllApiUsersOptionalParams](interfaces/GetAllApiUsersOptionalParams.md)
 - [GetAllCollectionsOptionalParams](interfaces/GetAllCollectionsOptionalParams.md)
 - [GetAllDataPointsOptionalParams](interfaces/GetAllDataPointsOptionalParams.md)
+- [GetAllDocumentSplittersOptionalParams](interfaces/GetAllDocumentSplittersOptionalParams.md)
 - [GetAllDocumentsOptionalParams](interfaces/GetAllDocumentsOptionalParams.md)
 - [GetAllExtractorsOptionalParams](interfaces/GetAllExtractorsOptionalParams.md)
 - [GetAllIndexDocumentsOptionalParams](interfaces/GetAllIndexDocumentsOptionalParams.md)
@@ -209,6 +212,7 @@
 - [GetDataPointChoicesOptionalParams](interfaces/GetDataPointChoicesOptionalParams.md)
 - [GetDataPointOptionalParams](interfaces/GetDataPointOptionalParams.md)
 - [GetDocumentOptionalParams](interfaces/GetDocumentOptionalParams.md)
+- [GetDocumentSplitterOptionalParams](interfaces/GetDocumentSplitterOptionalParams.md)
 - [GetExtractorOptionalParams](interfaces/GetExtractorOptionalParams.md)
 - [GetInvitationByTokenOptionalParams](interfaces/GetInvitationByTokenOptionalParams.md)
 - [GetInvitationOptionalParams](interfaces/GetInvitationOptionalParams.md)
@@ -456,6 +460,7 @@
 - [WorkspaceCollectionsItem](interfaces/WorkspaceCollectionsItem.md)
 - [WorkspaceCollectionsItemExtractor](interfaces/WorkspaceCollectionsItemExtractor.md)
 - [WorkspaceCreate](interfaces/WorkspaceCreate.md)
+- [WorkspaceDocumentSplitter](interfaces/WorkspaceDocumentSplitter.md)
 - [WorkspaceMembership](interfaces/WorkspaceMembership.md)
 - [WorkspaceMembershipCreate](interfaces/WorkspaceMembershipCreate.md)
 - [WorkspaceUpdate](interfaces/WorkspaceUpdate.md)
@@ -501,16 +506,18 @@
 - [DateRange](modules.md#daterange)
 - [DeleteAnnotationResponse](modules.md#deleteannotationresponse)
 - [DocumentFormat](modules.md#documentformat)
+- [DocumentSplitterType](modules.md#documentsplittertype)
 - [DocumentState](modules.md#documentstate)
 - [DocumentType](modules.md#documenttype)
 - [DocumentUnion](modules.md#documentunion)
 - [EditDocumentPagesResponse](modules.md#editdocumentpagesresponse)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum20](modules.md#enum20)
+- [Enum23](modules.md#enum23)
 - [GetAllAnnotationsResponse](modules.md#getallannotationsresponse)
 - [GetAllApiUsersResponse](modules.md#getallapiusersresponse)
 - [GetAllCollectionsResponse](modules.md#getallcollectionsresponse)
 - [GetAllDataPointsResponse](modules.md#getalldatapointsresponse)
+- [GetAllDocumentSplittersResponse](modules.md#getalldocumentsplittersresponse)
 - [GetAllDocumentsResponse](modules.md#getalldocumentsresponse)
 - [GetAllExtractorsResponse](modules.md#getallextractorsresponse)
 - [GetAllIndexDocumentsResponse](modules.md#getallindexdocumentsresponse)
@@ -531,6 +538,7 @@
 - [GetDataPointChoicesResponse](modules.md#getdatapointchoicesresponse)
 - [GetDataPointResponse](modules.md#getdatapointresponse)
 - [GetDocumentResponse](modules.md#getdocumentresponse)
+- [GetDocumentSplitterResponse](modules.md#getdocumentsplitterresponse)
 - [GetExtractorResponse](modules.md#getextractorresponse)
 - [GetInvitationByTokenResponse](modules.md#getinvitationbytokenresponse)
 - [GetInvitationResponse](modules.md#getinvitationresponse)
@@ -557,6 +565,7 @@
 - [InvitationResponseStatus](modules.md#invitationresponsestatus)
 - [InvitationStatus](modules.md#invitationstatus)
 - [JobDescriptionSearchConfigDistanceUnit](modules.md#jobdescriptionsearchconfigdistanceunit)
+- [LLMModelType](modules.md#llmmodeltype)
 - [ListMappingDataSourceValuesResponse](modules.md#listmappingdatasourcevaluesresponse)
 - [ListMappingDataSourcesResponse](modules.md#listmappingdatasourcesresponse)
 - [ListMappingsResponse](modules.md#listmappingsresponse)
@@ -598,7 +607,6 @@
 - [UpdateValidationResultResponse](modules.md#updatevalidationresultresponse)
 - [UpdateWorkspaceResponse](modules.md#updateworkspaceresponse)
 - [Version](modules.md#version)
-- [WorkspaceSplitDocumentsOptions](modules.md#workspacesplitdocumentsoptions)
 - [WorkspaceVisibility](modules.md#workspacevisibility)
 
 ## Type Aliases
@@ -934,6 +942,19 @@ Defines values for DocumentFormat. \
 
 ___
 
+### DocumentSplitterType
+
+Ƭ **DocumentSplitterType**: `string`
+
+Defines values for DocumentSplitterType. \
+[KnownDocumentSplitterType](enums/KnownDocumentSplitterType.md) can be used interchangeably with DocumentSplitterType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**llm** \
+**extractor**
+
+___
+
 ### DocumentState
 
 Ƭ **DocumentState**: `string`
@@ -985,12 +1006,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum20
+### Enum23
 
-Ƭ **Enum20**: `string`
+Ƭ **Enum23**: `string`
 
-Defines values for Enum20. \
-[KnownEnum20](enums/KnownEnum20.md) can be used interchangeably with Enum20,
+Defines values for Enum23. \
+[KnownEnum23](enums/KnownEnum23.md) can be used interchangeably with Enum23,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1027,6 +1048,14 @@ ___
 Ƭ **GetAllDataPointsResponse**: [`DataPoint`](interfaces/DataPoint.md)[]
 
 Contains response data for the getAllDataPoints operation.
+
+___
+
+### GetAllDocumentSplittersResponse
+
+Ƭ **GetAllDocumentSplittersResponse**: [`DocumentSplitter`](interfaces/DocumentSplitter.md)[]
+
+Contains response data for the getAllDocumentSplitters operation.
 
 ___
 
@@ -1187,6 +1216,14 @@ ___
 Ƭ **GetDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
 
 Contains response data for the getDocument operation.
+
+___
+
+### GetDocumentSplitterResponse
+
+Ƭ **GetDocumentSplitterResponse**: [`DocumentSplitter`](interfaces/DocumentSplitter.md)
+
+Contains response data for the getDocumentSplitter operation.
 
 ___
 
@@ -1428,6 +1465,22 @@ Defines values for JobDescriptionSearchConfigDistanceUnit. \
 ### Known values supported by the service
 **mi** \
 **km**
+
+___
+
+### LLMModelType
+
+Ƭ **LLMModelType**: `string`
+
+Defines values for LLMModelType. \
+[KnownLLMModelType](enums/KnownLLMModelType.md) can be used interchangeably with LLMModelType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**anthropic.claude-3-haiku-20240307-v1:0** \
+**anthropic.claude-3-sonnet-20240229-v1:0** \
+**anthropic.claude-3-5-sonnet-20240620-v1:0** \
+**gpt-35** \
+**gpt-4**
 
 ___
 
@@ -2047,21 +2100,6 @@ Defines values for Version. \
 **v1** \
 **v2** \
 **v3**
-
-___
-
-### WorkspaceSplitDocumentsOptions
-
-Ƭ **WorkspaceSplitDocumentsOptions**: `string`
-
-Defines values for WorkspaceSplitDocumentsOptions. \
-[KnownWorkspaceSplitDocumentsOptions](enums/KnownWorkspaceSplitDocumentsOptions.md) can be used interchangeably with WorkspaceSplitDocumentsOptions,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**leave** \
-**conservative** \
-**recommended** \
-**aggressive**
 
 ___
 

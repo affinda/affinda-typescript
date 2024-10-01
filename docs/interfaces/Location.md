@@ -8,9 +8,9 @@
 
   ↳ [`LocationAnnotationUpdateParsed`](LocationAnnotationUpdateParsed.md)
 
-  ↳ [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
-
   ↳ [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
+
+  ↳ [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
 
 ## Table of contents
 

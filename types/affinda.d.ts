@@ -212,16 +212,6 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     batchRemoveTag(body: BatchRemoveTagRequest, options?: BatchRemoveTagOptionalParams): Promise<void>;
     /**
-     * Split / merge / rotate / delete pages of a document.
-     * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
-     * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
-     *
-     * @param identifier Document's identifier
-     * @param body Describe how the pages should be edited
-     * @param options The options parameters.
-     */
-    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: EditDocumentPagesOptionalParams): Promise<EditDocumentPagesResponse>;
-    /**
      * Returns the validation results of a document.
      * @param document Filter by document.
      * @param options The options parameters.
@@ -264,6 +254,27 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     batchDeleteValidationResults(body: BatchDeleteValidationResultsRequest, options?: BatchDeleteValidationResultsOptionalParams): Promise<void>;
+    /**
+     * Returns all the document splitters visible to the user.
+     * @param options The options parameters.
+     */
+    getAllDocumentSplitters(options?: GetAllDocumentSplittersOptionalParams): Promise<GetAllDocumentSplittersResponse>;
+    /**
+     * Return a specific document splitter.
+     * @param identifier Document splitter's identifier
+     * @param options The options parameters.
+     */
+    getDocumentSplitter(identifier: string, options?: GetDocumentSplitterOptionalParams): Promise<GetDocumentSplitterResponse>;
+    /**
+     * Split / merge / rotate / delete pages of a document.
+     * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
+     * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+     *
+     * @param identifier Document's identifier
+     * @param body Describe how the pages should be edited
+     * @param options The options parameters.
+     */
+    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: EditDocumentPagesOptionalParams): Promise<EditDocumentPagesResponse>;
     /**
      * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
      * @param organization Filter by organization.
@@ -715,6 +726,69 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     listOccupationGroups(options?: ListOccupationGroupsOptionalParams): Promise<ListOccupationGroupsResponse>;
     /**
+     * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
+     * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
+     * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
+     * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
+     * the custom criteria.
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    createResumeSearch(body: ResumeSearchParameters, options?: CreateResumeSearchOptionalParams): Promise<CreateResumeSearchResponse>;
+    /**
+     * This contains more detailed information about the matching score of the search criteria, or which
+     * search criteria is missing in this resume.
+     * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
+     * @param identifier Resume identifier
+     * @param body Search parameters
+     * @param options The options parameters.
+     */
+    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: GetResumeSearchDetailOptionalParams): Promise<GetResumeSearchDetailResponse>;
+    /**
+     * Return configurations such as which fields can be displayed in the logged in user's embeddable
+     * resume search tool, what are their weights, what is the maximum number of results that can be
+     * returned, etc.
+     * @param options The options parameters.
+     */
+    getResumeSearchConfig(options?: GetResumeSearchConfigOptionalParams): Promise<GetResumeSearchConfigResponse>;
+    /**
+     * Update configurations such as which fields can be displayed in the logged in user's embeddable
+     * resume search tool, what are their weights, what is the maximum number of results that can be
+     * returned, etc.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateResumeSearchConfig(body: ResumeSearchConfig, options?: UpdateResumeSearchConfigOptionalParams): Promise<UpdateResumeSearchConfigResponse>;
+    /**
+     * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
+     * An optional parameter `config_override` can be passed to override the user-level configurations of
+     * the embeddable resume search tool.
+     * @param options The options parameters.
+     */
+    createResumeSearchEmbedUrl(options?: CreateResumeSearchEmbedUrlOptionalParams): Promise<CreateResumeSearchEmbedUrlResponse>;
+    /**
+     * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
+     * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
+     * match the score returned from POST
+     * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
+     * @param resume Identify the resume to match.
+     * @param jobDescription Identify the job description to match.
+     * @param options The options parameters.
+     */
+    getResumeSearchMatch(resume: string, jobDescription: string, options?: GetResumeSearchMatchOptionalParams): Promise<GetResumeSearchMatchResponse>;
+    /**
+     * Provided one or more job titles, get related suggestions for your search.
+     * @param jobTitles Job title to query suggestions for
+     * @param options The options parameters.
+     */
+    getResumeSearchSuggestionJobTitle(jobTitles: string[], options?: GetResumeSearchSuggestionJobTitleOptionalParams): Promise<GetResumeSearchSuggestionJobTitleResponse>;
+    /**
+     * Provided one or more skills, get related suggestions for your search.
+     * @param skills Skill to query suggestions for
+     * @param options The options parameters.
+     */
+    getResumeSearchSuggestionSkill(skills: string[], options?: GetResumeSearchSuggestionSkillOptionalParams): Promise<GetResumeSearchSuggestionSkillResponse>;
+    /**
      * Searches through parsed job descriptions. You can search with custom criterias or a resume.
      * @param body Search parameters
      * @param options The options parameters.
@@ -807,69 +881,6 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     reIndexDocument(name: string, identifier: string, options?: ReIndexDocumentOptionalParams): Promise<void>;
-    /**
-     * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
-     * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
-     * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
-     * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
-     * the custom criteria.
-     * @param body Search parameters
-     * @param options The options parameters.
-     */
-    createResumeSearch(body: ResumeSearchParameters, options?: CreateResumeSearchOptionalParams): Promise<CreateResumeSearchResponse>;
-    /**
-     * This contains more detailed information about the matching score of the search criteria, or which
-     * search criteria is missing in this resume.
-     * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
-     * @param identifier Resume identifier
-     * @param body Search parameters
-     * @param options The options parameters.
-     */
-    getResumeSearchDetail(identifier: string, body: ResumeSearchParameters, options?: GetResumeSearchDetailOptionalParams): Promise<GetResumeSearchDetailResponse>;
-    /**
-     * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
-     * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
-     * match the score returned from POST
-     * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
-     * @param resume Identify the resume to match.
-     * @param jobDescription Identify the job description to match.
-     * @param options The options parameters.
-     */
-    getResumeSearchMatch(resume: string, jobDescription: string, options?: GetResumeSearchMatchOptionalParams): Promise<GetResumeSearchMatchResponse>;
-    /**
-     * Return configurations such as which fields can be displayed in the logged in user's embeddable
-     * resume search tool, what are their weights, what is the maximum number of results that can be
-     * returned, etc.
-     * @param options The options parameters.
-     */
-    getResumeSearchConfig(options?: GetResumeSearchConfigOptionalParams): Promise<GetResumeSearchConfigResponse>;
-    /**
-     * Update configurations such as which fields can be displayed in the logged in user's embeddable
-     * resume search tool, what are their weights, what is the maximum number of results that can be
-     * returned, etc.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateResumeSearchConfig(body: ResumeSearchConfig, options?: UpdateResumeSearchConfigOptionalParams): Promise<UpdateResumeSearchConfigResponse>;
-    /**
-     * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
-     * An optional parameter `config_override` can be passed to override the user-level configurations of
-     * the embeddable resume search tool.
-     * @param options The options parameters.
-     */
-    createResumeSearchEmbedUrl(options?: CreateResumeSearchEmbedUrlOptionalParams): Promise<CreateResumeSearchEmbedUrlResponse>;
-    /**
-     * Provided one or more job titles, get related suggestions for your search.
-     * @param jobTitles Job title to query suggestions for
-     * @param options The options parameters.
-     */
-    getResumeSearchSuggestionJobTitle(jobTitles: string[], options?: GetResumeSearchSuggestionJobTitleOptionalParams): Promise<GetResumeSearchSuggestionJobTitleResponse>;
-    /**
-     * Provided one or more skills, get related suggestions for your search.
-     * @param skills Skill to query suggestions for
-     * @param options The options parameters.
-     */
-    getResumeSearchSuggestionSkill(skills: string[], options?: GetResumeSearchSuggestionSkillOptionalParams): Promise<GetResumeSearchSuggestionSkillResponse>;
 }
 
 /** Optional parameters. */
@@ -2126,6 +2137,32 @@ export declare interface DocumentSplitPage {
     rotation?: number;
 }
 
+export declare interface DocumentSplitter {
+    /** Uniquely identify a document splitter. */
+    identifier: string;
+    name: string;
+    /** The different types of document splitters */
+    type: DocumentSplitterType;
+    /** Uniquely identify an organization. */
+    organization: string | null;
+    /** Uniquely identify an extractor. */
+    extractor: string | null;
+    /** The different types of document splitters */
+    llmModel: LLMModelType | null;
+    /** The hint about when to split which is passed into the LLM prompt. */
+    llmHint: string | null;
+}
+
+/**
+ * Defines values for DocumentSplitterType. \
+ * {@link KnownDocumentSplitterType} can be used interchangeably with DocumentSplitterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **llm** \
+ * **extractor**
+ */
+export declare type DocumentSplitterType = string;
+
 /**
  * Defines values for DocumentState. \
  * {@link KnownDocumentState} can be used interchangeably with DocumentState,
@@ -2217,14 +2254,14 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum20. \
- * {@link KnownEnum20} can be used interchangeably with Enum20,
+ * Defines values for Enum23. \
+ * {@link KnownEnum23} can be used interchangeably with Enum23,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum20 = string;
+export declare type Enum23 = string;
 
 export declare interface ExpectedRemunerationAnnotation extends Annotation {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2475,6 +2512,21 @@ export declare interface GetAllDocumentsOptionalParams extends coreClient.Operat
     count?: boolean;
 }
 
+/** Optional parameters. */
+export declare interface GetAllDocumentSplittersOptionalParams extends coreClient.OperationOptions {
+    /** The number of documents to skip before starting to collect the result set. */
+    offset?: number;
+    /** The numbers of results to return. */
+    limit?: number;
+    /** Filter by organization. */
+    organization?: string;
+    /** Allows you to include public splitters in the response when you're filtering by organization. */
+    includePublic?: boolean;
+}
+
+/** Contains response data for the getAllDocumentSplitters operation. */
+export declare type GetAllDocumentSplittersResponse = DocumentSplitter[];
+
 /** Contains response data for the getAllDocuments operation. */
 export declare type GetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
 
@@ -2511,7 +2563,7 @@ export declare interface GetAllIndexesOptionalParams extends coreClient.Operatio
     /** The numbers of results to return. */
     limit?: number;
     /** Filter indices by a document type */
-    documentType?: Enum20;
+    documentType?: Enum23;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -2682,6 +2734,13 @@ export declare interface GetDocumentOptionalParams extends coreClient.OperationO
 
 /** Contains response data for the getDocument operation. */
 export declare type GetDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export declare interface GetDocumentSplitterOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the getDocumentSplitter operation. */
+export declare type GetDocumentSplitterResponse = DocumentSplitter;
 
 /** Optional parameters. */
 export declare interface GetExtractorOptionalParams extends coreClient.OperationOptions {
@@ -3458,6 +3517,14 @@ export declare enum KnownDocumentFormat {
     HrXml = "hr-xml"
 }
 
+/** Known values of {@link DocumentSplitterType} that the service accepts. */
+export declare enum KnownDocumentSplitterType {
+    /** Llm */
+    Llm = "llm",
+    /** Extractor */
+    Extractor = "extractor"
+}
+
 /** Known values of {@link DocumentState} that the service accepts. */
 export declare enum KnownDocumentState {
     /** Uploaded */
@@ -3480,8 +3547,8 @@ export declare enum KnownDocumentType {
     JobDescriptions = "job_descriptions"
 }
 
-/** Known values of {@link Enum20} that the service accepts. */
-export declare enum KnownEnum20 {
+/** Known values of {@link Enum23} that the service accepts. */
+export declare enum KnownEnum23 {
     /** Resumes */
     Resumes = "resumes",
     /** JobDescriptions */
@@ -3520,6 +3587,20 @@ export declare enum KnownJobDescriptionSearchConfigDistanceUnit {
     Mi = "mi",
     /** Km */
     Km = "km"
+}
+
+/** Known values of {@link LLMModelType} that the service accepts. */
+export declare enum KnownLLMModelType {
+    /** AnthropicClaude3Haiku20240307V10 */
+    AnthropicClaude3Haiku20240307V10 = "anthropic.claude-3-haiku-20240307-v1:0",
+    /** AnthropicClaude3Sonnet20240229V10 */
+    AnthropicClaude3Sonnet20240229V10 = "anthropic.claude-3-sonnet-20240229-v1:0",
+    /** AnthropicClaude35Sonnet20240620V10 */
+    AnthropicClaude35Sonnet20240620V10 = "anthropic.claude-3-5-sonnet-20240620-v1:0",
+    /** Gpt35 */
+    Gpt35 = "gpt-35",
+    /** Gpt4 */
+    Gpt4 = "gpt-4"
 }
 
 /** Known values of {@link OrganizationRole} that the service accepts. */
@@ -4082,18 +4163,6 @@ export declare enum KnownVersion {
     V3 = "v3"
 }
 
-/** Known values of {@link WorkspaceSplitDocumentsOptions} that the service accepts. */
-export declare enum KnownWorkspaceSplitDocumentsOptions {
-    /** Leave */
-    Leave = "leave",
-    /** Conservative */
-    Conservative = "conservative",
-    /** Recommended */
-    Recommended = "recommended",
-    /** Aggressive */
-    Aggressive = "aggressive"
-}
-
 /** Known values of {@link WorkspaceVisibility} that the service accepts. */
 export declare enum KnownWorkspaceVisibility {
     /** Organization */
@@ -4169,6 +4238,19 @@ export declare interface ListOccupationGroupsOptionalParams extends coreClient.O
 
 /** Contains response data for the listOccupationGroups operation. */
 export declare type ListOccupationGroupsResponse = OccupationGroup[];
+
+/**
+ * Defines values for LLMModelType. \
+ * {@link KnownLLMModelType} can be used interchangeably with LLMModelType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **anthropic.claude-3-haiku-20240307-v1:0** \
+ * **anthropic.claude-3-sonnet-20240229-v1:0** \
+ * **anthropic.claude-3-5-sonnet-20240620-v1:0** \
+ * **gpt-35** \
+ * **gpt-4**
+ */
+export declare type LLMModelType = string;
 
 declare interface Location_2 {
     /** NOTE: This property will not be serialized. It can only be populated by the server. */
@@ -5981,8 +6063,7 @@ export declare interface Workspace {
     ingestEmail?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
-    /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
-    documentSplitter?: WorkspaceSplitDocumentsOptions;
+    documentSplitter?: WorkspaceDocumentSplitter;
 }
 
 export declare interface WorkspaceCollectionsItem {
@@ -6020,8 +6101,14 @@ export declare interface WorkspaceCreate {
     rejectDuplicates?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
-    /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
-    documentSplitter?: WorkspaceSplitDocumentsOptions;
+    /** Uniquely identify a document splitter. */
+    documentSplitter?: string;
+}
+
+export declare interface WorkspaceDocumentSplitter {
+    /** Uniquely identify a document splitter. */
+    identifier: string;
+    name: string;
 }
 
 export declare interface WorkspaceMembership {
@@ -6039,18 +6126,6 @@ export declare interface WorkspaceMembershipCreate {
     user?: number;
 }
 
-/**
- * Defines values for WorkspaceSplitDocumentsOptions. \
- * {@link KnownWorkspaceSplitDocumentsOptions} can be used interchangeably with WorkspaceSplitDocumentsOptions,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **leave** \
- * **conservative** \
- * **recommended** \
- * **aggressive**
- */
-export declare type WorkspaceSplitDocumentsOptions = string;
-
 export declare interface WorkspaceUpdate {
     name?: string;
     /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
@@ -6061,8 +6136,8 @@ export declare interface WorkspaceUpdate {
     rejectDuplicates?: string;
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
-    /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
-    documentSplitter?: WorkspaceSplitDocumentsOptions;
+    /** Uniquely identify a document splitter. */
+    documentSplitter?: string;
 }
 
 /**

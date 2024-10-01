@@ -16,10 +16,10 @@ import {
   PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema as PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchemaMapper,
   BatchAddTagRequest as BatchAddTagRequestMapper,
   BatchRemoveTagRequest as BatchRemoveTagRequestMapper,
-  DocumentEditRequest as DocumentEditRequestMapper,
   ValidationResultCreate as ValidationResultCreateMapper,
   ValidationResultUpdate as ValidationResultUpdateMapper,
   BatchDeleteValidationResultsRequest as BatchDeleteValidationResultsRequestMapper,
+  DocumentEditRequest as DocumentEditRequestMapper,
   ExtractorCreate as ExtractorCreateMapper,
   ExtractorUpdate as ExtractorUpdateMapper,
   DataPointCreate as DataPointCreateMapper,
@@ -43,15 +43,15 @@ import {
   ApiUserUpdate as ApiUserUpdateMapper,
   ResthookSubscriptionCreate as ResthookSubscriptionCreateMapper,
   ResthookSubscriptionUpdate as ResthookSubscriptionUpdateMapper,
+  ResumeSearchParameters as ResumeSearchParametersMapper,
+  ResumeSearchConfig as ResumeSearchConfigMapper,
+  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
   JobDescriptionSearchParameters as JobDescriptionSearchParametersMapper,
   JobDescriptionSearchConfig as JobDescriptionSearchConfigMapper,
   PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema as PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
   IndexCreate as IndexCreateMapper,
   IndexUpdate as IndexUpdateMapper,
   PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema as PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
-  ResumeSearchParameters as ResumeSearchParametersMapper,
-  ResumeSearchConfig as ResumeSearchConfigMapper,
-  Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema as Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
 } from "../models/mappers";
 
 export const accept: OperationParameter = {
@@ -644,11 +644,6 @@ export const body10: OperationParameter = {
   mapper: BatchRemoveTagRequestMapper,
 };
 
-export const body11: OperationParameter = {
-  parameterPath: "body",
-  mapper: DocumentEditRequestMapper,
-};
-
 export const document: OperationQueryParameter = {
   parameterPath: "document",
   mapper: {
@@ -660,7 +655,7 @@ export const document: OperationQueryParameter = {
   },
 };
 
-export const body12: OperationParameter = {
+export const body11: OperationParameter = {
   parameterPath: "body",
   mapper: ValidationResultCreateMapper,
 };
@@ -679,12 +674,12 @@ export const id: OperationURLParameter = {
   },
 };
 
-export const body13: OperationParameter = {
+export const body12: OperationParameter = {
   parameterPath: "body",
   mapper: ValidationResultUpdateMapper,
 };
 
-export const body14: OperationParameter = {
+export const body13: OperationParameter = {
   parameterPath: "body",
   mapper: {
     serializedName: "body",
@@ -701,29 +696,9 @@ export const body14: OperationParameter = {
   },
 };
 
-export const body15: OperationParameter = {
+export const body14: OperationParameter = {
   parameterPath: "body",
   mapper: BatchDeleteValidationResultsRequestMapper,
-};
-
-export const includePublicExtractors: OperationQueryParameter = {
-  parameterPath: ["options", "includePublicExtractors"],
-  mapper: {
-    serializedName: "include_public_extractors",
-    type: {
-      name: "Boolean",
-    },
-  },
-};
-
-export const body16: OperationParameter = {
-  parameterPath: ["options", "body"],
-  mapper: ExtractorCreateMapper,
-};
-
-export const body17: OperationParameter = {
-  parameterPath: "body",
-  mapper: ExtractorUpdateMapper,
 };
 
 export const organization1: OperationQueryParameter = {
@@ -744,6 +719,31 @@ export const includePublic: OperationQueryParameter = {
       name: "Boolean",
     },
   },
+};
+
+export const body15: OperationParameter = {
+  parameterPath: "body",
+  mapper: DocumentEditRequestMapper,
+};
+
+export const includePublicExtractors: OperationQueryParameter = {
+  parameterPath: ["options", "includePublicExtractors"],
+  mapper: {
+    serializedName: "include_public_extractors",
+    type: {
+      name: "Boolean",
+    },
+  },
+};
+
+export const body16: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: ExtractorCreateMapper,
+};
+
+export const body17: OperationParameter = {
+  parameterPath: "body",
+  mapper: ExtractorUpdateMapper,
 };
 
 export const extractor: OperationQueryParameter = {
@@ -1148,59 +1148,6 @@ export const xHookSecret: OperationParameter = {
 
 export const body43: OperationParameter = {
   parameterPath: "body",
-  mapper: JobDescriptionSearchParametersMapper,
-};
-
-export const body44: OperationParameter = {
-  parameterPath: "body",
-  mapper: JobDescriptionSearchConfigMapper,
-};
-
-export const body45: OperationParameter = {
-  parameterPath: ["options", "body"],
-  mapper:
-    PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
-};
-
-export const documentType: OperationQueryParameter = {
-  parameterPath: ["options", "documentType"],
-  mapper: {
-    serializedName: "document_type",
-    type: {
-      name: "String",
-    },
-  },
-};
-
-export const body46: OperationParameter = {
-  parameterPath: "body",
-  mapper: IndexCreateMapper,
-};
-
-export const body47: OperationParameter = {
-  parameterPath: "body",
-  mapper: IndexUpdateMapper,
-};
-
-export const name3: OperationURLParameter = {
-  parameterPath: "name",
-  mapper: {
-    serializedName: "name",
-    required: true,
-    type: {
-      name: "String",
-    },
-  },
-};
-
-export const body48: OperationParameter = {
-  parameterPath: "body",
-  mapper:
-    PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
-};
-
-export const body49: OperationParameter = {
-  parameterPath: "body",
   mapper: ResumeSearchParametersMapper,
 };
 
@@ -1216,6 +1163,17 @@ export const limit1: OperationQueryParameter = {
       name: "Number",
     },
   },
+};
+
+export const body44: OperationParameter = {
+  parameterPath: "body",
+  mapper: ResumeSearchConfigMapper,
+};
+
+export const body45: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper:
+    Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
 };
 
 export const resume: OperationQueryParameter = {
@@ -1386,17 +1344,6 @@ export const managementLevelWeight: OperationQueryParameter = {
   },
 };
 
-export const body50: OperationParameter = {
-  parameterPath: "body",
-  mapper: ResumeSearchConfigMapper,
-};
-
-export const body51: OperationParameter = {
-  parameterPath: ["options", "body"],
-  mapper:
-    Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
-};
-
 export const jobTitles: OperationQueryParameter = {
   parameterPath: "jobTitles",
   mapper: {
@@ -1429,4 +1376,57 @@ export const skills: OperationQueryParameter = {
     },
   },
   collectionFormat: "Multi",
+};
+
+export const body46: OperationParameter = {
+  parameterPath: "body",
+  mapper: JobDescriptionSearchParametersMapper,
+};
+
+export const body47: OperationParameter = {
+  parameterPath: "body",
+  mapper: JobDescriptionSearchConfigMapper,
+};
+
+export const body48: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper:
+    PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
+};
+
+export const documentType: OperationQueryParameter = {
+  parameterPath: ["options", "documentType"],
+  mapper: {
+    serializedName: "document_type",
+    type: {
+      name: "String",
+    },
+  },
+};
+
+export const body49: OperationParameter = {
+  parameterPath: "body",
+  mapper: IndexCreateMapper,
+};
+
+export const body50: OperationParameter = {
+  parameterPath: "body",
+  mapper: IndexUpdateMapper,
+};
+
+export const name3: OperationURLParameter = {
+  parameterPath: "name",
+  mapper: {
+    serializedName: "name",
+    required: true,
+    type: {
+      name: "String",
+    },
+  },
+};
+
+export const body51: OperationParameter = {
+  parameterPath: "body",
+  mapper:
+    PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
 };

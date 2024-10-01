@@ -29,8 +29,7 @@ export interface Workspace {
   ingestEmail?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
-  /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
-  documentSplitter?: WorkspaceSplitDocumentsOptions;
+  documentSplitter?: WorkspaceDocumentSplitter;
 }
 
 export interface Organization {
@@ -168,6 +167,12 @@ export interface User {
   avatar?: string;
 }
 
+export interface WorkspaceDocumentSplitter {
+  /** Uniquely identify a document splitter. */
+  identifier: string;
+  name: string;
+}
+
 export interface RequestError {
   type: string;
   errors: RequestErrorErrorsItem[];
@@ -191,8 +196,8 @@ export interface WorkspaceCreate {
   rejectDuplicates?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
-  /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
-  documentSplitter?: WorkspaceSplitDocumentsOptions;
+  /** Uniquely identify a document splitter. */
+  documentSplitter?: string;
 }
 
 export interface WorkspaceUpdate {
@@ -205,8 +210,8 @@ export interface WorkspaceUpdate {
   rejectDuplicates?: string;
   /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
   whitelistIngestAddresses?: string[];
-  /** Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split. */
-  documentSplitter?: WorkspaceSplitDocumentsOptions;
+  /** Uniquely identify a document splitter. */
+  documentSplitter?: string;
 }
 
 /** Monthly credits consumption */
@@ -1256,6 +1261,69 @@ export interface BatchRemoveTagRequest {
   tag?: number;
 }
 
+/** Validation result arising from a ValidationRule */
+export interface ValidationResult {
+  /** Validation Result's ID */
+  id: number;
+  /** List of annotation ids that were validated */
+  annotations: number[];
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed: boolean | null;
+  /** The hot-dog case slug of the validation rule that was applied */
+  ruleSlug: string;
+  /** Message explaining why the validation failed */
+  message: string;
+  /** Unique identifier for the document */
+  document: string;
+}
+
+export interface ValidationResultCreate {
+  /** List of annotation ids that were validated */
+  annotations: number[];
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed?: boolean;
+  /** The hot-dog case slug of the validation rule that was applied */
+  ruleSlug: string;
+  /** Message explaining why the validation failed */
+  message: string;
+  /** Unique identifier for the document */
+  document: string;
+}
+
+export interface ValidationResultUpdate {
+  /** List of annotation ids that were validated */
+  annotations?: number[];
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed?: boolean;
+  /** The hot-dog case slug of the validation rule that was applied */
+  ruleSlug?: string;
+  /** Message explaining why the validation failed */
+  message?: string;
+  /** Unique identifier for the document */
+  document?: string;
+}
+
+export interface BatchDeleteValidationResultsRequest {
+  /** List of validation result IDs to delete. */
+  ids: number[];
+}
+
+export interface DocumentSplitter {
+  /** Uniquely identify a document splitter. */
+  identifier: string;
+  name: string;
+  /** The different types of document splitters */
+  type: DocumentSplitterType;
+  /** Uniquely identify an organization. */
+  organization: string | null;
+  /** Uniquely identify an extractor. */
+  extractor: string | null;
+  /** The different types of document splitters */
+  llmModel: LLMModelType | null;
+  /** The hint about when to split which is passed into the LLM prompt. */
+  llmHint: string | null;
+}
+
 export interface DocumentEditRequest {
   splits: DocumentSplit[];
 }
@@ -1321,53 +1389,6 @@ export interface MetaParentDocument {
 export interface MetaChildDocumentsItem {
   /** Unique identifier for the document */
   identifier?: string;
-}
-
-/** Validation result arising from a ValidationRule */
-export interface ValidationResult {
-  /** Validation Result's ID */
-  id: number;
-  /** List of annotation ids that were validated */
-  annotations: number[];
-  /** Whether the validation passed or not, null if the validation was not applicable */
-  passed: boolean | null;
-  /** The hot-dog case slug of the validation rule that was applied */
-  ruleSlug: string;
-  /** Message explaining why the validation failed */
-  message: string;
-  /** Unique identifier for the document */
-  document: string;
-}
-
-export interface ValidationResultCreate {
-  /** List of annotation ids that were validated */
-  annotations: number[];
-  /** Whether the validation passed or not, null if the validation was not applicable */
-  passed?: boolean;
-  /** The hot-dog case slug of the validation rule that was applied */
-  ruleSlug: string;
-  /** Message explaining why the validation failed */
-  message: string;
-  /** Unique identifier for the document */
-  document: string;
-}
-
-export interface ValidationResultUpdate {
-  /** List of annotation ids that were validated */
-  annotations?: number[];
-  /** Whether the validation passed or not, null if the validation was not applicable */
-  passed?: boolean;
-  /** The hot-dog case slug of the validation rule that was applied */
-  ruleSlug?: string;
-  /** Message explaining why the validation failed */
-  message?: string;
-  /** Unique identifier for the document */
-  document?: string;
-}
-
-export interface BatchDeleteValidationResultsRequest {
-  /** List of validation result IDs to delete. */
-  ids: number[];
 }
 
 export interface ExtractorCreate {
@@ -1871,16 +1892,24 @@ export interface OccupationGroup {
   children: OccupationGroup[];
 }
 
-export interface JobDescriptionSearchParameters {
+export interface ResumeSearchParameters {
   indices: string[];
+  /** A random string that uniquely identify the resource. */
+  jobDescription?: string;
   /** A random string that uniquely identify the resource. */
   resume?: string;
   jobTitles?: string[];
+  /** Search only through the canditate's current job */
+  jobTitlesCurrentOnly?: boolean;
   jobTitlesRequired?: boolean;
   jobTitlesWeight?: number;
-  totalYearsExperience?: number;
+  /** Minimum years of total work experience */
+  yearsExperienceMin?: number;
+  /** Maximum years of total work experience */
+  yearsExperienceMax?: number;
   yearsExperienceRequired?: boolean;
   yearsExperienceWeight?: number;
+  /** Search by location name or by coordinates */
   locations?: ResumeSearchParametersLocation[];
   locationsWeight?: number;
   locationsRequired?: boolean;
@@ -1888,11 +1917,20 @@ export interface JobDescriptionSearchParameters {
   skillsWeight?: number;
   languages?: ResumeSearchParametersSkill[];
   languagesWeight?: number;
+  institutions?: string[];
+  institutionsRequired?: boolean;
   degrees?: string[];
   degreesRequired?: boolean;
-  degreeTypes?: (EducationLevel | null)[];
-  degreeTypesRequired?: boolean;
+  highestDegreeTypes?: (EducationLevel | null)[];
+  highestDegreeTypesRequired?: boolean;
+  /** Search for student canditates */
+  isCurrentStudent?: boolean;
+  isCurrentStudentRequired?: boolean;
+  /** Search for canditates that graduated less than a year ago */
+  isRecentGraduate?: boolean;
+  isRecentGraduateRequired?: boolean;
   educationWeight?: number;
+  /** Search through resumes' raw text */
   searchExpression?: string;
   searchExpressionRequired?: boolean;
   searchExpressionWeight?: number;
@@ -1902,7 +1940,7 @@ export interface JobDescriptionSearchParameters {
   managementLevel?: ManagementLevel;
   managementLevelRequired?: boolean;
   managementLevelWeight?: number;
-  customData?: SearchParametersCustomData[];
+  customData?: ResumeSearchParametersCustomData[];
 }
 
 export interface ResumeSearchParametersLocation {
@@ -1933,22 +1971,23 @@ export interface SearchParametersCustomData {
   weight?: number;
 }
 
-export interface JobDescriptionSearch {
+export interface ResumeSearch {
   /** Total number of results */
   count?: number;
   /** URL to request next page of results */
   next?: string;
   /** URL to request previous page of results */
   previous?: string;
-  parameters?: JobDescriptionSearchParameters;
-  results?: JobDescriptionSearchResult[];
+  parameters?: ResumeSearchParameters;
+  results?: ResumeSearchResult[];
 }
 
-export interface JobDescriptionSearchResult {
+export interface ResumeSearchResult {
   /** A random string that uniquely identify the resource. */
   identifier: string;
   score: number;
   pdf: string | null;
+  name?: string;
   jobTitle: JobTitleSearchScoreComponent;
   managementLevel: ManagementLevelSearchScoreComponent;
   experience: ExperienceSearchScoreComponent;
@@ -1956,9 +1995,8 @@ export interface JobDescriptionSearchResult {
   languages: LanguagesSearchScoreComponent;
   location: LocationSearchScoreComponent;
   education: EducationSearchScoreComponent;
-  occupationGroup?: OccupationGroupSearchScoreComponent;
+  occupationGroup: OccupationGroupSearchScoreComponent;
   searchExpression: SearchExpressionSearchScoreComponent;
-  organizationName: string | null;
   /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
   customData: {
     [
@@ -2025,319 +2063,6 @@ export interface ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditional
   value?: string;
   label: string;
   score?: number;
-}
-
-export interface JobDescriptionSearchDetail {
-  jobTitle?: JobDescriptionSearchDetailJobTitle;
-  location?: JobDescriptionSearchDetailLocation;
-  education?: JobDescriptionSearchDetailEducation;
-  skills?: JobDescriptionSearchDetailSkills;
-  experience?: JobDescriptionSearchDetailExperience;
-  occupationGroup?: JobDescriptionSearchDetailOccupationGroup;
-  languages?: JobDescriptionSearchDetailLanguages;
-  managementLevel?: JobDescriptionSearchDetailManagementLevel;
-  searchExpression?: JobDescriptionSearchDetailSearchExpression;
-}
-
-export interface JobDescriptionSearchDetailJobTitle {
-  missing?: string[];
-  value?: JobDescriptionSearchDetailJobTitleValue;
-}
-
-export interface JobDescriptionSearchDetailJobTitleValue {
-  name?: string;
-  companyName?: string;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailLocation {
-  missing?: ResumeSearchParametersLocation[];
-  value?: JobDescriptionSearchDetailLocationValue;
-}
-
-export interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailEducation {
-  missing?: JobDescriptionSearchDetailEducationMissing;
-  value?: JobDescriptionSearchDetailEducationValue;
-}
-
-export interface JobDescriptionSearchDetailEducationMissing {
-  degrees?: string[];
-  degreeTypes?: string[];
-}
-
-export interface JobDescriptionSearchDetailEducationValue {
-  degrees?: string[];
-  degreeTypes?: string[];
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailSkills {
-  missing?: ResumeSearchParametersSkill[];
-  value?: JobDescriptionSearchDetailSkillsValueItem[];
-}
-
-export interface JobDescriptionSearchDetailSkillsValueItem {
-  name?: string;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailExperience {
-  minimumExperience?: number;
-  maximumExperience?: number;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailOccupationGroup {
-  missing?: number[];
-  value?: JobDescriptionSearchDetailOccupationGroupValue;
-}
-
-export interface OccupationGroupSearchResult {
-  match?: boolean;
-  code: number;
-  name: string;
-  children?: OccupationGroup[];
-  parents?: OccupationGroup[];
-}
-
-export interface JobDescriptionSearchDetailLanguages {
-  missing?: ResumeSearchParametersSkill[];
-  value?: JobDescriptionSearchDetailLanguagesValueItem[];
-}
-
-export interface JobDescriptionSearchDetailLanguagesValueItem {
-  name?: string;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailManagementLevel {
-  level?: ManagementLevel;
-  match?: boolean;
-}
-
-export interface JobDescriptionSearchDetailSearchExpression {
-  missing?: string[];
-  value?: string[];
-}
-
-export interface JobDescriptionSearchConfig {
-  allowPdfDownload?: boolean;
-  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
-  maxResults?: number;
-  displayJobTitle?: boolean;
-  displayLocation?: boolean;
-  displayYearsExperience?: boolean;
-  displayOccupationGroup?: boolean;
-  displayEducation?: boolean;
-  displaySkills?: boolean;
-  displayLanguages?: boolean;
-  displayManagementLevel?: boolean;
-  displayKeywords?: boolean;
-  weightJobTitle?: number;
-  weightLocation?: number;
-  weightYearsExperience?: number;
-  weightOccupationGroup?: number;
-  weightEducation?: number;
-  weightSkills?: number;
-  weightLanguages?: number;
-  weightManagementLevel?: number;
-  weightKeywords?: number;
-  /** List of index names. */
-  indices?: string[];
-  /** Controls whether or not the index dropdown is displayed to the user */
-  showIndexDropdown?: boolean;
-  /** Customize the theme of the embeded search tool. */
-  searchToolTheme?: JobDescriptionSearchConfigSearchToolTheme;
-  /**
-   * ID of the logged in user.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly userId?: number;
-  /**
-   * Username of the logged in user.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly username?: string;
-  /** A list of actions to show in the dropdown in the embedded search tool */
-  actions?: SearchConfigAction[];
-  /** Hide the reset/import toolbar. */
-  hideToolbar?: boolean;
-  /** Hide the entire side panel. */
-  hideSidePanel?: boolean;
-  customFieldsConfig?: CustomFieldConfig[];
-  /** The unit of distance to use for location based searches */
-  distanceUnit?: JobDescriptionSearchConfigDistanceUnit;
-}
-
-export interface SearchConfigAction {
-  /** Human readable label to display in the UI */
-  label: string;
-  /** Name of the event to be triggered */
-  eventName: string;
-}
-
-export interface CustomFieldConfig {
-  /** Data point identifier. */
-  dataPoint: string;
-  weight: number;
-}
-
-export interface PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
-  configOverride?: JobDescriptionSearchConfig;
-}
-
-export interface JobDescriptionSearchEmbed {
-  /** The signed URL for the embedable search tool. */
-  url?: string;
-}
-
-export interface Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Index[];
-}
-
-export interface Index {
-  /** Unique index name */
-  name: string;
-  documentType: IndexDocumentType;
-  /**
-   * The user who created this index
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly user: IndexUser;
-}
-
-/** The user who created this index */
-export interface IndexUser {
-  /** Uniquely identify a user. */
-  id: number;
-  name: string;
-  email: string;
-  /** URL of the user's avatar. */
-  avatar: string | null;
-}
-
-/** IndexRequestBody */
-export interface IndexCreate {
-  /** Unique index name */
-  name: string;
-  documentType?: DocumentType;
-}
-
-export interface IndexUpdate {
-  /** Unique index name */
-  name?: string;
-}
-
-export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
-  /** Number of indexed documents in result */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  results?: Get200ApplicationJsonPropertiesItemsItem[];
-}
-
-export interface Get200ApplicationJsonPropertiesItemsItem {
-  document?: string;
-}
-
-export interface PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
-  document?: string;
-}
-
-export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
-  /** Unique identifier for the document. */
-  document?: string;
-}
-
-export interface ResumeSearchParameters {
-  indices: string[];
-  /** A random string that uniquely identify the resource. */
-  jobDescription?: string;
-  /** A random string that uniquely identify the resource. */
-  resume?: string;
-  jobTitles?: string[];
-  /** Search only through the canditate's current job */
-  jobTitlesCurrentOnly?: boolean;
-  jobTitlesRequired?: boolean;
-  jobTitlesWeight?: number;
-  /** Minimum years of total work experience */
-  yearsExperienceMin?: number;
-  /** Maximum years of total work experience */
-  yearsExperienceMax?: number;
-  yearsExperienceRequired?: boolean;
-  yearsExperienceWeight?: number;
-  /** Search by location name or by coordinates */
-  locations?: ResumeSearchParametersLocation[];
-  locationsWeight?: number;
-  locationsRequired?: boolean;
-  skills?: ResumeSearchParametersSkill[];
-  skillsWeight?: number;
-  languages?: ResumeSearchParametersSkill[];
-  languagesWeight?: number;
-  institutions?: string[];
-  institutionsRequired?: boolean;
-  degrees?: string[];
-  degreesRequired?: boolean;
-  highestDegreeTypes?: (EducationLevel | null)[];
-  highestDegreeTypesRequired?: boolean;
-  /** Search for student canditates */
-  isCurrentStudent?: boolean;
-  isCurrentStudentRequired?: boolean;
-  /** Search for canditates that graduated less than a year ago */
-  isRecentGraduate?: boolean;
-  isRecentGraduateRequired?: boolean;
-  educationWeight?: number;
-  /** Search through resumes' raw text */
-  searchExpression?: string;
-  searchExpressionRequired?: boolean;
-  searchExpressionWeight?: number;
-  socCodes?: number[];
-  socCodesWeight?: number;
-  socCodesRequired?: boolean;
-  managementLevel?: ManagementLevel;
-  managementLevelRequired?: boolean;
-  managementLevelWeight?: number;
-  customData?: ResumeSearchParametersCustomData[];
-}
-
-export interface ResumeSearch {
-  /** Total number of results */
-  count?: number;
-  /** URL to request next page of results */
-  next?: string;
-  /** URL to request previous page of results */
-  previous?: string;
-  parameters?: ResumeSearchParameters;
-  results?: ResumeSearchResult[];
-}
-
-export interface ResumeSearchResult {
-  /** A random string that uniquely identify the resource. */
-  identifier: string;
-  score: number;
-  pdf: string | null;
-  name?: string;
-  jobTitle: JobTitleSearchScoreComponent;
-  managementLevel: ManagementLevelSearchScoreComponent;
-  experience: ExperienceSearchScoreComponent;
-  skills: SkillsSearchScoreComponent;
-  languages: LanguagesSearchScoreComponent;
-  location: LocationSearchScoreComponent;
-  education: EducationSearchScoreComponent;
-  occupationGroup: OccupationGroupSearchScoreComponent;
-  searchExpression: SearchExpressionSearchScoreComponent;
-  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
-  customData: {
-    [
-      propertyName: string
-    ]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
-  };
 }
 
 export interface ResumeSearchDetail {
@@ -2423,6 +2148,14 @@ export interface ResumeSearchDetailOccupationGroup {
   value?: OccupationGroupSearchResult[];
 }
 
+export interface OccupationGroupSearchResult {
+  match?: boolean;
+  code: number;
+  name: string;
+  children?: OccupationGroup[];
+  parents?: OccupationGroup[];
+}
+
 export interface ResumeSearchDetailLanguages {
   missing?: ResumeSearchParametersSkill[];
   value?: ResumeSearchDetailLanguagesValueItem[];
@@ -2440,24 +2173,6 @@ export interface ResumeSearchDetailManagementLevel {
 export interface ResumeSearchDetailSearchExpression {
   missing?: string[];
   value?: string[];
-}
-
-export interface ResumeSearchMatch {
-  /** The matching score between the provided resume and job description. */
-  score?: number;
-  details?: ResumeSearchMatchDetails;
-}
-
-export interface ResumeSearchMatchDetails {
-  jobTitle?: JobTitleSearchScoreComponent;
-  managementLevel?: ManagementLevelSearchScoreComponent;
-  experience?: ExperienceSearchScoreComponent;
-  skills?: SkillsSearchScoreComponent;
-  languages?: LanguagesSearchScoreComponent;
-  location?: LocationSearchScoreComponent;
-  education?: EducationSearchScoreComponent;
-  occupationGroup?: OccupationGroupSearchScoreComponent;
-  searchExpression?: SearchExpressionSearchScoreComponent;
 }
 
 export interface ResumeSearchConfig {
@@ -2509,6 +2224,19 @@ export interface ResumeSearchConfig {
   distanceUnit?: ResumeSearchConfigDistanceUnit;
 }
 
+export interface SearchConfigAction {
+  /** Human readable label to display in the UI */
+  label: string;
+  /** Name of the event to be triggered */
+  eventName: string;
+}
+
+export interface CustomFieldConfig {
+  /** Data point identifier. */
+  dataPoint: string;
+  weight: number;
+}
+
 export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema {
   configOverride?: ResumeSearchConfig;
 }
@@ -2516,6 +2244,299 @@ export interface Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicatio
 export interface ResumeSearchEmbed {
   /** The signed URL for the embedable search tool. */
   url?: string;
+}
+
+export interface ResumeSearchMatch {
+  /** The matching score between the provided resume and job description. */
+  score?: number;
+  details?: ResumeSearchMatchDetails;
+}
+
+export interface ResumeSearchMatchDetails {
+  jobTitle?: JobTitleSearchScoreComponent;
+  managementLevel?: ManagementLevelSearchScoreComponent;
+  experience?: ExperienceSearchScoreComponent;
+  skills?: SkillsSearchScoreComponent;
+  languages?: LanguagesSearchScoreComponent;
+  location?: LocationSearchScoreComponent;
+  education?: EducationSearchScoreComponent;
+  occupationGroup?: OccupationGroupSearchScoreComponent;
+  searchExpression?: SearchExpressionSearchScoreComponent;
+}
+
+export interface JobDescriptionSearchParameters {
+  indices: string[];
+  /** A random string that uniquely identify the resource. */
+  resume?: string;
+  jobTitles?: string[];
+  jobTitlesRequired?: boolean;
+  jobTitlesWeight?: number;
+  totalYearsExperience?: number;
+  yearsExperienceRequired?: boolean;
+  yearsExperienceWeight?: number;
+  locations?: ResumeSearchParametersLocation[];
+  locationsWeight?: number;
+  locationsRequired?: boolean;
+  skills?: ResumeSearchParametersSkill[];
+  skillsWeight?: number;
+  languages?: ResumeSearchParametersSkill[];
+  languagesWeight?: number;
+  degrees?: string[];
+  degreesRequired?: boolean;
+  degreeTypes?: (EducationLevel | null)[];
+  degreeTypesRequired?: boolean;
+  educationWeight?: number;
+  searchExpression?: string;
+  searchExpressionRequired?: boolean;
+  searchExpressionWeight?: number;
+  socCodes?: number[];
+  socCodesWeight?: number;
+  socCodesRequired?: boolean;
+  managementLevel?: ManagementLevel;
+  managementLevelRequired?: boolean;
+  managementLevelWeight?: number;
+  customData?: SearchParametersCustomData[];
+}
+
+export interface JobDescriptionSearch {
+  /** Total number of results */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  parameters?: JobDescriptionSearchParameters;
+  results?: JobDescriptionSearchResult[];
+}
+
+export interface JobDescriptionSearchResult {
+  /** A random string that uniquely identify the resource. */
+  identifier: string;
+  score: number;
+  pdf: string | null;
+  jobTitle: JobTitleSearchScoreComponent;
+  managementLevel: ManagementLevelSearchScoreComponent;
+  experience: ExperienceSearchScoreComponent;
+  skills: SkillsSearchScoreComponent;
+  languages: LanguagesSearchScoreComponent;
+  location: LocationSearchScoreComponent;
+  education: EducationSearchScoreComponent;
+  occupationGroup?: OccupationGroupSearchScoreComponent;
+  searchExpression: SearchExpressionSearchScoreComponent;
+  organizationName: string | null;
+  /** Dictionary of <components·nqbw24·schemas·customdatasearchscorecomponent·additionalproperties> */
+  customData: {
+    [
+      propertyName: string
+    ]: ComponentsNqbw24SchemasCustomdatasearchscorecomponentAdditionalproperties;
+  };
+}
+
+export interface JobDescriptionSearchDetail {
+  jobTitle?: JobDescriptionSearchDetailJobTitle;
+  location?: JobDescriptionSearchDetailLocation;
+  education?: JobDescriptionSearchDetailEducation;
+  skills?: JobDescriptionSearchDetailSkills;
+  experience?: JobDescriptionSearchDetailExperience;
+  occupationGroup?: JobDescriptionSearchDetailOccupationGroup;
+  languages?: JobDescriptionSearchDetailLanguages;
+  managementLevel?: JobDescriptionSearchDetailManagementLevel;
+  searchExpression?: JobDescriptionSearchDetailSearchExpression;
+}
+
+export interface JobDescriptionSearchDetailJobTitle {
+  missing?: string[];
+  value?: JobDescriptionSearchDetailJobTitleValue;
+}
+
+export interface JobDescriptionSearchDetailJobTitleValue {
+  name?: string;
+  companyName?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailLocation {
+  missing?: ResumeSearchParametersLocation[];
+  value?: JobDescriptionSearchDetailLocationValue;
+}
+
+export interface Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailEducation {
+  missing?: JobDescriptionSearchDetailEducationMissing;
+  value?: JobDescriptionSearchDetailEducationValue;
+}
+
+export interface JobDescriptionSearchDetailEducationMissing {
+  degrees?: string[];
+  degreeTypes?: string[];
+}
+
+export interface JobDescriptionSearchDetailEducationValue {
+  degrees?: string[];
+  degreeTypes?: string[];
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailSkills {
+  missing?: ResumeSearchParametersSkill[];
+  value?: JobDescriptionSearchDetailSkillsValueItem[];
+}
+
+export interface JobDescriptionSearchDetailSkillsValueItem {
+  name?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailExperience {
+  minimumExperience?: number;
+  maximumExperience?: number;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailOccupationGroup {
+  missing?: number[];
+  value?: JobDescriptionSearchDetailOccupationGroupValue;
+}
+
+export interface JobDescriptionSearchDetailLanguages {
+  missing?: ResumeSearchParametersSkill[];
+  value?: JobDescriptionSearchDetailLanguagesValueItem[];
+}
+
+export interface JobDescriptionSearchDetailLanguagesValueItem {
+  name?: string;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailManagementLevel {
+  level?: ManagementLevel;
+  match?: boolean;
+}
+
+export interface JobDescriptionSearchDetailSearchExpression {
+  missing?: string[];
+  value?: string[];
+}
+
+export interface JobDescriptionSearchConfig {
+  allowPdfDownload?: boolean;
+  /** Maximum number of results that can be returned. Setting to "null" means no limitation. */
+  maxResults?: number;
+  displayJobTitle?: boolean;
+  displayLocation?: boolean;
+  displayYearsExperience?: boolean;
+  displayOccupationGroup?: boolean;
+  displayEducation?: boolean;
+  displaySkills?: boolean;
+  displayLanguages?: boolean;
+  displayManagementLevel?: boolean;
+  displayKeywords?: boolean;
+  weightJobTitle?: number;
+  weightLocation?: number;
+  weightYearsExperience?: number;
+  weightOccupationGroup?: number;
+  weightEducation?: number;
+  weightSkills?: number;
+  weightLanguages?: number;
+  weightManagementLevel?: number;
+  weightKeywords?: number;
+  /** List of index names. */
+  indices?: string[];
+  /** Controls whether or not the index dropdown is displayed to the user */
+  showIndexDropdown?: boolean;
+  /** Customize the theme of the embeded search tool. */
+  searchToolTheme?: JobDescriptionSearchConfigSearchToolTheme;
+  /**
+   * ID of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly userId?: number;
+  /**
+   * Username of the logged in user.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly username?: string;
+  /** A list of actions to show in the dropdown in the embedded search tool */
+  actions?: SearchConfigAction[];
+  /** Hide the reset/import toolbar. */
+  hideToolbar?: boolean;
+  /** Hide the entire side panel. */
+  hideSidePanel?: boolean;
+  customFieldsConfig?: CustomFieldConfig[];
+  /** The unit of distance to use for location based searches */
+  distanceUnit?: JobDescriptionSearchConfigDistanceUnit;
+}
+
+export interface PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema {
+  configOverride?: JobDescriptionSearchConfig;
+}
+
+export interface JobDescriptionSearchEmbed {
+  /** The signed URL for the embedable search tool. */
+  url?: string;
+}
+
+export interface Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Index[];
+}
+
+export interface Index {
+  /** Unique index name */
+  name: string;
+  documentType: IndexDocumentType;
+  /**
+   * The user who created this index
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly user: IndexUser;
+}
+
+/** The user who created this index */
+export interface IndexUser {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+}
+
+/** IndexRequestBody */
+export interface IndexCreate {
+  /** Unique index name */
+  name: string;
+  documentType?: DocumentType;
+}
+
+export interface IndexUpdate {
+  /** Unique index name */
+  name?: string;
+}
+
+export interface PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema {
+  /** Number of indexed documents in result */
+  count?: number;
+  /** URL to request next page of results */
+  next?: string;
+  /** URL to request previous page of results */
+  previous?: string;
+  results?: Get200ApplicationJsonPropertiesItemsItem[];
+}
+
+export interface Get200ApplicationJsonPropertiesItemsItem {
+  document?: string;
+}
+
+export interface PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema {
+  document?: string;
+}
+
+export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema {
+  /** Unique identifier for the document. */
+  document?: string;
 }
 
 export interface InvoiceData {
@@ -2693,11 +2714,11 @@ export interface OrganizationUpdate {
 }
 
 /** Customize the theme of the embeded search tool. */
-export interface JobDescriptionSearchConfigSearchToolTheme
-  extends ThemeConfig {}
+export interface ResumeSearchConfigSearchToolTheme extends ThemeConfig {}
 
 /** Customize the theme of the embeded search tool. */
-export interface ResumeSearchConfigSearchToolTheme extends ThemeConfig {}
+export interface JobDescriptionSearchConfigSearchToolTheme
+  extends ThemeConfig {}
 
 export interface InvitationRespondedBy extends User {}
 
@@ -2776,13 +2797,13 @@ export interface ResumeRedact extends Document {
 
 export interface LocationAnnotationUpdateParsed extends Location {}
 
-export interface JobDescriptionSearchDetailLocationValue
-  extends Location,
-    Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {}
-
 export interface ResumeSearchDetailLocationValue
   extends Location,
     ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {}
+
+export interface JobDescriptionSearchDetailLocationValue
+  extends Location,
+    Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {}
 
 export interface ResumeSearchDetailEducationValueItem
   extends Education,
@@ -2904,9 +2925,6 @@ export interface YearsExperienceAnnotationUpdate extends AnnotationBase {
 export interface ResumeSearchParametersCustomData
   extends SearchParametersCustomData {}
 
-export interface JobDescriptionSearchDetailOccupationGroupValue
-  extends OccupationGroupSearchResult {}
-
 export interface ResumeSearchDetailSkillsValueItem
   extends ResumeSkill,
     ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1 {}
@@ -2914,6 +2932,9 @@ export interface ResumeSearchDetailSkillsValueItem
 export interface ResumeSearchDetailLanguagesValueItem
   extends ResumeSkill,
     Components159Ji55SchemasResumesearchdetailPropertiesLanguagesPropertiesValueItemsAllof1 {}
+
+export interface JobDescriptionSearchDetailOccupationGroupValue
+  extends OccupationGroupSearchResult {}
 
 /** Known values of {@link Region} that the service accepts. */
 export enum KnownRegion {
@@ -3007,30 +3028,6 @@ export enum KnownWorkspaceVisibility {
  * **private**
  */
 export type WorkspaceVisibility = string;
-
-/** Known values of {@link WorkspaceSplitDocumentsOptions} that the service accepts. */
-export enum KnownWorkspaceSplitDocumentsOptions {
-  /** Leave */
-  Leave = "leave",
-  /** Conservative */
-  Conservative = "conservative",
-  /** Recommended */
-  Recommended = "recommended",
-  /** Aggressive */
-  Aggressive = "aggressive",
-}
-
-/**
- * Defines values for WorkspaceSplitDocumentsOptions. \
- * {@link KnownWorkspaceSplitDocumentsOptions} can be used interchangeably with WorkspaceSplitDocumentsOptions,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **leave** \
- * **conservative** \
- * **recommended** \
- * **aggressive**
- */
-export type WorkspaceSplitDocumentsOptions = string;
 
 /** Known values of {@link AnnotationContentType} that the service accepts. */
 export enum KnownAnnotationContentType {
@@ -3848,6 +3845,51 @@ export enum KnownDocumentFormat {
  */
 export type DocumentFormat = string;
 
+/** Known values of {@link DocumentSplitterType} that the service accepts. */
+export enum KnownDocumentSplitterType {
+  /** Llm */
+  Llm = "llm",
+  /** Extractor */
+  Extractor = "extractor",
+}
+
+/**
+ * Defines values for DocumentSplitterType. \
+ * {@link KnownDocumentSplitterType} can be used interchangeably with DocumentSplitterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **llm** \
+ * **extractor**
+ */
+export type DocumentSplitterType = string;
+
+/** Known values of {@link LLMModelType} that the service accepts. */
+export enum KnownLLMModelType {
+  /** AnthropicClaude3Haiku20240307V10 */
+  AnthropicClaude3Haiku20240307V10 = "anthropic.claude-3-haiku-20240307-v1:0",
+  /** AnthropicClaude3Sonnet20240229V10 */
+  AnthropicClaude3Sonnet20240229V10 = "anthropic.claude-3-sonnet-20240229-v1:0",
+  /** AnthropicClaude35Sonnet20240620V10 */
+  AnthropicClaude35Sonnet20240620V10 = "anthropic.claude-3-5-sonnet-20240620-v1:0",
+  /** Gpt35 */
+  Gpt35 = "gpt-35",
+  /** Gpt4 */
+  Gpt4 = "gpt-4",
+}
+
+/**
+ * Defines values for LLMModelType. \
+ * {@link KnownLLMModelType} can be used interchangeably with LLMModelType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **anthropic.claude-3-haiku-20240307-v1:0** \
+ * **anthropic.claude-3-sonnet-20240229-v1:0** \
+ * **anthropic.claude-3-5-sonnet-20240620-v1:0** \
+ * **gpt-35** \
+ * **gpt-4**
+ */
+export type LLMModelType = string;
+
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export enum KnownInvitationStatus {
   /** Pending */
@@ -4007,78 +4049,6 @@ export enum KnownSearchParametersCustomDataFilterType {
  */
 export type SearchParametersCustomDataFilterType = string;
 
-/** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
-export enum KnownJobDescriptionSearchConfigDistanceUnit {
-  /** Mi */
-  Mi = "mi",
-  /** Km */
-  Km = "km",
-}
-
-/**
- * Defines values for JobDescriptionSearchConfigDistanceUnit. \
- * {@link KnownJobDescriptionSearchConfigDistanceUnit} can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **mi** \
- * **km**
- */
-export type JobDescriptionSearchConfigDistanceUnit = string;
-
-/** Known values of {@link Enum20} that the service accepts. */
-export enum KnownEnum20 {
-  /** Resumes */
-  Resumes = "resumes",
-  /** JobDescriptions */
-  JobDescriptions = "job_descriptions",
-}
-
-/**
- * Defines values for Enum20. \
- * {@link KnownEnum20} can be used interchangeably with Enum20,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type Enum20 = string;
-
-/** Known values of {@link IndexDocumentType} that the service accepts. */
-export enum KnownIndexDocumentType {
-  /** Resumes */
-  Resumes = "resumes",
-  /** JobDescriptions */
-  JobDescriptions = "job_descriptions",
-}
-
-/**
- * Defines values for IndexDocumentType. \
- * {@link KnownIndexDocumentType} can be used interchangeably with IndexDocumentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type IndexDocumentType = string;
-
-/** Known values of {@link DocumentType} that the service accepts. */
-export enum KnownDocumentType {
-  /** Resumes */
-  Resumes = "resumes",
-  /** JobDescriptions */
-  JobDescriptions = "job_descriptions",
-}
-
-/**
- * Defines values for DocumentType. \
- * {@link KnownDocumentType} can be used interchangeably with DocumentType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resumes** \
- * **job_descriptions**
- */
-export type DocumentType = string;
-
 /** Known values of {@link ResumeSkillSourcesItemSection} that the service accepts. */
 export enum KnownResumeSkillSourcesItemSection {
   /** Achievements */
@@ -4168,6 +4138,78 @@ export enum KnownResumeSearchConfigDistanceUnit {
  * **km**
  */
 export type ResumeSearchConfigDistanceUnit = string;
+
+/** Known values of {@link JobDescriptionSearchConfigDistanceUnit} that the service accepts. */
+export enum KnownJobDescriptionSearchConfigDistanceUnit {
+  /** Mi */
+  Mi = "mi",
+  /** Km */
+  Km = "km",
+}
+
+/**
+ * Defines values for JobDescriptionSearchConfigDistanceUnit. \
+ * {@link KnownJobDescriptionSearchConfigDistanceUnit} can be used interchangeably with JobDescriptionSearchConfigDistanceUnit,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **mi** \
+ * **km**
+ */
+export type JobDescriptionSearchConfigDistanceUnit = string;
+
+/** Known values of {@link Enum23} that the service accepts. */
+export enum KnownEnum23 {
+  /** Resumes */
+  Resumes = "resumes",
+  /** JobDescriptions */
+  JobDescriptions = "job_descriptions",
+}
+
+/**
+ * Defines values for Enum23. \
+ * {@link KnownEnum23} can be used interchangeably with Enum23,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type Enum23 = string;
+
+/** Known values of {@link IndexDocumentType} that the service accepts. */
+export enum KnownIndexDocumentType {
+  /** Resumes */
+  Resumes = "resumes",
+  /** JobDescriptions */
+  JobDescriptions = "job_descriptions",
+}
+
+/**
+ * Defines values for IndexDocumentType. \
+ * {@link KnownIndexDocumentType} can be used interchangeably with IndexDocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type IndexDocumentType = string;
+
+/** Known values of {@link DocumentType} that the service accepts. */
+export enum KnownDocumentType {
+  /** Resumes */
+  Resumes = "resumes",
+  /** JobDescriptions */
+  JobDescriptions = "job_descriptions",
+}
+
+/**
+ * Defines values for DocumentType. \
+ * {@link KnownDocumentType} can be used interchangeably with DocumentType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **resumes** \
+ * **job_descriptions**
+ */
+export type DocumentType = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -4454,13 +4496,6 @@ export interface BatchRemoveTagOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface EditDocumentPagesOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the editDocumentPages operation. */
-export type EditDocumentPagesResponse = Meta[];
-
-/** Optional parameters. */
 export interface GetAllValidationResultsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -4507,6 +4542,36 @@ export type BatchCreateValidationResultsResponse = ValidationResult[];
 /** Optional parameters. */
 export interface BatchDeleteValidationResultsOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetAllDocumentSplittersOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter by organization. */
+  organization?: string;
+  /** Allows you to include public splitters in the response when you're filtering by organization. */
+  includePublic?: boolean;
+}
+
+/** Contains response data for the getAllDocumentSplitters operation. */
+export type GetAllDocumentSplittersResponse = DocumentSplitter[];
+
+/** Optional parameters. */
+export interface GetDocumentSplitterOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDocumentSplitter operation. */
+export type GetDocumentSplitterResponse = DocumentSplitter;
+
+/** Optional parameters. */
+export interface EditDocumentPagesOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the editDocumentPages operation. */
+export type EditDocumentPagesResponse = Meta[];
 
 /** Optional parameters. */
 export interface GetAllExtractorsOptionalParams
@@ -5099,6 +5164,98 @@ export interface ListOccupationGroupsOptionalParams
 export type ListOccupationGroupsResponse = OccupationGroup[];
 
 /** Optional parameters. */
+export interface CreateResumeSearchOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the createResumeSearch operation. */
+export type CreateResumeSearchResponse = ResumeSearch;
+
+/** Optional parameters. */
+export interface GetResumeSearchDetailOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchDetail operation. */
+export type GetResumeSearchDetailResponse = ResumeSearchDetail;
+
+/** Optional parameters. */
+export interface GetResumeSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchConfig operation. */
+export type GetResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export interface UpdateResumeSearchConfigOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateResumeSearchConfig operation. */
+export type UpdateResumeSearchConfigResponse = ResumeSearchConfig;
+
+/** Optional parameters. */
+export interface CreateResumeSearchEmbedUrlOptionalParams
+  extends coreClient.OperationOptions {
+  body?: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
+}
+
+/** Contains response data for the createResumeSearchEmbedUrl operation. */
+export type CreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
+
+/** Optional parameters. */
+export interface GetResumeSearchMatchOptionalParams
+  extends coreClient.OperationOptions {
+  /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
+  index?: string;
+  /** Add keywords to the search criteria. */
+  searchExpression?: string;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  jobTitlesWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  yearsExperienceWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  locationsWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  languagesWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  skillsWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  educationWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  searchExpressionWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  socCodesWeight?: number;
+  /** How important is this criteria to the matching score, range from 0 to 1. */
+  managementLevelWeight?: number;
+}
+
+/** Contains response data for the getResumeSearchMatch operation. */
+export type GetResumeSearchMatchResponse = ResumeSearchMatch;
+
+/** Optional parameters. */
+export interface GetResumeSearchSuggestionJobTitleOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
+export type GetResumeSearchSuggestionJobTitleResponse = {
+  /** The parsed response body. */
+  body: string[];
+};
+
+/** Optional parameters. */
+export interface GetResumeSearchSuggestionSkillOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getResumeSearchSuggestionSkill operation. */
+export type GetResumeSearchSuggestionSkillResponse = {
+  /** The parsed response body. */
+  body: string[];
+};
+
+/** Optional parameters. */
 export interface CreateJobDescriptionSearchOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
@@ -5152,7 +5309,7 @@ export interface GetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum20;
+  documentType?: Enum23;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -5205,98 +5362,6 @@ export interface DeleteIndexDocumentOptionalParams
 /** Optional parameters. */
 export interface ReIndexDocumentOptionalParams
   extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface CreateResumeSearchOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-}
-
-/** Contains response data for the createResumeSearch operation. */
-export type CreateResumeSearchResponse = ResumeSearch;
-
-/** Optional parameters. */
-export interface GetResumeSearchDetailOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchDetail operation. */
-export type GetResumeSearchDetailResponse = ResumeSearchDetail;
-
-/** Optional parameters. */
-export interface GetResumeSearchMatchOptionalParams
-  extends coreClient.OperationOptions {
-  /** Optionally, specify an index to search in. If not specified, will search in all indexes. */
-  index?: string;
-  /** Add keywords to the search criteria. */
-  searchExpression?: string;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  jobTitlesWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  yearsExperienceWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  locationsWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  languagesWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  skillsWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  educationWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  searchExpressionWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  socCodesWeight?: number;
-  /** How important is this criteria to the matching score, range from 0 to 1. */
-  managementLevelWeight?: number;
-}
-
-/** Contains response data for the getResumeSearchMatch operation. */
-export type GetResumeSearchMatchResponse = ResumeSearchMatch;
-
-/** Optional parameters. */
-export interface GetResumeSearchConfigOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchConfig operation. */
-export type GetResumeSearchConfigResponse = ResumeSearchConfig;
-
-/** Optional parameters. */
-export interface UpdateResumeSearchConfigOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateResumeSearchConfig operation. */
-export type UpdateResumeSearchConfigResponse = ResumeSearchConfig;
-
-/** Optional parameters. */
-export interface CreateResumeSearchEmbedUrlOptionalParams
-  extends coreClient.OperationOptions {
-  body?: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema;
-}
-
-/** Contains response data for the createResumeSearchEmbedUrl operation. */
-export type CreateResumeSearchEmbedUrlResponse = ResumeSearchEmbed;
-
-/** Optional parameters. */
-export interface GetResumeSearchSuggestionJobTitleOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchSuggestionJobTitle operation. */
-export type GetResumeSearchSuggestionJobTitleResponse = {
-  /** The parsed response body. */
-  body: string[];
-};
-
-/** Optional parameters. */
-export interface GetResumeSearchSuggestionSkillOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getResumeSearchSuggestionSkill operation. */
-export type GetResumeSearchSuggestionSkillResponse = {
-  /** The parsed response body. */
-  body: string[];
-};
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

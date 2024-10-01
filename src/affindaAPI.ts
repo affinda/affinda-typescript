@@ -65,9 +65,6 @@ import {
   BatchAddTagOptionalParams,
   BatchRemoveTagRequest,
   BatchRemoveTagOptionalParams,
-  DocumentEditRequest,
-  EditDocumentPagesOptionalParams,
-  EditDocumentPagesResponse,
   GetAllValidationResultsOptionalParams,
   GetAllValidationResultsResponse,
   ValidationResultCreate,
@@ -83,6 +80,13 @@ import {
   BatchCreateValidationResultsResponse,
   BatchDeleteValidationResultsRequest,
   BatchDeleteValidationResultsOptionalParams,
+  GetAllDocumentSplittersOptionalParams,
+  GetAllDocumentSplittersResponse,
+  GetDocumentSplitterOptionalParams,
+  GetDocumentSplitterResponse,
+  DocumentEditRequest,
+  EditDocumentPagesOptionalParams,
+  EditDocumentPagesResponse,
   GetAllExtractorsOptionalParams,
   GetAllExtractorsResponse,
   CreateExtractorOptionalParams,
@@ -234,6 +238,24 @@ import {
   ActivateResthookSubscriptionResponse,
   ListOccupationGroupsOptionalParams,
   ListOccupationGroupsResponse,
+  ResumeSearchParameters,
+  CreateResumeSearchOptionalParams,
+  CreateResumeSearchResponse,
+  GetResumeSearchDetailOptionalParams,
+  GetResumeSearchDetailResponse,
+  GetResumeSearchConfigOptionalParams,
+  GetResumeSearchConfigResponse,
+  ResumeSearchConfig,
+  UpdateResumeSearchConfigOptionalParams,
+  UpdateResumeSearchConfigResponse,
+  CreateResumeSearchEmbedUrlOptionalParams,
+  CreateResumeSearchEmbedUrlResponse,
+  GetResumeSearchMatchOptionalParams,
+  GetResumeSearchMatchResponse,
+  GetResumeSearchSuggestionJobTitleOptionalParams,
+  GetResumeSearchSuggestionJobTitleResponse,
+  GetResumeSearchSuggestionSkillOptionalParams,
+  GetResumeSearchSuggestionSkillResponse,
   JobDescriptionSearchParameters,
   CreateJobDescriptionSearchOptionalParams,
   CreateJobDescriptionSearchResponse,
@@ -262,24 +284,6 @@ import {
   CreateIndexDocumentResponse,
   DeleteIndexDocumentOptionalParams,
   ReIndexDocumentOptionalParams,
-  ResumeSearchParameters,
-  CreateResumeSearchOptionalParams,
-  CreateResumeSearchResponse,
-  GetResumeSearchDetailOptionalParams,
-  GetResumeSearchDetailResponse,
-  GetResumeSearchMatchOptionalParams,
-  GetResumeSearchMatchResponse,
-  GetResumeSearchConfigOptionalParams,
-  GetResumeSearchConfigResponse,
-  ResumeSearchConfig,
-  UpdateResumeSearchConfigOptionalParams,
-  UpdateResumeSearchConfigResponse,
-  CreateResumeSearchEmbedUrlOptionalParams,
-  CreateResumeSearchEmbedUrlResponse,
-  GetResumeSearchSuggestionJobTitleOptionalParams,
-  GetResumeSearchSuggestionJobTitleResponse,
-  GetResumeSearchSuggestionSkillOptionalParams,
-  GetResumeSearchSuggestionSkillResponse,
 } from "./models";
 
 export class AffindaAPI extends coreClient.ServiceClient {
@@ -307,7 +311,7 @@ export class AffindaAPI extends coreClient.ServiceClient {
       credential: credentials,
     };
 
-    const packageDetails = `azsdk-js-affinda/7.3.1`;
+    const packageDetails = `azsdk-js-affinda/7.4.0`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
@@ -778,26 +782,6 @@ export class AffindaAPI extends coreClient.ServiceClient {
   }
 
   /**
-   * Split / merge / rotate / delete pages of a document.
-   * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
-   * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
-   *
-   * @param identifier Document's identifier
-   * @param body Describe how the pages should be edited
-   * @param options The options parameters.
-   */
-  editDocumentPages(
-    identifier: string,
-    body: DocumentEditRequest,
-    options?: EditDocumentPagesOptionalParams,
-  ): Promise<EditDocumentPagesResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      editDocumentPagesOperationSpec,
-    );
-  }
-
-  /**
    * Returns the validation results of a document.
    * @param document Filter by document.
    * @param options The options parameters.
@@ -901,6 +885,54 @@ export class AffindaAPI extends coreClient.ServiceClient {
     return this.sendOperationRequest(
       { body, options },
       batchDeleteValidationResultsOperationSpec,
+    );
+  }
+
+  /**
+   * Returns all the document splitters visible to the user.
+   * @param options The options parameters.
+   */
+  getAllDocumentSplitters(
+    options?: GetAllDocumentSplittersOptionalParams,
+  ): Promise<GetAllDocumentSplittersResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllDocumentSplittersOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific document splitter.
+   * @param identifier Document splitter's identifier
+   * @param options The options parameters.
+   */
+  getDocumentSplitter(
+    identifier: string,
+    options?: GetDocumentSplitterOptionalParams,
+  ): Promise<GetDocumentSplitterResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getDocumentSplitterOperationSpec,
+    );
+  }
+
+  /**
+   * Split / merge / rotate / delete pages of a document.
+   * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
+   * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+   *
+   * @param identifier Document's identifier
+   * @param body Describe how the pages should be edited
+   * @param options The options parameters.
+   */
+  editDocumentPages(
+    identifier: string,
+    body: DocumentEditRequest,
+    options?: EditDocumentPagesOptionalParams,
+  ): Promise<EditDocumentPagesResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      editDocumentPagesOperationSpec,
     );
   }
 
@@ -1974,6 +2006,141 @@ export class AffindaAPI extends coreClient.ServiceClient {
   }
 
   /**
+   * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
+   * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
+   * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
+   * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
+   * the custom criteria.
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  createResumeSearch(
+    body: ResumeSearchParameters,
+    options?: CreateResumeSearchOptionalParams,
+  ): Promise<CreateResumeSearchResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createResumeSearchOperationSpec,
+    );
+  }
+
+  /**
+   * This contains more detailed information about the matching score of the search criteria, or which
+   * search criteria is missing in this resume.
+   * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
+   * @param identifier Resume identifier
+   * @param body Search parameters
+   * @param options The options parameters.
+   */
+  getResumeSearchDetail(
+    identifier: string,
+    body: ResumeSearchParameters,
+    options?: GetResumeSearchDetailOptionalParams,
+  ): Promise<GetResumeSearchDetailResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      getResumeSearchDetailOperationSpec,
+    );
+  }
+
+  /**
+   * Return configurations such as which fields can be displayed in the logged in user's embeddable
+   * resume search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
+   * @param options The options parameters.
+   */
+  getResumeSearchConfig(
+    options?: GetResumeSearchConfigOptionalParams,
+  ): Promise<GetResumeSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getResumeSearchConfigOperationSpec,
+    );
+  }
+
+  /**
+   * Update configurations such as which fields can be displayed in the logged in user's embeddable
+   * resume search tool, what are their weights, what is the maximum number of results that can be
+   * returned, etc.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateResumeSearchConfig(
+    body: ResumeSearchConfig,
+    options?: UpdateResumeSearchConfigOptionalParams,
+  ): Promise<UpdateResumeSearchConfigResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      updateResumeSearchConfigOperationSpec,
+    );
+  }
+
+  /**
+   * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
+   * An optional parameter `config_override` can be passed to override the user-level configurations of
+   * the embeddable resume search tool.
+   * @param options The options parameters.
+   */
+  createResumeSearchEmbedUrl(
+    options?: CreateResumeSearchEmbedUrlOptionalParams,
+  ): Promise<CreateResumeSearchEmbedUrlResponse> {
+    return this.sendOperationRequest(
+      { options },
+      createResumeSearchEmbedUrlOperationSpec,
+    );
+  }
+
+  /**
+   * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
+   * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
+   * match the score returned from POST
+   * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
+   * @param resume Identify the resume to match.
+   * @param jobDescription Identify the job description to match.
+   * @param options The options parameters.
+   */
+  getResumeSearchMatch(
+    resume: string,
+    jobDescription: string,
+    options?: GetResumeSearchMatchOptionalParams,
+  ): Promise<GetResumeSearchMatchResponse> {
+    return this.sendOperationRequest(
+      { resume, jobDescription, options },
+      getResumeSearchMatchOperationSpec,
+    );
+  }
+
+  /**
+   * Provided one or more job titles, get related suggestions for your search.
+   * @param jobTitles Job title to query suggestions for
+   * @param options The options parameters.
+   */
+  getResumeSearchSuggestionJobTitle(
+    jobTitles: string[],
+    options?: GetResumeSearchSuggestionJobTitleOptionalParams,
+  ): Promise<GetResumeSearchSuggestionJobTitleResponse> {
+    return this.sendOperationRequest(
+      { jobTitles, options },
+      getResumeSearchSuggestionJobTitleOperationSpec,
+    );
+  }
+
+  /**
+   * Provided one or more skills, get related suggestions for your search.
+   * @param skills Skill to query suggestions for
+   * @param options The options parameters.
+   */
+  getResumeSearchSuggestionSkill(
+    skills: string[],
+    options?: GetResumeSearchSuggestionSkillOptionalParams,
+  ): Promise<GetResumeSearchSuggestionSkillResponse> {
+    return this.sendOperationRequest(
+      { skills, options },
+      getResumeSearchSuggestionSkillOperationSpec,
+    );
+  }
+
+  /**
    * Searches through parsed job descriptions. You can search with custom criterias or a resume.
    * @param body Search parameters
    * @param options The options parameters.
@@ -2179,141 +2346,6 @@ export class AffindaAPI extends coreClient.ServiceClient {
     return this.sendOperationRequest(
       { name, identifier, options },
       reIndexDocumentOperationSpec,
-    );
-  }
-
-  /**
-   * Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
-   * job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
-   * a resume - a parsed resume is used to find other candidates that have similar attributes<br /> 3.
-   * Search using custom criteria<br /><br /> Users should only populate 1 of jobDescription, resume or
-   * the custom criteria.
-   * @param body Search parameters
-   * @param options The options parameters.
-   */
-  createResumeSearch(
-    body: ResumeSearchParameters,
-    options?: CreateResumeSearchOptionalParams,
-  ): Promise<CreateResumeSearchResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createResumeSearchOperationSpec,
-    );
-  }
-
-  /**
-   * This contains more detailed information about the matching score of the search criteria, or which
-   * search criteria is missing in this resume.
-   * The `identifier` is the unique ID returned via the [/resume_search](#post-/resume_search) endpoint.
-   * @param identifier Resume identifier
-   * @param body Search parameters
-   * @param options The options parameters.
-   */
-  getResumeSearchDetail(
-    identifier: string,
-    body: ResumeSearchParameters,
-    options?: GetResumeSearchDetailOptionalParams,
-  ): Promise<GetResumeSearchDetailResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      getResumeSearchDetailOperationSpec,
-    );
-  }
-
-  /**
-   * Get the matching score between a resume and a job description. The score ranges between 0 and 1,
-   * with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
-   * match the score returned from POST
-   * [/resume_search/details/{identifier}](#post-/resume_search/details/-identifier-).
-   * @param resume Identify the resume to match.
-   * @param jobDescription Identify the job description to match.
-   * @param options The options parameters.
-   */
-  getResumeSearchMatch(
-    resume: string,
-    jobDescription: string,
-    options?: GetResumeSearchMatchOptionalParams,
-  ): Promise<GetResumeSearchMatchResponse> {
-    return this.sendOperationRequest(
-      { resume, jobDescription, options },
-      getResumeSearchMatchOperationSpec,
-    );
-  }
-
-  /**
-   * Return configurations such as which fields can be displayed in the logged in user's embeddable
-   * resume search tool, what are their weights, what is the maximum number of results that can be
-   * returned, etc.
-   * @param options The options parameters.
-   */
-  getResumeSearchConfig(
-    options?: GetResumeSearchConfigOptionalParams,
-  ): Promise<GetResumeSearchConfigResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getResumeSearchConfigOperationSpec,
-    );
-  }
-
-  /**
-   * Update configurations such as which fields can be displayed in the logged in user's embeddable
-   * resume search tool, what are their weights, what is the maximum number of results that can be
-   * returned, etc.
-   * @param body
-   * @param options The options parameters.
-   */
-  updateResumeSearchConfig(
-    body: ResumeSearchConfig,
-    options?: UpdateResumeSearchConfigOptionalParams,
-  ): Promise<UpdateResumeSearchConfigResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      updateResumeSearchConfigOperationSpec,
-    );
-  }
-
-  /**
-   * Create and return a signed URL of the resume search tool which then can be embedded on a web page.
-   * An optional parameter `config_override` can be passed to override the user-level configurations of
-   * the embeddable resume search tool.
-   * @param options The options parameters.
-   */
-  createResumeSearchEmbedUrl(
-    options?: CreateResumeSearchEmbedUrlOptionalParams,
-  ): Promise<CreateResumeSearchEmbedUrlResponse> {
-    return this.sendOperationRequest(
-      { options },
-      createResumeSearchEmbedUrlOperationSpec,
-    );
-  }
-
-  /**
-   * Provided one or more job titles, get related suggestions for your search.
-   * @param jobTitles Job title to query suggestions for
-   * @param options The options parameters.
-   */
-  getResumeSearchSuggestionJobTitle(
-    jobTitles: string[],
-    options?: GetResumeSearchSuggestionJobTitleOptionalParams,
-  ): Promise<GetResumeSearchSuggestionJobTitleResponse> {
-    return this.sendOperationRequest(
-      { jobTitles, options },
-      getResumeSearchSuggestionJobTitleOperationSpec,
-    );
-  }
-
-  /**
-   * Provided one or more skills, get related suggestions for your search.
-   * @param skills Skill to query suggestions for
-   * @param options The options parameters.
-   */
-  getResumeSearchSuggestionSkill(
-    skills: string[],
-    options?: GetResumeSearchSuggestionSkillOptionalParams,
-  ): Promise<GetResumeSearchSuggestionSkillResponse> {
-    return this.sendOperationRequest(
-      { skills, options },
-      getResumeSearchSuggestionSkillOperationSpec,
     );
   }
 }
@@ -3039,36 +3071,6 @@ const batchRemoveTagOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer,
 };
-const editDocumentPagesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validate/{identifier}/split",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Meta" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body11,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
 const getAllValidationResultsOperationSpec: coreClient.OperationSpec = {
   path: "/v3/validation_results",
   httpMethod: "GET",
@@ -3119,7 +3121,7 @@ const createValidationResultOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body12,
+  requestBody: Parameters.body11,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3167,7 +3169,7 @@ const updateValidationResultOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body13,
+  requestBody: Parameters.body12,
   urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3220,7 +3222,7 @@ const batchCreateValidationResultsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body14,
+  requestBody: Parameters.body13,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -3243,8 +3245,97 @@ const batchDeleteValidationResultsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body15,
+  requestBody: Parameters.body14,
   urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer,
+};
+const getAllDocumentSplittersOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/document_splitters",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "DocumentSplitter" },
+          },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization1,
+    Parameters.includePublic,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getDocumentSplitterOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/document_splitters/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DocumentSplitter,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const editDocumentPagesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validate/{identifier}/split",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Meta" } },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body15,
+  urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
   serializer,
@@ -5064,6 +5155,213 @@ const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
   headerParameters: [Parameters.accept],
   serializer,
 };
+const createResumeSearchOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.ResumeSearch,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body43,
+  queryParameters: [Parameters.offset, Parameters.limit1],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer,
+};
+const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search/details/{identifier}",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchDetail,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body43,
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer,
+};
+const getResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search/config",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchConfig,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search/config",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchConfig,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body44,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer,
+};
+const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search/embed",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchEmbed,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body45,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType],
+  mediaType: "json",
+  serializer,
+};
+const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search/match",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ResumeSearchMatch,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.resume,
+    Parameters.jobDescription,
+    Parameters.index,
+    Parameters.searchExpression,
+    Parameters.jobTitlesWeight,
+    Parameters.yearsExperienceWeight,
+    Parameters.locationsWeight,
+    Parameters.languagesWeight,
+    Parameters.skillsWeight,
+    Parameters.educationWeight,
+    Parameters.searchExpressionWeight,
+    Parameters.socCodesWeight,
+    Parameters.managementLevelWeight,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getResumeSearchSuggestionJobTitleOperationSpec: coreClient.OperationSpec =
+  {
+    path: "/v3/resume_search/suggestion_job_title",
+    httpMethod: "GET",
+    responses: {
+      200: {
+        bodyMapper: {
+          type: { name: "Sequence", element: { type: { name: "String" } } },
+        },
+      },
+      400: {
+        bodyMapper: Mappers.RequestError,
+        isError: true,
+      },
+      401: {
+        bodyMapper: Mappers.RequestError,
+        isError: true,
+      },
+      default: {
+        bodyMapper: Mappers.RequestError,
+      },
+    },
+    queryParameters: [Parameters.jobTitles],
+    urlParameters: [Parameters.region],
+    headerParameters: [Parameters.accept],
+    serializer,
+  };
+const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/resume_search/suggestion_skill",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Sequence", element: { type: { name: "String" } } },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.skills],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
 const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
   path: "/v3/job_description_search",
   httpMethod: "POST",
@@ -5083,7 +5381,7 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body43,
+  requestBody: Parameters.body46,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
@@ -5109,7 +5407,7 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body43,
+  requestBody: Parameters.body46,
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -5154,7 +5452,7 @@ const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec =
         bodyMapper: Mappers.RequestError,
       },
     },
-    requestBody: Parameters.body44,
+    requestBody: Parameters.body47,
     urlParameters: [Parameters.region],
     headerParameters: [Parameters.accept, Parameters.contentType],
     mediaType: "json",
@@ -5176,7 +5474,7 @@ const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec 
         bodyMapper: Mappers.RequestError,
       },
     },
-    requestBody: Parameters.body45,
+    requestBody: Parameters.body48,
     urlParameters: [Parameters.region],
     headerParameters: [Parameters.accept, Parameters.contentType],
     mediaType: "json",
@@ -5231,7 +5529,7 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body46,
+  requestBody: Parameters.body49,
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -5256,7 +5554,7 @@ const updateIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body47,
+  requestBody: Parameters.body50,
   urlParameters: [Parameters.region, Parameters.name3],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -5328,7 +5626,7 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body48,
+  requestBody: Parameters.body51,
   urlParameters: [Parameters.region, Parameters.name3],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -5373,213 +5671,6 @@ const reIndexDocumentOperationSpec: coreClient.OperationSpec = {
     },
   },
   urlParameters: [Parameters.region, Parameters.identifier, Parameters.name3],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createResumeSearchOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.ResumeSearch,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body49,
-  queryParameters: [Parameters.offset, Parameters.limit1],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search/details/{identifier}",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResumeSearchDetail,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body49,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getResumeSearchMatchOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search/match",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResumeSearchMatch,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.resume,
-    Parameters.jobDescription,
-    Parameters.index,
-    Parameters.searchExpression,
-    Parameters.jobTitlesWeight,
-    Parameters.yearsExperienceWeight,
-    Parameters.locationsWeight,
-    Parameters.languagesWeight,
-    Parameters.skillsWeight,
-    Parameters.educationWeight,
-    Parameters.searchExpressionWeight,
-    Parameters.socCodesWeight,
-    Parameters.managementLevelWeight,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search/config",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResumeSearchConfig,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search/config",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResumeSearchConfig,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body50,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search/embed",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ResumeSearchEmbed,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body51,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getResumeSearchSuggestionJobTitleOperationSpec: coreClient.OperationSpec =
-  {
-    path: "/v3/resume_search/suggestion_job_title",
-    httpMethod: "GET",
-    responses: {
-      200: {
-        bodyMapper: {
-          type: { name: "Sequence", element: { type: { name: "String" } } },
-        },
-      },
-      400: {
-        bodyMapper: Mappers.RequestError,
-        isError: true,
-      },
-      401: {
-        bodyMapper: Mappers.RequestError,
-        isError: true,
-      },
-      default: {
-        bodyMapper: Mappers.RequestError,
-      },
-    },
-    queryParameters: [Parameters.jobTitles],
-    urlParameters: [Parameters.region],
-    headerParameters: [Parameters.accept],
-    serializer,
-  };
-const getResumeSearchSuggestionSkillOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/resume_search/suggestion_skill",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: { name: "Sequence", element: { type: { name: "String" } } },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [Parameters.skills],
-  urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer,
 };

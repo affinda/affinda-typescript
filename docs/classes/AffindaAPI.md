@@ -78,6 +78,7 @@
 - [getAllApiUsers](AffindaAPI.md#getallapiusers)
 - [getAllCollections](AffindaAPI.md#getallcollections)
 - [getAllDataPoints](AffindaAPI.md#getalldatapoints)
+- [getAllDocumentSplitters](AffindaAPI.md#getalldocumentsplitters)
 - [getAllDocuments](AffindaAPI.md#getalldocuments)
 - [getAllExtractors](AffindaAPI.md#getallextractors)
 - [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
@@ -98,6 +99,7 @@
 - [getDataPointChoice](AffindaAPI.md#getdatapointchoice)
 - [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
 - [getDocument](AffindaAPI.md#getdocument)
+- [getDocumentSplitter](AffindaAPI.md#getdocumentsplitter)
 - [getExtractor](AffindaAPI.md#getextractor)
 - [getInvitation](AffindaAPI.md#getinvitation)
 - [getInvitationByToken](AffindaAPI.md#getinvitationbytoken)
@@ -1297,6 +1299,24 @@ Returns your custom data points as well as Affinda's off-the-shelf data points.
 
 ___
 
+### getAllDocumentSplitters
+
+▸ **getAllDocumentSplitters**(`options?`): `Promise`\<[`GetAllDocumentSplittersResponse`](../modules.md#getalldocumentsplittersresponse)\>
+
+Returns all the document splitters visible to the user.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`GetAllDocumentSplittersOptionalParams`](../interfaces/GetAllDocumentSplittersOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`GetAllDocumentSplittersResponse`](../modules.md#getalldocumentsplittersresponse)\>
+
+___
+
 ### getAllDocuments
 
 ▸ **getAllDocuments**(`options?`): `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)\>
@@ -1668,6 +1688,25 @@ Return a specific document.
 #### Returns
 
 `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+
+___
+
+### getDocumentSplitter
+
+▸ **getDocumentSplitter**(`identifier`, `options?`): `Promise`\<[`DocumentSplitter`](../interfaces/DocumentSplitter.md)\>
+
+Return a specific document splitter.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document splitter's identifier |
+| `options?` | [`GetDocumentSplitterOptionalParams`](../interfaces/GetDocumentSplitterOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`DocumentSplitter`](../interfaces/DocumentSplitter.md)\>
 
 ___
 

@@ -19,7 +19,7 @@
 
 • `Optional` **documentSplitter**: `string`
 
-Option "leave" means no document splitting at all. Option "conservative" means we don't actually split documents the documents, but will add a warning to documents that may require a split. Option "recommended" means we split documents that are highly likely to require a split, and add warnings to documents that might require one. Option "aggressive" means we split all documents that are likely to require a split.
+Uniquely identify a document splitter.
 
 ___
 
