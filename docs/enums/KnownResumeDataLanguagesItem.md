@@ -23,6 +23,7 @@ Known values of [ResumeDataLanguagesItem](../modules.md#resumedatalanguagesitem)
 - [Bagheli](KnownResumeDataLanguagesItem.md#bagheli)
 - [Bagri](KnownResumeDataLanguagesItem.md#bagri)
 - [Bahasa](KnownResumeDataLanguagesItem.md#bahasa)
+- [BahasaIndonesian](KnownResumeDataLanguagesItem.md#bahasaindonesian)
 - [Bambara](KnownResumeDataLanguagesItem.md#bambara)
 - [Bangala](KnownResumeDataLanguagesItem.md#bangala)
 - [Bardi](KnownResumeDataLanguagesItem.md#bardi)
@@ -331,6 +332,14 @@ ___
 • **Bahasa** = ``"Bahasa"``
 
 Bahasa
+
+___
+
+### BahasaIndonesian
+
+• **BahasaIndonesian** = ``"Bahasa Indonesian"``
+
+BahasaIndonesian
 
 ___
 

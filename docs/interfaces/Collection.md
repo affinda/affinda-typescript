@@ -7,6 +7,7 @@
 ### Properties
 
 - [allowOpenai](Collection.md#allowopenai)
+- [autoRefreshValidationResults](Collection.md#autorefreshvalidationresults)
 - [autoValidateIfValidationRulesPass](Collection.md#autovalidateifvalidationrulespass)
 - [autoValidationThreshold](Collection.md#autovalidationthreshold)
 - [confirmedDocsCount](Collection.md#confirmeddocscount)
@@ -34,6 +35,14 @@
 • `Optional` **allowOpenai**: `boolean`
 
 Whether to allow OpenAI API to be used to assist in creating a model for this collection.
+
+___
+
+### autoRefreshValidationResults
+
+• `Optional` **autoRefreshValidationResults**: `boolean`
+
+If True, validation results are refreshed whenever annotations are changed.
 
 ___
 

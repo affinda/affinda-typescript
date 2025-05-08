@@ -15,6 +15,7 @@ Optional parameters.
 ### Properties
 
 - [additionalPolicies](AffindaAPIOptionalParams.md#additionalpolicies)
+- [agent](AffindaAPIOptionalParams.md#agent)
 - [allowInsecureConnection](AffindaAPIOptionalParams.md#allowinsecureconnection)
 - [baseUri](AffindaAPIOptionalParams.md#baseuri)
 - [credential](AffindaAPIOptionalParams.md#credential)
@@ -27,6 +28,7 @@ Optional parameters.
 - [region](AffindaAPIOptionalParams.md#region)
 - [requestContentType](AffindaAPIOptionalParams.md#requestcontenttype)
 - [retryOptions](AffindaAPIOptionalParams.md#retryoptions)
+- [telemetryOptions](AffindaAPIOptionalParams.md#telemetryoptions)
 - [tlsOptions](AffindaAPIOptionalParams.md#tlsoptions)
 - [userAgentOptions](AffindaAPIOptionalParams.md#useragentoptions)
 
@@ -41,6 +43,18 @@ Additional policies to include in the HTTP pipeline.
 #### Inherited from
 
 coreClient.ServiceClientOptions.additionalPolicies
+
+___
+
+### agent
+
+• `Optional` **agent**: `Agent`
+
+Options for configuring Agent instance for outgoing requests
+
+#### Inherited from
+
+coreClient.ServiceClientOptions.agent
 
 ___
 
@@ -187,6 +201,18 @@ Options that control how to retry failed requests.
 #### Inherited from
 
 coreClient.ServiceClientOptions.retryOptions
+
+___
+
+### telemetryOptions
+
+• `Optional` **telemetryOptions**: `TelemetryOptions`
+
+Options for setting common telemetry and tracing info to outgoing requests.
+
+#### Inherited from
+
+coreClient.ServiceClientOptions.telemetryOptions
 
 ___
 

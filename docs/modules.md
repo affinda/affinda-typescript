@@ -10,16 +10,15 @@
 - [KnownCollectionDateFormatPreference](enums/KnownCollectionDateFormatPreference.md)
 - [KnownDateFormatPreference](enums/KnownDateFormatPreference.md)
 - [KnownDateRange](enums/KnownDateRange.md)
+- [KnownDocType](enums/KnownDocType.md)
 - [KnownDocumentFormat](enums/KnownDocumentFormat.md)
 - [KnownDocumentSplitterType](enums/KnownDocumentSplitterType.md)
 - [KnownDocumentState](enums/KnownDocumentState.md)
-- [KnownDocumentType](enums/KnownDocumentType.md)
-- [KnownEnum23](enums/KnownEnum23.md)
-- [KnownIndexDocumentType](enums/KnownIndexDocumentType.md)
+- [KnownEnum22](enums/KnownEnum22.md)
+- [KnownIndexDocType](enums/KnownIndexDocType.md)
 - [KnownInvitationResponseStatus](enums/KnownInvitationResponseStatus.md)
 - [KnownInvitationStatus](enums/KnownInvitationStatus.md)
 - [KnownJobDescriptionSearchConfigDistanceUnit](enums/KnownJobDescriptionSearchConfigDistanceUnit.md)
-- [KnownLLMModelType](enums/KnownLLMModelType.md)
 - [KnownOrganizationRole](enums/KnownOrganizationRole.md)
 - [KnownOrganizationUserRole](enums/KnownOrganizationUserRole.md)
 - [KnownRegion](enums/KnownRegion.md)
@@ -90,6 +89,7 @@
 - [CreateDataPointChoiceOptionalParams](interfaces/CreateDataPointChoiceOptionalParams.md)
 - [CreateDataPointOptionalParams](interfaces/CreateDataPointOptionalParams.md)
 - [CreateDocumentOptionalParams](interfaces/CreateDocumentOptionalParams.md)
+- [CreateDocumentTypeOptionalParams](interfaces/CreateDocumentTypeOptionalParams.md)
 - [CreateExtractorOptionalParams](interfaces/CreateExtractorOptionalParams.md)
 - [CreateIndexDocumentOptionalParams](interfaces/CreateIndexDocumentOptionalParams.md)
 - [CreateIndexOptionalParams](interfaces/CreateIndexOptionalParams.md)
@@ -135,6 +135,7 @@
 - [DeleteDataPointChoiceOptionalParams](interfaces/DeleteDataPointChoiceOptionalParams.md)
 - [DeleteDataPointOptionalParams](interfaces/DeleteDataPointOptionalParams.md)
 - [DeleteDocumentOptionalParams](interfaces/DeleteDocumentOptionalParams.md)
+- [DeleteDocumentTypeOptionalParams](interfaces/DeleteDocumentTypeOptionalParams.md)
 - [DeleteExtractorOptionalParams](interfaces/DeleteExtractorOptionalParams.md)
 - [DeleteIndexDocumentOptionalParams](interfaces/DeleteIndexDocumentOptionalParams.md)
 - [DeleteIndexOptionalParams](interfaces/DeleteIndexOptionalParams.md)
@@ -163,6 +164,9 @@
 - [DocumentSplit](interfaces/DocumentSplit.md)
 - [DocumentSplitPage](interfaces/DocumentSplitPage.md)
 - [DocumentSplitter](interfaces/DocumentSplitter.md)
+- [DocumentType](interfaces/DocumentType.md)
+- [DocumentTypeCreate](interfaces/DocumentTypeCreate.md)
+- [DocumentTypeUpdate](interfaces/DocumentTypeUpdate.md)
 - [DocumentUpdate](interfaces/DocumentUpdate.md)
 - [DocumentWarning](interfaces/DocumentWarning.md)
 - [EditDocumentPagesOptionalParams](interfaces/EditDocumentPagesOptionalParams.md)
@@ -213,6 +217,8 @@
 - [GetDataPointOptionalParams](interfaces/GetDataPointOptionalParams.md)
 - [GetDocumentOptionalParams](interfaces/GetDocumentOptionalParams.md)
 - [GetDocumentSplitterOptionalParams](interfaces/GetDocumentSplitterOptionalParams.md)
+- [GetDocumentTypeOptionalParams](interfaces/GetDocumentTypeOptionalParams.md)
+- [GetDocumentTypesOptionalParams](interfaces/GetDocumentTypesOptionalParams.md)
 - [GetExtractorOptionalParams](interfaces/GetExtractorOptionalParams.md)
 - [GetInvitationByTokenOptionalParams](interfaces/GetInvitationByTokenOptionalParams.md)
 - [GetInvitationOptionalParams](interfaces/GetInvitationOptionalParams.md)
@@ -223,6 +229,7 @@
 - [GetMappingOptionalParams](interfaces/GetMappingOptionalParams.md)
 - [GetOrganizationMembershipOptionalParams](interfaces/GetOrganizationMembershipOptionalParams.md)
 - [GetOrganizationOptionalParams](interfaces/GetOrganizationOptionalParams.md)
+- [GetRedactedDocumentOptionalParams](interfaces/GetRedactedDocumentOptionalParams.md)
 - [GetResthookSubscriptionOptionalParams](interfaces/GetResthookSubscriptionOptionalParams.md)
 - [GetResumeSearchConfigOptionalParams](interfaces/GetResumeSearchConfigOptionalParams.md)
 - [GetResumeSearchDetailOptionalParams](interfaces/GetResumeSearchDetailOptionalParams.md)
@@ -433,10 +440,12 @@
 - [UpdateDataPointOptionalParams](interfaces/UpdateDataPointOptionalParams.md)
 - [UpdateDocumentDataOptionalParams](interfaces/UpdateDocumentDataOptionalParams.md)
 - [UpdateDocumentOptionalParams](interfaces/UpdateDocumentOptionalParams.md)
+- [UpdateDocumentTypeOptionalParams](interfaces/UpdateDocumentTypeOptionalParams.md)
 - [UpdateExtractorOptionalParams](interfaces/UpdateExtractorOptionalParams.md)
 - [UpdateIndexOptionalParams](interfaces/UpdateIndexOptionalParams.md)
 - [UpdateInvitationOptionalParams](interfaces/UpdateInvitationOptionalParams.md)
 - [UpdateJobDescriptionSearchConfigOptionalParams](interfaces/UpdateJobDescriptionSearchConfigOptionalParams.md)
+- [UpdateMappingDataSourceValueOptionalParams](interfaces/UpdateMappingDataSourceValueOptionalParams.md)
 - [UpdateMappingOptionalParams](interfaces/UpdateMappingOptionalParams.md)
 - [UpdateOrganizationMembershipOptionalParams](interfaces/UpdateOrganizationMembershipOptionalParams.md)
 - [UpdateOrganizationOptionalParams](interfaces/UpdateOrganizationOptionalParams.md)
@@ -486,6 +495,7 @@
 - [CreateDataPointChoiceResponse](modules.md#createdatapointchoiceresponse)
 - [CreateDataPointResponse](modules.md#createdatapointresponse)
 - [CreateDocumentResponse](modules.md#createdocumentresponse)
+- [CreateDocumentTypeResponse](modules.md#createdocumenttyperesponse)
 - [CreateExtractorResponse](modules.md#createextractorresponse)
 - [CreateIndexDocumentResponse](modules.md#createindexdocumentresponse)
 - [CreateIndexResponse](modules.md#createindexresponse)
@@ -505,14 +515,14 @@
 - [DateFormatPreference](modules.md#dateformatpreference)
 - [DateRange](modules.md#daterange)
 - [DeleteAnnotationResponse](modules.md#deleteannotationresponse)
+- [DocType](modules.md#doctype)
 - [DocumentFormat](modules.md#documentformat)
 - [DocumentSplitterType](modules.md#documentsplittertype)
 - [DocumentState](modules.md#documentstate)
-- [DocumentType](modules.md#documenttype)
 - [DocumentUnion](modules.md#documentunion)
 - [EditDocumentPagesResponse](modules.md#editdocumentpagesresponse)
 - [EducationLevel](modules.md#educationlevel)
-- [Enum23](modules.md#enum23)
+- [Enum22](modules.md#enum22)
 - [GetAllAnnotationsResponse](modules.md#getallannotationsresponse)
 - [GetAllApiUsersResponse](modules.md#getallapiusersresponse)
 - [GetAllCollectionsResponse](modules.md#getallcollectionsresponse)
@@ -539,6 +549,8 @@
 - [GetDataPointResponse](modules.md#getdatapointresponse)
 - [GetDocumentResponse](modules.md#getdocumentresponse)
 - [GetDocumentSplitterResponse](modules.md#getdocumentsplitterresponse)
+- [GetDocumentTypeResponse](modules.md#getdocumenttyperesponse)
+- [GetDocumentTypesResponse](modules.md#getdocumenttypesresponse)
 - [GetExtractorResponse](modules.md#getextractorresponse)
 - [GetInvitationByTokenResponse](modules.md#getinvitationbytokenresponse)
 - [GetInvitationResponse](modules.md#getinvitationresponse)
@@ -549,6 +561,7 @@
 - [GetMappingResponse](modules.md#getmappingresponse)
 - [GetOrganizationMembershipResponse](modules.md#getorganizationmembershipresponse)
 - [GetOrganizationResponse](modules.md#getorganizationresponse)
+- [GetRedactedDocumentResponse](modules.md#getredacteddocumentresponse)
 - [GetResthookSubscriptionResponse](modules.md#getresthooksubscriptionresponse)
 - [GetResumeSearchConfigResponse](modules.md#getresumesearchconfigresponse)
 - [GetResumeSearchDetailResponse](modules.md#getresumesearchdetailresponse)
@@ -561,11 +574,10 @@
 - [GetValidationResultResponse](modules.md#getvalidationresultresponse)
 - [GetWorkspaceMembershipResponse](modules.md#getworkspacemembershipresponse)
 - [GetWorkspaceResponse](modules.md#getworkspaceresponse)
-- [IndexDocumentType](modules.md#indexdocumenttype)
+- [IndexDocType](modules.md#indexdoctype)
 - [InvitationResponseStatus](modules.md#invitationresponsestatus)
 - [InvitationStatus](modules.md#invitationstatus)
 - [JobDescriptionSearchConfigDistanceUnit](modules.md#jobdescriptionsearchconfigdistanceunit)
-- [LLMModelType](modules.md#llmmodeltype)
 - [ListMappingDataSourceValuesResponse](modules.md#listmappingdatasourcevaluesresponse)
 - [ListMappingDataSourcesResponse](modules.md#listmappingdatasourcesresponse)
 - [ListMappingsResponse](modules.md#listmappingsresponse)
@@ -594,10 +606,12 @@
 - [UpdateDataPointResponse](modules.md#updatedatapointresponse)
 - [UpdateDocumentDataResponse](modules.md#updatedocumentdataresponse)
 - [UpdateDocumentResponse](modules.md#updatedocumentresponse)
+- [UpdateDocumentTypeResponse](modules.md#updatedocumenttyperesponse)
 - [UpdateExtractorResponse](modules.md#updateextractorresponse)
 - [UpdateIndexResponse](modules.md#updateindexresponse)
 - [UpdateInvitationResponse](modules.md#updateinvitationresponse)
 - [UpdateJobDescriptionSearchConfigResponse](modules.md#updatejobdescriptionsearchconfigresponse)
+- [UpdateMappingDataSourceValueResponse](modules.md#updatemappingdatasourcevalueresponse)
 - [UpdateMappingResponse](modules.md#updatemappingresponse)
 - [UpdateOrganizationMembershipResponse](modules.md#updateorganizationmembershipresponse)
 - [UpdateOrganizationResponse](modules.md#updateorganizationresponse)
@@ -656,7 +670,8 @@ Defines values for AnnotationContentType. \
 **group** \
 **table_deprecated** \
 **url** \
-**image**
+**image** \
+**docclf**
 
 ___
 
@@ -759,6 +774,14 @@ ___
 Ƭ **CreateDocumentResponse**: [`DocumentUnion`](modules.md#documentunion)
 
 Contains response data for the createDocument operation.
+
+___
+
+### CreateDocumentTypeResponse
+
+Ƭ **CreateDocumentTypeResponse**: [`DocumentType`](interfaces/DocumentType.md)
+
+Contains response data for the createDocumentType operation.
 
 ___
 
@@ -928,6 +951,19 @@ Contains response data for the deleteAnnotation operation.
 
 ___
 
+### DocType
+
+Ƭ **DocType**: `string`
+
+Defines values for DocType. \
+[KnownDocType](enums/KnownDocType.md) can be used interchangeably with DocType,
+ this enum contains the known values that the service supports.
+### Known values supported by the service
+**resumes** \
+**job_descriptions**
+
+___
+
 ### DocumentFormat
 
 Ƭ **DocumentFormat**: `string`
@@ -951,7 +987,8 @@ Defines values for DocumentSplitterType. \
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **llm** \
-**extractor**
+**extractor** \
+**keyword**
 
 ___
 
@@ -968,19 +1005,6 @@ Defines values for DocumentState. \
 **validated** \
 **archived** \
 **rejected**
-
-___
-
-### DocumentType
-
-Ƭ **DocumentType**: `string`
-
-Defines values for DocumentType. \
-[KnownDocumentType](enums/KnownDocumentType.md) can be used interchangeably with DocumentType,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**resumes** \
-**job_descriptions**
 
 ___
 
@@ -1006,12 +1030,12 @@ Defines values for EducationLevel.
 
 ___
 
-### Enum23
+### Enum22
 
-Ƭ **Enum23**: `string`
+Ƭ **Enum22**: `string`
 
-Defines values for Enum23. \
-[KnownEnum23](enums/KnownEnum23.md) can be used interchangeably with Enum23,
+Defines values for Enum22. \
+[KnownEnum22](enums/KnownEnum22.md) can be used interchangeably with Enum22,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1227,6 +1251,22 @@ Contains response data for the getDocumentSplitter operation.
 
 ___
 
+### GetDocumentTypeResponse
+
+Ƭ **GetDocumentTypeResponse**: [`DocumentType`](interfaces/DocumentType.md)
+
+Contains response data for the getDocumentType operation.
+
+___
+
+### GetDocumentTypesResponse
+
+Ƭ **GetDocumentTypesResponse**: [`DocumentType`](interfaces/DocumentType.md)[]
+
+Contains response data for the getDocumentTypes operation.
+
+___
+
 ### GetExtractorResponse
 
 Ƭ **GetExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
@@ -1304,6 +1344,21 @@ ___
 Ƭ **GetOrganizationResponse**: [`Organization`](interfaces/Organization.md)
 
 Contains response data for the getOrganization operation.
+
+___
+
+### GetRedactedDocumentResponse
+
+Ƭ **GetRedactedDocumentResponse**: `Object`
+
+Contains response data for the getRedactedDocument operation.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `blobBody?` | `Promise`\<`Blob`\> | BROWSER ONLY The response body as a browser Blob. Always `undefined` in node.js. |
+| `readableStreamBody?` | `NodeJS.ReadableStream` | NODEJS ONLY The response body as a node.js Readable stream. Always `undefined` in the browser. |
 
 ___
 
@@ -1415,12 +1470,12 @@ Contains response data for the getWorkspace operation.
 
 ___
 
-### IndexDocumentType
+### IndexDocType
 
-Ƭ **IndexDocumentType**: `string`
+Ƭ **IndexDocType**: `string`
 
-Defines values for IndexDocumentType. \
-[KnownIndexDocumentType](enums/KnownIndexDocumentType.md) can be used interchangeably with IndexDocumentType,
+Defines values for IndexDocType. \
+[KnownIndexDocType](enums/KnownIndexDocType.md) can be used interchangeably with IndexDocType,
  this enum contains the known values that the service supports.
 ### Known values supported by the service
 **resumes** \
@@ -1465,22 +1520,6 @@ Defines values for JobDescriptionSearchConfigDistanceUnit. \
 ### Known values supported by the service
 **mi** \
 **km**
-
-___
-
-### LLMModelType
-
-Ƭ **LLMModelType**: `string`
-
-Defines values for LLMModelType. \
-[KnownLLMModelType](enums/KnownLLMModelType.md) can be used interchangeably with LLMModelType,
- this enum contains the known values that the service supports.
-### Known values supported by the service
-**anthropic.claude-3-haiku-20240307-v1:0** \
-**anthropic.claude-3-sonnet-20240229-v1:0** \
-**anthropic.claude-3-5-sonnet-20240620-v1:0** \
-**gpt-35** \
-**gpt-4**
 
 ___
 
@@ -1660,6 +1699,7 @@ Defines values for ResumeDataLanguagesItem. \
 **Bagheli** \
 **Bagri** \
 **Bahasa** \
+**Bahasa Indonesian** \
 **Bambara** \
 **Bangala** \
 **Bardi** \
@@ -1993,6 +2033,14 @@ Contains response data for the updateDocument operation.
 
 ___
 
+### UpdateDocumentTypeResponse
+
+Ƭ **UpdateDocumentTypeResponse**: [`DocumentType`](interfaces/DocumentType.md)
+
+Contains response data for the updateDocumentType operation.
+
+___
+
 ### UpdateExtractorResponse
 
 Ƭ **UpdateExtractorResponse**: [`Extractor`](interfaces/Extractor.md)
@@ -2022,6 +2070,14 @@ ___
 Ƭ **UpdateJobDescriptionSearchConfigResponse**: [`JobDescriptionSearchConfig`](interfaces/JobDescriptionSearchConfig.md)
 
 Contains response data for the updateJobDescriptionSearchConfig operation.
+
+___
+
+### UpdateMappingDataSourceValueResponse
+
+Ƭ **UpdateMappingDataSourceValueResponse**: `Record`\<`string`, `unknown`\>
+
+Contains response data for the updateMappingDataSourceValue operation.
 
 ___
 

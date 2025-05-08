@@ -13,6 +13,7 @@ Known values of [AnnotationContentType](../modules.md#annotationcontenttype) tha
 - [Daterange](KnownAnnotationContentType.md#daterange)
 - [Datetime](KnownAnnotationContentType.md#datetime)
 - [Decimal](KnownAnnotationContentType.md#decimal)
+- [Docclf](KnownAnnotationContentType.md#docclf)
 - [Enum](KnownAnnotationContentType.md#enum)
 - [Expectedremuneration](KnownAnnotationContentType.md#expectedremuneration)
 - [Float](KnownAnnotationContentType.md#float)
@@ -70,6 +71,14 @@ ___
 • **Decimal** = ``"decimal"``
 
 Decimal
+
+___
+
+### Docclf
+
+• **Docclf** = ``"docclf"``
+
+Docclf
 
 ___
 

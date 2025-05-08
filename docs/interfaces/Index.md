@@ -2,19 +2,23 @@
 
 # Interface: Index
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
 ## Table of contents
 
 ### Properties
 
-- [documentType](Index.md#documenttype)
+- [docType](Index.md#doctype)
 - [name](Index.md#name)
 - [user](Index.md#user)
 
 ## Properties
 
-### documentType
+### docType
 
-• **documentType**: `string`
+• **docType**: `string`
 
 ___
 

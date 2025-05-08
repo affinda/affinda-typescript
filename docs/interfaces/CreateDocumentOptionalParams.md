@@ -20,6 +20,7 @@ Optional parameters.
 - [customIdentifier](CreateDocumentOptionalParams.md#customidentifier)
 - [data](CreateDocumentOptionalParams.md#data)
 - [deleteAfterParse](CreateDocumentOptionalParams.md#deleteafterparse)
+- [documentType](CreateDocumentOptionalParams.md#documenttype)
 - [enableValidationTool](CreateDocumentOptionalParams.md#enablevalidationtool)
 - [expiryTime](CreateDocumentOptionalParams.md#expirytime)
 - [file](CreateDocumentOptionalParams.md#file)
@@ -34,7 +35,9 @@ Optional parameters.
 - [serializerOptions](CreateDocumentOptionalParams.md#serializeroptions)
 - [tracingOptions](CreateDocumentOptionalParams.md#tracingoptions)
 - [url](CreateDocumentOptionalParams.md#url)
+- [useOcr](CreateDocumentOptionalParams.md#useocr)
 - [wait](CreateDocumentOptionalParams.md#wait)
+- [warningMessages](CreateDocumentOptionalParams.md#warningmessages)
 - [workspace](CreateDocumentOptionalParams.md#workspace)
 
 ## Properties
@@ -91,6 +94,14 @@ If true, no data will be stored after parsing. Only compatible with requests whe
 
 ___
 
+### documentType
+
+• `Optional` **documentType**: `string`
+
+The document type's identifier.  Provide if you already know the document type.
+
+___
+
 ### enableValidationTool
 
 • `Optional` **enableValidationTool**: `string`
@@ -111,7 +122,7 @@ ___
 
 • `Optional` **file**: `RequestBodyType`
 
-File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP
+File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX
 
 ___
 
@@ -221,11 +232,27 @@ URL to download the document.
 
 ___
 
+### useOcr
+
+• `Optional` **useOcr**: `boolean`
+
+If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document.
+
+___
+
 ### wait
 
 • `Optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.
+
+___
+
+### warningMessages
+
+• `Optional` **warningMessages**: [`DocumentWarning`](DocumentWarning.md)[]
+
+Array of DocumentWarning
 
 ___
 

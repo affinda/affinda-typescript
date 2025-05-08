@@ -37,6 +37,7 @@
 - [createDataPoint](AffindaAPI.md#createdatapoint)
 - [createDataPointChoice](AffindaAPI.md#createdatapointchoice)
 - [createDocument](AffindaAPI.md#createdocument)
+- [createDocumentType](AffindaAPI.md#createdocumenttype)
 - [createExtractor](AffindaAPI.md#createextractor)
 - [createIndex](AffindaAPI.md#createindex)
 - [createIndexDocument](AffindaAPI.md#createindexdocument)
@@ -59,6 +60,7 @@
 - [deleteDataPoint](AffindaAPI.md#deletedatapoint)
 - [deleteDataPointChoice](AffindaAPI.md#deletedatapointchoice)
 - [deleteDocument](AffindaAPI.md#deletedocument)
+- [deleteDocumentType](AffindaAPI.md#deletedocumenttype)
 - [deleteExtractor](AffindaAPI.md#deleteextractor)
 - [deleteIndex](AffindaAPI.md#deleteindex)
 - [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
@@ -100,6 +102,8 @@
 - [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
 - [getDocument](AffindaAPI.md#getdocument)
 - [getDocumentSplitter](AffindaAPI.md#getdocumentsplitter)
+- [getDocumentType](AffindaAPI.md#getdocumenttype)
+- [getDocumentTypes](AffindaAPI.md#getdocumenttypes)
 - [getExtractor](AffindaAPI.md#getextractor)
 - [getInvitation](AffindaAPI.md#getinvitation)
 - [getInvitationByToken](AffindaAPI.md#getinvitationbytoken)
@@ -110,6 +114,7 @@
 - [getMappingDataSourceValue](AffindaAPI.md#getmappingdatasourcevalue)
 - [getOrganization](AffindaAPI.md#getorganization)
 - [getOrganizationMembership](AffindaAPI.md#getorganizationmembership)
+- [getRedactedDocument](AffindaAPI.md#getredacteddocument)
 - [getResthookSubscription](AffindaAPI.md#getresthooksubscription)
 - [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
 - [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
@@ -141,11 +146,13 @@
 - [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
 - [updateDocument](AffindaAPI.md#updatedocument)
 - [updateDocumentData](AffindaAPI.md#updatedocumentdata)
+- [updateDocumentType](AffindaAPI.md#updatedocumenttype)
 - [updateExtractor](AffindaAPI.md#updateextractor)
 - [updateIndex](AffindaAPI.md#updateindex)
 - [updateInvitation](AffindaAPI.md#updateinvitation)
 - [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
 - [updateMapping](AffindaAPI.md#updatemapping)
+- [updateMappingDataSourceValue](AffindaAPI.md#updatemappingdatasourcevalue)
 - [updateOrganization](AffindaAPI.md#updateorganization)
 - [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
 - [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
@@ -500,6 +507,25 @@ processing status and retrieve results.<br/>
 #### Returns
 
 `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+
+___
+
+### createDocumentType
+
+▸ **createDocumentType**(`body`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+
+Create a new document type in the specified organization.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body` | [`DocumentTypeCreate`](../interfaces/DocumentTypeCreate.md) |  |
+| `options?` | [`CreateDocumentTypeOptionalParams`](../interfaces/CreateDocumentTypeOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
 ___
 
@@ -927,6 +953,25 @@ Deletes the specified document from the database.
 | :------ | :------ | :------ |
 | `identifier` | `string` | Document's identifier |
 | `options?` | [`DeleteDocumentOptionalParams`](../interfaces/DeleteDocumentOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<`void`\>
+
+___
+
+### deleteDocumentType
+
+▸ **deleteDocumentType**(`identifier`, `options?`): `Promise`\<`void`\>
+
+Delete a document type.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document type identifier |
+| `options?` | [`DeleteDocumentTypeOptionalParams`](../interfaces/DeleteDocumentTypeOptionalParams.md) | The options parameters. |
 
 #### Returns
 
@@ -1710,6 +1755,43 @@ Return a specific document splitter.
 
 ___
 
+### getDocumentType
+
+▸ **getDocumentType**(`identifier`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+
+Returns the details of a specific document type.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document type identifier |
+| `options?` | [`GetDocumentTypeOptionalParams`](../interfaces/GetDocumentTypeOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+
+___
+
+### getDocumentTypes
+
+▸ **getDocumentTypes**(`options?`): `Promise`\<[`GetDocumentTypesResponse`](../modules.md#getdocumenttypesresponse)\>
+
+Returns a list of document types that the user has access to.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`GetDocumentTypesOptionalParams`](../interfaces/GetDocumentTypesOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`GetDocumentTypesResponse`](../modules.md#getdocumenttypesresponse)\>
+
+___
+
 ### getExtractor
 
 ▸ **getExtractor**(`identifier`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
@@ -1904,6 +1986,25 @@ Get detail of an organization membership.
 #### Returns
 
 `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+
+___
+
+### getRedactedDocument
+
+▸ **getRedactedDocument**(`identifier`, `options?`): `Promise`\<[`GetRedactedDocumentResponse`](../modules.md#getredacteddocumentresponse)\>
+
+Get the redacted version of a document. The original document is not modified.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document identifier |
+| `options?` | [`GetRedactedDocumentOptionalParams`](../interfaces/GetRedactedDocumentOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`GetRedactedDocumentResponse`](../modules.md#getredacteddocumentresponse)\>
 
 ___
 
@@ -2533,6 +2634,26 @@ Only applicable for resumes and job descriptions. For other document types, plea
 
 ___
 
+### updateDocumentType
+
+▸ **updateDocumentType**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+
+Update an existing document type.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Document type identifier |
+| `body` | [`DocumentTypeUpdate`](../interfaces/DocumentTypeUpdate.md) |  |
+| `options?` | [`UpdateDocumentTypeOptionalParams`](../interfaces/UpdateDocumentTypeOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+
+___
+
 ### updateExtractor
 
 ▸ **updateExtractor**(`identifier`, `body`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
@@ -2631,6 +2752,27 @@ Updates a specific mapping.
 #### Returns
 
 `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+
+___
+
+### updateMappingDataSourceValue
+
+▸ **updateMappingDataSourceValue**(`identifier`, `value`, `body`, `options?`): `Promise`\<[`UpdateMappingDataSourceValueResponse`](../modules.md#updatemappingdatasourcevalueresponse)\>
+
+Update the specified mapping data source value.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identifier` | `string` | Mapping data source's identifier |
+| `value` | `string` | Mapping Data Source's value |
+| `body` | `Record`\<`string`, `unknown`\> | Any object |
+| `options?` | [`UpdateMappingDataSourceValueOptionalParams`](../interfaces/UpdateMappingDataSourceValueOptionalParams.md) | The options parameters. |
+
+#### Returns
+
+`Promise`\<[`UpdateMappingDataSourceValueResponse`](../modules.md#updatemappingdatasourcevalueresponse)\>
 
 ___
 

@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [archivedBy](DocumentMeta.md#archivedby)
 - [archivedDt](DocumentMeta.md#archiveddt)
 - [childDocuments](DocumentMeta.md#childdocuments)
 - [collection](DocumentMeta.md#collection)
@@ -14,6 +15,7 @@
 - [createdBy](DocumentMeta.md#createdby)
 - [createdDt](DocumentMeta.md#createddt)
 - [customIdentifier](DocumentMeta.md#customidentifier)
+- [documentType](DocumentMeta.md#documenttype)
 - [errorCode](DocumentMeta.md#errorcode)
 - [errorDetail](DocumentMeta.md#errordetail)
 - [expiryTime](DocumentMeta.md#expirytime)
@@ -44,6 +46,12 @@
 - [workspace](DocumentMeta.md#workspace)
 
 ## Properties
+
+### archivedBy
+
+• `Optional` **archivedBy**: [`UserNullable`](UserNullable.md)
+
+___
 
 ### archivedDt
 
@@ -94,6 +102,14 @@ ___
 • `Optional` **customIdentifier**: `string`
 
 Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique.
+
+___
+
+### documentType
+
+• `Optional` **documentType**: `string`
+
+The document type's identifier.  Provide if you already know the document type.
 
 ___
 

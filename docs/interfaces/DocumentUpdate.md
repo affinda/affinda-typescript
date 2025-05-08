@@ -16,6 +16,7 @@
 - [isRejected](DocumentUpdate.md#isrejected)
 - [language](DocumentUpdate.md#language)
 - [skipParse](DocumentUpdate.md#skipparse)
+- [warningMessages](DocumentUpdate.md#warningmessages)
 
 ## Properties
 
@@ -88,3 +89,9 @@ ___
 ### skipParse
 
 • `Optional` **skipParse**: `boolean`
+
+___
+
+### warningMessages
+
+• `Optional` **warningMessages**: [`DocumentWarning`](DocumentWarning.md)[]

@@ -281,6 +281,8 @@ export interface Collection {
   trainsExtractor?: boolean;
   /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
   disableConfirmationIfValidationRulesFail?: boolean;
+  /** If True, validation results are refreshed whenever annotations are changed. */
+  autoRefreshValidationResults?: boolean;
 }
 
 export interface CollectionWorkspace {
@@ -663,6 +665,8 @@ export interface DocumentMeta {
   isOcrd?: boolean;
   ocrConfidence?: number;
   reviewUrl?: string;
+  /** The document type's identifier.  Provide if you already know the document type. */
+  documentType?: string;
   collection?: DocumentMetaCollection;
   workspace: DocumentMetaWorkspace;
   archivedDt?: Date;
@@ -673,6 +677,7 @@ export interface DocumentMeta {
   isConfirmed?: boolean;
   rejectedDt?: Date;
   rejectedBy?: UserNullable;
+  archivedBy?: UserNullable;
   isRejected?: boolean;
   createdDt?: Date;
   errorCode?: string;
@@ -727,6 +732,8 @@ export interface DocumentMetaCollection {
   name?: string;
   extractor?: DocumentMetaCollectionExtractor;
   validationRules?: ValidationRule[];
+  /** If True, validation results are refreshed whenever annotations are changed. */
+  autoRefreshValidationResults?: boolean;
 }
 
 export interface DocumentMetaCollectionExtractor {
@@ -1154,6 +1161,7 @@ export interface DocumentUpdate {
   identifier?: string;
   /** Specify a custom identifier for the document if you need one, not required to be unique. */
   customIdentifier?: string;
+  warningMessages?: DocumentWarning[];
 }
 
 export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
@@ -1318,8 +1326,6 @@ export interface DocumentSplitter {
   organization: string | null;
   /** Uniquely identify an extractor. */
   extractor: string | null;
-  /** The different types of document splitters */
-  llmModel: LLMModelType | null;
   /** The hint about when to split which is passed into the LLM prompt. */
   llmHint: string | null;
 }
@@ -1687,6 +1693,35 @@ export interface TagUpdate {
   name?: string;
   /** Uniquely identify a workspace. */
   workspace?: string;
+}
+
+export interface DocumentType {
+  /** Uniquely identify a document type. */
+  identifier: string;
+  /** The name of the document type. */
+  name: string;
+  /** A description of the document type. */
+  description?: string;
+  /** The email address that can be used to email documents directly to this document type. */
+  ingestEmail?: string;
+  /** The identifier of the organization this document type belongs to. */
+  organization: string;
+}
+
+export interface DocumentTypeCreate {
+  /** The name of the document type. */
+  name: string;
+  /** A description of the document type. */
+  description?: string;
+  /** The identifier of the organization this document type belongs to. */
+  organization: string;
+}
+
+export interface DocumentTypeUpdate {
+  /** The new name of the document type. */
+  name?: string;
+  /** A new description of the document type. */
+  description?: string;
 }
 
 /** Configuration of the embeddable validation tool. */
@@ -2484,9 +2519,11 @@ export interface Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAl
 }
 
 export interface Index {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   /** Unique index name */
   name: string;
-  documentType: IndexDocumentType;
+  docType: IndexDocType;
   /**
    * The user who created this index
    * NOTE: This property will not be serialized. It can only be populated by the server.
@@ -2506,9 +2543,11 @@ export interface IndexUser {
 
 /** IndexRequestBody */
 export interface IndexCreate {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
   /** Unique index name */
   name: string;
-  documentType?: DocumentType;
+  docType?: DocType;
 }
 
 export interface IndexUpdate {
@@ -2659,7 +2698,7 @@ export interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesB
 }
 
 export interface DocumentCreate {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;
@@ -2667,6 +2706,8 @@ export interface DocumentCreate {
   data?: DocumentCreateData;
   /** Uniquely identify a collection. */
   collection?: string;
+  /** The document type's identifier.  Provide if you already know the document type. */
+  documentType?: string;
   /** Uniquely identify a workspace. */
   workspace?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -2693,6 +2734,9 @@ export interface DocumentCreate {
   deleteAfterParse?: string;
   /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
   enableValidationTool?: string;
+  /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
+  useOcr?: boolean;
+  warningMessages?: DocumentWarning[];
 }
 
 export interface OrganizationCreate {
@@ -3075,6 +3119,8 @@ export enum KnownAnnotationContentType {
   Url = "url",
   /** Image */
   Image = "image",
+  /** Docclf */
+  Docclf = "docclf",
 }
 
 /**
@@ -3103,7 +3149,8 @@ export enum KnownAnnotationContentType {
  * **group** \
  * **table_deprecated** \
  * **url** \
- * **image**
+ * **image** \
+ * **docclf**
  */
 export type AnnotationContentType = string;
 
@@ -3235,6 +3282,8 @@ export enum KnownResumeDataLanguagesItem {
   Bagri = "Bagri",
   /** Bahasa */
   Bahasa = "Bahasa",
+  /** BahasaIndonesian */
+  BahasaIndonesian = "Bahasa Indonesian",
   /** Bambara */
   Bambara = "Bambara",
   /** Bangala */
@@ -3633,6 +3682,7 @@ export enum KnownResumeDataLanguagesItem {
  * **Bagheli** \
  * **Bagri** \
  * **Bahasa** \
+ * **Bahasa Indonesian** \
  * **Bambara** \
  * **Bangala** \
  * **Bardi** \
@@ -3851,6 +3901,8 @@ export enum KnownDocumentSplitterType {
   Llm = "llm",
   /** Extractor */
   Extractor = "extractor",
+  /** Keyword */
+  Keyword = "keyword",
 }
 
 /**
@@ -3859,36 +3911,10 @@ export enum KnownDocumentSplitterType {
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **llm** \
- * **extractor**
+ * **extractor** \
+ * **keyword**
  */
 export type DocumentSplitterType = string;
-
-/** Known values of {@link LLMModelType} that the service accepts. */
-export enum KnownLLMModelType {
-  /** AnthropicClaude3Haiku20240307V10 */
-  AnthropicClaude3Haiku20240307V10 = "anthropic.claude-3-haiku-20240307-v1:0",
-  /** AnthropicClaude3Sonnet20240229V10 */
-  AnthropicClaude3Sonnet20240229V10 = "anthropic.claude-3-sonnet-20240229-v1:0",
-  /** AnthropicClaude35Sonnet20240620V10 */
-  AnthropicClaude35Sonnet20240620V10 = "anthropic.claude-3-5-sonnet-20240620-v1:0",
-  /** Gpt35 */
-  Gpt35 = "gpt-35",
-  /** Gpt4 */
-  Gpt4 = "gpt-4",
-}
-
-/**
- * Defines values for LLMModelType. \
- * {@link KnownLLMModelType} can be used interchangeably with LLMModelType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **anthropic.claude-3-haiku-20240307-v1:0** \
- * **anthropic.claude-3-sonnet-20240229-v1:0** \
- * **anthropic.claude-3-5-sonnet-20240620-v1:0** \
- * **gpt-35** \
- * **gpt-4**
- */
-export type LLMModelType = string;
 
 /** Known values of {@link InvitationStatus} that the service accepts. */
 export enum KnownInvitationStatus {
@@ -4157,8 +4183,8 @@ export enum KnownJobDescriptionSearchConfigDistanceUnit {
  */
 export type JobDescriptionSearchConfigDistanceUnit = string;
 
-/** Known values of {@link Enum23} that the service accepts. */
-export enum KnownEnum23 {
+/** Known values of {@link Enum22} that the service accepts. */
+export enum KnownEnum22 {
   /** Resumes */
   Resumes = "resumes",
   /** JobDescriptions */
@@ -4166,17 +4192,17 @@ export enum KnownEnum23 {
 }
 
 /**
- * Defines values for Enum23. \
- * {@link KnownEnum23} can be used interchangeably with Enum23,
+ * Defines values for Enum22. \
+ * {@link KnownEnum22} can be used interchangeably with Enum22,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum23 = string;
+export type Enum22 = string;
 
-/** Known values of {@link IndexDocumentType} that the service accepts. */
-export enum KnownIndexDocumentType {
+/** Known values of {@link IndexDocType} that the service accepts. */
+export enum KnownIndexDocType {
   /** Resumes */
   Resumes = "resumes",
   /** JobDescriptions */
@@ -4184,17 +4210,17 @@ export enum KnownIndexDocumentType {
 }
 
 /**
- * Defines values for IndexDocumentType. \
- * {@link KnownIndexDocumentType} can be used interchangeably with IndexDocumentType,
+ * Defines values for IndexDocType. \
+ * {@link KnownIndexDocType} can be used interchangeably with IndexDocType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type IndexDocumentType = string;
+export type IndexDocType = string;
 
-/** Known values of {@link DocumentType} that the service accepts. */
-export enum KnownDocumentType {
+/** Known values of {@link DocType} that the service accepts. */
+export enum KnownDocType {
   /** Resumes */
   Resumes = "resumes",
   /** JobDescriptions */
@@ -4202,14 +4228,14 @@ export enum KnownDocumentType {
 }
 
 /**
- * Defines values for DocumentType. \
- * {@link KnownDocumentType} can be used interchangeably with DocumentType,
+ * Defines values for DocType. \
+ * {@link KnownDocType} can be used interchangeably with DocType,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type DocumentType = string;
+export type DocType = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -4419,7 +4445,7 @@ export type GetAllDocumentsResponse =
 /** Optional parameters. */
 export interface CreateDocumentOptionalParams
   extends coreClient.OperationOptions {
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX, ZIP */
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;
@@ -4427,6 +4453,8 @@ export interface CreateDocumentOptionalParams
   data?: DocumentCreateData;
   /** Uniquely identify a collection. */
   collection?: string;
+  /** The document type's identifier.  Provide if you already know the document type. */
+  documentType?: string;
   /** Uniquely identify a workspace. */
   workspace?: string;
   /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
@@ -4453,6 +4481,10 @@ export interface CreateDocumentOptionalParams
   deleteAfterParse?: string;
   /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
   enableValidationTool?: string;
+  /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
+  useOcr?: boolean;
+  /** Array of DocumentWarning */
+  warningMessages?: DocumentWarning[];
 }
 
 /** Contains response data for the createDocument operation. */
@@ -4486,6 +4518,28 @@ export interface UpdateDocumentDataOptionalParams
 
 /** Contains response data for the updateDocumentData operation. */
 export type UpdateDocumentDataResponse = DocumentUnion;
+
+/** Optional parameters. */
+export interface GetRedactedDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getRedactedDocument operation. */
+export type GetRedactedDocumentResponse = {
+  /**
+   * BROWSER ONLY
+   *
+   * The response body as a browser Blob.
+   * Always `undefined` in node.js.
+   */
+  blobBody?: Promise<Blob>;
+  /**
+   * NODEJS ONLY
+   *
+   * The response body as a node.js Readable stream.
+   * Always `undefined` in the browser.
+   */
+  readableStreamBody?: NodeJS.ReadableStream;
+};
 
 /** Optional parameters. */
 export interface BatchAddTagOptionalParams
@@ -4827,6 +4881,8 @@ export interface ListMappingDataSourceValuesOptionalParams
   search?: string;
   /** Filter based on annotation ID */
   annotation?: number;
+  /** Identifier of the document to apply filter lookups on if available */
+  document?: string;
 }
 
 /** Contains response data for the listMappingDataSourceValues operation. */
@@ -4853,6 +4909,13 @@ export interface GetMappingDataSourceValueOptionalParams
 
 /** Contains response data for the getMappingDataSourceValue operation. */
 export type GetMappingDataSourceValueResponse = Record<string, unknown>;
+
+/** Optional parameters. */
+export interface UpdateMappingDataSourceValueOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateMappingDataSourceValue operation. */
+export type UpdateMappingDataSourceValueResponse = Record<string, unknown>;
 
 /** Optional parameters. */
 export interface DeleteMappingDataSourceValueOptionalParams
@@ -4930,6 +4993,41 @@ export type UpdateTagResponse = Tag;
 
 /** Optional parameters. */
 export interface DeleteTagOptionalParams extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetDocumentTypesOptionalParams
+  extends coreClient.OperationOptions {
+  /** Filter by organization identifier */
+  organization?: string;
+}
+
+/** Contains response data for the getDocumentTypes operation. */
+export type GetDocumentTypesResponse = DocumentType[];
+
+/** Optional parameters. */
+export interface CreateDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createDocumentType operation. */
+export type CreateDocumentTypeResponse = DocumentType;
+
+/** Optional parameters. */
+export interface GetDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDocumentType operation. */
+export type GetDocumentTypeResponse = DocumentType;
+
+/** Optional parameters. */
+export interface UpdateDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDocumentType operation. */
+export type UpdateDocumentTypeResponse = DocumentType;
+
+/** Optional parameters. */
+export interface DeleteDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
 export interface GetAllOrganizationsOptionalParams
@@ -5309,7 +5407,7 @@ export interface GetAllIndexesOptionalParams
   /** The numbers of results to return. */
   limit?: number;
   /** Filter indices by a document type */
-  documentType?: Enum23;
+  documentType?: Enum22;
 }
 
 /** Contains response data for the getAllIndexes operation. */

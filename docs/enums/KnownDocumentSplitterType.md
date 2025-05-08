@@ -9,6 +9,7 @@ Known values of [DocumentSplitterType](../modules.md#documentsplittertype) that 
 ### Enumeration Members
 
 - [Extractor](KnownDocumentSplitterType.md#extractor)
+- [Keyword](KnownDocumentSplitterType.md#keyword)
 - [Llm](KnownDocumentSplitterType.md#llm)
 
 ## Enumeration Members
@@ -18,6 +19,14 @@ Known values of [DocumentSplitterType](../modules.md#documentsplittertype) that 
 • **Extractor** = ``"extractor"``
 
 Extractor
+
+___
+
+### Keyword
+
+• **Keyword** = ``"keyword"``
+
+Keyword
 
 ___
 

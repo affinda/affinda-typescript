@@ -16,6 +16,7 @@ Optional parameters.
 
 - [abortSignal](ListMappingDataSourceValuesOptionalParams.md#abortsignal)
 - [annotation](ListMappingDataSourceValuesOptionalParams.md#annotation)
+- [document](ListMappingDataSourceValuesOptionalParams.md#document)
 - [limit](ListMappingDataSourceValuesOptionalParams.md#limit)
 - [offset](ListMappingDataSourceValuesOptionalParams.md#offset)
 - [onResponse](ListMappingDataSourceValuesOptionalParams.md#onresponse)
@@ -43,6 +44,14 @@ ___
 • `Optional` **annotation**: `number`
 
 Filter based on annotation ID
+
+___
+
+### document
+
+• `Optional` **document**: `string`
+
+Identifier of the document to apply filter lookups on if available
 
 ___
 

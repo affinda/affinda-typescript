@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.5.0] - 2025-05-08
+### Changed
+- Updated readme
+
+### Added
+- add document type endpoints
+
 ## [7.4.0] - 2024-10-01
 ### Added
 - Add document splitter endpoints

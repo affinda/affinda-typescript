@@ -6,12 +6,21 @@
 
 ### Properties
 
+- [autoRefreshValidationResults](DocumentMetaCollection.md#autorefreshvalidationresults)
 - [extractor](DocumentMetaCollection.md#extractor)
 - [identifier](DocumentMetaCollection.md#identifier)
 - [name](DocumentMetaCollection.md#name)
 - [validationRules](DocumentMetaCollection.md#validationrules)
 
 ## Properties
+
+### autoRefreshValidationResults
+
+• `Optional` **autoRefreshValidationResults**: `boolean`
+
+If True, validation results are refreshed whenever annotations are changed.
+
+___
 
 ### extractor
 

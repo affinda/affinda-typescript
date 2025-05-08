@@ -4,18 +4,22 @@
 
 IndexRequestBody
 
+## Indexable
+
+▪ [property: `string`]: `any`
+
 ## Table of contents
 
 ### Properties
 
-- [documentType](IndexCreate.md#documenttype)
+- [docType](IndexCreate.md#doctype)
 - [name](IndexCreate.md#name)
 
 ## Properties
 
-### documentType
+### docType
 
-• `Optional` **documentType**: `string`
+• `Optional` **docType**: `string`
 
 ___
 

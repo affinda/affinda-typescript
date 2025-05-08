@@ -1176,6 +1176,13 @@ export const Collection: coreClient.CompositeMapper = {
           name: "Boolean",
         },
       },
+      autoRefreshValidationResults: {
+        defaultValue: true,
+        serializedName: "autoRefreshValidationResults",
+        type: {
+          name: "Boolean",
+        },
+      },
     },
   },
 };
@@ -2850,6 +2857,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      documentType: {
+        serializedName: "documentType",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
       collection: {
         serializedName: "collection",
         type: {
@@ -2912,6 +2926,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
       },
       rejectedBy: {
         serializedName: "rejectedBy",
+        type: {
+          name: "Composite",
+          className: "UserNullable",
+        },
+      },
+      archivedBy: {
+        serializedName: "archivedBy",
         type: {
           name: "Composite",
           className: "UserNullable",
@@ -3149,6 +3170,12 @@ export const DocumentMetaCollection: coreClient.CompositeMapper = {
               className: "ValidationRule",
             },
           },
+        },
+      },
+      autoRefreshValidationResults: {
+        serializedName: "autoRefreshValidationResults",
+        type: {
+          name: "Boolean",
         },
       },
     },
@@ -5049,6 +5076,18 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      warningMessages: {
+        serializedName: "warningMessages",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DocumentWarning",
+            },
+          },
+        },
+      },
     },
   },
 };
@@ -5745,14 +5784,6 @@ export const DocumentSplitter: coreClient.CompositeMapper = {
       },
       extractor: {
         serializedName: "extractor",
-        required: true,
-        nullable: true,
-        type: {
-          name: "String",
-        },
-      },
-      llmModel: {
-        serializedName: "llmModel",
         required: true,
         nullable: true,
         type: {
@@ -7270,6 +7301,101 @@ export const TagUpdate: coreClient.CompositeMapper = {
       },
       workspace: {
         serializedName: "workspace",
+        type: {
+          name: "String",
+        },
+      },
+    },
+  },
+};
+
+export const DocumentType: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentType",
+    modelProperties: {
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String",
+        },
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String",
+        },
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+      ingestEmail: {
+        serializedName: "ingest_email",
+        type: {
+          name: "String",
+        },
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        type: {
+          name: "String",
+        },
+      },
+    },
+  },
+};
+
+export const DocumentTypeCreate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentTypeCreate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String",
+        },
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+      organization: {
+        serializedName: "organization",
+        required: true,
+        type: {
+          name: "String",
+        },
+      },
+    },
+  },
+};
+
+export const DocumentTypeUpdate: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentTypeUpdate",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String",
+        },
+      },
+      description: {
+        serializedName: "description",
+        nullable: true,
         type: {
           name: "String",
         },
@@ -11330,6 +11456,7 @@ export const Index: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Index",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       name: {
         serializedName: "name",
@@ -11338,8 +11465,8 @@ export const Index: coreClient.CompositeMapper = {
           name: "String",
         },
       },
-      documentType: {
-        serializedName: "documentType",
+      docType: {
+        serializedName: "docType",
         required: true,
         type: {
           name: "String",
@@ -11401,6 +11528,7 @@ export const IndexCreate: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "IndexCreate",
+    additionalProperties: { type: { name: "Object" } },
     modelProperties: {
       name: {
         serializedName: "name",
@@ -11409,8 +11537,8 @@ export const IndexCreate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
-      documentType: {
-        serializedName: "documentType",
+      docType: {
+        serializedName: "docType",
         type: {
           name: "String",
         },
@@ -12260,6 +12388,13 @@ export const DocumentCreate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      documentType: {
+        serializedName: "documentType",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
       workspace: {
         serializedName: "workspace",
         type: {
@@ -12341,6 +12476,25 @@ export const DocumentCreate: coreClient.CompositeMapper = {
         serializedName: "enableValidationTool",
         type: {
           name: "String",
+        },
+      },
+      useOcr: {
+        serializedName: "useOcr",
+        nullable: true,
+        type: {
+          name: "Boolean",
+        },
+      },
+      warningMessages: {
+        serializedName: "warningMessages",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "DocumentWarning",
+            },
+          },
         },
       },
     },

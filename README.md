@@ -34,6 +34,8 @@ Please see below for which versions are compatible with which API version.
 
 ## Quickstart
 
+Before using the API, you need to create an account, setup a workspace, and obtain an API key. Follow the steps in our [documentation](https://docs.affinda.com/docs/getting-started-with-affinda).
+
 ### Currently supported environments
 
 - [LTS versions of Node.js](https://nodejs.org/about/releases/)
@@ -58,38 +60,23 @@ npm build
 Example parsing a resume:
 
 ```javascript
-const { AffindaCredential, AffindaAPI } = require("@affinda/affinda");
-const fs = require("fs");
+import { AffindaAPI, AffindaCredential } from "@affinda/affinda";
+import * as fs from "fs";
 
-const credential = new AffindaCredential("REPLACE_TOKEN");
+const credential = new AffindaCredential("YOUR_API_KEY");
 const client = new AffindaAPI(credential);
-const readStream = fs.createReadStream("PATH_TO_RESUME.pdf");
 
-client
-  .createDocument({ file: readStream })
-  .then((result) => {
-    console.log("Returned data:");
-    console.dir(result);
-  })
-  .catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-  });
-
-// Can also use a URL:
+const file = fs.createReadStream("resume.pdf");
 
 client
   .createDocument({
-    url: "https://api.affinda.com/static/sample_resumes/example.docx",
+    file,
+    workspace: "YOUR_WORKSPACE_IDENTIFIER",
   })
-  .then((result) => {
-    console.log("Returned data:");
-    console.dir(result);
+  .then(doc => {
+    console.log("Parsed data:", doc.data);
   })
-  .catch((err) => {
-    console.log("An error occurred:");
-    console.error(err);
-  });
+  .catch(err => console.error("Error:", err));
 ```
 
 ## API reference

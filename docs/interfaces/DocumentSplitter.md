@@ -9,7 +9,6 @@
 - [extractor](DocumentSplitter.md#extractor)
 - [identifier](DocumentSplitter.md#identifier)
 - [llmHint](DocumentSplitter.md#llmhint)
-- [llmModel](DocumentSplitter.md#llmmodel)
 - [name](DocumentSplitter.md#name)
 - [organization](DocumentSplitter.md#organization)
 - [type](DocumentSplitter.md#type)
@@ -37,14 +36,6 @@ ___
 • **llmHint**: ``null`` \| `string`
 
 The hint about when to split which is passed into the LLM prompt.
-
-___
-
-### llmModel
-
-• **llmModel**: ``null`` \| `string`
-
-The different types of document splitters
 
 ___
 
