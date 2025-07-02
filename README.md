@@ -83,7 +83,7 @@ client
 
 You can generate typescript interfaces to help with consuming the API response in a type-safe way.
 
-Use the `generateInterfaces.ts` script to auto-generate typescript interfaces from your document type configuration.
+Use the `affinda-generate-interfaces` command to auto-generate typescript interfaces from your document type configuration.
 
 For example, this will generate typescript interfaces for your "Resume Parser" document type:
 

@@ -9,7 +9,7 @@
   ],
   "author": "affinda",
   "description": "A client for the AffindaAPI",
-  "version": "7.6.0",
+  "version": "7.6.1",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -17,6 +17,8 @@
     "@azure/core-auth": "^1.6.0",
     "@azure/core-client": "^1.7.0",
     "@azure/core-rest-pipeline": "^1.14.0",
+    "json-schema-to-typescript": "^15.0.4",
+    "node-fetch": "^3.3.2",
     "readline-sync": "^1.4.10",
     "tslib": "^2.2.0",
     "yargs": "^18.0.0"
@@ -41,9 +43,7 @@
     "@types/readline-sync": "^1.4.8",
     "@types/yargs": "^17.0.33",
     "dotenv": "^16.0.0",
-    "json-schema-to-typescript": "^15.0.4",
     "mkdirp": "^2.1.2",
-    "node-fetch": "^3.3.2",
     "rimraf": "^5.0.0",
     "rollup": "^2.66.1",
     "rollup-plugin-sourcemaps": "^0.6.3",
