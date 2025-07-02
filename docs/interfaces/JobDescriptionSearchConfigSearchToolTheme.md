@@ -1,60 +1,53 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchConfigSearchToolTheme
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchConfigSearchToolTheme
 
 # Interface: JobDescriptionSearchConfigSearchToolTheme
 
 Customize the theme of the embeded search tool.
 
-## Hierarchy
+## Extends
 
 - [`ThemeConfig`](ThemeConfig.md)
 
-  ↳ **`JobDescriptionSearchConfigSearchToolTheme`**
-
-## Table of contents
-
-### Properties
-
-- [borderRadius](JobDescriptionSearchConfigSearchToolTheme.md#borderradius)
-- [fontUrl](JobDescriptionSearchConfigSearchToolTheme.md#fonturl)
-- [palette](JobDescriptionSearchConfigSearchToolTheme.md#palette)
-- [typography](JobDescriptionSearchConfigSearchToolTheme.md#typography)
-
 ## Properties
 
-### borderRadius
+### borderRadius?
 
-• `Optional` **borderRadius**: `number`
-
-#### Inherited from
-
-[ThemeConfig](ThemeConfig.md).[borderRadius](ThemeConfig.md#borderradius)
-
-___
-
-### fontUrl
-
-• `Optional` **fontUrl**: `string`
+> `optional` **borderRadius**: `number`
 
 #### Inherited from
 
-[ThemeConfig](ThemeConfig.md).[fontUrl](ThemeConfig.md#fonturl)
+[`ThemeConfig`](ThemeConfig.md).[`borderRadius`](ThemeConfig.md#borderradius)
 
-___
+***
 
-### palette
+### fontUrl?
 
-• `Optional` **palette**: [`ThemeConfigPalette`](ThemeConfigPalette.md)
-
-#### Inherited from
-
-[ThemeConfig](ThemeConfig.md).[palette](ThemeConfig.md#palette)
-
-___
-
-### typography
-
-• `Optional` **typography**: [`ThemeConfigTypography`](ThemeConfigTypography.md)
+> `optional` **fontUrl**: `string`
 
 #### Inherited from
 
-[ThemeConfig](ThemeConfig.md).[typography](ThemeConfig.md#typography)
+[`ThemeConfig`](ThemeConfig.md).[`fontUrl`](ThemeConfig.md#fonturl)
+
+***
+
+### palette?
+
+> `optional` **palette**: [`ThemeConfigPalette`](ThemeConfigPalette.md)
+
+#### Inherited from
+
+[`ThemeConfig`](ThemeConfig.md).[`palette`](ThemeConfig.md#palette)
+
+***
+
+### typography?
+
+> `optional` **typography**: [`ThemeConfigTypography`](ThemeConfigTypography.md)
+
+#### Inherited from
+
+[`ThemeConfig`](ThemeConfig.md).[`typography`](ThemeConfig.md#typography)

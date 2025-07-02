@@ -1,49 +1,43 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearch
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearch
 
 # Interface: ResumeSearch
 
-## Table of contents
-
-### Properties
-
-- [count](ResumeSearch.md#count)
-- [next](ResumeSearch.md#next)
-- [parameters](ResumeSearch.md#parameters)
-- [previous](ResumeSearch.md#previous)
-- [results](ResumeSearch.md#results)
-
 ## Properties
 
-### count
+### count?
 
-• `Optional` **count**: `number`
+> `optional` **count**: `number`
 
 Total number of results
 
-___
+***
 
-### next
+### next?
 
-• `Optional` **next**: `string`
+> `optional` **next**: `string`
 
 URL to request next page of results
 
-___
+***
 
-### parameters
+### parameters?
 
-• `Optional` **parameters**: [`ResumeSearchParameters`](ResumeSearchParameters.md)
+> `optional` **parameters**: [`ResumeSearchParameters`](ResumeSearchParameters.md)
 
-___
+***
 
-### previous
+### previous?
 
-• `Optional` **previous**: `string`
+> `optional` **previous**: `string`
 
 URL to request previous page of results
 
-___
+***
 
-### results
+### results?
 
-• `Optional` **results**: [`ResumeSearchResult`](ResumeSearchResult.md)[]
+> `optional` **results**: [`ResumeSearchResult`](ResumeSearchResult.md)[]

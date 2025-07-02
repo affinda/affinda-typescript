@@ -1,24 +1,21 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / TagUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / TagUpdate
 
 # Interface: TagUpdate
 
-## Table of contents
-
-### Properties
-
-- [name](TagUpdate.md#name)
-- [workspace](TagUpdate.md#workspace)
-
 ## Properties
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`
 
 Uniquely identify a workspace.

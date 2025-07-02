@@ -1,36 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataSectionsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataSectionsItem
 
 # Interface: ResumeDataSectionsItem
 
-## Table of contents
-
-### Properties
-
-- [bbox](ResumeDataSectionsItem.md#bbox)
-- [pageIndex](ResumeDataSectionsItem.md#pageindex)
-- [sectionType](ResumeDataSectionsItem.md#sectiontype)
-- [text](ResumeDataSectionsItem.md#text)
-
 ## Properties
 
-### bbox
+### bbox?
 
-• `Optional` **bbox**: `number`[]
+> `optional` **bbox**: `number`[]
 
-___
+***
 
-### pageIndex
+### pageIndex?
 
-• `Optional` **pageIndex**: `number`
+> `optional` **pageIndex**: `number`
 
-___
+***
 
-### sectionType
+### sectionType?
 
-• `Optional` **sectionType**: `string`
+> `optional` **sectionType**: `string`
 
-___
+***
 
-### text
+### text?
 
-• `Optional` **text**: `string`
+> `optional` **text**: `string`

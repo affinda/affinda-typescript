@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailEducationMissing
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailEducationMissing
 
 # Interface: ResumeSearchDetailEducationMissing
 
-## Table of contents
-
-### Properties
-
-- [currentStudent](ResumeSearchDetailEducationMissing.md#currentstudent)
-- [degrees](ResumeSearchDetailEducationMissing.md#degrees)
-- [highestDegreeTypes](ResumeSearchDetailEducationMissing.md#highestdegreetypes)
-- [institutions](ResumeSearchDetailEducationMissing.md#institutions)
-- [recentGraduate](ResumeSearchDetailEducationMissing.md#recentgraduate)
-
 ## Properties
 
-### currentStudent
+### currentStudent?
 
-• `Optional` **currentStudent**: `boolean`
+> `optional` **currentStudent**: `boolean`
 
-___
+***
 
-### degrees
+### degrees?
 
-• `Optional` **degrees**: `string`[]
+> `optional` **degrees**: `string`[]
 
-___
+***
 
-### highestDegreeTypes
+### highestDegreeTypes?
 
-• `Optional` **highestDegreeTypes**: `string`[]
+> `optional` **highestDegreeTypes**: `string`[]
 
-___
+***
 
-### institutions
+### institutions?
 
-• `Optional` **institutions**: `string`[]
+> `optional` **institutions**: `string`[]
 
-___
+***
 
-### recentGraduate
+### recentGraduate?
 
-• `Optional` **recentGraduate**: `boolean`
+> `optional` **recentGraduate**: `boolean`

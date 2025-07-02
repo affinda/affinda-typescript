@@ -1,26 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentTypeUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentTypeUpdate
 
 # Interface: DocumentTypeUpdate
 
-## Table of contents
-
-### Properties
-
-- [description](DocumentTypeUpdate.md#description)
-- [name](DocumentTypeUpdate.md#name)
-
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
 A new description of the document type.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
 The new name of the document type.

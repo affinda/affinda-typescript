@@ -1,42 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Tag
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Tag
 
 # Interface: Tag
-
-## Table of contents
-
-### Properties
-
-- [documentCount](Tag.md#documentcount)
-- [id](Tag.md#id)
-- [name](Tag.md#name)
-- [workspace](Tag.md#workspace)
 
 ## Properties
 
 ### documentCount
 
-• **documentCount**: `number`
+> **documentCount**: `number`
 
 Number of documents tagged with this.
 
-___
+***
 
 ### id
 
-• **id**: `number`
+> **id**: `number`
 
 Uniquely identify a tag.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### workspace
 
-• **workspace**: `string`
+> **workspace**: `string`
 
 Uniquely identify a workspace.

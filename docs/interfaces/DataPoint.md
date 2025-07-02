@@ -1,122 +1,107 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataPoint
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DataPoint
 
 # Interface: DataPoint
-
-## Table of contents
-
-### Properties
-
-- [annotationContentType](DataPoint.md#annotationcontenttype)
-- [availableDataSources](DataPoint.md#availabledatasources)
-- [children](DataPoint.md#children)
-- [description](DataPoint.md#description)
-- [extractor](DataPoint.md#extractor)
-- [identifier](DataPoint.md#identifier)
-- [manualEntry](DataPoint.md#manualentry)
-- [mappingDataSource](DataPoint.md#mappingdatasource)
-- [multiple](DataPoint.md#multiple)
-- [name](DataPoint.md#name)
-- [noRect](DataPoint.md#norect)
-- [organization](DataPoint.md#organization)
-- [parent](DataPoint.md#parent)
-- [slug](DataPoint.md#slug)
 
 ## Properties
 
 ### annotationContentType
 
-• **annotationContentType**: `string`
+> **annotationContentType**: `string`
 
 The different data types of annotations
 
-___
+***
 
-### availableDataSources
+### availableDataSources?
 
-• `Optional` **availableDataSources**: [`MappingDataSource`](MappingDataSource.md)[]
+> `optional` **availableDataSources**: [`MappingDataSource`](MappingDataSource.md)[]
 
-___
+***
 
-### children
+### children?
 
-• `Optional` **children**: [`DataPoint`](DataPoint.md)[]
+> `optional` **children**: `DataPoint`[]
 
-___
+***
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
-___
+***
 
 ### extractor
 
-• **extractor**: ``null`` \| `string`
+> **extractor**: `null` \| `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a data point.
 
-___
+***
 
-### manualEntry
+### manualEntry?
 
-• `Optional` **manualEntry**: `boolean`
+> `optional` **manualEntry**: `boolean`
 
 If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool.
 
-___
+***
 
-### mappingDataSource
+### mappingDataSource?
 
-• `Optional` **mappingDataSource**: `string`
+> `optional` **mappingDataSource**: `string`
 
 If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching.
 
-___
+***
 
-### multiple
+### multiple?
 
-• `Optional` **multiple**: `boolean`
+> `optional` **multiple**: `boolean`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
 Name of the data point.
 
-___
+***
 
-### noRect
+### noRect?
 
-• `Optional` **noRect**: `boolean`
+> `optional` **noRect**: `boolean`
 
-___
+***
 
 ### organization
 
-• **organization**: ``null`` \| [`Organization`](Organization.md)
+> **organization**: `null` \| [`Organization`](Organization.md)
 
-___
+***
 
-### parent
+### parent?
 
-• `Optional` **parent**: `string`
+> `optional` **parent**: `string`
 
 The identifier of the parent data point if applicable.
 
-___
+***
 
 ### slug
 
-• **slug**: `string`
+> **slug**: `string`
 
 A camelCase string that will be used as the key in the API response.

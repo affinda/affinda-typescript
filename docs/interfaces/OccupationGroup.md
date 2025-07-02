@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / OccupationGroup
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / OccupationGroup
 
 # Interface: OccupationGroup
-
-## Table of contents
-
-### Properties
-
-- [children](OccupationGroup.md#children)
-- [code](OccupationGroup.md#code)
-- [name](OccupationGroup.md#name)
 
 ## Properties
 
 ### children
 
-• **children**: [`OccupationGroup`](OccupationGroup.md)[]
+> **children**: `OccupationGroup`[]
 
-___
+***
 
 ### code
 
-• **code**: `number`
+> **code**: `number`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`

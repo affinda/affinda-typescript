@@ -1,26 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / BatchAddTagRequest
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / BatchAddTagRequest
 
 # Interface: BatchAddTagRequest
 
-## Table of contents
-
-### Properties
-
-- [identifiers](BatchAddTagRequest.md#identifiers)
-- [tag](BatchAddTagRequest.md#tag)
-
 ## Properties
 
-### identifiers
+### identifiers?
 
-• `Optional` **identifiers**: `string`[]
+> `optional` **identifiers**: `string`[]
 
 List of documents to tag
 
-___
+***
 
-### tag
+### tag?
 
-• `Optional` **tag**: `number`
+> `optional` **tag**: `number`
 
 The tag's ID

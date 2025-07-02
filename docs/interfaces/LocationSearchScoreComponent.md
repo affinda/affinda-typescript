@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / LocationSearchScoreComponent
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / LocationSearchScoreComponent
 
 # Interface: LocationSearchScoreComponent
-
-## Table of contents
-
-### Properties
-
-- [label](LocationSearchScoreComponent.md#label)
-- [score](LocationSearchScoreComponent.md#score)
-- [value](LocationSearchScoreComponent.md#value)
 
 ## Properties
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### score
+### score?
 
-• `Optional` **score**: `number`
+> `optional` **score**: `number`
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`
+> `optional` **value**: `string`

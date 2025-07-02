@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Rectangle
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Rectangle
 
 # Interface: Rectangle
 
-## Table of contents
-
-### Properties
-
-- [pageIndex](Rectangle.md#pageindex)
-- [x0](Rectangle.md#x0)
-- [x1](Rectangle.md#x1)
-- [y0](Rectangle.md#y0)
-- [y1](Rectangle.md#y1)
-
 ## Properties
 
-### pageIndex
+### pageIndex?
 
-• `Optional` **pageIndex**: `number`
+> `optional` **pageIndex**: `number`
 
-___
+***
 
 ### x0
 
-• **x0**: `number`
+> **x0**: `number`
 
-___
+***
 
 ### x1
 
-• **x1**: `number`
+> **x1**: `number`
 
-___
+***
 
 ### y0
 
-• **y0**: `number`
+> **y0**: `number`
 
-___
+***
 
 ### y1
 
-• **y1**: `number`
+> **y1**: `number`

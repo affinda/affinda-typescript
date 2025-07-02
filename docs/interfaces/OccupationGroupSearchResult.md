@@ -1,49 +1,41 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / OccupationGroupSearchResult
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / OccupationGroupSearchResult
 
 # Interface: OccupationGroupSearchResult
 
-## Hierarchy
+## Extended by
 
-- **`OccupationGroupSearchResult`**
-
-  ↳ [`JobDescriptionSearchDetailOccupationGroupValue`](JobDescriptionSearchDetailOccupationGroupValue.md)
-
-## Table of contents
-
-### Properties
-
-- [children](OccupationGroupSearchResult.md#children)
-- [code](OccupationGroupSearchResult.md#code)
-- [match](OccupationGroupSearchResult.md#match)
-- [name](OccupationGroupSearchResult.md#name)
-- [parents](OccupationGroupSearchResult.md#parents)
+- [`JobDescriptionSearchDetailOccupationGroupValue`](JobDescriptionSearchDetailOccupationGroupValue.md)
 
 ## Properties
 
-### children
+### children?
 
-• `Optional` **children**: [`OccupationGroup`](OccupationGroup.md)[]
+> `optional` **children**: [`OccupationGroup`](OccupationGroup.md)[]
 
-___
+***
 
 ### code
 
-• **code**: `number`
+> **code**: `number`
 
-___
+***
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
-### parents
+### parents?
 
-• `Optional` **parents**: [`OccupationGroup`](OccupationGroup.md)[]
+> `optional` **parents**: [`OccupationGroup`](OccupationGroup.md)[]

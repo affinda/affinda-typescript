@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailSearchExpression
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailSearchExpression
 
 # Interface: ResumeSearchDetailSearchExpression
 
-## Table of contents
-
-### Properties
-
-- [missing](ResumeSearchDetailSearchExpression.md#missing)
-- [value](ResumeSearchDetailSearchExpression.md#value)
-
 ## Properties
 
-### missing
+### missing?
 
-• `Optional` **missing**: `string`[]
+> `optional` **missing**: `string`[]
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`[]
+> `optional` **value**: `string`[]

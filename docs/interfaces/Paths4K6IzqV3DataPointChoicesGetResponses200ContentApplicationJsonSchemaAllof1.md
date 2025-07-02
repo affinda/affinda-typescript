@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1
 
 # Interface: Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1
 
-## Hierarchy
+## Extended by
 
-- **`Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1`**
-
-  ↳ [`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)
-
-## Table of contents
-
-### Properties
-
-- [results](Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+- [`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)
 
 ## Properties
 
-### results
+### results?
 
-• `Optional` **results**: [`DataPointChoice`](DataPointChoice.md)[]
+> `optional` **results**: [`DataPointChoice`](DataPointChoice.md)[]

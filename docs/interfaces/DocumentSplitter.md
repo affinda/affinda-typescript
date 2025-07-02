@@ -1,60 +1,53 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentSplitter
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentSplitter
 
 # Interface: DocumentSplitter
-
-## Table of contents
-
-### Properties
-
-- [extractor](DocumentSplitter.md#extractor)
-- [identifier](DocumentSplitter.md#identifier)
-- [llmHint](DocumentSplitter.md#llmhint)
-- [name](DocumentSplitter.md#name)
-- [organization](DocumentSplitter.md#organization)
-- [type](DocumentSplitter.md#type)
 
 ## Properties
 
 ### extractor
 
-• **extractor**: ``null`` \| `string`
+> **extractor**: `null` \| `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a document splitter.
 
-___
+***
 
 ### llmHint
 
-• **llmHint**: ``null`` \| `string`
+> **llmHint**: `null` \| `string`
 
 The hint about when to split which is passed into the LLM prompt.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### organization
 
-• **organization**: ``null`` \| `string`
+> **organization**: `null` \| `string`
 
 Uniquely identify an organization.
 
-___
+***
 
 ### type
 
-• **type**: `string`
+> **type**: `string`
 
 The different types of document splitters

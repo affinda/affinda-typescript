@@ -1,42 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / IndexUser
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / IndexUser
 
 # Interface: IndexUser
 
 The user who created this index
 
-## Table of contents
-
-### Properties
-
-- [avatar](IndexUser.md#avatar)
-- [email](IndexUser.md#email)
-- [id](IndexUser.md#id)
-- [name](IndexUser.md#name)
-
 ## Properties
 
 ### avatar
 
-• **avatar**: ``null`` \| `string`
+> **avatar**: `null` \| `string`
 
 URL of the user's avatar.
 
-___
+***
 
 ### email
 
-• **email**: `string`
+> **email**: `string`
 
-___
+***
 
 ### id
 
-• **id**: `number`
+> **id**: `number`
 
 Uniquely identify a user.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`

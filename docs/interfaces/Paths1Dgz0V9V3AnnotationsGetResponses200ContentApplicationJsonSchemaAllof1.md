@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1
 
 # Interface: Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1
 
-## Hierarchy
+## Extended by
 
-- **`Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1`**
-
-  ↳ [`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)
-
-## Table of contents
-
-### Properties
-
-- [results](Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+- [`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)
 
 ## Properties
 
-### results
+### results?
 
-• `Optional` **results**: (``null`` \| [`Annotation`](Annotation.md))[]
+> `optional` **results**: (`null` \| [`Annotation`](Annotation.md))[]

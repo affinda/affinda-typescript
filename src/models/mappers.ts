@@ -5019,6 +5019,19 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      workspace: {
+        serializedName: "workspace",
+        type: {
+          name: "String",
+        },
+      },
+      documentType: {
+        serializedName: "documentType",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
       fileName: {
         serializedName: "fileName",
         nullable: true,
@@ -7396,6 +7409,22 @@ export const DocumentTypeUpdate: coreClient.CompositeMapper = {
       description: {
         serializedName: "description",
         nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+    },
+  },
+};
+
+export const PydanticModelsResponse: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "PydanticModelsResponse",
+    modelProperties: {
+      code: {
+        serializedName: "code",
+        required: true,
         type: {
           name: "String",
         },

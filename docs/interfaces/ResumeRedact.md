@@ -1,73 +1,65 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeRedact
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeRedact
 
 # Interface: ResumeRedact
 
-## Hierarchy
+## Extends
 
 - [`Document`](Document.md)
 
-  ↳ **`ResumeRedact`**
-
-## Table of contents
-
-### Properties
-
-- [data](ResumeRedact.md#data)
-- [error](ResumeRedact.md#error)
-- [extractor](ResumeRedact.md#extractor)
-- [meta](ResumeRedact.md#meta)
-- [warnings](ResumeRedact.md#warnings)
-
 ## Properties
 
-### data
+### data?
 
-• `Optional` **data**: [`ResumeRedactData`](ResumeRedactData.md)
+> `optional` **data**: [`ResumeRedactData`](ResumeRedactData.md)
 
 Dictionary of <any>
 
 #### Overrides
 
-[Document](Document.md).[data](Document.md#data)
+[`Document`](Document.md).[`data`](Document.md#data)
 
-___
+***
 
-### error
+### error?
 
-• `Optional` **error**: [`DocumentError`](DocumentError.md)
+> `optional` **error**: [`DocumentError`](DocumentError.md)
 
 #### Inherited from
 
-[Document](Document.md).[error](Document.md#error)
+[`Document`](Document.md).[`error`](Document.md#error)
 
-___
+***
 
 ### extractor
 
-• **extractor**: ``"resume-redact"``
+> **extractor**: `"resume-redact"`
 
 Polymorphic discriminator, which specifies the different types this object can be
 
 #### Overrides
 
-[Document](Document.md).[extractor](Document.md#extractor)
+[`Document`](Document.md).[`extractor`](Document.md#extractor)
 
-___
+***
 
 ### meta
 
-• **meta**: [`DocumentMeta`](DocumentMeta.md)
+> **meta**: [`DocumentMeta`](DocumentMeta.md)
 
 #### Inherited from
 
-[Document](Document.md).[meta](Document.md#meta)
+[`Document`](Document.md).[`meta`](Document.md#meta)
 
-___
+***
 
-### warnings
+### warnings?
 
-• `Optional` **warnings**: [`DocumentWarning`](DocumentWarning.md)[]
+> `optional` **warnings**: [`DocumentWarning`](DocumentWarning.md)[]
 
 #### Inherited from
 
-[Document](Document.md).[warnings](Document.md#warnings)
+[`Document`](Document.md).[`warnings`](Document.md#warnings)

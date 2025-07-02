@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1
 
 # Interface: Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1
 
-## Hierarchy
+## Extended by
 
-- **`Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`**
-
-  ↳ [`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)
-
-## Table of contents
-
-### Properties
-
-- [results](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+- [`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)
 
 ## Properties
 
-### results
+### results?
 
-• `Optional` **results**: [`OrganizationMembership`](OrganizationMembership.md)[]
+> `optional` **results**: [`OrganizationMembership`](OrganizationMembership.md)[]

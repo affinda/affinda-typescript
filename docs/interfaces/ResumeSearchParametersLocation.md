@@ -1,36 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchParametersLocation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchParametersLocation
 
 # Interface: ResumeSearchParametersLocation
 
-## Table of contents
-
-### Properties
-
-- [coordinates](ResumeSearchParametersLocation.md#coordinates)
-- [distance](ResumeSearchParametersLocation.md#distance)
-- [name](ResumeSearchParametersLocation.md#name)
-- [unit](ResumeSearchParametersLocation.md#unit)
-
 ## Properties
 
-### coordinates
+### coordinates?
 
-• `Optional` **coordinates**: [`ResumeSearchParametersLocationCoordinates`](ResumeSearchParametersLocationCoordinates.md)
+> `optional` **coordinates**: [`ResumeSearchParametersLocationCoordinates`](ResumeSearchParametersLocationCoordinates.md)
 
-___
+***
 
-### distance
+### distance?
 
-• `Optional` **distance**: `number`
+> `optional` **distance**: `number`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### unit
+### unit?
 
-• `Optional` **unit**: [`SearchLocationUnit`](../modules.md#searchlocationunit)
+> `optional` **unit**: [`SearchLocationUnit`](../type-aliases/SearchLocationUnit.md)

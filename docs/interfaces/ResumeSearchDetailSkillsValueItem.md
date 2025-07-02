@@ -1,82 +1,71 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailSkillsValueItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailSkillsValueItem
 
 # Interface: ResumeSearchDetailSkillsValueItem
 
-## Hierarchy
+## Extends
 
-- [`ResumeSkill`](ResumeSkill.md)
-
-- [`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`](ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
-
-  ↳ **`ResumeSearchDetailSkillsValueItem`**
-
-## Table of contents
-
-### Properties
-
-- [lastUsed](ResumeSearchDetailSkillsValueItem.md#lastused)
-- [match](ResumeSearchDetailSkillsValueItem.md#match)
-- [name](ResumeSearchDetailSkillsValueItem.md#name)
-- [numberOfMonths](ResumeSearchDetailSkillsValueItem.md#numberofmonths)
-- [sources](ResumeSearchDetailSkillsValueItem.md#sources)
-- [type](ResumeSearchDetailSkillsValueItem.md#type)
+- [`ResumeSkill`](ResumeSkill.md).[`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`](ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md)
 
 ## Properties
 
-### lastUsed
+### lastUsed?
 
-• `Optional` **lastUsed**: `string`
-
-#### Inherited from
-
-[ResumeSkill](ResumeSkill.md).[lastUsed](ResumeSkill.md#lastused)
-
-___
-
-### match
-
-• `Optional` **match**: `boolean`
+> `optional` **lastUsed**: `string`
 
 #### Inherited from
 
-[ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1](ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md).[match](ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md#match)
+[`ResumeSkill`](ResumeSkill.md).[`lastUsed`](ResumeSkill.md#lastused)
 
-___
+***
 
-### name
+### match?
 
-• `Optional` **name**: `string`
-
-#### Inherited from
-
-[ResumeSkill](ResumeSkill.md).[name](ResumeSkill.md#name)
-
-___
-
-### numberOfMonths
-
-• `Optional` **numberOfMonths**: `number`
+> `optional` **match**: `boolean`
 
 #### Inherited from
 
-[ResumeSkill](ResumeSkill.md).[numberOfMonths](ResumeSkill.md#numberofmonths)
+[`ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1`](ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md).[`match`](ComponentsH65QjbSchemasResumesearchdetailPropertiesSkillsPropertiesValueItemsAllof1.md#match)
 
-___
+***
 
-### sources
+### name?
 
-• `Optional` **sources**: [`ResumeSkillSourcesItem`](ResumeSkillSourcesItem.md)[]
-
-#### Inherited from
-
-[ResumeSkill](ResumeSkill.md).[sources](ResumeSkill.md#sources)
-
-___
-
-### type
-
-• `Optional` **type**: `string`
+> `optional` **name**: `string`
 
 #### Inherited from
 
-[ResumeSkill](ResumeSkill.md).[type](ResumeSkill.md#type)
+[`ResumeSkill`](ResumeSkill.md).[`name`](ResumeSkill.md#name)
+
+***
+
+### numberOfMonths?
+
+> `optional` **numberOfMonths**: `number`
+
+#### Inherited from
+
+[`ResumeSkill`](ResumeSkill.md).[`numberOfMonths`](ResumeSkill.md#numberofmonths)
+
+***
+
+### sources?
+
+> `optional` **sources**: [`ResumeSkillSourcesItem`](ResumeSkillSourcesItem.md)[]
+
+#### Inherited from
+
+[`ResumeSkill`](ResumeSkill.md).[`sources`](ResumeSkill.md#sources)
+
+***
+
+### type?
+
+> `optional` **type**: `string`
+
+#### Inherited from
+
+[`ResumeSkill`](ResumeSkill.md).[`type`](ResumeSkill.md#type)

@@ -1,53 +1,47 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ValidationResultUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ValidationResultUpdate
 
 # Interface: ValidationResultUpdate
 
-## Table of contents
-
-### Properties
-
-- [annotations](ValidationResultUpdate.md#annotations)
-- [document](ValidationResultUpdate.md#document)
-- [message](ValidationResultUpdate.md#message)
-- [passed](ValidationResultUpdate.md#passed)
-- [ruleSlug](ValidationResultUpdate.md#ruleslug)
-
 ## Properties
 
-### annotations
+### annotations?
 
-• `Optional` **annotations**: `number`[]
+> `optional` **annotations**: `number`[]
 
 List of annotation ids that were validated
 
-___
+***
 
-### document
+### document?
 
-• `Optional` **document**: `string`
+> `optional` **document**: `string`
 
 Unique identifier for the document
 
-___
+***
 
-### message
+### message?
 
-• `Optional` **message**: `string`
+> `optional` **message**: `string`
 
 Message explaining why the validation failed
 
-___
+***
 
-### passed
+### passed?
 
-• `Optional` **passed**: `boolean`
+> `optional` **passed**: `boolean`
 
 Whether the validation passed or not, null if the validation was not applicable
 
-___
+***
 
-### ruleSlug
+### ruleSlug?
 
-• `Optional` **ruleSlug**: `string`
+> `optional` **ruleSlug**: `string`
 
 The hot-dog case slug of the validation rule that was applied

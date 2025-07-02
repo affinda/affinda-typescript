@@ -1,44 +1,36 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ThemeConfig
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ThemeConfig
 
 # Interface: ThemeConfig
 
-## Hierarchy
+## Extended by
 
-- **`ThemeConfig`**
-
-  ↳ [`ResumeSearchConfigSearchToolTheme`](ResumeSearchConfigSearchToolTheme.md)
-
-  ↳ [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
-
-## Table of contents
-
-### Properties
-
-- [borderRadius](ThemeConfig.md#borderradius)
-- [fontUrl](ThemeConfig.md#fonturl)
-- [palette](ThemeConfig.md#palette)
-- [typography](ThemeConfig.md#typography)
+- [`ResumeSearchConfigSearchToolTheme`](ResumeSearchConfigSearchToolTheme.md)
+- [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
 
 ## Properties
 
-### borderRadius
+### borderRadius?
 
-• `Optional` **borderRadius**: `number`
+> `optional` **borderRadius**: `number`
 
-___
+***
 
-### fontUrl
+### fontUrl?
 
-• `Optional` **fontUrl**: `string`
+> `optional` **fontUrl**: `string`
 
-___
+***
 
-### palette
+### palette?
 
-• `Optional` **palette**: [`ThemeConfigPalette`](ThemeConfigPalette.md)
+> `optional` **palette**: [`ThemeConfigPalette`](ThemeConfigPalette.md)
 
-___
+***
 
-### typography
+### typography?
 
-• `Optional` **typography**: [`ThemeConfigTypography`](ThemeConfigTypography.md)
+> `optional` **typography**: [`ThemeConfigTypography`](ThemeConfigTypography.md)

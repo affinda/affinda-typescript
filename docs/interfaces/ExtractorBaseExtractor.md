@@ -1,52 +1,45 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ExtractorBaseExtractor
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ExtractorBaseExtractor
 
 # Interface: ExtractorBaseExtractor
 
-## Table of contents
-
-### Properties
-
-- [createdDt](ExtractorBaseExtractor.md#createddt)
-- [identifier](ExtractorBaseExtractor.md#identifier)
-- [isCustom](ExtractorBaseExtractor.md#iscustom)
-- [name](ExtractorBaseExtractor.md#name)
-- [namePlural](ExtractorBaseExtractor.md#nameplural)
-- [validatable](ExtractorBaseExtractor.md#validatable)
-
 ## Properties
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `Date`
+> `optional` **createdDt**: `Date`
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
-### isCustom
+### isCustom?
 
-• `Optional` **isCustom**: `boolean`
+> `optional` **isCustom**: `boolean`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### namePlural
 
-• **namePlural**: `string`
+> **namePlural**: `string`
 
-___
+***
 
 ### validatable
 
-• **validatable**: `boolean`
+> **validatable**: `boolean`

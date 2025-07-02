@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailEducation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailEducation
 
 # Interface: ResumeSearchDetailEducation
 
-## Table of contents
-
-### Properties
-
-- [missing](ResumeSearchDetailEducation.md#missing)
-- [value](ResumeSearchDetailEducation.md#value)
-
 ## Properties
 
-### missing
+### missing?
 
-• `Optional` **missing**: [`ResumeSearchDetailEducationMissing`](ResumeSearchDetailEducationMissing.md)
+> `optional` **missing**: [`ResumeSearchDetailEducationMissing`](ResumeSearchDetailEducationMissing.md)
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)[]
+> `optional` **value**: [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)[]

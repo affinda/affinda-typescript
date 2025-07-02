@@ -1,208 +1,68 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPI
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / AffindaAPI
 
 # Class: AffindaAPI
 
-## Hierarchy
+## Extends
 
 - `ServiceClient`
 
-  ↳ **`AffindaAPI`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](AffindaAPI.md#constructor)
-
-### Properties
-
-- [pipeline](AffindaAPI.md#pipeline)
-- [region](AffindaAPI.md#region)
-
-### Methods
-
-- [activateResthookSubscription](AffindaAPI.md#activateresthooksubscription)
-- [addMappingDataSourceValue](AffindaAPI.md#addmappingdatasourcevalue)
-- [batchAddTag](AffindaAPI.md#batchaddtag)
-- [batchCreateAnnotations](AffindaAPI.md#batchcreateannotations)
-- [batchCreateValidationResults](AffindaAPI.md#batchcreatevalidationresults)
-- [batchDeleteAnnotations](AffindaAPI.md#batchdeleteannotations)
-- [batchDeleteValidationResults](AffindaAPI.md#batchdeletevalidationresults)
-- [batchRemoveTag](AffindaAPI.md#batchremovetag)
-- [batchUpdateAnnotations](AffindaAPI.md#batchupdateannotations)
-- [createAnnotation](AffindaAPI.md#createannotation)
-- [createApiUser](AffindaAPI.md#createapiuser)
-- [createCollection](AffindaAPI.md#createcollection)
-- [createDataFieldForCollection](AffindaAPI.md#createdatafieldforcollection)
-- [createDataPoint](AffindaAPI.md#createdatapoint)
-- [createDataPointChoice](AffindaAPI.md#createdatapointchoice)
-- [createDocument](AffindaAPI.md#createdocument)
-- [createDocumentType](AffindaAPI.md#createdocumenttype)
-- [createExtractor](AffindaAPI.md#createextractor)
-- [createIndex](AffindaAPI.md#createindex)
-- [createIndexDocument](AffindaAPI.md#createindexdocument)
-- [createInvitation](AffindaAPI.md#createinvitation)
-- [createJobDescriptionSearch](AffindaAPI.md#createjobdescriptionsearch)
-- [createJobDescriptionSearchEmbedUrl](AffindaAPI.md#createjobdescriptionsearchembedurl)
-- [createMapping](AffindaAPI.md#createmapping)
-- [createMappingDataSource](AffindaAPI.md#createmappingdatasource)
-- [createOrganization](AffindaAPI.md#createorganization)
-- [createResthookSubscription](AffindaAPI.md#createresthooksubscription)
-- [createResumeSearch](AffindaAPI.md#createresumesearch)
-- [createResumeSearchEmbedUrl](AffindaAPI.md#createresumesearchembedurl)
-- [createTag](AffindaAPI.md#createtag)
-- [createValidationResult](AffindaAPI.md#createvalidationresult)
-- [createWorkspace](AffindaAPI.md#createworkspace)
-- [createWorkspaceMembership](AffindaAPI.md#createworkspacemembership)
-- [deleteAnnotation](AffindaAPI.md#deleteannotation)
-- [deleteApiUser](AffindaAPI.md#deleteapiuser)
-- [deleteCollection](AffindaAPI.md#deletecollection)
-- [deleteDataPoint](AffindaAPI.md#deletedatapoint)
-- [deleteDataPointChoice](AffindaAPI.md#deletedatapointchoice)
-- [deleteDocument](AffindaAPI.md#deletedocument)
-- [deleteDocumentType](AffindaAPI.md#deletedocumenttype)
-- [deleteExtractor](AffindaAPI.md#deleteextractor)
-- [deleteIndex](AffindaAPI.md#deleteindex)
-- [deleteIndexDocument](AffindaAPI.md#deleteindexdocument)
-- [deleteInvitation](AffindaAPI.md#deleteinvitation)
-- [deleteMapping](AffindaAPI.md#deletemapping)
-- [deleteMappingDataSource](AffindaAPI.md#deletemappingdatasource)
-- [deleteMappingDataSourceValue](AffindaAPI.md#deletemappingdatasourcevalue)
-- [deleteOrganization](AffindaAPI.md#deleteorganization)
-- [deleteOrganizationMembership](AffindaAPI.md#deleteorganizationmembership)
-- [deleteResthookSubscription](AffindaAPI.md#deleteresthooksubscription)
-- [deleteTag](AffindaAPI.md#deletetag)
-- [deleteValidationResult](AffindaAPI.md#deletevalidationresult)
-- [deleteWorkspace](AffindaAPI.md#deleteworkspace)
-- [deleteWorkspaceMembership](AffindaAPI.md#deleteworkspacemembership)
-- [editDocumentPages](AffindaAPI.md#editdocumentpages)
-- [getAllAnnotations](AffindaAPI.md#getallannotations)
-- [getAllApiUsers](AffindaAPI.md#getallapiusers)
-- [getAllCollections](AffindaAPI.md#getallcollections)
-- [getAllDataPoints](AffindaAPI.md#getalldatapoints)
-- [getAllDocumentSplitters](AffindaAPI.md#getalldocumentsplitters)
-- [getAllDocuments](AffindaAPI.md#getalldocuments)
-- [getAllExtractors](AffindaAPI.md#getallextractors)
-- [getAllIndexDocuments](AffindaAPI.md#getallindexdocuments)
-- [getAllIndexes](AffindaAPI.md#getallindexes)
-- [getAllInvitations](AffindaAPI.md#getallinvitations)
-- [getAllOrganizationMemberships](AffindaAPI.md#getallorganizationmemberships)
-- [getAllOrganizations](AffindaAPI.md#getallorganizations)
-- [getAllResthookSubscriptions](AffindaAPI.md#getallresthooksubscriptions)
-- [getAllTags](AffindaAPI.md#getalltags)
-- [getAllValidationResults](AffindaAPI.md#getallvalidationresults)
-- [getAllWorkspaceMemberships](AffindaAPI.md#getallworkspacememberships)
-- [getAllWorkspaces](AffindaAPI.md#getallworkspaces)
-- [getAnnotation](AffindaAPI.md#getannotation)
-- [getApiUser](AffindaAPI.md#getapiuser)
-- [getCollection](AffindaAPI.md#getcollection)
-- [getDataFieldForCollection](AffindaAPI.md#getdatafieldforcollection)
-- [getDataPoint](AffindaAPI.md#getdatapoint)
-- [getDataPointChoice](AffindaAPI.md#getdatapointchoice)
-- [getDataPointChoices](AffindaAPI.md#getdatapointchoices)
-- [getDocument](AffindaAPI.md#getdocument)
-- [getDocumentSplitter](AffindaAPI.md#getdocumentsplitter)
-- [getDocumentType](AffindaAPI.md#getdocumenttype)
-- [getDocumentTypes](AffindaAPI.md#getdocumenttypes)
-- [getExtractor](AffindaAPI.md#getextractor)
-- [getInvitation](AffindaAPI.md#getinvitation)
-- [getInvitationByToken](AffindaAPI.md#getinvitationbytoken)
-- [getJobDescriptionSearchConfig](AffindaAPI.md#getjobdescriptionsearchconfig)
-- [getJobDescriptionSearchDetail](AffindaAPI.md#getjobdescriptionsearchdetail)
-- [getMapping](AffindaAPI.md#getmapping)
-- [getMappingDataSource](AffindaAPI.md#getmappingdatasource)
-- [getMappingDataSourceValue](AffindaAPI.md#getmappingdatasourcevalue)
-- [getOrganization](AffindaAPI.md#getorganization)
-- [getOrganizationMembership](AffindaAPI.md#getorganizationmembership)
-- [getRedactedDocument](AffindaAPI.md#getredacteddocument)
-- [getResthookSubscription](AffindaAPI.md#getresthooksubscription)
-- [getResumeSearchConfig](AffindaAPI.md#getresumesearchconfig)
-- [getResumeSearchDetail](AffindaAPI.md#getresumesearchdetail)
-- [getResumeSearchMatch](AffindaAPI.md#getresumesearchmatch)
-- [getResumeSearchSuggestionJobTitle](AffindaAPI.md#getresumesearchsuggestionjobtitle)
-- [getResumeSearchSuggestionSkill](AffindaAPI.md#getresumesearchsuggestionskill)
-- [getTag](AffindaAPI.md#gettag)
-- [getUsageByCollection](AffindaAPI.md#getusagebycollection)
-- [getUsageByWorkspace](AffindaAPI.md#getusagebyworkspace)
-- [getValidationResult](AffindaAPI.md#getvalidationresult)
-- [getWorkspace](AffindaAPI.md#getworkspace)
-- [getWorkspaceMembership](AffindaAPI.md#getworkspacemembership)
-- [listMappingDataSourceValues](AffindaAPI.md#listmappingdatasourcevalues)
-- [listMappingDataSources](AffindaAPI.md#listmappingdatasources)
-- [listMappings](AffindaAPI.md#listmappings)
-- [listOccupationGroups](AffindaAPI.md#listoccupationgroups)
-- [reIndexDocument](AffindaAPI.md#reindexdocument)
-- [regenerateApiKeyForApiUser](AffindaAPI.md#regenerateapikeyforapiuser)
-- [replaceDataPointChoices](AffindaAPI.md#replacedatapointchoices)
-- [replaceMappingDataSourceValues](AffindaAPI.md#replacemappingdatasourcevalues)
-- [respondToInvitation](AffindaAPI.md#respondtoinvitation)
-- [sendOperationRequest](AffindaAPI.md#sendoperationrequest)
-- [sendRequest](AffindaAPI.md#sendrequest)
-- [updateAnnotation](AffindaAPI.md#updateannotation)
-- [updateApiUser](AffindaAPI.md#updateapiuser)
-- [updateCollection](AffindaAPI.md#updatecollection)
-- [updateDataFieldForCollection](AffindaAPI.md#updatedatafieldforcollection)
-- [updateDataPoint](AffindaAPI.md#updatedatapoint)
-- [updateDataPointChoice](AffindaAPI.md#updatedatapointchoice)
-- [updateDocument](AffindaAPI.md#updatedocument)
-- [updateDocumentData](AffindaAPI.md#updatedocumentdata)
-- [updateDocumentType](AffindaAPI.md#updatedocumenttype)
-- [updateExtractor](AffindaAPI.md#updateextractor)
-- [updateIndex](AffindaAPI.md#updateindex)
-- [updateInvitation](AffindaAPI.md#updateinvitation)
-- [updateJobDescriptionSearchConfig](AffindaAPI.md#updatejobdescriptionsearchconfig)
-- [updateMapping](AffindaAPI.md#updatemapping)
-- [updateMappingDataSourceValue](AffindaAPI.md#updatemappingdatasourcevalue)
-- [updateOrganization](AffindaAPI.md#updateorganization)
-- [updateOrganizationMembership](AffindaAPI.md#updateorganizationmembership)
-- [updateResthookSubscription](AffindaAPI.md#updateresthooksubscription)
-- [updateResumeSearchConfig](AffindaAPI.md#updateresumesearchconfig)
-- [updateTag](AffindaAPI.md#updatetag)
-- [updateValidationResult](AffindaAPI.md#updatevalidationresult)
-- [updateWorkspace](AffindaAPI.md#updateworkspace)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new AffindaAPI**(`credentials`, `options?`)
+> **new AffindaAPI**(`credentials`, `options?`): `AffindaAPI`
 
 Initializes a new instance of the AffindaAPI class.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `credentials` | `TokenCredential` | Subscription credentials which uniquely identify client subscription. |
-| `options?` | [`AffindaAPIOptionalParams`](../interfaces/AffindaAPIOptionalParams.md) | The parameter options |
+##### credentials
+
+`TokenCredential`
+
+Subscription credentials which uniquely identify client subscription.
+
+##### options?
+
+[`AffindaAPIOptionalParams`](../interfaces/AffindaAPIOptionalParams.md)
+
+The parameter options
+
+#### Returns
+
+`AffindaAPI`
 
 #### Overrides
 
-coreClient.ServiceClient.constructor
+`coreClient.ServiceClient.constructor`
 
 ## Properties
 
 ### pipeline
 
-• `Readonly` **pipeline**: `Pipeline`
+> `readonly` **pipeline**: `Pipeline`
 
 The pipeline used by this client to make requests
 
 #### Inherited from
 
-coreClient.ServiceClient.pipeline
+`coreClient.ServiceClient.pipeline`
 
-___
+***
 
 ### region
 
-• **region**: `string`
+> **region**: `string`
 
 ## Methods
 
-### activateResthookSubscription
+### activateResthookSubscription()
 
-▸ **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+> **activateResthookSubscription**(`xHookSecret`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After creating a subscription, we'll send a POST request to your target URL with a `X-Hook-Secret`
 header. <br />
@@ -211,40 +71,59 @@ that you received to activate the subscription using this endpoint.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `xHookSecret` | `string` | The secret received when creating a subscription. |
-| `options?` | [`ActivateResthookSubscriptionOptionalParams`](../interfaces/ActivateResthookSubscriptionOptionalParams.md) | The options parameters. |
+##### xHookSecret
+
+`string`
+
+The secret received when creating a subscription.
+
+##### options?
+
+[`ActivateResthookSubscriptionOptionalParams`](../interfaces/ActivateResthookSubscriptionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
-___
+***
 
-### addMappingDataSourceValue
+### addMappingDataSourceValue()
 
-▸ **addMappingDataSourceValue**(`identifier`, `body`, `options?`): `Promise`\<[`AddMappingDataSourceValueResponse`](../modules.md#addmappingdatasourcevalueresponse)\>
+> **addMappingDataSourceValue**(`identifier`, `body`, `options?`): `Promise`\<[`AddMappingDataSourceValueResponse`](../type-aliases/AddMappingDataSourceValueResponse.md)\>
 
 Adds a value to a mapping data source
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `body` | `Record`\<`string`, `unknown`\> | Any object |
-| `options?` | [`AddMappingDataSourceValueOptionalParams`](../interfaces/AddMappingDataSourceValueOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### body
+
+`Record`\<`string`, `unknown`\>
+
+Any object
+
+##### options?
+
+[`AddMappingDataSourceValueOptionalParams`](../interfaces/AddMappingDataSourceValueOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`AddMappingDataSourceValueResponse`](../modules.md#addmappingdatasourcevalueresponse)\>
+`Promise`\<[`AddMappingDataSourceValueResponse`](../type-aliases/AddMappingDataSourceValueResponse.md)\>
 
-___
+***
 
-### batchAddTag
+### batchAddTag()
 
-▸ **batchAddTag**(`body`, `options?`): `Promise`\<`void`\>
+> **batchAddTag**(`body`, `options?`): `Promise`\<`void`\>
 
 Add a tag to documents.
 Tags are used to group documents together.
@@ -252,247 +131,325 @@ Tags can be used to filter documents.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`BatchAddTagRequest`](../interfaces/BatchAddTagRequest.md) | Specify the tag and the documents to tag |
-| `options?` | [`BatchAddTagOptionalParams`](../interfaces/BatchAddTagOptionalParams.md) | The options parameters. |
+##### body
+
+[`BatchAddTagRequest`](../interfaces/BatchAddTagRequest.md)
+
+Specify the tag and the documents to tag
+
+##### options?
+
+[`BatchAddTagOptionalParams`](../interfaces/BatchAddTagOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### batchCreateAnnotations
+### batchCreateAnnotations()
 
-▸ **batchCreateAnnotations**(`body`, `options?`): `Promise`\<[`BatchCreateAnnotationsResponse`](../modules.md#batchcreateannotationsresponse)\>
+> **batchCreateAnnotations**(`body`, `options?`): `Promise`\<[`BatchCreateAnnotationsResponse`](../type-aliases/BatchCreateAnnotationsResponse.md)\>
 
 Batch create annotations
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`AnnotationCreate`](../interfaces/AnnotationCreate.md)[] | Array of AnnotationCreate |
-| `options?` | [`BatchCreateAnnotationsOptionalParams`](../interfaces/BatchCreateAnnotationsOptionalParams.md) | The options parameters. |
+##### body
+
+[`AnnotationCreate`](../interfaces/AnnotationCreate.md)[]
+
+Array of AnnotationCreate
+
+##### options?
+
+[`BatchCreateAnnotationsOptionalParams`](../interfaces/BatchCreateAnnotationsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`BatchCreateAnnotationsResponse`](../modules.md#batchcreateannotationsresponse)\>
+`Promise`\<[`BatchCreateAnnotationsResponse`](../type-aliases/BatchCreateAnnotationsResponse.md)\>
 
-___
+***
 
-### batchCreateValidationResults
+### batchCreateValidationResults()
 
-▸ **batchCreateValidationResults**(`body`, `options?`): `Promise`\<[`BatchCreateValidationResultsResponse`](../modules.md#batchcreatevalidationresultsresponse)\>
+> **batchCreateValidationResults**(`body`, `options?`): `Promise`\<[`BatchCreateValidationResultsResponse`](../type-aliases/BatchCreateValidationResultsResponse.md)\>
 
 Batch create validation results.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`ValidationResultCreate`](../interfaces/ValidationResultCreate.md)[] | Array of ValidationResultCreate |
-| `options?` | [`BatchCreateValidationResultsOptionalParams`](../interfaces/BatchCreateValidationResultsOptionalParams.md) | The options parameters. |
+##### body
+
+[`ValidationResultCreate`](../interfaces/ValidationResultCreate.md)[]
+
+Array of ValidationResultCreate
+
+##### options?
+
+[`BatchCreateValidationResultsOptionalParams`](../interfaces/BatchCreateValidationResultsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`BatchCreateValidationResultsResponse`](../modules.md#batchcreatevalidationresultsresponse)\>
+`Promise`\<[`BatchCreateValidationResultsResponse`](../type-aliases/BatchCreateValidationResultsResponse.md)\>
 
-___
+***
 
-### batchDeleteAnnotations
+### batchDeleteAnnotations()
 
-▸ **batchDeleteAnnotations**(`body`, `options?`): `Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
+> **batchDeleteAnnotations**(`body`, `options?`): `Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
 
 Batch delete annotations
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | `number`[] | Array of annotation IDs to be deleted |
-| `options?` | [`BatchDeleteAnnotationsOptionalParams`](../interfaces/BatchDeleteAnnotationsOptionalParams.md) | The options parameters. |
+##### body
+
+`number`[]
+
+Array of annotation IDs to be deleted
+
+##### options?
+
+[`BatchDeleteAnnotationsOptionalParams`](../interfaces/BatchDeleteAnnotationsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`BatchDeleteAnnotationsResponse`](../interfaces/BatchDeleteAnnotationsResponse.md)\>
 
-___
+***
 
-### batchDeleteValidationResults
+### batchDeleteValidationResults()
 
-▸ **batchDeleteValidationResults**(`body`, `options?`): `Promise`\<`void`\>
+> **batchDeleteValidationResults**(`body`, `options?`): `Promise`\<`void`\>
 
 Batch delete validation results
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`BatchDeleteValidationResultsRequest`](../interfaces/BatchDeleteValidationResultsRequest.md) |  |
-| `options?` | [`BatchDeleteValidationResultsOptionalParams`](../interfaces/BatchDeleteValidationResultsOptionalParams.md) | The options parameters. |
+##### body
+
+[`BatchDeleteValidationResultsRequest`](../interfaces/BatchDeleteValidationResultsRequest.md)
+
+##### options?
+
+[`BatchDeleteValidationResultsOptionalParams`](../interfaces/BatchDeleteValidationResultsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### batchRemoveTag
+### batchRemoveTag()
 
-▸ **batchRemoveTag**(`body`, `options?`): `Promise`\<`void`\>
+> **batchRemoveTag**(`body`, `options?`): `Promise`\<`void`\>
 
 Remove a tag from documents.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`BatchRemoveTagRequest`](../interfaces/BatchRemoveTagRequest.md) | Specify the tag and the documents to remove the tag from |
-| `options?` | [`BatchRemoveTagOptionalParams`](../interfaces/BatchRemoveTagOptionalParams.md) | The options parameters. |
+##### body
+
+[`BatchRemoveTagRequest`](../interfaces/BatchRemoveTagRequest.md)
+
+Specify the tag and the documents to remove the tag from
+
+##### options?
+
+[`BatchRemoveTagOptionalParams`](../interfaces/BatchRemoveTagOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### batchUpdateAnnotations
+### batchUpdateAnnotations()
 
-▸ **batchUpdateAnnotations**(`body`, `options?`): `Promise`\<[`BatchUpdateAnnotationsResponse`](../modules.md#batchupdateannotationsresponse)\>
+> **batchUpdateAnnotations**(`body`, `options?`): `Promise`\<[`BatchUpdateAnnotationsResponse`](../type-aliases/BatchUpdateAnnotationsResponse.md)\>
 
 Batch update annotations
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`AnnotationBatchUpdate`](../interfaces/AnnotationBatchUpdate.md)[] | Array of AnnotationBatchUpdate |
-| `options?` | [`BatchUpdateAnnotationsOptionalParams`](../interfaces/BatchUpdateAnnotationsOptionalParams.md) | The options parameters. |
+##### body
+
+[`AnnotationBatchUpdate`](../interfaces/AnnotationBatchUpdate.md)[]
+
+Array of AnnotationBatchUpdate
+
+##### options?
+
+[`BatchUpdateAnnotationsOptionalParams`](../interfaces/BatchUpdateAnnotationsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`BatchUpdateAnnotationsResponse`](../modules.md#batchupdateannotationsresponse)\>
+`Promise`\<[`BatchUpdateAnnotationsResponse`](../type-aliases/BatchUpdateAnnotationsResponse.md)\>
 
-___
+***
 
-### createAnnotation
+### createAnnotation()
 
-▸ **createAnnotation**(`body`, `options?`): `Promise`\<[`AnnotationWithValidationResults`](../interfaces/AnnotationWithValidationResults.md)\>
+> **createAnnotation**(`body`, `options?`): `Promise`\<[`AnnotationWithValidationResults`](../interfaces/AnnotationWithValidationResults.md)\>
 
 Create a annotation
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`AnnotationCreate`](../interfaces/AnnotationCreate.md) |  |
-| `options?` | [`CreateAnnotationOptionalParams`](../interfaces/CreateAnnotationOptionalParams.md) | The options parameters. |
+##### body
+
+[`AnnotationCreate`](../interfaces/AnnotationCreate.md)
+
+##### options?
+
+[`CreateAnnotationOptionalParams`](../interfaces/CreateAnnotationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`AnnotationWithValidationResults`](../interfaces/AnnotationWithValidationResults.md)\>
 
-___
+***
 
-### createApiUser
+### createApiUser()
 
-▸ **createApiUser**(`body`, `options?`): `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+> **createApiUser**(`body`, `options?`): `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
 
 Create an API user
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`ApiUserCreate`](../interfaces/ApiUserCreate.md) |  |
-| `options?` | [`CreateApiUserOptionalParams`](../interfaces/CreateApiUserOptionalParams.md) | The options parameters. |
+##### body
+
+[`ApiUserCreate`](../interfaces/ApiUserCreate.md)
+
+##### options?
+
+[`CreateApiUserOptionalParams`](../interfaces/CreateApiUserOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
 
-___
+***
 
-### createCollection
+### createCollection()
 
-▸ **createCollection**(`body`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
+> **createCollection**(`body`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 Create a collection
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`CollectionCreate`](../interfaces/CollectionCreate.md) |  |
-| `options?` | [`CreateCollectionOptionalParams`](../interfaces/CreateCollectionOptionalParams.md) | The options parameters. |
+##### body
+
+[`CollectionCreate`](../interfaces/CollectionCreate.md)
+
+##### options?
+
+[`CreateCollectionOptionalParams`](../interfaces/CreateCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
-___
+***
 
-### createDataFieldForCollection
+### createDataFieldForCollection()
 
-▸ **createDataFieldForCollection**(`identifier`, `body`, `options?`): `Promise`\<[`DataField`](../interfaces/DataField.md)\>
+> **createDataFieldForCollection**(`identifier`, `body`, `options?`): `Promise`\<[`DataField`](../interfaces/DataField.md)\>
 
 Create data field for a collection along with a new data point.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `body` | [`DataFieldCreate`](../interfaces/DataFieldCreate.md) | The data field and data point to be created. |
-| `options?` | [`CreateDataFieldForCollectionOptionalParams`](../interfaces/CreateDataFieldForCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### body
+
+[`DataFieldCreate`](../interfaces/DataFieldCreate.md)
+
+The data field and data point to be created.
+
+##### options?
+
+[`CreateDataFieldForCollectionOptionalParams`](../interfaces/CreateDataFieldForCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataField`](../interfaces/DataField.md)\>
 
-___
+***
 
-### createDataPoint
+### createDataPoint()
 
-▸ **createDataPoint**(`options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
+> **createDataPoint**(`options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Create a custom data point.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`CreateDataPointOptionalParams`](../interfaces/CreateDataPointOptionalParams.md) | The options parameters. |
+##### options?
+
+[`CreateDataPointOptionalParams`](../interfaces/CreateDataPointOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
-___
+***
 
-### createDataPointChoice
+### createDataPointChoice()
 
-▸ **createDataPointChoice**(`options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+> **createDataPointChoice**(`options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 Create a custom data point choice.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`CreateDataPointChoiceOptionalParams`](../interfaces/CreateDataPointChoiceOptionalParams.md) | The options parameters. |
+##### options?
+
+[`CreateDataPointChoiceOptionalParams`](../interfaces/CreateDataPointChoiceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
-___
+***
 
-### createDocument
+### createDocument()
 
-▸ **createDocument**(`options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+> **createDocument**(`options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
 Uploads a document for parsing. When successful, returns an `identifier` in the response for
 subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
@@ -500,133 +457,175 @@ processing status and retrieve results.<br/>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`CreateDocumentOptionalParams`](../interfaces/CreateDocumentOptionalParams.md) | The options parameters. |
+##### options?
+
+[`CreateDocumentOptionalParams`](../interfaces/CreateDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
-___
+***
 
-### createDocumentType
+### createDocumentType()
 
-▸ **createDocumentType**(`body`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+> **createDocumentType**(`body`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
 Create a new document type in the specified organization.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`DocumentTypeCreate`](../interfaces/DocumentTypeCreate.md) |  |
-| `options?` | [`CreateDocumentTypeOptionalParams`](../interfaces/CreateDocumentTypeOptionalParams.md) | The options parameters. |
+##### body
+
+[`DocumentTypeCreate`](../interfaces/DocumentTypeCreate.md)
+
+##### options?
+
+[`CreateDocumentTypeOptionalParams`](../interfaces/CreateDocumentTypeOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
-___
+***
 
-### createExtractor
+### createExtractor()
 
-▸ **createExtractor**(`options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
+> **createExtractor**(`options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 Create a custom extractor.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`CreateExtractorOptionalParams`](../interfaces/CreateExtractorOptionalParams.md) | The options parameters. |
+##### options?
+
+[`CreateExtractorOptionalParams`](../interfaces/CreateExtractorOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
-___
+***
 
-### createIndex
+### createIndex()
 
-▸ **createIndex**(`body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
+> **createIndex**(`body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
 
 Create an index for the search tool
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`IndexCreate`](../interfaces/IndexCreate.md) | Index to create |
-| `options?` | [`CreateIndexOptionalParams`](../interfaces/CreateIndexOptionalParams.md) | The options parameters. |
+##### body
+
+[`IndexCreate`](../interfaces/IndexCreate.md)
+
+Index to create
+
+##### options?
+
+[`CreateIndexOptionalParams`](../interfaces/CreateIndexOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Index`](../interfaces/Index.md)\>
 
-___
+***
 
-### createIndexDocument
+### createIndexDocument()
 
-▸ **createIndexDocument**(`name`, `body`, `options?`): `Promise`\<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
+> **createIndexDocument**(`name`, `body`, `options?`): `Promise`\<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
 Create an indexed document for the search tool
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `body` | [`PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md) | Document to index |
-| `options?` | [`CreateIndexDocumentOptionalParams`](../interfaces/CreateIndexDocumentOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+Index name
+
+##### body
+
+[`PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md)
+
+Document to index
+
+##### options?
+
+[`CreateIndexDocumentOptionalParams`](../interfaces/CreateIndexDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema`](../interfaces/PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### createInvitation
+### createInvitation()
 
-▸ **createInvitation**(`body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
+> **createInvitation**(`body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Create a new invitation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`InvitationCreate`](../interfaces/InvitationCreate.md) | Invitation to create. |
-| `options?` | [`CreateInvitationOptionalParams`](../interfaces/CreateInvitationOptionalParams.md) | The options parameters. |
+##### body
+
+[`InvitationCreate`](../interfaces/InvitationCreate.md)
+
+Invitation to create.
+
+##### options?
+
+[`CreateInvitationOptionalParams`](../interfaces/CreateInvitationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
-___
+***
 
-### createJobDescriptionSearch
+### createJobDescriptionSearch()
 
-▸ **createJobDescriptionSearch**(`body`, `options?`): `Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
+> **createJobDescriptionSearch**(`body`, `options?`): `Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
 Searches through parsed job descriptions. You can search with custom criterias or a resume.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
-| `options?` | [`CreateJobDescriptionSearchOptionalParams`](../interfaces/CreateJobDescriptionSearchOptionalParams.md) | The options parameters. |
+##### body
+
+Search parameters
+
+`null` | [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md)
+
+##### options?
+
+[`CreateJobDescriptionSearchOptionalParams`](../interfaces/CreateJobDescriptionSearchOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`JobDescriptionSearch`](../interfaces/JobDescriptionSearch.md)\>
 
-___
+***
 
-### createJobDescriptionSearchEmbedUrl
+### createJobDescriptionSearchEmbedUrl()
 
-▸ **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
+> **createJobDescriptionSearchEmbedUrl**(`options?`): `Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
 
 Create and return a signed URL of the job description search tool which then can be embedded on a
 web page. An optional parameter `config_override` can be passed to override the user-level
@@ -634,76 +633,96 @@ configurations of the embeddable search tool.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`CreateJobDescriptionSearchEmbedUrlOptionalParams`](../interfaces/CreateJobDescriptionSearchEmbedUrlOptionalParams.md) | The options parameters. |
+##### options?
+
+[`CreateJobDescriptionSearchEmbedUrlOptionalParams`](../interfaces/CreateJobDescriptionSearchEmbedUrlOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`JobDescriptionSearchEmbed`](../interfaces/JobDescriptionSearchEmbed.md)\>
 
-___
+***
 
-### createMapping
+### createMapping()
 
-▸ **createMapping**(`body`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+> **createMapping**(`body`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
 Create a custom mapping.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`MappingCreate`](../interfaces/MappingCreate.md) |  |
-| `options?` | [`CreateMappingOptionalParams`](../interfaces/CreateMappingOptionalParams.md) | The options parameters. |
+##### body
+
+[`MappingCreate`](../interfaces/MappingCreate.md)
+
+##### options?
+
+[`CreateMappingOptionalParams`](../interfaces/CreateMappingOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
-___
+***
 
-### createMappingDataSource
+### createMappingDataSource()
 
-▸ **createMappingDataSource**(`body`, `options?`): `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
+> **createMappingDataSource**(`body`, `options?`): `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
 
 Create a custom mapping data source.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`MappingDataSourceCreate`](../interfaces/MappingDataSourceCreate.md) | A mapping data source is used to map from raw data found by our AI models to records in your database. |
-| `options?` | [`CreateMappingDataSourceOptionalParams`](../interfaces/CreateMappingDataSourceOptionalParams.md) | The options parameters. |
+##### body
+
+[`MappingDataSourceCreate`](../interfaces/MappingDataSourceCreate.md)
+
+A mapping data source is used to map from raw data found by our AI models to records in
+            your database.
+
+##### options?
+
+[`CreateMappingDataSourceOptionalParams`](../interfaces/CreateMappingDataSourceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
 
-___
+***
 
-### createOrganization
+### createOrganization()
 
-▸ **createOrganization**(`name`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
+> **createOrganization**(`name`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 Create a new organization.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` |  |
-| `options?` | [`CreateOrganizationOptionalParams`](../interfaces/CreateOrganizationOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+##### options?
+
+[`CreateOrganizationOptionalParams`](../interfaces/CreateOrganizationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
-___
+***
 
-### createResthookSubscription
+### createResthookSubscription()
 
-▸ **createResthookSubscription**(`body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+> **createResthookSubscription**(`body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 After a subscription is successfully created, we'll send a POST request to your target URL with a
 `X-Hook-Secret` header. <br />
@@ -716,20 +735,25 @@ here.](https://docs.affinda.com/docs/webhooks)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`ResthookSubscriptionCreate`](../interfaces/ResthookSubscriptionCreate.md) |  |
-| `options?` | [`CreateResthookSubscriptionOptionalParams`](../interfaces/CreateResthookSubscriptionOptionalParams.md) | The options parameters. |
+##### body
+
+[`ResthookSubscriptionCreate`](../interfaces/ResthookSubscriptionCreate.md)
+
+##### options?
+
+[`CreateResthookSubscriptionOptionalParams`](../interfaces/CreateResthookSubscriptionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
-___
+***
 
-### createResumeSearch
+### createResumeSearch()
 
-▸ **createResumeSearch**(`body`, `options?`): `Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
+> **createResumeSearch**(`body`, `options?`): `Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
 Searches through parsed resumes. Users have 3 options to create a search:<br /><br /> 1.	Match to a
 job description - a parsed job description is used to find candidates that suit it<br /> 2.	Match to
@@ -739,20 +763,27 @@ the custom criteria.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
-| `options?` | [`CreateResumeSearchOptionalParams`](../interfaces/CreateResumeSearchOptionalParams.md) | The options parameters. |
+##### body
+
+[`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md)
+
+Search parameters
+
+##### options?
+
+[`CreateResumeSearchOptionalParams`](../interfaces/CreateResumeSearchOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResumeSearch`](../interfaces/ResumeSearch.md)\>
 
-___
+***
 
-### createResumeSearchEmbedUrl
+### createResumeSearchEmbedUrl()
 
-▸ **createResumeSearchEmbedUrl**(`options?`): `Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
+> **createResumeSearchEmbedUrl**(`options?`): `Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
 Create and return a signed URL of the resume search tool which then can be embedded on a web page.
 An optional parameter `config_override` can be passed to override the user-level configurations of
@@ -760,497 +791,678 @@ the embeddable resume search tool.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`CreateResumeSearchEmbedUrlOptionalParams`](../interfaces/CreateResumeSearchEmbedUrlOptionalParams.md) | The options parameters. |
+##### options?
+
+[`CreateResumeSearchEmbedUrlOptionalParams`](../interfaces/CreateResumeSearchEmbedUrlOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResumeSearchEmbed`](../interfaces/ResumeSearchEmbed.md)\>
 
-___
+***
 
-### createTag
+### createTag()
 
-▸ **createTag**(`body`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
+> **createTag**(`body`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 Create a tag
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`TagCreate`](../interfaces/TagCreate.md) |  |
-| `options?` | [`CreateTagOptionalParams`](../interfaces/CreateTagOptionalParams.md) | The options parameters. |
+##### body
+
+[`TagCreate`](../interfaces/TagCreate.md)
+
+##### options?
+
+[`CreateTagOptionalParams`](../interfaces/CreateTagOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
-___
+***
 
-### createValidationResult
+### createValidationResult()
 
-▸ **createValidationResult**(`body`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+> **createValidationResult**(`body`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
 Create a validation result.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`ValidationResultCreate`](../interfaces/ValidationResultCreate.md) |  |
-| `options?` | [`CreateValidationResultOptionalParams`](../interfaces/CreateValidationResultOptionalParams.md) | The options parameters. |
+##### body
+
+[`ValidationResultCreate`](../interfaces/ValidationResultCreate.md)
+
+##### options?
+
+[`CreateValidationResultOptionalParams`](../interfaces/CreateValidationResultOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
-___
+***
 
-### createWorkspace
+### createWorkspace()
 
-▸ **createWorkspace**(`body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
+> **createWorkspace**(`body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 Create a workspace
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`WorkspaceCreate`](../interfaces/WorkspaceCreate.md) | Workspace to create |
-| `options?` | [`CreateWorkspaceOptionalParams`](../interfaces/CreateWorkspaceOptionalParams.md) | The options parameters. |
+##### body
+
+[`WorkspaceCreate`](../interfaces/WorkspaceCreate.md)
+
+Workspace to create
+
+##### options?
+
+[`CreateWorkspaceOptionalParams`](../interfaces/CreateWorkspaceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
-___
+***
 
-### createWorkspaceMembership
+### createWorkspaceMembership()
 
-▸ **createWorkspaceMembership**(`body`, `options?`): `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
+> **createWorkspaceMembership**(`body`, `options?`): `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
 Create a workspace membership.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`WorkspaceMembershipCreate`](../interfaces/WorkspaceMembershipCreate.md) |  |
-| `options?` | [`CreateWorkspaceMembershipOptionalParams`](../interfaces/CreateWorkspaceMembershipOptionalParams.md) | The options parameters. |
+##### body
+
+[`WorkspaceMembershipCreate`](../interfaces/WorkspaceMembershipCreate.md)
+
+##### options?
+
+[`CreateWorkspaceMembershipOptionalParams`](../interfaces/CreateWorkspaceMembershipOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
-___
+***
 
-### deleteAnnotation
+### deleteAnnotation()
 
-▸ **deleteAnnotation**(`id`, `options?`): `Promise`\<[`AnotationDelete`](../interfaces/AnotationDelete.md)\>
+> **deleteAnnotation**(`id`, `options?`): `Promise`\<[`AnotationDelete`](../interfaces/AnotationDelete.md)\>
 
 Deletes the specified annotation from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Annotation's ID |
-| `options?` | [`DeleteAnnotationOptionalParams`](../interfaces/DeleteAnnotationOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Annotation's ID
+
+##### options?
+
+[`DeleteAnnotationOptionalParams`](../interfaces/DeleteAnnotationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`AnotationDelete`](../interfaces/AnotationDelete.md)\>
 
-___
+***
 
-### deleteApiUser
+### deleteApiUser()
 
-▸ **deleteApiUser**(`id`, `options?`): `Promise`\<`void`\>
+> **deleteApiUser**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified API user from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | API user's ID |
-| `options?` | [`DeleteApiUserOptionalParams`](../interfaces/DeleteApiUserOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+API user's ID
+
+##### options?
+
+[`DeleteApiUserOptionalParams`](../interfaces/DeleteApiUserOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteCollection
+### deleteCollection()
 
-▸ **deleteCollection**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteCollection**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified collection from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `options?` | [`DeleteCollectionOptionalParams`](../interfaces/DeleteCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### options?
+
+[`DeleteCollectionOptionalParams`](../interfaces/DeleteCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteDataPoint
+### deleteDataPoint()
 
-▸ **deleteDataPoint**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteDataPoint**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified data point from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | DataPoint's identifier |
-| `options?` | [`DeleteDataPointOptionalParams`](../interfaces/DeleteDataPointOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+DataPoint's identifier
+
+##### options?
+
+[`DeleteDataPointOptionalParams`](../interfaces/DeleteDataPointOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteDataPointChoice
+### deleteDataPointChoice()
 
-▸ **deleteDataPointChoice**(`id`, `options?`): `Promise`\<`void`\>
+> **deleteDataPointChoice**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified data point choice from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Data point choice's ID |
-| `options?` | [`DeleteDataPointChoiceOptionalParams`](../interfaces/DeleteDataPointChoiceOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Data point choice's ID
+
+##### options?
+
+[`DeleteDataPointChoiceOptionalParams`](../interfaces/DeleteDataPointChoiceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteDocument
+### deleteDocument()
 
-▸ **deleteDocument**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteDocument**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified document from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `options?` | [`DeleteDocumentOptionalParams`](../interfaces/DeleteDocumentOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document's identifier
+
+##### options?
+
+[`DeleteDocumentOptionalParams`](../interfaces/DeleteDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteDocumentType
+### deleteDocumentType()
 
-▸ **deleteDocumentType**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteDocumentType**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete a document type.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document type identifier |
-| `options?` | [`DeleteDocumentTypeOptionalParams`](../interfaces/DeleteDocumentTypeOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document type identifier
+
+##### options?
+
+[`DeleteDocumentTypeOptionalParams`](../interfaces/DeleteDocumentTypeOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteExtractor
+### deleteExtractor()
 
-▸ **deleteExtractor**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteExtractor**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified extractor from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Extractor's identifier |
-| `options?` | [`DeleteExtractorOptionalParams`](../interfaces/DeleteExtractorOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Extractor's identifier
+
+##### options?
+
+[`DeleteExtractorOptionalParams`](../interfaces/DeleteExtractorOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteIndex
+### deleteIndex()
 
-▸ **deleteIndex**(`name`, `options?`): `Promise`\<`void`\>
+> **deleteIndex**(`name`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified index from the database
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `options?` | [`DeleteIndexOptionalParams`](../interfaces/DeleteIndexOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+Index name
+
+##### options?
+
+[`DeleteIndexOptionalParams`](../interfaces/DeleteIndexOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteIndexDocument
+### deleteIndexDocument()
 
-▸ **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
+> **deleteIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified indexed document from the database
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`DeleteIndexDocumentOptionalParams`](../interfaces/DeleteIndexDocumentOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+Index name
+
+##### identifier
+
+`string`
+
+Document identifier
+
+##### options?
+
+[`DeleteIndexDocumentOptionalParams`](../interfaces/DeleteIndexDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteInvitation
+### deleteInvitation()
 
-▸ **deleteInvitation**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteInvitation**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified invitation from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Invitation identifier. |
-| `options?` | [`DeleteInvitationOptionalParams`](../interfaces/DeleteInvitationOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Invitation identifier.
+
+##### options?
+
+[`DeleteInvitationOptionalParams`](../interfaces/DeleteInvitationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteMapping
+### deleteMapping()
 
-▸ **deleteMapping**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteMapping**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified mapping from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping's identifier |
-| `options?` | [`DeleteMappingOptionalParams`](../interfaces/DeleteMappingOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping's identifier
+
+##### options?
+
+[`DeleteMappingOptionalParams`](../interfaces/DeleteMappingOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteMappingDataSource
+### deleteMappingDataSource()
 
-▸ **deleteMappingDataSource**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteMappingDataSource**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified mapping data source from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `options?` | [`DeleteMappingDataSourceOptionalParams`](../interfaces/DeleteMappingDataSourceOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### options?
+
+[`DeleteMappingDataSourceOptionalParams`](../interfaces/DeleteMappingDataSourceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteMappingDataSourceValue
+### deleteMappingDataSourceValue()
 
-▸ **deleteMappingDataSourceValue**(`identifier`, `value`, `options?`): `Promise`\<`void`\>
+> **deleteMappingDataSourceValue**(`identifier`, `value`, `options?`): `Promise`\<`void`\>
 
 Delete the specified mapping data source value from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `value` | `string` | Mapping Data Source Value's value |
-| `options?` | [`DeleteMappingDataSourceValueOptionalParams`](../interfaces/DeleteMappingDataSourceValueOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### value
+
+`string`
+
+Mapping Data Source Value's value
+
+##### options?
+
+[`DeleteMappingDataSourceValueOptionalParams`](../interfaces/DeleteMappingDataSourceValueOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteOrganization
+### deleteOrganization()
 
-▸ **deleteOrganization**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteOrganization**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Delete the specified organization from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Organization identifier. |
-| `options?` | [`DeleteOrganizationOptionalParams`](../interfaces/DeleteOrganizationOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Organization identifier.
+
+##### options?
+
+[`DeleteOrganizationOptionalParams`](../interfaces/DeleteOrganizationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteOrganizationMembership
+### deleteOrganizationMembership()
 
-▸ **deleteOrganizationMembership**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteOrganizationMembership**(`identifier`, `options?`): `Promise`\<`void`\>
 
 The admin users can use this endpoint to remove member from their organization. Other users can also
 use this to leave their organization.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Membership identifier. |
-| `options?` | [`DeleteOrganizationMembershipOptionalParams`](../interfaces/DeleteOrganizationMembershipOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Membership identifier.
+
+##### options?
+
+[`DeleteOrganizationMembershipOptionalParams`](../interfaces/DeleteOrganizationMembershipOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteResthookSubscription
+### deleteResthookSubscription()
 
-▸ **deleteResthookSubscription**(`id`, `options?`): `Promise`\<`void`\>
+> **deleteResthookSubscription**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified resthook subscription from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | ResthookSubscription's ID |
-| `options?` | [`DeleteResthookSubscriptionOptionalParams`](../interfaces/DeleteResthookSubscriptionOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+ResthookSubscription's ID
+
+##### options?
+
+[`DeleteResthookSubscriptionOptionalParams`](../interfaces/DeleteResthookSubscriptionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteTag
+### deleteTag()
 
-▸ **deleteTag**(`id`, `options?`): `Promise`\<`void`\>
+> **deleteTag**(`id`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified tag from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Tag's ID |
-| `options?` | [`DeleteTagOptionalParams`](../interfaces/DeleteTagOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Tag's ID
+
+##### options?
+
+[`DeleteTagOptionalParams`](../interfaces/DeleteTagOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteValidationResult
+### deleteValidationResult()
 
-▸ **deleteValidationResult**(`id`, `options?`): `Promise`\<`void`\>
+> **deleteValidationResult**(`id`, `options?`): `Promise`\<`void`\>
 
 Remove validation result.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Validation result's ID. |
-| `options?` | [`DeleteValidationResultOptionalParams`](../interfaces/DeleteValidationResultOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Validation result's ID.
+
+##### options?
+
+[`DeleteValidationResultOptionalParams`](../interfaces/DeleteValidationResultOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteWorkspace
+### deleteWorkspace()
 
-▸ **deleteWorkspace**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteWorkspace**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Deletes the specified workspace from the database.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `options?` | [`DeleteWorkspaceOptionalParams`](../interfaces/DeleteWorkspaceOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Workspace's identifier
+
+##### options?
+
+[`DeleteWorkspaceOptionalParams`](../interfaces/DeleteWorkspaceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### deleteWorkspaceMembership
+### deleteWorkspaceMembership()
 
-▸ **deleteWorkspaceMembership**(`identifier`, `options?`): `Promise`\<`void`\>
+> **deleteWorkspaceMembership**(`identifier`, `options?`): `Promise`\<`void`\>
 
 Remove an user from a workspace.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace membership's identifier. |
-| `options?` | [`DeleteWorkspaceMembershipOptionalParams`](../interfaces/DeleteWorkspaceMembershipOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Workspace membership's identifier.
+
+##### options?
+
+[`DeleteWorkspaceMembershipOptionalParams`](../interfaces/DeleteWorkspaceMembershipOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### editDocumentPages
+### editDocumentPages()
 
-▸ **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`\<[`EditDocumentPagesResponse`](../modules.md#editdocumentpagesresponse)\>
+> **editDocumentPages**(`identifier`, `body`, `options?`): `Promise`\<[`EditDocumentPagesResponse`](../type-aliases/EditDocumentPagesResponse.md)\>
 
 Split / merge / rotate / delete pages of a document.
 Documents with multiple pages can be splitted into multiple documents, or merged into one document.
@@ -1258,601 +1470,780 @@ Each page can also be rotated. Edit operations will trigger re-parsing of the do
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `body` | [`DocumentEditRequest`](../interfaces/DocumentEditRequest.md) | Describe how the pages should be edited |
-| `options?` | [`EditDocumentPagesOptionalParams`](../interfaces/EditDocumentPagesOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document's identifier
+
+##### body
+
+[`DocumentEditRequest`](../interfaces/DocumentEditRequest.md)
+
+Describe how the pages should be edited
+
+##### options?
+
+[`EditDocumentPagesOptionalParams`](../interfaces/EditDocumentPagesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`EditDocumentPagesResponse`](../modules.md#editdocumentpagesresponse)\>
+`Promise`\<[`EditDocumentPagesResponse`](../type-aliases/EditDocumentPagesResponse.md)\>
 
-___
+***
 
-### getAllAnnotations
+### getAllAnnotations()
 
-▸ **getAllAnnotations**(`document`, `options?`): `Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllAnnotations**(`document`, `options?`): `Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns your annotations.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `document` | `string` | Filter by document. |
-| `options?` | [`GetAllAnnotationsOptionalParams`](../interfaces/GetAllAnnotationsOptionalParams.md) | The options parameters. |
+##### document
+
+`string`
+
+Filter by document.
+
+##### options?
+
+[`GetAllAnnotationsOptionalParams`](../interfaces/GetAllAnnotationsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllApiUsers
+### getAllApiUsers()
 
-▸ **getAllApiUsers**(`options?`): `Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllApiUsers**(`options?`): `Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns your API users.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllApiUsersOptionalParams`](../interfaces/GetAllApiUsersOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllApiUsersOptionalParams`](../interfaces/GetAllApiUsersOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllCollections
+### getAllCollections()
 
-▸ **getAllCollections**(`workspace`, `options?`): `Promise`\<[`GetAllCollectionsResponse`](../modules.md#getallcollectionsresponse)\>
+> **getAllCollections**(`workspace`, `options?`): `Promise`\<[`GetAllCollectionsResponse`](../type-aliases/GetAllCollectionsResponse.md)\>
 
 Returns your collections.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `workspace` | `string` | Filter by workspace. |
-| `options?` | [`GetAllCollectionsOptionalParams`](../interfaces/GetAllCollectionsOptionalParams.md) | The options parameters. |
+##### workspace
+
+`string`
+
+Filter by workspace.
+
+##### options?
+
+[`GetAllCollectionsOptionalParams`](../interfaces/GetAllCollectionsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllCollectionsResponse`](../modules.md#getallcollectionsresponse)\>
+`Promise`\<[`GetAllCollectionsResponse`](../type-aliases/GetAllCollectionsResponse.md)\>
 
-___
+***
 
-### getAllDataPoints
+### getAllDataPoints()
 
-▸ **getAllDataPoints**(`options?`): `Promise`\<[`GetAllDataPointsResponse`](../modules.md#getalldatapointsresponse)\>
+> **getAllDataPoints**(`options?`): `Promise`\<[`GetAllDataPointsResponse`](../type-aliases/GetAllDataPointsResponse.md)\>
 
 Returns your custom data points as well as Affinda's off-the-shelf data points.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllDataPointsOptionalParams`](../interfaces/GetAllDataPointsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllDataPointsOptionalParams`](../interfaces/GetAllDataPointsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllDataPointsResponse`](../modules.md#getalldatapointsresponse)\>
+`Promise`\<[`GetAllDataPointsResponse`](../type-aliases/GetAllDataPointsResponse.md)\>
 
-___
+***
 
-### getAllDocumentSplitters
+### getAllDocuments()
 
-▸ **getAllDocumentSplitters**(`options?`): `Promise`\<[`GetAllDocumentSplittersResponse`](../modules.md#getalldocumentsplittersresponse)\>
-
-Returns all the document splitters visible to the user.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllDocumentSplittersOptionalParams`](../interfaces/GetAllDocumentSplittersOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`\<[`GetAllDocumentSplittersResponse`](../modules.md#getalldocumentsplittersresponse)\>
-
-___
-
-### getAllDocuments
-
-▸ **getAllDocuments**(`options?`): `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllDocuments**(`options?`): `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the document summaries for that user, limited to 300 per page.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllDocumentsOptionalParams`](../interfaces/GetAllDocumentsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllDocumentsOptionalParams`](../interfaces/GetAllDocumentsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllExtractors
+### getAllDocumentSplitters()
 
-▸ **getAllExtractors**(`organization`, `options?`): `Promise`\<[`GetAllExtractorsResponse`](../modules.md#getallextractorsresponse)\>
+> **getAllDocumentSplitters**(`options?`): `Promise`\<[`GetAllDocumentSplittersResponse`](../type-aliases/GetAllDocumentSplittersResponse.md)\>
+
+Returns all the document splitters visible to the user.
+
+#### Parameters
+
+##### options?
+
+[`GetAllDocumentSplittersOptionalParams`](../interfaces/GetAllDocumentSplittersOptionalParams.md)
+
+The options parameters.
+
+#### Returns
+
+`Promise`\<[`GetAllDocumentSplittersResponse`](../type-aliases/GetAllDocumentSplittersResponse.md)\>
+
+***
+
+### getAllExtractors()
+
+> **getAllExtractors**(`organization`, `options?`): `Promise`\<[`GetAllExtractorsResponse`](../type-aliases/GetAllExtractorsResponse.md)\>
 
 Returns your custom extractors as well as Affinda's off-the-shelf extractors.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `organization` | `string` | Filter by organization. |
-| `options?` | [`GetAllExtractorsOptionalParams`](../interfaces/GetAllExtractorsOptionalParams.md) | The options parameters. |
+##### organization
+
+`string`
+
+Filter by organization.
+
+##### options?
+
+[`GetAllExtractorsOptionalParams`](../interfaces/GetAllExtractorsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllExtractorsResponse`](../modules.md#getallextractorsresponse)\>
+`Promise`\<[`GetAllExtractorsResponse`](../type-aliases/GetAllExtractorsResponse.md)\>
 
-___
+***
 
-### getAllIndexDocuments
+### getAllIndexDocuments()
 
-▸ **getAllIndexDocuments**(`name`, `options?`): `Promise`\<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllIndexDocuments**(`name`, `options?`): `Promise`\<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexed documents for that index
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `options?` | [`GetAllIndexDocumentsOptionalParams`](../interfaces/GetAllIndexDocumentsOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+Index name
+
+##### options?
+
+[`GetAllIndexDocumentsOptionalParams`](../interfaces/GetAllIndexDocumentsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllIndexes
+### getAllIndexes()
 
-▸ **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllIndexes**(`options?`): `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the indexes
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllIndexesOptionalParams`](../interfaces/GetAllIndexesOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllIndexesOptionalParams`](../interfaces/GetAllIndexesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllInvitations
+### getAllInvitations()
 
-▸ **getAllInvitations**(`options?`): `Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllInvitations**(`options?`): `Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Get list of all invitations you created or sent to you.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllInvitationsOptionalParams`](../interfaces/GetAllInvitationsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllInvitationsOptionalParams`](../interfaces/GetAllInvitationsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllOrganizationMemberships
+### getAllOrganizationMemberships()
 
-▸ **getAllOrganizationMemberships**(`options?`): `Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllOrganizationMemberships**(`options?`): `Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns all the organization memberships
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllOrganizationMembershipsOptionalParams`](../interfaces/GetAllOrganizationMembershipsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllOrganizationMembershipsOptionalParams`](../interfaces/GetAllOrganizationMembershipsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllOrganizations
+### getAllOrganizations()
 
-▸ **getAllOrganizations**(`options?`): `Promise`\<[`GetAllOrganizationsResponse`](../modules.md#getallorganizationsresponse)\>
+> **getAllOrganizations**(`options?`): `Promise`\<[`GetAllOrganizationsResponse`](../type-aliases/GetAllOrganizationsResponse.md)\>
 
 Returns all the organizations
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllOrganizationsOptionalParams`](../interfaces/GetAllOrganizationsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllOrganizationsOptionalParams`](../interfaces/GetAllOrganizationsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllOrganizationsResponse`](../modules.md#getallorganizationsresponse)\>
+`Promise`\<[`GetAllOrganizationsResponse`](../type-aliases/GetAllOrganizationsResponse.md)\>
 
-___
+***
 
-### getAllResthookSubscriptions
+### getAllResthookSubscriptions()
 
-▸ **getAllResthookSubscriptions**(`options?`): `Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllResthookSubscriptions**(`options?`): `Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns your resthook subscriptions.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllResthookSubscriptionsOptionalParams`](../interfaces/GetAllResthookSubscriptionsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllResthookSubscriptionsOptionalParams`](../interfaces/GetAllResthookSubscriptionsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllTags
+### getAllTags()
 
-▸ **getAllTags**(`options?`): `Promise`\<[`GetAllTagsResponse`](../modules.md#getalltagsresponse)\>
+> **getAllTags**(`options?`): `Promise`\<[`GetAllTagsResponse`](../type-aliases/GetAllTagsResponse.md)\>
 
 Returns your tags.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllTagsOptionalParams`](../interfaces/GetAllTagsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllTagsOptionalParams`](../interfaces/GetAllTagsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllTagsResponse`](../modules.md#getalltagsresponse)\>
+`Promise`\<[`GetAllTagsResponse`](../type-aliases/GetAllTagsResponse.md)\>
 
-___
+***
 
-### getAllValidationResults
+### getAllValidationResults()
 
-▸ **getAllValidationResults**(`document`, `options?`): `Promise`\<[`GetAllValidationResultsResponse`](../modules.md#getallvalidationresultsresponse)\>
+> **getAllValidationResults**(`document`, `options?`): `Promise`\<[`GetAllValidationResultsResponse`](../type-aliases/GetAllValidationResultsResponse.md)\>
 
 Returns the validation results of a document.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `document` | `string` | Filter by document. |
-| `options?` | [`GetAllValidationResultsOptionalParams`](../interfaces/GetAllValidationResultsOptionalParams.md) | The options parameters. |
+##### document
+
+`string`
+
+Filter by document.
+
+##### options?
+
+[`GetAllValidationResultsOptionalParams`](../interfaces/GetAllValidationResultsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllValidationResultsResponse`](../modules.md#getallvalidationresultsresponse)\>
+`Promise`\<[`GetAllValidationResultsResponse`](../type-aliases/GetAllValidationResultsResponse.md)\>
 
-___
+***
 
-### getAllWorkspaceMemberships
+### getAllWorkspaceMemberships()
 
-▸ **getAllWorkspaceMemberships**(`options?`): `Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
+> **getAllWorkspaceMemberships**(`options?`): `Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the memberships of your workspaces.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetAllWorkspaceMembershipsOptionalParams`](../interfaces/GetAllWorkspaceMembershipsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetAllWorkspaceMembershipsOptionalParams`](../interfaces/GetAllWorkspaceMembershipsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getAllWorkspaces
+### getAllWorkspaces()
 
-▸ **getAllWorkspaces**(`organization`, `options?`): `Promise`\<[`GetAllWorkspacesResponse`](../modules.md#getallworkspacesresponse)\>
+> **getAllWorkspaces**(`organization`, `options?`): `Promise`\<[`GetAllWorkspacesResponse`](../type-aliases/GetAllWorkspacesResponse.md)\>
 
 Returns your workspaces.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `organization` | `string` | Filter by organization. |
-| `options?` | [`GetAllWorkspacesOptionalParams`](../interfaces/GetAllWorkspacesOptionalParams.md) | The options parameters. |
+##### organization
+
+`string`
+
+Filter by organization.
+
+##### options?
+
+[`GetAllWorkspacesOptionalParams`](../interfaces/GetAllWorkspacesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetAllWorkspacesResponse`](../modules.md#getallworkspacesresponse)\>
+`Promise`\<[`GetAllWorkspacesResponse`](../type-aliases/GetAllWorkspacesResponse.md)\>
 
-___
+***
 
-### getAnnotation
+### getAnnotation()
 
-▸ **getAnnotation**(`id`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
+> **getAnnotation**(`id`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 Return a specific annotation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Annotation's ID |
-| `options?` | [`GetAnnotationOptionalParams`](../interfaces/GetAnnotationOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Annotation's ID
+
+##### options?
+
+[`GetAnnotationOptionalParams`](../interfaces/GetAnnotationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
-___
+***
 
-### getApiUser
+### getApiUser()
 
-▸ **getApiUser**(`id`, `options?`): `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+> **getApiUser**(`id`, `options?`): `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 Return a specific API user.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | API user's ID |
-| `options?` | [`GetApiUserOptionalParams`](../interfaces/GetApiUserOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+API user's ID
+
+##### options?
+
+[`GetApiUserOptionalParams`](../interfaces/GetApiUserOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
-___
+***
 
-### getCollection
+### getCollection()
 
-▸ **getCollection**(`identifier`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
+> **getCollection**(`identifier`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 Return a specific collection.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `options?` | [`GetCollectionOptionalParams`](../interfaces/GetCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### options?
+
+[`GetCollectionOptionalParams`](../interfaces/GetCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
-___
+***
 
-### getDataFieldForCollection
+### getDataFieldForCollection()
 
-▸ **getDataFieldForCollection**(`identifier`, `datapointIdentifier`, `options?`): `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
+> **getDataFieldForCollection**(`identifier`, `datapointIdentifier`, `options?`): `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 Get a data field for a collection assosciated with a data point
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `datapointIdentifier` | `string` | Datapoint's identifier |
-| `options?` | [`GetDataFieldForCollectionOptionalParams`](../interfaces/GetDataFieldForCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### datapointIdentifier
+
+`string`
+
+Datapoint's identifier
+
+##### options?
+
+[`GetDataFieldForCollectionOptionalParams`](../interfaces/GetDataFieldForCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
-___
+***
 
-### getDataPoint
+### getDataPoint()
 
-▸ **getDataPoint**(`identifier`, `options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
+> **getDataPoint**(`identifier`, `options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Return a specific data point.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Data point's identifier |
-| `options?` | [`GetDataPointOptionalParams`](../interfaces/GetDataPointOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Data point's identifier
+
+##### options?
+
+[`GetDataPointOptionalParams`](../interfaces/GetDataPointOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
-___
+***
 
-### getDataPointChoice
+### getDataPointChoice()
 
-▸ **getDataPointChoice**(`id`, `options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+> **getDataPointChoice**(`id`, `options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 Return a specific data point choice.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Data point choice's ID |
-| `options?` | [`GetDataPointChoiceOptionalParams`](../interfaces/GetDataPointChoiceOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Data point choice's ID
+
+##### options?
+
+[`GetDataPointChoiceOptionalParams`](../interfaces/GetDataPointChoiceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
-___
+***
 
-### getDataPointChoices
+### getDataPointChoices()
 
-▸ **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)\>
+> **getDataPointChoices**(`dataPoint`, `collection`, `options?`): `Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns available choices for a specific enum data point.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dataPoint` | `string` | The data point to get choices for. |
-| `collection` | `string` | The collection to get choices for. |
-| `options?` | [`GetDataPointChoicesOptionalParams`](../interfaces/GetDataPointChoicesOptionalParams.md) | The options parameters. |
+##### dataPoint
+
+`string`
+
+The data point to get choices for.
+
+##### collection
+
+`string`
+
+The collection to get choices for.
+
+##### options?
+
+[`GetDataPointChoicesOptionalParams`](../interfaces/GetDataPointChoicesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema`](../interfaces/PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### getDocument
+### getDocument()
 
-▸ **getDocument**(`identifier`, `options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+> **getDocument**(`identifier`, `options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
 Return a specific document.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `options?` | [`GetDocumentOptionalParams`](../interfaces/GetDocumentOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document's identifier
+
+##### options?
+
+[`GetDocumentOptionalParams`](../interfaces/GetDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
-___
+***
 
-### getDocumentSplitter
+### getDocumentSplitter()
 
-▸ **getDocumentSplitter**(`identifier`, `options?`): `Promise`\<[`DocumentSplitter`](../interfaces/DocumentSplitter.md)\>
+> **getDocumentSplitter**(`identifier`, `options?`): `Promise`\<[`DocumentSplitter`](../interfaces/DocumentSplitter.md)\>
 
 Return a specific document splitter.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document splitter's identifier |
-| `options?` | [`GetDocumentSplitterOptionalParams`](../interfaces/GetDocumentSplitterOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document splitter's identifier
+
+##### options?
+
+[`GetDocumentSplitterOptionalParams`](../interfaces/GetDocumentSplitterOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DocumentSplitter`](../interfaces/DocumentSplitter.md)\>
 
-___
+***
 
-### getDocumentType
+### getDocumentType()
 
-▸ **getDocumentType**(`identifier`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+> **getDocumentType**(`identifier`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
 Returns the details of a specific document type.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document type identifier |
-| `options?` | [`GetDocumentTypeOptionalParams`](../interfaces/GetDocumentTypeOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document type identifier
+
+##### options?
+
+[`GetDocumentTypeOptionalParams`](../interfaces/GetDocumentTypeOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
-___
+***
 
-### getDocumentTypes
+### getDocumentTypes()
 
-▸ **getDocumentTypes**(`options?`): `Promise`\<[`GetDocumentTypesResponse`](../modules.md#getdocumenttypesresponse)\>
+> **getDocumentTypes**(`options?`): `Promise`\<[`GetDocumentTypesResponse`](../type-aliases/GetDocumentTypesResponse.md)\>
 
 Returns a list of document types that the user has access to.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetDocumentTypesOptionalParams`](../interfaces/GetDocumentTypesOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetDocumentTypesOptionalParams`](../interfaces/GetDocumentTypesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetDocumentTypesResponse`](../modules.md#getdocumenttypesresponse)\>
+`Promise`\<[`GetDocumentTypesResponse`](../type-aliases/GetDocumentTypesResponse.md)\>
 
-___
+***
 
-### getExtractor
+### getExtractor()
 
-▸ **getExtractor**(`identifier`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
+> **getExtractor**(`identifier`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 Return a specific extractor.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Extractor's identifier |
-| `options?` | [`GetExtractorOptionalParams`](../interfaces/GetExtractorOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Extractor's identifier
+
+##### options?
+
+[`GetExtractorOptionalParams`](../interfaces/GetExtractorOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
-___
+***
 
-### getInvitation
+### getInvitation()
 
-▸ **getInvitation**(`identifier`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
+> **getInvitation**(`identifier`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Get detail of an invitation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Invitation identifier. |
-| `options?` | [`GetInvitationOptionalParams`](../interfaces/GetInvitationOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Invitation identifier.
+
+##### options?
+
+[`GetInvitationOptionalParams`](../interfaces/GetInvitationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
-___
+***
 
-### getInvitationByToken
+### getInvitationByToken()
 
-▸ **getInvitationByToken**(`token`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
+> **getInvitationByToken**(`token`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Get detail of an invitation using a secret token. This allows users who have not registered/logged
 in to view the invitation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `token` | `string` | Invitation token. |
-| `options?` | [`GetInvitationByTokenOptionalParams`](../interfaces/GetInvitationByTokenOptionalParams.md) | The options parameters. |
+##### token
+
+`string`
+
+Invitation token.
+
+##### options?
+
+[`GetInvitationByTokenOptionalParams`](../interfaces/GetInvitationByTokenOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
-___
+***
 
-### getJobDescriptionSearchConfig
+### getJobDescriptionSearchConfig()
 
-▸ **getJobDescriptionSearchConfig**(`options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+> **getJobDescriptionSearchConfig**(`options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 Return configurations such as which fields can be displayed in the logged in user's embeddable job
 description search tool, what are their weights, what is the maximum number of results that can be
@@ -1860,19 +2251,21 @@ returned, etc.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetJobDescriptionSearchConfigOptionalParams`](../interfaces/GetJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetJobDescriptionSearchConfigOptionalParams`](../interfaces/GetJobDescriptionSearchConfigOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
-___
+***
 
-### getJobDescriptionSearchDetail
+### getJobDescriptionSearchDetail()
 
-▸ **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
+> **getJobDescriptionSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this job description.
@@ -1881,155 +2274,221 @@ The `identifier` is the unique ID returned via the
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Job Description identifier |
-| `body` | ``null`` \| [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md) | Search parameters |
-| `options?` | [`GetJobDescriptionSearchDetailOptionalParams`](../interfaces/GetJobDescriptionSearchDetailOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Job Description identifier
+
+##### body
+
+Search parameters
+
+`null` | [`JobDescriptionSearchParameters`](../interfaces/JobDescriptionSearchParameters.md)
+
+##### options?
+
+[`GetJobDescriptionSearchDetailOptionalParams`](../interfaces/GetJobDescriptionSearchDetailOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`JobDescriptionSearchDetail`](../interfaces/JobDescriptionSearchDetail.md)\>
 
-___
+***
 
-### getMapping
+### getMapping()
 
-▸ **getMapping**(`identifier`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+> **getMapping**(`identifier`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
 Return a specific mapping.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping's identifier |
-| `options?` | [`GetMappingOptionalParams`](../interfaces/GetMappingOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping's identifier
+
+##### options?
+
+[`GetMappingOptionalParams`](../interfaces/GetMappingOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
-___
+***
 
-### getMappingDataSource
+### getMappingDataSource()
 
-▸ **getMappingDataSource**(`identifier`, `options?`): `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
+> **getMappingDataSource**(`identifier`, `options?`): `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
 
 Return a specific mapping data source.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `options?` | [`GetMappingDataSourceOptionalParams`](../interfaces/GetMappingDataSourceOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### options?
+
+[`GetMappingDataSourceOptionalParams`](../interfaces/GetMappingDataSourceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`MappingDataSource`](../interfaces/MappingDataSource.md)\>
 
-___
+***
 
-### getMappingDataSourceValue
+### getMappingDataSourceValue()
 
-▸ **getMappingDataSourceValue**(`identifier`, `value`, `options?`): `Promise`\<[`GetMappingDataSourceValueResponse`](../modules.md#getmappingdatasourcevalueresponse)\>
+> **getMappingDataSourceValue**(`identifier`, `value`, `options?`): `Promise`\<[`GetMappingDataSourceValueResponse`](../type-aliases/GetMappingDataSourceValueResponse.md)\>
 
 Return a specific mapping dta source value.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `value` | `string` | Mapping Data Source Value's value |
-| `options?` | [`GetMappingDataSourceValueOptionalParams`](../interfaces/GetMappingDataSourceValueOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### value
+
+`string`
+
+Mapping Data Source Value's value
+
+##### options?
+
+[`GetMappingDataSourceValueOptionalParams`](../interfaces/GetMappingDataSourceValueOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetMappingDataSourceValueResponse`](../modules.md#getmappingdatasourcevalueresponse)\>
+`Promise`\<[`GetMappingDataSourceValueResponse`](../type-aliases/GetMappingDataSourceValueResponse.md)\>
 
-___
+***
 
-### getOrganization
+### getOrganization()
 
-▸ **getOrganization**(`identifier`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
+> **getOrganization**(`identifier`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 Get detail of an organization.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Organization identifier. |
-| `options?` | [`GetOrganizationOptionalParams`](../interfaces/GetOrganizationOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Organization identifier.
+
+##### options?
+
+[`GetOrganizationOptionalParams`](../interfaces/GetOrganizationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
-___
+***
 
-### getOrganizationMembership
+### getOrganizationMembership()
 
-▸ **getOrganizationMembership**(`identifier`, `options?`): `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+> **getOrganizationMembership**(`identifier`, `options?`): `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
 Get detail of an organization membership.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Membership identifier. |
-| `options?` | [`GetOrganizationMembershipOptionalParams`](../interfaces/GetOrganizationMembershipOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Membership identifier.
+
+##### options?
+
+[`GetOrganizationMembershipOptionalParams`](../interfaces/GetOrganizationMembershipOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
-___
+***
 
-### getRedactedDocument
+### getRedactedDocument()
 
-▸ **getRedactedDocument**(`identifier`, `options?`): `Promise`\<[`GetRedactedDocumentResponse`](../modules.md#getredacteddocumentresponse)\>
+> **getRedactedDocument**(`identifier`, `options?`): `Promise`\<[`GetRedactedDocumentResponse`](../type-aliases/GetRedactedDocumentResponse.md)\>
 
 Get the redacted version of a document. The original document is not modified.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`GetRedactedDocumentOptionalParams`](../interfaces/GetRedactedDocumentOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document identifier
+
+##### options?
+
+[`GetRedactedDocumentOptionalParams`](../interfaces/GetRedactedDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetRedactedDocumentResponse`](../modules.md#getredacteddocumentresponse)\>
+`Promise`\<[`GetRedactedDocumentResponse`](../type-aliases/GetRedactedDocumentResponse.md)\>
 
-___
+***
 
-### getResthookSubscription
+### getResthookSubscription()
 
-▸ **getResthookSubscription**(`id`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+> **getResthookSubscription**(`id`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Return a specific resthook subscription.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Resthook subscription's ID |
-| `options?` | [`GetResthookSubscriptionOptionalParams`](../interfaces/GetResthookSubscriptionOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Resthook subscription's ID
+
+##### options?
+
+[`GetResthookSubscriptionOptionalParams`](../interfaces/GetResthookSubscriptionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
-___
+***
 
-### getResumeSearchConfig
+### getResumeSearchConfig()
 
-▸ **getResumeSearchConfig**(`options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+> **getResumeSearchConfig**(`options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 Return configurations such as which fields can be displayed in the logged in user's embeddable
 resume search tool, what are their weights, what is the maximum number of results that can be
@@ -2037,19 +2496,21 @@ returned, etc.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`GetResumeSearchConfigOptionalParams`](../interfaces/GetResumeSearchConfigOptionalParams.md) | The options parameters. |
+##### options?
+
+[`GetResumeSearchConfigOptionalParams`](../interfaces/GetResumeSearchConfigOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
-___
+***
 
-### getResumeSearchDetail
+### getResumeSearchDetail()
 
-▸ **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
+> **getResumeSearchDetail**(`identifier`, `body`, `options?`): `Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
 
 This contains more detailed information about the matching score of the search criteria, or which
 search criteria is missing in this resume.
@@ -2057,21 +2518,33 @@ The `identifier` is the unique ID returned via the [/resume_search](#post-/resum
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Resume identifier |
-| `body` | [`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md) | Search parameters |
-| `options?` | [`GetResumeSearchDetailOptionalParams`](../interfaces/GetResumeSearchDetailOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Resume identifier
+
+##### body
+
+[`ResumeSearchParameters`](../interfaces/ResumeSearchParameters.md)
+
+Search parameters
+
+##### options?
+
+[`GetResumeSearchDetailOptionalParams`](../interfaces/GetResumeSearchDetailOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResumeSearchDetail`](../interfaces/ResumeSearchDetail.md)\>
 
-___
+***
 
-### getResumeSearchMatch
+### getResumeSearchMatch()
 
-▸ **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
+> **getResumeSearchMatch**(`resume`, `jobDescription`, `options?`): `Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
 Get the matching score between a resume and a job description. The score ranges between 0 and 1,
 with 0 being not a match at all, and 1 being perfect match.<br/> Note, this score will not directly
@@ -2080,247 +2553,411 @@ match the score returned from POST
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `resume` | `string` | Identify the resume to match. |
-| `jobDescription` | `string` | Identify the job description to match. |
-| `options?` | [`GetResumeSearchMatchOptionalParams`](../interfaces/GetResumeSearchMatchOptionalParams.md) | The options parameters. |
+##### resume
+
+`string`
+
+Identify the resume to match.
+
+##### jobDescription
+
+`string`
+
+Identify the job description to match.
+
+##### options?
+
+[`GetResumeSearchMatchOptionalParams`](../interfaces/GetResumeSearchMatchOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResumeSearchMatch`](../interfaces/ResumeSearchMatch.md)\>
 
-___
+***
 
-### getResumeSearchSuggestionJobTitle
+### getResumeSearchSuggestionJobTitle()
 
-▸ **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`\<[`GetResumeSearchSuggestionJobTitleResponse`](../modules.md#getresumesearchsuggestionjobtitleresponse)\>
+> **getResumeSearchSuggestionJobTitle**(`jobTitles`, `options?`): `Promise`\<[`GetResumeSearchSuggestionJobTitleResponse`](../type-aliases/GetResumeSearchSuggestionJobTitleResponse.md)\>
 
 Provided one or more job titles, get related suggestions for your search.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `jobTitles` | `string`[] | Job title to query suggestions for |
-| `options?` | [`GetResumeSearchSuggestionJobTitleOptionalParams`](../interfaces/GetResumeSearchSuggestionJobTitleOptionalParams.md) | The options parameters. |
+##### jobTitles
+
+`string`[]
+
+Job title to query suggestions for
+
+##### options?
+
+[`GetResumeSearchSuggestionJobTitleOptionalParams`](../interfaces/GetResumeSearchSuggestionJobTitleOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetResumeSearchSuggestionJobTitleResponse`](../modules.md#getresumesearchsuggestionjobtitleresponse)\>
+`Promise`\<[`GetResumeSearchSuggestionJobTitleResponse`](../type-aliases/GetResumeSearchSuggestionJobTitleResponse.md)\>
 
-___
+***
 
-### getResumeSearchSuggestionSkill
+### getResumeSearchSuggestionSkill()
 
-▸ **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`\<[`GetResumeSearchSuggestionSkillResponse`](../modules.md#getresumesearchsuggestionskillresponse)\>
+> **getResumeSearchSuggestionSkill**(`skills`, `options?`): `Promise`\<[`GetResumeSearchSuggestionSkillResponse`](../type-aliases/GetResumeSearchSuggestionSkillResponse.md)\>
 
 Provided one or more skills, get related suggestions for your search.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `skills` | `string`[] | Skill to query suggestions for |
-| `options?` | [`GetResumeSearchSuggestionSkillOptionalParams`](../interfaces/GetResumeSearchSuggestionSkillOptionalParams.md) | The options parameters. |
+##### skills
+
+`string`[]
+
+Skill to query suggestions for
+
+##### options?
+
+[`GetResumeSearchSuggestionSkillOptionalParams`](../interfaces/GetResumeSearchSuggestionSkillOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetResumeSearchSuggestionSkillResponse`](../modules.md#getresumesearchsuggestionskillresponse)\>
+`Promise`\<[`GetResumeSearchSuggestionSkillResponse`](../type-aliases/GetResumeSearchSuggestionSkillResponse.md)\>
 
-___
+***
 
-### getTag
+### getTag()
 
-▸ **getTag**(`id`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
+> **getTag**(`id`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 Return a specific tag.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Tag's ID |
-| `options?` | [`GetTagOptionalParams`](../interfaces/GetTagOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Tag's ID
+
+##### options?
+
+[`GetTagOptionalParams`](../interfaces/GetTagOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
-___
+***
 
-### getUsageByCollection
+### getUsageByCollection()
 
-▸ **getUsageByCollection**(`identifier`, `options?`): `Promise`\<[`GetUsageByCollectionResponse`](../modules.md#getusagebycollectionresponse)\>
+> **getUsageByCollection**(`identifier`, `options?`): `Promise`\<[`GetUsageByCollectionResponse`](../type-aliases/GetUsageByCollectionResponse.md)\>
 
 Return monthly credits consumption of a collection.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `options?` | [`GetUsageByCollectionOptionalParams`](../interfaces/GetUsageByCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### options?
+
+[`GetUsageByCollectionOptionalParams`](../interfaces/GetUsageByCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetUsageByCollectionResponse`](../modules.md#getusagebycollectionresponse)\>
+`Promise`\<[`GetUsageByCollectionResponse`](../type-aliases/GetUsageByCollectionResponse.md)\>
 
-___
+***
 
-### getUsageByWorkspace
+### getUsageByWorkspace()
 
-▸ **getUsageByWorkspace**(`identifier`, `options?`): `Promise`\<[`GetUsageByWorkspaceResponse`](../modules.md#getusagebyworkspaceresponse)\>
+> **getUsageByWorkspace**(`identifier`, `options?`): `Promise`\<[`GetUsageByWorkspaceResponse`](../type-aliases/GetUsageByWorkspaceResponse.md)\>
 
 Return monthly credits consumption of a workspace.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `options?` | [`GetUsageByWorkspaceOptionalParams`](../interfaces/GetUsageByWorkspaceOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Workspace's identifier
+
+##### options?
+
+[`GetUsageByWorkspaceOptionalParams`](../interfaces/GetUsageByWorkspaceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`GetUsageByWorkspaceResponse`](../modules.md#getusagebyworkspaceresponse)\>
+`Promise`\<[`GetUsageByWorkspaceResponse`](../type-aliases/GetUsageByWorkspaceResponse.md)\>
 
-___
+***
 
-### getValidationResult
+### getValidationResult()
 
-▸ **getValidationResult**(`id`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+> **getValidationResult**(`id`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
 Return a specific validation result.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Validation result's ID. |
-| `options?` | [`GetValidationResultOptionalParams`](../interfaces/GetValidationResultOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Validation result's ID.
+
+##### options?
+
+[`GetValidationResultOptionalParams`](../interfaces/GetValidationResultOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
-___
+***
 
-### getWorkspace
+### getWorkspace()
 
-▸ **getWorkspace**(`identifier`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
+> **getWorkspace**(`identifier`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 Return a specific workspace.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `options?` | [`GetWorkspaceOptionalParams`](../interfaces/GetWorkspaceOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Workspace's identifier
+
+##### options?
+
+[`GetWorkspaceOptionalParams`](../interfaces/GetWorkspaceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
-___
+***
 
-### getWorkspaceMembership
+### getWorkspaceMembership()
 
-▸ **getWorkspaceMembership**(`identifier`, `options?`): `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
+> **getWorkspaceMembership**(`identifier`, `options?`): `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
 Return a specific workspace membership.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace membership's identifier. |
-| `options?` | [`GetWorkspaceMembershipOptionalParams`](../interfaces/GetWorkspaceMembershipOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Workspace membership's identifier.
+
+##### options?
+
+[`GetWorkspaceMembershipOptionalParams`](../interfaces/GetWorkspaceMembershipOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`WorkspaceMembership`](../interfaces/WorkspaceMembership.md)\>
 
-___
+***
 
-### listMappingDataSourceValues
+### jsonSchemaFromDocumentType()
 
-▸ **listMappingDataSourceValues**(`identifier`, `options?`): `Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)\>
+> **jsonSchemaFromDocumentType**(`identifier`, `options?`): `Promise`\<[`JsonSchemaFromDocumentTypeResponse`](../type-aliases/JsonSchemaFromDocumentTypeResponse.md)\>
 
-Returns the list of all values in a mapping data source
+Generate JSON schema from a document type.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `options?` | [`ListMappingDataSourceValuesOptionalParams`](../interfaces/ListMappingDataSourceValuesOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document type's identifier
+
+##### options?
+
+[`JsonSchemaFromDocumentTypeOptionalParams`](../interfaces/JsonSchemaFromDocumentTypeOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)\>
+`Promise`\<[`JsonSchemaFromDocumentTypeResponse`](../type-aliases/JsonSchemaFromDocumentTypeResponse.md)\>
 
-___
+***
 
-### listMappingDataSources
+### listMappingDataSources()
 
-▸ **listMappingDataSources**(`options?`): `Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)\>
+> **listMappingDataSources**(`options?`): `Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the list of all custom mapping data sources.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`ListMappingDataSourcesOptionalParams`](../interfaces/ListMappingDataSourcesOptionalParams.md) | The options parameters. |
+##### options?
+
+[`ListMappingDataSourcesOptionalParams`](../interfaces/ListMappingDataSourcesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### listMappings
+### listMappingDataSourceValues()
 
-▸ **listMappings**(`mappingDataSource`, `options?`): `Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)\>
+> **listMappingDataSourceValues**(`identifier`, `options?`): `Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)\>
+
+Returns the list of all values in a mapping data source
+
+#### Parameters
+
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### options?
+
+[`ListMappingDataSourceValuesOptionalParams`](../interfaces/ListMappingDataSourceValuesOptionalParams.md)
+
+The options parameters.
+
+#### Returns
+
+`Promise`\<[`Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema.md)\>
+
+***
+
+### listMappings()
+
+> **listMappings**(`mappingDataSource`, `options?`): `Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)\>
 
 Returns the list of all custom data mappings.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `mappingDataSource` | `string` | Mapping data source's identifier |
-| `options?` | [`ListMappingsOptionalParams`](../interfaces/ListMappingsOptionalParams.md) | The options parameters. |
+##### mappingDataSource
+
+`string`
+
+Mapping data source's identifier
+
+##### options?
+
+[`ListMappingsOptionalParams`](../interfaces/ListMappingsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](../interfaces/Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)\>
 
-___
+***
 
-### listOccupationGroups
+### listOccupationGroups()
 
-▸ **listOccupationGroups**(`options?`): `Promise`\<[`ListOccupationGroupsResponse`](../modules.md#listoccupationgroupsresponse)\>
+> **listOccupationGroups**(`options?`): `Promise`\<[`ListOccupationGroupsResponse`](../type-aliases/ListOccupationGroupsResponse.md)\>
 
 Returns the list of searchable occupation groups.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`ListOccupationGroupsOptionalParams`](../interfaces/ListOccupationGroupsOptionalParams.md) | The options parameters. |
+##### options?
+
+[`ListOccupationGroupsOptionalParams`](../interfaces/ListOccupationGroupsOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`ListOccupationGroupsResponse`](../modules.md#listoccupationgroupsresponse)\>
+`Promise`\<[`ListOccupationGroupsResponse`](../type-aliases/ListOccupationGroupsResponse.md)\>
 
-___
+***
 
-### reIndexDocument
+### pydanticModelsFromDocumentType()
 
-▸ **reIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
+> **pydanticModelsFromDocumentType**(`identifier`, `options?`): `Promise`\<[`PydanticModelsResponse`](../interfaces/PydanticModelsResponse.md)\>
+
+Generate Pydantic models from a document type.
+
+#### Parameters
+
+##### identifier
+
+`string`
+
+Document type's identifier
+
+##### options?
+
+[`PydanticModelsFromDocumentTypeOptionalParams`](../interfaces/PydanticModelsFromDocumentTypeOptionalParams.md)
+
+The options parameters.
+
+#### Returns
+
+`Promise`\<[`PydanticModelsResponse`](../interfaces/PydanticModelsResponse.md)\>
+
+***
+
+### regenerateApiKeyForApiUser()
+
+> **regenerateApiKeyForApiUser**(`id`, `options?`): `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+Regenerate API key for an API user.
+
+#### Parameters
+
+##### id
+
+`number`
+
+API user's ID
+
+##### options?
+
+[`RegenerateApiKeyForApiUserOptionalParams`](../interfaces/RegenerateApiKeyForApiUserOptionalParams.md)
+
+The options parameters.
+
+#### Returns
+
+`Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
+
+***
+
+### reIndexDocument()
+
+> **reIndexDocument**(`name`, `identifier`, `options?`): `Promise`\<`void`\>
 
 Re-index a document.
 This is relevant if you updated the document's data via the /annotations endpoint, and want to
@@ -2329,40 +2966,33 @@ the document's data in the search index.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `identifier` | `string` | Document identifier |
-| `options?` | [`ReIndexDocumentOptionalParams`](../interfaces/ReIndexDocumentOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+Index name
+
+##### identifier
+
+`string`
+
+Document identifier
+
+##### options?
+
+[`ReIndexDocumentOptionalParams`](../interfaces/ReIndexDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-___
+***
 
-### regenerateApiKeyForApiUser
+### replaceDataPointChoices()
 
-▸ **regenerateApiKeyForApiUser**(`id`, `options?`): `Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
-
-Regenerate API key for an API user.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | API user's ID |
-| `options?` | [`RegenerateApiKeyForApiUserOptionalParams`](../interfaces/RegenerateApiKeyForApiUserOptionalParams.md) | The options parameters. |
-
-#### Returns
-
-`Promise`\<[`ApiUserWithKey`](../interfaces/ApiUserWithKey.md)\>
-
-___
-
-### replaceDataPointChoices
-
-▸ **replaceDataPointChoices**(`options?`): `Promise`\<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
+> **replaceDataPointChoices**(`options?`): `Promise`\<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
 
 Replace choices of a data point. Existing choices and incoming choices are matched base on their
 `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
@@ -2370,74 +3000,107 @@ choices will be deleted.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | [`ReplaceDataPointChoicesOptionalParams`](../interfaces/ReplaceDataPointChoicesOptionalParams.md) | The options parameters. |
+##### options?
+
+[`ReplaceDataPointChoicesOptionalParams`](../interfaces/ReplaceDataPointChoicesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPointChoiceReplaceResponse`](../interfaces/DataPointChoiceReplaceResponse.md)\>
 
-___
+***
 
-### replaceMappingDataSourceValues
+### replaceMappingDataSourceValues()
 
-▸ **replaceMappingDataSourceValues**(`identifier`, `body`, `options?`): `Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../modules.md#replacemappingdatasourcevaluesresponse)\>
+> **replaceMappingDataSourceValues**(`identifier`, `body`, `options?`): `Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../type-aliases/ReplaceMappingDataSourceValuesResponse.md)\>
 
 Replaces the list of all values in a mapping data source
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `body` | `Record`\<`string`, `unknown`\>[] | Array of AnyObject |
-| `options?` | [`ReplaceMappingDataSourceValuesOptionalParams`](../interfaces/ReplaceMappingDataSourceValuesOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### body
+
+`Record`\<`string`, `unknown`\>[]
+
+Array of AnyObject
+
+##### options?
+
+[`ReplaceMappingDataSourceValuesOptionalParams`](../interfaces/ReplaceMappingDataSourceValuesOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../modules.md#replacemappingdatasourcevaluesresponse)\>
+`Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../type-aliases/ReplaceMappingDataSourceValuesResponse.md)\>
 
-___
+***
 
-### respondToInvitation
+### respondToInvitation()
 
-▸ **respondToInvitation**(`token`, `body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
+> **respondToInvitation**(`token`, `body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Choose to accept or decline an invitation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `token` | `string` | Invitation token. |
-| `body` | [`InvitationResponse`](../interfaces/InvitationResponse.md) |  |
-| `options?` | [`RespondToInvitationOptionalParams`](../interfaces/RespondToInvitationOptionalParams.md) | The options parameters. |
+##### token
+
+`string`
+
+Invitation token.
+
+##### body
+
+[`InvitationResponse`](../interfaces/InvitationResponse.md)
+
+##### options?
+
+[`RespondToInvitationOptionalParams`](../interfaces/RespondToInvitationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
-___
+***
 
-### sendOperationRequest
+### sendOperationRequest()
 
-▸ **sendOperationRequest**\<`T`\>(`operationArguments`, `operationSpec`): `Promise`\<`T`\>
+> **sendOperationRequest**\<`T`\>(`operationArguments`, `operationSpec`): `Promise`\<`T`\>
 
 Send an HTTP request that is populated using the provided OperationSpec.
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Description |
-| :------ | :------ |
-| `T` | The typed result of the request, based on the OperationSpec. |
+##### T
+
+`T`
+
+The typed result of the request, based on the OperationSpec.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `operationArguments` | `OperationArguments` | The arguments that the HTTP request's templated values will be populated from. |
-| `operationSpec` | `OperationSpec` | The OperationSpec to use to populate the httpRequest. |
+##### operationArguments
+
+`OperationArguments`
+
+The arguments that the HTTP request's templated values will be populated from.
+
+##### operationSpec
+
+`OperationSpec`
+
+The OperationSpec to use to populate the httpRequest.
 
 #### Returns
 
@@ -2445,21 +3108,21 @@ Send an HTTP request that is populated using the provided OperationSpec.
 
 #### Inherited from
 
-coreClient.ServiceClient.sendOperationRequest
+`coreClient.ServiceClient.sendOperationRequest`
 
-___
+***
 
-### sendRequest
+### sendRequest()
 
-▸ **sendRequest**(`request`): `Promise`\<`PipelineResponse`\>
+> **sendRequest**(`request`): `Promise`\<`PipelineResponse`\>
 
 Send the provided httpRequest.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `request` | `PipelineRequest` |
+##### request
+
+`PipelineRequest`
 
 #### Returns
 
@@ -2467,154 +3130,243 @@ Send the provided httpRequest.
 
 #### Inherited from
 
-coreClient.ServiceClient.sendRequest
+`coreClient.ServiceClient.sendRequest`
 
-___
+***
 
-### updateAnnotation
+### updateAnnotation()
 
-▸ **updateAnnotation**(`id`, `body`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
+> **updateAnnotation**(`id`, `body`, `options?`): `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
 Update data of an annotation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Annotation's ID |
-| `body` | [`AnnotationUpdate`](../interfaces/AnnotationUpdate.md) | Annotation data to update |
-| `options?` | [`UpdateAnnotationOptionalParams`](../interfaces/UpdateAnnotationOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Annotation's ID
+
+##### body
+
+[`AnnotationUpdate`](../interfaces/AnnotationUpdate.md)
+
+Annotation data to update
+
+##### options?
+
+[`UpdateAnnotationOptionalParams`](../interfaces/UpdateAnnotationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Annotation`](../interfaces/Annotation.md)\>
 
-___
+***
 
-### updateApiUser
+### updateApiUser()
 
-▸ **updateApiUser**(`id`, `body`, `options?`): `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
+> **updateApiUser**(`id`, `body`, `options?`): `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
 Update data of an API user.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | API user's ID |
-| `body` | [`ApiUserUpdate`](../interfaces/ApiUserUpdate.md) | API user to update |
-| `options?` | [`UpdateApiUserOptionalParams`](../interfaces/UpdateApiUserOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+API user's ID
+
+##### body
+
+[`ApiUserUpdate`](../interfaces/ApiUserUpdate.md)
+
+API user to update
+
+##### options?
+
+[`UpdateApiUserOptionalParams`](../interfaces/UpdateApiUserOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ApiUserWithoutKey`](../interfaces/ApiUserWithoutKey.md)\>
 
-___
+***
 
-### updateCollection
+### updateCollection()
 
-▸ **updateCollection**(`identifier`, `body`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
+> **updateCollection**(`identifier`, `body`, `options?`): `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
 Update data of a collection.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `body` | [`CollectionUpdate`](../interfaces/CollectionUpdate.md) | Collection data to update |
-| `options?` | [`UpdateCollectionOptionalParams`](../interfaces/UpdateCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### body
+
+[`CollectionUpdate`](../interfaces/CollectionUpdate.md)
+
+Collection data to update
+
+##### options?
+
+[`UpdateCollectionOptionalParams`](../interfaces/UpdateCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Collection`](../interfaces/Collection.md)\>
 
-___
+***
 
-### updateDataFieldForCollection
+### updateDataFieldForCollection()
 
-▸ **updateDataFieldForCollection**(`identifier`, `datapointIdentifier`, `body`, `options?`): `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
+> **updateDataFieldForCollection**(`identifier`, `datapointIdentifier`, `body`, `options?`): `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
 Update data field for a collection assosciated with a data point
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Collection's identifier |
-| `datapointIdentifier` | `string` | Datapoint's identifier |
-| `body` | [`CollectionField`](../interfaces/CollectionField.md) | Data field properties to update |
-| `options?` | [`UpdateDataFieldForCollectionOptionalParams`](../interfaces/UpdateDataFieldForCollectionOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Collection's identifier
+
+##### datapointIdentifier
+
+`string`
+
+Datapoint's identifier
+
+##### body
+
+[`CollectionField`](../interfaces/CollectionField.md)
+
+Data field properties to update
+
+##### options?
+
+[`UpdateDataFieldForCollectionOptionalParams`](../interfaces/UpdateDataFieldForCollectionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`CollectionField`](../interfaces/CollectionField.md)\>
 
-___
+***
 
-### updateDataPoint
+### updateDataPoint()
 
-▸ **updateDataPoint**(`identifier`, `body`, `options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
+> **updateDataPoint**(`identifier`, `body`, `options?`): `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
 Update data of a data point.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | DataPoint's identifier |
-| `body` | [`DataPointUpdate`](../interfaces/DataPointUpdate.md) | Data point to update |
-| `options?` | [`UpdateDataPointOptionalParams`](../interfaces/UpdateDataPointOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+DataPoint's identifier
+
+##### body
+
+[`DataPointUpdate`](../interfaces/DataPointUpdate.md)
+
+Data point to update
+
+##### options?
+
+[`UpdateDataPointOptionalParams`](../interfaces/UpdateDataPointOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPoint`](../interfaces/DataPoint.md)\>
 
-___
+***
 
-### updateDataPointChoice
+### updateDataPointChoice()
 
-▸ **updateDataPointChoice**(`id`, `body`, `options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
+> **updateDataPointChoice**(`id`, `body`, `options?`): `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
 Update data of a data point choice.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Data point choice's ID |
-| `body` | [`DataPointChoiceUpdate`](../interfaces/DataPointChoiceUpdate.md) | Data point choice to update |
-| `options?` | [`UpdateDataPointChoiceOptionalParams`](../interfaces/UpdateDataPointChoiceOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Data point choice's ID
+
+##### body
+
+[`DataPointChoiceUpdate`](../interfaces/DataPointChoiceUpdate.md)
+
+Data point choice to update
+
+##### options?
+
+[`UpdateDataPointChoiceOptionalParams`](../interfaces/UpdateDataPointChoiceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DataPointChoice`](../interfaces/DataPointChoice.md)\>
 
-___
+***
 
-### updateDocument
+### updateDocument()
 
-▸ **updateDocument**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+> **updateDocument**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
 Update file name, expiry time, or move to another collection, etc.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document's identifier |
-| `body` | [`DocumentUpdate`](../interfaces/DocumentUpdate.md) | Document data to update |
-| `options?` | [`UpdateDocumentOptionalParams`](../interfaces/UpdateDocumentOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document's identifier
+
+##### body
+
+[`DocumentUpdate`](../interfaces/DocumentUpdate.md)
+
+Document data to update
+
+##### options?
+
+[`UpdateDocumentOptionalParams`](../interfaces/UpdateDocumentOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
-___
+***
 
-### updateDocumentData
+### updateDocumentData()
 
-▸ **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+> **updateDocumentData**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
 Update data of a document.
 Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
@@ -2622,101 +3374,157 @@ Only applicable for resumes and job descriptions. For other document types, plea
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Resume or Job Description identifier |
-| `body` | [`PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md) | Resume data to update |
-| `options?` | [`UpdateDocumentDataOptionalParams`](../interfaces/UpdateDocumentDataOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Resume or Job Description identifier
+
+##### body
+
+[`PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema`](../interfaces/PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema.md)
+
+Resume data to update
+
+##### options?
+
+[`UpdateDocumentDataOptionalParams`](../interfaces/UpdateDocumentDataOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`DocumentUnion`](../modules.md#documentunion)\>
+`Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
-___
+***
 
-### updateDocumentType
+### updateDocumentType()
 
-▸ **updateDocumentType**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
+> **updateDocumentType**(`identifier`, `body`, `options?`): `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
 Update an existing document type.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Document type identifier |
-| `body` | [`DocumentTypeUpdate`](../interfaces/DocumentTypeUpdate.md) |  |
-| `options?` | [`UpdateDocumentTypeOptionalParams`](../interfaces/UpdateDocumentTypeOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Document type identifier
+
+##### body
+
+[`DocumentTypeUpdate`](../interfaces/DocumentTypeUpdate.md)
+
+##### options?
+
+[`UpdateDocumentTypeOptionalParams`](../interfaces/UpdateDocumentTypeOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`DocumentType`](../interfaces/DocumentType.md)\>
 
-___
+***
 
-### updateExtractor
+### updateExtractor()
 
-▸ **updateExtractor**(`identifier`, `body`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
+> **updateExtractor**(`identifier`, `body`, `options?`): `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
 Update data of an extractor.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Extractor's identifier |
-| `body` | [`ExtractorUpdate`](../interfaces/ExtractorUpdate.md) | Extractor data to update |
-| `options?` | [`UpdateExtractorOptionalParams`](../interfaces/UpdateExtractorOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Extractor's identifier
+
+##### body
+
+[`ExtractorUpdate`](../interfaces/ExtractorUpdate.md)
+
+Extractor data to update
+
+##### options?
+
+[`UpdateExtractorOptionalParams`](../interfaces/UpdateExtractorOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Extractor`](../interfaces/Extractor.md)\>
 
-___
+***
 
-### updateIndex
+### updateIndex()
 
-▸ **updateIndex**(`name`, `body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
+> **updateIndex**(`name`, `body`, `options?`): `Promise`\<[`Index`](../interfaces/Index.md)\>
 
 Updates the specified index
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Index name |
-| `body` | [`IndexUpdate`](../interfaces/IndexUpdate.md) | Index data to update |
-| `options?` | [`UpdateIndexOptionalParams`](../interfaces/UpdateIndexOptionalParams.md) | The options parameters. |
+##### name
+
+`string`
+
+Index name
+
+##### body
+
+[`IndexUpdate`](../interfaces/IndexUpdate.md)
+
+Index data to update
+
+##### options?
+
+[`UpdateIndexOptionalParams`](../interfaces/UpdateIndexOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Index`](../interfaces/Index.md)\>
 
-___
+***
 
-### updateInvitation
+### updateInvitation()
 
-▸ **updateInvitation**(`identifier`, `body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
+> **updateInvitation**(`identifier`, `body`, `options?`): `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
 Update the detail of an invitation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Invitation identifier. |
-| `body` | [`InvitationUpdate`](../interfaces/InvitationUpdate.md) |  |
-| `options?` | [`UpdateInvitationOptionalParams`](../interfaces/UpdateInvitationOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Invitation identifier.
+
+##### body
+
+[`InvitationUpdate`](../interfaces/InvitationUpdate.md)
+
+##### options?
+
+[`UpdateInvitationOptionalParams`](../interfaces/UpdateInvitationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Invitation`](../interfaces/Invitation.md)\>
 
-___
+***
 
-### updateJobDescriptionSearchConfig
+### updateJobDescriptionSearchConfig()
 
-▸ **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
+> **updateJobDescriptionSearchConfig**(`body`, `options?`): `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
 Update configurations such as which fields can be displayed in the logged in user's embeddable job
 description search tool, what are their weights, what is the maximum number of results that can be
@@ -2724,120 +3532,181 @@ returned, etc.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md) |  |
-| `options?` | [`UpdateJobDescriptionSearchConfigOptionalParams`](../interfaces/UpdateJobDescriptionSearchConfigOptionalParams.md) | The options parameters. |
+##### body
+
+[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)
+
+##### options?
+
+[`UpdateJobDescriptionSearchConfigOptionalParams`](../interfaces/UpdateJobDescriptionSearchConfigOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`JobDescriptionSearchConfig`](../interfaces/JobDescriptionSearchConfig.md)\>
 
-___
+***
 
-### updateMapping
+### updateMapping()
 
-▸ **updateMapping**(`identifier`, `body`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
+> **updateMapping**(`identifier`, `body`, `options?`): `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
 Updates a specific mapping.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping's identifier |
-| `body` | [`MappingUpdate`](../interfaces/MappingUpdate.md) |  |
-| `options?` | [`UpdateMappingOptionalParams`](../interfaces/UpdateMappingOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping's identifier
+
+##### body
+
+[`MappingUpdate`](../interfaces/MappingUpdate.md)
+
+##### options?
+
+[`UpdateMappingOptionalParams`](../interfaces/UpdateMappingOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Mapping`](../interfaces/Mapping.md)\>
 
-___
+***
 
-### updateMappingDataSourceValue
+### updateMappingDataSourceValue()
 
-▸ **updateMappingDataSourceValue**(`identifier`, `value`, `body`, `options?`): `Promise`\<[`UpdateMappingDataSourceValueResponse`](../modules.md#updatemappingdatasourcevalueresponse)\>
+> **updateMappingDataSourceValue**(`identifier`, `value`, `body`, `options?`): `Promise`\<[`UpdateMappingDataSourceValueResponse`](../type-aliases/UpdateMappingDataSourceValueResponse.md)\>
 
 Update the specified mapping data source value.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Mapping data source's identifier |
-| `value` | `string` | Mapping Data Source's value |
-| `body` | `Record`\<`string`, `unknown`\> | Any object |
-| `options?` | [`UpdateMappingDataSourceValueOptionalParams`](../interfaces/UpdateMappingDataSourceValueOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Mapping data source's identifier
+
+##### value
+
+`string`
+
+Mapping Data Source's value
+
+##### body
+
+`Record`\<`string`, `unknown`\>
+
+Any object
+
+##### options?
+
+[`UpdateMappingDataSourceValueOptionalParams`](../interfaces/UpdateMappingDataSourceValueOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
-`Promise`\<[`UpdateMappingDataSourceValueResponse`](../modules.md#updatemappingdatasourcevalueresponse)\>
+`Promise`\<[`UpdateMappingDataSourceValueResponse`](../type-aliases/UpdateMappingDataSourceValueResponse.md)\>
 
-___
+***
 
-### updateOrganization
+### updateOrganization()
 
-▸ **updateOrganization**(`identifier`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
+> **updateOrganization**(`identifier`, `options?`): `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
 Update the detail of an organization.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Organization identifier. |
-| `options?` | [`UpdateOrganizationOptionalParams`](../interfaces/UpdateOrganizationOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Organization identifier.
+
+##### options?
+
+[`UpdateOrganizationOptionalParams`](../interfaces/UpdateOrganizationOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Organization`](../interfaces/Organization.md)\>
 
-___
+***
 
-### updateOrganizationMembership
+### updateOrganizationMembership()
 
-▸ **updateOrganizationMembership**(`identifier`, `body`, `options?`): `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
+> **updateOrganizationMembership**(`identifier`, `body`, `options?`): `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
 The admin users can use this endpoint to update the role of the members within their organization.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Membership identifier. |
-| `body` | [`OrganizationMembershipUpdate`](../interfaces/OrganizationMembershipUpdate.md) |  |
-| `options?` | [`UpdateOrganizationMembershipOptionalParams`](../interfaces/UpdateOrganizationMembershipOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Membership identifier.
+
+##### body
+
+[`OrganizationMembershipUpdate`](../interfaces/OrganizationMembershipUpdate.md)
+
+##### options?
+
+[`UpdateOrganizationMembershipOptionalParams`](../interfaces/UpdateOrganizationMembershipOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`OrganizationMembership`](../interfaces/OrganizationMembership.md)\>
 
-___
+***
 
-### updateResthookSubscription
+### updateResthookSubscription()
 
-▸ **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
+> **updateResthookSubscription**(`id`, `body`, `options?`): `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
 Update data of a resthook subscription.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | ResthookSubscription's ID |
-| `body` | [`ResthookSubscriptionUpdate`](../interfaces/ResthookSubscriptionUpdate.md) | ResthookSubscription data to update |
-| `options?` | [`UpdateResthookSubscriptionOptionalParams`](../interfaces/UpdateResthookSubscriptionOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+ResthookSubscription's ID
+
+##### body
+
+[`ResthookSubscriptionUpdate`](../interfaces/ResthookSubscriptionUpdate.md)
+
+ResthookSubscription data to update
+
+##### options?
+
+[`UpdateResthookSubscriptionOptionalParams`](../interfaces/UpdateResthookSubscriptionOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResthookSubscription`](../interfaces/ResthookSubscription.md)\>
 
-___
+***
 
-### updateResumeSearchConfig
+### updateResumeSearchConfig()
 
-▸ **updateResumeSearchConfig**(`body`, `options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
+> **updateResumeSearchConfig**(`body`, `options?`): `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
 Update configurations such as which fields can be displayed in the logged in user's embeddable
 resume search tool, what are their weights, what is the maximum number of results that can be
@@ -2845,70 +3714,111 @@ returned, etc.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | [`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md) |  |
-| `options?` | [`UpdateResumeSearchConfigOptionalParams`](../interfaces/UpdateResumeSearchConfigOptionalParams.md) | The options parameters. |
+##### body
+
+[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)
+
+##### options?
+
+[`UpdateResumeSearchConfigOptionalParams`](../interfaces/UpdateResumeSearchConfigOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ResumeSearchConfig`](../interfaces/ResumeSearchConfig.md)\>
 
-___
+***
 
-### updateTag
+### updateTag()
 
-▸ **updateTag**(`id`, `body`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
+> **updateTag**(`id`, `body`, `options?`): `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
 Update data of an tag.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Tag's ID |
-| `body` | [`TagUpdate`](../interfaces/TagUpdate.md) | Tag data to update |
-| `options?` | [`UpdateTagOptionalParams`](../interfaces/UpdateTagOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Tag's ID
+
+##### body
+
+[`TagUpdate`](../interfaces/TagUpdate.md)
+
+Tag data to update
+
+##### options?
+
+[`UpdateTagOptionalParams`](../interfaces/UpdateTagOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`Tag`](../interfaces/Tag.md)\>
 
-___
+***
 
-### updateValidationResult
+### updateValidationResult()
 
-▸ **updateValidationResult**(`id`, `body`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
+> **updateValidationResult**(`id`, `body`, `options?`): `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
 Update a validation result.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | Validation result's ID. |
-| `body` | [`ValidationResultUpdate`](../interfaces/ValidationResultUpdate.md) | Validation result data to update |
-| `options?` | [`UpdateValidationResultOptionalParams`](../interfaces/UpdateValidationResultOptionalParams.md) | The options parameters. |
+##### id
+
+`number`
+
+Validation result's ID.
+
+##### body
+
+[`ValidationResultUpdate`](../interfaces/ValidationResultUpdate.md)
+
+Validation result data to update
+
+##### options?
+
+[`UpdateValidationResultOptionalParams`](../interfaces/UpdateValidationResultOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 
 `Promise`\<[`ValidationResult`](../interfaces/ValidationResult.md)\>
 
-___
+***
 
-### updateWorkspace
+### updateWorkspace()
 
-▸ **updateWorkspace**(`identifier`, `body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
+> **updateWorkspace**(`identifier`, `body`, `options?`): `Promise`\<[`Workspace`](../interfaces/Workspace.md)\>
 
 Update a workspace.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identifier` | `string` | Workspace's identifier |
-| `body` | [`WorkspaceUpdate`](../interfaces/WorkspaceUpdate.md) | Workspace data to update |
-| `options?` | [`UpdateWorkspaceOptionalParams`](../interfaces/UpdateWorkspaceOptionalParams.md) | The options parameters. |
+##### identifier
+
+`string`
+
+Workspace's identifier
+
+##### body
+
+[`WorkspaceUpdate`](../interfaces/WorkspaceUpdate.md)
+
+Workspace data to update
+
+##### options?
+
+[`UpdateWorkspaceOptionalParams`](../interfaces/UpdateWorkspaceOptionalParams.md)
+
+The options parameters.
 
 #### Returns
 

@@ -1,73 +1,65 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / InvitationRespondedBy
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / InvitationRespondedBy
 
 # Interface: InvitationRespondedBy
 
-## Hierarchy
+## Extends
 
 - [`User`](User.md)
 
-  ↳ **`InvitationRespondedBy`**
-
-## Table of contents
-
-### Properties
-
-- [avatar](InvitationRespondedBy.md#avatar)
-- [email](InvitationRespondedBy.md#email)
-- [id](InvitationRespondedBy.md#id)
-- [name](InvitationRespondedBy.md#name)
-- [username](InvitationRespondedBy.md#username)
-
 ## Properties
 
-### avatar
+### avatar?
 
-• `Optional` **avatar**: `string`
+> `optional` **avatar**: `string`
 
 URL of the user's avatar.
 
 #### Inherited from
 
-[User](User.md).[avatar](User.md#avatar)
+[`User`](User.md).[`avatar`](User.md#avatar)
 
-___
+***
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
 #### Inherited from
 
-[User](User.md).[email](User.md#email)
+[`User`](User.md).[`email`](User.md#email)
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
 Uniquely identify a user.
 
 #### Inherited from
 
-[User](User.md).[id](User.md#id)
+[`User`](User.md).[`id`](User.md#id)
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
-
-#### Inherited from
-
-[User](User.md).[name](User.md#name)
-
-___
-
-### username
-
-• `Optional` **username**: `string`
+> `optional` **name**: `string`
 
 #### Inherited from
 
-[User](User.md).[username](User.md#username)
+[`User`](User.md).[`name`](User.md#name)
+
+***
+
+### username?
+
+> `optional` **username**: `string`
+
+#### Inherited from
+
+[`User`](User.md).[`username`](User.md#username)

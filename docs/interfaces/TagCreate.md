@@ -1,24 +1,21 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / TagCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / TagCreate
 
 # Interface: TagCreate
-
-## Table of contents
-
-### Properties
-
-- [name](TagCreate.md#name)
-- [workspace](TagCreate.md#workspace)
 
 ## Properties
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### workspace
 
-• **workspace**: `string`
+> **workspace**: `string`
 
 Uniquely identify a workspace.

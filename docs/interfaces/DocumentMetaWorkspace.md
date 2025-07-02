@@ -1,24 +1,21 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentMetaWorkspace
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentMetaWorkspace
 
 # Interface: DocumentMetaWorkspace
-
-## Table of contents
-
-### Properties
-
-- [identifier](DocumentMetaWorkspace.md#identifier)
-- [name](DocumentMetaWorkspace.md#name)
 
 ## Properties
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a workspace.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`

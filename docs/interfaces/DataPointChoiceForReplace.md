@@ -1,36 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataPointChoiceForReplace
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DataPointChoiceForReplace
 
 # Interface: DataPointChoiceForReplace
 
-## Table of contents
-
-### Properties
-
-- [description](DataPointChoiceForReplace.md#description)
-- [label](DataPointChoiceForReplace.md#label)
-- [synonyms](DataPointChoiceForReplace.md#synonyms)
-- [value](DataPointChoiceForReplace.md#value)
-
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
-___
+***
 
-### label
+### label?
 
-• `Optional` **label**: `string`
+> `optional` **label**: `string`
 
-___
+***
 
-### synonyms
+### synonyms?
 
-• `Optional` **synonyms**: `string`[]
+> `optional` **synonyms**: `string`[]
 
-___
+***
 
 ### value
 
-• **value**: `string`
+> **value**: `string`

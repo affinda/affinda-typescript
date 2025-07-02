@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / TableBetaAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / TableBetaAnnotationParsed
 
 # Interface: TableBetaAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [rows](TableBetaAnnotationParsed.md#rows)
-
 ## Properties
 
-### rows
+### rows?
 
-• `Optional` **rows**: (``null`` \| [`RowBetaAnnotation`](RowBetaAnnotation.md))[]
+> `optional` **rows**: (`null` \| [`RowBetaAnnotation`](RowBetaAnnotation.md))[]

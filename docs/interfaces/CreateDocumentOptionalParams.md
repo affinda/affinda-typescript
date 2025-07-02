@@ -1,166 +1,146 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / CreateDocumentOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / CreateDocumentOptionalParams
 
 # Interface: CreateDocumentOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`CreateDocumentOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](CreateDocumentOptionalParams.md#abortsignal)
-- [collection](CreateDocumentOptionalParams.md#collection)
-- [compact](CreateDocumentOptionalParams.md#compact)
-- [customIdentifier](CreateDocumentOptionalParams.md#customidentifier)
-- [data](CreateDocumentOptionalParams.md#data)
-- [deleteAfterParse](CreateDocumentOptionalParams.md#deleteafterparse)
-- [documentType](CreateDocumentOptionalParams.md#documenttype)
-- [enableValidationTool](CreateDocumentOptionalParams.md#enablevalidationtool)
-- [expiryTime](CreateDocumentOptionalParams.md#expirytime)
-- [file](CreateDocumentOptionalParams.md#file)
-- [fileName](CreateDocumentOptionalParams.md#filename)
-- [identifier](CreateDocumentOptionalParams.md#identifier)
-- [language](CreateDocumentOptionalParams.md#language)
-- [lowPriority](CreateDocumentOptionalParams.md#lowpriority)
-- [onResponse](CreateDocumentOptionalParams.md#onresponse)
-- [regionBias](CreateDocumentOptionalParams.md#regionbias)
-- [rejectDuplicates](CreateDocumentOptionalParams.md#rejectduplicates)
-- [requestOptions](CreateDocumentOptionalParams.md#requestoptions)
-- [serializerOptions](CreateDocumentOptionalParams.md#serializeroptions)
-- [tracingOptions](CreateDocumentOptionalParams.md#tracingoptions)
-- [url](CreateDocumentOptionalParams.md#url)
-- [useOcr](CreateDocumentOptionalParams.md#useocr)
-- [wait](CreateDocumentOptionalParams.md#wait)
-- [warningMessages](CreateDocumentOptionalParams.md#warningmessages)
-- [workspace](CreateDocumentOptionalParams.md#workspace)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### collection
+### camelCase?
 
-• `Optional` **collection**: `string`
+> `optional` **camelCase**: `boolean`
+
+Whether to return the response in camelCase. Default is true.
+
+***
+
+### collection?
+
+> `optional` **collection**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
-### compact
+### compact?
 
-• `Optional` **compact**: `string`
+> `optional` **compact**: `string`
 
 If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result.
 
-___
+***
 
-### customIdentifier
+### customIdentifier?
 
-• `Optional` **customIdentifier**: `string`
+> `optional` **customIdentifier**: `string`
 
 Specify a custom identifier for the document if you need one, not required to be unique.
 
-___
+***
 
-### data
+### data?
 
-• `Optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
+> `optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
 
 Create resume or job description directly from data.
 
-___
+***
 
-### deleteAfterParse
+### deleteAfterParse?
 
-• `Optional` **deleteAfterParse**: `string`
+> `optional` **deleteAfterParse**: `string`
 
 If true, no data will be stored after parsing. Only compatible with requests where wait: True.
 
-___
+***
 
-### documentType
+### documentType?
 
-• `Optional` **documentType**: `string`
+> `optional` **documentType**: `string`
 
 The document type's identifier.  Provide if you already know the document type.
 
-___
+***
 
-### enableValidationTool
+### enableValidationTool?
 
-• `Optional` **enableValidationTool**: `string`
+> `optional` **enableValidationTool**: `string`
 
 If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed.
 
-___
+***
 
-### expiryTime
+### expiryTime?
 
-• `Optional` **expiryTime**: `string`
+> `optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
-___
+***
 
-### file
+### file?
 
-• `Optional` **file**: `RequestBodyType`
+> `optional` **file**: `RequestBodyType`
 
 File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX
 
-___
+***
 
-### fileName
+### fileName?
 
-• `Optional` **fileName**: `string`
+> `optional` **fileName**: `string`
 
 Optional filename of the file
 
-___
+***
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Deprecated in favor of `customIdentifier`.
 
-___
+***
 
-### language
+### language?
 
-• `Optional` **language**: `string`
+> `optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
-___
+***
 
-### lowPriority
+### lowPriority?
 
-• `Optional` **lowPriority**: `string`
+> `optional` **lowPriority**: `string`
 
 Explicitly mark this document as low priority.
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -168,96 +148,96 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### regionBias
+### regionBias?
 
-• `Optional` **regionBias**: `string`
+> `optional` **regionBias**: `string`
 
 A JSON representation of the RegionBias object.
 
-___
+***
 
-### rejectDuplicates
+### rejectDuplicates?
 
-• `Optional` **rejectDuplicates**: `boolean`
+> `optional` **rejectDuplicates**: `boolean`
 
 If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings.
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`
 
-___
+***
 
-### url
+### url?
 
-• `Optional` **url**: `string`
+> `optional` **url**: `string`
 
 URL to download the document.
 
-___
+***
 
-### useOcr
+### useOcr?
 
-• `Optional` **useOcr**: `boolean`
+> `optional` **useOcr**: `boolean`
 
 If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document.
 
-___
+***
 
-### wait
+### wait?
 
-• `Optional` **wait**: `string`
+> `optional` **wait**: `string`
 
 If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete.
 
-___
+***
 
-### warningMessages
+### warningMessages?
 
-• `Optional` **warningMessages**: [`DocumentWarning`](DocumentWarning.md)[]
+> `optional` **warningMessages**: [`DocumentWarning`](DocumentWarning.md)[]
 
 Array of DocumentWarning
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`
 
 Uniquely identify a workspace.

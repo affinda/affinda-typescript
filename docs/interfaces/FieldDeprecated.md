@@ -1,118 +1,105 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / FieldDeprecated
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / FieldDeprecated
 
 # Interface: FieldDeprecated
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [autoValidationThreshold](FieldDeprecated.md#autovalidationthreshold)
-- [dataPoint](FieldDeprecated.md#datapoint)
-- [dataSource](FieldDeprecated.md#datasource)
-- [disabled](FieldDeprecated.md#disabled)
-- [displayEnumValue](FieldDeprecated.md#displayenumvalue)
-- [displayRawText](FieldDeprecated.md#displayrawtext)
-- [dropNull](FieldDeprecated.md#dropnull)
-- [fieldType](FieldDeprecated.md#fieldtype)
-- [fields](FieldDeprecated.md#fields)
-- [label](FieldDeprecated.md#label)
-- [mandatory](FieldDeprecated.md#mandatory)
-- [mapping](FieldDeprecated.md#mapping)
-- [showDropdown](FieldDeprecated.md#showdropdown)
-- [slug](FieldDeprecated.md#slug)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### autoValidationThreshold
+### autoValidationThreshold?
 
-• `Optional` **autoValidationThreshold**: `number`
+> `optional` **autoValidationThreshold**: `number`
 
-___
+***
 
 ### dataPoint
 
-• **dataPoint**: `string`
+> **dataPoint**: `string`
 
-___
+***
 
-### dataSource
+### dataSource?
 
-• `Optional` **dataSource**: `string`
+> `optional` **dataSource**: `string`
 
 Data source mapping identifier
 
-___
+***
 
-### disabled
+### disabled?
 
-• `Optional` **disabled**: `boolean`
+> `optional` **disabled**: `boolean`
 
-___
+***
 
-### displayEnumValue
+### displayEnumValue?
 
-• `Optional` **displayEnumValue**: `boolean`
+> `optional` **displayEnumValue**: `boolean`
 
-___
+***
 
-### displayRawText
+### displayRawText?
 
-• `Optional` **displayRawText**: `boolean`
+> `optional` **displayRawText**: `boolean`
 
-___
+***
 
-### dropNull
+### dropNull?
 
-• `Optional` **dropNull**: `boolean`
+> `optional` **dropNull**: `boolean`
 
 If True, any dropdown annotations that fail to parse to a value will be discarded
 
-___
+***
+
+### fields?
+
+> `optional` **fields**: `FieldDeprecated`[]
+
+***
 
 ### fieldType
 
-• **fieldType**: `string`
+> **fieldType**: `string`
 
 The different data types of annotations
 
-___
-
-### fields
-
-• `Optional` **fields**: [`FieldDeprecated`](FieldDeprecated.md)[]
-
-___
+***
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### mandatory
+### mandatory?
 
-• `Optional` **mandatory**: `boolean`
+> `optional` **mandatory**: `boolean`
 
-___
+***
 
-### mapping
+### mapping?
 
-• `Optional` **mapping**: `string`
+> `optional` **mapping**: `string`
 
 Defines how the data point is mapped to the data source
 
-___
+***
 
-### showDropdown
+### showDropdown?
 
-• `Optional` **showDropdown**: `boolean`
+> `optional` **showDropdown**: `boolean`
 
-___
+***
 
-### slug
+### slug?
 
-• `Optional` **slug**: `string`
+> `optional` **slug**: `string`

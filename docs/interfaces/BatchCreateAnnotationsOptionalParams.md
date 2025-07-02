@@ -1,42 +1,34 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / BatchCreateAnnotationsOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / BatchCreateAnnotationsOptionalParams
 
 # Interface: BatchCreateAnnotationsOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`BatchCreateAnnotationsOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](BatchCreateAnnotationsOptionalParams.md#abortsignal)
-- [onResponse](BatchCreateAnnotationsOptionalParams.md#onresponse)
-- [requestOptions](BatchCreateAnnotationsOptionalParams.md#requestoptions)
-- [serializerOptions](BatchCreateAnnotationsOptionalParams.md#serializeroptions)
-- [tracingOptions](BatchCreateAnnotationsOptionalParams.md#tracingoptions)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -44,40 +36,40 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`

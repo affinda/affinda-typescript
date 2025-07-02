@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailManagementLevel
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailManagementLevel
 
 # Interface: ResumeSearchDetailManagementLevel
 
-## Table of contents
-
-### Properties
-
-- [level](ResumeSearchDetailManagementLevel.md#level)
-- [match](ResumeSearchDetailManagementLevel.md#match)
-
 ## Properties
 
-### level
+### level?
 
-• `Optional` **level**: [`ManagementLevel`](../modules.md#managementlevel)
+> `optional` **level**: [`ManagementLevel`](../type-aliases/ManagementLevel.md)
 
-___
+***
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`

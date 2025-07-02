@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1
 
 # Interface: Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1
 
-## Hierarchy
+## Extended by
 
-- **`Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1`**
-
-  ↳ [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
-
-## Table of contents
-
-### Properties
-
-- [results](Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+- [`PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema`](PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema.md)
 
 ## Properties
 
-### results
+### results?
 
-• `Optional` **results**: [`Index`](Index.md)[]
+> `optional` **results**: [`Index`](Index.md)[]

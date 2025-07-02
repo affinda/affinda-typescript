@@ -1147,6 +1147,10 @@ export interface YearsExperienceAnnotationParsed {
 export interface DocumentUpdate {
   /** Uniquely identify a collection. */
   collection?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+  /** The document type's identifier.  Provide if you already know the document type. */
+  documentType?: string;
   /** Optional filename of the file */
   fileName?: string;
   /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -1722,6 +1726,11 @@ export interface DocumentTypeUpdate {
   name?: string;
   /** A new description of the document type. */
   description?: string;
+}
+
+export interface PydanticModelsResponse {
+  /** Pydantic model code */
+  code: string;
 }
 
 /** Configuration of the embeddable validation tool. */
@@ -4436,6 +4445,8 @@ export interface GetAllDocumentsOptionalParams
   compact?: boolean;
   /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
   count?: boolean;
+  /** Whether to return the response in camelCase. Default is true. */
+  camelCase?: boolean;
 }
 
 /** Contains response data for the getAllDocuments operation. */
@@ -4445,6 +4456,8 @@ export type GetAllDocumentsResponse =
 /** Optional parameters. */
 export interface CreateDocumentOptionalParams
   extends coreClient.OperationOptions {
+  /** Whether to return the response in camelCase. Default is true. */
+  camelCase?: boolean;
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
@@ -4494,6 +4507,8 @@ export type CreateDocumentResponse = DocumentUnion;
 export interface GetDocumentOptionalParams extends coreClient.OperationOptions {
   /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
   compact?: boolean;
+  /** Whether to return the response in camelCase. Default is true. */
+  camelCase?: boolean;
   /** Specify which format you want the response to be. Default is "json" */
   format?: DocumentFormat;
 }
@@ -4503,7 +4518,12 @@ export type GetDocumentResponse = DocumentUnion;
 
 /** Optional parameters. */
 export interface UpdateDocumentOptionalParams
-  extends coreClient.OperationOptions {}
+  extends coreClient.OperationOptions {
+  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+  compact?: boolean;
+  /** Whether to return the response in camelCase. Default is true. */
+  camelCase?: boolean;
+}
 
 /** Contains response data for the updateDocument operation. */
 export type UpdateDocumentResponse = DocumentUnion;
@@ -4997,6 +5017,8 @@ export interface DeleteTagOptionalParams extends coreClient.OperationOptions {}
 /** Optional parameters. */
 export interface GetDocumentTypesOptionalParams
   extends coreClient.OperationOptions {
+  /** Filter by workspace identifier */
+  workspace?: string;
   /** Filter by organization identifier */
   organization?: string;
 }
@@ -5028,6 +5050,28 @@ export type UpdateDocumentTypeResponse = DocumentType;
 /** Optional parameters. */
 export interface DeleteDocumentTypeOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface JsonSchemaFromDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {
+  /** Title for the JSON schema */
+  title?: string;
+}
+
+/** Contains response data for the jsonSchemaFromDocumentType operation. */
+export type JsonSchemaFromDocumentTypeResponse = {
+  [propertyName: string]: any;
+};
+
+/** Optional parameters. */
+export interface PydanticModelsFromDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {
+  /** Name for the Pydantic model */
+  modelName?: string;
+}
+
+/** Contains response data for the pydanticModelsFromDocumentType operation. */
+export type PydanticModelsFromDocumentTypeResponse = PydanticModelsResponse;
 
 /** Optional parameters. */
 export interface GetAllOrganizationsOptionalParams

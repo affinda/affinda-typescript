@@ -1,86 +1,75 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataWorkExperienceItem
 
 # Interface: ResumeDataWorkExperienceItem
 
-## Table of contents
-
-### Properties
-
-- [dates](ResumeDataWorkExperienceItem.md#dates)
-- [id](ResumeDataWorkExperienceItem.md#id)
-- [industry](ResumeDataWorkExperienceItem.md#industry)
-- [jobDescription](ResumeDataWorkExperienceItem.md#jobdescription)
-- [jobTitle](ResumeDataWorkExperienceItem.md#jobtitle)
-- [location](ResumeDataWorkExperienceItem.md#location)
-- [occupation](ResumeDataWorkExperienceItem.md#occupation)
-- [organization](ResumeDataWorkExperienceItem.md#organization)
-- [socCode](ResumeDataWorkExperienceItem.md#soccode)
-- [socName](ResumeDataWorkExperienceItem.md#socname)
-
 ## Properties
 
-### dates
+### dates?
 
-• `Optional` **dates**: [`ResumeDataWorkExperienceItemDates`](ResumeDataWorkExperienceItemDates.md)
+> `optional` **dates**: [`ResumeDataWorkExperienceItemDates`](ResumeDataWorkExperienceItemDates.md)
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
-___
+***
 
-### industry
+### industry?
 
-• `Optional` `Readonly` **industry**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### jobDescription
-
-• `Optional` **jobDescription**: `string`
-
-___
-
-### jobTitle
-
-• `Optional` **jobTitle**: `string`
-
-___
-
-### location
-
-• `Optional` **location**: [`Location`](Location.md)
-
-___
-
-### occupation
-
-• `Optional` `Readonly` **occupation**: [`ResumeDataWorkExperienceItemOccupation`](ResumeDataWorkExperienceItemOccupation.md)
+> `readonly` `optional` **industry**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### organization
+### jobDescription?
 
-• `Optional` **organization**: `string`
+> `optional` **jobDescription**: `string`
 
-___
+***
 
-### socCode
+### jobTitle?
 
-• `Optional` `Readonly` **socCode**: `string`
+> `optional` **jobTitle**: `string`
+
+***
+
+### location?
+
+> `optional` **location**: [`Location`](Location.md)
+
+***
+
+### occupation?
+
+> `readonly` `optional` **occupation**: [`ResumeDataWorkExperienceItemOccupation`](ResumeDataWorkExperienceItemOccupation.md)
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### socName
+### organization?
 
-• `Optional` `Readonly` **socName**: `string`
+> `optional` **organization**: `string`
+
+***
+
+### socCode?
+
+> `readonly` `optional` **socCode**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
+
+### socName?
+
+> `readonly` `optional` **socName**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.

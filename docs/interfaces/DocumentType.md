@@ -1,53 +1,47 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentType
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentType
 
 # Interface: DocumentType
 
-## Table of contents
-
-### Properties
-
-- [description](DocumentType.md#description)
-- [identifier](DocumentType.md#identifier)
-- [ingestEmail](DocumentType.md#ingestemail)
-- [name](DocumentType.md#name)
-- [organization](DocumentType.md#organization)
-
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
 A description of the document type.
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a document type.
 
-___
+***
 
-### ingestEmail
+### ingestEmail?
 
-• `Optional` **ingestEmail**: `string`
+> `optional` **ingestEmail**: `string`
 
 The email address that can be used to email documents directly to this document type.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
 The name of the document type.
 
-___
+***
 
 ### organization
 
-• **organization**: `string`
+> **organization**: `string`
 
 The identifier of the organization this document type belongs to.

@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchEmbed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchEmbed
 
 # Interface: JobDescriptionSearchEmbed
 
-## Table of contents
-
-### Properties
-
-- [url](JobDescriptionSearchEmbed.md#url)
-
 ## Properties
 
-### url
+### url?
 
-• `Optional` **url**: `string`
+> `optional` **url**: `string`
 
 The signed URL for the embedable search tool.

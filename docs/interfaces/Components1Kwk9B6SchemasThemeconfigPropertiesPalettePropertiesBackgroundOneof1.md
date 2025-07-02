@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1
 
 # Interface: Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1
 
-## Table of contents
-
-### Properties
-
-- [default](Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1.md#default)
-- [paper](Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1.md#paper)
-
 ## Properties
 
-### default
+### default?
 
-• `Optional` **default**: `string`
+> `optional` **default**: `string`
 
-___
+***
 
-### paper
+### paper?
 
-• `Optional` **paper**: `string`
+> `optional` **paper**: `string`

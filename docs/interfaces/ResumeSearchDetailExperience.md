@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailExperience
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailExperience
 
 # Interface: ResumeSearchDetailExperience
 
-## Table of contents
-
-### Properties
-
-- [match](ResumeSearchDetailExperience.md#match)
-- [years](ResumeSearchDetailExperience.md#years)
-
 ## Properties
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`
 
-___
+***
 
-### years
+### years?
 
-• `Optional` **years**: `number`
+> `optional` **years**: `number`

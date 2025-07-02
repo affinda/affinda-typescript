@@ -1,38 +1,36 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Index
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Index
 
 # Interface: Index
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [docType](Index.md#doctype)
-- [name](Index.md#name)
-- [user](Index.md#user)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
 ### docType
 
-• **docType**: `string`
+> **docType**: `string`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
 Unique index name
 
-___
+***
 
 ### user
 
-• `Readonly` **user**: [`IndexUser`](IndexUser.md)
+> `readonly` **user**: [`IndexUser`](IndexUser.md)
 
 The user who created this index
 NOTE: This property will not be serialized. It can only be populated by the server.

@@ -1,308 +1,269 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentMeta
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentMeta
 
 # Interface: DocumentMeta
 
-## Table of contents
-
-### Properties
-
-- [archivedBy](DocumentMeta.md#archivedby)
-- [archivedDt](DocumentMeta.md#archiveddt)
-- [childDocuments](DocumentMeta.md#childdocuments)
-- [collection](DocumentMeta.md#collection)
-- [confirmedBy](DocumentMeta.md#confirmedby)
-- [confirmedDt](DocumentMeta.md#confirmeddt)
-- [createdBy](DocumentMeta.md#createdby)
-- [createdDt](DocumentMeta.md#createddt)
-- [customIdentifier](DocumentMeta.md#customidentifier)
-- [documentType](DocumentMeta.md#documenttype)
-- [errorCode](DocumentMeta.md#errorcode)
-- [errorDetail](DocumentMeta.md#errordetail)
-- [expiryTime](DocumentMeta.md#expirytime)
-- [failed](DocumentMeta.md#failed)
-- [file](DocumentMeta.md#file)
-- [fileName](DocumentMeta.md#filename)
-- [html](DocumentMeta.md#html)
-- [identifier](DocumentMeta.md#identifier)
-- [isArchived](DocumentMeta.md#isarchived)
-- [isConfirmed](DocumentMeta.md#isconfirmed)
-- [isOcrd](DocumentMeta.md#isocrd)
-- [isRejected](DocumentMeta.md#isrejected)
-- [language](DocumentMeta.md#language)
-- [ocrConfidence](DocumentMeta.md#ocrconfidence)
-- [pages](DocumentMeta.md#pages)
-- [parentDocument](DocumentMeta.md#parentdocument)
-- [pdf](DocumentMeta.md#pdf)
-- [ready](DocumentMeta.md#ready)
-- [readyDt](DocumentMeta.md#readydt)
-- [regionBias](DocumentMeta.md#regionbias)
-- [rejectedBy](DocumentMeta.md#rejectedby)
-- [rejectedDt](DocumentMeta.md#rejecteddt)
-- [reviewUrl](DocumentMeta.md#reviewurl)
-- [skipParse](DocumentMeta.md#skipparse)
-- [sourceEmail](DocumentMeta.md#sourceemail)
-- [sourceEmailAddress](DocumentMeta.md#sourceemailaddress)
-- [tags](DocumentMeta.md#tags)
-- [workspace](DocumentMeta.md#workspace)
-
 ## Properties
 
-### archivedBy
+### archivedBy?
 
-• `Optional` **archivedBy**: [`UserNullable`](UserNullable.md)
+> `optional` **archivedBy**: [`UserNullable`](UserNullable.md)
 
-___
+***
 
-### archivedDt
+### archivedDt?
 
-• `Optional` **archivedDt**: `Date`
+> `optional` **archivedDt**: `Date`
 
-___
+***
 
-### childDocuments
+### childDocuments?
 
-• `Optional` **childDocuments**: [`DocumentMetaChildDocumentsItem`](DocumentMetaChildDocumentsItem.md)[]
+> `optional` **childDocuments**: [`DocumentMetaChildDocumentsItem`](DocumentMetaChildDocumentsItem.md)[]
 
 If this document has been splitted into a number of child documents, this attribute points to those child documents.
 
-___
+***
 
-### collection
+### collection?
 
-• `Optional` **collection**: [`DocumentMetaCollection`](DocumentMetaCollection.md)
+> `optional` **collection**: [`DocumentMetaCollection`](DocumentMetaCollection.md)
 
-___
+***
 
-### confirmedBy
+### confirmedBy?
 
-• `Optional` **confirmedBy**: [`UserNullable`](UserNullable.md)
+> `optional` **confirmedBy**: [`UserNullable`](UserNullable.md)
 
-___
+***
 
-### confirmedDt
+### confirmedDt?
 
-• `Optional` **confirmedDt**: `Date`
+> `optional` **confirmedDt**: `Date`
 
-___
+***
 
-### createdBy
+### createdBy?
 
-• `Optional` **createdBy**: [`User`](User.md)
+> `optional` **createdBy**: [`User`](User.md)
 
-___
+***
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `Date`
+> `optional` **createdDt**: `Date`
 
-___
+***
 
-### customIdentifier
+### customIdentifier?
 
-• `Optional` **customIdentifier**: `string`
+> `optional` **customIdentifier**: `string`
 
 Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique.
 
-___
+***
 
-### documentType
+### documentType?
 
-• `Optional` **documentType**: `string`
+> `optional` **documentType**: `string`
 
 The document type's identifier.  Provide if you already know the document type.
 
-___
+***
 
-### errorCode
+### errorCode?
 
-• `Optional` **errorCode**: `string`
+> `optional` **errorCode**: `string`
 
-___
+***
 
-### errorDetail
+### errorDetail?
 
-• `Optional` **errorDetail**: `string`
+> `optional` **errorDetail**: `string`
 
-___
+***
 
-### expiryTime
+### expiryTime?
 
-• `Optional` **expiryTime**: `string`
+> `optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
-___
+***
 
-### failed
+### failed?
 
-• `Optional` **failed**: `boolean`
+> `optional` **failed**: `boolean`
 
 If true, some exception was raised during processing. Check the 'error' field of the main return object.
 
-___
+***
 
-### file
+### file?
 
-• `Optional` **file**: `string`
+> `optional` **file**: `string`
 
 URL to view the file.
 
-___
+***
 
-### fileName
+### fileName?
 
-• `Optional` **fileName**: `string`
+> `optional` **fileName**: `string`
 
 Optional filename of the file
 
-___
+***
 
-### html
+### html?
 
-• `Optional` **html**: `string`
+> `optional` **html**: `string`
 
 URL to view the file converted to HTML.
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Unique identifier for the document
 
-___
+***
 
-### isArchived
+### isArchived?
 
-• `Optional` **isArchived**: `boolean`
+> `optional` **isArchived**: `boolean`
 
-___
+***
 
-### isConfirmed
+### isConfirmed?
 
-• `Optional` **isConfirmed**: `boolean`
+> `optional` **isConfirmed**: `boolean`
 
-___
+***
 
-### isOcrd
+### isOcrd?
 
-• `Optional` **isOcrd**: `boolean`
+> `optional` **isOcrd**: `boolean`
 
-___
+***
 
-### isRejected
+### isRejected?
 
-• `Optional` **isRejected**: `boolean`
+> `optional` **isRejected**: `boolean`
 
-___
+***
 
-### language
+### language?
 
-• `Optional` **language**: `string`
+> `optional` **language**: `string`
 
 The document's language.
 
-___
+***
 
-### ocrConfidence
+### ocrConfidence?
 
-• `Optional` **ocrConfidence**: `number`
+> `optional` **ocrConfidence**: `number`
 
-___
+***
 
 ### pages
 
-• **pages**: [`PageMeta`](PageMeta.md)[]
+> **pages**: [`PageMeta`](PageMeta.md)[]
 
 The document's pages.
 
-___
+***
 
-### parentDocument
+### parentDocument?
 
-• `Optional` **parentDocument**: [`DocumentMetaParentDocument`](DocumentMetaParentDocument.md)
+> `optional` **parentDocument**: [`DocumentMetaParentDocument`](DocumentMetaParentDocument.md)
 
 If this document is part of a splitted document, this attribute points to the original document that this document is splitted from.
 
-___
+***
 
-### pdf
+### pdf?
 
-• `Optional` **pdf**: `string`
+> `optional` **pdf**: `string`
 
 The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process).
 
-___
+***
 
-### ready
+### ready?
 
-• `Optional` **ready**: `boolean`
+> `optional` **ready**: `boolean`
 
 If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling
 
-___
+***
 
-### readyDt
+### readyDt?
 
-• `Optional` **readyDt**: `Date`
+> `optional` **readyDt**: `Date`
 
 The datetime when the document was ready
 
-___
+***
 
-### regionBias
+### regionBias?
 
-• `Optional` **regionBias**: [`RegionBias`](RegionBias.md)
+> `optional` **regionBias**: [`RegionBias`](RegionBias.md)
 
-___
+***
 
-### rejectedBy
+### rejectedBy?
 
-• `Optional` **rejectedBy**: [`UserNullable`](UserNullable.md)
+> `optional` **rejectedBy**: [`UserNullable`](UserNullable.md)
 
-___
+***
 
-### rejectedDt
+### rejectedDt?
 
-• `Optional` **rejectedDt**: `Date`
+> `optional` **rejectedDt**: `Date`
 
-___
+***
 
-### reviewUrl
+### reviewUrl?
 
-• `Optional` **reviewUrl**: `string`
+> `optional` **reviewUrl**: `string`
 
-___
+***
 
-### skipParse
+### skipParse?
 
-• `Optional` **skipParse**: `boolean`
+> `optional` **skipParse**: `boolean`
 
-___
+***
 
-### sourceEmail
+### sourceEmail?
 
-• `Optional` **sourceEmail**: `string`
+> `optional` **sourceEmail**: `string`
 
 If the document is created via email ingestion, this field stores the email file's URL.
 
-___
+***
 
-### sourceEmailAddress
+### sourceEmailAddress?
 
-• `Optional` **sourceEmailAddress**: `string`
+> `optional` **sourceEmailAddress**: `string`
 
 If the document is created via email ingestion, this field stores the email's From address.
 
-___
+***
 
-### tags
+### tags?
 
-• `Optional` **tags**: [`Tag`](Tag.md)[]
+> `optional` **tags**: [`Tag`](Tag.md)[]
 
-___
+***
 
 ### workspace
 
-• **workspace**: [`DocumentMetaWorkspace`](DocumentMetaWorkspace.md)
+> **workspace**: [`DocumentMetaWorkspace`](DocumentMetaWorkspace.md)

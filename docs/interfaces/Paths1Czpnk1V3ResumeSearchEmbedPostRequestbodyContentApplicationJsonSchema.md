@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema
 
 # Interface: Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema
 
-## Table of contents
-
-### Properties
-
-- [configOverride](Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md#configoverride)
-
 ## Properties
 
-### configOverride
+### configOverride?
 
-• `Optional` **configOverride**: [`ResumeSearchConfig`](ResumeSearchConfig.md)
+> `optional` **configOverride**: [`ResumeSearchConfig`](ResumeSearchConfig.md)

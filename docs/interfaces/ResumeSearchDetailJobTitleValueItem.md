@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailJobTitleValueItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailJobTitleValueItem
 
 # Interface: ResumeSearchDetailJobTitleValueItem
 
-## Table of contents
-
-### Properties
-
-- [companyName](ResumeSearchDetailJobTitleValueItem.md#companyname)
-- [endDate](ResumeSearchDetailJobTitleValueItem.md#enddate)
-- [match](ResumeSearchDetailJobTitleValueItem.md#match)
-- [name](ResumeSearchDetailJobTitleValueItem.md#name)
-- [startDate](ResumeSearchDetailJobTitleValueItem.md#startdate)
-
 ## Properties
 
-### companyName
+### companyName?
 
-• `Optional` **companyName**: `string`
+> `optional` **companyName**: `string`
 
-___
+***
 
-### endDate
+### endDate?
 
-• `Optional` **endDate**: `string`
+> `optional` **endDate**: `string`
 
-___
+***
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### startDate
+### startDate?
 
-• `Optional` **startDate**: `string`
+> `optional` **startDate**: `string`

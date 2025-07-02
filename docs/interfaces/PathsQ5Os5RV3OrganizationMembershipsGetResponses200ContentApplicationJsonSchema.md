@@ -1,66 +1,57 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
 
 # Interface: PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
 
-## Hierarchy
+## Extends
 
-- [`PaginatedResponse`](PaginatedResponse.md)
-
-- [`Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
-
-  ↳ **`PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema`**
-
-## Table of contents
-
-### Properties
-
-- [count](PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md#count)
-- [next](PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md#next)
-- [previous](PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md#previous)
-- [results](PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema.md#results)
+- [`PaginatedResponse`](PaginatedResponse.md).[`Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 
 ## Properties
 
 ### count
 
-• **count**: `number`
+> **count**: `number`
 
 Number of items in results.
 
 #### Inherited from
 
-[PaginatedResponse](PaginatedResponse.md).[count](PaginatedResponse.md#count)
+[`PaginatedResponse`](PaginatedResponse.md).[`count`](PaginatedResponse.md#count)
 
-___
+***
 
-### next
+### next?
 
-• `Optional` **next**: `string`
+> `optional` **next**: `string`
 
 URL to request next page of results.
 
 #### Inherited from
 
-[PaginatedResponse](PaginatedResponse.md).[next](PaginatedResponse.md#next)
+[`PaginatedResponse`](PaginatedResponse.md).[`next`](PaginatedResponse.md#next)
 
-___
+***
 
-### previous
+### previous?
 
-• `Optional` **previous**: `string`
+> `optional` **previous**: `string`
 
 URL to request previous page of results.
 
 #### Inherited from
 
-[PaginatedResponse](PaginatedResponse.md).[previous](PaginatedResponse.md#previous)
+[`PaginatedResponse`](PaginatedResponse.md).[`previous`](PaginatedResponse.md#previous)
 
-___
+***
 
-### results
+### results?
 
-• `Optional` **results**: [`OrganizationMembership`](OrganizationMembership.md)[]
+> `optional` **results**: [`OrganizationMembership`](OrganizationMembership.md)[]
 
 #### Inherited from
 
-[Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md).[results](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+[`Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1`](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md).[`results`](Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)

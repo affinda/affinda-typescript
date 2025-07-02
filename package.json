@@ -9,15 +9,17 @@
   ],
   "author": "affinda",
   "description": "A client for the AffindaAPI",
-  "version": "7.5.0",
+  "version": "7.6.0",
   "engines": {
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@azure/core-client": "^1.7.0",
     "@azure/core-auth": "^1.6.0",
+    "@azure/core-client": "^1.7.0",
     "@azure/core-rest-pipeline": "^1.14.0",
-    "tslib": "^2.2.0"
+    "readline-sync": "^1.4.10",
+    "tslib": "^2.2.0",
+    "yargs": "^18.0.0"
   },
   "keywords": [
     "affinda",
@@ -32,19 +34,23 @@
   "types": "./types/affinda.d.ts",
   "devDependencies": {
     "@microsoft/api-extractor": "^7.31.1",
-    "mkdirp": "^2.1.2",
-    "typescript": "~5.3.3",
-    "uglify-js": "^3.4.9",
-    "rimraf": "^5.0.0",
-    "dotenv": "^16.0.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-multi-entry": "^6.0.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
+    "@types/readline-sync": "^1.4.8",
+    "@types/yargs": "^17.0.33",
+    "dotenv": "^16.0.0",
+    "json-schema-to-typescript": "^15.0.4",
+    "mkdirp": "^2.1.2",
+    "node-fetch": "^3.3.2",
+    "rimraf": "^5.0.0",
     "rollup": "^2.66.1",
     "rollup-plugin-sourcemaps": "^0.6.3",
-    "typedoc": "^0.24.0",
-    "typedoc-plugin-markdown": "^3.10.4"
+    "typedoc": "^0.28.5",
+    "typedoc-plugin-markdown": "^4.6.4",
+    "typescript": "~5.3.3",
+    "uglify-js": "^3.4.9"
   },
   "homepage": "https://github.com/affinda/affinda-typescript",
   "repository": {
@@ -73,8 +79,9 @@
     "types/*"
   ],
   "scripts": {
-    "build": "npm run clean && tsc && rollup -c 2>&1 && npm run minify && mkdirp ./review && npm run extract-api",
+    "build": "npm run clean && tsc && npm run setup-generate-interfaces && rollup -c 2>&1 && npm run minify && mkdirp ./review && npm run extract-api",
     "minify": "uglifyjs -c -m --comments --source-map \"content='./dist/index.js.map'\" -o ./dist/index.min.js ./dist/index.js",
+    "setup-generate-interfaces": "mv ./dist-esm/generateInterfaces.js ./dist-esm/generateInterfaces.mjs && chmod +x ./dist-esm/generateInterfaces.mjs",
     "prepack": "npm run build",
     "pack": "npm pack 2>&1",
     "extract-api": "api-extractor run --local",
@@ -99,6 +106,9 @@
     "integration-test:node": "echo skipped",
     "integration-test": "echo skipped",
     "docs": "echo skipped"
+  },
+  "bin": {
+    "affinda-generate-interfaces": "./dist-esm/generateInterfaces.mjs"
   },
   "sideEffects": false,
   "//metadata": {

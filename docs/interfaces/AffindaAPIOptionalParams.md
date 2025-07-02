@@ -1,239 +1,219 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaAPIOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / AffindaAPIOptionalParams
 
 # Interface: AffindaAPIOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `ServiceClientOptions`
 
-  ↳ **`AffindaAPIOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [additionalPolicies](AffindaAPIOptionalParams.md#additionalpolicies)
-- [agent](AffindaAPIOptionalParams.md#agent)
-- [allowInsecureConnection](AffindaAPIOptionalParams.md#allowinsecureconnection)
-- [baseUri](AffindaAPIOptionalParams.md#baseuri)
-- [credential](AffindaAPIOptionalParams.md#credential)
-- [credentialScopes](AffindaAPIOptionalParams.md#credentialscopes)
-- [endpoint](AffindaAPIOptionalParams.md#endpoint)
-- [httpClient](AffindaAPIOptionalParams.md#httpclient)
-- [pipeline](AffindaAPIOptionalParams.md#pipeline)
-- [proxyOptions](AffindaAPIOptionalParams.md#proxyoptions)
-- [redirectOptions](AffindaAPIOptionalParams.md#redirectoptions)
-- [region](AffindaAPIOptionalParams.md#region)
-- [requestContentType](AffindaAPIOptionalParams.md#requestcontenttype)
-- [retryOptions](AffindaAPIOptionalParams.md#retryoptions)
-- [telemetryOptions](AffindaAPIOptionalParams.md#telemetryoptions)
-- [tlsOptions](AffindaAPIOptionalParams.md#tlsoptions)
-- [userAgentOptions](AffindaAPIOptionalParams.md#useragentoptions)
-
 ## Properties
 
-### additionalPolicies
+### additionalPolicies?
 
-• `Optional` **additionalPolicies**: `AdditionalPolicyConfig`[]
+> `optional` **additionalPolicies**: `AdditionalPolicyConfig`[]
 
 Additional policies to include in the HTTP pipeline.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.additionalPolicies
+`coreClient.ServiceClientOptions.additionalPolicies`
 
-___
+***
 
-### agent
+### agent?
 
-• `Optional` **agent**: `Agent`
+> `optional` **agent**: `Agent`
 
 Options for configuring Agent instance for outgoing requests
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.agent
+`coreClient.ServiceClientOptions.agent`
 
-___
+***
 
-### allowInsecureConnection
+### allowInsecureConnection?
 
-• `Optional` **allowInsecureConnection**: `boolean`
+> `optional` **allowInsecureConnection**: `boolean`
 
 Set to true if the request is sent over HTTP instead of HTTPS
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.allowInsecureConnection
+`coreClient.ServiceClientOptions.allowInsecureConnection`
 
-___
+***
 
-### baseUri
+### ~~baseUri?~~
 
-• `Optional` **baseUri**: `string`
+> `optional` **baseUri**: `string`
 
 If specified, this is the base URI that requests will be made against for this ServiceClient.
 If it is not specified, then all OperationSpecs must contain a baseUrl property.
 
-**`Deprecated`**
+#### Deprecated
 
 This property is deprecated and will be removed soon, please use endpoint instead
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.baseUri
+`coreClient.ServiceClientOptions.baseUri`
 
-___
+***
 
-### credential
+### credential?
 
-• `Optional` **credential**: `TokenCredential`
+> `optional` **credential**: `TokenCredential`
 
 Credential used to authenticate the request.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.credential
+`coreClient.ServiceClientOptions.credential`
 
-___
+***
 
-### credentialScopes
+### credentialScopes?
 
-• `Optional` **credentialScopes**: `string` \| `string`[]
+> `optional` **credentialScopes**: `string` \| `string`[]
 
 If specified, will be used to build the BearerTokenAuthenticationPolicy.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.credentialScopes
+`coreClient.ServiceClientOptions.credentialScopes`
 
-___
+***
 
-### endpoint
+### endpoint?
 
-• `Optional` **endpoint**: `string`
+> `optional` **endpoint**: `string`
 
 Overrides client endpoint.
 
 #### Overrides
 
-coreClient.ServiceClientOptions.endpoint
+`coreClient.ServiceClientOptions.endpoint`
 
-___
+***
 
-### httpClient
+### httpClient?
 
-• `Optional` **httpClient**: `HttpClient`
+> `optional` **httpClient**: `HttpClient`
 
 The HttpClient that will be used to send HTTP requests.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.httpClient
+`coreClient.ServiceClientOptions.httpClient`
 
-___
+***
 
-### pipeline
+### pipeline?
 
-• `Optional` **pipeline**: `Pipeline`
+> `optional` **pipeline**: `Pipeline`
 
 A customized pipeline to use, otherwise a default one will be created.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.pipeline
+`coreClient.ServiceClientOptions.pipeline`
 
-___
+***
 
-### proxyOptions
+### proxyOptions?
 
-• `Optional` **proxyOptions**: `ProxySettings`
+> `optional` **proxyOptions**: `ProxySettings`
 
 Options to configure a proxy for outgoing requests.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.proxyOptions
+`coreClient.ServiceClientOptions.proxyOptions`
 
-___
+***
 
-### redirectOptions
+### redirectOptions?
 
-• `Optional` **redirectOptions**: `RedirectPolicyOptions`
+> `optional` **redirectOptions**: `RedirectPolicyOptions`
 
 Options for how redirect responses are handled.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.redirectOptions
+`coreClient.ServiceClientOptions.redirectOptions`
 
-___
+***
 
-### region
+### region?
 
-• `Optional` **region**: `string`
+> `optional` **region**: `string`
 
 region - server parameter
 
-___
+***
 
-### requestContentType
+### requestContentType?
 
-• `Optional` **requestContentType**: `string`
+> `optional` **requestContentType**: `string`
 
 The default request content type for the service.
 Used if no requestContentType is present on an OperationSpec.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.requestContentType
+`coreClient.ServiceClientOptions.requestContentType`
 
-___
+***
 
-### retryOptions
+### retryOptions?
 
-• `Optional` **retryOptions**: `PipelineRetryOptions`
+> `optional` **retryOptions**: `PipelineRetryOptions`
 
 Options that control how to retry failed requests.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.retryOptions
+`coreClient.ServiceClientOptions.retryOptions`
 
-___
+***
 
-### telemetryOptions
+### telemetryOptions?
 
-• `Optional` **telemetryOptions**: `TelemetryOptions`
+> `optional` **telemetryOptions**: `TelemetryOptions`
 
 Options for setting common telemetry and tracing info to outgoing requests.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.telemetryOptions
+`coreClient.ServiceClientOptions.telemetryOptions`
 
-___
+***
 
-### tlsOptions
+### tlsOptions?
 
-• `Optional` **tlsOptions**: `TlsSettings`
+> `optional` **tlsOptions**: `TlsSettings`
 
 Options for configuring TLS authentication
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.tlsOptions
+`coreClient.ServiceClientOptions.tlsOptions`
 
-___
+***
 
-### userAgentOptions
+### userAgentOptions?
 
-• `Optional` **userAgentOptions**: `UserAgentPolicyOptions`
+> `optional` **userAgentOptions**: `UserAgentPolicyOptions`
 
 Options for adding user agent details to outgoing requests.
 
 #### Inherited from
 
-coreClient.ServiceClientOptions.userAgentOptions
+`coreClient.ServiceClientOptions.userAgentOptions`

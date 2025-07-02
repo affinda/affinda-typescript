@@ -1,39 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ChangedValidationResults
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ChangedValidationResults
 
 # Interface: ChangedValidationResults
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [created](ChangedValidationResults.md#created)
-- [deleted](ChangedValidationResults.md#deleted)
-- [updated](ChangedValidationResults.md#updated)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### created
+### created?
 
-• `Optional` **created**: [`ValidationResult`](ValidationResult.md)[]
+> `optional` **created**: [`ValidationResult`](ValidationResult.md)[]
 
 List of validation results created during this operation.
 
-___
+***
 
-### deleted
+### deleted?
 
-• `Optional` **deleted**: [`ValidationResult`](ValidationResult.md)[]
+> `optional` **deleted**: [`ValidationResult`](ValidationResult.md)[]
 
 List of validation results deleted during this operation.
 
-___
+***
 
-### updated
+### updated?
 
-• `Optional` **updated**: [`ValidationResult`](ValidationResult.md)[]
+> `optional` **updated**: [`ValidationResult`](ValidationResult.md)[]
 
 List of validation results updated during this operation.

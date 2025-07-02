@@ -1,51 +1,42 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSkill
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSkill
 
 # Interface: ResumeSkill
 
-## Hierarchy
+## Extended by
 
-- **`ResumeSkill`**
-
-  ↳ [`ResumeSearchDetailSkillsValueItem`](ResumeSearchDetailSkillsValueItem.md)
-
-  ↳ [`ResumeSearchDetailLanguagesValueItem`](ResumeSearchDetailLanguagesValueItem.md)
-
-## Table of contents
-
-### Properties
-
-- [lastUsed](ResumeSkill.md#lastused)
-- [name](ResumeSkill.md#name)
-- [numberOfMonths](ResumeSkill.md#numberofmonths)
-- [sources](ResumeSkill.md#sources)
-- [type](ResumeSkill.md#type)
+- [`ResumeSearchDetailSkillsValueItem`](ResumeSearchDetailSkillsValueItem.md)
+- [`ResumeSearchDetailLanguagesValueItem`](ResumeSearchDetailLanguagesValueItem.md)
 
 ## Properties
 
-### lastUsed
+### lastUsed?
 
-• `Optional` **lastUsed**: `string`
+> `optional` **lastUsed**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### numberOfMonths
+### numberOfMonths?
 
-• `Optional` **numberOfMonths**: `number`
+> `optional` **numberOfMonths**: `number`
 
-___
+***
 
-### sources
+### sources?
 
-• `Optional` **sources**: [`ResumeSkillSourcesItem`](ResumeSkillSourcesItem.md)[]
+> `optional` **sources**: [`ResumeSkillSourcesItem`](ResumeSkillSourcesItem.md)[]
 
-___
+***
 
-### type
+### type?
 
-• `Optional` **type**: `string`
+> `optional` **type**: `string`

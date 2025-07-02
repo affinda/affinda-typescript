@@ -1,187 +1,154 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Annotation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Annotation
 
 # Interface: Annotation
 
-## Hierarchy
+## Extended by
 
-- **`Annotation`**
-
-  ↳ [`JobTitleAnnotation`](JobTitleAnnotation.md)
-
-  ↳ [`TextAnnotation`](TextAnnotation.md)
-
-  ↳ [`DateAnnotation`](DateAnnotation.md)
-
-  ↳ [`LanguageAnnotation`](LanguageAnnotation.md)
-
-  ↳ [`SkillAnnotation`](SkillAnnotation.md)
-
-  ↳ [`ExpectedRemunerationAnnotation`](ExpectedRemunerationAnnotation.md)
-
-  ↳ [`LocationAnnotation`](LocationAnnotation.md)
-
-  ↳ [`YearsExperienceAnnotation`](YearsExperienceAnnotation.md)
-
-  ↳ [`AnnotationWithValidationResults`](AnnotationWithValidationResults.md)
-
-  ↳ [`FloatAnnotation`](FloatAnnotation.md)
-
-  ↳ [`RowAnnotation`](RowAnnotation.md)
-
-  ↳ [`TableAnnotation`](TableAnnotation.md)
-
-  ↳ [`RowBetaAnnotation`](RowBetaAnnotation.md)
-
-  ↳ [`TableBetaAnnotation`](TableBetaAnnotation.md)
-
-  ↳ [`CurrencyCodeAnnotation`](CurrencyCodeAnnotation.md)
-
-  ↳ [`DateRangeAnnotation`](DateRangeAnnotation.md)
-
-  ↳ [`PhoneNumberAnnotation`](PhoneNumberAnnotation.md)
-
-  ↳ [`UrlAnnotation`](UrlAnnotation.md)
+- [`JobTitleAnnotation`](JobTitleAnnotation.md)
+- [`TextAnnotation`](TextAnnotation.md)
+- [`DateAnnotation`](DateAnnotation.md)
+- [`LanguageAnnotation`](LanguageAnnotation.md)
+- [`SkillAnnotation`](SkillAnnotation.md)
+- [`ExpectedRemunerationAnnotation`](ExpectedRemunerationAnnotation.md)
+- [`LocationAnnotation`](LocationAnnotation.md)
+- [`YearsExperienceAnnotation`](YearsExperienceAnnotation.md)
+- [`AnnotationWithValidationResults`](AnnotationWithValidationResults.md)
+- [`FloatAnnotation`](FloatAnnotation.md)
+- [`RowAnnotation`](RowAnnotation.md)
+- [`TableAnnotation`](TableAnnotation.md)
+- [`RowBetaAnnotation`](RowBetaAnnotation.md)
+- [`TableBetaAnnotation`](TableBetaAnnotation.md)
+- [`CurrencyCodeAnnotation`](CurrencyCodeAnnotation.md)
+- [`DateRangeAnnotation`](DateRangeAnnotation.md)
+- [`PhoneNumberAnnotation`](PhoneNumberAnnotation.md)
+- [`UrlAnnotation`](UrlAnnotation.md)
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [classificationConfidence](Annotation.md#classificationconfidence)
-- [confidence](Annotation.md#confidence)
-- [contentType](Annotation.md#contenttype)
-- [dataPoint](Annotation.md#datapoint)
-- [document](Annotation.md#document)
-- [id](Annotation.md#id)
-- [isAutoVerified](Annotation.md#isautoverified)
-- [isClientVerified](Annotation.md#isclientverified)
-- [isVerified](Annotation.md#isverified)
-- [pageIndex](Annotation.md#pageindex)
-- [parent](Annotation.md#parent)
-- [raw](Annotation.md#raw)
-- [rectangle](Annotation.md#rectangle)
-- [rectangles](Annotation.md#rectangles)
-- [textExtractionConfidence](Annotation.md#textextractionconfidence)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
 ### classificationConfidence
 
-• **classificationConfidence**: ``null`` \| `number`
+> **classificationConfidence**: `null` \| `number`
 
 The model's confidence that the text has been classified correctly
 
-___
+***
 
 ### confidence
 
-• **confidence**: ``null`` \| `number`
+> **confidence**: `null` \| `number`
 
 The overall confidence that the model's prediction is correct
 
-___
+***
 
 ### contentType
 
-• **contentType**: `string`
+> **contentType**: `string`
 
 The different data types of annotations
 
-___
+***
 
 ### dataPoint
 
-• **dataPoint**: `string`
+> **dataPoint**: `string`
 
 Data point's identifier
 
-___
+***
 
 ### document
 
-• **document**: `string`
+> **document**: `string`
 
 Unique identifier for the document
 
-___
+***
 
 ### id
 
-• **id**: `number`
+> **id**: `number`
 
 Annotation's ID
 
-___
+***
 
 ### isAutoVerified
 
-• **isAutoVerified**: `boolean`
+> **isAutoVerified**: `boolean`
 
 Indicates whether the data has been auto-validated
 
-___
+***
 
 ### isClientVerified
 
-• **isClientVerified**: `boolean`
+> **isClientVerified**: `boolean`
 
 Indicates whether the data has been validated by a human
 
-___
+***
 
 ### isVerified
 
-• **isVerified**: `boolean`
+> **isVerified**: `boolean`
 
 Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules
 
-___
+***
 
 ### pageIndex
 
-• **pageIndex**: ``null`` \| `number`
+> **pageIndex**: `null` \| `number`
 
 The page number within the document, starting from 0.
 
-___
+***
 
-### parent
+### parent?
 
-• `Optional` **parent**: `number`
+> `optional` **parent**: `number`
 
 The parent annotation's ID
 
-___
+***
 
 ### raw
 
-• **raw**: ``null`` \| `string`
+> **raw**: `null` \| `string`
 
 Raw data extracted from the before any post-processing
 
-___
+***
 
 ### rectangle
 
-• **rectangle**: ``null`` \| [`Rectangle`](Rectangle.md)
+> **rectangle**: `null` \| [`Rectangle`](Rectangle.md)
 
 x/y coordinates for the rectangular bounding box containing the data
 
-___
+***
 
 ### rectangles
 
-• **rectangles**: [`Rectangle`](Rectangle.md)[]
+> **rectangles**: [`Rectangle`](Rectangle.md)[]
 
 x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles.
 
-___
+***
 
 ### textExtractionConfidence
 
-• **textExtractionConfidence**: ``null`` \| `number`
+> **textExtractionConfidence**: `null` \| `number`
 
 If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model

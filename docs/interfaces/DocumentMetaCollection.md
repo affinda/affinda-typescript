@@ -1,47 +1,41 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentMetaCollection
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentMetaCollection
 
 # Interface: DocumentMetaCollection
 
-## Table of contents
-
-### Properties
-
-- [autoRefreshValidationResults](DocumentMetaCollection.md#autorefreshvalidationresults)
-- [extractor](DocumentMetaCollection.md#extractor)
-- [identifier](DocumentMetaCollection.md#identifier)
-- [name](DocumentMetaCollection.md#name)
-- [validationRules](DocumentMetaCollection.md#validationrules)
-
 ## Properties
 
-### autoRefreshValidationResults
+### autoRefreshValidationResults?
 
-• `Optional` **autoRefreshValidationResults**: `boolean`
+> `optional` **autoRefreshValidationResults**: `boolean`
 
 If True, validation results are refreshed whenever annotations are changed.
 
-___
+***
 
-### extractor
+### extractor?
 
-• `Optional` **extractor**: [`DocumentMetaCollectionExtractor`](DocumentMetaCollectionExtractor.md)
+> `optional` **extractor**: [`DocumentMetaCollectionExtractor`](DocumentMetaCollectionExtractor.md)
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### validationRules
+### validationRules?
 
-• `Optional` **validationRules**: [`ValidationRule`](ValidationRule.md)[]
+> `optional` **validationRules**: [`ValidationRule`](ValidationRule.md)[]

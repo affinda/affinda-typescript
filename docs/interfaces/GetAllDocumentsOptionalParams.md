@@ -1,157 +1,138 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllDocumentsOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / GetAllDocumentsOptionalParams
 
 # Interface: GetAllDocumentsOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`GetAllDocumentsOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](GetAllDocumentsOptionalParams.md#abortsignal)
-- [collection](GetAllDocumentsOptionalParams.md#collection)
-- [compact](GetAllDocumentsOptionalParams.md#compact)
-- [count](GetAllDocumentsOptionalParams.md#count)
-- [createdDt](GetAllDocumentsOptionalParams.md#createddt)
-- [customIdentifier](GetAllDocumentsOptionalParams.md#customidentifier)
-- [exclude](GetAllDocumentsOptionalParams.md#exclude)
-- [failed](GetAllDocumentsOptionalParams.md#failed)
-- [hasChallenges](GetAllDocumentsOptionalParams.md#haschallenges)
-- [inReview](GetAllDocumentsOptionalParams.md#inreview)
-- [includeData](GetAllDocumentsOptionalParams.md#includedata)
-- [limit](GetAllDocumentsOptionalParams.md#limit)
-- [offset](GetAllDocumentsOptionalParams.md#offset)
-- [onResponse](GetAllDocumentsOptionalParams.md#onresponse)
-- [ordering](GetAllDocumentsOptionalParams.md#ordering)
-- [ready](GetAllDocumentsOptionalParams.md#ready)
-- [requestOptions](GetAllDocumentsOptionalParams.md#requestoptions)
-- [search](GetAllDocumentsOptionalParams.md#search)
-- [serializerOptions](GetAllDocumentsOptionalParams.md#serializeroptions)
-- [state](GetAllDocumentsOptionalParams.md#state)
-- [tags](GetAllDocumentsOptionalParams.md#tags)
-- [tracingOptions](GetAllDocumentsOptionalParams.md#tracingoptions)
-- [validatable](GetAllDocumentsOptionalParams.md#validatable)
-- [workspace](GetAllDocumentsOptionalParams.md#workspace)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### collection
+### camelCase?
 
-• `Optional` **collection**: `string`
+> `optional` **camelCase**: `boolean`
+
+Whether to return the response in camelCase. Default is true.
+
+***
+
+### collection?
+
+> `optional` **collection**: `string`
 
 Filter by collection.
 
-___
+***
 
-### compact
+### compact?
 
-• `Optional` **compact**: `boolean`
+> `optional` **compact**: `boolean`
 
 If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false".
 
-___
+***
 
-### count
+### count?
 
-• `Optional` **count**: `boolean`
+> `optional` **count**: `boolean`
 
 If "false", the documents count is not computed, thus saving time for large collections. Default is "true".
 
-___
+***
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `string`
+> `optional` **createdDt**: `string`
 
 Filter by created datetime.
 
-___
+***
 
-### customIdentifier
+### customIdentifier?
 
-• `Optional` **customIdentifier**: `string`
+> `optional` **customIdentifier**: `string`
 
 Filter for documents with this custom identifier.
 
-___
+***
 
-### exclude
+### exclude?
 
-• `Optional` **exclude**: `string`[]
+> `optional` **exclude**: `string`[]
 
 Exclude some documents from the result.
 
-___
+***
 
-### failed
+### failed?
 
-• `Optional` **failed**: `boolean`
+> `optional` **failed**: `boolean`
 
 Filter by failed status.
 
-___
+***
 
-### hasChallenges
+### hasChallenges?
 
-• `Optional` **hasChallenges**: `boolean`
+> `optional` **hasChallenges**: `boolean`
 
 Filter for documents with challenges.
 
-___
+***
 
-### inReview
+### includeData?
 
-• `Optional` **inReview**: `boolean`
-
-Exclude documents that are currently being reviewed.
-
-___
-
-### includeData
-
-• `Optional` **includeData**: `boolean`
+> `optional` **includeData**: `boolean`
 
 By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint.
 
-___
+***
 
-### limit
+### inReview?
 
-• `Optional` **limit**: `number`
+> `optional` **inReview**: `boolean`
+
+Exclude documents that are currently being reviewed.
+
+***
+
+### limit?
+
+> `optional` **limit**: `number`
 
 The numbers of results to return.
 
-___
+***
 
-### offset
+### offset?
 
-• `Optional` **offset**: `number`
+> `optional` **offset**: `number`
 
 The number of documents to skip before starting to collect the result set.
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -159,96 +140,96 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### ordering
+### ordering?
 
-• `Optional` **ordering**: `string`[]
+> `optional` **ordering**: `string`[]
 
 Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. Supported values include: 'file_name', 'extractor', 'created_dt', 'validated_dt', 'archived_dt' and 'parsed__<dataPointSlug>'.
 
-___
+***
 
-### ready
+### ready?
 
-• `Optional` **ready**: `boolean`
+> `optional` **ready**: `boolean`
 
 Filter by ready status.
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### search
+### search?
 
-• `Optional` **search**: `string`
+> `optional` **search**: `string`
 
 Partial, case-insensitive match with file name or tag name.
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### state
+### state?
 
-• `Optional` **state**: `string`
+> `optional` **state**: `string`
 
 Filter by the document's state.
 
-___
+***
 
-### tags
+### tags?
 
-• `Optional` **tags**: `number`[]
+> `optional` **tags**: `number`[]
 
 Filter by tag's IDs.
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`
 
-___
+***
 
-### validatable
+### validatable?
 
-• `Optional` **validatable**: `boolean`
+> `optional` **validatable**: `boolean`
 
 Filter for validatable documents.
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`
 
 Filter by workspace.

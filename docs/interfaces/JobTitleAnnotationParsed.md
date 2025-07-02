@@ -1,31 +1,27 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobTitleAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobTitleAnnotationParsed
 
 # Interface: JobTitleAnnotationParsed
 
 Years of experience range
 
-## Table of contents
-
-### Properties
-
-- [classification](JobTitleAnnotationParsed.md#classification)
-- [managementLevel](JobTitleAnnotationParsed.md#managementlevel)
-- [name](JobTitleAnnotationParsed.md#name)
-
 ## Properties
 
-### classification
+### classification?
 
-• `Optional` **classification**: [`JobTitleAnnotationParsedClassification`](JobTitleAnnotationParsedClassification.md)
+> `optional` **classification**: [`JobTitleAnnotationParsedClassification`](JobTitleAnnotationParsedClassification.md)
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: `string`
+> `optional` **managementLevel**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`

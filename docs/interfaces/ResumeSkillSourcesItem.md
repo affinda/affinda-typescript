@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSkillSourcesItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSkillSourcesItem
 
 # Interface: ResumeSkillSourcesItem
 
-## Table of contents
-
-### Properties
-
-- [position](ResumeSkillSourcesItem.md#position)
-- [section](ResumeSkillSourcesItem.md#section)
-
 ## Properties
 
-### position
+### position?
 
-• `Optional` **position**: `number`
+> `optional` **position**: `number`
 
-___
+***
 
-### section
+### section?
 
-• `Optional` **section**: `string`
+> `optional` **section**: `string`

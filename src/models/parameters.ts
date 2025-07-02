@@ -425,6 +425,16 @@ export const count: OperationQueryParameter = {
   },
 };
 
+export const camelCase: OperationQueryParameter = {
+  parameterPath: ["options", "camelCase"],
+  mapper: {
+    serializedName: "camel_case",
+    type: {
+      name: "Boolean",
+    },
+  },
+};
+
 export const contentType1: OperationParameter = {
   parameterPath: ["options", "contentType"],
   mapper: {
@@ -1075,6 +1085,26 @@ export const body35: OperationParameter = {
 export const body36: OperationParameter = {
   parameterPath: "body",
   mapper: DocumentTypeUpdateMapper,
+};
+
+export const title: OperationQueryParameter = {
+  parameterPath: ["options", "title"],
+  mapper: {
+    serializedName: "title",
+    type: {
+      name: "String",
+    },
+  },
+};
+
+export const modelName: OperationQueryParameter = {
+  parameterPath: ["options", "modelName"],
+  mapper: {
+    serializedName: "model_name",
+    type: {
+      name: "String",
+    },
+  },
 };
 
 export const name1: OperationParameter = {

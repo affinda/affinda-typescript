@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailJobTitleValue
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailJobTitleValue
 
 # Interface: JobDescriptionSearchDetailJobTitleValue
 
-## Table of contents
-
-### Properties
-
-- [companyName](JobDescriptionSearchDetailJobTitleValue.md#companyname)
-- [match](JobDescriptionSearchDetailJobTitleValue.md#match)
-- [name](JobDescriptionSearchDetailJobTitleValue.md#name)
-
 ## Properties
 
-### companyName
+### companyName?
 
-• `Optional` **companyName**: `string`
+> `optional` **companyName**: `string`
 
-___
+***
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`

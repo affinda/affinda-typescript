@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Get200ApplicationJsonPropertiesItemsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Get200ApplicationJsonPropertiesItemsItem
 
 # Interface: Get200ApplicationJsonPropertiesItemsItem
 
-## Table of contents
-
-### Properties
-
-- [document](Get200ApplicationJsonPropertiesItemsItem.md#document)
-
 ## Properties
 
-### document
+### document?
 
-• `Optional` **document**: `string`
+> `optional` **document**: `string`

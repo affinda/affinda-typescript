@@ -1,87 +1,75 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Extractor
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Extractor
 
 # Interface: Extractor
 
-## Table of contents
-
-### Properties
-
-- [baseExtractor](Extractor.md#baseextractor)
-- [category](Extractor.md#category)
-- [createdDt](Extractor.md#createddt)
-- [fieldGroups](Extractor.md#fieldgroups)
-- [identifier](Extractor.md#identifier)
-- [isCustom](Extractor.md#iscustom)
-- [lastTrainedDt](Extractor.md#lasttraineddt)
-- [name](Extractor.md#name)
-- [namePlural](Extractor.md#nameplural)
-- [organization](Extractor.md#organization)
-- [validatable](Extractor.md#validatable)
-
 ## Properties
 
-### baseExtractor
+### baseExtractor?
 
-• `Optional` **baseExtractor**: [`ExtractorBaseExtractor`](ExtractorBaseExtractor.md)
+> `optional` **baseExtractor**: [`ExtractorBaseExtractor`](ExtractorBaseExtractor.md)
 
-___
+***
 
-### category
+### category?
 
-• `Optional` **category**: `string`
+> `optional` **category**: `string`
 
-___
+***
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `Date`
+> `optional` **createdDt**: `Date`
 
-___
+***
 
-### fieldGroups
+### fieldGroups?
 
-• `Optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
+> `optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
-### isCustom
+### isCustom?
 
-• `Optional` **isCustom**: `boolean`
+> `optional` **isCustom**: `boolean`
 
-___
+***
 
-### lastTrainedDt
+### lastTrainedDt?
 
-• `Optional` **lastTrainedDt**: `Date`
+> `optional` **lastTrainedDt**: `Date`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### namePlural
 
-• **namePlural**: `string`
+> **namePlural**: `string`
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: [`Organization`](Organization.md)
+> `optional` **organization**: [`Organization`](Organization.md)
 
-___
+***
 
 ### validatable
 
-• **validatable**: `boolean`
+> **validatable**: `boolean`

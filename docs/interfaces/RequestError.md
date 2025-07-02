@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / RequestError
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / RequestError
 
 # Interface: RequestError
-
-## Table of contents
-
-### Properties
-
-- [errors](RequestError.md#errors)
-- [type](RequestError.md#type)
 
 ## Properties
 
 ### errors
 
-• **errors**: [`RequestErrorErrorsItem`](RequestErrorErrorsItem.md)[]
+> **errors**: [`RequestErrorErrorsItem`](RequestErrorErrorsItem.md)[]
 
-___
+***
 
 ### type
 
-• **type**: `string`
+> **type**: `string`

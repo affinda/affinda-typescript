@@ -1,42 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema
 
 # Interface: PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema
 
-## Table of contents
-
-### Properties
-
-- [count](PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md#count)
-- [next](PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md#next)
-- [previous](PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md#previous)
-- [results](PathsO7SnenV3IndexNameDocumentsGetResponses200ContentApplicationJsonSchema.md#results)
-
 ## Properties
 
-### count
+### count?
 
-• `Optional` **count**: `number`
+> `optional` **count**: `number`
 
 Number of indexed documents in result
 
-___
+***
 
-### next
+### next?
 
-• `Optional` **next**: `string`
+> `optional` **next**: `string`
 
 URL to request next page of results
 
-___
+***
 
-### previous
+### previous?
 
-• `Optional` **previous**: `string`
+> `optional` **previous**: `string`
 
 URL to request previous page of results
 
-___
+***
 
-### results
+### results?
 
-• `Optional` **results**: [`Get200ApplicationJsonPropertiesItemsItem`](Get200ApplicationJsonPropertiesItemsItem.md)[]
+> `optional` **results**: [`Get200ApplicationJsonPropertiesItemsItem`](Get200ApplicationJsonPropertiesItemsItem.md)[]

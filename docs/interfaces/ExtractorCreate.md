@@ -1,61 +1,53 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ExtractorCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ExtractorCreate
 
 # Interface: ExtractorCreate
 
-## Table of contents
-
-### Properties
-
-- [baseExtractor](ExtractorCreate.md#baseextractor)
-- [category](ExtractorCreate.md#category)
-- [fieldGroups](ExtractorCreate.md#fieldgroups)
-- [name](ExtractorCreate.md#name)
-- [namePlural](ExtractorCreate.md#nameplural)
-- [organization](ExtractorCreate.md#organization)
-- [validatable](ExtractorCreate.md#validatable)
-
 ## Properties
 
-### baseExtractor
+### baseExtractor?
 
-• `Optional` **baseExtractor**: `string`
+> `optional` **baseExtractor**: `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
-### category
+### category?
 
-• `Optional` **category**: `string`
+> `optional` **category**: `string`
 
-___
+***
 
-### fieldGroups
+### fieldGroups?
 
-• `Optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
+> `optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
-### namePlural
+### namePlural?
 
-• `Optional` **namePlural**: `string`
+> `optional` **namePlural**: `string`
 
-___
+***
 
 ### organization
 
-• **organization**: `string`
+> **organization**: `string`
 
 Uniquely identify an organization.
 
-___
+***
 
-### validatable
+### validatable?
 
-• `Optional` **validatable**: `boolean`
+> `optional` **validatable**: `boolean`

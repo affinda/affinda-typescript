@@ -1,24 +1,20 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobTitleParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobTitleParsed
 
 # Interface: JobTitleParsed
 
-## Hierarchy
+## Extended by
 
-- **`JobTitleParsed`**
-
-  ↳ [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
-
-## Table of contents
-
-### Properties
-
-- [parsed](JobTitleParsed.md#parsed)
+- [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
 
 ## Properties
 
-### parsed
+### parsed?
 
-• `Optional` `Readonly` **parsed**: [`JobTitleParsedParsed`](JobTitleParsedParsed.md)
+> `readonly` `optional` **parsed**: [`JobTitleParsedParsed`](JobTitleParsedParsed.md)
 
 Matching job title to extracted text
 NOTE: This property will not be serialized. It can only be populated by the server.

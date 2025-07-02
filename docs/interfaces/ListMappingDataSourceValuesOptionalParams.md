@@ -1,79 +1,66 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ListMappingDataSourceValuesOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ListMappingDataSourceValuesOptionalParams
 
 # Interface: ListMappingDataSourceValuesOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`ListMappingDataSourceValuesOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](ListMappingDataSourceValuesOptionalParams.md#abortsignal)
-- [annotation](ListMappingDataSourceValuesOptionalParams.md#annotation)
-- [document](ListMappingDataSourceValuesOptionalParams.md#document)
-- [limit](ListMappingDataSourceValuesOptionalParams.md#limit)
-- [offset](ListMappingDataSourceValuesOptionalParams.md#offset)
-- [onResponse](ListMappingDataSourceValuesOptionalParams.md#onresponse)
-- [requestOptions](ListMappingDataSourceValuesOptionalParams.md#requestoptions)
-- [search](ListMappingDataSourceValuesOptionalParams.md#search)
-- [serializerOptions](ListMappingDataSourceValuesOptionalParams.md#serializeroptions)
-- [tracingOptions](ListMappingDataSourceValuesOptionalParams.md#tracingoptions)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### annotation
+### annotation?
 
-• `Optional` **annotation**: `number`
+> `optional` **annotation**: `number`
 
 Filter based on annotation ID
 
-___
+***
 
-### document
+### document?
 
-• `Optional` **document**: `string`
+> `optional` **document**: `string`
 
 Identifier of the document to apply filter lookups on if available
 
-___
+***
 
-### limit
+### limit?
 
-• `Optional` **limit**: `number`
+> `optional` **limit**: `number`
 
 The numbers of results to return.
 
-___
+***
 
-### offset
+### offset?
 
-• `Optional` **offset**: `number`
+> `optional` **offset**: `number`
 
 The number of documents to skip before starting to collect the result set.
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -81,48 +68,48 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### search
+### search?
 
-• `Optional` **search**: `string`
+> `optional` **search**: `string`
 
 Search for specific values
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`

@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / BatchDeleteAnnotationsResponse
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / BatchDeleteAnnotationsResponse
 
 # Interface: BatchDeleteAnnotationsResponse
 
-## Table of contents
-
-### Properties
-
-- [validationResults](BatchDeleteAnnotationsResponse.md#validationresults)
-
 ## Properties
 
-### validationResults
+### validationResults?
 
-• `Optional` **validationResults**: `Record`\<`string`, `unknown`\>
+> `optional` **validationResults**: `Record`\<`string`, `unknown`\>
 
 The validation results created, changed or deleted as a result of deleting the annotations.

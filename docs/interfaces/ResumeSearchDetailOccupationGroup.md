@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailOccupationGroup
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailOccupationGroup
 
 # Interface: ResumeSearchDetailOccupationGroup
 
-## Table of contents
-
-### Properties
-
-- [missing](ResumeSearchDetailOccupationGroup.md#missing)
-- [value](ResumeSearchDetailOccupationGroup.md#value)
-
 ## Properties
 
-### missing
+### missing?
 
-• `Optional` **missing**: `number`[]
+> `optional` **missing**: `number`[]
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: [`OccupationGroupSearchResult`](OccupationGroupSearchResult.md)[]
+> `optional` **value**: [`OccupationGroupSearchResult`](OccupationGroupSearchResult.md)[]

@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / UrlAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / UrlAnnotationParsed
 
 # Interface: UrlAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [domain](UrlAnnotationParsed.md#domain)
-- [url](UrlAnnotationParsed.md#url)
-
 ## Properties
 
-### domain
+### domain?
 
-• `Optional` **domain**: `string`
+> `optional` **domain**: `string`
 
-___
+***
 
-### url
+### url?
 
-• `Optional` **url**: `string`
+> `optional` **url**: `string`

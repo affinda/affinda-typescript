@@ -1,4 +1,8 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AffindaCredential
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / AffindaCredential
 
 # Class: AffindaCredential
 
@@ -6,55 +10,58 @@
 
 - `TokenCredential`
 
-## Table of contents
-
-### Constructors
-
-- [constructor](AffindaCredential.md#constructor)
-
-### Properties
-
-- [token](AffindaCredential.md#token)
-
-### Methods
-
-- [getToken](AffindaCredential.md#gettoken)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new AffindaCredential**(`token`)
+> **new AffindaCredential**(`token`): `AffindaCredential`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `token` | `string` |
+##### token
+
+`string`
+
+#### Returns
+
+`AffindaCredential`
 
 ## Properties
 
 ### token
 
-• **token**: `string`
+> **token**: `string`
 
 ## Methods
 
-### getToken
+### getToken()
 
-▸ **getToken**(`scopes`, `options?`): `Promise`\<``null`` \| `AccessToken`\>
+> **getToken**(`scopes`, `options?`): `Promise`\<`null` \| `AccessToken`\>
+
+Gets the token provided by this credential.
+
+This method is called automatically by Azure SDK client libraries. You may call this method
+directly, but you must also handle token caching and token refreshing.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `scopes` | `string` \| `string`[] |
-| `options?` | `GetTokenOptions` |
+##### scopes
+
+The list of scopes for which the token will have access.
+
+`string` | `string`[]
+
+##### options?
+
+`GetTokenOptions`
+
+The options used to configure any requests this
+               TokenCredential implementation might make.
 
 #### Returns
 
-`Promise`\<``null`` \| `AccessToken`\>
+`Promise`\<`null` \| `AccessToken`\>
 
 #### Implementation of
 
-TokenCredential.getToken
+`TokenCredential.getToken`

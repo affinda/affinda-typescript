@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
 
 # Interface: Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1
 
-## Hierarchy
+## Extended by
 
-- **`Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1`**
-
-  ↳ [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
-
-## Table of contents
-
-### Properties
-
-- [match](Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1.md#match)
+- [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
 
 ## Properties
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`

@@ -1,49 +1,43 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResthookSubscriptionCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResthookSubscriptionCreate
 
 # Interface: ResthookSubscriptionCreate
-
-## Table of contents
-
-### Properties
-
-- [event](ResthookSubscriptionCreate.md#event)
-- [organization](ResthookSubscriptionCreate.md#organization)
-- [targetUrl](ResthookSubscriptionCreate.md#targeturl)
-- [version](ResthookSubscriptionCreate.md#version)
-- [workspace](ResthookSubscriptionCreate.md#workspace)
 
 ## Properties
 
 ### event
 
-• **event**: `string`
+> **event**: `string`
 
 The event name to subscribe to.
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: `string`
+> `optional` **organization**: `string`
 
-___
+***
 
 ### targetUrl
 
-• **targetUrl**: `string`
+> **targetUrl**: `string`
 
 URL of the resthook's receiver.
 
-___
+***
 
-### version
+### version?
 
-• `Optional` **version**: `string`
+> `optional` **version**: `string`
 
 Version of the resthook subscription. Determines the resthook body being fired.
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`

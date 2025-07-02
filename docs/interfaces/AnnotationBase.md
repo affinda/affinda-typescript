@@ -1,131 +1,110 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AnnotationBase
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / AnnotationBase
 
 # Interface: AnnotationBase
 
-## Hierarchy
+## Extended by
 
-- **`AnnotationBase`**
-
-  ↳ [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
-
-  ↳ [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
-
-  ↳ [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
-
-  ↳ [`LanguageAnnotationUpdate`](LanguageAnnotationUpdate.md)
-
-  ↳ [`SkillAnnotationUpdate`](SkillAnnotationUpdate.md)
-
-  ↳ [`ExpectedRemunerationAnnotationUpdate`](ExpectedRemunerationAnnotationUpdate.md)
-
-  ↳ [`LocationAnnotationUpdate`](LocationAnnotationUpdate.md)
-
-  ↳ [`YearsExperienceAnnotationUpdate`](YearsExperienceAnnotationUpdate.md)
+- [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
+- [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+- [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
+- [`LanguageAnnotationUpdate`](LanguageAnnotationUpdate.md)
+- [`SkillAnnotationUpdate`](SkillAnnotationUpdate.md)
+- [`ExpectedRemunerationAnnotationUpdate`](ExpectedRemunerationAnnotationUpdate.md)
+- [`LocationAnnotationUpdate`](LocationAnnotationUpdate.md)
+- [`YearsExperienceAnnotationUpdate`](YearsExperienceAnnotationUpdate.md)
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [classificationConfidence](AnnotationBase.md#classificationconfidence)
-- [confidence](AnnotationBase.md#confidence)
-- [contentType](AnnotationBase.md#contenttype)
-- [dataPoint](AnnotationBase.md#datapoint)
-- [id](AnnotationBase.md#id)
-- [isAutoVerified](AnnotationBase.md#isautoverified)
-- [isClientVerified](AnnotationBase.md#isclientverified)
-- [isVerified](AnnotationBase.md#isverified)
-- [pageIndex](AnnotationBase.md#pageindex)
-- [raw](AnnotationBase.md#raw)
-- [rectangle](AnnotationBase.md#rectangle)
-- [rectangles](AnnotationBase.md#rectangles)
-- [textExtractionConfidence](AnnotationBase.md#textextractionconfidence)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### classificationConfidence
+### classificationConfidence?
 
-• `Optional` **classificationConfidence**: `number`
+> `optional` **classificationConfidence**: `number`
 
 The model's confidence that the text has been classified correctly
 
-___
+***
 
-### confidence
+### confidence?
 
-• `Optional` **confidence**: `number`
+> `optional` **confidence**: `number`
 
 The overall confidence that the model's prediction is correct
 
-___
+***
 
-### contentType
+### contentType?
 
-• `Optional` **contentType**: `string`
+> `optional` **contentType**: `string`
 
-___
+***
 
-### dataPoint
+### dataPoint?
 
-• `Optional` **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
-___
+***
 
-### isAutoVerified
+### isAutoVerified?
 
-• `Optional` **isAutoVerified**: `boolean`
+> `optional` **isAutoVerified**: `boolean`
 
-___
+***
 
-### isClientVerified
+### isClientVerified?
 
-• `Optional` **isClientVerified**: `boolean`
+> `optional` **isClientVerified**: `boolean`
 
-___
+***
 
-### isVerified
+### isVerified?
 
-• `Optional` **isVerified**: `boolean`
+> `optional` **isVerified**: `boolean`
 
-___
+***
 
-### pageIndex
+### pageIndex?
 
-• `Optional` **pageIndex**: `number`
+> `optional` **pageIndex**: `number`
 
-___
+***
 
-### raw
+### raw?
 
-• `Optional` **raw**: `string`
+> `optional` **raw**: `string`
 
-___
+***
 
-### rectangle
+### rectangle?
 
-• `Optional` **rectangle**: [`Rectangle`](Rectangle.md)
+> `optional` **rectangle**: [`Rectangle`](Rectangle.md)
 
-___
+***
 
-### rectangles
+### rectangles?
 
-• `Optional` `Readonly` **rectangles**: [`Rectangle`](Rectangle.md)[]
+> `readonly` `optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### textExtractionConfidence
+### textExtractionConfidence?
 
-• `Optional` **textExtractionConfidence**: `number`
+> `optional` **textExtractionConfidence**: `number`
 
 If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model.

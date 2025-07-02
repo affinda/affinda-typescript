@@ -1,151 +1,135 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Field
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Field
 
 # Interface: Field
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [autoValidationThreshold](Field.md#autovalidationthreshold)
-- [dataPoint](Field.md#datapoint)
-- [dataSource](Field.md#datasource)
-- [disabledChildFields](Field.md#disabledchildfields)
-- [displayEnumValue](Field.md#displayenumvalue)
-- [displayRawText](Field.md#displayrawtext)
-- [dropNull](Field.md#dropnull)
-- [enableAutoValidationThreshold](Field.md#enableautovalidationthreshold)
-- [enabledChildFields](Field.md#enabledchildfields)
-- [fieldType](Field.md#fieldtype)
-- [fields](Field.md#fields)
-- [hideEnumDetail](Field.md#hideenumdetail)
-- [label](Field.md#label)
-- [mandatory](Field.md#mandatory)
-- [mapping](Field.md#mapping)
-- [showDropdown](Field.md#showdropdown)
-- [slug](Field.md#slug)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### autoValidationThreshold
+### autoValidationThreshold?
 
-• `Optional` **autoValidationThreshold**: `number`
+> `optional` **autoValidationThreshold**: `number`
 
 Threshold for auto validation. If null, uses the collection's autoValidationThreshold.
 
-___
+***
 
 ### dataPoint
 
-• **dataPoint**: `string`
+> **dataPoint**: `string`
 
 Data point identifier
 
-___
+***
 
-### dataSource
+### dataSource?
 
-• `Optional` **dataSource**: `string`
+> `optional` **dataSource**: `string`
 
 Data source mapping identifier
 
-___
+***
 
-### disabledChildFields
+### disabledChildFields?
 
-• `Optional` **disabledChildFields**: [`Field`](Field.md)[]
+> `optional` **disabledChildFields**: `Field`[]
 
-___
+***
 
-### displayEnumValue
+### displayEnumValue?
 
-• `Optional` **displayEnumValue**: `boolean`
+> `optional` **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
-___
+***
 
-### displayRawText
+### displayRawText?
 
-• `Optional` **displayRawText**: `boolean`
+> `optional` **displayRawText**: `boolean`
 
 If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type.
 
-___
+***
 
-### dropNull
+### dropNull?
 
-• `Optional` **dropNull**: `boolean`
+> `optional` **dropNull**: `boolean`
 
 If True, any dropdown annotations that fail to parse to a value will be discarded
 
-___
+***
 
-### enableAutoValidationThreshold
+### enableAutoValidationThreshold?
 
-• `Optional` **enableAutoValidationThreshold**: `boolean`
+> `optional` **enableAutoValidationThreshold**: `boolean`
 
 If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection
 
-___
+***
 
-### enabledChildFields
+### enabledChildFields?
 
-• `Optional` **enabledChildFields**: [`Field`](Field.md)[]
+> `optional` **enabledChildFields**: `Field`[]
 
-___
+***
+
+### fields?
+
+> `optional` **fields**: `Record`\<`string`, `unknown`\>[]
+
+***
 
 ### fieldType
 
-• **fieldType**: `string`
+> **fieldType**: `string`
 
 The different data types of annotations
 
-___
+***
 
-### fields
+### hideEnumDetail?
 
-• `Optional` **fields**: `Record`\<`string`, `unknown`\>[]
-
-___
-
-### hideEnumDetail
-
-• `Optional` **hideEnumDetail**: `boolean`
+> `optional` **hideEnumDetail**: `boolean`
 
 If true, the hoverable enum value detail icon will be hidden.
 
-___
+***
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### mandatory
+### mandatory?
 
-• `Optional` **mandatory**: `boolean`
+> `optional` **mandatory**: `boolean`
 
-___
+***
 
-### mapping
+### mapping?
 
-• `Optional` **mapping**: `string`
+> `optional` **mapping**: `string`
 
 Defines how the data point is mapped to the data source
 
-___
+***
 
-### showDropdown
+### showDropdown?
 
-• `Optional` **showDropdown**: `boolean`
+> `optional` **showDropdown**: `boolean`
 
-___
+***
 
-### slug
+### slug?
 
-• `Optional` **slug**: `string`
+> `optional` **slug**: `string`

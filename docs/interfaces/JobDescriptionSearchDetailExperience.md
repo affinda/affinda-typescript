@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailExperience
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailExperience
 
 # Interface: JobDescriptionSearchDetailExperience
 
-## Table of contents
-
-### Properties
-
-- [match](JobDescriptionSearchDetailExperience.md#match)
-- [maximumExperience](JobDescriptionSearchDetailExperience.md#maximumexperience)
-- [minimumExperience](JobDescriptionSearchDetailExperience.md#minimumexperience)
-
 ## Properties
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`
 
-___
+***
 
-### maximumExperience
+### maximumExperience?
 
-• `Optional` **maximumExperience**: `number`
+> `optional` **maximumExperience**: `number`
 
-___
+***
 
-### minimumExperience
+### minimumExperience?
 
-• `Optional` **minimumExperience**: `number`
+> `optional` **minimumExperience**: `number`

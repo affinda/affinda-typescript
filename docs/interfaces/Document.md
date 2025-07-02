@@ -1,63 +1,52 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Document
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Document
 
 # Interface: Document
 
-## Hierarchy
+## Extended by
 
-- **`Document`**
-
-  ↳ [`Resume`](Resume.md)
-
-  ↳ [`Invoice`](Invoice.md)
-
-  ↳ [`JobDescription`](JobDescription.md)
-
-  ↳ [`ResumeRedact`](ResumeRedact.md)
-
-## Table of contents
-
-### Properties
-
-- [data](Document.md#data)
-- [error](Document.md#error)
-- [extractor](Document.md#extractor)
-- [meta](Document.md#meta)
-- [warnings](Document.md#warnings)
+- [`Resume`](Resume.md)
+- [`Invoice`](Invoice.md)
+- [`JobDescription`](JobDescription.md)
+- [`ResumeRedact`](ResumeRedact.md)
 
 ## Properties
 
-### data
+### data?
 
-• `Optional` **data**: `Object`
+> `optional` **data**: `object`
 
 Dictionary of <any>
 
-#### Index signature
+#### Index Signature
 
-▪ [propertyName: `string`]: `any`
+\[`propertyName`: `string`\]: `any`
 
-___
+***
 
-### error
+### error?
 
-• `Optional` **error**: [`DocumentError`](DocumentError.md)
+> `optional` **error**: [`DocumentError`](DocumentError.md)
 
-___
+***
 
 ### extractor
 
-• **extractor**: ``"resume"`` \| ``"invoice"`` \| ``"job-description"`` \| ``"resume-redact"``
+> **extractor**: `"resume"` \| `"invoice"` \| `"job-description"` \| `"resume-redact"`
 
 Polymorphic discriminator, which specifies the different types this object can be
 
-___
+***
 
 ### meta
 
-• **meta**: [`DocumentMeta`](DocumentMeta.md)
+> **meta**: [`DocumentMeta`](DocumentMeta.md)
 
-___
+***
 
-### warnings
+### warnings?
 
-• `Optional` **warnings**: [`DocumentWarning`](DocumentWarning.md)[]
+> `optional` **warnings**: [`DocumentWarning`](DocumentWarning.md)[]

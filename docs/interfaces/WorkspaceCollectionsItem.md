@@ -1,49 +1,43 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / WorkspaceCollectionsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / WorkspaceCollectionsItem
 
 # Interface: WorkspaceCollectionsItem
 
-## Table of contents
-
-### Properties
-
-- [confirmedDocsCount](WorkspaceCollectionsItem.md#confirmeddocscount)
-- [extractor](WorkspaceCollectionsItem.md#extractor)
-- [identifier](WorkspaceCollectionsItem.md#identifier)
-- [name](WorkspaceCollectionsItem.md#name)
-- [unvalidatedDocsCount](WorkspaceCollectionsItem.md#unvalidateddocscount)
-
 ## Properties
 
-### confirmedDocsCount
+### confirmedDocsCount?
 
-• `Optional` **confirmedDocsCount**: `number`
+> `optional` **confirmedDocsCount**: `number`
 
 Number of validated documents in the collection.
 
-___
+***
 
 ### extractor
 
-• **extractor**: [`WorkspaceCollectionsItemExtractor`](WorkspaceCollectionsItemExtractor.md)
+> **extractor**: [`WorkspaceCollectionsItemExtractor`](WorkspaceCollectionsItemExtractor.md)
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
-### unvalidatedDocsCount
+### unvalidatedDocsCount?
 
-• `Optional` **unvalidatedDocsCount**: `number`
+> `optional` **unvalidatedDocsCount**: `number`
 
 Number of unvalidated documents in the collection.

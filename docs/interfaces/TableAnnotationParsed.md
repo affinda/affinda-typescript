@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / TableAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / TableAnnotationParsed
 
 # Interface: TableAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [rows](TableAnnotationParsed.md#rows)
-
 ## Properties
 
-### rows
+### rows?
 
-• `Optional` **rows**: (``null`` \| [`RowAnnotation`](RowAnnotation.md))[]
+> `optional` **rows**: (`null` \| [`RowAnnotation`](RowAnnotation.md))[]

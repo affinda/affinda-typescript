@@ -1,26 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentMetaChildDocumentsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentMetaChildDocumentsItem
 
 # Interface: DocumentMetaChildDocumentsItem
 
-## Table of contents
-
-### Properties
-
-- [customIdentifier](DocumentMetaChildDocumentsItem.md#customidentifier)
-- [identifier](DocumentMetaChildDocumentsItem.md#identifier)
-
 ## Properties
 
-### customIdentifier
+### customIdentifier?
 
-• `Optional` **customIdentifier**: `string`
+> `optional` **customIdentifier**: `string`
 
 Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique.
 
-___
+***
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Unique identifier for the document

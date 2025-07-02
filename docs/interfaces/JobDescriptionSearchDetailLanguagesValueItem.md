@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailLanguagesValueItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailLanguagesValueItem
 
 # Interface: JobDescriptionSearchDetailLanguagesValueItem
 
-## Table of contents
-
-### Properties
-
-- [match](JobDescriptionSearchDetailLanguagesValueItem.md#match)
-- [name](JobDescriptionSearchDetailLanguagesValueItem.md#name)
-
 ## Properties
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`

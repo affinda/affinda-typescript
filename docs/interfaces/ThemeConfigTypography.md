@@ -1,45 +1,39 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ThemeConfigTypography
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ThemeConfigTypography
 
 # Interface: ThemeConfigTypography
 
-## Table of contents
-
-### Properties
-
-- [fontFamily](ThemeConfigTypography.md#fontfamily)
-- [fontSize](ThemeConfigTypography.md#fontsize)
-- [fontWeightBold](ThemeConfigTypography.md#fontweightbold)
-- [fontWeightMedium](ThemeConfigTypography.md#fontweightmedium)
-- [fontWeightRegular](ThemeConfigTypography.md#fontweightregular)
-
 ## Properties
 
-### fontFamily
+### fontFamily?
 
-• `Optional` **fontFamily**: `string`
+> `optional` **fontFamily**: `string`
 
-___
+***
 
-### fontSize
+### fontSize?
 
-• `Optional` **fontSize**: `any`
+> `optional` **fontSize**: `any`
 
 Anything
 
-___
+***
 
-### fontWeightBold
+### fontWeightBold?
 
-• `Optional` **fontWeightBold**: `string`
+> `optional` **fontWeightBold**: `string`
 
-___
+***
 
-### fontWeightMedium
+### fontWeightMedium?
 
-• `Optional` **fontWeightMedium**: `string`
+> `optional` **fontWeightMedium**: `string`
 
-___
+***
 
-### fontWeightRegular
+### fontWeightRegular?
 
-• `Optional` **fontWeightRegular**: `string`
+> `optional` **fontWeightRegular**: `string`

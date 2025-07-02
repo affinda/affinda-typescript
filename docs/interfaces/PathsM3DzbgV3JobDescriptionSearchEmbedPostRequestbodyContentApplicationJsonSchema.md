@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema
 
 # Interface: PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema
 
-## Table of contents
-
-### Properties
-
-- [configOverride](PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchema.md#configoverride)
-
 ## Properties
 
-### configOverride
+### configOverride?
 
-• `Optional` **configOverride**: [`JobDescriptionSearchConfig`](JobDescriptionSearchConfig.md)
+> `optional` **configOverride**: [`JobDescriptionSearchConfig`](JobDescriptionSearchConfig.md)

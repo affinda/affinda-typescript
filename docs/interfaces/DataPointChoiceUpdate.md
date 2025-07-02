@@ -1,63 +1,55 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataPointChoiceUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DataPointChoiceUpdate
 
 # Interface: DataPointChoiceUpdate
 
-## Table of contents
-
-### Properties
-
-- [collection](DataPointChoiceUpdate.md#collection)
-- [dataPoint](DataPointChoiceUpdate.md#datapoint)
-- [description](DataPointChoiceUpdate.md#description)
-- [label](DataPointChoiceUpdate.md#label)
-- [organization](DataPointChoiceUpdate.md#organization)
-- [synonyms](DataPointChoiceUpdate.md#synonyms)
-- [value](DataPointChoiceUpdate.md#value)
-
 ## Properties
 
-### collection
+### collection?
 
-• `Optional` **collection**: `string`
+> `optional` **collection**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
-### dataPoint
+### dataPoint?
 
-• `Optional` **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
 Uniquely identify a data point.
 
-___
+***
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
-___
+***
 
-### label
+### label?
 
-• `Optional` **label**: `string`
+> `optional` **label**: `string`
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: `string`
+> `optional` **organization**: `string`
 
 Uniquely identify an organization.
 
-___
+***
 
-### synonyms
+### synonyms?
 
-• `Optional` **synonyms**: `string`[]
+> `optional` **synonyms**: `string`[]
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`
+> `optional` **value**: `string`

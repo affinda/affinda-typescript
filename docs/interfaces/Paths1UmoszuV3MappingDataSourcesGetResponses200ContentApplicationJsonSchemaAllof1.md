@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1
 
 # Interface: Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1
 
-## Hierarchy
+## Extended by
 
-- **`Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1`**
-
-  ↳ [`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)
-
-## Table of contents
-
-### Properties
-
-- [results](Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+- [`Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema`](Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema.md)
 
 ## Properties
 
-### results
+### results?
 
-• `Optional` **results**: [`MappingDataSource`](MappingDataSource.md)[]
+> `optional` **results**: [`MappingDataSource`](MappingDataSource.md)[]

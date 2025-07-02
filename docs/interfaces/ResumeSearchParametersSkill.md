@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchParametersSkill
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchParametersSkill
 
 # Interface: ResumeSearchParametersSkill
 
-## Table of contents
-
-### Properties
-
-- [name](ResumeSearchParametersSkill.md#name)
-- [required](ResumeSearchParametersSkill.md#required)
-
 ## Properties
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### required
+### required?
 
-• `Optional` **required**: `boolean`
+> `optional` **required**: `boolean`

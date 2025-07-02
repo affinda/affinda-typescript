@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchEmbed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchEmbed
 
 # Interface: ResumeSearchEmbed
 
-## Table of contents
-
-### Properties
-
-- [url](ResumeSearchEmbed.md#url)
-
 ## Properties
 
-### url
+### url?
 
-• `Optional` **url**: `string`
+> `optional` **url**: `string`
 
 The signed URL for the embedable search tool.

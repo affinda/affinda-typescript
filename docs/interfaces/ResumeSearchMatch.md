@@ -1,24 +1,21 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchMatch
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchMatch
 
 # Interface: ResumeSearchMatch
 
-## Table of contents
-
-### Properties
-
-- [details](ResumeSearchMatch.md#details)
-- [score](ResumeSearchMatch.md#score)
-
 ## Properties
 
-### details
+### details?
 
-• `Optional` **details**: [`ResumeSearchMatchDetails`](ResumeSearchMatchDetails.md)
+> `optional` **details**: [`ResumeSearchMatchDetails`](ResumeSearchMatchDetails.md)
 
-___
+***
 
-### score
+### score?
 
-• `Optional` **score**: `number`
+> `optional` **score**: `number`
 
 The matching score between the provided resume and job description.

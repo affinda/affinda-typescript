@@ -1,63 +1,55 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataPointChoiceCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DataPointChoiceCreate
 
 # Interface: DataPointChoiceCreate
 
-## Table of contents
-
-### Properties
-
-- [collection](DataPointChoiceCreate.md#collection)
-- [dataPoint](DataPointChoiceCreate.md#datapoint)
-- [description](DataPointChoiceCreate.md#description)
-- [label](DataPointChoiceCreate.md#label)
-- [organization](DataPointChoiceCreate.md#organization)
-- [synonyms](DataPointChoiceCreate.md#synonyms)
-- [value](DataPointChoiceCreate.md#value)
-
 ## Properties
 
-### collection
+### collection?
 
-• `Optional` **collection**: `string`
+> `optional` **collection**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
 ### dataPoint
 
-• **dataPoint**: `string`
+> **dataPoint**: `string`
 
 Uniquely identify a data point.
 
-___
+***
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
-___
+***
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: `string`
+> `optional` **organization**: `string`
 
 Uniquely identify an organization.
 
-___
+***
 
-### synonyms
+### synonyms?
 
-• `Optional` **synonyms**: `string`[]
+> `optional` **synonyms**: `string`[]
 
-___
+***
 
 ### value
 
-• **value**: `string`
+> **value**: `string`

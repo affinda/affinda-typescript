@@ -1,60 +1,58 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetDocumentOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / GetDocumentOptionalParams
 
 # Interface: GetDocumentOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`GetDocumentOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](GetDocumentOptionalParams.md#abortsignal)
-- [compact](GetDocumentOptionalParams.md#compact)
-- [format](GetDocumentOptionalParams.md#format)
-- [onResponse](GetDocumentOptionalParams.md#onresponse)
-- [requestOptions](GetDocumentOptionalParams.md#requestoptions)
-- [serializerOptions](GetDocumentOptionalParams.md#serializeroptions)
-- [tracingOptions](GetDocumentOptionalParams.md#tracingoptions)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### compact
+### camelCase?
 
-• `Optional` **compact**: `boolean`
+> `optional` **camelCase**: `boolean`
+
+Whether to return the response in camelCase. Default is true.
+
+***
+
+### compact?
+
+> `optional` **compact**: `boolean`
 
 If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false".
 
-___
+***
 
-### format
+### format?
 
-• `Optional` **format**: `string`
+> `optional` **format**: `string`
 
 Specify which format you want the response to be. Default is "json"
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -62,40 +60,40 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`

@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataName
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataName
 
 # Interface: ResumeDataName
 
-## Table of contents
-
-### Properties
-
-- [first](ResumeDataName.md#first)
-- [last](ResumeDataName.md#last)
-- [middle](ResumeDataName.md#middle)
-- [raw](ResumeDataName.md#raw)
-- [title](ResumeDataName.md#title)
-
 ## Properties
 
-### first
+### first?
 
-• `Optional` **first**: `string`
+> `optional` **first**: `string`
 
-___
+***
 
-### last
+### last?
 
-• `Optional` **last**: `string`
+> `optional` **last**: `string`
 
-___
+***
 
-### middle
+### middle?
 
-• `Optional` **middle**: `string`
+> `optional` **middle**: `string`
 
-___
+***
 
-### raw
+### raw?
 
-• `Optional` **raw**: `string`
+> `optional` **raw**: `string`
 
-___
+***
 
-### title
+### title?
 
-• `Optional` **title**: `string`
+> `optional` **title**: `string`

@@ -1,47 +1,43 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataRefereesItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataRefereesItem
 
 # Interface: ResumeDataRefereesItem
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [email](ResumeDataRefereesItem.md#email)
-- [name](ResumeDataRefereesItem.md#name)
-- [number](ResumeDataRefereesItem.md#number)
-- [position](ResumeDataRefereesItem.md#position)
-- [text](ResumeDataRefereesItem.md#text)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### number
+### number?
 
-• `Optional` **number**: `string`
+> `optional` **number**: `string`
 
-___
+***
 
-### position
+### position?
 
-• `Optional` **position**: `string`
+> `optional` **position**: `string`
 
-___
+***
 
-### text
+### text?
 
-• `Optional` **text**: `string`
+> `optional` **text**: `string`

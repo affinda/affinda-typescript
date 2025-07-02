@@ -1,33 +1,29 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / WorkspaceMembership
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / WorkspaceMembership
 
 # Interface: WorkspaceMembership
 
-## Table of contents
-
-### Properties
-
-- [identifier](WorkspaceMembership.md#identifier)
-- [user](WorkspaceMembership.md#user)
-- [workspace](WorkspaceMembership.md#workspace)
-
 ## Properties
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Uniquely identify a membership.
 
-___
+***
 
-### user
+### user?
 
-• `Optional` **user**: [`User`](User.md)
+> `optional` **user**: [`User`](User.md)
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`
 
 Uniquely identify a workspace.

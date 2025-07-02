@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / MetaChildDocumentsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / MetaChildDocumentsItem
 
 # Interface: MetaChildDocumentsItem
 
-## Table of contents
-
-### Properties
-
-- [identifier](MetaChildDocumentsItem.md#identifier)
-
 ## Properties
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Unique identifier for the document

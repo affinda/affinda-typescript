@@ -1,36 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / EducationDates
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / EducationDates
 
 # Interface: EducationDates
 
-## Table of contents
-
-### Properties
-
-- [completionDate](EducationDates.md#completiondate)
-- [isCurrent](EducationDates.md#iscurrent)
-- [rawText](EducationDates.md#rawtext)
-- [startDate](EducationDates.md#startdate)
-
 ## Properties
 
-### completionDate
+### completionDate?
 
-• `Optional` **completionDate**: `Date`
+> `optional` **completionDate**: `Date`
 
-___
+***
 
-### isCurrent
+### isCurrent?
 
-• `Optional` **isCurrent**: `boolean`
+> `optional` **isCurrent**: `boolean`
 
-___
+***
 
-### rawText
+### rawText?
 
-• `Optional` **rawText**: `string`
+> `optional` **rawText**: `string`
 
-___
+***
 
-### startDate
+### startDate?
 
-• `Optional` **startDate**: `Date`
+> `optional` **startDate**: `Date`

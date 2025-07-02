@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailManagementLevel
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailManagementLevel
 
 # Interface: JobDescriptionSearchDetailManagementLevel
 
-## Table of contents
-
-### Properties
-
-- [level](JobDescriptionSearchDetailManagementLevel.md#level)
-- [match](JobDescriptionSearchDetailManagementLevel.md#match)
-
 ## Properties
 
-### level
+### level?
 
-• `Optional` **level**: [`ManagementLevel`](../modules.md#managementlevel)
+> `optional` **level**: [`ManagementLevel`](../type-aliases/ManagementLevel.md)
 
-___
+***
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`

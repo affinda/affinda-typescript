@@ -1,82 +1,72 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataSkillsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataSkillsItem
 
 # Interface: ResumeDataSkillsItem
 
-## Table of contents
-
-### Properties
-
-- [count](ResumeDataSkillsItem.md#count)
-- [emsiId](ResumeDataSkillsItem.md#emsiid)
-- [id](ResumeDataSkillsItem.md#id)
-- [lastUsed](ResumeDataSkillsItem.md#lastused)
-- [name](ResumeDataSkillsItem.md#name)
-- [numberOfMonths](ResumeDataSkillsItem.md#numberofmonths)
-- [sources](ResumeDataSkillsItem.md#sources)
-- [type](ResumeDataSkillsItem.md#type)
-- [weighting](ResumeDataSkillsItem.md#weighting)
-
 ## Properties
 
-### count
+### count?
 
-• `Optional` `Readonly` **count**: `number`
+> `readonly` `optional` **count**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### emsiId
+### emsiId?
 
-• `Optional` `Readonly` **emsiId**: `string`
+> `readonly` `optional` **emsiId**: `string`
 
 EMSI id of this skill.
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
-___
+***
 
-### lastUsed
+### lastUsed?
 
-• `Optional` **lastUsed**: `string`
+> `optional` **lastUsed**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### numberOfMonths
+### numberOfMonths?
 
-• `Optional` **numberOfMonths**: `number`
+> `optional` **numberOfMonths**: `number`
 
-___
+***
 
-### sources
+### sources?
 
-• `Optional` `Readonly` **sources**: [`ResumeDataSkillsPropertiesItemsItem`](ResumeDataSkillsPropertiesItemsItem.md)[]
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### type
-
-• `Optional` `Readonly` **type**: `string`
+> `readonly` `optional` **sources**: [`ResumeDataSkillsPropertiesItemsItem`](ResumeDataSkillsPropertiesItemsItem.md)[]
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### weighting
+### type?
 
-• `Optional` `Readonly` **weighting**: `number`
+> `readonly` `optional` **type**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
+
+### weighting?
+
+> `readonly` `optional` **weighting**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.

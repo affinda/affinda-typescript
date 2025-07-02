@@ -1,95 +1,83 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / CollectionUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / CollectionUpdate
 
 # Interface: CollectionUpdate
 
-## Table of contents
-
-### Properties
-
-- [allowOpenai](CollectionUpdate.md#allowopenai)
-- [autoValidationThreshold](CollectionUpdate.md#autovalidationthreshold)
-- [dateFormatFromDocument](CollectionUpdate.md#dateformatfromdocument)
-- [dateFormatPreference](CollectionUpdate.md#dateformatpreference)
-- [disableConfirmationIfValidationRulesFail](CollectionUpdate.md#disableconfirmationifvalidationrulesfail)
-- [enableAutoValidationThreshold](CollectionUpdate.md#enableautovalidationthreshold)
-- [extractorConfig](CollectionUpdate.md#extractorconfig)
-- [fields](CollectionUpdate.md#fields)
-- [fieldsLayout](CollectionUpdate.md#fieldslayout)
-- [name](CollectionUpdate.md#name)
-- [trainsExtractor](CollectionUpdate.md#trainsextractor)
-
 ## Properties
 
-### allowOpenai
+### allowOpenai?
 
-• `Optional` **allowOpenai**: `boolean`
+> `optional` **allowOpenai**: `boolean`
 
 Whether to allow OpenAI API to be used to assist in creating a model for this collection.
 
-___
+***
 
-### autoValidationThreshold
+### autoValidationThreshold?
 
-• `Optional` **autoValidationThreshold**: `number`
+> `optional` **autoValidationThreshold**: `number`
 
-___
+***
 
-### dateFormatFromDocument
+### dateFormatFromDocument?
 
-• `Optional` **dateFormatFromDocument**: `boolean`
+> `optional` **dateFormatFromDocument**: `boolean`
 
 Predict the date format from any dates in the document that is not ambiguous.
 
-___
+***
 
-### dateFormatPreference
+### dateFormatPreference?
 
-• `Optional` **dateFormatPreference**: `string`
+> `optional` **dateFormatPreference**: `string`
 
-___
+***
 
-### disableConfirmationIfValidationRulesFail
+### disableConfirmationIfValidationRulesFail?
 
-• `Optional` **disableConfirmationIfValidationRulesFail**: `boolean`
+> `optional` **disableConfirmationIfValidationRulesFail**: `boolean`
 
 If True, users cannot validate documents with missing mandatory fields, or failing validation rules.
 
-___
+***
 
-### enableAutoValidationThreshold
+### enableAutoValidationThreshold?
 
-• `Optional` **enableAutoValidationThreshold**: `boolean`
+> `optional` **enableAutoValidationThreshold**: `boolean`
 
-___
+***
 
-### extractorConfig
+### extractorConfig?
 
-• `Optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
+> `optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
 
 Extra configurations specific to an extractor.
 
-___
+***
 
-### fields
+### fields?
 
-• `Optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
+> `optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
 
-___
+***
 
-### fieldsLayout
+### fieldsLayout?
 
-• `Optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
+> `optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### trainsExtractor
+### trainsExtractor?
 
-• `Optional` **trainsExtractor**: `boolean`
+> `optional` **trainsExtractor**: `boolean`
 
 Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors.

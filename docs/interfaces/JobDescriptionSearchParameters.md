@@ -1,220 +1,189 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchParameters
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchParameters
 
 # Interface: JobDescriptionSearchParameters
 
-## Table of contents
-
-### Properties
-
-- [customData](JobDescriptionSearchParameters.md#customdata)
-- [degreeTypes](JobDescriptionSearchParameters.md#degreetypes)
-- [degreeTypesRequired](JobDescriptionSearchParameters.md#degreetypesrequired)
-- [degrees](JobDescriptionSearchParameters.md#degrees)
-- [degreesRequired](JobDescriptionSearchParameters.md#degreesrequired)
-- [educationWeight](JobDescriptionSearchParameters.md#educationweight)
-- [indices](JobDescriptionSearchParameters.md#indices)
-- [jobTitles](JobDescriptionSearchParameters.md#jobtitles)
-- [jobTitlesRequired](JobDescriptionSearchParameters.md#jobtitlesrequired)
-- [jobTitlesWeight](JobDescriptionSearchParameters.md#jobtitlesweight)
-- [languages](JobDescriptionSearchParameters.md#languages)
-- [languagesWeight](JobDescriptionSearchParameters.md#languagesweight)
-- [locations](JobDescriptionSearchParameters.md#locations)
-- [locationsRequired](JobDescriptionSearchParameters.md#locationsrequired)
-- [locationsWeight](JobDescriptionSearchParameters.md#locationsweight)
-- [managementLevel](JobDescriptionSearchParameters.md#managementlevel)
-- [managementLevelRequired](JobDescriptionSearchParameters.md#managementlevelrequired)
-- [managementLevelWeight](JobDescriptionSearchParameters.md#managementlevelweight)
-- [resume](JobDescriptionSearchParameters.md#resume)
-- [searchExpression](JobDescriptionSearchParameters.md#searchexpression)
-- [searchExpressionRequired](JobDescriptionSearchParameters.md#searchexpressionrequired)
-- [searchExpressionWeight](JobDescriptionSearchParameters.md#searchexpressionweight)
-- [skills](JobDescriptionSearchParameters.md#skills)
-- [skillsWeight](JobDescriptionSearchParameters.md#skillsweight)
-- [socCodes](JobDescriptionSearchParameters.md#soccodes)
-- [socCodesRequired](JobDescriptionSearchParameters.md#soccodesrequired)
-- [socCodesWeight](JobDescriptionSearchParameters.md#soccodesweight)
-- [totalYearsExperience](JobDescriptionSearchParameters.md#totalyearsexperience)
-- [yearsExperienceRequired](JobDescriptionSearchParameters.md#yearsexperiencerequired)
-- [yearsExperienceWeight](JobDescriptionSearchParameters.md#yearsexperienceweight)
-
 ## Properties
 
-### customData
+### customData?
 
-• `Optional` **customData**: [`SearchParametersCustomData`](SearchParametersCustomData.md)[]
+> `optional` **customData**: [`SearchParametersCustomData`](SearchParametersCustomData.md)[]
 
-___
+***
 
-### degreeTypes
+### degrees?
 
-• `Optional` **degreeTypes**: (``null`` \| [`EducationLevel`](../modules.md#educationlevel))[]
+> `optional` **degrees**: `string`[]
 
-___
+***
 
-### degreeTypesRequired
+### degreesRequired?
 
-• `Optional` **degreeTypesRequired**: `boolean`
+> `optional` **degreesRequired**: `boolean`
 
-___
+***
 
-### degrees
+### degreeTypes?
 
-• `Optional` **degrees**: `string`[]
+> `optional` **degreeTypes**: (`null` \| [`EducationLevel`](../type-aliases/EducationLevel.md))[]
 
-___
+***
 
-### degreesRequired
+### degreeTypesRequired?
 
-• `Optional` **degreesRequired**: `boolean`
+> `optional` **degreeTypesRequired**: `boolean`
 
-___
+***
 
-### educationWeight
+### educationWeight?
 
-• `Optional` **educationWeight**: `number`
+> `optional` **educationWeight**: `number`
 
-___
+***
 
 ### indices
 
-• **indices**: `string`[]
+> **indices**: `string`[]
 
-___
+***
 
-### jobTitles
+### jobTitles?
 
-• `Optional` **jobTitles**: `string`[]
+> `optional` **jobTitles**: `string`[]
 
-___
+***
 
-### jobTitlesRequired
+### jobTitlesRequired?
 
-• `Optional` **jobTitlesRequired**: `boolean`
+> `optional` **jobTitlesRequired**: `boolean`
 
-___
+***
 
-### jobTitlesWeight
+### jobTitlesWeight?
 
-• `Optional` **jobTitlesWeight**: `number`
+> `optional` **jobTitlesWeight**: `number`
 
-___
+***
 
-### languages
+### languages?
 
-• `Optional` **languages**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
+> `optional` **languages**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
 
-___
+***
 
-### languagesWeight
+### languagesWeight?
 
-• `Optional` **languagesWeight**: `number`
+> `optional` **languagesWeight**: `number`
 
-___
+***
 
-### locations
+### locations?
 
-• `Optional` **locations**: [`ResumeSearchParametersLocation`](ResumeSearchParametersLocation.md)[]
+> `optional` **locations**: [`ResumeSearchParametersLocation`](ResumeSearchParametersLocation.md)[]
 
-___
+***
 
-### locationsRequired
+### locationsRequired?
 
-• `Optional` **locationsRequired**: `boolean`
+> `optional` **locationsRequired**: `boolean`
 
-___
+***
 
-### locationsWeight
+### locationsWeight?
 
-• `Optional` **locationsWeight**: `number`
+> `optional` **locationsWeight**: `number`
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: [`ManagementLevel`](../modules.md#managementlevel)
+> `optional` **managementLevel**: [`ManagementLevel`](../type-aliases/ManagementLevel.md)
 
-___
+***
 
-### managementLevelRequired
+### managementLevelRequired?
 
-• `Optional` **managementLevelRequired**: `boolean`
+> `optional` **managementLevelRequired**: `boolean`
 
-___
+***
 
-### managementLevelWeight
+### managementLevelWeight?
 
-• `Optional` **managementLevelWeight**: `number`
+> `optional` **managementLevelWeight**: `number`
 
-___
+***
 
-### resume
+### resume?
 
-• `Optional` **resume**: `string`
+> `optional` **resume**: `string`
 
 A random string that uniquely identify the resource.
 
-___
+***
 
-### searchExpression
+### searchExpression?
 
-• `Optional` **searchExpression**: `string`
+> `optional` **searchExpression**: `string`
 
-___
+***
 
-### searchExpressionRequired
+### searchExpressionRequired?
 
-• `Optional` **searchExpressionRequired**: `boolean`
+> `optional` **searchExpressionRequired**: `boolean`
 
-___
+***
 
-### searchExpressionWeight
+### searchExpressionWeight?
 
-• `Optional` **searchExpressionWeight**: `number`
+> `optional` **searchExpressionWeight**: `number`
 
-___
+***
 
-### skills
+### skills?
 
-• `Optional` **skills**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
+> `optional` **skills**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
 
-___
+***
 
-### skillsWeight
+### skillsWeight?
 
-• `Optional` **skillsWeight**: `number`
+> `optional` **skillsWeight**: `number`
 
-___
+***
 
-### socCodes
+### socCodes?
 
-• `Optional` **socCodes**: `number`[]
+> `optional` **socCodes**: `number`[]
 
-___
+***
 
-### socCodesRequired
+### socCodesRequired?
 
-• `Optional` **socCodesRequired**: `boolean`
+> `optional` **socCodesRequired**: `boolean`
 
-___
+***
 
-### socCodesWeight
+### socCodesWeight?
 
-• `Optional` **socCodesWeight**: `number`
+> `optional` **socCodesWeight**: `number`
 
-___
+***
 
-### totalYearsExperience
+### totalYearsExperience?
 
-• `Optional` **totalYearsExperience**: `number`
+> `optional` **totalYearsExperience**: `number`
 
-___
+***
 
-### yearsExperienceRequired
+### yearsExperienceRequired?
 
-• `Optional` **yearsExperienceRequired**: `boolean`
+> `optional` **yearsExperienceRequired**: `boolean`
 
-___
+***
 
-### yearsExperienceWeight
+### yearsExperienceWeight?
 
-• `Optional` **yearsExperienceWeight**: `number`
+> `optional` **yearsExperienceWeight**: `number`

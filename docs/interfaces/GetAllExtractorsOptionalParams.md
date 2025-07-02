@@ -1,61 +1,50 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllExtractorsOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / GetAllExtractorsOptionalParams
 
 # Interface: GetAllExtractorsOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`GetAllExtractorsOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](GetAllExtractorsOptionalParams.md#abortsignal)
-- [includePublicExtractors](GetAllExtractorsOptionalParams.md#includepublicextractors)
-- [name](GetAllExtractorsOptionalParams.md#name)
-- [onResponse](GetAllExtractorsOptionalParams.md#onresponse)
-- [requestOptions](GetAllExtractorsOptionalParams.md#requestoptions)
-- [serializerOptions](GetAllExtractorsOptionalParams.md#serializeroptions)
-- [tracingOptions](GetAllExtractorsOptionalParams.md#tracingoptions)
-- [validatable](GetAllExtractorsOptionalParams.md#validatable)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### includePublicExtractors
+### includePublicExtractors?
 
-• `Optional` **includePublicExtractors**: `boolean`
+> `optional` **includePublicExtractors**: `boolean`
 
 Whether to include Affinda's off-the-shelf extractors.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
 Filter by name.
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -63,48 +52,48 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`
 
-___
+***
 
-### validatable
+### validatable?
 
-• `Optional` **validatable**: `boolean`
+> `optional` **validatable**: `boolean`
 
 Filter by validatable.

@@ -1,92 +1,81 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / CollectionField
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / CollectionField
 
 # Interface: CollectionField
 
-## Table of contents
-
-### Properties
-
-- [autoValidationThreshold](CollectionField.md#autovalidationthreshold)
-- [dataSource](CollectionField.md#datasource)
-- [displayEnumValue](CollectionField.md#displayenumvalue)
-- [displayRawText](CollectionField.md#displayrawtext)
-- [enableAutoValidationThreshold](CollectionField.md#enableautovalidationthreshold)
-- [fieldType](CollectionField.md#fieldtype)
-- [label](CollectionField.md#label)
-- [mandatory](CollectionField.md#mandatory)
-- [mapping](CollectionField.md#mapping)
-- [showDropdown](CollectionField.md#showdropdown)
-
 ## Properties
 
-### autoValidationThreshold
+### autoValidationThreshold?
 
-• `Optional` **autoValidationThreshold**: `number`
+> `optional` **autoValidationThreshold**: `number`
 
 Threshold for auto validation. If null, uses the collection's autoValidationThreshold.
 
-___
+***
 
-### dataSource
+### dataSource?
 
-• `Optional` **dataSource**: `string`
+> `optional` **dataSource**: `string`
 
 Data source mapping identifier
 
-___
+***
 
-### displayEnumValue
+### displayEnumValue?
 
-• `Optional` **displayEnumValue**: `boolean`
+> `optional` **displayEnumValue**: `boolean`
 
 If true, both the value and the label for the enums will appear in the dropdown in the validation tool.
 
-___
+***
 
-### displayRawText
+### displayRawText?
 
-• `Optional` **displayRawText**: `string`
+> `optional` **displayRawText**: `string`
 
 Defines how the data point is mapped to the data source
 
-___
+***
 
-### enableAutoValidationThreshold
+### enableAutoValidationThreshold?
 
-• `Optional` **enableAutoValidationThreshold**: `boolean`
+> `optional` **enableAutoValidationThreshold**: `boolean`
 
 If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection
 
-___
+***
 
-### fieldType
+### fieldType?
 
-• `Optional` **fieldType**: `string`
+> `optional` **fieldType**: `string`
 
 The different data types of annotations
 
-___
+***
 
-### label
+### label?
 
-• `Optional` **label**: `string`
+> `optional` **label**: `string`
 
-___
+***
 
-### mandatory
+### mandatory?
 
-• `Optional` **mandatory**: `boolean`
+> `optional` **mandatory**: `boolean`
 
-___
+***
 
-### mapping
+### mapping?
 
-• `Optional` **mapping**: `string`
+> `optional` **mapping**: `string`
 
 Defines how the data point is mapped to the data source
 
-___
+***
 
-### showDropdown
+### showDropdown?
 
-• `Optional` **showDropdown**: `boolean`
+> `optional` **showDropdown**: `boolean`

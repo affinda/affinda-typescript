@@ -1,44 +1,39 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResthookSubscriptionUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResthookSubscriptionUpdate
 
 # Interface: ResthookSubscriptionUpdate
 
-## Table of contents
-
-### Properties
-
-- [event](ResthookSubscriptionUpdate.md#event)
-- [organization](ResthookSubscriptionUpdate.md#organization)
-- [version](ResthookSubscriptionUpdate.md#version)
-- [workspace](ResthookSubscriptionUpdate.md#workspace)
-
 ## Properties
 
-### event
+### event?
 
-• `Optional` **event**: `string`
+> `optional` **event**: `string`
 
 The event name to subscribe to.
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: `string`
+> `optional` **organization**: `string`
 
 Uniquely identify an organization.
 
-___
+***
 
-### version
+### version?
 
-• `Optional` **version**: `string`
+> `optional` **version**: `string`
 
 Version of the resthook subscription. Determines the resthook body being fired.
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`
 
 Uniquely identify a workspace.

@@ -1,31 +1,27 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResthookSubscriptionWorkspace
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResthookSubscriptionWorkspace
 
 # Interface: ResthookSubscriptionWorkspace
-
-## Table of contents
-
-### Properties
-
-- [identifier](ResthookSubscriptionWorkspace.md#identifier)
-- [name](ResthookSubscriptionWorkspace.md#name)
-- [organization](ResthookSubscriptionWorkspace.md#organization)
 
 ## Properties
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a workspace.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### organization
 
-• **organization**: [`Organization`](Organization.md)
+> **organization**: [`Organization`](Organization.md)

@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1
 
 # Interface: ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1
 
-## Hierarchy
+## Extended by
 
-- **`ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1`**
-
-  ↳ [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
-
-## Table of contents
-
-### Properties
-
-- [match](ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1.md#match)
+- [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
 
 ## Properties
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`

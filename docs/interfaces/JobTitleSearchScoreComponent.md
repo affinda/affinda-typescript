@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobTitleSearchScoreComponent
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobTitleSearchScoreComponent
 
 # Interface: JobTitleSearchScoreComponent
-
-## Table of contents
-
-### Properties
-
-- [label](JobTitleSearchScoreComponent.md#label)
-- [score](JobTitleSearchScoreComponent.md#score)
-- [value](JobTitleSearchScoreComponent.md#value)
 
 ## Properties
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### score
+### score?
 
-• `Optional` **score**: `number`
+> `optional` **score**: `number`
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`
+> `optional` **value**: `string`

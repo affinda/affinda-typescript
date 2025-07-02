@@ -1,53 +1,45 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / User
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / User
 
 # Interface: User
 
-## Hierarchy
+## Extended by
 
-- **`User`**
-
-  ↳ [`InvitationRespondedBy`](InvitationRespondedBy.md)
-
-## Table of contents
-
-### Properties
-
-- [avatar](User.md#avatar)
-- [email](User.md#email)
-- [id](User.md#id)
-- [name](User.md#name)
-- [username](User.md#username)
+- [`InvitationRespondedBy`](InvitationRespondedBy.md)
 
 ## Properties
 
-### avatar
+### avatar?
 
-• `Optional` **avatar**: `string`
+> `optional` **avatar**: `string`
 
 URL of the user's avatar.
 
-___
+***
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
 Uniquely identify a user.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### username
+### username?
 
-• `Optional` **username**: `string`
+> `optional` **username**: `string`

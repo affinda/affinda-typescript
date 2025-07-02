@@ -1,122 +1,107 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / CollectionCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / CollectionCreate
 
 # Interface: CollectionCreate
 
-## Table of contents
-
-### Properties
-
-- [allowOpenai](CollectionCreate.md#allowopenai)
-- [autoValidationThreshold](CollectionCreate.md#autovalidationthreshold)
-- [baseExtractor](CollectionCreate.md#baseextractor)
-- [dateFormatFromDocument](CollectionCreate.md#dateformatfromdocument)
-- [dateFormatPreference](CollectionCreate.md#dateformatpreference)
-- [disableConfirmationIfValidationRulesFail](CollectionCreate.md#disableconfirmationifvalidationrulesfail)
-- [enableAutoValidationThreshold](CollectionCreate.md#enableautovalidationthreshold)
-- [extractor](CollectionCreate.md#extractor)
-- [extractorConfig](CollectionCreate.md#extractorconfig)
-- [fields](CollectionCreate.md#fields)
-- [fieldsLayout](CollectionCreate.md#fieldslayout)
-- [name](CollectionCreate.md#name)
-- [trainsExtractor](CollectionCreate.md#trainsextractor)
-- [workspace](CollectionCreate.md#workspace)
-
 ## Properties
 
-### allowOpenai
+### allowOpenai?
 
-• `Optional` **allowOpenai**: `boolean`
+> `optional` **allowOpenai**: `boolean`
 
 Whether to allow OpenAI API to be used to assist in creating a model for this collection.
 
-___
+***
 
-### autoValidationThreshold
+### autoValidationThreshold?
 
-• `Optional` **autoValidationThreshold**: `number`
+> `optional` **autoValidationThreshold**: `number`
 
-___
+***
 
-### baseExtractor
+### baseExtractor?
 
-• `Optional` **baseExtractor**: `string`
+> `optional` **baseExtractor**: `string`
 
 Not applicable, please leave empty. This feature is reserved for super user.
 
-___
+***
 
-### dateFormatFromDocument
+### dateFormatFromDocument?
 
-• `Optional` **dateFormatFromDocument**: `boolean`
+> `optional` **dateFormatFromDocument**: `boolean`
 
 Predict the date format from any dates in the document that is not ambiguous.
 
-___
+***
 
-### dateFormatPreference
+### dateFormatPreference?
 
-• `Optional` **dateFormatPreference**: `string`
+> `optional` **dateFormatPreference**: `string`
 
-___
+***
 
-### disableConfirmationIfValidationRulesFail
+### disableConfirmationIfValidationRulesFail?
 
-• `Optional` **disableConfirmationIfValidationRulesFail**: `boolean`
+> `optional` **disableConfirmationIfValidationRulesFail**: `boolean`
 
 If True, users cannot validate documents with missing mandatory fields, or failing validation rules.
 
-___
+***
 
-### enableAutoValidationThreshold
+### enableAutoValidationThreshold?
 
-• `Optional` **enableAutoValidationThreshold**: `boolean`
+> `optional` **enableAutoValidationThreshold**: `boolean`
 
-___
+***
 
-### extractor
+### extractor?
 
-• `Optional` **extractor**: `string`
+> `optional` **extractor**: `string`
 
 Uniquely identify an extractor. Required if you are not a super user.
 
-___
+***
 
-### extractorConfig
+### extractorConfig?
 
-• `Optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
+> `optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
 
 Extra configurations specific to an extractor.
 
-___
+***
 
-### fields
+### fields?
 
-• `Optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
+> `optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
 
-___
+***
 
-### fieldsLayout
+### fieldsLayout?
 
-• `Optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
+> `optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
-### trainsExtractor
+### trainsExtractor?
 
-• `Optional` **trainsExtractor**: `boolean`
+> `optional` **trainsExtractor**: `boolean`
 
 Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors.
 
-___
+***
 
 ### workspace
 
-• **workspace**: `string`
+> **workspace**: `string`
 
 Uniquely identify a workspace.

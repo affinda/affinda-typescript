@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentWarning
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentWarning
 
 # Interface: DocumentWarning
 
-## Table of contents
-
-### Properties
-
-- [warningCode](DocumentWarning.md#warningcode)
-- [warningDetail](DocumentWarning.md#warningdetail)
-
 ## Properties
 
-### warningCode
+### warningCode?
 
-• `Optional` **warningCode**: `string`
+> `optional` **warningCode**: `string`
 
-___
+***
 
-### warningDetail
+### warningDetail?
 
-• `Optional` **warningDetail**: `string`
+> `optional` **warningDetail**: `string`

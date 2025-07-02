@@ -1,26 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / SearchConfigAction
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / SearchConfigAction
 
 # Interface: SearchConfigAction
-
-## Table of contents
-
-### Properties
-
-- [eventName](SearchConfigAction.md#eventname)
-- [label](SearchConfigAction.md#label)
 
 ## Properties
 
 ### eventName
 
-• **eventName**: `string`
+> **eventName**: `string`
 
 Name of the event to be triggered
 
-___
+***
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
 Human readable label to display in the UI

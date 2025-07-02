@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DateRangeAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DateRangeAnnotationParsed
 
 # Interface: DateRangeAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [end](DateRangeAnnotationParsed.md#end)
-- [start](DateRangeAnnotationParsed.md#start)
-
 ## Properties
 
-### end
+### end?
 
-• `Optional` **end**: [`DateRangeValue`](DateRangeValue.md)
+> `optional` **end**: [`DateRangeValue`](DateRangeValue.md)
 
-___
+***
 
-### start
+### start?
 
-• `Optional` **start**: [`DateRangeValue`](DateRangeValue.md)
+> `optional` **start**: [`DateRangeValue`](DateRangeValue.md)

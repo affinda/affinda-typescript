@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / BatchDeleteValidationResultsRequest
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / BatchDeleteValidationResultsRequest
 
 # Interface: BatchDeleteValidationResultsRequest
-
-## Table of contents
-
-### Properties
-
-- [ids](BatchDeleteValidationResultsRequest.md#ids)
 
 ## Properties
 
 ### ids
 
-• **ids**: `number`[]
+> **ids**: `number`[]
 
 List of validation result IDs to delete.

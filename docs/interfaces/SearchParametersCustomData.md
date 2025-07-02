@@ -1,55 +1,47 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / SearchParametersCustomData
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / SearchParametersCustomData
 
 # Interface: SearchParametersCustomData
 
-## Hierarchy
+## Extended by
 
-- **`SearchParametersCustomData`**
-
-  ↳ [`ResumeSearchParametersCustomData`](ResumeSearchParametersCustomData.md)
-
-## Table of contents
-
-### Properties
-
-- [dataPoint](SearchParametersCustomData.md#datapoint)
-- [filterType](SearchParametersCustomData.md#filtertype)
-- [query](SearchParametersCustomData.md#query)
-- [required](SearchParametersCustomData.md#required)
-- [weight](SearchParametersCustomData.md#weight)
+- [`ResumeSearchParametersCustomData`](ResumeSearchParametersCustomData.md)
 
 ## Properties
 
 ### dataPoint
 
-• **dataPoint**: `string`
+> **dataPoint**: `string`
 
 The data point's slug
 
-___
+***
 
 ### filterType
 
-• **filterType**: `string`
+> **filterType**: `string`
 
 Data points of "text" type support only "equals" filterType, others support both "equals" and "range"
 
-___
+***
 
 ### query
 
-• **query**: `Record`\<`string`, `unknown`\>
+> **query**: `Record`\<`string`, `unknown`\>
 
 "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal)
 
-___
+***
 
-### required
+### required?
 
-• `Optional` **required**: `boolean`
+> `optional` **required**: `boolean`
 
-___
+***
 
-### weight
+### weight?
 
-• `Optional` **weight**: `number`
+> `optional` **weight**: `number`

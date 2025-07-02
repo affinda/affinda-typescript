@@ -1,26 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentSplit
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentSplit
 
 # Interface: DocumentSplit
 
 Describe a split of a document.
 
-## Table of contents
-
-### Properties
-
-- [identifier](DocumentSplit.md#identifier)
-- [pages](DocumentSplit.md#pages)
-
 ## Properties
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `any`
+> `optional` **identifier**: `any`
 
 Anything
 
-___
+***
 
 ### pages
 
-• **pages**: [`DocumentSplitPage`](DocumentSplitPage.md)[]
+> **pages**: [`DocumentSplitPage`](DocumentSplitPage.md)[]

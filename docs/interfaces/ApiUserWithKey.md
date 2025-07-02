@@ -1,72 +1,63 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ApiUserWithKey
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ApiUserWithKey
 
 # Interface: ApiUserWithKey
-
-## Table of contents
-
-### Properties
-
-- [apiKey](ApiUserWithKey.md#apikey)
-- [apiKeyLastChars](ApiUserWithKey.md#apikeylastchars)
-- [avatar](ApiUserWithKey.md#avatar)
-- [email](ApiUserWithKey.md#email)
-- [id](ApiUserWithKey.md#id)
-- [name](ApiUserWithKey.md#name)
-- [organizations](ApiUserWithKey.md#organizations)
-- [username](ApiUserWithKey.md#username)
 
 ## Properties
 
 ### apiKey
 
-• **apiKey**: `string`
+> **apiKey**: `string`
 
 Use this key to authenticate with the API.
 
-___
+***
 
-### apiKeyLastChars
+### apiKeyLastChars?
 
-• `Optional` **apiKeyLastChars**: `string`
+> `optional` **apiKeyLastChars**: `string`
 
 The last 4 characters of the API key.
 
-___
+***
 
 ### avatar
 
-• **avatar**: ``null`` \| `string`
+> **avatar**: `null` \| `string`
 
 URL of the user's avatar.
 
-___
+***
 
 ### email
 
-• **email**: `string`
+> **email**: `string`
 
-___
+***
 
 ### id
 
-• **id**: `number`
+> **id**: `number`
 
 Uniquely identify a user.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### organizations
 
-• **organizations**: [`ApiUserWithKeyOrganizationsItem`](ApiUserWithKeyOrganizationsItem.md)[]
+> **organizations**: [`ApiUserWithKeyOrganizationsItem`](ApiUserWithKeyOrganizationsItem.md)[]
 
-___
+***
 
 ### username
 
-• **username**: `string`
+> **username**: `string`

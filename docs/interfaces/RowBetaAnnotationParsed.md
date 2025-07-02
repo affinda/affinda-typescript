@@ -1,92 +1,79 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / RowBetaAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / RowBetaAnnotationParsed
 
 # Interface: RowBetaAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [itemBaseTotalBeta](RowBetaAnnotationParsed.md#itembasetotalbeta)
-- [itemCodeBeta](RowBetaAnnotationParsed.md#itemcodebeta)
-- [itemDateBeta](RowBetaAnnotationParsed.md#itemdatebeta)
-- [itemDescriptionBeta](RowBetaAnnotationParsed.md#itemdescriptionbeta)
-- [itemDiscountBeta](RowBetaAnnotationParsed.md#itemdiscountbeta)
-- [itemOtherBeta](RowBetaAnnotationParsed.md#itemotherbeta)
-- [itemQuantityBeta](RowBetaAnnotationParsed.md#itemquantitybeta)
-- [itemTaxRateBeta](RowBetaAnnotationParsed.md#itemtaxratebeta)
-- [itemTaxTotalBeta](RowBetaAnnotationParsed.md#itemtaxtotalbeta)
-- [itemTotalBeta](RowBetaAnnotationParsed.md#itemtotalbeta)
-- [itemUnitBeta](RowBetaAnnotationParsed.md#itemunitbeta)
-- [itemUnitPriceBeta](RowBetaAnnotationParsed.md#itemunitpricebeta)
-
 ## Properties
 
-### itemBaseTotalBeta
+### itemBaseTotalBeta?
 
-• `Optional` **itemBaseTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemBaseTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemCodeBeta
+### itemCodeBeta?
 
-• `Optional` **itemCodeBeta**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemCodeBeta**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemDateBeta
+### itemDateBeta?
 
-• `Optional` **itemDateBeta**: [`DateAnnotation`](DateAnnotation.md)
+> `optional` **itemDateBeta**: [`DateAnnotation`](DateAnnotation.md)
 
-___
+***
 
-### itemDescriptionBeta
+### itemDescriptionBeta?
 
-• `Optional` **itemDescriptionBeta**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemDescriptionBeta**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemDiscountBeta
+### itemDiscountBeta?
 
-• `Optional` **itemDiscountBeta**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemDiscountBeta**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemOtherBeta
+### itemOtherBeta?
 
-• `Optional` **itemOtherBeta**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemOtherBeta**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemQuantityBeta
+### itemQuantityBeta?
 
-• `Optional` **itemQuantityBeta**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemQuantityBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemTaxRateBeta
+### itemTaxRateBeta?
 
-• `Optional` **itemTaxRateBeta**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemTaxRateBeta**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemTaxTotalBeta
+### itemTaxTotalBeta?
 
-• `Optional` **itemTaxTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemTaxTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemTotalBeta
+### itemTotalBeta?
 
-• `Optional` **itemTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemTotalBeta**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemUnitBeta
+### itemUnitBeta?
 
-• `Optional` **itemUnitBeta**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemUnitBeta**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemUnitPriceBeta
+### itemUnitPriceBeta?
 
-• `Optional` **itemUnitPriceBeta**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemUnitPriceBeta**: [`FloatAnnotation`](FloatAnnotation.md)

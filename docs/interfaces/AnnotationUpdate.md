@@ -1,89 +1,79 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / AnnotationUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / AnnotationUpdate
 
 # Interface: AnnotationUpdate
 
-## Table of contents
-
-### Properties
-
-- [dataPoint](AnnotationUpdate.md#datapoint)
-- [document](AnnotationUpdate.md#document)
-- [isClientVerified](AnnotationUpdate.md#isclientverified)
-- [pageIndex](AnnotationUpdate.md#pageindex)
-- [parent](AnnotationUpdate.md#parent)
-- [parsed](AnnotationUpdate.md#parsed)
-- [raw](AnnotationUpdate.md#raw)
-- [rectangles](AnnotationUpdate.md#rectangles)
-- [validationResults](AnnotationUpdate.md#validationresults)
-
 ## Properties
 
-### dataPoint
+### dataPoint?
 
-• `Optional` **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
 Data point's identifier
 
-___
+***
 
-### document
+### document?
 
-• `Optional` **document**: `string`
+> `optional` **document**: `string`
 
 Unique identifier for the document
 
-___
+***
 
-### isClientVerified
+### isClientVerified?
 
-• `Optional` **isClientVerified**: `boolean`
+> `optional` **isClientVerified**: `boolean`
 
 Indicates whether the data has been validated by a human
 
-___
+***
 
-### pageIndex
+### pageIndex?
 
-• `Optional` **pageIndex**: `number`
+> `optional` **pageIndex**: `number`
 
 The page number within the document, starting from 0.
 
-___
+***
 
-### parent
+### parent?
 
-• `Optional` **parent**: `number`
+> `optional` **parent**: `number`
 
 The parent annotation's ID
 
-___
+***
 
-### parsed
+### parsed?
 
-• `Optional` **parsed**: `any`
+> `optional` **parsed**: `any`
 
 Anything
 
-___
+***
 
-### raw
+### raw?
 
-• `Optional` **raw**: `string`
+> `optional` **raw**: `string`
 
 Raw data extracted from the before any post-processing
 
-___
+***
 
-### rectangles
+### rectangles?
 
-• `Optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
+> `optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
 
 x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles.
 
-___
+***
 
-### validationResults
+### validationResults?
 
-• `Optional` **validationResults**: (``null`` \| [`ChangedValidationResults`](ChangedValidationResults.md))[]
+> `optional` **validationResults**: (`null` \| [`ChangedValidationResults`](ChangedValidationResults.md))[]
 
 The validation results created, changed or deleted as a result of updating the annotation.

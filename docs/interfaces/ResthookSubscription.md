@@ -1,85 +1,75 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResthookSubscription
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResthookSubscription
 
 # Interface: ResthookSubscription
-
-## Table of contents
-
-### Properties
-
-- [active](ResthookSubscription.md#active)
-- [autoDeactivateReason](ResthookSubscription.md#autodeactivatereason)
-- [autoDeactivated](ResthookSubscription.md#autodeactivated)
-- [event](ResthookSubscription.md#event)
-- [id](ResthookSubscription.md#id)
-- [organization](ResthookSubscription.md#organization)
-- [targetUrl](ResthookSubscription.md#targeturl)
-- [version](ResthookSubscription.md#version)
-- [workspace](ResthookSubscription.md#workspace)
 
 ## Properties
 
 ### active
 
-• **active**: `boolean`
+> **active**: `boolean`
 
 Resthooks only fire for active subscriptions.
 
-___
-
-### autoDeactivateReason
-
-• **autoDeactivateReason**: `string`
-
-The reason for the subscription being auto deactivated. May contains the error response that the receiver returned.
-
-___
+***
 
 ### autoDeactivated
 
-• **autoDeactivated**: `boolean`
+> **autoDeactivated**: `boolean`
 
 Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time.
 
-___
+***
+
+### autoDeactivateReason
+
+> **autoDeactivateReason**: `string`
+
+The reason for the subscription being auto deactivated. May contains the error response that the receiver returned.
+
+***
 
 ### event
 
-• **event**: `string`
+> **event**: `string`
 
 The event name to subscribe to.
 
-___
+***
 
 ### id
 
-• **id**: `number`
+> **id**: `number`
 
 Resthook subscription's ID.
 
-___
+***
 
 ### organization
 
-• **organization**: ``null`` \| [`Organization`](Organization.md)
+> **organization**: `null` \| [`Organization`](Organization.md)
 
-___
+***
 
 ### targetUrl
 
-• **targetUrl**: `string`
+> **targetUrl**: `string`
 
 URL of the resthook's receiver.
 
-___
+***
 
 ### version
 
-• **version**: `string`
+> **version**: `string`
 
 Version of the resthook subscription. Determines the resthook body being fired.
 
-___
+***
 
 ### workspace
 
-• **workspace**: ``null`` \| [`ResthookSubscriptionWorkspace`](ResthookSubscriptionWorkspace.md)
+> **workspace**: `null` \| [`ResthookSubscriptionWorkspace`](ResthookSubscriptionWorkspace.md)

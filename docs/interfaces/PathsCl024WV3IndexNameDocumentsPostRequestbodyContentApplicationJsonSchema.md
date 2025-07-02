@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema
 
 # Interface: PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema
 
-## Table of contents
-
-### Properties
-
-- [document](PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchema.md#document)
-
 ## Properties
 
-### document
+### document?
 
-• `Optional` **document**: `string`
+> `optional` **document**: `string`

@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ExtractorConfig
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ExtractorConfig
 
 # Interface: ExtractorConfig
 
 Extra configurations specific to an extractor.
 
-## Table of contents
-
-### Properties
-
-- [resumeRedact](ExtractorConfig.md#resumeredact)
-
 ## Properties
 
-### resumeRedact
+### resumeRedact?
 
-• `Optional` **resumeRedact**: [`RedactConfig`](RedactConfig.md)
+> `optional` **resumeRedact**: [`RedactConfig`](RedactConfig.md)

@@ -1,49 +1,43 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearch
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearch
 
 # Interface: JobDescriptionSearch
 
-## Table of contents
-
-### Properties
-
-- [count](JobDescriptionSearch.md#count)
-- [next](JobDescriptionSearch.md#next)
-- [parameters](JobDescriptionSearch.md#parameters)
-- [previous](JobDescriptionSearch.md#previous)
-- [results](JobDescriptionSearch.md#results)
-
 ## Properties
 
-### count
+### count?
 
-• `Optional` **count**: `number`
+> `optional` **count**: `number`
 
 Total number of results
 
-___
+***
 
-### next
+### next?
 
-• `Optional` **next**: `string`
+> `optional` **next**: `string`
 
 URL to request next page of results
 
-___
+***
 
-### parameters
+### parameters?
 
-• `Optional` **parameters**: [`JobDescriptionSearchParameters`](JobDescriptionSearchParameters.md)
+> `optional` **parameters**: [`JobDescriptionSearchParameters`](JobDescriptionSearchParameters.md)
 
-___
+***
 
-### previous
+### previous?
 
-• `Optional` **previous**: `string`
+> `optional` **previous**: `string`
 
 URL to request previous page of results
 
-___
+***
 
-### results
+### results?
 
-• `Optional` **results**: [`JobDescriptionSearchResult`](JobDescriptionSearchResult.md)[]
+> `optional` **results**: [`JobDescriptionSearchResult`](JobDescriptionSearchResult.md)[]

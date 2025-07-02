@@ -1,4 +1,8 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentCreateData
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentCreateData
 
 # Interface: DocumentCreateData
 

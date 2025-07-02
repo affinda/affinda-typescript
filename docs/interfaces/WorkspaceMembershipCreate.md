@@ -1,26 +1,23 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / WorkspaceMembershipCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / WorkspaceMembershipCreate
 
 # Interface: WorkspaceMembershipCreate
 
-## Table of contents
-
-### Properties
-
-- [user](WorkspaceMembershipCreate.md#user)
-- [workspace](WorkspaceMembershipCreate.md#workspace)
-
 ## Properties
 
-### user
+### user?
 
-• `Optional` **user**: `number`
+> `optional` **user**: `number`
 
 Uniquely identify a user.
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: `string`
+> `optional` **workspace**: `string`
 
 Uniquely identify a workspace.

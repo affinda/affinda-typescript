@@ -1,64 +1,55 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / RedactConfig
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / RedactConfig
 
 # Interface: RedactConfig
 
-## Table of contents
-
-### Properties
-
-- [redactDates](RedactConfig.md#redactdates)
-- [redactEducationDetails](RedactConfig.md#redacteducationdetails)
-- [redactGender](RedactConfig.md#redactgender)
-- [redactHeadshot](RedactConfig.md#redactheadshot)
-- [redactLocations](RedactConfig.md#redactlocations)
-- [redactPersonalDetails](RedactConfig.md#redactpersonaldetails)
-- [redactReferees](RedactConfig.md#redactreferees)
-- [redactWorkDetails](RedactConfig.md#redactworkdetails)
-
 ## Properties
 
-### redactDates
+### redactDates?
 
-• `Optional` **redactDates**: `boolean`
+> `optional` **redactDates**: `boolean`
 
-___
+***
 
-### redactEducationDetails
+### redactEducationDetails?
 
-• `Optional` **redactEducationDetails**: `boolean`
+> `optional` **redactEducationDetails**: `boolean`
 
-___
+***
 
-### redactGender
+### redactGender?
 
-• `Optional` **redactGender**: `boolean`
+> `optional` **redactGender**: `boolean`
 
-___
+***
 
-### redactHeadshot
+### redactHeadshot?
 
-• `Optional` **redactHeadshot**: `boolean`
+> `optional` **redactHeadshot**: `boolean`
 
-___
+***
 
-### redactLocations
+### redactLocations?
 
-• `Optional` **redactLocations**: `boolean`
+> `optional` **redactLocations**: `boolean`
 
-___
+***
 
-### redactPersonalDetails
+### redactPersonalDetails?
 
-• `Optional` **redactPersonalDetails**: `boolean`
+> `optional` **redactPersonalDetails**: `boolean`
 
-___
+***
 
-### redactReferees
+### redactReferees?
 
-• `Optional` **redactReferees**: `boolean`
+> `optional` **redactReferees**: `boolean`
 
-___
+***
 
-### redactWorkDetails
+### redactWorkDetails?
 
-• `Optional` **redactWorkDetails**: `boolean`
+> `optional` **redactWorkDetails**: `boolean`

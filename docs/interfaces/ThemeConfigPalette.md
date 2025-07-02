@@ -1,87 +1,75 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ThemeConfigPalette
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ThemeConfigPalette
 
 # Interface: ThemeConfigPalette
 
-## Table of contents
-
-### Properties
-
-- [annotation](ThemeConfigPalette.md#annotation)
-- [background](ThemeConfigPalette.md#background)
-- [divider](ThemeConfigPalette.md#divider)
-- [error](ThemeConfigPalette.md#error)
-- [info](ThemeConfigPalette.md#info)
-- [mode](ThemeConfigPalette.md#mode)
-- [primary](ThemeConfigPalette.md#primary)
-- [secondary](ThemeConfigPalette.md#secondary)
-- [success](ThemeConfigPalette.md#success)
-- [text](ThemeConfigPalette.md#text)
-- [warning](ThemeConfigPalette.md#warning)
-
 ## Properties
 
-### annotation
+### annotation?
 
-• `Optional` **annotation**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **annotation**: [`PaletteColorOptions`](PaletteColorOptions.md)
 
-___
+***
 
-### background
+### background?
 
-• `Optional` **background**: `any`
+> `optional` **background**: `any`
 
 Anything
 
-___
+***
 
-### divider
+### divider?
 
-• `Optional` **divider**: `string`
+> `optional` **divider**: `string`
 
-___
+***
 
-### error
+### error?
 
-• `Optional` **error**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **error**: [`PaletteColorOptions`](PaletteColorOptions.md)
 
-___
+***
 
-### info
+### info?
 
-• `Optional` **info**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **info**: [`PaletteColorOptions`](PaletteColorOptions.md)
 
-___
+***
 
-### mode
+### mode?
 
-• `Optional` **mode**: `string`
+> `optional` **mode**: `string`
 
-___
+***
 
-### primary
+### primary?
 
-• `Optional` **primary**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **primary**: [`PaletteColorOptions`](PaletteColorOptions.md)
 
-___
+***
 
-### secondary
+### secondary?
 
-• `Optional` **secondary**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **secondary**: [`PaletteColorOptions`](PaletteColorOptions.md)
 
-___
+***
 
-### success
+### success?
 
-• `Optional` **success**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **success**: [`PaletteColorOptions`](PaletteColorOptions.md)
 
-___
+***
 
-### text
+### text?
 
-• `Optional` **text**: [`ThemeConfigPaletteText`](ThemeConfigPaletteText.md)
+> `optional` **text**: [`ThemeConfigPaletteText`](ThemeConfigPaletteText.md)
 
-___
+***
 
-### warning
+### warning?
 
-• `Optional` **warning**: [`PaletteColorOptions`](PaletteColorOptions.md)
+> `optional` **warning**: [`PaletteColorOptions`](PaletteColorOptions.md)

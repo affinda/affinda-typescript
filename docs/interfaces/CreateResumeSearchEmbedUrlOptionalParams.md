@@ -1,49 +1,40 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / CreateResumeSearchEmbedUrlOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / CreateResumeSearchEmbedUrlOptionalParams
 
 # Interface: CreateResumeSearchEmbedUrlOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`CreateResumeSearchEmbedUrlOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](CreateResumeSearchEmbedUrlOptionalParams.md#abortsignal)
-- [body](CreateResumeSearchEmbedUrlOptionalParams.md#body)
-- [onResponse](CreateResumeSearchEmbedUrlOptionalParams.md#onresponse)
-- [requestOptions](CreateResumeSearchEmbedUrlOptionalParams.md#requestoptions)
-- [serializerOptions](CreateResumeSearchEmbedUrlOptionalParams.md#serializeroptions)
-- [tracingOptions](CreateResumeSearchEmbedUrlOptionalParams.md#tracingoptions)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### body
+### body?
 
-• `Optional` **body**: [`Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
+> `optional` **body**: [`Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema`](Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchema.md)
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -51,40 +42,40 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`

@@ -1,240 +1,209 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchConfig
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchConfig
 
 # Interface: JobDescriptionSearchConfig
 
-## Table of contents
-
-### Properties
-
-- [actions](JobDescriptionSearchConfig.md#actions)
-- [allowPdfDownload](JobDescriptionSearchConfig.md#allowpdfdownload)
-- [customFieldsConfig](JobDescriptionSearchConfig.md#customfieldsconfig)
-- [displayEducation](JobDescriptionSearchConfig.md#displayeducation)
-- [displayJobTitle](JobDescriptionSearchConfig.md#displayjobtitle)
-- [displayKeywords](JobDescriptionSearchConfig.md#displaykeywords)
-- [displayLanguages](JobDescriptionSearchConfig.md#displaylanguages)
-- [displayLocation](JobDescriptionSearchConfig.md#displaylocation)
-- [displayManagementLevel](JobDescriptionSearchConfig.md#displaymanagementlevel)
-- [displayOccupationGroup](JobDescriptionSearchConfig.md#displayoccupationgroup)
-- [displaySkills](JobDescriptionSearchConfig.md#displayskills)
-- [displayYearsExperience](JobDescriptionSearchConfig.md#displayyearsexperience)
-- [distanceUnit](JobDescriptionSearchConfig.md#distanceunit)
-- [hideSidePanel](JobDescriptionSearchConfig.md#hidesidepanel)
-- [hideToolbar](JobDescriptionSearchConfig.md#hidetoolbar)
-- [indices](JobDescriptionSearchConfig.md#indices)
-- [maxResults](JobDescriptionSearchConfig.md#maxresults)
-- [searchToolTheme](JobDescriptionSearchConfig.md#searchtooltheme)
-- [showIndexDropdown](JobDescriptionSearchConfig.md#showindexdropdown)
-- [userId](JobDescriptionSearchConfig.md#userid)
-- [username](JobDescriptionSearchConfig.md#username)
-- [weightEducation](JobDescriptionSearchConfig.md#weighteducation)
-- [weightJobTitle](JobDescriptionSearchConfig.md#weightjobtitle)
-- [weightKeywords](JobDescriptionSearchConfig.md#weightkeywords)
-- [weightLanguages](JobDescriptionSearchConfig.md#weightlanguages)
-- [weightLocation](JobDescriptionSearchConfig.md#weightlocation)
-- [weightManagementLevel](JobDescriptionSearchConfig.md#weightmanagementlevel)
-- [weightOccupationGroup](JobDescriptionSearchConfig.md#weightoccupationgroup)
-- [weightSkills](JobDescriptionSearchConfig.md#weightskills)
-- [weightYearsExperience](JobDescriptionSearchConfig.md#weightyearsexperience)
-
 ## Properties
 
-### actions
+### actions?
 
-• `Optional` **actions**: [`SearchConfigAction`](SearchConfigAction.md)[]
+> `optional` **actions**: [`SearchConfigAction`](SearchConfigAction.md)[]
 
 A list of actions to show in the dropdown in the embedded search tool
 
-___
+***
 
-### allowPdfDownload
+### allowPdfDownload?
 
-• `Optional` **allowPdfDownload**: `boolean`
+> `optional` **allowPdfDownload**: `boolean`
 
-___
+***
 
-### customFieldsConfig
+### customFieldsConfig?
 
-• `Optional` **customFieldsConfig**: [`CustomFieldConfig`](CustomFieldConfig.md)[]
+> `optional` **customFieldsConfig**: [`CustomFieldConfig`](CustomFieldConfig.md)[]
 
-___
+***
 
-### displayEducation
+### displayEducation?
 
-• `Optional` **displayEducation**: `boolean`
+> `optional` **displayEducation**: `boolean`
 
-___
+***
 
-### displayJobTitle
+### displayJobTitle?
 
-• `Optional` **displayJobTitle**: `boolean`
+> `optional` **displayJobTitle**: `boolean`
 
-___
+***
 
-### displayKeywords
+### displayKeywords?
 
-• `Optional` **displayKeywords**: `boolean`
+> `optional` **displayKeywords**: `boolean`
 
-___
+***
 
-### displayLanguages
+### displayLanguages?
 
-• `Optional` **displayLanguages**: `boolean`
+> `optional` **displayLanguages**: `boolean`
 
-___
+***
 
-### displayLocation
+### displayLocation?
 
-• `Optional` **displayLocation**: `boolean`
+> `optional` **displayLocation**: `boolean`
 
-___
+***
 
-### displayManagementLevel
+### displayManagementLevel?
 
-• `Optional` **displayManagementLevel**: `boolean`
+> `optional` **displayManagementLevel**: `boolean`
 
-___
+***
 
-### displayOccupationGroup
+### displayOccupationGroup?
 
-• `Optional` **displayOccupationGroup**: `boolean`
+> `optional` **displayOccupationGroup**: `boolean`
 
-___
+***
 
-### displaySkills
+### displaySkills?
 
-• `Optional` **displaySkills**: `boolean`
+> `optional` **displaySkills**: `boolean`
 
-___
+***
 
-### displayYearsExperience
+### displayYearsExperience?
 
-• `Optional` **displayYearsExperience**: `boolean`
+> `optional` **displayYearsExperience**: `boolean`
 
-___
+***
 
-### distanceUnit
+### distanceUnit?
 
-• `Optional` **distanceUnit**: `string`
+> `optional` **distanceUnit**: `string`
 
 The unit of distance to use for location based searches
 
-___
+***
 
-### hideSidePanel
+### hideSidePanel?
 
-• `Optional` **hideSidePanel**: `boolean`
+> `optional` **hideSidePanel**: `boolean`
 
 Hide the entire side panel.
 
-___
+***
 
-### hideToolbar
+### hideToolbar?
 
-• `Optional` **hideToolbar**: `boolean`
+> `optional` **hideToolbar**: `boolean`
 
 Hide the reset/import toolbar.
 
-___
+***
 
-### indices
+### indices?
 
-• `Optional` **indices**: `string`[]
+> `optional` **indices**: `string`[]
 
 List of index names.
 
-___
+***
 
-### maxResults
+### maxResults?
 
-• `Optional` **maxResults**: `number`
+> `optional` **maxResults**: `number`
 
 Maximum number of results that can be returned. Setting to "null" means no limitation.
 
-___
+***
 
-### searchToolTheme
+### searchToolTheme?
 
-• `Optional` **searchToolTheme**: [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
+> `optional` **searchToolTheme**: [`JobDescriptionSearchConfigSearchToolTheme`](JobDescriptionSearchConfigSearchToolTheme.md)
 
 Customize the theme of the embeded search tool.
 
-___
+***
 
-### showIndexDropdown
+### showIndexDropdown?
 
-• `Optional` **showIndexDropdown**: `boolean`
+> `optional` **showIndexDropdown**: `boolean`
 
 Controls whether or not the index dropdown is displayed to the user
 
-___
+***
 
-### userId
+### userId?
 
-• `Optional` `Readonly` **userId**: `number`
+> `readonly` `optional` **userId**: `number`
 
 ID of the logged in user.
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### username
+### username?
 
-• `Optional` `Readonly` **username**: `string`
+> `readonly` `optional` **username**: `string`
 
 Username of the logged in user.
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### weightEducation
+### weightEducation?
 
-• `Optional` **weightEducation**: `number`
+> `optional` **weightEducation**: `number`
 
-___
+***
 
-### weightJobTitle
+### weightJobTitle?
 
-• `Optional` **weightJobTitle**: `number`
+> `optional` **weightJobTitle**: `number`
 
-___
+***
 
-### weightKeywords
+### weightKeywords?
 
-• `Optional` **weightKeywords**: `number`
+> `optional` **weightKeywords**: `number`
 
-___
+***
 
-### weightLanguages
+### weightLanguages?
 
-• `Optional` **weightLanguages**: `number`
+> `optional` **weightLanguages**: `number`
 
-___
+***
 
-### weightLocation
+### weightLocation?
 
-• `Optional` **weightLocation**: `number`
+> `optional` **weightLocation**: `number`
 
-___
+***
 
-### weightManagementLevel
+### weightManagementLevel?
 
-• `Optional` **weightManagementLevel**: `number`
+> `optional` **weightManagementLevel**: `number`
 
-___
+***
 
-### weightOccupationGroup
+### weightOccupationGroup?
 
-• `Optional` **weightOccupationGroup**: `number`
+> `optional` **weightOccupationGroup**: `number`
 
-___
+***
 
-### weightSkills
+### weightSkills?
 
-• `Optional` **weightSkills**: `number`
+> `optional` **weightSkills**: `number`
 
-___
+***
 
-### weightYearsExperience
+### weightYearsExperience?
 
-• `Optional` **weightYearsExperience**: `number`
+> `optional` **weightYearsExperience**: `number`

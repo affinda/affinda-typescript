@@ -1,4 +1,8 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / IndexCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / IndexCreate
 
 # Interface: IndexCreate
 
@@ -6,25 +10,20 @@ IndexRequestBody
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [docType](IndexCreate.md#doctype)
-- [name](IndexCreate.md#name)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### docType
+### docType?
 
-• `Optional` **docType**: `string`
+> `optional` **docType**: `string`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
 Unique index name

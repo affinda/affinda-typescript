@@ -1,52 +1,45 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ExtractorUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ExtractorUpdate
 
 # Interface: ExtractorUpdate
 
-## Table of contents
-
-### Properties
-
-- [baseExtractor](ExtractorUpdate.md#baseextractor)
-- [category](ExtractorUpdate.md#category)
-- [fieldGroups](ExtractorUpdate.md#fieldgroups)
-- [name](ExtractorUpdate.md#name)
-- [namePlural](ExtractorUpdate.md#nameplural)
-- [validatable](ExtractorUpdate.md#validatable)
-
 ## Properties
 
-### baseExtractor
+### baseExtractor?
 
-• `Optional` **baseExtractor**: `string`
+> `optional` **baseExtractor**: `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
-### category
+### category?
 
-• `Optional` **category**: `string`
+> `optional` **category**: `string`
 
-___
+***
 
-### fieldGroups
+### fieldGroups?
 
-• `Optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
+> `optional` **fieldGroups**: [`FieldGroup`](FieldGroup.md)[]
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### namePlural
+### namePlural?
 
-• `Optional` **namePlural**: `string`
+> `optional` **namePlural**: `string`
 
-___
+***
 
-### validatable
+### validatable?
 
-• `Optional` **validatable**: `boolean`
+> `optional` **validatable**: `boolean`

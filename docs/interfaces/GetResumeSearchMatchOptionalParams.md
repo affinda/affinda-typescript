@@ -1,101 +1,82 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetResumeSearchMatchOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / GetResumeSearchMatchOptionalParams
 
 # Interface: GetResumeSearchMatchOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`GetResumeSearchMatchOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](GetResumeSearchMatchOptionalParams.md#abortsignal)
-- [educationWeight](GetResumeSearchMatchOptionalParams.md#educationweight)
-- [index](GetResumeSearchMatchOptionalParams.md#index)
-- [jobTitlesWeight](GetResumeSearchMatchOptionalParams.md#jobtitlesweight)
-- [languagesWeight](GetResumeSearchMatchOptionalParams.md#languagesweight)
-- [locationsWeight](GetResumeSearchMatchOptionalParams.md#locationsweight)
-- [managementLevelWeight](GetResumeSearchMatchOptionalParams.md#managementlevelweight)
-- [onResponse](GetResumeSearchMatchOptionalParams.md#onresponse)
-- [requestOptions](GetResumeSearchMatchOptionalParams.md#requestoptions)
-- [searchExpression](GetResumeSearchMatchOptionalParams.md#searchexpression)
-- [searchExpressionWeight](GetResumeSearchMatchOptionalParams.md#searchexpressionweight)
-- [serializerOptions](GetResumeSearchMatchOptionalParams.md#serializeroptions)
-- [skillsWeight](GetResumeSearchMatchOptionalParams.md#skillsweight)
-- [socCodesWeight](GetResumeSearchMatchOptionalParams.md#soccodesweight)
-- [tracingOptions](GetResumeSearchMatchOptionalParams.md#tracingoptions)
-- [yearsExperienceWeight](GetResumeSearchMatchOptionalParams.md#yearsexperienceweight)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### educationWeight
+### educationWeight?
 
-• `Optional` **educationWeight**: `number`
+> `optional` **educationWeight**: `number`
 
 How important is this criteria to the matching score, range from 0 to 1.
 
-___
+***
 
-### index
+### index?
 
-• `Optional` **index**: `string`
+> `optional` **index**: `string`
 
 Optionally, specify an index to search in. If not specified, will search in all indexes.
 
-___
+***
 
-### jobTitlesWeight
+### jobTitlesWeight?
 
-• `Optional` **jobTitlesWeight**: `number`
-
-How important is this criteria to the matching score, range from 0 to 1.
-
-___
-
-### languagesWeight
-
-• `Optional` **languagesWeight**: `number`
+> `optional` **jobTitlesWeight**: `number`
 
 How important is this criteria to the matching score, range from 0 to 1.
 
-___
+***
 
-### locationsWeight
+### languagesWeight?
 
-• `Optional` **locationsWeight**: `number`
-
-How important is this criteria to the matching score, range from 0 to 1.
-
-___
-
-### managementLevelWeight
-
-• `Optional` **managementLevelWeight**: `number`
+> `optional` **languagesWeight**: `number`
 
 How important is this criteria to the matching score, range from 0 to 1.
 
-___
+***
 
-### onResponse
+### locationsWeight?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **locationsWeight**: `number`
+
+How important is this criteria to the matching score, range from 0 to 1.
+
+***
+
+### managementLevelWeight?
+
+> `optional` **managementLevelWeight**: `number`
+
+How important is this criteria to the matching score, range from 0 to 1.
+
+***
+
+### onResponse?
+
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -103,80 +84,80 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### searchExpression
+### searchExpression?
 
-• `Optional` **searchExpression**: `string`
+> `optional` **searchExpression**: `string`
 
 Add keywords to the search criteria.
 
-___
+***
 
-### searchExpressionWeight
+### searchExpressionWeight?
 
-• `Optional` **searchExpressionWeight**: `number`
+> `optional` **searchExpressionWeight**: `number`
 
 How important is this criteria to the matching score, range from 0 to 1.
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### skillsWeight
+### skillsWeight?
 
-• `Optional` **skillsWeight**: `number`
-
-How important is this criteria to the matching score, range from 0 to 1.
-
-___
-
-### socCodesWeight
-
-• `Optional` **socCodesWeight**: `number`
+> `optional` **skillsWeight**: `number`
 
 How important is this criteria to the matching score, range from 0 to 1.
 
-___
+***
 
-### tracingOptions
+### socCodesWeight?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **socCodesWeight**: `number`
+
+How important is this criteria to the matching score, range from 0 to 1.
+
+***
+
+### tracingOptions?
+
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`
 
-___
+***
 
-### yearsExperienceWeight
+### yearsExperienceWeight?
 
-• `Optional` **yearsExperienceWeight**: `number`
+> `optional` **yearsExperienceWeight**: `number`
 
 How important is this criteria to the matching score, range from 0 to 1.

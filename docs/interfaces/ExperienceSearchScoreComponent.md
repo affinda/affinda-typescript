@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ExperienceSearchScoreComponent
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ExperienceSearchScoreComponent
 
 # Interface: ExperienceSearchScoreComponent
-
-## Table of contents
-
-### Properties
-
-- [label](ExperienceSearchScoreComponent.md#label)
-- [score](ExperienceSearchScoreComponent.md#score)
-- [value](ExperienceSearchScoreComponent.md#value)
 
 ## Properties
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### score
+### score?
 
-• `Optional` **score**: `number`
+> `optional` **score**: `number`
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`
+> `optional` **value**: `string`

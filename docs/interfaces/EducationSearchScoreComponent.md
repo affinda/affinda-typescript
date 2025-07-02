@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / EducationSearchScoreComponent
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / EducationSearchScoreComponent
 
 # Interface: EducationSearchScoreComponent
-
-## Table of contents
-
-### Properties
-
-- [label](EducationSearchScoreComponent.md#label)
-- [score](EducationSearchScoreComponent.md#score)
-- [value](EducationSearchScoreComponent.md#value)
 
 ## Properties
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### score
+### score?
 
-• `Optional` **score**: `number`
+> `optional` **score**: `number`
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`
+> `optional` **value**: `string`

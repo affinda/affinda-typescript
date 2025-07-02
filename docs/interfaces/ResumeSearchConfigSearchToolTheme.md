@@ -1,60 +1,53 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchConfigSearchToolTheme
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchConfigSearchToolTheme
 
 # Interface: ResumeSearchConfigSearchToolTheme
 
 Customize the theme of the embeded search tool.
 
-## Hierarchy
+## Extends
 
 - [`ThemeConfig`](ThemeConfig.md)
 
-  ↳ **`ResumeSearchConfigSearchToolTheme`**
-
-## Table of contents
-
-### Properties
-
-- [borderRadius](ResumeSearchConfigSearchToolTheme.md#borderradius)
-- [fontUrl](ResumeSearchConfigSearchToolTheme.md#fonturl)
-- [palette](ResumeSearchConfigSearchToolTheme.md#palette)
-- [typography](ResumeSearchConfigSearchToolTheme.md#typography)
-
 ## Properties
 
-### borderRadius
+### borderRadius?
 
-• `Optional` **borderRadius**: `number`
-
-#### Inherited from
-
-[ThemeConfig](ThemeConfig.md).[borderRadius](ThemeConfig.md#borderradius)
-
-___
-
-### fontUrl
-
-• `Optional` **fontUrl**: `string`
+> `optional` **borderRadius**: `number`
 
 #### Inherited from
 
-[ThemeConfig](ThemeConfig.md).[fontUrl](ThemeConfig.md#fonturl)
+[`ThemeConfig`](ThemeConfig.md).[`borderRadius`](ThemeConfig.md#borderradius)
 
-___
+***
 
-### palette
+### fontUrl?
 
-• `Optional` **palette**: [`ThemeConfigPalette`](ThemeConfigPalette.md)
-
-#### Inherited from
-
-[ThemeConfig](ThemeConfig.md).[palette](ThemeConfig.md#palette)
-
-___
-
-### typography
-
-• `Optional` **typography**: [`ThemeConfigTypography`](ThemeConfigTypography.md)
+> `optional` **fontUrl**: `string`
 
 #### Inherited from
 
-[ThemeConfig](ThemeConfig.md).[typography](ThemeConfig.md#typography)
+[`ThemeConfig`](ThemeConfig.md).[`fontUrl`](ThemeConfig.md#fonturl)
+
+***
+
+### palette?
+
+> `optional` **palette**: [`ThemeConfigPalette`](ThemeConfigPalette.md)
+
+#### Inherited from
+
+[`ThemeConfig`](ThemeConfig.md).[`palette`](ThemeConfig.md#palette)
+
+***
+
+### typography?
+
+> `optional` **typography**: [`ThemeConfigTypography`](ThemeConfigTypography.md)
+
+#### Inherited from
+
+[`ThemeConfig`](ThemeConfig.md).[`typography`](ThemeConfig.md#typography)

@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / FieldsLayout
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / FieldsLayout
 
 # Interface: FieldsLayout
-
-## Table of contents
-
-### Properties
-
-- [categories](FieldsLayout.md#categories)
-- [defaultCategory](FieldsLayout.md#defaultcategory)
 
 ## Properties
 
 ### categories
 
-• **categories**: [`FieldCategory`](FieldCategory.md)[]
+> **categories**: [`FieldCategory`](FieldCategory.md)[]
 
-___
+***
 
 ### defaultCategory
 
-• **defaultCategory**: [`FieldCategory`](FieldCategory.md)
+> **defaultCategory**: [`FieldCategory`](FieldCategory.md)

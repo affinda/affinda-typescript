@@ -1,134 +1,119 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / OrganizationValidationToolConfig
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / OrganizationValidationToolConfig
 
 # Interface: OrganizationValidationToolConfig
 
 Configuration of the embeddable validation tool.
 
-## Table of contents
-
-### Properties
-
-- [disableCurrencyFormatting](OrganizationValidationToolConfig.md#disablecurrencyformatting)
-- [disableEditDocumentMetadata](OrganizationValidationToolConfig.md#disableeditdocumentmetadata)
-- [hideActions](OrganizationValidationToolConfig.md#hideactions)
-- [hideCollection](OrganizationValidationToolConfig.md#hidecollection)
-- [hideEditPages](OrganizationValidationToolConfig.md#hideeditpages)
-- [hideExport](OrganizationValidationToolConfig.md#hideexport)
-- [hideFilename](OrganizationValidationToolConfig.md#hidefilename)
-- [hideReject](OrganizationValidationToolConfig.md#hidereject)
-- [hideReparse](OrganizationValidationToolConfig.md#hidereparse)
-- [hideRunOcr](OrganizationValidationToolConfig.md#hiderunocr)
-- [hideTags](OrganizationValidationToolConfig.md#hidetags)
-- [hideWarnings](OrganizationValidationToolConfig.md#hidewarnings)
-- [restrictDocumentSplitting](OrganizationValidationToolConfig.md#restrictdocumentsplitting)
-- [theme](OrganizationValidationToolConfig.md#theme)
-
 ## Properties
 
-### disableCurrencyFormatting
+### disableCurrencyFormatting?
 
-• `Optional` **disableCurrencyFormatting**: `boolean`
+> `optional` **disableCurrencyFormatting**: `boolean`
 
 Disable currency formatting of decimals values.
 
-___
+***
 
-### disableEditDocumentMetadata
+### disableEditDocumentMetadata?
 
-• `Optional` **disableEditDocumentMetadata**: `boolean`
+> `optional` **disableEditDocumentMetadata**: `boolean`
 
 Disable editing document metadata. Makes the collection selector, filename input and tags editor read only.
 
-___
+***
 
-### hideActions
+### hideActions?
 
-• `Optional` **hideActions**: `boolean`
+> `optional` **hideActions**: `boolean`
 
 Hide the confirm document button and other actions.
 
-___
+***
 
-### hideCollection
+### hideCollection?
 
-• `Optional` **hideCollection**: `boolean`
+> `optional` **hideCollection**: `boolean`
 
 Hide the collection selector.
 
-___
+***
 
-### hideEditPages
+### hideEditPages?
 
-• `Optional` **hideEditPages**: `boolean`
+> `optional` **hideEditPages**: `boolean`
 
 Hide the edit pages button.
 
-___
+***
 
-### hideExport
+### hideExport?
 
-• `Optional` **hideExport**: `boolean`
+> `optional` **hideExport**: `boolean`
 
 Hide the export menu.
 
-___
+***
 
-### hideFilename
+### hideFilename?
 
-• `Optional` **hideFilename**: `boolean`
+> `optional` **hideFilename**: `boolean`
 
 Hide the filename input.
 
-___
+***
 
-### hideReject
+### hideReject?
 
-• `Optional` **hideReject**: `boolean`
+> `optional` **hideReject**: `boolean`
 
 Hide the reject document button.
 
-___
+***
 
-### hideReparse
+### hideReparse?
 
-• `Optional` **hideReparse**: `boolean`
+> `optional` **hideReparse**: `boolean`
 
 Hide the reparse button.
 
-___
+***
 
-### hideRunOcr
+### hideRunOcr?
 
-• `Optional` **hideRunOcr**: `boolean`
+> `optional` **hideRunOcr**: `boolean`
 
 Hide the run OCR button.
 
-___
+***
 
-### hideTags
+### hideTags?
 
-• `Optional` **hideTags**: `boolean`
+> `optional` **hideTags**: `boolean`
 
 Hide the tags editor.
 
-___
+***
 
-### hideWarnings
+### hideWarnings?
 
-• `Optional` **hideWarnings**: `boolean`
+> `optional` **hideWarnings**: `boolean`
 
 Hide the warnings panel.
 
-___
+***
 
-### restrictDocumentSplitting
+### restrictDocumentSplitting?
 
-• `Optional` **restrictDocumentSplitting**: `boolean`
+> `optional` **restrictDocumentSplitting**: `boolean`
 
 Disable the page editor after a document has been split once.
 
-___
+***
 
-### theme
+### theme?
 
-• `Optional` **theme**: [`ThemeConfig`](ThemeConfig.md)
+> `optional` **theme**: [`ThemeConfig`](ThemeConfig.md)

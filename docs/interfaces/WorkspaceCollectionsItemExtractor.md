@@ -1,66 +1,57 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / WorkspaceCollectionsItemExtractor
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / WorkspaceCollectionsItemExtractor
 
 # Interface: WorkspaceCollectionsItemExtractor
 
-## Table of contents
-
-### Properties
-
-- [baseExtractor](WorkspaceCollectionsItemExtractor.md#baseextractor)
-- [category](WorkspaceCollectionsItemExtractor.md#category)
-- [createdDt](WorkspaceCollectionsItemExtractor.md#createddt)
-- [identifier](WorkspaceCollectionsItemExtractor.md#identifier)
-- [isCustom](WorkspaceCollectionsItemExtractor.md#iscustom)
-- [name](WorkspaceCollectionsItemExtractor.md#name)
-- [namePlural](WorkspaceCollectionsItemExtractor.md#nameplural)
-- [validatable](WorkspaceCollectionsItemExtractor.md#validatable)
-
 ## Properties
 
-### baseExtractor
+### baseExtractor?
 
-• `Optional` **baseExtractor**: [`BaseExtractor`](BaseExtractor.md)
+> `optional` **baseExtractor**: [`BaseExtractor`](BaseExtractor.md)
 
-___
+***
 
-### category
+### category?
 
-• `Optional` **category**: `string`
+> `optional` **category**: `string`
 
-___
+***
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `Date`
+> `optional` **createdDt**: `Date`
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
-### isCustom
+### isCustom?
 
-• `Optional` **isCustom**: `boolean`
+> `optional` **isCustom**: `boolean`
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
 ### namePlural
 
-• **namePlural**: `string`
+> **namePlural**: `string`
 
-___
+***
 
 ### validatable
 
-• **validatable**: `boolean`
+> **validatable**: `boolean`

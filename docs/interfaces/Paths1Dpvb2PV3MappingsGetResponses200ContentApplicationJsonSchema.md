@@ -1,66 +1,57 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
 
 # Interface: Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
 
-## Hierarchy
+## Extends
 
-- [`PaginatedResponse`](PaginatedResponse.md)
-
-- [`PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1`](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md)
-
-  ↳ **`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`**
-
-## Table of contents
-
-### Properties
-
-- [count](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md#count)
-- [next](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md#next)
-- [previous](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md#previous)
-- [results](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md#results)
+- [`PaginatedResponse`](PaginatedResponse.md).[`PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1`](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md)
 
 ## Properties
 
 ### count
 
-• **count**: `number`
+> **count**: `number`
 
 Number of items in results.
 
 #### Inherited from
 
-[PaginatedResponse](PaginatedResponse.md).[count](PaginatedResponse.md#count)
+[`PaginatedResponse`](PaginatedResponse.md).[`count`](PaginatedResponse.md#count)
 
-___
+***
 
-### next
+### next?
 
-• `Optional` **next**: `string`
+> `optional` **next**: `string`
 
 URL to request next page of results.
 
 #### Inherited from
 
-[PaginatedResponse](PaginatedResponse.md).[next](PaginatedResponse.md#next)
+[`PaginatedResponse`](PaginatedResponse.md).[`next`](PaginatedResponse.md#next)
 
-___
+***
 
-### previous
+### previous?
 
-• `Optional` **previous**: `string`
+> `optional` **previous**: `string`
 
 URL to request previous page of results.
 
 #### Inherited from
 
-[PaginatedResponse](PaginatedResponse.md).[previous](PaginatedResponse.md#previous)
+[`PaginatedResponse`](PaginatedResponse.md).[`previous`](PaginatedResponse.md#previous)
 
-___
+***
 
-### results
+### results?
 
-• `Optional` **results**: [`Mapping`](Mapping.md)[]
+> `optional` **results**: [`Mapping`](Mapping.md)[]
 
 #### Inherited from
 
-[PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md).[results](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+[`PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1`](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md).[`results`](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)

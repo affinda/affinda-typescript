@@ -1,31 +1,27 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobTitleParsedParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobTitleParsedParsed
 
 # Interface: JobTitleParsedParsed
 
 Matching job title to extracted text
 
-## Table of contents
-
-### Properties
-
-- [classification](JobTitleParsedParsed.md#classification)
-- [managementLevel](JobTitleParsedParsed.md#managementlevel)
-- [name](JobTitleParsedParsed.md#name)
-
 ## Properties
 
-### classification
+### classification?
 
-• `Optional` **classification**: [`JobTitleParsedClassification`](JobTitleParsedClassification.md)
+> `optional` **classification**: [`JobTitleParsedClassification`](JobTitleParsedClassification.md)
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: `string`
+> `optional` **managementLevel**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`

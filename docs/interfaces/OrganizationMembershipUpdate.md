@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / OrganizationMembershipUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / OrganizationMembershipUpdate
 
 # Interface: OrganizationMembershipUpdate
 
-## Table of contents
-
-### Properties
-
-- [role](OrganizationMembershipUpdate.md#role)
-
 ## Properties
 
-### role
+### role?
 
-• `Optional` **role**: `string`
+> `optional` **role**: `string`

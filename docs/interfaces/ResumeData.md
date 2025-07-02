@@ -1,4 +1,8 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeData
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeData
 
 # Interface: ResumeData
 
@@ -6,204 +10,176 @@ A JSON-encoded string of the `ResumeData` object.
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [certifications](ResumeData.md#certifications)
-- [dateOfBirth](ResumeData.md#dateofbirth)
-- [education](ResumeData.md#education)
-- [emails](ResumeData.md#emails)
-- [headShot](ResumeData.md#headshot)
-- [isResumeProbability](ResumeData.md#isresumeprobability)
-- [languageCodes](ResumeData.md#languagecodes)
-- [languages](ResumeData.md#languages)
-- [linkedin](ResumeData.md#linkedin)
-- [location](ResumeData.md#location)
-- [name](ResumeData.md#name)
-- [objective](ResumeData.md#objective)
-- [phoneNumberDetails](ResumeData.md#phonenumberdetails)
-- [phoneNumbers](ResumeData.md#phonenumbers)
-- [profession](ResumeData.md#profession)
-- [publications](ResumeData.md#publications)
-- [rawText](ResumeData.md#rawtext)
-- [redactedText](ResumeData.md#redactedtext)
-- [referees](ResumeData.md#referees)
-- [sections](ResumeData.md#sections)
-- [skills](ResumeData.md#skills)
-- [summary](ResumeData.md#summary)
-- [totalYearsExperience](ResumeData.md#totalyearsexperience)
-- [websites](ResumeData.md#websites)
-- [workExperience](ResumeData.md#workexperience)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### certifications
+### certifications?
 
-• `Optional` **certifications**: `string`[]
+> `optional` **certifications**: `string`[]
 
-___
+***
 
-### dateOfBirth
+### dateOfBirth?
 
-• `Optional` **dateOfBirth**: `string`
+> `optional` **dateOfBirth**: `string`
 
-___
+***
 
-### education
+### education?
 
-• `Optional` **education**: [`Education`](Education.md)[]
+> `optional` **education**: [`Education`](Education.md)[]
 
-___
+***
 
-### emails
+### emails?
 
-• `Optional` **emails**: `string`[]
+> `optional` **emails**: `string`[]
 
-___
+***
 
-### headShot
+### headShot?
 
-• `Optional` `Readonly` **headShot**: `Uint8Array`
+> `readonly` `optional` **headShot**: `Uint8Array`
 
 base64 encoded string
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### isResumeProbability
+### isResumeProbability?
 
-• `Optional` `Readonly` **isResumeProbability**: `number`
+> `readonly` `optional` **isResumeProbability**: `number`
 
 Probability that the given document is a resume. Values below 30 suggest that the document is not a resume.
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### languageCodes
+### languageCodes?
 
-• `Optional` `Readonly` **languageCodes**: `string`[]
+> `readonly` `optional` **languageCodes**: `string`[]
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### languages
+### languages?
 
-• `Optional` **languages**: `string`[]
+> `optional` **languages**: `string`[]
 
-___
+***
 
-### linkedin
+### linkedin?
 
-• `Optional` `Readonly` **linkedin**: `string`
+> `readonly` `optional` **linkedin**: `string`
 
 Linkedin account associated with the candidate
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### location
+### location?
 
-• `Optional` **location**: [`Location`](Location.md)
+> `optional` **location**: [`Location`](Location.md)
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: [`ResumeDataName`](ResumeDataName.md)
+> `optional` **name**: [`ResumeDataName`](ResumeDataName.md)
 
-___
+***
 
-### objective
+### objective?
 
-• `Optional` **objective**: `string`
+> `optional` **objective**: `string`
 
-___
+***
 
-### phoneNumberDetails
+### phoneNumberDetails?
 
-• `Optional` **phoneNumberDetails**: [`ResumeDataPhoneNumberDetailsItem`](ResumeDataPhoneNumberDetailsItem.md)[]
+> `optional` **phoneNumberDetails**: [`ResumeDataPhoneNumberDetailsItem`](ResumeDataPhoneNumberDetailsItem.md)[]
 
-___
+***
 
-### phoneNumbers
+### phoneNumbers?
 
-• `Optional` **phoneNumbers**: `string`[]
+> `optional` **phoneNumbers**: `string`[]
 
-___
+***
 
-### profession
+### profession?
 
-• `Optional` `Readonly` **profession**: `string`
+> `readonly` `optional` **profession**: `string`
 
 Prediction of the candidate's profession based on recent work experience
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### publications
+### publications?
 
-• `Optional` **publications**: `string`[]
+> `optional` **publications**: `string`[]
 
-___
+***
 
-### rawText
+### rawText?
 
-• `Optional` **rawText**: `string`
+> `optional` **rawText**: `string`
 
 All of the raw text of the parsed resume, example is shortened for readability
 
-___
+***
 
-### redactedText
+### redactedText?
 
-• `Optional` **redactedText**: `string`
+> `optional` **redactedText**: `string`
 
 Redacted version of the text in the resume, removing PII.
 
-___
+***
 
-### referees
+### referees?
 
-• `Optional` **referees**: [`ResumeDataRefereesItem`](ResumeDataRefereesItem.md)[]
+> `optional` **referees**: [`ResumeDataRefereesItem`](ResumeDataRefereesItem.md)[]
 
-___
+***
 
-### sections
+### sections?
 
-• `Optional` `Readonly` **sections**: [`ResumeDataSectionsItem`](ResumeDataSectionsItem.md)[]
+> `readonly` `optional` **sections**: [`ResumeDataSectionsItem`](ResumeDataSectionsItem.md)[]
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### skills
+### skills?
 
-• `Optional` **skills**: [`ResumeDataSkillsItem`](ResumeDataSkillsItem.md)[]
+> `optional` **skills**: [`ResumeDataSkillsItem`](ResumeDataSkillsItem.md)[]
 
-___
+***
 
-### summary
+### summary?
 
-• `Optional` **summary**: `string`
+> `optional` **summary**: `string`
 
-___
+***
 
-### totalYearsExperience
+### totalYearsExperience?
 
-• `Optional` **totalYearsExperience**: `number`
+> `optional` **totalYearsExperience**: `number`
 
-___
+***
 
-### websites
+### websites?
 
-• `Optional` **websites**: `string`[]
+> `optional` **websites**: `string`[]
 
-___
+***
 
-### workExperience
+### workExperience?
 
-• `Optional` **workExperience**: [`ResumeDataWorkExperienceItem`](ResumeDataWorkExperienceItem.md)[]
+> `optional` **workExperience**: [`ResumeDataWorkExperienceItem`](ResumeDataWorkExperienceItem.md)[]

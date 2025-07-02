@@ -1,97 +1,101 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentUpdate
 
 # Interface: DocumentUpdate
 
-## Table of contents
-
-### Properties
-
-- [collection](DocumentUpdate.md#collection)
-- [customIdentifier](DocumentUpdate.md#customidentifier)
-- [expiryTime](DocumentUpdate.md#expirytime)
-- [fileName](DocumentUpdate.md#filename)
-- [identifier](DocumentUpdate.md#identifier)
-- [isArchived](DocumentUpdate.md#isarchived)
-- [isConfirmed](DocumentUpdate.md#isconfirmed)
-- [isRejected](DocumentUpdate.md#isrejected)
-- [language](DocumentUpdate.md#language)
-- [skipParse](DocumentUpdate.md#skipparse)
-- [warningMessages](DocumentUpdate.md#warningmessages)
-
 ## Properties
 
-### collection
+### collection?
 
-• `Optional` **collection**: `string`
+> `optional` **collection**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
-### customIdentifier
+### customIdentifier?
 
-• `Optional` **customIdentifier**: `string`
+> `optional` **customIdentifier**: `string`
 
 Specify a custom identifier for the document if you need one, not required to be unique.
 
-___
+***
 
-### expiryTime
+### documentType?
 
-• `Optional` **expiryTime**: `string`
+> `optional` **documentType**: `string`
+
+The document type's identifier.  Provide if you already know the document type.
+
+***
+
+### expiryTime?
+
+> `optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
-___
+***
 
-### fileName
+### fileName?
 
-• `Optional` **fileName**: `string`
+> `optional` **fileName**: `string`
 
 Optional filename of the file
 
-___
+***
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Deprecated in favor of `customIdentifier`.
 
-___
+***
 
-### isArchived
+### isArchived?
 
-• `Optional` **isArchived**: `boolean`
+> `optional` **isArchived**: `boolean`
 
-___
+***
 
-### isConfirmed
+### isConfirmed?
 
-• `Optional` **isConfirmed**: `boolean`
+> `optional` **isConfirmed**: `boolean`
 
-___
+***
 
-### isRejected
+### isRejected?
 
-• `Optional` **isRejected**: `boolean`
+> `optional` **isRejected**: `boolean`
 
-___
+***
 
-### language
+### language?
 
-• `Optional` **language**: `string`
+> `optional` **language**: `string`
 
 Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
-___
+***
 
-### skipParse
+### skipParse?
 
-• `Optional` **skipParse**: `boolean`
+> `optional` **skipParse**: `boolean`
 
-___
+***
 
-### warningMessages
+### warningMessages?
 
-• `Optional` **warningMessages**: [`DocumentWarning`](DocumentWarning.md)[]
+> `optional` **warningMessages**: [`DocumentWarning`](DocumentWarning.md)[]
+
+***
+
+### workspace?
+
+> `optional` **workspace**: `string`
+
+Uniquely identify a workspace.

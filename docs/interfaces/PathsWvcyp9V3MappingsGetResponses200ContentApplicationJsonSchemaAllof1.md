@@ -1,21 +1,17 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1
 
 # Interface: PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1
 
-## Hierarchy
+## Extended by
 
-- **`PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1`**
-
-  ↳ [`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)
-
-## Table of contents
-
-### Properties
-
-- [results](PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1.md#results)
+- [`Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema`](Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema.md)
 
 ## Properties
 
-### results
+### results?
 
-• `Optional` **results**: [`Mapping`](Mapping.md)[]
+> `optional` **results**: [`Mapping`](Mapping.md)[]

@@ -1,92 +1,79 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / RowAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / RowAnnotationParsed
 
 # Interface: RowAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [itemBaseTotal](RowAnnotationParsed.md#itembasetotal)
-- [itemCode](RowAnnotationParsed.md#itemcode)
-- [itemDate](RowAnnotationParsed.md#itemdate)
-- [itemDescription](RowAnnotationParsed.md#itemdescription)
-- [itemDiscount](RowAnnotationParsed.md#itemdiscount)
-- [itemOther](RowAnnotationParsed.md#itemother)
-- [itemQuantity](RowAnnotationParsed.md#itemquantity)
-- [itemTaxRate](RowAnnotationParsed.md#itemtaxrate)
-- [itemTaxTotal](RowAnnotationParsed.md#itemtaxtotal)
-- [itemTotal](RowAnnotationParsed.md#itemtotal)
-- [itemUnit](RowAnnotationParsed.md#itemunit)
-- [itemUnitPrice](RowAnnotationParsed.md#itemunitprice)
-
 ## Properties
 
-### itemBaseTotal
+### itemBaseTotal?
 
-• `Optional` **itemBaseTotal**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemBaseTotal**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemCode
+### itemCode?
 
-• `Optional` **itemCode**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemCode**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemDate
+### itemDate?
 
-• `Optional` **itemDate**: [`DateAnnotation`](DateAnnotation.md)
+> `optional` **itemDate**: [`DateAnnotation`](DateAnnotation.md)
 
-___
+***
 
-### itemDescription
+### itemDescription?
 
-• `Optional` **itemDescription**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemDescription**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemDiscount
+### itemDiscount?
 
-• `Optional` **itemDiscount**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemDiscount**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemOther
+### itemOther?
 
-• `Optional` **itemOther**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemOther**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemQuantity
+### itemQuantity?
 
-• `Optional` **itemQuantity**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemQuantity**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemTaxRate
+### itemTaxRate?
 
-• `Optional` **itemTaxRate**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemTaxRate**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemTaxTotal
+### itemTaxTotal?
 
-• `Optional` **itemTaxTotal**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemTaxTotal**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemTotal
+### itemTotal?
 
-• `Optional` **itemTotal**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemTotal**: [`FloatAnnotation`](FloatAnnotation.md)
 
-___
+***
 
-### itemUnit
+### itemUnit?
 
-• `Optional` **itemUnit**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **itemUnit**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### itemUnitPrice
+### itemUnitPrice?
 
-• `Optional` **itemUnitPrice**: [`FloatAnnotation`](FloatAnnotation.md)
+> `optional` **itemUnitPrice**: [`FloatAnnotation`](FloatAnnotation.md)

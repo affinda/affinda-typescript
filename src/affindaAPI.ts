@@ -192,6 +192,10 @@ import {
   UpdateDocumentTypeOptionalParams,
   UpdateDocumentTypeResponse,
   DeleteDocumentTypeOptionalParams,
+  JsonSchemaFromDocumentTypeOptionalParams,
+  JsonSchemaFromDocumentTypeResponse,
+  PydanticModelsFromDocumentTypeOptionalParams,
+  PydanticModelsFromDocumentTypeResponse,
   GetAllOrganizationsOptionalParams,
   GetAllOrganizationsResponse,
   CreateOrganizationOptionalParams,
@@ -326,7 +330,7 @@ export class AffindaAPI extends coreClient.ServiceClient {
       credential: credentials,
     };
 
-    const packageDetails = `azsdk-js-affinda/7.5.0`;
+    const packageDetails = `azsdk-js-affinda/7.6.0`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
@@ -1691,6 +1695,36 @@ export class AffindaAPI extends coreClient.ServiceClient {
   }
 
   /**
+   * Generate JSON schema from a document type.
+   * @param identifier Document type's identifier
+   * @param options The options parameters.
+   */
+  jsonSchemaFromDocumentType(
+    identifier: string,
+    options?: JsonSchemaFromDocumentTypeOptionalParams,
+  ): Promise<JsonSchemaFromDocumentTypeResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      jsonSchemaFromDocumentTypeOperationSpec,
+    );
+  }
+
+  /**
+   * Generate Pydantic models from a document type.
+   * @param identifier Document type's identifier
+   * @param options The options parameters.
+   */
+  pydanticModelsFromDocumentType(
+    identifier: string,
+    options?: PydanticModelsFromDocumentTypeOptionalParams,
+  ): Promise<PydanticModelsFromDocumentTypeResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      pydanticModelsFromDocumentTypeOperationSpec,
+    );
+  }
+
+  /**
    * Returns all the organizations
    * @param options The options parameters.
    */
@@ -3008,6 +3042,7 @@ const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
     Parameters.customIdentifier,
     Parameters.compact,
     Parameters.count,
+    Parameters.camelCase,
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
@@ -3061,6 +3096,7 @@ const createDocumentOperationSpec: coreClient.OperationSpec = {
     Parameters.useOcr,
     Parameters.warningMessages,
   ],
+  queryParameters: [Parameters.camelCase],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.contentType1, Parameters.accept1],
   serializer,
@@ -3084,7 +3120,11 @@ const getDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  queryParameters: [Parameters.compact, Parameters.format],
+  queryParameters: [
+    Parameters.compact,
+    Parameters.camelCase,
+    Parameters.format,
+  ],
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer,
@@ -3109,6 +3149,7 @@ const updateDocumentOperationSpec: coreClient.OperationSpec = {
     },
   },
   requestBody: Parameters.body7,
+  queryParameters: [Parameters.compact, Parameters.camelCase],
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept, Parameters.contentType],
   mediaType: "json",
@@ -4657,7 +4698,7 @@ const getDocumentTypesOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  queryParameters: [Parameters.organization1],
+  queryParameters: [Parameters.workspace, Parameters.organization1],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer,
@@ -4750,6 +4791,56 @@ const deleteDocumentTypeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const jsonSchemaFromDocumentTypeOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/document_types/{identifier}/json_schema",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Dictionary", value: { type: { name: "any" } } },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.title],
+  urlParameters: [Parameters.region, Parameters.identifier],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const pydanticModelsFromDocumentTypeOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/document_types/{identifier}/pydantic_models",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.PydanticModelsResponse,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.modelName],
   urlParameters: [Parameters.region, Parameters.identifier],
   headerParameters: [Parameters.accept],
   serializer,

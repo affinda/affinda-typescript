@@ -1,33 +1,29 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataSkillsPropertiesItemsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataSkillsPropertiesItemsItem
 
 # Interface: ResumeDataSkillsPropertiesItemsItem
 
-## Table of contents
-
-### Properties
-
-- [position](ResumeDataSkillsPropertiesItemsItem.md#position)
-- [section](ResumeDataSkillsPropertiesItemsItem.md#section)
-- [workExperienceId](ResumeDataSkillsPropertiesItemsItem.md#workexperienceid)
-
 ## Properties
 
-### position
+### position?
 
-• `Optional` **position**: `number`
+> `optional` **position**: `number`
 
 If this skill is extracted from a "workExperience" section, the "position" is the index of the work experience where this skill is found, with 0 being the first work experience, 1 being the second work experience, and so on.
 
-___
+***
 
-### section
+### section?
 
-• `Optional` **section**: `string`
+> `optional` **section**: `string`
 
-___
+***
 
-### workExperienceId
+### workExperienceId?
 
-• `Optional` **workExperienceId**: `number`
+> `optional` **workExperienceId**: `number`
 
 If this skill is extracted from a "workExperience" section, the "workExperienceId" is the id of the work experience where this skill is found.

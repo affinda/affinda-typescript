@@ -1,31 +1,27 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / CollectionWorkspace
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / CollectionWorkspace
 
 # Interface: CollectionWorkspace
 
-## Table of contents
-
-### Properties
-
-- [identifier](CollectionWorkspace.md#identifier)
-- [name](CollectionWorkspace.md#name)
-- [organization](CollectionWorkspace.md#organization)
-
 ## Properties
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Uniquely identify a workspace.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: [`Organization`](Organization.md)
+> `optional` **organization**: [`Organization`](Organization.md)

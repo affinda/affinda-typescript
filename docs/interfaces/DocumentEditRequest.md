@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentEditRequest
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentEditRequest
 
 # Interface: DocumentEditRequest
-
-## Table of contents
-
-### Properties
-
-- [splits](DocumentEditRequest.md#splits)
 
 ## Properties
 
 ### splits
 
-• **splits**: [`DocumentSplit`](DocumentSplit.md)[]
+> **splits**: [`DocumentSplit`](DocumentSplit.md)[]

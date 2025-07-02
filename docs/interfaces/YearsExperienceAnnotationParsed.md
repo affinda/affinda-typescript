@@ -1,28 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / YearsExperienceAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / YearsExperienceAnnotationParsed
 
 # Interface: YearsExperienceAnnotationParsed
 
 Years of experience range
 
-## Table of contents
-
-### Properties
-
-- [maximum](YearsExperienceAnnotationParsed.md#maximum)
-- [minimum](YearsExperienceAnnotationParsed.md#minimum)
-
 ## Properties
 
-### maximum
+### maximum?
 
-• `Optional` **maximum**: `number`
+> `optional` **maximum**: `number`
 
 Maximum years of experience
 
-___
+***
 
-### minimum
+### minimum?
 
-• `Optional` **minimum**: `number`
+> `optional` **minimum**: `number`
 
 Minimum years of experience

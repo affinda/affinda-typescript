@@ -1,181 +1,168 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobTitleAnnotationUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobTitleAnnotationUpdate
 
 # Interface: JobTitleAnnotationUpdate
 
-## Hierarchy
+## Extends
 
-- [`AnnotationBase`](AnnotationBase.md)
+- [`AnnotationBase`](AnnotationBase.md).[`JobTitleParsed`](JobTitleParsed.md)
 
-- [`JobTitleParsed`](JobTitleParsed.md)
+## Indexable
 
-  ↳ **`JobTitleAnnotationUpdate`**
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [classificationConfidence](JobTitleAnnotationUpdate.md#classificationconfidence)
-- [confidence](JobTitleAnnotationUpdate.md#confidence)
-- [contentType](JobTitleAnnotationUpdate.md#contenttype)
-- [dataPoint](JobTitleAnnotationUpdate.md#datapoint)
-- [id](JobTitleAnnotationUpdate.md#id)
-- [isAutoVerified](JobTitleAnnotationUpdate.md#isautoverified)
-- [isClientVerified](JobTitleAnnotationUpdate.md#isclientverified)
-- [isVerified](JobTitleAnnotationUpdate.md#isverified)
-- [pageIndex](JobTitleAnnotationUpdate.md#pageindex)
-- [parsed](JobTitleAnnotationUpdate.md#parsed)
-- [raw](JobTitleAnnotationUpdate.md#raw)
-- [rectangle](JobTitleAnnotationUpdate.md#rectangle)
-- [rectangles](JobTitleAnnotationUpdate.md#rectangles)
-- [textExtractionConfidence](JobTitleAnnotationUpdate.md#textextractionconfidence)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### classificationConfidence
+### classificationConfidence?
 
-• `Optional` **classificationConfidence**: `number`
+> `optional` **classificationConfidence**: `number`
 
 The model's confidence that the text has been classified correctly
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[classificationConfidence](AnnotationBase.md#classificationconfidence)
+[`AnnotationBase`](AnnotationBase.md).[`classificationConfidence`](AnnotationBase.md#classificationconfidence)
 
-___
+***
 
-### confidence
+### confidence?
 
-• `Optional` **confidence**: `number`
+> `optional` **confidence**: `number`
 
 The overall confidence that the model's prediction is correct
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[confidence](AnnotationBase.md#confidence)
+[`AnnotationBase`](AnnotationBase.md).[`confidence`](AnnotationBase.md#confidence)
 
-___
+***
 
-### contentType
+### contentType?
 
-• `Optional` **contentType**: `string`
-
-#### Inherited from
-
-[AnnotationBase](AnnotationBase.md).[contentType](AnnotationBase.md#contenttype)
-
-___
-
-### dataPoint
-
-• `Optional` **dataPoint**: `string`
+> `optional` **contentType**: `string`
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[dataPoint](AnnotationBase.md#datapoint)
+[`AnnotationBase`](AnnotationBase.md).[`contentType`](AnnotationBase.md#contenttype)
 
-___
+***
 
-### id
+### dataPoint?
 
-• `Optional` **id**: `number`
-
-#### Inherited from
-
-[AnnotationBase](AnnotationBase.md).[id](AnnotationBase.md#id)
-
-___
-
-### isAutoVerified
-
-• `Optional` **isAutoVerified**: `boolean`
+> `optional` **dataPoint**: `string`
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[isAutoVerified](AnnotationBase.md#isautoverified)
+[`AnnotationBase`](AnnotationBase.md).[`dataPoint`](AnnotationBase.md#datapoint)
 
-___
+***
 
-### isClientVerified
+### id?
 
-• `Optional` **isClientVerified**: `boolean`
-
-#### Inherited from
-
-[AnnotationBase](AnnotationBase.md).[isClientVerified](AnnotationBase.md#isclientverified)
-
-___
-
-### isVerified
-
-• `Optional` **isVerified**: `boolean`
+> `optional` **id**: `number`
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[isVerified](AnnotationBase.md#isverified)
+[`AnnotationBase`](AnnotationBase.md).[`id`](AnnotationBase.md#id)
 
-___
+***
 
-### pageIndex
+### isAutoVerified?
 
-• `Optional` **pageIndex**: `number`
+> `optional` **isAutoVerified**: `boolean`
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[pageIndex](AnnotationBase.md#pageindex)
+[`AnnotationBase`](AnnotationBase.md).[`isAutoVerified`](AnnotationBase.md#isautoverified)
 
-___
+***
 
-### parsed
+### isClientVerified?
 
-• `Optional` `Readonly` **parsed**: [`JobTitleParsedParsed`](JobTitleParsedParsed.md)
+> `optional` **isClientVerified**: `boolean`
+
+#### Inherited from
+
+[`AnnotationBase`](AnnotationBase.md).[`isClientVerified`](AnnotationBase.md#isclientverified)
+
+***
+
+### isVerified?
+
+> `optional` **isVerified**: `boolean`
+
+#### Inherited from
+
+[`AnnotationBase`](AnnotationBase.md).[`isVerified`](AnnotationBase.md#isverified)
+
+***
+
+### pageIndex?
+
+> `optional` **pageIndex**: `number`
+
+#### Inherited from
+
+[`AnnotationBase`](AnnotationBase.md).[`pageIndex`](AnnotationBase.md#pageindex)
+
+***
+
+### parsed?
+
+> `readonly` `optional` **parsed**: [`JobTitleParsedParsed`](JobTitleParsedParsed.md)
 
 Matching job title to extracted text
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[JobTitleParsed](JobTitleParsed.md).[parsed](JobTitleParsed.md#parsed)
+[`JobTitleParsed`](JobTitleParsed.md).[`parsed`](JobTitleParsed.md#parsed)
 
-___
+***
 
-### raw
+### raw?
 
-• `Optional` **raw**: `string`
-
-#### Inherited from
-
-[AnnotationBase](AnnotationBase.md).[raw](AnnotationBase.md#raw)
-
-___
-
-### rectangle
-
-• `Optional` **rectangle**: [`Rectangle`](Rectangle.md)
+> `optional` **raw**: `string`
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[rectangle](AnnotationBase.md#rectangle)
+[`AnnotationBase`](AnnotationBase.md).[`raw`](AnnotationBase.md#raw)
 
-___
+***
 
-### rectangles
+### rectangle?
 
-• `Optional` `Readonly` **rectangles**: [`Rectangle`](Rectangle.md)[]
+> `optional` **rectangle**: [`Rectangle`](Rectangle.md)
+
+#### Inherited from
+
+[`AnnotationBase`](AnnotationBase.md).[`rectangle`](AnnotationBase.md#rectangle)
+
+***
+
+### rectangles?
+
+> `readonly` `optional` **rectangles**: [`Rectangle`](Rectangle.md)[]
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[rectangles](AnnotationBase.md#rectangles)
+[`AnnotationBase`](AnnotationBase.md).[`rectangles`](AnnotationBase.md#rectangles)
 
-___
+***
 
-### textExtractionConfidence
+### textExtractionConfidence?
 
-• `Optional` **textExtractionConfidence**: `number`
+> `optional` **textExtractionConfidence**: `number`
 
 If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model.
 
 #### Inherited from
 
-[AnnotationBase](AnnotationBase.md).[textExtractionConfidence](AnnotationBase.md#textextractionconfidence)
+[`AnnotationBase`](AnnotationBase.md).[`textExtractionConfidence`](AnnotationBase.md#textextractionconfidence)

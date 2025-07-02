@@ -1,71 +1,61 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetail
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetail
 
 # Interface: JobDescriptionSearchDetail
 
-## Table of contents
-
-### Properties
-
-- [education](JobDescriptionSearchDetail.md#education)
-- [experience](JobDescriptionSearchDetail.md#experience)
-- [jobTitle](JobDescriptionSearchDetail.md#jobtitle)
-- [languages](JobDescriptionSearchDetail.md#languages)
-- [location](JobDescriptionSearchDetail.md#location)
-- [managementLevel](JobDescriptionSearchDetail.md#managementlevel)
-- [occupationGroup](JobDescriptionSearchDetail.md#occupationgroup)
-- [searchExpression](JobDescriptionSearchDetail.md#searchexpression)
-- [skills](JobDescriptionSearchDetail.md#skills)
-
 ## Properties
 
-### education
+### education?
 
-• `Optional` **education**: [`JobDescriptionSearchDetailEducation`](JobDescriptionSearchDetailEducation.md)
+> `optional` **education**: [`JobDescriptionSearchDetailEducation`](JobDescriptionSearchDetailEducation.md)
 
-___
+***
 
-### experience
+### experience?
 
-• `Optional` **experience**: [`JobDescriptionSearchDetailExperience`](JobDescriptionSearchDetailExperience.md)
+> `optional` **experience**: [`JobDescriptionSearchDetailExperience`](JobDescriptionSearchDetailExperience.md)
 
-___
+***
 
-### jobTitle
+### jobTitle?
 
-• `Optional` **jobTitle**: [`JobDescriptionSearchDetailJobTitle`](JobDescriptionSearchDetailJobTitle.md)
+> `optional` **jobTitle**: [`JobDescriptionSearchDetailJobTitle`](JobDescriptionSearchDetailJobTitle.md)
 
-___
+***
 
-### languages
+### languages?
 
-• `Optional` **languages**: [`JobDescriptionSearchDetailLanguages`](JobDescriptionSearchDetailLanguages.md)
+> `optional` **languages**: [`JobDescriptionSearchDetailLanguages`](JobDescriptionSearchDetailLanguages.md)
 
-___
+***
 
-### location
+### location?
 
-• `Optional` **location**: [`JobDescriptionSearchDetailLocation`](JobDescriptionSearchDetailLocation.md)
+> `optional` **location**: [`JobDescriptionSearchDetailLocation`](JobDescriptionSearchDetailLocation.md)
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: [`JobDescriptionSearchDetailManagementLevel`](JobDescriptionSearchDetailManagementLevel.md)
+> `optional` **managementLevel**: [`JobDescriptionSearchDetailManagementLevel`](JobDescriptionSearchDetailManagementLevel.md)
 
-___
+***
 
-### occupationGroup
+### occupationGroup?
 
-• `Optional` **occupationGroup**: [`JobDescriptionSearchDetailOccupationGroup`](JobDescriptionSearchDetailOccupationGroup.md)
+> `optional` **occupationGroup**: [`JobDescriptionSearchDetailOccupationGroup`](JobDescriptionSearchDetailOccupationGroup.md)
 
-___
+***
 
-### searchExpression
+### searchExpression?
 
-• `Optional` **searchExpression**: [`JobDescriptionSearchDetailSearchExpression`](JobDescriptionSearchDetailSearchExpression.md)
+> `optional` **searchExpression**: [`JobDescriptionSearchDetailSearchExpression`](JobDescriptionSearchDetailSearchExpression.md)
 
-___
+***
 
-### skills
+### skills?
 
-• `Optional` **skills**: [`JobDescriptionSearchDetailSkills`](JobDescriptionSearchDetailSkills.md)
+> `optional` **skills**: [`JobDescriptionSearchDetailSkills`](JobDescriptionSearchDetailSkills.md)

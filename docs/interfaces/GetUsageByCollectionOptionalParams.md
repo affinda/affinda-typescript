@@ -1,52 +1,42 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetUsageByCollectionOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / GetUsageByCollectionOptionalParams
 
 # Interface: GetUsageByCollectionOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`GetUsageByCollectionOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](GetUsageByCollectionOptionalParams.md#abortsignal)
-- [end](GetUsageByCollectionOptionalParams.md#end)
-- [onResponse](GetUsageByCollectionOptionalParams.md#onresponse)
-- [requestOptions](GetUsageByCollectionOptionalParams.md#requestoptions)
-- [serializerOptions](GetUsageByCollectionOptionalParams.md#serializeroptions)
-- [start](GetUsageByCollectionOptionalParams.md#start)
-- [tracingOptions](GetUsageByCollectionOptionalParams.md#tracingoptions)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### end
+### end?
 
-• `Optional` **end**: `string`
+> `optional` **end**: `string`
 
 End date of the period to retrieve. Format: YYYY-MM
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -54,48 +44,48 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### start
+### start?
 
-• `Optional` **start**: `string`
+> `optional` **start**: `string`
 
 Start date of the period to retrieve. Format: YYYY-MM
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`

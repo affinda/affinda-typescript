@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailLocation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailLocation
 
 # Interface: JobDescriptionSearchDetailLocation
 
-## Table of contents
-
-### Properties
-
-- [missing](JobDescriptionSearchDetailLocation.md#missing)
-- [value](JobDescriptionSearchDetailLocation.md#value)
-
 ## Properties
 
-### missing
+### missing?
 
-• `Optional` **missing**: [`ResumeSearchParametersLocation`](ResumeSearchParametersLocation.md)[]
+> `optional` **missing**: [`ResumeSearchParametersLocation`](ResumeSearchParametersLocation.md)[]
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
+> `optional` **value**: [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)

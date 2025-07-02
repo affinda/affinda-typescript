@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchParametersLocationCoordinates
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchParametersLocationCoordinates
 
 # Interface: ResumeSearchParametersLocationCoordinates
 
-## Table of contents
-
-### Properties
-
-- [latitude](ResumeSearchParametersLocationCoordinates.md#latitude)
-- [longitude](ResumeSearchParametersLocationCoordinates.md#longitude)
-
 ## Properties
 
-### latitude
+### latitude?
 
-• `Optional` **latitude**: `number`
+> `optional` **latitude**: `number`
 
-___
+***
 
-### longitude
+### longitude?
 
-• `Optional` **longitude**: `number`
+> `optional` **longitude**: `number`

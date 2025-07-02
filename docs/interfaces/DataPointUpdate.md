@@ -1,51 +1,45 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataPointUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DataPointUpdate
 
 # Interface: DataPointUpdate
 
-## Table of contents
-
-### Properties
-
-- [description](DataPointUpdate.md#description)
-- [mappingDataSource](DataPointUpdate.md#mappingdatasource)
-- [name](DataPointUpdate.md#name)
-- [parent](DataPointUpdate.md#parent)
-- [slug](DataPointUpdate.md#slug)
-
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
-___
+***
 
-### mappingDataSource
+### mappingDataSource?
 
-• `Optional` **mappingDataSource**: `string`
+> `optional` **mappingDataSource**: `string`
 
 If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
 Name of the data point.
 
-___
+***
 
-### parent
+### parent?
 
-• `Optional` **parent**: `string`
+> `optional` **parent**: `string`
 
 The identifier of the parent data point if applicable.
 
-___
+***
 
-### slug
+### slug?
 
-• `Optional` **slug**: `string`
+> `optional` **slug**: `string`
 
 A camelCase string that will be used as the key in the API response.

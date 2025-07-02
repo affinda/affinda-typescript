@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailEducation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailEducation
 
 # Interface: JobDescriptionSearchDetailEducation
 
-## Table of contents
-
-### Properties
-
-- [missing](JobDescriptionSearchDetailEducation.md#missing)
-- [value](JobDescriptionSearchDetailEducation.md#value)
-
 ## Properties
 
-### missing
+### missing?
 
-• `Optional` **missing**: [`JobDescriptionSearchDetailEducationMissing`](JobDescriptionSearchDetailEducationMissing.md)
+> `optional` **missing**: [`JobDescriptionSearchDetailEducationMissing`](JobDescriptionSearchDetailEducationMissing.md)
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: [`JobDescriptionSearchDetailEducationValue`](JobDescriptionSearchDetailEducationValue.md)
+> `optional` **value**: [`JobDescriptionSearchDetailEducationValue`](JobDescriptionSearchDetailEducationValue.md)

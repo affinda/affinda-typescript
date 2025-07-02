@@ -1,36 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ExpectedRemunerationAnnotationParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ExpectedRemunerationAnnotationParsed
 
 # Interface: ExpectedRemunerationAnnotationParsed
 
-## Table of contents
-
-### Properties
-
-- [currency](ExpectedRemunerationAnnotationParsed.md#currency)
-- [maximum](ExpectedRemunerationAnnotationParsed.md#maximum)
-- [minimum](ExpectedRemunerationAnnotationParsed.md#minimum)
-- [unit](ExpectedRemunerationAnnotationParsed.md#unit)
-
 ## Properties
 
-### currency
+### currency?
 
-• `Optional` **currency**: `string`
+> `optional` **currency**: `string`
 
-___
+***
 
-### maximum
+### maximum?
 
-• `Optional` **maximum**: `number`
+> `optional` **maximum**: `number`
 
-___
+***
 
-### minimum
+### minimum?
 
-• `Optional` **minimum**: `number`
+> `optional` **minimum**: `number`
 
-___
+***
 
-### unit
+### unit?
 
-• `Optional` **unit**: `string`
+> `optional` **unit**: `string`

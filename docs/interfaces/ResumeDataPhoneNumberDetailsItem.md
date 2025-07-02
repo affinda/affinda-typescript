@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataPhoneNumberDetailsItem
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataPhoneNumberDetailsItem
 
 # Interface: ResumeDataPhoneNumberDetailsItem
 
-## Table of contents
-
-### Properties
-
-- [countryCode](ResumeDataPhoneNumberDetailsItem.md#countrycode)
-- [formattedNumber](ResumeDataPhoneNumberDetailsItem.md#formattednumber)
-- [internationalCountryCode](ResumeDataPhoneNumberDetailsItem.md#internationalcountrycode)
-- [nationalNumber](ResumeDataPhoneNumberDetailsItem.md#nationalnumber)
-- [rawText](ResumeDataPhoneNumberDetailsItem.md#rawtext)
-
 ## Properties
 
-### countryCode
+### countryCode?
 
-• `Optional` **countryCode**: `string`
+> `optional` **countryCode**: `string`
 
-___
+***
 
-### formattedNumber
+### formattedNumber?
 
-• `Optional` **formattedNumber**: `string`
+> `optional` **formattedNumber**: `string`
 
-___
+***
 
-### internationalCountryCode
+### internationalCountryCode?
 
-• `Optional` **internationalCountryCode**: `number`
+> `optional` **internationalCountryCode**: `number`
 
-___
+***
 
-### nationalNumber
+### nationalNumber?
 
-• `Optional` **nationalNumber**: `string`
+> `optional` **nationalNumber**: `string`
 
-___
+***
 
-### rawText
+### rawText?
 
-• `Optional` **rawText**: `string`
+> `optional` **rawText**: `string`

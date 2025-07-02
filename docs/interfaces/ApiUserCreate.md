@@ -1,47 +1,41 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ApiUserCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ApiUserCreate
 
 # Interface: ApiUserCreate
 
-## Table of contents
-
-### Properties
-
-- [avatar](ApiUserCreate.md#avatar)
-- [email](ApiUserCreate.md#email)
-- [name](ApiUserCreate.md#name)
-- [organization](ApiUserCreate.md#organization)
-- [username](ApiUserCreate.md#username)
-
 ## Properties
 
-### avatar
+### avatar?
 
-• `Optional` **avatar**: `string`
+> `optional` **avatar**: `string`
 
 URL of the user's avatar.
 
-___
+***
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
 ### organization
 
-• **organization**: `string`
+> **organization**: `string`
 
 Uniquely identify an organization.
 
-___
+***
 
-### username
+### username?
 
-• `Optional` **username**: `string`
+> `optional` **username**: `string`

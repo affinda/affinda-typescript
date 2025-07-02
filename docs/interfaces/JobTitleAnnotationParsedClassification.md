@@ -1,70 +1,61 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobTitleAnnotationParsedClassification
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobTitleAnnotationParsedClassification
 
 # Interface: JobTitleAnnotationParsedClassification
 
-## Table of contents
-
-### Properties
-
-- [majorGroup](JobTitleAnnotationParsedClassification.md#majorgroup)
-- [majorGroupCode](JobTitleAnnotationParsedClassification.md#majorgroupcode)
-- [minorGroup](JobTitleAnnotationParsedClassification.md#minorgroup)
-- [minorGroupCode](JobTitleAnnotationParsedClassification.md#minorgroupcode)
-- [socCode](JobTitleAnnotationParsedClassification.md#soccode)
-- [subMajorGroup](JobTitleAnnotationParsedClassification.md#submajorgroup)
-- [subMajorGroupCode](JobTitleAnnotationParsedClassification.md#submajorgroupcode)
-- [title](JobTitleAnnotationParsedClassification.md#title)
-
 ## Properties
 
-### majorGroup
+### majorGroup?
 
-• `Optional` **majorGroup**: `string`
+> `optional` **majorGroup**: `string`
 
-___
+***
 
-### majorGroupCode
+### majorGroupCode?
 
-• `Optional` **majorGroupCode**: `number`
-
-The 4 digit code representing the SOC2020 classification for this job title
-
-___
-
-### minorGroup
-
-• `Optional` **minorGroup**: `string`
-
-___
-
-### minorGroupCode
-
-• `Optional` **minorGroupCode**: `number`
+> `optional` **majorGroupCode**: `number`
 
 The 4 digit code representing the SOC2020 classification for this job title
 
-___
+***
 
-### socCode
+### minorGroup?
 
-• `Optional` **socCode**: `number`
+> `optional` **minorGroup**: `string`
 
-___
+***
 
-### subMajorGroup
+### minorGroupCode?
 
-• `Optional` **subMajorGroup**: `string`
-
-___
-
-### subMajorGroupCode
-
-• `Optional` **subMajorGroupCode**: `number`
+> `optional` **minorGroupCode**: `number`
 
 The 4 digit code representing the SOC2020 classification for this job title
 
-___
+***
 
-### title
+### socCode?
 
-• `Optional` **title**: `string`
+> `optional` **socCode**: `number`
+
+***
+
+### subMajorGroup?
+
+> `optional` **subMajorGroup**: `string`
+
+***
+
+### subMajorGroupCode?
+
+> `optional` **subMajorGroupCode**: `number`
+
+The 4 digit code representing the SOC2020 classification for this job title
+
+***
+
+### title?
+
+> `optional` **title**: `string`

@@ -1,115 +1,101 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Workspace
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Workspace
 
 # Interface: Workspace
 
-## Table of contents
-
-### Properties
-
-- [collections](Workspace.md#collections)
-- [confirmedDocsCount](Workspace.md#confirmeddocscount)
-- [documentSplitter](Workspace.md#documentsplitter)
-- [identifier](Workspace.md#identifier)
-- [ingestEmail](Workspace.md#ingestemail)
-- [members](Workspace.md#members)
-- [name](Workspace.md#name)
-- [organization](Workspace.md#organization)
-- [rejectDuplicates](Workspace.md#rejectduplicates)
-- [rejectInvalidDocuments](Workspace.md#rejectinvaliddocuments)
-- [unvalidatedDocsCount](Workspace.md#unvalidateddocscount)
-- [visibility](Workspace.md#visibility)
-- [whitelistIngestAddresses](Workspace.md#whitelistingestaddresses)
-
 ## Properties
 
-### collections
+### collections?
 
-• `Optional` **collections**: [`WorkspaceCollectionsItem`](WorkspaceCollectionsItem.md)[]
+> `optional` **collections**: [`WorkspaceCollectionsItem`](WorkspaceCollectionsItem.md)[]
 
-___
+***
 
-### confirmedDocsCount
+### confirmedDocsCount?
 
-• `Optional` **confirmedDocsCount**: `number`
+> `optional` **confirmedDocsCount**: `number`
 
 Number of validated documents in the workspace.
 
-___
+***
 
-### documentSplitter
+### documentSplitter?
 
-• `Optional` **documentSplitter**: [`WorkspaceDocumentSplitter`](WorkspaceDocumentSplitter.md)
+> `optional` **documentSplitter**: [`WorkspaceDocumentSplitter`](WorkspaceDocumentSplitter.md)
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a workspace.
 
-___
+***
 
-### ingestEmail
+### ingestEmail?
 
-• `Optional` **ingestEmail**: `string`
+> `optional` **ingestEmail**: `string`
 
 When you send email to this address, any document attached in the body will be uploaded to this workspace.
 
-___
+***
 
-### members
+### members?
 
-• `Optional` **members**: [`User`](User.md)[]
+> `optional` **members**: [`User`](User.md)[]
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: [`Organization`](Organization.md)
+> `optional` **organization**: [`Organization`](Organization.md)
 
-___
+***
 
-### rejectDuplicates
+### rejectDuplicates?
 
-• `Optional` **rejectDuplicates**: `string`
+> `optional` **rejectDuplicates**: `string`
 
 If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings.
 
-___
+***
 
-### rejectInvalidDocuments
+### rejectInvalidDocuments?
 
-• `Optional` **rejectInvalidDocuments**: `boolean`
+> `optional` **rejectInvalidDocuments**: `boolean`
 
 If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed.
 
-___
+***
 
-### unvalidatedDocsCount
+### unvalidatedDocsCount?
 
-• `Optional` **unvalidatedDocsCount**: `number`
+> `optional` **unvalidatedDocsCount**: `number`
 
 Number of unvalidated documents in the workspace.
 
-___
+***
 
-### visibility
+### visibility?
 
-• `Optional` **visibility**: `string`
+> `optional` **visibility**: `string`
 
 Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace.
 
-___
+***
 
-### whitelistIngestAddresses
+### whitelistIngestAddresses?
 
-• `Optional` **whitelistIngestAddresses**: `string`[]
+> `optional` **whitelistIngestAddresses**: `string`[]
 
 If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info".

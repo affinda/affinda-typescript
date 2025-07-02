@@ -1,56 +1,47 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Education
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Education
 
 # Interface: Education
 
-## Hierarchy
+## Extended by
 
-- **`Education`**
-
-  ↳ [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)
-
-## Table of contents
-
-### Properties
-
-- [accreditation](Education.md#accreditation)
-- [dates](Education.md#dates)
-- [grade](Education.md#grade)
-- [id](Education.md#id)
-- [location](Education.md#location)
-- [organization](Education.md#organization)
+- [`ResumeSearchDetailEducationValueItem`](ResumeSearchDetailEducationValueItem.md)
 
 ## Properties
 
-### accreditation
+### accreditation?
 
-• `Optional` **accreditation**: [`Accreditation`](Accreditation.md)
+> `optional` **accreditation**: [`Accreditation`](Accreditation.md)
 
-___
+***
 
-### dates
+### dates?
 
-• `Optional` **dates**: [`EducationDates`](EducationDates.md)
+> `optional` **dates**: [`EducationDates`](EducationDates.md)
 
-___
+***
 
-### grade
+### grade?
 
-• `Optional` **grade**: [`EducationGrade`](EducationGrade.md)
+> `optional` **grade**: [`EducationGrade`](EducationGrade.md)
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
-___
+***
 
-### location
+### location?
 
-• `Optional` **location**: [`Location`](Location.md)
+> `optional` **location**: [`Location`](Location.md)
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: `string`
+> `optional` **organization**: `string`

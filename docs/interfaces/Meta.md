@@ -1,171 +1,151 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Meta
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Meta
 
 # Interface: Meta
 
-## Table of contents
-
-### Properties
-
-- [childDocuments](Meta.md#childdocuments)
-- [createdDt](Meta.md#createddt)
-- [customIdentifier](Meta.md#customidentifier)
-- [documentType](Meta.md#documenttype)
-- [expiryTime](Meta.md#expirytime)
-- [failed](Meta.md#failed)
-- [fileName](Meta.md#filename)
-- [identifier](Meta.md#identifier)
-- [isOcrd](Meta.md#isocrd)
-- [isVerified](Meta.md#isverified)
-- [language](Meta.md#language)
-- [ocrConfidence](Meta.md#ocrconfidence)
-- [pages](Meta.md#pages)
-- [parentDocument](Meta.md#parentdocument)
-- [pdf](Meta.md#pdf)
-- [ready](Meta.md#ready)
-- [readyDt](Meta.md#readydt)
-- [regionBias](Meta.md#regionbias)
-- [reviewUrl](Meta.md#reviewurl)
-
 ## Properties
 
-### childDocuments
+### childDocuments?
 
-• `Optional` **childDocuments**: [`MetaChildDocumentsItem`](MetaChildDocumentsItem.md)[]
+> `optional` **childDocuments**: [`MetaChildDocumentsItem`](MetaChildDocumentsItem.md)[]
 
 If this document has been splitted into a number of child documents, this attribute points to those child documents.
 
-___
+***
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `Date`
+> `optional` **createdDt**: `Date`
 
-___
+***
 
-### customIdentifier
+### customIdentifier?
 
-• `Optional` **customIdentifier**: `string`
+> `optional` **customIdentifier**: `string`
 
 Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique.
 
-___
+***
 
-### documentType
+### documentType?
 
-• `Optional` **documentType**: `string`
+> `optional` **documentType**: `string`
 
-___
+***
 
-### expiryTime
+### expiryTime?
 
-• `Optional` **expiryTime**: `string`
+> `optional` **expiryTime**: `string`
 
 The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry.
 
-___
+***
 
-### failed
+### failed?
 
-• `Optional` **failed**: `boolean`
+> `optional` **failed**: `boolean`
 
 If true, some exception was raised during processing. Check the 'error' field of the main return object.
 
-___
+***
 
-### fileName
+### fileName?
 
-• `Optional` **fileName**: `string`
+> `optional` **fileName**: `string`
 
 Optional filename of the file
 
-___
+***
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Unique identifier for the document
 
-___
+***
 
-### isOcrd
+### isOcrd?
 
-• `Optional` **isOcrd**: `boolean`
+> `optional` **isOcrd**: `boolean`
 
-___
+***
 
-### isVerified
+### isVerified?
 
-• `Optional` **isVerified**: `boolean`
+> `optional` **isVerified**: `boolean`
 
 This is true if the 'confirm' button has been clicked in the Affinda validation tool
 
-___
+***
 
-### language
+### language?
 
-• `Optional` **language**: `string`
+> `optional` **language**: `string`
 
 The document's language.
 
-___
+***
 
-### ocrConfidence
+### ocrConfidence?
 
-• `Optional` **ocrConfidence**: `number`
+> `optional` **ocrConfidence**: `number`
 
 The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer)
 
-___
+***
 
-### pages
+### pages?
 
-• `Optional` **pages**: [`PageMeta`](PageMeta.md)[]
+> `optional` **pages**: [`PageMeta`](PageMeta.md)[]
 
 The document's pages.
 
-___
+***
 
-### parentDocument
+### parentDocument?
 
-• `Optional` **parentDocument**: [`MetaParentDocument`](MetaParentDocument.md)
+> `optional` **parentDocument**: [`MetaParentDocument`](MetaParentDocument.md)
 
 If this document is part of a splitted document, this attribute points to the original document that this document is splitted from.
 
-___
+***
 
-### pdf
+### pdf?
 
-• `Optional` **pdf**: `string`
+> `optional` **pdf**: `string`
 
 The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process).
 
-___
+***
 
-### ready
+### ready?
 
-• `Optional` **ready**: `boolean`
+> `optional` **ready**: `boolean`
 
 If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling
 
-___
+***
 
-### readyDt
+### readyDt?
 
-• `Optional` **readyDt**: `Date`
+> `optional` **readyDt**: `Date`
 
 The datetime when the document was ready
 
-___
+***
 
-### regionBias
+### regionBias?
 
-• `Optional` **regionBias**: [`RegionBias`](RegionBias.md)
+> `optional` **regionBias**: [`RegionBias`](RegionBias.md)
 
-___
+***
 
-### reviewUrl
+### reviewUrl?
 
-• `Optional` **reviewUrl**: `string`
+> `optional` **reviewUrl**: `string`
 
 Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes.

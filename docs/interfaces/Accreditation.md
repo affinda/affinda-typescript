@@ -1,42 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Accreditation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Accreditation
 
 # Interface: Accreditation
 
-## Table of contents
-
-### Properties
-
-- [education](Accreditation.md#education)
-- [educationLevel](Accreditation.md#educationlevel)
-- [inputStr](Accreditation.md#inputstr)
-- [matchStr](Accreditation.md#matchstr)
-
 ## Properties
 
-### education
+### education?
 
-• `Optional` **education**: `string`
+> `optional` **education**: `string`
 
-___
+***
 
-### educationLevel
+### educationLevel?
 
-• `Optional` `Readonly` **educationLevel**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### inputStr
-
-• `Optional` `Readonly` **inputStr**: `string`
+> `readonly` `optional` **educationLevel**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### matchStr
+### inputStr?
 
-• `Optional` `Readonly` **matchStr**: `string`
+> `readonly` `optional` **inputStr**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
+
+### matchStr?
+
+> `readonly` `optional` **matchStr**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.

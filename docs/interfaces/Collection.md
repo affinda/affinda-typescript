@@ -1,177 +1,155 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Collection
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Collection
 
 # Interface: Collection
 
-## Table of contents
-
-### Properties
-
-- [allowOpenai](Collection.md#allowopenai)
-- [autoRefreshValidationResults](Collection.md#autorefreshvalidationresults)
-- [autoValidateIfValidationRulesPass](Collection.md#autovalidateifvalidationrulespass)
-- [autoValidationThreshold](Collection.md#autovalidationthreshold)
-- [confirmedDocsCount](Collection.md#confirmeddocscount)
-- [dateFormatFromDocument](Collection.md#dateformatfromdocument)
-- [dateFormatPreference](Collection.md#dateformatpreference)
-- [disableConfirmationIfValidationRulesFail](Collection.md#disableconfirmationifvalidationrulesfail)
-- [enableAutoValidationThreshold](Collection.md#enableautovalidationthreshold)
-- [extractor](Collection.md#extractor)
-- [extractorConfig](Collection.md#extractorconfig)
-- [fields](Collection.md#fields)
-- [fieldsConfigured](Collection.md#fieldsconfigured)
-- [fieldsLayout](Collection.md#fieldslayout)
-- [identifier](Collection.md#identifier)
-- [ingestEmail](Collection.md#ingestemail)
-- [name](Collection.md#name)
-- [tailoredExtractorRequested](Collection.md#tailoredextractorrequested)
-- [trainsExtractor](Collection.md#trainsextractor)
-- [unvalidatedDocsCount](Collection.md#unvalidateddocscount)
-- [workspace](Collection.md#workspace)
-
 ## Properties
 
-### allowOpenai
+### allowOpenai?
 
-• `Optional` **allowOpenai**: `boolean`
+> `optional` **allowOpenai**: `boolean`
 
 Whether to allow OpenAI API to be used to assist in creating a model for this collection.
 
-___
+***
 
-### autoRefreshValidationResults
+### autoRefreshValidationResults?
 
-• `Optional` **autoRefreshValidationResults**: `boolean`
+> `optional` **autoRefreshValidationResults**: `boolean`
 
 If True, validation results are refreshed whenever annotations are changed.
 
-___
+***
 
-### autoValidateIfValidationRulesPass
+### autoValidateIfValidationRulesPass?
 
-• `Optional` **autoValidateIfValidationRulesPass**: `boolean`
+> `optional` **autoValidateIfValidationRulesPass**: `boolean`
 
-___
+***
 
-### autoValidationThreshold
+### autoValidationThreshold?
 
-• `Optional` **autoValidationThreshold**: `number`
+> `optional` **autoValidationThreshold**: `number`
 
-___
+***
 
-### confirmedDocsCount
+### confirmedDocsCount?
 
-• `Optional` **confirmedDocsCount**: `number`
+> `optional` **confirmedDocsCount**: `number`
 
 Number of validated documents in the collection.
 
-___
+***
 
-### dateFormatFromDocument
+### dateFormatFromDocument?
 
-• `Optional` **dateFormatFromDocument**: `boolean`
+> `optional` **dateFormatFromDocument**: `boolean`
 
 Predict the date format from any dates in the document that is not ambiguous.
 
-___
+***
 
-### dateFormatPreference
+### dateFormatPreference?
 
-• `Optional` **dateFormatPreference**: `string`
+> `optional` **dateFormatPreference**: `string`
 
-___
+***
 
-### disableConfirmationIfValidationRulesFail
+### disableConfirmationIfValidationRulesFail?
 
-• `Optional` **disableConfirmationIfValidationRulesFail**: `boolean`
+> `optional` **disableConfirmationIfValidationRulesFail**: `boolean`
 
 If True, users cannot validate documents with missing mandatory fields, or failing validation rules.
 
-___
+***
 
-### enableAutoValidationThreshold
+### enableAutoValidationThreshold?
 
-• `Optional` **enableAutoValidationThreshold**: `boolean`
+> `optional` **enableAutoValidationThreshold**: `boolean`
 
-___
+***
 
-### extractor
+### extractor?
 
-• `Optional` **extractor**: [`Extractor`](Extractor.md)
+> `optional` **extractor**: [`Extractor`](Extractor.md)
 
-___
+***
 
-### extractorConfig
+### extractorConfig?
 
-• `Optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
+> `optional` **extractorConfig**: [`ExtractorConfig`](ExtractorConfig.md)
 
 Extra configurations specific to an extractor.
 
-___
+***
 
-### fields
+### fields?
 
-• `Optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
+> `optional` **fields**: [`FieldGroup`](FieldGroup.md)[]
 
-___
+***
 
-### fieldsConfigured
+### fieldsConfigured?
 
-• `Optional` **fieldsConfigured**: `boolean`
+> `optional` **fieldsConfigured**: `boolean`
 
-___
+***
 
-### fieldsLayout
+### fieldsLayout?
 
-• `Optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
+> `optional` **fieldsLayout**: [`FieldsLayout`](FieldsLayout.md)
 
-___
+***
 
 ### identifier
 
-• **identifier**: `string`
+> **identifier**: `string`
 
 Uniquely identify a collection.
 
-___
+***
 
-### ingestEmail
+### ingestEmail?
 
-• `Optional` **ingestEmail**: `string`
+> `optional` **ingestEmail**: `string`
 
 When you send email to this address, any document attached in the body will be uploaded to this collection.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### tailoredExtractorRequested
+### tailoredExtractorRequested?
 
-• `Optional` **tailoredExtractorRequested**: `boolean`
+> `optional` **tailoredExtractorRequested**: `boolean`
 
 Whether a tailored extractor has been requested for this collection.
 
-___
+***
 
-### trainsExtractor
+### trainsExtractor?
 
-• `Optional` **trainsExtractor**: `boolean`
+> `optional` **trainsExtractor**: `boolean`
 
 Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors.
 
-___
+***
 
-### unvalidatedDocsCount
+### unvalidatedDocsCount?
 
-• `Optional` **unvalidatedDocsCount**: `number`
+> `optional` **unvalidatedDocsCount**: `number`
 
 Number of unvalidated documents in the collection.
 
-___
+***
 
-### workspace
+### workspace?
 
-• `Optional` **workspace**: [`CollectionWorkspace`](CollectionWorkspace.md)
+> `optional` **workspace**: [`CollectionWorkspace`](CollectionWorkspace.md)

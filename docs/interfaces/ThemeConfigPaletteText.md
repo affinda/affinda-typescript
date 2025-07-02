@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ThemeConfigPaletteText
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ThemeConfigPaletteText
 
 # Interface: ThemeConfigPaletteText
 
-## Table of contents
-
-### Properties
-
-- [disabled](ThemeConfigPaletteText.md#disabled)
-- [primary](ThemeConfigPaletteText.md#primary)
-- [secondary](ThemeConfigPaletteText.md#secondary)
-
 ## Properties
 
-### disabled
+### disabled?
 
-• `Optional` **disabled**: `string`
+> `optional` **disabled**: `string`
 
-___
+***
 
-### primary
+### primary?
 
-• `Optional` **primary**: `string`
+> `optional` **primary**: `string`
 
-___
+***
 
-### secondary
+### secondary?
 
-• `Optional` **secondary**: `string`
+> `optional` **secondary**: `string`

@@ -1,195 +1,178 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / LocationAnnotationUpdateParsed
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / LocationAnnotationUpdateParsed
 
 # Interface: LocationAnnotationUpdateParsed
 
-## Hierarchy
+## Extends
 
 - [`Location`](Location.md)
 
-  ↳ **`LocationAnnotationUpdateParsed`**
-
-## Table of contents
-
-### Properties
-
-- [apartmentNumber](LocationAnnotationUpdateParsed.md#apartmentnumber)
-- [city](LocationAnnotationUpdateParsed.md#city)
-- [country](LocationAnnotationUpdateParsed.md#country)
-- [countryCode](LocationAnnotationUpdateParsed.md#countrycode)
-- [formatted](LocationAnnotationUpdateParsed.md#formatted)
-- [latitude](LocationAnnotationUpdateParsed.md#latitude)
-- [longitude](LocationAnnotationUpdateParsed.md#longitude)
-- [poBox](LocationAnnotationUpdateParsed.md#pobox)
-- [postalCode](LocationAnnotationUpdateParsed.md#postalcode)
-- [rawInput](LocationAnnotationUpdateParsed.md#rawinput)
-- [state](LocationAnnotationUpdateParsed.md#state)
-- [stateCode](LocationAnnotationUpdateParsed.md#statecode)
-- [street](LocationAnnotationUpdateParsed.md#street)
-- [streetNumber](LocationAnnotationUpdateParsed.md#streetnumber)
-
 ## Properties
 
-### apartmentNumber
+### apartmentNumber?
 
-• `Optional` `Readonly` **apartmentNumber**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-#### Inherited from
-
-[Location](Location.md).[apartmentNumber](Location.md#apartmentnumber)
-
-___
-
-### city
-
-• `Optional` `Readonly` **city**: `string`
+> `readonly` `optional` **apartmentNumber**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[city](Location.md#city)
+[`Location`](Location.md).[`apartmentNumber`](Location.md#apartmentnumber)
 
-___
+***
 
-### country
+### city?
 
-• `Optional` `Readonly` **country**: `string`
+> `readonly` `optional` **city**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[country](Location.md#country)
+[`Location`](Location.md).[`city`](Location.md#city)
 
-___
+***
 
-### countryCode
+### country?
 
-• `Optional` `Readonly` **countryCode**: `string`
+> `readonly` `optional` **country**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+#### Inherited from
+
+[`Location`](Location.md).[`country`](Location.md#country)
+
+***
+
+### countryCode?
+
+> `readonly` `optional` **countryCode**: `string`
 
 Two letter country code (ISO 3166-1 alpha-2)
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[countryCode](Location.md#countrycode)
+[`Location`](Location.md).[`countryCode`](Location.md#countrycode)
 
-___
+***
 
-### formatted
+### formatted?
 
-• `Optional` `Readonly` **formatted**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-#### Inherited from
-
-[Location](Location.md).[formatted](Location.md#formatted)
-
-___
-
-### latitude
-
-• `Optional` `Readonly` **latitude**: `number`
+> `readonly` `optional` **formatted**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[latitude](Location.md#latitude)
+[`Location`](Location.md).[`formatted`](Location.md#formatted)
 
-___
+***
 
-### longitude
+### latitude?
 
-• `Optional` `Readonly` **longitude**: `number`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-#### Inherited from
-
-[Location](Location.md).[longitude](Location.md#longitude)
-
-___
-
-### poBox
-
-• `Optional` `Readonly` **poBox**: `string`
+> `readonly` `optional` **latitude**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[poBox](Location.md#pobox)
+[`Location`](Location.md).[`latitude`](Location.md#latitude)
 
-___
+***
 
-### postalCode
+### longitude?
 
-• `Optional` `Readonly` **postalCode**: `string`
+> `readonly` `optional` **longitude**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[postalCode](Location.md#postalcode)
+[`Location`](Location.md).[`longitude`](Location.md#longitude)
 
-___
+***
+
+### poBox?
+
+> `readonly` `optional` **poBox**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+#### Inherited from
+
+[`Location`](Location.md).[`poBox`](Location.md#pobox)
+
+***
+
+### postalCode?
+
+> `readonly` `optional` **postalCode**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+#### Inherited from
+
+[`Location`](Location.md).[`postalCode`](Location.md#postalcode)
+
+***
 
 ### rawInput
 
-• **rawInput**: `string`
+> **rawInput**: `string`
 
 #### Inherited from
 
-[Location](Location.md).[rawInput](Location.md#rawinput)
+[`Location`](Location.md).[`rawInput`](Location.md#rawinput)
 
-___
+***
 
-### state
+### state?
 
-• `Optional` `Readonly` **state**: `string`
+> `readonly` `optional` **state**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[state](Location.md#state)
+[`Location`](Location.md).[`state`](Location.md#state)
 
-___
+***
 
-### stateCode
+### stateCode?
 
-• `Optional` `Readonly` **stateCode**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-#### Inherited from
-
-[Location](Location.md).[stateCode](Location.md#statecode)
-
-___
-
-### street
-
-• `Optional` `Readonly` **street**: `string`
+> `readonly` `optional` **stateCode**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[street](Location.md#street)
+[`Location`](Location.md).[`stateCode`](Location.md#statecode)
 
-___
+***
 
-### streetNumber
+### street?
 
-• `Optional` `Readonly` **streetNumber**: `string`
+> `readonly` `optional` **street**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
 #### Inherited from
 
-[Location](Location.md).[streetNumber](Location.md#streetnumber)
+[`Location`](Location.md).[`street`](Location.md#street)
+
+***
+
+### streetNumber?
+
+> `readonly` `optional` **streetNumber**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+#### Inherited from
+
+[`Location`](Location.md).[`streetNumber`](Location.md#streetnumber)

@@ -79,15 +79,33 @@ client
   .catch(err => console.error("Error:", err));
 ```
 
+## Typescript interfaces
+
+You can generate typescript interfaces to help with consuming the API response in a type-safe way.
+
+Use the `generateInterfaces.ts` script to auto-generate typescript interfaces from your document type configuration.
+
+For example, this will generate typescript interfaces for your "Resume Parser" document type:
+
+```bash
+# Assuming your Resume Parser document type ID is "rLERIsHk"
+npm exec affinda-generate-interfaces -- --document-type-id=rLERIsHk
+```
+
+You will be prompted for your API key, unless you already have the `AFFINDA_API_KEY` environment variable set.
+
+The generated typescript interfaces will be in `./affinda-interfaces` by default.
+
+For all the options you can use, run:
+
+```bash
+npm exec affinda-generate-interfaces -- --help
+```
+
 ## API reference
 
 A full API reference generated with [typedoc](https://github.com/TypeStrong/typedoc)
-is [available here](./docs/modules.md)
-
-## Samples
-
-Samples are available for [NodeJS](./docs/samples_nodejs.md) and also for [javascript](./docs/samples_javascript.md)
-intended for use in a browser.
+is [available here](./docs/globals.md)
 
 ## Troubleshooting
 

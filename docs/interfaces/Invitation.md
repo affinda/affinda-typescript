@@ -1,77 +1,67 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Invitation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Invitation
 
 # Interface: Invitation
 
-## Table of contents
-
-### Properties
-
-- [createdDt](Invitation.md#createddt)
-- [email](Invitation.md#email)
-- [expiryDate](Invitation.md#expirydate)
-- [identifier](Invitation.md#identifier)
-- [invitedBy](Invitation.md#invitedby)
-- [organization](Invitation.md#organization)
-- [respondedBy](Invitation.md#respondedby)
-- [role](Invitation.md#role)
-- [status](Invitation.md#status)
-
 ## Properties
 
-### createdDt
+### createdDt?
 
-• `Optional` **createdDt**: `Date`
+> `optional` **createdDt**: `Date`
 
-___
+***
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
 The email which the invitation is sent to.
 
-___
+***
 
-### expiryDate
+### expiryDate?
 
-• `Optional` **expiryDate**: `Date`
+> `optional` **expiryDate**: `Date`
 
 The date after which the invitation expires. Default is 10 days from now.
 
-___
+***
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Uniquely identify an invitation.
 
-___
+***
 
-### invitedBy
+### invitedBy?
 
-• `Optional` **invitedBy**: [`User`](User.md)
+> `optional` **invitedBy**: [`User`](User.md)
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: [`Organization`](Organization.md)
+> `optional` **organization**: [`Organization`](Organization.md)
 
-___
+***
 
-### respondedBy
+### respondedBy?
 
-• `Optional` **respondedBy**: [`InvitationRespondedBy`](InvitationRespondedBy.md)
+> `optional` **respondedBy**: [`InvitationRespondedBy`](InvitationRespondedBy.md)
 
-___
+***
 
-### role
+### role?
 
-• `Optional` **role**: `string`
+> `optional` **role**: `string`
 
-___
+***
 
-### status
+### status?
 
-• `Optional` **status**: `string`
+> `optional` **status**: `string`

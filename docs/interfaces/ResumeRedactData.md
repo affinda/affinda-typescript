@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeRedactData
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeRedactData
 
 # Interface: ResumeRedactData
 
-## Table of contents
-
-### Properties
-
-- [redactedPdf](ResumeRedactData.md#redactedpdf)
-
 ## Properties
 
-### redactedPdf
+### redactedPdf?
 
-• `Optional` **redactedPdf**: `string`
+> `optional` **redactedPdf**: `string`
 
 URL to download the redacted resume.

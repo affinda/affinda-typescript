@@ -1,143 +1,124 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / Location
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / Location
 
 # Interface: Location
 
-## Hierarchy
+## Extended by
 
-- **`Location`**
-
-  ↳ [`LocationAnnotationUpdateParsed`](LocationAnnotationUpdateParsed.md)
-
-  ↳ [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
-
-  ↳ [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
-
-## Table of contents
-
-### Properties
-
-- [apartmentNumber](Location.md#apartmentnumber)
-- [city](Location.md#city)
-- [country](Location.md#country)
-- [countryCode](Location.md#countrycode)
-- [formatted](Location.md#formatted)
-- [latitude](Location.md#latitude)
-- [longitude](Location.md#longitude)
-- [poBox](Location.md#pobox)
-- [postalCode](Location.md#postalcode)
-- [rawInput](Location.md#rawinput)
-- [state](Location.md#state)
-- [stateCode](Location.md#statecode)
-- [street](Location.md#street)
-- [streetNumber](Location.md#streetnumber)
+- [`LocationAnnotationUpdateParsed`](LocationAnnotationUpdateParsed.md)
+- [`ResumeSearchDetailLocationValue`](ResumeSearchDetailLocationValue.md)
+- [`JobDescriptionSearchDetailLocationValue`](JobDescriptionSearchDetailLocationValue.md)
 
 ## Properties
 
-### apartmentNumber
+### apartmentNumber?
 
-• `Optional` `Readonly` **apartmentNumber**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### city
-
-• `Optional` `Readonly` **city**: `string`
+> `readonly` `optional` **apartmentNumber**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### country
+### city?
 
-• `Optional` `Readonly` **country**: `string`
+> `readonly` `optional` **city**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### countryCode
+### country?
 
-• `Optional` `Readonly` **countryCode**: `string`
+> `readonly` `optional` **country**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
+
+### countryCode?
+
+> `readonly` `optional` **countryCode**: `string`
 
 Two letter country code (ISO 3166-1 alpha-2)
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### formatted
+### formatted?
 
-• `Optional` `Readonly` **formatted**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### latitude
-
-• `Optional` `Readonly` **latitude**: `number`
+> `readonly` `optional` **formatted**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### longitude
+### latitude?
 
-• `Optional` `Readonly` **longitude**: `number`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### poBox
-
-• `Optional` `Readonly` **poBox**: `string`
+> `readonly` `optional` **latitude**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### postalCode
+### longitude?
 
-• `Optional` `Readonly` **postalCode**: `string`
+> `readonly` `optional` **longitude**: `number`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
+
+### poBox?
+
+> `readonly` `optional` **poBox**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
+
+### postalCode?
+
+> `readonly` `optional` **postalCode**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
 
 ### rawInput
 
-• **rawInput**: `string`
+> **rawInput**: `string`
 
-___
+***
 
-### state
+### state?
 
-• `Optional` `Readonly` **state**: `string`
-
-NOTE: This property will not be serialized. It can only be populated by the server.
-
-___
-
-### stateCode
-
-• `Optional` `Readonly` **stateCode**: `string`
+> `readonly` `optional` **state**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### street
+### stateCode?
 
-• `Optional` `Readonly` **street**: `string`
+> `readonly` `optional` **stateCode**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.
 
-___
+***
 
-### streetNumber
+### street?
 
-• `Optional` `Readonly` **streetNumber**: `string`
+> `readonly` `optional` **street**: `string`
+
+NOTE: This property will not be serialized. It can only be populated by the server.
+
+***
+
+### streetNumber?
+
+> `readonly` `optional` **streetNumber**: `string`
 
 NOTE: This property will not be serialized. It can only be populated by the server.

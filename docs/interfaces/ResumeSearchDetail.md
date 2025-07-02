@@ -1,71 +1,61 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetail
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetail
 
 # Interface: ResumeSearchDetail
 
-## Table of contents
-
-### Properties
-
-- [education](ResumeSearchDetail.md#education)
-- [experience](ResumeSearchDetail.md#experience)
-- [jobTitle](ResumeSearchDetail.md#jobtitle)
-- [languages](ResumeSearchDetail.md#languages)
-- [location](ResumeSearchDetail.md#location)
-- [managementLevel](ResumeSearchDetail.md#managementlevel)
-- [occupationGroup](ResumeSearchDetail.md#occupationgroup)
-- [searchExpression](ResumeSearchDetail.md#searchexpression)
-- [skills](ResumeSearchDetail.md#skills)
-
 ## Properties
 
-### education
+### education?
 
-• `Optional` **education**: [`ResumeSearchDetailEducation`](ResumeSearchDetailEducation.md)
+> `optional` **education**: [`ResumeSearchDetailEducation`](ResumeSearchDetailEducation.md)
 
-___
+***
 
-### experience
+### experience?
 
-• `Optional` **experience**: [`ResumeSearchDetailExperience`](ResumeSearchDetailExperience.md)
+> `optional` **experience**: [`ResumeSearchDetailExperience`](ResumeSearchDetailExperience.md)
 
-___
+***
 
-### jobTitle
+### jobTitle?
 
-• `Optional` **jobTitle**: [`ResumeSearchDetailJobTitle`](ResumeSearchDetailJobTitle.md)
+> `optional` **jobTitle**: [`ResumeSearchDetailJobTitle`](ResumeSearchDetailJobTitle.md)
 
-___
+***
 
-### languages
+### languages?
 
-• `Optional` **languages**: [`ResumeSearchDetailLanguages`](ResumeSearchDetailLanguages.md)
+> `optional` **languages**: [`ResumeSearchDetailLanguages`](ResumeSearchDetailLanguages.md)
 
-___
+***
 
-### location
+### location?
 
-• `Optional` **location**: [`ResumeSearchDetailLocation`](ResumeSearchDetailLocation.md)
+> `optional` **location**: [`ResumeSearchDetailLocation`](ResumeSearchDetailLocation.md)
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: [`ResumeSearchDetailManagementLevel`](ResumeSearchDetailManagementLevel.md)
+> `optional` **managementLevel**: [`ResumeSearchDetailManagementLevel`](ResumeSearchDetailManagementLevel.md)
 
-___
+***
 
-### occupationGroup
+### occupationGroup?
 
-• `Optional` **occupationGroup**: [`ResumeSearchDetailOccupationGroup`](ResumeSearchDetailOccupationGroup.md)
+> `optional` **occupationGroup**: [`ResumeSearchDetailOccupationGroup`](ResumeSearchDetailOccupationGroup.md)
 
-___
+***
 
-### searchExpression
+### searchExpression?
 
-• `Optional` **searchExpression**: [`ResumeSearchDetailSearchExpression`](ResumeSearchDetailSearchExpression.md)
+> `optional` **searchExpression**: [`ResumeSearchDetailSearchExpression`](ResumeSearchDetailSearchExpression.md)
 
-___
+***
 
-### skills
+### skills?
 
-• `Optional` **skills**: [`ResumeSearchDetailSkills`](ResumeSearchDetailSkills.md)
+> `optional` **skills**: [`ResumeSearchDetailSkills`](ResumeSearchDetailSkills.md)

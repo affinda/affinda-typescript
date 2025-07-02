@@ -1,36 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / PaletteColorOptions
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / PaletteColorOptions
 
 # Interface: PaletteColorOptions
 
-## Table of contents
-
-### Properties
-
-- [contrastText](PaletteColorOptions.md#contrasttext)
-- [dark](PaletteColorOptions.md#dark)
-- [light](PaletteColorOptions.md#light)
-- [main](PaletteColorOptions.md#main)
-
 ## Properties
 
-### contrastText
+### contrastText?
 
-• `Optional` **contrastText**: `string`
+> `optional` **contrastText**: `string`
 
-___
+***
 
-### dark
+### dark?
 
-• `Optional` **dark**: `string`
+> `optional` **dark**: `string`
 
-___
+***
 
-### light
+### light?
 
-• `Optional` **light**: `string`
+> `optional` **light**: `string`
 
-___
+***
 
 ### main
 
-• **main**: `string`
+> **main**: `string`

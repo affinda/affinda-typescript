@@ -1,296 +1,255 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / InvoiceData
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / InvoiceData
 
 # Interface: InvoiceData
 
-## Table of contents
-
-### Properties
-
-- [bankAccountNumber](InvoiceData.md#bankaccountnumber)
-- [bankBsb](InvoiceData.md#bankbsb)
-- [bankIban](InvoiceData.md#bankiban)
-- [bankSortCode](InvoiceData.md#banksortcode)
-- [bankSwift](InvoiceData.md#bankswift)
-- [bpayBillerCode](InvoiceData.md#bpaybillercode)
-- [bpayReference](InvoiceData.md#bpayreference)
-- [currencyCode](InvoiceData.md#currencycode)
-- [customFields](InvoiceData.md#customfields)
-- [customerBillingAddress](InvoiceData.md#customerbillingaddress)
-- [customerBusinessNumber](InvoiceData.md#customerbusinessnumber)
-- [customerCompanyName](InvoiceData.md#customercompanyname)
-- [customerContactName](InvoiceData.md#customercontactname)
-- [customerDeliveryAddress](InvoiceData.md#customerdeliveryaddress)
-- [customerEmail](InvoiceData.md#customeremail)
-- [customerNumber](InvoiceData.md#customernumber)
-- [customerPhoneNumber](InvoiceData.md#customerphonenumber)
-- [customerVat](InvoiceData.md#customervat)
-- [invoiceDate](InvoiceData.md#invoicedate)
-- [invoiceNumber](InvoiceData.md#invoicenumber)
-- [invoiceOrderDate](InvoiceData.md#invoiceorderdate)
-- [invoicePurchaseOrderNumber](InvoiceData.md#invoicepurchaseordernumber)
-- [paymentAmountBase](InvoiceData.md#paymentamountbase)
-- [paymentAmountDue](InvoiceData.md#paymentamountdue)
-- [paymentAmountPaid](InvoiceData.md#paymentamountpaid)
-- [paymentAmountTax](InvoiceData.md#paymentamounttax)
-- [paymentAmountTotal](InvoiceData.md#paymentamounttotal)
-- [paymentDateDue](InvoiceData.md#paymentdatedue)
-- [paymentReference](InvoiceData.md#paymentreference)
-- [rawText](InvoiceData.md#rawtext)
-- [supplierAddress](InvoiceData.md#supplieraddress)
-- [supplierBusinessNumber](InvoiceData.md#supplierbusinessnumber)
-- [supplierCompanyName](InvoiceData.md#suppliercompanyname)
-- [supplierEmail](InvoiceData.md#supplieremail)
-- [supplierFax](InvoiceData.md#supplierfax)
-- [supplierPhoneNumber](InvoiceData.md#supplierphonenumber)
-- [supplierVat](InvoiceData.md#suppliervat)
-- [supplierWebsite](InvoiceData.md#supplierwebsite)
-- [tables](InvoiceData.md#tables)
-- [tablesBeta](InvoiceData.md#tablesbeta)
-
 ## Properties
 
-### bankAccountNumber
+### bankAccountNumber?
 
-• `Optional` **bankAccountNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bankAccountNumber**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### bankBsb
+### bankBsb?
 
-• `Optional` **bankBsb**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bankBsb**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### bankIban
+### bankIban?
 
-• `Optional` **bankIban**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bankIban**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### bankSortCode
+### bankSortCode?
 
-• `Optional` **bankSortCode**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bankSortCode**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### bankSwift
+### bankSwift?
 
-• `Optional` **bankSwift**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bankSwift**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### bpayBillerCode
+### bpayBillerCode?
 
-• `Optional` **bpayBillerCode**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bpayBillerCode**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### bpayReference
+### bpayReference?
 
-• `Optional` **bpayReference**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **bpayReference**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### currencyCode
+### currencyCode?
 
-• `Optional` **currencyCode**: [`CurrencyCodeAnnotation`](CurrencyCodeAnnotation.md)
+> `optional` **currencyCode**: [`CurrencyCodeAnnotation`](CurrencyCodeAnnotation.md)
 
-___
+***
 
-### customFields
+### customerBillingAddress?
 
-• `Optional` **customFields**: `Object`
+> `optional` **customerBillingAddress**: [`LocationAnnotation`](LocationAnnotation.md)
+
+***
+
+### customerBusinessNumber?
+
+> `optional` **customerBusinessNumber**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customerCompanyName?
+
+> `optional` **customerCompanyName**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customerContactName?
+
+> `optional` **customerContactName**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customerDeliveryAddress?
+
+> `optional` **customerDeliveryAddress**: [`LocationAnnotation`](LocationAnnotation.md)
+
+***
+
+### customerEmail?
+
+> `optional` **customerEmail**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customerNumber?
+
+> `optional` **customerNumber**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customerPhoneNumber?
+
+> `optional` **customerPhoneNumber**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customerVat?
+
+> `optional` **customerVat**: [`TextAnnotation`](TextAnnotation.md)
+
+***
+
+### customFields?
+
+> `optional` **customFields**: `object`
 
 Dictionary of <any>
 
-#### Index signature
+#### Index Signature
 
-▪ [propertyName: `string`]: `any`
+\[`propertyName`: `string`\]: `any`
 
-___
+***
 
-### customerBillingAddress
+### invoiceDate?
 
-• `Optional` **customerBillingAddress**: [`LocationAnnotation`](LocationAnnotation.md)
+> `optional` **invoiceDate**: [`DateAnnotation`](DateAnnotation.md)
 
-___
+***
 
-### customerBusinessNumber
+### invoiceNumber?
 
-• `Optional` **customerBusinessNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **invoiceNumber**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### customerCompanyName
+### invoiceOrderDate?
 
-• `Optional` **customerCompanyName**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **invoiceOrderDate**: [`DateAnnotation`](DateAnnotation.md)
 
-___
+***
 
-### customerContactName
+### invoicePurchaseOrderNumber?
 
-• `Optional` **customerContactName**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **invoicePurchaseOrderNumber**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### customerDeliveryAddress
+### paymentAmountBase?
 
-• `Optional` **customerDeliveryAddress**: [`LocationAnnotation`](LocationAnnotation.md)
+> `optional` **paymentAmountBase**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### customerEmail
+### paymentAmountDue?
 
-• `Optional` **customerEmail**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **paymentAmountDue**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### customerNumber
+### paymentAmountPaid?
 
-• `Optional` **customerNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **paymentAmountPaid**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### customerPhoneNumber
+### paymentAmountTax?
 
-• `Optional` **customerPhoneNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **paymentAmountTax**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### customerVat
+### paymentAmountTotal?
 
-• `Optional` **customerVat**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **paymentAmountTotal**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### invoiceDate
+### paymentDateDue?
 
-• `Optional` **invoiceDate**: [`DateAnnotation`](DateAnnotation.md)
+> `optional` **paymentDateDue**: [`DateAnnotation`](DateAnnotation.md)
 
-___
+***
 
-### invoiceNumber
+### paymentReference?
 
-• `Optional` **invoiceNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **paymentReference**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### invoiceOrderDate
+### rawText?
 
-• `Optional` **invoiceOrderDate**: [`DateAnnotation`](DateAnnotation.md)
-
-___
-
-### invoicePurchaseOrderNumber
-
-• `Optional` **invoicePurchaseOrderNumber**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### paymentAmountBase
-
-• `Optional` **paymentAmountBase**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### paymentAmountDue
-
-• `Optional` **paymentAmountDue**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### paymentAmountPaid
-
-• `Optional` **paymentAmountPaid**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### paymentAmountTax
-
-• `Optional` **paymentAmountTax**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### paymentAmountTotal
-
-• `Optional` **paymentAmountTotal**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### paymentDateDue
-
-• `Optional` **paymentDateDue**: [`DateAnnotation`](DateAnnotation.md)
-
-___
-
-### paymentReference
-
-• `Optional` **paymentReference**: [`TextAnnotation`](TextAnnotation.md)
-
-___
-
-### rawText
-
-• `Optional` **rawText**: `string`
+> `optional` **rawText**: `string`
 
 All of the raw text of the parsed invoice.
 
-___
+***
 
-### supplierAddress
+### supplierAddress?
 
-• `Optional` **supplierAddress**: [`LocationAnnotation`](LocationAnnotation.md)
+> `optional` **supplierAddress**: [`LocationAnnotation`](LocationAnnotation.md)
 
-___
+***
 
-### supplierBusinessNumber
+### supplierBusinessNumber?
 
-• `Optional` **supplierBusinessNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierBusinessNumber**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### supplierCompanyName
+### supplierCompanyName?
 
-• `Optional` **supplierCompanyName**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierCompanyName**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### supplierEmail
+### supplierEmail?
 
-• `Optional` **supplierEmail**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierEmail**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### supplierFax
+### supplierFax?
 
-• `Optional` **supplierFax**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierFax**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### supplierPhoneNumber
+### supplierPhoneNumber?
 
-• `Optional` **supplierPhoneNumber**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierPhoneNumber**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### supplierVat
+### supplierVat?
 
-• `Optional` **supplierVat**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierVat**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### supplierWebsite
+### supplierWebsite?
 
-• `Optional` **supplierWebsite**: [`TextAnnotation`](TextAnnotation.md)
+> `optional` **supplierWebsite**: [`TextAnnotation`](TextAnnotation.md)
 
-___
+***
 
-### tables
+### tables?
 
-• `Optional` **tables**: (``null`` \| [`TableAnnotation`](TableAnnotation.md))[]
+> `optional` **tables**: (`null` \| [`TableAnnotation`](TableAnnotation.md))[]
 
-___
+***
 
-### tablesBeta
+### tablesBeta?
 
-• `Optional` **tablesBeta**: (``null`` \| [`TableBetaAnnotation`](TableBetaAnnotation.md))[]
+> `optional` **tablesBeta**: (`null` \| [`TableBetaAnnotation`](TableBetaAnnotation.md))[]

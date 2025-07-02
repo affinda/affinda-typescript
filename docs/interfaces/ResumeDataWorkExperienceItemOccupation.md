@@ -1,49 +1,43 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItemOccupation
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataWorkExperienceItemOccupation
 
 # Interface: ResumeDataWorkExperienceItemOccupation
 
-## Table of contents
-
-### Properties
-
-- [classification](ResumeDataWorkExperienceItemOccupation.md#classification)
-- [emsiId](ResumeDataWorkExperienceItemOccupation.md#emsiid)
-- [jobTitle](ResumeDataWorkExperienceItemOccupation.md#jobtitle)
-- [jobTitleNormalized](ResumeDataWorkExperienceItemOccupation.md#jobtitlenormalized)
-- [managementLevel](ResumeDataWorkExperienceItemOccupation.md#managementlevel)
-
 ## Properties
 
-### classification
+### classification?
 
-• `Optional` **classification**: [`Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification`](Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
+> `optional` **classification**: [`Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification`](Components1TryetgSchemasResumedataPropertiesWorkexperienceItemsPropertiesOccupationPropertiesClassification.md)
 
-___
+***
 
-### emsiId
+### emsiId?
 
-• `Optional` **emsiId**: `string`
+> `optional` **emsiId**: `string`
 
 EMSI id of the normalised job title.
 
-___
+***
 
-### jobTitle
+### jobTitle?
 
-• `Optional` **jobTitle**: `string`
+> `optional` **jobTitle**: `string`
 
 The raw (not normalized) job title pulled from the work experience entry
 
-___
+***
 
-### jobTitleNormalized
+### jobTitleNormalized?
 
-• `Optional` **jobTitleNormalized**: `string`
+> `optional` **jobTitleNormalized**: `string`
 
 Mapped onto the EMSI job title taxonomy if a sufficiently close match exists.
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: [`ManagementLevel`](../modules.md#managementlevel)
+> `optional` **managementLevel**: [`ManagementLevel`](../type-aliases/ManagementLevel.md)

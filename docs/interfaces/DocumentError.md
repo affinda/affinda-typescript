@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentError
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentError
 
 # Interface: DocumentError
 
-## Table of contents
-
-### Properties
-
-- [errorCode](DocumentError.md#errorcode)
-- [errorDetail](DocumentError.md#errordetail)
-
 ## Properties
 
-### errorCode
+### errorCode?
 
-• `Optional` **errorCode**: `string`
+> `optional` **errorCode**: `string`
 
-___
+***
 
-### errorDetail
+### errorDetail?
 
-• `Optional` **errorDetail**: `string`
+> `optional` **errorDetail**: `string`

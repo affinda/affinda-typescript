@@ -1,45 +1,39 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DataPointChoice
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DataPointChoice
 
 # Interface: DataPointChoice
 
-## Table of contents
-
-### Properties
-
-- [description](DataPointChoice.md#description)
-- [id](DataPointChoice.md#id)
-- [label](DataPointChoice.md#label)
-- [synonyms](DataPointChoice.md#synonyms)
-- [value](DataPointChoice.md#value)
-
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
 
-___
+***
 
 ### id
 
-• **id**: `number`
+> **id**: `number`
 
 Data point choice's ID
 
-___
+***
 
 ### label
 
-• **label**: `string`
+> **label**: `string`
 
-___
+***
 
-### synonyms
+### synonyms?
 
-• `Optional` **synonyms**: `string`[]
+> `optional` **synonyms**: `string`[]
 
-___
+***
 
 ### value
 
-• **value**: `string`
+> **value**: `string`

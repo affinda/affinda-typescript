@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeDataWorkExperienceItemDates
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeDataWorkExperienceItemDates
 
 # Interface: ResumeDataWorkExperienceItemDates
 
-## Table of contents
-
-### Properties
-
-- [endDate](ResumeDataWorkExperienceItemDates.md#enddate)
-- [isCurrent](ResumeDataWorkExperienceItemDates.md#iscurrent)
-- [monthsInPosition](ResumeDataWorkExperienceItemDates.md#monthsinposition)
-- [rawText](ResumeDataWorkExperienceItemDates.md#rawtext)
-- [startDate](ResumeDataWorkExperienceItemDates.md#startdate)
-
 ## Properties
 
-### endDate
+### endDate?
 
-• `Optional` **endDate**: `Date`
+> `optional` **endDate**: `Date`
 
-___
+***
 
-### isCurrent
+### isCurrent?
 
-• `Optional` **isCurrent**: `boolean`
+> `optional` **isCurrent**: `boolean`
 
-___
+***
 
-### monthsInPosition
+### monthsInPosition?
 
-• `Optional` **monthsInPosition**: `number`
+> `optional` **monthsInPosition**: `number`
 
-___
+***
 
-### rawText
+### rawText?
 
-• `Optional` **rawText**: `string`
+> `optional` **rawText**: `string`
 
-___
+***
 
-### startDate
+### startDate?
 
-• `Optional` **startDate**: `Date`
+> `optional` **startDate**: `Date`

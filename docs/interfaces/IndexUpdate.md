@@ -1,17 +1,15 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / IndexUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / IndexUpdate
 
 # Interface: IndexUpdate
 
-## Table of contents
-
-### Properties
-
-- [name](IndexUpdate.md#name)
-
 ## Properties
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
 Unique index name

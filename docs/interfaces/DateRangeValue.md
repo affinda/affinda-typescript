@@ -1,43 +1,37 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DateRangeValue
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DateRangeValue
 
 # Interface: DateRangeValue
 
-## Table of contents
-
-### Properties
-
-- [date](DateRangeValue.md#date)
-- [day](DateRangeValue.md#day)
-- [isCurrent](DateRangeValue.md#iscurrent)
-- [month](DateRangeValue.md#month)
-- [year](DateRangeValue.md#year)
-
 ## Properties
 
-### date
+### date?
 
-• `Optional` **date**: `Date`
+> `optional` **date**: `Date`
 
-___
+***
 
-### day
+### day?
 
-• `Optional` **day**: `number`
+> `optional` **day**: `number`
 
-___
+***
 
-### isCurrent
+### isCurrent?
 
-• `Optional` **isCurrent**: `boolean`
+> `optional` **isCurrent**: `boolean`
 
-___
+***
 
-### month
+### month?
 
-• `Optional` **month**: `number`
+> `optional` **month**: `number`
 
-___
+***
 
-### year
+### year?
 
-• `Optional` **year**: `number`
+> `optional` **year**: `number`

@@ -1,47 +1,41 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / UserNullable
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / UserNullable
 
 # Interface: UserNullable
 
-## Table of contents
-
-### Properties
-
-- [avatar](UserNullable.md#avatar)
-- [email](UserNullable.md#email)
-- [id](UserNullable.md#id)
-- [name](UserNullable.md#name)
-- [username](UserNullable.md#username)
-
 ## Properties
 
-### avatar
+### avatar?
 
-• `Optional` **avatar**: `string`
+> `optional` **avatar**: `string`
 
 URL of the user's avatar.
 
-___
+***
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `number`
+> `optional` **id**: `number`
 
 Uniquely identify a user.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### username
+### username?
 
-• `Optional` **username**: `string`
+> `optional` **username**: `string`

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.6.0] - 2025-07-02
+### Added
+- Generate Typescript interfaces for document types
+
 ## [7.5.0] - 2025-05-08
 ### Changed
 - Updated readme

@@ -1,22 +1,19 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchDetailLanguages
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchDetailLanguages
 
 # Interface: ResumeSearchDetailLanguages
 
-## Table of contents
-
-### Properties
-
-- [missing](ResumeSearchDetailLanguages.md#missing)
-- [value](ResumeSearchDetailLanguages.md#value)
-
 ## Properties
 
-### missing
+### missing?
 
-• `Optional` **missing**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
+> `optional` **missing**: [`ResumeSearchParametersSkill`](ResumeSearchParametersSkill.md)[]
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: [`ResumeSearchDetailLanguagesValueItem`](ResumeSearchDetailLanguagesValueItem.md)[]
+> `optional` **value**: [`ResumeSearchDetailLanguagesValueItem`](ResumeSearchDetailLanguagesValueItem.md)[]

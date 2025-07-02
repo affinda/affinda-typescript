@@ -1,71 +1,61 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ResumeSearchMatchDetails
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ResumeSearchMatchDetails
 
 # Interface: ResumeSearchMatchDetails
 
-## Table of contents
-
-### Properties
-
-- [education](ResumeSearchMatchDetails.md#education)
-- [experience](ResumeSearchMatchDetails.md#experience)
-- [jobTitle](ResumeSearchMatchDetails.md#jobtitle)
-- [languages](ResumeSearchMatchDetails.md#languages)
-- [location](ResumeSearchMatchDetails.md#location)
-- [managementLevel](ResumeSearchMatchDetails.md#managementlevel)
-- [occupationGroup](ResumeSearchMatchDetails.md#occupationgroup)
-- [searchExpression](ResumeSearchMatchDetails.md#searchexpression)
-- [skills](ResumeSearchMatchDetails.md#skills)
-
 ## Properties
 
-### education
+### education?
 
-• `Optional` **education**: [`EducationSearchScoreComponent`](EducationSearchScoreComponent.md)
+> `optional` **education**: [`EducationSearchScoreComponent`](EducationSearchScoreComponent.md)
 
-___
+***
 
-### experience
+### experience?
 
-• `Optional` **experience**: [`ExperienceSearchScoreComponent`](ExperienceSearchScoreComponent.md)
+> `optional` **experience**: [`ExperienceSearchScoreComponent`](ExperienceSearchScoreComponent.md)
 
-___
+***
 
-### jobTitle
+### jobTitle?
 
-• `Optional` **jobTitle**: [`JobTitleSearchScoreComponent`](JobTitleSearchScoreComponent.md)
+> `optional` **jobTitle**: [`JobTitleSearchScoreComponent`](JobTitleSearchScoreComponent.md)
 
-___
+***
 
-### languages
+### languages?
 
-• `Optional` **languages**: [`LanguagesSearchScoreComponent`](LanguagesSearchScoreComponent.md)
+> `optional` **languages**: [`LanguagesSearchScoreComponent`](LanguagesSearchScoreComponent.md)
 
-___
+***
 
-### location
+### location?
 
-• `Optional` **location**: [`LocationSearchScoreComponent`](LocationSearchScoreComponent.md)
+> `optional` **location**: [`LocationSearchScoreComponent`](LocationSearchScoreComponent.md)
 
-___
+***
 
-### managementLevel
+### managementLevel?
 
-• `Optional` **managementLevel**: [`ManagementLevelSearchScoreComponent`](ManagementLevelSearchScoreComponent.md)
+> `optional` **managementLevel**: [`ManagementLevelSearchScoreComponent`](ManagementLevelSearchScoreComponent.md)
 
-___
+***
 
-### occupationGroup
+### occupationGroup?
 
-• `Optional` **occupationGroup**: [`OccupationGroupSearchScoreComponent`](OccupationGroupSearchScoreComponent.md)
+> `optional` **occupationGroup**: [`OccupationGroupSearchScoreComponent`](OccupationGroupSearchScoreComponent.md)
 
-___
+***
 
-### searchExpression
+### searchExpression?
 
-• `Optional` **searchExpression**: [`SearchExpressionSearchScoreComponent`](SearchExpressionSearchScoreComponent.md)
+> `optional` **searchExpression**: [`SearchExpressionSearchScoreComponent`](SearchExpressionSearchScoreComponent.md)
 
-___
+***
 
-### skills
+### skills?
 
-• `Optional` **skills**: [`SkillsSearchScoreComponent`](SkillsSearchScoreComponent.md)
+> `optional` **skills**: [`SkillsSearchScoreComponent`](SkillsSearchScoreComponent.md)

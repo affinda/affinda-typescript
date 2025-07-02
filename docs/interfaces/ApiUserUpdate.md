@@ -1,38 +1,33 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / ApiUserUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / ApiUserUpdate
 
 # Interface: ApiUserUpdate
 
-## Table of contents
-
-### Properties
-
-- [avatar](ApiUserUpdate.md#avatar)
-- [email](ApiUserUpdate.md#email)
-- [name](ApiUserUpdate.md#name)
-- [username](ApiUserUpdate.md#username)
-
 ## Properties
 
-### avatar
+### avatar?
 
-• `Optional` **avatar**: `string`
+> `optional` **avatar**: `string`
 
 URL of the user's avatar.
 
-___
+***
 
-### email
+### email?
 
-• `Optional` **email**: `string`
+> `optional` **email**: `string`
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### username
+### username?
 
-• `Optional` **username**: `string`
+> `optional` **username**: `string`

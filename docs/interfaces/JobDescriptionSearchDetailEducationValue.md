@@ -1,29 +1,25 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionSearchDetailEducationValue
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionSearchDetailEducationValue
 
 # Interface: JobDescriptionSearchDetailEducationValue
 
-## Table of contents
-
-### Properties
-
-- [degreeTypes](JobDescriptionSearchDetailEducationValue.md#degreetypes)
-- [degrees](JobDescriptionSearchDetailEducationValue.md#degrees)
-- [match](JobDescriptionSearchDetailEducationValue.md#match)
-
 ## Properties
 
-### degreeTypes
+### degrees?
 
-• `Optional` **degreeTypes**: `string`[]
+> `optional` **degrees**: `string`[]
 
-___
+***
 
-### degrees
+### degreeTypes?
 
-• `Optional` **degrees**: `string`[]
+> `optional` **degreeTypes**: `string`[]
 
-___
+***
 
-### match
+### match?
 
-• `Optional` **match**: `boolean`
+> `optional` **match**: `boolean`

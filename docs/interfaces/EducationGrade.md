@@ -1,33 +1,31 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / EducationGrade
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / EducationGrade
 
 # Interface: EducationGrade
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [metric](EducationGrade.md#metric)
-- [raw](EducationGrade.md#raw)
-- [value](EducationGrade.md#value)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### metric
+### metric?
 
-• `Optional` **metric**: `string`
+> `optional` **metric**: `string`
 
-___
+***
 
-### raw
+### raw?
 
-• `Optional` **raw**: `string`
+> `optional` **raw**: `string`
 
-___
+***
 
-### value
+### value?
 
-• `Optional` **value**: `string`
+> `optional` **value**: `string`

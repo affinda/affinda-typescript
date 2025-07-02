@@ -1,40 +1,35 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / DocumentMetaCollectionExtractor
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / DocumentMetaCollectionExtractor
 
 # Interface: DocumentMetaCollectionExtractor
 
-## Table of contents
-
-### Properties
-
-- [baseExtractor](DocumentMetaCollectionExtractor.md#baseextractor)
-- [identifier](DocumentMetaCollectionExtractor.md#identifier)
-- [name](DocumentMetaCollectionExtractor.md#name)
-- [validatable](DocumentMetaCollectionExtractor.md#validatable)
-
 ## Properties
 
-### baseExtractor
+### baseExtractor?
 
-• `Optional` **baseExtractor**: `string`
+> `optional` **baseExtractor**: `string`
 
 Base extractor's identifier.
 
-___
+***
 
-### identifier
+### identifier?
 
-• `Optional` **identifier**: `string`
+> `optional` **identifier**: `string`
 
 Uniquely identify an extractor.
 
-___
+***
 
-### name
+### name?
 
-• `Optional` **name**: `string`
+> `optional` **name**: `string`
 
-___
+***
 
-### validatable
+### validatable?
 
-• `Optional` **validatable**: `boolean`
+> `optional` **validatable**: `boolean`

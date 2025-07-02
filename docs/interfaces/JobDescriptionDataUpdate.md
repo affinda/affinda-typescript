@@ -1,4 +1,8 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / JobDescriptionDataUpdate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / JobDescriptionDataUpdate
 
 # Interface: JobDescriptionDataUpdate
 
@@ -6,128 +10,108 @@ A JSON-encoded string of the `JobDescriptionData` object.
 
 ## Indexable
 
-▪ [property: `string`]: `any`
+\[`property`: `string`\]: `any`
 
-## Table of contents
-
-### Properties
-
-- [certifications](JobDescriptionDataUpdate.md#certifications)
-- [contactEmail](JobDescriptionDataUpdate.md#contactemail)
-- [contactName](JobDescriptionDataUpdate.md#contactname)
-- [contactPhone](JobDescriptionDataUpdate.md#contactphone)
-- [educationAccreditation](JobDescriptionDataUpdate.md#educationaccreditation)
-- [educationLevel](JobDescriptionDataUpdate.md#educationlevel)
-- [endDate](JobDescriptionDataUpdate.md#enddate)
-- [expectedRemuneration](JobDescriptionDataUpdate.md#expectedremuneration)
-- [jobTitle](JobDescriptionDataUpdate.md#jobtitle)
-- [jobType](JobDescriptionDataUpdate.md#jobtype)
-- [languages](JobDescriptionDataUpdate.md#languages)
-- [location](JobDescriptionDataUpdate.md#location)
-- [organizationName](JobDescriptionDataUpdate.md#organizationname)
-- [organizationWebsite](JobDescriptionDataUpdate.md#organizationwebsite)
-- [skills](JobDescriptionDataUpdate.md#skills)
-- [startDate](JobDescriptionDataUpdate.md#startdate)
-- [yearsExperience](JobDescriptionDataUpdate.md#yearsexperience)
+Describes unknown properties. The value of an unknown property can be of "any" type.
 
 ## Properties
 
-### certifications
+### certifications?
 
-• `Optional` **certifications**: (``null`` \| [`TextAnnotationUpdate`](TextAnnotationUpdate.md))[]
+> `optional` **certifications**: (`null` \| [`TextAnnotationUpdate`](TextAnnotationUpdate.md))[]
 
-___
+***
 
-### contactEmail
+### contactEmail?
 
-• `Optional` **contactEmail**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **contactEmail**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### contactName
+### contactName?
 
-• `Optional` **contactName**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **contactName**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### contactPhone
+### contactPhone?
 
-• `Optional` **contactPhone**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **contactPhone**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### educationAccreditation
+### educationAccreditation?
 
-• `Optional` **educationAccreditation**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **educationAccreditation**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### educationLevel
+### educationLevel?
 
-• `Optional` **educationLevel**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **educationLevel**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### endDate
+### endDate?
 
-• `Optional` **endDate**: [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
+> `optional` **endDate**: [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
 
-___
+***
 
-### expectedRemuneration
+### expectedRemuneration?
 
-• `Optional` **expectedRemuneration**: [`ExpectedRemunerationAnnotationUpdate`](ExpectedRemunerationAnnotationUpdate.md)
+> `optional` **expectedRemuneration**: [`ExpectedRemunerationAnnotationUpdate`](ExpectedRemunerationAnnotationUpdate.md)
 
-___
+***
 
-### jobTitle
+### jobTitle?
 
-• `Optional` **jobTitle**: [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
+> `optional` **jobTitle**: [`JobTitleAnnotationUpdate`](JobTitleAnnotationUpdate.md)
 
-___
+***
 
-### jobType
+### jobType?
 
-• `Optional` **jobType**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **jobType**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### languages
+### languages?
 
-• `Optional` **languages**: (``null`` \| [`LanguageAnnotationUpdate`](LanguageAnnotationUpdate.md))[]
+> `optional` **languages**: (`null` \| [`LanguageAnnotationUpdate`](LanguageAnnotationUpdate.md))[]
 
-___
+***
 
-### location
+### location?
 
-• `Optional` **location**: [`LocationAnnotationUpdate`](LocationAnnotationUpdate.md)
+> `optional` **location**: [`LocationAnnotationUpdate`](LocationAnnotationUpdate.md)
 
-___
+***
 
-### organizationName
+### organizationName?
 
-• `Optional` **organizationName**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **organizationName**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### organizationWebsite
+### organizationWebsite?
 
-• `Optional` **organizationWebsite**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
+> `optional` **organizationWebsite**: [`TextAnnotationUpdate`](TextAnnotationUpdate.md)
 
-___
+***
 
-### skills
+### skills?
 
-• `Optional` **skills**: (``null`` \| [`SkillAnnotationUpdate`](SkillAnnotationUpdate.md))[]
+> `optional` **skills**: (`null` \| [`SkillAnnotationUpdate`](SkillAnnotationUpdate.md))[]
 
-___
+***
 
-### startDate
+### startDate?
 
-• `Optional` **startDate**: [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
+> `optional` **startDate**: [`DateAnnotationUpdate`](DateAnnotationUpdate.md)
 
-___
+***
 
-### yearsExperience
+### yearsExperience?
 
-• `Optional` **yearsExperience**: [`YearsExperienceAnnotationUpdate`](YearsExperienceAnnotationUpdate.md)
+> `optional` **yearsExperience**: [`YearsExperienceAnnotationUpdate`](YearsExperienceAnnotationUpdate.md)

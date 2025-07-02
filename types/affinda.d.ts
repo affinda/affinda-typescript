@@ -587,6 +587,18 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     deleteDocumentType(identifier: string, options?: DeleteDocumentTypeOptionalParams): Promise<void>;
     /**
+     * Generate JSON schema from a document type.
+     * @param identifier Document type's identifier
+     * @param options The options parameters.
+     */
+    jsonSchemaFromDocumentType(identifier: string, options?: JsonSchemaFromDocumentTypeOptionalParams): Promise<JsonSchemaFromDocumentTypeResponse>;
+    /**
+     * Generate Pydantic models from a document type.
+     * @param identifier Document type's identifier
+     * @param options The options parameters.
+     */
+    pydanticModelsFromDocumentType(identifier: string, options?: PydanticModelsFromDocumentTypeOptionalParams): Promise<PydanticModelsFromDocumentTypeResponse>;
+    /**
      * Returns all the organizations
      * @param options The options parameters.
      */
@@ -1462,6 +1474,8 @@ export declare type CreateDataPointResponse = DataPoint;
 
 /** Optional parameters. */
 export declare interface CreateDocumentOptionalParams extends coreClient.OperationOptions {
+    /** Whether to return the response in camelCase. Default is true. */
+    camelCase?: boolean;
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
@@ -2296,6 +2310,10 @@ export declare type DocumentUnion = Document_2 | Resume | Invoice | JobDescripti
 export declare interface DocumentUpdate {
     /** Uniquely identify a collection. */
     collection?: string;
+    /** Uniquely identify a workspace. */
+    workspace?: string;
+    /** The document type's identifier.  Provide if you already know the document type. */
+    documentType?: string;
     /** Optional filename of the file */
     fileName?: string;
     /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
@@ -2615,6 +2633,8 @@ export declare interface GetAllDocumentsOptionalParams extends coreClient.Operat
     compact?: boolean;
     /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
     count?: boolean;
+    /** Whether to return the response in camelCase. Default is true. */
+    camelCase?: boolean;
 }
 
 /** Optional parameters. */
@@ -2833,6 +2853,8 @@ export declare type GetDataPointResponse = DataPoint;
 export declare interface GetDocumentOptionalParams extends coreClient.OperationOptions {
     /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
     compact?: boolean;
+    /** Whether to return the response in camelCase. Default is true. */
+    camelCase?: boolean;
     /** Specify which format you want the response to be. Default is "json" */
     format?: DocumentFormat;
 }
@@ -2856,6 +2878,8 @@ export declare type GetDocumentTypeResponse = DocumentType_2;
 
 /** Optional parameters. */
 export declare interface GetDocumentTypesOptionalParams extends coreClient.OperationOptions {
+    /** Filter by workspace identifier */
+    workspace?: string;
     /** Filter by organization identifier */
     organization?: string;
 }
@@ -3571,6 +3595,17 @@ export declare interface JobTitleSearchScoreComponent {
     label: string;
     score?: number;
 }
+
+/** Optional parameters. */
+export declare interface JsonSchemaFromDocumentTypeOptionalParams extends coreClient.OperationOptions {
+    /** Title for the JSON schema */
+    title?: string;
+}
+
+/** Contains response data for the jsonSchemaFromDocumentType operation. */
+export declare type JsonSchemaFromDocumentTypeResponse = {
+    [propertyName: string]: any;
+};
 
 /** Known values of {@link AnnotationContentType} that the service accepts. */
 export declare enum KnownAnnotationContentType {
@@ -4837,6 +4872,20 @@ export declare interface PhoneNumberAnnotationParsed {
     nationalNumber?: string;
 }
 
+/** Optional parameters. */
+export declare interface PydanticModelsFromDocumentTypeOptionalParams extends coreClient.OperationOptions {
+    /** Name for the Pydantic model */
+    modelName?: string;
+}
+
+/** Contains response data for the pydanticModelsFromDocumentType operation. */
+export declare type PydanticModelsFromDocumentTypeResponse = PydanticModelsResponse;
+
+export declare interface PydanticModelsResponse {
+    /** Pydantic model code */
+    code: string;
+}
+
 export declare interface Rectangle {
     pageIndex?: number;
     x0: number;
@@ -5938,6 +5987,10 @@ export declare type UpdateDocumentDataResponse = DocumentUnion;
 
 /** Optional parameters. */
 export declare interface UpdateDocumentOptionalParams extends coreClient.OperationOptions {
+    /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+    compact?: boolean;
+    /** Whether to return the response in camelCase. Default is true. */
+    camelCase?: boolean;
 }
 
 /** Contains response data for the updateDocument operation. */

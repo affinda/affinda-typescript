@@ -1,62 +1,50 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / GetAllOrganizationMembershipsOptionalParams
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / GetAllOrganizationMembershipsOptionalParams
 
 # Interface: GetAllOrganizationMembershipsOptionalParams
 
 Optional parameters.
 
-## Hierarchy
+## Extends
 
 - `OperationOptions`
 
-  ↳ **`GetAllOrganizationMembershipsOptionalParams`**
-
-## Table of contents
-
-### Properties
-
-- [abortSignal](GetAllOrganizationMembershipsOptionalParams.md#abortsignal)
-- [limit](GetAllOrganizationMembershipsOptionalParams.md#limit)
-- [offset](GetAllOrganizationMembershipsOptionalParams.md#offset)
-- [onResponse](GetAllOrganizationMembershipsOptionalParams.md#onresponse)
-- [organization](GetAllOrganizationMembershipsOptionalParams.md#organization)
-- [requestOptions](GetAllOrganizationMembershipsOptionalParams.md#requestoptions)
-- [role](GetAllOrganizationMembershipsOptionalParams.md#role)
-- [serializerOptions](GetAllOrganizationMembershipsOptionalParams.md#serializeroptions)
-- [tracingOptions](GetAllOrganizationMembershipsOptionalParams.md#tracingoptions)
-
 ## Properties
 
-### abortSignal
+### abortSignal?
 
-• `Optional` **abortSignal**: `AbortSignalLike`
+> `optional` **abortSignal**: `AbortSignalLike`
 
 The signal which can be used to abort requests.
 
 #### Inherited from
 
-coreClient.OperationOptions.abortSignal
+`coreClient.OperationOptions.abortSignal`
 
-___
+***
 
-### limit
+### limit?
 
-• `Optional` **limit**: `number`
+> `optional` **limit**: `number`
 
 The numbers of results to return.
 
-___
+***
 
-### offset
+### offset?
 
-• `Optional` **offset**: `number`
+> `optional` **offset**: `number`
 
 The number of documents to skip before starting to collect the result set.
 
-___
+***
 
-### onResponse
+### onResponse?
 
-• `Optional` **onResponse**: `RawResponseCallback`
+> `optional` **onResponse**: `RawResponseCallback`
 
 A function to be called each time a response is received from the server
 while performing the requested operation.
@@ -64,56 +52,56 @@ May be called multiple times.
 
 #### Inherited from
 
-coreClient.OperationOptions.onResponse
+`coreClient.OperationOptions.onResponse`
 
-___
+***
 
-### organization
+### organization?
 
-• `Optional` **organization**: `string`
+> `optional` **organization**: `string`
 
 Filter by organization.
 
-___
+***
 
-### requestOptions
+### requestOptions?
 
-• `Optional` **requestOptions**: `OperationRequestOptions`
+> `optional` **requestOptions**: `OperationRequestOptions`
 
 Options used when creating and sending HTTP requests for this operation.
 
 #### Inherited from
 
-coreClient.OperationOptions.requestOptions
+`coreClient.OperationOptions.requestOptions`
 
-___
+***
 
-### role
+### role?
 
-• `Optional` **role**: `string`
+> `optional` **role**: `string`
 
 Filter by role.
 
-___
+***
 
-### serializerOptions
+### serializerOptions?
 
-• `Optional` **serializerOptions**: `SerializerOptions`
+> `optional` **serializerOptions**: `SerializerOptions`
 
 Options to override serialization/de-serialization behavior.
 
 #### Inherited from
 
-coreClient.OperationOptions.serializerOptions
+`coreClient.OperationOptions.serializerOptions`
 
-___
+***
 
-### tracingOptions
+### tracingOptions?
 
-• `Optional` **tracingOptions**: `OperationTracingOptions`
+> `optional` **tracingOptions**: `OperationTracingOptions`
 
 Options used when tracing is enabled.
 
 #### Inherited from
 
-coreClient.OperationOptions.tracingOptions
+`coreClient.OperationOptions.tracingOptions`

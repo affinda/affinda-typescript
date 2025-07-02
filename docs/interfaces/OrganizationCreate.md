@@ -1,33 +1,29 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / OrganizationCreate
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / OrganizationCreate
 
 # Interface: OrganizationCreate
 
-## Table of contents
-
-### Properties
-
-- [avatar](OrganizationCreate.md#avatar)
-- [name](OrganizationCreate.md#name)
-- [resthookSignatureKey](OrganizationCreate.md#resthooksignaturekey)
-
 ## Properties
 
-### avatar
+### avatar?
 
-• `Optional` **avatar**: `RequestBodyType`
+> `optional` **avatar**: `RequestBodyType`
 
 Upload avatar for the organization.
 
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-___
+***
 
-### resthookSignatureKey
+### resthookSignatureKey?
 
-• `Optional` **resthookSignatureKey**: `string`
+> `optional` **resthookSignatureKey**: `string`
 
 Used to sign webhook payloads so you can verify their integrity.

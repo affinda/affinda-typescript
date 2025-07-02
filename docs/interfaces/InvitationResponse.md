@@ -1,15 +1,13 @@
-[@affinda/affinda](../README.md) / [Exports](../modules.md) / InvitationResponse
+[**@affinda/affinda**](../README.md)
+
+***
+
+[@affinda/affinda](../globals.md) / InvitationResponse
 
 # Interface: InvitationResponse
 
-## Table of contents
-
-### Properties
-
-- [status](InvitationResponse.md#status)
-
 ## Properties
 
-### status
+### status?
 
-• `Optional` **status**: `string`
+> `optional` **status**: `string`
