@@ -28,6 +28,14 @@ Number of validated documents in the workspace.
 
 ***
 
+### documentTypes?
+
+> `optional` **documentTypes**: `string`[]
+
+Document types associated with this workspace
+
+***
+
 ### identifier
 
 > **identifier**: `string`

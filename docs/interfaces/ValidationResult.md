@@ -54,4 +54,4 @@ Whether the validation passed or not, null if the validation was not applicable
 
 > **ruleSlug**: `string`
 
-The hot-dog case slug of the validation rule that was applied
+The kebab-case slug of the validation rule that was applied

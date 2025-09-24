@@ -54,9 +54,9 @@ The different data types of annotations
 
 ***
 
-### dataPoint
+### dataPoint?
 
-> **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
 Data point's identifier
 
@@ -75,6 +75,18 @@ Unique identifier for the document
 #### Inherited from
 
 [`Annotation`](Annotation.md).[`document`](Annotation.md#document)
+
+***
+
+### field?
+
+> `optional` **field**: `string`
+
+Field's identifier
+
+#### Inherited from
+
+[`Annotation`](Annotation.md).[`field`](Annotation.md#field)
 
 ***
 

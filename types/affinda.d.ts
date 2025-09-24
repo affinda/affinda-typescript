@@ -40,6 +40,44 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     constructor(credentials: coreAuth.TokenCredential, options?: AffindaAPIOptionalParams);
     /**
+     * Returns all the document summaries for that user, limited to 300 per page.
+     * @param options The options parameters.
+     */
+    getAllDocuments(options?: GetAllDocumentsOptionalParams): Promise<GetAllDocumentsResponse>;
+    /**
+     * Uploads a document for parsing via file upload or URL.
+     * When successful, returns an `identifier` in the response for subsequent use with the
+     * [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
+     * retrieve results.<br/>
+     * @param options The options parameters.
+     */
+    createDocument(options?: CreateDocumentOptionalParams): Promise<CreateDocumentResponse>;
+    /**
+     * Return a specific document.
+     * @param identifier Document's identifier
+     * @param options The options parameters.
+     */
+    getDocument(identifier: string, options?: GetDocumentOptionalParams): Promise<GetDocumentResponse>;
+    /**
+     * Update file name, expiry time, or move to another collection, etc.
+     * @param identifier Document's identifier
+     * @param body Document data to update
+     * @param options The options parameters.
+     */
+    updateDocument(identifier: string, body: DocumentUpdate, options?: UpdateDocumentOptionalParams): Promise<UpdateDocumentResponse>;
+    /**
+     * Deletes the specified document from the database.
+     * @param identifier Document's identifier
+     * @param options The options parameters.
+     */
+    deleteDocument(identifier: string, options?: DeleteDocumentOptionalParams): Promise<void>;
+    /**
+     * Get the redacted version of a document. The original document is not modified.
+     * @param identifier Document identifier
+     * @param options The options parameters.
+     */
+    getRedactedDocument(identifier: string, options?: GetRedactedDocumentOptionalParams): Promise<GetRedactedDocumentResponse>;
+    /**
      * Returns your workspaces.
      * @param organization Filter by organization.
      * @param options The options parameters.
@@ -100,125 +138,115 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     deleteWorkspaceMembership(identifier: string, options?: DeleteWorkspaceMembershipOptionalParams): Promise<void>;
     /**
-     * Returns your collections.
-     * @param workspace Filter by workspace.
+     * Returns a list of document types that the user has access to.
      * @param options The options parameters.
      */
-    getAllCollections(workspace: string, options?: GetAllCollectionsOptionalParams): Promise<GetAllCollectionsResponse>;
+    getDocumentTypes(options?: GetDocumentTypesOptionalParams): Promise<GetDocumentTypesResponse>;
     /**
-     * Create a collection
+     * Create a new document type in the specified organization.
      * @param body
      * @param options The options parameters.
      */
-    createCollection(body: CollectionCreate, options?: CreateCollectionOptionalParams): Promise<CreateCollectionResponse>;
+    createDocumentType(body: DocumentTypeCreate, options?: CreateDocumentTypeOptionalParams): Promise<CreateDocumentTypeResponse>;
     /**
-     * Return a specific collection.
-     * @param identifier Collection's identifier
+     * Returns the details of a specific document type.
+     * @param identifier Document type identifier
      * @param options The options parameters.
      */
-    getCollection(identifier: string, options?: GetCollectionOptionalParams): Promise<GetCollectionResponse>;
+    getDocumentType(identifier: string, options?: GetDocumentTypeOptionalParams): Promise<GetDocumentTypeResponse>;
     /**
-     * Update data of a collection.
-     * @param identifier Collection's identifier
-     * @param body Collection data to update
+     * Update an existing document type.
+     * @param identifier Document type identifier
+     * @param body
      * @param options The options parameters.
      */
-    updateCollection(identifier: string, body: CollectionUpdate, options?: UpdateCollectionOptionalParams): Promise<UpdateCollectionResponse>;
+    updateDocumentType(identifier: string, body: DocumentTypeUpdate, options?: UpdateDocumentTypeOptionalParams): Promise<UpdateDocumentTypeResponse>;
     /**
-     * Deletes the specified collection from the database.
-     * @param identifier Collection's identifier
+     * Delete a document type.
+     * @param identifier Document type identifier
      * @param options The options parameters.
      */
-    deleteCollection(identifier: string, options?: DeleteCollectionOptionalParams): Promise<void>;
+    deleteDocumentType(identifier: string, options?: DeleteDocumentTypeOptionalParams): Promise<void>;
     /**
-     * Create data field for a collection along with a new data point.
-     * @param identifier Collection's identifier
-     * @param body The data field and data point to be created.
+     * Generate JSON schema from a document type.
+     * @param identifier Document type's identifier
      * @param options The options parameters.
      */
-    createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: CreateDataFieldForCollectionOptionalParams): Promise<CreateDataFieldForCollectionResponse>;
+    jsonSchemaFromDocumentType(identifier: string, options?: JsonSchemaFromDocumentTypeOptionalParams): Promise<JsonSchemaFromDocumentTypeResponse>;
     /**
-     * Get a data field for a collection assosciated with a data point
-     * @param identifier Collection's identifier
-     * @param datapointIdentifier Datapoint's identifier
+     * Generate Pydantic models from a document type.
+     * @param identifier Document type's identifier
      * @param options The options parameters.
      */
-    getDataFieldForCollection(identifier: string, datapointIdentifier: string, options?: GetDataFieldForCollectionOptionalParams): Promise<GetDataFieldForCollectionResponse>;
+    pydanticModelsFromDocumentType(identifier: string, options?: PydanticModelsFromDocumentTypeOptionalParams): Promise<PydanticModelsFromDocumentTypeResponse>;
     /**
-     * Update data field for a collection assosciated with a data point
-     * @param identifier Collection's identifier
-     * @param datapointIdentifier Datapoint's identifier
-     * @param body Data field properties to update
+     * Create a custom mapping data source.
+     * @param body A mapping data source is used to map from raw data found by our AI models to records in
+     *             your database.
      * @param options The options parameters.
      */
-    updateDataFieldForCollection(identifier: string, datapointIdentifier: string, body: CollectionField, options?: UpdateDataFieldForCollectionOptionalParams): Promise<UpdateDataFieldForCollectionResponse>;
+    createMappingDataSource(body: MappingDataSourceCreate, options?: CreateMappingDataSourceOptionalParams): Promise<CreateMappingDataSourceResponse>;
     /**
-     * Return monthly credits consumption of a collection.
-     * @param identifier Collection's identifier
+     * Returns the list of all custom mapping data sources.
      * @param options The options parameters.
      */
-    getUsageByCollection(identifier: string, options?: GetUsageByCollectionOptionalParams): Promise<GetUsageByCollectionResponse>;
+    listMappingDataSources(options?: ListMappingDataSourcesOptionalParams): Promise<ListMappingDataSourcesResponse>;
     /**
-     * Returns all the document summaries for that user, limited to 300 per page.
+     * Return a specific mapping data source.
+     * @param identifier Data source's identifier
      * @param options The options parameters.
      */
-    getAllDocuments(options?: GetAllDocumentsOptionalParams): Promise<GetAllDocumentsResponse>;
+    getMappingDataSource(identifier: string, options?: GetMappingDataSourceOptionalParams): Promise<GetMappingDataSourceResponse>;
     /**
-     * Uploads a document for parsing. When successful, returns an `identifier` in the response for
-     * subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
-     * processing status and retrieve results.<br/>
+     * Delete the specified mapping data source from the database.
+     * @param identifier Data source's identifier
      * @param options The options parameters.
      */
-    createDocument(options?: CreateDocumentOptionalParams): Promise<CreateDocumentResponse>;
+    deleteMappingDataSource(identifier: string, options?: DeleteMappingDataSourceOptionalParams): Promise<void>;
     /**
-     * Return a specific document.
-     * @param identifier Document's identifier
+     * Returns the list of all values in a mapping data source
+     * @param identifier Data source's identifier
      * @param options The options parameters.
      */
-    getDocument(identifier: string, options?: GetDocumentOptionalParams): Promise<GetDocumentResponse>;
+    listMappingDataSourceValues(identifier: string, options?: ListMappingDataSourceValuesOptionalParams): Promise<ListMappingDataSourceValuesResponse>;
     /**
-     * Update file name, expiry time, or move to another collection, etc.
-     * @param identifier Document's identifier
-     * @param body Document data to update
+     * Replaces the list of all values in a mapping data source
+     * Note: For large data sources (e.g. > 1000 values), it can take a few minutes after the request
+     * completes for the new values to be searchable.
+     * @param identifier Data source's identifier
+     * @param body Array of AnyObject
      * @param options The options parameters.
      */
-    updateDocument(identifier: string, body: DocumentUpdate, options?: UpdateDocumentOptionalParams): Promise<UpdateDocumentResponse>;
+    replaceMappingDataSourceValues(identifier: string, body: Record<string, unknown>[], options?: ReplaceMappingDataSourceValuesOptionalParams): Promise<ReplaceMappingDataSourceValuesResponse>;
     /**
-     * Deletes the specified document from the database.
-     * @param identifier Document's identifier
+     * Adds a value to a mapping data source
+     * @param identifier Data source's identifier
+     * @param body Any object
      * @param options The options parameters.
      */
-    deleteDocument(identifier: string, options?: DeleteDocumentOptionalParams): Promise<void>;
+    addMappingDataSourceValue(identifier: string, body: Record<string, unknown>, options?: AddMappingDataSourceValueOptionalParams): Promise<AddMappingDataSourceValueResponse>;
     /**
-     * Update data of a document.
-     * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
-     * /annotations/{id}` endpoint or the `POST /annotations/batch_update` endpoint.
-     * @param identifier Resume or Job Description identifier
-     * @param body Resume data to update
+     * Return a specific mapping dta source value.
+     * @param identifier Data source's identifier
+     * @param value Data Source Value's value
      * @param options The options parameters.
      */
-    updateDocumentData(identifier: string, body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema, options?: UpdateDocumentDataOptionalParams): Promise<UpdateDocumentDataResponse>;
+    getMappingDataSourceValue(identifier: string, value: string, options?: GetMappingDataSourceValueOptionalParams): Promise<GetMappingDataSourceValueResponse>;
     /**
-     * Get the redacted version of a document. The original document is not modified.
-     * @param identifier Document identifier
+     * Update the specified mapping data source value.
+     * @param identifier Data source's identifier
+     * @param value Data Source's value
+     * @param body Any object
      * @param options The options parameters.
      */
-    getRedactedDocument(identifier: string, options?: GetRedactedDocumentOptionalParams): Promise<GetRedactedDocumentResponse>;
+    updateMappingDataSourceValue(identifier: string, value: string, body: Record<string, unknown>, options?: UpdateMappingDataSourceValueOptionalParams): Promise<UpdateMappingDataSourceValueResponse>;
     /**
-     * Add a tag to documents.
-     * Tags are used to group documents together.
-     * Tags can be used to filter documents.
-     *
-     * @param body Specify the tag and the documents to tag
+     * Delete the specified mapping data source value from the database.
+     * @param identifier Data source's identifier
+     * @param value Data Source Value's value
      * @param options The options parameters.
      */
-    batchAddTag(body: BatchAddTagRequest, options?: BatchAddTagOptionalParams): Promise<void>;
-    /**
-     * Remove a tag from documents.
-     * @param body Specify the tag and the documents to remove the tag from
-     * @param options The options parameters.
-     */
-    batchRemoveTag(body: BatchRemoveTagRequest, options?: BatchRemoveTagOptionalParams): Promise<void>;
+    deleteMappingDataSourceValue(identifier: string, value: string, options?: DeleteMappingDataSourceValueOptionalParams): Promise<void>;
     /**
      * Returns the validation results of a document.
      * @param document Filter by document.
@@ -263,123 +291,79 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     batchDeleteValidationResults(body: BatchDeleteValidationResultsRequest, options?: BatchDeleteValidationResultsOptionalParams): Promise<void>;
     /**
-     * Returns all the document splitters visible to the user.
+     * Returns all the organizations
      * @param options The options parameters.
      */
-    getAllDocumentSplitters(options?: GetAllDocumentSplittersOptionalParams): Promise<GetAllDocumentSplittersResponse>;
+    getAllOrganizations(options?: GetAllOrganizationsOptionalParams): Promise<GetAllOrganizationsResponse>;
     /**
-     * Return a specific document splitter.
-     * @param identifier Document splitter's identifier
+     * Create a new organization.
+     * @param name
      * @param options The options parameters.
      */
-    getDocumentSplitter(identifier: string, options?: GetDocumentSplitterOptionalParams): Promise<GetDocumentSplitterResponse>;
+    createOrganization(name: string, options?: CreateOrganizationOptionalParams): Promise<CreateOrganizationResponse>;
     /**
-     * Split / merge / rotate / delete pages of a document.
-     * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
-     * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+     * Get detail of an organization.
+     * @param identifier Organization identifier.
+     * @param options The options parameters.
+     */
+    getOrganization(identifier: string, options?: GetOrganizationOptionalParams): Promise<GetOrganizationResponse>;
+    /**
+     * Update the detail of an organization.
+     * @param identifier Organization identifier.
+     * @param options The options parameters.
+     */
+    updateOrganization(identifier: string, options?: UpdateOrganizationOptionalParams): Promise<UpdateOrganizationResponse>;
+    /**
+     * Delete the specified organization from the database.
+     * @param identifier Organization identifier.
+     * @param options The options parameters.
+     */
+    deleteOrganization(identifier: string, options?: DeleteOrganizationOptionalParams): Promise<void>;
+    /**
+     * Returns your tags.
+     * @param options The options parameters.
+     */
+    getAllTags(options?: GetAllTagsOptionalParams): Promise<GetAllTagsResponse>;
+    /**
+     * Create a tag
+     * @param body
+     * @param options The options parameters.
+     */
+    createTag(body: TagCreate, options?: CreateTagOptionalParams): Promise<CreateTagResponse>;
+    /**
+     * Return a specific tag.
+     * @param id Tag's ID
+     * @param options The options parameters.
+     */
+    getTag(id: number, options?: GetTagOptionalParams): Promise<GetTagResponse>;
+    /**
+     * Update data of an tag.
+     * @param id Tag's ID
+     * @param body Tag data to update
+     * @param options The options parameters.
+     */
+    updateTag(id: number, body: TagUpdate, options?: UpdateTagOptionalParams): Promise<UpdateTagResponse>;
+    /**
+     * Deletes the specified tag from the database.
+     * @param id Tag's ID
+     * @param options The options parameters.
+     */
+    deleteTag(id: number, options?: DeleteTagOptionalParams): Promise<void>;
+    /**
+     * Add a tag to documents.
+     * Tags are used to group documents together.
+     * Tags can be used to filter documents.
      *
-     * @param identifier Document's identifier
-     * @param body Describe how the pages should be edited
+     * @param body Specify the tag and the documents to tag
      * @param options The options parameters.
      */
-    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: EditDocumentPagesOptionalParams): Promise<EditDocumentPagesResponse>;
+    batchAddTag(body: BatchAddTagRequest, options?: BatchAddTagOptionalParams): Promise<void>;
     /**
-     * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
-     * @param organization Filter by organization.
+     * Remove a tag from documents.
+     * @param body Specify the tag and the documents to remove the tag from
      * @param options The options parameters.
      */
-    getAllExtractors(organization: string, options?: GetAllExtractorsOptionalParams): Promise<GetAllExtractorsResponse>;
-    /**
-     * Create a custom extractor.
-     * @param options The options parameters.
-     */
-    createExtractor(options?: CreateExtractorOptionalParams): Promise<CreateExtractorResponse>;
-    /**
-     * Return a specific extractor.
-     * @param identifier Extractor's identifier
-     * @param options The options parameters.
-     */
-    getExtractor(identifier: string, options?: GetExtractorOptionalParams): Promise<GetExtractorResponse>;
-    /**
-     * Update data of an extractor.
-     * @param identifier Extractor's identifier
-     * @param body Extractor data to update
-     * @param options The options parameters.
-     */
-    updateExtractor(identifier: string, body: ExtractorUpdate, options?: UpdateExtractorOptionalParams): Promise<UpdateExtractorResponse>;
-    /**
-     * Deletes the specified extractor from the database.
-     * @param identifier Extractor's identifier
-     * @param options The options parameters.
-     */
-    deleteExtractor(identifier: string, options?: DeleteExtractorOptionalParams): Promise<void>;
-    /**
-     * Returns your custom data points as well as Affinda's off-the-shelf data points.
-     * @param options The options parameters.
-     */
-    getAllDataPoints(options?: GetAllDataPointsOptionalParams): Promise<GetAllDataPointsResponse>;
-    /**
-     * Create a custom data point.
-     * @param options The options parameters.
-     */
-    createDataPoint(options?: CreateDataPointOptionalParams): Promise<CreateDataPointResponse>;
-    /**
-     * Return a specific data point.
-     * @param identifier Data point's identifier
-     * @param options The options parameters.
-     */
-    getDataPoint(identifier: string, options?: GetDataPointOptionalParams): Promise<GetDataPointResponse>;
-    /**
-     * Update data of a data point.
-     * @param identifier DataPoint's identifier
-     * @param body Data point to update
-     * @param options The options parameters.
-     */
-    updateDataPoint(identifier: string, body: DataPointUpdate, options?: UpdateDataPointOptionalParams): Promise<UpdateDataPointResponse>;
-    /**
-     * Deletes the specified data point from the database.
-     * @param identifier DataPoint's identifier
-     * @param options The options parameters.
-     */
-    deleteDataPoint(identifier: string, options?: DeleteDataPointOptionalParams): Promise<void>;
-    /**
-     * Returns available choices for a specific enum data point.
-     * @param dataPoint The data point to get choices for.
-     * @param collection The collection to get choices for.
-     * @param options The options parameters.
-     */
-    getDataPointChoices(dataPoint: string, collection: string, options?: GetDataPointChoicesOptionalParams): Promise<GetDataPointChoicesResponse>;
-    /**
-     * Create a custom data point choice.
-     * @param options The options parameters.
-     */
-    createDataPointChoice(options?: CreateDataPointChoiceOptionalParams): Promise<CreateDataPointChoiceResponse>;
-    /**
-     * Return a specific data point choice.
-     * @param id Data point choice's ID
-     * @param options The options parameters.
-     */
-    getDataPointChoice(id: number, options?: GetDataPointChoiceOptionalParams): Promise<GetDataPointChoiceResponse>;
-    /**
-     * Update data of a data point choice.
-     * @param id Data point choice's ID
-     * @param body Data point choice to update
-     * @param options The options parameters.
-     */
-    updateDataPointChoice(id: number, body: DataPointChoiceUpdate, options?: UpdateDataPointChoiceOptionalParams): Promise<UpdateDataPointChoiceResponse>;
-    /**
-     * Deletes the specified data point choice from the database.
-     * @param id Data point choice's ID
-     * @param options The options parameters.
-     */
-    deleteDataPointChoice(id: number, options?: DeleteDataPointChoiceOptionalParams): Promise<void>;
-    /**
-     * Replace choices of a data point. Existing choices and incoming choices are matched base on their
-     * `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
-     * choices will be deleted.
-     * @param options The options parameters.
-     */
-    replaceDataPointChoices(options?: ReplaceDataPointChoicesOptionalParams): Promise<ReplaceDataPointChoicesResponse>;
+    batchRemoveTag(body: BatchRemoveTagRequest, options?: BatchRemoveTagOptionalParams): Promise<void>;
     /**
      * Returns your annotations.
      * @param document Filter by document.
@@ -430,309 +414,6 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      */
     batchDeleteAnnotations(body: number[], options?: BatchDeleteAnnotationsOptionalParams): Promise<BatchDeleteAnnotationsOperationResponse>;
     /**
-     * Create a custom mapping data source.
-     * @param body A mapping data source is used to map from raw data found by our AI models to records in
-     *             your database.
-     * @param options The options parameters.
-     */
-    createMappingDataSource(body: MappingDataSourceCreate, options?: CreateMappingDataSourceOptionalParams): Promise<CreateMappingDataSourceResponse>;
-    /**
-     * Returns the list of all custom mapping data sources.
-     * @param options The options parameters.
-     */
-    listMappingDataSources(options?: ListMappingDataSourcesOptionalParams): Promise<ListMappingDataSourcesResponse>;
-    /**
-     * Return a specific mapping data source.
-     * @param identifier Mapping data source's identifier
-     * @param options The options parameters.
-     */
-    getMappingDataSource(identifier: string, options?: GetMappingDataSourceOptionalParams): Promise<GetMappingDataSourceResponse>;
-    /**
-     * Delete the specified mapping data source from the database.
-     * @param identifier Mapping data source's identifier
-     * @param options The options parameters.
-     */
-    deleteMappingDataSource(identifier: string, options?: DeleteMappingDataSourceOptionalParams): Promise<void>;
-    /**
-     * Returns the list of all values in a mapping data source
-     * @param identifier Mapping data source's identifier
-     * @param options The options parameters.
-     */
-    listMappingDataSourceValues(identifier: string, options?: ListMappingDataSourceValuesOptionalParams): Promise<ListMappingDataSourceValuesResponse>;
-    /**
-     * Replaces the list of all values in a mapping data source
-     * @param identifier Mapping data source's identifier
-     * @param body Array of AnyObject
-     * @param options The options parameters.
-     */
-    replaceMappingDataSourceValues(identifier: string, body: Record<string, unknown>[], options?: ReplaceMappingDataSourceValuesOptionalParams): Promise<ReplaceMappingDataSourceValuesResponse>;
-    /**
-     * Adds a value to a mapping data source
-     * @param identifier Mapping data source's identifier
-     * @param body Any object
-     * @param options The options parameters.
-     */
-    addMappingDataSourceValue(identifier: string, body: Record<string, unknown>, options?: AddMappingDataSourceValueOptionalParams): Promise<AddMappingDataSourceValueResponse>;
-    /**
-     * Return a specific mapping dta source value.
-     * @param identifier Mapping data source's identifier
-     * @param value Mapping Data Source Value's value
-     * @param options The options parameters.
-     */
-    getMappingDataSourceValue(identifier: string, value: string, options?: GetMappingDataSourceValueOptionalParams): Promise<GetMappingDataSourceValueResponse>;
-    /**
-     * Update the specified mapping data source value.
-     * @param identifier Mapping data source's identifier
-     * @param value Mapping Data Source's value
-     * @param body Any object
-     * @param options The options parameters.
-     */
-    updateMappingDataSourceValue(identifier: string, value: string, body: Record<string, unknown>, options?: UpdateMappingDataSourceValueOptionalParams): Promise<UpdateMappingDataSourceValueResponse>;
-    /**
-     * Delete the specified mapping data source value from the database.
-     * @param identifier Mapping data source's identifier
-     * @param value Mapping Data Source Value's value
-     * @param options The options parameters.
-     */
-    deleteMappingDataSourceValue(identifier: string, value: string, options?: DeleteMappingDataSourceValueOptionalParams): Promise<void>;
-    /**
-     * Create a custom mapping.
-     * @param body
-     * @param options The options parameters.
-     */
-    createMapping(body: MappingCreate, options?: CreateMappingOptionalParams): Promise<CreateMappingResponse>;
-    /**
-     * Returns the list of all custom data mappings.
-     * @param mappingDataSource Mapping data source's identifier
-     * @param options The options parameters.
-     */
-    listMappings(mappingDataSource: string, options?: ListMappingsOptionalParams): Promise<ListMappingsResponse>;
-    /**
-     * Return a specific mapping.
-     * @param identifier Mapping's identifier
-     * @param options The options parameters.
-     */
-    getMapping(identifier: string, options?: GetMappingOptionalParams): Promise<GetMappingResponse>;
-    /**
-     * Delete the specified mapping from the database.
-     * @param identifier Mapping's identifier
-     * @param options The options parameters.
-     */
-    deleteMapping(identifier: string, options?: DeleteMappingOptionalParams): Promise<void>;
-    /**
-     * Updates a specific mapping.
-     * @param identifier Mapping's identifier
-     * @param body
-     * @param options The options parameters.
-     */
-    updateMapping(identifier: string, body: MappingUpdate, options?: UpdateMappingOptionalParams): Promise<UpdateMappingResponse>;
-    /**
-     * Returns your tags.
-     * @param options The options parameters.
-     */
-    getAllTags(options?: GetAllTagsOptionalParams): Promise<GetAllTagsResponse>;
-    /**
-     * Create a tag
-     * @param body
-     * @param options The options parameters.
-     */
-    createTag(body: TagCreate, options?: CreateTagOptionalParams): Promise<CreateTagResponse>;
-    /**
-     * Return a specific tag.
-     * @param id Tag's ID
-     * @param options The options parameters.
-     */
-    getTag(id: number, options?: GetTagOptionalParams): Promise<GetTagResponse>;
-    /**
-     * Update data of an tag.
-     * @param id Tag's ID
-     * @param body Tag data to update
-     * @param options The options parameters.
-     */
-    updateTag(id: number, body: TagUpdate, options?: UpdateTagOptionalParams): Promise<UpdateTagResponse>;
-    /**
-     * Deletes the specified tag from the database.
-     * @param id Tag's ID
-     * @param options The options parameters.
-     */
-    deleteTag(id: number, options?: DeleteTagOptionalParams): Promise<void>;
-    /**
-     * Returns a list of document types that the user has access to.
-     * @param options The options parameters.
-     */
-    getDocumentTypes(options?: GetDocumentTypesOptionalParams): Promise<GetDocumentTypesResponse>;
-    /**
-     * Create a new document type in the specified organization.
-     * @param body
-     * @param options The options parameters.
-     */
-    createDocumentType(body: DocumentTypeCreate, options?: CreateDocumentTypeOptionalParams): Promise<CreateDocumentTypeResponse>;
-    /**
-     * Returns the details of a specific document type.
-     * @param identifier Document type identifier
-     * @param options The options parameters.
-     */
-    getDocumentType(identifier: string, options?: GetDocumentTypeOptionalParams): Promise<GetDocumentTypeResponse>;
-    /**
-     * Update an existing document type.
-     * @param identifier Document type identifier
-     * @param body
-     * @param options The options parameters.
-     */
-    updateDocumentType(identifier: string, body: DocumentTypeUpdate, options?: UpdateDocumentTypeOptionalParams): Promise<UpdateDocumentTypeResponse>;
-    /**
-     * Delete a document type.
-     * @param identifier Document type identifier
-     * @param options The options parameters.
-     */
-    deleteDocumentType(identifier: string, options?: DeleteDocumentTypeOptionalParams): Promise<void>;
-    /**
-     * Generate JSON schema from a document type.
-     * @param identifier Document type's identifier
-     * @param options The options parameters.
-     */
-    jsonSchemaFromDocumentType(identifier: string, options?: JsonSchemaFromDocumentTypeOptionalParams): Promise<JsonSchemaFromDocumentTypeResponse>;
-    /**
-     * Generate Pydantic models from a document type.
-     * @param identifier Document type's identifier
-     * @param options The options parameters.
-     */
-    pydanticModelsFromDocumentType(identifier: string, options?: PydanticModelsFromDocumentTypeOptionalParams): Promise<PydanticModelsFromDocumentTypeResponse>;
-    /**
-     * Returns all the organizations
-     * @param options The options parameters.
-     */
-    getAllOrganizations(options?: GetAllOrganizationsOptionalParams): Promise<GetAllOrganizationsResponse>;
-    /**
-     * Create a new organization.
-     * @param name
-     * @param options The options parameters.
-     */
-    createOrganization(name: string, options?: CreateOrganizationOptionalParams): Promise<CreateOrganizationResponse>;
-    /**
-     * Get detail of an organization.
-     * @param identifier Organization identifier.
-     * @param options The options parameters.
-     */
-    getOrganization(identifier: string, options?: GetOrganizationOptionalParams): Promise<GetOrganizationResponse>;
-    /**
-     * Update the detail of an organization.
-     * @param identifier Organization identifier.
-     * @param options The options parameters.
-     */
-    updateOrganization(identifier: string, options?: UpdateOrganizationOptionalParams): Promise<UpdateOrganizationResponse>;
-    /**
-     * Delete the specified organization from the database.
-     * @param identifier Organization identifier.
-     * @param options The options parameters.
-     */
-    deleteOrganization(identifier: string, options?: DeleteOrganizationOptionalParams): Promise<void>;
-    /**
-     * Returns all the organization memberships
-     * @param options The options parameters.
-     */
-    getAllOrganizationMemberships(options?: GetAllOrganizationMembershipsOptionalParams): Promise<GetAllOrganizationMembershipsResponse>;
-    /**
-     * Get detail of an organization membership.
-     * @param identifier Membership identifier.
-     * @param options The options parameters.
-     */
-    getOrganizationMembership(identifier: string, options?: GetOrganizationMembershipOptionalParams): Promise<GetOrganizationMembershipResponse>;
-    /**
-     * The admin users can use this endpoint to update the role of the members within their organization.
-     * @param identifier Membership identifier.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: UpdateOrganizationMembershipOptionalParams): Promise<UpdateOrganizationMembershipResponse>;
-    /**
-     * The admin users can use this endpoint to remove member from their organization. Other users can also
-     * use this to leave their organization.
-     * @param identifier Membership identifier.
-     * @param options The options parameters.
-     */
-    deleteOrganizationMembership(identifier: string, options?: DeleteOrganizationMembershipOptionalParams): Promise<void>;
-    /**
-     * Get list of all invitations you created or sent to you.
-     * @param options The options parameters.
-     */
-    getAllInvitations(options?: GetAllInvitationsOptionalParams): Promise<GetAllInvitationsResponse>;
-    /**
-     * Create a new invitation.
-     * @param body Invitation to create.
-     * @param options The options parameters.
-     */
-    createInvitation(body: InvitationCreate, options?: CreateInvitationOptionalParams): Promise<CreateInvitationResponse>;
-    /**
-     * Get detail of an invitation.
-     * @param identifier Invitation identifier.
-     * @param options The options parameters.
-     */
-    getInvitation(identifier: string, options?: GetInvitationOptionalParams): Promise<GetInvitationResponse>;
-    /**
-     * Update the detail of an invitation.
-     * @param identifier Invitation identifier.
-     * @param body
-     * @param options The options parameters.
-     */
-    updateInvitation(identifier: string, body: InvitationUpdate, options?: UpdateInvitationOptionalParams): Promise<UpdateInvitationResponse>;
-    /**
-     * Delete the specified invitation from the database.
-     * @param identifier Invitation identifier.
-     * @param options The options parameters.
-     */
-    deleteInvitation(identifier: string, options?: DeleteInvitationOptionalParams): Promise<void>;
-    /**
-     * Get detail of an invitation using a secret token. This allows users who have not registered/logged
-     * in to view the invitation.
-     * @param token Invitation token.
-     * @param options The options parameters.
-     */
-    getInvitationByToken(token: string, options?: GetInvitationByTokenOptionalParams): Promise<GetInvitationByTokenResponse>;
-    /**
-     * Choose to accept or decline an invitation.
-     * @param token Invitation token.
-     * @param body
-     * @param options The options parameters.
-     */
-    respondToInvitation(token: string, body: InvitationResponse, options?: RespondToInvitationOptionalParams): Promise<RespondToInvitationResponse>;
-    /**
-     * Returns your API users.
-     * @param options The options parameters.
-     */
-    getAllApiUsers(options?: GetAllApiUsersOptionalParams): Promise<GetAllApiUsersResponse>;
-    /**
-     * Create an API user
-     * @param body
-     * @param options The options parameters.
-     */
-    createApiUser(body: ApiUserCreate, options?: CreateApiUserOptionalParams): Promise<CreateApiUserResponse>;
-    /**
-     * Return a specific API user.
-     * @param id API user's ID
-     * @param options The options parameters.
-     */
-    getApiUser(id: number, options?: GetApiUserOptionalParams): Promise<GetApiUserResponse>;
-    /**
-     * Update data of an API user.
-     * @param id API user's ID
-     * @param body API user to update
-     * @param options The options parameters.
-     */
-    updateApiUser(id: number, body: ApiUserUpdate, options?: UpdateApiUserOptionalParams): Promise<UpdateApiUserResponse>;
-    /**
-     * Deletes the specified API user from the database.
-     * @param id API user's ID
-     * @param options The options parameters.
-     */
-    deleteApiUser(id: number, options?: DeleteApiUserOptionalParams): Promise<void>;
-    /**
-     * Regenerate API key for an API user.
-     * @param id API user's ID
-     * @param options The options parameters.
-     */
-    regenerateApiKeyForApiUser(id: number, options?: RegenerateApiKeyForApiUserOptionalParams): Promise<RegenerateApiKeyForApiUserResponse>;
-    /**
      * Returns your resthook subscriptions.
      * @param options The options parameters.
      */
@@ -778,6 +459,28 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     activateResthookSubscription(xHookSecret: string, options?: ActivateResthookSubscriptionOptionalParams): Promise<ActivateResthookSubscriptionResponse>;
+    /**
+     * Creates a document directly from structured resume or job description data for use in Search & Match
+     * functionality. This endpoint is specifically designed for programmatic document creation without
+     * file uploads.<br/>
+     * If you want to upload a document with a file or URL, see the main [POST
+     * /v3/documents](#post-/v3/documents) endpoint under the Documents tag.<br/>
+     * When successful, returns an `identifier` in the response for subsequent use with the
+     * [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
+     * retrieve results.<br/>
+     * @param data Create resume or job description directly from data.
+     * @param options The options parameters.
+     */
+    createDocumentFromData(data: DocumentCreateFromDataData, options?: CreateDocumentFromDataOptionalParams): Promise<CreateDocumentFromDataResponse>;
+    /**
+     * Update data of a document.
+     * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
+     * /annotations/{id}` endpoint or the `POST /annotations/batch_update` endpoint.
+     * @param identifier Resume or Job Description identifier
+     * @param body Resume data to update
+     * @param options The options parameters.
+     */
+    updateDocumentData(identifier: string, body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema, options?: UpdateDocumentDataOptionalParams): Promise<UpdateDocumentDataResponse>;
     /**
      * Returns the list of searchable occupation groups.
      * @param options The options parameters.
@@ -939,6 +642,319 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     reIndexDocument(name: string, identifier: string, options?: ReIndexDocumentOptionalParams): Promise<void>;
+    /**
+     * Returns your collections.
+     * @param workspace Filter by workspace.
+     * @param options The options parameters.
+     */
+    getAllCollections(workspace: string, options?: GetAllCollectionsOptionalParams): Promise<GetAllCollectionsResponse>;
+    /**
+     * Create a collection
+     * @param body
+     * @param options The options parameters.
+     */
+    createCollection(body: CollectionCreate, options?: CreateCollectionOptionalParams): Promise<CreateCollectionResponse>;
+    /**
+     * Return a specific collection.
+     * @param identifier Collection's identifier
+     * @param options The options parameters.
+     */
+    getCollection(identifier: string, options?: GetCollectionOptionalParams): Promise<GetCollectionResponse>;
+    /**
+     * Update data of a collection.
+     * @param identifier Collection's identifier
+     * @param body Collection data to update
+     * @param options The options parameters.
+     */
+    updateCollection(identifier: string, body: CollectionUpdate, options?: UpdateCollectionOptionalParams): Promise<UpdateCollectionResponse>;
+    /**
+     * Deletes the specified collection from the database.
+     * @param identifier Collection's identifier
+     * @param options The options parameters.
+     */
+    deleteCollection(identifier: string, options?: DeleteCollectionOptionalParams): Promise<void>;
+    /**
+     * Create data field for a collection along with a new data point.
+     * @param identifier Collection's identifier
+     * @param body The data field and data point to be created.
+     * @param options The options parameters.
+     */
+    createDataFieldForCollection(identifier: string, body: DataFieldCreate, options?: CreateDataFieldForCollectionOptionalParams): Promise<CreateDataFieldForCollectionResponse>;
+    /**
+     * Get a data field for a collection assosciated with a data point
+     * @param identifier Collection's identifier
+     * @param datapointIdentifier Datapoint's identifier
+     * @param options The options parameters.
+     */
+    getDataFieldForCollection(identifier: string, datapointIdentifier: string, options?: GetDataFieldForCollectionOptionalParams): Promise<GetDataFieldForCollectionResponse>;
+    /**
+     * Update data field for a collection assosciated with a data point
+     * @param identifier Collection's identifier
+     * @param datapointIdentifier Datapoint's identifier
+     * @param body Data field properties to update
+     * @param options The options parameters.
+     */
+    updateDataFieldForCollection(identifier: string, datapointIdentifier: string, body: CollectionField, options?: UpdateDataFieldForCollectionOptionalParams): Promise<UpdateDataFieldForCollectionResponse>;
+    /**
+     * Return monthly credits consumption of a collection.
+     * @param identifier Collection's identifier
+     * @param options The options parameters.
+     */
+    getUsageByCollection(identifier: string, options?: GetUsageByCollectionOptionalParams): Promise<GetUsageByCollectionResponse>;
+    /**
+     * Returns your custom data points as well as Affinda's off-the-shelf data points.
+     * @param options The options parameters.
+     */
+    getAllDataPoints(options?: GetAllDataPointsOptionalParams): Promise<GetAllDataPointsResponse>;
+    /**
+     * Create a custom data point.
+     * @param options The options parameters.
+     */
+    createDataPoint(options?: CreateDataPointOptionalParams): Promise<CreateDataPointResponse>;
+    /**
+     * Return a specific data point.
+     * @param identifier Data point's identifier
+     * @param options The options parameters.
+     */
+    getDataPoint(identifier: string, options?: GetDataPointOptionalParams): Promise<GetDataPointResponse>;
+    /**
+     * Update data of a data point.
+     * @param identifier DataPoint's identifier
+     * @param body Data point to update
+     * @param options The options parameters.
+     */
+    updateDataPoint(identifier: string, body: DataPointUpdate, options?: UpdateDataPointOptionalParams): Promise<UpdateDataPointResponse>;
+    /**
+     * Deletes the specified data point from the database.
+     * @param identifier DataPoint's identifier
+     * @param options The options parameters.
+     */
+    deleteDataPoint(identifier: string, options?: DeleteDataPointOptionalParams): Promise<void>;
+    /**
+     * Returns available choices for a specific enum data point.
+     * @param dataPoint The data point to get choices for.
+     * @param collection The collection to get choices for.
+     * @param options The options parameters.
+     */
+    getDataPointChoices(dataPoint: string, collection: string, options?: GetDataPointChoicesOptionalParams): Promise<GetDataPointChoicesResponse>;
+    /**
+     * Create a custom data point choice.
+     * @param options The options parameters.
+     */
+    createDataPointChoice(options?: CreateDataPointChoiceOptionalParams): Promise<CreateDataPointChoiceResponse>;
+    /**
+     * Return a specific data point choice.
+     * @param id Data point choice's ID
+     * @param options The options parameters.
+     */
+    getDataPointChoice(id: number, options?: GetDataPointChoiceOptionalParams): Promise<GetDataPointChoiceResponse>;
+    /**
+     * Update data of a data point choice.
+     * @param id Data point choice's ID
+     * @param body Data point choice to update
+     * @param options The options parameters.
+     */
+    updateDataPointChoice(id: number, body: DataPointChoiceUpdate, options?: UpdateDataPointChoiceOptionalParams): Promise<UpdateDataPointChoiceResponse>;
+    /**
+     * Deletes the specified data point choice from the database.
+     * @param id Data point choice's ID
+     * @param options The options parameters.
+     */
+    deleteDataPointChoice(id: number, options?: DeleteDataPointChoiceOptionalParams): Promise<void>;
+    /**
+     * Replace choices of a data point. Existing choices and incoming choices are matched base on their
+     * `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
+     * choices will be deleted.
+     * @param options The options parameters.
+     */
+    replaceDataPointChoices(options?: ReplaceDataPointChoicesOptionalParams): Promise<ReplaceDataPointChoicesResponse>;
+    /**
+     * Returns your API users.
+     * @param options The options parameters.
+     */
+    getAllApiUsers(options?: GetAllApiUsersOptionalParams): Promise<GetAllApiUsersResponse>;
+    /**
+     * Create an API user
+     * @param body
+     * @param options The options parameters.
+     */
+    createApiUser(body: ApiUserCreate, options?: CreateApiUserOptionalParams): Promise<CreateApiUserResponse>;
+    /**
+     * Return a specific API user.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    getApiUser(id: number, options?: GetApiUserOptionalParams): Promise<GetApiUserResponse>;
+    /**
+     * Update data of an API user.
+     * @param id API user's ID
+     * @param body API user to update
+     * @param options The options parameters.
+     */
+    updateApiUser(id: number, body: ApiUserUpdate, options?: UpdateApiUserOptionalParams): Promise<UpdateApiUserResponse>;
+    /**
+     * Deletes the specified API user from the database.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    deleteApiUser(id: number, options?: DeleteApiUserOptionalParams): Promise<void>;
+    /**
+     * Regenerate API key for an API user.
+     * @param id API user's ID
+     * @param options The options parameters.
+     */
+    regenerateApiKeyForApiUser(id: number, options?: RegenerateApiKeyForApiUserOptionalParams): Promise<RegenerateApiKeyForApiUserResponse>;
+    /**
+     * Returns all the document splitters visible to the user.
+     * @param options The options parameters.
+     */
+    getAllDocumentSplitters(options?: GetAllDocumentSplittersOptionalParams): Promise<GetAllDocumentSplittersResponse>;
+    /**
+     * Return a specific document splitter.
+     * @param identifier Document splitter's identifier
+     * @param options The options parameters.
+     */
+    getDocumentSplitter(identifier: string, options?: GetDocumentSplitterOptionalParams): Promise<GetDocumentSplitterResponse>;
+    /**
+     * Split / merge / rotate / delete pages of a document.
+     * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
+     * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+     *
+     * @param identifier Document's identifier
+     * @param body Describe how the pages should be edited
+     * @param options The options parameters.
+     */
+    editDocumentPages(identifier: string, body: DocumentEditRequest, options?: EditDocumentPagesOptionalParams): Promise<EditDocumentPagesResponse>;
+    /**
+     * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
+     * @param organization Filter by organization.
+     * @param options The options parameters.
+     */
+    getAllExtractors(organization: string, options?: GetAllExtractorsOptionalParams): Promise<GetAllExtractorsResponse>;
+    /**
+     * Create a custom extractor.
+     * @param options The options parameters.
+     */
+    createExtractor(options?: CreateExtractorOptionalParams): Promise<CreateExtractorResponse>;
+    /**
+     * Return a specific extractor.
+     * @param identifier Extractor's identifier
+     * @param options The options parameters.
+     */
+    getExtractor(identifier: string, options?: GetExtractorOptionalParams): Promise<GetExtractorResponse>;
+    /**
+     * Update data of an extractor.
+     * @param identifier Extractor's identifier
+     * @param body Extractor data to update
+     * @param options The options parameters.
+     */
+    updateExtractor(identifier: string, body: ExtractorUpdate, options?: UpdateExtractorOptionalParams): Promise<UpdateExtractorResponse>;
+    /**
+     * Deletes the specified extractor from the database.
+     * @param identifier Extractor's identifier
+     * @param options The options parameters.
+     */
+    deleteExtractor(identifier: string, options?: DeleteExtractorOptionalParams): Promise<void>;
+    /**
+     * Returns all the organization memberships
+     * @param options The options parameters.
+     */
+    getAllOrganizationMemberships(options?: GetAllOrganizationMembershipsOptionalParams): Promise<GetAllOrganizationMembershipsResponse>;
+    /**
+     * Get detail of an organization membership.
+     * @param identifier Membership identifier.
+     * @param options The options parameters.
+     */
+    getOrganizationMembership(identifier: string, options?: GetOrganizationMembershipOptionalParams): Promise<GetOrganizationMembershipResponse>;
+    /**
+     * The admin users can use this endpoint to update the role of the members within their organization.
+     * @param identifier Membership identifier.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateOrganizationMembership(identifier: string, body: OrganizationMembershipUpdate, options?: UpdateOrganizationMembershipOptionalParams): Promise<UpdateOrganizationMembershipResponse>;
+    /**
+     * The admin users can use this endpoint to remove member from their organization. Other users can also
+     * use this to leave their organization.
+     * @param identifier Membership identifier.
+     * @param options The options parameters.
+     */
+    deleteOrganizationMembership(identifier: string, options?: DeleteOrganizationMembershipOptionalParams): Promise<void>;
+    /**
+     * Get list of all invitations you created or sent to you.
+     * @param options The options parameters.
+     */
+    getAllInvitations(options?: GetAllInvitationsOptionalParams): Promise<GetAllInvitationsResponse>;
+    /**
+     * Create a new invitation.
+     * @param body Invitation to create.
+     * @param options The options parameters.
+     */
+    createInvitation(body: InvitationCreate, options?: CreateInvitationOptionalParams): Promise<CreateInvitationResponse>;
+    /**
+     * Get detail of an invitation.
+     * @param identifier Invitation identifier.
+     * @param options The options parameters.
+     */
+    getInvitation(identifier: string, options?: GetInvitationOptionalParams): Promise<GetInvitationResponse>;
+    /**
+     * Update the detail of an invitation.
+     * @param identifier Invitation identifier.
+     * @param body
+     * @param options The options parameters.
+     */
+    updateInvitation(identifier: string, body: InvitationUpdate, options?: UpdateInvitationOptionalParams): Promise<UpdateInvitationResponse>;
+    /**
+     * Delete the specified invitation from the database.
+     * @param identifier Invitation identifier.
+     * @param options The options parameters.
+     */
+    deleteInvitation(identifier: string, options?: DeleteInvitationOptionalParams): Promise<void>;
+    /**
+     * Get detail of an invitation using a secret token. This allows users who have not registered/logged
+     * in to view the invitation.
+     * @param token Invitation token.
+     * @param options The options parameters.
+     */
+    getInvitationByToken(token: string, options?: GetInvitationByTokenOptionalParams): Promise<GetInvitationByTokenResponse>;
+    /**
+     * Choose to accept or decline an invitation.
+     * @param token Invitation token.
+     * @param body
+     * @param options The options parameters.
+     */
+    respondToInvitation(token: string, body: InvitationResponse, options?: RespondToInvitationOptionalParams): Promise<RespondToInvitationResponse>;
+    /**
+     * Create a custom mapping.
+     * @param body
+     * @param options The options parameters.
+     */
+    createMapping(body: MappingCreate, options?: CreateMappingOptionalParams): Promise<CreateMappingResponse>;
+    /**
+     * Returns the list of all custom data mappings.
+     * @param mappingDataSource Data source's identifier
+     * @param options The options parameters.
+     */
+    listMappings(mappingDataSource: string, options?: ListMappingsOptionalParams): Promise<ListMappingsResponse>;
+    /**
+     * Return a specific mapping.
+     * @param identifier Mapping's identifier
+     * @param options The options parameters.
+     */
+    getMapping(identifier: string, options?: GetMappingOptionalParams): Promise<GetMappingResponse>;
+    /**
+     * Delete the specified mapping from the database.
+     * @param identifier Mapping's identifier
+     * @param options The options parameters.
+     */
+    deleteMapping(identifier: string, options?: DeleteMappingOptionalParams): Promise<void>;
+    /**
+     * Updates a specific mapping.
+     * @param identifier Mapping's identifier
+     * @param body
+     * @param options The options parameters.
+     */
+    updateMapping(identifier: string, body: MappingUpdate, options?: UpdateMappingOptionalParams): Promise<UpdateMappingResponse>;
 }
 
 /** Optional parameters. */
@@ -983,7 +999,9 @@ export declare interface Annotation {
     /** Indicates whether the data has been auto-validated */
     isAutoVerified: boolean;
     /** Data point's identifier */
-    dataPoint: string;
+    dataPoint?: string;
+    /** Field's identifier */
+    field?: string;
     /** The different data types of annotations */
     contentType: AnnotationContentType;
     /** The parent annotation's ID */
@@ -1074,7 +1092,9 @@ export declare interface AnnotationCreate {
     /** The page number within the document, starting from 0. */
     pageIndex: number | null;
     /** Data point's identifier */
-    dataPoint: string;
+    dataPoint?: string;
+    /** Field's identifier */
+    field?: string;
     /** Raw data extracted from the before any post-processing */
     raw?: string;
     /** Anything */
@@ -1102,6 +1122,8 @@ export declare interface AnnotationUpdate {
     isClientVerified?: boolean;
     /** Data point's identifier */
     dataPoint?: string;
+    /** Field's identifier */
+    field?: string;
     /** The parent annotation's ID */
     parent?: number;
     /** The validation results created, changed or deleted as a result of updating the annotation. */
@@ -1473,15 +1495,22 @@ export declare interface CreateDataPointOptionalParams extends coreClient.Operat
 export declare type CreateDataPointResponse = DataPoint;
 
 /** Optional parameters. */
+export declare interface CreateDocumentFromDataOptionalParams extends coreClient.OperationOptions {
+    /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+    snakeCase?: boolean;
+}
+
+/** Contains response data for the createDocumentFromData operation. */
+export declare type CreateDocumentFromDataResponse = DocumentUnion;
+
+/** Optional parameters. */
 export declare interface CreateDocumentOptionalParams extends coreClient.OperationOptions {
-    /** Whether to return the response in camelCase. Default is true. */
-    camelCase?: boolean;
+    /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+    snakeCase?: boolean;
     /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
     url?: string;
-    /** Create resume or job description directly from data. */
-    data?: DocumentCreateData;
     /** Uniquely identify a collection. */
     collection?: string;
     /** The document type's identifier.  Provide if you already know the document type. */
@@ -1501,7 +1530,7 @@ export declare interface CreateDocumentOptionalParams extends coreClient.Operati
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
@@ -1513,7 +1542,7 @@ export declare interface CreateDocumentOptionalParams extends coreClient.Operati
     /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
     enableValidationTool?: string;
     /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
-    useOcr?: boolean;
+    useOcr?: string;
     /** Array of DocumentWarning */
     warningMessages?: DocumentWarning[];
 }
@@ -2063,8 +2092,6 @@ export declare interface DocumentCreate {
     file?: coreRestPipeline.RequestBodyType;
     /** URL to download the document. */
     url?: string;
-    /** Create resume or job description directly from data. */
-    data?: DocumentCreateData;
     /** Uniquely identify a collection. */
     collection?: string;
     /** The document type's identifier.  Provide if you already know the document type. */
@@ -2084,7 +2111,7 @@ export declare interface DocumentCreate {
     /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
     language?: string;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-    rejectDuplicates?: boolean;
+    rejectDuplicates?: string;
     /** A JSON representation of the RegionBias object. */
     regionBias?: string;
     /** Explicitly mark this document as low priority. */
@@ -2096,12 +2123,17 @@ export declare interface DocumentCreate {
     /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
     enableValidationTool?: string;
     /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
-    useOcr?: boolean;
+    useOcr?: string;
     warningMessages?: DocumentWarning[];
 }
 
+export declare interface DocumentCreateFromData extends DocumentCreate {
+    /** Create resume or job description directly from data. */
+    data: DocumentCreateFromDataData;
+}
+
 /** Create resume or job description directly from data. */
-export declare interface DocumentCreateData {
+export declare interface DocumentCreateFromDataData {
 }
 
 export declare interface DocumentEditRequest {
@@ -2377,14 +2409,14 @@ export declare interface EducationSearchScoreComponent {
 }
 
 /**
- * Defines values for Enum22. \
- * {@link KnownEnum22} can be used interchangeably with Enum22,
+ * Defines values for Enum17. \
+ * {@link KnownEnum17} can be used interchangeably with Enum17,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export declare type Enum22 = string;
+export declare type Enum17 = string;
 
 export declare interface ExpectedRemunerationAnnotation extends Annotation {
     parsed?: ExpectedRemunerationAnnotationParsed;
@@ -2633,8 +2665,8 @@ export declare interface GetAllDocumentsOptionalParams extends coreClient.Operat
     compact?: boolean;
     /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
     count?: boolean;
-    /** Whether to return the response in camelCase. Default is true. */
-    camelCase?: boolean;
+    /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+    snakeCase?: boolean;
 }
 
 /** Optional parameters. */
@@ -2657,10 +2689,10 @@ export declare type GetAllDocumentsResponse = PathsOxm5M7V3DocumentsGetResponses
 
 /** Optional parameters. */
 export declare interface GetAllExtractorsOptionalParams extends coreClient.OperationOptions {
-    /** Filter by name. */
-    name?: string;
     /** Filter by validatable. */
     validatable?: boolean;
+    /** Filter by name. */
+    name?: string;
     /** Whether to include Affinda's off-the-shelf extractors. */
     includePublicExtractors?: boolean;
 }
@@ -2681,14 +2713,14 @@ export declare type GetAllIndexDocumentsResponse = PathsO7SnenV3IndexNameDocumen
 
 /** Optional parameters. */
 export declare interface GetAllIndexesOptionalParams extends coreClient.OperationOptions {
-    /** Filter indices by name */
-    name?: string;
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
+    /** Filter indices by name */
+    name?: string;
     /** Filter indices by a document type */
-    documentType?: Enum22;
+    documentType?: Enum17;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -2746,14 +2778,14 @@ export declare type GetAllResthookSubscriptionsResponse = PathsVz5Kj2V3ResthookS
 
 /** Optional parameters. */
 export declare interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
-    /** Filter by name. */
-    name?: string;
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
     /** Filter by workspace. */
     workspace?: string;
+    /** Filter by name. */
+    name?: string;
 }
 
 /** Contains response data for the getAllTags operation. */
@@ -2853,8 +2885,8 @@ export declare type GetDataPointResponse = DataPoint;
 export declare interface GetDocumentOptionalParams extends coreClient.OperationOptions {
     /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
     compact?: boolean;
-    /** Whether to return the response in camelCase. Default is true. */
-    camelCase?: boolean;
+    /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+    snakeCase?: boolean;
     /** Specify which format you want the response to be. Default is "json" */
     format?: DocumentFormat;
 }
@@ -3733,8 +3765,8 @@ export declare enum KnownDocumentState {
     Rejected = "rejected"
 }
 
-/** Known values of {@link Enum22} that the service accepts. */
-export declare enum KnownEnum22 {
+/** Known values of {@link Enum17} that the service accepts. */
+export declare enum KnownEnum17 {
     /** Resumes */
     Resumes = "resumes",
     /** JobDescriptions */
@@ -4363,14 +4395,14 @@ export declare interface LanguagesSearchScoreComponent {
 
 /** Optional parameters. */
 export declare interface ListMappingDataSourcesOptionalParams extends coreClient.OperationOptions {
-    /** Filter by name. */
-    name?: string;
     /** The number of documents to skip before starting to collect the result set. */
     offset?: number;
     /** The numbers of results to return. */
     limit?: number;
     /** Filter by workspace. */
     workspace?: string;
+    /** Filter by name. */
+    name?: string;
     /** Filter by organization. */
     organization?: string;
     /** Filter by identifier. */
@@ -5989,8 +6021,8 @@ export declare type UpdateDocumentDataResponse = DocumentUnion;
 export declare interface UpdateDocumentOptionalParams extends coreClient.OperationOptions {
     /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
     compact?: boolean;
-    /** Whether to return the response in camelCase. Default is true. */
-    camelCase?: boolean;
+    /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+    snakeCase?: boolean;
 }
 
 /** Contains response data for the updateDocument operation. */
@@ -6154,7 +6186,7 @@ export declare interface ValidationResult {
     annotations: number[];
     /** Whether the validation passed or not, null if the validation was not applicable */
     passed: boolean | null;
-    /** The hot-dog case slug of the validation rule that was applied */
+    /** The kebab-case slug of the validation rule that was applied */
     ruleSlug: string;
     /** Message explaining why the validation failed */
     message: string;
@@ -6167,7 +6199,7 @@ export declare interface ValidationResultCreate {
     annotations: number[];
     /** Whether the validation passed or not, null if the validation was not applicable */
     passed?: boolean;
-    /** The hot-dog case slug of the validation rule that was applied */
+    /** The kebab-case slug of the validation rule that was applied */
     ruleSlug: string;
     /** Message explaining why the validation failed */
     message: string;
@@ -6180,7 +6212,7 @@ export declare interface ValidationResultUpdate {
     annotations?: number[];
     /** Whether the validation passed or not, null if the validation was not applicable */
     passed?: boolean;
-    /** The hot-dog case slug of the validation rule that was applied */
+    /** The kebab-case slug of the validation rule that was applied */
     ruleSlug?: string;
     /** Message explaining why the validation failed */
     message?: string;
@@ -6246,6 +6278,8 @@ export declare interface Workspace {
     /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
     visibility?: WorkspaceVisibility;
     collections?: WorkspaceCollectionsItem[];
+    /** Document types associated with this workspace */
+    documentTypes?: string[];
     /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
     rejectInvalidDocuments?: boolean;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
@@ -6295,6 +6329,8 @@ export declare interface WorkspaceCreate {
     rejectInvalidDocuments?: boolean;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
+    /** Document types to associate with this workspace */
+    documentTypes?: string[];
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
     /** Uniquely identify a document splitter. */
@@ -6330,6 +6366,8 @@ export declare interface WorkspaceUpdate {
     rejectInvalidDocuments?: boolean;
     /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
     rejectDuplicates?: string;
+    /** Document types to associate with this workspace */
+    documentTypes?: string[];
     /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
     whitelistIngestAddresses?: string[];
     /** Uniquely identify a document splitter. */

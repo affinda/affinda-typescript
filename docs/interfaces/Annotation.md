@@ -8,6 +8,7 @@
 
 ## Extended by
 
+- [`AnnotationWithValidationResults`](AnnotationWithValidationResults.md)
 - [`JobTitleAnnotation`](JobTitleAnnotation.md)
 - [`TextAnnotation`](TextAnnotation.md)
 - [`DateAnnotation`](DateAnnotation.md)
@@ -16,7 +17,6 @@
 - [`ExpectedRemunerationAnnotation`](ExpectedRemunerationAnnotation.md)
 - [`LocationAnnotation`](LocationAnnotation.md)
 - [`YearsExperienceAnnotation`](YearsExperienceAnnotation.md)
-- [`AnnotationWithValidationResults`](AnnotationWithValidationResults.md)
 - [`FloatAnnotation`](FloatAnnotation.md)
 - [`RowAnnotation`](RowAnnotation.md)
 - [`TableAnnotation`](TableAnnotation.md)
@@ -59,9 +59,9 @@ The different data types of annotations
 
 ***
 
-### dataPoint
+### dataPoint?
 
-> **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
 Data point's identifier
 
@@ -72,6 +72,14 @@ Data point's identifier
 > **document**: `string`
 
 Unique identifier for the document
+
+***
+
+### field?
+
+> `optional` **field**: `string`
+
+Field's identifier
 
 ***
 

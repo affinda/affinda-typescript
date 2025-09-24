@@ -24,6 +24,14 @@ Unique identifier for the document
 
 ***
 
+### field?
+
+> `optional` **field**: `string`
+
+Field's identifier
+
+***
+
 ### isClientVerified?
 
 > `optional` **isClientVerified**: `boolean`

@@ -101,7 +101,7 @@ Adds a value to a mapping data source
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### body
 
@@ -451,15 +451,49 @@ The options parameters.
 
 > **createDocument**(`options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
-Uploads a document for parsing. When successful, returns an `identifier` in the response for
-subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
-processing status and retrieve results.<br/>
+Uploads a document for parsing via file upload or URL.
+When successful, returns an `identifier` in the response for subsequent use with the
+[/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
+retrieve results.<br/>
 
 #### Parameters
 
 ##### options?
 
 [`CreateDocumentOptionalParams`](../interfaces/CreateDocumentOptionalParams.md)
+
+The options parameters.
+
+#### Returns
+
+`Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
+
+***
+
+### createDocumentFromData()
+
+> **createDocumentFromData**(`data`, `options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
+
+Creates a document directly from structured resume or job description data for use in Search & Match
+functionality. This endpoint is specifically designed for programmatic document creation without
+file uploads.<br/>
+If you want to upload a document with a file or URL, see the main [POST
+/v3/documents](#post-/v3/documents) endpoint under the Documents tag.<br/>
+When successful, returns an `identifier` in the response for subsequent use with the
+[/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
+retrieve results.<br/>
+
+#### Parameters
+
+##### data
+
+[`DocumentCreateFromDataData`](../interfaces/DocumentCreateFromDataData.md)
+
+Create resume or job description directly from data.
+
+##### options?
+
+[`CreateDocumentFromDataOptionalParams`](../interfaces/CreateDocumentFromDataOptionalParams.md)
 
 The options parameters.
 
@@ -1231,7 +1265,7 @@ Delete the specified mapping data source from the database.
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### options?
 
@@ -1257,13 +1291,13 @@ Delete the specified mapping data source value from the database.
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### value
 
 `string`
 
-Mapping Data Source Value's value
+Data Source Value's value
 
 ##### options?
 
@@ -2336,7 +2370,7 @@ Return a specific mapping data source.
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### options?
 
@@ -2362,13 +2396,13 @@ Return a specific mapping dta source value.
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### value
 
 `string`
 
-Mapping Data Source Value's value
+Data Source Value's value
 
 ##### options?
 
@@ -2843,7 +2877,7 @@ Returns the list of all values in a mapping data source
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### options?
 
@@ -2869,7 +2903,7 @@ Returns the list of all custom data mappings.
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### options?
 
@@ -3017,6 +3051,8 @@ The options parameters.
 > **replaceMappingDataSourceValues**(`identifier`, `body`, `options?`): `Promise`\<[`ReplaceMappingDataSourceValuesResponse`](../type-aliases/ReplaceMappingDataSourceValuesResponse.md)\>
 
 Replaces the list of all values in a mapping data source
+Note: For large data sources (e.g. > 1000 values), it can take a few minutes after the request
+completes for the new values to be searchable.
 
 #### Parameters
 
@@ -3024,7 +3060,7 @@ Replaces the list of all values in a mapping data source
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### body
 
@@ -3590,13 +3626,13 @@ Update the specified mapping data source value.
 
 `string`
 
-Mapping data source's identifier
+Data source's identifier
 
 ##### value
 
 `string`
 
-Mapping Data Source's value
+Data Source's value
 
 ##### body
 

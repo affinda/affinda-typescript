@@ -2,9 +2,9 @@
 
 ***
 
-[@affinda/affinda](../globals.md) / UpdateDocumentOptionalParams
+[@affinda/affinda](../globals.md) / CreateDocumentFromDataOptionalParams
 
-# Interface: UpdateDocumentOptionalParams
+# Interface: CreateDocumentFromDataOptionalParams
 
 Optional parameters.
 
@@ -23,14 +23,6 @@ The signal which can be used to abort requests.
 #### Inherited from
 
 `coreClient.OperationOptions.abortSignal`
-
-***
-
-### compact?
-
-> `optional` **compact**: `boolean`
-
-If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false".
 
 ***
 

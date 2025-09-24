@@ -8,9 +8,9 @@
 
 ## Properties
 
-### dataPoint
+### dataPoint?
 
-> **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
 Data point's identifier
 
@@ -21,6 +21,14 @@ Data point's identifier
 > **document**: `string`
 
 Unique identifier for the document
+
+***
+
+### field?
+
+> `optional` **field**: `string`
+
+Field's identifier
 
 ***
 

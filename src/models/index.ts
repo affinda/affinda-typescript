@@ -8,220 +8,6 @@ export type DocumentUnion =
   | JobDescription
   | ResumeRedact;
 
-export interface Workspace {
-  /** Uniquely identify a workspace. */
-  identifier: string;
-  organization?: Organization;
-  name?: string;
-  /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
-  visibility?: WorkspaceVisibility;
-  collections?: WorkspaceCollectionsItem[];
-  /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
-  rejectInvalidDocuments?: boolean;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-  rejectDuplicates?: string;
-  members?: User[];
-  /** Number of unvalidated documents in the workspace. */
-  unvalidatedDocsCount?: number;
-  /** Number of validated documents in the workspace. */
-  confirmedDocsCount?: number;
-  /** When you send email to this address, any document attached in the body will be uploaded to this workspace. */
-  ingestEmail?: string;
-  /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
-  whitelistIngestAddresses?: string[];
-  documentSplitter?: WorkspaceDocumentSplitter;
-}
-
-export interface Organization {
-  /** Uniquely identify an organization. */
-  identifier?: string;
-  name?: string;
-  /** The role of the logged in user within the organization. */
-  userRole?: OrganizationUserRole;
-  /** URL of the organization's avatar. */
-  avatar?: string;
-  /** Used to sign webhook payloads so you can verify their integrity. */
-  resthookSignatureKey?: string;
-  isTrial?: boolean;
-  /** Configuration of the embeddable validation tool. */
-  validationToolConfig?: OrganizationValidationToolConfig;
-  /** Whether to show the custom field creation in the UI. */
-  showCustomFieldCreation?: boolean;
-}
-
-/** Configuration of the embeddable validation tool. */
-export interface OrganizationValidationToolConfig {
-  theme?: ThemeConfig;
-  /** Hide the confirm document button and other actions. */
-  hideActions?: boolean;
-  /** Hide the collection selector. */
-  hideCollection?: boolean;
-  /** Hide the edit pages button. */
-  hideEditPages?: boolean;
-  /** Hide the export menu. */
-  hideExport?: boolean;
-  /** Hide the filename input. */
-  hideFilename?: boolean;
-  /** Hide the reject document button. */
-  hideReject?: boolean;
-  /** Hide the reparse button. */
-  hideReparse?: boolean;
-  /** Hide the run OCR button. */
-  hideRunOcr?: boolean;
-  /** Hide the tags editor. */
-  hideTags?: boolean;
-  /** Hide the warnings panel. */
-  hideWarnings?: boolean;
-  /** Disable the page editor after a document has been split once. */
-  restrictDocumentSplitting?: boolean;
-  /** Disable currency formatting of decimals values. */
-  disableCurrencyFormatting?: boolean;
-  /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
-  disableEditDocumentMetadata?: boolean;
-}
-
-export interface ThemeConfig {
-  palette?: ThemeConfigPalette;
-  typography?: ThemeConfigTypography;
-  borderRadius?: number;
-  fontUrl?: string;
-}
-
-export interface ThemeConfigPalette {
-  mode?: ThemeConfigPaletteMode;
-  /** Anything */
-  background?: any;
-  text?: ThemeConfigPaletteText;
-  divider?: string;
-  primary?: PaletteColorOptions;
-  secondary?: PaletteColorOptions;
-  success?: PaletteColorOptions;
-  annotation?: PaletteColorOptions;
-  error?: PaletteColorOptions;
-  info?: PaletteColorOptions;
-  warning?: PaletteColorOptions;
-}
-
-export interface ThemeConfigPaletteText {
-  primary?: string;
-  secondary?: string;
-  disabled?: string;
-}
-
-export interface PaletteColorOptions {
-  main: string;
-  light?: string;
-  dark?: string;
-  contrastText?: string;
-}
-
-export interface ThemeConfigTypography {
-  fontFamily?: string;
-  /** Anything */
-  fontSize?: any;
-  fontWeightRegular?: string;
-  fontWeightMedium?: string;
-  fontWeightBold?: string;
-}
-
-export interface WorkspaceCollectionsItem {
-  /** Uniquely identify a collection. */
-  identifier: string;
-  name: string;
-  extractor: WorkspaceCollectionsItemExtractor;
-  /** Number of unvalidated documents in the collection. */
-  unvalidatedDocsCount?: number;
-  /** Number of validated documents in the collection. */
-  confirmedDocsCount?: number;
-}
-
-export interface WorkspaceCollectionsItemExtractor {
-  /** Uniquely identify an extractor. */
-  identifier: string;
-  name: string;
-  namePlural: string;
-  baseExtractor?: BaseExtractor;
-  category?: string;
-  validatable: boolean;
-  isCustom?: boolean;
-  createdDt?: Date;
-}
-
-export interface BaseExtractor {
-  /** Uniquely identify an extractor. */
-  identifier: string;
-  name: string;
-  namePlural: string;
-  validatable: boolean;
-  isCustom?: boolean;
-  createdDt?: Date;
-}
-
-export interface User {
-  /** Uniquely identify a user. */
-  id?: number;
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-}
-
-export interface WorkspaceDocumentSplitter {
-  /** Uniquely identify a document splitter. */
-  identifier: string;
-  name: string;
-}
-
-export interface RequestError {
-  type: string;
-  errors: RequestErrorErrorsItem[];
-}
-
-export interface RequestErrorErrorsItem {
-  attr: string | null;
-  code: string;
-  detail: string;
-}
-
-export interface WorkspaceCreate {
-  /** Uniquely identify an organization. */
-  organization: string;
-  name: string;
-  /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
-  visibility?: WorkspaceVisibility;
-  /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
-  rejectInvalidDocuments?: boolean;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-  rejectDuplicates?: string;
-  /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
-  whitelistIngestAddresses?: string[];
-  /** Uniquely identify a document splitter. */
-  documentSplitter?: string;
-}
-
-export interface WorkspaceUpdate {
-  name?: string;
-  /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
-  visibility?: WorkspaceVisibility;
-  /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
-  rejectInvalidDocuments?: boolean;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-  rejectDuplicates?: string;
-  /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
-  whitelistIngestAddresses?: string[];
-  /** Uniquely identify a document splitter. */
-  documentSplitter?: string;
-}
-
-/** Monthly credits consumption */
-export interface UsageByWorkspace {
-  /** Month of the usage */
-  month: string;
-  /** Usage count */
-  count: number;
-}
-
 export interface PaginatedResponse {
   /** Number of items in results. */
   count: number;
@@ -229,398 +15,6 @@ export interface PaginatedResponse {
   next?: string;
   /** URL to request previous page of results. */
   previous?: string;
-}
-
-export interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results: WorkspaceMembership[];
-}
-
-export interface WorkspaceMembership {
-  /** Uniquely identify a membership. */
-  identifier?: string;
-  /** Uniquely identify a workspace. */
-  workspace?: string;
-  user?: User;
-}
-
-export interface WorkspaceMembershipCreate {
-  /** Uniquely identify a workspace. */
-  workspace?: string;
-  /** Uniquely identify a user. */
-  user?: number;
-}
-
-export interface Collection {
-  /** Uniquely identify a collection. */
-  identifier: string;
-  name?: string;
-  workspace?: CollectionWorkspace;
-  extractor?: Extractor;
-  autoValidationThreshold?: number;
-  enableAutoValidationThreshold?: boolean;
-  autoValidateIfValidationRulesPass?: boolean;
-  fields?: FieldGroup[];
-  fieldsLayout?: FieldsLayout;
-  fieldsConfigured?: boolean;
-  dateFormatPreference?: CollectionDateFormatPreference;
-  /** Predict the date format from any dates in the document that is not ambiguous. */
-  dateFormatFromDocument?: boolean;
-  /** Extra configurations specific to an extractor. */
-  extractorConfig?: ExtractorConfig;
-  /** Number of unvalidated documents in the collection. */
-  unvalidatedDocsCount?: number;
-  /** Number of validated documents in the collection. */
-  confirmedDocsCount?: number;
-  /** When you send email to this address, any document attached in the body will be uploaded to this collection. */
-  ingestEmail?: string;
-  /** Whether a tailored extractor has been requested for this collection. */
-  tailoredExtractorRequested?: boolean;
-  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
-  allowOpenai?: boolean;
-  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
-  trainsExtractor?: boolean;
-  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
-  disableConfirmationIfValidationRulesFail?: boolean;
-  /** If True, validation results are refreshed whenever annotations are changed. */
-  autoRefreshValidationResults?: boolean;
-}
-
-export interface CollectionWorkspace {
-  /** Uniquely identify a workspace. */
-  identifier?: string;
-  organization?: Organization;
-  name?: string;
-}
-
-export interface Extractor {
-  /** Uniquely identify an extractor. */
-  identifier: string;
-  name: string;
-  namePlural: string;
-  baseExtractor?: ExtractorBaseExtractor;
-  organization?: Organization;
-  category?: string;
-  validatable: boolean;
-  isCustom?: boolean;
-  fieldGroups?: FieldGroup[];
-  createdDt?: Date;
-  lastTrainedDt?: Date;
-}
-
-export interface ExtractorBaseExtractor {
-  /** Uniquely identify an extractor. */
-  identifier: string;
-  name: string;
-  namePlural: string;
-  validatable: boolean;
-  isCustom?: boolean;
-  createdDt?: Date;
-}
-
-export interface FieldGroup {
-  label: string;
-  fields: FieldDeprecated[];
-}
-
-export interface FieldDeprecated {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  label: string;
-  slug?: string;
-  /** The different data types of annotations */
-  fieldType: AnnotationContentType;
-  /** Data source mapping identifier */
-  dataSource?: string;
-  /** Defines how the data point is mapped to the data source */
-  mapping?: string;
-  dataPoint: string;
-  mandatory?: boolean;
-  disabled?: boolean;
-  autoValidationThreshold?: number;
-  showDropdown?: boolean;
-  displayRawText?: boolean;
-  /** If True, any dropdown annotations that fail to parse to a value will be discarded */
-  dropNull?: boolean;
-  displayEnumValue?: boolean;
-  fields?: FieldDeprecated[];
-}
-
-export interface FieldsLayout {
-  defaultCategory: FieldCategory;
-  categories: FieldCategory[];
-}
-
-export interface FieldCategory {
-  label: string;
-  enabledFields: Field[];
-  disabledFields: Field[];
-}
-
-export interface Field {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  label: string;
-  /** Data point identifier */
-  dataPoint: string;
-  /** The different data types of annotations */
-  fieldType: AnnotationContentType;
-  /** Data source mapping identifier */
-  dataSource?: string;
-  /** Defines how the data point is mapped to the data source */
-  mapping?: string;
-  mandatory?: boolean;
-  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
-  autoValidationThreshold?: number;
-  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
-  enableAutoValidationThreshold?: boolean;
-  showDropdown?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
-  /** If true, the hoverable enum value detail icon will be hidden. */
-  hideEnumDetail?: boolean;
-  /** If True, any dropdown annotations that fail to parse to a value will be discarded */
-  dropNull?: boolean;
-  enabledChildFields?: Field[];
-  disabledChildFields?: Field[];
-  slug?: string;
-  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
-  displayRawText?: boolean;
-  fields?: Record<string, unknown>[];
-}
-
-/** Extra configurations specific to an extractor. */
-export interface ExtractorConfig {
-  resumeRedact?: RedactConfig;
-}
-
-export interface RedactConfig {
-  redactHeadshot?: boolean;
-  redactPersonalDetails?: boolean;
-  redactWorkDetails?: boolean;
-  redactReferees?: boolean;
-  redactEducationDetails?: boolean;
-  redactLocations?: boolean;
-  redactDates?: boolean;
-  redactGender?: boolean;
-}
-
-export interface CollectionCreate {
-  name: string;
-  /** Uniquely identify a workspace. */
-  workspace: string;
-  /** Uniquely identify an extractor. Required if you are not a super user. */
-  extractor?: string;
-  /** Not applicable, please leave empty. This feature is reserved for super user. */
-  baseExtractor?: string;
-  autoValidationThreshold?: number;
-  enableAutoValidationThreshold?: boolean;
-  fields?: FieldGroup[];
-  fieldsLayout?: FieldsLayout;
-  dateFormatPreference?: DateFormatPreference;
-  /** Predict the date format from any dates in the document that is not ambiguous. */
-  dateFormatFromDocument?: boolean;
-  /** Extra configurations specific to an extractor. */
-  extractorConfig?: ExtractorConfig;
-  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
-  allowOpenai?: boolean;
-  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
-  trainsExtractor?: boolean;
-  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
-  disableConfirmationIfValidationRulesFail?: boolean;
-}
-
-export interface CollectionUpdate {
-  name?: string;
-  autoValidationThreshold?: number;
-  enableAutoValidationThreshold?: boolean;
-  fields?: FieldGroup[];
-  fieldsLayout?: FieldsLayout;
-  dateFormatPreference?: DateFormatPreference;
-  /** Predict the date format from any dates in the document that is not ambiguous. */
-  dateFormatFromDocument?: boolean;
-  /** Extra configurations specific to an extractor. */
-  extractorConfig?: ExtractorConfig;
-  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
-  allowOpenai?: boolean;
-  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
-  trainsExtractor?: boolean;
-  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
-  disableConfirmationIfValidationRulesFail?: boolean;
-}
-
-export interface DataFieldCreate {
-  /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
-  categoryLabel?: string;
-  /** The field to be created. */
-  field: DataFieldCreateField;
-  /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
-  dataPoint: DataFieldCreateDataPoint;
-}
-
-/** The field to be created. */
-export interface DataFieldCreateField {
-  label: string;
-  /** The different data types of annotations */
-  fieldType?: AnnotationContentType;
-  mandatory?: boolean;
-  showDropdown?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
-  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
-  autoValidationThreshold?: number;
-  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
-  enableAutoValidationThreshold?: boolean;
-  /** Data source mapping identifier */
-  dataSource?: string;
-  /** Defines how the data point is mapped to the data source */
-  mapping?: string;
-  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
-  displayRawText?: boolean;
-}
-
-/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
-export interface DataFieldCreateDataPoint {
-  /** Name of the data point. */
-  name: string;
-  /** A camelCase string that will be used as the key in the API response. */
-  slug: string;
-  description?: string;
-  /** The different data types of annotations */
-  type: AnnotationContentType;
-  multiple?: boolean;
-  noRect?: boolean;
-  /** The identifier of the parent data point if applicable. */
-  parent?: string;
-  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
-  manualEntry?: boolean;
-  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
-  mappingDataSource?: string;
-}
-
-export interface DataField {
-  /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
-  categoryLabel?: string;
-  /** The field to be created. */
-  field: DataFieldField;
-  /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
-  dataPoint: DataFieldDataPoint;
-}
-
-/** The field to be created. */
-export interface DataFieldField {
-  label: string;
-  /** The different data types of annotations */
-  fieldType?: AnnotationContentType;
-  mandatory: boolean;
-  showDropdown?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue: boolean;
-  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
-  autoValidationThreshold: number | null;
-  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
-  enableAutoValidationThreshold?: boolean;
-  enabledChildFields: Field[];
-  disabledChildFields: Field[];
-  /** Data source mapping identifier */
-  dataSource?: string;
-  /** Defines how the data point is mapped to the data source */
-  mapping?: string;
-  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
-  displayRawText?: boolean;
-}
-
-/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
-export interface DataFieldDataPoint {
-  /** Uniquely identify a data point. */
-  identifier: string;
-  /** Name of the data point. */
-  name: string;
-  /** A camelCase string that will be used as the key in the API response. */
-  slug: string;
-  description: string | null;
-  /** The different data types of annotations */
-  type: AnnotationContentType;
-  multiple: boolean;
-  noRect: boolean;
-  /** The identifier of the parent data point if applicable. */
-  parent: string | null;
-  children: DataPoint[];
-  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
-  manualEntry?: boolean;
-  availableDataSources?: MappingDataSource[];
-}
-
-export interface DataPoint {
-  /** Uniquely identify a data point. */
-  identifier: string;
-  /** Name of the data point. */
-  name: string;
-  /** A camelCase string that will be used as the key in the API response. */
-  slug: string;
-  description?: string;
-  /** The different data types of annotations */
-  annotationContentType: AnnotationContentType;
-  organization: Organization | null;
-  /** Uniquely identify an extractor. */
-  extractor: string | null;
-  multiple?: boolean;
-  noRect?: boolean;
-  /** The identifier of the parent data point if applicable. */
-  parent?: string;
-  children?: DataPoint[];
-  availableDataSources?: MappingDataSource[];
-  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
-  mappingDataSource?: string;
-  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
-  manualEntry?: boolean;
-}
-
-/** A mapping data source is used to map from raw data found by our AI models to records in your database. */
-export interface MappingDataSource {
-  /**
-   * Uniquely identify a mapping data source.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly identifier: string;
-  name?: string;
-  /** Attribute in the schema which uniquely identifiers the value */
-  keyProperty: string;
-  /** Attribute in the schema which is used to display the value */
-  displayProperty: string;
-  /** The organization that this mapping data source belongs to. */
-  organization: string | null;
-  /** The workspace that this mapping data source belongs to. */
-  workspace: string | null;
-  /** The schema of the mapping data source. */
-  schema?: Record<string, unknown>;
-}
-
-export interface CollectionField {
-  label?: string;
-  /** The different data types of annotations */
-  fieldType?: AnnotationContentType;
-  mandatory?: boolean;
-  showDropdown?: boolean;
-  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
-  displayEnumValue?: boolean;
-  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
-  autoValidationThreshold?: number;
-  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
-  enableAutoValidationThreshold?: boolean;
-  /** Data source mapping identifier */
-  dataSource?: string;
-  /** Defines how the data point is mapped to the data source */
-  mapping?: string;
-  /** Defines how the data point is mapped to the data source */
-  displayRawText?: string;
-}
-
-/** Monthly credits consumption */
-export interface UsageByCollection {
-  /** Month of the usage */
-  month: string;
-  /** Usage count */
-  count: number;
 }
 
 export interface PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {
@@ -779,6 +173,16 @@ export interface Tag {
   documentCount: number;
 }
 
+export interface User {
+  /** Uniquely identify a user. */
+  id?: number;
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+}
+
 export interface RegionBias {
   /** A single alpha-2 country code (e.g. AU) used by google geocoding service */
   country?: string;
@@ -804,8 +208,634 @@ export interface DocumentWarning {
   warningDetail?: string;
 }
 
+export interface RequestError {
+  type: string;
+  errors: RequestErrorErrorsItem[];
+}
+
+export interface RequestErrorErrorsItem {
+  attr: string | null;
+  code: string;
+  detail: string;
+}
+
+export interface DocumentUpdate {
+  /** Uniquely identify a collection. */
+  collection?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+  /** The document type's identifier.  Provide if you already know the document type. */
+  documentType?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  isConfirmed?: boolean;
+  isRejected?: boolean;
+  isArchived?: boolean;
+  skipParse?: boolean;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** Deprecated in favor of `customIdentifier`. */
+  identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
+  warningMessages?: DocumentWarning[];
+}
+
+export interface Workspace {
+  /** Uniquely identify a workspace. */
+  identifier: string;
+  organization?: Organization;
+  name?: string;
+  /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
+  visibility?: WorkspaceVisibility;
+  collections?: WorkspaceCollectionsItem[];
+  /** Document types associated with this workspace */
+  documentTypes?: string[];
+  /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
+  rejectInvalidDocuments?: boolean;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+  rejectDuplicates?: string;
+  members?: User[];
+  /** Number of unvalidated documents in the workspace. */
+  unvalidatedDocsCount?: number;
+  /** Number of validated documents in the workspace. */
+  confirmedDocsCount?: number;
+  /** When you send email to this address, any document attached in the body will be uploaded to this workspace. */
+  ingestEmail?: string;
+  /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
+  whitelistIngestAddresses?: string[];
+  documentSplitter?: WorkspaceDocumentSplitter;
+}
+
+export interface Organization {
+  /** Uniquely identify an organization. */
+  identifier?: string;
+  name?: string;
+  /** The role of the logged in user within the organization. */
+  userRole?: OrganizationUserRole;
+  /** URL of the organization's avatar. */
+  avatar?: string;
+  /** Used to sign webhook payloads so you can verify their integrity. */
+  resthookSignatureKey?: string;
+  isTrial?: boolean;
+  /** Configuration of the embeddable validation tool. */
+  validationToolConfig?: OrganizationValidationToolConfig;
+  /** Whether to show the custom field creation in the UI. */
+  showCustomFieldCreation?: boolean;
+}
+
+/** Configuration of the embeddable validation tool. */
+export interface OrganizationValidationToolConfig {
+  theme?: ThemeConfig;
+  /** Hide the confirm document button and other actions. */
+  hideActions?: boolean;
+  /** Hide the collection selector. */
+  hideCollection?: boolean;
+  /** Hide the edit pages button. */
+  hideEditPages?: boolean;
+  /** Hide the export menu. */
+  hideExport?: boolean;
+  /** Hide the filename input. */
+  hideFilename?: boolean;
+  /** Hide the reject document button. */
+  hideReject?: boolean;
+  /** Hide the reparse button. */
+  hideReparse?: boolean;
+  /** Hide the run OCR button. */
+  hideRunOcr?: boolean;
+  /** Hide the tags editor. */
+  hideTags?: boolean;
+  /** Hide the warnings panel. */
+  hideWarnings?: boolean;
+  /** Disable the page editor after a document has been split once. */
+  restrictDocumentSplitting?: boolean;
+  /** Disable currency formatting of decimals values. */
+  disableCurrencyFormatting?: boolean;
+  /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
+  disableEditDocumentMetadata?: boolean;
+}
+
+export interface ThemeConfig {
+  palette?: ThemeConfigPalette;
+  typography?: ThemeConfigTypography;
+  borderRadius?: number;
+  fontUrl?: string;
+}
+
+export interface ThemeConfigPalette {
+  mode?: ThemeConfigPaletteMode;
+  /** Anything */
+  background?: any;
+  text?: ThemeConfigPaletteText;
+  divider?: string;
+  primary?: PaletteColorOptions;
+  secondary?: PaletteColorOptions;
+  success?: PaletteColorOptions;
+  annotation?: PaletteColorOptions;
+  error?: PaletteColorOptions;
+  info?: PaletteColorOptions;
+  warning?: PaletteColorOptions;
+}
+
+export interface ThemeConfigPaletteText {
+  primary?: string;
+  secondary?: string;
+  disabled?: string;
+}
+
+export interface PaletteColorOptions {
+  main: string;
+  light?: string;
+  dark?: string;
+  contrastText?: string;
+}
+
+export interface ThemeConfigTypography {
+  fontFamily?: string;
+  /** Anything */
+  fontSize?: any;
+  fontWeightRegular?: string;
+  fontWeightMedium?: string;
+  fontWeightBold?: string;
+}
+
+export interface WorkspaceCollectionsItem {
+  /** Uniquely identify a collection. */
+  identifier: string;
+  name: string;
+  extractor: WorkspaceCollectionsItemExtractor;
+  /** Number of unvalidated documents in the collection. */
+  unvalidatedDocsCount?: number;
+  /** Number of validated documents in the collection. */
+  confirmedDocsCount?: number;
+}
+
+export interface WorkspaceCollectionsItemExtractor {
+  /** Uniquely identify an extractor. */
+  identifier: string;
+  name: string;
+  namePlural: string;
+  baseExtractor?: BaseExtractor;
+  category?: string;
+  validatable: boolean;
+  isCustom?: boolean;
+  createdDt?: Date;
+}
+
+export interface BaseExtractor {
+  /** Uniquely identify an extractor. */
+  identifier: string;
+  name: string;
+  namePlural: string;
+  validatable: boolean;
+  isCustom?: boolean;
+  createdDt?: Date;
+}
+
+export interface WorkspaceDocumentSplitter {
+  /** Uniquely identify a document splitter. */
+  identifier: string;
+  name: string;
+}
+
+export interface WorkspaceCreate {
+  /** Uniquely identify an organization. */
+  organization: string;
+  name: string;
+  /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
+  visibility?: WorkspaceVisibility;
+  /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
+  rejectInvalidDocuments?: boolean;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+  rejectDuplicates?: string;
+  /** Document types to associate with this workspace */
+  documentTypes?: string[];
+  /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
+  whitelistIngestAddresses?: string[];
+  /** Uniquely identify a document splitter. */
+  documentSplitter?: string;
+}
+
+export interface WorkspaceUpdate {
+  name?: string;
+  /** Visibility "organization" means everyone in the organization can access the workspace. Visibility "private" means only people explicitly added can access the workspace. */
+  visibility?: WorkspaceVisibility;
+  /** If true, the uploaded document will be rejected if it's of the wrong document type, or if its document type cannot be determined. No credits will be consumed. */
+  rejectInvalidDocuments?: boolean;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+  rejectDuplicates?: string;
+  /** Document types to associate with this workspace */
+  documentTypes?: string[];
+  /** If specified, only emails from these addresses will be ingested for parsing. Wild cards are allowed, e.g. "*@eyefind.info". */
+  whitelistIngestAddresses?: string[];
+  /** Uniquely identify a document splitter. */
+  documentSplitter?: string;
+}
+
+/** Monthly credits consumption */
+export interface UsageByWorkspace {
+  /** Month of the usage */
+  month: string;
+  /** Usage count */
+  count: number;
+}
+
+export interface Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results: WorkspaceMembership[];
+}
+
+export interface WorkspaceMembership {
+  /** Uniquely identify a membership. */
+  identifier?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+  user?: User;
+}
+
+export interface WorkspaceMembershipCreate {
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+  /** Uniquely identify a user. */
+  user?: number;
+}
+
+export interface DocumentType {
+  /** Uniquely identify a document type. */
+  identifier: string;
+  /** The name of the document type. */
+  name: string;
+  /** A description of the document type. */
+  description?: string;
+  /** The email address that can be used to email documents directly to this document type. */
+  ingestEmail?: string;
+  /** The identifier of the organization this document type belongs to. */
+  organization: string;
+}
+
+export interface DocumentTypeCreate {
+  /** The name of the document type. */
+  name: string;
+  /** A description of the document type. */
+  description?: string;
+  /** The identifier of the organization this document type belongs to. */
+  organization: string;
+}
+
+export interface DocumentTypeUpdate {
+  /** The new name of the document type. */
+  name?: string;
+  /** A new description of the document type. */
+  description?: string;
+}
+
+export interface PydanticModelsResponse {
+  /** Pydantic model code */
+  code: string;
+}
+
+/** A mapping data source is used to map from raw data found by our AI models to records in your database. */
+export interface MappingDataSourceCreate {
+  name?: string;
+  /** The organization that this mapping data source belongs to. */
+  organization?: string;
+  /** The workspace that this mapping data source belongs to. */
+  workspace?: string;
+  /** Attribute in the schema which uniquely identifiers the value */
+  keyProperty?: string;
+  /** Attribute in the schema which is used to display the value */
+  displayProperty?: string;
+  values?: Record<string, unknown>[];
+  /** The schema of the mapping data source. */
+  schema?: Record<string, unknown>;
+}
+
+/** A mapping data source is used to map from raw data found by our AI models to records in your database. */
+export interface MappingDataSource {
+  /**
+   * Uniquely identify a mapping data source.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly identifier: string;
+  name?: string;
+  /** Attribute in the schema which uniquely identifiers the value */
+  keyProperty: string;
+  /** Attribute in the schema which is used to display the value */
+  displayProperty: string;
+  /** The organization that this mapping data source belongs to. */
+  organization: string | null;
+  /** The workspace that this mapping data source belongs to. */
+  workspace: string | null;
+  /** The schema of the mapping data source. */
+  schema?: Record<string, unknown>;
+}
+
+export interface Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: MappingDataSource[];
+}
+
+export interface Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Record<string, unknown>[];
+}
+
+/** Validation result arising from a ValidationRule */
+export interface ValidationResult {
+  /** Validation Result's ID */
+  id: number;
+  /** List of annotation ids that were validated */
+  annotations: number[];
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed: boolean | null;
+  /** The kebab-case slug of the validation rule that was applied */
+  ruleSlug: string;
+  /** Message explaining why the validation failed */
+  message: string;
+  /** Unique identifier for the document */
+  document: string;
+}
+
+export interface ValidationResultCreate {
+  /** List of annotation ids that were validated */
+  annotations: number[];
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed?: boolean;
+  /** The kebab-case slug of the validation rule that was applied */
+  ruleSlug: string;
+  /** Message explaining why the validation failed */
+  message: string;
+  /** Unique identifier for the document */
+  document: string;
+}
+
+export interface ValidationResultUpdate {
+  /** List of annotation ids that were validated */
+  annotations?: number[];
+  /** Whether the validation passed or not, null if the validation was not applicable */
+  passed?: boolean;
+  /** The kebab-case slug of the validation rule that was applied */
+  ruleSlug?: string;
+  /** Message explaining why the validation failed */
+  message?: string;
+  /** Unique identifier for the document */
+  document?: string;
+}
+
+export interface BatchDeleteValidationResultsRequest {
+  /** List of validation result IDs to delete. */
+  ids: number[];
+}
+
+/** Configuration of the embeddable validation tool. */
+export interface ValidationToolConfig {
+  theme?: ThemeConfig;
+  /** Hide the confirm document button and other actions. */
+  hideActions?: boolean;
+  /** Hide the collection selector. */
+  hideCollection?: boolean;
+  /** Hide the edit pages button. */
+  hideEditPages?: boolean;
+  /** Hide the export menu. */
+  hideExport?: boolean;
+  /** Hide the filename input. */
+  hideFilename?: boolean;
+  /** Hide the reject document button. */
+  hideReject?: boolean;
+  /** Hide the reparse button. */
+  hideReparse?: boolean;
+  /** Hide the run OCR button. */
+  hideRunOcr?: boolean;
+  /** Hide the tags editor. */
+  hideTags?: boolean;
+  /** Hide the warnings panel. */
+  hideWarnings?: boolean;
+  /** Disable the page editor after a document has been split once. */
+  restrictDocumentSplitting?: boolean;
+  /** Disable currency formatting of decimals values. */
+  disableCurrencyFormatting?: boolean;
+  /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
+  disableEditDocumentMetadata?: boolean;
+}
+
+export interface TagCreate {
+  name: string;
+  /** Uniquely identify a workspace. */
+  workspace: string;
+}
+
+export interface TagUpdate {
+  name?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+}
+
+export interface BatchAddTagRequest {
+  /** List of documents to tag */
+  identifiers?: string[];
+  /** The tag's ID */
+  tag?: number;
+}
+
+export interface BatchRemoveTagRequest {
+  /** List of documents to remove tag from */
+  identifiers?: string[];
+  /** The tag's ID */
+  tag?: number;
+}
+
+export interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: (Annotation | null)[];
+}
+
+export interface Annotation {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  /** Annotation's ID */
+  id: number;
+  /** x/y coordinates for the rectangular bounding box containing the data */
+  rectangle: Rectangle | null;
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles: Rectangle[];
+  /** Unique identifier for the document */
+  document: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex: number | null;
+  /** Raw data extracted from the before any post-processing */
+  raw: string | null;
+  /** The overall confidence that the model's prediction is correct */
+  confidence: number | null;
+  /** The model's confidence that the text has been classified correctly */
+  classificationConfidence: number | null;
+  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
+  textExtractionConfidence: number | null;
+  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
+  isVerified: boolean;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified: boolean;
+  /** Indicates whether the data has been auto-validated */
+  isAutoVerified: boolean;
+  /** Data point's identifier */
+  dataPoint?: string;
+  /** Field's identifier */
+  field?: string;
+  /** The different data types of annotations */
+  contentType: AnnotationContentType;
+  /** The parent annotation's ID */
+  parent?: number;
+}
+
+export interface Rectangle {
+  pageIndex?: number;
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+}
+
+export interface AnnotationCreate {
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles?: Rectangle[];
+  /** Unique identifier for the document */
+  document: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex: number | null;
+  /** Data point's identifier */
+  dataPoint?: string;
+  /** Field's identifier */
+  field?: string;
+  /** Raw data extracted from the before any post-processing */
+  raw?: string;
+  /** Anything */
+  parsed?: any;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified?: boolean;
+  /** The parent annotation's ID */
+  parent?: number;
+  /** The validation results created, changed or deleted as a result of creating the annotation. */
+  validationResults?: (ChangedValidationResults | null)[];
+}
+
+export interface ChangedValidationResults {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  /** List of validation results created during this operation. */
+  created?: ValidationResult[];
+  /** List of validation results updated during this operation. */
+  updated?: ValidationResult[];
+  /** List of validation results deleted during this operation. */
+  deleted?: ValidationResult[];
+}
+
+export interface AnnotationUpdate {
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles?: Rectangle[];
+  /** Unique identifier for the document */
+  document?: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex?: number;
+  /** Raw data extracted from the before any post-processing */
+  raw?: string;
+  /** Anything */
+  parsed?: any;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified?: boolean;
+  /** Data point's identifier */
+  dataPoint?: string;
+  /** Field's identifier */
+  field?: string;
+  /** The parent annotation's ID */
+  parent?: number;
+  /** The validation results created, changed or deleted as a result of updating the annotation. */
+  validationResults?: (ChangedValidationResults | null)[];
+}
+
+export interface AnotationDelete {
+  /** The validation results created, changed or deleted as a result of deleting the annotation. */
+  validationResults?: Record<string, unknown>;
+}
+
+export interface AnnotationBatchUpdate {
+  /** Annotation's ID */
+  id: number;
+  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
+  rectangles?: Rectangle[];
+  /** Unique identifier for the document */
+  document?: string;
+  /** The page number within the document, starting from 0. */
+  pageIndex?: number;
+  /** Raw data extracted from the before any post-processing */
+  raw?: string;
+  /** Anything */
+  parsed?: any;
+  /** Indicates whether the data has been validated by a human */
+  isClientVerified?: boolean;
+  /** Data point's identifier */
+  dataPoint?: string;
+  /** The parent annotation's ID */
+  parent?: number;
+  /** The validation results created, changed or deleted as a result of updating the annotation. */
+  validationResults?: (ChangedValidationResults | null)[];
+}
+
+export interface BatchDeleteAnnotationsResponse {
+  /** The validation results created, changed or deleted as a result of deleting the annotations. */
+  validationResults?: Record<string, unknown>;
+}
+
+export interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: ResthookSubscription[];
+}
+
+export interface ResthookSubscription {
+  /** Resthook subscription's ID. */
+  id: number;
+  /** The event name to subscribe to. */
+  event: ResthookEvent;
+  organization: Organization | null;
+  workspace: ResthookSubscriptionWorkspace | null;
+  /** URL of the resthook's receiver. */
+  targetUrl: string;
+  /** Resthooks only fire for active subscriptions. */
+  active: boolean;
+  /** Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time. */
+  autoDeactivated: boolean;
+  /** The reason for the subscription being auto deactivated. May contains the error response that the receiver returned. */
+  autoDeactivateReason: string;
+  /** Version of the resthook subscription. Determines the resthook body being fired. */
+  version: ResthookSubscriptionVersion;
+}
+
+export interface ResthookSubscriptionWorkspace {
+  /** Uniquely identify a workspace. */
+  identifier: string;
+  name: string;
+  organization: Organization;
+}
+
+export interface ResthookSubscriptionCreate {
+  /** URL of the resthook's receiver. */
+  targetUrl: string;
+  /** The event name to subscribe to. */
+  event: ResthookEvent;
+  organization?: string;
+  workspace?: string;
+  /** Version of the resthook subscription. Determines the resthook body being fired. */
+  version?: Version;
+}
+
+export interface ResthookSubscriptionUpdate {
+  /** The event name to subscribe to. */
+  event?: ResthookEvent;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+  /** Version of the resthook subscription. Determines the resthook body being fired. */
+  version?: Version;
+}
+
 /** Create resume or job description directly from data. */
-export interface DocumentCreateData {}
+export interface DocumentCreateFromDataData {}
 
 /** A JSON-encoded string of the `ResumeData` object. */
 export interface ResumeData {
@@ -1086,49 +1116,6 @@ export interface JobTitleAnnotationParsedClassification {
   majorGroupCode?: number;
 }
 
-export interface Annotation {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  /** Annotation's ID */
-  id: number;
-  /** x/y coordinates for the rectangular bounding box containing the data */
-  rectangle: Rectangle | null;
-  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
-  rectangles: Rectangle[];
-  /** Unique identifier for the document */
-  document: string;
-  /** The page number within the document, starting from 0. */
-  pageIndex: number | null;
-  /** Raw data extracted from the before any post-processing */
-  raw: string | null;
-  /** The overall confidence that the model's prediction is correct */
-  confidence: number | null;
-  /** The model's confidence that the text has been classified correctly */
-  classificationConfidence: number | null;
-  /** If the document was submitted as an image, this is the confidence that the text in the image has been correctly read by the model */
-  textExtractionConfidence: number | null;
-  /** Indicates whether the data has been validated, either by a human using our validation tool or through auto-validation rules */
-  isVerified: boolean;
-  /** Indicates whether the data has been validated by a human */
-  isClientVerified: boolean;
-  /** Indicates whether the data has been auto-validated */
-  isAutoVerified: boolean;
-  /** Data point's identifier */
-  dataPoint: string;
-  /** The different data types of annotations */
-  contentType: AnnotationContentType;
-  /** The parent annotation's ID */
-  parent?: number;
-}
-
-export interface Rectangle {
-  pageIndex?: number;
-  x0: number;
-  y0: number;
-  x1: number;
-  y1: number;
-}
-
 export interface ExpectedRemunerationAnnotationParsed {
   minimum?: number;
   maximum?: number;
@@ -1142,30 +1129,6 @@ export interface YearsExperienceAnnotationParsed {
   minimum?: number;
   /** Maximum years of experience */
   maximum?: number;
-}
-
-export interface DocumentUpdate {
-  /** Uniquely identify a collection. */
-  collection?: string;
-  /** Uniquely identify a workspace. */
-  workspace?: string;
-  /** The document type's identifier.  Provide if you already know the document type. */
-  documentType?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  isConfirmed?: boolean;
-  isRejected?: boolean;
-  isArchived?: boolean;
-  skipParse?: boolean;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-  /** Deprecated in favor of `customIdentifier`. */
-  identifier?: string;
-  /** Specify a custom identifier for the document if you need one, not required to be unique. */
-  customIdentifier?: string;
-  warningMessages?: DocumentWarning[];
 }
 
 export interface PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema {}
@@ -1257,677 +1220,6 @@ export interface YearsExperienceAnnotationUpdateParsed {
   minimum?: number;
   /** Maximum years of experience */
   maximum?: number;
-}
-
-export interface BatchAddTagRequest {
-  /** List of documents to tag */
-  identifiers?: string[];
-  /** The tag's ID */
-  tag?: number;
-}
-
-export interface BatchRemoveTagRequest {
-  /** List of documents to remove tag from */
-  identifiers?: string[];
-  /** The tag's ID */
-  tag?: number;
-}
-
-/** Validation result arising from a ValidationRule */
-export interface ValidationResult {
-  /** Validation Result's ID */
-  id: number;
-  /** List of annotation ids that were validated */
-  annotations: number[];
-  /** Whether the validation passed or not, null if the validation was not applicable */
-  passed: boolean | null;
-  /** The hot-dog case slug of the validation rule that was applied */
-  ruleSlug: string;
-  /** Message explaining why the validation failed */
-  message: string;
-  /** Unique identifier for the document */
-  document: string;
-}
-
-export interface ValidationResultCreate {
-  /** List of annotation ids that were validated */
-  annotations: number[];
-  /** Whether the validation passed or not, null if the validation was not applicable */
-  passed?: boolean;
-  /** The hot-dog case slug of the validation rule that was applied */
-  ruleSlug: string;
-  /** Message explaining why the validation failed */
-  message: string;
-  /** Unique identifier for the document */
-  document: string;
-}
-
-export interface ValidationResultUpdate {
-  /** List of annotation ids that were validated */
-  annotations?: number[];
-  /** Whether the validation passed or not, null if the validation was not applicable */
-  passed?: boolean;
-  /** The hot-dog case slug of the validation rule that was applied */
-  ruleSlug?: string;
-  /** Message explaining why the validation failed */
-  message?: string;
-  /** Unique identifier for the document */
-  document?: string;
-}
-
-export interface BatchDeleteValidationResultsRequest {
-  /** List of validation result IDs to delete. */
-  ids: number[];
-}
-
-export interface DocumentSplitter {
-  /** Uniquely identify a document splitter. */
-  identifier: string;
-  name: string;
-  /** The different types of document splitters */
-  type: DocumentSplitterType;
-  /** Uniquely identify an organization. */
-  organization: string | null;
-  /** Uniquely identify an extractor. */
-  extractor: string | null;
-  /** The hint about when to split which is passed into the LLM prompt. */
-  llmHint: string | null;
-}
-
-export interface DocumentEditRequest {
-  splits: DocumentSplit[];
-}
-
-/** Describe a split of a document. */
-export interface DocumentSplit {
-  /** Anything */
-  identifier?: any;
-  pages: DocumentSplitPage[];
-}
-
-/** List the pages within this split. Not including a page here will signal that the page should be deleted. */
-export interface DocumentSplitPage {
-  /** Page's ID */
-  id: number;
-  /** Specify a degree of rotation if you want to rotate a page. Possitive number for clockwise rotation, and negative number for counter-clockwise rotation. */
-  rotation?: number;
-}
-
-export interface Meta {
-  /** Unique identifier for the document */
-  identifier?: string;
-  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
-  customIdentifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
-  ready?: boolean;
-  /** The datetime when the document was ready */
-  readyDt?: Date;
-  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
-  failed?: boolean;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  /** The document's language. */
-  language?: string;
-  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
-  pdf?: string;
-  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-  parentDocument?: MetaParentDocument;
-  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
-  childDocuments?: MetaChildDocumentsItem[];
-  /** The document's pages. */
-  pages?: PageMeta[];
-  /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
-  isVerified?: boolean;
-  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
-  reviewUrl?: string;
-  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
-  ocrConfidence?: number;
-  createdDt?: Date;
-  documentType?: string;
-  regionBias?: RegionBias;
-  isOcrd?: boolean;
-}
-
-/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
-export interface MetaParentDocument {
-  /** Unique identifier for the document */
-  identifier?: string;
-}
-
-export interface MetaChildDocumentsItem {
-  /** Unique identifier for the document */
-  identifier?: string;
-}
-
-export interface ExtractorCreate {
-  name: string;
-  namePlural?: string;
-  /** Uniquely identify an extractor. */
-  baseExtractor?: string;
-  /** Uniquely identify an organization. */
-  organization: string;
-  category?: string;
-  validatable?: boolean;
-  fieldGroups?: FieldGroup[];
-}
-
-export interface ExtractorUpdate {
-  name?: string;
-  namePlural?: string;
-  /** Uniquely identify an extractor. */
-  baseExtractor?: string;
-  category?: string;
-  validatable?: boolean;
-  fieldGroups?: FieldGroup[];
-}
-
-export interface DataPointCreate {
-  /** Name of the data point. */
-  name: string;
-  /** A camelCase string that will be used as the key in the API response. */
-  slug: string;
-  description?: string;
-  /** The different data types of annotations */
-  annotationContentType: AnnotationContentType;
-  /** Uniquely identify an organization. */
-  organization: string;
-  /** Uniquely identify an extractor. */
-  extractor: string;
-  multiple?: boolean;
-  noRect?: boolean;
-  /** The identifier of the parent data point if applicable. */
-  parent?: string;
-  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
-  manualEntry?: boolean;
-  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
-  mappingDataSource?: string;
-}
-
-export interface DataPointUpdate {
-  /** Name of the data point. */
-  name?: string;
-  /** A camelCase string that will be used as the key in the API response. */
-  slug?: string;
-  description?: string;
-  /** The identifier of the parent data point if applicable. */
-  parent?: string;
-  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
-  mappingDataSource?: string;
-}
-
-export interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: DataPointChoice[];
-}
-
-export interface DataPointChoice {
-  /** Data point choice's ID */
-  id: number;
-  label: string;
-  value: string;
-  synonyms?: string[];
-  description?: string;
-}
-
-export interface DataPointChoiceCreate {
-  /** Uniquely identify a data point. */
-  dataPoint: string;
-  /** Uniquely identify an organization. */
-  organization?: string;
-  /** Uniquely identify a collection. */
-  collection?: string;
-  label: string;
-  value: string;
-  synonyms?: string[];
-  description?: string;
-}
-
-export interface DataPointChoiceUpdate {
-  /** Uniquely identify a data point. */
-  dataPoint?: string;
-  /** Uniquely identify an organization. */
-  organization?: string;
-  /** Uniquely identify a collection. */
-  collection?: string;
-  label?: string;
-  value?: string;
-  synonyms?: string[];
-  description?: string;
-}
-
-/** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
-export interface DataPointChoiceReplaceRequest {
-  /** Uniquely identify a data point. */
-  dataPoint: string;
-  /** Uniquely identify a collection. */
-  collection?: string;
-  /** Uniquely identify an organization. */
-  organization?: string;
-  /** Incoming choices to replace existing choices of a data point. Existing choices and incoming choices are matched base on their `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming choices will be deleted. */
-  choices: DataPointChoiceForReplace[];
-}
-
-export interface DataPointChoiceForReplace {
-  value: string;
-  label?: string;
-  synonyms?: string[];
-  description?: string;
-}
-
-export interface DataPointChoiceReplaceResponse {
-  /** Uniquely identify a data point. */
-  dataPoint: string;
-  /** Uniquely identify a collection. */
-  collection: string | null;
-  /** Uniquely identify an organization. */
-  organization: string | null;
-  choices: DataPointChoiceReplaceResponseChoicesItem[];
-}
-
-export interface DataPointChoiceReplaceResponseChoicesItem {
-  /** Data point choice's ID */
-  id: number;
-  value: string;
-  label: string;
-  synonyms: string[] | null;
-  description: string | null;
-}
-
-export interface Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: (Annotation | null)[];
-}
-
-export interface AnnotationCreate {
-  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
-  rectangles?: Rectangle[];
-  /** Unique identifier for the document */
-  document: string;
-  /** The page number within the document, starting from 0. */
-  pageIndex: number | null;
-  /** Data point's identifier */
-  dataPoint: string;
-  /** Raw data extracted from the before any post-processing */
-  raw?: string;
-  /** Anything */
-  parsed?: any;
-  /** Indicates whether the data has been validated by a human */
-  isClientVerified?: boolean;
-  /** The parent annotation's ID */
-  parent?: number;
-  /** The validation results created, changed or deleted as a result of creating the annotation. */
-  validationResults?: (ChangedValidationResults | null)[];
-}
-
-export interface ChangedValidationResults {
-  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
-  [property: string]: any;
-  /** List of validation results created during this operation. */
-  created?: ValidationResult[];
-  /** List of validation results updated during this operation. */
-  updated?: ValidationResult[];
-  /** List of validation results deleted during this operation. */
-  deleted?: ValidationResult[];
-}
-
-export interface AnnotationUpdate {
-  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
-  rectangles?: Rectangle[];
-  /** Unique identifier for the document */
-  document?: string;
-  /** The page number within the document, starting from 0. */
-  pageIndex?: number;
-  /** Raw data extracted from the before any post-processing */
-  raw?: string;
-  /** Anything */
-  parsed?: any;
-  /** Indicates whether the data has been validated by a human */
-  isClientVerified?: boolean;
-  /** Data point's identifier */
-  dataPoint?: string;
-  /** The parent annotation's ID */
-  parent?: number;
-  /** The validation results created, changed or deleted as a result of updating the annotation. */
-  validationResults?: (ChangedValidationResults | null)[];
-}
-
-export interface AnotationDelete {
-  /** The validation results created, changed or deleted as a result of deleting the annotation. */
-  validationResults?: Record<string, unknown>;
-}
-
-export interface AnnotationBatchUpdate {
-  /** Annotation's ID */
-  id: number;
-  /** x/y coordinates for the rectangles containing the data. An annotation can be contained within multiple rectangles. */
-  rectangles?: Rectangle[];
-  /** Unique identifier for the document */
-  document?: string;
-  /** The page number within the document, starting from 0. */
-  pageIndex?: number;
-  /** Raw data extracted from the before any post-processing */
-  raw?: string;
-  /** Anything */
-  parsed?: any;
-  /** Indicates whether the data has been validated by a human */
-  isClientVerified?: boolean;
-  /** Data point's identifier */
-  dataPoint?: string;
-  /** The parent annotation's ID */
-  parent?: number;
-  /** The validation results created, changed or deleted as a result of updating the annotation. */
-  validationResults?: (ChangedValidationResults | null)[];
-}
-
-export interface BatchDeleteAnnotationsResponse {
-  /** The validation results created, changed or deleted as a result of deleting the annotations. */
-  validationResults?: Record<string, unknown>;
-}
-
-/** A mapping data source is used to map from raw data found by our AI models to records in your database. */
-export interface MappingDataSourceCreate {
-  name?: string;
-  /** The organization that this mapping data source belongs to. */
-  organization?: string;
-  /** The workspace that this mapping data source belongs to. */
-  workspace?: string;
-  /** Attribute in the schema which uniquely identifiers the value */
-  keyProperty?: string;
-  /** Attribute in the schema which is used to display the value */
-  displayProperty?: string;
-  values?: Record<string, unknown>[];
-  /** The schema of the mapping data source. */
-  schema?: Record<string, unknown>;
-}
-
-export interface Paths1UmoszuV3MappingDataSourcesGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: MappingDataSource[];
-}
-
-export interface Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Record<string, unknown>[];
-}
-
-export interface MappingCreate {
-  /** The mapping data source this mapping applies to. */
-  dataSource: string | null;
-  /** Higher values will result in more strict matching. */
-  scoreCutoff?: number;
-  /** The organization that this mapping belongs to. */
-  organization?: string;
-  /** The field to order the results by. Leave blank for ordering by relevance. */
-  orderBy?: string;
-}
-
-/** A mapping allows you to specify specific settings regarding a lookup against a MappingDataSource should be applied. */
-export interface Mapping {
-  /**
-   * Uniquely identify a mapping.
-   * NOTE: This property will not be serialized. It can only be populated by the server.
-   */
-  readonly identifier: string;
-  /** The organization that this mapping belongs to. */
-  organization?: string;
-  /** The mapping data source this mapping applies to. */
-  dataSource: string | null;
-  /** Higher values will result in more strict matching. */
-  scoreCutoff?: number;
-  /** The field to order the results by. Leave blank for ordering by relevance. */
-  orderBy?: string;
-}
-
-export interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Mapping[];
-}
-
-export interface MappingUpdate {
-  /** Higher values will result in more strict matching. */
-  scoreCutoff?: number;
-  /** The field to order the results by. Leave blank for ordering by relevance. */
-  orderBy?: string;
-}
-
-export interface TagCreate {
-  name: string;
-  /** Uniquely identify a workspace. */
-  workspace: string;
-}
-
-export interface TagUpdate {
-  name?: string;
-  /** Uniquely identify a workspace. */
-  workspace?: string;
-}
-
-export interface DocumentType {
-  /** Uniquely identify a document type. */
-  identifier: string;
-  /** The name of the document type. */
-  name: string;
-  /** A description of the document type. */
-  description?: string;
-  /** The email address that can be used to email documents directly to this document type. */
-  ingestEmail?: string;
-  /** The identifier of the organization this document type belongs to. */
-  organization: string;
-}
-
-export interface DocumentTypeCreate {
-  /** The name of the document type. */
-  name: string;
-  /** A description of the document type. */
-  description?: string;
-  /** The identifier of the organization this document type belongs to. */
-  organization: string;
-}
-
-export interface DocumentTypeUpdate {
-  /** The new name of the document type. */
-  name?: string;
-  /** A new description of the document type. */
-  description?: string;
-}
-
-export interface PydanticModelsResponse {
-  /** Pydantic model code */
-  code: string;
-}
-
-/** Configuration of the embeddable validation tool. */
-export interface ValidationToolConfig {
-  theme?: ThemeConfig;
-  /** Hide the confirm document button and other actions. */
-  hideActions?: boolean;
-  /** Hide the collection selector. */
-  hideCollection?: boolean;
-  /** Hide the edit pages button. */
-  hideEditPages?: boolean;
-  /** Hide the export menu. */
-  hideExport?: boolean;
-  /** Hide the filename input. */
-  hideFilename?: boolean;
-  /** Hide the reject document button. */
-  hideReject?: boolean;
-  /** Hide the reparse button. */
-  hideReparse?: boolean;
-  /** Hide the run OCR button. */
-  hideRunOcr?: boolean;
-  /** Hide the tags editor. */
-  hideTags?: boolean;
-  /** Hide the warnings panel. */
-  hideWarnings?: boolean;
-  /** Disable the page editor after a document has been split once. */
-  restrictDocumentSplitting?: boolean;
-  /** Disable currency formatting of decimals values. */
-  disableCurrencyFormatting?: boolean;
-  /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
-  disableEditDocumentMetadata?: boolean;
-}
-
-export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: OrganizationMembership[];
-}
-
-export interface OrganizationMembership {
-  /** A random string that uniquely identify the resource. */
-  identifier: string;
-  /** Uniquely identify an organization. */
-  organization: string;
-  user: User;
-  role: OrganizationRole;
-}
-
-export interface OrganizationMembershipUpdate {
-  role?: OrganizationRole;
-}
-
-export interface PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: Invitation[];
-}
-
-export interface Invitation {
-  /** Uniquely identify an invitation. */
-  identifier?: string;
-  organization?: Organization;
-  /** The email which the invitation is sent to. */
-  email?: string;
-  role?: OrganizationRole;
-  status?: InvitationStatus;
-  /** The date after which the invitation expires. Default is 10 days from now. */
-  expiryDate?: Date;
-  invitedBy?: User;
-  respondedBy?: InvitationRespondedBy;
-  createdDt?: Date;
-}
-
-export interface InvitationCreate {
-  /** Uniquely identify an organization. */
-  organization: string;
-  /** The email which the invitation is sent to. */
-  email: string;
-  role: OrganizationRole;
-}
-
-export interface InvitationUpdate {
-  role?: OrganizationRole;
-}
-
-export interface InvitationResponse {
-  status?: InvitationResponseStatus;
-}
-
-export interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: ApiUserWithoutKey[];
-}
-
-export interface ApiUserWithoutKey {
-  /** Uniquely identify a user. */
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  /** URL of the user's avatar. */
-  avatar: string | null;
-  organizations: ApiUserWithoutKeyOrganizationsItem[];
-  /** The last 4 characters of the API key. */
-  apiKeyLastChars?: string;
-}
-
-export interface ApiUserWithoutKeyOrganizationsItem {
-  /** Uniquely identify an organization. */
-  identifier: string;
-  name: string;
-}
-
-export interface ApiUserCreate {
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-  /** Uniquely identify an organization. */
-  organization: string;
-}
-
-export interface ApiUserWithKey {
-  /** Uniquely identify a user. */
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  /** URL of the user's avatar. */
-  avatar: string | null;
-  organizations: ApiUserWithKeyOrganizationsItem[];
-  /** Use this key to authenticate with the API. */
-  apiKey: string;
-  /** The last 4 characters of the API key. */
-  apiKeyLastChars?: string;
-}
-
-export interface ApiUserWithKeyOrganizationsItem {
-  /** Uniquely identify an organization. */
-  identifier: string;
-  name: string;
-}
-
-export interface ApiUserUpdate {
-  name?: string;
-  username?: string;
-  email?: string;
-  /** URL of the user's avatar. */
-  avatar?: string;
-}
-
-export interface Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {
-  results?: ResthookSubscription[];
-}
-
-export interface ResthookSubscription {
-  /** Resthook subscription's ID. */
-  id: number;
-  /** The event name to subscribe to. */
-  event: ResthookEvent;
-  organization: Organization | null;
-  workspace: ResthookSubscriptionWorkspace | null;
-  /** URL of the resthook's receiver. */
-  targetUrl: string;
-  /** Resthooks only fire for active subscriptions. */
-  active: boolean;
-  /** Resthook subscriptions can be auto deactivated if the receiver continuously returns error status code over a period of time. */
-  autoDeactivated: boolean;
-  /** The reason for the subscription being auto deactivated. May contains the error response that the receiver returned. */
-  autoDeactivateReason: string;
-  /** Version of the resthook subscription. Determines the resthook body being fired. */
-  version: ResthookSubscriptionVersion;
-}
-
-export interface ResthookSubscriptionWorkspace {
-  /** Uniquely identify a workspace. */
-  identifier: string;
-  name: string;
-  organization: Organization;
-}
-
-export interface ResthookSubscriptionCreate {
-  /** URL of the resthook's receiver. */
-  targetUrl: string;
-  /** The event name to subscribe to. */
-  event: ResthookEvent;
-  organization?: string;
-  workspace?: string;
-  /** Version of the resthook subscription. Determines the resthook body being fired. */
-  version?: Version;
-}
-
-export interface ResthookSubscriptionUpdate {
-  /** The event name to subscribe to. */
-  event?: ResthookEvent;
-  /** Uniquely identify an organization. */
-  organization?: string;
-  /** Uniquely identify a workspace. */
-  workspace?: string;
-  /** Version of the resthook subscription. Determines the resthook body being fired. */
-  version?: Version;
 }
 
 export interface OccupationGroup {
@@ -2587,6 +1879,726 @@ export interface PathsFte27NV3IndexNameDocumentsPostResponses201ContentApplicati
   document?: string;
 }
 
+export interface Collection {
+  /** Uniquely identify a collection. */
+  identifier: string;
+  name?: string;
+  workspace?: CollectionWorkspace;
+  extractor?: Extractor;
+  autoValidationThreshold?: number;
+  enableAutoValidationThreshold?: boolean;
+  autoValidateIfValidationRulesPass?: boolean;
+  fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
+  fieldsConfigured?: boolean;
+  dateFormatPreference?: CollectionDateFormatPreference;
+  /** Predict the date format from any dates in the document that is not ambiguous. */
+  dateFormatFromDocument?: boolean;
+  /** Extra configurations specific to an extractor. */
+  extractorConfig?: ExtractorConfig;
+  /** Number of unvalidated documents in the collection. */
+  unvalidatedDocsCount?: number;
+  /** Number of validated documents in the collection. */
+  confirmedDocsCount?: number;
+  /** When you send email to this address, any document attached in the body will be uploaded to this collection. */
+  ingestEmail?: string;
+  /** Whether a tailored extractor has been requested for this collection. */
+  tailoredExtractorRequested?: boolean;
+  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+  allowOpenai?: boolean;
+  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+  trainsExtractor?: boolean;
+  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+  disableConfirmationIfValidationRulesFail?: boolean;
+  /** If True, validation results are refreshed whenever annotations are changed. */
+  autoRefreshValidationResults?: boolean;
+}
+
+export interface CollectionWorkspace {
+  /** Uniquely identify a workspace. */
+  identifier?: string;
+  organization?: Organization;
+  name?: string;
+}
+
+export interface Extractor {
+  /** Uniquely identify an extractor. */
+  identifier: string;
+  name: string;
+  namePlural: string;
+  baseExtractor?: ExtractorBaseExtractor;
+  organization?: Organization;
+  category?: string;
+  validatable: boolean;
+  isCustom?: boolean;
+  fieldGroups?: FieldGroup[];
+  createdDt?: Date;
+  lastTrainedDt?: Date;
+}
+
+export interface ExtractorBaseExtractor {
+  /** Uniquely identify an extractor. */
+  identifier: string;
+  name: string;
+  namePlural: string;
+  validatable: boolean;
+  isCustom?: boolean;
+  createdDt?: Date;
+}
+
+export interface FieldGroup {
+  label: string;
+  fields: FieldDeprecated[];
+}
+
+export interface FieldDeprecated {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  label: string;
+  slug?: string;
+  /** The different data types of annotations */
+  fieldType: AnnotationContentType;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
+  dataPoint: string;
+  mandatory?: boolean;
+  disabled?: boolean;
+  autoValidationThreshold?: number;
+  showDropdown?: boolean;
+  displayRawText?: boolean;
+  /** If True, any dropdown annotations that fail to parse to a value will be discarded */
+  dropNull?: boolean;
+  displayEnumValue?: boolean;
+  fields?: FieldDeprecated[];
+}
+
+export interface FieldsLayout {
+  defaultCategory: FieldCategory;
+  categories: FieldCategory[];
+}
+
+export interface FieldCategory {
+  label: string;
+  enabledFields: Field[];
+  disabledFields: Field[];
+}
+
+export interface Field {
+  /** Describes unknown properties. The value of an unknown property can be of "any" type. */
+  [property: string]: any;
+  label: string;
+  /** Data point identifier */
+  dataPoint: string;
+  /** The different data types of annotations */
+  fieldType: AnnotationContentType;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
+  mandatory?: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
+  autoValidationThreshold?: number;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
+  showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  /** If true, the hoverable enum value detail icon will be hidden. */
+  hideEnumDetail?: boolean;
+  /** If True, any dropdown annotations that fail to parse to a value will be discarded */
+  dropNull?: boolean;
+  enabledChildFields?: Field[];
+  disabledChildFields?: Field[];
+  slug?: string;
+  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+  displayRawText?: boolean;
+  fields?: Record<string, unknown>[];
+}
+
+/** Extra configurations specific to an extractor. */
+export interface ExtractorConfig {
+  resumeRedact?: RedactConfig;
+}
+
+export interface RedactConfig {
+  redactHeadshot?: boolean;
+  redactPersonalDetails?: boolean;
+  redactWorkDetails?: boolean;
+  redactReferees?: boolean;
+  redactEducationDetails?: boolean;
+  redactLocations?: boolean;
+  redactDates?: boolean;
+  redactGender?: boolean;
+}
+
+export interface CollectionCreate {
+  name: string;
+  /** Uniquely identify a workspace. */
+  workspace: string;
+  /** Uniquely identify an extractor. Required if you are not a super user. */
+  extractor?: string;
+  /** Not applicable, please leave empty. This feature is reserved for super user. */
+  baseExtractor?: string;
+  autoValidationThreshold?: number;
+  enableAutoValidationThreshold?: boolean;
+  fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
+  dateFormatPreference?: DateFormatPreference;
+  /** Predict the date format from any dates in the document that is not ambiguous. */
+  dateFormatFromDocument?: boolean;
+  /** Extra configurations specific to an extractor. */
+  extractorConfig?: ExtractorConfig;
+  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+  allowOpenai?: boolean;
+  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+  trainsExtractor?: boolean;
+  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+  disableConfirmationIfValidationRulesFail?: boolean;
+}
+
+export interface CollectionUpdate {
+  name?: string;
+  autoValidationThreshold?: number;
+  enableAutoValidationThreshold?: boolean;
+  fields?: FieldGroup[];
+  fieldsLayout?: FieldsLayout;
+  dateFormatPreference?: DateFormatPreference;
+  /** Predict the date format from any dates in the document that is not ambiguous. */
+  dateFormatFromDocument?: boolean;
+  /** Extra configurations specific to an extractor. */
+  extractorConfig?: ExtractorConfig;
+  /** Whether to allow OpenAI API to be used to assist in creating a model for this collection. */
+  allowOpenai?: boolean;
+  /** Whether this collection feeds documents into the extractor's training queue. This setting can only be toggled for custom extractors. */
+  trainsExtractor?: boolean;
+  /** If True, users cannot validate documents with missing mandatory fields, or failing validation rules. */
+  disableConfirmationIfValidationRulesFail?: boolean;
+}
+
+export interface DataFieldCreate {
+  /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
+  categoryLabel?: string;
+  /** The field to be created. */
+  field: DataFieldCreateField;
+  /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+  dataPoint: DataFieldCreateDataPoint;
+}
+
+/** The field to be created. */
+export interface DataFieldCreateField {
+  label: string;
+  /** The different data types of annotations */
+  fieldType?: AnnotationContentType;
+  mandatory?: boolean;
+  showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
+  autoValidationThreshold?: number;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
+  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+  displayRawText?: boolean;
+}
+
+/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+export interface DataFieldCreateDataPoint {
+  /** Name of the data point. */
+  name: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug: string;
+  description?: string;
+  /** The different data types of annotations */
+  type: AnnotationContentType;
+  multiple?: boolean;
+  noRect?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
+}
+
+export interface DataField {
+  /** The label of the category that this field will be put into. If not provided, the field will be put into the default category. If no category exists with the specified label, a new category will be created. */
+  categoryLabel?: string;
+  /** The field to be created. */
+  field: DataFieldField;
+  /** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+  dataPoint: DataFieldDataPoint;
+}
+
+/** The field to be created. */
+export interface DataFieldField {
+  label: string;
+  /** The different data types of annotations */
+  fieldType?: AnnotationContentType;
+  mandatory: boolean;
+  showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
+  autoValidationThreshold: number | null;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
+  enabledChildFields: Field[];
+  disabledChildFields: Field[];
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
+  /** If true, then the validation tool will show the user the raw text found on the page, not the value that has been parsed to a specific type. */
+  displayRawText?: boolean;
+}
+
+/** The data point to be created for this field. If a data point with the same slug and collection already exists, it will be reused. */
+export interface DataFieldDataPoint {
+  /** Uniquely identify a data point. */
+  identifier: string;
+  /** Name of the data point. */
+  name: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug: string;
+  description: string | null;
+  /** The different data types of annotations */
+  type: AnnotationContentType;
+  multiple: boolean;
+  noRect: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent: string | null;
+  children: DataPoint[];
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
+  availableDataSources?: MappingDataSource[];
+}
+
+export interface DataPoint {
+  /** Uniquely identify a data point. */
+  identifier: string;
+  /** Name of the data point. */
+  name: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug: string;
+  description?: string;
+  /** The different data types of annotations */
+  annotationContentType: AnnotationContentType;
+  organization: Organization | null;
+  /** Uniquely identify an extractor. */
+  extractor: string | null;
+  multiple?: boolean;
+  noRect?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
+  children?: DataPoint[];
+  availableDataSources?: MappingDataSource[];
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
+}
+
+export interface CollectionField {
+  label?: string;
+  /** The different data types of annotations */
+  fieldType?: AnnotationContentType;
+  mandatory?: boolean;
+  showDropdown?: boolean;
+  /** If true, both the value and the label for the enums will appear in the dropdown in the validation tool. */
+  displayEnumValue?: boolean;
+  /** Threshold for auto validation. If null, uses the collection's autoValidationThreshold. */
+  autoValidationThreshold?: number;
+  /** If true, the autoValidationThreshold enable auto validation from the threshold from this field if specified, else from the collection */
+  enableAutoValidationThreshold?: boolean;
+  /** Data source mapping identifier */
+  dataSource?: string;
+  /** Defines how the data point is mapped to the data source */
+  mapping?: string;
+  /** Defines how the data point is mapped to the data source */
+  displayRawText?: string;
+}
+
+/** Monthly credits consumption */
+export interface UsageByCollection {
+  /** Month of the usage */
+  month: string;
+  /** Usage count */
+  count: number;
+}
+
+export interface DataPointCreate {
+  /** Name of the data point. */
+  name: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug: string;
+  description?: string;
+  /** The different data types of annotations */
+  annotationContentType: AnnotationContentType;
+  /** Uniquely identify an organization. */
+  organization: string;
+  /** Uniquely identify an extractor. */
+  extractor: string;
+  multiple?: boolean;
+  noRect?: boolean;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
+  /** If true, the model will not be used to predict this data point. Instead, the user will be able to manually enter the value in the validation tool. */
+  manualEntry?: boolean;
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
+}
+
+export interface DataPointUpdate {
+  /** Name of the data point. */
+  name?: string;
+  /** A camelCase string that will be used as the key in the API response. */
+  slug?: string;
+  description?: string;
+  /** The identifier of the parent data point if applicable. */
+  parent?: string;
+  /** If populated, the model will learn to predict this field using the data source, rather than relying on fuzzy string matching. */
+  mappingDataSource?: string;
+}
+
+export interface Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: DataPointChoice[];
+}
+
+export interface DataPointChoice {
+  /** Data point choice's ID */
+  id: number;
+  label: string;
+  value: string;
+  synonyms?: string[];
+  description?: string;
+}
+
+export interface DataPointChoiceCreate {
+  /** Uniquely identify a data point. */
+  dataPoint: string;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
+  label: string;
+  value: string;
+  synonyms?: string[];
+  description?: string;
+}
+
+export interface DataPointChoiceUpdate {
+  /** Uniquely identify a data point. */
+  dataPoint?: string;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
+  label?: string;
+  value?: string;
+  synonyms?: string[];
+  description?: string;
+}
+
+/** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+export interface DataPointChoiceReplaceRequest {
+  /** Uniquely identify a data point. */
+  dataPoint: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
+  /** Uniquely identify an organization. */
+  organization?: string;
+  /** Incoming choices to replace existing choices of a data point. Existing choices and incoming choices are matched base on their `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming choices will be deleted. */
+  choices: DataPointChoiceForReplace[];
+}
+
+export interface DataPointChoiceForReplace {
+  value: string;
+  label?: string;
+  synonyms?: string[];
+  description?: string;
+}
+
+export interface DataPointChoiceReplaceResponse {
+  /** Uniquely identify a data point. */
+  dataPoint: string;
+  /** Uniquely identify a collection. */
+  collection: string | null;
+  /** Uniquely identify an organization. */
+  organization: string | null;
+  choices: DataPointChoiceReplaceResponseChoicesItem[];
+}
+
+export interface DataPointChoiceReplaceResponseChoicesItem {
+  /** Data point choice's ID */
+  id: number;
+  value: string;
+  label: string;
+  synonyms: string[] | null;
+  description: string | null;
+}
+
+export interface Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: ApiUserWithoutKey[];
+}
+
+export interface ApiUserWithoutKey {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+  organizations: ApiUserWithoutKeyOrganizationsItem[];
+  /** The last 4 characters of the API key. */
+  apiKeyLastChars?: string;
+}
+
+export interface ApiUserWithoutKeyOrganizationsItem {
+  /** Uniquely identify an organization. */
+  identifier: string;
+  name: string;
+}
+
+export interface ApiUserCreate {
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+  /** Uniquely identify an organization. */
+  organization: string;
+}
+
+export interface ApiUserWithKey {
+  /** Uniquely identify a user. */
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  /** URL of the user's avatar. */
+  avatar: string | null;
+  organizations: ApiUserWithKeyOrganizationsItem[];
+  /** Use this key to authenticate with the API. */
+  apiKey: string;
+  /** The last 4 characters of the API key. */
+  apiKeyLastChars?: string;
+}
+
+export interface ApiUserWithKeyOrganizationsItem {
+  /** Uniquely identify an organization. */
+  identifier: string;
+  name: string;
+}
+
+export interface ApiUserUpdate {
+  name?: string;
+  username?: string;
+  email?: string;
+  /** URL of the user's avatar. */
+  avatar?: string;
+}
+
+export interface DocumentSplitter {
+  /** Uniquely identify a document splitter. */
+  identifier: string;
+  name: string;
+  /** The different types of document splitters */
+  type: DocumentSplitterType;
+  /** Uniquely identify an organization. */
+  organization: string | null;
+  /** Uniquely identify an extractor. */
+  extractor: string | null;
+  /** The hint about when to split which is passed into the LLM prompt. */
+  llmHint: string | null;
+}
+
+export interface DocumentEditRequest {
+  splits: DocumentSplit[];
+}
+
+/** Describe a split of a document. */
+export interface DocumentSplit {
+  /** Anything */
+  identifier?: any;
+  pages: DocumentSplitPage[];
+}
+
+/** List the pages within this split. Not including a page here will signal that the page should be deleted. */
+export interface DocumentSplitPage {
+  /** Page's ID */
+  id: number;
+  /** Specify a degree of rotation if you want to rotate a page. Possitive number for clockwise rotation, and negative number for counter-clockwise rotation. */
+  rotation?: number;
+}
+
+export interface Meta {
+  /** Unique identifier for the document */
+  identifier?: string;
+  /** Optional identifier for the document that you can set to track the document in the Affinda system.  Is not required to be unique. */
+  customIdentifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** If true, the document has finished processing. Particularly useful if an endpoint request specified wait=False, when polling use this variable to determine when to stop polling */
+  ready?: boolean;
+  /** The datetime when the document was ready */
+  readyDt?: Date;
+  /** If true, some exception was raised during processing. Check the 'error' field of the main return object. */
+  failed?: boolean;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** The document's language. */
+  language?: string;
+  /** The URL to the document's pdf (if the uploaded document is not already pdf, it's converted to pdf as part of the parsing process). */
+  pdf?: string;
+  /** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+  parentDocument?: MetaParentDocument;
+  /** If this document has been splitted into a number of child documents, this attribute points to those child documents. */
+  childDocuments?: MetaChildDocumentsItem[];
+  /** The document's pages. */
+  pages?: PageMeta[];
+  /** This is true if the 'confirm' button has been clicked in the Affinda validation tool */
+  isVerified?: boolean;
+  /** Signed URL (valid for 60 minutes) to access the validation tool.  Not applicable for documents types such a resumes. */
+  reviewUrl?: string;
+  /** The overall confidence in the conversion of image to text.  (only applicable for images or PDF documents without a text layer) */
+  ocrConfidence?: number;
+  createdDt?: Date;
+  documentType?: string;
+  regionBias?: RegionBias;
+  isOcrd?: boolean;
+}
+
+/** If this document is part of a splitted document, this attribute points to the original document that this document is splitted from. */
+export interface MetaParentDocument {
+  /** Unique identifier for the document */
+  identifier?: string;
+}
+
+export interface MetaChildDocumentsItem {
+  /** Unique identifier for the document */
+  identifier?: string;
+}
+
+export interface ExtractorCreate {
+  name: string;
+  namePlural?: string;
+  /** Uniquely identify an extractor. */
+  baseExtractor?: string;
+  /** Uniquely identify an organization. */
+  organization: string;
+  category?: string;
+  validatable?: boolean;
+  fieldGroups?: FieldGroup[];
+}
+
+export interface ExtractorUpdate {
+  name?: string;
+  namePlural?: string;
+  /** Uniquely identify an extractor. */
+  baseExtractor?: string;
+  category?: string;
+  validatable?: boolean;
+  fieldGroups?: FieldGroup[];
+}
+
+export interface Paths93Fa0ZV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: OrganizationMembership[];
+}
+
+export interface OrganizationMembership {
+  /** A random string that uniquely identify the resource. */
+  identifier: string;
+  /** Uniquely identify an organization. */
+  organization: string;
+  user: User;
+  role: OrganizationRole;
+}
+
+export interface OrganizationMembershipUpdate {
+  role?: OrganizationRole;
+}
+
+export interface PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Invitation[];
+}
+
+export interface Invitation {
+  /** Uniquely identify an invitation. */
+  identifier?: string;
+  organization?: Organization;
+  /** The email which the invitation is sent to. */
+  email?: string;
+  role?: OrganizationRole;
+  status?: InvitationStatus;
+  /** The date after which the invitation expires. Default is 10 days from now. */
+  expiryDate?: Date;
+  invitedBy?: User;
+  respondedBy?: InvitationRespondedBy;
+  createdDt?: Date;
+}
+
+export interface InvitationCreate {
+  /** Uniquely identify an organization. */
+  organization: string;
+  /** The email which the invitation is sent to. */
+  email: string;
+  role: OrganizationRole;
+}
+
+export interface InvitationUpdate {
+  role?: OrganizationRole;
+}
+
+export interface InvitationResponse {
+  status?: InvitationResponseStatus;
+}
+
+export interface MappingCreate {
+  /** The mapping data source this mapping applies to. */
+  dataSource: string | null;
+  /** Higher values will result in more strict matching. */
+  scoreCutoff?: number;
+  /** The organization that this mapping belongs to. */
+  organization?: string;
+  /** The field to order the results by. Leave blank for ordering by relevance. */
+  orderBy?: string;
+}
+
+/** A mapping allows you to specify specific settings regarding a lookup against a MappingDataSource should be applied. */
+export interface Mapping {
+  /**
+   * Uniquely identify a mapping.
+   * NOTE: This property will not be serialized. It can only be populated by the server.
+   */
+  readonly identifier: string;
+  /** The organization that this mapping belongs to. */
+  organization?: string;
+  /** The mapping data source this mapping applies to. */
+  dataSource: string | null;
+  /** Higher values will result in more strict matching. */
+  scoreCutoff?: number;
+  /** The field to order the results by. Leave blank for ordering by relevance. */
+  orderBy?: string;
+}
+
+export interface PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {
+  results?: Mapping[];
+}
+
+export interface MappingUpdate {
+  /** Higher values will result in more strict matching. */
+  scoreCutoff?: number;
+  /** The field to order the results by. Leave blank for ordering by relevance. */
+  orderBy?: string;
+}
+
 export interface InvoiceData {
   tables?: (TableAnnotation | null)[];
   tablesBeta?: (TableBetaAnnotation | null)[];
@@ -2701,18 +2713,11 @@ export interface UrlAnnotationParsed {
   domain?: string;
 }
 
-export interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1 {
-  default?: string;
-  paper?: string;
-}
-
 export interface DocumentCreate {
   /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
   file?: coreRestPipeline.RequestBodyType;
   /** URL to download the document. */
   url?: string;
-  /** Create resume or job description directly from data. */
-  data?: DocumentCreateData;
   /** Uniquely identify a collection. */
   collection?: string;
   /** The document type's identifier.  Provide if you already know the document type. */
@@ -2732,7 +2737,7 @@ export interface DocumentCreate {
   /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
   language?: string;
   /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-  rejectDuplicates?: boolean;
+  rejectDuplicates?: string;
   /** A JSON representation of the RegionBias object. */
   regionBias?: string;
   /** Explicitly mark this document as low priority. */
@@ -2744,8 +2749,13 @@ export interface DocumentCreate {
   /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
   enableValidationTool?: string;
   /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
-  useOcr?: boolean;
+  useOcr?: string;
   warningMessages?: DocumentWarning[];
+}
+
+export interface Components1Kwk9B6SchemasThemeconfigPropertiesPalettePropertiesBackgroundOneof1 {
+  default?: string;
+  paper?: string;
 }
 
 export interface OrganizationCreate {
@@ -2766,30 +2776,13 @@ export interface OrganizationUpdate {
   validationToolConfig?: ValidationToolConfig;
 }
 
-/** Customize the theme of the embeded search tool. */
-export interface ResumeSearchConfigSearchToolTheme extends ThemeConfig {}
-
-/** Customize the theme of the embeded search tool. */
-export interface JobDescriptionSearchConfigSearchToolTheme
-  extends ThemeConfig {}
-
-export interface InvitationRespondedBy extends User {}
-
-export interface PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
-  extends PaginatedResponse,
-    Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {}
-
 export interface PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema
   extends PaginatedResponse,
     PathsL3R02CV3DocumentsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export interface PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
+export interface PathsZ1JuagV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchema
   extends PaginatedResponse,
-    Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {}
-
-export interface Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema
-  extends PaginatedResponse,
-    Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {}
+    Paths2Ld2HiV3WorkspaceMembershipsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
 export interface Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema
   extends PaginatedResponse,
@@ -2799,9 +2792,25 @@ export interface Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200
   extends PaginatedResponse,
     Paths1O6IvdaV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export interface Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
+export interface Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema
   extends PaginatedResponse,
-    PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {}
+    Paths1Dgz0V9V3AnnotationsGetResponses200ContentApplicationJsonSchemaAllof1 {}
+
+export interface PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {}
+
+export interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {}
+
+export interface PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths4K6IzqV3DataPointChoicesGetResponses200ContentApplicationJsonSchemaAllof1 {}
+
+export interface Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
+  extends PaginatedResponse,
+    Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
 export interface PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema
   extends PaginatedResponse,
@@ -2811,17 +2820,9 @@ export interface Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonS
   extends PaginatedResponse,
     PathsKhpbbuV3InvitationsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
-export interface Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema
+export interface Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema
   extends PaginatedResponse,
-    Paths11PzrpaV3ApiUsersGetResponses200ContentApplicationJsonSchemaAllof1 {}
-
-export interface PathsVz5Kj2V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchema
-  extends PaginatedResponse,
-    Paths1Qojy9V3ResthookSubscriptionsGetResponses200ContentApplicationJsonSchemaAllof1 {}
-
-export interface PathsDvrcp3V3IndexGetResponses200ContentApplicationJsonSchema
-  extends PaginatedResponse,
-    Paths4T5Cm5V3IndexGetResponses200ContentApplicationJsonSchemaAllof1 {}
+    PathsWvcyp9V3MappingsGetResponses200ContentApplicationJsonSchemaAllof1 {}
 
 export interface Resume extends Document {
   /** Polymorphic discriminator, which specifies the different types this object can be */
@@ -2848,19 +2849,19 @@ export interface ResumeRedact extends Document {
   data?: ResumeRedactData;
 }
 
-export interface LocationAnnotationUpdateParsed extends Location {}
+export interface InvitationRespondedBy extends User {}
 
-export interface ResumeSearchDetailLocationValue
-  extends Location,
-    ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {}
+/** Customize the theme of the embeded search tool. */
+export interface ResumeSearchConfigSearchToolTheme extends ThemeConfig {}
 
-export interface JobDescriptionSearchDetailLocationValue
-  extends Location,
-    Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {}
+/** Customize the theme of the embeded search tool. */
+export interface JobDescriptionSearchConfigSearchToolTheme
+  extends ThemeConfig {}
 
-export interface ResumeSearchDetailEducationValueItem
-  extends Education,
-    ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {}
+export interface AnnotationWithValidationResults extends Annotation {
+  /** List of validation results for this annotation. */
+  validationResults?: ValidationResult[];
+}
 
 export interface JobTitleAnnotation extends Annotation {
   /** Years of experience range */
@@ -2898,11 +2899,6 @@ export interface YearsExperienceAnnotation extends Annotation {
   parsed?: YearsExperienceAnnotationParsed;
 }
 
-export interface AnnotationWithValidationResults extends Annotation {
-  /** List of validation results for this annotation. */
-  validationResults?: ValidationResult[];
-}
-
 export interface FloatAnnotation extends Annotation {
   parsed?: number;
 }
@@ -2938,6 +2934,20 @@ export interface PhoneNumberAnnotation extends Annotation {
 export interface UrlAnnotation extends Annotation {
   parsed?: UrlAnnotationParsed;
 }
+
+export interface LocationAnnotationUpdateParsed extends Location {}
+
+export interface ResumeSearchDetailLocationValue
+  extends Location,
+    ComponentsN9ShogSchemasResumesearchdetailPropertiesLocationPropertiesValueAllof1 {}
+
+export interface JobDescriptionSearchDetailLocationValue
+  extends Location,
+    Components1TlnsonSchemasJobdescriptionsearchdetailPropertiesLocationPropertiesValueAllof1 {}
+
+export interface ResumeSearchDetailEducationValueItem
+  extends Education,
+    ComponentsSxu0N3SchemasResumesearchdetailPropertiesEducationPropertiesValueItemsAllof1 {}
 
 export interface JobTitleAnnotationUpdate
   extends AnnotationBase,
@@ -2989,6 +2999,11 @@ export interface ResumeSearchDetailLanguagesValueItem
 export interface JobDescriptionSearchDetailOccupationGroupValue
   extends OccupationGroupSearchResult {}
 
+export interface DocumentCreateFromData extends DocumentCreate {
+  /** Create resume or job description directly from data. */
+  data: DocumentCreateFromDataData;
+}
+
 /** Known values of {@link Region} that the service accepts. */
 export enum KnownRegion {
   /** Api */
@@ -3009,6 +3024,81 @@ export enum KnownRegion {
  * **api.us1**
  */
 export type Region = string;
+
+/** Known values of {@link DocumentState} that the service accepts. */
+export enum KnownDocumentState {
+  /** Uploaded */
+  Uploaded = "uploaded",
+  /** Review */
+  Review = "review",
+  /** Validated */
+  Validated = "validated",
+  /** Archived */
+  Archived = "archived",
+  /** Rejected */
+  Rejected = "rejected",
+}
+
+/**
+ * Defines values for DocumentState. \
+ * {@link KnownDocumentState} can be used interchangeably with DocumentState,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **uploaded** \
+ * **review** \
+ * **validated** \
+ * **archived** \
+ * **rejected**
+ */
+export type DocumentState = string;
+
+/** Known values of {@link DateRange} that the service accepts. */
+export enum KnownDateRange {
+  /** Today */
+  Today = "today",
+  /** Yesterday */
+  Yesterday = "yesterday",
+  /** Week */
+  Week = "week",
+  /** Month */
+  Month = "month",
+  /** Year */
+  Year = "year",
+}
+
+/**
+ * Defines values for DateRange. \
+ * {@link KnownDateRange} can be used interchangeably with DateRange,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **today** \
+ * **yesterday** \
+ * **week** \
+ * **month** \
+ * **year**
+ */
+export type DateRange = string;
+
+/** Known values of {@link DocumentFormat} that the service accepts. */
+export enum KnownDocumentFormat {
+  /** Json */
+  Json = "json",
+  /** Xml */
+  Xml = "xml",
+  /** HrXml */
+  HrXml = "hr-xml",
+}
+
+/**
+ * Defines values for DocumentFormat. \
+ * {@link KnownDocumentFormat} can be used interchangeably with DocumentFormat,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **json** \
+ * **xml** \
+ * **hr-xml**
+ */
+export type DocumentFormat = string;
 
 /** Known values of {@link OrganizationRole} that the service accepts. */
 export enum KnownOrganizationRole {
@@ -3163,101 +3253,107 @@ export enum KnownAnnotationContentType {
  */
 export type AnnotationContentType = string;
 
-/** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
-export enum KnownCollectionDateFormatPreference {
-  /** DMY */
-  DMY = "DMY",
-  /** MDY */
-  MDY = "MDY",
-  /** YMD */
-  YMD = "YMD",
+/** Known values of {@link ResthookEvent} that the service accepts. */
+export enum KnownResthookEvent {
+  /** ResumeParseSucceeded */
+  ResumeParseSucceeded = "resume.parse.succeeded",
+  /** ResumeParseFailed */
+  ResumeParseFailed = "resume.parse.failed",
+  /** ResumeParseCompleted */
+  ResumeParseCompleted = "resume.parse.completed",
+  /** InvoiceParseSucceeded */
+  InvoiceParseSucceeded = "invoice.parse.succeeded",
+  /** InvoiceParseFailed */
+  InvoiceParseFailed = "invoice.parse.failed",
+  /** InvoiceParseCompleted */
+  InvoiceParseCompleted = "invoice.parse.completed",
+  /** InvoiceValidateCompleted */
+  InvoiceValidateCompleted = "invoice.validate.completed",
+  /** DocumentParseSucceeded */
+  DocumentParseSucceeded = "document.parse.succeeded",
+  /** DocumentParseFailed */
+  DocumentParseFailed = "document.parse.failed",
+  /** DocumentParseCompleted */
+  DocumentParseCompleted = "document.parse.completed",
+  /** DocumentValidateCompleted */
+  DocumentValidateCompleted = "document.validate.completed",
+  /** DocumentClassifySucceeded */
+  DocumentClassifySucceeded = "document.classify.succeeded",
+  /** DocumentClassifyFailed */
+  DocumentClassifyFailed = "document.classify.failed",
+  /** DocumentClassifyCompleted */
+  DocumentClassifyCompleted = "document.classify.completed",
+  /** DocumentRejected */
+  DocumentRejected = "document.rejected",
+  /** AnnotationValidated */
+  AnnotationValidated = "annotation.validated",
 }
 
 /**
- * Defines values for CollectionDateFormatPreference. \
- * {@link KnownCollectionDateFormatPreference} can be used interchangeably with CollectionDateFormatPreference,
+ * Defines values for ResthookEvent. \
+ * {@link KnownResthookEvent} can be used interchangeably with ResthookEvent,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
- * **DMY** \
- * **MDY** \
- * **YMD**
+ * **resume.parse.succeeded** \
+ * **resume.parse.failed** \
+ * **resume.parse.completed** \
+ * **invoice.parse.succeeded** \
+ * **invoice.parse.failed** \
+ * **invoice.parse.completed** \
+ * **invoice.validate.completed** \
+ * **document.parse.succeeded** \
+ * **document.parse.failed** \
+ * **document.parse.completed** \
+ * **document.validate.completed** \
+ * **document.classify.succeeded** \
+ * **document.classify.failed** \
+ * **document.classify.completed** \
+ * **document.rejected** \
+ * **annotation.validated**
  */
-export type CollectionDateFormatPreference = string;
+export type ResthookEvent = string;
 
-/** Known values of {@link DateFormatPreference} that the service accepts. */
-export enum KnownDateFormatPreference {
-  /** DMY */
-  DMY = "DMY",
-  /** MDY */
-  MDY = "MDY",
-  /** YMD */
-  YMD = "YMD",
+/** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
+export enum KnownResthookSubscriptionVersion {
+  /** V1 */
+  V1 = "v1",
+  /** V2 */
+  V2 = "v2",
+  /** V3 */
+  V3 = "v3",
 }
 
 /**
- * Defines values for DateFormatPreference. \
- * {@link KnownDateFormatPreference} can be used interchangeably with DateFormatPreference,
+ * Defines values for ResthookSubscriptionVersion. \
+ * {@link KnownResthookSubscriptionVersion} can be used interchangeably with ResthookSubscriptionVersion,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
- * **DMY** \
- * **MDY** \
- * **YMD**
+ * **v1** \
+ * **v2** \
+ * **v3**
  */
-export type DateFormatPreference = string;
+export type ResthookSubscriptionVersion = string;
 
-/** Known values of {@link DocumentState} that the service accepts. */
-export enum KnownDocumentState {
-  /** Uploaded */
-  Uploaded = "uploaded",
-  /** Review */
-  Review = "review",
-  /** Validated */
-  Validated = "validated",
-  /** Archived */
-  Archived = "archived",
-  /** Rejected */
-  Rejected = "rejected",
+/** Known values of {@link Version} that the service accepts. */
+export enum KnownVersion {
+  /** V1 */
+  V1 = "v1",
+  /** V2 */
+  V2 = "v2",
+  /** V3 */
+  V3 = "v3",
 }
 
 /**
- * Defines values for DocumentState. \
- * {@link KnownDocumentState} can be used interchangeably with DocumentState,
+ * Defines values for Version. \
+ * {@link KnownVersion} can be used interchangeably with Version,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
- * **uploaded** \
- * **review** \
- * **validated** \
- * **archived** \
- * **rejected**
+ * **v1** \
+ * **v2** \
+ * **v3**
  */
-export type DocumentState = string;
-
-/** Known values of {@link DateRange} that the service accepts. */
-export enum KnownDateRange {
-  /** Today */
-  Today = "today",
-  /** Yesterday */
-  Yesterday = "yesterday",
-  /** Week */
-  Week = "week",
-  /** Month */
-  Month = "month",
-  /** Year */
-  Year = "year",
-}
-
-/**
- * Defines values for DateRange. \
- * {@link KnownDateRange} can be used interchangeably with DateRange,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **today** \
- * **yesterday** \
- * **week** \
- * **month** \
- * **year**
- */
-export type DateRange = string;
+export type Version = string;
 
 /** Known values of {@link ResumeDataLanguagesItem} that the service accepts. */
 export enum KnownResumeDataLanguagesItem {
@@ -3883,189 +3979,6 @@ export enum KnownResumeDataLanguagesItem {
  */
 export type ResumeDataLanguagesItem = string;
 
-/** Known values of {@link DocumentFormat} that the service accepts. */
-export enum KnownDocumentFormat {
-  /** Json */
-  Json = "json",
-  /** Xml */
-  Xml = "xml",
-  /** HrXml */
-  HrXml = "hr-xml",
-}
-
-/**
- * Defines values for DocumentFormat. \
- * {@link KnownDocumentFormat} can be used interchangeably with DocumentFormat,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **json** \
- * **xml** \
- * **hr-xml**
- */
-export type DocumentFormat = string;
-
-/** Known values of {@link DocumentSplitterType} that the service accepts. */
-export enum KnownDocumentSplitterType {
-  /** Llm */
-  Llm = "llm",
-  /** Extractor */
-  Extractor = "extractor",
-  /** Keyword */
-  Keyword = "keyword",
-}
-
-/**
- * Defines values for DocumentSplitterType. \
- * {@link KnownDocumentSplitterType} can be used interchangeably with DocumentSplitterType,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **llm** \
- * **extractor** \
- * **keyword**
- */
-export type DocumentSplitterType = string;
-
-/** Known values of {@link InvitationStatus} that the service accepts. */
-export enum KnownInvitationStatus {
-  /** Pending */
-  Pending = "pending",
-  /** Accepted */
-  Accepted = "accepted",
-  /** Declined */
-  Declined = "declined",
-}
-
-/**
- * Defines values for InvitationStatus. \
- * {@link KnownInvitationStatus} can be used interchangeably with InvitationStatus,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **pending** \
- * **accepted** \
- * **declined**
- */
-export type InvitationStatus = string;
-
-/** Known values of {@link InvitationResponseStatus} that the service accepts. */
-export enum KnownInvitationResponseStatus {
-  /** Accepted */
-  Accepted = "accepted",
-  /** Declined */
-  Declined = "declined",
-}
-
-/**
- * Defines values for InvitationResponseStatus. \
- * {@link KnownInvitationResponseStatus} can be used interchangeably with InvitationResponseStatus,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **accepted** \
- * **declined**
- */
-export type InvitationResponseStatus = string;
-
-/** Known values of {@link ResthookEvent} that the service accepts. */
-export enum KnownResthookEvent {
-  /** ResumeParseSucceeded */
-  ResumeParseSucceeded = "resume.parse.succeeded",
-  /** ResumeParseFailed */
-  ResumeParseFailed = "resume.parse.failed",
-  /** ResumeParseCompleted */
-  ResumeParseCompleted = "resume.parse.completed",
-  /** InvoiceParseSucceeded */
-  InvoiceParseSucceeded = "invoice.parse.succeeded",
-  /** InvoiceParseFailed */
-  InvoiceParseFailed = "invoice.parse.failed",
-  /** InvoiceParseCompleted */
-  InvoiceParseCompleted = "invoice.parse.completed",
-  /** InvoiceValidateCompleted */
-  InvoiceValidateCompleted = "invoice.validate.completed",
-  /** DocumentParseSucceeded */
-  DocumentParseSucceeded = "document.parse.succeeded",
-  /** DocumentParseFailed */
-  DocumentParseFailed = "document.parse.failed",
-  /** DocumentParseCompleted */
-  DocumentParseCompleted = "document.parse.completed",
-  /** DocumentValidateCompleted */
-  DocumentValidateCompleted = "document.validate.completed",
-  /** DocumentClassifySucceeded */
-  DocumentClassifySucceeded = "document.classify.succeeded",
-  /** DocumentClassifyFailed */
-  DocumentClassifyFailed = "document.classify.failed",
-  /** DocumentClassifyCompleted */
-  DocumentClassifyCompleted = "document.classify.completed",
-  /** DocumentRejected */
-  DocumentRejected = "document.rejected",
-  /** AnnotationValidated */
-  AnnotationValidated = "annotation.validated",
-}
-
-/**
- * Defines values for ResthookEvent. \
- * {@link KnownResthookEvent} can be used interchangeably with ResthookEvent,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **resume.parse.succeeded** \
- * **resume.parse.failed** \
- * **resume.parse.completed** \
- * **invoice.parse.succeeded** \
- * **invoice.parse.failed** \
- * **invoice.parse.completed** \
- * **invoice.validate.completed** \
- * **document.parse.succeeded** \
- * **document.parse.failed** \
- * **document.parse.completed** \
- * **document.validate.completed** \
- * **document.classify.succeeded** \
- * **document.classify.failed** \
- * **document.classify.completed** \
- * **document.rejected** \
- * **annotation.validated**
- */
-export type ResthookEvent = string;
-
-/** Known values of {@link ResthookSubscriptionVersion} that the service accepts. */
-export enum KnownResthookSubscriptionVersion {
-  /** V1 */
-  V1 = "v1",
-  /** V2 */
-  V2 = "v2",
-  /** V3 */
-  V3 = "v3",
-}
-
-/**
- * Defines values for ResthookSubscriptionVersion. \
- * {@link KnownResthookSubscriptionVersion} can be used interchangeably with ResthookSubscriptionVersion,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **v1** \
- * **v2** \
- * **v3**
- */
-export type ResthookSubscriptionVersion = string;
-
-/** Known values of {@link Version} that the service accepts. */
-export enum KnownVersion {
-  /** V1 */
-  V1 = "v1",
-  /** V2 */
-  V2 = "v2",
-  /** V3 */
-  V3 = "v3",
-}
-
-/**
- * Defines values for Version. \
- * {@link KnownVersion} can be used interchangeably with Version,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **v1** \
- * **v2** \
- * **v3**
- */
-export type Version = string;
-
 /** Known values of {@link SearchParametersCustomDataFilterType} that the service accepts. */
 export enum KnownSearchParametersCustomDataFilterType {
   /** Equals */
@@ -4192,8 +4105,8 @@ export enum KnownJobDescriptionSearchConfigDistanceUnit {
  */
 export type JobDescriptionSearchConfigDistanceUnit = string;
 
-/** Known values of {@link Enum22} that the service accepts. */
-export enum KnownEnum22 {
+/** Known values of {@link Enum17} that the service accepts. */
+export enum KnownEnum17 {
   /** Resumes */
   Resumes = "resumes",
   /** JobDescriptions */
@@ -4201,14 +4114,14 @@ export enum KnownEnum22 {
 }
 
 /**
- * Defines values for Enum22. \
- * {@link KnownEnum22} can be used interchangeably with Enum22,
+ * Defines values for Enum17. \
+ * {@link KnownEnum17} can be used interchangeably with Enum17,
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **resumes** \
  * **job_descriptions**
  */
-export type Enum22 = string;
+export type Enum17 = string;
 
 /** Known values of {@link IndexDocType} that the service accepts. */
 export enum KnownIndexDocType {
@@ -4245,6 +4158,108 @@ export enum KnownDocType {
  * **job_descriptions**
  */
 export type DocType = string;
+
+/** Known values of {@link CollectionDateFormatPreference} that the service accepts. */
+export enum KnownCollectionDateFormatPreference {
+  /** DMY */
+  DMY = "DMY",
+  /** MDY */
+  MDY = "MDY",
+  /** YMD */
+  YMD = "YMD",
+}
+
+/**
+ * Defines values for CollectionDateFormatPreference. \
+ * {@link KnownCollectionDateFormatPreference} can be used interchangeably with CollectionDateFormatPreference,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **DMY** \
+ * **MDY** \
+ * **YMD**
+ */
+export type CollectionDateFormatPreference = string;
+
+/** Known values of {@link DateFormatPreference} that the service accepts. */
+export enum KnownDateFormatPreference {
+  /** DMY */
+  DMY = "DMY",
+  /** MDY */
+  MDY = "MDY",
+  /** YMD */
+  YMD = "YMD",
+}
+
+/**
+ * Defines values for DateFormatPreference. \
+ * {@link KnownDateFormatPreference} can be used interchangeably with DateFormatPreference,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **DMY** \
+ * **MDY** \
+ * **YMD**
+ */
+export type DateFormatPreference = string;
+
+/** Known values of {@link DocumentSplitterType} that the service accepts. */
+export enum KnownDocumentSplitterType {
+  /** Llm */
+  Llm = "llm",
+  /** Extractor */
+  Extractor = "extractor",
+  /** Keyword */
+  Keyword = "keyword",
+}
+
+/**
+ * Defines values for DocumentSplitterType. \
+ * {@link KnownDocumentSplitterType} can be used interchangeably with DocumentSplitterType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **llm** \
+ * **extractor** \
+ * **keyword**
+ */
+export type DocumentSplitterType = string;
+
+/** Known values of {@link InvitationStatus} that the service accepts. */
+export enum KnownInvitationStatus {
+  /** Pending */
+  Pending = "pending",
+  /** Accepted */
+  Accepted = "accepted",
+  /** Declined */
+  Declined = "declined",
+}
+
+/**
+ * Defines values for InvitationStatus. \
+ * {@link KnownInvitationStatus} can be used interchangeably with InvitationStatus,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **pending** \
+ * **accepted** \
+ * **declined**
+ */
+export type InvitationStatus = string;
+
+/** Known values of {@link InvitationResponseStatus} that the service accepts. */
+export enum KnownInvitationResponseStatus {
+  /** Accepted */
+  Accepted = "accepted",
+  /** Declined */
+  Declined = "declined",
+}
+
+/**
+ * Defines values for InvitationResponseStatus. \
+ * {@link KnownInvitationResponseStatus} can be used interchangeably with InvitationResponseStatus,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **accepted** \
+ * **declined**
+ */
+export type InvitationResponseStatus = string;
 /** Defines values for ManagementLevel. */
 export type ManagementLevel = "None" | "Low" | "Mid" | "Upper";
 /** Defines values for SearchLocationUnit. */
@@ -4256,6 +4271,154 @@ export type EducationLevel =
   | "bachelors"
   | "masters"
   | "doctoral";
+
+/** Optional parameters. */
+export interface GetAllDocumentsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter by workspace. */
+  workspace?: string;
+  /** Filter by collection. */
+  collection?: string;
+  /** Filter by the document's state. */
+  state?: DocumentState;
+  /** Filter by tag's IDs. */
+  tags?: number[];
+  /** Filter by created datetime. */
+  createdDt?: DateRange;
+  /** Partial, case-insensitive match with file name or tag name. */
+  search?: string;
+  /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. Supported values include: 'file_name', 'extractor', 'created_dt', 'validated_dt', 'archived_dt' and 'parsed__<dataPointSlug>'. */
+  ordering?: string[];
+  /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint. */
+  includeData?: boolean;
+  /** Exclude some documents from the result. */
+  exclude?: string[];
+  /** Exclude documents that are currently being reviewed. */
+  inReview?: boolean;
+  /** Filter by failed status. */
+  failed?: boolean;
+  /** Filter by ready status. */
+  ready?: boolean;
+  /** Filter for validatable documents. */
+  validatable?: boolean;
+  /** Filter for documents with challenges. */
+  hasChallenges?: boolean;
+  /** Filter for documents with this custom identifier. */
+  customIdentifier?: string;
+  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+  compact?: boolean;
+  /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
+  count?: boolean;
+  /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+  snakeCase?: boolean;
+}
+
+/** Contains response data for the getAllDocuments operation. */
+export type GetAllDocumentsResponse =
+  PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface CreateDocumentOptionalParams
+  extends coreClient.OperationOptions {
+  /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+  snakeCase?: boolean;
+  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
+  file?: coreRestPipeline.RequestBodyType;
+  /** URL to download the document. */
+  url?: string;
+  /** Uniquely identify a collection. */
+  collection?: string;
+  /** The document type's identifier.  Provide if you already know the document type. */
+  documentType?: string;
+  /** Uniquely identify a workspace. */
+  workspace?: string;
+  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
+  wait?: string;
+  /** Deprecated in favor of `customIdentifier`. */
+  identifier?: string;
+  /** Specify a custom identifier for the document if you need one, not required to be unique. */
+  customIdentifier?: string;
+  /** Optional filename of the file */
+  fileName?: string;
+  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
+  expiryTime?: string;
+  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
+  language?: string;
+  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
+  rejectDuplicates?: string;
+  /** A JSON representation of the RegionBias object. */
+  regionBias?: string;
+  /** Explicitly mark this document as low priority. */
+  lowPriority?: string;
+  /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
+  compact?: string;
+  /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
+  deleteAfterParse?: string;
+  /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
+  enableValidationTool?: string;
+  /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
+  useOcr?: string;
+  /** Array of DocumentWarning */
+  warningMessages?: DocumentWarning[];
+}
+
+/** Contains response data for the createDocument operation. */
+export type CreateDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export interface GetDocumentOptionalParams extends coreClient.OperationOptions {
+  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+  compact?: boolean;
+  /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+  snakeCase?: boolean;
+  /** Specify which format you want the response to be. Default is "json" */
+  format?: DocumentFormat;
+}
+
+/** Contains response data for the getDocument operation. */
+export type GetDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export interface UpdateDocumentOptionalParams
+  extends coreClient.OperationOptions {
+  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
+  compact?: boolean;
+  /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+  snakeCase?: boolean;
+}
+
+/** Contains response data for the updateDocument operation. */
+export type UpdateDocumentResponse = DocumentUnion;
+
+/** Optional parameters. */
+export interface DeleteDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetRedactedDocumentOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getRedactedDocument operation. */
+export type GetRedactedDocumentResponse = {
+  /**
+   * BROWSER ONLY
+   *
+   * The response body as a browser Blob.
+   * Always `undefined` in node.js.
+   */
+  blobBody?: Promise<Blob>;
+  /**
+   * NODEJS ONLY
+   *
+   * The response body as a node.js Readable stream.
+   * Always `undefined` in the browser.
+   */
+  readableStreamBody?: NodeJS.ReadableStream;
+};
 
 /** Optional parameters. */
 export interface GetAllWorkspacesOptionalParams
@@ -4340,516 +4503,63 @@ export interface DeleteWorkspaceMembershipOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface GetAllCollectionsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getAllCollections operation. */
-export type GetAllCollectionsResponse = Collection[];
-
-/** Optional parameters. */
-export interface CreateCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createCollection operation. */
-export type CreateCollectionResponse = Collection;
-
-/** Optional parameters. */
-export interface GetCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getCollection operation. */
-export type GetCollectionResponse = Collection;
-
-/** Optional parameters. */
-export interface UpdateCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateCollection operation. */
-export type UpdateCollectionResponse = Collection;
-
-/** Optional parameters. */
-export interface DeleteCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface CreateDataFieldForCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createDataFieldForCollection operation. */
-export type CreateDataFieldForCollectionResponse = DataField;
-
-/** Optional parameters. */
-export interface GetDataFieldForCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getDataFieldForCollection operation. */
-export type GetDataFieldForCollectionResponse = CollectionField;
-
-/** Optional parameters. */
-export interface UpdateDataFieldForCollectionOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateDataFieldForCollection operation. */
-export type UpdateDataFieldForCollectionResponse = CollectionField;
-
-/** Optional parameters. */
-export interface GetUsageByCollectionOptionalParams
+export interface GetDocumentTypesOptionalParams
   extends coreClient.OperationOptions {
-  /** Start date of the period to retrieve. Format: YYYY-MM */
-  start?: string;
-  /** End date of the period to retrieve. Format: YYYY-MM */
-  end?: string;
-}
-
-/** Contains response data for the getUsageByCollection operation. */
-export type GetUsageByCollectionResponse = UsageByCollection[];
-
-/** Optional parameters. */
-export interface GetAllDocumentsOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-  /** Filter by workspace. */
+  /** Filter by workspace identifier */
   workspace?: string;
-  /** Filter by collection. */
-  collection?: string;
-  /** Filter by the document's state. */
-  state?: DocumentState;
-  /** Filter by tag's IDs. */
-  tags?: number[];
-  /** Filter by created datetime. */
-  createdDt?: DateRange;
-  /** Partial, case-insensitive match with file name or tag name. */
-  search?: string;
-  /** Sort the result set. A "-" at the beginning denotes DESC sort, e.g. -created_dt. Sort by multiple fields is supported. Supported values include: 'file_name', 'extractor', 'created_dt', 'validated_dt', 'archived_dt' and 'parsed__<dataPointSlug>'. */
-  ordering?: string[];
-  /** By default, this endpoint returns only the meta data of the documents. Set this to `true` will return a summary of the data that was parsed. If you want to retrieve the full set of data for a document, use the `GET /documents/{identifier}` endpoint. */
-  includeData?: boolean;
-  /** Exclude some documents from the result. */
-  exclude?: string[];
-  /** Exclude documents that are currently being reviewed. */
-  inReview?: boolean;
-  /** Filter by failed status. */
-  failed?: boolean;
-  /** Filter by ready status. */
-  ready?: boolean;
-  /** Filter for validatable documents. */
-  validatable?: boolean;
-  /** Filter for documents with challenges. */
-  hasChallenges?: boolean;
-  /** Filter for documents with this custom identifier. */
-  customIdentifier?: string;
-  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
-  compact?: boolean;
-  /** If "false", the documents count is not computed, thus saving time for large collections. Default is "true". */
-  count?: boolean;
-  /** Whether to return the response in camelCase. Default is true. */
-  camelCase?: boolean;
+  /** Filter by organization identifier */
+  organization?: string;
 }
 
-/** Contains response data for the getAllDocuments operation. */
-export type GetAllDocumentsResponse =
-  PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema;
+/** Contains response data for the getDocumentTypes operation. */
+export type GetDocumentTypesResponse = DocumentType[];
 
 /** Optional parameters. */
-export interface CreateDocumentOptionalParams
+export interface CreateDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createDocumentType operation. */
+export type CreateDocumentTypeResponse = DocumentType;
+
+/** Optional parameters. */
+export interface GetDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDocumentType operation. */
+export type GetDocumentTypeResponse = DocumentType;
+
+/** Optional parameters. */
+export interface UpdateDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDocumentType operation. */
+export type UpdateDocumentTypeResponse = DocumentType;
+
+/** Optional parameters. */
+export interface DeleteDocumentTypeOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface JsonSchemaFromDocumentTypeOptionalParams
   extends coreClient.OperationOptions {
-  /** Whether to return the response in camelCase. Default is true. */
-  camelCase?: boolean;
-  /** File as binary data blob. Supported formats: PDF, DOC, DOCX, TXT, RTF, HTML, PNG, JPG, TIFF, ODT, XLS, XLSX */
-  file?: coreRestPipeline.RequestBodyType;
-  /** URL to download the document. */
-  url?: string;
-  /** Create resume or job description directly from data. */
-  data?: DocumentCreateData;
-  /** Uniquely identify a collection. */
-  collection?: string;
-  /** The document type's identifier.  Provide if you already know the document type. */
-  documentType?: string;
-  /** Uniquely identify a workspace. */
-  workspace?: string;
-  /** If "true" (default), will return a response only after processing has completed. If "false", will return an empty data object which can be polled at the GET endpoint until processing is complete. */
-  wait?: string;
-  /** Deprecated in favor of `customIdentifier`. */
-  identifier?: string;
-  /** Specify a custom identifier for the document if you need one, not required to be unique. */
-  customIdentifier?: string;
-  /** Optional filename of the file */
-  fileName?: string;
-  /** The date/time in ISO-8601 format when the document will be automatically deleted.  Defaults to no expiry. */
-  expiryTime?: string;
-  /** Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese. */
-  language?: string;
-  /** If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings. */
-  rejectDuplicates?: boolean;
-  /** A JSON representation of the RegionBias object. */
-  regionBias?: string;
-  /** Explicitly mark this document as low priority. */
-  lowPriority?: string;
-  /** If true, the returned parse result (assuming `wait` is also true) will be a compact version of the full result. */
-  compact?: string;
-  /** If true, no data will be stored after parsing. Only compatible with requests where wait: True. */
-  deleteAfterParse?: string;
-  /** If true, the document will be viewable in the Affinda Validation Tool. Set to False to optimize parsing speed. */
-  enableValidationTool?: string;
-  /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
-  useOcr?: boolean;
-  /** Array of DocumentWarning */
-  warningMessages?: DocumentWarning[];
+  /** Title for the JSON schema */
+  title?: string;
 }
 
-/** Contains response data for the createDocument operation. */
-export type CreateDocumentResponse = DocumentUnion;
-
-/** Optional parameters. */
-export interface GetDocumentOptionalParams extends coreClient.OperationOptions {
-  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
-  compact?: boolean;
-  /** Whether to return the response in camelCase. Default is true. */
-  camelCase?: boolean;
-  /** Specify which format you want the response to be. Default is "json" */
-  format?: DocumentFormat;
-}
-
-/** Contains response data for the getDocument operation. */
-export type GetDocumentResponse = DocumentUnion;
-
-/** Optional parameters. */
-export interface UpdateDocumentOptionalParams
-  extends coreClient.OperationOptions {
-  /** If "true", the response is compacted to annotations' parsed data. Annotations' meta data are excluded. Default is "false". */
-  compact?: boolean;
-  /** Whether to return the response in camelCase. Default is true. */
-  camelCase?: boolean;
-}
-
-/** Contains response data for the updateDocument operation. */
-export type UpdateDocumentResponse = DocumentUnion;
-
-/** Optional parameters. */
-export interface DeleteDocumentOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface UpdateDocumentDataOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateDocumentData operation. */
-export type UpdateDocumentDataResponse = DocumentUnion;
-
-/** Optional parameters. */
-export interface GetRedactedDocumentOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getRedactedDocument operation. */
-export type GetRedactedDocumentResponse = {
-  /**
-   * BROWSER ONLY
-   *
-   * The response body as a browser Blob.
-   * Always `undefined` in node.js.
-   */
-  blobBody?: Promise<Blob>;
-  /**
-   * NODEJS ONLY
-   *
-   * The response body as a node.js Readable stream.
-   * Always `undefined` in the browser.
-   */
-  readableStreamBody?: NodeJS.ReadableStream;
+/** Contains response data for the jsonSchemaFromDocumentType operation. */
+export type JsonSchemaFromDocumentTypeResponse = {
+  [propertyName: string]: any;
 };
 
 /** Optional parameters. */
-export interface BatchAddTagOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface BatchRemoveTagOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface GetAllValidationResultsOptionalParams
+export interface PydanticModelsFromDocumentTypeOptionalParams
   extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
+  /** Name for the Pydantic model */
+  modelName?: string;
 }
 
-/** Contains response data for the getAllValidationResults operation. */
-export type GetAllValidationResultsResponse = ValidationResult[];
-
-/** Optional parameters. */
-export interface CreateValidationResultOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createValidationResult operation. */
-export type CreateValidationResultResponse = ValidationResult;
-
-/** Optional parameters. */
-export interface GetValidationResultOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getValidationResult operation. */
-export type GetValidationResultResponse = ValidationResult;
-
-/** Optional parameters. */
-export interface UpdateValidationResultOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateValidationResult operation. */
-export type UpdateValidationResultResponse = ValidationResult;
-
-/** Optional parameters. */
-export interface DeleteValidationResultOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface BatchCreateValidationResultsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the batchCreateValidationResults operation. */
-export type BatchCreateValidationResultsResponse = ValidationResult[];
-
-/** Optional parameters. */
-export interface BatchDeleteValidationResultsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface GetAllDocumentSplittersOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-  /** Filter by organization. */
-  organization?: string;
-  /** Allows you to include public splitters in the response when you're filtering by organization. */
-  includePublic?: boolean;
-}
-
-/** Contains response data for the getAllDocumentSplitters operation. */
-export type GetAllDocumentSplittersResponse = DocumentSplitter[];
-
-/** Optional parameters. */
-export interface GetDocumentSplitterOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getDocumentSplitter operation. */
-export type GetDocumentSplitterResponse = DocumentSplitter;
-
-/** Optional parameters. */
-export interface EditDocumentPagesOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the editDocumentPages operation. */
-export type EditDocumentPagesResponse = Meta[];
-
-/** Optional parameters. */
-export interface GetAllExtractorsOptionalParams
-  extends coreClient.OperationOptions {
-  /** Filter by name. */
-  name?: string;
-  /** Filter by validatable. */
-  validatable?: boolean;
-  /** Whether to include Affinda's off-the-shelf extractors. */
-  includePublicExtractors?: boolean;
-}
-
-/** Contains response data for the getAllExtractors operation. */
-export type GetAllExtractorsResponse = Extractor[];
-
-/** Optional parameters. */
-export interface CreateExtractorOptionalParams
-  extends coreClient.OperationOptions {
-  body?: ExtractorCreate;
-}
-
-/** Contains response data for the createExtractor operation. */
-export type CreateExtractorResponse = Extractor;
-
-/** Optional parameters. */
-export interface GetExtractorOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getExtractor operation. */
-export type GetExtractorResponse = Extractor;
-
-/** Optional parameters. */
-export interface UpdateExtractorOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateExtractor operation. */
-export type UpdateExtractorResponse = Extractor;
-
-/** Optional parameters. */
-export interface DeleteExtractorOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface GetAllDataPointsOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-  /** Filter by organization. */
-  organization?: string;
-  /** Allows you to include public data points in the response when you're filtering by organization. */
-  includePublic?: boolean;
-  /** Filter by extractor. */
-  extractor?: string;
-  /** Filter by slug. */
-  slug?: string;
-  /** Filter by description. */
-  description?: string;
-  /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
-  annotationContentType?: string;
-  /** Filter by specific identifiers. */
-  identifier?: string[];
-}
-
-/** Contains response data for the getAllDataPoints operation. */
-export type GetAllDataPointsResponse = DataPoint[];
-
-/** Optional parameters. */
-export interface CreateDataPointOptionalParams
-  extends coreClient.OperationOptions {
-  body?: DataPointCreate;
-}
-
-/** Contains response data for the createDataPoint operation. */
-export type CreateDataPointResponse = DataPoint;
-
-/** Optional parameters. */
-export interface GetDataPointOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getDataPoint operation. */
-export type GetDataPointResponse = DataPoint;
-
-/** Optional parameters. */
-export interface UpdateDataPointOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateDataPoint operation. */
-export type UpdateDataPointResponse = DataPoint;
-
-/** Optional parameters. */
-export interface DeleteDataPointOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface GetDataPointChoicesOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-  /** Filter choices by searching for a substring. */
-  search?: string;
-}
-
-/** Contains response data for the getDataPointChoices operation. */
-export type GetDataPointChoicesResponse =
-  PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface CreateDataPointChoiceOptionalParams
-  extends coreClient.OperationOptions {
-  body?: DataPointChoiceCreate;
-}
-
-/** Contains response data for the createDataPointChoice operation. */
-export type CreateDataPointChoiceResponse = DataPointChoice;
-
-/** Optional parameters. */
-export interface GetDataPointChoiceOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getDataPointChoice operation. */
-export type GetDataPointChoiceResponse = DataPointChoice;
-
-/** Optional parameters. */
-export interface UpdateDataPointChoiceOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateDataPointChoice operation. */
-export type UpdateDataPointChoiceResponse = DataPointChoice;
-
-/** Optional parameters. */
-export interface DeleteDataPointChoiceOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface ReplaceDataPointChoicesOptionalParams
-  extends coreClient.OperationOptions {
-  /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
-  body?: DataPointChoiceReplaceRequest;
-}
-
-/** Contains response data for the replaceDataPointChoices operation. */
-export type ReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
-
-/** Optional parameters. */
-export interface GetAllAnnotationsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getAllAnnotations operation. */
-export type GetAllAnnotationsResponse =
-  Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface CreateAnnotationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createAnnotation operation. */
-export type CreateAnnotationResponse = AnnotationWithValidationResults;
-
-/** Optional parameters. */
-export interface GetAnnotationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getAnnotation operation. */
-export type GetAnnotationResponse = Annotation;
-
-/** Optional parameters. */
-export interface UpdateAnnotationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateAnnotation operation. */
-export type UpdateAnnotationResponse = Annotation;
-
-/** Optional parameters. */
-export interface DeleteAnnotationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the deleteAnnotation operation. */
-export type DeleteAnnotationResponse = AnotationDelete;
-
-/** Optional parameters. */
-export interface BatchCreateAnnotationsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the batchCreateAnnotations operation. */
-export type BatchCreateAnnotationsResponse = (Annotation | null)[];
-
-/** Optional parameters. */
-export interface BatchUpdateAnnotationsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the batchUpdateAnnotations operation. */
-export type BatchUpdateAnnotationsResponse = (Annotation | null)[];
-
-/** Optional parameters. */
-export interface BatchDeleteAnnotationsOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the batchDeleteAnnotations operation. */
-export type BatchDeleteAnnotationsOperationResponse =
-  BatchDeleteAnnotationsResponse;
+/** Contains response data for the pydanticModelsFromDocumentType operation. */
+export type PydanticModelsFromDocumentTypeResponse = PydanticModelsResponse;
 
 /** Optional parameters. */
 export interface CreateMappingDataSourceOptionalParams
@@ -4861,14 +4571,14 @@ export type CreateMappingDataSourceResponse = MappingDataSource;
 /** Optional parameters. */
 export interface ListMappingDataSourcesOptionalParams
   extends coreClient.OperationOptions {
-  /** Filter by name. */
-  name?: string;
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
   /** Filter by workspace. */
   workspace?: string;
+  /** Filter by name. */
+  name?: string;
   /** Filter by organization. */
   organization?: string;
   /** Filter by identifier. */
@@ -4942,14 +4652,7 @@ export interface DeleteMappingDataSourceValueOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface CreateMappingOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createMapping operation. */
-export type CreateMappingResponse = Mapping;
-
-/** Optional parameters. */
-export interface ListMappingsOptionalParams
+export interface GetAllValidationResultsOptionalParams
   extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
@@ -4957,121 +4660,44 @@ export interface ListMappingsOptionalParams
   limit?: number;
 }
 
-/** Contains response data for the listMappings operation. */
-export type ListMappingsResponse =
-  Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
+/** Contains response data for the getAllValidationResults operation. */
+export type GetAllValidationResultsResponse = ValidationResult[];
 
 /** Optional parameters. */
-export interface GetMappingOptionalParams extends coreClient.OperationOptions {}
+export interface CreateValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
 
-/** Contains response data for the getMapping operation. */
-export type GetMappingResponse = Mapping;
+/** Contains response data for the createValidationResult operation. */
+export type CreateValidationResultResponse = ValidationResult;
 
 /** Optional parameters. */
-export interface DeleteMappingOptionalParams
+export interface GetValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getValidationResult operation. */
+export type GetValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export interface UpdateValidationResultOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateValidationResult operation. */
+export type UpdateValidationResultResponse = ValidationResult;
+
+/** Optional parameters. */
+export interface DeleteValidationResultOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface UpdateMappingOptionalParams
+export interface BatchCreateValidationResultsOptionalParams
   extends coreClient.OperationOptions {}
 
-/** Contains response data for the updateMapping operation. */
-export type UpdateMappingResponse = Mapping;
+/** Contains response data for the batchCreateValidationResults operation. */
+export type BatchCreateValidationResultsResponse = ValidationResult[];
 
 /** Optional parameters. */
-export interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
-  /** Filter by name. */
-  name?: string;
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-  /** Filter by workspace. */
-  workspace?: string;
-}
-
-/** Contains response data for the getAllTags operation. */
-export type GetAllTagsResponse = Tag[];
-
-/** Optional parameters. */
-export interface CreateTagOptionalParams extends coreClient.OperationOptions {}
-
-/** Contains response data for the createTag operation. */
-export type CreateTagResponse = Tag;
-
-/** Optional parameters. */
-export interface GetTagOptionalParams extends coreClient.OperationOptions {}
-
-/** Contains response data for the getTag operation. */
-export type GetTagResponse = Tag;
-
-/** Optional parameters. */
-export interface UpdateTagOptionalParams extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateTag operation. */
-export type UpdateTagResponse = Tag;
-
-/** Optional parameters. */
-export interface DeleteTagOptionalParams extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface GetDocumentTypesOptionalParams
-  extends coreClient.OperationOptions {
-  /** Filter by workspace identifier */
-  workspace?: string;
-  /** Filter by organization identifier */
-  organization?: string;
-}
-
-/** Contains response data for the getDocumentTypes operation. */
-export type GetDocumentTypesResponse = DocumentType[];
-
-/** Optional parameters. */
-export interface CreateDocumentTypeOptionalParams
+export interface BatchDeleteValidationResultsOptionalParams
   extends coreClient.OperationOptions {}
-
-/** Contains response data for the createDocumentType operation. */
-export type CreateDocumentTypeResponse = DocumentType;
-
-/** Optional parameters. */
-export interface GetDocumentTypeOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getDocumentType operation. */
-export type GetDocumentTypeResponse = DocumentType;
-
-/** Optional parameters. */
-export interface UpdateDocumentTypeOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateDocumentType operation. */
-export type UpdateDocumentTypeResponse = DocumentType;
-
-/** Optional parameters. */
-export interface DeleteDocumentTypeOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Optional parameters. */
-export interface JsonSchemaFromDocumentTypeOptionalParams
-  extends coreClient.OperationOptions {
-  /** Title for the JSON schema */
-  title?: string;
-}
-
-/** Contains response data for the jsonSchemaFromDocumentType operation. */
-export type JsonSchemaFromDocumentTypeResponse = {
-  [propertyName: string]: any;
-};
-
-/** Optional parameters. */
-export interface PydanticModelsFromDocumentTypeOptionalParams
-  extends coreClient.OperationOptions {
-  /** Name for the Pydantic model */
-  modelName?: string;
-}
-
-/** Contains response data for the pydanticModelsFromDocumentType operation. */
-export type PydanticModelsFromDocumentTypeResponse = PydanticModelsResponse;
 
 /** Optional parameters. */
 export interface GetAllOrganizationsOptionalParams
@@ -5119,139 +4745,106 @@ export interface DeleteOrganizationOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface GetAllOrganizationMembershipsOptionalParams
-  extends coreClient.OperationOptions {
+export interface GetAllTagsOptionalParams extends coreClient.OperationOptions {
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
-  /** Filter by organization. */
-  organization?: string;
-  /** Filter by role. */
-  role?: OrganizationRole;
+  /** Filter by workspace. */
+  workspace?: string;
+  /** Filter by name. */
+  name?: string;
 }
 
-/** Contains response data for the getAllOrganizationMemberships operation. */
-export type GetAllOrganizationMembershipsResponse =
-  PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
+/** Contains response data for the getAllTags operation. */
+export type GetAllTagsResponse = Tag[];
 
 /** Optional parameters. */
-export interface GetOrganizationMembershipOptionalParams
-  extends coreClient.OperationOptions {}
+export interface CreateTagOptionalParams extends coreClient.OperationOptions {}
 
-/** Contains response data for the getOrganizationMembership operation. */
-export type GetOrganizationMembershipResponse = OrganizationMembership;
-
-/** Optional parameters. */
-export interface UpdateOrganizationMembershipOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateOrganizationMembership operation. */
-export type UpdateOrganizationMembershipResponse = OrganizationMembership;
+/** Contains response data for the createTag operation. */
+export type CreateTagResponse = Tag;
 
 /** Optional parameters. */
-export interface DeleteOrganizationMembershipOptionalParams
-  extends coreClient.OperationOptions {}
+export interface GetTagOptionalParams extends coreClient.OperationOptions {}
+
+/** Contains response data for the getTag operation. */
+export type GetTagResponse = Tag;
 
 /** Optional parameters. */
-export interface GetAllInvitationsOptionalParams
-  extends coreClient.OperationOptions {
-  /** The number of documents to skip before starting to collect the result set. */
-  offset?: number;
-  /** The numbers of results to return. */
-  limit?: number;
-  /** Filter by organization. */
-  organization?: string;
-  /** Filter by role. */
-  role?: OrganizationRole;
-  /** Filter by status. */
-  status?: InvitationStatus;
-}
+export interface UpdateTagOptionalParams extends coreClient.OperationOptions {}
 
-/** Contains response data for the getAllInvitations operation. */
-export type GetAllInvitationsResponse =
-  Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
+/** Contains response data for the updateTag operation. */
+export type UpdateTagResponse = Tag;
 
 /** Optional parameters. */
-export interface CreateInvitationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createInvitation operation. */
-export type CreateInvitationResponse = Invitation;
+export interface DeleteTagOptionalParams extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface GetInvitationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getInvitation operation. */
-export type GetInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export interface UpdateInvitationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateInvitation operation. */
-export type UpdateInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export interface DeleteInvitationOptionalParams
+export interface BatchAddTagOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface GetInvitationByTokenOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the getInvitationByToken operation. */
-export type GetInvitationByTokenResponse = Invitation;
-
-/** Optional parameters. */
-export interface RespondToInvitationOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the respondToInvitation operation. */
-export type RespondToInvitationResponse = Invitation;
-
-/** Optional parameters. */
-export interface GetAllApiUsersOptionalParams
-  extends coreClient.OperationOptions {
-  /** Filter by organization. */
-  organization?: string;
-}
-
-/** Contains response data for the getAllApiUsers operation. */
-export type GetAllApiUsersResponse =
-  Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface CreateApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the createApiUser operation. */
-export type CreateApiUserResponse = ApiUserWithKey;
-
-/** Optional parameters. */
-export interface GetApiUserOptionalParams extends coreClient.OperationOptions {}
-
-/** Contains response data for the getApiUser operation. */
-export type GetApiUserResponse = ApiUserWithoutKey;
-
-/** Optional parameters. */
-export interface UpdateApiUserOptionalParams
-  extends coreClient.OperationOptions {}
-
-/** Contains response data for the updateApiUser operation. */
-export type UpdateApiUserResponse = ApiUserWithoutKey;
-
-/** Optional parameters. */
-export interface DeleteApiUserOptionalParams
+export interface BatchRemoveTagOptionalParams
   extends coreClient.OperationOptions {}
 
 /** Optional parameters. */
-export interface RegenerateApiKeyForApiUserOptionalParams
+export interface GetAllAnnotationsOptionalParams
   extends coreClient.OperationOptions {}
 
-/** Contains response data for the regenerateApiKeyForApiUser operation. */
-export type RegenerateApiKeyForApiUserResponse = ApiUserWithKey;
+/** Contains response data for the getAllAnnotations operation. */
+export type GetAllAnnotationsResponse =
+  Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface CreateAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createAnnotation operation. */
+export type CreateAnnotationResponse = AnnotationWithValidationResults;
+
+/** Optional parameters. */
+export interface GetAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAnnotation operation. */
+export type GetAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export interface UpdateAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateAnnotation operation. */
+export type UpdateAnnotationResponse = Annotation;
+
+/** Optional parameters. */
+export interface DeleteAnnotationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the deleteAnnotation operation. */
+export type DeleteAnnotationResponse = AnotationDelete;
+
+/** Optional parameters. */
+export interface BatchCreateAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchCreateAnnotations operation. */
+export type BatchCreateAnnotationsResponse = (Annotation | null)[];
+
+/** Optional parameters. */
+export interface BatchUpdateAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchUpdateAnnotations operation. */
+export type BatchUpdateAnnotationsResponse = (Annotation | null)[];
+
+/** Optional parameters. */
+export interface BatchDeleteAnnotationsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the batchDeleteAnnotations operation. */
+export type BatchDeleteAnnotationsOperationResponse =
+  BatchDeleteAnnotationsResponse;
 
 /** Optional parameters. */
 export interface GetAllResthookSubscriptionsOptionalParams
@@ -5297,6 +4890,23 @@ export interface ActivateResthookSubscriptionOptionalParams
 
 /** Contains response data for the activateResthookSubscription operation. */
 export type ActivateResthookSubscriptionResponse = ResthookSubscription;
+
+/** Optional parameters. */
+export interface CreateDocumentFromDataOptionalParams
+  extends coreClient.OperationOptions {
+  /** Whether to return the response in snake_case instead of camelCase. Default is false. */
+  snakeCase?: boolean;
+}
+
+/** Contains response data for the createDocumentFromData operation. */
+export type CreateDocumentFromDataResponse = DocumentUnion;
+
+/** Optional parameters. */
+export interface UpdateDocumentDataOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDocumentData operation. */
+export type UpdateDocumentDataResponse = DocumentUnion;
 
 /** Optional parameters. */
 export interface ListOccupationGroupsOptionalParams
@@ -5444,14 +5054,14 @@ export type CreateJobDescriptionSearchEmbedUrlResponse =
 /** Optional parameters. */
 export interface GetAllIndexesOptionalParams
   extends coreClient.OperationOptions {
-  /** Filter indices by name */
-  name?: string;
   /** The number of documents to skip before starting to collect the result set. */
   offset?: number;
   /** The numbers of results to return. */
   limit?: number;
+  /** Filter indices by name */
+  name?: string;
   /** Filter indices by a document type */
-  documentType?: Enum22;
+  documentType?: Enum17;
 }
 
 /** Contains response data for the getAllIndexes operation. */
@@ -5504,6 +5114,419 @@ export interface DeleteIndexDocumentOptionalParams
 /** Optional parameters. */
 export interface ReIndexDocumentOptionalParams
   extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetAllCollectionsOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getAllCollections operation. */
+export type GetAllCollectionsResponse = Collection[];
+
+/** Optional parameters. */
+export interface CreateCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createCollection operation. */
+export type CreateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export interface GetCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getCollection operation. */
+export type GetCollectionResponse = Collection;
+
+/** Optional parameters. */
+export interface UpdateCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateCollection operation. */
+export type UpdateCollectionResponse = Collection;
+
+/** Optional parameters. */
+export interface DeleteCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface CreateDataFieldForCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createDataFieldForCollection operation. */
+export type CreateDataFieldForCollectionResponse = DataField;
+
+/** Optional parameters. */
+export interface GetDataFieldForCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDataFieldForCollection operation. */
+export type GetDataFieldForCollectionResponse = CollectionField;
+
+/** Optional parameters. */
+export interface UpdateDataFieldForCollectionOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDataFieldForCollection operation. */
+export type UpdateDataFieldForCollectionResponse = CollectionField;
+
+/** Optional parameters. */
+export interface GetUsageByCollectionOptionalParams
+  extends coreClient.OperationOptions {
+  /** Start date of the period to retrieve. Format: YYYY-MM */
+  start?: string;
+  /** End date of the period to retrieve. Format: YYYY-MM */
+  end?: string;
+}
+
+/** Contains response data for the getUsageByCollection operation. */
+export type GetUsageByCollectionResponse = UsageByCollection[];
+
+/** Optional parameters. */
+export interface GetAllDataPointsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter by organization. */
+  organization?: string;
+  /** Allows you to include public data points in the response when you're filtering by organization. */
+  includePublic?: boolean;
+  /** Filter by extractor. */
+  extractor?: string;
+  /** Filter by slug. */
+  slug?: string;
+  /** Filter by description. */
+  description?: string;
+  /** Filter by annotation content type, e.g. text, integer, float, date, etc. */
+  annotationContentType?: string;
+  /** Filter by specific identifiers. */
+  identifier?: string[];
+}
+
+/** Contains response data for the getAllDataPoints operation. */
+export type GetAllDataPointsResponse = DataPoint[];
+
+/** Optional parameters. */
+export interface CreateDataPointOptionalParams
+  extends coreClient.OperationOptions {
+  body?: DataPointCreate;
+}
+
+/** Contains response data for the createDataPoint operation. */
+export type CreateDataPointResponse = DataPoint;
+
+/** Optional parameters. */
+export interface GetDataPointOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDataPoint operation. */
+export type GetDataPointResponse = DataPoint;
+
+/** Optional parameters. */
+export interface UpdateDataPointOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDataPoint operation. */
+export type UpdateDataPointResponse = DataPoint;
+
+/** Optional parameters. */
+export interface DeleteDataPointOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetDataPointChoicesOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter choices by searching for a substring. */
+  search?: string;
+}
+
+/** Contains response data for the getDataPointChoices operation. */
+export type GetDataPointChoicesResponse =
+  PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface CreateDataPointChoiceOptionalParams
+  extends coreClient.OperationOptions {
+  body?: DataPointChoiceCreate;
+}
+
+/** Contains response data for the createDataPointChoice operation. */
+export type CreateDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
+export interface GetDataPointChoiceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDataPointChoice operation. */
+export type GetDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
+export interface UpdateDataPointChoiceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateDataPointChoice operation. */
+export type UpdateDataPointChoiceResponse = DataPointChoice;
+
+/** Optional parameters. */
+export interface DeleteDataPointChoiceOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface ReplaceDataPointChoicesOptionalParams
+  extends coreClient.OperationOptions {
+  /** Request body for replacing choices of a data point. Either `collection` or `organization` is required. */
+  body?: DataPointChoiceReplaceRequest;
+}
+
+/** Contains response data for the replaceDataPointChoices operation. */
+export type ReplaceDataPointChoicesResponse = DataPointChoiceReplaceResponse;
+
+/** Optional parameters. */
+export interface GetAllApiUsersOptionalParams
+  extends coreClient.OperationOptions {
+  /** Filter by organization. */
+  organization?: string;
+}
+
+/** Contains response data for the getAllApiUsers operation. */
+export type GetAllApiUsersResponse =
+  Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface CreateApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createApiUser operation. */
+export type CreateApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
+export interface GetApiUserOptionalParams extends coreClient.OperationOptions {}
+
+/** Contains response data for the getApiUser operation. */
+export type GetApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export interface UpdateApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateApiUser operation. */
+export type UpdateApiUserResponse = ApiUserWithoutKey;
+
+/** Optional parameters. */
+export interface DeleteApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface RegenerateApiKeyForApiUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the regenerateApiKeyForApiUser operation. */
+export type RegenerateApiKeyForApiUserResponse = ApiUserWithKey;
+
+/** Optional parameters. */
+export interface GetAllDocumentSplittersOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter by organization. */
+  organization?: string;
+  /** Allows you to include public splitters in the response when you're filtering by organization. */
+  includePublic?: boolean;
+}
+
+/** Contains response data for the getAllDocumentSplitters operation. */
+export type GetAllDocumentSplittersResponse = DocumentSplitter[];
+
+/** Optional parameters. */
+export interface GetDocumentSplitterOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getDocumentSplitter operation. */
+export type GetDocumentSplitterResponse = DocumentSplitter;
+
+/** Optional parameters. */
+export interface EditDocumentPagesOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the editDocumentPages operation. */
+export type EditDocumentPagesResponse = Meta[];
+
+/** Optional parameters. */
+export interface GetAllExtractorsOptionalParams
+  extends coreClient.OperationOptions {
+  /** Filter by validatable. */
+  validatable?: boolean;
+  /** Filter by name. */
+  name?: string;
+  /** Whether to include Affinda's off-the-shelf extractors. */
+  includePublicExtractors?: boolean;
+}
+
+/** Contains response data for the getAllExtractors operation. */
+export type GetAllExtractorsResponse = Extractor[];
+
+/** Optional parameters. */
+export interface CreateExtractorOptionalParams
+  extends coreClient.OperationOptions {
+  body?: ExtractorCreate;
+}
+
+/** Contains response data for the createExtractor operation. */
+export type CreateExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export interface GetExtractorOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getExtractor operation. */
+export type GetExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export interface UpdateExtractorOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateExtractor operation. */
+export type UpdateExtractorResponse = Extractor;
+
+/** Optional parameters. */
+export interface DeleteExtractorOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetAllOrganizationMembershipsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter by organization. */
+  organization?: string;
+  /** Filter by role. */
+  role?: OrganizationRole;
+}
+
+/** Contains response data for the getAllOrganizationMemberships operation. */
+export type GetAllOrganizationMembershipsResponse =
+  PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface GetOrganizationMembershipOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getOrganizationMembership operation. */
+export type GetOrganizationMembershipResponse = OrganizationMembership;
+
+/** Optional parameters. */
+export interface UpdateOrganizationMembershipOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateOrganizationMembership operation. */
+export type UpdateOrganizationMembershipResponse = OrganizationMembership;
+
+/** Optional parameters. */
+export interface DeleteOrganizationMembershipOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetAllInvitationsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+  /** Filter by organization. */
+  organization?: string;
+  /** Filter by role. */
+  role?: OrganizationRole;
+  /** Filter by status. */
+  status?: InvitationStatus;
+}
+
+/** Contains response data for the getAllInvitations operation. */
+export type GetAllInvitationsResponse =
+  Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface CreateInvitationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createInvitation operation. */
+export type CreateInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export interface GetInvitationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getInvitation operation. */
+export type GetInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export interface UpdateInvitationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateInvitation operation. */
+export type UpdateInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export interface DeleteInvitationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface GetInvitationByTokenOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the getInvitationByToken operation. */
+export type GetInvitationByTokenResponse = Invitation;
+
+/** Optional parameters. */
+export interface RespondToInvitationOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the respondToInvitation operation. */
+export type RespondToInvitationResponse = Invitation;
+
+/** Optional parameters. */
+export interface CreateMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the createMapping operation. */
+export type CreateMappingResponse = Mapping;
+
+/** Optional parameters. */
+export interface ListMappingsOptionalParams
+  extends coreClient.OperationOptions {
+  /** The number of documents to skip before starting to collect the result set. */
+  offset?: number;
+  /** The numbers of results to return. */
+  limit?: number;
+}
+
+/** Contains response data for the listMappings operation. */
+export type ListMappingsResponse =
+  Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export interface GetMappingOptionalParams extends coreClient.OperationOptions {}
+
+/** Contains response data for the getMapping operation. */
+export type GetMappingResponse = Mapping;
+
+/** Optional parameters. */
+export interface DeleteMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Optional parameters. */
+export interface UpdateMappingOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the updateMapping operation. */
+export type UpdateMappingResponse = Mapping;
 
 /** Optional parameters. */
 export interface AffindaAPIOptionalParams

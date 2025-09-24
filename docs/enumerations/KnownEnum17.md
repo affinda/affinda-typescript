@@ -2,11 +2,11 @@
 
 ***
 
-[@affinda/affinda](../globals.md) / KnownEnum22
+[@affinda/affinda](../globals.md) / KnownEnum17
 
-# Enumeration: KnownEnum22
+# Enumeration: KnownEnum17
 
-Known values of [Enum22](../type-aliases/Enum22.md) that the service accepts.
+Known values of [Enum17](../type-aliases/Enum17.md) that the service accepts.
 
 ## Enumeration Members
 

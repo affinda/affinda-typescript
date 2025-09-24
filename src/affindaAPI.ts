@@ -6,6 +6,18 @@ import * as Mappers from "./models/mappers";
 import {
   Region,
   AffindaAPIOptionalParams,
+  GetAllDocumentsOptionalParams,
+  GetAllDocumentsResponse,
+  CreateDocumentOptionalParams,
+  CreateDocumentResponse,
+  GetDocumentOptionalParams,
+  GetDocumentResponse,
+  DocumentUpdate,
+  UpdateDocumentOptionalParams,
+  UpdateDocumentResponse,
+  DeleteDocumentOptionalParams,
+  GetRedactedDocumentOptionalParams,
+  GetRedactedDocumentResponse,
   GetAllWorkspacesOptionalParams,
   GetAllWorkspacesResponse,
   WorkspaceCreate,
@@ -27,119 +39,21 @@ import {
   GetWorkspaceMembershipOptionalParams,
   GetWorkspaceMembershipResponse,
   DeleteWorkspaceMembershipOptionalParams,
-  GetAllCollectionsOptionalParams,
-  GetAllCollectionsResponse,
-  CollectionCreate,
-  CreateCollectionOptionalParams,
-  CreateCollectionResponse,
-  GetCollectionOptionalParams,
-  GetCollectionResponse,
-  CollectionUpdate,
-  UpdateCollectionOptionalParams,
-  UpdateCollectionResponse,
-  DeleteCollectionOptionalParams,
-  DataFieldCreate,
-  CreateDataFieldForCollectionOptionalParams,
-  CreateDataFieldForCollectionResponse,
-  GetDataFieldForCollectionOptionalParams,
-  GetDataFieldForCollectionResponse,
-  CollectionField,
-  UpdateDataFieldForCollectionOptionalParams,
-  UpdateDataFieldForCollectionResponse,
-  GetUsageByCollectionOptionalParams,
-  GetUsageByCollectionResponse,
-  GetAllDocumentsOptionalParams,
-  GetAllDocumentsResponse,
-  CreateDocumentOptionalParams,
-  CreateDocumentResponse,
-  GetDocumentOptionalParams,
-  GetDocumentResponse,
-  DocumentUpdate,
-  UpdateDocumentOptionalParams,
-  UpdateDocumentResponse,
-  DeleteDocumentOptionalParams,
-  PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema,
-  UpdateDocumentDataOptionalParams,
-  UpdateDocumentDataResponse,
-  GetRedactedDocumentOptionalParams,
-  GetRedactedDocumentResponse,
-  BatchAddTagRequest,
-  BatchAddTagOptionalParams,
-  BatchRemoveTagRequest,
-  BatchRemoveTagOptionalParams,
-  GetAllValidationResultsOptionalParams,
-  GetAllValidationResultsResponse,
-  ValidationResultCreate,
-  CreateValidationResultOptionalParams,
-  CreateValidationResultResponse,
-  GetValidationResultOptionalParams,
-  GetValidationResultResponse,
-  ValidationResultUpdate,
-  UpdateValidationResultOptionalParams,
-  UpdateValidationResultResponse,
-  DeleteValidationResultOptionalParams,
-  BatchCreateValidationResultsOptionalParams,
-  BatchCreateValidationResultsResponse,
-  BatchDeleteValidationResultsRequest,
-  BatchDeleteValidationResultsOptionalParams,
-  GetAllDocumentSplittersOptionalParams,
-  GetAllDocumentSplittersResponse,
-  GetDocumentSplitterOptionalParams,
-  GetDocumentSplitterResponse,
-  DocumentEditRequest,
-  EditDocumentPagesOptionalParams,
-  EditDocumentPagesResponse,
-  GetAllExtractorsOptionalParams,
-  GetAllExtractorsResponse,
-  CreateExtractorOptionalParams,
-  CreateExtractorResponse,
-  GetExtractorOptionalParams,
-  GetExtractorResponse,
-  ExtractorUpdate,
-  UpdateExtractorOptionalParams,
-  UpdateExtractorResponse,
-  DeleteExtractorOptionalParams,
-  GetAllDataPointsOptionalParams,
-  GetAllDataPointsResponse,
-  CreateDataPointOptionalParams,
-  CreateDataPointResponse,
-  GetDataPointOptionalParams,
-  GetDataPointResponse,
-  DataPointUpdate,
-  UpdateDataPointOptionalParams,
-  UpdateDataPointResponse,
-  DeleteDataPointOptionalParams,
-  GetDataPointChoicesOptionalParams,
-  GetDataPointChoicesResponse,
-  CreateDataPointChoiceOptionalParams,
-  CreateDataPointChoiceResponse,
-  GetDataPointChoiceOptionalParams,
-  GetDataPointChoiceResponse,
-  DataPointChoiceUpdate,
-  UpdateDataPointChoiceOptionalParams,
-  UpdateDataPointChoiceResponse,
-  DeleteDataPointChoiceOptionalParams,
-  ReplaceDataPointChoicesOptionalParams,
-  ReplaceDataPointChoicesResponse,
-  GetAllAnnotationsOptionalParams,
-  GetAllAnnotationsResponse,
-  AnnotationCreate,
-  CreateAnnotationOptionalParams,
-  CreateAnnotationResponse,
-  GetAnnotationOptionalParams,
-  GetAnnotationResponse,
-  AnnotationUpdate,
-  UpdateAnnotationOptionalParams,
-  UpdateAnnotationResponse,
-  DeleteAnnotationOptionalParams,
-  DeleteAnnotationResponse,
-  BatchCreateAnnotationsOptionalParams,
-  BatchCreateAnnotationsResponse,
-  AnnotationBatchUpdate,
-  BatchUpdateAnnotationsOptionalParams,
-  BatchUpdateAnnotationsResponse,
-  BatchDeleteAnnotationsOptionalParams,
-  BatchDeleteAnnotationsOperationResponse,
+  GetDocumentTypesOptionalParams,
+  GetDocumentTypesResponse,
+  DocumentTypeCreate,
+  CreateDocumentTypeOptionalParams,
+  CreateDocumentTypeResponse,
+  GetDocumentTypeOptionalParams,
+  GetDocumentTypeResponse,
+  DocumentTypeUpdate,
+  UpdateDocumentTypeOptionalParams,
+  UpdateDocumentTypeResponse,
+  DeleteDocumentTypeOptionalParams,
+  JsonSchemaFromDocumentTypeOptionalParams,
+  JsonSchemaFromDocumentTypeResponse,
+  PydanticModelsFromDocumentTypeOptionalParams,
+  PydanticModelsFromDocumentTypeResponse,
   MappingDataSourceCreate,
   CreateMappingDataSourceOptionalParams,
   CreateMappingDataSourceResponse,
@@ -159,17 +73,30 @@ import {
   UpdateMappingDataSourceValueOptionalParams,
   UpdateMappingDataSourceValueResponse,
   DeleteMappingDataSourceValueOptionalParams,
-  MappingCreate,
-  CreateMappingOptionalParams,
-  CreateMappingResponse,
-  ListMappingsOptionalParams,
-  ListMappingsResponse,
-  GetMappingOptionalParams,
-  GetMappingResponse,
-  DeleteMappingOptionalParams,
-  MappingUpdate,
-  UpdateMappingOptionalParams,
-  UpdateMappingResponse,
+  GetAllValidationResultsOptionalParams,
+  GetAllValidationResultsResponse,
+  ValidationResultCreate,
+  CreateValidationResultOptionalParams,
+  CreateValidationResultResponse,
+  GetValidationResultOptionalParams,
+  GetValidationResultResponse,
+  ValidationResultUpdate,
+  UpdateValidationResultOptionalParams,
+  UpdateValidationResultResponse,
+  DeleteValidationResultOptionalParams,
+  BatchCreateValidationResultsOptionalParams,
+  BatchCreateValidationResultsResponse,
+  BatchDeleteValidationResultsRequest,
+  BatchDeleteValidationResultsOptionalParams,
+  GetAllOrganizationsOptionalParams,
+  GetAllOrganizationsResponse,
+  CreateOrganizationOptionalParams,
+  CreateOrganizationResponse,
+  GetOrganizationOptionalParams,
+  GetOrganizationResponse,
+  UpdateOrganizationOptionalParams,
+  UpdateOrganizationResponse,
+  DeleteOrganizationOptionalParams,
   GetAllTagsOptionalParams,
   GetAllTagsResponse,
   TagCreate,
@@ -181,67 +108,29 @@ import {
   UpdateTagOptionalParams,
   UpdateTagResponse,
   DeleteTagOptionalParams,
-  GetDocumentTypesOptionalParams,
-  GetDocumentTypesResponse,
-  DocumentTypeCreate,
-  CreateDocumentTypeOptionalParams,
-  CreateDocumentTypeResponse,
-  GetDocumentTypeOptionalParams,
-  GetDocumentTypeResponse,
-  DocumentTypeUpdate,
-  UpdateDocumentTypeOptionalParams,
-  UpdateDocumentTypeResponse,
-  DeleteDocumentTypeOptionalParams,
-  JsonSchemaFromDocumentTypeOptionalParams,
-  JsonSchemaFromDocumentTypeResponse,
-  PydanticModelsFromDocumentTypeOptionalParams,
-  PydanticModelsFromDocumentTypeResponse,
-  GetAllOrganizationsOptionalParams,
-  GetAllOrganizationsResponse,
-  CreateOrganizationOptionalParams,
-  CreateOrganizationResponse,
-  GetOrganizationOptionalParams,
-  GetOrganizationResponse,
-  UpdateOrganizationOptionalParams,
-  UpdateOrganizationResponse,
-  DeleteOrganizationOptionalParams,
-  GetAllOrganizationMembershipsOptionalParams,
-  GetAllOrganizationMembershipsResponse,
-  GetOrganizationMembershipOptionalParams,
-  GetOrganizationMembershipResponse,
-  OrganizationMembershipUpdate,
-  UpdateOrganizationMembershipOptionalParams,
-  UpdateOrganizationMembershipResponse,
-  DeleteOrganizationMembershipOptionalParams,
-  GetAllInvitationsOptionalParams,
-  GetAllInvitationsResponse,
-  InvitationCreate,
-  CreateInvitationOptionalParams,
-  CreateInvitationResponse,
-  GetInvitationOptionalParams,
-  GetInvitationResponse,
-  InvitationUpdate,
-  UpdateInvitationOptionalParams,
-  UpdateInvitationResponse,
-  DeleteInvitationOptionalParams,
-  GetInvitationByTokenOptionalParams,
-  GetInvitationByTokenResponse,
-  InvitationResponse,
-  RespondToInvitationOptionalParams,
-  RespondToInvitationResponse,
-  GetAllApiUsersOptionalParams,
-  GetAllApiUsersResponse,
-  ApiUserCreate,
-  CreateApiUserOptionalParams,
-  CreateApiUserResponse,
-  GetApiUserOptionalParams,
-  GetApiUserResponse,
-  ApiUserUpdate,
-  UpdateApiUserOptionalParams,
-  UpdateApiUserResponse,
-  DeleteApiUserOptionalParams,
-  RegenerateApiKeyForApiUserOptionalParams,
-  RegenerateApiKeyForApiUserResponse,
+  BatchAddTagRequest,
+  BatchAddTagOptionalParams,
+  BatchRemoveTagRequest,
+  BatchRemoveTagOptionalParams,
+  GetAllAnnotationsOptionalParams,
+  GetAllAnnotationsResponse,
+  AnnotationCreate,
+  CreateAnnotationOptionalParams,
+  CreateAnnotationResponse,
+  GetAnnotationOptionalParams,
+  GetAnnotationResponse,
+  AnnotationUpdate,
+  UpdateAnnotationOptionalParams,
+  UpdateAnnotationResponse,
+  DeleteAnnotationOptionalParams,
+  DeleteAnnotationResponse,
+  BatchCreateAnnotationsOptionalParams,
+  BatchCreateAnnotationsResponse,
+  AnnotationBatchUpdate,
+  BatchUpdateAnnotationsOptionalParams,
+  BatchUpdateAnnotationsResponse,
+  BatchDeleteAnnotationsOptionalParams,
+  BatchDeleteAnnotationsOperationResponse,
   GetAllResthookSubscriptionsOptionalParams,
   GetAllResthookSubscriptionsResponse,
   ResthookSubscriptionCreate,
@@ -255,6 +144,12 @@ import {
   DeleteResthookSubscriptionOptionalParams,
   ActivateResthookSubscriptionOptionalParams,
   ActivateResthookSubscriptionResponse,
+  DocumentCreateFromDataData,
+  CreateDocumentFromDataOptionalParams,
+  CreateDocumentFromDataResponse,
+  PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema,
+  UpdateDocumentDataOptionalParams,
+  UpdateDocumentDataResponse,
   ListOccupationGroupsOptionalParams,
   ListOccupationGroupsResponse,
   ResumeSearchParameters,
@@ -303,6 +198,114 @@ import {
   CreateIndexDocumentResponse,
   DeleteIndexDocumentOptionalParams,
   ReIndexDocumentOptionalParams,
+  GetAllCollectionsOptionalParams,
+  GetAllCollectionsResponse,
+  CollectionCreate,
+  CreateCollectionOptionalParams,
+  CreateCollectionResponse,
+  GetCollectionOptionalParams,
+  GetCollectionResponse,
+  CollectionUpdate,
+  UpdateCollectionOptionalParams,
+  UpdateCollectionResponse,
+  DeleteCollectionOptionalParams,
+  DataFieldCreate,
+  CreateDataFieldForCollectionOptionalParams,
+  CreateDataFieldForCollectionResponse,
+  GetDataFieldForCollectionOptionalParams,
+  GetDataFieldForCollectionResponse,
+  CollectionField,
+  UpdateDataFieldForCollectionOptionalParams,
+  UpdateDataFieldForCollectionResponse,
+  GetUsageByCollectionOptionalParams,
+  GetUsageByCollectionResponse,
+  GetAllDataPointsOptionalParams,
+  GetAllDataPointsResponse,
+  CreateDataPointOptionalParams,
+  CreateDataPointResponse,
+  GetDataPointOptionalParams,
+  GetDataPointResponse,
+  DataPointUpdate,
+  UpdateDataPointOptionalParams,
+  UpdateDataPointResponse,
+  DeleteDataPointOptionalParams,
+  GetDataPointChoicesOptionalParams,
+  GetDataPointChoicesResponse,
+  CreateDataPointChoiceOptionalParams,
+  CreateDataPointChoiceResponse,
+  GetDataPointChoiceOptionalParams,
+  GetDataPointChoiceResponse,
+  DataPointChoiceUpdate,
+  UpdateDataPointChoiceOptionalParams,
+  UpdateDataPointChoiceResponse,
+  DeleteDataPointChoiceOptionalParams,
+  ReplaceDataPointChoicesOptionalParams,
+  ReplaceDataPointChoicesResponse,
+  GetAllApiUsersOptionalParams,
+  GetAllApiUsersResponse,
+  ApiUserCreate,
+  CreateApiUserOptionalParams,
+  CreateApiUserResponse,
+  GetApiUserOptionalParams,
+  GetApiUserResponse,
+  ApiUserUpdate,
+  UpdateApiUserOptionalParams,
+  UpdateApiUserResponse,
+  DeleteApiUserOptionalParams,
+  RegenerateApiKeyForApiUserOptionalParams,
+  RegenerateApiKeyForApiUserResponse,
+  GetAllDocumentSplittersOptionalParams,
+  GetAllDocumentSplittersResponse,
+  GetDocumentSplitterOptionalParams,
+  GetDocumentSplitterResponse,
+  DocumentEditRequest,
+  EditDocumentPagesOptionalParams,
+  EditDocumentPagesResponse,
+  GetAllExtractorsOptionalParams,
+  GetAllExtractorsResponse,
+  CreateExtractorOptionalParams,
+  CreateExtractorResponse,
+  GetExtractorOptionalParams,
+  GetExtractorResponse,
+  ExtractorUpdate,
+  UpdateExtractorOptionalParams,
+  UpdateExtractorResponse,
+  DeleteExtractorOptionalParams,
+  GetAllOrganizationMembershipsOptionalParams,
+  GetAllOrganizationMembershipsResponse,
+  GetOrganizationMembershipOptionalParams,
+  GetOrganizationMembershipResponse,
+  OrganizationMembershipUpdate,
+  UpdateOrganizationMembershipOptionalParams,
+  UpdateOrganizationMembershipResponse,
+  DeleteOrganizationMembershipOptionalParams,
+  GetAllInvitationsOptionalParams,
+  GetAllInvitationsResponse,
+  InvitationCreate,
+  CreateInvitationOptionalParams,
+  CreateInvitationResponse,
+  GetInvitationOptionalParams,
+  GetInvitationResponse,
+  InvitationUpdate,
+  UpdateInvitationOptionalParams,
+  UpdateInvitationResponse,
+  DeleteInvitationOptionalParams,
+  GetInvitationByTokenOptionalParams,
+  GetInvitationByTokenResponse,
+  InvitationResponse,
+  RespondToInvitationOptionalParams,
+  RespondToInvitationResponse,
+  MappingCreate,
+  CreateMappingOptionalParams,
+  CreateMappingResponse,
+  ListMappingsOptionalParams,
+  ListMappingsResponse,
+  GetMappingOptionalParams,
+  GetMappingResponse,
+  DeleteMappingOptionalParams,
+  MappingUpdate,
+  UpdateMappingOptionalParams,
+  UpdateMappingResponse,
 } from "./models";
 
 export class AffindaAPI extends coreClient.ServiceClient {
@@ -330,7 +333,7 @@ export class AffindaAPI extends coreClient.ServiceClient {
       credential: credentials,
     };
 
-    const packageDetails = `azsdk-js-affinda/7.6.1`;
+    const packageDetails = `azsdk-js-affinda/7.7.0`;
     const userAgentPrefix =
       options.userAgentOptions && options.userAgentOptions.userAgentPrefix
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
@@ -382,6 +385,91 @@ export class AffindaAPI extends coreClient.ServiceClient {
 
     // Assigning values to Constant parameters
     this.region = options.region || "api";
+  }
+
+  /**
+   * Returns all the document summaries for that user, limited to 300 per page.
+   * @param options The options parameters.
+   */
+  getAllDocuments(
+    options?: GetAllDocumentsOptionalParams,
+  ): Promise<GetAllDocumentsResponse> {
+    return this.sendOperationRequest({ options }, getAllDocumentsOperationSpec);
+  }
+
+  /**
+   * Uploads a document for parsing via file upload or URL.
+   * When successful, returns an `identifier` in the response for subsequent use with the
+   * [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
+   * retrieve results.<br/>
+   * @param options The options parameters.
+   */
+  createDocument(
+    options?: CreateDocumentOptionalParams,
+  ): Promise<CreateDocumentResponse> {
+    return this.sendOperationRequest({ options }, createDocumentOperationSpec);
+  }
+
+  /**
+   * Return a specific document.
+   * @param identifier Document's identifier
+   * @param options The options parameters.
+   */
+  getDocument(
+    identifier: string,
+    options?: GetDocumentOptionalParams,
+  ): Promise<GetDocumentResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getDocumentOperationSpec,
+    );
+  }
+
+  /**
+   * Update file name, expiry time, or move to another collection, etc.
+   * @param identifier Document's identifier
+   * @param body Document data to update
+   * @param options The options parameters.
+   */
+  updateDocument(
+    identifier: string,
+    body: DocumentUpdate,
+    options?: UpdateDocumentOptionalParams,
+  ): Promise<UpdateDocumentResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateDocumentOperationSpec,
+    );
+  }
+
+  /**
+   * Deletes the specified document from the database.
+   * @param identifier Document's identifier
+   * @param options The options parameters.
+   */
+  deleteDocument(
+    identifier: string,
+    options?: DeleteDocumentOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteDocumentOperationSpec,
+    );
+  }
+
+  /**
+   * Get the redacted version of a document. The original document is not modified.
+   * @param identifier Document identifier
+   * @param options The options parameters.
+   */
+  getRedactedDocument(
+    identifier: string,
+    options?: GetRedactedDocumentOptionalParams,
+  ): Promise<GetRedactedDocumentResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getRedactedDocumentOperationSpec,
+    );
   }
 
   /**
@@ -535,283 +623,270 @@ export class AffindaAPI extends coreClient.ServiceClient {
   }
 
   /**
-   * Returns your collections.
-   * @param workspace Filter by workspace.
+   * Returns a list of document types that the user has access to.
    * @param options The options parameters.
    */
-  getAllCollections(
-    workspace: string,
-    options?: GetAllCollectionsOptionalParams,
-  ): Promise<GetAllCollectionsResponse> {
+  getDocumentTypes(
+    options?: GetDocumentTypesOptionalParams,
+  ): Promise<GetDocumentTypesResponse> {
     return this.sendOperationRequest(
-      { workspace, options },
-      getAllCollectionsOperationSpec,
+      { options },
+      getDocumentTypesOperationSpec,
     );
   }
 
   /**
-   * Create a collection
+   * Create a new document type in the specified organization.
    * @param body
    * @param options The options parameters.
    */
-  createCollection(
-    body: CollectionCreate,
-    options?: CreateCollectionOptionalParams,
-  ): Promise<CreateCollectionResponse> {
+  createDocumentType(
+    body: DocumentTypeCreate,
+    options?: CreateDocumentTypeOptionalParams,
+  ): Promise<CreateDocumentTypeResponse> {
     return this.sendOperationRequest(
       { body, options },
-      createCollectionOperationSpec,
+      createDocumentTypeOperationSpec,
     );
   }
 
   /**
-   * Return a specific collection.
-   * @param identifier Collection's identifier
+   * Returns the details of a specific document type.
+   * @param identifier Document type identifier
    * @param options The options parameters.
    */
-  getCollection(
+  getDocumentType(
     identifier: string,
-    options?: GetCollectionOptionalParams,
-  ): Promise<GetCollectionResponse> {
+    options?: GetDocumentTypeOptionalParams,
+  ): Promise<GetDocumentTypeResponse> {
     return this.sendOperationRequest(
       { identifier, options },
-      getCollectionOperationSpec,
+      getDocumentTypeOperationSpec,
     );
   }
 
   /**
-   * Update data of a collection.
-   * @param identifier Collection's identifier
-   * @param body Collection data to update
+   * Update an existing document type.
+   * @param identifier Document type identifier
+   * @param body
    * @param options The options parameters.
    */
-  updateCollection(
+  updateDocumentType(
     identifier: string,
-    body: CollectionUpdate,
-    options?: UpdateCollectionOptionalParams,
-  ): Promise<UpdateCollectionResponse> {
+    body: DocumentTypeUpdate,
+    options?: UpdateDocumentTypeOptionalParams,
+  ): Promise<UpdateDocumentTypeResponse> {
     return this.sendOperationRequest(
       { identifier, body, options },
-      updateCollectionOperationSpec,
+      updateDocumentTypeOperationSpec,
     );
   }
 
   /**
-   * Deletes the specified collection from the database.
-   * @param identifier Collection's identifier
+   * Delete a document type.
+   * @param identifier Document type identifier
    * @param options The options parameters.
    */
-  deleteCollection(
+  deleteDocumentType(
     identifier: string,
-    options?: DeleteCollectionOptionalParams,
+    options?: DeleteDocumentTypeOptionalParams,
   ): Promise<void> {
     return this.sendOperationRequest(
       { identifier, options },
-      deleteCollectionOperationSpec,
+      deleteDocumentTypeOperationSpec,
     );
   }
 
   /**
-   * Create data field for a collection along with a new data point.
-   * @param identifier Collection's identifier
-   * @param body The data field and data point to be created.
+   * Generate JSON schema from a document type.
+   * @param identifier Document type's identifier
    * @param options The options parameters.
    */
-  createDataFieldForCollection(
+  jsonSchemaFromDocumentType(
     identifier: string,
-    body: DataFieldCreate,
-    options?: CreateDataFieldForCollectionOptionalParams,
-  ): Promise<CreateDataFieldForCollectionResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      createDataFieldForCollectionOperationSpec,
-    );
-  }
-
-  /**
-   * Get a data field for a collection assosciated with a data point
-   * @param identifier Collection's identifier
-   * @param datapointIdentifier Datapoint's identifier
-   * @param options The options parameters.
-   */
-  getDataFieldForCollection(
-    identifier: string,
-    datapointIdentifier: string,
-    options?: GetDataFieldForCollectionOptionalParams,
-  ): Promise<GetDataFieldForCollectionResponse> {
-    return this.sendOperationRequest(
-      { identifier, datapointIdentifier, options },
-      getDataFieldForCollectionOperationSpec,
-    );
-  }
-
-  /**
-   * Update data field for a collection assosciated with a data point
-   * @param identifier Collection's identifier
-   * @param datapointIdentifier Datapoint's identifier
-   * @param body Data field properties to update
-   * @param options The options parameters.
-   */
-  updateDataFieldForCollection(
-    identifier: string,
-    datapointIdentifier: string,
-    body: CollectionField,
-    options?: UpdateDataFieldForCollectionOptionalParams,
-  ): Promise<UpdateDataFieldForCollectionResponse> {
-    return this.sendOperationRequest(
-      { identifier, datapointIdentifier, body, options },
-      updateDataFieldForCollectionOperationSpec,
-    );
-  }
-
-  /**
-   * Return monthly credits consumption of a collection.
-   * @param identifier Collection's identifier
-   * @param options The options parameters.
-   */
-  getUsageByCollection(
-    identifier: string,
-    options?: GetUsageByCollectionOptionalParams,
-  ): Promise<GetUsageByCollectionResponse> {
+    options?: JsonSchemaFromDocumentTypeOptionalParams,
+  ): Promise<JsonSchemaFromDocumentTypeResponse> {
     return this.sendOperationRequest(
       { identifier, options },
-      getUsageByCollectionOperationSpec,
+      jsonSchemaFromDocumentTypeOperationSpec,
     );
   }
 
   /**
-   * Returns all the document summaries for that user, limited to 300 per page.
+   * Generate Pydantic models from a document type.
+   * @param identifier Document type's identifier
    * @param options The options parameters.
    */
-  getAllDocuments(
-    options?: GetAllDocumentsOptionalParams,
-  ): Promise<GetAllDocumentsResponse> {
-    return this.sendOperationRequest({ options }, getAllDocumentsOperationSpec);
-  }
-
-  /**
-   * Uploads a document for parsing. When successful, returns an `identifier` in the response for
-   * subsequent use with the [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check
-   * processing status and retrieve results.<br/>
-   * @param options The options parameters.
-   */
-  createDocument(
-    options?: CreateDocumentOptionalParams,
-  ): Promise<CreateDocumentResponse> {
-    return this.sendOperationRequest({ options }, createDocumentOperationSpec);
-  }
-
-  /**
-   * Return a specific document.
-   * @param identifier Document's identifier
-   * @param options The options parameters.
-   */
-  getDocument(
+  pydanticModelsFromDocumentType(
     identifier: string,
-    options?: GetDocumentOptionalParams,
-  ): Promise<GetDocumentResponse> {
+    options?: PydanticModelsFromDocumentTypeOptionalParams,
+  ): Promise<PydanticModelsFromDocumentTypeResponse> {
     return this.sendOperationRequest(
       { identifier, options },
-      getDocumentOperationSpec,
+      pydanticModelsFromDocumentTypeOperationSpec,
     );
   }
 
   /**
-   * Update file name, expiry time, or move to another collection, etc.
-   * @param identifier Document's identifier
-   * @param body Document data to update
+   * Create a custom mapping data source.
+   * @param body A mapping data source is used to map from raw data found by our AI models to records in
+   *             your database.
    * @param options The options parameters.
    */
-  updateDocument(
-    identifier: string,
-    body: DocumentUpdate,
-    options?: UpdateDocumentOptionalParams,
-  ): Promise<UpdateDocumentResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateDocumentOperationSpec,
-    );
-  }
-
-  /**
-   * Deletes the specified document from the database.
-   * @param identifier Document's identifier
-   * @param options The options parameters.
-   */
-  deleteDocument(
-    identifier: string,
-    options?: DeleteDocumentOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteDocumentOperationSpec,
-    );
-  }
-
-  /**
-   * Update data of a document.
-   * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
-   * /annotations/{id}` endpoint or the `POST /annotations/batch_update` endpoint.
-   * @param identifier Resume or Job Description identifier
-   * @param body Resume data to update
-   * @param options The options parameters.
-   */
-  updateDocumentData(
-    identifier: string,
-    body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema,
-    options?: UpdateDocumentDataOptionalParams,
-  ): Promise<UpdateDocumentDataResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateDocumentDataOperationSpec,
-    );
-  }
-
-  /**
-   * Get the redacted version of a document. The original document is not modified.
-   * @param identifier Document identifier
-   * @param options The options parameters.
-   */
-  getRedactedDocument(
-    identifier: string,
-    options?: GetRedactedDocumentOptionalParams,
-  ): Promise<GetRedactedDocumentResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getRedactedDocumentOperationSpec,
-    );
-  }
-
-  /**
-   * Add a tag to documents.
-   * Tags are used to group documents together.
-   * Tags can be used to filter documents.
-   *
-   * @param body Specify the tag and the documents to tag
-   * @param options The options parameters.
-   */
-  batchAddTag(
-    body: BatchAddTagRequest,
-    options?: BatchAddTagOptionalParams,
-  ): Promise<void> {
+  createMappingDataSource(
+    body: MappingDataSourceCreate,
+    options?: CreateMappingDataSourceOptionalParams,
+  ): Promise<CreateMappingDataSourceResponse> {
     return this.sendOperationRequest(
       { body, options },
-      batchAddTagOperationSpec,
+      createMappingDataSourceOperationSpec,
     );
   }
 
   /**
-   * Remove a tag from documents.
-   * @param body Specify the tag and the documents to remove the tag from
+   * Returns the list of all custom mapping data sources.
    * @param options The options parameters.
    */
-  batchRemoveTag(
-    body: BatchRemoveTagRequest,
-    options?: BatchRemoveTagOptionalParams,
+  listMappingDataSources(
+    options?: ListMappingDataSourcesOptionalParams,
+  ): Promise<ListMappingDataSourcesResponse> {
+    return this.sendOperationRequest(
+      { options },
+      listMappingDataSourcesOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific mapping data source.
+   * @param identifier Data source's identifier
+   * @param options The options parameters.
+   */
+  getMappingDataSource(
+    identifier: string,
+    options?: GetMappingDataSourceOptionalParams,
+  ): Promise<GetMappingDataSourceResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getMappingDataSourceOperationSpec,
+    );
+  }
+
+  /**
+   * Delete the specified mapping data source from the database.
+   * @param identifier Data source's identifier
+   * @param options The options parameters.
+   */
+  deleteMappingDataSource(
+    identifier: string,
+    options?: DeleteMappingDataSourceOptionalParams,
   ): Promise<void> {
     return this.sendOperationRequest(
-      { body, options },
-      batchRemoveTagOperationSpec,
+      { identifier, options },
+      deleteMappingDataSourceOperationSpec,
+    );
+  }
+
+  /**
+   * Returns the list of all values in a mapping data source
+   * @param identifier Data source's identifier
+   * @param options The options parameters.
+   */
+  listMappingDataSourceValues(
+    identifier: string,
+    options?: ListMappingDataSourceValuesOptionalParams,
+  ): Promise<ListMappingDataSourceValuesResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      listMappingDataSourceValuesOperationSpec,
+    );
+  }
+
+  /**
+   * Replaces the list of all values in a mapping data source
+   * Note: For large data sources (e.g. > 1000 values), it can take a few minutes after the request
+   * completes for the new values to be searchable.
+   * @param identifier Data source's identifier
+   * @param body Array of AnyObject
+   * @param options The options parameters.
+   */
+  replaceMappingDataSourceValues(
+    identifier: string,
+    body: Record<string, unknown>[],
+    options?: ReplaceMappingDataSourceValuesOptionalParams,
+  ): Promise<ReplaceMappingDataSourceValuesResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      replaceMappingDataSourceValuesOperationSpec,
+    );
+  }
+
+  /**
+   * Adds a value to a mapping data source
+   * @param identifier Data source's identifier
+   * @param body Any object
+   * @param options The options parameters.
+   */
+  addMappingDataSourceValue(
+    identifier: string,
+    body: Record<string, unknown>,
+    options?: AddMappingDataSourceValueOptionalParams,
+  ): Promise<AddMappingDataSourceValueResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      addMappingDataSourceValueOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific mapping dta source value.
+   * @param identifier Data source's identifier
+   * @param value Data Source Value's value
+   * @param options The options parameters.
+   */
+  getMappingDataSourceValue(
+    identifier: string,
+    value: string,
+    options?: GetMappingDataSourceValueOptionalParams,
+  ): Promise<GetMappingDataSourceValueResponse> {
+    return this.sendOperationRequest(
+      { identifier, value, options },
+      getMappingDataSourceValueOperationSpec,
+    );
+  }
+
+  /**
+   * Update the specified mapping data source value.
+   * @param identifier Data source's identifier
+   * @param value Data Source's value
+   * @param body Any object
+   * @param options The options parameters.
+   */
+  updateMappingDataSourceValue(
+    identifier: string,
+    value: string,
+    body: Record<string, unknown>,
+    options?: UpdateMappingDataSourceValueOptionalParams,
+  ): Promise<UpdateMappingDataSourceValueResponse> {
+    return this.sendOperationRequest(
+      { identifier, value, body, options },
+      updateMappingDataSourceValueOperationSpec,
+    );
+  }
+
+  /**
+   * Delete the specified mapping data source value from the database.
+   * @param identifier Data source's identifier
+   * @param value Data Source Value's value
+   * @param options The options parameters.
+   */
+  deleteMappingDataSourceValue(
+    identifier: string,
+    value: string,
+    options?: DeleteMappingDataSourceValueOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, value, options },
+      deleteMappingDataSourceValueOperationSpec,
     );
   }
 
@@ -923,284 +998,163 @@ export class AffindaAPI extends coreClient.ServiceClient {
   }
 
   /**
-   * Returns all the document splitters visible to the user.
+   * Returns all the organizations
    * @param options The options parameters.
    */
-  getAllDocumentSplitters(
-    options?: GetAllDocumentSplittersOptionalParams,
-  ): Promise<GetAllDocumentSplittersResponse> {
+  getAllOrganizations(
+    options?: GetAllOrganizationsOptionalParams,
+  ): Promise<GetAllOrganizationsResponse> {
     return this.sendOperationRequest(
       { options },
-      getAllDocumentSplittersOperationSpec,
+      getAllOrganizationsOperationSpec,
     );
   }
 
   /**
-   * Return a specific document splitter.
-   * @param identifier Document splitter's identifier
+   * Create a new organization.
+   * @param name
    * @param options The options parameters.
    */
-  getDocumentSplitter(
+  createOrganization(
+    name: string,
+    options?: CreateOrganizationOptionalParams,
+  ): Promise<CreateOrganizationResponse> {
+    return this.sendOperationRequest(
+      { name, options },
+      createOrganizationOperationSpec,
+    );
+  }
+
+  /**
+   * Get detail of an organization.
+   * @param identifier Organization identifier.
+   * @param options The options parameters.
+   */
+  getOrganization(
     identifier: string,
-    options?: GetDocumentSplitterOptionalParams,
-  ): Promise<GetDocumentSplitterResponse> {
+    options?: GetOrganizationOptionalParams,
+  ): Promise<GetOrganizationResponse> {
     return this.sendOperationRequest(
       { identifier, options },
-      getDocumentSplitterOperationSpec,
+      getOrganizationOperationSpec,
     );
   }
 
   /**
-   * Split / merge / rotate / delete pages of a document.
-   * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
-   * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
-   *
-   * @param identifier Document's identifier
-   * @param body Describe how the pages should be edited
+   * Update the detail of an organization.
+   * @param identifier Organization identifier.
    * @param options The options parameters.
    */
-  editDocumentPages(
+  updateOrganization(
     identifier: string,
-    body: DocumentEditRequest,
-    options?: EditDocumentPagesOptionalParams,
-  ): Promise<EditDocumentPagesResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      editDocumentPagesOperationSpec,
-    );
-  }
-
-  /**
-   * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
-   * @param organization Filter by organization.
-   * @param options The options parameters.
-   */
-  getAllExtractors(
-    organization: string,
-    options?: GetAllExtractorsOptionalParams,
-  ): Promise<GetAllExtractorsResponse> {
-    return this.sendOperationRequest(
-      { organization, options },
-      getAllExtractorsOperationSpec,
-    );
-  }
-
-  /**
-   * Create a custom extractor.
-   * @param options The options parameters.
-   */
-  createExtractor(
-    options?: CreateExtractorOptionalParams,
-  ): Promise<CreateExtractorResponse> {
-    return this.sendOperationRequest({ options }, createExtractorOperationSpec);
-  }
-
-  /**
-   * Return a specific extractor.
-   * @param identifier Extractor's identifier
-   * @param options The options parameters.
-   */
-  getExtractor(
-    identifier: string,
-    options?: GetExtractorOptionalParams,
-  ): Promise<GetExtractorResponse> {
+    options?: UpdateOrganizationOptionalParams,
+  ): Promise<UpdateOrganizationResponse> {
     return this.sendOperationRequest(
       { identifier, options },
-      getExtractorOperationSpec,
+      updateOrganizationOperationSpec,
     );
   }
 
   /**
-   * Update data of an extractor.
-   * @param identifier Extractor's identifier
-   * @param body Extractor data to update
+   * Delete the specified organization from the database.
+   * @param identifier Organization identifier.
    * @param options The options parameters.
    */
-  updateExtractor(
+  deleteOrganization(
     identifier: string,
-    body: ExtractorUpdate,
-    options?: UpdateExtractorOptionalParams,
-  ): Promise<UpdateExtractorResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateExtractorOperationSpec,
-    );
-  }
-
-  /**
-   * Deletes the specified extractor from the database.
-   * @param identifier Extractor's identifier
-   * @param options The options parameters.
-   */
-  deleteExtractor(
-    identifier: string,
-    options?: DeleteExtractorOptionalParams,
+    options?: DeleteOrganizationOptionalParams,
   ): Promise<void> {
     return this.sendOperationRequest(
       { identifier, options },
-      deleteExtractorOperationSpec,
+      deleteOrganizationOperationSpec,
     );
   }
 
   /**
-   * Returns your custom data points as well as Affinda's off-the-shelf data points.
+   * Returns your tags.
    * @param options The options parameters.
    */
-  getAllDataPoints(
-    options?: GetAllDataPointsOptionalParams,
-  ): Promise<GetAllDataPointsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllDataPointsOperationSpec,
-    );
+  getAllTags(options?: GetAllTagsOptionalParams): Promise<GetAllTagsResponse> {
+    return this.sendOperationRequest({ options }, getAllTagsOperationSpec);
   }
 
   /**
-   * Create a custom data point.
+   * Create a tag
+   * @param body
    * @param options The options parameters.
    */
-  createDataPoint(
-    options?: CreateDataPointOptionalParams,
-  ): Promise<CreateDataPointResponse> {
-    return this.sendOperationRequest({ options }, createDataPointOperationSpec);
+  createTag(
+    body: TagCreate,
+    options?: CreateTagOptionalParams,
+  ): Promise<CreateTagResponse> {
+    return this.sendOperationRequest({ body, options }, createTagOperationSpec);
   }
 
   /**
-   * Return a specific data point.
-   * @param identifier Data point's identifier
+   * Return a specific tag.
+   * @param id Tag's ID
    * @param options The options parameters.
    */
-  getDataPoint(
-    identifier: string,
-    options?: GetDataPointOptionalParams,
-  ): Promise<GetDataPointResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getDataPointOperationSpec,
-    );
+  getTag(id: number, options?: GetTagOptionalParams): Promise<GetTagResponse> {
+    return this.sendOperationRequest({ id, options }, getTagOperationSpec);
   }
 
   /**
-   * Update data of a data point.
-   * @param identifier DataPoint's identifier
-   * @param body Data point to update
+   * Update data of an tag.
+   * @param id Tag's ID
+   * @param body Tag data to update
    * @param options The options parameters.
    */
-  updateDataPoint(
-    identifier: string,
-    body: DataPointUpdate,
-    options?: UpdateDataPointOptionalParams,
-  ): Promise<UpdateDataPointResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateDataPointOperationSpec,
-    );
-  }
-
-  /**
-   * Deletes the specified data point from the database.
-   * @param identifier DataPoint's identifier
-   * @param options The options parameters.
-   */
-  deleteDataPoint(
-    identifier: string,
-    options?: DeleteDataPointOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteDataPointOperationSpec,
-    );
-  }
-
-  /**
-   * Returns available choices for a specific enum data point.
-   * @param dataPoint The data point to get choices for.
-   * @param collection The collection to get choices for.
-   * @param options The options parameters.
-   */
-  getDataPointChoices(
-    dataPoint: string,
-    collection: string,
-    options?: GetDataPointChoicesOptionalParams,
-  ): Promise<GetDataPointChoicesResponse> {
-    return this.sendOperationRequest(
-      { dataPoint, collection, options },
-      getDataPointChoicesOperationSpec,
-    );
-  }
-
-  /**
-   * Create a custom data point choice.
-   * @param options The options parameters.
-   */
-  createDataPointChoice(
-    options?: CreateDataPointChoiceOptionalParams,
-  ): Promise<CreateDataPointChoiceResponse> {
-    return this.sendOperationRequest(
-      { options },
-      createDataPointChoiceOperationSpec,
-    );
-  }
-
-  /**
-   * Return a specific data point choice.
-   * @param id Data point choice's ID
-   * @param options The options parameters.
-   */
-  getDataPointChoice(
+  updateTag(
     id: number,
-    options?: GetDataPointChoiceOptionalParams,
-  ): Promise<GetDataPointChoiceResponse> {
-    return this.sendOperationRequest(
-      { id, options },
-      getDataPointChoiceOperationSpec,
-    );
-  }
-
-  /**
-   * Update data of a data point choice.
-   * @param id Data point choice's ID
-   * @param body Data point choice to update
-   * @param options The options parameters.
-   */
-  updateDataPointChoice(
-    id: number,
-    body: DataPointChoiceUpdate,
-    options?: UpdateDataPointChoiceOptionalParams,
-  ): Promise<UpdateDataPointChoiceResponse> {
+    body: TagUpdate,
+    options?: UpdateTagOptionalParams,
+  ): Promise<UpdateTagResponse> {
     return this.sendOperationRequest(
       { id, body, options },
-      updateDataPointChoiceOperationSpec,
+      updateTagOperationSpec,
     );
   }
 
   /**
-   * Deletes the specified data point choice from the database.
-   * @param id Data point choice's ID
+   * Deletes the specified tag from the database.
+   * @param id Tag's ID
    * @param options The options parameters.
    */
-  deleteDataPointChoice(
-    id: number,
-    options?: DeleteDataPointChoiceOptionalParams,
+  deleteTag(id: number, options?: DeleteTagOptionalParams): Promise<void> {
+    return this.sendOperationRequest({ id, options }, deleteTagOperationSpec);
+  }
+
+  /**
+   * Add a tag to documents.
+   * Tags are used to group documents together.
+   * Tags can be used to filter documents.
+   *
+   * @param body Specify the tag and the documents to tag
+   * @param options The options parameters.
+   */
+  batchAddTag(
+    body: BatchAddTagRequest,
+    options?: BatchAddTagOptionalParams,
   ): Promise<void> {
     return this.sendOperationRequest(
-      { id, options },
-      deleteDataPointChoiceOperationSpec,
+      { body, options },
+      batchAddTagOperationSpec,
     );
   }
 
   /**
-   * Replace choices of a data point. Existing choices and incoming choices are matched base on their
-   * `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
-   * choices will be deleted.
+   * Remove a tag from documents.
+   * @param body Specify the tag and the documents to remove the tag from
    * @param options The options parameters.
    */
-  replaceDataPointChoices(
-    options?: ReplaceDataPointChoicesOptionalParams,
-  ): Promise<ReplaceDataPointChoicesResponse> {
+  batchRemoveTag(
+    body: BatchRemoveTagRequest,
+    options?: BatchRemoveTagOptionalParams,
+  ): Promise<void> {
     return this.sendOperationRequest(
-      { options },
-      replaceDataPointChoicesOperationSpec,
+      { body, options },
+      batchRemoveTagOperationSpec,
     );
   }
 
@@ -1327,730 +1281,6 @@ export class AffindaAPI extends coreClient.ServiceClient {
   }
 
   /**
-   * Create a custom mapping data source.
-   * @param body A mapping data source is used to map from raw data found by our AI models to records in
-   *             your database.
-   * @param options The options parameters.
-   */
-  createMappingDataSource(
-    body: MappingDataSourceCreate,
-    options?: CreateMappingDataSourceOptionalParams,
-  ): Promise<CreateMappingDataSourceResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createMappingDataSourceOperationSpec,
-    );
-  }
-
-  /**
-   * Returns the list of all custom mapping data sources.
-   * @param options The options parameters.
-   */
-  listMappingDataSources(
-    options?: ListMappingDataSourcesOptionalParams,
-  ): Promise<ListMappingDataSourcesResponse> {
-    return this.sendOperationRequest(
-      { options },
-      listMappingDataSourcesOperationSpec,
-    );
-  }
-
-  /**
-   * Return a specific mapping data source.
-   * @param identifier Mapping data source's identifier
-   * @param options The options parameters.
-   */
-  getMappingDataSource(
-    identifier: string,
-    options?: GetMappingDataSourceOptionalParams,
-  ): Promise<GetMappingDataSourceResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getMappingDataSourceOperationSpec,
-    );
-  }
-
-  /**
-   * Delete the specified mapping data source from the database.
-   * @param identifier Mapping data source's identifier
-   * @param options The options parameters.
-   */
-  deleteMappingDataSource(
-    identifier: string,
-    options?: DeleteMappingDataSourceOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteMappingDataSourceOperationSpec,
-    );
-  }
-
-  /**
-   * Returns the list of all values in a mapping data source
-   * @param identifier Mapping data source's identifier
-   * @param options The options parameters.
-   */
-  listMappingDataSourceValues(
-    identifier: string,
-    options?: ListMappingDataSourceValuesOptionalParams,
-  ): Promise<ListMappingDataSourceValuesResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      listMappingDataSourceValuesOperationSpec,
-    );
-  }
-
-  /**
-   * Replaces the list of all values in a mapping data source
-   * @param identifier Mapping data source's identifier
-   * @param body Array of AnyObject
-   * @param options The options parameters.
-   */
-  replaceMappingDataSourceValues(
-    identifier: string,
-    body: Record<string, unknown>[],
-    options?: ReplaceMappingDataSourceValuesOptionalParams,
-  ): Promise<ReplaceMappingDataSourceValuesResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      replaceMappingDataSourceValuesOperationSpec,
-    );
-  }
-
-  /**
-   * Adds a value to a mapping data source
-   * @param identifier Mapping data source's identifier
-   * @param body Any object
-   * @param options The options parameters.
-   */
-  addMappingDataSourceValue(
-    identifier: string,
-    body: Record<string, unknown>,
-    options?: AddMappingDataSourceValueOptionalParams,
-  ): Promise<AddMappingDataSourceValueResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      addMappingDataSourceValueOperationSpec,
-    );
-  }
-
-  /**
-   * Return a specific mapping dta source value.
-   * @param identifier Mapping data source's identifier
-   * @param value Mapping Data Source Value's value
-   * @param options The options parameters.
-   */
-  getMappingDataSourceValue(
-    identifier: string,
-    value: string,
-    options?: GetMappingDataSourceValueOptionalParams,
-  ): Promise<GetMappingDataSourceValueResponse> {
-    return this.sendOperationRequest(
-      { identifier, value, options },
-      getMappingDataSourceValueOperationSpec,
-    );
-  }
-
-  /**
-   * Update the specified mapping data source value.
-   * @param identifier Mapping data source's identifier
-   * @param value Mapping Data Source's value
-   * @param body Any object
-   * @param options The options parameters.
-   */
-  updateMappingDataSourceValue(
-    identifier: string,
-    value: string,
-    body: Record<string, unknown>,
-    options?: UpdateMappingDataSourceValueOptionalParams,
-  ): Promise<UpdateMappingDataSourceValueResponse> {
-    return this.sendOperationRequest(
-      { identifier, value, body, options },
-      updateMappingDataSourceValueOperationSpec,
-    );
-  }
-
-  /**
-   * Delete the specified mapping data source value from the database.
-   * @param identifier Mapping data source's identifier
-   * @param value Mapping Data Source Value's value
-   * @param options The options parameters.
-   */
-  deleteMappingDataSourceValue(
-    identifier: string,
-    value: string,
-    options?: DeleteMappingDataSourceValueOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, value, options },
-      deleteMappingDataSourceValueOperationSpec,
-    );
-  }
-
-  /**
-   * Create a custom mapping.
-   * @param body
-   * @param options The options parameters.
-   */
-  createMapping(
-    body: MappingCreate,
-    options?: CreateMappingOptionalParams,
-  ): Promise<CreateMappingResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createMappingOperationSpec,
-    );
-  }
-
-  /**
-   * Returns the list of all custom data mappings.
-   * @param mappingDataSource Mapping data source's identifier
-   * @param options The options parameters.
-   */
-  listMappings(
-    mappingDataSource: string,
-    options?: ListMappingsOptionalParams,
-  ): Promise<ListMappingsResponse> {
-    return this.sendOperationRequest(
-      { mappingDataSource, options },
-      listMappingsOperationSpec,
-    );
-  }
-
-  /**
-   * Return a specific mapping.
-   * @param identifier Mapping's identifier
-   * @param options The options parameters.
-   */
-  getMapping(
-    identifier: string,
-    options?: GetMappingOptionalParams,
-  ): Promise<GetMappingResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getMappingOperationSpec,
-    );
-  }
-
-  /**
-   * Delete the specified mapping from the database.
-   * @param identifier Mapping's identifier
-   * @param options The options parameters.
-   */
-  deleteMapping(
-    identifier: string,
-    options?: DeleteMappingOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteMappingOperationSpec,
-    );
-  }
-
-  /**
-   * Updates a specific mapping.
-   * @param identifier Mapping's identifier
-   * @param body
-   * @param options The options parameters.
-   */
-  updateMapping(
-    identifier: string,
-    body: MappingUpdate,
-    options?: UpdateMappingOptionalParams,
-  ): Promise<UpdateMappingResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateMappingOperationSpec,
-    );
-  }
-
-  /**
-   * Returns your tags.
-   * @param options The options parameters.
-   */
-  getAllTags(options?: GetAllTagsOptionalParams): Promise<GetAllTagsResponse> {
-    return this.sendOperationRequest({ options }, getAllTagsOperationSpec);
-  }
-
-  /**
-   * Create a tag
-   * @param body
-   * @param options The options parameters.
-   */
-  createTag(
-    body: TagCreate,
-    options?: CreateTagOptionalParams,
-  ): Promise<CreateTagResponse> {
-    return this.sendOperationRequest({ body, options }, createTagOperationSpec);
-  }
-
-  /**
-   * Return a specific tag.
-   * @param id Tag's ID
-   * @param options The options parameters.
-   */
-  getTag(id: number, options?: GetTagOptionalParams): Promise<GetTagResponse> {
-    return this.sendOperationRequest({ id, options }, getTagOperationSpec);
-  }
-
-  /**
-   * Update data of an tag.
-   * @param id Tag's ID
-   * @param body Tag data to update
-   * @param options The options parameters.
-   */
-  updateTag(
-    id: number,
-    body: TagUpdate,
-    options?: UpdateTagOptionalParams,
-  ): Promise<UpdateTagResponse> {
-    return this.sendOperationRequest(
-      { id, body, options },
-      updateTagOperationSpec,
-    );
-  }
-
-  /**
-   * Deletes the specified tag from the database.
-   * @param id Tag's ID
-   * @param options The options parameters.
-   */
-  deleteTag(id: number, options?: DeleteTagOptionalParams): Promise<void> {
-    return this.sendOperationRequest({ id, options }, deleteTagOperationSpec);
-  }
-
-  /**
-   * Returns a list of document types that the user has access to.
-   * @param options The options parameters.
-   */
-  getDocumentTypes(
-    options?: GetDocumentTypesOptionalParams,
-  ): Promise<GetDocumentTypesResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getDocumentTypesOperationSpec,
-    );
-  }
-
-  /**
-   * Create a new document type in the specified organization.
-   * @param body
-   * @param options The options parameters.
-   */
-  createDocumentType(
-    body: DocumentTypeCreate,
-    options?: CreateDocumentTypeOptionalParams,
-  ): Promise<CreateDocumentTypeResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createDocumentTypeOperationSpec,
-    );
-  }
-
-  /**
-   * Returns the details of a specific document type.
-   * @param identifier Document type identifier
-   * @param options The options parameters.
-   */
-  getDocumentType(
-    identifier: string,
-    options?: GetDocumentTypeOptionalParams,
-  ): Promise<GetDocumentTypeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getDocumentTypeOperationSpec,
-    );
-  }
-
-  /**
-   * Update an existing document type.
-   * @param identifier Document type identifier
-   * @param body
-   * @param options The options parameters.
-   */
-  updateDocumentType(
-    identifier: string,
-    body: DocumentTypeUpdate,
-    options?: UpdateDocumentTypeOptionalParams,
-  ): Promise<UpdateDocumentTypeResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateDocumentTypeOperationSpec,
-    );
-  }
-
-  /**
-   * Delete a document type.
-   * @param identifier Document type identifier
-   * @param options The options parameters.
-   */
-  deleteDocumentType(
-    identifier: string,
-    options?: DeleteDocumentTypeOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteDocumentTypeOperationSpec,
-    );
-  }
-
-  /**
-   * Generate JSON schema from a document type.
-   * @param identifier Document type's identifier
-   * @param options The options parameters.
-   */
-  jsonSchemaFromDocumentType(
-    identifier: string,
-    options?: JsonSchemaFromDocumentTypeOptionalParams,
-  ): Promise<JsonSchemaFromDocumentTypeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      jsonSchemaFromDocumentTypeOperationSpec,
-    );
-  }
-
-  /**
-   * Generate Pydantic models from a document type.
-   * @param identifier Document type's identifier
-   * @param options The options parameters.
-   */
-  pydanticModelsFromDocumentType(
-    identifier: string,
-    options?: PydanticModelsFromDocumentTypeOptionalParams,
-  ): Promise<PydanticModelsFromDocumentTypeResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      pydanticModelsFromDocumentTypeOperationSpec,
-    );
-  }
-
-  /**
-   * Returns all the organizations
-   * @param options The options parameters.
-   */
-  getAllOrganizations(
-    options?: GetAllOrganizationsOptionalParams,
-  ): Promise<GetAllOrganizationsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllOrganizationsOperationSpec,
-    );
-  }
-
-  /**
-   * Create a new organization.
-   * @param name
-   * @param options The options parameters.
-   */
-  createOrganization(
-    name: string,
-    options?: CreateOrganizationOptionalParams,
-  ): Promise<CreateOrganizationResponse> {
-    return this.sendOperationRequest(
-      { name, options },
-      createOrganizationOperationSpec,
-    );
-  }
-
-  /**
-   * Get detail of an organization.
-   * @param identifier Organization identifier.
-   * @param options The options parameters.
-   */
-  getOrganization(
-    identifier: string,
-    options?: GetOrganizationOptionalParams,
-  ): Promise<GetOrganizationResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getOrganizationOperationSpec,
-    );
-  }
-
-  /**
-   * Update the detail of an organization.
-   * @param identifier Organization identifier.
-   * @param options The options parameters.
-   */
-  updateOrganization(
-    identifier: string,
-    options?: UpdateOrganizationOptionalParams,
-  ): Promise<UpdateOrganizationResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      updateOrganizationOperationSpec,
-    );
-  }
-
-  /**
-   * Delete the specified organization from the database.
-   * @param identifier Organization identifier.
-   * @param options The options parameters.
-   */
-  deleteOrganization(
-    identifier: string,
-    options?: DeleteOrganizationOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteOrganizationOperationSpec,
-    );
-  }
-
-  /**
-   * Returns all the organization memberships
-   * @param options The options parameters.
-   */
-  getAllOrganizationMemberships(
-    options?: GetAllOrganizationMembershipsOptionalParams,
-  ): Promise<GetAllOrganizationMembershipsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllOrganizationMembershipsOperationSpec,
-    );
-  }
-
-  /**
-   * Get detail of an organization membership.
-   * @param identifier Membership identifier.
-   * @param options The options parameters.
-   */
-  getOrganizationMembership(
-    identifier: string,
-    options?: GetOrganizationMembershipOptionalParams,
-  ): Promise<GetOrganizationMembershipResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getOrganizationMembershipOperationSpec,
-    );
-  }
-
-  /**
-   * The admin users can use this endpoint to update the role of the members within their organization.
-   * @param identifier Membership identifier.
-   * @param body
-   * @param options The options parameters.
-   */
-  updateOrganizationMembership(
-    identifier: string,
-    body: OrganizationMembershipUpdate,
-    options?: UpdateOrganizationMembershipOptionalParams,
-  ): Promise<UpdateOrganizationMembershipResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateOrganizationMembershipOperationSpec,
-    );
-  }
-
-  /**
-   * The admin users can use this endpoint to remove member from their organization. Other users can also
-   * use this to leave their organization.
-   * @param identifier Membership identifier.
-   * @param options The options parameters.
-   */
-  deleteOrganizationMembership(
-    identifier: string,
-    options?: DeleteOrganizationMembershipOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteOrganizationMembershipOperationSpec,
-    );
-  }
-
-  /**
-   * Get list of all invitations you created or sent to you.
-   * @param options The options parameters.
-   */
-  getAllInvitations(
-    options?: GetAllInvitationsOptionalParams,
-  ): Promise<GetAllInvitationsResponse> {
-    return this.sendOperationRequest(
-      { options },
-      getAllInvitationsOperationSpec,
-    );
-  }
-
-  /**
-   * Create a new invitation.
-   * @param body Invitation to create.
-   * @param options The options parameters.
-   */
-  createInvitation(
-    body: InvitationCreate,
-    options?: CreateInvitationOptionalParams,
-  ): Promise<CreateInvitationResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createInvitationOperationSpec,
-    );
-  }
-
-  /**
-   * Get detail of an invitation.
-   * @param identifier Invitation identifier.
-   * @param options The options parameters.
-   */
-  getInvitation(
-    identifier: string,
-    options?: GetInvitationOptionalParams,
-  ): Promise<GetInvitationResponse> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      getInvitationOperationSpec,
-    );
-  }
-
-  /**
-   * Update the detail of an invitation.
-   * @param identifier Invitation identifier.
-   * @param body
-   * @param options The options parameters.
-   */
-  updateInvitation(
-    identifier: string,
-    body: InvitationUpdate,
-    options?: UpdateInvitationOptionalParams,
-  ): Promise<UpdateInvitationResponse> {
-    return this.sendOperationRequest(
-      { identifier, body, options },
-      updateInvitationOperationSpec,
-    );
-  }
-
-  /**
-   * Delete the specified invitation from the database.
-   * @param identifier Invitation identifier.
-   * @param options The options parameters.
-   */
-  deleteInvitation(
-    identifier: string,
-    options?: DeleteInvitationOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { identifier, options },
-      deleteInvitationOperationSpec,
-    );
-  }
-
-  /**
-   * Get detail of an invitation using a secret token. This allows users who have not registered/logged
-   * in to view the invitation.
-   * @param token Invitation token.
-   * @param options The options parameters.
-   */
-  getInvitationByToken(
-    token: string,
-    options?: GetInvitationByTokenOptionalParams,
-  ): Promise<GetInvitationByTokenResponse> {
-    return this.sendOperationRequest(
-      { token, options },
-      getInvitationByTokenOperationSpec,
-    );
-  }
-
-  /**
-   * Choose to accept or decline an invitation.
-   * @param token Invitation token.
-   * @param body
-   * @param options The options parameters.
-   */
-  respondToInvitation(
-    token: string,
-    body: InvitationResponse,
-    options?: RespondToInvitationOptionalParams,
-  ): Promise<RespondToInvitationResponse> {
-    return this.sendOperationRequest(
-      { token, body, options },
-      respondToInvitationOperationSpec,
-    );
-  }
-
-  /**
-   * Returns your API users.
-   * @param options The options parameters.
-   */
-  getAllApiUsers(
-    options?: GetAllApiUsersOptionalParams,
-  ): Promise<GetAllApiUsersResponse> {
-    return this.sendOperationRequest({ options }, getAllApiUsersOperationSpec);
-  }
-
-  /**
-   * Create an API user
-   * @param body
-   * @param options The options parameters.
-   */
-  createApiUser(
-    body: ApiUserCreate,
-    options?: CreateApiUserOptionalParams,
-  ): Promise<CreateApiUserResponse> {
-    return this.sendOperationRequest(
-      { body, options },
-      createApiUserOperationSpec,
-    );
-  }
-
-  /**
-   * Return a specific API user.
-   * @param id API user's ID
-   * @param options The options parameters.
-   */
-  getApiUser(
-    id: number,
-    options?: GetApiUserOptionalParams,
-  ): Promise<GetApiUserResponse> {
-    return this.sendOperationRequest({ id, options }, getApiUserOperationSpec);
-  }
-
-  /**
-   * Update data of an API user.
-   * @param id API user's ID
-   * @param body API user to update
-   * @param options The options parameters.
-   */
-  updateApiUser(
-    id: number,
-    body: ApiUserUpdate,
-    options?: UpdateApiUserOptionalParams,
-  ): Promise<UpdateApiUserResponse> {
-    return this.sendOperationRequest(
-      { id, body, options },
-      updateApiUserOperationSpec,
-    );
-  }
-
-  /**
-   * Deletes the specified API user from the database.
-   * @param id API user's ID
-   * @param options The options parameters.
-   */
-  deleteApiUser(
-    id: number,
-    options?: DeleteApiUserOptionalParams,
-  ): Promise<void> {
-    return this.sendOperationRequest(
-      { id, options },
-      deleteApiUserOperationSpec,
-    );
-  }
-
-  /**
-   * Regenerate API key for an API user.
-   * @param id API user's ID
-   * @param options The options parameters.
-   */
-  regenerateApiKeyForApiUser(
-    id: number,
-    options?: RegenerateApiKeyForApiUserOptionalParams,
-  ): Promise<RegenerateApiKeyForApiUserResponse> {
-    return this.sendOperationRequest(
-      { id, options },
-      regenerateApiKeyForApiUserOperationSpec,
-    );
-  }
-
-  /**
    * Returns your resthook subscriptions.
    * @param options The options parameters.
    */
@@ -2147,6 +1377,47 @@ export class AffindaAPI extends coreClient.ServiceClient {
     return this.sendOperationRequest(
       { xHookSecret, options },
       activateResthookSubscriptionOperationSpec,
+    );
+  }
+
+  /**
+   * Creates a document directly from structured resume or job description data for use in Search & Match
+   * functionality. This endpoint is specifically designed for programmatic document creation without
+   * file uploads.<br/>
+   * If you want to upload a document with a file or URL, see the main [POST
+   * /v3/documents](#post-/v3/documents) endpoint under the Documents tag.<br/>
+   * When successful, returns an `identifier` in the response for subsequent use with the
+   * [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
+   * retrieve results.<br/>
+   * @param data Create resume or job description directly from data.
+   * @param options The options parameters.
+   */
+  createDocumentFromData(
+    data: DocumentCreateFromDataData,
+    options?: CreateDocumentFromDataOptionalParams,
+  ): Promise<CreateDocumentFromDataResponse> {
+    return this.sendOperationRequest(
+      { data, options },
+      createDocumentFromDataOperationSpec,
+    );
+  }
+
+  /**
+   * Update data of a document.
+   * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
+   * /annotations/{id}` endpoint or the `POST /annotations/batch_update` endpoint.
+   * @param identifier Resume or Job Description identifier
+   * @param body Resume data to update
+   * @param options The options parameters.
+   */
+  updateDocumentData(
+    identifier: string,
+    body: PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema,
+    options?: UpdateDocumentDataOptionalParams,
+  ): Promise<UpdateDocumentDataResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateDocumentDataOperationSpec,
     );
   }
 
@@ -2506,10 +1777,970 @@ export class AffindaAPI extends coreClient.ServiceClient {
       reIndexDocumentOperationSpec,
     );
   }
+
+  /**
+   * Returns your collections.
+   * @param workspace Filter by workspace.
+   * @param options The options parameters.
+   */
+  getAllCollections(
+    workspace: string,
+    options?: GetAllCollectionsOptionalParams,
+  ): Promise<GetAllCollectionsResponse> {
+    return this.sendOperationRequest(
+      { workspace, options },
+      getAllCollectionsOperationSpec,
+    );
+  }
+
+  /**
+   * Create a collection
+   * @param body
+   * @param options The options parameters.
+   */
+  createCollection(
+    body: CollectionCreate,
+    options?: CreateCollectionOptionalParams,
+  ): Promise<CreateCollectionResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific collection.
+   * @param identifier Collection's identifier
+   * @param options The options parameters.
+   */
+  getCollection(
+    identifier: string,
+    options?: GetCollectionOptionalParams,
+  ): Promise<GetCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Update data of a collection.
+   * @param identifier Collection's identifier
+   * @param body Collection data to update
+   * @param options The options parameters.
+   */
+  updateCollection(
+    identifier: string,
+    body: CollectionUpdate,
+    options?: UpdateCollectionOptionalParams,
+  ): Promise<UpdateCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Deletes the specified collection from the database.
+   * @param identifier Collection's identifier
+   * @param options The options parameters.
+   */
+  deleteCollection(
+    identifier: string,
+    options?: DeleteCollectionOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Create data field for a collection along with a new data point.
+   * @param identifier Collection's identifier
+   * @param body The data field and data point to be created.
+   * @param options The options parameters.
+   */
+  createDataFieldForCollection(
+    identifier: string,
+    body: DataFieldCreate,
+    options?: CreateDataFieldForCollectionOptionalParams,
+  ): Promise<CreateDataFieldForCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      createDataFieldForCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Get a data field for a collection assosciated with a data point
+   * @param identifier Collection's identifier
+   * @param datapointIdentifier Datapoint's identifier
+   * @param options The options parameters.
+   */
+  getDataFieldForCollection(
+    identifier: string,
+    datapointIdentifier: string,
+    options?: GetDataFieldForCollectionOptionalParams,
+  ): Promise<GetDataFieldForCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, datapointIdentifier, options },
+      getDataFieldForCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Update data field for a collection assosciated with a data point
+   * @param identifier Collection's identifier
+   * @param datapointIdentifier Datapoint's identifier
+   * @param body Data field properties to update
+   * @param options The options parameters.
+   */
+  updateDataFieldForCollection(
+    identifier: string,
+    datapointIdentifier: string,
+    body: CollectionField,
+    options?: UpdateDataFieldForCollectionOptionalParams,
+  ): Promise<UpdateDataFieldForCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, datapointIdentifier, body, options },
+      updateDataFieldForCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Return monthly credits consumption of a collection.
+   * @param identifier Collection's identifier
+   * @param options The options parameters.
+   */
+  getUsageByCollection(
+    identifier: string,
+    options?: GetUsageByCollectionOptionalParams,
+  ): Promise<GetUsageByCollectionResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getUsageByCollectionOperationSpec,
+    );
+  }
+
+  /**
+   * Returns your custom data points as well as Affinda's off-the-shelf data points.
+   * @param options The options parameters.
+   */
+  getAllDataPoints(
+    options?: GetAllDataPointsOptionalParams,
+  ): Promise<GetAllDataPointsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllDataPointsOperationSpec,
+    );
+  }
+
+  /**
+   * Create a custom data point.
+   * @param options The options parameters.
+   */
+  createDataPoint(
+    options?: CreateDataPointOptionalParams,
+  ): Promise<CreateDataPointResponse> {
+    return this.sendOperationRequest({ options }, createDataPointOperationSpec);
+  }
+
+  /**
+   * Return a specific data point.
+   * @param identifier Data point's identifier
+   * @param options The options parameters.
+   */
+  getDataPoint(
+    identifier: string,
+    options?: GetDataPointOptionalParams,
+  ): Promise<GetDataPointResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getDataPointOperationSpec,
+    );
+  }
+
+  /**
+   * Update data of a data point.
+   * @param identifier DataPoint's identifier
+   * @param body Data point to update
+   * @param options The options parameters.
+   */
+  updateDataPoint(
+    identifier: string,
+    body: DataPointUpdate,
+    options?: UpdateDataPointOptionalParams,
+  ): Promise<UpdateDataPointResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateDataPointOperationSpec,
+    );
+  }
+
+  /**
+   * Deletes the specified data point from the database.
+   * @param identifier DataPoint's identifier
+   * @param options The options parameters.
+   */
+  deleteDataPoint(
+    identifier: string,
+    options?: DeleteDataPointOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteDataPointOperationSpec,
+    );
+  }
+
+  /**
+   * Returns available choices for a specific enum data point.
+   * @param dataPoint The data point to get choices for.
+   * @param collection The collection to get choices for.
+   * @param options The options parameters.
+   */
+  getDataPointChoices(
+    dataPoint: string,
+    collection: string,
+    options?: GetDataPointChoicesOptionalParams,
+  ): Promise<GetDataPointChoicesResponse> {
+    return this.sendOperationRequest(
+      { dataPoint, collection, options },
+      getDataPointChoicesOperationSpec,
+    );
+  }
+
+  /**
+   * Create a custom data point choice.
+   * @param options The options parameters.
+   */
+  createDataPointChoice(
+    options?: CreateDataPointChoiceOptionalParams,
+  ): Promise<CreateDataPointChoiceResponse> {
+    return this.sendOperationRequest(
+      { options },
+      createDataPointChoiceOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific data point choice.
+   * @param id Data point choice's ID
+   * @param options The options parameters.
+   */
+  getDataPointChoice(
+    id: number,
+    options?: GetDataPointChoiceOptionalParams,
+  ): Promise<GetDataPointChoiceResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      getDataPointChoiceOperationSpec,
+    );
+  }
+
+  /**
+   * Update data of a data point choice.
+   * @param id Data point choice's ID
+   * @param body Data point choice to update
+   * @param options The options parameters.
+   */
+  updateDataPointChoice(
+    id: number,
+    body: DataPointChoiceUpdate,
+    options?: UpdateDataPointChoiceOptionalParams,
+  ): Promise<UpdateDataPointChoiceResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateDataPointChoiceOperationSpec,
+    );
+  }
+
+  /**
+   * Deletes the specified data point choice from the database.
+   * @param id Data point choice's ID
+   * @param options The options parameters.
+   */
+  deleteDataPointChoice(
+    id: number,
+    options?: DeleteDataPointChoiceOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { id, options },
+      deleteDataPointChoiceOperationSpec,
+    );
+  }
+
+  /**
+   * Replace choices of a data point. Existing choices and incoming choices are matched base on their
+   * `value`. New `value` will be created, existing `value` will be updated, and `value` not in incoming
+   * choices will be deleted.
+   * @param options The options parameters.
+   */
+  replaceDataPointChoices(
+    options?: ReplaceDataPointChoicesOptionalParams,
+  ): Promise<ReplaceDataPointChoicesResponse> {
+    return this.sendOperationRequest(
+      { options },
+      replaceDataPointChoicesOperationSpec,
+    );
+  }
+
+  /**
+   * Returns your API users.
+   * @param options The options parameters.
+   */
+  getAllApiUsers(
+    options?: GetAllApiUsersOptionalParams,
+  ): Promise<GetAllApiUsersResponse> {
+    return this.sendOperationRequest({ options }, getAllApiUsersOperationSpec);
+  }
+
+  /**
+   * Create an API user
+   * @param body
+   * @param options The options parameters.
+   */
+  createApiUser(
+    body: ApiUserCreate,
+    options?: CreateApiUserOptionalParams,
+  ): Promise<CreateApiUserResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createApiUserOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific API user.
+   * @param id API user's ID
+   * @param options The options parameters.
+   */
+  getApiUser(
+    id: number,
+    options?: GetApiUserOptionalParams,
+  ): Promise<GetApiUserResponse> {
+    return this.sendOperationRequest({ id, options }, getApiUserOperationSpec);
+  }
+
+  /**
+   * Update data of an API user.
+   * @param id API user's ID
+   * @param body API user to update
+   * @param options The options parameters.
+   */
+  updateApiUser(
+    id: number,
+    body: ApiUserUpdate,
+    options?: UpdateApiUserOptionalParams,
+  ): Promise<UpdateApiUserResponse> {
+    return this.sendOperationRequest(
+      { id, body, options },
+      updateApiUserOperationSpec,
+    );
+  }
+
+  /**
+   * Deletes the specified API user from the database.
+   * @param id API user's ID
+   * @param options The options parameters.
+   */
+  deleteApiUser(
+    id: number,
+    options?: DeleteApiUserOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { id, options },
+      deleteApiUserOperationSpec,
+    );
+  }
+
+  /**
+   * Regenerate API key for an API user.
+   * @param id API user's ID
+   * @param options The options parameters.
+   */
+  regenerateApiKeyForApiUser(
+    id: number,
+    options?: RegenerateApiKeyForApiUserOptionalParams,
+  ): Promise<RegenerateApiKeyForApiUserResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      regenerateApiKeyForApiUserOperationSpec,
+    );
+  }
+
+  /**
+   * Returns all the document splitters visible to the user.
+   * @param options The options parameters.
+   */
+  getAllDocumentSplitters(
+    options?: GetAllDocumentSplittersOptionalParams,
+  ): Promise<GetAllDocumentSplittersResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllDocumentSplittersOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific document splitter.
+   * @param identifier Document splitter's identifier
+   * @param options The options parameters.
+   */
+  getDocumentSplitter(
+    identifier: string,
+    options?: GetDocumentSplitterOptionalParams,
+  ): Promise<GetDocumentSplitterResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getDocumentSplitterOperationSpec,
+    );
+  }
+
+  /**
+   * Split / merge / rotate / delete pages of a document.
+   * Documents with multiple pages can be splitted into multiple documents, or merged into one document.
+   * Each page can also be rotated. Edit operations will trigger re-parsing of the documents involved.
+   *
+   * @param identifier Document's identifier
+   * @param body Describe how the pages should be edited
+   * @param options The options parameters.
+   */
+  editDocumentPages(
+    identifier: string,
+    body: DocumentEditRequest,
+    options?: EditDocumentPagesOptionalParams,
+  ): Promise<EditDocumentPagesResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      editDocumentPagesOperationSpec,
+    );
+  }
+
+  /**
+   * Returns your custom extractors as well as Affinda's off-the-shelf extractors.
+   * @param organization Filter by organization.
+   * @param options The options parameters.
+   */
+  getAllExtractors(
+    organization: string,
+    options?: GetAllExtractorsOptionalParams,
+  ): Promise<GetAllExtractorsResponse> {
+    return this.sendOperationRequest(
+      { organization, options },
+      getAllExtractorsOperationSpec,
+    );
+  }
+
+  /**
+   * Create a custom extractor.
+   * @param options The options parameters.
+   */
+  createExtractor(
+    options?: CreateExtractorOptionalParams,
+  ): Promise<CreateExtractorResponse> {
+    return this.sendOperationRequest({ options }, createExtractorOperationSpec);
+  }
+
+  /**
+   * Return a specific extractor.
+   * @param identifier Extractor's identifier
+   * @param options The options parameters.
+   */
+  getExtractor(
+    identifier: string,
+    options?: GetExtractorOptionalParams,
+  ): Promise<GetExtractorResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getExtractorOperationSpec,
+    );
+  }
+
+  /**
+   * Update data of an extractor.
+   * @param identifier Extractor's identifier
+   * @param body Extractor data to update
+   * @param options The options parameters.
+   */
+  updateExtractor(
+    identifier: string,
+    body: ExtractorUpdate,
+    options?: UpdateExtractorOptionalParams,
+  ): Promise<UpdateExtractorResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateExtractorOperationSpec,
+    );
+  }
+
+  /**
+   * Deletes the specified extractor from the database.
+   * @param identifier Extractor's identifier
+   * @param options The options parameters.
+   */
+  deleteExtractor(
+    identifier: string,
+    options?: DeleteExtractorOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteExtractorOperationSpec,
+    );
+  }
+
+  /**
+   * Returns all the organization memberships
+   * @param options The options parameters.
+   */
+  getAllOrganizationMemberships(
+    options?: GetAllOrganizationMembershipsOptionalParams,
+  ): Promise<GetAllOrganizationMembershipsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllOrganizationMembershipsOperationSpec,
+    );
+  }
+
+  /**
+   * Get detail of an organization membership.
+   * @param identifier Membership identifier.
+   * @param options The options parameters.
+   */
+  getOrganizationMembership(
+    identifier: string,
+    options?: GetOrganizationMembershipOptionalParams,
+  ): Promise<GetOrganizationMembershipResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getOrganizationMembershipOperationSpec,
+    );
+  }
+
+  /**
+   * The admin users can use this endpoint to update the role of the members within their organization.
+   * @param identifier Membership identifier.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateOrganizationMembership(
+    identifier: string,
+    body: OrganizationMembershipUpdate,
+    options?: UpdateOrganizationMembershipOptionalParams,
+  ): Promise<UpdateOrganizationMembershipResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateOrganizationMembershipOperationSpec,
+    );
+  }
+
+  /**
+   * The admin users can use this endpoint to remove member from their organization. Other users can also
+   * use this to leave their organization.
+   * @param identifier Membership identifier.
+   * @param options The options parameters.
+   */
+  deleteOrganizationMembership(
+    identifier: string,
+    options?: DeleteOrganizationMembershipOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteOrganizationMembershipOperationSpec,
+    );
+  }
+
+  /**
+   * Get list of all invitations you created or sent to you.
+   * @param options The options parameters.
+   */
+  getAllInvitations(
+    options?: GetAllInvitationsOptionalParams,
+  ): Promise<GetAllInvitationsResponse> {
+    return this.sendOperationRequest(
+      { options },
+      getAllInvitationsOperationSpec,
+    );
+  }
+
+  /**
+   * Create a new invitation.
+   * @param body Invitation to create.
+   * @param options The options parameters.
+   */
+  createInvitation(
+    body: InvitationCreate,
+    options?: CreateInvitationOptionalParams,
+  ): Promise<CreateInvitationResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createInvitationOperationSpec,
+    );
+  }
+
+  /**
+   * Get detail of an invitation.
+   * @param identifier Invitation identifier.
+   * @param options The options parameters.
+   */
+  getInvitation(
+    identifier: string,
+    options?: GetInvitationOptionalParams,
+  ): Promise<GetInvitationResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getInvitationOperationSpec,
+    );
+  }
+
+  /**
+   * Update the detail of an invitation.
+   * @param identifier Invitation identifier.
+   * @param body
+   * @param options The options parameters.
+   */
+  updateInvitation(
+    identifier: string,
+    body: InvitationUpdate,
+    options?: UpdateInvitationOptionalParams,
+  ): Promise<UpdateInvitationResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateInvitationOperationSpec,
+    );
+  }
+
+  /**
+   * Delete the specified invitation from the database.
+   * @param identifier Invitation identifier.
+   * @param options The options parameters.
+   */
+  deleteInvitation(
+    identifier: string,
+    options?: DeleteInvitationOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteInvitationOperationSpec,
+    );
+  }
+
+  /**
+   * Get detail of an invitation using a secret token. This allows users who have not registered/logged
+   * in to view the invitation.
+   * @param token Invitation token.
+   * @param options The options parameters.
+   */
+  getInvitationByToken(
+    token: string,
+    options?: GetInvitationByTokenOptionalParams,
+  ): Promise<GetInvitationByTokenResponse> {
+    return this.sendOperationRequest(
+      { token, options },
+      getInvitationByTokenOperationSpec,
+    );
+  }
+
+  /**
+   * Choose to accept or decline an invitation.
+   * @param token Invitation token.
+   * @param body
+   * @param options The options parameters.
+   */
+  respondToInvitation(
+    token: string,
+    body: InvitationResponse,
+    options?: RespondToInvitationOptionalParams,
+  ): Promise<RespondToInvitationResponse> {
+    return this.sendOperationRequest(
+      { token, body, options },
+      respondToInvitationOperationSpec,
+    );
+  }
+
+  /**
+   * Create a custom mapping.
+   * @param body
+   * @param options The options parameters.
+   */
+  createMapping(
+    body: MappingCreate,
+    options?: CreateMappingOptionalParams,
+  ): Promise<CreateMappingResponse> {
+    return this.sendOperationRequest(
+      { body, options },
+      createMappingOperationSpec,
+    );
+  }
+
+  /**
+   * Returns the list of all custom data mappings.
+   * @param mappingDataSource Data source's identifier
+   * @param options The options parameters.
+   */
+  listMappings(
+    mappingDataSource: string,
+    options?: ListMappingsOptionalParams,
+  ): Promise<ListMappingsResponse> {
+    return this.sendOperationRequest(
+      { mappingDataSource, options },
+      listMappingsOperationSpec,
+    );
+  }
+
+  /**
+   * Return a specific mapping.
+   * @param identifier Mapping's identifier
+   * @param options The options parameters.
+   */
+  getMapping(
+    identifier: string,
+    options?: GetMappingOptionalParams,
+  ): Promise<GetMappingResponse> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      getMappingOperationSpec,
+    );
+  }
+
+  /**
+   * Delete the specified mapping from the database.
+   * @param identifier Mapping's identifier
+   * @param options The options parameters.
+   */
+  deleteMapping(
+    identifier: string,
+    options?: DeleteMappingOptionalParams,
+  ): Promise<void> {
+    return this.sendOperationRequest(
+      { identifier, options },
+      deleteMappingOperationSpec,
+    );
+  }
+
+  /**
+   * Updates a specific mapping.
+   * @param identifier Mapping's identifier
+   * @param body
+   * @param options The options parameters.
+   */
+  updateMapping(
+    identifier: string,
+    body: MappingUpdate,
+    options?: UpdateMappingOptionalParams,
+  ): Promise<UpdateMappingResponse> {
+    return this.sendOperationRequest(
+      { identifier, body, options },
+      updateMappingOperationSpec,
+    );
+  }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
+const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    403: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.workspace,
+    Parameters.collection,
+    Parameters.state,
+    Parameters.tags,
+    Parameters.createdDt,
+    Parameters.search,
+    Parameters.ordering,
+    Parameters.includeData,
+    Parameters.exclude,
+    Parameters.inReview,
+    Parameters.failed,
+    Parameters.ready,
+    Parameters.validatable,
+    Parameters.hasChallenges,
+    Parameters.customIdentifier,
+    Parameters.compact,
+    Parameters.count,
+    Parameters.snakeCase,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document,
+    },
+    201: {
+      bodyMapper: Mappers.Document,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    403: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  formDataParameters: [
+    Parameters.file,
+    Parameters.url,
+    Parameters.collection1,
+    Parameters.documentType,
+    Parameters.workspace1,
+    Parameters.wait,
+    Parameters.identifier,
+    Parameters.customIdentifier1,
+    Parameters.fileName,
+    Parameters.expiryTime,
+    Parameters.language,
+    Parameters.rejectDuplicates,
+    Parameters.regionBias,
+    Parameters.lowPriority,
+    Parameters.compact1,
+    Parameters.deleteAfterParse,
+    Parameters.enableValidationTool,
+    Parameters.useOcr,
+    Parameters.warningMessages,
+  ],
+  queryParameters: [Parameters.snakeCase],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer,
+};
+const getDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.compact,
+    Parameters.snakeCase,
+    Parameters.format,
+  ],
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body,
+  queryParameters: [Parameters.compact, Parameters.snakeCase],
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getRedactedDocumentOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/{identifier}/redacted",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Stream" },
+        serializedName: "parsedResponse",
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept2],
+  serializer,
+};
 const getAllWorkspacesOperationSpec: coreClient.OperationSpec = {
   path: "/v3/workspaces",
   httpMethod: "GET",
@@ -2558,9 +2789,9 @@ const createWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body,
+  requestBody: Parameters.body1,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -2583,7 +2814,7 @@ const getWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -2606,9 +2837,9 @@ const updateWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body1,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  requestBody: Parameters.body2,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -2629,7 +2860,7 @@ const deleteWorkspaceOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -2660,7 +2891,7 @@ const getUsageByWorkspaceOperationSpec: coreClient.OperationSpec = {
     },
   },
   queryParameters: [Parameters.start, Parameters.end],
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -2713,9 +2944,9 @@ const createWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body2,
+  requestBody: Parameters.body3,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -2738,7 +2969,7 @@ const getWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -2759,1918 +2990,7 @@ const deleteWorkspaceMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getAllCollectionsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Collection" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [Parameters.workspace1],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.Collection,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body3,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Collection,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Collection,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body4,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}/create_data_field",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DataField,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body5,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}/fields/{datapoint_identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.CollectionField,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [
-    Parameters.region,
-    Parameters.identifier,
-    Parameters.datapointIdentifier,
-  ],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}/fields/{datapoint_identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.CollectionField,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body6,
-  urlParameters: [
-    Parameters.region,
-    Parameters.identifier,
-    Parameters.datapointIdentifier,
-  ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getUsageByCollectionOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/collections/{identifier}/usage",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Composite", className: "UsageByCollection" },
-          },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [Parameters.start, Parameters.end],
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getAllDocumentsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.PathsOxm5M7V3DocumentsGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    403: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.workspace,
-    Parameters.collection,
-    Parameters.state,
-    Parameters.tags,
-    Parameters.createdDt,
-    Parameters.search,
-    Parameters.ordering,
-    Parameters.includeData,
-    Parameters.exclude,
-    Parameters.inReview,
-    Parameters.failed,
-    Parameters.ready,
-    Parameters.validatable,
-    Parameters.hasChallenges,
-    Parameters.customIdentifier,
-    Parameters.compact,
-    Parameters.count,
-    Parameters.camelCase,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Document,
-    },
-    201: {
-      bodyMapper: Mappers.Document,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    403: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  formDataParameters: [
-    Parameters.file,
-    Parameters.url,
-    Parameters.data,
-    Parameters.collection1,
-    Parameters.documentType,
-    Parameters.workspace2,
-    Parameters.wait,
-    Parameters.identifier1,
-    Parameters.customIdentifier1,
-    Parameters.fileName,
-    Parameters.expiryTime,
-    Parameters.language,
-    Parameters.rejectDuplicates,
-    Parameters.regionBias,
-    Parameters.lowPriority,
-    Parameters.compact1,
-    Parameters.deleteAfterParse,
-    Parameters.enableValidationTool,
-    Parameters.useOcr,
-    Parameters.warningMessages,
-  ],
-  queryParameters: [Parameters.camelCase],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType1, Parameters.accept1],
-  serializer,
-};
-const getDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Document,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.compact,
-    Parameters.camelCase,
-    Parameters.format,
-  ],
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Document,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body7,
-  queryParameters: [Parameters.compact, Parameters.camelCase],
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/{identifier}/update_data",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Document,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body8,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getRedactedDocumentOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/{identifier}/redacted",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: { name: "Stream" },
-        serializedName: "parsedResponse",
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept2],
-  serializer,
-};
-const batchAddTagOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/batch_add_tag",
-  httpMethod: "POST",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body9,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const batchRemoveTagOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/documents/batch_remove_tag",
-  httpMethod: "POST",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body10,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAllValidationResultsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Composite", className: "ValidationResult" },
-          },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [Parameters.offset, Parameters.limit, Parameters.document],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createValidationResultOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.ValidationResult,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body11,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getValidationResultOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ValidationResult,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateValidationResultOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ValidationResult,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body12,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteValidationResultOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const batchCreateValidationResultsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results/batch_create",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Composite", className: "ValidationResult" },
-          },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body13,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const batchDeleteValidationResultsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validation_results/batch_delete",
-  httpMethod: "POST",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body14,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAllDocumentSplittersOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/document_splitters",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Composite", className: "DocumentSplitter" },
-          },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.organization1,
-    Parameters.includePublic,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getDocumentSplitterOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/document_splitters/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DocumentSplitter,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const editDocumentPagesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/validate/{identifier}/split",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Meta" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body15,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAllExtractorsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Extractor" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.organization,
-    Parameters.name,
-    Parameters.validatable,
-    Parameters.includePublicExtractors,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createExtractorOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.Extractor,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body16,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getExtractorOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Extractor,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateExtractorOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Extractor,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body17,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteExtractorOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/extractors/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_points",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "DataPoint" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.organization1,
-    Parameters.includePublic,
-    Parameters.extractor,
-    Parameters.slug,
-    Parameters.description,
-    Parameters.annotationContentType,
-    Parameters.identifier2,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createDataPointOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_points",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.DataPoint,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body18,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getDataPointOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_points/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DataPoint,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateDataPointOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_points/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DataPoint,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body19,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteDataPointOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_points/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getDataPointChoicesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_point_choices",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.search,
-    Parameters.dataPoint,
-    Parameters.collection2,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createDataPointChoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_point_choices",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.DataPointChoice,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body20,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getDataPointChoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_point_choices/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DataPointChoice,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateDataPointChoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_point_choices/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DataPointChoice,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body21,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteDataPointChoiceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_point_choices/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const replaceDataPointChoicesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/data_point_choices/replace",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.DataPointChoiceReplaceResponse,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body22,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAllAnnotationsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [Parameters.document],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createAnnotationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.AnnotationWithValidationResults,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body23,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAnnotationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Annotation,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateAnnotationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Annotation,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body24,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteAnnotationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    200: {
-      bodyMapper: Mappers.AnotationDelete,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const batchCreateAnnotationsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations/batch_create",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Annotation" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body25,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const batchUpdateAnnotationsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations/batch_update",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Annotation" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body26,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const batchDeleteAnnotationsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/annotations/batch_delete",
-  httpMethod: "POST",
-  responses: {
-    200: {
-      bodyMapper: Mappers.BatchDeleteAnnotationsResponse,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body27,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const createMappingDataSourceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.MappingDataSource,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body28,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const listMappingDataSourcesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.name,
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.workspace,
-    Parameters.organization1,
-    Parameters.identifier3,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getMappingDataSourceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.MappingDataSource,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const deleteMappingDataSourceOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const listMappingDataSourceValuesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}/values",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.search,
-    Parameters.annotation,
-    Parameters.document1,
-  ],
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const replaceMappingDataSourceValuesOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}/values",
-  httpMethod: "PUT",
-  responses: {
-    201: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: {
-            type: { name: "Dictionary", value: { type: { name: "any" } } },
-          },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body29,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const addMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}/values",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: {
-        type: { name: "Dictionary", value: { type: { name: "any" } } },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body30,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}/values/{value}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: { name: "Dictionary", value: { type: { name: "any" } } },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier, Parameters.value],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}/values/{value}",
-  httpMethod: "PUT",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: { name: "Dictionary", value: { type: { name: "any" } } },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body30,
-  urlParameters: [Parameters.region, Parameters.identifier, Parameters.value],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mapping_data_sources/{identifier}/values/{value}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier, Parameters.value],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createMappingOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mappings",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.Mapping,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body31,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const listMappingsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mappings",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.mappingDataSource,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getMappingOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mappings/{identifier}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Mapping,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const deleteMappingOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mappings/{identifier}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateMappingOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/mappings/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Mapping,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body32,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAllTagsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/tags",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: {
-        type: {
-          name: "Sequence",
-          element: { type: { name: "Composite", className: "Tag" } },
-        },
-      },
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [
-    Parameters.name,
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.workspace,
-  ],
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const createTagOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/tags",
-  httpMethod: "POST",
-  responses: {
-    201: {
-      bodyMapper: Mappers.Tag,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body33,
-  urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getTagOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/tags/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Tag,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateTagOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/tags/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Tag,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body34,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteTagOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/tags/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -4723,9 +3043,9 @@ const createDocumentTypeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body35,
+  requestBody: Parameters.body4,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -4745,7 +3065,7 @@ const getDocumentTypeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -4770,9 +3090,9 @@ const updateDocumentTypeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body36,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  requestBody: Parameters.body5,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -4791,7 +3111,7 @@ const deleteDocumentTypeOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -4817,7 +3137,7 @@ const jsonSchemaFromDocumentTypeOperationSpec: coreClient.OperationSpec = {
     },
   },
   queryParameters: [Parameters.title],
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -4841,8 +3161,452 @@ const pydanticModelsFromDocumentTypeOperationSpec: coreClient.OperationSpec = {
     },
   },
   queryParameters: [Parameters.modelName],
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
+  serializer,
+};
+const createMappingDataSourceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.MappingDataSource,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body6,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const listMappingDataSourcesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths11QdcofV3MappingDataSourcesGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.workspace,
+    Parameters.name,
+    Parameters.organization1,
+    Parameters.identifier2,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getMappingDataSourceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.MappingDataSource,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const deleteMappingDataSourceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const listMappingDataSourceValuesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}/values",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1Qr7BnyV3MappingDataSourcesIdentifierValuesGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.search,
+    Parameters.annotation,
+    Parameters.document,
+  ],
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const replaceMappingDataSourceValuesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}/values",
+  httpMethod: "PUT",
+  responses: {
+    201: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Dictionary", value: { type: { name: "any" } } },
+          },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body7,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const addMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}/values",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: {
+        type: { name: "Dictionary", value: { type: { name: "any" } } },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body8,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}/values/{value}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Dictionary", value: { type: { name: "any" } } },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.value],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}/values/{value}",
+  httpMethod: "PUT",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: { name: "Dictionary", value: { type: { name: "any" } } },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body8,
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.value],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteMappingDataSourceValueOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mapping_data_sources/{identifier}/values/{value}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.value],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getAllValidationResultsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "ValidationResult" },
+          },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.offset, Parameters.limit, Parameters.document1],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createValidationResultOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.ValidationResult,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body9,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getValidationResultOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ValidationResult,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateValidationResultOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ValidationResult,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body10,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteValidationResultOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const batchCreateValidationResultsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results/batch_create",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "ValidationResult" },
+          },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body11,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const batchDeleteValidationResultsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validation_results/batch_delete",
+  httpMethod: "POST",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body12,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer,
 };
 const getAllOrganizationsOperationSpec: coreClient.OperationSpec = {
@@ -4898,7 +3662,7 @@ const createOrganizationOperationSpec: coreClient.OperationSpec = {
     Parameters.resthookSignatureKey,
   ],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.contentType1, Parameters.accept1],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer,
 };
 const getOrganizationOperationSpec: coreClient.OperationSpec = {
@@ -4920,7 +3684,7 @@ const getOrganizationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -4949,8 +3713,8 @@ const updateOrganizationOperationSpec: coreClient.OperationSpec = {
     Parameters.name2,
     Parameters.validationToolConfig,
   ],
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.contentType1, Parameters.accept1],
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
   serializer,
 };
 const deleteOrganizationOperationSpec: coreClient.OperationSpec = {
@@ -4970,17 +3734,21 @@ const deleteOrganizationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.identifier1],
   headerParameters: [Parameters.accept],
   serializer,
 };
-const getAllOrganizationMembershipsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/organization_memberships",
+const getAllTagsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/tags",
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper:
-        Mappers.PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema,
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Tag" } },
+        },
+      },
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -4997,19 +3765,19 @@ const getAllOrganizationMembershipsOperationSpec: coreClient.OperationSpec = {
   queryParameters: [
     Parameters.offset,
     Parameters.limit,
-    Parameters.organization1,
-    Parameters.role,
+    Parameters.workspace,
+    Parameters.name,
   ],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer,
 };
-const getOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/organization_memberships/{identifier}",
-  httpMethod: "GET",
+const createTagOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/tags",
+  httpMethod: "POST",
   responses: {
-    200: {
-      bodyMapper: Mappers.OrganizationMembership,
+    201: {
+      bodyMapper: Mappers.Tag,
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5023,37 +3791,62 @@ const getOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/organization_memberships/{identifier}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.OrganizationMembership,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body37,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  requestBody: Parameters.body13,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
-const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/organization_memberships/{identifier}",
+const getTagOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/tags/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Tag,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateTagOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/tags/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Tag,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body14,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteTagOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/tags/{id}",
   httpMethod: "DELETE",
   responses: {
     204: {},
@@ -5069,17 +3862,63 @@ const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer,
 };
-const getAllInvitationsOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations",
+const batchAddTagOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/batch_add_tag",
+  httpMethod: "POST",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body15,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const batchRemoveTagOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/batch_remove_tag",
+  httpMethod: "POST",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body16,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getAllAnnotationsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations",
   httpMethod: "GET",
   responses: {
     200: {
       bodyMapper:
-        Mappers.Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema,
+        Mappers.Paths1D5Zg6MV3AnnotationsGetResponses200ContentApplicationJsonSchema,
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5093,23 +3932,17 @@ const getAllInvitationsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  queryParameters: [
-    Parameters.offset,
-    Parameters.limit,
-    Parameters.organization1,
-    Parameters.role,
-    Parameters.status,
-  ],
+  queryParameters: [Parameters.document1],
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept],
   serializer,
 };
-const createInvitationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations",
+const createAnnotationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations",
   httpMethod: "POST",
   responses: {
     201: {
-      bodyMapper: Mappers.Invitation,
+      bodyMapper: Mappers.AnnotationWithValidationResults,
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5123,18 +3956,18 @@ const createInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body38,
+  requestBody: Parameters.body17,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
-const getInvitationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations/{identifier}",
+const getAnnotationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations/{id}",
   httpMethod: "GET",
   responses: {
     200: {
-      bodyMapper: Mappers.Invitation,
+      bodyMapper: Mappers.Annotation,
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5148,16 +3981,16 @@ const getInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer,
 };
-const updateInvitationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations/{identifier}",
+const updateAnnotationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations/{id}",
   httpMethod: "PATCH",
   responses: {
     200: {
-      bodyMapper: Mappers.Invitation,
+      bodyMapper: Mappers.Annotation,
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5171,58 +4004,18 @@ const updateInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body39,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  requestBody: Parameters.body18,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
-const deleteInvitationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations/{identifier}",
+const deleteAnnotationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations/{id}",
   httpMethod: "DELETE",
   responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const getInvitationByTokenOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations/token/{token}",
-  httpMethod: "GET",
-  responses: {
     200: {
-      bodyMapper: Mappers.Invitation,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.token],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const respondToInvitationOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/invitations/token/{token}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.Invitation,
+      bodyMapper: Mappers.AnotationDelete,
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5236,43 +4029,21 @@ const respondToInvitationOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body40,
-  urlParameters: [Parameters.region, Parameters.token],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const getAllApiUsersOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  queryParameters: [Parameters.organization1],
-  urlParameters: [Parameters.region],
+  urlParameters: [Parameters.region, Parameters.id],
   headerParameters: [Parameters.accept],
   serializer,
 };
-const createApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users",
+const batchCreateAnnotationsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations/batch_create",
   httpMethod: "POST",
   responses: {
     201: {
-      bodyMapper: Mappers.ApiUserWithKey,
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Annotation" } },
+        },
+      },
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5286,87 +4057,23 @@ const createApiUserOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body41,
+  requestBody: Parameters.body19,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
-const getApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ApiUserWithoutKey,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const updateApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}",
-  httpMethod: "PATCH",
-  responses: {
-    200: {
-      bodyMapper: Mappers.ApiUserWithoutKey,
-    },
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  requestBody: Parameters.body42,
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.contentType],
-  mediaType: "json",
-  serializer,
-};
-const deleteApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}",
-  httpMethod: "DELETE",
-  responses: {
-    204: {},
-    400: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    401: {
-      bodyMapper: Mappers.RequestError,
-      isError: true,
-    },
-    default: {
-      bodyMapper: Mappers.RequestError,
-    },
-  },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
-  serializer,
-};
-const regenerateApiKeyForApiUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v3/api_users/{id}/regenerate_api_key",
+const batchUpdateAnnotationsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations/batch_update",
   httpMethod: "POST",
   responses: {
     200: {
-      bodyMapper: Mappers.ApiUserWithKey,
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Annotation" } },
+        },
+      },
     },
     400: {
       bodyMapper: Mappers.RequestError,
@@ -5380,8 +4087,35 @@ const regenerateApiKeyForApiUserOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.id],
-  headerParameters: [Parameters.accept],
+  requestBody: Parameters.body20,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const batchDeleteAnnotationsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/annotations/batch_delete",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.BatchDeleteAnnotationsResponse,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body21,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer,
 };
 const getAllResthookSubscriptionsOperationSpec: coreClient.OperationSpec = {
@@ -5428,9 +4162,9 @@ const createResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body43,
+  requestBody: Parameters.body22,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5476,9 +4210,9 @@ const updateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body44,
+  requestBody: Parameters.body23,
   urlParameters: [Parameters.region, Parameters.id1],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5524,6 +4258,63 @@ const activateResthookSubscriptionOperationSpec: coreClient.OperationSpec = {
   },
   urlParameters: [Parameters.region],
   headerParameters: [Parameters.accept, Parameters.xHookSecret],
+  serializer,
+};
+const createDocumentFromDataOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/create_from_data",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document,
+    },
+    201: {
+      bodyMapper: Mappers.Document,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    403: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  formDataParameters: [Parameters.data],
+  queryParameters: [Parameters.snakeCase],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.contentType, Parameters.accept1],
+  serializer,
+};
+const updateDocumentDataOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/documents/{identifier}/update_data",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Document,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body24,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer,
 };
 const listOccupationGroupsOperationSpec: coreClient.OperationSpec = {
@@ -5575,10 +4366,10 @@ const createResumeSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body45,
+  requestBody: Parameters.body25,
   queryParameters: [Parameters.offset, Parameters.limit1],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5601,9 +4392,9 @@ const getResumeSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body45,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  requestBody: Parameters.body25,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5645,9 +4436,9 @@ const updateResumeSearchConfigOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body46,
+  requestBody: Parameters.body26,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5666,9 +4457,9 @@ const createResumeSearchEmbedUrlOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body47,
+  requestBody: Parameters.body27,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5782,10 +4573,10 @@ const createJobDescriptionSearchOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body48,
+  requestBody: Parameters.body28,
   queryParameters: [Parameters.offset, Parameters.limit],
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5808,9 +4599,9 @@ const getJobDescriptionSearchDetailOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body48,
-  urlParameters: [Parameters.region, Parameters.identifier],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  requestBody: Parameters.body28,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5853,9 +4644,9 @@ const updateJobDescriptionSearchConfigOperationSpec: coreClient.OperationSpec =
         bodyMapper: Mappers.RequestError,
       },
     },
-    requestBody: Parameters.body49,
+    requestBody: Parameters.body29,
     urlParameters: [Parameters.region],
-    headerParameters: [Parameters.accept, Parameters.contentType],
+    headerParameters: [Parameters.accept, Parameters.contentType1],
     mediaType: "json",
     serializer,
   };
@@ -5875,9 +4666,9 @@ const createJobDescriptionSearchEmbedUrlOperationSpec: coreClient.OperationSpec 
         bodyMapper: Mappers.RequestError,
       },
     },
-    requestBody: Parameters.body50,
+    requestBody: Parameters.body30,
     urlParameters: [Parameters.region],
-    headerParameters: [Parameters.accept, Parameters.contentType],
+    headerParameters: [Parameters.accept, Parameters.contentType1],
     mediaType: "json",
     serializer,
   };
@@ -5902,9 +4693,9 @@ const getAllIndexesOperationSpec: coreClient.OperationSpec = {
     },
   },
   queryParameters: [
-    Parameters.name,
     Parameters.offset,
     Parameters.limit,
+    Parameters.name,
     Parameters.documentType1,
   ],
   urlParameters: [Parameters.region],
@@ -5930,9 +4721,9 @@ const createIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body51,
+  requestBody: Parameters.body31,
   urlParameters: [Parameters.region],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -5955,9 +4746,9 @@ const updateIndexOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body52,
+  requestBody: Parameters.body32,
   urlParameters: [Parameters.region, Parameters.name3],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -6027,9 +4818,9 @@ const createIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  requestBody: Parameters.body53,
+  requestBody: Parameters.body33,
   urlParameters: [Parameters.region, Parameters.name3],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
   mediaType: "json",
   serializer,
 };
@@ -6050,7 +4841,7 @@ const deleteIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier, Parameters.name3],
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.name3],
   headerParameters: [Parameters.accept],
   serializer,
 };
@@ -6071,7 +4862,1275 @@ const reIndexDocumentOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.RequestError,
     },
   },
-  urlParameters: [Parameters.region, Parameters.identifier, Parameters.name3],
+  urlParameters: [Parameters.region, Parameters.identifier1, Parameters.name3],
   headerParameters: [Parameters.accept],
+  serializer,
+};
+const getAllCollectionsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Collection" } },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.workspace2],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Collection,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body34,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Collection,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Collection,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body35,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}/create_data_field",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataField,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body36,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}/fields/{datapoint_identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.CollectionField,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [
+    Parameters.region,
+    Parameters.identifier1,
+    Parameters.datapointIdentifier,
+  ],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateDataFieldForCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}/fields/{datapoint_identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.CollectionField,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body37,
+  urlParameters: [
+    Parameters.region,
+    Parameters.identifier1,
+    Parameters.datapointIdentifier,
+  ],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getUsageByCollectionOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/collections/{identifier}/usage",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "UsageByCollection" },
+          },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.start, Parameters.end],
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getAllDataPointsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_points",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "DataPoint" } },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization1,
+    Parameters.includePublic,
+    Parameters.extractor,
+    Parameters.slug,
+    Parameters.description,
+    Parameters.annotationContentType,
+    Parameters.identifier3,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_points",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.DataPoint,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body38,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_points/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPoint,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_points/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPoint,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body39,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteDataPointOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_points/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getDataPointChoicesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsMnwxgV3DataPointChoicesGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.search,
+    Parameters.dataPoint,
+    Parameters.collection2,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createDataPointChoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.DataPointChoice,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body40,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getDataPointChoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPointChoice,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateDataPointChoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPointChoice,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body41,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteDataPointChoiceOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const replaceDataPointChoicesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/data_point_choices/replace",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DataPointChoiceReplaceResponse,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body42,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getAllApiUsersOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths26Civ0V3ApiUsersGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [Parameters.organization1],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.ApiUserWithKey,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body43,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ApiUserWithoutKey,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ApiUserWithoutKey,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body44,
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const regenerateApiKeyForApiUserOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/api_users/{id}/regenerate_api_key",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ApiUserWithKey,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.id],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getAllDocumentSplittersOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/document_splitters",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: {
+            type: { name: "Composite", className: "DocumentSplitter" },
+          },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization1,
+    Parameters.includePublic,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getDocumentSplitterOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/document_splitters/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.DocumentSplitter,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const editDocumentPagesOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/validate/{identifier}/split",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Meta" } },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body45,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getAllExtractorsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/extractors",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: {
+        type: {
+          name: "Sequence",
+          element: { type: { name: "Composite", className: "Extractor" } },
+        },
+      },
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.validatable,
+    Parameters.organization,
+    Parameters.name,
+    Parameters.includePublicExtractors,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/extractors",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Extractor,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body46,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/extractors/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Extractor,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/extractors/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Extractor,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body47,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteExtractorOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/extractors/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getAllOrganizationMembershipsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/organization_memberships",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsQ5Os5RV3OrganizationMembershipsGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization1,
+    Parameters.role,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/organization_memberships/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.OrganizationMembership,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/organization_memberships/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.OrganizationMembership,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body48,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteOrganizationMembershipOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/organization_memberships/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getAllInvitationsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths18Wh2VcV3InvitationsGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.organization1,
+    Parameters.role,
+    Parameters.status,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const createInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Invitation,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body49,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const getInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body50,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const deleteInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getInvitationByTokenOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations/token/{token}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.token],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const respondToInvitationOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/invitations/token/{token}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Invitation,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body51,
+  urlParameters: [Parameters.region, Parameters.token],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const createMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.Mapping,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body52,
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
+  serializer,
+};
+const listMappingsOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1Dpvb2PV3MappingsGetResponses200ContentApplicationJsonSchema,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  queryParameters: [
+    Parameters.offset,
+    Parameters.limit,
+    Parameters.mappingDataSource,
+  ],
+  urlParameters: [Parameters.region],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const getMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings/{identifier}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Mapping,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const deleteMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings/{identifier}",
+  httpMethod: "DELETE",
+  responses: {
+    204: {},
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept],
+  serializer,
+};
+const updateMappingOperationSpec: coreClient.OperationSpec = {
+  path: "/v3/mappings/{identifier}",
+  httpMethod: "PATCH",
+  responses: {
+    200: {
+      bodyMapper: Mappers.Mapping,
+    },
+    400: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    401: {
+      bodyMapper: Mappers.RequestError,
+      isError: true,
+    },
+    default: {
+      bodyMapper: Mappers.RequestError,
+    },
+  },
+  requestBody: Parameters.body53,
+  urlParameters: [Parameters.region, Parameters.identifier1],
+  headerParameters: [Parameters.accept, Parameters.contentType1],
+  mediaType: "json",
   serializer,
 };

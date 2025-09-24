@@ -6,6 +6,10 @@
 
 # Interface: DocumentCreate
 
+## Extended by
+
+- [`DocumentCreateFromData`](DocumentCreateFromData.md)
+
 ## Properties
 
 ### collection?
@@ -29,14 +33,6 @@ If true, the returned parse result (assuming `wait` is also true) will be a comp
 > `optional` **customIdentifier**: `string`
 
 Specify a custom identifier for the document if you need one, not required to be unique.
-
-***
-
-### data?
-
-> `optional` **data**: [`DocumentCreateData`](DocumentCreateData.md)
-
-Create resume or job description directly from data.
 
 ***
 
@@ -122,7 +118,7 @@ A JSON representation of the RegionBias object.
 
 ### rejectDuplicates?
 
-> `optional` **rejectDuplicates**: `boolean`
+> `optional` **rejectDuplicates**: `string`
 
 If "true", parsing will fail when the uploaded document is duplicate of an existing document, no credits will be consumed. If "false", will parse the document normally whether its a duplicate or not. If not provided, will fallback to the workspace settings.
 
@@ -138,7 +134,7 @@ URL to download the document.
 
 ### useOcr?
 
-> `optional` **useOcr**: `boolean`
+> `optional` **useOcr**: `string`
 
 If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document.
 

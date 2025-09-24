@@ -26,14 +26,6 @@ The signal which can be used to abort requests.
 
 ***
 
-### camelCase?
-
-> `optional` **camelCase**: `boolean`
-
-Whether to return the response in camelCase. Default is true.
-
-***
-
 ### collection?
 
 > `optional` **collection**: `string`
@@ -189,6 +181,14 @@ Options to override serialization/de-serialization behavior.
 #### Inherited from
 
 `coreClient.OperationOptions.serializerOptions`
+
+***
+
+### snakeCase?
+
+> `optional` **snakeCase**: `boolean`
+
+Whether to return the response in snake_case instead of camelCase. Default is false.
 
 ***
 

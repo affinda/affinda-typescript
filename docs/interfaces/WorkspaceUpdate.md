@@ -16,6 +16,14 @@ Uniquely identify a document splitter.
 
 ***
 
+### documentTypes?
+
+> `optional` **documentTypes**: `string`[]
+
+Document types to associate with this workspace
+
+***
+
 ### name?
 
 > `optional` **name**: `string`
