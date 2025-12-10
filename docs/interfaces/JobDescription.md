@@ -16,7 +16,7 @@
 
 > `optional` **data**: [`JobDescriptionData`](JobDescriptionData.md)
 
-Dictionary of <any>
+A JSON-encoded string of the `JobDescriptionData` object.
 
 #### Overrides
 

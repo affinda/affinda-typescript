@@ -349,6 +349,13 @@ export const DocumentMeta: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      llmHint: {
+        serializedName: "llmHint",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
       tags: {
         serializedName: "tags",
         type: {
@@ -1002,6 +1009,13 @@ export const DocumentUpdate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      llmHint: {
+        serializedName: "llmHint",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
       warningMessages: {
         serializedName: "warningMessages",
         type: {
@@ -1247,6 +1261,12 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
           name: "Boolean",
         },
       },
+      hideShowRawValues: {
+        serializedName: "hideShowRawValues",
+        type: {
+          name: "Boolean",
+        },
+      },
       hideReject: {
         serializedName: "hideReject",
         type: {
@@ -1291,6 +1311,18 @@ export const OrganizationValidationToolConfig: coreClient.CompositeMapper = {
       },
       disableEditDocumentMetadata: {
         serializedName: "disableEditDocumentMetadata",
+        type: {
+          name: "Boolean",
+        },
+      },
+      disableManualAnnotationEditing: {
+        serializedName: "disableManualAnnotationEditing",
+        type: {
+          name: "Boolean",
+        },
+      },
+      hideDocumentStatus: {
+        serializedName: "hideDocumentStatus",
         type: {
           name: "Boolean",
         },
@@ -1610,12 +1642,6 @@ export const WorkspaceCollectionsItemExtractor: coreClient.CompositeMapper = {
       validatable: {
         serializedName: "validatable",
         required: true,
-        type: {
-          name: "Boolean",
-        },
-      },
-      isCustom: {
-        serializedName: "isCustom",
         type: {
           name: "Boolean",
         },
@@ -2442,6 +2468,12 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
           name: "Boolean",
         },
       },
+      hideShowRawValues: {
+        serializedName: "hideShowRawValues",
+        type: {
+          name: "Boolean",
+        },
+      },
       hideReject: {
         serializedName: "hideReject",
         type: {
@@ -2486,6 +2518,18 @@ export const ValidationToolConfig: coreClient.CompositeMapper = {
       },
       disableEditDocumentMetadata: {
         serializedName: "disableEditDocumentMetadata",
+        type: {
+          name: "Boolean",
+        },
+      },
+      disableManualAnnotationEditing: {
+        serializedName: "disableManualAnnotationEditing",
+        type: {
+          name: "Boolean",
+        },
+      },
+      hideDocumentStatus: {
+        serializedName: "hideDocumentStatus",
         type: {
           name: "Boolean",
         },
@@ -3337,6 +3381,22 @@ export const ResthookSubscriptionUpdate: coreClient.CompositeMapper = {
         serializedName: "version",
         type: {
           name: "String",
+        },
+      },
+    },
+  },
+};
+
+export const DocumentCreateFromData: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "DocumentCreateFromData",
+    modelProperties: {
+      data: {
+        serializedName: "data",
+        type: {
+          name: "Composite",
+          className: "DocumentCreateFromDataData",
         },
       },
     },
@@ -5477,6 +5537,10 @@ export const ResumeSearchParameters: coreClient.CompositeMapper = {
         type: {
           name: "Sequence",
           element: {
+            constraints: {
+              InclusiveMaximum: 9999,
+              InclusiveMinimum: 1,
+            },
             type: {
               name: "Number",
             },
@@ -5639,7 +5703,14 @@ export const SearchParametersCustomData: coreClient.CompositeMapper = {
       },
       dataPoint: {
         serializedName: "dataPoint",
-        required: true,
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+      field: {
+        serializedName: "field",
+        nullable: true,
         type: {
           name: "String",
         },
@@ -7391,6 +7462,10 @@ export const JobDescriptionSearchParameters: coreClient.CompositeMapper = {
         type: {
           name: "Sequence",
           element: {
+            constraints: {
+              InclusiveMaximum: 9999,
+              InclusiveMinimum: 1,
+            },
             type: {
               name: "Number",
             },
@@ -12533,6 +12608,25 @@ export const DocumentCreate: coreClient.CompositeMapper = {
           name: "String",
         },
       },
+      llmHint: {
+        serializedName: "llmHint",
+        nullable: true,
+        type: {
+          name: "String",
+        },
+      },
+      limitToExamples: {
+        serializedName: "limitToExamples",
+        nullable: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "String",
+            },
+          },
+        },
+      },
       warningMessages: {
         serializedName: "warningMessages",
         type: {
@@ -13480,23 +13574,6 @@ export const JobDescriptionSearchDetailOccupationGroupValue: coreClient.Composit
       },
     },
   };
-
-export const DocumentCreateFromData: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "DocumentCreateFromData",
-    modelProperties: {
-      ...DocumentCreate.type.modelProperties,
-      data: {
-        serializedName: "data",
-        type: {
-          name: "Composite",
-          className: "DocumentCreateFromDataData",
-        },
-      },
-    },
-  },
-};
 
 export let discriminators = {
   Document: Document,

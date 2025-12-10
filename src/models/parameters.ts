@@ -23,7 +23,7 @@ import {
   AnnotationUpdate as AnnotationUpdateMapper,
   ResthookSubscriptionCreate as ResthookSubscriptionCreateMapper,
   ResthookSubscriptionUpdate as ResthookSubscriptionUpdateMapper,
-  DocumentCreateFromDataData as DocumentCreateFromDataDataMapper,
+  DocumentCreateFromData as DocumentCreateFromDataMapper,
   PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchema as PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchemaMapper,
   ResumeSearchParameters as ResumeSearchParametersMapper,
   ResumeSearchConfig as ResumeSearchConfigMapper,
@@ -493,6 +493,31 @@ export const useOcr: OperationParameter = {
     serializedName: "useOcr",
     type: {
       name: "String",
+    },
+  },
+};
+
+export const llmHint: OperationParameter = {
+  parameterPath: ["options", "llmHint"],
+  mapper: {
+    serializedName: "llmHint",
+    type: {
+      name: "String",
+    },
+  },
+};
+
+export const limitToExamples: OperationParameter = {
+  parameterPath: ["options", "limitToExamples"],
+  mapper: {
+    serializedName: "limitToExamples",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "String",
+        },
+      },
     },
   },
 };
@@ -974,18 +999,18 @@ export const xHookSecret: OperationParameter = {
   },
 };
 
-export const data: OperationParameter = {
-  parameterPath: "data",
-  mapper: DocumentCreateFromDataDataMapper,
+export const body24: OperationParameter = {
+  parameterPath: "body",
+  mapper: DocumentCreateFromDataMapper,
 };
 
-export const body24: OperationParameter = {
+export const body25: OperationParameter = {
   parameterPath: "body",
   mapper:
     PathsO1OmciV3DocumentsIdentifierUpdateDataPostRequestbodyContentApplicationJsonSchemaMapper,
 };
 
-export const body25: OperationParameter = {
+export const body26: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchParametersMapper,
 };
@@ -1004,12 +1029,12 @@ export const limit1: OperationQueryParameter = {
   },
 };
 
-export const body26: OperationParameter = {
+export const body27: OperationParameter = {
   parameterPath: "body",
   mapper: ResumeSearchConfigMapper,
 };
 
-export const body27: OperationParameter = {
+export const body28: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper:
     Paths1Czpnk1V3ResumeSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
@@ -1217,17 +1242,17 @@ export const skills: OperationQueryParameter = {
   collectionFormat: "Multi",
 };
 
-export const body28: OperationParameter = {
+export const body29: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchParametersMapper,
 };
 
-export const body29: OperationParameter = {
+export const body30: OperationParameter = {
   parameterPath: "body",
   mapper: JobDescriptionSearchConfigMapper,
 };
 
-export const body30: OperationParameter = {
+export const body31: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper:
     PathsM3DzbgV3JobDescriptionSearchEmbedPostRequestbodyContentApplicationJsonSchemaMapper,
@@ -1243,12 +1268,12 @@ export const documentType1: OperationQueryParameter = {
   },
 };
 
-export const body31: OperationParameter = {
+export const body32: OperationParameter = {
   parameterPath: "body",
   mapper: IndexCreateMapper,
 };
 
-export const body32: OperationParameter = {
+export const body33: OperationParameter = {
   parameterPath: "body",
   mapper: IndexUpdateMapper,
 };
@@ -1264,7 +1289,7 @@ export const name3: OperationURLParameter = {
   },
 };
 
-export const body33: OperationParameter = {
+export const body34: OperationParameter = {
   parameterPath: "body",
   mapper:
     PathsCl024WV3IndexNameDocumentsPostRequestbodyContentApplicationJsonSchemaMapper,
@@ -1281,17 +1306,17 @@ export const workspace2: OperationQueryParameter = {
   },
 };
 
-export const body34: OperationParameter = {
+export const body35: OperationParameter = {
   parameterPath: "body",
   mapper: CollectionCreateMapper,
 };
 
-export const body35: OperationParameter = {
+export const body36: OperationParameter = {
   parameterPath: "body",
   mapper: CollectionUpdateMapper,
 };
 
-export const body36: OperationParameter = {
+export const body37: OperationParameter = {
   parameterPath: "body",
   mapper: DataFieldCreateMapper,
 };
@@ -1307,7 +1332,7 @@ export const datapointIdentifier: OperationURLParameter = {
   },
 };
 
-export const body37: OperationParameter = {
+export const body38: OperationParameter = {
   parameterPath: "body",
   mapper: CollectionFieldMapper,
 };
@@ -1377,12 +1402,12 @@ export const identifier3: OperationQueryParameter = {
   },
 };
 
-export const body38: OperationParameter = {
+export const body39: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: DataPointCreateMapper,
 };
 
-export const body39: OperationParameter = {
+export const body40: OperationParameter = {
   parameterPath: "body",
   mapper: DataPointUpdateMapper,
 };
@@ -1409,32 +1434,32 @@ export const collection2: OperationQueryParameter = {
   },
 };
 
-export const body40: OperationParameter = {
+export const body41: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: DataPointChoiceCreateMapper,
 };
 
-export const body41: OperationParameter = {
+export const body42: OperationParameter = {
   parameterPath: "body",
   mapper: DataPointChoiceUpdateMapper,
 };
 
-export const body42: OperationParameter = {
+export const body43: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: DataPointChoiceReplaceRequestMapper,
 };
 
-export const body43: OperationParameter = {
+export const body44: OperationParameter = {
   parameterPath: "body",
   mapper: ApiUserCreateMapper,
 };
 
-export const body44: OperationParameter = {
+export const body45: OperationParameter = {
   parameterPath: "body",
   mapper: ApiUserUpdateMapper,
 };
 
-export const body45: OperationParameter = {
+export const body46: OperationParameter = {
   parameterPath: "body",
   mapper: DocumentEditRequestMapper,
 };
@@ -1449,12 +1474,12 @@ export const includePublicExtractors: OperationQueryParameter = {
   },
 };
 
-export const body46: OperationParameter = {
+export const body47: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: ExtractorCreateMapper,
 };
 
-export const body47: OperationParameter = {
+export const body48: OperationParameter = {
   parameterPath: "body",
   mapper: ExtractorUpdateMapper,
 };
@@ -1469,7 +1494,7 @@ export const role: OperationQueryParameter = {
   },
 };
 
-export const body48: OperationParameter = {
+export const body49: OperationParameter = {
   parameterPath: "body",
   mapper: OrganizationMembershipUpdateMapper,
 };
@@ -1484,12 +1509,12 @@ export const status: OperationQueryParameter = {
   },
 };
 
-export const body49: OperationParameter = {
+export const body50: OperationParameter = {
   parameterPath: "body",
   mapper: InvitationCreateMapper,
 };
 
-export const body50: OperationParameter = {
+export const body51: OperationParameter = {
   parameterPath: "body",
   mapper: InvitationUpdateMapper,
 };
@@ -1505,12 +1530,12 @@ export const token: OperationURLParameter = {
   },
 };
 
-export const body51: OperationParameter = {
+export const body52: OperationParameter = {
   parameterPath: "body",
   mapper: InvitationResponseMapper,
 };
 
-export const body52: OperationParameter = {
+export const body53: OperationParameter = {
   parameterPath: "body",
   mapper: MappingCreateMapper,
 };
@@ -1526,7 +1551,7 @@ export const mappingDataSource: OperationQueryParameter = {
   },
 };
 
-export const body53: OperationParameter = {
+export const body54: OperationParameter = {
   parameterPath: "body",
   mapper: MappingUpdateMapper,
 };

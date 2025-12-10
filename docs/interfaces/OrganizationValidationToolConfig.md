@@ -26,6 +26,14 @@ Disable editing document metadata. Makes the collection selector, filename input
 
 ***
 
+### disableManualAnnotationEditing?
+
+> `optional` **disableManualAnnotationEditing**: `boolean`
+
+Disable manual editing of annotation values via the validation popover.
+
+***
+
 ### hideActions?
 
 > `optional` **hideActions**: `boolean`
@@ -39,6 +47,14 @@ Hide the confirm document button and other actions.
 > `optional` **hideCollection**: `boolean`
 
 Hide the collection selector.
+
+***
+
+### hideDocumentStatus?
+
+> `optional` **hideDocumentStatus**: `boolean`
+
+Hide the document status indicator in the toolbar.
 
 ***
 
@@ -87,6 +103,14 @@ Hide the reparse button.
 > `optional` **hideRunOcr**: `boolean`
 
 Hide the run OCR button.
+
+***
+
+### hideShowRawValues?
+
+> `optional` **hideShowRawValues**: `boolean`
+
+Hide the toggle for showing raw annotation values.
 
 ***
 

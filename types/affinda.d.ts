@@ -468,10 +468,10 @@ export declare class AffindaAPI extends coreClient.ServiceClient {
      * When successful, returns an `identifier` in the response for subsequent use with the
      * [/documents/{identifier}](#get-/v3/documents/-identifier-) endpoint to check processing status and
      * retrieve results.<br/>
-     * @param data Create resume or job description directly from data.
+     * @param body Resume or job description data to create a document from
      * @param options The options parameters.
      */
-    createDocumentFromData(data: DocumentCreateFromDataData, options?: CreateDocumentFromDataOptionalParams): Promise<CreateDocumentFromDataResponse>;
+    createDocumentFromData(body: DocumentCreateFromData, options?: CreateDocumentFromDataOptionalParams): Promise<CreateDocumentFromDataResponse>;
     /**
      * Update data of a document.
      * Only applicable for resumes and job descriptions. For other document types, please use the `PATCH
@@ -1543,6 +1543,10 @@ export declare interface CreateDocumentOptionalParams extends coreClient.Operati
     enableValidationTool?: string;
     /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
     useOcr?: string;
+    /** Optional hint inserted into the LLM prompt when processing this document. */
+    llmHint?: string;
+    /** Restrict LLM example selection to the specified document identifiers. */
+    limitToExamples?: string[];
     /** Array of DocumentWarning */
     warningMessages?: DocumentWarning[];
 }
@@ -2124,10 +2128,14 @@ export declare interface DocumentCreate {
     enableValidationTool?: string;
     /** If true, the document will be treated like an image, and the text will be extracted using OCR. If false, the document will be treated like a PDF, and the text will be extracted using the parser. If not set, we will determine whether to use OCR based on whether words are found in the document. */
     useOcr?: string;
+    /** Optional hint inserted into the LLM prompt when processing this document. */
+    llmHint?: string;
+    /** Restrict LLM example selection to the specified document identifiers. */
+    limitToExamples?: string[];
     warningMessages?: DocumentWarning[];
 }
 
-export declare interface DocumentCreateFromData extends DocumentCreate {
+export declare interface DocumentCreateFromData {
     /** Create resume or job description directly from data. */
     data: DocumentCreateFromDataData;
 }
@@ -2205,6 +2213,8 @@ export declare interface DocumentMeta {
     file?: string;
     /** URL to view the file converted to HTML. */
     html?: string;
+    /** Optional hint inserted into the LLM prompt when processing this document. */
+    llmHint?: string;
     tags?: Tag[];
     createdBy?: User;
     /** If the document is created via email ingestion, this field stores the email file's URL. */
@@ -2360,6 +2370,8 @@ export declare interface DocumentUpdate {
     identifier?: string;
     /** Specify a custom identifier for the document if you need one, not required to be unique. */
     customIdentifier?: string;
+    /** Optional hint inserted into the LLM prompt when processing this document. */
+    llmHint?: string;
     warningMessages?: DocumentWarning[];
 }
 
@@ -3289,9 +3301,11 @@ export declare interface InvoiceData {
 export declare interface JobDescription extends Document_2 {
     /** Polymorphic discriminator, which specifies the different types this object can be */
     extractor: "job-description";
+    /** A JSON-encoded string of the `JobDescriptionData` object. */
     data?: JobDescriptionData;
 }
 
+/** A JSON-encoded string of the `JobDescriptionData` object. */
 export declare interface JobDescriptionData {
     /** Describes unknown properties. The value of an unknown property can be of "any" type. */
     [property: string]: any;
@@ -4728,6 +4742,8 @@ export declare interface OrganizationValidationToolConfig {
     hideExport?: boolean;
     /** Hide the filename input. */
     hideFilename?: boolean;
+    /** Hide the toggle for showing raw annotation values. */
+    hideShowRawValues?: boolean;
     /** Hide the reject document button. */
     hideReject?: boolean;
     /** Hide the reparse button. */
@@ -4744,6 +4760,10 @@ export declare interface OrganizationValidationToolConfig {
     disableCurrencyFormatting?: boolean;
     /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
     disableEditDocumentMetadata?: boolean;
+    /** Disable manual editing of annotation values via the validation popover. */
+    disableManualAnnotationEditing?: boolean;
+    /** Hide the document status indicator in the toolbar. */
+    hideDocumentStatus?: boolean;
 }
 
 export declare interface PageMeta {
@@ -5841,8 +5861,10 @@ export declare type SearchLocationUnit = "km" | "mi";
 export declare interface SearchParametersCustomData {
     /** Data points of "text" type support only "equals" filterType, others support both "equals" and "range" */
     filterType: SearchParametersCustomDataFilterType;
-    /** The data point's slug */
-    dataPoint: string;
+    /** The data point's slug, used for portal v2 (deprecated) */
+    dataPoint?: string;
+    /** The field's slug */
+    field?: string;
     /** "equals" searches require the "value" key inside the query, and "range" searches require at least one of "gte" (greater than or equal) and "lte" (less than or equal) */
     query: Record<string, unknown>;
     required?: boolean;
@@ -6241,6 +6263,8 @@ export declare interface ValidationToolConfig {
     hideExport?: boolean;
     /** Hide the filename input. */
     hideFilename?: boolean;
+    /** Hide the toggle for showing raw annotation values. */
+    hideShowRawValues?: boolean;
     /** Hide the reject document button. */
     hideReject?: boolean;
     /** Hide the reparse button. */
@@ -6257,6 +6281,10 @@ export declare interface ValidationToolConfig {
     disableCurrencyFormatting?: boolean;
     /** Disable editing document metadata. Makes the collection selector, filename input and tags editor read only. */
     disableEditDocumentMetadata?: boolean;
+    /** Disable manual editing of annotation values via the validation popover. */
+    disableManualAnnotationEditing?: boolean;
+    /** Hide the document status indicator in the toolbar. */
+    hideDocumentStatus?: boolean;
 }
 
 /**
@@ -6315,7 +6343,6 @@ export declare interface WorkspaceCollectionsItemExtractor {
     baseExtractor?: BaseExtractor;
     category?: string;
     validatable: boolean;
-    isCustom?: boolean;
     createdDt?: Date;
 }
 

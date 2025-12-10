@@ -472,7 +472,7 @@ The options parameters.
 
 ### createDocumentFromData()
 
-> **createDocumentFromData**(`data`, `options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
+> **createDocumentFromData**(`body`, `options?`): `Promise`\<[`DocumentUnion`](../type-aliases/DocumentUnion.md)\>
 
 Creates a document directly from structured resume or job description data for use in Search & Match
 functionality. This endpoint is specifically designed for programmatic document creation without
@@ -485,11 +485,11 @@ retrieve results.<br/>
 
 #### Parameters
 
-##### data
+##### body
 
-[`DocumentCreateFromDataData`](../interfaces/DocumentCreateFromDataData.md)
+[`DocumentCreateFromData`](../interfaces/DocumentCreateFromData.md)
 
-Create resume or job description directly from data.
+Resume or job description data to create a document from
 
 ##### options?
 

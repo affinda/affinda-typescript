@@ -34,12 +34,6 @@ Uniquely identify an extractor.
 
 ***
 
-### isCustom?
-
-> `optional` **isCustom**: `boolean`
-
-***
-
 ### name
 
 > **name**: `string`

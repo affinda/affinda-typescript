@@ -12,15 +12,27 @@
 
 ## Properties
 
-### dataPoint
+### dataPoint?
 
-> **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
-The data point's slug
+The data point's slug, used for portal v2 (deprecated)
 
 #### Inherited from
 
 [`SearchParametersCustomData`](SearchParametersCustomData.md).[`dataPoint`](SearchParametersCustomData.md#datapoint)
+
+***
+
+### field?
+
+> `optional` **field**: `string`
+
+The field's slug
+
+#### Inherited from
+
+[`SearchParametersCustomData`](SearchParametersCustomData.md).[`field`](SearchParametersCustomData.md#field)
 
 ***
 

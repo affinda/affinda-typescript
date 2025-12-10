@@ -166,6 +166,14 @@ The document's language.
 
 ***
 
+### llmHint?
+
+> `optional` **llmHint**: `string`
+
+Optional hint inserted into the LLM prompt when processing this document.
+
+***
+
 ### ocrConfidence?
 
 > `optional` **ocrConfidence**: `number`

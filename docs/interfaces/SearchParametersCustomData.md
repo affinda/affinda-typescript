@@ -12,11 +12,19 @@
 
 ## Properties
 
-### dataPoint
+### dataPoint?
 
-> **dataPoint**: `string`
+> `optional` **dataPoint**: `string`
 
-The data point's slug
+The data point's slug, used for portal v2 (deprecated)
+
+***
+
+### field?
+
+> `optional` **field**: `string`
+
+The field's slug
 
 ***
 

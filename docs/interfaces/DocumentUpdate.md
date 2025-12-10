@@ -82,6 +82,14 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ***
 
+### llmHint?
+
+> `optional` **llmHint**: `string`
+
+Optional hint inserted into the LLM prompt when processing this document.
+
+***
+
 ### skipParse?
 
 > `optional` **skipParse**: `boolean`

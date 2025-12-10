@@ -114,6 +114,22 @@ Language code in ISO 639-1 format. Must specify zh-cn or zh-tw for Chinese.
 
 ***
 
+### limitToExamples?
+
+> `optional` **limitToExamples**: `string`[]
+
+Restrict LLM example selection to the specified document identifiers.
+
+***
+
+### llmHint?
+
+> `optional` **llmHint**: `string`
+
+Optional hint inserted into the LLM prompt when processing this document.
+
+***
+
 ### lowPriority?
 
 > `optional` **lowPriority**: `string`
